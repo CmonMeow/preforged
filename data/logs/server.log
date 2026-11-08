@@ -1,6 +1,6 @@
 Guild Wars 2022 single server; native direct listeners; client build37130
-Host entrypoint compiled Nov  8 2026 14:16:54; process 9392
-Executable SHA256 3a790e910cc78c41469b4a1d19341495ef9a5d0a262894f054c2e35487cbc218
+Host entrypoint compiled Nov  8 2026 14:16:54; process 10620
+Executable SHA256 0490d576bc24f9670ff784fab42532ca6b957a9de969876e81779b5061160d81
 QUEST content_catalog loaded quests=22
 ITEM salvage_catalog unconfigured recipes=0
 ITEM identification_catalog unconfigured recipes=0
@@ -34,7 +34,7 @@ PORTAL path=/Spawned/WebGate/my_account/game_accounts.xml status=200
 PORTAL path=/Spawned/WebGate/my_account/token.xml status=200
 AUTH phase hello -> ticket
 AUTH login transaction=1
-AUTH ticket_lookup status=0 elapsed_ms=0 connection_elapsed_ms=7782
+AUTH ticket_lookup status=0 elapsed_ms=16 connection_elapsed_ms=3782
 AUTH roster_entry index=0 name=Cmon Meow map=161 campaign=1 entitled=1 selected=0
 AUTH roster_entry index=1 name=A V E Y map=57 campaign=1 entitled=1 selected=0
 AUTH roster_entry index=2 name=Ecto Plz map=55 campaign=1 entitled=1 selected=0
@@ -42,41 +42,692 @@ AUTH roster_entry index=3 name=Meow Zu Heltzer map=449 campaign=3 entitled=1 sel
 AUTH roster_entry index=4 name=Me Illusionist map=330 campaign=0 entitled=1 selected=0
 AUTH roster_entry index=5 name=Ctrl Alt Meow map=146 campaign=1 entitled=1 selected=0
 AUTH roster_entry index=6 name=Avey map=148 campaign=1 entitled=1 selected=0
+AUTH roster_entry index=7 name=Gg Gg map=146 campaign=1 entitled=1 selected=0
 AUTH initial_character name=Cmon Meow map=161
 AUTH eula_lookup status=0 accepted=1
 AUTH response transaction=1
-AUTH character_roster count=7
+AUTH character_roster count=8
 AUTHENTICATED character_account_login_result_sent=1
 AUTH post_login_opcode=15 bytes=112
 AUTH post_login_opcode=53 bytes=6
 AUTH hardware_info_exchange_complete=1
+AUTH post_login_opcode=10 bytes=18
+AUTH post_login_opcode=14 bytes=6
+AUTH player_status value=1
 AUTH post_login_opcode=41 bytes=26
-AUTH creation_preview_granted transaction=3 world=942465284
+AUTH map_entry_spawn map=146 source=server_configuration x=6602 y=4485 plane=0
+AUTH instance transaction=4 map=146 world=1407080707
 WORLD connection accepted peer=127.0.0.1
-WORLD version_received version=37130 world=942465284 map=0 player=1
-WORLD transfer_grant_validated map=0
-WORLD npc_ai_coverage map=0 placed=0 reviewed_hostiles=0 active=0 unknown_health=0 wandering=0
-WORLD map_support map=0 asset=0 collision=missing zone_entry=unverified
+WORLD version_received version=37130 world=1407080707 map=146 player=1
+WORLD transfer_grant_validated map=146
+WORLD population_ai map=146 actor=10002 policy=tad-development status=armed
+WORLD population_ai map=146 actor=10003 policy=tad-development status=armed
+WORLD population_ai map=146 actor=59000 policy=firestarter-development status=armed
+WORLD population_ai map=146 actor=59001 policy=raider-development status=armed
+WORLD population_ai map=146 actor=59002 policy=raider-development status=armed
+WORLD population_ai map=146 actor=59003 policy=raider-development status=armed
+WORLD population_ai map=146 actor=59004 policy=raider-development status=armed
+WORLD population_ai map=146 actor=59005 policy=raider-development status=armed
+WORLD npc_ai_coverage map=146 placed=23 reviewed_hostiles=8 active=8 unknown_health=15 wandering=8
+WORLD map_support map=146 asset=113021 collision=loaded zone_entry=unverified
 WORLD client_seed_received=66
-WORLD encrypted_channel=1 map=0
+WORLD encrypted_channel=1 map=146
 WORLD map_request path=ordinary option0=0 option1=0
-WORLD creation_scene_asset=165843
-WORLD entry_position x=0 y=0 plane=0 facing=0
-WORLD player_stream_sent map=0 world=942465284 player=1
-WORLD mission_mask_request bytes=112 manifest_response_source=catalog_or_explicit_diagnostic
-WORLD diagnostic_empty_manifest_sent=1 map=0 version=0 files=0 composites=0
+WORLD diagnostic_empty_manifest_sent=1 map=146 version=0 files=0 composites=0
+WORLD solo_party_initialized player=1
+WORLD quest_log_restored packets=0
+WORLD entry_position x=6602 y=4485 plane=0 facing=0
+WORLD player_stream_sent map=146 world=1407080707 player=1
+WORLD attributes_restored total=0 available=0 revision=0
+WORLD character_skills_restored persisted=1 learned=0 primary=6 secondary=0 revision=1
+WORLD exploration_restored map=146 continent=1 source_bounds=1
+WORLD diagnostic_final_spawn_sent=1
+WORLD equipment_unresolved index=0 composite=0
+WORLD equipment_appearance_sent count=5
+WORLD npc_population_sent packets=35
+WORLD pet_presence ready=1 map=146
+WORLD guild_announcement_published body_units=3 author_units=9 native_chat=1 session_duplicate=0
+WORLD keyboard_rotation player=1 angle=inf scale=1 server_ms=88781765
+WORLD keyboard_rotation player=1 angle=0.661829 scale=1 server_ms=88782078
+WORLD keyboard_stop player=1 x=6602 y=4485 correction_distance=0 server_ms=88782078 client_plane=0
+WORLD stop_checkpoint player=1 status=1 distance=0 budget=0 correction=0
+WORLD keyboard_rotation player=1 angle=inf scale=1 server_ms=88782375
+WORLD keyboard_rotation player=1 angle=0.837758 scale=1 server_ms=88782453
+WORLD keyboard_rotation player=1 angle=-inf scale=1 server_ms=88784375
+WORLD keyboard_rotation player=1 angle=0.483805 scale=1 server_ms=88784531
+WORLD keyboard_rotation player=1 angle=-inf scale=1 server_ms=88784937
+WORLD keyboard_rotation player=1 angle=0.412596 scale=1 server_ms=88784968
+WORLD keyboard_direction player=1 vx=309.165 vy=-703.023 client_x=6602 client_y=4485 client_plane=0 direction=8 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88784968
+WORLD keyboard_stop player=1 x=6609.32 y=4464.43 correction_distance=0 server_ms=88785062 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=21.838 budget=49.104 correction=2.16316
+WORLD keyboard_direction player=1 vx=767.47 vy=6.04937 client_x=6609.32 client_y=4464.43 client_plane=0 direction=4 checkpoint=1 checkpoint_distance=0 checkpoint_budget=27.266 checkpoint_correction=0 server_ms=88785609
+WORLD keyboard_direction player=1 vx=-104.642 vy=-757.827 client_x=6613.88 client_y=4426.29 client_plane=0 direction=4 checkpoint=2 checkpoint_distance=38.4117 checkpoint_budget=77.8272 checkpoint_correction=60.0139 server_ms=88785875
+WORLD keyboard_direction player=1 vx=676.584 vy=-357.051 client_x=6620.19 client_y=4356.81 client_plane=0 direction=6 checkpoint=2 checkpoint_distance=69.7622 checkpoint_budget=97.0387 checkpoint_correction=15.7637 server_ms=88786234
+WORLD keyboard_direction player=1 vx=723.259 vy=249.295 client_x=6628.77 client_y=4352.29 client_plane=0 direction=8 checkpoint=2 checkpoint_distance=9.69385 checkpoint_budget=36.2103 checkpoint_correction=0.760318 server_ms=88786281
+WORLD keyboard_stop player=1 x=6642.41 y=4357.1 correction_distance=0 server_ms=88786343 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=14.4709 budget=39.9084 correction=1.08366
+WORLD keyboard_direction player=1 vx=-300.11 vy=705.338 client_x=6642.41 client_y=4357.1 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=25.4375 checkpoint_correction=0 server_ms=88786500
+WORLD keyboard_direction player=1 vx=-311.16 vy=702.142 client_x=6599.68 client_y=4457.54 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=109.152 checkpoint_budget=137.758 checkpoint_correction=3.16746 server_ms=88786890
+WORLD keyboard_direction player=1 vx=-651.424 vy=405.1 client_x=6577.79 client_y=4499.66 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=47.4652 checkpoint_budget=73.5335 checkpoint_correction=3.82699 server_ms=88787046
+WORLD keyboard_direction player=1 vx=-403.116 vy=650.192 client_x=6569.72 client_y=4504.68 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=9.50414 checkpoint_budget=35.2843 checkpoint_correction=0.288187 server_ms=88787078
+WORLD keyboard_stop player=1 x=6513.77 y=4562.34 correction_distance=0 server_ms=88787375 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=80.341 budget=111.316 correction=18.561
+WORLD keyboard_direction player=1 vx=72.4399 vy=-764.109 client_x=6513.77 client_y=4562.34 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88787984
+WORLD keyboard_direction player=1 vx=459.986 vy=-613.899 client_x=6523.99 client_y=4505.42 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=57.8211 checkpoint_budget=87.264 checkpoint_correction=4.87406 server_ms=88788187
+WORLD keyboard_direction player=1 vx=10.1299 vy=-764.95 client_x=6534.92 client_y=4489.9 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=18.9841 checkpoint_budget=46.944 checkpoint_correction=1.00275 server_ms=88788250
+WORLD keyboard_direction player=1 vx=-351.128 vy=-679.677 client_x=6511.06 client_y=4418.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=75.6654 checkpoint_budget=104.28 checkpoint_correction=25.2765 server_ms=88788515
+WORLD keyboard_stop player=1 x=6334.46 y=4076.25 correction_distance=0 server_ms=88789843 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=384.768 budget=411.079 correction=2.30482
+WORLD keyboard_direction player=1 vx=-354.306 vy=-681.16 client_x=6202.14 client_y=4032.42 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=26.3103 checkpoint_correction=0 server_ms=88791453
+WORLD keyboard_stop player=1 x=6190.97 y=4010.96 correction_distance=0 server_ms=88791531 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=21.1375 budget=48.7743 correction=3.57184
+WORLD selection selected=10011 secondary=0 outcome=accepted
+WORLD npc_interaction actor=10011 storage=0
+WORLD quest_dialogue quest=83 reward=0 status=0 reason=
+WORLD keyboard_direction player=1 vx=-354.306 vy=-681.161 client_x=6190.97 client_y=4010.96 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=27.6368 checkpoint_correction=0 server_ms=88795343
+WORLD keyboard_direction player=1 vx=-342.96 vy=-683.835 client_x=6175.56 client_y=3981.32 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=33.4079 checkpoint_budget=63.6368 checkpoint_correction=2.59212 server_ms=88795468
+WORLD exploration_revealed map=146 cell_x=31 cell_y=22
+WORLD keyboard_direction player=1 vx=-60.3956 vy=-762.63 client_x=6140.87 client_y=3857.69 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=128.411 checkpoint_budget=159.264 checkpoint_correction=24.8164 server_ms=88795921
+WORLD keyboard_direction player=1 vx=-71.7352 vy=-761.647 client_x=6125.41 client_y=3662.46 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=195.84 checkpoint_budget=222.336 checkpoint_correction=2.30393 server_ms=88796593
+WORLD keyboard_direction player=1 vx=-172.494 vy=-745.317 client_x=6118.01 client_y=3615.28 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=47.7532 checkpoint_budget=76.032 checkpoint_correction=3.4887 server_ms=88796765
+WORLD keyboard_direction player=1 vx=-172.494 vy=-745.317 client_x=6002.16 client_y=3114.72 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=513.792 checkpoint_budget=541.207 checkpoint_correction=0.86392 server_ms=88798546
+WORLD exploration_revealed map=146 cell_x=31 cell_y=23
+WORLD keyboard_direction player=1 vx=-161.427 vy=-747.792 client_x=5955.54 client_y=2913.26 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=206.784 checkpoint_budget=234.487 checkpoint_correction=0.287937 server_ms=88799265
+WORLD keyboard_direction player=1 vx=-60.4615 vy=-765.616 client_x=5948.32 client_y=2865.77 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=48.0408 checkpoint_budget=77.2389 checkpoint_correction=3.36044 server_ms=88799437
+WORLD keyboard_direction player=1 vx=-71.5393 vy=-761.665 client_x=5942.65 client_y=2793.99 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=72.0001 checkpoint_budget=100.8 checkpoint_correction=0.000488281 server_ms=88799687
+WORLD keyboard_direction player=1 vx=-138.99 vy=-752.286 client_x=5938.15 client_y=2760.04 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=34.2505 checkpoint_budget=60.1919 checkpoint_correction=3.12035 server_ms=88799796
+WORLD keyboard_stop player=1 x=5822.93 y=2136.41 correction_distance=0 server_ms=88802046 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=634.176 budget=673.941 correction=13.8243
+WORLD keyboard_direction player=1 vx=-139.495 vy=-755.018 client_x=5822.93 client_y=2136.41 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88802453
+WORLD keyboard_direction player=1 vx=-127.852 vy=-754.258 client_x=5799.8 client_y=2011.24 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=127.296 checkpoint_budget=159.264 checkpoint_correction=3.16801 server_ms=88802906
+WORLD keyboard_direction player=1 vx=-26.803 vy=-764.548 client_x=5794.74 client_y=1963.75 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=47.7537 checkpoint_budget=73.728 checkpoint_correction=4.02117 server_ms=88803062
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD keyboard_direction player=1 vx=-26.803 vy=-764.548 client_x=5776.83 client_y=1452.87 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=511.2 checkpoint_budget=529.974 checkpoint_correction=7.20016 server_ms=88804812
+WORLD keyboard_direction player=1 vx=-15.4941 vy=-767.844 client_x=5775.31 client_y=1409.4 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=43.488 checkpoint_budget=63.7023 checkpoint_correction=1.4401 server_ms=88804968
+WORLD keyboard_direction player=1 vx=75.1499 vy=-761.318 client_x=5776.82 client_y=1365.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=43.7345 checkpoint_budget=60.8223 checkpoint_correction=3.88525 server_ms=88805109
+WORLD keyboard_direction player=1 vx=64.0787 vy=-765.322 client_x=5792.07 client_y=1211.21 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=155.232 checkpoint_budget=174.624 checkpoint_correction=2.30418 server_ms=88805656
+WORLD keyboard_direction player=1 vx=-60.7605 vy=-765.593 client_x=5792.58 client_y=1153.14 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=58.0748 checkpoint_budget=73.2478 checkpoint_correction=5.93649 server_ms=88805843
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD keyboard_stop player=1 x=5757.88 y=715.893 correction_distance=0 server_ms=88807390 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=438.624 budget=460.709 correction=6.91179
+WORLD keyboard_direction player=1 vx=-60.7448 vy=-765.389 client_x=5757.88 client_y=715.893 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=22.085 checkpoint_correction=0 server_ms=88807796
+WORLD keyboard_stop player=1 x=5752.94 y=653.593 correction_distance=0 server_ms=88808015 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=62.496 budget=85.157 correction=0.575951
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD keyboard_direction player=1 vx=-60.7448 vy=-765.389 client_x=5752.94 client_y=653.593 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=22.661 checkpoint_correction=0 server_ms=88808703
+WORLD keyboard_stop player=1 x=5744.16 y=543.061 correction_distance=0 server_ms=88809078 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=110.88 budget=130.661 correction=2.88001
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD keyboard_direction player=1 vx=514.135 vy=568.767 client_x=5744.16 client_y=543.061 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=19.781 checkpoint_correction=0 server_ms=88817343
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD keyboard_direction player=1 vx=-445.092 vy=-622.209 client_x=5771.96 client_y=517.43 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=37.8074 checkpoint_budget=91.781 checkpoint_correction=81.6557 server_ms=88817593
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD keyboard_direction player=1 vx=82.3862 vy=-760.568 client_x=5730.52 client_y=448.173 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=80.705 checkpoint_budget=114.336 checkpoint_correction=8.33641 server_ms=88817890
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD keyboard_direction player=1 vx=678.318 vy=353.746 client_x=5786.15 client_y=435.691 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=57.014 checkpoint_budget=96.48 checkpoint_correction=73.0787 server_ms=88818125
+WORLD keyboard_direction player=1 vx=370.176 vy=671.884 client_x=5832.28 client_y=462.289 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=53.2498 checkpoint_budget=82.656 checkpoint_correction=2.34513 server_ms=88818312
+WORLD keyboard_direction player=1 vx=618.737 vy=449.907 client_x=5854.79 client_y=504.789 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=48.093 checkpoint_budget=78.336 checkpoint_correction=1.65247 server_ms=88818484
+WORLD keyboard_stop player=1 x=5920.43 y=560.778 correction_distance=0 server_ms=88818781 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=86.2691 budget=114.336 correction=6.70237
+WORLD npc_approach_route player=1 actor=10011 start_x=5920.43 start_y=560.778 start_plane=0 first_x=6142 first_y=4014 first_plane=0 queued=0
+WORLD npc_approach actor=10011 outcome=moving
+WORLD selection selected=10011 secondary=0 outcome=accepted
+WORLD keyboard_direction player=1 vx=564.424 vy=516.409 client_x=5933.65 client_y=766.85 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.0669 checkpoint_correction=0 server_ms=88819656
+WORLD keyboard_direction player=1 vx=579.487 vy=499.446 client_x=5944.27 client_y=776.571 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=10.0198 checkpoint_budget=41.6029 checkpoint_correction=8.88366 server_ms=88819703
+WORLD keyboard_stop player=1 x=5979.58 y=790.396 correction_distance=0 server_ms=88819843 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=37.9223 budget=69.12 correction=13.3777
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD selection selected=10011 secondary=0 outcome=accepted
+WORLD keyboard_direction player=1 vx=-585.26 vy=495.856 client_x=5979.58 client_y=790.396 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88820203
+WORLD keyboard_stop player=1 x=5916.74 y=843.641 correction_distance=0 server_ms=88820484 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=82.3679 budget=109.728 correction=1.44033
+WORLD keyboard_rotation player=1 angle=inf scale=1 server_ms=88820703
+WORLD keyboard_rotation player=1 angle=2.57693 scale=1 server_ms=88820765
+WORLD keyboard_direction player=1 vx=-408.017 vy=-647.127 client_x=5916.74 client_y=843.641 client_plane=0 direction=7 checkpoint=1 checkpoint_distance=0 checkpoint_budget=27.3601 checkpoint_correction=0 server_ms=88820765
+WORLD keyboard_stop player=1 x=5903.71 y=815.126 correction_distance=0 server_ms=88820921 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=31.3494 budget=61.0561 correction=4.94337
+WORLD selection selected=10011 secondary=10003 outcome=accepted
+WORLD selection selected=10011 secondary=10002 outcome=accepted
+WORLD selection selected=10003 secondary=0 outcome=accepted
+WORLD ordinary_attack target=10003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=10003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD ordinary_attack target=10003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD selection selected=0 secondary=0 outcome=accepted
+WORLD selection selected=10002 secondary=0 outcome=accepted
+WORLD keyboard_direction player=1 vx=-42.7233 vy=-766.162 client_x=5786.3 client_y=650.443 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88825703
+WORLD keyboard_direction player=1 vx=-31.4092 vy=-767.357 client_x=5783.1 client_y=592.932 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=57.6 checkpoint_budget=87.264 checkpoint_correction=0.863997 server_ms=88825906
+WORLD keyboard_direction player=1 vx=82.0174 vy=-760.608 client_x=5784.62 client_y=540.896 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=52.0583 checkpoint_budget=78.336 checkpoint_correction=4.36889 server_ms=88826078
+WORLD keyboard_stop player=1 x=5796.42 y=431.514 correction_distance=0 server_ms=88826468 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=110.016 budget=138.598 correction=2.30397
+WORLD keyboard_direction player=1 vx=82.2644 vy=-763.581 client_x=5765.17 client_y=261.856 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.5817 checkpoint_correction=0 server_ms=88828812
+WORLD keyboard_direction player=1 vx=93.1673 vy=-759.323 client_x=5766.19 client_y=252.407 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=6.90648 checkpoint_budget=37.5097 checkpoint_correction=2.2113 server_ms=88828843
+WORLD keyboard_stop player=1 x=5766.75 y=247.833 correction_distance=0 server_ms=88828859 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=4.60798 budget=33.408 correction=0
+WORLD ordinary_attack target=10002 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=10002 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD selection selected=0 secondary=0 outcome=accepted
+WORLD keyboard_direction player=1 vx=-742.852 vy=-190.566 client_x=5766.75 client_y=247.833 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88833578
+WORLD keyboard_direction player=1 vx=-538.725 vy=-543.164 client_x=5631.54 client_y=207.578 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=141.077 checkpoint_budget=172.8 checkpoint_correction=6.18442 server_ms=88834078
+WORLD keyboard_direction player=1 vx=-192.901 vy=-740.298 client_x=5603.36 client_y=143.459 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=70.0386 checkpoint_budget=100.8 checkpoint_correction=26.0026 server_ms=88834328
+WORLD exploration_revealed map=146 cell_x=31 cell_y=24
+WORLD keyboard_direction player=1 vx=-207.335 vy=-736.386 client_x=5538.07 client_y=-107.086 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=258.912 checkpoint_budget=289.728 checkpoint_correction=2.01617 server_ms=88835234
+WORLD keyboard_direction player=1 vx=-254.171 vy=-721.56 client_x=5494.01 client_y=-244.756 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.549 checkpoint_budget=172.8 checkpoint_correction=5.12084 server_ms=88835734
+WORLD keyboard_direction player=1 vx=-213.496 vy=-734.623 client_x=5447.09 client_y=-381.48 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.551 checkpoint_budget=172.251 checkpoint_correction=1.28993 server_ms=88836234
+WORLD keyboard_direction player=1 vx=-226.795 vy=-730.627 client_x=5400.39 client_y=-542.16 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=167.328 checkpoint_budget=194.164 checkpoint_correction=0.863985 server_ms=88836812
+WORLD keyboard_direction player=1 vx=-241.972 vy=-728.885 client_x=5317.91 client_y=-807.861 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=278.208 checkpoint_budget=305.908 checkpoint_correction=0.863748 server_ms=88837781
+WORLD keyboard_direction player=1 vx=-265.251 vy=-720.74 client_x=5267.89 client_y=-943.806 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.856 checkpoint_budget=171.7 checkpoint_correction=4.71084 server_ms=88838281
+WORLD selection selected=60001 secondary=0 outcome=accepted
+WORLD keyboard_direction player=1 vx=-251.146 vy=-722.619 client_x=5103.96 client_y=-1389.22 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=474.624 checkpoint_budget=503.772 checkpoint_correction=2.30383 server_ms=88839937
+WORLD keyboard_direction player=1 vx=-230.872 vy=-729.349 client_x=5059.28 client_y=-1526.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.989 checkpoint_budget=172.8 checkpoint_correction=2.73133 server_ms=88840437
+WORLD ordinary_attack target=60001 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=60001 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=60001 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=60001 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=60001 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD selection selected=0 secondary=0 outcome=accepted
+WORLD quest_loot_created quest=83 cycle=1 source=60001
+WORLD selection selected=32768 secondary=0 outcome=accepted
+WORLD ground_approach actor=32768 outcome=moving
+WORLD selection selected=32768 secondary=60000 outcome=accepted
+WORLD selection selected=32768 secondary=0 outcome=accepted
+WORLD ground_pickup actor=32768 outcome=committed
+WORLD selection selected=0 secondary=0 outcome=accepted
+WORLD quest_objective_complete quest=83 cycle=1 reason=carried_scale
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=-391.688 vy=659.881 client_x=4682.42 client_y=-2327.92 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=60.192 checkpoint_correction=0 server_ms=88857421
+WORLD keyboard_direction player=1 vx=-17.5578 vy=764.816 client_x=4644.4 client_y=-2206.57 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=127.164 checkpoint_budget=154.944 checkpoint_correction=29.3324 server_ms=88857859
+WORLD keyboard_direction player=1 vx=56.0939 vy=762.958 client_x=4653.03 client_y=-2061.74 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=145.095 checkpoint_budget=171.78 checkpoint_correction=11.974 server_ms=88858359
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=56.0939 vy=762.958 client_x=4690.68 client_y=-1549.62 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=513.504 checkpoint_budget=539.612 checkpoint_correction=0.576189 server_ms=88860140
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=56.0939 vy=762.958 client_x=4728.06 client_y=-1041.23 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=509.76 checkpoint_budget=534.716 checkpoint_correction=1.1521 server_ms=88861906
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD selection selected=10001 secondary=0 outcome=accepted
+WORLD npc_approach_route player=1 actor=10001 start_x=4758.41 start_y=-628.485 start_plane=0 first_x=7116 first_y=3084 first_plane=0 queued=0
+WORLD npc_approach actor=10001 outcome=moving
+WORLD npc_approach_route player=1 actor=10001 start_x=4794.69 start_y=-571.355 start_plane=0 first_x=7116 first_y=3084 first_plane=0 queued=0
+WORLD npc_approach actor=10001 outcome=moving
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD npc_interaction actor=10001 storage=0
+WORLD keyboard_direction player=1 vx=56.2195 vy=764.662 client_x=7030.78 client_y=2949.81 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=438.812 checkpoint_correction=0 server_ms=88879390
+WORLD keyboard_stop player=1 x=7037.73 y=3044.3 correction_distance=0 server_ms=88879734 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=94.7521 budget=127.872 correction=4.32002
+WORLD keyboard_rotation player=1 angle=inf scale=1 server_ms=88879906
+WORLD keyboard_rotation player=1 angle=1.24928 scale=1 server_ms=88880031
+WORLD selection selected=10011 secondary=0 outcome=accepted
+WORLD npc_approach_route player=1 actor=10011 start_x=7037.73 start_y=3044.3 start_plane=0 first_x=6142 first_y=4014 first_plane=0 queued=0
+WORLD npc_approach actor=10011 outcome=moving
+WORLD npc_approach_route player=1 actor=10011 start_x=6988.88 start_y=3097.19 start_plane=0 first_x=6142 first_y=4014 first_plane=0 queued=0
+WORLD npc_approach actor=10011 outcome=moving
+WORLD npc_interaction actor=10011 storage=0
+WORLD quest_dialogue quest=83 reward=1 status=0 reason=
+WORLD selection selected=0 secondary=0 outcome=accepted
+WORLD keyboard_direction player=1 vx=476.547 vy=-601.893 client_x=6249.86 client_y=3897.23 client_plane=0 direction=4 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=88889484
+WORLD keyboard_direction player=1 vx=256.072 vy=-720.888 client_x=6285.97 client_y=3809.61 client_plane=0 direction=4 checkpoint=2 checkpoint_distance=94.7652 checkpoint_budget=123.84 checkpoint_correction=26.3775 server_ms=88889984
+WORLD keyboard_stop player=1 x=6290.17 y=3797.79 correction_distance=0 server_ms=88890046 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=12.5452 budget=40.585 correction=0.760141
+WORLD selection selected=10008 secondary=0 outcome=accepted
+WORLD npc_approach_route player=1 actor=10008 start_x=6290.17 start_y=3797.79 start_plane=0 first_x=6078 first_y=3766 first_plane=0 queued=0
+WORLD npc_approach actor=10008 outcome=moving
+WORLD npc_interaction actor=10008 storage=0
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD quest_dialogue quest=54 reward=0 status=0 reason=
+AUTH post_login_opcode=0 bytes=6
+WORLD keyboard_direction player=1 vx=-257.015 vy=723.542 client_x=6228.08 client_y=3788.49 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.0398 checkpoint_correction=0 server_ms=88893250
+WORLD keyboard_direction player=1 vx=-266.66 vy=717.039 client_x=6218.44 client_y=3815.63 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=28.8 checkpoint_budget=54.8238 checkpoint_correction=2.01595 server_ms=88893343
+WORLD keyboard_direction player=1 vx=-589.017 vy=488.17 client_x=6209.44 client_y=3838.38 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=24.4719 checkpoint_budget=53.0958 checkpoint_correction=2.6539 server_ms=88893437
+WORLD keyboard_direction player=1 vx=-625.925 vy=439.852 client_x=6164.91 client_y=3866.12 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=52.4581 checkpoint_budget=78.1599 checkpoint_correction=7.47234 server_ms=88893609
+WORLD keyboard_direction player=1 vx=-700.049 vy=-308.517 client_x=6097.48 client_y=3863.57 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=67.4758 checkpoint_budget=97.7017 checkpoint_correction=44.7625 server_ms=88893859
+WORLD keyboard_direction player=1 vx=-763.734 vy=-71.9034 client_x=6032.17 client_y=3824.36 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=76.1777 checkpoint_budget=105.408 checkpoint_correction=9.59794 server_ms=88894125
+WORLD keyboard_direction player=1 vx=-676.086 vy=357.994 client_x=5913.81 client_y=3822.02 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=118.384 checkpoint_budget=150.048 checkpoint_correction=9.32802 server_ms=88894546
+WORLD keyboard_direction player=1 vx=-762.705 vy=59.4443 client_x=5876.49 client_y=3843.16 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=42.898 checkpoint_budget=74.016 checkpoint_correction=2.63529 server_ms=88894703
+WORLD keyboard_direction player=1 vx=-704.949 vy=297.152 client_x=5736.61 client_y=3874.51 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.345 checkpoint_budget=172.8 checkpoint_correction=20.487 server_ms=88895203
+WORLD keyboard_direction player=1 vx=-497.368 vy=584.025 client_x=5718.56 client_y=3882.11 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=19.5841 checkpoint_budget=46.656 checkpoint_correction=1.72795 server_ms=88895265
+WORLD keyboard_direction player=1 vx=-701.352 vy=305.545 client_x=5706.05 client_y=3896.8 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=19.296 checkpoint_budget=45.2159 checkpoint_correction=1.15171 server_ms=88895328
+WORLD keyboard_direction player=1 vx=-673.998 vy=368.172 client_x=5675.46 client_y=3911.56 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=33.9631 checkpoint_budget=61.9199 checkpoint_correction=2.44097 server_ms=88895453
+WORLD keyboard_direction player=1 vx=-665.877 vy=376.642 client_x=5620.36 client_y=3941.65 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=62.7838 checkpoint_budget=86.4208 checkpoint_correction=4.31984 server_ms=88895656
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=-581.432 vy=497.181 client_x=5564.94 client_y=3980.26 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=67.5414 checkpoint_budget=91.029 checkpoint_correction=6.31331 server_ms=88895890
+WORLD keyboard_direction player=1 vx=-588.711 vy=488.54 client_x=5237.48 client_y=4260.26 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=430.848 checkpoint_budget=455.488 checkpoint_correction=1.15123 server_ms=88897390
+WORLD keyboard_direction player=1 vx=-636.077 vy=425.038 client_x=5206.95 client_y=4283.33 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=38.2743 checkpoint_budget=65.2474 checkpoint_correction=2.94619 server_ms=88897531
+WORLD keyboard_direction player=1 vx=-629.714 vy=434.41 client_x=5054.17 client_y=4385.42 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=183.744 checkpoint_budget=206.973 checkpoint_correction=3.74436 server_ms=88898156
+WORLD keyboard_direction player=1 vx=-588.538 vy=488.749 client_x=5027.43 client_y=4405.41 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=33.3869 checkpoint_budget=59.229 checkpoint_correction=2.92844 server_ms=88898281
+WORLD selection selected=10017 secondary=0 outcome=accepted
+WORLD npc_approach_route player=1 actor=10017 start_x=4709.05 start_y=4669.81 start_plane=0 first_x=4444 first_y=5005 first_plane=0 queued=1 step=2743,7786,0
+WORLD npc_approach actor=10017 outcome=moving
+WORLD npc_approach_route player=1 actor=10017 start_x=4681.01 start_y=4705.28 start_plane=0 first_x=4444 first_y=5005 first_plane=0 queued=1 step=2743,7786,0
+WORLD npc_approach actor=10017 outcome=moving
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD exploration_revealed map=146 cell_x=31 cell_y=21
+WORLD exploration_revealed map=146 cell_x=30 cell_y=21
+WORLD npc_interaction actor=10017 storage=0
+WORLD quest_dialogue quest=71 reward=0 status=0 reason=
+WORLD keyboard_rotation player=1 angle=inf scale=1 server_ms=88913796
+WORLD keyboard_direction player=1 vx=-765.008 vy=-3.84383 client_x=2826.25 client_y=7649.9 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=439.698 checkpoint_correction=0 server_ms=88914062
+WORLD keyboard_direction player=1 vx=-729.275 vy=-240.793 client_x=2778.15 client_y=7642.56 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=48.6523 checkpoint_budget=78.336 checkpoint_correction=1.7648 server_ms=88914234
+WORLD keyboard_direction player=1 vx=-732.763 vy=-229.96 client_x=2496.19 client_y=7549.46 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=296.928 checkpoint_budget=325.728 checkpoint_correction=281.174 server_ms=88915265
+WORLD keyboard_direction player=1 vx=-752.641 vy=-152.827 client_x=2459.47 client_y=7539.78 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=37.9857 checkpoint_budget=64.7996 checkpoint_correction=6.85753 server_ms=88915390
+WORLD keyboard_direction player=1 vx=-751.875 vy=-141.192 client_x=2303.95 client_y=7508.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=158.688 checkpoint_budget=184.35 checkpoint_correction=87.4332 server_ms=88915937
+WORLD keyboard_direction player=1 vx=-763.29 vy=-51.3875 client_x=2261.45 client_y=7502.57 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=42.8716 checkpoint_budget=70.5898 checkpoint_correction=9.67626 server_ms=88916093
+WORLD keyboard_direction player=1 vx=-763.973 vy=-39.9617 client_x=1831 client_y=7473.59 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=431.424 checkpoint_budget=459.717 checkpoint_correction=511.638 server_ms=88917593
+WORLD keyboard_direction player=1 vx=-747.856 vy=174.744 client_x=1735.84 client_y=7481.66 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=95.5037 checkpoint_budget=122.757 checkpoint_correction=44.8375 server_ms=88917921
+WORLD keyboard_direction player=1 vx=-745.203 vy=185.732 client_x=1525.22 client_y=7530.87 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=216.288 checkpoint_budget=243.253 checkpoint_correction=158.48 server_ms=88918671
+WORLD keyboard_direction player=1 vx=-721.971 vy=261.883 client_x=1488 client_y=7541.99 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=38.8497 checkpoint_budget=67.5735 checkpoint_correction=7.83441 server_ms=88918812
+WORLD keyboard_direction player=1 vx=-721.971 vy=261.883 client_x=1003.63 client_y=7717.69 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=515.247 checkpoint_budget=541.651 checkpoint_correction=642.985 server_ms=88920593
+WORLD keyboard_direction player=1 vx=-715.246 vy=271.43 client_x=976.56 client_y=7727.51 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=28.8001 checkpoint_budget=53.4759 checkpoint_correction=3.26657 server_ms=88920687
+WORLD keyboard_direction player=1 vx=-672.669 vy=364.373 client_x=933.324 client_y=7747.09 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=47.4654 checkpoint_budget=74.2118 checkpoint_correction=11.8493 server_ms=88920859
+WORLD keyboard_direction player=1 vx=-667.168 vy=374.351 client_x=795.564 client_y=7821.72 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=156.672 checkpoint_budget=184.282 checkpoint_correction=86.6822 server_ms=88921406
+WORLD keyboard_direction player=1 vx=-618.143 vy=450.723 client_x=758.876 client_y=7844.99 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=43.4467 checkpoint_budget=72.5382 checkpoint_correction=9.64751 server_ms=88921562
+WORLD keyboard_direction player=1 vx=-624.759 vy=441.506 client_x=615.063 client_y=7949.85 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=177.984 checkpoint_budget=204.192 checkpoint_correction=107.982 server_ms=88922171
+WORLD keyboard_direction player=1 vx=-688.178 vy=334.159 client_x=565.667 client_y=7979.3 client_plane=23 direction=1 checkpoint=2 checkpoint_distance=57.5095 checkpoint_budget=84.9598 checkpoint_correction=7.91287 server_ms=88922375
+WORLD keyboard_direction player=1 vx=-677.094 vy=356.083 client_x=331.577 client_y=8092.97 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=260.227 checkpoint_budget=288.378 checkpoint_correction=223.37 server_ms=88923281
+WORLD keyboard_direction player=1 vx=-631.378 vy=431.988 client_x=211.362 client_y=8172.08 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.909 checkpoint_budget=172.15 checkpoint_correction=86.2649 server_ms=88923781
+WORLD exploration_revealed map=146 cell_x=29 cell_y=21
+WORLD keyboard_direction player=1 vx=-763.602 vy=82.0746 client_x=-148.263 client_y=8418.13 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=435.744 checkpoint_budget=464.561 checkpoint_correction=518.907 server_ms=88925296
+WORLD keyboard_direction player=1 vx=-707.455 vy=-296.591 client_x=-218.098 client_y=8407.17 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=70.6911 checkpoint_budget=100.8 checkpoint_correction=0.499627 server_ms=88925546
+WORLD keyboard_direction player=1 vx=-755.64 vy=-119.413 client_x=-280.618 client_y=8371.3 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=72.0763 checkpoint_budget=100.8 checkpoint_correction=9.91496 server_ms=88925796
+WORLD keyboard_direction player=1 vx=-695.692 vy=-318.221 client_x=-418.419 client_y=8332.33 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.207 checkpoint_budget=172.724 checkpoint_correction=41.2619 server_ms=88926296
+WORLD keyboard_direction player=1 vx=-581.723 vy=-496.84 client_x=-491.851 client_y=8240.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=117.418 checkpoint_budget=172.8 checkpoint_correction=21.3824 server_ms=88926796
+WORLD keyboard_direction player=1 vx=-555.291 vy=-526.216 client_x=-596.667 client_y=8144.11 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=142.537 checkpoint_budget=172.8 checkpoint_correction=67.5439 server_ms=88927296
+WORLD keyboard_direction player=1 vx=-571.191 vy=-508.914 client_x=-771.639 client_y=7978.3 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=241.056 checkpoint_budget=267.552 checkpoint_correction=191.745 server_ms=88928125
+WORLD keyboard_direction player=1 vx=-597.376 vy=-477.906 client_x=-883.495 client_y=7887.64 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.981 checkpoint_budget=170.496 checkpoint_correction=79.43 server_ms=88928625
+WORLD keyboard_direction player=1 vx=-590.898 vy=-490.574 client_x=-1024.95 client_y=7774.48 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=181.152 checkpoint_budget=210.834 checkpoint_correction=116.167 server_ms=88929265
+WORLD keyboard_direction player=1 vx=-587.237 vy=-490.311 client_x=-1420.48 client_y=7446.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=514.08 checkpoint_budget=541.727 checkpoint_correction=641.913 server_ms=88931046
+WORLD keyboard_direction player=1 vx=-744.276 vy=-185.776 client_x=-1579.21 client_y=7313.57 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=206.784 checkpoint_budget=234.719 checkpoint_correction=146.202 server_ms=88931765
+WORLD keyboard_direction player=1 vx=-749.857 vy=-161.783 client_x=-1724.78 client_y=7279.66 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=149.461 checkpoint_budget=176.542 checkpoint_correction=80.2296 server_ms=88932281
+WORLD keyboard_direction player=1 vx=-596.708 vy=-478.739 client_x=-1775.73 client_y=7268.67 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=52.128 checkpoint_budget=80.9372 checkpoint_correction=10.419 server_ms=88932468
+WORLD selection selected=60003 secondary=0 outcome=accepted
+WORLD ordinary_attack target=60003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD ordinary_attack target=60003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD exploration_revealed map=146 cell_x=29 cell_y=22
+WORLD exploration_revealed map=146 cell_x=28 cell_y=22
+WORLD keyboard_direction player=1 vx=502.51 vy=-580.112 client_x=-3714.5 client_y=5545.41 client_plane=0 direction=7 checkpoint=1 checkpoint_distance=0 checkpoint_budget=218.016 checkpoint_correction=0 server_ms=88941484
+WORLD keyboard_direction player=1 vx=-293.003 vy=-708.949 client_x=-3672.07 client_y=5496.43 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=49.8402 checkpoint_budget=92.952 checkpoint_correction=68.0946 server_ms=88941781
+WORLD keyboard_direction player=1 vx=-305.822 vy=-703.514 client_x=-3757.77 client_y=5289.09 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=224.352 checkpoint_budget=253.728 checkpoint_correction=0.576079 server_ms=88942562
+WORLD keyboard_direction player=1 vx=-601.042 vy=-478.092 client_x=-3809.52 client_y=5170.27 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=129.599 checkpoint_budget=159.264 checkpoint_correction=0.869909 server_ms=88943015
+WORLD keyboard_direction player=1 vx=-339.823 vy=-687.735 client_x=-3863.1 client_y=5128.93 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=67.6757 checkpoint_budget=96.48 checkpoint_correction=0.992279 server_ms=88943250
+WORLD keyboard_direction player=1 vx=-609.843 vy=-461.892 client_x=-3903.41 client_y=5047.34 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=91.0082 checkpoint_budget=118.656 checkpoint_correction=1.15233 server_ms=88943562
+WORLD keyboard_stop player=1 x=-4103.38 y=4895.88 correction_distance=0 server_ms=88944421 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=250.848 budget=275.04 correction=3.45678
+WORLD ordinary_attack target=60003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD skill_effect id=194 phase=began
+WORLD skill_use opcode=68 id=194 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_effect id=194 phase=applied
+WORLD skill_use opcode=68 id=180 copy=0 target=0 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=180 phase=began
+WORLD skill_use opcode=68 id=180 copy=0 target=0 call=0 outcome=accepted reason=accepted
+WORLD skill_effect id=180 phase=applied
+WORLD skill_use opcode=68 id=180 copy=0 target=0 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=31 phase=began
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=31 phase=applied
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=40 phase=began
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=40 phase=effect_failed
+WORLD skill_effect id=40 phase=began
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_use opcode=68 id=76 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=76 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD pet_presence ready=0 map=146
+WORLD skill_use opcode=68 id=76 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD pet_presence ready=1 map=146
+WORLD skill_use opcode=68 id=76 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=40 phase=effect_failed
+WORLD skill_effect id=40 phase=began
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD skill_effect id=40 phase=effect_failed
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD skill_effect id=40 phase=began
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD ordinary_attack target=60003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD skill_effect id=40 phase=effect_failed
+WORLD skill_use opcode=68 id=76 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD ordinary_attack target=60003 call=0 outcome=scheduled reason=reviewed_weapon_target_policy
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_effect id=31 phase=began
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_effect id=31 phase=applied
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD skill_effect id=40 phase=began
+WORLD skill_use opcode=68 id=40 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_effect id=40 phase=effect_failed
+WORLD skill_effect id=180 phase=began
+WORLD skill_use opcode=68 id=180 copy=0 target=0 call=0 outcome=accepted reason=accepted
+WORLD skill_effect id=180 phase=applied
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD movement_destination_blocked=1
+WORLD keyboard_direction player=1 vx=445.055 vy=-624.864 client_x=-4103.38 client_y=4895.88 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=24.1916 checkpoint_correction=0 server_ms=88973921
+WORLD keyboard_stop player=1 x=-4043.66 y=4814.33 correction_distance=0 server_ms=88974281 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=101.08 budget=127.872 correction=2.9274
+WORLD keyboard_direction player=1 vx=460.725 vy=-613.646 client_x=-4043.66 client_y=4814.33 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=26.7912 checkpoint_correction=0 server_ms=88974765
+WORLD keyboard_direction player=1 vx=706.58 vy=-293.252 client_x=-3974.11 client_y=4742.36 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=96.0758 checkpoint_budget=125.863 checkpoint_correction=10.9374 server_ms=88975109
+WORLD keyboard_direction player=1 vx=718.973 vy=-261.4 client_x=-3838.34 client_y=4691.88 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.85 checkpoint_budget=172.8 checkpoint_correction=5.47146 server_ms=88975609
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=not enough energy or caster unavailable
+WORLD keyboard_direction player=1 vx=422.79 vy=640.839 client_x=-3540.76 client_y=4542.53 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=332.96 checkpoint_budget=365.486 checkpoint_correction=39.2691 server_ms=88976781
+WORLD keyboard_direction player=1 vx=500.484 vy=578.591 client_x=-3438.63 client_y=4643.43 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.557 checkpoint_budget=172.8 checkpoint_correction=29.8948 server_ms=88977281
+WORLD keyboard_direction player=1 vx=-571.191 vy=-508.914 client_x=-3451.96 client_y=4676.17 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=35.3488 checkpoint_budget=100.8 checkpoint_correction=64.2159 server_ms=88977531
+WORLD skill_effect id=31 phase=began
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=rejected reason=cast or aftercast active
+WORLD skill_effect id=31 phase=applied
+WORLD keyboard_direction player=1 vx=322.941 vy=695.798 client_x=-3468.73 client_y=4661.22 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=51.264 checkpoint_correction=0 server_ms=88979562
+WORLD keyboard_direction player=1 vx=-192.58 vy=740.381 client_x=-3375.71 client_y=4764.11 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=138.703 checkpoint_budget=172.8 checkpoint_correction=42.6431 server_ms=88980062
+WORLD keyboard_direction player=1 vx=-382.375 vy=666.043 client_x=-3438.09 client_y=4893.15 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.325 checkpoint_budget=172.8 checkpoint_correction=28.0929 server_ms=88980562
+WORLD keyboard_direction player=1 vx=-369.721 vy=669.745 client_x=-3506.85 client_y=5020.31 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.565 checkpoint_budget=172.8 checkpoint_correction=3.71473 server_ms=88981062
+WORLD keyboard_direction player=1 vx=-404.718 vy=649.196 client_x=-3579.83 client_y=5145.09 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.553 checkpoint_budget=172.235 checkpoint_correction=3.61665 server_ms=88981562
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=-448.153 vy=620.009 client_x=-3658.89 client_y=5266.09 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.538 checkpoint_budget=171.683 checkpoint_correction=3.12384 server_ms=88982062
+WORLD keyboard_direction player=1 vx=-628.955 vy=435.509 client_x=-3753.21 client_y=5373.17 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=142.693 checkpoint_budget=171.145 checkpoint_correction=13.8514 server_ms=88982562
+WORLD keyboard_direction player=1 vx=-742.998 vy=-182.223 client_x=-3818.42 client_y=5389.22 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=67.1617 checkpoint_budget=100.452 checkpoint_correction=25.6506 server_ms=88982812
+WORLD keyboard_direction player=1 vx=-712.372 vy=-278.888 client_x=-3957.13 client_y=5350.99 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.881 checkpoint_budget=172.8 checkpoint_correction=4.09345 server_ms=88983312
+WORLD keyboard_direction player=1 vx=-634.079 vy=-428.013 client_x=-4085.43 client_y=5285.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.956 checkpoint_budget=172.8 checkpoint_correction=14.0445 server_ms=88983812
+WORLD pet_presence ready=0 map=146
+WORLD keyboard_direction player=1 vx=-526.319 vy=-559.296 client_x=-4197.89 client_y=5187.04 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=149.605 checkpoint_budget=177.408 checkpoint_correction=18.851 server_ms=88984328
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=-438.089 vy=-630.795 client_x=-4291.35 client_y=5074.28 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=146.456 checkpoint_budget=176.123 checkpoint_correction=9.46547 server_ms=88984843
+WORLD keyboard_direction player=1 vx=-267.453 vy=-719.925 client_x=-4359.5 client_y=4948.05 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.453 checkpoint_budget=172.8 checkpoint_correction=16.1004 server_ms=88985343
+WORLD keyboard_direction player=1 vx=-53.3066 vy=-766.148 client_x=-4392.03 client_y=4803.58 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=148.084 checkpoint_budget=177.408 checkpoint_correction=19.8994 server_ms=88985859
+WORLD keyboard_direction player=1 vx=338.478 vy=-686.065 client_x=-4386.44 client_y=4717.86 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=85.9016 checkpoint_budget=114.336 checkpoint_correction=11.5373 server_ms=88986156
+WORLD keyboard_direction player=1 vx=419.855 vy=-643.075 client_x=-4307.69 client_y=4590.26 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=149.944 checkpoint_budget=176.754 checkpoint_correction=14.1985 server_ms=88986671
+WORLD keyboard_direction player=1 vx=287.946 vy=-711.977 client_x=-4244.61 client_y=4460.34 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.425 checkpoint_budget=170.81 checkpoint_correction=18.223 server_ms=88987171
+WORLD keyboard_direction player=1 vx=767.269 vy=33.4991 client_x=-4187.01 client_y=4433.12 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=63.7083 checkpoint_budget=98.3853 checkpoint_correction=49.985 server_ms=88987421
+WORLD keyboard_direction player=1 vx=404.93 vy=652.576 client_x=-4138.31 client_y=4478.05 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=66.2608 checkpoint_budget=100.8 checkpoint_correction=47.8177 server_ms=88987671
+WORLD keyboard_direction player=1 vx=433.674 vy=633.838 client_x=-4061.4 client_y=4599.08 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.4 checkpoint_budget=172.8 checkpoint_correction=1.65933 server_ms=88988171
+WORLD keyboard_direction player=1 vx=420.305 vy=642.781 client_x=-3914.71 client_y=4813.47 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=259.776 checkpoint_budget=290.016 checkpoint_correction=1.43859 server_ms=88989078
+WORLD keyboard_direction player=1 vx=56.2953 vy=762.943 client_x=-3874.45 client_y=4899.28 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=94.7811 checkpoint_budget=123.264 checkpoint_correction=13.2758 server_ms=88989406
+WORLD keyboard_direction player=1 vx=-322.382 vy=697.061 client_x=-3890.55 client_y=5012.83 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=114.691 checkpoint_budget=145.411 checkpoint_correction=24.8965 server_ms=88989812
+WORLD keyboard_direction player=1 vx=-604.973 vy=468.251 client_x=-3967.64 client_y=5109.54 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=123.676 checkpoint_budget=150.336 checkpoint_correction=29.4047 server_ms=88990250
+WORLD skill_effect id=31 phase=began
+WORLD skill_use opcode=68 id=31 copy=0 target=60003 call=0 outcome=accepted reason=accepted
+WORLD skill_effect id=31 phase=applied
+WORLD selection selected=0 secondary=0 outcome=accepted
+WORLD quest_objective_complete quest=71 cycle=1
+WORLD keyboard_direction player=1 vx=697.601 vy=318.328 client_x=-3981.76 client_y=5120.47 client_plane=0 direction=4 checkpoint=1 checkpoint_distance=0 checkpoint_budget=44.5164 checkpoint_correction=0 server_ms=88993953
+WORLD keyboard_direction player=1 vx=635.867 vy=425.353 client_x=-3901.75 client_y=5171.93 client_plane=0 direction=4 checkpoint=2 checkpoint_distance=95.1219 checkpoint_budget=123.84 checkpoint_correction=13.625 server_ms=88994453
+WORLD keyboard_direction player=1 vx=175.993 vy=744.499 client_x=-3869.5 client_y=5192.4 client_plane=0 direction=6 checkpoint=2 checkpoint_distance=38.2001 checkpoint_budget=67.3043 checkpoint_correction=1.00082 server_ms=88994656
+WORLD keyboard_direction player=1 vx=-364.095 vy=672.82 client_x=-3865.02 client_y=5211.06 client_plane=0 direction=8 checkpoint=2 checkpoint_distance=19.1976 checkpoint_budget=49.5187 checkpoint_correction=1.52284 server_ms=88994765
+WORLD keyboard_direction player=1 vx=-733.179 vy=225.627 client_x=-3880.51 client_y=5259.01 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=50.3929 checkpoint_budget=79.56 checkpoint_correction=9.27094 server_ms=88995000
+WORLD keyboard_direction player=1 vx=-508.653 vy=574.223 client_x=-3954.34 client_y=5293.33 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=81.4147 checkpoint_budget=109.728 checkpoint_correction=11.0881 server_ms=88995281
+WORLD keyboard_direction player=1 vx=-143.938 vy=753.486 client_x=-3988.58 client_y=5360.24 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=75.1611 checkpoint_budget=104.633 checkpoint_correction=19.073 server_ms=88995546
+WORLD keyboard_direction player=1 vx=262.469 vy=718.583 client_x=-3980.58 client_y=5429.59 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=69.803 checkpoint_budget=100.8 checkpoint_correction=21.5475 server_ms=88995796
+WORLD keyboard_direction player=1 vx=-66.4081 vy=762.13 client_x=-3974.06 client_y=5447.44 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=19.0082 checkpoint_budget=46.944 checkpoint_correction=0.864412 server_ms=88995859
+WORLD keyboard_direction player=1 vx=316.044 vy=699.957 client_x=-3966.45 client_y=5517.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=70.466 checkpoint_budget=99.9358 checkpoint_correction=13.958 server_ms=88996109
+WORLD keyboard_direction player=1 vx=261.402 vy=718.972 client_x=-3909.37 client_y=5649.67 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.977 checkpoint_budget=172.8 checkpoint_correction=2.36316 server_ms=88996609
+WORLD keyboard_direction player=1 vx=185.853 vy=742.099 client_x=-3872.22 client_y=5789.02 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.212 checkpoint_budget=172.8 checkpoint_correction=12.7072 server_ms=88997109
+WORLD keyboard_direction player=1 vx=174.854 vy=744.767 client_x=-3847.38 client_y=5888.19 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=102.24 checkpoint_budget=127.66 checkpoint_correction=3.16806 server_ms=88997453
+WORLD keyboard_direction player=1 vx=85.2026 vy=760.258 client_x=-3839.79 client_y=5930.97 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=43.4474 checkpoint_budget=70.3477 checkpoint_correction=2.84329 server_ms=88997609
+WORLD exploration_revealed map=146 cell_x=28 cell_y=21
+WORLD keyboard_direction player=1 vx=85.2026 vy=760.258 client_x=-3782.69 client_y=6440.42 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=512.64 checkpoint_budget=539.828 checkpoint_correction=0.287111 server_ms=88999390
+WORLD keyboard_direction player=1 vx=85.2026 vy=760.258 client_x=-3725.98 client_y=6946.44 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=509.184 checkpoint_budget=535.796 checkpoint_correction=0.576207 server_ms=89001156
+WORLD keyboard_direction player=1 vx=48.1494 vy=766.489 client_x=-3710.57 client_y=7088.16 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=142.553 checkpoint_budget=170.612 checkpoint_correction=1.5214 server_ms=89001656
+WORLD keyboard_direction player=1 vx=-110.772 vy=756.955 client_x=-3724.93 client_y=7230.79 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.357 checkpoint_budget=172.06 checkpoint_correction=23.4161 server_ms=89002156
+WORLD keyboard_direction player=1 vx=-88.5324 vy=759.878 client_x=-3744.51 client_y=7374.61 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=145.141 checkpoint_budget=172.703 checkpoint_correction=1.84468 server_ms=89002656
+WORLD keyboard_direction player=1 vx=-35.3105 vy=764.202 client_x=-3759.58 client_y=7524.42 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=150.573 checkpoint_budget=175.882 checkpoint_correction=3.25797 server_ms=89003171
+WORLD keyboard_direction player=1 vx=-50.2411 vy=763.366 client_x=-3766.37 client_y=7671.44 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=147.168 checkpoint_budget=173.917 checkpoint_correction=1.43903 server_ms=89003687
+WORLD keyboard_direction player=1 vx=292.318 vy=709.232 client_x=-3776.05 client_y=7818.57 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=147.456 checkpoint_budget=175.356 checkpoint_correction=1.15239 server_ms=89004203
+WORLD keyboard_direction player=1 vx=-55.5692 vy=762.997 client_x=-3748.73 client_y=7884.88 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=71.712 checkpoint_budget=99.9005 checkpoint_correction=0.287807 server_ms=89004453
+WORLD keyboard_direction player=1 vx=-57.6996 vy=762.839 client_x=-3785.73 client_y=8393 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=509.472 checkpoint_budget=536.508 checkpoint_correction=1.1534 server_ms=89006218
+WORLD keyboard_direction player=1 vx=-57.6996 vy=762.839 client_x=-3824.14 client_y=8900.73 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=509.184 checkpoint_budget=535.645 checkpoint_correction=0.574814 server_ms=89007984
+WORLD exploration_revealed map=146 cell_x=28 cell_y=20
+WORLD keyboard_direction player=1 vx=-57.6996 vy=762.839 client_x=-3862.63 client_y=9409.62 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=510.336 checkpoint_budget=535.069 checkpoint_correction=1.72846 server_ms=89009750
+WORLD keyboard_direction player=1 vx=278.399 vy=714.81 client_x=-3879.14 client_y=9627.87 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=218.88 checkpoint_budget=245.052 checkpoint_correction=1.44063 server_ms=89010515
+WORLD pet_presence ready=0 map=146
+WORLD pet_presence ready=1 map=146
+WORLD keyboard_direction player=1 vx=232.966 vy=730.88 client_x=-3833.91 client_y=9764.86 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=144.264 checkpoint_budget=174.78 checkpoint_correction=8.82761 server_ms=89011031
+WORLD keyboard_direction player=1 vx=216.581 vy=735.902 client_x=-3742.07 client_y=10053 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=302.4 checkpoint_budget=330.336 checkpoint_correction=0.864213 server_ms=89012078
+WORLD keyboard_direction player=1 vx=56.7098 vy=765.012 client_x=-3718.98 client_y=10193.9 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=142.826 checkpoint_budget=171.936 checkpoint_correction=17.7938 server_ms=89012578
+AUTH post_login_opcode=0 bytes=6
+WORLD keyboard_direction player=1 vx=33.1871 vy=766.393 client_x=-3709.57 client_y=10338.2 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=144.565 checkpoint_budget=172.8 checkpoint_correction=1.39639 server_ms=89013078
+WORLD keyboard_direction player=1 vx=17.083 vy=764.827 client_x=-3700.39 client_y=10550.2 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=212.256 checkpoint_budget=239.627 checkpoint_correction=0.86604 server_ms=89013812
+WORLD keyboard_direction player=1 vx=-23.5016 vy=764.656 client_x=-3700.95 client_y=10694.2 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=143.968 checkpoint_budget=171.37 checkpoint_correction=3.77197 server_ms=89014312
+WORLD keyboard_direction player=1 vx=51.3677 vy=765.389 client_x=-3701.28 client_y=10836.1 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=141.918 checkpoint_budget=171.402 checkpoint_correction=4.55716 server_ms=89014812
+WORLD keyboard_direction player=1 vx=67.3854 vy=764.146 client_x=-3688.42 client_y=11027.8 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=192.096 checkpoint_budget=217.728 checkpoint_correction=3.16824 server_ms=89015468
+WORLD keyboard_direction player=1 vx=124.755 vy=756.899 client_x=-3672.57 client_y=11172.3 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=145.387 checkpoint_budget=169.632 checkpoint_correction=3.37646 server_ms=89015968
+WORLD keyboard_direction player=1 vx=170.99 vy=747.811 client_x=-3643.44 client_y=11314.5 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=145.121 checkpoint_budget=168.245 checkpoint_correction=5.70745 server_ms=89016468
+WORLD keyboard_direction player=1 vx=170.99 vy=747.811 client_x=-3599.36 client_y=11551.6 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=241.153 checkpoint_budget=297.588 checkpoint_correction=3.05119 server_ms=89017421
+WORLD keyboard_direction player=1 vx=-185.146 vy=742.275 client_x=-3643.73 client_y=11581.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=53.3239 checkpoint_budget=172.8 checkpoint_correction=0.720596 server_ms=89017921
+WORLD keyboard_direction player=1 vx=-298.492 vy=704.382 client_x=-3735.72 client_y=11642.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=110.564 checkpoint_budget=172.8 checkpoint_correction=2.62196 server_ms=89018421
+WORLD keyboard_direction player=1 vx=-744.359 vy=185.444 client_x=-3779.59 client_y=11671.7 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=52.7201 checkpoint_budget=87.552 checkpoint_correction=3.05078 server_ms=89018625
+WORLD keyboard_direction player=1 vx=-756.633 vy=-112.952 client_x=-3921.39 client_y=11673.5 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=141.808 checkpoint_budget=172.8 checkpoint_correction=33.0812 server_ms=89019125
+WORLD keyboard_direction player=1 vx=-692.207 vy=-330.619 client_x=-4058.85 client_y=11631.4 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=143.771 checkpoint_budget=172.8 checkpoint_correction=21.4327 server_ms=89019625
+WORLD keyboard_direction player=1 vx=-755.671 vy=-119.219 client_x=-4130.23 client_y=11584.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=85.6544 checkpoint_budget=114.048 checkpoint_correction=11.9695 server_ms=89019921
+WORLD keyboard_stop player=1 x=-4154.41 y=11580.2 correction_distance=0 server_ms=89020000 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=24.4802 budget=51.1456 correction=1.72818
+AUTH post_login_opcode=9 bytes=77
+AUTH character_summary_restored summary_bytes=62 version=6 equipment_count=5
+AUTH post_login_opcode=14 bytes=6
+AUTH player_status value=0
+AUTH post_login_opcode=53 bytes=6
+AUTH hardware_info_exchange_complete=1
+AUTH post_login_opcode=7 bytes=18
+AUTH character_delete_2022 result=deleted
+AUTH post_login_opcode=33 bytes=10
+AUTH post_login_opcode_33_fields=9,595
+AUTH post_login_opcode=32 bytes=520
+AUTH post_login_opcode_32 transaction=9 payload_bytes=512
+AUTH post_login_opcode=32 bytes=91
+AUTH post_login_opcode_32 transaction=9 payload_bytes=83
+AUTH settings_upload_saved bytes=595
+AUTH post_login_opcode=10 bytes=22
+AUTH post_login_opcode=14 bytes=6
+AUTH player_status value=1
 AUTH post_login_opcode=41 bytes=26
-AUTH creation_preview_granted transaction=5 world=1561700780
+AUTH map_entry_spawn map=57 source=server_configuration x=18528.8 y=-16669.3 plane=0
+AUTH instance transaction=11 map=57 world=2041131492
 WORLD connection accepted peer=127.0.0.1
-WORLD version_received version=37130 world=1561700780 map=0 player=1
-WORLD transfer_grant_validated map=0
-WORLD npc_ai_coverage map=0 placed=0 reviewed_hostiles=0 active=0 unknown_health=0 wandering=0
-WORLD map_support map=0 asset=0 collision=missing zone_entry=unverified
+WORLD version_received version=37130 world=2041131492 map=57 player=1
+WORLD transfer_grant_validated map=57
+WORLD npc_ai_coverage map=57 placed=18 reviewed_hostiles=0 active=0 unknown_health=18 wandering=0
+WORLD map_support map=57 asset=34216 collision=loaded zone_entry=unverified
 WORLD client_seed_received=66
-WORLD encrypted_channel=1 map=0
+WORLD encrypted_channel=1 map=57
 WORLD map_request path=ordinary option0=0 option1=0
-WORLD creation_scene_asset=165843
-WORLD entry_position x=0 y=0 plane=0 facing=0
-WORLD player_stream_sent map=0 world=1561700780 player=1
+WORLD solo_party_initialized player=1
+WORLD quest_log_restored packets=0
+WORLD entry_position x=18528.8 y=-16669.3 plane=0 facing=0
+WORLD player_stream_sent map=57 world=2041131492 player=1
 WORLD mission_mask_request bytes=112 manifest_response_source=catalog_or_explicit_diagnostic
-WORLD diagnostic_empty_manifest_sent=1 map=0 version=0 files=0 composites=0
+WORLD diagnostic_empty_manifest_sent=1 map=57 version=0 files=0 composites=0
+WORLD manifest_empty_completion_queued=1 map=57
+WORLD attributes_restored total=200 available=0 revision=3
+WORLD character_skills_restored persisted=1 learned=1081 primary=8 secondary=7 revision=3
+WORLD exploration_restored map=57 continent=0 source_bounds=1
+WORLD diagnostic_final_spawn_sent=1
+WORLD equipment_appearance_sent count=5
+WORLD npc_population_sent packets=54
+WORLD pet_presence ready=1 map=57
+WORLD guild_announcement_published body_units=3 author_units=9 native_chat=0 session_duplicate=1
+WORLD keyboard_direction player=1 vx=-442.062 vy=-626.599 client_x=18528.8 client_y=-16669.3 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=0 checkpoint_correction=0 server_ms=89046687
+WORLD keyboard_direction player=1 vx=-764.554 vy=-26.6314 client_x=18429.7 client_y=-16740.5 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=122.057 checkpoint_budget=154.944 checkpoint_correction=41.4286 server_ms=89047125
+WORLD keyboard_direction player=1 vx=-671.675 vy=370.556 client_x=18359.7 client_y=-16733.2 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=70.349 checkpoint_budget=100.8 checkpoint_correction=10.0119 server_ms=89047375
+WORLD keyboard_direction player=1 vx=-388.126 vy=661.678 client_x=18314.7 client_y=-16680.4 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=69.3791 checkpoint_budget=100.8 checkpoint_correction=25.4448 server_ms=89047625
+WORLD keyboard_direction player=1 vx=-643.807 vy=418.732 client_x=18307.4 client_y=-16668 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=14.3989 checkpoint_budget=42.048 checkpoint_correction=1.1503 server_ms=89047671
+WORLD keyboard_direction player=1 vx=-693.567 vy=322.826 client_x=18183.7 client_y=-16599.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=141.602 checkpoint_budget=171.649 checkpoint_correction=10.089 server_ms=89048171
+WORLD keyboard_direction player=1 vx=-720.332 vy=257.632 client_x=18051.3 client_y=-16547.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=142.2 checkpoint_budget=172.8 checkpoint_correction=9.06561 server_ms=89048671
+WORLD keyboard_direction player=1 vx=-724.059 vy=246.961 client_x=17980.2 client_y=-16521.8 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=75.456 checkpoint_budget=105.408 checkpoint_correction=1.15156 server_ms=89048937
+WORLD keyboard_direction player=1 vx=-748.202 vy=159.519 client_x=17939 client_y=-16510 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=42.8643 checkpoint_budget=73.728 checkpoint_correction=2.99785 server_ms=89049093
+WORLD keyboard_direction player=1 vx=-741.765 vy=-195.562 client_x=17674.5 client_y=-16453.6 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=270.432 checkpoint_budget=298.944 checkpoint_correction=0.288541 server_ms=89050031
+WORLD keyboard_direction player=1 vx=-755.775 vy=118.559 client_x=17535 client_y=-16490.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=144.287 checkpoint_budget=172.512 checkpoint_correction=0.30674 server_ms=89050531
+WORLD keyboard_direction player=1 vx=-767.917 vy=-11.32 client_x=17391.5 client_y=-16488.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.51 checkpoint_budget=176.544 checkpoint_correction=21.3331 server_ms=89051046
+WORLD keyboard_direction player=1 vx=-765.018 vy=0.0401936 client_x=17362.7 client_y=-16489.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=28.8 checkpoint_budget=55.872 checkpoint_correction=1.7287 server_ms=89051140
+WORLD keyboard_direction player=1 vx=-763.854 vy=79.6953 client_x=17323.9 client_y=-16487.3 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=38.8504 checkpoint_budget=63.072 checkpoint_correction=3.31747 server_ms=89051265
+WORLD keyboard_direction player=1 vx=-763.854 vy=79.6953 client_x=16811.2 client_y=-16433.8 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=515.52 checkpoint_budget=546.366 checkpoint_correction=6.61845 server_ms=89053078
+WORLD keyboard_direction player=1 vx=-594.561 vy=481.403 client_x=16677.6 client_y=-16413.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=135.137 checkpoint_budget=159.264 checkpoint_correction=8.00401 server_ms=89053531
+WORLD keyboard_direction player=1 vx=-28.3494 vy=764.492 client_x=16656.2 client_y=-16347.9 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=68.752 checkpoint_budget=96.1269 checkpoint_correction=39.9278 server_ms=89053781
+WORLD keyboard_direction player=1 vx=-398.623 vy=652.956 client_x=16633.7 client_y=-16320 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=35.809 checkpoint_budget=130.767 checkpoint_correction=3.46094 server_ms=89054140
+WORLD keyboard_direction player=1 vx=-647.03 vy=413.734 client_x=16570.3 client_y=-16320 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=63.375 checkpoint_budget=109.728 checkpoint_correction=20.3984 server_ms=89054421
+WORLD keyboard_direction player=1 vx=-616.104 vy=453.506 client_x=16449.8 client_y=-16320 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=120.545 checkpoint_budget=172.8 checkpoint_correction=2.21289 server_ms=89054921
+WORLD keyboard_direction player=1 vx=-422.951 vy=637.467 client_x=16345.8 client_y=-16238.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=141.369 checkpoint_budget=177.408 checkpoint_correction=25.8151 server_ms=89055437
+WORLD keyboard_direction player=1 vx=-463.843 vy=608.359 client_x=16262 client_y=-16116.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=148.001 checkpoint_budget=177.408 checkpoint_correction=2.44262 server_ms=89055953
+WORLD keyboard_direction player=1 vx=-487.511 vy=593.428 client_x=16173.1 client_y=-16005.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=142.261 checkpoint_budget=172.8 checkpoint_correction=3.81 server_ms=89056453
+WORLD keyboard_direction player=1 vx=-497.891 vy=580.824 client_x=15940.5 client_y=-15722.4 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=366.336 checkpoint_budget=393.12 checkpoint_correction=2.01213 server_ms=89057718
+WORLD keyboard_direction player=1 vx=-696.957 vy=315.44 client_x=15902.7 client_y=-15678.2 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=58.1751 checkpoint_budget=85.2477 checkpoint_correction=0.307059 server_ms=89057921
+WORLD keyboard_direction player=1 vx=-464.798 vy=611.381 client_x=15824.4 client_y=-15641 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=86.6816 checkpoint_budget=112.609 checkpoint_correction=1.9541 server_ms=89058218
+WORLD keyboard_direction player=1 vx=-430.044 vy=632.704 client_x=15739.8 client_y=-15548.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=125.552 checkpoint_budget=174.535 checkpoint_correction=8.93516 server_ms=89058734
+WORLD keyboard_direction player=1 vx=-376.523 vy=665.945 client_x=15661.8 client_y=-15429 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=142.507 checkpoint_budget=172.8 checkpoint_correction=2.90073 server_ms=89059234
+WORLD keyboard_direction player=1 vx=-17.6531 vy=766.908 client_x=15635.9 client_y=-15383.1 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=52.7042 checkpoint_budget=82.656 checkpoint_correction=1.15193 server_ms=89059421
+WORLD keyboard_direction player=1 vx=-294.038 vy=706.253 client_x=15636.5 client_y=-15349.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=33.3856 checkpoint_budget=60.48 checkpoint_correction=2.17626 server_ms=89059531
+WORLD exploration_revealed map=57 cell_x=112 cell_y=143
+WORLD keyboard_direction player=1 vx=-603.573 vy=473.454 client_x=15589.1 client_y=-15239.1 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=120.368 checkpoint_budget=148.63 checkpoint_correction=1.655 server_ms=89059953
+WORLD keyboard_direction player=1 vx=-328.498 vy=694.2 client_x=15551.1 client_y=-15209.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=48.3842 checkpoint_budget=77.798 checkpoint_correction=1.15167 server_ms=89060125
+WORLD keyboard_direction player=1 vx=-242.974 vy=728.552 client_x=15492.9 client_y=-15077.6 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.892 checkpoint_budget=172.8 checkpoint_correction=3.6901 server_ms=89060625
+WORLD portal_crossed gate=capture_57_59_4112 source_map=57 destination=59 epoch=2041131492
+WORLD direct_transfer_sent source_map=57 map=59 gate=capture_57_59_4112 world=654196739 x=15241 y=-14387 plane=0 facing=1.43474
+WORLD connection accepted peer=127.0.0.1
+WORLD version_received version=37130 world=654196739 map=59 player=1
+WORLD transfer_grant_validated map=59
+WORLD npc_ai_coverage map=59 placed=11 reviewed_hostiles=0 active=0 unknown_health=11 wandering=0
+WORLD map_support map=59 asset=34216 collision=loaded zone_entry=unverified
+WORLD client_seed_received=66
+WORLD encrypted_channel=1 map=59
+AUTH post_login_opcode=9 bytes=86
+AUTH character_summary_restored summary_bytes=62 version=6 equipment_count=5
+WORLD map_request path=ordinary option0=0 option1=0
+WORLD diagnostic_empty_manifest_sent=1 map=59 version=0 files=0 composites=0
+WORLD solo_party_initialized player=1
+WORLD quest_log_restored packets=0
+WORLD entry_position x=15241 y=-14387 plane=0 facing=1.43474
+WORLD player_stream_sent map=59 world=654196739 player=1
+WORLD attributes_restored total=200 available=0 revision=3
+WORLD character_skills_restored persisted=1 learned=1081 primary=8 secondary=7 revision=3
+WORLD exploration_restored map=59 continent=0 source_bounds=1
+WORLD diagnostic_final_spawn_sent=1
+WORLD equipment_appearance_sent count=5
+WORLD npc_population_sent packets=33
+WORLD pet_presence ready=1 map=59
+WORLD guild_announcement_published body_units=3 author_units=9 native_chat=0 session_duplicate=1
+WORLD exploration_revealed map=59 cell_x=111 cell_y=143
+WORLD keyboard_stop player=1 x=15241 y=-14387 correction_distance=0 server_ms=89061234 client_plane=0
+WORLD stop_checkpoint player=1 status=1 distance=0 budget=0 correction=0
+WORLD keyboard_direction player=1 vx=104.018 vy=759.797 client_x=15241 client_y=-14387 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=89061921
+WORLD keyboard_direction player=1 vx=67.9431 vy=764.989 client_x=15266.1 client_y=-14203.8 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=184.896 checkpoint_budget=213.408 checkpoint_correction=0.288921 server_ms=89062562
+WORLD keyboard_direction player=1 vx=334.888 vy=687.824 client_x=15267.4 client_y=-14179.4 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=24.4575 checkpoint_budget=50.9758 checkpoint_correction=2.15218 server_ms=89062640
+WORLD keyboard_direction player=1 vx=-13.412 vy=764.9 client_x=15359.8 client_y=-13989.6 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=211.104 checkpoint_budget=238.198 checkpoint_correction=0.574767 server_ms=89063375
+WORLD skill_use opcode=68 id=1239 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=1239 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=1239 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=1253 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=2110 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=1232 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=2100 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=2235 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=1237 copy=0 target=0 call=0 outcome=rejected reason=skill effect not implemented
+WORLD skill_use opcode=68 id=791 copy=0 target=0 call=0 outcome=rejected reason=target unavailable/out of range
+WORLD keyboard_direction player=1 vx=-142.168 vy=-754.16 client_x=15340.1 client_y=-12864 client_plane=0 direction=7 checkpoint=5 checkpoint_distance=1125.76 checkpoint_budget=864 checkpoint_correction=0 server_ms=89070890
+WORLD keyboard_stop player=1 x=15330.1 y=-12917.1 correction_distance=0.648729 server_ms=89071140 client_plane=0
+WORLD stop_checkpoint player=1 status=5 distance=1072.3 budget=648 correction=0
+WORLD keyboard_direction player=1 vx=-754.238 vy=142.176 client_x=15330.1 client_y=-12917.1 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=648 checkpoint_correction=0 server_ms=89071281
+WORLD keyboard_direction player=1 vx=-729.028 vy=-238.7 client_x=15194.7 client_y=-12891.8 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=137.661 checkpoint_budget=168.192 checkpoint_correction=1.74546 server_ms=89071765
+WORLD keyboard_direction player=1 vx=-764.702 vy=-21.9543 client_x=15084 client_y=-12936.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=119.291 checkpoint_budget=150.336 checkpoint_correction=8.18905 server_ms=89072187
+WORLD keyboard_direction player=1 vx=-763.73 vy=-44.3638 client_x=14940.3 client_y=-12943.8 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.994 checkpoint_budget=172.8 checkpoint_correction=3.47875 server_ms=89072687
+WORLD keyboard_direction player=1 vx=-762.988 vy=-55.6893 client_x=14718.3 client_y=-12956.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=222.336 checkpoint_budget=249.408 checkpoint_correction=1.72748 server_ms=89073453
+WORLD keyboard_direction player=1 vx=-746.393 vy=-167.777 client_x=14666.2 client_y=-12964.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=52.6335 checkpoint_budget=80.9279 checkpoint_correction=3.90543 server_ms=89073640
+WORLD keyboard_direction player=1 vx=-755.119 vy=-140.07 client_x=14508.3 client_y=-12999.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=161.856 checkpoint_budget=190.438 checkpoint_correction=0.289493 server_ms=89074203
+WORLD keyboard_direction player=1 vx=-704.235 vy=-298.839 client_x=14494.4 client_y=-13002.3 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=14.1118 checkpoint_budget=42.118 checkpoint_correction=0.576142 server_ms=89074250
+WORLD keyboard_direction player=1 vx=-763.532 vy=47.6544 client_x=14449.5 client_y=-12974.8 client_plane=0 direction=7 checkpoint=2 checkpoint_distance=52.6209 checkpoint_budget=90.7902 checkpoint_correction=53.5836 server_ms=89074468
+WORLD keyboard_direction player=1 vx=-726.804 vy=248.152 client_x=14346.8 client_y=-12941 client_plane=0 direction=7 checkpoint=2 checkpoint_distance=108.19 checkpoint_budget=136.8 checkpoint_correction=27.5387 server_ms=89074968
+WORLD keyboard_direction player=1 vx=-710.648 vy=283.252 client_x=14245.1 client_y=-12904 client_plane=0 direction=7 checkpoint=2 checkpoint_distance=108.194 checkpoint_budget=136.61 checkpoint_correction=2.1665 server_ms=89075468
+WORLD keyboard_direction player=1 vx=-61.4371 vy=764.647 client_x=14238.5 client_y=-12901.4 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=7.12788 checkpoint_budget=35.3274 checkpoint_correction=0.215617 server_ms=89075500
+WORLD keyboard_direction player=1 vx=355.983 vy=677.147 client_x=14236.5 client_y=-12834.9 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=66.4788 checkpoint_budget=95.5915 checkpoint_correction=3.5551 server_ms=89075734
+WORLD keyboard_direction player=1 vx=385.524 vy=664.225 client_x=14307.1 client_y=-12710 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=143.405 checkpoint_budget=172.8 checkpoint_correction=4.35304 server_ms=89076234
+WORLD keyboard_direction player=1 vx=46.648 vy=765.691 client_x=14350.9 client_y=-12634.6 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=87.2638 checkpoint_budget=114.336 checkpoint_correction=1.72756 server_ms=89076531
+WORLD keyboard_direction player=1 vx=170.82 vy=748.762 client_x=14342.6 client_y=-12558.3 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=76.7453 checkpoint_budget=103.392 checkpoint_correction=12.9263 server_ms=89076796
+WORLD keyboard_direction player=1 vx=-232.701 vy=728.768 client_x=14349.3 client_y=-12444.3 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=114.155 checkpoint_budget=143.863 checkpoint_correction=19.3933 server_ms=89077203
+WORLD keyboard_direction player=1 vx=76.763 vy=764.154 client_x=14347.8 client_y=-12439.7 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=4.89606 checkpoint_budget=33.12 checkpoint_correction=0.575994 server_ms=89077218
+WORLD keyboard_direction player=1 vx=-687.786 vy=339.72 client_x=14335.4 client_y=-12321.5 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=118.753 checkpoint_budget=149.76 checkpoint_correction=24.6438 server_ms=89077640
+WORLD keyboard_direction player=1 vx=-152.46 vy=751.808 client_x=14297 client_y=-12302.5 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=42.912 checkpoint_budget=69.408 checkpoint_correction=2.30466 server_ms=89077781
+WORLD keyboard_direction player=1 vx=-474.652 vy=599.965 client_x=14295.1 client_y=-12293.2 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=9.50401 checkpoint_budget=35.424 checkpoint_correction=0.575901 server_ms=89077812
+WORLD exploration_revealed map=59 cell_x=111 cell_y=142
+WORLD keyboard_direction player=1 vx=-168.171 vy=748.45 client_x=14250.8 client_y=-12237.2 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=71.4242 checkpoint_budget=97.9199 checkpoint_correction=0.576358 server_ms=89078062
+WORLD keyboard_direction player=1 vx=224.491 vy=733.528 client_x=14228.1 client_y=-12101 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=138.132 checkpoint_budget=165.888 checkpoint_correction=7.88999 server_ms=89078546
+WORLD keyboard_direction player=1 vx=158.682 vy=748.38 client_x=14244.9 client_y=-12066.9 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=37.9718 checkpoint_budget=68.3635 checkpoint_correction=6.8494 server_ms=89078687
+WORLD keyboard_direction player=1 vx=510.818 vy=569.489 client_x=14279.6 client_y=-12004.6 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=71.2951 checkpoint_budget=100.8 checkpoint_correction=21.3899 server_ms=89078937
+WORLD keyboard_direction player=1 vx=345.481 vy=682.565 client_x=14319.2 client_y=-11969.3 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=53.1184 checkpoint_budget=82.944 checkpoint_correction=6.09549 server_ms=89079125
+WORLD keyboard_direction player=1 vx=638.099 vy=425.78 client_x=14379.6 client_y=-11877.5 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=109.83 checkpoint_budget=136.8 checkpoint_correction=12.4072 server_ms=89079500
+WORLD pet_presence ready=0 map=59
+WORLD pet_presence ready=1 map=59
+WORLD keyboard_direction player=1 vx=663.037 vy=385.799 client_x=14501.5 client_y=-11802.5 client_plane=0 direction=2 checkpoint=2 checkpoint_distance=143.199 checkpoint_budget=170.97 checkpoint_correction=5.3629 server_ms=89080000
+WORLD pet_presence ready=0 map=59
+WORLD pet_presence ready=1 map=59
+WORLD keyboard_direction player=1 vx=759.842 vy=88.8394 client_x=14598.4 client_y=-11709.5 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=134.859 checkpoint_budget=171.77 checkpoint_correction=6.94858 server_ms=89080500
+WORLD keyboard_direction player=1 vx=714.143 vy=-280.105 client_x=14660.3 client_y=-11703.1 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=62.2037 checkpoint_budget=91.584 checkpoint_correction=1.0578 server_ms=89080718
+WORLD keyboard_direction player=1 vx=708.941 vy=-293.021 client_x=14794.4 client_y=-11755.7 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=144 checkpoint_budget=172.8 checkpoint_correction=0.00195312 server_ms=89081218
+WORLD keyboard_direction player=1 vx=764.459 vy=29.2159 client_x=14830.4 client_y=-11771.1 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=39.1643 checkpoint_budget=69.408 checkpoint_correction=1.52611 server_ms=89081359
+WORLD keyboard_direction player=1 vx=687.263 vy=-336.038 client_x=14941.5 client_y=-11768.5 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=111.155 checkpoint_budget=136.8 checkpoint_correction=3.55078 server_ms=89081734
+WORLD keyboard_direction player=1 vx=695.045 vy=-319.632 client_x=15088.5 client_y=-11840.4 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=163.584 checkpoint_budget=187.501 checkpoint_correction=1.72867 server_ms=89082296
+WORLD keyboard_direction player=1 vx=710.567 vy=-289.057 client_x=15222 client_y=-11895.6 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=144.56 checkpoint_budget=172.524 checkpoint_correction=6.98671 server_ms=89082812
+WORLD keyboard_direction player=1 vx=760.472 vy=100.707 client_x=15324.8 client_y=-11912.1 client_plane=0 direction=3 checkpoint=2 checkpoint_distance=104.066 checkpoint_budget=131.356 checkpoint_correction=23.5179 server_ms=89083171
+WORLD keyboard_direction player=1 vx=390.475 vy=657.861 client_x=15359.6 client_y=-11881 client_plane=0 direction=8 checkpoint=2 checkpoint_distance=46.6681 checkpoint_budget=86.0426 checkpoint_correction=33.1104 server_ms=89083375
+WORLD keyboard_stop player=1 x=15363.7 y=-11864.9 correction_distance=0 server_ms=89083453 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=16.6346 budget=45.648 correction=4.75412
+WORLD exploration_revealed map=59 cell_x=112 cell_y=142
+WORLD keyboard_direction player=1 vx=235.697 vy=-729.673 client_x=15363.7 client_y=-11864.9 client_plane=0 direction=7 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=89083781
+WORLD keyboard_stop player=1 x=15380.3 y=-11916.1 correction_distance=0 server_ms=89084031 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=53.7836 budget=82.8 correction=0.216491
+WORLD keyboard_direction player=1 vx=663.69 vy=-383.978 client_x=15380.3 client_y=-11916.1 client_plane=0 direction=4 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=89086640
+WORLD keyboard_direction player=1 vx=740.576 vy=197.723 client_x=15408.1 client_y=-11932.2 client_plane=0 direction=6 checkpoint=2 checkpoint_distance=32.1239 checkpoint_budget=58.4525 checkpoint_correction=2.47164 server_ms=89086796
+WORLD keyboard_direction player=1 vx=383.105 vy=662.18 client_x=15414.1 client_y=-11930.6 client_plane=0 direction=8 checkpoint=2 checkpoint_distance=6.27285 checkpoint_budget=35.2624 checkpoint_correction=2.66111 server_ms=89086843
+WORLD keyboard_stop player=1 x=15441.2 y=-11876.6 correction_distance=0 server_ms=89087125 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=60.4381 budget=89.712 correction=3.62536
+WORLD keyboard_direction player=1 vx=-761.922 vy=-83.697 client_x=15441.2 client_y=-11876.6 client_plane=0 direction=1 checkpoint=1 checkpoint_distance=0 checkpoint_budget=28.8 checkpoint_correction=0 server_ms=89089296
+WORLD keyboard_direction player=1 vx=-761.922 vy=-83.697 client_x=14930.2 client_y=-11932.7 client_plane=0 direction=1 checkpoint=2 checkpoint_distance=514.08 checkpoint_budget=546.336 checkpoint_correction=3.45779 server_ms=89091093
+WORLD keyboard_stop player=1 x=14835.2 y=-11943.1 correction_distance=0 server_ms=89091421 client_plane=0
+WORLD stop_checkpoint player=1 status=2 distance=95.6157 budget=123.264 correction=1.15144
+AUTH post_login_opcode=14 bytes=6
+AUTH player_status value=0
+AUTH account_session_released status=0
+AUTH connection closed phase=ticket keepalives=1 connection_hint=1

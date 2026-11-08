@@ -289,7 +289,10 @@ public:
         const bool public_district=map_type==0 || map_type==3 || map_type==15;
         std::vector<std::uint32_t> npc_ids;
         for(const auto& npc:npcs_.for_map(map))npc_ids.push_back(npc.id);
-        if(map==146||map==147){npc_ids.push_back(62000);npc_ids.push_back(62001);}
+        // Native Northlands door/lever actor IDs are compact (door 1, lever 2).
+        // Our player ID 1 is already occupied, so reserve IDs 2 and 3 for the
+        // private portal actors before allocating any party player tickets.
+        if(map==146||map==147){npc_ids.push_back(2);npc_ids.push_back(3);}
         auto reservation=directory_.reserve(public_district
             ?std::optional<InstanceKey>{{map_type,map,region,district,language}}:std::nullopt,npc_ids);
         const auto id=std::pair{reservation.world(),reservation.player()};
@@ -1627,9 +1630,10 @@ void handle_game(SOCKET socket, fw::gw::auth::DiffieHellman& key, const sockaddr
     std::vector<std::uint8_t> pending;pending.reserve(1024);std::array<std::uint8_t,512> incoming{};
     unsigned equipment_visibility=0;
     if(!grant->name.empty()){const auto state=gwserver::NetworkManager::current().server().equipmentVisibility({{grant->account},{grant->character}});if(state.status!=FW_OK||!state.value)throw std::runtime_error("equipment visibility lookup failed");equipment_visibility=*state.value;}
-    bool map_sent=false,player_sent=false,loaded=false,gameplay_ready=false,manifest_spawned=false,manifest_sent=false;
+    bool map_sent=false,player_sent=false,loaded=false,gameplay_ready=false,manifest_spawned=false,manifest_sent=false,manifest_diagnostic=false;
     const auto send_manifest=[&]{
         if(manifest_sent||build!=37130)return;
+        const bool creation_preview=grant->map_type==11&&grant->map==0;
         const auto override_path=std::getenv("FW_GW_MANIFEST_CATALOG");
         const std::filesystem::path path=override_path?override_path:"data/gw/map-manifests.txt";
         std::optional<fw::gw::manifest::Entry> entry;
@@ -1640,13 +1644,16 @@ void handle_game(SOCKET socket, fw::gw::auth::DiffieHellman& key, const sockaddr
         }else if(override_path)throw std::runtime_error("configured manifest catalog missing");
         const bool diagnostic=!entry;
         if(diagnostic){
-            if(!std::getenv("FW_GW_PROBE_EMPTY_MANIFEST"))return;
+            // The 2022 character-creation scene is a supported, dependency-free
+            // preview. Its reviewed manifest is explicitly map 0/version 0 with
+            // no file or composite IDs; it must not depend on a probe switch.
+            if(!creation_preview&&!std::getenv("FW_GW_PROBE_EMPTY_MANIFEST"))return;
             entry=fw::gw::manifest::Entry{static_cast<std::uint16_t>(grant->map),0,{}};
         }
         const auto manifest_context=grant->map_type==11?fw::gw::manifest::Context::creation_preview:fw::gw::manifest::Context::world;
         for(auto packet:fw::gw::manifest::packets(*entry,manifest_context))send_world(socket,*channel,std::move(packet),fw::now_ms()+5000);
-        manifest_sent=true;
-        std::osyncstream(std::cout)<<"WORLD "<<(diagnostic?"diagnostic_empty_manifest_sent=1":"catalog_manifest_sent=1")
+        manifest_sent=true;manifest_diagnostic=diagnostic;
+        std::osyncstream(std::cout)<<"WORLD "<<(creation_preview?"creation_preview_manifest_sent=1":diagnostic?"diagnostic_empty_manifest_sent=1":"catalog_manifest_sent=1")
             <<" map="<<grant->map<<" version="<<entry->version<<" files="<<entry->phases[0].size()
             <<" composites="<<entry->phases[1].size()<<std::endl;
     };
@@ -5148,16 +5155,27 @@ void handle_game(SOCKET socket, fw::gw::auth::DiffieHellman& key, const sockaddr
                 if(!map_sent)throw std::runtime_error("mission mask request before map load");
                 std::osyncstream(std::cout)<<"WORLD mission_mask_request bytes="<<(packet.size()-4)
                     <<" manifest_response_source=catalog_or_explicit_diagnostic"<<std::endl;
-                if(build==37130&&std::getenv("FW_GW_PROBE_EMPTY_MANIFEST")){
+                if(build==37130&&(std::getenv("FW_GW_PROBE_EMPTY_MANIFEST")||
+                    (grant->map_type==11&&grant->map==0))){
                     // Use reviewed catalog entries; missing maps require the explicit diagnostic option.
                     // Verified 2022 descriptors: 407 BYTE phase, 406 BYTE type/WORD mission/DWORD version.
                     send_manifest();
+                    if(manifest_sent&&manifest_diagnostic&&!manifest_spawned){
+                        // A diagnostic empty manifest has no file work for the
+                        // client to finish, and this build does not emit opcode
+                        // 0x86 for that case. Queue the same request internally
+                        // so the normal, complete initialization path handles
+                        // both the creation preview and the first world map.
+                        std::vector<std::uint8_t> spawn_request;u16(spawn_request,0x86);
+                        pending.insert(pending.begin(),spawn_request.begin(),spawn_request.end());
+                        std::osyncstream(std::cout)<<"WORLD manifest_empty_completion_queued=1 map="<<grant->map<<std::endl;
+                    }
                 }
             }
             else if(opcode==0x86){
                 if(build!=37130||!map_sent)throw std::runtime_error("unexpected manifest spawn request");
                 if(manifest_spawned){std::osyncstream(std::cout)<<"WORLD manifest_spawn_retry ignored=1"<<std::endl;continue;}
-                if(std::getenv("FW_GW_PROBE_EMPTY_MANIFEST")){
+                if(manifest_diagnostic){
                     manifest_spawned=true;
                     if(grant->map_type==11)
                         send_world(socket,*channel,fw::gw::equipment::local_character_2022(grant->player),fw::now_ms()+5000);

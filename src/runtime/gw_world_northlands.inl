@@ -14,11 +14,12 @@ private:
     bool northlands_lever_actor_locked(unsigned actor)const{
         return northlands_gate_&&northlands_gate_->scene()==northlands::Scene::south146&&northlands_gate_->lever().actor==actor;
     }
-    void append_northlands_snapshot_locked(std::vector<Packet>& packets)const{
-        if(!northlands_gate_)return;
-        if(northlands_gate_->scene()==northlands::Scene::south146)packets.push_back(northlands::lever_spawn_2022(northlands_gate_->lever().actor));
-        packets.push_back(northlands::door_spawn_2022(northlands_door_.actor,northlands_gate_->scene()));
-        for(const auto& event:northlands_gate_->snapshot())packets.push_back(northlands::wire_2022(event));
+    void append_northlands_snapshot_locked(std::vector<Packet>&)const{
+        // Do not inject the captured nonliving lever/door records into the
+        // 37130 client yet. Its join crash resolves actor 2 / model 1279 and
+        // faults while indexing the model asset (missing file 0x0801f2).
+        // Keep the authoritative gate controller, but withhold its actor and
+        // scene-state packets until this native record is reproduced exactly.
     }
     void advance_player_positions_locked(std::uint64_t now){
         for(auto& [id,player]:players_)if(!player.steering||now>=player.steering_tick)advance_steering(player,now);
@@ -235,10 +236,15 @@ private:
         }
     }
 public:
-    void configure_northlands(northlands::Scene scene,unsigned lever_actor=62000,unsigned door_actor=62001){
+    // The client indexes these dynamic map actors in a compact per-instance
+    // actor table. Large server-reserved IDs (62000/62001) pass the wire
+    // decoder but crash the client when the portal models are registered.
+    // Player identity is 1 in this host, so keep these captured portal actors
+    // compact and distinct from it.
+    void configure_northlands(northlands::Scene scene,unsigned lever_actor=2,unsigned door_actor=3){
         std::lock_guard lock(mutex_);
         if(northlands_gate_||!players_.empty()||!navigation_||next_actor_generation_>UINT64_MAX-3||
-            !lever_actor||!door_actor||lever_actor>65535||door_actor>65535||lever_actor==door_actor||
+            lever_actor<2||door_actor<2||lever_actor>65535||door_actor>65535||lever_actor==door_actor||
             npcs_.contains(lever_actor)||npcs_.contains(door_actor)||ground_items_.used_actor(lever_actor)||ground_items_.used_actor(door_actor))
             throw std::invalid_argument("Northlands gate configuration unavailable");
         auto generation=next_actor_generation_;

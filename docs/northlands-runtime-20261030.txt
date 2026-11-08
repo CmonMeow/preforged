@@ -25,7 +25,12 @@ an actor that legally passed the door may reach its portal after closure.
 
 Integration
 Fresh ordinary Worlds146/147 configure the controller after navigation/NPCs.
-Actor IDs62000/62001 are server-reserved relocations of captured templates.
+Captured portal records use compact actor IDs1 (door) and2 (lever). This host
+assigns player ID1, so the private instance reserves IDs2 and3 for portal actors
+before assigning party players. However, the 37130 join crash persisted with
+actor2/model1279. Runtime portal actor and scene-state packets are now withheld
+until their captured wire layout and model asset lookup are corrected; the
+authoritative gate controller remains loaded but is not interactable in-client.
 Native CtoS79 (DWORD target, BYTE call) selects the nonliving lever and is
 handled before NPC dialogue. The World validates live scoped ownership,
 control state, graph reach and trusted position; distant pulls approach first.
