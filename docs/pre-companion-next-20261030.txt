@@ -1,0 +1,101 @@
+Pre-Searing pet/minion implementation path -- 2026-10-30
+
+Read-only audit during coordinated build76108. Hashed source/archived capture/
+local wiki inventory and packet receipts: build/reports/pre-companion-audit-20261030.json.
+Correction: Quest.cs88/92 identifies Necromancer's Novice72 and Ranger's
+Companion76. Ranger Test86 (Artemis/Queen) is a separate implemented quest.
+Quest76 is absent from the current16 pre quest rules; do not bind it as72.
+
+Reusable facilities
+- companion_policy.h already distinguishes pet Guard/Heel/Attack, follower,
+  committed minion and summoned-ally behavior, with generation-safe targets and
+  pending-action cancellation. It has NO production consumer. Its thresholds
+  deliberately remain unconfigured; empirical geometry does not recover them.
+- World NPC action authority, ordinary ledger, collision-aware motion and
+  friendly NPC-to-NPC contact/reactions already exist. Friendly ordinary has
+  explicit fixed targets, not companion AI. Its unowned path refuses quest-owned
+  targets; a pet cannot simply be enrolled there and attack quest objectives.
+  Add exact owner/encounter permission and credit rather than deleting that gate.
+- bind_pet_owner (world_signet_sorrow.inl) validates two lifetimes and marks the
+  pet corpse pre-exploited. It supports Signet of Sorrow's dead-pet condition,
+  not charm/AI/UI/persistence; no production caller found. Ownership is cleared
+  on departure/reconfigure, not stored as a persistent character pet.
+- CorpseReservations and atomic quest-summon publication exist. Verata's quest
+  Bone Horror is appearance/quest machinery, not player skill83 minion control.
+- Existing NPC healing/Health/conditions can underpin living-pet healing, but
+  player ResurrectionPlan excludes436 and provides no dead-NPC revive lifecycle.
+
+Evidence already sufficient to begin implementation without repeat capture
+- Fixed checkpoint83:38 local starts/38 finishes;411:1/1;436:4/4. These are
+  captured activations, not proof of a working private lifecycle.
+- Charm exact caster15/target181 receipt shows ten-second activation and the
+  selected Stalker attacking its charmer before completion. Same lifetime then
+  appears as Pet - Melandru's Stalker/model1345/level5/allegiance4; max Health180
+  and Energy30 are observed for that exact pet. Do not infer all animal stats.
+- Charm finish effect708 targets181 with cause15. Packet178 begins181/15 and
+  carries pet identity data. Follow-up tools/protocol/pet_2022.py now proves its
+  pinned2022 PetAdd177 schema, native array insertion and UI event10000049.
+  Hashed report build/reports/pet-native-2022-20261030.json retains exact wire,
+  pet181/owner15, copied encoded name, trailing128406/129924/1 and native record.
+  The final1 is emitted in the UI payload alongside181; no Guard/Heel/Attack
+  numeric interpretation or meaning of128406/129924 is inferred yet.
+- Comfort finish31127 is followed by kind21 bodies747/748 both on caster7,
+  maxHealth180 on pet8 and kind55 healing pet8 caused by7. Audit empty
+  body_effect_evidence lists miss these; do not treat them as no-body proof.
+  Follow-up verifier executes original708/747/748 effect-table lookup and first
+  particle creation plus actor-reversal check. Encoded files respectively
+  6c9400010000/c96400010000/ca6400010000; synthetic actor/assets, not pixels.
+- Local Charm_Animal111-118 and Animal_companion138-140: only one owned pet,
+  charmable current living unowned animal, maximum4 levels above charmer,
+  temporary hostility during charm and permanent ownership on successful finish.
+- Comfort_Animal66-72:20..104 healing and10..58percent resurrection; pinned row
+  436 gives5Energy,1s activation,.75s aftercast,1s recharge,range5000. Row411
+  gives10Energy,10s,.75s,zero recharge. Rank source is Beast Mastery22.
+- Animal_companion219:pet corpses are not exploitable;220:Comfort revives and
+  owner shrine wipe also revives.441:baseHealth20*level+80 and armor3*level+20.
+  Level5 Health180 agrees with the exact receipt, not universal capture proof.
+- Local quest76 requires charming a Stalker, not any pet; Nente grants starter
+  bow/411/436 on acceptance. Abandon does not erase the newly owned pet.
+- Skill83 pinned row:10Energy,3s,.75s,5s; nearest fresh corpse, rank-scaled
+  level1..17. Native body fields are sentinel2077: actor spawn is still required.
+
+Shortest complete vertical slice (keep411/436 unbound until all steps pass)
+1. Pin exact Regent Valley Stalker appearance/charmability and Nente quest76
+   receipts; implement owner record with species/evolution/level/XP/name and
+   durable versioned storage. Restore spawn only with a qualifying equipped
+   pet-bringing skill. Bind fresh World scopes to durable identity each entry.
+2. Add transactional paid411 admission/completion: no pet already owned,
+   reviewed charmability, valid level/range/plane/LoS/current target lifetime,
+   hostile reaction during activation, cancellation/interruption/death guards,
+   then single durable adoption + live conversion/publication. Two simultaneous
+   charmers must never both adopt. Reward quest76 only from committed adoption
+   of its required species and normal durable objective/reward handling.
+3. Connect companion_policy to shared authoritative routes and ordinary NPC
+   action ledger. Provide documented private follow/acquire/drop tuning;
+   owner target/threat events, Guard/Heel/Attack command decoding and exact
+   ownership validation; reviewed species slashing/armor/Health/damage/cadence;
+   pet-owner damage/kill credit and scoped permission against owner's quest foes.
+   Preserve source lifetime/action identity through retarget/cancel/release.
+4. Add paid436 owned-pet resolution independent of selected target; living
+   healing through shared reduction/wound/reaction authority, dead-pet revive
+   through typed current NPC lifetime/effect reset/action retirement/publication.
+   Include pet death owner's skill-disable policy and shrine/entry resurrection,
+   UI ownership/Health/mode publication and late observers. Verify native2022
+   packets with original consumers rather than replaying modern captures.
+5. Native paid-cast/adoption/reconnect/movement/combat/heal/death/revive tests,
+   exact source+executable hashes and isolated private handshake; rendered
+   Stalker charm/control/quest76 acceptance still required separately.
+
+Additional83 minion facilities beyond pet infrastructure
+Atomic corpse selection/reservation/consumption and spawn; max2+floor(DeathMagic/2)
+control cap checked on new creation; retained target until death rather than pet
+recall; increasing decomposition1pip plus1every20seconds (net cap10 but retain
+underlying growth); master death turns minions masterless, not pet-style revival;
+count UI, ownership/credit/opposition transitions and death/despawn cleanup.
+Bone_Horror236-239 supports blunt melee,3.10s cadence and level-based Health/
+approximate armor, but exact damage curve/rounding and numeric pursuit tuning
+still need reviewed policy. Existing captured Verata summon's appearance alone
+does not authorize stats, permanent ownership, decomposition or player AI.
+
+No bindings, runtime changes, checkpoint writes, builds or rendered claims from
+this audit. Parent's separate escort owner-readiness test has passed natively.

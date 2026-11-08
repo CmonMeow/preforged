@@ -1,0 +1,6 @@
+Character map and experience reads use NetworkServer -> NetworkManager -> Accounts::characterNumber. OwnedCharacter and optional uint32 result stay typed in production. Shared helper validates map1..65535 and experience uint32, preserves null experience, and checks cancellation before and after SQLite read. Offline adapter shares the helper. Endpoint persisted map/experience and wrong-owner checks plus direct map/foreign experience/expiry tests pass. Built server_core; running host has not been redeployed for this change.
+Custom-client transport remains unavailable and requires a gameplay-authenticated wire contract rather than remote exposure of trusted storage operations.
+
+Deployed gameplay path; live2022 PID14180 login/world/keyboard/ground movement passed. Full suite found offline mapzero regression (125/126). Fixed helper offline-only allow_zero_map flag; accounts_lifecycle and network_lifecycle retests pass. Gameplay continues to reject mapzero. Offline correction built into test/core; host binary has not been relinked for that correction.
+
+Correction deployed and verified: full126/126 tests pass (28.40s); private2022 PID15712 login/world/keyboard/ground movement passed, client alive after5seconds. Prior pending relink is resolved. Broader custom-client transport and remaining typed-operation migrations are still incomplete.

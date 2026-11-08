@@ -1,0 +1,56 @@
+Ward177 detached player publication contract, 2026-10-23
+
+Files: gw_ward_foes_player_wire.h and ward_foes_player_wire.cpp. No production
+consumer is installed. Test is detached, not registered or executed by author;
+coordinator owns serialized builds. No client or process was touched.
+
+Pinned evidence already recorded in gw_agent_wire.h: opcode39 descriptor
+59b0ec ->5bc5d0 ->5c1750 writes nonnegative absolute base speed; opcode43
+59b11c ->5bc8a0 ->5c17d0 writes normalized .01..1 fraction and gait byte.
+Destination41 does not initialize that fraction. Direction1 copies route
+displacement into facing; direction0 preserves facing. tests/agent_wire.cpp
+checks native serializers. docs/skill-integration.txt records Dash39 220->330
+and native43 maximum1. Current player baseline288 is separately attributed
+in gw_player_movement.h to fixed20261015 haste-speed-capture-evidence.json,
+opcode39 actor25 map280 tick8359828. These establish wire semantics, not an
+observed Ward entry/exit packet trace or rendered Ward acceptance.
+
+Helper accepts FINAL composed movement multiplier, independent gait fraction
+and direction. It emits39(288*multiplier),43(fraction,direction). Pass actual
+World composition after Ward, other speed effects and caps/floors; never blindly
+multiply an already capped speed by .5. Never send1.5 in43 for haste. Keyboard
+gait/contact projection remains a fraction of the new base speed. A zero-speed
+pause needs existing stop/control handling, not this positive-speed adapter.
+
+Insertion guidance for World owner:
+1. Settle the old click/keyboard trajectory exactly through each geometric or
+   time boundary, using old composition. Materialize authoritative position,
+   surface and steering orientation there. Process entry,exit,expiry,creation,
+   recast/relation/lifetime changes, and other speed-effect changes together.
+2. Recompute final speed. On a changed value publish new39 and appropriate43
+   to owner and observers in the same ordered outbox batch. Existing World
+   multiplier replacement uses44 correction before39/43. Whether44 is needed
+   on every Ward boundary is unproven: movement-findings.txt warns repeated44
+   can disrupt animation. Do not claim boundary44 visually verified.
+3. Click: preserve remaining connected route; rebase its current leg at the
+   boundary, recompute timing, then publish41 with current target/planes and
+   forward gait1. Moving client and server must integrate the same new rate.
+4. Keyboard: preserve held input, turn rate and normalized gait. Recompute
+   velocity from input/new base (or scale prior velocity only if it represents
+   an unclipped held-input vector). Re-run navigation/contact projection and
+   steering_ahead; its computed43/41 must follow39. Do not leave the reset43
+   fraction1 as final backward/diagonal/contact speed. Renew owner publication
+   even though ordinary free steering tick echoes are intentionally suppressed.
+5. Advance checkpoint speed credit piecewise across the same boundaries;
+   using elapsed time times the final speed admits/rejects reports incorrectly.
+   Forecasts, range checks, delayed ticks and command-driven materialization
+   must use the same trajectory and avoid duplicate boundary publications.
+
+Detached test covers entry/exit absolute base values, all valid gait bytes,
+fraction preservation including .66/.75/contact .25, caller-composed boost,
+and invalid speed/fraction rejection. This is packet algebra only. Required
+World tests: click crossing both edges, keyboard all gaits with/without wall,
+held turning, creation/expiry while inside, overlapping union, other snares,
+sparse-vs-dense settlement and owner/observer packet order. Native rendering
+and absence of owner prediction desync remain unverified. Production177 stays
+gated until all player/NPC movement consumers and publication paths are ready.

@@ -1,0 +1,50 @@
+Shared Energy damage and Seed -- 2026-10-28
+
+Fixed checkpoint:20261024-all-completed. No new capture ingestion/bindings.
+
+Before:Energy Surge39/Energy Burn42 used shared protection but bypassed Seed.
+The new native regression reproduced the missing heal. Energy59 could also
+apply Weakness/Fragility after spending Energy without admitting its Seed
+feedback. Saved Player pointers and full collateral Energy assignments could
+retain stale state across callback-bearing admission.
+
+Now:Earth and Energy skills share gw_world_damage_admission.inl. It projects
+scoped Health,Deep Wound,1399,307,Fragility and player Seed feedback. Missing
+Seed facts are prepared on real World authority before damage/Energy loss;
+all discardable proposals restart after any timeline settlement. Earth-specific
+armor/Watch/condition sequencing stays in its own adapter.
+
+Energy recipient intents retain Scopes. Actual Energy loss is rebuilt from
+current authority,only drained recipients mutate Energy,and Mind Wrack observes
+each actual transition once. Damage uses the shared reactive handler with
+scoped attribution and one death owner. Weakness merges onto current conditions;
+capacity is checked after admission and at commit. NPC condition-reaction307
+receipts are validated before commit. NPC recipient scopes are reacquired
+after damage and condition callbacks.
+
+Validation:12 current native suites,22 source/mutation checks and6 backlog unit
+checks pass. The serialized Release host build and --build-info succeed.
+New tests cover Burn/Surge feedback,conversion,unknown/immune/allowed NPCs,
+empty primary Energy,unchanged collateral Energy,refusal before Energy/counter
+mutation,and59 Weakness/Fragility/Seed. Rendering is not verified.
+Evidence:build/reports/energy-area-seed-progress-20261028.json
+
+Not complete:
+- Full arbitrary linked-end/recipient retirement and capacity overlap admission.
+- Full damaging-removal admission69/27/67/302;1399 stays staged/unbound.
+- Paid Healing Seed274 casting:World API exists,but no Runtime/gateway caller.
+- Rendered damage/heal/condition/animation acceptance.
+
+Reachability matters:generic hostile-NPC helpers do not automatically need
+allied-NPC Seed. Current Seed-target and NPC enrollment restrictions mean some
+trusted fixture paths have no confirmed production caller. NPC Bonds reflected
+player damage still bypasses Seed/projection if configured,but production AI
+enrollment was not found. This is a latent integration gap,not proof that every
+current NPC spell can reach it.
+Audit:build/reports/reactive-feedback-reachability-20261028.txt
+
+Next paid274 evidence:build/reports/healing-seed-native-2022-20261027.json.
+One captured2s activation/completion and targetbody489 are present. Catalog
+caster resource2077 is a native sentinel,not independently captured casterFX.
+Integrate typed hook,nonself ally admission,duration,equipment/Divine Favor,
+completion/replay and gateway using existing complete_healing_seed;then test.

@@ -1,0 +1,107 @@
+Verified integration update -- 2026-10-30
+The historical draft notes below are superseded for World inclusion: gw_world_pets.inl is included, pet_world is registered and passes, and the tested canonical host is c47e53614c8d54ac5cf41e97303d042b1c3b6583bdf5feaa16557961a7028596.
+Evidence: build/reports/presearing-companion-progress-20261030.json and its referenced native/host reports. All19 focused suites and56 source checks pass. Native pet World tests exercise actual shared ordinary motion, adoption, death/revive, ownership, visibility and scope cleanup under synthetic combat policy.
+Still required: paid Runtime/auth lifecycle for411/436; reviewed pet attack scaling and PvE modifiers; layered follow; production entry/bar restoration wiring and rendered acceptance. Normal411/436 bindings remain disabled. Initial world handshake is not full world initialization.
+Pet411/436 integration ownership/savepoint -- 2026-10-30
+
+Current source ownership (coordinated by parent)
+NPC agent: new gw_pet_profile.h/catalog.h/lifecycle.h/wire.h, World-pets draft,
+detached pet_profile_lifecycle.cpp/pet_relation_transition.cpp; exact scoped
+StalkerCharmTransition in gw_npc_combat_catalog.h only. Parent owns new persistent
+storage/network adapters and paid Runtime/auth hooks. Quest agent owns existing
+auth/accounts quest changes. No production hook/binding is authorized merely
+because these first-slice files exist.
+
+Persistent schema contract is stable: pets::Profile optionalPet; species1,
+level5..20,experience,evolution0..5,optionalASCII customname. PET byte1 binary
+version and strict no trailing bytes. No scopes, actor IDs, Health or live modes
+persist. Parent wraps independent revision in authenticated VersionedProfile.
+AdoptionWrite passes exact expectedRevision+expectedProfile+replacementProfile.
+Storage CAS must verify owner, revision, absentpet expected state and immutable
+replacement. Successful reply means transaction committed; conflict/unavailable
+must not convert the World actor. Token ledger consumes exact completed attempt
+before invoking CAS, refusing replay after success/failure/cancel/stale/death.
+
+Native control proof now complete to serializer boundary
+Archived primary GWCA PartyMgr.cpp413-434 describes target-lock before mode.
+Exact scan matches pinned2022 LockPetTarget7902A0->875B60: command20 carries
+petActor,targetActor (zero unlock). SetHeroBehavior790270->875B10: command19
+carries petActor,mode. Local current HeroBehavior enum Fight0,Guard1,Avoid2;
+Toolbox independently labels these Fight/Guard/Avoid Combat. Original builders
+execute offline for all modes and lock/unlock in pet_2022.py. Server must prove
+session owns petActor in current lifetime; packet lacks generation. Fight lock
+must resolve current hostile target and store scoped key, never a naked ID.
+Guard/avoid clear locked target; do not mistake mode0 for Guard. Captured
+PetAdd177 final1 means Guard. PetInfo model_file_id1/2 are128406/129924 and
+independently match captured Stalker definition1769, not guessed asset IDs.
+
+Actual qualified pre content
+Definition1345 in archive epoch8/map162: model128406,skin0,appearance0,flags13,
+primary2,defaultlevel5,visual0/0/0/100,models[129924]. Selected wild181 first
+observation1791 neutral2 at-15185.521484/-2665.847168 plane0; not proven spawn.
+No Stalker is installed by current baseline npcs.txt. Host needs an explicit
+reviewed supplement, authored actor/definition IDs and navigation validation of
+the chosen first-observed placement, without modifying immutable captures.
+Pet actual Health180 atlevel5 is captured; wiki Health20level+80 and armor3level+20
+are separate source-backed formulas. No numeric attack profile or pursuit/drop
+threshold is recovered. Evolved Health remains absent in catalog and rejects
+spawn until reviewed. Stats absent must never silently default to player stats.
+
+World draft API (not included yet)
+restore_pet_profile(ownerScope,revision,profile,ownerLevel) reads trusted entry.
+configure_tameable_stalker(scope,binding) explicitly enrolls exactcontent.
+begin_pet_charm(owner,target,castSequence,now,duration) returns exactAttempt and
+sets only internal neutral->hostile relation. cancel_pet_charm consumes it.
+complete_pet_charm(attempt,paidActionCurrent,CAS,now) prebuilds conversion,
+ownership/corpse/session state and PetAdd, calls durable CAS once, swaps only
+after success, and returns packets for the normal paid-finish order.
+retire_pet_scope_locked must be called before exact owner/actor ID reuse.
+The draft still needs temporal settlement, enemy-action retirement, packed team
+publication, customname and full effects/observer integration before inclusion.
+
+Required remaining splices for complete vertical slice
+1. Shared World header: top includes + pets inl; exact departure/reconfigure
+cleanup; owner level updates; late NPC entry/visibility must append PetAdd after
+the pet spawn for each eligible observer. Do not expose unspawned actorrefs.
+2. Mapentry/bar-presence reconciler spawns exactly one fresh owned pet from the
+durable profile when411/436/1195 equipped; removing all qualifying skills retires
+only the current World actor, retaining durable ownership. No copied skill or
+untrustedbar may manufacture a secondpet. Death/disconnect/reentry fences tested.
+3. Shared motion/ordinary pet adapter: owner currenttarget/threat triggers,
+Guard/Heel/Attack, authored follow/drop policy, cancellation, collision and pet
+ability to attack owner's exact scoped quest foes. Extend friendly ordinary
+permission/credit with ownerdomain, preserving unrelated quest isolation.
+4. Charm411 paid10Energy,10s/.75s/0recharge,
+sealed requesttarget/castsequence/duration, revalidation/cancel/interruption.
+No generic completion bool from client. Native708 after original finish.
+5. Comfort436 paid5Energy,1s/.75s/1s, currentownedpet implicit target; ranked
+healing20..104 or deadpet10..58percent revive. Shared actualhealing/wound/reaction
+settlement and exactNPC-corpse revive cleanup are required; raw Health assignment
+   cannot substitute. Preserve pet pre-exploited corpse. Beast_Mastery123 explicitly
+   excludes pre-searing from owner skilldisable on petdeath; do not add it to pre.
+   Shrine wipe revive remains separate lifecycle. Native747/748 oncaster.
+6. Deploy/binding only after paid acceptance, CASrollback/replay, ownership/
+entry/bar/command/AI/combat/killcredit/heal/death/revive/reconnect tests pass and
+native177/178/control/effectpublication verified; rendered acceptance separate.
+
+Current evidence: pet-native-2022-20261030.json; pre-companion-audit-20261030.json.
+
+Later same-day source draft
+World-pets now implements explicit reviewed wild-combat enrollment, actual
+ordinary retaliation during paidcharm, CAS-gated adoption, restored/bar-presence
+fresh spawn, scoped petowner/quest-foe permission and ownercredit helpers,
+Guard/Heel/Fight command processing, collisionroute follow/pursuit and shared
+ordinary actions, ownedpet implicit Comfort target/replay prevention and shared
+healing/corpse retirement followed by narrow same-generation revival. Typed
+LiveActor revival preserves action sequence and advances replay epoch; explicit
+conditions/death/control/weapon/effect/wound-debt reset, Health percentage floor.
+Newtests/pet_world.cpp is unregistered pending real World integration, not a
+shadow header. Fixture damage/windup/movement are synthetic test policy only.
+
+Required before production publication remains concrete: real World include/
+motion/ordinary/credit/entry/visibility/departure/tick hooks and native tests;
+PvE owned-only incoming/outgoing modifiers; reviewed initial level5 base damage/
+mastery/windup profile; paid Runtime/auth lifecycle and effect ordering. Numeric
+pet cadence2seconds is separately supported by Attack_speed137-142/footnote177.
+Shared Flare motion is planar: layered internal-floor following is still open.
+No production411/436 binding or rendered/retail combat parity claim follows.

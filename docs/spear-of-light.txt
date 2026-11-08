@@ -1,0 +1,36 @@
+Spear of Light1130 - World and normal casting integrated, 2026-10-22
+
+CURRENT: The native private-server player casting dispatcher now supports1130 against reviewed hostile players and NPCs. Earlier staged-only notes below are historical. The host was rebuilt serially; no official session or tester package was restarted/replaced.
+
+World owns the queued fixed-aim flight, scope generations, initial navigation LOS trace, destination/plane/range, live allegiance and holy-trait checks. A captured model1266 launch requires a unique allocated synchronization key. Runtime emits58 before launch; the World approves only an exact queued packet, rebases arrival to its publication time and then arms delivery through the completion callback. Calling the callback without publishing the approved launch cannot arm damage. A delayed publication preserves the entire flight duration. Queues are removed on departure/death/resurrection/retirement, so a reused actor cannot inherit an old shot. Scheduler fact guards include these flights.
+
+At impact, authoritative attacking state is sampled anew. Base and conditional bonus remain separate holy damage hits. Players use reviewed holy equipment/flat vulnerability and incoming_spell_actor; NPCs use reviewed holy traits and existing damage_npc. Preflight checks both hits, individual commits use shared protection/death handling, and a lethal first hit does not strike a corpse. The generic caster and target body resources remain sentinel2077; no invented body effect is emitted.
+
+Validation: spear_light_test passes84 damage contexts,13 flight contexts and publication-delay/packet checks. spear_light_world_test passes player/NPC rank0..20 deliveries, pre-impact no damage, attack state after release, stale generation, source departure, unpublished launch/callback and delayed-publication cases. spear_light_cast_test passes normal Runtime-to-World PvE/PvP rank0/12/20 cases for Energy5,1second cast,15second recharge, finish-before-launch,cancel,missing hook,effect failure and retired target. Neighbor player_holy_damage,water_trident_world and projectile_miss_state rebuilt and passed. All six CTest suites passed; five runtime coverage, five backlog and three checkpoint merge tests passed. Offline verifier rechecked75 frozen targeted activations,67 release receipts and representative original native action11/state6 consumers with varying keys.
+
+Limits: shared flight speed1800/hit radius32 is an explicit uncalibrated simulation policy, not a retail measurement. NPC launch prediction currently uses stationary aim. Full projectile height/dynamic obstruction behavior, autonomous NPC casters, combined reactive/reflective/fatal ordering and rendered native projectile acceptance remain open. Unit/integration success is not proof of every retail interaction.
+
+Host SHA256:8e34664f8971b948ba2ae1d7078d29eee98f4fda789607d37096128294a50fef.
+Cumulative checkpoint:20261022-cumulative-skills,50 frozen packet/world files. This merges previous Halloween captures with tonight, verifies hashes/compatible prefixes and hard-links immutable bytes without reading live logs. Current baseline679captured/311source-bound/368awaiting-binding/650missing-capture. Nonbaseline and other/unassigned observations remain separate overlapping evidence tiers. Missing-capture does not mean unimplemented; source binding does not mean rendered or full retail verification.
+
+HISTORICAL STAGING NOTES
+========================
+Spear of Light1130 - staged impact policy, 2026-10-22
+
+The local historical Spear_of_Light article and pinned2022 metadata agree on5Energy,1second activation,.75second aftercast,15second recharge,26..56 base holy damage and15..60 conditional holy bonus at ranks0..15. The article explicitly describes the bonus as a separate packet against an attacking foe. The new gw_spear_light.h plan preserves separate hits and requires known light-sensitivity and attacking facts; unknown facts are not false. It rejects altered plans and ranks above20. Rank is evaluated as26+2r and15+3r with the established native rank extrapolation through20.
+
+Validation: spear_light_test builds and passes84 rank/attack/light-sensitivity contexts plus unknown-fact, altered-plan and rank rejection cases. Offline spear_light_2022.py hashes tonight's immutable capture, verifies all75 local targeted activations and executes the original2022 one-second/style50 cast consumer. Both native body resources are2077sentinels. No speculative success-body particle is emitted.
+
+The five-second capture windows retain50 caster/target-matched damage candidates and owner endpoints. They do not contain explicit skill1130 damage attribution packets in that window, so candidates are not claimed as proven base/bonus hits. Subsequent skills/ordinary attacks may occur in the same window. No flight speed/release delay is inferred from network arrival intervals.
+
+NOT LIVE YET:1130 remains unsupported in Runtime. Work remaining is actual projectile visual/release evidence, authoritative launch/impact queue (including lifetime/LOS/dodge), impact-time attacking and reviewed holy-trait facts, individual damage reactions, ordinary casting/World integration and rendered testing. The pure impact plan is not a completed skill and does not advance the source-bound count.
+
+Projectile evidence and delivery state, 2026-10-22
+
+The verifier now extracts67 releases: latest observed owner action must be one of the75 local1130starts, followed by successful58 then same-owner164 within100ms without an intervening action start. Every release uses model1266,is_attack0; opaque synchronization keys vary1..9. These are not fixed flags. Three representative keys1/3/9 serialize through the original2022 descriptor60be2c and execute original launch callback874c80, action11 and state6 consumer with the retained expected payload. Exact source hashes and release lines are saved in spear-light-native-2022.json.
+
+New spear_light_launch_2022 emits model1266 and requires an explicit nonzero allocated synchronization key, finite destination and bounded positive duration. It does not infer a constant key from one capture. Native and C++ tests verify the29byte packet shape.
+
+SpearLightFlight now owns a delayed fixed aim and actor generation pair. It checks finite positions, range1248, plane, hostility, live actors and clock/overflow boundaries. Impact samples current attacking state rather than storing release-time attacking state. It is single-delivery; moved-away/dead/friendly/retired targets and missing trait/attack facts cannot receive guessed damage. Flight policy must be explicitly supplied: retail speed/tolerance remain uncalibrated. It does not itself test map collision/LOS; World must provide that and its scheduler. The policy test covers13 delivery contexts in addition to84 damage contexts.
+
+Still not a live World/Runtime binding. Remaining work: queue/scheduler integration, shared lifetime cleanup, authoritative collision/target traits/attack ledger, individual reaction-safe damage commits, source casting hook, synchronized native release/impact publication and rendered validation. No source-bound count increase; developer host was not rebuilt for this staged-only change. Official capture processes and tester package untouched.

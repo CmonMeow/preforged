@@ -1,0 +1,30 @@
+NATIVE BEFORE EVIDENCE — exact confirmed scope, 2026-10-31
+Source: build/reports/end-death-before-20261031.json (preserved unchanged).
+Derived machine-readable scope: build/reports/end-death-before-scope-20261031.json.
+
+CONFIRMED: Immediate Profane strip of Watchful1392 can settle lethal wound debt
+without invoking actual player death cleanup at the completed Well return.
+Observed lethal HP0, death_atnull, epoch_delta0, Watchful end1, remote upkeep end0.
+Healthy control correctly gets130HP under Defile, no death/epoch and one end.
+The separate Well post-cohort kill candidate addresses the observed missing
+cleanup, after all strip IDs, without duplicate nested removals.
+
+CONFIRMED: Patient2061 natural expiry can stamp death at coarse requested5000
+rather than expiry2100 when NO maintained link is present. This occurs for BOTH
+World tick and direct settle_resources. Each still emits one Patient end and
+one death epoch; the defect is exact death chronology, not a missing corpse.
+
+DISCONFIRMED: The earlier hypothesis that this Patient path delays remote
+maintained upkeep. WITH the remote lease, BOTH tick/resources ALREADY record
+correct death2100, epoch1, Patient end1 and upkeep end1. Shared maintained
+frontier settlement prevents/masks the coarse chronology defect in this context.
+Do not cite that scenario as a demonstrated bug. The candidate's remote cases
+are preservation controls, not failing baselines.
+
+AFTER acceptance must retain healthy Watchful behavior, fix immediate lethal
+Watchful cleanup, and make allfour Patient clock/link contexts death2100 with
+one epoch and one Patient end. Remote cases must remain one upkeep end, and
+same-clock repetition must produce no duplicates. Candidate patches remain
+unapplied pending parent freeze release. No source/test edits or native builds
+were made during this evidence review; original receipts/rendered pixels are
+outside these mechanics probes.

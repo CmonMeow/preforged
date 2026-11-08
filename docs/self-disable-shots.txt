@@ -1,0 +1,56 @@
+Marauder's Shot908 and Focused Shot909: landed-hit self disables
+
+The pinned2022/native and archived wiki rules are the implementation target.
+Marauder's Shot costs10Energy,recharges6s and deals+10..35 at ranks0..15.
+Only a landed hit disables the caster's non-attack skills for10s.
+Focused Shot costs5Energy,recharges2s and deals+10..25. Only a landed hit
+disables the caster's other attack skills for5..3s at ranks0..15.
+The descending duration curve must retain the archived integer progression.
+A miss,block,cancellation or in-flight failure is not a landed-hit disable.
+
+Authority design
+The trigger keeps its exact Slot(skill,copy) through projectile flight. The
+impact transaction reads the current scoped published skillbar,not a release
+snapshot or an invented list. Focused excludes the exact triggering slot;
+other eligible copies remain distinct slots. Retail duplicate909edge semantics
+are not established by the existing single-copy capture and remain a gap.
+An unknown bar fails preflight before target damage. A known future bar defers
+the arrow until its publication timestamp; scheduling, fact readiness and
+resolution use the same frontier so unrelated earlier arrows still resolve.
+Existing
+independent disable authority composes the result with real local recharge;
+World must not emit a guessed-zero recharge. Reset barriers,retirement,reversed
+arrow resolution and repeated events must retain their existing guarantees.
+
+Evidence
+ tools/protocol/self_disable_shots_2022.py verifies immutable fixed capture
+20261022-cumulative-skills packets1360. Marauder start506256,release timer506260,
+caster1058at506261and slot ack506263;Focused start506280,timer506296,caster1062
+at506297,ack506299. Other attack timers at506311/506312are retained as context,
+not proof of the complete bar or every disable's cause.
+Focused's captured8s release differs from native/wiki2s;nearby other-skill8s
+notifications also differ from old5..3s. Modern balance/modifier context is
+unresolved. We retain old values rather than silently apply the captured8s.
+Ten notifications,six original body timing cases,two native caster particle
+consumers and original targeted/caster serializers pass offline. No melee46
+finish is fabricated for these bow releases. Target2077 is the sentinel.
+
+Validation and limits
+The focused bow_self_disable suite passes normal player-caster mechanics and
+Runtime integration, including actual temporary-copy restoration before impact.
+Bar snapshot equality is an internal invariant within one World mutex damage
+transaction; all current public bar writers acquire that same lock. Independent
+disable state is re-read after reactions. The future-bar regression verifies
+one impact at the deferred boundary, a disable deadline based on that boundary,
+no replay, and an unrelated earlier arrow. All seven focused/neighbor suites
+pass after the timing fix; the serial Release host rebuild succeeded.
+Host SHA256:55106965BC20CF3A0203FF5E476F59FADAC7BAD3ECD495C7A3FDB4AD21E3D911.
+No live host deployment or official-client restart was performed.
+Shared projectile retirement cancels dead-source arrows before impact;
+that is tested as current policy, not claimed as retail death equivalence.
+Actor/model/asset/clock
+services in native probes are stubbed;rendered/audio acceptance,live release
+calibration,NPC casters and full retail publication order remain open.
+The current generic launch/caster publication ordering must be separately
+reviewed against the capture;presence of the packets alone is not equivalence.
+Source binding does not establish those unverified global behaviors.

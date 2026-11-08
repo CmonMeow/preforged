@@ -1,0 +1,25 @@
+Authored NPC pursuit leash correction (2026-10-23)
+
+The local wiki Aggro.html, oldid2655578, line74 states that foes follow only a
+certain distance from where they took aggro. It distinguishes patrol behavior
+but supplies no universal radius or exact crossing algorithm. Existing host
+FlarePolicy.leash is an authored home radius; this change enforces that policy,
+not a claim that retail uses this radius, origin, or clipping algorithm.
+
+Previously the shared caster/ordinary movement helper checked leash only on
+the next AI tick. A long interval could publish a position hundreds of units
+beyond a small configured leash before returning. The new pure leash_budget
+walks the actual navigation polyline and limits pursuit to its first home-circle
+exit. Going outside and re-entering later is not permitted by this authored
+policy. A goal stop before the boundary remains successful. Reaching the
+boundary transitions immediately to returning and clears encounter memory;
+return-home motion uses its full existing budget. Other movement is untouched.
+
+Tests npc_pursuit_leash cover coarse travel, detours, scheduler slicing,
+positive/zero budget, exact boundary inward/outward, already outside, early
+goal stop and malformed geometry. npc_pursuit_leash_world covers Flare and
+elemental drivers requesting600 units against leash100, the native44 position
+bound and explicit return lifecycle. Existing aggro-return assertions remain.
+Knockdown/aftercast speed integrals and last traversed tangent remain owned by
+the existing motion pipeline. A boundary reached with spare time returns on
+the next scheduler tick; this does not invent a sub-tick controller schedule.

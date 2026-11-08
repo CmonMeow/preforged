@@ -1,0 +1,40 @@
+CURATED END-CONSUMER CANDIDATES — new detached tests, no native validation yet.
+
+1. Immediate Profane stripping, Watchful1392 Health gain.
+Well strip loops remove_health_effect_locked and returns without kill_locked.
+Watchful early gain may settle lethal Deep Wound debt; the generic end function
+sets HP0 but does not own death cleanup. ClaimWell's immediate strip path has
+no subsequent player advance to finish it. New actual test:
+tests/watchful_profane_gain_death_draft.cpp. Remote248 lease outside the field
+must end only on maintainer death, with epoch/death time/private upkeep exactly
+once. Healthy Defile target must receive full30 Health gain. Candidate:
+build/patches/well-end-gain-death.patch. Kill only after whole strip cohort,
+avoiding duplicate removals caused by reentering death cleanup mid-ID list.
+
+2. Expiry death frontier, Patient2061 true healing.
+advance_health_locked records regeneration death before processing ended_effects,
+but an end heal/gain can kill afterward. It then integrates later intervals and
+records death in final previous>0/health0 guard at requested now. Direct public
+settle_resources bypasses World tick deadline partitioning and exposes late time.
+New actual test tests/patient_expiry_death_frontier_draft.cpp compares tick5000
+and settle_resources5000 against real Patient expiry2100. Both must retire remote
+Retribution upkeep and increment death epoch once at2100. Candidate:
+build/patches/end-expiry-death-frontier.patch. Capture pre-end-cohort life, finish
+all IDs, then kill at ends on positive-to-zero transition. Patient remains actual
+healing; it is not converted to Health gain. This prevents retrospective remote
+upkeep death from being stamped at a coarse sampling time.
+
+Reviewed existing safe boundaries (do not broaden edits without evidence):
+- Player enchantment_removal calls kill_locked after end cohort before damage.
+- Captured Chilblains damage_then_remove calls kill_locked after removal.
+  Its alternate staged remove_then_damage branch can skip cleanup, but1392 is
+  explicitly rejected for noncaptured ordering; not a normal binding defect.
+- Ordinary World Health advance eventually invokes kill, so the expiry case is
+  exact event time/chronology rather than a claim every corpse stays unretired.
+- Seed common gain now owns player kill and NPC record-death after real gain.
+- Watchful end is genuine Health gain. EtherRenewal/BloodRenewal/ShadowRefuge
+  wiki Notes explicitly identify true healing despite description text. Aura
+  Restoration and SpiritBond likewise remain healing, not generalized gain.
+
+No source or registered test was changed while40589 was live. Candidates need
+parent review plus actual native evidence before implementation claims.

@@ -1,0 +1,2020 @@
+Pre-Searing implementation checkpoint -- 2026-10-11
+
+Scope: available skills and items, map doors, and captured profession quests.
+Published content comes from the local wiki; native packet behavior comes from
+the pinned 2022 client and captures. Official playthrough automation is stopped.
+
+Current summary (supersedes the historical checkpoints below)
+- Supremacy37 now has native acceptance at Ralena165, learned230/220, Tower
+  completion in161 and Aziure reward verified with Pre Quest War W/E. Native
+  Lightning Javelin resolved; XP1000->1250 persists. Reports:supremacy-native.
+  Tower lightning AR0 is explicit temporary development policy, not measured
+  retail weakness. Production-content projectile regression and npc_wire pass.
+- Native Warrior secondary Elementalist trial73 now passes acceptance, three-wave
+  combat, Aziure reward and K-menu profession selection. XP750->1000 and chosen
+  secondary6 persist; temporary permissions clear. Evidence and limits are in
+  data/gw/quests/profession-trial-evidence.txt. Four focused regressions pass.
+- 19/44 pre-Searing skills have runtime bindings; this is not 44 playable skills.
+- Five profession quest policies are installed:83,85,75,73,37. Offline tests cover
+  collection pickup/reward persistence and Grawl combat/acceptance/turn-in.
+- New Prophecies Warriors and Elementalists receive captured equipped starter
+  weapons. Existing weaponless characters have not been migrated.
+- Ordinary Starter Elemental Rod attacks now use fire armor, NPC fire modifiers,
+  wind-up and projectile impact, with one hit per projectile. Native UI testing,
+  retail projectile calibration and complete profession playthroughs remain open.
+- Captured directed doors are installed; this does not mean every pre door has
+  been captured or verified in the private client. Other profession quests,
+  side quests, collector gear and the complete pre item set remain unfinished.
+
+Skills
+src/runtime/gw_presearing_skills.h enumerates the 44 wiki-listed obtainable skills.
+tools/skills/presearing_audit.cpp compares those IDs with pinned client metadata
+and runtime effect bindings. Currently 19/44 have bindings. A binding does not
+prove NPC combat, learned grants, or live animation correctness.
+Flare (194) now has a projectile damage binding using pinned client scale20..65.
+Native regression verifies energy, cast/aftercast timing, cancellation and target
+lifetime fences. NPC combat remains a separate incomplete integration.
+
+Doors
+The capture importer now scans archived run subdirectories, excluding duplicate
+interaction windows. Four additional captured directed routes were validated
+against exact navigation meshes and installed in config/map-portals.txt:
+Lakeside County -> Ashford Abbey, Green Hills County, Wizard's Folly;
+Ashford Abbey -> Lakeside County.
+data/gw/portal-provenance.json retains nested capture paths and record lines.
+Trigger rectangles are developer approximations around captured departures;
+they are not measured official portal boundaries. No inferred reverse routes
+were installed. Private client traversal still needs validation.
+
+Quests
+The quest audit now includes archived E/W and W/E profession runs. It preserves
+964 observations and 49 bounded wire candidates. Objective completion is not
+proof of reward turn-in; quest removal can also mean abandonment.
+The partial Ranger capture is archived with an explicit incomplete-run note.
+Native quest state/persistence and packet encoders exist, but NPC offers,
+authorized objectives and atomic reward transactions are not yet wired.
+An XP-only reward storage transaction now commits character experience and the
+completed->rewarded quest attempt together. Ownership, revision and attempt
+checks reject duplicate/stale turn-ins. Cancellation after writes rolls both
+back; missing imported XP baselines are rejected rather than treated as zero.
+Network controller publishes quest removal only after the transaction commits.
+This is not a full reward implementation: gold, items and learned skills must
+join the same transaction before quests containing those rewards can use it.
+NPC dialogue has not been connected to this operation yet.
+The storage transaction also accepts reviewed learned-skill grants, checks their
+skill-profile revision and adds one owned copy only when absent. Skillbar and
+professions remain unchanged. XP, learned skills and turn-in state roll back
+together. The XP-only packet controller rejects skill-bearing requests until
+owner learned-state packets are prepared and published after the commit.
+A batch reward controller now prepares the full learned-state packet followed
+by new-learning219 (or existing-count220) and quest removal81. Storage conflicts
+return no packets. Existing copy counts are preserved, duplicate grants rejected.
+NPC dialogue callers still need wiring; gold/item rewards remain unsupported.
+Gold is now supported by the storage reward transaction: it checks the inventory
+revision and carrying capacity before writing, then commits inventory gold with
+XP, learned skills and rewarded status. Full pockets reject the complete reward
+without clipping it. Packet controllers still reject gold-bearing rewards until
+inventory balance notifications/session revisions are integrated. Item grants
+and NPC dialogue remain incomplete.
+Four profession quest policies now distinguish acceptance grants from turn-in
+grants, primary-only eligibility and primary-test prerequisites. Native IDs85,
+75,73,37 are mapped by decoded names in the archived W/E snapshots; wiki source
+hashes are stored with each policy. Supremacy's offer NPC differs from its reward
+NPC. These policies do not yet create offers or authorize creature objectives.
+Grawl's acceptance sword and Experiment's three waves/Aziure survival must be
+implemented before claiming those quests playable.
+Acceptance can now atomically save one newly accepted quest and reviewed skill
+grants. The storage layer verifies the transition is an acceptance, fences both
+quest and skill revisions, and preserves owned copy counts. The controller
+prepares quest and learned-state notifications before saving and publishes only
+on success. Legacy textual storage dispatch rejects grant-bearing requests
+rather than silently omitting the grants. NPC offer selection remains unwired.
+Four validated capture-content candidates are preserved under data/gw/quests/
+candidates, with snapshot lines and source SHA256. They are not enabled. The
+Warrior Test description embeds captured character name Logger, which requires
+per-character rebinding; native wire validity does not prove 2022 Gw.dat resource
+compatibility. These are explicit runtime integration gates, not missing wiki
+quest content and not reasons to repeat an entire official playthrough.
+gw_quest_text_binding.h provides explicit captured-character argument rebinding
+on a session content copy. It replaces only tagged literal107/name/1 arguments,
+preserves surrounding resource codes and original catalog evidence, validates
+character names and enforces the127-unit detail bound. Missing tagged arguments
+are errors rather than a plain substring replacement. This helper is not yet
+connected to the catalog/session restoration path or live-client verified.
+Session restoration and quest detail requests now invoke catalog character
+binding using the owned character's current stored name. FWQC1 accepts an
+optional14th field: UTF16LE hex of the reviewed captured character literal.
+Unmarked13-field rows remain opaque. Bound session copies clear their binding
+metadata to prevent double substitution. No candidate catalogs are enabled;
+this production path still awaits live2022 text-resource validation.
+The native quest-state regression now reads all four preserved candidate files
+directly, validates their source hash and builds Add72/Details75 restoration.
+Warrior Test is rebound to a19-unit name and serialized successfully, while
+the captured source remains unchanged. This validates actual captured framing
+and argument bounds; it does not prove the client renders those resource IDs.
+Population discovery now includes archived profession captures and preserves
+nested relative paths in provenance. W/E observes Van in146 (line504), Grast
+in146 (3147) and160 (3214), Aziure in161 (2120), Ralena in165 (1773).
+The installed Van in134 is a different context and cannot authorize quest85.
+Prepared review populations are in build/reports/presearing-npc-review only.
+Largest-snapshot selection picks active Experiment shards in161 and misses Van
+and Grast in146. Do not promote these candidates as unconditional populations:
+baseline quest-givers need reviewed snapshot selection, while quest waves need
+attempt-scoped activation. This explains why loading more captures alone does
+not make quest NPCs available correctly.
+Five isolated quest-giver candidates are now in data/gw/quests/actors: Van146,
+Grast146/160, Aziure161 and Ralena165. Exact captured definitions and placements
+are preserved with source hashes and snapshot lines. All five pass the existing
+native population/navigation validator. They remain separate from live NPCs;
+activation needs quest-stage rules and fresh production actor IDs.
+The batch reward controller now prepares native carried-gold delta319 after
+checking the owned inventory revision and carrying capacity. Gold, skill and
+quest-removal packets are returned only after the shared transaction succeeds.
+NPC callers must synchronize their native inventory balance/revision with this
+loaded profile and advance their session bookkeeping after publishing. The
+single-packet XP-only compatibility helper still rejects gold rewards.
+NPC catalog parsing now retains the reviewed capture name as server metadata,
+separate from its encoded wire name. Instance::nearby_npc_name resolves it only
+for a present owned player/NPC within the existing interaction-range gate.
+Header comments are excluded. Native tests cover exact identity, nonexistent
+actors and leaving range. Quest menus have not yet been connected to this gate.
+Production NPC interaction now prepares quest choices through nearby_npc_name
+and the configured content catalog. Selection rechecks range, deadline, exact
+offered choice/attempt and current eligibility, then calls acceptance or reward
+controllers and reloads owned skills/XP. Tokens are private-server menu IDs,
+not claimed retail dialogue mappings. Supported policy locations are explicit;
+Van134 cannot offer Warrior Test146. Grawl is withheld until its sword grant
+works. Primary-test eligibility currently proves only the mapped Warrior Test;
+other primary test identities still need content policies. Default catalog is
+still disabled. Combat objectives, actual actor activation, live rendering and
+level/XP UI progression remain unfinished; this is not a playable quest claim.
+FWQC2 now supports an active row followed by an optional completed row for the
+same quest. Field14 is active/completed, field15 optionally binds a captured
+character argument. Duplicate completion rows and unknown stages are rejected.
+Restore, detail requests, completion updates and marker replies select the
+variant by durable quest stage. Session binding clones variants so source
+catalogs remain unchanged. All four captured stage pairs are preserved in
+candidates/presearing-staged.fwqc, still disabled pending live resource checks.
+Do not require repeat playthroughs before recovering the existing evidence.
+
+Items
+Existing inventory/equipment infrastructure remains available. This checkpoint
+does not implement a complete pre-Searing item, collector or merchant catalog.
+Next work must bind wiki availability/rewards to item definitions and NPC offers,
+rather than exposing the full development inventory as pre-Searing progression.
+
+NPC runtime checkpoint (2026-10-10)
+The host now retains validated combat metadata instead of discarding it after
+startup validation. Instance NPC state carries a fresh actor generation and
+reviewed health/armor. Current health is published on joining snapshots, and
+damage produces a single captured-identity death event for the attacking owner.
+Flare now reaches this path through the actual cast controller and projectile
+flight, without synthesizing an NPC player-energy profile. Version2 combat
+catalogs can supply separately sourced fire/cold ratings; unknown ratings still
+reject effects that require them. Production catalog remains relation-only;
+this is a tested runtime mechanism, not live verified pre-Searing combat.
+Full Release build and129 CTest tests pass, including the new NPC world test.
+Warrior Test's observed encounter candidates are three River Skale Tads with
+wiki health35, preserved separately under quests/actors with exact provenance.
+Death packets now confirm captured actors41/40/42 dead at lines11610/11671/11713
+in the companion packet log. Provenance preserves the exact packets and hash.
+begin_kill_objective binds an explicit set of live actor scopes to a quest/cycle.
+Unrelated same-model kills do not count, duplicates cannot inflate objectives,
+and rebinding cannot replace the group or reset partial progress. Completed
+objectives remain pending until the session controller commits native quest
+completion through the account store. Failed CAS/storage is retried; stale
+attempts and successful abandonment clear the objective. Runtime and account
+integration tests cover kill -> pending -> rejected commit -> successful commit.
+Encounter activation, reviewed combat ratings, NPC basic attacks/AI and live
+verification are still needed. Default quest catalog remains disabled.
+
+Encounter activation checkpoint (2026-10-10)
+The host now loads optional hashed quest encounter manifests. Warrior Test
+acceptance prepares validated creatures before the account save and publishes
+them only after success. Active quest restoration uses the same spawning path.
+Abandonment/disconnect removes owned creatures and fresh joining snapshots no
+longer replay removed spawns. Actor IDs are not reused within the instance.
+Production encounter content remains disabled; reviewed combat ratings, basic
+attacks, the map146 quest-giver population and live client checks still remain.
+See quest-encounters.txt for the native format and transaction boundary.
+
+Basic NPC attack checkpoint (2026-10-10)
+Ordinary sword/axe/hammer attacks now support configured hostile living NPCs;
+earth caster weapons use projectile flight before impact. Physical armor is a
+separate, evidence-requiring version3 catalog field. Missing ratings reject the
+attack. Runtime tests cover windup, repeat, death/objective identity, absent armor,
+wand flight and encounter replacement. The account-backed integration completes
+its synthetic encounter through timed sword attacks rather than a direct damage
+helper. River Skale Tad's local wiki armor research row contains question marks
+for all damage types, so this does not establish its retail armor or enable the
+production quest encounter.
+Full Release regression: 129/129 tests pass in build/reports/npc-weapon-regression.txt.
+
+Warrior Test content activation checkpoint (2026-10-10)
+Default server configuration now enables quest85 active/completed captures and
+the three captured Tad appearances. Van's captured map146 placement is loaded
+as a supplemental quest giver; template IDs are remapped without altering the
+base population hash or its combat bindings. The host validates the merged
+population and encounter against exact navigation at startup.
+Temporary armor0 and private enemy comparison token2 are explicitly authored in
+warrior-test-development-policy.txt, not claimed as captured retail statistics.
+No enemy AI or attacks are implemented by this activation. Other profession
+quests are not enabled by this single-quest catalog.
+Release build and129/129 regression tests pass. Host PID16144 started and logged
+giver_catalog_validated maps=1 and encounter_catalog_validated encounters=1.
+Private client PID22360 reached AUTH hello then timed out before character
+selection. Screenshots returned a uniform frame; no quest UI/playthrough was
+verified. The goal remains incomplete. Do not interpret host validation as proof
+of a completed Warrior Test in the native client.
+The read-only-archive retry PID4244 also returned a uniform frame and failed to
+reach login. Input desktop was Default. Both private test clients were closed
+using verified project executable paths; host16144 remains running visibly.
+No official client was targeted. Authentication startup still needs diagnosis.
+
+Login-wait and reward publication checkpoint (2026-10-10)
+The next private test could not acquire foreground focus; the input tool refused
+to send keys. PID4648 was closed after checking the project executable path.
+No new quest UI evidence was obtained. Uniform screenshots alone do not identify
+a game-rendering failure or prove the PC is locked.
+Pending authentication previously used an absolute60-second connection deadline
+and rejected the ninth pre-login keepalive. It now uses a60-second idle deadline,
+renewed only for validated handshake progress or a complete login-wait keepalive.
+Partial/rejected frames do not renew it. Authenticated idle policy stays5minutes.
+The native test advances24hours of valid pending keepalives without wall-clock
+waiting and verifies incomplete/rejected traffic and clock regressions.
+Successful quest rewards now refresh the world's XP value and send the already
+pinned232 statistics snapshot, so XP changes no longer require reconnecting.
+This does not implement XP-driven leveling or prove a native reward UI test.
+Full Release build and129/129 tests pass; report presearing-login-xp-regression.txt.
+Updated visible host PID5048 is ready with the Warrior Test catalogs validated.
+
+Grawl activation checkpoint (2026-10-10)
+Default quest catalog now contains85 and75 active/completed stages, with
+captured Van146 and Grast160 supplemental placements. Grawl encounter actors
+26/29/30 are backed by exact captured definitions and death packets, independently
+of ordinary Grawl nearby. Health80 is local wiki evidence; armor0/private hostile
+token2 are explicitly temporary development policy. No enemy attacks/AI.
+Atomic sword/skill acceptance prepares the encounter before committing and only
+publishes after success. Active kill encounters restore by configured quest/map,
+not a hardcoded85-only branch. Quest75 turn-in rewards250XP once.
+Starter Sword now has reviewed unrestricted quest-weapon permission and exact
+captured2..3 slashing stats; unknown armor and unreviewed A488 values stay denied.
+Full native Release build and129/129 tests pass; report:
+ build/reports/presearing-grawl-regression.txt.
+Host11412 started visibly and validated two giver maps and two encounters.
+The private client again returned uniform screenshots and could not acquire
+foreground; the input tool refused ENTER without sending input. That client was
+closed after checking its full project executable path. No official client was
+targeted. Native UI acceptance/combat/turn-in is still unverified; the goal is
+not complete. Next content work remains Elementalist Test evidence, Supremacy
+encounter and Experiment waves/Aziure survival, plus enemy AI and level progression.
+
+Cross-map quest groundwork (2026-10-10)
+Supremacy37 acceptance now supports committing in Foible's Fair165 without
+spawning Wizard's Folly161 actors there. Encounter restoration on entry remains
+map-scoped. Offers require a configured encounter;37 is not enabled in default
+content yet. Captured Tower Golem appearance/placement and its exact death packet
+are preserved in actors/tower-golem.txt and tower-golem-provenance.json.
+Health/armor and patrol/AI are not established; no level-derived stats invented.
+Native encounter tests cover rejected commits, stale owner scopes, deferred
+activation and destination activation. npc_world_combat passes. No live client
+quest test performed and no official session touched.
+
+Supremacy activation checkpoint (2026-10-10)
+Default catalogs now include37 active/completed captured quest stages, Ralena165,
+Aziure161 and Tower Golem161. Acceptance grants230/220 durably in165; encounter
+activation is deferred until161. The owned golem death completes only37 and
+Aziure turn-in awards250XP once. Tests verify skill grants and rewarded state
+survive reopening the database and duplicate reward fails.
+Tower health100 and armor0 are temporary authored development policy, explicitly
+recorded in tower-development-policy.txt, not inferred retail data. Captured
+appearance/position/death are unchanged. Patrol, retaliation, lightning weakness
+and complete functionality of granted skills remain unfinished. No native UI
+playthrough verified; quest73 waves and primary Elementalist83 remain pending.
+Full Release build succeeded;129/129 native tests passed.
+Report: build/reports/presearing-air-regression.txt.
+Visible host21048 validated quests3, giver maps4 and encounters3 and opened
+portal6601/auth6112/world6113. Executable SHA256:
+59b8fb4733702763da1a6ae6a5f9042f7ba0af335b3876706a98af5d269c758d.
+This verifies catalog startup and native mechanisms, not a live UI playthrough.
+
+Experiment evidence checkpoint (2026-10-10)
+Reproducible extraction tools/quests/extract_experiment.ps1 identifies12 Ice
+Elemental Shards in map161 epoch15. First observations group4 actors each at
+instance102954/123938/142937ms (world lines2043/2112/2168). All12 have exact
+incoming241 dead-bit packets between quest73 active/completed snapshots.
+Group1 death ticks100086562..100091203, group2 100102421..100111734,
+group3 100120359..100135187. Completion snapshot100136093 follows finaldeath.
+Artifact data/gw/quests/actors/experiment-provenance.json stores rawdefinitions,
+actors, deathhex, sourceSHA256 and limits. First observations may already be
+moving actors; they are not asserted initial spawn locations. Wiki requires
+three waves, double fire damage and Aziure survival. Quest73 remains disabled
+until wave lifecycle, guardian survival and Fire Storm againstNPCs work.
+
+Fire Storm groundwork (2026-10-10)
+Native gw_fire_storm.h models fixed-location ten one-second damage pulses and
+wiki scale5/29/35 at ranks0/12/15 with adjacent166 radius. Cast lifetime and
+original coordinates remain attached to each pulse. Handles clock regression,
+delayed ticks without duplicate pulses, bounded duration and forged plans.
+First pulse at+1000ms is the current scheduler convention; exact retail first
+pulse timing still needs capture validation. elemental_damage native test passes.
+This field is not yet wired to world ticking/casting, NPC fire weakness or
+animation packets. It does not make Fire Storm playable yet. The existing
+server host is preserved; no official client touched.
+
+Fire Storm NPC world checkpoint (2026-10-10)
+Instance::fire_storm now validates caster/target lifetimes, hostile living NPC,
+known fire armor, range1248, plane and navigation LOS. World ticks apply fixed
+location pulses to nearby hostileNPCs through damage_npc_locked, preserving
+damage packets/death identity/quest completion. Missing or replaced caster
+lifetimes retire fields. Ten pulses terminate the field. Test exercises the
+captured Tower Golem, pre-pulse/no-duplicate timing and quest37 completion.
+Expected damage includes caster-level/armor scaling, not raw29 flatdamage.
+Native npc_world_combat and elemental_damage tests pass; server_core builds.
+No client casting hook/ground-effect animation yet; Fire Storm is not client
+playable. Player targets and movingNPC historical catch-up need further work.
+Running server remains previous build; no official sessions touched.
+
+Fire Storm casting integration (2026-10-10)
+Skill197 now routes through casting Runtime with native skill-table energy,
+activation/aftercast/recharge and captured target lifetime. Dedicated hook calls
+Instance::fire_storm. NPC targets may lack playerResources without rejection;
+stale target generations still cancel before effect commit. Normal existing
+cast activation/success packets remain in use; ground visual effect is not yet
+pinned. This is NPC-only damage; PvP player AoE is still missing.
+Focused skill_casting/elemental_damage/npc_world_combat tests pass. Native
+server_core builds. Running host is still previous linked binary, pending
+broader verification/deployment. Experiment waves/survival remain unenabled.
+
+Fire Storm deployment checkpoint (2026-10-10)
+Full native Release build and129/129 CTest regression pass.
+Report build/reports/presearing-fire-storm-regression.txt.
+Previous project host21048 was stopped only after PID/fullpath verification.
+Updated host22488 launched with visible console; official sessions preserved.
+Skill197 has client cast dispatch and NPC timed damage in this linked build.
+Native UI playthrough/ground visual and player targets remain unverified or
+unfinished. Quest73 wave lifecycle/guardian survival remain disabled.
+
+Experiment wave objective checkpoint (2026-10-10)
+Native gw_quest_waves.h models captured3x4 progression independent of wire IDs.
+Activation binds exact actor lifetimes; duplicate/previouswave/stalegeneration
+and wrongcycle events cannot progress it. Allfour deaths are needed before
+nextwave; allthreewaves before completion. Guardian death makes the attempt
+failed even if its final reward is pending. New attempts use new runtime state.
+quest_state test exercises captured17..20/24..27/31..34 groups, recycled actors,
+duplicates, premature advancement and guardian death. Native test passes.
+Not integrated with world spawn/death/reward dispatch yet; quest73 stays disabled.
+Guardian combat health/attacks, double fire weakness and NPCAI remain missing.
+
+Wave world integration checkpoint (2026-10-10)
+Instance now owns wave objectives with validated guardian/owner lifetimes.
+Wave binding validates each living hostileNPC lifetime. record_npc_death_locked
+feeds exact death scopes to wave objectives; pending completion includes only
+completed finalwaves and disappears if guardian subsequentlydies. Existing
+clear_kill_objective accepts exactcycle wave cleanup. Player disconnect destroys
+its owned wave state. Synthetic NPCcombat test verifies firstwave readiness,
+secondwave completion, pending reward invalidation and stalecleanup rejection.
+npc_world_combat passes. This does not yet spawn three captured groups, enable
+quest73, or implement guardian damage/enemyAI. NativeUI remains unverified.
+
+Wave content/lifecycle checkpoint (2026-10-10)
+Prepared actors/experiment-wave-1.txt through experiment-wave-3.txt from the
+provenance actor groups. Preserve captured model129706, appearance scale70,
+flags0, Elementalist primary6, level1, names, planes and firstobservedpositions.
+Template IDs20300..20311 are private IDs and must be remapped at runtime.
+Allthree files validate exact-plane navigation and native spawn packets for161.
+Positions remain first observations, not proven original spawns. These files
+are not activated yet; health/armor/guardian behavior and spawning remain work.
+Fixed samequest kill/wave conflict: both begin_kill_objective and ordinary
+encounter spawn reject an existing wave objective before durable callback.
+Both kinds now share64-objective limit. npc_world_combat regression passes.
+Running host remains deployed FireStorm build; new wave changes not linked yet.
+
+Atomic wave spawning checkpoint (2026-10-10)
+spawn_quest_wave reuses validated native encounter staging and remapping while
+binding the staged actor lifetimes to an existing ready wave objective. It does
+not create an ordinary kill objective. Readiness/state/spawns are copied before
+the durable callback; callback failure exposes nothing and leaves retryable state.
+Active/final waves reject extra spawning; nextwave allocates fresh IDs/lifetimes.
+Synthetic two-wave combat test covers failed commit, readiness, all-death gating,
+final completion and ownedactor cleanup. npc_world_combat passes.
+Not yet configured with captured3x4 content or quest73 acceptance. Guardian
+combat metadata/AI and NPC fire weakness remain missing. Existing host preserved.
+
+Guardian validation checkpoint (2026-10-10)
+Atomic wave spawn revalidates original guardian generation, living health and
+same encounter map before staging/commit. Foreign-map wave test proves rejection
+before callback/publication. Pending wave completion also revalidates living
+guardian lifetime, so missing/replaced actors cannot expose reward eligibility.
+npc_world_combat passes. Quest73 content remains disabled pending its guardian
+profile/behavior and acceptance/configuration. Running host is unchanged.
+
+Experiment shard combat content (2026-10-10)
+Three wave combat catalogs now bind all12 captured actors to wiki health80.
+Population hashes and separate capture/wiki/authored evidence aliases are pinned.
+Physical/earth/fire/cold armor0 and token2 remain explicit temporarydevelopment
+policy. Doublefire vulnerability is documented but not implemented; armor is
+not modified tofake it. Dedicated native test loads/binds eachwave, checks4
+shards with exactname/model and health80, and validates native Instance content.
+Global npc_combat_catalog_test population CLI is specialized to production
+relation-only coverage and rejected these combat fixtures; use the dedicated
+npc_world_combat test for quest catalogs. Quest73 remains disabled.
+
+Shard fire vulnerability checkpoint (2026-10-10)
+NPC combat catalog revision4 appends fire_multiplier and its evidence alias to
+revision3 rows. Accepted multiplier1..4;1 has no evidence field, nondefault must
+reference a declared source. Existing revisions retain multiplier1. LiveActor
+applies multiplier to fire damage before unchanged armor scaling; other kinds
+are untouched. Shard catalogs use2 and localExperiment wiki provenance.
+Dedicated content test confirms exact2x fire/earth damage at equalarmor for all
+threewave catalogs. Native npc_world_combat passes. Fullshared-header regression
+and server deployment pending; Experiment activation/guardianAI unfinished.
+
+Vulnerability compatibility checkpoint (2026-10-10)
+Catalog tests cover multiplier0/5 rejection, absent/unknown evidence rejection,
+normal multiplier1 with no alias, existingarmor preservation, and fire-only
+application versus cold at equalarmor. Updated obsolete unsupportedrevision
+fixture4 to5 because4 is now implemented. npc_combat_catalog,
+npc_combat_population and npc_world_combat all pass. This validates production
+catalog backwardcompatibility but does not replace the pending full regression
+or enable quest73. Running server and official sessions unchanged.
+
+Captured-wave combat verification (2026-10-10)
+Native npc_world_combat test now loads all3 captured appearance/combat catalogs,
+spawns eachgroup atomically under quest73, moves caster near actualobserved
+positions and castsFireStorm throughworldeffects. Asserts readiness afterfirst
+andsecondwave, completion only afterthird, exactly12 attributed sharddeaths.
+Passes. This uses syntheticguardian/map161 withoutnavigation to isolatewave
+andspell mechanics; does not prove AziureHP/AI, questacceptance or liveUI.
+No productioncontent activated or hostrestarted. Remainingacceptance/guardian
+andpersistentfailedattempt handling stillrequired before enablingquest73.
+
+Experiment durable retry verification (2026-10-10)
+Accounts test now explicitly abandons quest73 attempt1, accepts attempt2,
+rejects oldrevision completion and oldcycle reward, and checks cycle2 survives
+opening database again. This is playerabandonment semantics, not an invented
+retail automaticfailure state. Existing profile has active/completed/rewarded/
+abandoned only; guardianfailure still needs controller/reward gating.
+Capture epoch15 identifies Aziure actor13 level5 at(-7774,1246). No verified
+maximumhealth response established. Current capture is modern/opcodealignment
+is separate from2022; do not assume158 means capacity in this archive.
+Quest73 remains disabled. No official client touched.
+
+Modern health-capacity capture alignment (2026-10-10)
+Extractor now preserves all12 shard capacity packets: modern159/kind42,
+16-byte decodedrecord, actor at+8/capacity at+12. Each capacity80 independently
+matches wiki. Requires all12 exactactorIDs within questactive/completed window;
+changedcapacity aborts extraction. Artifact experiment-provenance.json includes
+line/tick/hex/sourcehash. This is capture decoding, not opcode159 replay to2022.
+Aziure13 has no such response established in this interval. Still no guardianHP
+orAI inferred; quest73 remains disabled. No official session touched.
+
+Guardian damage primitive (2026-10-10)
+Aziure13 in E/W mapepoch26 window97678343..97924421 has no verified modern159
+kind42 healthcapacity record. No level-derivedHP invented.
+LiveActor now separates playerdamage from trustedneutralguardian damage. Neutral
+NPC stays immune to playerdamage; reviewed damageable neutralguardian accepts
+trusted combat application. Protected allies remain rejected. Nativecatalogtest
+checks both paths. World sourcevalidation/AI/presentation not wired yet.
+
+World guardian attack primitive (2026-10-10)
+Trusted damage_quest_guardian validates living hostile source and target actor
+lifetimes, source ownership by activewave quest, exactguardian binding, native
+sourcelevel, range and plane. Neutral guardian takesdamage throughdistinctAI
+path; publicplayerdamage remains rejected. Damage packets broadcast; guardian
+kill notifies waveobjectives and removes pendingcompletion. Nativecombat test
+checks staleenemy/playerdamage rejection and enemykill failure. Passes.
+Automatic attack timing, chase/pathLOS and actualAziureprofile remainunfinished;
+thisAPI is not wired to clientrequests. Quest73 is stilldisabled.
+
+Guardian attack visibility (2026-10-10)
+Trusted guardian attack now locates source onits exactplane and requires a
+layeredmesh trace ending on guardianplane whennavigation is installed. No
+substitute floor or attack through disconnected banks. NPCcombat tests now
+reject attack beyondrange49 fordistance50 and reject invented casterlevel20
+forcapturedlevel1 source; validlevel/range attack stillfailsguardian quest.
+npc_world_combat passes. NavigationLOS branch is not yet exercised by a
+specific guardianfixture. AutomaticNPC movement/attacktiming remain unfinished.
+
+Guardian navigation fixture verification (2026-10-10)
+Dedicated native fixture now tests two disconnected same-plane surfaces:
+quest-owned enemy cannot damage the guardian across the gap, while an enemy
+on the guardian surface can attack and fail the wave objective. Health remains
+unchanged on rejection. npc_world_combat passes. This resolves the previous
+unexercised navigation-LOS branch; it does not implement automatic NPC AI.
+
+Pre-Searing scope refresh (2026-10-10)
+Rebuilt and ran native presearing_audit: 12/44 effect bindings. Scope now reflects
+three enabled quests, atomic starter sword acceptance and installed portal pairs.
+Skills/items/doors/quests remain the delivery scope; collector evidence is not
+an executable item catalog and test coverage is not live playability.
+
+Captured wave controller (2026-10-10)
+Instance.advance_quest_waves selects the next captured group from authoritative
+wave progress. Requires the full configured wave count and group sizes; rejects
+wrong owner/cycle, fighting, failed and completed objectives. Publication checks
+selected wave index again under the instance lock so concurrent callers cannot
+publish an earlier group after progress advances. Existing spawn validation and
+transaction-before-publication remain in force.
+Native test traverses all three actual captured shard groups through this API,
+including failed transaction retry, old-cycle denial, duplicate poll denial,
+partial-catalog rejection and no restart after completion. npc_world_combat passes.
+This is the controller primitive, not yet the auth-loop/content integration.
+Experiment remains disabled pending guardian content and NPC attack behavior.
+
+Experiment wave content loader (2026-10-10)
+Added load_quest_waves and actual experiment-waves.txt with hashes computed from
+the three captured appearance files. Loader reuses combat/evidence validation;
+requires contiguous indices, same map/group size and bounded quest/wave count.
+Tests reject duplicate/skipped indices, wrong map/hash, unsupported header and
+empty manifest. Actual captured manifest loads and its groups are used in the
+three-wave Fire Storm controller test. npc_world_combat passes.
+No host configuration enabled and no official sessions touched. Guardian profile,
+acceptance and auth-loop integration remain; quest73 still disabled.
+
+Atomic wave acceptance verification (2026-10-10)
+Added accept_quest_waves: stages initial objective and first group in the same
+world publication transaction. Failed durable callback leaves neither state nor
+actors; duplicate acceptance never calls storage. Validates all future groups'
+map/hostility/health/native population and installed navigation before saving.
+Test actual three-group captured content now starts through atomic acceptance,
+then advances remaining waves and completes all12 kills. Rejects malformed
+third-group map and later-group placement outside navigation without commit.
+npc_world_combat passes after rebuilding; production server_core compiled.
+Host NPC/dialog integration and Aziure combat content are still pending; quest73
+remains disabled. Running host and official clients were not changed.
+
+Host wave content plumbing (2026-10-10)
+ServerSettings now accepts optional quest_waves path/none. NpcCatalog retains
+reviewed wave encounters alongside kill encounters. Host loads the separate
+manifest, requires configured quest content, rejects conflicting kill/wave
+quest IDs and validates every group using its installed native navigation.
+Native network_lifecycle tests verify path and explicit disable; pass. Rebuilt
+production server_core and npc_world_combat; captured wave test passes.
+Default config remains unchanged: no wave quest enabled. Acceptance/dialog
+routing, guardian content and enemy behavior remain before quest73 is playable.
+No running host or official client was terminated or changed.
+
+Experiment dialogue/runtime routing (2026-10-10)
+Host dialogue filters quest73 unless configured wave encounter matches map and
+selected NPC has a living damageable neutral combat lifetime. Acceptance calls
+atomic accept_quest_waves with the durable account acceptance callback. Polling
+advances captured groups only for active matching-cycle durable quest records.
+Completed wave objectives remain installed until reward to preserve survival
+checks; reward rechecks exact completion/cycle, then retires owned creatures.
+Added guardian eligibility checks for wrong map/stale generation/death; native
+npc_world_combat passes. Rebuilt production server_core successfully.
+This routing is not live verified or enabled. Current giver supplement forbids
+combat definitions, so Aziure still needs a reviewed separate guardian binding.
+Wave active/completed reconnect restoration and actual enemy AI remain missing;
+do not enable quest73 or claim persistent full playability yet.
+
+Wave reconnect restoration (2026-10-10)
+World entry now resolves the quest's named guardian uniquely against the installed
+population and validates its current living neutral combat lifetime. Active
+saved quests restart initial wave through atomic publication. Completed saved
+quests restore completed objective without enemies, preserving reward gating.
+Added trusted restore_completed_wave_objective; not exposed to client completion
+requests. Test disconnect/rejoin rejects old owner/guardian scopes, restores
+pending reward without enemies, denies wave advance after completion, clears
+on reward acknowledgment and restarts a subsequent active attempt. Passes.
+Production server_core compiled; npc_world_combat passed. Partial kills remain
+nondurable. Real Aziure combat binding/enemy AI and live verification are missing;
+quest73 remains disabled. No client or running host process changed.
+
+Aziure guardian binding (2026-10-10)
+Optional quest_giver_combat now binds exact supplemental population hash before
+merge. Merge accepts named nonservice living neutral guardians and remaps combat
+actor/definition identities together; hostile/mismatched supplements rejected.
+Created aziure-development-combat and policy using captured model116225/level5/
+flags524/placement(-7774,1246), with explicitly authored HP100/armor0. These are
+not inferred retail stats. Existing appearance/name/position remain unchanged.
+Test actual giver+guardian profile loads, merges and validates on map161 mesh;
+synthetic merge preserves base combat state and rejects hostile supplement.
+npc_world_combat and network_lifecycle (path/none) pass; server_core compiled.
+Default config unchanged. Enemy AI/attack behavior and live quest gameplay remain;
+Experiment still disabled. No running host or client process changed.
+
+Experiment movement evidence (2026-10-10)
+Extractor now preserves every observed shard position with source line/instance
+clock, and per-segment elapsed time, plane and chord displacement. Existing12
+capacity/death identity checks still pass. All12 actors have51..62 snapshots.
+Wave1 observed chords1102.59/1303.85/1219.13/2187.52 world units; wave2 four
+actors have zero displacement; wave3 chords998.28/707.56/903.83/1138.69.
+Do not treat chord sum as path length or average chord speed as exact gait.
+World samples lack alive/dead flags; retained observations may include corpses.
+No proven clock alignment to packet death ticks, so no fabricated cutoff used.
+Local Ice_Elemental_Shard wiki explicitly says shards lack skills. Preserved
+wiki hash and behavior source; ordinary Ice Elemental skill list is not theirs.
+This rules out adding guessed Ice Spear casting. Enemy attack target/cadence
+and NPC navigation integration remain to implement. No client touched.
+
+Quest NPC movement motor (2026-10-10)
+Added trusted chase_quest_guardian with exact source/owner/wave/guardian lifetime
+checks, explicit bounded speed and layered navigation route. Tick integrates
+elapsed distance through segments, changes planes at route endpoints, publishes
+native2022 speed/destination/stop and updates NPC reconnect/combat coordinates.
+Owned retirement erases motion; invalid/dead/failed-wave motion stops on tick.
+Tests reject chase across disconnected same-plane surfaces and allow nearby
+connected route. Synthetic50-unit chase at100 units/sec is outside20-unit hit
+range after250ms and within1-unit range after500ms; no instant teleport. Stale
+and duplicate chase intents rejected. npc_world_combat passes; server_core builds.
+Movement policy is not automatic AI yet. No retail speed or attack cadence claimed.
+Enemy attack scheduling/animation and live quest validation remain;73 disabled.
+No running server or client process changed.
+
+Experiment development guardian AI (2026-10-10)
+Added drive_quest_guardians server-owned scheduler: validates owner/cycle/wave,
+selects owned living NPCs, chases on navigation, stops within range, waits first
+cadence and applies at most one ordinary hit per poll. Delayed polls do not burst.
+Trusted neutral guardian weapon path uses physical armor and current source
+Weakness/Blind; no fabricated skill attribution. Uses pinned ordinary attack
+start/finish/hit packets. Host polls quest73 with explicitly authored policy
+(speed220/range128/base5/2000ms), documented in separate development policy.
+Native fixture tests unlabeled policy/stale cycle rejection, timed chase,
+first-hit delay, fixed physical hit, no delayed burst, guardian death->failure
+and no further attacks after failure. npc_world_combat passes; server_core builds.
+Attack start/finish are presently immediate at impact, not separate windup.
+Retail damage/cadence/aggro/retargeting and live visuals remain unverified.
+Default quest73 still disabled pending combined/live validation. No processes
+or official sessions changed.
+
+Combined Experiment verification and activation preparation (2026-10-10)
+Captured wave combat test now uses actual Aziure appearance/combat binding and
+map161 navigation, rather than synthetic guardian without geometry. Three-wave
+Fire Storm/restore flow passes. Additional actual-population AI test lets first
+wave navigate/chase/attack until Aziure dies, asserts failed quest/no reward.
+Accounts test now persists cycle2 completion, closes/reopens before reward,
+grants250XP once, rejects duplicate, reopens rewarded state and checks total850.
+quest_accounts and npc_world_combat pass. Promoted exactly two captured quest73
+stage rows to default FWQC2 and configured wave/giver combat paths. This enables
+development quest content, not a claim of retail AI or live verified gameplay.
+Stopped only path-verified private host PID22488 for linking new executable.
+Full rebuild/regression and host restart are pending. Official clients untouched.
+
+Experiment development host deployment (2026-10-10)
+Full Release rebuild succeeded and all129 tests passed in24.45 seconds. Report:
+build/reports/presearing-experiment-regression.txt. Started visible normal CMD
+console PID18644, private server_host PID19508 with exact executable path
+C:/Users/CmonMeow/Desktop/gw-server/bin/server_host.exe. Runtime SHA256:
+3fe15ca845d1fcf9d63dcfa7f4af85d14957715fb8e48453094a71ee33ed8a6d.
+Startup confirms4 quest entries,3 kill encounters,1 wave encounter,4 giver maps,
+46 portal routes and397 navigation meshes; portal6601/auth6112/world6113 ready.
+Quest73 is now enabled for development alongside85/75/37. Captured identity/stages
+are preserved; guardian HP/armor and AI damage/cadence remain explicit authored
+policies. No native-client quest playthrough verified yet. Only12/44 pre skills
+bound; other professions/items/quests remain. Goal is active, not complete.
+
+Live client attempt and failure diagnostics (2026-10-10)
+Launched project private client PID19196 (exact bin/client/Gw.exe). Server accepted
+auth transport through hello. Desktop screenshot rejected uniform pixels; control
+refused foreground input. No login/quest buttons sent, no live playthrough claimed.
+Official clients untouched. GUI limitation does not stop remaining offline work.
+Added once-per-session quest/cycle guardian-failure chat feedback and structured
+server event (guardian_lost, fresh_instance_or_abandon). No invented native failed
+quest flag or automatic abandonment. Instances release when final lease leaves;
+a fresh instance is required to restore guardian, not arbitrary reentry into an
+occupied failed instance. Diagnostic change compiled into server_core, not yet
+linked/deployed into running host19508. Existing enabled quest build stays live.
+
+Glyph of Lesser Energy (200): casting runtime now supports 15-second glyph, two spell-start charges, rank-scaled 10..18 energy reduction, zero-cost floor, and cancellation consuming charges. Native effect lifecycle and pinned caster animation used. skill_casting_test verifies cost, cancellation, exhaustion and expiry. Aura of Restoration remains pending. This addition is source/test verified; running host has not yet been replaced.
+Glyph build linked and private host restarted after exact PID/path verification. Official clients untouched. Live skill/UI behavior still needs verification.
+
+Aura of Restoration180: 60-second authoritative enchantment, successful spell completion heals using original energy cost (200+20*EnergyStorage percent) and returns one energy at rank8+. Initial cast does not self-trigger; renewal uses existing enchantment once. Cancellation/removal/expiry tested. Original native65/67 effect lifecycle; no invented caster-body particle for catalog sentinel2077. Wiki SHA256 6834b235ccfdb7157f7bf952f4c6f9fb55b071e500d16db43f297bea19d3ebd7; Spell.html classifies Aura under successful casts and lists seven spell types. Glyph and Aura now share that classification (including ward/well). Coverage audit14/44 is effect binding only, not client proof.
+Aura/Glyph shared spell classification compiled into server_host and deployed after exact private host PID/path verification; focused casting, quest persistence and NPC world combat regression checks passed. No official client process changed. Native client Aura visuals and quest playthrough remain unverified.
+
+Healing Signet1: native two-second activation, zero energy, four-second recharge, self-only Tactics healing82..172 (154 at12), no Divine Favor/Aura trigger. Server-scoped casting hook applies -40 armor until completion/cancellation/death; deadline ends penalty even if update loop is delayed. Modifier resides beside condition armor resolution but is not a condition and cannot be cleansed; armor-ignoring damage unchanged. Unit tests cover timing, zero-energy cast, selected foe, cancellation, death, missing hook; world weapon regression confirms actual melee damage increases during penalty and restores afterwards, stale generation rejected. Healing_Signet wiki SHA2567c5e681038433c1354158808b5d6280a8cd285fecd1a2bc9edf542b63510d7d9. Live UI/signature animation not yet verified; native catalog caster-body resource sentinel retained.
+
+Lightning Javelin230 groundwork: reviewed pinned-row damage15/43/50 at Air Magic0/12/15 and25% penetration; separate plan retains attack-only interruption requirement. Finite bounded segment-hit helper takes explicit projectile radius and returns path fraction for ordered hit processing; tests cover inside/outside corridor, endpoints, beyond segment, reversed diagonal, degenerate segment and invalid radius. lightning regression passes. NOT registered as supported: existing projectile queue only resolves endpoint player targets, so swept intermediate NPC/player hits, generation-aware attack interruption and native projectile visuals must be implemented before eligibility is enabled. Coverage remains15/44. No host restart for this non-runtime addition.
+
+Javelin attack interruption prerequisite: exact-scope world interrupt_attack rejects idle/dead/recycled actors, cancels ordinary attack, clears attack-skill windup, advances scoped epoch. Casting runtime snapshots that epoch for melee skills and clears pending activation before effect if interrupted; spell casts do not consult attack epoch. Tests check ordinary windup causes no delayed damage, repeated idle interrupt no epoch advance, exact deadline and stale generation rejection, plus pending attack skill cancellation. Lightning Javelin remains disabled until swept projectile/NPC path hits and visuals are complete.
+
+NPC lightning armor prerequisite: combat catalog revision5 appends optional lightning armor and evidence reference after revision4 vulnerability fields. Versions1..4 preserved. LiveActor copies reviewed lightning rating, applies current Cracked Armor on damage-time copy, and rejects lightning damage when rating unknown. Tests verify25% penetration, condition-adjusted damage without base corruption, absence rejection, evidence and range validation; four focused regression tests passed. No production NPC ratings guessed or changed. Lightning Javelin still not enabled; swept world integration remains.
+
+Quest prerequisite correction: NPC menu previously recognized only rewarded Warrior Test85 for primary Warriors, permanently blocking Elementalist Experiment for other primary professions. It now checks own profession test IDs: Warrior85/Ranger86/Monk84/Necromancer82/Mesmer81/Elementalist83. Cross-reference Desktop/gw/game info/Quest.cs SHA2565678cc707efe77f4ecab56ee75a923d5c393dc4bf73075901dfe1d196369bcae. Tests for all six reject completed-but-unrewarded and abandoned tests; unrelated Warrior Test cannot satisfy Elementalist. Quest_state and quest_accounts tests passed. Identity lookup does not enable uncaptured profession quests/dialogues. Elementalist83 collection objective remains unfinished.
+
+Elementalist Test83 recovered evidence: reproducible tools/quests/extract_elementalist_test.ps1 preserves9 incoming quest packets and5 Shimmering Scale ground observations from archived E/W capture in data/gw/quests/elementalist-test-evidence.json, with original source hashes/line references/raw packet bytes and bounded UTF16 fields. Item model2566,file23704,type21,zero base value,quantity1,interaction537399809,encoded name9558/52505/35705/32767 decoded Shimmering Scale. Observations are not distinct-drop probabilities; quest removal not independent reward proof. Collection objective/atomic consumption and2022 resource review remain before enabling83.
+
+Shimmering Scale turn-in planner: inventory::presearing::consume_shimmering_scale validates character inventory, matches captured model/file/type/encoded name, only consumes a carried normal-bag item, removes one quantity from a copied profile, preserves live input until commit. Missing/lookalike items return no plan. Tests cover absence, original immutability, wrong model/name and changing native item ID. Reward storage integration and actual drops/objective completion remain pending;83 still disabled.
+
+Elementalist Test83 reward storage: trusted request consume_shimmering_scale requires83, revision-fenced carried inventory. In one SQLite transaction consume one matching scale, grant500XP/controller-specified learned skills, mark completed->rewarded and advance inventory/quest/skill revisions. Native controller prepares detach/delete or quantity delta before commit, publishes only after successful storage result; XP-only publication rejects consumption requests. quest_accounts tests prove missing/stale inventory denial, unrelated quest rejection, timeout rollback of all four states, single successful reward, duplicate denial and reopened persistence. Production83 remains disabled until collection/drop/content/NPC integration. Running host not restarted for this staged addition.
+
+Scale turn-in client identity correction: rewardCharacterQuest now requires the owned session identity registry for consumption, rejects unbound item identities before storage, translates logical IDs via character-domain wire_item before detach/delete/quantity publication. Tested with durable item4096 mapped to a different wire ID and commit-denial empty packet batch. Network lifecycle and quest accounts regressions pass. Typed SQLite reward stays atomic; NPC integration must pass inventory_ids and install updated session view after commit.83 remains disabled; running host unchanged.
+
+2026-10-10: Elementalist Test (83) staged integration
+- Wiki-backed policy: primary Elementalist, Howland in Lakeside County (146),
+  500 XP and Flare (194)/Aura of Restoration (180) on reward.
+- Reward session now prepares mapped inventory removal and commits its local
+  projection only after atomic database reward succeeds. A carried Shimmering
+  Scale is required; missing item or failed transaction grants nothing.
+- Production quest catalog still excludes 83. This is not a playable quest yet.
+  Remaining: reviewed Howland dialogue/content, owner-scoped River Skale loot,
+  collection completion transition, and War Preparations prerequisite.
+- Validation: quest_state test passes; server_core Release build succeeds.
+
+Elementalist Test collection integration (2026-10-10)
+- carried_shimmering_scale identifies the objective item without copying or
+  consuming inventory. Equipment slots do not count as carried quest trophies.
+- completeElementalistTest reads the authoritative inventory and uses the
+  existing active->completed revision/cycle fence. Missing content/items,
+  stale attempts, and failed saves publish no quest update. Completion retains
+  the scale; the atomic reward transaction remains the final possession check.
+- Loaded session polls this objective only when quest 83 has catalog content,
+  is active, and its current inventory contains the scale. Existing completed
+  state survives reconnect and is not repeatedly published.
+- network_lifecycle and quest_accounts passed; native server core compiled.
+- Still disabled in production. Remaining: reviewed Howland dialogue/content,
+  owned River Skale loot, War Preparations prerequisite, and live 2022 testing.
+
+Elementalist Test native content recovery (2026-10-10)
+- Extraction now retains exact marker bits/plane/location from captured QuestAdd,
+  whose 80-byte memory layout matches bundled GWCA StoC.h. Produces inactive
+  candidates/quest-83.fwqc with captured active text, no guessed completed row.
+- Joins Howland's named actor observation to NPC table1475 in the same map146,
+  epoch3: model15490, model file116715, Elementalist2, position6142/4014.
+  candidates/howland.txt is separate from production giver/combat hashes.
+- Evidence JSON records both source line references and source hashes; actor
+  name code equals the quest's encoded NPC name. Coordinates are observations.
+- quest_state validates both candidates, exact marker/name codes, native quest
+  serialization and NPC appearance join. Modern resource compatibility still
+  needs live 2022 verification; production83 remains disabled.
+
+NPC death loot groundwork (2026-10-10)
+- Death events retain corpse position/plane. Trusted loot_npc_death requires
+  exact killer and NPC lifetimes, pending lethal event, dead authoritative NPC,
+  valid metadata, bounded reservation and available disjoint world identities.
+- Successful creation publishes captured item metadata then ground actor and
+  allocation; consumes the pending death once. Failed staging retains the event.
+  Loot position comes from the NPC, never the player's current location.
+- shimmering_scale_definition reproduces captured model2566/file23704/type21,
+  quantity1, interaction537399809, encoded name and modifier3221225472.
+  It does not copy captured item489 or invent a profession restriction.
+- npc_world_combat validates living/stale-killer rejection, invalid metadata,
+  corpse placement, allocation and single drop. Production has no caller yet.
+- Local Shimmering_Scale wiki SHA256
+  d1db655751ce5dae4efb8ffb13825eee8006331ad3e4f25fa8b7af4661ac7925
+  identifies only the three River Skale Tads already in the river as sources.
+  The capture contains four Tad actors elsewhere/nearby as well; model1434 alone
+  must not authorize drops. Exact encounter assignment remains required.
+
+Quest-attempt loot authorization (2026-10-10)
+- begin_quest_loot stages exact living hostile NPC scopes for owner/quest/cycle
+  and runs the durable acceptance callback only after all validation succeeds.
+  Failed acceptance installs no assignment; existing attempts cannot overwrite.
+- pending_quest_loot filters by assigned lifetime and arming time without
+  consuming retry events. loot_npc_death accepts explicit quest/cycle and
+  validates the assignment before creating floor loot. clear_quest_loot is
+  fenced by exact owner scope and cycle.
+- npc_world_combat verifies stale-target callback rejection, failed acceptance,
+  duplicate binding, wrong quest/cycle, failure retry preservation, allocation,
+  corpse location and cleanup fences. Release server_core also builds.
+- Not connected to default content yet: captured observations contain four Tad
+  IDs and no explicit death/source-item link. Do not treat proximity, model-only
+  matching, or visibility loss as proof of the three quest loot actors.
+
+Quest loot retirement integration (2026-10-10)
+- Successful abandon returns its committed attempt cycle. Native session now
+  clears kill/wave objectives and loot assignment using that exact cycle,
+  replacing prior unrestricted kill-objective cleanup.
+- Successful reward clears only its matching loot assignment. Failed durable
+  changes do not retire runtime objectives or loot.
+- network_lifecycle asserts the persisted abandon cycle; Release core builds.
+  Production83 remains disabled pending exact River Skale assignment and live
+  content verification. No official client or capture session was touched.
+
+Elementalist Test actor lifetime audit (2026-10-10)
+- Reproducible extractor now exports elementalist-test-actor-timeline.json from
+  complete incoming AgentAdd/AgentState/AgentRemove memory records and retains
+  original packet bytes, line indices and tick timestamps.
+- Four model1434 actors37/38/39/40 spawn at96253109. Explicit dead-bit16 events
+  occur for37 at96276093,40 at96284937,39 at96295406,38 at96298968.
+- Observed scale IDs489/493/497 are ground actors48/50/52. Their first AgentAdd
+  ticks96296015/96302453/96307218. Two later reentries reuse the same item IDs,
+  so five presentations must not be counted as five distinct drops.
+- Actors37/40/39/38 are later reused by other NPC model words within the same
+  map window. Bare captured agent IDs are unsuitable as stable content keys.
+- Item GeneralInfo opcode353 is incomplete in this archive (header only); it
+  cannot supply a corpse-to-item link. World snapshots supply scale metadata.
+  Therefore there is no defensible exact three-source assignment from current
+  evidence alone; avoid granting drops to all four by matching model1434.
+
+Atomic collection encounter activation (2026-10-10)
+- spawn_loot_encounter uses the existing validated encounter staging/remapping
+  and acceptance transaction boundary. It installs a LootAssignment rather
+  than a KillObjective, so enemy deaths cannot mark collection complete.
+- Failed durable acceptance exposes no enemies/binding. Successful activation
+  binds remapped exact NPC lifetimes and arming time before broadcasting actors.
+- clear_quest_loot retires only controller-owned encounter NPCs for that owner
+  and quest; natural/base NPCs assigned by begin_quest_loot are not removed.
+- npc_world_combat proves failed acceptance isolation, successful spawn/death/
+  floor-item path, possession-only completion semantics and actor retirement.
+- Default quest configuration remains unchanged. Content manifest/controller
+  integration and the exact three-source population remain outstanding.
+
+Collection manifest/controller integration (2026-10-10)
+- Version2 scale83 rows load into a distinct loot_encounters catalog; hashes,
+  explicit hostile combat metadata and navigation validate at startup.
+- Menu hides acceptance without configured matching-map collection; acceptance
+  activates its population atomically. Active entry restores the assignment.
+- Objective polling creates captured scales only for pending assigned deaths
+  under the active quest cycle, then possession completion/reward handling applies.
+- Existing version1 kill manifests/default configuration are unchanged. No
+  unproven three-source population is installed; quest83 remains disabled.
+- npc_world_combat covers loader partitioning, duplicate/version/unknown-kind
+  rejection and failure preserving existing output. Release core compiled.
+
+Collection reconnect recovery (2026-10-10)
+- Shared pre-Searing collection policy restores a scale encounter for active or
+  completed attempt only when its turn-in item is not carried. Carrying the item
+  suppresses unnecessary encounter restoration; rewarded/abandoned attempts do
+  not reactivate. No quest cycle or durable completion state is rewritten.
+- Pending assigned deaths can produce scales for either active or completed
+  attempt, so losing an item after completion does not block recollection.
+  Atomic reward still checks current possession and prevents duplicate rewards.
+- This is private-server recovery policy, not a claimed retail packet mapping.
+  Quest accounts tests cover lifecycle stages with/without a carried trophy.
+
+Combined persistent collection integration test (2026-10-10)
+- network_lifecycle creates a dedicated character, loads captured quest83
+  native content, atomically accepts with synthetic reviewed encounter, kills
+  the assigned actor and creates the captured scale floor definition.
+- Floor presence alone fails completion. Actual ground-credit planner maps
+  floor metadata into session-owned inventory and saves its durable projection.
+- Completion survives a separate SQLite connection reopen. Atomic reward
+  consumes the scale, awards500XP and Flare/Aura, denies a repeated reward,
+  and reopened persistence retains rewarded state/learned skills/item absence.
+- Coverage excludes navigation/range pickup arbitration and live 2022 UI;
+  synthetic encounter selection is not an installed or inferred retail population.
+- Build/network_lifecycle test passed. Production83 remains disabled.
+
+Development Elementalist collection content (2026-10-10)
+- data/gw/quests/development-elementalist contains an isolated version2 scale83
+  encounter, three Tads, explicit development policy and combat provenance.
+- Captured Tad appearance/table1434 and wiki health35 are retained. Placements
+  deliberately use scale-floor observation anchors; they are AUTHORED encounter
+  locations, not proven spawn points or corpse/item associations. Armor0,
+  hostility token2 and one scale/assigned kill are explicitly development policy.
+- All three actors pass map146 navigation placement and the collection manifest
+  loader in npc_world_combat. Population SHA256
+  aa5207c1a1cba7317cd71a5f641aef3ea6d6cef182199ad274f09c5eea1f2e23.
+- This provides an honest temporary population for full-flow development tests;
+  default configuration remains unchanged pending native2022 content testing.
+- Warrior reward audit: quest85 wiki500XP/Frenzy346/Healing Signet1 matches rule.
+  Healing Signet is supported; Frenzy346 still unsupported by casting runtime,
+  so learning the reward does not establish that the Warrior flow is playable.
+
+Frenzy mechanics groundwork (2026-10-10)
+- Native record346 verified as stance, 5 energy, 4-second recharge; wiki duration
+  is8 seconds. Attack duration reduction is33% (factor0.67), not division by1.33.
+- gw_frenzy.h validates timing before arithmetic, preserves range, rounds at the
+  millisecond boundary and prevents a zero repeat interval. Strike multiplier
+  is2; negative/nonfinite/overflowing inputs are rejected.
+- weapon_intent regression checks activation/expiry boundaries, scoped registry,
+  unchanged inactive timing, malformed timing and damage bounds.
+- Five focused Release tests pass: weapon_intent, quest_state, quest_accounts,
+  npc_world_combat and network_lifecycle.
+- Frenzy remains disabled in casting runtime. Ongoing attack retiming, all incoming
+  strike paths and native effect presentation still need integration. This is
+  tested groundwork, not a claim of playable Frenzy or a deployed server build.
+
+Frenzy ordinary-attack integration (2026-10-10)
+- Weapon Intent can retime an active windup/repeat while preserving the remaining
+  phase fraction. Unchanged timings do not accumulate rounding drift. Overdue
+  ticks release once and apply changed timing to the next cycle; invalid timing,
+  clock regression and deadline overflow are guarded.
+- World ordinary NPC/player attacks now derive timing from the exact player
+  effect registry at start and on each simulation tick. Status expiry/removal
+  restores the baseline sword/axe/wand cadence. Missing equipment cancels safely.
+- Native world regression applies346 midway through sword windup, verifies the
+  accelerated hit, removes the stance and verifies delayed baseline repetition.
+  World checks respect the existing100ms simulation cadence; submillisecond
+  boundary checks belong to the scheduler test.
+- weapon_intent and npc_world_combat pass. Runtime casting remains disabled for
+ 346 pending incoming strike multiplier coverage and native stance presentation.
+  No official client/session was touched; no claim of deployed playable Frenzy.
+
+Frenzy weapon damage integration (2026-10-10)
+- Ordinary player-target hits (melee and wand projectiles) and melee attack skills
+  now apply active346 damage amplification before subtractive physical reduction.
+  Damage-related adrenaline accounting uses the amplified amount. Registry scope
+  and impact time select the active stance; projectile launch does not snapshot it.
+- world_weapon_attacks checks baseline20 damage minus3 absorption=17 versus
+  active40 minus3=37, attack-skill bonus amplification, removal restoring baseline,
+  magical wand hits ignoring physical absorption, and expiry during projectile
+  flight restoring baseline damage. Explicit100-unit/sec test flight takes1s.
+- Release world_weapon_attacks, world_adrenaline and weapon_intent pass; server_core
+  rebuilt successfully. No host binary was deployed or official client touched.
+- Full Frenzy remains unproven and casting disabled: spell/AoE incoming damage,
+  stance replacement and native effect presentation still require integration.
+  Sacrifice/degeneration/life-stealing paths are not routed through this multiplier.
+
+Frenzy direct spell damage integration (2026-10-10)
+- combat::Actor now carries authoritative direct-damage vulnerability, default1.
+  combat::apply validates the multiplier, caps publishable damage before mutation,
+  and builds raw/applied/clamped/overkill state consistently. This parameter is
+  not used by degeneration, sacrifice or separate life-stealing resolution.
+- World lightning, elemental impact, earth projectiles, Shockwave/Aftershock,
+  primary hex damage, condition damage, wound spells, shadow direct damage and
+  Crystal Wave actors derive the multiplier from exact active346 registry scope.
+  Shadow spells amplify their direct damage but preserve their life-steal portion.
+- Tests cover all5 direct damage kinds, invalid multipliers without health mutation,
+  overkill serialization,3ring Shockwave amplification, unchanged life-steal gains,
+  and actual world LightningTouch with and without active Frenzy.
+- Six focused Release tests pass; production server_core builds. Stance casting,
+  category replacement and native presentation remain pending. Host not deployed.
+
+Authoritative stance replacement (2026-10-10)
+- World status application uses category replacement for native stance rows,
+  while enchantments/glyphs retain same-skill replacement. Different old stances
+  emit their native67 removal immediately; same-skill renewal remains published
+  by casting Runtime to avoid duplicate removals.
+- World regression applies Aura180 plus Frenzy346, replaces Frenzy with Dash1043,
+  checks preserved Aura, absent Frenzy, exactly one removal for old effect2,
+  then replaces Dash with Frenzy and verifies only one stance remains.
+- world_weapon_attacks passes. Frenzy cast activation still requires wiring;
+  this fixes status coexistence before enabling its native skillbar handler.
+
+Frenzy casting wired (2026-10-10)
+- Runtime now supports346 through trusted and normal learned/equipped player
+  entry points. Requires authoritative status mutation+snapshot hooks, validates
+  the pinned stance row, targets self, sends instant action48 and native caster
+  body601, costs5 energy, expires after8seconds and recharges after4seconds.
+  It does not change movement speed and renewal does not stack the stance.
+- Snapshot reconciliation now retains naturally expired owned effects for the
+  expiry handler, which removes their authoritative record and publishes67.
+  Previously active-only snapshots could erase them before expiry publication.
+- Casting tests cover player/trusted activation, self targeting despite another
+  selection, cost, exact expiry boundary, recharge denial/recast, nonstacking,
+  body resource and expiry publication. Five casting/combat tests pass, and
+  server_core rebuilt. No host binary deployed; live2022 visuals remain unverified.
+- Earlier paragraphs saying346 is disabled are superseded by this entry. The
+  whole Warrior/Elementalist quest objective remains incomplete pending native
+  playthrough and remaining quest content/skills, particularly Lightning Javelin.
+
+Casting stance replacement follow-through (2026-10-10)
+- Runtime removes other local stance records immediately after a successful new
+  stance registration. Replacing Dash resets movement bonus in that completion
+  step, rather than leaving it until a later snapshot update. Authoritative world
+  mutation owns the replaced native67; Runtime does not duplicate it.
+- Regression casts Dash then Frenzy in one Runtime, checks immediate movement1,
+  exactly one authoritative stance and no side effect from old Dash expiry.
+- Release skill_casting and world_weapon_attacks pass; server_core builds.
+  Native preseason effect coverage refreshed in build/reports/presearing-skill-coverage.txt.
+  Coverage is effect binding, not proof of live2022 gameplay. No host deployed.
+
+Lightning Javelin impact selection (2026-10-10)
+- Local Lightning_Javelin wiki explicitly describes adjacent path/end-point foes,
+  forward-facing exclusions and a selected foe evading toward caster missing even
+  inside the flight path. The new scoped impact planner distinguishes selected
+  endpoint collision from collateral path/end-point eligibility.
+- Planner filters allies/dead/caster, rejects duplicate scopes and malformed or
+  cross-instance positions, orders hits deterministically by path fraction and
+  actor lifetime. Collision radii remain supplied policy, not invented retail width.
+- Lightning regression passes for collateral path hit, endpoint bubble, evaded
+  selected foe, rear exclusion, ally/dead exclusion, selected endpoint hit and
+  duplicate rejection. Existing damage/rank/penetration tests remain passing.
+-230 remains unbound until actual world projectile scheduling, NPC/player mutation,
+  interruption and native presentation are connected. No deployed host changes.
+
+Lightning Javelin timed-flight state (2026-10-10)
+- JavelinFlight validates the reviewed plan and explicit projectile policy, samples
+  intercept aim, bounds cast range/deadline, and consumes its impact once at arrival.
+  Repeated/early impact polls cannot duplicate hits; source death/lifetime change
+  or regressed time cancels it. Selected raw actor ID reuse is excluded from both
+  primary and collateral damage for the old projectile.
+- Lightning tests verify a1second100-unit flight, no early hit, one arrival batch,
+  no duplicate batch, selected generation replacement, source generation change,
+  forged plan and deadline overflow rejection. The lightning suite passes.
+- World scheduling/damage/interrupt/native presentation still need integration;
+ 230 remains unbound. The tested flight state is reusable production source, not
+  a claim of native-client playability. No deployed host or official session changed.
+
+Lightning Javelin world scheduling (2026-10-10)
+- Instance accepts reviewed Javelin plans with explicit adjacent radius and existing
+  projectile policy, validates exact caster/target scope, hostility, lightning armor,
+  range, plane and navigable cast line, then queues timed flight. Flight samples
+  same-plane players/NPCs at impact, publishes real combat damage/deaths and applies
+  attack-only interrupt epoch to surviving actively attacking players.
+- Caster lifetime/death/plane changes discard old flight; pending flights prevent
+  projectile policy changes. NPC damage uses existing reviewed NPC combat resolver.
+  NPC attack AI interruption and native230 visuals remain unfinished; cast binding
+  stays disabled. Fixed aim and existing speed are explicit development policies.
+- World regression verifies delayed selected+collateral player damage,25% penetration
+  (15damage against80AR atlevel20), one batch only, active attack interruption and
+  policy immutability while in flight. Lightning/world_weapon_attacks pass.
+- Production core builds; host not deployed and live2022 skill not yet verified.
+
+Lightning Javelin quest-NPC verification (2026-10-10)
+- Synthetic35HP quest enemy with explicitly authored80lightningAR receives three
+  timed15damage Javelin impacts atlevel20/25%penetration:35->20->5->0.
+  The lethal impact completes the exact85/cycle1 kill objective and records one
+  scoped death; later ticks cannot duplicate it. No early impact mutates health.
+- Reconnecting the caster under the same raw player ID cancels the old projectile
+  before any permanent NPC damage and releases pending-flight policy lock.
+  A target with no reviewed lightningAR rejects launch instead of inventing armor.
+- Release npc_world_combat, world_weapon_attacks and lightning all pass. This proves
+  server-side NPC damage/objective integration under synthetic fixture metadata;
+  it does not prove retail NPC stats, hostile attackAI interruption or2022 visuals.
+ 230 remains unbound pending the remaining native casting/presentation integration.
+
+Lightning Javelin casting connected (2026-10-10)
+- Runtime binds230 to a dedicated appended hook (existing aggregate hook order is
+  preserved), derives Air rank8, validates foe scope/range at start/completion and
+  supports NPC targets without fabricated player resources. Normal player learned
+  and equipped eligibility remains in force. Host wires the hook to timed world
+  flight with explicit166 adjacent-radius development policy.
+- Regression verifies learned/equipped rank12 Javelin spends5energy, retains selected
+  target in native activation, does not launch before1second, schedules exactly
+  one reviewed43damage/25%penetration plan and treats body2077 as a sentinel.
+- Release skill_casting, lightning, world_weapon_attacks and npc_world_combat pass;
+  production server_core rebuild succeeds. Earlier230-unbound notes are superseded.
+- Native live visuals, retail high-arc flight speed/leading and NPC attackAI
+  interruption remain unverified/incomplete. Existing fixed-aim policy is labeled
+  development behavior. Host binary has not yet been linked/deployed for live test.
+
+Full Release integration checkpoint (2026-10-10)
+- All CMake Release targets rebuilt successfully, including production
+  bin/server_host.exe and updated casting/world/quest tests.
+- CTest129/129 passed,0failed,25.82seconds. Complete output:
+  build/reports/full-regression.txt. This includes quest persistence, network
+  lifecycle, world simulation, inventories, portals and shortest navigation.
+- server_host.exe --build-info succeeds; pinned client build37130.
+  Host SHA256:8e53895f50a2ea0951fe058989ae1013d07dda34d5fe70f46784fe3ed677e717.
+- Updated effect audit17/44 pre-Searing bindings; effect support is not proof
+  of live animations/gameplay. Default quest catalog still enables85/75/37/73;
+  collection83 remains separate labeled development content.
+- No running server_host was present before the build; no official client was
+  touched. Host has been linked into bin, superseding earlier not-deployed notes.
+  Native2022 quest playthrough and remaining profession/content scope are pending.
+
+Production host startup checkpoint (2026-10-10)
+- Launched linked private server_host, verified exact process path/PID22604 and
+  listeners127.0.0.1:6601,6112,6113. Host reported ready after validating4quests,
+ 3kill encounters/0collection encounters/1wave encounter,46portal routes,
+ 397navmeshes,115NPC maps and1402combat actors. Report:
+  build/reports/presearing-host-startup.txt.
+- Startup explicitly reports0salvage,0identification,0consumable recipes: these
+  are current item-system gaps, not a complete pre-Searing inventory implementation.
+- Stopped only this verified private startup test via its owned console handle;
+  process disappearance confirmed. No hidden test host remains from this run.
+  Official client sessions were not targeted. Native quest playthrough is pending.
+
+Elementalist Test collection installed (2026-10-10)
+- Default pre-Searing FWQC2 catalog now includes captured quest83 active row,
+  imported as active stage without inventing a completed variant. Quest giver
+  catalog includes captured Howland name/appearance/position. Encounter manifest
+  upgraded to2 and references development-elementalist scale collection content.
+- Three Tad placements/armor/one-scale-per-kill remain explicitly AUTHORED
+  development policy, not recovered retail spawn/drop probabilities. Existing
+  development-elementalist/policy.txt retains that distinction.
+- Quest-giver catalog SHA now9d70f3a947ee056117117c447398b34026a77ccf2158a02ceeed0bbc61848004;
+  Aziure combat sidecar revision updated to match, with its actor stats unchanged.
+  Initial smoke caught the old hash and rejected startup; corrected revision passes.
+- Rebuilt host startup validates5quests,3kill encounters,1collection encounter,
+ 1wave encounter and all listeners ready. Collection83 is now configured for
+  native development testing; earlier default-disabled83 notes are superseded.
+  Native quest acceptance/completion UI still requires playthrough verification.
+
+Installed quest83 content regression (2026-10-10)
+- quest_state now reads the actual default presearing.fwqc and quest-giver file,
+  verifies all5enabled quest identities and exactly one Howland whose encoded
+  name/profession/model match quest83 capture. This catches installed-data drift,
+  rather than testing only isolated candidate fixtures.
+- Completed83 serialization sets only the established completion bit while
+  retaining captured active details. No completed_variant is invented. Active
+  and completed detail batches remain identical by explicit current policy.
+- Release quest_state, quest_accounts and network_lifecycle pass, including
+  atomic carried-scale consumption and durable reward/reopen checks from existing
+  collection integration coverage. Native UI/interaction path is still unverified.
+
+Pre-Searing sword skill checkpoint (2026-10-10)
+- Sever Artery382 and Gash384 are bound to native sword/adrenaline casting.
+  Local wiki Sever_Artery.html specifies5..25second bleeding (rank0..15);
+  Gash.html specifies5..20bonus damage and Deep Wound duration, conditional on
+  the victim already bleeding. Rank12 is21seconds bleeding,17bonus/17seconds wound.
+- Player combat applies conditions only on a successful hit against a surviving
+  target; Gash without bleeding performs ordinary weapon damage. Existing world
+  condition publication, degeneration and Deep Wound capacity handling are reused.
+  Sword type27, existing Strength penetration and adrenaline expenditure remain
+  enforced. Overflow deadlines are rejected before damage mutation.
+- Release host rebuilt; seven focused casting/world/quest/portal/content tests
+  pass. Skill audit now19/44effect bindings. No native client visual test performed.
+- CRITICAL remaining quest-combat gap: melee skill targeting still requires a
+  player Resources profile and player target in the world. NPC melee skill support
+  and NPC bleeding/Deep Wound health integration must be completed before claiming
+  Sever Artery/Gash playable against pre-Searing quest enemies.
+- Content remains five configured profession quests; other professions and side
+  quests are incomplete. Items currently include captured starter sword and scale
+  quest paths, not the full pre-Searing collector/armor/consumable catalog. Existing
+  portal tests validate configured routes, not all pre-Searing doors or live travel.
+
+NPC melee skill path (2026-10-10)
+- Native casting completion now allows an NPC without a fabricated player
+  Resources profile, while retaining exact target Scope and world eligibility.
+  Player targets still require nonzero health. World melee eligibility supports
+  reviewed hostile NPCs with physical armor, same-plane line of sight and128range.
+- NPC hits retain weapon revision/type checks, reviewed body armor, Strength
+  penetration, source blindness/weakness and exact target generation. Typed skill
+  damage packets and one-shot quest death/objective credit are published.
+- Sever/Gash store and present their conditions when the reviewed NPC definition
+  explicitly permits conditions. Gash bonus checks actual unexpired bleeding.
+  Conditions-immune definitions still receive normal attack damage.
+- NPC conditional attacks requiring moving/attacking state (Protector's Strike,
+  Counterattack) fail closed pending authoritative NPC activity sampling; neither
+  state is guessed from player inputs. Normal unconditional attack skills work.
+- Rebuilt Release tests pass: adrenaline_casting exercises all seven adrenal
+  attack plans against both player profiles and resource-less NPC targets.
+  npc_world_combat checks sword conditions, conditional bonus, stale generation,
+  changed weapon, overflow deadline and assigned quest completion from lethal
+  melee skills; duplicate dead-target credit is rejected.
+- Corrected two stale quest-giver hashes in npc_world_combat to the installed
+  five-quest giver catalog. Earlier missing-NPC-melee-path note is superseded.
+- Remaining: NPC conditions currently lack timed degeneration and Deep Wound
+  health-capacity integration. Definition condition permission for actual quest
+  enemies also needs review; do not treat synthetic condition-enabled tests as
+  proof of native quest playability. Live client effects remain unverified.
+
+NPC condition health checkpoint (2026-10-10)
+- NPC condition updates now integrate elapsed degeneration at2health per pip per
+  second, capped at10negative pips, with application/expiry boundaries and a
+  monotonic condition clock. Late polling does not extend expired bleeding.
+  World ticks and incoming skill damage advance condition health before mutation.
+- Deep Wound uses the shared nonlethal capacity state:20%maximum reduction capped
+  at100, restoration on expiry/removal, and wound-aware degeneration. Fractional
+  maximum health cannot receive a new wound under current integral-capacity policy.
+- Native public health fractions and effect masks update; condition kills flow
+  through the same one-time NPC death/objective path. Credit retains both NPC and
+  source Scope generations and is cleared on population replacement; reconnected
+  actor IDs cannot inherit the old session's kill credit.
+- Installed development Grawl definitions now explicitly allow conditions,
+  backed by the updated authored policy/source hash. This is not a recovered
+  retail immunity table. Tad/other encounter permission is unchanged.
+- Tests cover6health/sec bleeding, expiry during late polling, backward-clock
+  rejection, wound capacity and restoration, and one-shot objective completion.
+  Installed Grawl content is additionally loaded and its actual first actor is
+  hit with Sever then killed by timed bleeding; this is offline, not live UI proof.
+- Remaining edges: pending lethal Deep Wound debt on direct NPC hits/healing,
+  client condition duration icons, other condition-source generation registration,
+  and broader encounter immunity/AI definitions require further integration.
+
+NPC condition renewal/cleansing correction (2026-10-10)
+- LiveActor now validates a proposed condition before integrating time, then
+  accounts for the old condition's elapsed damage before replacing its timestamp.
+  Cleansing and explicit expiry likewise integrate before removing old state;
+  backward-clock operations are rejected. Invalid applications do not advance time.
+- Regression: bleeding renewed after2seconds causes12damage before renewal and
+ 30more through the new5second expiry; cleansing after2seconds retains12damage
+  and produces no later damage. These prevent lost degeneration between polls.
+- A world reconnect regression starts bleeding, replaces the player with the
+  same actor ID/newgeneration, and verifies the eventual NPC death grants neither
+  death records nor quest completion to the replacement player.
+- Rebuilt server_host and three focused NPC tests pass. Report:
+  build/reports/presearing-condition-renewal.txt. This does not establish full
+  pre-Searing playability or resolve the pending Deep Wound direct-hit debt edge.
+
+Grawl Invasion durable combat/reward integration (2026-10-10)
+- network_lifecycle now loads installed presearing.fwqc quest75 and its wiki rule,
+  atomically accepts it with its Starter Sword and Sever Artery/Gash/Healing Signet
+  grants, then reopens SQLite to verify all acceptance state survived.
+- Three explicitly synthetic enemy placements/armor exercise all assigned kills
+  through the world Sever/Gash paths. No early objective completion is allowed.
+  Combat fixture locations are not claimed as captured Grawl spawn positions.
+- Completes the actual quest identity/cycle, turns in its250XP reward exactly once,
+  rejects duplicate turn-in, and reopens SQLite to verify rewarded quest, XP,
+  acceptance skills and Starter Sword remain consistent.
+- This uses the trusted server quest endpoints; native NPC dialogue selection,
+  Warrior-Test prerequisite eligibility, player skillbar interaction, pathfinding
+  to real encounter placements and map travel are outside this test's scope.
+  Earlier installed-content NPC tests cover the real first Grawl separately.
+
+Captured starter weapons on creation (2026-10-10)
+- Found missing first-quest prerequisite: creation persisted armor but no weapon,
+  while new characters correctly have no learned skills until quest progression.
+  Level-one non-PvP Prophecies Warrior/Elementalist creation now atomically equips
+  the respective captured weapon in bag2slot0 and selects weapon set0.
+- Warrior: Starter Hammer model1699/file39776/type15, encoded name and complete
+  modifiers from W/E capture3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff.
+  Elementalist: model2742/file94937/type22 from E/W capture
+  b8eb71a20e83e8bc1956e147843faef7cb2ed4fcc008bd9287b0b0bf56b7c3b6.
+  Captured session IDs/sentinel are not copied; IDs are owned inventory allocations.
+- Exact Starter Hammer A4880503 base3..5 and its customization are supported in
+  reviewed weapon decoding. Local Starter_Hammer.html independently lists3..5
+  blunt/+20%customized; source4eb6f0d527ac0f1cee9620016980d595cd5e0048799b035b1cc01c49d9a9fca5.
+  Other arbitrary A488 damage records remain unsupported.
+- Pure tests verify definitions, equipped/selected identity, input immutability,
+  no duplicate occupied-slot grant, profile roundtrip and hammer combat decoding.
+  network_lifecycle creates both professions with supplied armor visuals and
+  reopens SQLite to verify weapon and primary profession persisted atomically.
+- Existing Unicode creation regression updated to four armor pieces plus hammer,
+  preserving its rollback and armor-stat checks. An earlier failed run left its
+  test-only DB dirty; that generated DB was reset before validation. Player data
+  was untouched. New regression now passes.
+- At that checkpoint ordinary wand22/fire transport was unsupported; see the
+  subsequent Starter Elemental Rod update. Existing
+  saved weaponless characters are not migrated. Other professions' starter
+  weapons are not invented. Native first-quest playthrough remains unverified.
+
+Starter Elemental Rod ordinary attacks (2026-10-10)
+- Decoded the captured type22 weapon as Starter Elemental Rod, not a staff.
+  Local Starter_Elemental_Rod.html lists3..5 fire damage and20%customization;
+  source494ab2e56013c33ad65d6460be27ceb145d28bef0dfcac9c956a50769a17432b.
+- Only its complete captured model2742/file94937/modifier definition permits
+  the opaque26980004 word. Arbitrary2698 modifiers remain unsupported.
+- Caster damage now selects reviewed fire or earth armor by actual damage type.
+  Missing fire armor rejects fire attacks rather than substituting earth armor.
+  NPC fire vulnerability applies through the existing reviewed NPC multiplier.
+- Reused ordinary attack timing/projectile generation fences. Tests verify fire
+  versus earth armor, flight before impact, no repeat impact, repeated NPC kills,
+  player targets and rejection of altered opaque item data.
+- Five focused regressions pass: npc_world_combat, world_weapon_attacks,
+  presearing_skills, weapon_intent and network_lifecycle. server_host rebuilt.
+  Synthetic combat fixtures establish runtime behavior, not native animation or
+  retail timing fidelity. Damage midpoint/projectile speed remain development
+  policies pending calibration. No official client was touched for these tests.
+
+Installed Elementalist encounter and pickup integration (2026-10-10)
+- The ordinary creation rod now has an offline regression against the installed
+  authored River Skale Tad encounter with the actual Lakeside navigation mesh.
+  It kills the first Tad, retains collection rather than kill completion, and
+  emits exactly one owned Shimmering Scale at the corpse.
+- The durable Elementalist Test regression now uses world pickup's save callback,
+  matching the client handler. Failed saves preserve the floor item; successful
+  pickup saves inventory and removes the floor item before objective completion.
+- The combat fixture starts beside the Tad; it does not verify the player's
+  arrival route, native NPC menu selection or live client animations.
+
+Installed Warrior Test starter combat (2026-10-10)
+- Offline regression loads the captured three-Tad population, installed combat
+  definitions and Lakeside navigation mesh. A level-one Warrior uses the exact
+  customized creation hammer, without learned skills, to kill all three Tads.
+- Movement between the captured placements and ordinary attack scheduling run
+  through Instance. Quest85 completes only after the third death, retains its
+  attempt identity, reports exactly three deaths and cleans up on disconnect.
+- npc_world_combat passes; report build/reports/presearing-installed-warrior-encounter.txt.
+  Starting at the first target is a fixture. Native NPC acceptance, reward UI,
+  client animation and the full player route still require live validation.
+
+Private-client validation checkpoint (2026-10-10)
+- Rebuilt host launched with five quests, three kill encounters, one collection
+  encounter and one wave encounter validated at startup.
+- tools/client/control.ps1 now retries foreground acquisition with a temporary
+  input-queue attachment, always detached in finally. The existing executable
+  identity and foreground checks still gate every input operation.
+- Verified private bin/client/Gw.exe login and rendered character selection;
+  no EULA appeared in that observed login. Official clients were not targeted.
+- The private process subsequently disappeared before character selection input.
+  Its exit cause is not established; this is not proof of quest-menu or world
+  playability. A process lifetime/exit-code capture is the next live-test step.
+
+Live Elementalist Test acceptance (2026-10-11)
+- Private client PID280 stayed open through login, character selection, world
+  entry, /tp146, NPC approach and Howland interaction. Host PID21900 loaded the
+  configured quest catalogs. No official client was running or targeted.
+- Howland's native menu renders Quest: Elementalist Test. Selecting it logged
+  WORLD quest_dialogue quest=83 reward=0 status=0. The live quest log renders
+  the correct title, zero collected scales, southwest skale objective, Howland
+  description and500XP/Flare/Aura of Restoration reward text in the2022 archive.
+- Evidence: build/reports/presearing-howland-offer-live.png and
+  build/reports/presearing-elementalist-active-live.png.
+- Used existing level20 Cmon Meow with learned skills; this establishes native
+  acceptance/text compatibility, not a new level-one playthrough or full reward
+  flow. Collection, return dialogue and native reward publication remain open.
+- Acceptance leaves the previously opened offer button visible. Fresh-state
+  validation rejects duplicate acceptance, but dialog presentation needs cleanup.
+
+Live collection interaction failure (2026-10-11)
+- Same private client PID280 walked from Howland into Lakeside using keyboard
+  movement. Quest Tad selected60001 displayed red, while ordinary population
+  Tads displayed green. Selected target rendered level0, matching River_Skale_Tad.html.
+- Clicking the red label then pressing Space emitted CMSG49 twice. Host logged
+  player_follow target=60001 outcome=invalid_or_unreachable; no CMSG36 ordinary
+  attack was observed. This prevents the normal attack interaction in this test.
+- Evidence: build/reports/presearing-tad-follow-live.png. Investigate native
+  allegiance/definition interaction classification; do not reinterpret follow
+  packets as attacks without producer evidence. No scale pickup was verified.
+- GWCA Agent.h names Allegiance neutral2/enemy3, but these values must not be
+  confused with our packed comparison/team token2. Exact native conversion is
+  not yet established. The local River_Skale_Tad page lists level0 and35health;
+  the definition's level0 is correct and does not require an override.
+
+Attack/follow investigation correction (2026-10-11)
+- Native0050ae70 selects attack action0 for neutral/enemy targets only when
+  0050acc0 is nonzero. Otherwise it falls through to follow action1.
+  0050acc0 queries controlled-character weapon state through7c3e30/7c3a80 and
+  tests weapon-data+0xC bit25, provided78f1d0's character gate permits it.
+  These are static decompile findings, not an emulated capability result.
+- Live Cmon Meow inventory displays an empty weapon slot, empty carried bags,
+  and armor/costume only. The avatar still holds its captured cosmetic weapon
+  appearance. This is an existing imported character; starter grants apply only
+  to new creation. Do not infer a wrong NPC token merely from follow requests
+  while using this unarmed test character.
+- Evidence: build/reports/presearing-existing-character-empty-weapon.png and
+  build/reports/presearing-attack-capability-2022.txt. Next test needs a real owned
+  equipped weapon or a fresh creation, then repeat the native interaction.
+  Full combat/collection/reward playthrough remains unverified.
+
+Explicit starter grant for existing local test character (2026-10-11)
+- Added native developer tool build/tools/starter_weapon.exe. --check opens the
+  DB read-only; --apply-offline requires the operator to stop private host/client.
+  Arguments: DATABASE CHARACTER PRIMARY MODE. Only reviewed primary1/6 weapons
+  are supported; missing inventory, ambiguous names, occupied slots and revision
+  conflicts reject. Existing items are preserved; normal login is not changed.
+- Read-only check of data/state.db confirmed Cmon Meow revision44 can receive
+  captured rod2742 as item16. Stopped the verified private host; private client
+  exited after its close request. Backed up the closed state.db under
+  build/reports/state-before-starter-weapon.db, then applied the explicit grant.
+- Repeated check rejects the now-occupied slot. The tool built successfully.
+  Current private host restarted as PID16684/session1525. Combat with the newly
+  owned rod still needs live validation; this is not an automatic migration or
+  an official-account change. Do not use the backup as a packaged project asset.
+
+Saved quest reconnect duplicate-agent correction (2026-10-11)
+- Equipped-rod reconnect crashed with native !array[agent] in agagent.cpp162,
+  report build/reports/observer-crash-3524.txt. Active quest restoration queued
+  actor spawns before the later full NPC snapshot included those same actors.
+- Player joins now explicitly defer encounter spawn publication until the first
+  NPC snapshot. npc_entry_packets captures current actors and enables subsequent
+  encounter spawns atomically under the instance lock. Loaded peers continue
+  receiving restoration spawns. Repeated entry snapshots are rejected.
+- Regression covers a connecting owner, an already-loaded peer, one initial
+  spawn per actor, repeated snapshot rejection and later encounter publication.
+  npc_world_combat passes; build/reports/presearing-reconnect-publication.txt.
+- Rebuilt host PID16248/session43341 and private client PID24488 successfully
+  restored the active quest into Lakeside; weapon icon is populated, and20seconds
+  of subsequent keyboard movement completed without the duplicate-agent crash.
+  Evidence: build/reports/presearing-reconnect-world-live.png. This does not yet
+  verify live attacks, scale pickup, reward turn-in or guardian wave behavior.
+
+Pre-Searing distant enemy interaction (2026-10-11)
+- Equipped Starter Elemental Rod now produces native ordinary-attack requests
+  for quest Tad60002. Live clicks from2731/-985 rejected because the selected
+  Tad was outside weapon range; the server did not approach the target.
+- Ordinary attacks against reviewed living hostile NPCs now schedule a bounded
+  collision-aware approach when range or line of sight is insufficient. Tick
+  starts the windup only after reaching the weapon range with line of sight;
+  movement stops there instead of continuing to the NPC center. No damage or
+  attack animation is published before the approach completes.
+- The pending intent pins target generation, expires after120seconds, and is
+  cleared by manual movement, action cancellation, equipment replacement or
+  target loss. Existing player-target attack behavior is unchanged. Pursuit of
+  moving NPCs and full skill-cast approach are not implemented by this change.
+- Regression verifies real movement rather than teleport, no premature damage,
+  projectile delay, stopping at range, and cancellation by another destination.
+  npc_world_combat, world_weapon_attacks and npc_approach pass (3/3).
+- Local wiki review confirms River Skale Tad level0/35HP. The earlier level2
+  concern was incorrect; no appearance override was installed.
+
+Native ordinary attack animation state (2026-10-11)
+- After approach, the live2022client failed m_attackInterval atavchar.cpp4764.
+  Server had created quest83's floor loot, but client pickup/turn-in were not
+  verified. Crash evidence: build/reports/observer-crash-8260.txt.
+- Pinned77aef0 requires nonzero interval(+EC) and modifier(+F0) before its body
+  action. Existing observer decoding already maps packet53 to these fields via
+  8736e0/790cf0/764720/77e750. Ordinary combat omitted that packet.
+- Ordinary animation startup now sends packet53 before159(kind4). Interval is
+  the configured weapon base period; modifier is the scheduler's effective/base
+  period ratio, including Frenzy. This publishes existing server timing rather
+  than introducing another timing policy. Every new windup refreshes it.
+- Player-target regression checks exact1750ms/1.0 timing precedes activation.
+  Live retest is still required before calling collection combat playable.
+
+Equipped-rod live result (2026-10-11)
+- Rebuilt host20808/session90544 SHA256
+  a6f4a2d0ccab076e1c590f6e00b6da319a9eb229fae13e3f9048173e4f819638.
+  Private client16948, executable bin/client/Gw.exe, build37130.
+- Native attack clicks scheduled quest83 Tad60001, produced its owned floor
+  Shimmering Scale, and did not reproduce the m_attackInterval crash.
+- Native floor click approached actor32768 and committed pickup. Server marked
+  quest83/cycle1 completed with reasoncarried_scale. Direct travel to146 restored
+  completed state and carried inventory; no replacement encounter was spawned.
+- Howland10011's native menu offered Reward: Elementalist Test. Clicking it
+  returned FW_UNAVAILABLE8. /xp confirms Experience has not been captured for
+  this character; the reward transaction rejects a missing XP baseline. Quest
+  and carried scale are retained rather than consumed on failure. No arbitrary
+  XP total was inserted into the imported main-character data.
+- Live evidence: presearing-rod-combat-live.png, presearing-scale-pickup-live.png,
+  presearing-howland-reward-live.png, presearing-reward-missing-xp-live.png under
+  build/reports. This is an existing level20 imported character, not a fresh
+  level1 proof. Reward turn-in and the other profession playthroughs remain open.
+- Focused regressions pass3/3 after the final build; report
+  build/reports/presearing-attack-approach.txt. Skill coverage remains19/44.
+
+Fresh-account native Elementalist reward (2026-10-11)
+- tools/accounts/presearing_test_account.cpp creates an isolated local account
+  through Accounts. Run build/tools/presearing_test_account.exe data/state.db
+  with the private host stopped. Credentials: presearing@example.test /
+  presearing-test. Native alias pre@example.test; imported accounts are untouched.
+- Fresh accounts previously required a captured settings file at login. Missing
+  saved settings now produces the native empty ARRAY8 auth-data response; an
+  existing unreadable file still rejects. Pinned486150/48a390 accepts count0.
+  auth_data checks the exact empty wire frame. Live fresh-account login succeeds.
+- Host6940 SHA256259b2a6be44900103831227dba8d3085c96a7ad93b6f39470789630dbadbe112;
+  private client17116 bin/client/Gw.exe build37130. Created Pre Quest Ele through
+  the native Prophecies wizard: primary6, level1, XP0, reviewed starter rod.
+- Native Howland10011 acceptance, ordinary rod attack against Tad60000, owned
+  scale floor pickup32768 and carried-scale completion succeeded without crash.
+  /tp146 was used to return for this test; portal traversal is not proven here.
+- Native reward click succeeded (FW_OK), /xp displays500 and K displays Flare
+  and Aura of Restoration. After transfer to Ascalon148, XP500 and learned2
+  revision2 were restored. Both skills were equipped through native K drag/drop.
+  This verifies transfer persistence, not a full process restart or live casts.
+- Evidence: build/reports/presearing-fresh-rod-live.png and
+  build/reports/presearing-fresh-reward-live.png. Focused auth_data, npc_approach,
+  world_weapon_attacks, npc_world_combat and network_lifecycle pass5/5.
+- First fixture character Pre Elementalist was accidentally created in Nightfall
+  (map490); it is not evidence for the Prophecies starter/reward path.
+- Remaining work includes other profession paths, all44 pre skills, complete
+  item/collector interactions, native portal tests and quest presentation polish.
+2026-10-11 continued quest acceptance / 2022 name compatibility:
+- Acceptance learns captured grants and fills vacant skill-bar slots atomically;
+  existing slots and previously learned removed skills are preserved. Evidence
+  and development-policy boundaries: data/gw/quests/acceptance-skillbar-evidence.txt.
+- Native Pre Quest Ele accepted quest73 and displayed Fire Storm/Glyph in vacant
+  slots. Encounter then crashed IsParam(data); fault buffer matched captured
+  Ice Elemental Shard resource units 0f22 c168 9412 6e13 exactly.
+- Server now omits that resource from definition85 and publishes the known
+  literal name via agent154 after spawn, including dynamic encounter snapshots.
+  Captured definitions and combat metadata remain unchanged. Live combat/reward
+  after this compatibility fix is not yet verified.
+- Release rebuild succeeded; npc_wire, npc_world_combat, character_skills,
+  quest_accounts, quest_state and network_lifecycle pass6/6.
+- Secondary training selection remains incomplete; do not claim all profession
+  paths, all pre skills/items, or all door traversal complete.
+2026-10-11 native active-quest reconnect diagnostics:
+- Initial live reentry failed array index<m_count. Read-only verified private
+  process inspection found decoded opcode39, actor60000, speed220. Quest AI
+  queued NPC movement before the final NPC spawn snapshot. AI now waits for
+  owner publication; motion updates skip unready peers, and snapshots include
+  current movement goals after all spawns. Regression covers deferred wave AI
+  and correctly ordered Ice Elemental Shard literal name on reconnect.
+- Subsequent native reentry loaded Wizard's Folly with all four skills, then
+  NPC attacks failed avchar m_attackInterval. Guardian weapon presentation now
+  sends timing53 using the configured attack cadence before start159. The
+  regression checks the explicit 1000ms synthetic policy timing and order.
+- npc_world_combat and npc_wire pass2/2 after both changes. Further live test
+  remains necessary; neither quest73 live completion nor full secondary flows
+  are proved by these corrections.
+- Final native verification with host PID20288/private client8860: reconnect
+  restored quest73/learned4, NPC population and AI; NPC guardian died and the
+  authored failure message appeared. Client remained responsive and auto-approach
+  continued; crash_details found no dialog after the full guardian attack run.
+  Evidence build/reports/presearing-reconnect-ai-stable.png. This verifies the
+  formerly crashing restore/attack path, not successful Experiment completion.
+2026-10-11 corrected real-catalog Shard names and native quest retry:
+- Correction to earlier compatibility claim: npc catalog hex encodes code units,
+  not UTF16LE bytes. The captured text220f68c11294136e loads units220f/68c1/
+  1294/136e, serialized bytes0f22c16894126e13. The earlier handcrafted test
+  used byte-swapped units, so the compatibility comparison never matched real
+  content. Opening L/approaching actual Shards still crashed IsParam(data).
+- Comparison now matches actual catalog units. Regression loads a catalog row
+  before validating the literal-name rule and reconnect spawn/name order.
+  npc_wire and npc_world_combat pass2/2; Release server rebuilt.
+- Host20852/client18592 native L shows the actual Experiment text without crash.
+  Native town148 abandon succeeded (quest_abandon73 status0), then transfer161,
+  auto-approach to Aziure10008 and native reaccept succeeded cycle2/status0.
+- Native Glyph200 and FireStorm197 both began/applied successfully. Screenshot
+  displays Ice Elemental Shard names and models without parser crash. This
+  attempt failed guardian_lost: early FireStorm field was left behind by moving
+  enemies. Successful combat/completion/turn-in is NOT established.
+- Review remaining authored AI/health/encounter timing against capture and wiki
+  before claiming this is playable for a level1/rank0 character. The local wiki
+  explicitly says one rank0 FireStorm removes most/all of each wave's health.
+2026-10-11 capture-rooted correction and targeting audit:
+- Definitive root cause of Shard text: source npc_definition_observed records
+  contain name units[3874,49512,37906,28179] =0f22/c168/9412/6e13.
+  The extracted wave files incorrectly held220f/68c1/1294/136e (byte swapped).
+  All three wave catalogs now carry the exact captured code units; population
+  hashes and combat bindings/manifests updated. Removed the literal-name
+  compatibility exception from production rather than retaining a workaround.
+- Tests load actual corrected populations and assert captured units, deferred
+  NPC publication and spawn ordering. Release rebuild and focused npc_world_combat
+  /npc_wire pass2/2. Native reconnect/L works with the corrected catalog.
+  Visible name after this data correction still needs a nearby live check.
+- Reproducible offline audit tools/quests/audit_experiment_combat.py writes
+  build/reports/experiment-combat-capture-audit.json with source hashes, raw
+  opcode160/type4 records and definition provenance. Captured Shards have27
+  ordinary attacks targeting actor7 and1 targeting actor16; actor16 is the Fire
+  Imp in npc_observations. No observed ordinary attack targets guardian13.
+- This contradicts treating guardian-only targeting as sufficient replay of
+  this encounter. Target selection/retaliation and player damage must be added
+  and verified; these records do not measure aggro radius/AI policy or armor.
+  Movement samples alone cannot establish target choices or exact spawn timing.
+- Current live host22976/private client18164; quest73 cycle2 remains active,
+  guardian-failed in current instance. Native FireStorm out-of-range rejection
+  is handled without crash. Successful three-wave reward remains unverified.
+2026-10-11 quest enemy owner interception:
+- Added optional player interception to the existing quest guardian AI. Native
+  production Experiment policy uses temporary authored radius1000; captured
+  target records justify owner targeting, not this exact radius/preference.
+- Quest NPC chase accepts only its scoped living owner or neutral quest guardian;
+  moving owner destinations repath after32 units. In-range owner attacks use
+  reviewed physical armor/conditions/absorption/Frenzy, existing damage, recovery,
+  adrenaline and death paths. Attack timing53 precedes start159, finish and hit.
+- Target loss/death falls back to guardian; no attacks to foreign owners, stale
+  generations, dead players or unpublished clients. NPC publication gating remains.
+- npc_world_combat regression covers owner chase/damage/presentation, stale
+  lifetime, leaving interception radius, owner death, foreign player rejection
+  and fallback after death. npc_world_combat/npc_wire pass2/2; server rebuilt.
+- Current targeting remains explicit development behavior. Summoned allies,
+  party member selection, threat logic and proper attack windup are incomplete.
+  Native successful three-wave completion and reward still require verification.
+
+2026-10-11 native Experiment cycle3 verification:
+- Private build37130 client PID3548, host3352; Pre Quest Ele, level1, rank0.
+  Abandoned previous attempt through L in town148, transferred to161, approached
+  Aziure10008 with native SPACE and accepted through the NPC dialogue.
+- Aura/Glyph and one rank-zero Fire Storm per wave killed the three four-shard
+  waves (actors60000..60011). Correct captured encoded names now display as
+  Ice Elemental Shard without a literal-name override or client parser crash.
+- Server recorded quest_objective_complete quest=73 cycle=3. Native NPC reward
+  button appeared; clicked it, server recorded reward=1 status=0, and the quest
+  disappeared from L. Evidence: build/reports/experiment-cycle3/.
+- This verifies acceptance, wave damage, completion and native reward handling
+  for the current development encounter; NOT retail AI or complete progression.
+  Player remained at100 health during the run: investigate incoming attacks and
+  starter armor modeling before treating the encounter difficulty as validated.
+  Map transfers used /tp; this run does not validate doorway triggers.
+
+2026-10-11 missing-headgear incoming attack fix:
+- Read-only persisted fixture inspection confirms Pre Quest Ele has chest,
+  legs, hands and feet with reviewed base5, no headgear, and XP750 after the
+  Experiment reward. The old uniform physical armor resolver returns unknown
+  for that valid partial set, which rejected quest NPC damage entirely.
+- Added independently reviewed per-location physical armor: empty locations
+  have0, equipped unreviewed/invalid/duplicate pieces still reject. Quest NPC
+  attacks sample server-side chest3/8, legs2/8, head/feet/hands1/8, as recorded
+  in local Armor_rating.html. These values are not averaged into an armor score.
+- Production equipment refresh now installs that profile for quest NPC incoming
+  attacks. Other physical and elemental paths still use their prior uniform
+  resolver and need separate integration; this is not a global armor fix.
+- Rebuilt energy_regeneration and npc_world_combat tests pass2/2, covering all
+  eight location buckets, naked head with other pieces, rejection of unknown
+  equipment and quest owner damage without a uniform armor scalar.
+  Rebuilt host1216 SHA256 e8f8150912bad47eedbb6a9f31d28aa273affecd7967bfa971aff39b02e0403c.
+  Native incoming-damage retest is pending; no live difficulty claim yet.
+
+2026-10-11 secondary-trial capture audit:
+- Added reproducible offline audit and data/gw/quests/profession-trial-evidence.txt.
+  Complete trial slot responses at100074984 precede W/E profession state at
+  100146656, after Experiment objective completion. Report preserves exact hex,
+  source hash and line numbers in build/reports/presearing-profession-trial-audit.json.
+- Acceptance-time permanent secondary selection would conflate these phases.
+  No such change was installed. Temporary skill authorization, durable trial
+  state and evidence-backed selection dialogue remain to implement.
+
+2026-10-11 primary Warrior native verification and reward slot fix:
+- Created Pre Quest War through the native Prophecies creation UI, primary1,
+  secondary0, level1. Accepted Van's Warrior Test85 in146, used the captured
+  starter hammer and native SPACE attacks to kill its three scoped River Skale
+  Tads, then approached Van normally. Native quest log showed reward readiness.
+- Restarted private host/client with completed quest preserved, returned to Van
+  and clicked reward. Frenzy346 and Healing Signet1 appeared immediately in slots
+  0/1 and the quest disappeared from L. Read-only DB inspection verifies XP500
+  and persisted bar [(346,0),(1,0),empty...]. Screenshots/logs are preserved in
+  build/reports/warrior-test-native/. Transfers used /tp; no doorway claim.
+- Fixed missing reward slot assignment using the captured responses described
+  in data/gw/quests/reward-skillbar-evidence.txt. Typed reward commits the bar
+  with learned skills/XP/quest/item changes under existing revisions; failed
+  commits publish no packets. Never overwrite occupied slots or reinsert known
+  removed skills. Network lifecycle rebuilt and passes, including native slot
+  response, missing actor rejection, reopen persistence and duplicate fence.
+- Host3764, private client18132. Temporary profession trial authorization remains
+  unfinished; this turn verified the primary Warrior path and repaired rewards.
+
+2026-10-11 native Grawl reward and secondary trial verification:
+- Completed75 survived host/client restart. Native Grast turn-in recorded
+  reward1/status0, cleared L and committed500->750XP. Grawl report has reward.png
+  and reward-server.txt. Starter Sword use and three-kill completion were already
+  verified; Sever Artery/Gash successful live casts remain pending.
+- Unchosen-secondary Warrior accepted73 from Aziure, learned/equipped three
+  Elementalist trial skills, and cast Glyph200 with primary1/secondary0. A Fire
+  Storm attempt was rejected during Glyph cast/aftercast; the encounter failed.
+- Native abandonment in165 cleared persisted trials but initially left icons.
+  Replaced full snapshot with explicit pinned216 per-slot clears. Rebuilt network
+  lifecycle passes, then native reaccept/town abandon cleared all three icons and
+  the quest immediately. Storage verifies FWS1, secondary0, four Warrior slots,
+  XP750. Source hashes, packet lines and screenshots preserved in trial evidence.
+- Successful secondary trial completion, final selection and its persistence
+  remain unfinished. Map transfers were /tp and do not verify doorway traversal.
+  Running private host27948/client12388; official clients were not targeted.
+
+2026-10-11 Supremacy native completion and lightning metadata:
+- Ralena10004 in165 offered37 to selected-secondary Elementalist; native accept
+  learned230/220, filled vacant slot7 with Lightning Javelin. Transferred to161;
+  active objective survived private host/client restart and activated scoped60000.
+- Initial Lightning Javelin was accepted but effect_failed because production
+  Tower metadata omitted lightning armor. Upgraded its catalog to v5 with explicit
+  temporary lightning AR0 and updated authored policy source hash. The wiki says
+  weak against lightning, but gives no quantified weakness; that remains unresolved.
+- Added regression launching Javelin against the actual production Tower catalog
+  at a nonzero flight distance. Rebuilt npc_world_combat and npc_wire pass2/2.
+- Restarted only verified project private processes. Host30088/client27796 loaded
+  changed data. Native230 applied; ordinary sword combat and Javelin killed Tower,
+  quest_objective_complete37 cycle1. Aziure10008 showed the reward button; native
+  turn-in reward1/status0 cleared L. Read-only DB verifies XP1250 (was1000).
+- Evidence:build/reports/supremacy-native/{lightning-completion.png,reward.png,
+  server.txt}. /tp transfers do not prove doors. Tower retaliation/retail stats,
+  Blinding Flash live use, primary Elementalist Supremacy run and full pre remain
+  unverified. No official clients were targeted during private testing.
+
+2026-10-11 four-profession capture integration:
+- Archived world/packet pair for PID30352 in data/captures/pre-searing-four-
+  professions-2026-10-11 with exact SHA256 manifest. Includes primary/secondary
+  Ranger/Mesmer/Monk/Necromancer quest objective stages; reward causality remains
+  a separate packet audit, not inferred from quest disappearance.
+- Fresh Prophecies creation now installs captured weapons for all six core
+  professions. Added Holy Rod/Truncheon/Cane from exact equipment rows7367/9609/
+  6002. Definitions/raw modifiers/source hash remain in starter-caster-provenance.
+  Ranger Bow evidence was already wired. No existing-character migration or
+  complete weapon combat claim; unknown modifier semantics remain gated.
+- Native candidate extractor produced81/82/84 active/completed resources from
+  exact snapshots. Existing86 candidate pair is included in quest-state tests.
+  Newly rebuilt quest_state and presearing_skills pass2/2. Host rebuild succeeds.
+  Offers/objectives for those four profession tests remain disabled until scoped
+  actors, mechanics and native2022 text rendering are verified.
+
+2026-10-11 remaining primary-test policy integration:
+- Added reviewed rules86/81/84/82 for Ranger/Mesmer/Monk/Necromancer, with exact
+  captured quest/NPC identities, local wiki hashes and500XP/two-skill rewards.
+  No acceptance-time learning invented. All primary tests use captured146 context.
+- Quest-state tests exercise the actual extracted active/completed catalogs and
+  offer/reward eligibility: primary only, correct map/NPC, no offer while active,
+  exact completed attempt. Newly rebuilt quest_state passes.
+- These four catalogs remain disabled in production. Their mechanics differ:
+  queen hunt, skale clearance, Gwen escort, corpse for Verata. Neither snapshots
+  nor a universal kill counter proves those mechanics. Bow/caster damage-type
+  support and reward skills must be completed before claiming playable flows.
+
+2026-10-11 captured caster-weapon validation:
+- owned_weapon previously allowed only the exact Elemental Rod baseline's opaque
+ 2698 word. Added complete captured Holy Rod/Cane/Truncheon baseline matches;
+ file+model+all modifiers must match. Altered opaque words still reject.
+- Rebuilt pre-Searing test verifies owned caster weapons for professions3..6,
+ correct3..5 fire/chaos/dark damage identities and persistence/customization.
+ Local Starter_Holy_Rod/Cane/Truncheon wiki agrees with captured damage types.
+- Holy Rod uses existing reviewed fire armor/projectile path. Extended ordinary
+ NPC combat regression to use both Holy and Elemental Rods: windup, flight, one
+ impact, repeated attacks, death attribution and missing-fire-armor rejection.
+- This does not add chaos/dark NPC armor policy. Those strikes remain denied
+ rather than using earth/physical armor as a guessed substitute. Ranger bow
+ attack integration also remains unfinished; inventory availability alone does
+ not make its profession test playable.
+
+2026-10-11 chaos/dark NPC weapon damage:
+- Local Chaos_damage/Dark_damage pages explicitly say normal armor calculations,
+  neither physical nor elemental. Added reviewed general_armor/evidence fields
+  to NPC combat catalog v6; old catalogs keep this unknown, not a default0.
+- Native raw6/7 ordinary caster hits use that final rating, without applying
+  fire vulnerability. Missing general armor still denies the strike. Existing
+  physical/elemental damage paths retain their independent final armor fields.
+- Rebuilt NPC world combat passes with Holy/Elemental fire rods and captured
+  Mesmer/Necromancer rods. General80 vs fire0 demonstrates reduced chaos/dark
+  damage; projectile windup/flight/no duplicate impacts and death credit pass.
+  Catalog parser also rejects a general armor value without source evidence.
+- Production NPC general armor values, private live tests, PvP armor handling,
+  Ranger projectiles and distinct remaining quest objectives still remain.
+
+2026-10-11 Mesmer Test one-skale objective:
+- Recovered Sebedoh and four River Skale Tads in capture instance20 (world6285,
+  definitions6283/6284), active81 snapshot6301 and completed6339. Packet53068
+  records actor38 death immediately before completion. Local Mesmer_Test Notes
+  explicitly say only one skale must be killed. Exact sources/hashes/records
+  preserved in data/gw/quests/mesmer-test-evidence.json.
+- Added explicit kill-any encounter policy in manifest v3. It completes on the
+  first death in the exact assigned lifetime set, while retaining other actors.
+  Wave/loot encounters reject combining this flag. Restore carries this policy.
+- NPC-world regression verifies failed acceptance publishes nothing, no death
+  means no completion, one scoped death completes while another assigned actor
+  lives, and reconnect cannot inherit completion. Existing all-kill tests remain.
+- Production Mesmer content is still not enabled; actors/resources and reward
+  skills must be wired and tested natively. Recorded positions are observations,
+  not proof of retail spawn triggers or NPC AI.
+
+2026-10-11 Mesmer encounter content installation:
+- Generated exact Sebedoh/four-skale definition/placement content from archived
+  instance20 records. Separate mesmer-test-development-policy documents health35
+  wiki source and all final armor0/private hostile2 as authored temporary values.
+- Dedicated manifest v3 kill-any81 loads the actual four-actor catalog. Rebuilt
+  NPC-world test uses captured Starter Cane and reviewed general armor, kills one
+  scoped skale, leaves another alive and gets exact quest81/cycle1 completion.
+- Installed81 active/completed resources, Sebedoh supplement and kill-any manifest
+  into default pre catalog. Host acceptance now explicitly uses the transactional
+  encounter path for81 instead of generic acceptance without an encounter. World
+  restoration preserves its one-kill policy. Native testing remains pending.
+- Empathy26 and Ether Feast40 learned reward grants are reviewed, but runtime
+  skill effects remain unfinished. This is not a complete playable Mesmer flow.
+- Startup initially rejected the changed giver-population hash (Sebedoh addition).
+  Rebound Aziure guardian metadata to the complete new giver SHA256fde5c41c...
+  without changing its combat/identity row. Updated matching regression hashes.
+  Native host startup now validates giver/encounter/wave catalogs and reaches READY.
+
+2026-10-11 Ether Feast40 player-target transaction:
+- Native private client27512 launched against host20280. Screenshot helper first
+  found no visible window, then uniform desktop pixels; no blind UI input sent.
+  Mesmer native acceptance/reward remains pending, not assumed successful.
+- Added40 to the existing energy-loss skill planner: lose up to3 actually present
+  energy, heal20..65 per point (rank12=56), no damage and no caster energy gain.
+  World player-target transaction commits loss and self-heal under one lock,
+  uses existing healing/deep-wound/max-health handling and publishes health.
+- Local Ether_Feast.html SHA256
+  baa15b54449b7c76c04b485b50e3c2c159da2d0dddd340cb8dfbc8c0d3de6276.
+- Rebuilt energy_drain_skills/world_simulation pass. Target with2energy heals112;
+  empty target heals0; energy is not stolen; heal caps at caster maximum.
+- Existing energy-drain world hook targets players only. NPC energy metadata and
+  NPC application remain missing, so this does not make the pre quest's reward
+  skill usable against skale or establish native animations. Host deployment of
+  the new skill code has not been performed; running host predates this change.
+
+2026-10-11 Ether Feast NPC energy support:
+- Added optional evidence-backed NPC spawn/current energy in catalog v7, retaining
+  unknown values for old catalogs. LiveActor owns the pool with lifetime guards.
+- World Ether Feast40 handles hostile NPC targets under one mutex, with exact
+  lifetime, health, range, plane and LOS checks. Actual energy loss determines
+  healing; repeated cast against depleted energy heals0. Caster energy clock and
+  existing healing/deep-wound path are preserved. Other drain skills remain
+  player-only pending their specific NPC/area behavior.
+- NPC-world regression passes for v7 metadata, stale target rejection without
+  healing,2energy->112heal, retained depletion, and unknown-pool rejection.
+- Production NPC pools/regeneration remain unreviewed; no guessed global defaults
+  were installed. Mesmer reward40 cannot yet be claimed fully playable on skale.
+  Running host20280 predates these skill changes; live deployment/testing pending.
+
+2026-10-11 Mesmer reward capture and persistent flow verification:
+- Packet records53799/53808/53812/53815 at84152265 show quest81 removal and actor31
+  Empathy26 slot0/Ether Feast40 slot1. Preserved exact records/source SHA in
+  data/gw/quests/mesmer-reward-evidence.json. Native wire encoders are independently
+  pinned; modern memory opcode differences are not inferred mappings.
+- Rebuilt network_lifecycle passes with Mesmer primary5, installed catalog/skale
+  encounter, one scoped death while other skale lives, durable completion, stale
+  reward rollback, captured two-slot publication,500XP, duplicate rejection and
+  database reopen preserving quest/reward/build. Combat uses a trusted fixture
+  damage call; native UI and skill animations remain separate verification.
+- Built/deployed current host after exact private PID/path check. Includes current
+  Ether Feast player/NPC handling. Startup reaches READY; official clients untouched.
+- Empathy effect, reviewed NPC energy/regeneration, native Mesmer playthrough and
+  remaining profession objectives remain incomplete. Goal stays active.
+
+2026-10-11 reviewed Empathy planner:
+- Pinned2022 skill26 scale10..55/reduction1..15 and PvP3151 scale15..45/no
+  reduction match the local wiki. Duration5..15seconds scales with Domination.
+- Added gw_empathy planner using the existing effect registry. Reaction and
+  impact-time reduction are separate queries: a hex expiring before impact
+  cannot reduce that hit. Damage never becomes negative. PvE/PvP alternatives
+  select the newest application, including ties; they do not add their effects.
+- Rebuilt skill_effect_plan passes for numeric variants, expiry boundary, removed
+  hexes, actor generation and same-tick alias ordering.
+- This is not a bound cast handler. Attack event dispatch, exactly-once reaction
+  publication, multiattack behavior, NPC hex state/removal, damage application
+  and native UI remain unimplemented. Skill26 remains unsupported at cast time.
+
+2026-10-11 NPC Empathy reaction state:
+- LiveActor now owns a lifetime-scoped effect registry for reviewed NPC Empathy.
+  Application sets native hex presentation; explicit removal clears it. Ordinary
+  condition state remains separate. No global NPC immunity/armor defaults changed.
+- NPC reaction accepts monotonically unique attack event IDs and nondecreasing
+  times, rejects actor lifetime mismatches, and applies armor-ignoring damage once.
+  Impact-time reduction is queried separately and stops at expiry/removal. PvP
+  reaction attribution preserves3151 rather than silently using26.
+- Rebuilt NPC-world regression verifies status, reaction damage, duplicate/stale
+  event rejection, impact expiry boundary and removal. This tests actual NPC
+  mutable combat state, not only the numeric skill planner.
+- World attack dispatcher, caster/target validation, casting hook, expiration
+  presentation on idle NPCs, hex-removal skills and native animation remain to
+  wire. Skill26 is still not marked supported in Runtime casting. Goal active.
+
+2026-10-11 world NPC Empathy dispatch:
+- Added world NPC application with caster/target lifetime, hostility, living
+  resources, range, plane and navigation LOS validation; sends existing native
+  hex-status packets. Cast source credit retains its exact player lifetime.
+- Quest NPC weapon attacks against player/guardian now invoke reactive damage
+  before miss resolution and apply the live reduction at hit resolution. Lethal
+  reactions stop that current melee hit and use existing NPC death/quest credit.
+  Direct guardian spell damage is not an attack and does not trigger Empathy.
+- World ticks expire idle NPC hex markers. Retirement removes attribution. Tests
+  use actual world attacks, verify10 reaction/1 reduction at rank0, normal hits
+  after expiry, native status expiry publication, and lethal reaction death credit.
+- Cast Runtime hook, player-target Empathy, multiattack/failed attack-skill edges,
+  NPC removal-skill integration and native UI remain. Skill26 still unsupported
+  at cast time; this does not claim fully working Empathy or a playable Mesmer run.
+
+2026-10-11 NPC Empathy cast binding:
+- Added explicit Empathy casting hook with pinned rank/variant planner and
+  authoritative target lifetime/range checks. Production hook invokes world
+  NPC application only after successful activation. Cancellation leaves no hex.
+- Fixed foe cast completion gate for resource-less NPC26 and40 targets. Previously
+  NPC Ether Feast reached its world handler directly in tests but Runtime rejected
+  completion because an NPC has no player Resources. World still independently
+  rejects unknown NPC energy and stale/living/hostility/LOS failures.
+- Newly rebuilt skill_casting passes for NPC26/40 activation boundary, cancelled
+  recast and actor generation change. Existing cast suite remains green.
+- Player-target Empathy, NPC AI for Mesmer skale, production energy review and
+  native UI remain unfinished. Casting binding alone does not prove animations,
+  all attacks/multiattack edges or a full profession playthrough.
+
+2026-10-11 integrated NPC cast verification and screenshot guard:
+- Private client22436 launched against host29640. Desktop capture showed another
+  application covering the client rectangle; no game input was sent using that
+  image. Screenshot helper now checks exact private PID foreground before/after
+  capture and removes prior image first. Verified rejection leaves no client.png.
+- Upgraded NPC Empathy regression to drive the actual casting Runtime into the
+  world handler: no hex at2099, apply at2100 after2000ms activation, reaction and
+  reduction on NPC attack, idle expiry5100ms after application and lethal credit.
+  This validates cast/world glue rather than directly installing a hex only.
+- Native client/UI visibility remains unavailable in this run. Mesmer playthrough,
+  reviewed NPC energy, NPC skale AI and other profession objectives remain open.
+
+2026-10-11 scoped Mesmer NPC resource reference profile:
+- Local Creature.html lists40 energy for Elementalist creatures and generally
+  reports one extra energy pip for monsters. Captured skale definitions are
+  primary6. Mesmer Test skale now use40/40 and5pips as an explicitly labeled
+  reference profile, not a measured exception-free per-creature value.
+- Preserved evidence/limitations in mesmer-test-energy-evidence.json and updated
+  the authored development policy hash. Other NPC pools remain unknown.
+- Catalog v8 adds evidence-backed regeneration. LiveActor preserves fractional
+  pip-ms, rejects backward clocks and uses existing maximum elapsed policy.
+  World ticks advance energy; Ether Feast samples the current pool at completion.
+- Production-content regression verifies Ether Feast on installed Mesmer skale
+  heals60 at rank0 without stealing energy/damaging the target. Fractional5pip
+  boundary599/600ms and backward-clock rejection also pass. Native verification
+  and reference-profile calibration remain pending; current host predates changes.
+
+2026-10-11 resource rejection checks and deployment:
+- Added v7/v8 parser rejection regressions for partial pools, zero capacity,
+  current>capacity, missing energy evidence, pips without a pool, pips>10 and
+  missing regeneration evidence. Existing NPC/skill casting regressions pass2/2.
+- Mesmer resource provenance now records both Creature.html monster reference
+  and Energy.html caster4pip source; authored policy explicitly combines4+1,
+  while capacity40 remains tied to Creature reference. Updated policy SHA binding.
+- Rebuilt server_host succeeds with current NPC resource/cast code. Started the
+  normal visible command host; this launch remains pending (PID28928 alive,
+  empty runtime log, no listeners). READY is not verified for this deployment.
+  No official client process was targeted. Native playthrough remains pending.
+- Deployment observation: PID28928 has one waiting Executive thread and remains
+  live. No restart was triggered solely by observation timeout. Attempts to read
+  its console mode could not attach; console selection is not a proven cause.
+  Earlier startup successes do not establish readiness of this current process.
+
+2026-10-11 host startup diagnostics and readiness:
+- Previous host28928 read the complete executable for its build hash but had no
+  durable startup output/listeners. RuntimeLog previously wrote to console first
+  and buffered its file until flush. Console blocking was possible, not proven.
+- Changed RuntimeLog to persist/flush each chunk before console output, so early
+  diagnostic phase information survives a console stall. Rebuilt host and replaced
+  only verified project process28928 to test this code change, not a timeout retry.
+- New launch reaches READY, validates all content catalogs and opens the expected
+  listeners. This verifies current deployment, not the root cause of prior wait.
+  Native profession playthrough remains pending and goal remains active.
+
+2026-10-11 Necromancer staged-objective capture audit:
+- Native foreground screenshot check remains unavailable; no blind game input
+  sent. Closed only the verified unused project client from this failed UI test.
+- Added reproducible tools/quests/audit_necromancer_test.py and preserved exact
+  hashes, instance37 quest snapshots,23 Verata movement samples, Bone Horror
+  definitions/first observations and3 bounded actor memory records.
+- Verata starts at6086/4161 then follows toward the river. Bone Horror92 first
+  observed at world10602 immediately before completed82 snapshot10603. Another
+  Bone Horror243 appears later; do not assume both are required quest summons.
+- Local Necromancer_Test walkthrough requires killing a skale and waiting for
+  Verata to animate a Bone Horror. The next implementation must preserve this
+  staged corpse/follow/summon behavior, not reuse unconditional one-kill completion.
+  Exact summon timing, corpse selection and NPC casting responses remain to review.
+
+2026-10-11 Necromancer corpse/summon objective controller:
+- Added host-only CorpseObjective stages: assigned actor death, verified corpse
+  claim by exact trainer lifetime, successful distinct summoned actor publication,
+  then completion. Death alone never completes. Owner/cycle/generation gates
+  reject stale events; invalidated trainer/owner/corpse blocks unfinished progress.
+- New quest-state tests pass for stage ordering, attempt fences, stale corpse,
+  wrong trainer, invalid summon identity, duplicate publication and lost corpse.
+- Captured actor38 death85855390 precedes Bone Horror92 publication85857687.
+  Raw generic tuple160/20/38/36/158 at publication is preserved by the reproducible
+  audit. It does not justify using normal skill83/player cast duration for Verata.
+- No NPC wire mappings or timing guesses installed. World NPC following, corpse
+  reservation/consumption, Bone publication and durable completion still need to
+  invoke this controller; Necromancer Test remains disabled pending integration.
+
+2026-10-11 corpse reservation/consumption fences:
+- Added lifetime-keyed CorpseReservations with owner/quest/cycle tickets,
+  consumption tombstones and explicit release/retirement. Consumed corpses
+  cannot be reserved again; recycled actor lifetimes have independent keys.
+- World API validates exact dead NPC health/lifetime, quest assignment and
+  current transient attempt before reservation. Consumption occurs only after
+  a successful publication callback under the Instance mutex. The callback must
+  not reenter Instance; Bone publication must be prepared/committed accordingly.
+- NPC-world regression verifies live actors, wrong attempts and stale generations
+  reject; failed publication preserves reservation; successful publication consumes
+  once; retries cannot republish/consume. Quest actor retirement clears tickets.
+- These APIs currently use the existing encounter attempt ledger. Necromancer's
+  staged controller still needs to replace kill-only bookkeeping at activation,
+  reserve/consume its corpse, move Verata and publish the captured Bone Horror.
+  No claim of playable Necromancer Test or native client verification.
+
+2026-10-11 captured trainer/summon appearance preparation:
+- Reproducible Necromancer audit now preserves the trainer definition as well
+  as observed movement. Prepared standalone Verata/Bone Horror actor catalogs
+  using exact model, skin, flags, primary, encoded actor name and model-file list.
+- Bone Horror's captured visual bytes are0/0/0/150, not the common0/0/0/100;
+  retained its actual visual DWORD2516582400. Observed actor level5 is used for
+  runtime presentation; original default_level0 remains in source provenance.
+- Rebuilt quest_state passes loading/configuring both catalogs and checking exact
+  captured fields. This verifies catalog/wire framing, not live rendering or AI.
+- Definitions remain separate from installed default populations until staged
+  corpse publication/following is integrated. No generic Animate Bone cast assumed.
+
+2026-10-11 atomic world corpse-objective activation:
+- Added separate Player corpse-objective ledger and spawn_corpse_encounter82.
+  Neutral trainer lifetime, assigned actors, staged objective and packets are
+  prepared before acceptance commit; failure exposes no actors/controller.
+- Scoped deaths advance corpse stage instead of kill completion. Pending durable
+  completions consult staged state; kill-only binding cannot overwrite it. The
+  shared64objective capacity includes corpse workflows. Reservations validate
+  their own staged cycle and retirement clears actors/tickets/controller state.
+- Rebuilt NPC-world test verifies failed acceptance rollback, successful spawn,
+  death leaving waiting_corpse/no completion, wrong-cycle reservation rejection,
+  kill-only replacement rejection and full retirement cleanup.
+- Corpse claim/proximity, Verata following, Bone publication and host acceptance/
+  restore wiring still remain; default quest82 remains disabled. No live claim.
+
+2026-10-11 corpse claim/publication verification: npc_world_combat passes after adding trainer range, lifetime and line-of-sight claim checks. Staged Necromancer corpse consumption now rejects publication before the trainer claim, preserves the reservation when publication fails, and rejects duplicate consumption. Tests exercise these through Instance. Quest 82 remains disabled in default content: trainer following and atomic Bone Horror publication/completion still require integration; this is not native-client completion proof.
+
+2026-10-11 staged Necromancer summon publication: Instance::publish_quest_corpse_summon stages native NPC packets, fresh actor lifetime, quest ownership, corpse consumption and objective completion before its commit callback. It rejects stale trainers, wrong map/allegiance and unavailable corpse reservations. NPC world-combat tests pass for callback failure rollback, retry, completion only after publication, duplicate rejection and cleanup of both enemy and summon. Fixture appearance is synthetic; default quest 82 remains disabled until captured Bone Horror metadata, trainer following and host acceptance/restoration are integrated and native UI verified.
+
+2026-10-12 captured summon integration verification: npc_world_combat now loads actors/necromancer-test-bone.txt into the real Instance publication path instead of cloning a synthetic trainer appearance. Verified model 48647, observed level 5 and visual adjustment {0,0,0,150}; publication/rollback/retry/completion/cleanup checks pass with this captured appearance. Protected-ally relation is a host policy in the fixture, not decoded retail allegiance. Health and damage stats remain unknown and are verified absent. Host quest acceptance/restoration and trainer navigation remain unfinished; no native-client completion claim.
+
+2026-10-12 completed corpse objective restoration: trusted Instance API restores completed quest82 with current owner/trainer lifetimes and map, no transient corpse/summon reconstruction. Tests reject stale trainer, wrong map and duplicate restoration; verify pending completion and cleanup without new actors. Wave initialization now rejects a conflicting corpse objective. npc_world_combat passes. API is not yet called from host account restoration because default corpse encounter content and trainer motion remain unintegrated.
+
+2026-10-12 trainer corpse approach: Instance::approach_quest_corpse uses layered navigation routes and existing quest NPC tick movement, fenced by owner/attempt/trainer/corpse lifetimes. Tick cancels movement when objective/corpse becomes invalid; unknown trainer health is permitted for this neutral quest action. NPC world-combat test verifies stale rejection, duplicate approach rejection and actual tick movement from x1000 to the corpse before a range10 claim, then captured summon publication. Test speed1000 is synthetic, not retail speed proof. Host orchestration/content wiring and native layered-route verification remain outstanding.
+
+2026-10-12 host-facing corpse orchestration API: advance_corpse_encounter handles waiting-death, approach/claim, captured summon publication and completed idempotency with per-transition scope validation. Appearance retains captured model data; placement uses current assigned corpse coordinates rather than absolute capture coordinates. NPC world-combat tests verify no pre-kill publication, completed publication and repeated-tick idempotency. Default content/host call site still unintegrated, so quest82 remains unavailable to native clients.
+
+2026-10-12 reviewed summon content loading: load_quest_summon validates raw appearance hash, one actor/map, matching combat binding and explicit friendly relation. necromancer-test-summon-combat.txt uses protected ally as authored quest policy with health/armor/energy/allegiance left unknown. World tests load these content files, reject wrong map/hash and pass the existing publication/controller checks. Host default encounter installation remains unfinished.
+
+2026-10-12 corpse encounter content interface: NpcCatalog now supports separate corpse encounters containing enemy templates, captured summon and explicit speed/range policy. Acceptance and advance helpers validate map, enemy state, friendly summon, services and policy bounds before durable commit. NPC world-combat tests exercise acceptance through this interface, invalid-content rejection before callback, and captured summon progression. This interface is not yet loaded/called by gw_auth; live default installation still pending.
+
+2026-10-12 gw_auth corpse dispatch: acceptance uses selected NPC actor scope and validated corpse content; tick invokes staged progression for active durable quests; completed objectives are retained for reward verification. Reward requires world completion and cleans quest actors. Account restoration restarts active encounters or restores completed readiness without transient actors. Missing content filters acceptance offers. server_core Release builds; npc_world_combat passes. Default content loader/installation and native quest test remain pending, so no live completion claim.
+
+2026-10-12 corpse manifest/startup loading: server settings accept quest_corpses. Manifest header gw-quest-corpses 1; row corpse QUEST MAP ENEMY_APPEARANCE ENEMY_COMBAT ENEMY_SHA256 SUMMON_APPEARANCE SUMMON_COMBAT SUMMON_SHA256 SPEED CLAIM_RANGE. Only staged quest82 supported. Loader independently binds enemy/summon populations; startup checks quest content, navigation and conflicting encounter types. server_core Release builds; npc_world_combat passes successful parse and duplicate rejection with a mixed captured parser fixture (Mesmer skale enemies, NOT asserted as Necromancer content). Default quest82 entry still requires its actual enemy capture, trainer metadata and quest strings.
+
+2026-10-12 actual Necromancer enemy appearance export: audit_necromancer_test.py now records four epoch37 River Skale Tad candidates (actors37..40) and their matching definitions, exports actors/necromancer-test-skale.txt and records its hash/provenance. Actor38's captured position is 4605,581; primary6/model82023 preserved, unknown combat stats untouched. Native quest_state test loads/configures all four and verifies identity/position. Only actor38 death is linked to this attempt completion; no requirement to kill all four inferred. Combat policy and quest/trainer content still needed for default installation.
+
+2026-10-12 quest82 text recovery: audit_necromancer_test.py exports necromancer-test.fwqc directly from epoch37 active/completed snapshots, preserving source hash, encoded UTF16 units, marker float bits and stage variants. Native quest_state test loads it and generates both2022 add/details batches for active and completed profiles. Test passes. Separate catalog remains uninstalled pending combat/trainer content; objective completion capture is not reward-turn-in proof.
+
+2026-10-12 Verata noncombat metadata: separate trainer-combat/policy files preserve captured appearance and bind neutral nondamageable policy with unknown health. Giver merging now allows such trainers while requiring reviewed health for damageable guardians. Added neutral_actor check for corpse approach/restoration; strict neutral_guardian remains for combat escort/waves. Native NPC world-combat test loads, remaps and navigates captured Verata from his captured position to a synthetic corpse without invented health; passes. Default installation still pending enemy combat policy and integrated native test.
+
+2026-10-12 actual enemy combat content: audit finds modern kind42 health-capacity10 for epoch37 actors38 and40 (packet lines98560/98686), no bounded allegiance records. Enemy combat catalog preserves measured10 for those actors; remaining two use wiki35 reference, initial full health/armor0/token2/no retaliation explicitly authored. Corpse manifest parser test now uses actual Necromancer appearances/combat, replaces mixed Mesmer fixture and verifies measured capacities. Default installation/native test still pending; development armor/AI are not retail claims.
+
+2026-10-12 default quest82 installation: appended captured active/completed quest text; added Verata to giver supplement with unique definition11; recomputed giver SHA60f5be8333e355220b06ee3cc734d3423c7600190d58cb23581af7fe210b01a9 and metadata/tests bindings. Configured presearing-corpses manifest with authored approach220/range128. Corrected Verata metadata padding for aggregate v3 catalog. quest_state/npc_world_combat pass. server_core/server_host build. Visible cmd host PID9060 executable bin/server_host.exe startup reports quests7, corpse encounters1 and READY auth6112/world6113/portal6601; listener ownership verified. Native quest playthrough/rewards still unverified; temporary enemy armor/AI policy remains.
+
+2026-10-12 Necromancer account persistence verification: network_lifecycle test creates isolated primary4 character, accepts quest82, reopens active state, completes trusted objective, rejects stale skill revision without XP changes, grants500XP/skills153,105 with native slot packets, rejects duplicate reward and reopens rewarded/skills/XP state. Passes. This fixture proves storage/reward service behavior, not native interaction. Native launch attempt exposed stale client_launcher rejecting quest_corpses setting; rebuilt launcher and --check now passes updated config without launching. Host remains ready; native quest UI still unverified.
+
+2026-10-12 integrated Necromancer world/account test: network_lifecycle now loads actual trainer/enemy/summon content, performs atomic acceptance, reopens active account state, kills assigned captured actor38 template, confirms kill alone does not complete, ticks Verata approach and publishes summon before durable completion/reward. Existing stale/duplicate/500XP/two-skill/reopen checks pass. Navigation-free fixture verifies orchestration and persistence, not live mesh/UI. Updated private launcher started native client but foreground guard rejected input; no native login keystrokes sent. Host unchanged.
+
+2026-10-12 actual navigation/reconnect verification: integrated Necromancer network_lifecycle test now configures real Lakeside County mesh before captured trainer/enemies, requires approach-route creation, advances navigation to assigned corpse and verifies summon-before-completion/reward. Fresh Instance restores durable completed82 with current captured trainer, no transient enemy/summon creation and pending reward readiness. Full test passes including persistence checks. Simulated elapsed time verifies reachability/sequencing, not retail movement timing or native animation; native UI remains unverified.
+
+2026-10-12 Monk Test capture audit: reproducible audit_monk_test.py and monk-test-evidence.json identify epoch25 Ciglo36, three River Skale Tads42..44 and Gwen244. Captured quest states at lines7599(active),7693(found Gwen/escort text),7710(completed flag) have no assigned-candidate death records in the bounded window. Only one sampled Gwen position occurs before completion; later47-position movement must not be used as evidence for completion trigger. Need local wiki/capture correlation for discovery/dialog/escort and separate reward turn-in before implementing. No fabricated mapping or full-escort completion claim.
+
+2026-10-12 Monk audit correction: previous zero-death statement was caused by audit comparing effects state2. Supplied GWCA Agent.h line241 defines death mask0x10. Corrected audit now records actor42 death packet67719 tick84638859, actor43 packet67772 tick84643375, actor44 packet67878 tick84650437, then quest completed snapshot tick84652593. Wiki Monk_Test SHA9b8bf2c2aebfd889e7ef9c6dcd3bd1ab957168efe578c3e45141b3dac8d2fe5a agrees all three River Skale Tads block Gwen. Completion flag follows blocker deaths before later sampled escort motion; first quest removal packet68227 tick84686171 retained, not assumed reward without corroboration. This supersedes prior no-death audit claim; no runtime behavior changed.
+
+2026-10-12 Monk captured content exports: audit_monk_test.py creates separate monk-test-givers.txt(Ciglo/Gwen), monk-test-skale.txt(three observed blockers), monk-test.fwqc(active/completed encoded stages) with hashes/provenance. Captured appearance/model files and positions preserved, no combat stats inferred. Native quest_state test verifies catalog/three blockers/Gwen models116759,116760 and coordinates3802,-4559; passes. Files not yet default-installed; discovery/follow/reward gating still to implement.
+
+2026-10-12 Monk escort controller: EscortObjective implements discovery, three assigned lifetime-fenced blocker deaths, following/completion and separate arrival/reward readiness. Invalid owner/attempt/Gwen/Ciglo identities, duplicate events, early arrival and escort loss reject. quest_state tests pass all stages including completion not granting early reward. Controller is host-only; world spatial validation/movement/acceptance/restoration still need integration. No fabricated native opcode mappings or runtime timers.
+
+2026-10-12 escort world ledger: per-player quest_escorts binds an untouched prepared quest84 kill group to neutral current Gwen/Ciglo lifetimes, replaces kill-only ledger, receives scoped NPC deaths, exposes staged completion and supports retirement cleanup. Synthetic world tests cover wrong cycle, replacement rejection, three actual deaths not completing undiscovered objective and actor cleanup. Binding API is not yet atomic with durable acceptance/publication and is not used by host; spatial discovery/follow/arrival remain pending.
+
+2026-10-12 escort spatial validation: discover_escort validates current owner/Gwen/Ciglo lifetimes, neutral state, available health, distance, plane and navigable LOS; arrive_escort also requires owner and Gwen near Ciglo and follower state. Reward readiness query remains separate from objective completion. NPC world-combat tests pass distant discovery, early arrival, cleared-blocker discovery, cycle rejection and arrival gating with synthetic positions. Retail radius unknown and supplied by host policy; atomic acceptance/follower movement/host dispatch remain unfinished.
+
+2026-10-12 atomic escort spawning: spawn_escort_encounter prepares three blocker lifetimes, native packets and escort controller before durable commit callback, validating current neutral living-or-unknown-health Gwen/Ciglo and shared map. Failed acceptance exposes no actors/state; stale Gwen rejects. Native NPC world-combat test uses atomic API and passes existing discovery/deaths/reward gating/cleanup. Old bind helper no longer required by this test; default Monk content/host dispatch/follow movement remain pending.
+
+2026-10-12 escort follow movement: follow_escort routes Gwen toward authoritative owner position with layered navigation, owner/cycle/lifetime/state checks, configured speed/stop radius and redundant-route suppression. Tick validates the escort attempt and supports noncombat unknown-health follower. Synthetic NPC world-combat tests pass blocked/undiscovered no-follow, wrong cycle rejection, actual movement to owner and follow-range stop, then arrival reward gating. Retail follow radius/speed unknown and host-configured; host/content/native integration still pending.
+
+2026-10-12 completed escort restoration: trusted restore_completed_escort_objective resumes following state with current neutral Gwen/Ciglo/map/lifetimes and no blockers; never restores arrival/reward readiness from generic completed quest flag. Tests reject wrong map/duplicate, verify no blocker respawn and require new spatial arrival for reward. Escort ledgers counted in shared64 objective capacity and kill/wave initialization rejects escort conflicts. NPC world-combat passes; host dispatch still unfinished.
+
+2026-10-12 escort host dispatch: NpcCatalog EscortEncounter defines map/blockers/role names and explicit movement/range policy. Helpers validate content, uniquely resolve current follower/recipient scopes, atomically accept and advance discovery/follow/arrival. gw_auth filters missing84 content, requires arrival-ready rewards, retains completed escort during follow, cleans on reward, and restores active/completed appropriately. NPC world-combat tests pass content-driven acceptance and ambiguous role rejection; server_core builds. Escort content manifest/config loader and actual Monk combat metadata/default installation still pending; running host remains previous build.
+
+2026-10-12 escort manifest/startup: quest_escorts config supported; gw-quest-escorts1 rows specify quest84/map/appearance/combat/hash/quoted follower+recipient/speed/discovery/follow/arrival ranges. Loader validates blockers through existing revision-bound combat parser and escort policy; startup checks quest/navigation/unique roles/conflicting types. Synthetic parser test succeeds and rejects duplicate84; NPC world-combat passes. server_core and launcher rebuild; launcher --check passes. Actual Monk combat metadata/default manifest still pending.
+
+2026-10-12 Monk actual combat/content: audit recovers all three blocker health capacities10 at packets67715/67764/67871. Added revision-bound enemy and neutral noncombat giver metadata plus monk-test-escorts manifest, explicit temporary armor/hostility/no retaliation/range policy. Actual content test loads manifest/roles and real Lakeside mesh, spawns all three capacity10 blockers, discovers captured Gwen and confirms blocked/no-follow. NPC world-combat passes. Default install and integrated reward/native flow still pending.
+
+2026-10-12 full real-mesh Monk escort test: player routes from captured Gwen to skale area, kills all three measured10 blockers, completion stays reward-ineligible, Gwen routes to player and follows return path to captured Ciglo5942,4172; arrival128 unlocks readiness. NPC world-combat passes. Default installation audit found existing baseline Gwen in map146 actor10009 at8023,2545 (npcs.txt lines2370/2371); blindly appending captured quest Gwen would create ambiguous role. Resolve captured quest placement against ambient population before default enablement; no installation performed.
+
+2026-10-12 named captured placement override: merge_quest_givers takes explicit replacement-name set; default behavior unchanged. Named replacement requires one matching nonservice baseline identity (model/skin/encoded name/model files), stages transaction and remaps fresh actor/definition. Test merges actual baseline+Monk supplement with Gwen override, verifies exactly one Gwen at3802,-4559 with noncombat metadata and rejects mismatched replacement without mutation. Full NPC world-combat passes. Host must derive explicit override names from escort content before giver merge; default Monk installation still pending.
+
+2026-10-12 default Monk installation: startup preloads escort manifest, derives explicit role-name replacement set and passes to giver merge. Appended captured Monk active/completed text and Ciglo/Gwen population, revised combined giver SHAfa5dbc3969970204cafd8ebb9d9b0b39809770f8fd76f359eba7ca4b45b4253c, metadata/tests updated. Named Monk source monkpolicy avoids combined evidence collision. Config quest_escorts points at actual manifest. quest_state/NPCworld pass, server_host/core build, launcher check passes. Visible host PID25888 startup validates quests8/escort1/corpse1 and READY auth6112/world6113/portal6601. Native playthrough and durable Monk reward integration remain unverified.
+
+2026-10-12 integrated Monk world/account verification: network_lifecycle creates isolated primary3 fixture, loads captured Ciglo/Gwen/blockers and actual mesh, atomically accepts84, discovers Gwen, routes player/kills all three, persists completed stage before arrival while world reward readiness remains false, follows Gwen to Ciglo, requires arrival, then verifies500XP/skills288,252/native slot packets, stale revision rollback, duplicate reward rejection and rewarded/skills/XP database reopen. Test passes. Host's native UI dialogue and capture-matched animation timing remain unverified; test uses authored development ranges/armor/no retaliation.
+
+2026-10-12 native input available: relaunched private host/client and logged pre account successfully; no EULA screen, roster3. Created Pre Quest Monk through native screens. Although Prophecies card was visible, Next was clicked without explicitly selecting that card; server recorded opcode94 campaign3/profession3 and correctly routed to490. Therefore this is not proof of backend campaign mapping failure; next test must explicitly click Prophecies card and verify opcode94 campaign1 before creation. New test character loaded native world without crash; it is not valid pre-Searing quest proof. Do not remap campaign3 to1 based on this run.
+
+2026-10-12 native explicit Prophecies creation: private client PID29260/server38824. Clicked Prophecies card before Next; opcode94 category1/option3 confirmed. Native Pre Monk Native created with primary3, creation destination148 and dedicated captured new-character spawn9661.21,7888.11, loaded into pre-Searing Ascalon without crash. /tp146 loaded Lakeside with NPC population42packets. Previous campaign3 run was default selection, not backend mapping bug. Current client is ready in146 for native Ciglo quest test; quest acceptance/reward not yet verified.
+
+2026-10-12 native Ciglo approach crash: selected actual merged actor10014 via bounded private target helper and native SPACE; host logged npc_approach moving then npc_interaction. Private client exited. Latest local ArenaNet.log report is build37130 textparser.cpp706 assertion (*data & ~WORD_BIT_MORE)>=WORD_VALUE_BASE, with error text string1c17 e88f adaf ec61 0000 matching captured Verata encoded name. Archived full latest report build/reports/monk-native/latest-crash.txt. This is native text compatibility evidence, not auth/EULA crash. Need resolve captured resource-name encoding against2022 supported literal name override serialization before further quest UI verification; no guessed opcode change made.
+
+2026-10-12 native name compatibility fix: quest-giver merge sets decoded literal_display_name; snapshot leaves source captured resource codes untouched in content but omits unverified resource name from serialized definition, publishes pinned name154 literal108/107/1 override after spawn. World test proves override packet/source preservation and passes. Rebuilt/deployed private host, native client23744/pre account: Pre Monk Native loaded146, selectedCiglo10014/SPACE approached, quest menu displayed without textparser crash, Verata decoded name renders, selecting Monk Test logged quest84 reward0 status0 and minimap quest marker appeared. Screenshot build/reports/monk-native/ciglo-accepted.png. Full escort/reward native flow still pending; captured quest text resource compatibility not yet proven in L window.
+
+2026-10-12 native Monk discovery/attack: L log rendered captured quest title/dialogue/rewards; native SPACE reached Gwen10015 through Lakeside, no crash. SPACE attack60000 rejected because actual Monk blocker v1 catalog lacked final fire armor; Holy Rod is equipped and fire-type policy requires reviewed armor before pathing. Upgraded enemy metadata v2 with explicitly authored fire/cold final0 consistent with development policy. Actual mesh/content test now equips captured Monk creation Holy Rod and requires ordinary_attack approach acceptance; remaining escort assertions preserved. Running host has old metadata until next controlled reload; native full combat/reward still pending.
+
+2026-10-12 native blocker/escort verification: controlled metadata reload, native Pre Monk Native reconnect restored active84/all three blockers. Holy Rod SPACE attacks60000/60001/60002 now scheduled and defeated blockers; approaching Gwen10015 produced native completed quest log with crossed-out discovery and escort text. Gwen followed return path to Ciglo but reward offer absent. Root cause: normal NPC approach stops160, escort incorrectly required owner128 and followed owner stop128 could leave Gwen outside recipient range. Fix uses normal NPC interaction gate for owner and routes follower to recipient once owner in interaction range. Added boundary regression owner150 from recipient/follower260; test passes. Running host not yet rebuilt for arrival fix; native reward still pending.
+
+2026-10-12 native Monk reward proven: deployed arrival fix and reconnected completed84 without blockers. Gwen resumed following; normal SPACE approach toCiglo10014 now offered Reward: Monk Test after Gwen arrival. Native choice logged quest84 reward1 status0; quest removed from L and Healing Breeze/Banish icons populated slots1/2. Read-only live data/state.db confirms Pre Monk Native500XP and FWQ1 record84/cycle1/stage3 rewarded; FWS primary3 profile retained. Archived reward-offer/reward-received PNG and reward-durable.json. Full native Monk flow verified across metadata reload/completed reconnect; development enemy armor/no retaliation/radii remain explicit approximations.
+
+2026-10-12 Ranger Test evidence/content: audit_ranger_test.py recovers epoch3 Artemis36, Queen45 at5670,-4379, health capacity10 packet6315, death packet6323 and subsequent86 completion. Exports artemis/queen appearances and active/completed FWQC with source hashes. Queen shares model definition1434 whose default name is Tad; export explicitly uses observed agent Queen name, not model default. Native quest_state loads content and verifies name/model/position; passes. Enemy combat metadata, bow weapon path, default install and native Ranger verification remain pending.

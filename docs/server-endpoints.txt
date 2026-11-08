@@ -1,0 +1,23 @@
+The native host reads config/server.txt before starting listeners. Keys are bind,
+public_host, auth_port and portal_port. The world port is auth_port+1. All three
+listeners use bind; world transfer responses advertise public_host. Duplicate,
+unknown, empty, malformed or overlapping-port settings reject without changing
+the parsed settings. Only IPv4 addresses/hostnames are supported here.
+
+Local defaults remain127.0.0.1 with portal6601/auth6112/world6113. For a LAN host
+bind can be0.0.0.0 and public_host must be this PC's reachable LAN IPv4. For
+internet deployment public_host must resolve to the reachable external IPv4;
+firewall/router reachability and remote client routing still need verification.
+The included native client launcher reads public_host/auth_port from the same
+file and verifies the pinned private executable before starting it. Its portal
+port remains6601; other portal ports reject until client routing is verified.
+Use bin/client/client_launcher.exe --check to validate without opening a game.
+The default file keeps client launches on localhost. This change
+does not claim public connectivity, DNS provisioning or modify firewall rules.
+
+Native regression uses127.0.0.2 rather than localhost and connects to each of
+portal/auth/world, verifying portal honors the configured bind. It also covers
+startup rollback, restart and invalid configuration preserving previous settings.
+network_lifecycle test passed after the fix. Host11540 restarted visibly with
+SHA2562a4afad77b186bc622e6e08ba1d32df268f2d684225e5d90ca8088284001606c
+and READY confirmed for the local defaults. Gameplay remains the74-binding batch.

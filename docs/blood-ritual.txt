@@ -1,0 +1,68 @@
+Blood Ritual157: guarded Runtime and production gateway binding
+
+The local historical Blood_Ritual.html revision2642614 describes a touch-range
+Necromancer/Blood Magic enchantment for another ally:5Energy,17percent Health
+sacrifice,2s cast,.75s aftercast,2s recharge,8..14s duration at ranks0..15 and
+constant+3 Energy regeneration. It is not an elite Blood is Power alias.
+The pinned2022 row agrees:duration8/14,bonus3/3,caster281,target2077,Touch
+specialbit1 set and Overcast specialbit0 clear. Its raw Overcast byte10 is
+therefore not an Overcast cost. Do not copy119's spell range,250ms activation,
+10s fixed duration,zero recharge,scaling pips,target224 or17/33percent cost.
+
+Evidence tool: tools/protocol/blood_ritual_2022.py
+Report: build/reports/blood-ritual-native-2022.json
+Checkpoint:20261017-npc-refresh-2,packet110488-195213578 plus its paired world
+identity sources,all SHA256-verified. Other-actor casts are at lines423474,
+426012,466014,484514,484728. The corresponding finishes and immediate self21
+resource281 events are verified exactly,with no intervening same-actor cast
+or stop. All five occur in map34;local actor10 is distinct from casters468,
+288,315,315,483. They are not local-player activations.157 must remain in the
+local missing-capture list. Do not relabel its five sightings as owned casts.
+
+Observed modern intervals are1000,1000,969,1000,1016ms. Their actor/context
+modifiers are unresolved;they do not override the pinned2s cast. The tool also
+executes the original2022 cast and caster-particle consumers with stubbed
+actor/asset services. No rendered result is claimed. No target effect is
+invented for2077. Touch144 is sourced from the supplied GWCA Constants.h and
+existing server touch policies;the actual2022 distance threshold and automatic
+approach remain independent verification gaps.
+
+Implemented shared transaction:
+The runtime shares the owned positive Energy-enchantment transaction with119 through a
+skill-bearing canonical plan, with canonical native fields checked before use.
+Same-skill renewal is distinct from different-skill stacking:119 and157 may
+coexist and add pips before the cap. Player/reviewed-NPC ally and lifetime
+validation uses touch range,rank duration,paid17percent sacrifice once,
+5Energy,2s activation/.75s aftercast/2s recharge and finish-before-self281.
+Generic status insertion is blocked;removal and Health/Energy death boundaries
+retain modifier ownership. The119-only half-even exception remains isolated.
+
+The native verifier passes all five exact receipt groups and original consumers.
+Runtime now uses the shared scoped Energy-enchantment callback for119/157.
+World owns sacrifice payment and forwards its receipt to casting completion,
+preventing a second charge. Generic active status insertion is blocked;removal
+and expiry end the corresponding Energy modifier. NPCs require reviewed ally,
+living Health and known Energy/rate facts before activation payment.
+
+Release tests cover player/NPC and PvE/PvP admission,cancel,interrupt,stale
+lifetimes,caster death,missing callback/receipt,5Energy,2s activation,.75s
+busy period,2s recharge and finish58 before self21/resource281. World tests
+cover144 versus144.01,rank durations,one sacrifice receipt and independent
+119/157 stacking,cap,renewal,removal and expiry. NPC tests cover mixed timed
+regeneration without one enchantment replacing the other.
+
+Local casts,numerical duration/pips/sacrifice and rounding confirmation,touch
+approach,modifier combinations,NPC caster AI and rendered QA remain pending.
+The119-only half-even rule is not applied to157;its existing fractional
+sacrifice policy awaits independent retail confirmation. No official client or
+logger was interrupted.157 remains missing a local-player capture.
+
+2026-10-21 Energy enchantment duration integration
+Blood is Power119and Blood Ritual157now accept the same scoped,timestamp-bound equipment duration receipt. Player application installs one adjusted expiry in the effect registry,zero-Health-pip lifecycle timer and Energy ceiling/regeneration curve. Reviewed NPC recipients install that expiry in their registry and Energy curve as well. Native pips,cost,range and sacrifice plans remain immutable;the existing single paid-sacrifice receipt still prevents duplicate Health loss.
+Generalized regeneration_duration_ready to enchantment_duration_ready(skill,base,now) so Energy enchantments share prepayment and completion validation without pretending to be Health-regeneration plans. Gateway builds current equipment quotes for both119/157and passes the checked receipt into World. Existing legacy adapters remain optional;normal gateway declares the guard.
+Corrected Blessed Aura eligibility:the documented effect applies to Monk enchantments,not every spell cast by its owner. Unsupported Aura stacking still rejects Monk enchants;Necromancer119/157and Blood Renewal115can use the independently supported weapon bonus while Aura is active. A regression exercises115with an active Aura record.
+New16World cases cover119/157,player/NPC recipients,dense/coarse ticks and renewal after20to10percent weapon changes. They check exact NPC Energy units,continued bonus after native base expiry,restoration of baseline pips,correct adjusted registry expiry,and unchanged330/170Health sacrifice at1000maximum. Renewal settles the old interval and replaces its modifier without double regeneration. The existing casting suite expands21to35cases,including119/157fresh completion quotes,unknown/lost equipment capability and no duplicate sacrifice callback.
+Six current-source suites pass:energy_enchantment_duration,enchantment_duration_cast,enchantment_duration,blood_power_cast,blood_ritual_cast,blood_ritual_world. Native119fixed cast/224consumer and157five non-local/unassigned cast/281consumer verifiers pass;157is not relabeled a local capture. Coverage tooling4/4passes. Serial host94255completed successfully. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing republished. Full Monk provider stacking,other enchantment families,NPC caster equipment and rendered duration/animation checks remain open. Official clients/loggers untouched.
+
+2026-10-29 typed completion:the shared World transaction in gw_world_energy_enchantment.inl preflights recipient state,consumes the exact admitted event,rewards Renewal before sacrifice,rebuilds post-reward state and returns one paid receipt. Recipient feedback is deferred after finish/visual prefix;actual Energy gain persists after lethal caster sacrifice in native tests. See build/reports/energy-enchantment-renewal-progress-20261029.json for224new cases,old-suite hashes and remaining retail/recursive/clock/rendered gates. Ritual157still lacks local activation capture;current corrected particle evidence is the maintained index entry157.
+

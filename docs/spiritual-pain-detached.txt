@@ -1,0 +1,35 @@
+SPIRITUAL PAIN [1336] — TESTED DETACHED DAMAGE, NOT SOURCE-BOUND
+
+The fixed 20261024-all-completed checkpoint contains a local start at
+packets-1360-15821281.jsonl:32484 (actor25 to actor30). Its finish at 32491
+is followed by target body resource1530 at 32492. The modern official
+recharge packet at 32490 says 4; the pinned original2022 catalogue says a
+base recharge of 7. The cause of this difference is unknown. Do not override
+the pinned value or copy modern headers into the original client.
+
+The local wiki and original2022 catalogue agree on Domination Magic rank
+scaling: 15..75 primary armor-ignoring damage and 25..125 extra damage to
+hostile summoned creatures in the selected foe's area. The new native plan
+validates the pinned metadata at ranks0..20. Its detached resolver applies
+the target hit and, when the target itself is a known summon, a separate
+second hit. A known summoned neighbor receives only the second hit. It
+rejects unknown summon identity, stale/invalid damage actors, unsupported
+level and out-of-area targets. A lethal primary hit does not receive the
+second hit. A separately tested staged World transaction now selects recipients;
+see docs/spiritual-pain-world.txt.
+
+The focused Release spiritual_pain CTest passes1/1. It covers all21 ranks,
+ordinary/summoned/neighbor damage, inclusive area edge, lethal first hit,
+unrelated targets and rejection cases. This is mechanics testing, not
+original2022 callback or rendered-client verification.
+
+Remaining before source binding: exhaustive summoned identity/hostility facts,
+normal paid Runtime cast and recharge, original2022 animation consumer, and
+private-client test. The one modern capture does not establish extra-damage
+packets for summoned targets or universal AoE geometry.
+
+SHA-256 header 64DCC33D4AC74E5FA771686420C09EC49296EAE9C0991541CD513F7FEE316045
+SHA-256 test 25E86A0F2AF5033A9A8CB0412F13575AA04270799327DF085F94872B1032D259
+SHA-256 tested EXE D8093595837456B11D182063BFDE2A8D0A9B7D413831703A74BF889955E1FE7F
+
+Official client and live loggers were untouched.

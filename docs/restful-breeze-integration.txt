@@ -1,0 +1,53 @@
+Restful Breeze 886 — source-bound native regeneration and action consumer
+
+Evidence: fixed checkpoint data/captures/skill-checkpoints/20261024-all-completed.
+The attributed player cast in packets-1360-15821281.jsonl has kind60 start at
+line285200, kind58 completion at285209, body507 at285210, and effect112/8s
+at285211. The 2022 pinned skill row gives +10 Health regeneration and
+8..18s rank duration; the archived local wiki says the enchantment ends when
+the recipient attacks or uses a skill. One captured cast does not itself
+prove the early-end action or rendering.
+
+Implemented in this stage:
+- reviewed rank-scaled +10 regeneration plan for skill886;
+- existing owned, timed Health regeneration State can settle a partial
+  interval at early removal;
+- World removes the effect at accepted recipient skill use and at actual
+  ordinary attack start, including the NPC-approach completion path. A denied
+  slot or stale actor generation does not remove it.
+- NPC LiveActor applies the same reviewed timed source, includes it in the
+  existing capped regeneration ledger, and ends it on accepted attack,
+  selected skill-action, or spellbook spell start. The actor generation is
+  checked; denied actions preserve the effect. World publishes the NPC
+  effect-removal event when those action entry points are used.
+- World now validates player-to-NPC ally status, range and lifetime, commits
+  the NPC source, and publishes body507 plus a timed status. Player and NPC
+  recipient paths both support deferred publication after casting completion.
+  The modern logger's opcode66 effect-add maps to the pinned2022 opcode65;
+  the raw opcode is not copied into the 2022 server stream.
+- Runtime admits paid Restful Breeze casts, rechecks the allied target at
+  completion, and invokes the production World hook. The hook applies the
+  enchanting duration adjustment and Divine Favor, then publishes the native
+  effect only after cast completion. Rejected or stale targets receive no
+  effect.
+
+Verification: serial Release builds of server_host, health_regeneration_test,
+restful_breeze_world_test, restful_breeze_npc_test,
+restful_breeze_cast_test and adjacent NPC suites;
+CTest health_regeneration, accepted_skill_start,
+restful_breeze_world, restful_breeze_npc, restful_breeze_cast,
+watchful_healing_npc_player_cast,
+shield_regeneration and npc_spell_replacement passed. The offline pinned-client verifier
+tools/protocol/restful_breeze_2022.py hash-checks the frozen capture and
+native image, all five cast/completion/body/status receipts, native cast
+consumer, and body507 recipient particle. Its report is
+build/reports/restful-breeze-native-2022.json. This does not establish
+rendered-client behavior. The captured 4s recharge differs from the pinned
+8s base; the cause remains unknown.
+
+The cast-to-World Release test additionally passes for allied player and NPC
+recipients, payment, invalid targets, stale scope, and finish/body/status
+publication order. Source binding still does not establish rendered-client
+acceptance. The 4s captured recharge versus pinned 8s base needs a retail
+modifier explanation, and broader Divine Favor/duration combinations remain
+to be verified.

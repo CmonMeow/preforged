@@ -1,0 +1,50 @@
+TORMENTOR'S INSIGNIA AND HOLY FIELDS — 2026-10-17
+
+Native upgrade identity0x253003d8 is recognized as a Necromancer insignia.
+It can be installed/replaced through the existing owned upgrade transaction,
+consumes one source item, replaces the previous insignia and retains unrelated
+modifiers. Wrong profession and duplicate insignias reject. Rune and insignia
+classification remain independent.
+
+Each worn piece adds10armor at its own location. The physical-location array
+retains individual piece totals; uniform scalar armor also includes the bonus.
+Holy vulnerability is global and stacking:6chest,4legs,2head/hands/feet, maximum16.
+The reviewed holy-equipment decoder now returns that aggregate instead of
+rejecting the recognized Tormentor word. Opaque upgrades still return unknown.
+Mixed armor ratings remain a limitation: scalar armor APIs reject nonuniform
+ratings instead of substituting an average. Physical player weapon paths now
+consume the reviewed locations directly (docs/mixed-weapon-armor.txt).
+Elemental weapon paths now use typed locations too (see
+docs/mixed-elemental-weapon-armor.txt). Spell recipient paths still need
+mixed-location integration before claiming all mixed armor configurations.
+
+Symbol of Wrath247 and Kirin's Wrath1113 player pulses now query the reviewed
+holy traits/bonus on each pulse. Unknown state skips that recipient; recognized
+flat vulnerability is added before existing damage protection. Equipment changes
+affect later pulses. Production publishes a timestamped gear update, settling
+already-due fields with the previous state before installing the new one.
+Backdated updates against equipment/Health/Energy clocks reject. Native NPC
+holy sensitivity and Banish-only summoned doubling remain separate.
+
+SOURCE EVIDENCE
+build/research/toolbox-modifiers/GWToolboxdll/Modules/PriceCheckerModule.cpp:212
+names0x253003d8 Tormentor's Insignia [Necromancer]. Local pinned Toolbox commit:
+ef3d3670d0d6343471341373680aafd9de911447
+PriceCheckerModule.cpp SHA256:
+b8fe50e4683eaa4a0e9f4d9ba6caf31806b353e0caa8080740acca7cddd480a2
+This establishes identity, not the game's damage rules. Those use the local
+historical Tormentor's_Insignia.html: armor+10,global stacking6/4/2 holy penalty.
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Tormentor's_Insignia.html
+No new official Tormentor item capture/rendered tooltip test is claimed.
+
+tormentor_holy_fields tests all five piece weights, full-set16/armor70, wrong
+profession/duplicates, owned installation and replacement with exact source
+debit and immutable proposal, both holy fields, dynamic/unknown gear state,
+Shielding Hands, field survival after caster death, caster lifetime replacement,
+radius/allies, delayed equipment settlement, backdating and repeated ticks.
+Other regressions rebuild armor decoding/rules, inventory upgrades, player holy
+damage and existing damage fields. Rendered acceptance, transformed player
+traits, other unknown upgrades and broad retail reaction ordering remain open.
+Official sessions/loggers were not controlled or interrupted.
+
+Validation: Release server_host rebuilt successfully. Six rebuilt native suites passed: tormentor_holy_fields,player_holy_damage,damage_fields,armor_attribute_runes,equipment_rules,item_transactions.49 tooling tests and fixed npc-refresh-2 source audit/publication pass;250bound/383awaiting/696missing.

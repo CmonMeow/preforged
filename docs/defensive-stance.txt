@@ -1,0 +1,74 @@
+Defensive Stance345 — owned stance and ending reward
+==========================================================
+
+Player-owned Runtime/World binding is enabled. NPC casters remain unsupported.
+
+Pinned2022 row:type3,Tactics21,zero Energy,120 adrenaline units,8-second
+recharge,duration1..5 seconds,75% block,ending reward cap0..4 strikes at
+ranks0..15. The wiki cost5 is an adrenaline icon;plain text extraction must
+not turn it into5 Energy. This uses the existing native adrenaline-unit system.
+
+gw_defensive_stance.h validates metadata and prepares an immutable ending
+transaction: remove the exact owned effect and calculate its capped reward
+from a same-lifetime authoritative end-time skillbar. The owner must commit
+the copied registry and adrenaline changes together under its lock. A second
+proposal against the committed registry cannot award the reward again.
+Natural expiry uses the deadline,not a later processing timestamp; a newer
+bar snapshot cannot stand in for the unknown end-time bar. Death/retirement
+remove without reward. Existing adrenaline pools retain caps and disabled state.
+
+Melee classification uses native attack type14 and weapon_req subsetb9:
+axe1,daggers8,hammer10,scythe20,sword80;generic melee b9. Bow2 and spear40
+are excluded. Empty/malformed/duplicate/unknown slots are validated explicitly.
+Separate copied slots count separately in this policy;retail behavior
+for copied skills remains unverified and needs evidence before binding it.
+
+tests/defensive_stance_policy.cpp covers ranks0..20,bar classification,
+cap/reward calculation,all end reasons,immutable proposals,duplicate removal,
+stale scope,late processing,future bar rejection,and capped/disabled pools.
+
+Fixed checkpoint20261017-npc-refresh-2:
+packets-1360-15821281.jsonl lines364714..364720 and365058..365064.
+Both windows contain adrenaline spend210,recharge8,instant48,body21/resource618,
+effect68/66 with rank0 one-second duration,and pending-slot release227.
+tools/protocol/defensive_stance_2022.py verifies manifest SHA256,exact receipts,
+native metadata,instant dispatch and body618 particle consumer. Resource618 is
+the target-body field;the generic caster-only success helper would emit none.
+Report:build/reports/defensive-stance-native-2022.json.
+
+Production lifecycle
+====================
+Runtime uses the owned instant stance path with native120-unit adrenaline spend,
+zero Energy,8-second recharge and explicit self body618 publication. It does not
+substitute the caster-body sentinel for the captured target-body resource.
+
+World installs a zero-pip timer alongside the registry entry. Natural expiry,
+explicit removal and replacement all prepare the same ending transaction.
+The transaction removes the exact registry instance,releases its bar observation,
+and commits capped/disabled adrenaline pools together under the World mutex.
+Soothing Images suppresses the reward;death ends the effect without a reward.
+Cleanup retires the timer before cross-actor settlement can re-enter it.
+
+CooldownBarAuthority holds one bounded observation for the owned effect/deadline.
+It retains the last bar strictly before expiry while allowing later publication
+to remain distinguishable. A newer pool clock/bar is rejected by reward preparation.
+World therefore settles a due stance before bar configuration/transitions,
+temporary-copy restoration,Echo/hex-copy bar commits,and adrenaline spend/reconcile.
+World ticks settle health/effect expiries before advancing adrenaline decay.
+This prevents a delayed ending from granting adrenaline to newly added skills.
+
+Controlled World/Runtime regressions cover natural expiry,replacement,explicit
+removal,same-skill renewal,invalid replacement,death,Soothing Images,late bar
+configuration/transition/reconcile,duplicate end processing,75% block threshold,
+120-unit spending with no Energy cost,and exactly one618 publication.
+
+Remaining verification gaps
+===========================
+NPC caster/equipment/skillbar authority remains unsupported. Copied-slot retail
+counting,official reward attribution/full simultaneous-boundary ordering,and
+rendered visual acceptance remain unverified. The fixed packets prove only the
+listed application windows,not those broader mechanics.
+
+Validation: defensive_stance_world,defensive_stance_policy,cooldown_bar_world,
+copy_restoration_world,shield_stance_world,world_adrenaline freshly rebuilt and
+passed;61 Python skill-tool tests and fixed native receipt verifier pass.

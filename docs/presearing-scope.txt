@@ -1,0 +1,62 @@
+Pre-Searing delivery scope
+
+Use the existing E/W and W/E quest captures and local wiki. This area is the
+first playable progression target; do not require another profession run before
+recovering the evidence already captured. Native C++ remains the server runtime.
+
+Skills: gw_presearing_skills.h identifies the 44 wiki-listed skills. The native
+presearing_audit reports effect bindings separately from actual gameplay. Current
+coverage is 19/44; learning a skill does not prove its effect or animation works.
+
+Items: data/gw/presearing-item-evidence.json preserves the local general/armor
+collector tables with source hashes. tools/quests/presearing_wiki_scope.py rebuilds
+that offline evidence. It is NOT an item catalog. Join offers to captured native
+definitions and validate stats before enabling exchanges. Cover starter gear,
+quest items/rewards, collector upgrades, merchant supplies and local drops.
+General/armor collector tables alone are not a complete pre-Searing item list.
+
+Starter Sword: the local Starter_Sword.html specifies slashing damage 2-3,
+customized +20%, cannot be sold, and upgrade-only salvage. Warmaster Grast gives
+it on accepting Grawl Invasion. A native definition and atomic quest/skill/item
+grant are implemented for Grawl acceptance with inventory revision checks.
+Native client receipt, inventory equip and ordinary sword attacks were verified
+with Pre Quest War during Grawl75 on2026-10-11. Reward turn-in after restarting
+host/client also verified:250XP committed and the native quest log cleared.
+
+Doors: config/map-portals.txt is the runtime authority. Installed pre-Searing
+pairs include Ascalon/Lakeside, Ashford/Catacombs, Fort Ranik/Regent Valley,
+Barradin/Green Hills and Foibles/Wizard's Folly. Some return arrivals and all
+trigger bounds are development geometry, explicitly identified in provenance.
+Missing connections still require endpoint review; a wiki exit alone does not
+prove native arrival coordinates or trigger shape.
+
+Quests: default configuration enables Elementalist Test83, Warrior Test85,
+Grawl Invasion75, Experiment73 and Supremacy of Air37. Acceptance, objective completion, reward persistence and
+starter sword grants have focused tests. Combat policies retain explicitly
+labeled temporary armor/health values where captures do not establish them.
+Experiment73 is enabled as development content: three captured four-shard waves, fire weakness,
+wave lifetime tracking and guardian damage/visibility primitives are tested,
+acceptance/controller and reconnect restoration are wired, with authored guardian
+and AI policies. Retail AI and live gameplay verification remain.
+Quest capture recovery continues; candidates are not automatically executable
+quests. Native UI progression and reconnect behavior require live verification.
+Release criterion: a new character can complete the supported profession and
+side-quest progression, learn/use the available skills, receive/use the correct
+items, cross both directions of doors and reconnect with correct quest state.
+Green serializer/storage tests are not sufficient to call the area playable.
+
+Next delivery order within this scope:
+1. Finish native Grawl reward verification and temporary secondary training;
+   keep trial authorization separate from permanent profession selection.
+2. Complete the wiki-listed44 skill effects and native animation checks, then
+   connect the remaining profession quest grants using recovered capture data.
+3. Join collector/merchant/quest offers to native item definitions and implement
+   atomic exchanges, correct armor stats and trophy costs. Table extraction alone
+   is insufficient; retain provenance for each enabled offer.
+4. Verify each configured pre door in both directions and review missing exits;
+   record entry spawn, source trigger and destination separately.
+5. Recover side quests and reward/unlock dependencies from existing captures and
+   wiki. Unknown dialogue mappings remain explicit gaps, not generic acceptance.
+
+
+

@@ -1,0 +1,93 @@
+Ear Bite [2213] — native source binding, 2026-10-24
+
+Ear Bite is source-bound against the fixed checkpoint: 679 captured obtainable
+skills, 377 source-bound, 302 awaiting binding, and 650 missing local activation
+captures. This does not establish rendered-client acceptance.
+
+tools/protocol/ear_bite_2022.py hash-verifies the immutable
+20261024-signet-infection-bound snapshot. In
+packets-19472-19186421.jsonl lines433614 and433629–433634, the local
+map280 cast starts for actor25 against30, finishes after roughly687ms of
+packet arrival time, emits caster body1905, damage to30, Bleeding type3 and
+health-rate publication. The pinned2022 row validates0Energy/100 native
+adrenaline, .75s cast/aftercast, zero recharge, Deldrimor title scaling
+15..25s Bleeding and50..70 piercing damage, body1905 and sentinel target2077.
+The verifier executes the native cast and body consumers with stubbed DAT
+services; rendered pixels, target armor, title rank and damage amount are not
+established by this one packet window. The archived local Wiki states touch
+range, piercing damage and Bleeding.
+
+GWCA TitleID::Deldrimor is39. Runtime admission reads earned rank0..10
+without requiring that title to be displayed; absent tracks use rank0 and
+broken rank links reject. The normal cast pays 100 adrenaline and validates a
+144-unit hostile touch target before its .75s completion.
+
+The shared direct-damage resolver now has an explicit armor-respecting
+piercing kind and separate physical armor authority. Unknown physical armor
+rejects without changing Health; Earth armor cannot stand in for it. NPC
+damage resolves the current condition/skill-adjusted physical armor on a
+copy, preserving its base rating. Existing generic flat protection and wire
+damage publication apply. src/runtime/gw_ear_bite.h provides a canonical
+Deldrimor-rank0..10 plan and pure target damage resolver. World now commits
+damage and Bleeding to scoped player/NPC targets, deferring effect packets
+until after Runtime finish and caster-body publication. Living susceptible
+targets receive Bleeding; condition-immune NPCs still take damage. Touch
+pursuit, exact retail damage, NPC caster AI and rendered client acceptance
+need further verification. Native tests now cover living susceptible player/NPC,
+condition-immune NPC and lethal player/NPC recipients.
+
+Serial Release host and paid Runtime/World test build. Six focused CTest
+suites pass: combat, energy_blast_world, ear_bite_policy, ear_bite_world,
+piercing_npc and progression. The frozen 2022 cast/body verifier passes.
+These are native mechanics tests, not rendered private-client acceptance.
+Neither official client nor logger was touched.
+
+Current source-binding SHA-256: server_host.exe
+96BA28027F54804D17B3516C3A92FC3BEB822C3776B431C5C93F1293611C1FD5;
+gw_skill_casting.h 5F38229E03BC5973CAFDA7B579C8B2246F6F952B50162DF050FFE9C4A69BECD4;
+gw_world_simulation.h 39720907ACA25425B6CB86E79420FF0A0B870FBD2CA3304979D435954FD98811;
+gw_auth.cpp 2A8F8784C0C554484C42331CE50BEBCA80CB07CF6D11A54A982F022EAEB17244;
+ear_bite_world.cpp FE10F2AB5F1AAF820A9E08C86B408592EF1733C9D34C4F935909FC8F42FDE770.
+
+Earlier foundation SHA-256 (historical):
+gw_combat.h C1DB7FD36172C1A768517C898D72C3293DF90975B9888617519163C91DD7BE0D
+gw_npc_combat_catalog.h A560BBB1C184B7C470C7653BE5F87D3F5A6D2D603FEA3FAA74E0FC6A8FA8A7B6
+gw_ear_bite.h B87801CF9AA1A4476F28B4DEBFACCA02439EFBFA8315B986418AEF0326E95006
+combat.cpp 879D09A2C2E81B36D7768CB340BFA844D2AC18755823E3BE9E7727F5B2A84F58
+ear_bite_policy.cpp D5F8170E50B37C477710D7F3216B9F20C27AD196C38151668918A9BA5790A433
+piercing_npc.cpp C8D8C2C180F1DF529D46C3CA5D5338A34586DEA9DCAF542333933451ECEFE649
+gw_progression.h 56709DEC41BAE492411198D62110542BC2B31F58FE96716F63BA17875707C53A
+progression.cpp ED77FB714D8C4455C1B36CE19D8641FA440FBDE97FF210BFA9230A00CFDC7847
+server_host.exe 090B9E3EB288A345DF946ED32527BFB51A48859BF61021E4ACB8B26388D4E5B6
+
+2026-10-27 Ear Bite2213 direct Healing Seed integration
+
+The player-recipient Ear Bite transaction now preflights the shared post-
+protection Reversal/Healing Seed authority before publishing or committing
+its hit, then commits through the reactive helper. Armor is applied once.
+Only actual positive damage triggers Seed; full conversion and healing-induced
+Deep Wound death do not. Lethal damage can heal other living adjacent allies
+without resurrecting the victim or adding Bleeding to a dead recipient.
+Unknown potential allied-NPC healing metadata rejects before damage, Reversal
+consumption and Bleeding. The existing deferred publication captures damage,
+healing and conditions together and remains idempotent after release.
+
+677 new native cases PASS:648 rank/armor/conversion/Health/Seed/deferred cases,
+8 unknown-recipient rejection cases,12 distant-recipient cases,6 healing-death
+cases and3 Bleeding-degeneration cases. Four freshly compiled native suites
+PASS:ear_bite_seed,ear_bite_world,reversal_ear_bite,reactive_healing_seed.
+41 Python checks PASS. Fresh isolated frozen-capture/native consumers PASS for
+Ear Bite(style51/.75s,caster1905,asset059b04010000) and Healing Seed
+(style49/2s,target489). These prove synthetic native consumer interpretation,
+not rendered acceptance or retail reaction ordering.
+
+No new binding is claimed:679 fixed captured baseline skills,402 source-bound,
+277 awaiting binding and650 missing local captures. Reversal307 and Seed274
+remain gated until their other required consumers are complete. NPC damaged-
+recipient Seed integration,physical touch-specific Barbs/Mark of Pain reactions,
+retail radius/timing boundaries and rendered verification remain open.
+Official clients and logging were untouched;manual queue and fixed checkpoint
+manifest remain unchanged. The Release host build result and all exact source,
+test and executable hashes are recorded in the phase report.
+
+Report:build/reports/ear-bite-seed-implementation-20261027.json

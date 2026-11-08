@@ -1,0 +1,20 @@
+Aura of Restoration180 equipment duration — 2026-10-21
+
+The existing native skill and healing-on-cast implementation used a fixed60-second local cache. The equipment-duration gateway now supplies an exact millisecond quote from the current session-owned inventory, caster lifetime and active effects. Runtime checks that capability before Energy payment and requotes at completion, before spell-effect reactions. Losing the declared callback or valid equipment quote cancels completion without a success packet. Legacy adapters which never declare the callback retain native duration.
+
+The committed duration drives the World status expiry, Runtime healing-on-cast cache and effect65 timer together. Gear changes after completion do not alter existing effects. Native rank, Energy cost, activation, recharge and healing formula remain unchanged. This does not claim full duration-provider stacking support.
+
+Validation: tests/aura_duration.cpp exercises six modes using the real Runtime, equipment decoder, duration receipt and status Registry:20percent, malformed admission, lost completion capability, malformed completion,10percent swap during cast, explicit removal. A five-Energy spell completed after the old60-second limit heals18 and restores1Energy at rank8; no extra trigger occurs at actual expiry. Exact emitted effect65 is checked against committed registry expiry. Existing skill_casting suite retains native-duration renewal/removal coverage. Host rebuilt serially; aura_duration, skill_casting and aftershock pass.
+
+Limits: no new official capture or rendered client test. General provider stacking/order and rendered timer/particle acceptance remain open. Fixed checkpoint remains20261017-npc-refresh-2; this improves already-bound skill180 and does not add a captured skill or a new binding. Official sessions/loggers untouched.
+
+2026-10-22 PvP variant integration
+--------------------------------
+Runtime now admits owned3375 in PvP and rejects direct3375 in PvE before payment. Base180 requests in PvP use3375 metadata/status; both requests share one local Aura cache. Spell completion uses unmodified native Energy cost, with PvE200..500percent and PvP200..400percent at ranks0..15, rounded only after multiplying cost. Rank8 Energy threshold is unchanged. Native character match_profile already maps learned180/bar180 to3375 in a session-only copy; regression verifies durable ownership remains unchanged.
+
+Validation: serial Release builds of aura_duration_test, skill_casting_test and server_host completed. Both CTest suites passed. Aura duration now runs18 contexts (PvE base, PvP base, PvP explicit variant times six equipment/removal modes); rank8 healing is18 PvE or15 PvP for five Energy. Additional tests verify session alias ownership, direct3375 PvE rejection without payment, and21 PvP healing ranks. Existing PvE tests retain initial/no-self-trigger, renewal, Glyph discount, cancellation, stripping and expiry checks. These callbacks isolate Aura from the base healing spell and do not establish complete World reaction ordering.
+
+Offline tools/protocol/aura_restoration_2022.py verifies12 exact frozen3375 activations against checkpoint hashes and executes both original2022 cast consumers:0.25seconds/style52, retained skill identity. Native rows have60second duration,20second recharge, differing200..500 versus200..400 scales and2077 sentinel body resources. No speculative success particle is added. See checkpoint/aura-restoration-native-2022.json.
+
+Remaining: rendered animation/effect timer acceptance, combined healing/energy modifier and fatal-reaction ordering, autonomous NPC casting and broader World integration verification. Source binding is not complete retail fidelity. Fixed implementation checkpoint remains20261017-npc-refresh-2; baseline counts633/309/324/696 unchanged because3375 is outside that baseline. The nonbaseline evidence tier now records this binding separately.
+Host SHA256:1fae9409478cd651474c45620f2fda4492045b4f51621e57ecd1a5b47e44d1e2. No running session restarted; distributed tester folder untouched.

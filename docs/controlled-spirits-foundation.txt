@@ -1,0 +1,381 @@
+2026-10-24 controlled spirits foundation (not a live skill binding)
+
+The latest completed packet and world logs, packets-54796-275153171.jsonl and
+world-54796-275142046.jsonl, are byte-identical to the preserved copies in
+data/captures/skill-checkpoints/20261024-signet-infection-bound. No newer
+official logger session was found in bin/PacketLogger or bin/GuildWarsLogger.
+The fixed capture cutoff and skill counts are therefore unchanged.
+
+tools/protocol/signet_spirits_2022.py verifies a local Signet of Spirits1239
+cast, finish and caster visual followed by three separate definitions and
+spawns (modern definition IDs 4280, 4281, 4282, sharing model file 184446).
+Those identifiers are evidence, not verified 2022 asset mappings. It hash-pins the source and exercises the
+2022 native cast and particle consumers. Its generated evidence is in
+build/reports/signet-spirits-native-2022.json.
+
+src/runtime/gw_controlled_spirits.h adds a detached rank-scaled Signet plan
+and instance/generation-scoped owner registry with expiry and owner retirement.
+The registry now admits a multi-spirit cast atomically, so a rejected member
+cannot leave a partial three-spirit population. The plan deliberately does not
+embed modern definition IDs as 2022 server asset mappings.
+World now stages three trusted, reviewed NPC templates, scoped lifetimes and
+definition/spawn/health/allegiance packets as one cast transaction. It returns
+the packet batch for publication after the cast-finish/body prefix. Exact
+expiry and owner departure retire the actors through the existing dynamic-NPC
+cleanup path. Visibility-managed instances reject this detached spawn until
+per-peer deferred publication is implemented. This route is not called by the
+normal skill gateway; no captured modern definition is silently treated as a
+verified 2022 asset.
+
+Client-visible combat is still incomplete: validated 2022 models, Spirit
+Health/armor, targeting, attack cadence/damage, death, replacement behavior,
+and rendered-client acceptance remain open before Signet of Spirits or Summon
+Spirits can be source-bound. Attack cadence and Spirit Health cannot be
+inferred from the three-spawn receipt alone.
+
+Validation: protocol verifier PASS; controlled_spirits,
+controlled_spirits_world and rebuilt npc_world_combat Release CTests PASS.
+The new World test covers malformed-template atomic rejection, three deferred
+spawns, definition-ID collision rejection, scoped ownership, exact expiry, recycled-generation rejection and
+departure. These are mechanics/packet-construction tests, not rendered-client
+verification. Serial Release server_host build succeeded.
+
+Tested SHA-256:
+  gw_controlled_spirits.h FACAC5DA93DC3E8C91A3688FD0527B9DCC34F5FB0CF2F0ED9666E3C1FACEF7B3
+  gw_world_simulation.h 8512A37269799ABF49894485A49975402B9507CAF70572E81B8AC39C91FD1C25
+  controlled_spirits_world.cpp C9A046ED2FFDA2328870C07FA52EF05F075597AE4F387BF114D38BD755FAD346
+  controlled_spirits_world_test.exe B9AB1F86965B35CCDE776D35255C5C26EDB9B21A963803D1092DCD7242E27E3B
+  server_host.exe 773D48C1E4D98D000DAFB2D33EF932C6E1DA8AAD0F1906D8F422FB9B8CA7D736
+No official client was launched, stopped, restarted, or attached.
+
+2026-10-24 Summon Spirits follow-up (still detached)
+The fixed capture contains Summon Spirits2100 moving five owned spirits in one
+cast: target effects use resources426/459, health updates precede five position
+packets, and caster body uses resource1163. A second observed Signet of Spirits
+cast added a new group while the first remained; no replacement was assumed.
+tools/protocol/summon_spirits_2022.py hash-pins the receipt and verifies the
+2022 cast, body and both targeted resources. Report:
+build/reports/summon-spirits-native-2022.json.
+
+The detached World operation validates rank0..20 healing, exact live owner and
+trusted walkable landing positions, then stages all moves and healing together.
+It publishes per-spirit target effects and health before positions. The normal
+Runtime skill gateway does not yet call it. Official landing placement, 2022
+spirit models/combat, and rendered acceptance remain unverified; both Signet of
+Spirits and Summon Spirits remain unbound.
+
+The completed Oct23 logger files were already included byte-for-byte in the
+20261024-signet-infection-bound checkpoint; no newer session was found. Fixed
+counts remain679 captured,378 bound,301 awaiting binding,650 missing. Serial
+Release host build, both pinned protocol verifiers and full CTest872/872 pass.
+These are packet/mechanics tests, not rendered verification.
+Tested SHA-256: world header A0075EF19444FD3EE23180F62B369C2FDA4B2E7F6D103A9796292354977E9D2F;
+particle header 0A454F2290F099E077AF45C97CD2321CD5D113EDA4BB04A19AB8F5A68E74BD6A;
+controlled-spirit header 3140A382A44D588944A8CFE8796894C500CC0A5791269D4DACE6B12F4F23769F;
+World test EXE AB936D4C7C6DEE049F8E9976BBF94436BE7AECF927787B43F19327BB64CF5D2F;
+host EXE 94409E7F422BB93F9B19994DE39500D0FE964B1760788D111E78F4828FA07174.
+No official client was touched.
+
+2026-10-24 repeated Signet cast correction
+The fixed map34/epoch29 world capture at instance_ms73749 has six spirits
+simultaneously: actors69/306 share definition4280, 289/307 share4281, and
+290/308 share4282. The old World admission rejected any definition already
+in the map, contradicting this receipt. Recasts now reuse a definition only
+when its 2022 properties, model-file list and literal display name exactly
+match; conflicting reuse rejects the whole cast. The second cast omits
+redundant definition packets and sends three new spawns. Both groups retain
+their own owner scopes and expiration clocks. This does not verify the modern
+definition IDs as usable 2022 model assets or bind Signet to normal casting.
+The rebuilt controlled_spirits_world and npc_world_combat Release tests pass,
+as does the serial Release host build. Current tested SHA-256: world header
+E1B280FBF5EF52EA4E670E861123DBF82E277E29ABE270E52A4592B7B29F79DE;
+World test EXE C9DB4665C6F18B7109E0DBC0A63053393DB3E19F6946AFADF6520D0A01F03B10;
+host EXE 8476554D219CEEB1A556B5802792972199A5965731C6A473D2E48469936E9793.
+Earlier hashes above describe the prior detached state. Official client untouched.
+
+2026-10-24 asset and attack-cadence evidence
+Read-only MFT inspection of bin/client/Gw.dat (the supplied 2022 archive)
+found both modern-captured spirit files: model file184446 at slot47023 and
+model-list file185352 at slot83067. The exact MFT and raw-byte hashes are in
+build/reports/spirit-assets-2022.json. Archive presence does not prove that
+the 2022 client parses or renders these bytes as the intended spirits.
+
+The hash-pinned map34/epoch29 attack receipt now has a reproducible audit in
+build/reports/signet-spirit-attack-observations.json. Actors69/289/290 and
+306/307/308 each show at least14 attack-start packets plus projectile and
+impact traffic. Their per-actor median start gaps range2000..2031ms; longer
+gaps occur around target changes or interruptions. Captured modern start
+resources3153/3154/3155 are observational only, not verified 2022 resources.
+The canonical detached Signet plan records a nominal2000ms attack period and
+rejects a forged value. Damage, range, targeting, spirit Health/armor, 2022
+attack packet format and rendered-client acceptance remain open. This is not
+an active attack AI and does not change the fixed679/378/301/650 backlog.
+Both rebuilt controlled-spirit Release tests and the serial host build pass.
+Current SHA-256: controlled-spirit header
+4BC6BB34BDC5E13BD26077CD5D46364E5005376BBC2DC4FBD1FD854AEAF4D86D;
+host EXE 757858505DACFEA8DE05320DF68252DD61ED61FE867B02CFCB2F1FB0CF0FF7F7.
+Official client and logger were untouched.
+
+2026-10-24 spirit Health semantics
+The archived Spirit mechanics page says spirits are non-fleshy and resist
+ordinary healing; the Summon Spirits description explicitly grants Health.
+The shared NPC heal_ally method now rejects an explicit healing-immune trait.
+A separate gain_spirit_health operation accepts only living non-fleshy,
+healing-immune allied spirits and adds capped Health without healing hex or
+wound modifiers. Controlled-spirit spawn requires both traits; Summon Spirits
+uses the dedicated Health-gain operation. The World test proves ordinary
+healing refusal, successful Health gain, invalid-template rejection and the
+three-spirit move/Health packet batch. This does not prove the client's
+rendered Health bars, retail modifier ordering, or normal skill binding.
+Rebuilt Release tests controlled_spirits_world, healing_ring_npc,
+spirit_light_world and npc_world_combat pass4/4; serial host build passes.
+Current SHA-256: NPC combat header
+8F3A9CDD48CD9BC6E49BEA91DE65C0D861DA10A8A852A5B23FE1185E457CABAF;
+World header 4B665D47E5FCD38A7B3B0820D7FB9734BE060C19084A0554DBCEF49334DE96D6;
+World test EXE 38749665EF8157EDD2B4FACDDFAD472D0A224924234063AC81022C27CBD79590;
+host EXE 975CB4A0E404D81B42C1AB0B439C8589CFA46D8DF61595D2EE9950DF48B2FB71.
+Fixed checkpoint/backlog remains679 captured,378 bound,301 awaiting and650
+uncaptured. Official client and loggers were untouched.
+
+2026-10-24 detached spirit attack damage
+The archived Spirit mechanics page specifies armor-ignoring ranged attacks;
+the Signet of Spirits rank plan supplies each attack's base damage. A detached
+attack_target resolver now applies that damage through the shared combat
+resolver, including ordinary damage reduction, while rejecting dead targets,
+nonhostile contacts and forged plans. Release tests compare armor400 physical
+and armor400 armor-ignoring contacts, damage protection, and invalid contacts.
+This is a contact-level policy only: World target selection, range, release,
+blocking, cadence, 2022 animation and rendered acceptance remain open. Signet
+is not a normal-cast skill binding. The completed logger files were already in
+the fixed checkpoint; no newer session or obtainable skill ID was found. Fixed
+counts remain679 captured,378 source-bound,301 awaiting,650 uncaptured.
+Both controlled-spirit Release tests and the serial Release host build pass.
+SHA-256: controlled-spirit header
+D4523E1ABCF6F1DF68D8DDD7B559C7F9E46E186640CF303188618DEC06F4F3CB;
+detached test 8B471E7794A3E1CF9F5965D8D627A871DA81414897E5E661C034E389110E088E;
+World test 572EEFFAF2702C97284A935F37EF044D00D4514BFFE9845EE367760BCB1C12A8;
+host 87543FC13A3C1FAA343E4B78CF1D647143DFDEBB5CAFFD0A143B169DA4C1C502.
+Official client and loggers were untouched.
+
+2026-10-24 native spirit attack-start format
+Six first attack starts from the pinned map34/epoch29 capture are hash-checked
+against their original packet source. The modern client uses opcode160 kind50
+with actor, target and observed resources3153/3154/3155. The original pinned
+2022 executable accepts opcode159 kind50 and queues event21 with those fields;
+tools/protocol/signet_spirit_attack_2022.py executes that callback offline for
+all three resource values. The dispatch does not load animation assets or
+prove these modern resource IDs render correctly in the 2022 client.
+
+src/runtime/gw_controlled_spirits.h now has an attack_start_2022 packet
+constructor that requires a nonzero trusted resource and distinct bounded
+actor IDs. It embeds no modern resource mapping and is not called by the
+normal World/Runtime skill path. Attack target selection, release/projectile,
+block, cooldown, impact and rendered-client acceptance remain open; the skill
+is still unbound. The fixed backlog remains679 captured,378 source-bound,301
+awaiting binding and650 uncaptured. Both controlled-spirit Release tests, both
+pinned Signet protocol verifiers and the serial Release host build pass.
+Current SHA-256: controlled-spirit header
+58653EF4429314577B45B60518FB46B60D1A9F688A41DD7C4A2C834263059B98;
+attack verifier FD2375F26137BFCC5FEB9EE2E33E0FE297C0A6E42A2CBE2989E4455BB5EE5358;
+detached test BE8E9AB5142417756ACDEAF3E071386CF725CF0475C6CBFCF6334CCA15157427;
+World test 7FF3946DC191C56DE740BABAF4DD393D8BE72B503D3B0C3984CB3317BFB9A155;
+host 3387EC49372D26691622F0209EC5437F4C8124F2EFDFB32CE2206D552AC268E4.
+Official client and live loggers were untouched.
+
+2026-10-25 timing follow-up: the verifier now hash-checks the frozen World
+snapshot too and aligns each of six spirit launch packets with a nearby
+source-position sample in map34 epoch29. Source-to-destination distance divided
+by the captured flight duration is 1,596 world units/second for all six
+(within 0.001). This is measured shot timing, not proof of all spirit projectile
+speeds, elevation handling, attack cadence, target selection, World impact, or
+rendered 2022 behavior. The updated verifier passes; report is
+build/reports/signet-spirit-projectile-native-2022.json. Verifier SHA-256
+D44B4BF973E559BE8F53CBC14B2F41E4586F617263067E9CB79C3BEFFC62E2BF;
+report SHA-256 D41A62CD86E3E25B201AED86FEDBDC5868A2E38CF1658322A7312F63D3AC5A83.
+
+2026-10-24 pinned 2022 internal attack identity follow-up
+The exact 2022 skill table has Ritualist/Communing attack rows3153,3154,3155
+with two-second activation. The original targeted-attack callback queues each
+ID and its attack-body consumer selects style41/state45 for two seconds with
+synthetic actor/model handles. tools/protocol/signet_spirit_attack_2022.py
+hash-checks the fixed six-attack receipt, executable and these consumers.
+The detached World spawn now records the three IDs per controlled spirit;
+the packet constructor accepts only this validated trio, and detached contact
+damage carries the corresponding internal skill ID. This supersedes the
+earlier statement that the IDs had no 2022 catalogue mapping. The IDs alone
+do not prove projectile/impact handling, rendered animations or source binding.
+No World attack targeting, scheduling, release or contact call was added.
+Both focused Release tests, both pinned protocol verifiers and the serialized
+Release host build pass. Fixed skill counts remain679 captured,378 bound,
+301 awaiting and650 missing. SHA-256: controlled-spirit header
+9BA93CA151E56ED67F27C7DD38BB2D08C59C6A7200C71510ADCA1BD2D8A0FC44;
+World header 9B6492A65CB0A0D203E86208D3DF5CA113B5A8491FAF2005380DF70C82327962;
+attack verifier 26A4DF9DE16CCC5F277ABB7E6613C2AC59B409F6F3C6CF775DB11A76EE7D21EB;
+detached test BA672D626DD6FBEBF5AA7C2C4346355BA5DFD104DF656A73DB08A48B49A9BF36;
+World test 7D89DA4A218A51D8F01A08E911718767F277DC60800D1F2FF6FBCE38D355E20B;
+host 908AD9693602E6A1029DEF3FC042457ADA3E1C7375A6C03916317B5AF1C3D126.
+Official client and live loggers were untouched.
+
+2026-10-24 pinned spirit projectile/arrival consumers
+Six fixed map34 spirit attack starts now each pair with a modern opcode164
+projectile launch and opcode167 arrival keyed to the same spirit. The
+hash-checked verifier tools/protocol/signet_spirit_projectile_2022.py runs
+the original 2022 opcode163 launch and opcode166 arrival callbacks and the
+projectile creation/trigger boundary with synthetic actor/model handles.
+The captured float flight-time bits pass through unchanged; no milliseconds
+conversion is appropriate for the client packet. The six launches use model2,
+arrival kind7 and opaque nonzero synchronization keys. The native controlled
+spirit packet constructors encode these 2022 layouts; byte tests include one
+exact frozen release and arrival. This supersedes the earlier statement that
+projectile/arrival consumer routes were wholly unidentified. The test does
+not render assets, reproduce retail server timing, schedule World attacks,
+resolve impact damage or make Signet of Spirits a normal cast binding.
+Both focused Release tests and the serialized Release host build pass; native
+launch/arrival verifier passes. Fixed counts remain679/378/301/650. SHA-256:
+controlled-spirit header 5DA5D3A8CB2FB0E9A478CDC090A576DC5D640DD375EFE547E4C1F656B62C0FD3;
+World header 9B6492A65CB0A0D203E86208D3DF5CA113B5A8491FAF2005380DF70C82327962;
+projectile verifier B92D73C23D5A11CE2C0292A782946837F420F9174BB4132ED8F4E0732FC130EB;
+detached test BAA291336F5B34012C090A855075A8119DAC6950F1B9E9E92897ED6527C34E50;
+World test 394FD30F25D7220AC5DE8FBE01562AE243DA2227BFB7C90E9310A714EDF1C0A2;
+host 46F6B09F91EE3482496B4BC3E8A665FC60739A0C44878C1B9254406E69DDEF89.
+Official client and live loggers were untouched.
+
+2026-10-25 captured flight-duration follow-up: the pinned projectile verifier
+now records each of the six launch destinations and source-to-destination
+distances in its generated report, while retaining packet/world/client hash
+checks and original 2022 callback checks. A bounded native
+signet_attack_flight_seconds helper uses the measured 1596 world units/second
+and rejects zero, over-30-second or non-finite inputs. All six fixed map-34
+packet/world joins agree with the computed durations within 20 microseconds.
+This is a launch-timing primitive only: World target choice, attack scheduling,
+projectile release/arrival, collision, damage and rendered assets are still
+missing, so Signet of Spirits1239 remains unbound. The two native spirit suites
+and both 2022 offline verifiers pass after a serialized Release host build.
+The fixed checkpoint and official client/loggers were untouched. SHA-256:
+  src/runtime/gw_controlled_spirits.h DCF85B83BFE2BC1B944BD01717419BAEB0EF8893D185C7345E101A5EE0F2032F
+  tests/controlled_spirits.cpp 035DBD8AAB879EEB3549301C2D72D4C87740651F2EC4B06CE02666FB6171E3C5
+  tools/protocol/signet_spirit_projectile_2022.py D9C1C50A4A0511A17FA3E73AE498B2166FFDB452C5B2B4A8728CDBD0151C8DAE
+  build/reports/signet-spirit-projectile-native-2022.json 45E26A1E37C216E357908C8ED602910EAD558FD468BB221483704EFAD5E98789
+  build/tools/controlled_spirits_test.exe 7661F5C3ECDF1A0913EDD0A7615307207E654E12A4165A5D949EA1A1F1F9E5AF
+  build/tools/controlled_spirits_world_test.exe 2984A1B2B7F9677DF27F44E85F95EBEC50065BFC0A2EFBBCEA93933FED3FFB60
+  bin/server_host.exe C34A095F5AEE18328D1F6AD3BB457BC6056961F22473AC25A8FDF05245247AB2
+
+2026-10-25 typed NPC attack prerequisite: NPC control now accepts a skill slot
+on an attack action only when the catalogue classifies that skill as an attack
+(type 14). It still rejects a cast skill masquerading as an attack. World can
+stage a controlled spirit's distinct 3153 attack token, and the token cannot
+complete before its reviewed two-second windup. This does not yet choose or
+validate a target, publish the 159 start, release a projectile, resolve impact,
+or autonomously schedule repeated attacks. Skill 1239 remains unbound.
+The Release host rebuilt and npc_action_control, controlled_spirits and
+controlled_spirits_world passed 3/3 focused CTests. No rendered client test was
+performed; official client and loggers were untouched. SHA-256:
+  src/runtime/gw_npc_action_control.h 40E209E300551FA9DA050E69E5FFE9C8B2A3DC79DC310BA6F09F7AA2AC7C8885
+  tests/npc_action_control.cpp B221E8B3EDBA0015556F342C3AD3EA470128E3F6C5133ABDB9846A20E3997285
+  tests/controlled_spirits_world.cpp AEE976167488FD12F6AE0B7329FD8C9486F9DAEFAE17837953C34CCF6F2EB1AF
+  bin/server_host.exe D402DA16C45993AB95D0C5B2023C8FBDB73D9F8E3750AF57F8476CF533950223
+
+2026-10-25 targeted World start: begin_controlled_spirit_attack now accepts
+only an existing, unexpired owned spirit and a living hostile NPC with an
+exact current scope on the same plane. It checks finite coordinates, a
+provisional 1248-unit attack ceiling and, when navigation is installed, a
+clear traced segment. It stages the reviewed two-second typed action and
+returns the exact 2022 opcode159/kind50 start packet and target as one World
+transaction. The pending token cannot be completed through the generic NPC
+action method. Retirement, owner departure and population replacement clear
+pending records. The ceiling is a conservative admission policy, not a
+measured retail range; the six fixed projectile samples do not establish one.
+This method is not yet driven by AI and does not publish its returned packet
+to peers. Projectile release, impact, target movement, repeat cadence and
+rendered assets remain open. Signet of Spirits1239 stays unbound.
+Serialized Release server_host and three focused CTests pass. Fixed capture
+audit/backlog remains679 captured/382 bound/297 awaiting/650 missing. Official
+client and loggers were untouched. SHA-256:
+  src/runtime/gw_world_simulation.h 449B0A0C4B2270C06BAAA178C41ABD1F18224214F625549066FF052FEDBADB22
+  tests/controlled_spirits_world.cpp AE100D94B6FCBA0D8DA611F496DB134A6175200C160A34DE2A28D4A8A8A7695B
+  bin/server_host.exe EE3239B27A8BF7BF5DF2963FDA946EB105929DEFA712B8FA7032ECB6AA8D3975
+
+2026-10-25 publication follow-up supersedes the start-packet publication gap
+above. An admitted targeted spirit attack now queues its reviewed opcode159
+start packet to every NPC-ready peer under the World lock. The generic NPC
+action entrypoint rejects controlled spirits, so callers cannot bypass target
+validation. A two-peer World regression confirms one identical packet per
+peer and no packets for stale/friendly/out-of-plane/out-of-range or duplicate
+attempts. This is a wire publication test, not rendered-client acceptance.
+There is still no autonomous attack selection, projectile release/arrival,
+damage/impact, collision-at-impact, or repeat scheduling. Skill1239 remains
+unbound. Serial Release host, three focused CTests and fixed capture audit
+pass. The official client/loggers were untouched. SHA-256:
+  src/runtime/gw_world_simulation.h A5C309204176B2A100B73959C5E5BD8545D6B69C1A42BB82CCF63724B852BCD7
+  tests/controlled_spirits_world.cpp 2967D30C2A0E583F2126C0D440EEFC0C9A3904FA81B0C6B7E0CDC83C22736C5B
+  bin/server_host.exe 4D235B7CBDBACE01D4F2DDB3753B060CBE4797B55949610CAAA3F027D24095E4
+
+2026-10-25 release follow-up: World now has a dedicated
+release_controlled_spirit_attack transaction. It will not release before the
+reviewed two-second typed windup, and revalidates the exact scoped hostile
+target, same plane, range and optional navigation trace at release. The
+fixed-capture 1596-unit/second helper supplies the projectile duration. A
+non-colliding synchronization key is reserved against ordinary and other
+spirit shots, then the 2022 opcode163/model2 packet is queued to NPC-ready
+peers. The ordinary multi-arrow allocator also sees live spirit keys.
+Two-peer World tests verify one release each, no early or duplicate release,
+and no rejected packet. The pending projectile is retained for a future
+arrival transaction; there is no arrival packet or damage yet, and the
+projectile is retired with its spirit/target. Signet1239 remains unbound.
+The fixed modern capture has an arrival for spirit69 at packet line68600;
+same-tick target22 damage packets at lines68601-68602 name actor10 as cause,
+amid concurrent combat. This is not enough to assign either hit to the
+spirit or infer the correct 2022 damage attribution. Impact and owner-credit
+policy need an isolated receipt or native consumer proof. Four rebuilt focused
+CTest suites (including Barrage), serialized Release host, and fixed audit
+pass. No rendered test; official client and loggers untouched. SHA-256:
+  src/runtime/gw_world_simulation.h 0A8B8C589584B6A1E9A39A757F1EEFC91792134D6BBB630C9380B3D05B686053
+  tests/controlled_spirits_world.cpp E8C3C348898F5D6E163D99DF6B558CD7AC6A67F69A1CFC51BB28975F08A6360B
+  bin/server_host.exe E40622F19B9BAA76C0A4D5AC5E9670BFE0F62F64BE0161E0580DD762EBCD28ED
+
+2026-10-25 timed arrival/impact follow-up supersedes the no-arrival/no-damage
+gap above. Released spirit shots now enter the same timed-delivery frontier as
+other projectiles. At delivery, World sends the keyed 2022 opcode166/kind7
+arrival, then checks the exact hostile NPC lifetime, plane and optional map
+trace before applying armor-ignoring Signet damage through the live NPC damage
+path. Damage packets name the player owner as cause and carry the internal
+spirit attack ID; death credit and Bonds propagation use the existing World
+transaction. A dead target still gets projectile arrival but no additional
+damage. Tests verify no early hit, one arrival, one owner-attributed hit, no
+duplicate hit and the dead-target path. The modern fixed receipt at lines
+72243-72250 has three spirit arrivals each immediately followed by an equal
+kind16 damage packet for target25/cause10. This supports owner attribution,
+but the modern kind16 packet is not proof that the 2022 armor-ignore kind55
+presentation will render identically. World currently handles hostile NPC
+targets only; PvP players, target-moving collision, block/protection outcomes,
+autonomous target choice/cadence, paid Signet cast wiring and rendered-client
+acceptance remain open. Skill1239 stays unbound.
+Serialized Release host, four focused CTests including neighboring Barrage,
+and unchanged fixed audit679/382/297/650 pass. Official client/loggers were
+untouched. SHA-256:
+  src/runtime/gw_world_simulation.h ACC35B61704ABA206FFD41A19C835261BA58876338EF0B31AFA7231A85849DBC
+  src/runtime/gw_world_projectile_chronology.inl 6E31E84277A4A66D7253C31E51707C50C8EEF359B8EEA135123B99215502D7A8
+  tests/controlled_spirits_world.cpp CA0BD7D1FB179CAB841FC40DC9EBAB53A0EC7358506A26A5A9EFC51604568D51
+  bin/server_host.exe 22774CD4022D84651E338C61E14A039C615052908E48519E254233254D7B9081
+
+2026-10-25 timing and autonomous attack correction supersedes earlier
+"two-second windup" and "no autonomous cadence" notes. In the fixed map34
+receipt, spirit starts recur approximately every 2000 ms per actor, while
+projectile release follows each start after about 900 ms (actor medians
+891-907 ms). The World now starts each live owned spirit against the nearest
+scoped hostile NPC on the same plane within the provisional 1248-unit policy,
+rechecks the target at release, launches after 900 ms, and permits the next
+start at 2000 ms. Selection uses map trace where navigation exists. The
+post-tick driver runs from the native host; publication and damage remain
+separate transactions. An automated World test checks three starts, no early
+release, three launches and impacts, and no early second starts. Serialized
+Release server and four focused CTests pass. Fixed audit remains 679 locally
+captured obtainable, 382 source-bound, 297 awaiting, 650 unseen. This does
+not bind paid Signet1239 casting or prove target choice, PvP-player targets,
+block outcomes, 2022 visuals, or retail AI timing beyond the captured sample.
+Official client and loggers were untouched. SHA-256:
+  src/runtime/gw_controlled_spirits.h 2381A1E8AFB7CE3F437C40F2740FC7B54F66F5A04E3497DA197FF784907C6BD1
+  src/runtime/gw_world_simulation.h 82FB7A365A5EB076B1485D7A6BD46DF1C30AB80ADE07EC8EDCBF840CF26C4780
+  src/apps/gw_auth.cpp 78D3040DF86D0722CB3DA6780403300392B64568B5C9661C01721CD4BCAAF354
+  tests/controlled_spirits_world.cpp 9E2C609D194C88B1A2608CEFCB822481B6654ED08445FFF4EF3C68649648E770
+  bin/server_host.exe 6B4E136FDAFE387BFF9B864E0A41B9325136695D1BD63F7B51337407E93BC4AD

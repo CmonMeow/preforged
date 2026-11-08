@@ -1,0 +1,55 @@
+Drain Delusions1337
+====================
+Pinned2022 canonical plan:Mesmer Inspiration Spell,5Energy,.25s activation,
+.75s aftercast,12s recharge,newest Mesmer hex removal,1..5Energy loss and4x
+actual-loss reward,target body49. Rank20 extrapolates6Energy loss. Archived
+Drain_Delusions.html supplies removal and per-point-loss semantics. Source
+src/runtime/gw_world_drain_delusions.inl is included in the single native World;
+Runtime and gw_auth bind directly without a bridge.
+
+World settles source and target/resource/hex-owner clocks,validates exact hostile
+scope/plane/range1248/navigation,and removes newest Mesmer hex first. Other
+professions' newer hexes are ignored. Player end effects use the shared removal
+path,including Phantom Pain's Deep Wound. A target killed by an end reaction is
+not drained. Precise drain-to-zero returns actual lost units;Mind Wrack observes
+that committed transition once. Removing Mind Wrack itself first prevents its
+zero-Energy reaction. Reward is4*actual lost units,through the shared precise
+gain/debt/cap/Overcast kernel,only if source lifetime still exists and is alive.
+No speculative whole-player/NPC state is restored after reactions. Completed
+condition boundary is dispatched normally.
+
+NPCs require reviewed current Energy and regeneration to lose Energy;no hex is
+a valid no-op without guessing an Energy pool. Supported owned removal endings
+are Fragility19/2998,Empathy26,MindWrack49/2734,Panic52. Other NPC endings reject
+before removing the hex. New NPC drain helper uses its existing precise pool/
+regeneration,not an extra pool. It drains the current exact lifetime. Mind Wrack
+and Panic owner credits are cleared when those exact effects are removed.
+
+Fractional policy:preserve the existing1/300000-Energy grid,without early rounding
+of loss/reward. Native capture proves integer loss1/gain4 only;fractional retail
+notification rounding is not proven. Current owner vitals reconcile actual
+resources;floating Energy notifications54 are not fabricated for fractional
+results. Removal-before-loss/zero-reaction-before-reward is explicit simulation
+ordering;focused retail causal captures remain open. No-hex visual behavior is
+also open;current implementation emits no target-body when no hex is removed.
+
+Tests/drain_delusions.cpp:player/NPC ranks0/12/20,zero/low/full Energy,hex/no-hex,
+unknown NPC resources,forged/friendly/stale scope,newer non-Mesmer hex,Phantom
+Pain end condition,fractional1/6 and1/2 Energy/debt/Overcast caps,Mind Wrack kept
+versus removed,future target clock,NPC precise drain,250ms completion/payment,
+cancel/interrupt/target replacement/missing hook and12s cooldown. Existing
+precise_energy_transfer,debilitating_shot,signet_disenchantment,
+mind_wrack_resource_events,endurance_resources_world regressions are retained.
+
+Native evidence:tools/protocol/drain_delusions_2022.py verifies frozen manifest/
+packet SHA and exact lines32507,32512..32514,32518..32520 from fixed checkpoint
+20261017-npc-refresh-2,then executes original2022.25s cast and target49 consumers.
+Integer notifications target-1,caster+4 plus normalized.08 and12s are captured.
+Report build/reports/drain-delusions-native-2022.json pins all input hashes.
+Actor/asset services stubbed;rendered client acceptance remains open.
+
+Remaining:other NPC hex endings/casters,NPC Overcast ceiling authority,broader
+end/reaction/lifetime interleavings,retail fractional notification rounding and
+causal ordering,rendered QA. This binding does not claim every interaction done.
+
+Validation:six freshly rebuilt native suites pass(drain_delusions,precise_energy_transfer,debilitating_shot,signet_disenchantment,mind_wrack_resource_events,endurance_resources_world).69 skill tooling tests,native consumer verifier and Release server_host pass. Fractional World tests prove5+(2+1/6)*4=13+2/3 and5+2.5*4=15 without early rounding. Fixed checkpoint275source bindings/358pending,696missing baseline captures. Latest hunting list and official logging untouched.

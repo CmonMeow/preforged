@@ -1,0 +1,34 @@
+2026-10-09: native 2022 empty-account creation lifecycle
+
+Disposable local account: creation-test@example.test / creationtest.
+This account is separate from all imported main/alternate character data.
+
+An empty roster automatically opens the creation wizard. The smoke test now
+skips the extra Create click for roster count zero, retaining the full-roster
+guard. Creation preview previously rejected an empty name in social setup and
+normal world registration. Preview now has an unnamed wire player record,
+without multiplayer registration. Manifest completion spawns its avatar once;
+an earlier duplicate spawn was rejected by the client's agagent assertion.
+
+Live private PID1492 successfully reached the campaign chooser, selected
+Prophecies and female Elementalist, created Codex Create Test, entered map148
+at level1, moved, returned to selection, reentered, and deleted that exact
+temporary character through CMSG7. The account is empty again. Appearance face,
+skin and hair-color choice lists remain incomplete; this is not all creation
+branches being verified. No official process was targeted; PID5604 preserved.
+
+Evidence in build/reports:
+empty-roster-preview-fixed.json
+empty-roster-created-world.png
+empty-roster-created-roster.png
+empty-roster-created-reentry.png
+empty-roster-lifecycle-deleted.png
+empty-roster-lifecycle-server.log
+empty-roster-lifecycle-full-tests.txt
+
+Repeated launches also exhausted the account's eight-session limit. Native
+arena_peer_fixture now logs out its creation-account setup session. Explicit
+--creation-reset-sessions revokes sessions only for creation-test@example.test;
+it does not touch characters or other accounts. General portal session cleanup
+across client exits was subsequently addressed in auth-session-cleanup.txt;
+limits were not raised. Broad architecture/gameplay goal remains incomplete.

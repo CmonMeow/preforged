@@ -1,0 +1,24 @@
+AFTERSHOCK CAMERA SHAKE DISCONNECT — 2026-10-20
+
+Reproduced on owned private2022 client,Cmon Meow,map146. Empty Aftershock completed and sent camera shake4580000080410000803e01000000;client immediately showed network-error/reconnect dialog. A host-only diagnostic suppression of just opcode69 allowed the same cast to finish and remain in map. A second A/B run sent4500000080410000803e01000000with identical16/.25/actor1payload;client remained connected and readable by the pinned skillbar observer.
+
+Cause:the previous serializer harness initialized connection+0x54=1,which sets header bit0x8000. It incorrectly described this state-dependent bit as a server-direction bit. Native serializer76165d..761677reads that state and ORs the high bit;descriptor alone does not prescribe it. Both native serialized variants are now checked explicitly. The live client rejects the flagged shake in this server's stream;plain69is accepted. Do not infer that every other packet's flag should be stripped without its own transport evidence.
+
+Fix:aftershock_screen_shake_2022now emits plain69. Existing tuning16.0/.25,actor-relative recipient,damage and animation remain intact. Removed temporary skip/plain diagnostic overrides from send_world;bounded exact shake tracing remains. Skill casting regression expected bytes updated. Offline screen_shake_2022verifies explicit header state0as the shipping form,state1as the rejected form,official captured tuning and native callback payload.
+
+Evidence under build/reports:
+- aftershock-disconnect-server-before.log:preserved pretest log
+- aftershock-disconnect-reproduced.log:flagged shake followed by reproduced network error
+- aftershock-shake-suppressed.log:cast remains connected with only shake suppressed
+- aftershock-plain-header-live.log:plain-shake live A/B session
+- screen-shake-2022.json:native state-dependent header/payload verification
+
+Final shipping build/default-host live retest is recorded below after completion. Rendered shake strength/duration is not independently measured by the network validity test. Official clients/loggers untouched;only PID/path-verified owned private sessions restarted.
+
+Final validation2026-10-20
+Default shipping host PID18260and owned client15456,CmonMeow,map146:two completed Aftershock casts at23778906and23841296sent plain69with no diagnostic override;client remained connected and accepted subsequent movement. Live fix report and default-host log saved under build/reports. Server and private client left open in a normal command-prompt host session.
+Serial server/skill_casting build18066produced the fixed binary;the broad captured_skills compile exceeded COFF sections. Added MSVC/bigobj for native test targets;build81117then completed captured_skills andaftershock. skill_casting,aftershock,mark_subversion_world,targeted_spell_failurepass4focused suites;coverage4testsand native screen-shake serializer/callback verifier pass. The broader captured_skills suite fails at891on a bow terminal-event assertion,before itsAftershocksection;that suite is not claimed passing. This separate failure remains queued.
+
+Follow-up:the separate bow assertion was an obsolete broad-test expectation,corrected against28hash-verified windows. captured_skills now passes completely. See docs/bow-terminal-lifecycle.txt.
+
+2026-10-20 deployment regression: shipping host10720/client13440 remained connected in map146 after completed casts25254937 and25272953, both emitting4500000080410000803e01000000. Read-only observer confirmed current map/actor after second cast. Evidence:build/reports/aftershock-mark-binding-live.log. This also exercises the newly bound shared targeted-spell-failure callback without Mark active.

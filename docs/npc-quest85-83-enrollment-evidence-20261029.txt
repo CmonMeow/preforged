@@ -1,0 +1,78 @@
+NPC quest85/83 enrollment evidence and reusable policy proposal, 2026-10-29
+Read-only audit. No runtime/catalog changes or new build acceptance claimed.
+
+Quest85 Warrior Test
+Exact roster: data/gw/quests/actors/warrior-test-tads.txt and its provenance JSON.
+Map146 epoch3 captured actors40,41,42; model1434/model_file82023, level0,
+flags8; positions4920,-2857;4702,-2843;4878,-3173. World snapshot560/565;
+acceptance529, completed615. Existing provenance retains wiki Health35,
+but the exact packet lifetimes now supply maximum Health10 for every actor.
+World source: data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl
+SHA256 3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff
+Packet source: data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl
+SHA256 3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a
+One-based packet lines; uint32 decoded records:
+11605 tick99563703 [159,42,41,10]
+11660 tick99566656 [159,42,40,10]
+11703 tick99569234 [159,42,42,10]
+11656 tick99566515 [160,4,42,31,0] ordinary start
+11664 tick99566656 [160,4,40,31,0] ordinary start
+11695 tick99568468 [160,4,42,31,0] ordinary start
+11677 tick99566906 [159,3,40,0] STOP, not completed release
+11702 tick99569234 [160,20,42,38,344] is not a skill activation record.
+Explicit deaths:11610 actor41,11671 actor40,11713 actor42, state16.
+Native kind42 capacity semantics: gw_combat.h publishes actor.health.maximum.
+No exact outgoing damage, weapon cadence, range, armor or resource book inferred.
+Existing presearing-encounters.txt uses kill85, not any-death. Preserve all-three
+completion, per-source retirement and surviving members continuing independently.
+
+Quest83 Elementalist Test
+IMPORTANT: current development-elementalist/actors.txt has THREE AUTHORED anchors
+from observed scale floor coordinates. Existing policy explicitly says these are
+not proven NPC spawn coordinates or corpse/item associations. Never re-label them
+as the following exact captured actor roster.
+Packet source: data/captures/pre-searing-ele-warrior-2026-10-09/packets-21116-95422890.jsonl
+SHA256 8b64d9637576aeb479a172077fc3390ef3284bdbeed85e5ab358a4e6370cae4b
+World source: data/captures/pre-searing-ele-warrior-2026-10-09/world-21116-95410734.jsonl
+SHA256 b8eb71a20e83e8bc1956e147843faef7cb2ed4fcc008bd9287b0b0bf56b7c3b6
+Existing data/gw/quests/elementalist-test-actor-timeline.json identifies initial
+map146 epoch3 actors37..40, AgentAdd10890/10894/10898/10902 tick96253109,
+positions4347,548;4605,581;4221,308;4480,274. Death lines11180/11557/11478/11325.
+These are lifetime1 only: later AgentAdd reuses IDs at different positions.
+Capacity10:11154 actor37 tick96274359;11255 actor40 tick96281171;
+11447 actor39 tick96293703;11533 actor38 tick96297234.
+Ordinary starts:11178 [160,4,37,31,0];11295 [160,4,40,31,0].
+11183 [159,3,37,0] is a stop, not measured completed attack.
+Do not attribute [160,60,42,40,186] line11278 or194 lines11547/11584
+from source42 to these Tads: source42 has different modelword536871425
+(AgentAdd11067), whereas initial Tads have modelword536872346.
+Additional actors44/45 AgentAdd11093/11099 have modelword536872347 and
+positions4920,-2857 /4702,-2843; no unsupported quest83 membership inferred.
+No exact assignment links current authored30001..30003 to any captured IDs.
+
+Cleanup: gw_auth.cpp acceptance uses spawn_loot_encounter; World wraps
+spawn_kill_encounter with loot=true, any_death=false. Host consumes
+pending_quest_loot, reserves each created scale for60000ms, and completes83
+from carried_shimmering_scale, not merely a kill count. Leave these semantics,
+loot ownership, accepted cycle, abandonment and restore flow intact.
+
+Reusable next implementation proposal (not implemented)
+Replace per-quest copied arming loops with one reviewed owned-ordinary descriptor:
+quest/map, objective kind (kill-all/kill-any/loot), maximum assigned members,
+explicit accepted identity bindings, required Health/armor facts, authored attack,
+movement/patrol policy, evidence paths. One exact-scope/cycle/remaining preflight
+and enrollment routine; thin data declarations for81 and85. Validate objective
+kind against the existing objective state instead of converting it. Reuse current
+owned ordinary driver and navigation, never spawn from the enrollment routine.
+Retain damage-triggered owner-targeted policy, not owner-exclusive damage claims.
+Use the known authored5 damage,750ms windup,2000ms period,128range only when
+explicitly selected in development policy; never report them as capture results.
+Unknown resource/skill/body traits remain unknown. No skillbook inferred from
+primary6, no group aggro or Broodcaller relationship invented.
+For83, same mechanism is possible only with a separately named AUTHORED roster
+policy and loot-objective guard. Capture10 can inform an explicitly documented
+Tad development profile, but cannot prove the authored anchor associations.
+Tests: real catalog and map mesh;85 first death leaves two eligible actors and
+final death retires remainder;81 any-death still retires all;83 preserves scale
+ownership/pickup completion; unchanged Health/pending action on idempotent arm;
+stale owner/cycle/source rejected; full patrol/pull/hit/return/resume.

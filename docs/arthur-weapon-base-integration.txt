@@ -1,0 +1,48 @@
+Arthur exact4 crafted primary weapons: base-only attack integration
+
+Production gap: crafting/strict equipment succeeded, but owned_weapon rejected
+all4 captured definitions through the starter-only A488/bow guard and unknown
+modifier rejection. The bounded helper gw_arthur_weapon_base.h matches the full
+reviewed definition from PRIVATE_ARTHUR_WIKI_CATALOG_V1; itemID may change with
+owned identity allocation, no other field is normalized or ignored.
+
+Independently reviewed bases from the complete Arthur wiki table:
+Kyhlo Axe:5..10 Slashing, no requirement.
+Ascalon Longbow:7..10 Piercing, no requirement.
+Foehammer:13..20 Blunt, HammerMastery19/rank3.
+Rinblade:10..14 Slashing, Swordsmanship20/rank3.
+Original7c6530 runs on each complete captured modifier list and independently
+returns51/0(no requirement) or19/3 or20/3. Original879a10 Health token952/5
+confirms Axe's Health5 field. The base range bytefields agree with wiki; the
+stubbed localized text service does not prove full rendered range text.
+
+The production owned_weapon path first preserves existing strict metadata,
+customized-character ownership and physical equipment checks. Only exact4
+family definitions may use this separate base authority. Other unknown A488
+payloads, upgraded/near-matching definitions and arbitrary conditional words
+retain the existing denial path. Met rank3 is required; reduced unmet-requirement
+weapon damage remains unsupported rather than rounded from an approximate wiki
+formula. Base intent feeds the existing shared strike resolver and mastery path.
+
+Explicit remaining equipped-stat gaps: Axe Health+5 does not yet change maximum
+Health. Bow/Hammer+1vsCharr are retained in item words and descriptor state but
+not applied to contacts; exact target-trait and damage-order integration remains.
+Rinblade's+5ArmorvsCharr is documented by Arthur wiki as nonfunctional and is
+intentionally not granted. No unknown effect is silently reinterpreted as an
+arbitrary generic weapon upgrade. Base attacks are partial item behavior, not
+full effect fidelity.
+
+Evidence: tools/protocol/arthur_weapon_base_2022.py,
+build/reports/arthur-weapon-base-2022.json, exact same-window source353 lines
+460881/460882/460892/460893, packetSHA
+e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c;
+Arthur_Ayala.html SHA
+1b4c6ec592883020e9cd0b4e70bfe49a41e5a222b3deaa6aa2ef301a0eaa11cf.
+Original requirements/Health formatter proof passed offline. New C++ regression
+covers strict actual equip,persist,owned_weapon,rank boundary,near-match denial,
+unknown/foreign metadata and shared damage resolver. Coordinated build pending;
+no rendered weapon strike acceptance or successful retail craft is asserted.
+
+Customization was reviewed as a later service candidate but is not activated.
+The detached gw_weapon_customization.h primitive is unregistered/uncompiled;
+no native type4 outgoing operation or completion code is guessed.

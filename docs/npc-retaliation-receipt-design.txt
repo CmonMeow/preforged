@@ -1,0 +1,54 @@
+Shared quest NPC retaliation receipt: source audit, 2026-10-23
+
+Current defect
+Both gate_npc_melee_quest_locked (gw_world_npc_flare.inl) and
+gate_npc_owned_caster_locked (gw_world_npc_aura.inl) compare current Health
+with a previous poll. A committed hit followed by heal before the next poll
+can restore the previous Health and conceal engagement. Exact actor lifetime
+and quest owner/cycle checks are already separate and must remain so.
+
+Candidate seam coverage in gw_npc_combat_catalog.h
+apply_damage_impl commits one accepted Hit after storm_energy_hit admission.
+apply_elemental commits a complete accepted result on a cloned LiveActor;
+its result.hits bypass apply_damage_impl. apply_earth_aoe likewise commits
+result.hits through a separate route. A receipt only in apply_damage_impl
+therefore misses reviewed elemental spells and must not be called universal.
+apply_shadow_damage and apply_feast_of_corruption commit direct target Hit
+results separately. apply_life_steal, apply_strip_enchantment and
+apply_grenths_balance mutate Health with life-loss semantics, not damage.
+advance_conditions integrates degeneration; heal applies modified healing.
+These distinct meanings should not be conflated by a damage-only receipt.
+
+Bounded implementable contract
+LiveActor owns a monotonic committed positive-Health-loss revision within its
+existing immutable Lifetime. Increment exactly once per admitted mutation
+that reduces Health, regardless of later restoration; healing never clears
+the revision. This captures damage, degeneration and life loss under the
+same explicitly authored quest retaliation policy that currently samples
+all Health loss. Do not label it an attack receipt or source-attributed hit.
+Every direct Health assignment above needs an explicit before/after seam;
+condition integration must increment only for actual negative slices.
+Pure preview copies own private revisions; only an accepted actor commit
+publishes them. Counter overflow must fail admission before Health mutation.
+
+Controllers store their consumed revision, not another mutable Health sample.
+Initialization must preserve current pre-arm loss behavior: compare immutable
+spawn Health as well as revision, since controllers may bind after damage.
+Successful return home consumes the current revision and clears triggered;
+otherwise old loss would immediately reengage. No automatic proximity aggro.
+Lifetime mismatch, quest cycle change, owner leave and retirement retain
+their current fail-closed gates. Actor recycling constructs a fresh counter.
+
+Tests required
+Grawl75 and Brood49: hit then full heal between polls still activates once;
+zero/rejected damage does not; Health gain does not; pre-arm loss still arms;
+return-home consumes old loss, new loss reactivates; reset/reconnect does not
+inherit receipts. Pure LiveActor tests cover each separate mutation family,
+failed previews, zero/positive regeneration and multiple negative slices.
+
+Evidence boundary
+Captured Grawl player attack -> positive damage -> NPC start supports the
+retaliation direction in that recorded encounter. It does not prove a retail
+universal trigger, polling interval, owner priority or degeneration policy.
+This proposal fixes the consistency of an existing authored policy; it adds
+no new encounter and makes no retail AI completeness claim.

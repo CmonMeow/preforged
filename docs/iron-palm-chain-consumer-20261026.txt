@@ -1,0 +1,100 @@
+IRON PALM786 ORIGINAL 2022 TARGET-STAGE CONSUMER
+
+tools/protocol/iron_palm_chain_2022.py executes the original hash-pinned
+2022 PE offline. Incoming descriptor RVA60bacc has schema
+[91,0x10,0x10,0x404] and callback873df0. The callback passes caster,
+target and stage to7924b0. That function compares caster with the local actor
+service78f6c0 and only forwards matching updates to763bf0. The next function
+looks up the target through784ac0, then invokes target method779af0.
+
+The original method obtains component type3 through777e80 for a nonzero
+value and writes that value to component+0x1c. A zero value clears target
+byte+0x1b0 and delivers UI event1000000a with [targetID,0]. Native execution
+checks stages1,2,3, clear, foreign caster and absent target. The original
+serializer60bacc independently emits opcode91 plus three DWORDs, exactly
+the detached gw_iron_palm_chain_wire.h bytes (14 bytes, including WORD header).
+
+Actor/local identity services, component allocation and UI delivery are
+stubbed; callback gating, target dispatch and stage/clear instructions are
+original code. The test does not load graphics assets. Frozen modern
+Iron Palm receipts33731/33921 are opcode92/caster25/target30/stage1; the
+hash-pinned local receipt audit runs as part of this verifier. Translation to
+original opcode91 follows the matching scoped semantics rather than an
+opcode-number or schema-only guess. Previous rejected opcode69/92/100
+candidates remain rejected.
+
+Run with PYTHONPATH=build/tool-deps;build/tools/python-deps;tools/protocol;
+tools/skills and python tools/protocol/iron_palm_chain_2022.py.
+Result: PASS; build/reports/iron-palm-chain-native-2022.json.
+tests/iron_palm_chain_wire.cpp is detached and awaits coordinated CMake/build
+registration. No existing included source, CMake, checkpoint or production
+binding was changed. Required follow-up is completion-before-impact-before-
+stage publication integration with the paid World cast, plus native tests.
+The World15-second expiry remains private-server policy; capture does not
+prove its retail timer. Rendered 2022 behavior remains unverified.
+
+Production integration prepared after coordinated freeze release: the Iron
+Palm World completion now preflights actor IDs and emits the verified stage1
+packet after accepted damage and conditional knockdown, only for a surviving
+victim. The packet belongs to the deferred completion batch, so normal Runtime
+publication puts finish58/caster857 before damage/control/stage. The production
+gw_auth hook now calls this deferred World path. Native cast and World tests
+were extended for exact order, one stage update, lethal suppression, stale
+scope, out-of-range refusal, interruption and cancellation. These integration
+changes await the parent's serialized build/test; this text is not a passing
+integration-test claim. Fixed checkpoint and explicit coverage lists remain
+unchanged. Original receipt/native-first-consumer proof passed independently.
+
+Reset/refresh follow-up: frozen local lead33731 at190782125 is followed by
+clear33844 at190797000 (14875ms). Lead33921 at190806390 is followed by
+clear34123 at190821343 (14953ms). Dancing Daggers lead34166 at190824171 is
+still active at Iron Palm hit34242 at190828687; no repeated stage1 packet is
+sent. Clear34449 at190843703 occurs15016ms after that Iron Palm hit, rather
+than15s after the earlier Dancing Daggers lead. The offline verifier now
+hash-checks this source and these exact receipts. This supports silent
+same-stage deadline refresh and approximate15-second timeout, but packet
+cadence does not prove an exact server deadline or ordering against movement,
+death, target switching and simultaneous actions.
+
+World Iron Palm now retains the existing15-second policy while suppressing
+a repeated stage1 wire update on an already active lead against that target.
+The World test checks a second hit damages again, emits no duplicate stage1,
+and refreshes the internal boundary. This new native integration test awaits
+the coordinated build. The original native clear test now begins with an
+existing type3 component and verifies the original consumer calls its removal
+service before delivering target clear. Allocation/removal services remain
+stubbed, and their tree/node housekeeping is not claimed as executed.
+
+Automatic expiry clear publication remains unfinished: DaggerChain::current
+expires internally without publishing opcode91/stage0. A lifecycle integration
+must preserve the target generation and clear the old client component at an
+authoritative boundary without clearing a replacement actor's state. No
+unsupported reset timing was added, and coverage remains explicitly unbound.
+
+2026-10-26 validation supersession: the wire test was registered. Serialized
+Release builds of iron_palm_world_test, iron_palm_cast_test and server_host
+passed. The four Iron Palm native CTests (policy, World, cast and wire) passed;
+three neighboring Quickening Zephyr/generic-casting tests also passed.
+World publishes the verified stage1 update after accepted surviving hit
+damage/control, with no update on lethal, rejected, interrupted or cancelled
+casts. The original offline consumer/serializer verifier passed. This is
+mechanics/packet verification, not rendered client acceptance. Timeout and
+other stage transitions remain unproven; source-bound coverage remains
+unchanged. Official logging was untouched.
+SHA256 tested server_host.exe:
+12BD0D8DEFBCADA34803858A4A4C6117AD3ABF9440A6A7C3B06547CE119F8A16
+SHA256 tested gw_world_simulation.h:
+2EFD87E9BC5E2DFE4564AB3E2CC109D20E2593B8160095CE2B6EC6EF87B6D17D
+SHA256 tested gw_auth.cpp:
+91C3AEC5F167896107C7F782AC2688E804E6B3F51137AF9F2A418DFD8D95CA2C
+
+Later 2026-10-26 expiry follow-up (supersedes the unfinished-expiry note
+above): World retains scope-keyed Iron Palm type-3 publication deadlines.
+Its tick emits one opcode91/stage0 clear at the 15-second private-server
+deadline; a repeated surviving hit refreshes that deadline without a
+duplicate stage1 packet. Player and NPC native regressions check both
+boundaries and one-time clear. Six focused/neighboring Release suites pass.
+Frozen retail clear observations fall 14,875-15,016 ms after the relevant
+Iron Palm hit, so exact server timing and 2022 rendered acceptance remain
+unverified. Coverage publication is unchanged. Tested host SHA256:
+CA620110458EB78480D7BF8E857A350C9FC1603297B7C5AD083C9A068488C80E

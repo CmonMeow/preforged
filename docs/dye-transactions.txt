@@ -1,0 +1,51 @@
+Dye Apply transaction, native 2022 build 37130
+
+Evidence
+The existing item_transactions_2022.py proof establishes request 104: target
+DWORD, count WORD, one to four source vial DWORD IDs. Preview happens locally;
+Apply sends 104 and Cancel sends no item debit. dye_semantics_2022.py executes
+original eligibility function 4f22b0, source getter 7c3840 -> 7c6d40, composition
+4f3740 and canonical color helper 4f2260. All 11 cases passed; the report is
+build/reports/dye-semantics-2022.json.
+
+Vial color comes from modifier property 0x24e, low 18 bits, rather than the
+vial's base appearance. Owned carried type-10 items must have one unambiguous
+color property. Codes 2 through 13 match pinned GWCA DyeColor. The planner
+supports up to four packed colors, appending source nibbles in the original
+client's order. Original 4f35e0 rejects mixing legacy premixed vials with modern
+single-color vials, mixtures containing only one repeated color, and the same
+existing color multiset when target interaction bit 0x20000000 is set. The
+local Dye.html wiki mirror confirms Apply/Cancel and the four-color limit.
+
+Eligibility
+Original 4f22b0 rejects target interaction bit 0x200 and type 10, and requires
+local inventory ownership. The server checks owned carried or equipped
+placement; bank, floor, missing and installed bag-container targets are denied.
+Captured spectacles 0x20110607 and staff 0x2e330641 have the forbidden bit;
+ordinary Obsidian armor 0x20110007 does not. There is no guessed skin whitelist.
+Installed container dyeing needs its separate placement/ownership branch.
+
+Transaction
+The planner changes a copy. Repeated vial IDs are aggregated and checked against
+stack quantities before debit. Each selected vial entry consumes one vial,
+including a legacy premixed vial containing multiple colors. Only target dye
+WORD changes; tint, identity, model, modifiers, profession and customization
+remain intact. The app requires a loaded scene and no active trade, prepares
+the durable identity projection and saves through the existing owner-checked
+inventory revision transaction. Only a successful commit sends quantity updates,
+removals and target definition plus metadata. Failure consumes nothing; rejection
+after the client's Apply dialog closes is reported in chat.
+
+Appearance
+Owned equipped slots 4, 2, 6, 3, 5 map to existing armor appearances only when
+the file/composite matches exactly. Native 159 type 15 updates owner and peers;
+the world cache is replaced so later arrivals receive the current color. Actor
+scope and generation are checked and missing appearances are never invented.
+World entry restores exact matched colors from durable equipped inventory.
+The previously captured character-selection roster summary is not rewritten
+by this slice; world appearance is restored from the actual owned inventory.
+
+Tests cover native decoding, permission bits, repeated stack debit, ownership,
+legacy mixing, no-op rejection, invalid colors, preservation, peer publication,
+late-arrival cache and stale generations. No live vial or asset identity was
+invented. Actual owned-item Apply in the running client remains to be tested.

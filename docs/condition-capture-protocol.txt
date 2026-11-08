@@ -1,0 +1,37 @@
+Captured condition protocol evidence
+====================================
+
+Fixed checkpoint:20261018-conditions-catapult.
+Source:packets-19472-19186421.jsonl,lines419411..420049.
+All ten condition applications are present:Bleeding,Blindness,Burning,Crippled,
+Deep Wound,Disease,Poison,Dazed,Weakness and Cracked Armor.
+
+The modern decoded opcode66 application fields map explicitly to pinned2022
+opcode65. tools/protocol/conditions_capture_2022.py verifies the manifest file
+hash and runs the original native2022 serializer for each captured application.
+It compares the native wire layout against the reviewed narrowed skill-ID
+layout and writes tests/fixtures/conditions-captured-2022.txt plus the report
+build/reports/conditions-native-2022.json with source lines,ticks,IDs,durations,
+raw captured bytes,native wire bytes and tool/client/source hashes.
+
+tests/ally_cleansing.cpp compares the production effect_add writer against all
+ten native-produced fixtures and checks unique membership in the production
+condition-ID table. Existing conditions tests cover duration/cover order,
+expiry,degeneration,presentation and armor policy separately. Both suites pass.
+
+This evidence does not prove rendered icons,retail degeneration/modifier
+ordering,removal priority,condition immunity or complete source attribution.
+Siege Attack501 is recorded as damage attribution to local actor25 on map280
+at line421190;caster identity,trajectory and damage formula remain unverified.
+The fixed implementation checkpoint remains20261017-npc-refresh-2;this protocol
+validation does not increase the source-bound skill count.
+
+Earlier records in the same source include condition attribute words above20
+(e.g.Bleeding25). The first broad fixture attempt failed the production rank
+validator. The controlled all10 fixture is explicitly limited to419411..420049;
+all earlier above20 words remain in the native report as attribute_outliers,
+including original wire serialization. GWCA labels this word attribute_level;
+its source-specific semantics and legitimate NPC limits are not yet established.
+Player rank admission has not been relaxed to make those records pass.
+
+Capture inventory now also records modern opcode65 upkeep applications and66 effects as typed effect_skill_sightings. These can remove an observed nonplayer effect from the hunting list without counting as a local cast or claiming complete mechanics. Siege Devourer2504 has two upkeep receipts in the completed snapshot.

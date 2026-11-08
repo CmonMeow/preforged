@@ -1,0 +1,133 @@
+{
+  "checkpoint": "20261022-cumulative-skills",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "source_sha256": "9cadca1740cdd4aae3ac27246b95f9dca0b262eff17a3fba4f429daa38664ddf",
+  "capture_file": "packets-108988-190116609.jsonl",
+  "receipts": [
+    {
+      "line": 45462,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191017531,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e0000006c030000"
+      },
+      "words": [
+        160,
+        60,
+        25,
+        30,
+        876
+      ]
+    },
+    {
+      "line": 45474,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191018562,
+        "opcode": 229,
+        "bytes": 20,
+        "complete": true,
+        "hex": "e5000000190000006c030000000000000f000000"
+      },
+      "words": [
+        229,
+        25,
+        876,
+        0,
+        15
+      ]
+    },
+    {
+      "line": 45475,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191018562,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      },
+      "words": [
+        159,
+        58,
+        25,
+        0
+      ]
+    },
+    {
+      "line": 45476,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191018562,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e00000019000000b2030000"
+      },
+      "words": [
+        160,
+        20,
+        30,
+        25,
+        946
+      ]
+    },
+    {
+      "line": 45477,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191018562,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000370000001e00000019000000abaa2abc"
+      },
+      "words": [
+        163,
+        55,
+        30,
+        25,
+        3156912811
+      ]
+    }
+  ],
+  "activation_consumer": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 876,
+    "override_after": 2139095040
+  },
+  "impact_consumer": {
+    "actor": 43,
+    "encoded_file": "d48002010000",
+    "flags": 1
+  },
+  "native_actor_normalization": "caster42,target43",
+  "native_recharge_seconds": 30,
+  "observed_recharge_seconds": 15,
+  "native_impact_wire": "9f80140000000200000001000000b2030000",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Signet_of_Shadows.html",
+  "wiki_sha256": "0d192e3775a3d8652fc8fdbb265b93bf6a69f82afd9788a6986c61381548f160",
+  "limitations": [
+    "The recorded recharge is 15 seconds; native2022 and historical description specify30. Modifier/version cause is unproven; retain native30.",
+    "Capture proves a normal target946 impact, not an isolated Blinded bonus or ordering with damage reactions.",
+    "Damage fraction is preserved as raw bits; target maximum health and attribute rank are not inferred.",
+    "Native model/asset services are stubbed; this does not establish rendered acceptance.",
+    "Runtime integration and source binding are separate from this evidence."
+  ]
+}

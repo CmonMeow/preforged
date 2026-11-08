@@ -1,0 +1,48 @@
+Freezing Gust [1382] — source-bound 2026-10-24
+
+Native private-server path:
+- Paid 10-Energy, 1-second Water Magic cast with 8-second base recharge.
+- The World samples the target's active Water Magic hexes at completion,
+  under its instance lock. A hexed target takes one rank-scaled cold hit;
+  otherwise the target receives the ranked 66-percent movement hex. The
+  successful damage branch does not create a new Freezing Gust hex.
+- Both player and hostile NPC recipients use scoped targets, range/plane and
+  navigation checks, reviewed cold armor, combat protections, native damage
+  publication and target-body resource 1643. Hex prevention/removal/expiry
+  and movement integration use the existing shared effect consumers.
+
+Evidence:
+- Fixed checkpoint 20261024-signet-infection-bound, manifest SHA-256
+  CC21124AC10039DE2A9C56EE00E288AE5737D8D353C7849CB8267742D2FB349B.
+  Local map-280 cast/4-second timer/finish/target-1643 records in
+  packets-1360-15821281.jsonl lines 234964, 234971-234973.
+- tools/protocol/freezing_gust_2022.py passes the pinned 2022 skill-row,
+  cast-animation (style 51, 1.0s), target particle-consumer and wire checks.
+  See build/reports/freezing-gust-native-2022.json.
+- Freezing Gust policy and World tests pass. The World test covers rank
+  boundaries, player/NPC slow and cold branches, Freezing Gust itself as a
+  qualifying Water hex, armor/forged-plan/stale-scope rejection, paid Runtime
+  completion and finish-before-target publication.
+- Serial Release server-host build succeeded. Full Release CTest passed
+  862/862; unrelated older test binaries were not all rebuilt. Nearby
+  movement, Water hex, Mind Freeze and casting tests were recompiled and
+  passed with the two Freezing Gust tests (6/6).
+
+Tested executable SHA-256:
+server_host.exe 489D7E5075DEE9F0E656C7BFC37FACA2992F7321CD3B40D3C4A988FC24981971
+freezing_gust_world_test.exe 7869A143E42AD8F2024B14B2A17A78F4899EE65E496B629BE8CC7E427E315990
+
+Reviewed source SHA-256:
+gw_freezing_gust.h 2A7A7E85E28C2614D8802599CF835FE51CF745F9AECB3ECB402112D296627EC9
+gw_movement_effects.h C7E0DE8AA217A925A1E153A383AE64F686EFB6FA7044A4E1D5C5ACE43D33D634
+gw_world_simulation.h 349950665121DA7C671B56FAF37DEA7EA675D46A7430ED8174161611DF4F4CB2
+gw_skill_casting.h 052DEC851E7952B1D1077C7D63EFDC5534FA79870DB7D165B0BE8CB90DDFD00C
+gw_npc_combat_catalog.h 28D1653354DA1143A93CE1FB1F9AA665F00558E195B4BF6AE28C0F64AE338CD0
+gw_auth.cpp 732A47302AEEB6E6334F7D644606FFDAA20F8F1548BDFFA7D1E5F2BA9B3587EB
+
+Limits: The one local retail cast proves timing and target resource, not
+which conditional branch ran or the exact damage/slow result. The original
+2022 consumer reaches asset lookup with stubbed DAT/model services; actual
+rendered client pixels and live private-client acceptance remain untested.
+NPC caster AI and unusual global hex/protection reaction combinations need
+broader verification. No official client or logger was interrupted.

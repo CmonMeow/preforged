@@ -1,0 +1,79 @@
+Selfless Spirit [1952, 2095] detached policy, 2026-10-26
+
+Status: NATIVE CAST AND PAYMENT WIRED; SOURCE COVERAGE UNBOUND. The World
+effect-application/lifecycle consumer and production casting/payment hooks
+are present. No official client action or rendered verification occurred.
+
+The fixed 20261024-all-completed skill-audit/captured-skills.json records
+1952 as unsupported with one local start and finish, and 2095 as unsupported
+with three local starts and finishes. The 1952 sample is actor 25, map 280,
+packets-1360-15821281.jsonl lines 313654/313663, ticks 22039703/22039875.
+The first 2095 sample is the same actor/map/file at lines 322101/322107,
+ticks 22158578/22158843. The other two 2095 samples are in
+packets-19472-19186421.jsonl, lines 480977/480987 and 481995/481999.
+These are checkpoint-index receipts; this change did not rehash or replay
+the underlying packet files. Neither skill's indexed body_effect_evidence
+contains a body receipt. The separate effect sightings contain a 1952
+application at line 313665 with duration 20 seconds; that does not prove
+cost reduction, modifier ordering or the captured character's title rank.
+tools/protocol/selfless_spirit_capture_2022.py verifies four complete local
+casts and their effect-add receipts. The paired cost-window verifier finds
+two spell casts during the active effect, but no identifiable Energy debit;
+it therefore cannot establish modifier ordering or payment timing.
+
+The native 2022 catalog pins both IDs to profession 3, attribute 51,
+enchantment type 6, special 524288, 5 Energy, .25 second activation,
+.75 second aftercast, 45 second recharge, reduction 3..3, duration 15..20,
+caster-body resource 553 and target-body sentinel 2077. The local archived
+buildwars skilldesc-en.json describes a reduction of 3 Energy for spells
+targeting another ally. These IDs are faction aliases, not a PvE/PvP pair.
+
+src/runtime/gw_selfless_spirit.h validates the pinned row and exposes a pure
+cost modifier quote. Only an active effect plus a spell plus an authoritative
+other-ally target yields a reduction, bounded by the supplied Energy cost.
+Unknown target classification rejects; self, foe, untargeted, inactive and
+nonspell facts yield an unchanged cost. Forged plan fields reject. The caller
+must establish all facts and may apply only one modifier across both aliases.
+The quote has no mutation, effect registry, payment, time or packet behavior.
+
+The Guild Wars Wiki's published rank table gives 15, 16, 17, 17, 18, 19,
+then 20 seconds at ranks 0..6, with rank 6..12 at 20 seconds. The policy
+pins that table for both faction aliases. It remains separate from the
+capture's observed 20-second duration, since the archive does not prove
+the caster's title rank. The progression mapping identifies the Kurzick
+and Luxon title tracks for the two aliases.
+Source: https://wiki.guildwars.com/wiki/Selfless_Spirit
+
+The detached registry helper stages expiration and alias replacement on a
+copy, reports all removed entries, and leaves the caller responsible for
+atomic World effect-store and packet publication. Its lifecycle test is
+registered in CMake and passes.
+
+World application now owns both aliases, effect expiry/replacement, generic
+single/area strip, Divine Favor and captured body553 publication. Chilblains'
+reviewed enchantment allowlist includes both aliases, with health_effects
+presence required. The focused World, Chilblains and Divine Spirit tests pass.
+The staged World payment API now requotes the live effect under its lock for
+ordinary, overcast and typed glyph branches, including reactive resettlement.
+The detached target policy distinguishes true targeted-ally spells from
+incidental UI selections. Focused native tests pass for both stages. Runtime
+now classifies admitted ally-targeted spells and calls World payment hooks.
+The Runtime can now admit and complete both aliases through a typed hook;
+rank, PvP, self-target, 250ms completion, interruption, recharge and one
+finish/body are tested with an isolated World-backed hook. The production
+host supplies that hook with Enchanting duration. Its player-ally predicate
+requires a nonzero party ID before treating a party match as evidence.
+Reactive exact-zero Mind Wrack and allied/hostile/stale NPC target regressions
+now pass in separate native tests. Remaining binding gates include modifier
+ordering evidence and rendered 2022 client acceptance.
+
+Standalone MSVC /std:c++20 /EHsc /O2 build and execution passed. The focused
+test covers both aliases, zero/sub-three/large costs, eligibility negatives,
+unknown targets, unsupported IDs and forged plans. The policy was also
+registered in CMake; its Release CTest passed. The server host now includes
+this header for the World effect stage, while paid client casting remains
+unbound.
+Current source and executable hashes are recorded in the turn's validation
+receipt. The earlier hashes were superseded by the rank-table addition.
+
+The fixed checkpoint, published coverage and backlog remain unchanged.

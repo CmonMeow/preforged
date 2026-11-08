@@ -1,0 +1,10 @@
+Storage pane provisioning
+World entry derives one base pane plus one for each server-owned campaign ID1/2/3; expansion ID4 does not add a campaign pane. Existing additional panes remain present. Provisioning runs before session item-ID hydration and persists character+bank profiles with both expected revisions via typed transferStorage. A failed commit aborts entry rather than sending unsaved panes. No existing bank profile is replaced by baseline.
+Live deployment and native second-pane UI validation remain outstanding.
+
+Deployed and verified 2026-10-09: 126/126 tests pass. Native private client PID15760 entered world; server logged storage_panes_provisioned count=4. Pane II selected, chest armor deposited; switching to pane I showed empty storage; switching back to II allowed withdrawal and re-equipping. Accepted opcodes77/112/112/46. Existing 20 platinum bank and74 platinum character balances preserved. Screenshots in build/reports/storage-pane-*.png. All fourteen paid panes and material transfers are not covered by this live test.
+
+Further live verification: deposited armor in pane IV, switched to pane III and confirmed it empty, returned to IV to withdraw and re-equip. Relaunched private client PID17380, logged in and entered Lion's Arch successfully; bank reopening was not completed, so pane persistence UI verification remains outstanding. Screens storage-pane-IV-deposit.png, storage-pane-III-empty.png, storage-pane-IV-reentry.png shows an unfinished NPC approach, not a bank confirmation; smoke storage-pane-reentry-smoke.json. Official client preserved.
+
+
+Re-entry follow-up completed: verified chest opened (server npc_interaction actor10050 storage1), pane IV selectable, armor deposit/withdraw/re-equip committed via77/112/112/46, final appearance and balances restored. Evidence storage-pane-IV-reentry-deposit.png and storage-pane-IV-reentry-restored.png. This supersedes the earlier unfinished approach limitation.

@@ -1,0 +1,319 @@
+Spiteful Spirit121: owned World hex stage;damage reactions/Runtime unbound
+
+Local historical Spiteful_Spirit.html revision2630082 describes an elite Curses
+hex:for8..20s,target foe attacking or using a skill causes5..35 shadow damage
+to itself and adjacent allies. Multiple hexed foes can compound area damage.
+Rank12 gives18s/29 damage;rank20 gives24s/45 damage. Radius166 is the supplied
+adjacent range convention;range1248 is the spell-range convention. These
+distance thresholds have not been independently executed in the2022 client.
+
+src/runtime/gw_spiteful_spirit.h checks the pinned2022 row121:type4,
+profession4,attribute7,special4 (elite),15Energy,2s activation,.75s aftercast,
+10s recharge,duration8/20,scale5/35,caster2077 sentinel,target227. Raw byte99
+does not enable Overcast. Release spiteful_spirit_policy passes ranks0..20,
+damage scaling,duration endpoints and invalid21.
+
+tools/protocol/spiteful_spirit_2022.py verifies source SHA256 and eight exact
+receipts from fixed20261017-npc-refresh-2:
+packets-1360-15821281.jsonl:
+91077:25->30,skill121,start17528140;
+91101:recharge10 at17530296;91102:finish58;91103:target20/resource227.
+91446:25->30,skill121,start17559140;
+91458:recharge10 at17561234;91459:finish58;91460:target20/resource227.
+Both are local activations in the fixed inventory;134 other/unassigned starts
+are separate. The verifier executes original2022 cast and target-particle
+consumers with stubbed actor/asset services. Report:
+build/reports/spiteful-spirit-native-2022.json. No2077 caster effect is invented.
+This proves native/packet consistency,not rendered animation or damage reactions.
+
+Action context:
+tools/skills/audit_spiteful_checkpoint.py streams the fixed
+packets-110488-195213578.jsonl,verifies its source SHA256 and writes
+build/reports/spiteful-action-context.json. It found85 GenericValue10/skill121
+damage markers,all85 immediately paired with matching Float55 packets at the
+same tick/recipient. Those paired packets supply the damage caster;the marker
+alone does not. No packet clock regressions occurred.
+
+45 markers have a following same-tick skill finish58 and a preceding skill
+start within the retained10s action context. Example:actor10 starts1239 at
+197569593,line172404. Damage marker121 follows at197570593,line172508;
+Float55 line172509 names369 as damage caster;finish58 is line172511 at the
+same tick. Other examples include1253,1232,2110,2235 and1237 with different
+cast intervals. This supports a completed-skill-use trigger as the next
+implementation hypothesis;it does not prove all triggers are completion-only.
+
+An affected actor can receive area damage because an adjacent hexed ally acted.
+Therefore action proximity alone must not assign every damage marker to the
+recipient's own action. Skill starts,attack releases,interrupt/cancel events,
+hex ownership/lifetime and adjacent recipient relationships need separate
+validation. The context tool deliberately retains raw references instead of
+labeling uncertain event causality as confirmed. Absolute damage/Health/rank
+and area geometry are not established by this report. Numeric actor histories
+also require separate map-epoch/lifetime evidence before causal attribution.
+
+Next implementation:
+Owned hostile hex and original-caster lifetime credit;expiry/removal/renewal;
+explicit attack-versus-skill event cardinality,including attack skills;
+trigger timing and cancelled/interrupted actions;adjacent allies of the hexed
+actor;preflight player/NPC relationships and mixed recipients;shadow damage
+semantics;reaction deaths and source attribution;finish-before227 casting.
+Do not reuse the Tainted Flesh hit-only rule:Spiteful Spirit punishes attacks,
+not merely successful hits. Do not generalize Backfire's spell-only trigger
+to signets,stances and other skill types without an explicit reviewed policy.
+
+121 remains CAPTURED-NEEDS-IMPLEMENTATION;source-bound counts stay285/348/696.
+Official clients/loggers and capture checkpoints were not modified.
+
+Validation:Release policy CTest,the pinned native verifier and78 skill-tooling
+tests passed. Extractor regressions cover pair adjacency/recipient/tick,clock
+reset,old/other-actor history and source/header corruption. Native actor/asset
+services remain stubbed;no rendered result or gameplay binding is claimed.
+
+Owned hex stage (2026-10-18):
+World spiteful_spirit validates canonical plan,source/target lifetimes,living
+hostile target,range,plane/LOS and settled resources. Player registry and
+zero-pip timer commit together;renewal replaces only121 and updates original
+caster lifetime/effect credit. Generic active121 insertion and occupied121 ID
+replacement are blocked. Target227 can be deferred for future finish ordering.
+Existing hex prevention and application observers are retained. Prevented
+renewal keeps the prior owned hex. No degeneration or reaction damage is
+invented by merely installing this hex.
+
+Reviewed hostile NPC targets use lifetime-bound registry entries and require
+an existing Health clock settled at the exact application time. A clean actor
+without a prior condition clock starts that clock on first installation.
+The primitive does not advance
+Health behind World's death-credit handling. Neutral/non-damageable/unknown-
+Health recipients are rejected. Expiry,removal and renewal retain normal
+registry presentation. Target retirement clears its stored reaction credit.
+
+World tests cover player/NPC installation,exact expiry,removal,renewal by a
+second caster,prevention and prevented renewal,owned effect-ID guards,self/
+ally/range/stale/forged-plan rejection,NPC role/Health gates and settled-clock
+barriers. The public cast path remains disabled:121 stays in captured-needs-
+implementation until attack/skill-use reactions and area damage are wired.
+This stage must not be counted as a completed gameplay skill or new binding.
+
+Owned-stage validation:server_host Release build,2 focused CTests and78
+skill-tooling tests passed. The fixed checkpoint audit/publish retains
+285 bound/348 awaiting/696 missing;121 remains awaiting gameplay binding.
+Official sessions and fixed capture bytes were not modified.
+
+Standalone reaction policy stage (2026-10-18):
+gw_spiteful_reaction.h partitions logical attack releases from completed
+non-attack skills. Attack skill completion is consumed without a second pulse
+when its release represents the action. This is a reviewed server-policy
+proposal,not retail proof of every dual/multi-target/failed-release case.
+Producer IDs must represent logical actions,not one event per area recipient.
+The existing attack-outcome recipient ledger cannot be connected blindly.
+
+SpitefulEvents binds the hexed actor lifetime,keeps separate phase cursors and
+rejects duplicate/backdated/wrong-lifetime events. Failed uses and events with
+no active hex are consumed without a reaction;replaying them after renewal
+cannot trigger a newly installed hex. Invalid hex metadata does not consume
+the valid event ID. The result retains the exact active hex entry and rank
+plan;World still must match its effect to original caster lifetime credit.
+Completion IDs must be assigned in observed completion order,not reserved
+at cast start;instant actions during another cast require that distinction.
+
+Area preflight takes a complete immutable population snapshot. The primary
+hexed actor is included even if its alliance is unknown. Other recipients must
+be alive,same-instance,same-plane,within166 and explicitly allied to the
+primary. Each candidate carries a pairwise ally-to-center fact for this snapshot;
+no guild/faction/group equivalence is inferred. Known non-allies are excluded;
+nearby unknown relationships mark the result
+incomplete. World must supply all nearby actors and refuse partial damage
+when the result is incomplete. A hostile-to-players flag is not an alliance.
+Duplicate actor slots,stale-generation duplicates,invalid geometry and forged
+plans reject. Scope-sorted results are independent of population order.
+4096 is a defensive snapshot cap,not a retail actor-count limit.
+
+Release spiteful_reaction_policy tests attack/completion partition,independent
+phase cursors,failed uses,expiry/renewal,replay,lifetimes,clock and malformed
+hex metadata;adjacent boundary,unknown/false ally facts,planes/instances,
+dead actors,duplicate slots,order independence,forged plan and defensive cap.
+Damage commit,world event authorization,logical attack cardinality,self-death
+ordering,shadow semantics,NPC relationship facts and Runtime remain pending.
+No binding count is increased for these standalone policies.
+
+World damage prototype (2026-10-18, supersedes damage-pending above):
+spiteful_action now preflights the complete adjacent pulse against copied
+combat actors before committing its logical event or any pulse damage.
+All recipient Health commits precede death cleanup, so killing the hexed
+actor does not suppress damage to its allies. Original caster lifetime and
+explicit authoritative level (1..255) remain attached to the owned hex.
+Shadow uses armor-ignoring damage with generic protection/reduction retained,
+following local Shadow_damage.html revision2643008. Frozen packet evidence
+requires the GenericValue10 skill121 marker to name the recipient; Float55
+continues to identify the original caster. Notices are staged as one batch.
+
+Player alliance uses explicit nonzero team tokens. Nearby NPC pairwise
+relationships remain unknown, so an unresolved nearby recipient rejects
+the whole pulse without consuming its event. Isolated NPC targets work.
+Ordinary timed resources may settle during preflight; the atomic guarantee
+concerns the Spiteful pulse, not rollback of elapsed simulation time.
+
+Three focused Release tests pass: owned installation, reaction policy and
+World damage. They cover exact adjacency, team exclusion, replay, failed
+uses, attack/completion partition, expiry, stale caster lifetime, unknown
+relationship rollback, Frenzy, Shielding Hands, primary death and NPC credit.
+This is still an unbound trusted prototype: authenticated logical action
+producers, public casting hooks, NPC relationship facts, combined reaction
+ordering and rendered animation verification remain required. Skill121
+stays captured-needs-implementation; binding counts must not increase.
+
+Source departure correction (2026-10-18):
+An installed hex no longer loses its damage when its original player caster
+leaves. The stored canonical plan/level still determine the pulse. If that
+caster lifetime is absent, publish absolute recipient Health rather than
+damage attributed to a recycled numeric actor ID; omit original-caster kill
+credit. NPC death cleanup and encounter/objective notifications still run
+without an attributed source; a missing caster must not suppress them.
+A replacement character never inherits this credit. This matches the
+existing Backfire source-lifetime policy; retail detached-source presentation
+still needs independent verification. Tests cover player-ID reuse plus
+nonlethal/lethal NPC pulses after source departure.
+
+Integration inspection confirms that current World attack outcome IDs are
+recipient resolutions (including batched area recipients), not logical action
+IDs. Casting also separates pre-effect reactions from finish/recharge commits.
+Neither stream can be connected directly as a universal successful-use event:
+logical attack grouping and explicit completion ordering remain required.
+
+Successful-effect completion producer (2026-10-18, integration in progress):
+Runtime now reports an accepted effect once through completed_action. Canceled,
+interrupted,stale-target and failed-effect branches return without that callback;
+repeated updates cannot duplicate it. The production closure supplies the
+session's authoritative actor Scope. World allocates completion IDs under its
+lock in observed completion order and calls the owned-hex pulse primitive.
+This callback precedes finish/recharge presentation and subsequent sacrifice
+settlement. Generic successful-effect completion is the current explicit
+policy;failed effect versus successful skill-use retail semantics and combined
+reaction/sacrifice ordering still require review. Native attack release and
+NPC completion producers remain separate work. Public121 casting stays disabled.
+World normalizes the completion timestamp to the actor's authoritative Health/
+Energy clock under that same lock. This avoids false stale-clock rejection
+when an accepted effect advanced resources after Runtime sampled its time.
+
+Ordinary attack producer (2026-10-18):
+Ordinary melee reports once after its immediate hit/miss resolution. Ordinary
+bow/wand reports once when its projectile has been queued,not at impact.
+A separate monotonic release counter feeds the owned hex's attack phase.
+These hooks are in the logical ordinary attack drivers;the shared projectile
+queue and recipient-outcome ledger do not emit reactions. Therefore queued
+attack-skill arrows and area recipients are not mistaken for separate actions.
+Reaction rejection records actor/reason diagnostics rather than silently
+asserting that the skill worked. Multi-hit/dual/area attack-skill integration,
+NPC attack producers and lethal-release/projectile ordering remain pending.
+Release regression fixtures cover melee,wand and bow with/without Blind,
+one pulse at release,no impact/repeated-tick duplicates,and cancellation
+before release. The World tick fixture respects the100ms simulation interval;
+a tick at599 would suppress a subsequent600 tick,so the pre-release check
+uses499 instead. Weapon armor facts are explicit for each delivery type.
+
+Weapon attack-skill batch producer (2026-10-18):
+The shared melee_attack_locked successful batch emits one release using the
+native skill ID. This includes single melee,Cyclone Axe,Double Shot and the
+Barrage-family path used by completed_bow_attack. Recipient outcome IDs and
+individual arrow admission never emit this release. Runtime's later type14
+completion is consumed without another pulse. Rejected batches emit none.
+Tests preserve Cyclone Axe's self-target admission and stale-lifetime rejection.
+Dual/dagger producers outside this shared path,NPC producers and lethal
+reaction/cooldown-finalization ordering remain pending. Do not infer coverage
+of every attack skill from these shared-path tests or enable public121 yet.
+
+First NPC completion producer and negative relationship facts (2026-10-18):
+The Flare controller reports a completed use only after a confirmed action
+completion,surviving pre-effect reactions and successful projectile admission.
+Its source Scope goes through the same locked completion-ID allocator as
+Runtime. No cast-start,failed-target,interrupted or impact callback is added.
+The Flare integration test installs an owned121 on the caster,observes one
+29-damage pulse at release,and verifies its nearby human target is excluded
+from that pulse while the Flare projectile still reaches that target.
+
+An explicitly hostile-to-players NPC supplies a known negative player/NPC
+alliance fact in either direction. This excludes a player from that hostile
+NPC's allied area (and vice versa);it never establishes that two NPCs are
+allied. Allied-to-players/neutral/unknown roles still do not resolve arbitrary
+team-sensitive pairwise facts. Unknown nearby actors still reject partial
+damage. The prior blanket unknown-NPC notes are superseded only by this known
+negative case. NPC elemental/weapon producers and NPC-to-NPC alliance data
+remain pending. Inspection found no separate assassin dagger-attack handler;
+do not confuse the Stone Daggers spell path with implemented dual attacks.
+
+Public casting binding (2026-10-18; supersedes disabled/unbound notes):
+Runtime121 and the native session adapter now admit the canonical Curses-rank
+plan,require authoritative hostile target/lifetime checks plus reaction hooks,
+pay15Energy,cast2s,apply the owned hex and defer targeted227 until after finish.
+Native2077 remains a sentinel;no caster particle is fabricated. Aftercast is
+.75s,recharge10s. NPCs use their reviewed Health/lifetime and hostile projectile
+guard without inventing a player resource profile. Production passes the
+authoritative grant level for original-caster damage attribution.
+
+The cast regression covers player/NPC targets,PvE/PvP,rank12,energy and missing
+hook denial,ally rejection,cancel,interrupt,source death,stale target,one
+completion callback,a subsequent reaction,finish-before227 and exact aftercast/
+recharge boundaries. The pinned native verifier independently checks its two
+fixed captured cast groups. This establishes a source binding,not full retail
+or rendered acceptance. The fixed implementation baseline now has286 locally
+captured source bindings and347 awaiting binding;696 lack local capture.
+
+Still open:unknown NPC-to-NPC relationships (whole pulse rejected with reason),
+NPC elemental/weapon action producers,unimplemented assassin dual-attack path,
+failed-effect versus successful-use semantics,combined lethal reactions and
+cooldown/sacrifice ordering,detached-source retail presentation and rendered
+animation QA. These gaps remain on the verification list;not all skills or
+all Spiteful Spirit combinations are declared complete. Official loggers and
+their live capture files remain separate and undisturbed.
+
+NPC elemental controller completion (2026-10-18):
+After the elemental ledger commits a ready release and its pre-effect reactions
+survive,the controller submits one use through the locked completion allocator.
+Stopped/failed/interrupted releases do not submit it. Impact resolution does
+not submit another. This extends the existing Flare-only producer to the
+reviewed elemental loadout controller;it does not add unimplemented NPC spells.
+Fixtures exercise native186,194,191 and214 with normal completion,interruption
+and a lethal Spiteful pulse. Reaction death retains the already released
+spell's lifetime-bound flight and awards original-caster death credit once.
+Other NPC action producers,relationships and rendered acceptance remain open.
+
+Trusted NPC weapon release producers (2026-10-18):
+The single-strike quest-player and quest-guardian weapon drivers opt in to a
+logical release at their resolved hit/miss/block terminal. The ledger's default
+destructor cancellation and other invalid/preflight outcomes do not emit it.
+The opt-in is off for all generic player batches and projectile recipients.
+Thus the ordinary/weapon-batch producer is not duplicated. Direct guardian
+spell/damage entry points without a weapon are not classified as attacks.
+
+Tests cover hit,Blind miss,Guardian block,invalid range/delivery,no installed
+hex,unknown nearby guardian alliance,lethal post-hit reaction and once-only
+death credit. A lethal pulse occurs after the NPC's completed strike;this
+preserves that strike's victim damage. Combined Empathy/other retaliation death
+ordering still needs retail evidence. NPC-to-NPC unknown relationships still
+reject the pulse instead of guessing an alliance;the guardian strike itself
+can finish independently. No general ranged-NPC/dual-attack AI is added.
+
+Reviewed raw NPC-token alliance policy (2026-10-18):
+Native78fa40 compares the observer's raw team token with the target token;
+for equal NPC tokens,definition flags determine categories1/4/5/6. Flags0x30
+take precedence over0x200;0x100 distinguishes minions. Native58be00 identifies
+the nonc/nonn special tokens;anim is checked separately. Extended pinned
+emulation verifies eleven NPC token/definition cases,including explicit0/0.
+These are native classification results with synthetic lookups,not a complete
+retail area-targeting proof.
+
+World now resolves NPC/NPC area facts from explicitly reviewed packed team
+tokens and captured definition flags in its current instance. Equal regular
+combat-compatible tokens admit an ally;different regular tokens exclude it.
+Missing tokens,anim/nonc/nonn tokens and noncombat-only0x200 definitions stay
+unknown. An explicitly reviewed zero token is distinct from absent metadata.
+Do not substitute the logger's relative allegiance byte,model equality,quest
+ownership or hostility-to-players for these facts. Imported/player token
+namespaces are not compared:player/NPC exclusions retain their separate role
+policy. Authors/importers must preserve a consistent current-instance token
+namespace;this change imports no spawn/token metadata.
+
+Area tests cover equal,different,explicit-zero,missing/special tokens,
+noncombat flag precedence,range/plane exclusion and all-or-nothing rejection.
+Remaining unknown metadata still rejects the pulse. Additional live grouped
+NPC skill/targeting comparisons and rendered verification remain required.

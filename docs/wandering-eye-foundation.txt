@@ -1,0 +1,185 @@
+WANDERING EYE [2056] — FROZEN RECEIPTS AND DETACHED NATIVE PLAN
+
+The immutable 20261024-urgoz-doa-completed packet/world checkpoint is hash-
+checked by tools/skills/audit_wandering_eye_capture.py. In maps474 and445,
+it has 257 timing-attributed cast starts (220/37), 245 same-actor finish
+receipts within 3.5 seconds, and 215 ordered finish/caster1716/target1717
+sequences. This time/actor/target join has no packet-native cast identity;
+it does not establish completed interrupt, area damage, or whether the
+caster was a player, hero, or NPC. The fixed obtainable-player checkpoint
+has no local2056 activation, so MISSING-CAPTURES.txt retains Wandering Eye.
+
+The pinned 2022 catalog row identifies a Mesmer Illusion Magic hex:
+5 Energy, two-second activation, .75-second aftercast, 12-second recharge,
+four-second duration, and damage30..110 across ranks0..15. The archived
+local Wiki page says the next attack is interrupted and nearby foes take
+damage. The detached gw_wandering_eye.h validates the row, computes the
+rank plan and classifies a trusted ordinary or attack-skill action. It
+rejects an invalid/forged action and leaves spells and idle actions alone.
+The 312-unit nearby radius is an existing private-server convention, not a
+measured retail boundary.
+
+Offline execution of the hash-pinned original 2022 callbacks accepts the
+targeted start for skill2056 as style49/two-second model animation, caster
+body1716 and target body1717. Exact first-consumer fields, serialized 2022
+wire and encoded particle file IDs are in
+build/reports/wandering-eye-native-2022.json. This does not verify pixels,
+sound, a live client, or interrupt/damage presentation.
+
+World integration still requires a scoped hostile hex effect, one-use
+consumption when a target begins an attack, protection-aware interruption,
+atomic nearby armor-ignoring hits against valid foes, packet ordering,
+Runtime payment/recharge and rendered-client verification. No production
+skill binding or source-coverage claim was added. The 2022 and PvP-only
+variant3195 must be kept distinct. A serial Release build and CTest of
+wandering_eye pass; official client and loggers were untouched.
+
+SHA-256:
+  archived Wiki EF2EEE92CFE8C5F6605C886606B087BF4F36C4561BC361E56BA12CB801AC6A98
+  gw_wandering_eye.h FA33EBB4A1213C4DD04963AF3217A9D6C9963CD91025AD135D86AD7F13E8CB7D
+  wandering_eye.cpp 5891DC4D32219345EC51A8468EE2555609CD84CF2499C255DA447AADF39FD526
+  audit_wandering_eye_capture.py C10EF3D880349577C0FAC76E2E397325217D9F17000CB780AB96FC0AF0262AD9
+  wandering_eye_2022.py F4660282577D58ABD0644551B97C12CD5AFEA7E9B00F07CF79C18A5E57600DF9
+  wandering-eye-doa-20261026.json 00425A88B2D9AF07C33310DC29399FFF8487B56D70EEBD35271F7C3F4D32F460
+  wandering-eye-native-2022.json 0DF6FB3D941FC7C43D7BF5CC2A8C11B212F32D592C8CED9F5562EEDC2140C4F5
+  wandering_eye_test.exe 4740035ABADE92D68FAD238BF17514AFD3AE6645F1078DB7435B9B94C3C8BD22
+
+2026-10-26 area transaction foundation: a read-only selector now requires
+the hexed victim to be live, hostile and in the same plane; it excludes
+allies and distant actors, rejects unknown nearby allegiance and duplicate
+scopes, and returns a deterministic target set. A copied-hit preflight
+then calculates armor-ignoring damage for every selected recipient and
+rejects the entire proposal if any target has unknown Health. The test
+checks a surviving primary, lethal neighbor, unchanged input actors and
+whole-proposal rejection. This is not yet a World mutation or normal cast.
+The attack-start owner must still consume the hex exactly once, apply
+interrupt protection, commit all hits atomically and publish effects in
+the reviewed order. The 312-unit radius remains unmeasured against retail.
+Serial Release wandering_eye_test build and CTest pass; no official client
+or logger action occurred. Current SHA-256:
+  gw_wandering_eye.h 83FCA980595793583CF287502DEB07667891A4C8368954F50F8AEDFDB4E41488
+  wandering_eye.cpp 11D05B0C4F3CA23816FB315A27B576BDFC80AC5040BCECE0CC113EEDC365C0DB
+  wandering_eye_test.exe CD627B30E4A9FB5CBF44B7B8C2360557D4A47AE8CA641725B933D12CEAD2D2BB
+
+2026-10-26 application/consumption foundation: the selected-recipient
+hex can now be prepared on a copied Registry with same-skill renewal and
+an explicit four-second (or caller-adjusted) expiry. The attack-start
+consumer likewise returns a copied Registry with the newest active
+Wandering Eye removed exactly once. Focused tests verify renewal,
+nonmutation of the source Registry, invalid scope/overflow rejection,
+expiry and double-consumption rejection. These are proposal primitives;
+World does not yet own their commit, protection, nearby hit publication or
+paid Runtime cast. No source binding was added. Serial Release
+wandering_eye_test and CTest pass. Current tested SHA-256:
+  gw_wandering_eye.h 4EE91A6CEE682F941C83064224F886BC3DF08584D77763A623328999F5581D6F
+  wandering_eye.cpp C25AE444EA62D699CBAE73203C6FD80A19CD5C59EE2D735DC4E74367404C2DB8
+  wandering_eye_test.exe 0E62C4F5BB84B1306C4201BE6CBF76C6D6C42AAA16BD0F79E7A8D74173A8D5D2
+
+2026-10-26 World application stage: apply_wandering_eye now validates an
+owned live caster, hostile selected player/NPC, plane, range, line of
+sight and adjusted duration. Player application preflights copied Registry
+and regeneration state and respects selected-hex prevention; NPC
+application commits a copied LiveActor. Both publish the selected target
+body/effect and retain source credit for the future attack-start reaction.
+Normal Runtime casting remains disabled: one-use consumption, protected
+interrupt, nearby damage and publication ordering must be connected to
+both attack owners first. Native World tests cover player/NPC scopes,
+renewal and expiry, not rendered effects. Serial Release server_host and
+wandering_eye_world_test builds plus both focused CTests pass. No official
+client or logger was operated. SHA-256:
+  gw_world_simulation.h D41C01C2BE76E5F7D7628DC6C72874D2619DE43039A561F29613E6456F5BE93D
+  gw_npc_combat_catalog.h 327FE66FE5F3A9BD3C7B3C3C22B2C7B9B85441E8EF709E98FA4B639C600B767B
+  gw_wandering_eye.h 4EE91A6CEE682F941C83064224F886BC3DF08584D77763A623328999F5581D6F
+  wandering_eye_world.cpp B4ED63075F426EE10F899B61D101E486B619A3C9A56346183B110FD597FCDFE4
+  wandering_eye_world_test.exe D0CE244C12F78D839FAB707A46947E4B86851314272C8184D20CCDC45F027E0A
+  server_host.exe 0DEAC79B07AF7E71D5200A3BA613AA71F5C71094499773F62CDC0C635725E29C
+
+2026-10-26 player attack-start reaction: World now consumes the selected
+player hex once on the trusted attack-start path, applies existing
+interrupt protection, and preflights a mixed player/NPC nearby area before
+publishing armor-ignoring hits. The native test proves the primary and
+nearby hostile player/NPC take rank12 damage, while a nearby ally and
+distant hostile do not; a later attack does not retrigger. This is not a
+normal client skill binding. NPC attack-start ownership, mixed-area
+reactions when an NPC is hexed, protection/packet-order comparisons to
+retail, 312-unit radius measurement, and rendered 2022 acceptance remain.
+Serial Release host build and two focused CTests pass. No official client
+or logger was operated. SHA-256:
+  gw_world_simulation.h A8AEF29736BE67B426EB32CBE9C71E7DC89C798F2CFA0999A7D5AB1DCDFAD309
+  wandering_eye_world.cpp CC7BEF78216E228EDFEF881ABCCCD94FDD58541724708FD23AA23C75B64355FD
+  wandering_eye_world_test.exe 121036ADE1D6FDDE15DA90B22D2E62B36673D6FBCCF7152CB8E3EACD682F122B
+  server_host.exe 5601D5C6B7145A015725A48272B3319F4AD806800B337BF21B03AE15E91B7BFA
+
+2026-10-26 NPC attack-start reaction: begin_npc_action now invokes the
+same one-use Wandering Eye area transaction for a hexed hostile NPC. The
+native fixture verifies mixed player/NPC recipients, excluded allies and
+distant actors, one-shot consumption, and both interrupted and protected
+NPC attack continuation. A failed test exposed an actor-copy commit that
+restored the canceled action; cancellation is now preflighted in the
+committed damage copy. The NPC path publishes hex removal, an attack stop
+when unprotected, and damage. Serial Release wandering_eye_world_test,
+focused CTest pair, and server_host build pass. Normal paid Runtime casting,
+retail packet-order comparison, attacker-leave persistence, radius
+measurement, and rendered 2022 verification remain. No official client or
+logger was operated. SHA-256:
+  gw_world_simulation.h 3794C8DDCD82AADE4B4DBD94AD79AC31F317A7F2063565B931C76CBE5EE75BBA
+  wandering_eye_world.cpp 870273DC26600BED75216CB631400BAAE88A72197A5C9EE0E447104AF32BCFBD
+  wandering_eye_world_test.exe F3EDE53B245F9BB76C9D6EDF0BDBDDB7034F24B311C261EBAF1CBD8D2630894C
+  server_host.exe D4C25197A1BE4E6E167A3B1C1CEB6118A0F5045DE9ECA6316E690538D3CCB54B
+
+2026-10-26 paid production binding: normal PvE skill2056 casts now pass
+through the Runtime gateway with 5 Energy, two-second activation, recharge,
+target revalidation and the World application hook. The selected player or
+NPC receives the captured target body effect; native tests verify payment,
+timing, recharge and both target types. Both trusted attack-start owners
+consume the hex and produce nearby damage. The separate PvP skill3195 is
+still gated. If the caster departs before the hex triggers, the victim's
+ordinary attack now proceeds instead of being locked; deferred damage from
+that departed source is still missing. Retail area radius, packet ordering,
+and rendered 2022 client behavior remain unverified. The completed DoA
+packet file is unchanged; its SHA-256 is
+DF78CFF883150E6CD8FC15DD4F8CD34B478183A12729A3E47AF3B07DC82D4CB6.
+The fixed player checkpoint has no local2056 activation, so the
+missing-capture list retains it. Serial Release host build, three focused
+CTests and the capture audit pass. Official client and loggers were untouched.
+Current tested SHA-256:
+  gw_skill_casting.h 8874629ECAFEF43B2DFCB2A3F3683267EA795457B9C0696FDABBFA91E12EB976
+  gw_world_simulation.h 25D9E198FBCABF6B718E3A5298C2B308A4C74BBFA9BC641045DAF80BCB896034
+  gw_auth.cpp 8102BEBFFB1379DD25EB11D6677D06BDAA1CF504FB550D49D3ADC5D79AC59BA5
+  wandering_eye_cast.cpp 3AB611A895684D078C792F18EB412C0332C6B56079D42248578CE37CDB5A5A6E
+  wandering_eye_world.cpp C5E9AE260A7E0A5B56B129F17C3C042BCAD2715A37905959EBBC8BAAD853AC1A
+  wandering_eye_cast_test.exe 87EA5D0282E39A6D9F9568100EE58AADCD90C72B1E3F1555D00C4CD5F16B3587
+  wandering_eye_world_test.exe B3E2CDFAEA6928273C10927EB6BC5B873AF1B501C22AECC162F327D3ADEF84C0
+  server_host.exe 7C2AE7606CBAF8F5F2F6B08FD86D8FD1F12076A16E65BB3790322C787BCDA4F9
+
+2026-10-26 departed-caster trigger: application now retains the caster's
+team token with the effect credit. Both player and NPC attack-start reactions
+can therefore select hostile nearby recipients, consume the hex once and
+publish the damage even after the caster leaves this World instance. If a
+caster is no longer present, NPC death records use the unattributed path;
+the original actor ID remains in the damage packet. A native regression
+verifies both target types and NPC action interruption after departure.
+Same-ID replacement presentation, exact retail source attribution and
+rendered 2022 acceptance remain unverified. This supersedes the earlier
+departed-caster gap, not the area-radius or packet-order gaps. Serial
+Release host build and all three focused CTests pass. Official client and
+loggers were untouched. Current tested SHA-256:
+  gw_world_simulation.h 51DD97EA5FB64C022A3B62886D318DD54DCFE0314BC1C76456B5B3359B485D3C
+  wandering_eye_world.cpp 10961B152A4F76D47D3F089EACB30D0D4AA0AC232DA2FC109FF7C3CDAB5EEB32
+  wandering_eye_world_test.exe FA6B6FE6216EFAB0DBDEB4BCACA1362667A3E30C268C123F0D3E00FF712C4CBD
+  server_host.exe 832D409F186B602732D747F4480401672CF51F0B65E34A96066D31B8F2500F93
+
+2026-10-26 attribution correction (supersedes the departure paragraph's
+damage-packet sentence): a recycled actor ID is no longer used as the
+damage source for a departed caster. The hex still resolves with its stored
+team and level; when the original scoped caster is absent, player and NPC
+Health changes use absolute native Health publication without a floating
+attributed damage notice. The regression rejoins a hostile replacement with
+the old numeric ID, verifies both victims take the hit and that the attack
+does not throw or credit the replacement. Exact retail presentation after
+caster departure remains unverified. Serial Release host build and all
+three focused CTests pass. Current tested SHA-256:
+  gw_world_simulation.h E8A521D268CBD28F2CC2F22FCA6F25DA12E9832382E397EB8F4C5E1E79076F1C
+  wandering_eye_world.cpp FB379224E997CC2435EAF5CC0C7A688B2DA3350E0852159447155A84AC5E1821
+  wandering_eye_world_test.exe 6EC292C6B2A312D16F61C58995ED91BDF512A45E62EE5FDE94E41944FFB3F281
+  server_host.exe 2E0C28A5BB32232EAC4EC69DA6C8204A9A9CBCFDC07BC1E965EB788808A47901

@@ -1,0 +1,29 @@
+Timestamped weapon facts
+========================
+
+World ordinary_weapon now accepts an optional event timestamp. The production
+Gateway refresh is migrated to supply fw::now_ms;source search finds that one
+production caller. Actor generation must match. Updates older than weapon,
+Health or Energy boundaries reject. Lower weapon revisions reject even after
+unequipping,because the last accepted revision survives a null weapon.
+
+For timestamped updates,the World settles already-due damage fields under the
+previous equipment,then advances owned resources,then cancels incompatible
+ordinary attack state and publishes the new trusted fact internally. Missing
+resources during initial actor setup do not invent a resource controller.
+The existing timestamp-free trusted API remains compatible and uses the current
+known resource/weapon boundary;it does not assert a new wall-clock event.
+
+Weapon changes compare item,revision,mastery,item type and caster-weapon class.
+Current known unarmed is distinct from never receiving a weapon refresh through
+the retained level/time/revision state. Future Dwarven375 consumers must require
+that authority and reject historical reads before ordinary_weapon_updated.
+
+New weapon_fact_order suite verifies axe/hammer timing changes,old timestamp,
+old revision,stale actor generation,newer resource boundary,pending attack cancel,
+unequipped revision retention,valid new revision and trusted API compatibility.
+Shield Stance and Bonetti World regressions also pass;62 skill-tool tests pass.
+
+This establishes equipment update ordering;it does not itself implement Dwarven
+IAS/armor/interruption. Inventory/attribute publication across separate World
+calls and exhaustive concurrent refresh/rendered behavior remain unverified.

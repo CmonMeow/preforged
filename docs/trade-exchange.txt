@@ -1,0 +1,43 @@
+Native durable trade exchange
+
+Accounts operation gw-trade-exchange has10tab-separated fields:
+ownerA,characterA,expectedRevisionA,goldOfferedA,itemOfferA,
+ownerB,characterB,expectedRevisionB,goldOfferedB,itemOfferB.
+Itemoffer may be empty; otherwise durableID:quantity comma-separated,max7unique.
+The caller must translate only its owned session wire IDs into durable IDs.
+Success returns revisionA,revisionB,hexProfileA,hexProfileB tab-separated.
+
+This operation does NOT authorize player consent. Live trade Sessions must freeze
+both confirmed offers, verify both current connections/world/range/eligiblemode,
+and hold settlement against cancellation/revisionchanges before calling it.
+Never route client-supplied owner/character/revision directly to this operation.
+
+BEGINIMMEDIATE transaction verifies distinct owners, each ownedcharacter and both
+inventory revisions. It loads durable profiles and derives the entire exchange
+from these records; no proposed inventory blob or client item definition is used.
+Both outgoing sides are removed before allocating incoming slots, permitting
+full bags to swap. Stack merging preserves all metadata compatibility; all new
+recipient items receive unique recipient-local durable IDs. Quantity and gold
+are conserved; each character gold<=100000,stack<=250,maximum7offereditems.
+Equipped/installed items cannot move. Customized items CANtrade perlocalwiki
+Customization.html; customization remains attached and does not grantuse rights.
+Bundle6/goldcoin20/quest21/costume44,45 are rejected. Model-specific bonus/event
+nontradeable restrictions are not yet completely reviewed; Trade.html lists them.
+
+Both writes and revisionincrements commit together only after final deadline
+check. Capacity/quantity/ownership/CAS failures write neither side. A SQL failure
+on the second record or deadline expiry after both writes rolls back both.
+
+Tests/trade_exchange.cpp uses an isolated scratchdatabase to verify exactdurable
+swap,collidinglocalIDs,partialstacks,goldconservation,staleCAS,replay,wrongowner,
+deadline andsecondSQLwrite rollback,fullbagvacatedslots,customization,F WI6armor
+metadata,questrejection,capacity/goldcap andinputprofileimmutability.
+
+Live GW2022 validation (2026-10-04): two distinct private accounts in shared
+Lion's Arch; native Trade button opcode71 opens initiator window, recipient
+View opens its window, both submit opcode3 and accept opcode7; transaction
+returns FW_OK and window closes without disconnection. This run used empty
+item/gold offers. Actual asset transfer remains live-unverified; automated
+transaction tests cover gold, stacks, metadata, IDs, revisions and rollback.
+Evidence: build/reports/trade-window-live.png, trade-completed-live.png,
+trade-handshake-live.txt.

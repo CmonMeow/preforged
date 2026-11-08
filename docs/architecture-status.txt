@@ -1,0 +1,902 @@
+Architecture status audit, 2026-10-04
+
+Production root: Desktop/gw-server. Source in src, tests and synthetic fixtures in tests,
+developer tools in tools, runnable artifacts in bin, disposable build results in build,
+persistent account state and private captures in data. Sibling projects are reference-only.
+
+Implemented foundation
+- src/apps/server_host.cpp owns one native host and visible console lifecycle.
+- src/network/network.h and network.cpp define NetworkManager, NetworkComponent,
+  NetworkServer and NetworkClient. Server/client derive from the common component.
+- NetworkServer owns portal/auth listener threads. The auth adapter owns world sessions.
+  Original Guild Wars 2022 clients connect directly to these listeners.
+- NetworkManager serializes trusted application calls into Accounts using a timed mutex
+  and request deadline. No local RPC hop, registry, forwarding host or DLL service loader.
+- NetworkClient exposes virtual request plus named account/character/inventory/social
+  operations. Transport is intentionally FW_UNAVAILABLE until a custom client is built.
+- Native lifecycle tests exercise bind failure rollback, restart, duplicate start, live
+  connectivity and future-client virtual request dispatch. These are evidence for the
+  foundation, not evidence that all game services or public hosting are complete.
+
+Remaining requirements and verification
+- Character create/delete/select: account ownership and persistence tests exist, but a
+  full fresh native create -> select -> world -> delete UI cycle remains to be verified
+  against the running client after recent gameplay changes.
+- World entry: native local client login/world entry verified on current build; cached
+  DAT and diagnostic empty manifest still required. Real asset dependency manifests
+  must replace that diagnostic before the entry pipeline is complete.
+- Gameplay: movement, travel, exploration, storage baseline, professions, attributes,
+  social state and selected skill families exist. A learned skill is not an implemented
+  skill. Selected offensive world damage/condition and resurrection families now work; complete skill coverage, NPC combat lifetimes/stats, real possessions,
+  merchants, quests and much of gameplay remain unfinished.
+- NPC capture populations have provenance; friendly observations must not be promoted
+  to invented enemy health, armor or combat permission.
+- Public hosting and future custom-client transport are not proven by loopback tests.
+- Verification: October4 initial full87-test run passed85; corrected two stale integration fixtures then passed both reruns. Subsequent lightning/casting/combat/world focused4/4 and guild/runes/world focused3/3 passed. New group tests need their own current builds; these runs do not prove all gameplay. Latest native login/world160 proof is in
+  build/client-check/smoke.json. Native attack/ordinary request regression is in
+  tools/protocol/skill-use-2022.txt and build/reports/skill-use-2022.json.
+
+Next integration work: authoritative condition state/removal and further inventory wire
+branches; maintain original-client packet evidence and exact actor lifetime checks.
+
+October4 latest combined deployment: freshly rebuilt full suite103/103 PASS,
+including attunements, health-sacrifice, current world/casting/item upgrades and
+salvage proposal tests. Enfeebling Blood118/2885 now has complete nearby Weakness
+and successful-activation sacrifice handling, with pinned10%/17% distinct costs.
+Selected bindings63; complete skills/items remain unfinished. Visible host READY
+uses executableSHA25637430ca954c1879bd8b90c061315389d13d5e6fc6e9e836a50bdf8f9fcf9c563.
+Host prints its exact linked executable hash, independently matched to Get-FileHash;
+entrypoint timestamp is explicitly labelled because it cannot identify linked
+core updates by itself. Native client UI validation remains pending: uniform
+desktop pixels now make screenshot tool fail rather than save blank evidence.
+
+October4 source update beyond deployed06:28:16 host: all five attunements now
+have authoritative stripping-aware snapshots/refunds and Elemental attribute
+bonuses, with61 selected bindings. Native-first armor eligibility permits first
+insignias without the earlier artificial prerequisite. Explicit weapon energy
+affects capacity; proven naming-only modifier words do not deny ordinary attacks.
+The health-sacrifice world engine passes scoped loss/death tests; binding its
+actual spells remains separate. Focused attunements/health_sacrifice/item
+transactions/weapon_intent/equipment_metadata_provider5/5 passed. Salvage has
+tested atomic proposal/session machinery but no guessed output recipe assets or
+live activation. These source changes still need the next combined host deploy
+and client verification; no complete skill/item coverage claim is made.
+
+October4 later combined deployment: host compiled06:28:16, runtime process12412
+reported READY with ten private gates. Includes57 selected skill bindings,
+ordinary reviewed earth-staff attack intents/hits/start/release/stop and owned
+dye transactions with visual restoration. Ordinary timing/range, midpoint rolls
+and instantaneous release are explicit private policy, not retail equivalence.
+Full CTest invocation passed101 existing test executables; one newly registered
+attunements target was not built and therefore not run. This is not102/102green.
+Native attack dispatch proof and fixture comparisons passed independently.
+Client process remained responding, but foreground activation was denied and
+desktop capture was blank, so no fresh native UI success is claimed. Earlier
+world-entry evidence remains historical. Pending live checks and full gameplay
+coverage keep the goal incomplete.
+
+October4 combined update: 97/97 freshly built CTests passed after replacing a
+stale requirement-opaque assertion with the original-client-proven attribute/rank
+decoder regression. Deployed host includes 52 selected skill bindings, rune and
+insignia upgrade transactions, Weakness effective attributes, and owned armor
+energy/pip metadata. The host restarted visibly and reports READY. This is
+automated integration evidence; native UI validation of the newest skill and
+upgrade batch remains pending. Complete skills/items and ordinary weapon attacks
+remain unfinished; ordinary attack parsing/math alone is not live attack support.
+
+October4 live evidence: private37130 client successfully entered53 and transferred13->26 using newly imported arrival defaults, with named captured collector on26. Combined equipped-passive/guild build entered26 and traveled248 with inventory open and preserved Guild Status announcement, no repeated announcement in chat. Evidence under build/reports/capture-8432-map26-live.png and guild-announcement-{before,after}-transfer.png. Existing-gear health480/energy66 were unchanged; live modified-gear bonus/application verification remains pending. NPC observation population938across68maps is not a complete combat/merchant catalog.
+
+October7 shared endpoint integration: application operation methods now belong to NetworkComponent and dispatch virtually through NetworkServer or NetworkClient. Direct GW auth/portal handlers call the server component; database admission remains in NetworkManager, in-process. Added shared cape/trim operations. The future custom client transport explicitly returns unavailable. Network lifecycle and nine observer/guild/NPC tests passed; production host rebuilt. Native UI verification follows deployment and is separate from these contract checks.
+October7 deployment verification: exact private host PID11088 and client PID5448. Local test login restored seven-character roster, then Play entered claimed hall map186 with main character Cmon Meow. Native screenshot build/reports/shared-network-world-entry.png; server logged player_stream_sent, persisted skills/attributes and claimed hall restoration. This verifies existing login/world entry through the common server endpoint, not a fresh create/delete UI cycle or complete gameplay.
+
+October7 fresh native creation check: private5448 logged out, entered Create -> roleplaying -> profession -> sex -> appearance -> body -> name. No campaign-selection page appeared; native preview opcode94 selected campaign3 profession1. Submission Network Test Hero disconnected with Code007 because runtime commit guard accepts only campaign1, and its destination redirect is also fixed148. No character_created event occurred. This contradicts complete character-creation support despite preview support for campaigns2/3. Added structured rejection details for campaign, preview profession, appearance profession/bytes and authorized campaign mask. Next work must reconcile native campaign selection and commit/destination policy; do not simply remove ownership/appearance validation. Evidence build/reports/creation-native-rejected.png and server.log. Delete cycle remains untested.
+
+October7 campaign creation source fix: native commit uses authorized_preview for campaign/profession/owned mask; campaign-specific armor summary and redirect now use the same selected campaign. Starting destinations148/212/490 follow pinned local GWCA enum Ascalon_City_pre_searing/Monastery_Overlook1/Island_of_Shehkah. Database ownership check selects campaign2 for212 and3 for490 instead of always demanding Prophecies. Existing developer profiles on other maps retain Prophecies policy. Added campaign/profession ownership matrix and persisted212/490 create-delete regressions. Freshly rebuilt creation_request/accounts and existing creation_equipment/response/network lifecycle passed5/5. Production rebuilt/restarted; native success and new-character arrival placement still require verification. No complete creation flow claim.
+
+October7 native campaign validation: private5448 on host10000 successfully committed Network Test Hero (Nightfall warrior), response391 and redirect400map490. Auth rejected map490 tuple because map_asset_file490 is absent (reference CSV has zero); world entry remains unsupported. Restored roster showed8of8, correct character/armor, but campaign label incorrectly Prophecies. Native named delete succeeded and restored7of8, preserving originals. Screenshots creation-nightfall-{restored,deleted}. Campaign selection page DOES appear with2s UI transition delay; earlier skipped-screen report was test timing, not established product failure. Capture world-13324-237035312.jsonl contains level1 local equipment on514 and subsequent transition514->490, with entry candidate10215,6479plane0, unverified spawn. Do not substitute514 for490 on name alone or promote candidate to verified spawn. Next work: resolve missing tutorial asset and summary campaign field using original-client/capture evidence.
+
+October7 native origin-label fix verified: creation commit sets summary low nibble to selected campaign; Campaign Test Hero appeared as Nightfall Campaign after fresh login (previous fixed1 displayed Prophecies). Exact native writer/decoder round-trips six fixtures, summary_2022 test passes. Deleted only Campaign Test Hero through native named-delete; originals remain. Screenshot build/reports/creation-nightfall-campaign-correct.png. Map490 missing asset remains next blocker for native world entry; no routing bypass applied.
+
+2026-10-07 world-entry origin campaign: native roster writer reads WorldContext+688 through797c70, but entry omitted SMSG123 which assigns it. Carry the owned profile's origin nibble through auth grants, direct map transfers and arena return grants; publish123 before local actor spawn. Never infer origin from current map (characters can travel between campaigns). Offline original serializer60bc58 verifies0/1/2/3/15. Built native host and five focused tests passed. Live private2022 PID5448: Prophecies Test entered148 and returned to selection retaining Prophecies Campaign, unlike the pre-fix missing label. Evidence build/reports/creation-origin-after-world.png. Equipment preview still becomes empty after world return despite authoritative57-byte summary with4 equipment records; unresolved separately. Deleted only the temporary Prophecies Test through native named-delete UI. Original seven characters retained. Goal remains active.
+October7 owned equipment association: world entry now emits native SMSG110
+for existing items in the equipped bag, after cosmetic appearance overrides.
+The physical slot order is converted to AgentInfo wire order. Pinned37130
+callback874090 updates AgentInfo and queues action9 consumed by77B431;
+SMSG159 type20 instead queues effect9 consumed by77CDD7 and was removed.
+Offline original serializer/handler proof: tools/protocol/equipment_assignment_2022.py.
+Live private client5448/server2248, map186: all five logout-composite physical
+slots now contain their owned item visuals and inclusion flags. Returning to
+character select retains Cmon Meow's armor. Evidence:
+build/reports/equipment-assignment-native.json,
+build/reports/equipment-assignment-live.json,
+build/reports/equipment-assignment-after-logout.png.
+This validates the existing character logout path; a fresh creation round trip
+and equipment changes after entry still require separate live validation.
+October7 equipment transaction follow-up: committed inventory transactions now
+compare equipped wire IDs before/after saving and send only changed SMSG110
+associations after item placement packets. Rejected/unchanged proposals publish
+none. Native removal proof confirms item0 clears AgentInfo and queues action27,
+not action9. Equipment proposal tests cover occupied swaps, removal and no-op.
+Private client5448 live map186: dragged chest armor to backpack, slot2 became
+file0/flags0; dragged it back, slot2 restored file544/flags536870918. Other four
+physical armor slots unchanged. Original equipment restored; no official client
+targeted. Evidence build/reports/equipment-unequip-live.json and
+build/reports/equipment-reequip-live.json. Five focused tests pass.
+Remaining equipment validation includes public appearance for other players,
+cosmetic override reconciliation and fresh-character creation round trips.
+October7 public equipment follow-up: committed armor membership changes now
+update the world's cosmetic presentation and broadcast native159 type14/15,
+including removal. Late entrants receive the latest presentation. Owned item
+IDs remain private to the owner's connection. Native77E810 destroys/rebuilds
+the composite on cosmetic changes; owner associations therefore follow the
+queued public update and restore unchanged equipped pieces too. World tests
+cover existing peer updates, removal, late join and obsolete scope rejection.
+Private5448 live map186 unequip/re-equip preserved all four unaffected physical
+slots across the composite rebuild, restoring chest file544 at the end.
+Evidence build/reports/equipment-public-unequip.json and
+build/reports/equipment-public-reequip.json. A second rendered client was not
+used; peer delivery and late join are verified at the world/outbox boundary.
+Remaining: fresh creation round trip, initial/reconnect cosmetic projection
+from inventory rather than imported summary, and dye rebuild association order.
+October7 dye ordering: a committed dye application now queues restoration of
+the owner's equipped wire IDs after the public color packet. Shared native
+restore_assignments is used for world entry, equipment rebuilds and dye rebuilds.
+Tests verify equipped-only restoration (no displaced backpack items), color
+before associations in owner outbox, and no owned IDs in peer color updates.
+Five focused equipment/world/inventory/modifier tests passed and host rebuilt.
+This is code and queue-boundary validation; no live dye consumable was used.
+Initial/reconnect cosmetic projection and new-character live round trip remain.
+October7 inventory-driven world-entry visuals: public armor now comes from
+saved equipped items, using fixed head/chest/hands/legs/feet order. Carrying
+items never revive imported summary equipment. Definition type and pinned
+composite bounds are checked; saved dye/render parameter are preserved.
+Regression tests cover missing head, backpack removal and saved dye/parameter.
+Four focused tests pass. Live private5448/server1344: unequipped chest to
+backpack, returned to character select, logged out, authenticated again and
+entered map186. Chest remained absent in physical slot2 and inventory preview;
+other four pieces remained equipped, energy capacity fell66 to61. Evidence
+build/reports/equipment-reconnect-removed.json and matching PNG. Original chest
+was re-equipped afterward. No official client was targeted.
+Auth roster summaries still originate from imported summaries; the fix applies
+to world entry and public presentation. Fresh character round trip remains.
+October7 roster inventory projection: owned roster-page reads now project
+persisted equipped armor into supported version6/8 summaries, preserving the
+remaining header/opaque fields and original stored import. With no inventory
+record, the captured summary remains untouched. Isolated Accounts integration
+tests exercise uncaptured import, saved equipped chest and saved backpack chest;
+equipment tests preserve version/map/appearance/campaign/profession bits.
+Fresh inventory_accounts and equipment_proposal tests pass. Rebuilt host live
+private5448: removed chest, logged out and authenticated again; character select
+displayed chest absent with other four pieces and character labels retained.
+Screenshot build/reports/roster-inventory-removed.png. Entered map186 and
+re-equipped original chest afterward; snapshot roster-inventory-restored.json.
+The projection is read-only; original captured summaries remain preserved.
+October7 fresh creation live validation: private2022 PID4580 created temporary
+Armor Roundtrip in Prophecies, entered map148, physical slots2/6/3/5 held
+files91/92/94/90 and head4 remained empty. Inventory preview was armored;
+fresh authentication preserved armor, level1 and Prophecies campaign label.
+Evidence creation-roundtrip-world.json/png and creation-roundtrip-relogin.png.
+Immediate return to selection instead displayed the old seven-character roster.
+An experiment publishing unsolicited auth CharacterInfo during selection10
+was rebuilt and tested; it did not repair that cache. Removed the experiment.
+No fix is claimed. The return emitted status14/settings33/32, not summary9;
+next step is decode the native return/cache branch, not repeat that packet.
+Second evidence creation-roundtrip-fixed-world.json and fixed-relogin.png
+records the failed experiment, not a successful fix. Both temporary characters
+were deleted through exact-name native delete; seven original characters remain.
+Nightfall creation also reproduced known missing490asset failure, and that
+temporary character was deleted. No official client was targeted. Starting
+position148 still uses generic town configuration; new-player spawn unverified.
+October7 selection AccountInfo follow-up: rebuilt server7088/private4580.
+Correct native SMSG17 branch sets pending kind0x11 selected GUID before
+completion; original-instruction selection_account_2022.py regression passes.
+New read-only equipment_summary_observer --selection verifies a nonzero native
+GUID after fresh creation/world return. Evidence selection-account-return.json.
+Nevertheless immediate roster remains7of8; no summary9 is emitted. This is
+still an unresolved creation-to-roster insertion issue, not a completed fix.
+Fresh authentication restores new character, all starter armor and labels.
+Playing that authenticated character and returning DOES emit summary9 and keeps
+8of8 with Selection Test selected. Evidence selection-account-existing-return
+PNG/JSON; native creation differs from existing-character return. Four focused
+auth/creation/account tests pass. Deleted only Selection Test afterward; seven
+original characters retained. Official clients untouched. Next trace must cover
+the native creation-to-account roster insertion, not resend selection identity.
+October7 creation roster repair verified: supersedes preceding unresolved cache
+note for tested2022 Prophecies flow. Native7eb6b0 suppresses unchanged summaries;
+complete391 primed its cache before auth-roster insertion.391 now carries empty
+summary, while durable profile stays complete. First world logout emits9 and
+inserts new character. Live4580/server10932: create Summary Test ->148 ->select
+showed8of8, correct labels/armor; Play ->148 ->select kept8of8. Exact-name delete
+restored7 originals. Read-only reentry armor snapshot and PNG/server evidence
+in build/reports/creation-empty-summary-*. Six focused tests pass; offline
+original-instruction summary_change_2022.py passes. Other campaigns, new-player
+spawn correctness, complete starter gameplay/inventory remain unfinished.
+October7 creation-specific arrival: config/creation-spawn-points.txt separates
+observed initial arrivals from ordinary travel. Enabled only Prophecies148
+(9661.211914,7888.114746,plane0,facing-2.2758), sourced from official capture
+world-13324-237035312.jsonl line9 with level1 equipment line10 and user's Logger
+creation context. Observed candidate, not a reconstructed retail spawn selector.
+Validated on pinned113021 navigation. Committed creation redirect grants a
+30-second account/character-scoped one-use arrival; first auth instance request
+now consumes such intent even when its map equals the selected saved map.
+No player movement position is persisted. Missing/invalid/unwalkable creation
+configuration logs failure and uses ordinary entry. Factions/Nightfall points
+remain disabled pending map/asset review. First-entry intent is transient; a
+host restart or timeout before consumption falls back to ordinary arrival.
+Five focused creation/portal/account tests pass. Rebuilt host9728/private4580
+created Arrival Test ->148 with recorded coordinates/plane/facing; native UI
+rendered in upper town. Immediate selection retained8of8 and armor. Next Play
+used normal9620.086914,4749.040527, verified in native visual/authoritative/
+predicted read-only sample creation-arrival-normal-reentry.jsonl. Thus one-use
+arrival did not contaminate ordinary travel. Named delete restored7 originals.
+Evidence creation-arrival-first.png, selection.png, equipment.json, deleted.png,
+and creation-arrival-server.log in build/reports. Official clients untouched.
+
+October7 full regression audit after replay movement changes:
+Full registered Release CTest run initially120/121 passed; npc_combat_population
+still expected obsolete938actors/68maps. Re-ran capture provenance preparation
+into build/reports/npc-combat-audit: all1402current actor bindings across115maps
+validated; protected388/neutral727/unknown287. All8 original map-row identity
+hashes remained exact. Generated catalog differed only in authored policy source
+fingerprint: docs/npc-combat.txt had changed since the earlier generation.
+Installed audited refreshed provenance/catalog; no actor row, relation, health,
+armor, allegiance, damage permission or condition permission changed. Native
+production population test now pins reviewed current coverage and preserves the
+8 earlier map hashes and every noncombat/unknown-stat assertion.
+Rebuilt npc_combat_catalog_test; full121/121 registered tests passed22.97seconds.
+Evidence build/reports/full-regression.txt and npc-combat-audit outputs. Existing
+host5348/private2132 preserved, no process action in this audit turn. Test success
+is coverage of implemented contracts, not proof of allskills/items, manifests,
+autonomous GvG NPC AI, complete world content or complete native-client gameplay.
+
+October7 shared character and social operation completion:
+Added shared NetworkComponent methods for name lookup, development rename/unlock,
+secondary profession save, and ignore checks. Native GW2022 handlers now call
+these methods instead of generic operation strings. These use the existing
+shared3second admission budget and existing transactional account operations;
+no gameplay rules or local custom-client success fallback were introduced.
+Expanded virtual transport coverage to every currently exposed shared method,
+including inventory, storage, factions, progression, skillbar and social APIs.
+Rebuilt server_core/network_lifecycle_test and server_host. Seven focused
+network/account/profession tests passed. Restarted only verified private host5348;
+private client2132 and official sessions were not terminated. Native UI behavior
+of this dispatch-only change has not been re-tested in this turn.
+
+October7 atomic creation inventory:
+New characters with supported appearance/profession now persist the existing
+private-server armor policy in fw_gw_inventory revision1 in the same transaction
+as roster/summary insertion. First world entry no longer owns initialization for
+these characters. Imported characters and existing inventories are unchanged;
+legacy/no-appearance records retain the existing world-entry fallback. This is
+private maximum basic armor, not claimed to be authentic retail starter gear.
+Starter weapons, head armor and authentic starter statistics remain incomplete.
+Added account lifecycle coverage for cancellation after inventory insertion
+(rolls back roster), pre-login ownership/customization/item IDs, foreign-account
+rejection, and deletion. Ten focused account/creation/network checks passed.
+Rebuilt and restarted only verified private host8684. Native client UI flow was
+not re-tested in this turn; private client and official sessions preserved.
+
+October7 global creation names:
+Creation now checks character-name availability across all accounts with the
+same case-insensitive namespace as development rename. Previously account-local
+creation allowed ambiguous public names for friends, whispers and trade.
+No existing imported records were renamed or deleted. Import reconciliation
+remains account-scoped for preservation of captured data. Regression covers
+cross-account/case collisions, unchanged roster on rejection and name reuse
+after deletion. Rebuilt rename/account lifecycle tests passed; host rebuilt.
+
+October7 native creation validation (private client2132, host9192):
+Logged in test@example.test/test without EULA prompt; original7of8 roster visible.
+Created temporary Inventory Test via native UI. The selected campaign was
+Nightfall (preview campaign3), not Prophecies. Persistence succeeded, then native
+redirect requested map490/type1. AUTH rejected tuple_valid=0: generated
+map_asset_file(490) returns0. Source map-assets-reference.csv also has file_hash0
+for490 and514; a same-name or neighboring asset must not be guessed. Capture
+world-13324-237035312.jsonl establishes map490 arrival but does not provide its
+asset binding. Thus Nightfall first-world entry is unimplemented, not validated.
+Logged out/in normally: native roster showed Inventory Test, Warrior, level1,
+Nightfall and its four body armor appearances. Deleted only Inventory Test using
+native exact-name confirmation, restoring7of8 original characters. No official
+client targeted; host/client remain open at character selection.
+Evidence creation-inventory-nightfall-selection.png, creation-inventory-cleaned.png
+and creation-inventory-live-server.log in build/reports. Next action is recover
+missing creation map assets or explicit destination admission/error handling;
+previous database tests alone do not prove campaign creation is playable.
+
+October7 map490 investigation and instance admission diagnostics:
+Rechecked upstream Jonathan-Greve/GuildWarsMapBrowser master/python_scripts/data.csv
+via HTTPS;490/514 still have file_hash0. Snapshot retained in build/reports/
+map-assets-upstream.csv. No asset association inferred from shared place names.
+Factored existing native auth tuple admission into gw_instance_admission.h with
+specific rejection reasons for missing assets, campaign ownership, map/type,
+transaction, district, region and language. Directed transfer ownership remains
+separate and unchanged. Missing asset490 now reports missing_map_asset rather
+than only tuple_valid0. Creation_request regression covers this observed failure,
+valid148, arena type6/International, and rejection branches; passed. Nativeauth
+core and host rebuilt; only verified private host9192 restarted. This diagnostic
+change does not implement490 or make Nightfall world entry playable.
+
+October7 DAT inventory and logger asset research:
+Stable capture currently disables StoC initialization; do not re-enable the
+packet hooks casually. GWCA InstanceLoadFile explicitly supplies map_fileID and
+spawn position; InstanceLoadInfo supplies logical map_id. Their correlation
+requires a validated load sequence, not the nearest periodic sample.
+Scanned bin/client/Gw.dat read-only with native navigation_bake --list-maps:
+132760 physical records scanned,355 FFNA map payloads,710 file-ID aliases,
+zero decode errors/oversized skips. Added mft_slot to inventory CSV output and
+rebuilt/reran to prove aliases share physical identity. Unknown-payload candidates
+filtered against captured490point10215,6479 and known reference aliases remain
+bounds-only; not promoted as logical map bindings. Reports dat-map-inventory.csv
+and shehkah-asset-candidates.csv retained in build/reports. Only exact verified
+private clients2132/9952 were closed for DAT access and private launcher restored;
+official sessions untouched. Tutorial490 remains unresolved. Next evidence needed
+is the paired native load-file/load-info response or stronger DAT identification.
+
+2026-10-07 creation destination preflight:
+Native opcode137 now verifies the selected campaign starting-map asset and
+map_entry_arrival before gw-character-create persists roster/inventory. Missing
+world returns394/DWORD19 and logs starting_world_unavailable persisted=0;
+duplicate names retain394/29. This prevents the observed Nightfall490 commit
+followed by failed world admission. No campaign or map substitution is made.
+Error19 meaning follows https://wiki.guildwars.com/wiki/Error_code (requested
+mission unavailable);394 native dispatch was previously traced to UI10000095.
+Failure serializer rejects zero and tests both19/29 framing. server_core and
+server_host rebuilt/deployed; network_lifecycle, accounts_lifecycle,
+creation_response and creation_request4/4PASS. Native UI reaction to19 and
+retry remains unverified. Map490 asset binding still missing, so this is a
+failure-ordering fix, not completed Nightfall world support.
+2026-10-07 native creation and both deletion handlers now dispatch through NetworkServer shared createCharacter/deleteCharacter methods (shared3000ms admission budget replaces handler2000ms). Build and network_lifecycle passed. UI test could not acquire foreground, no input sent; creation failure19 retry remains unverified.
+2026-10-07 native creation preflight verified:
+Private6040/server6072, proper Nightfall Warrior preview armor initialized.
+Arrival Test create returned native019 operation unavailable, connection alive,
+Create remained enabled. Second Create same session returned019 again. Server
+logged starting_world_unavailable persisted=0 twice. F12 logout/relogin restored
+original seven-character roster; no test character committed. Evidence:
+build/reports/creation-unavailable-world-error.png and
+creation-rejection-roster-unchanged.png. Early run clicked through preview before
+responses settled and disconnected007; not counted as preflight verification.
+Preview synchronization validation remains a separate issue to investigate.
+Follow-up: final screenshot creation-rejection-roster-unchanged.png was refreshed only after confirmed logout/login completed; native AUTH character_roster count=7. Third rejection also observed, no character persisted. Diagnostic host6072 replaced by normal visible START SERVER.cmd host after capture.
+2026-10-07 preview validation rejection:
+Creation137 now uses authorized_request shared validator for campaign ownership,
+allowed professions, appearance profession equality and four zero reserved
+bytes. Mismatch responds394/error19, logs preview_mismatch and consumes exactly
+one framed request without persistence or disconnect. Earlier throw removed.
+Tests iterate3campaigns*10professions, mismatch/ownership/reserved-byte checks.
+Four creation/account/network tests passed; host rebuilt and deployed. Native
+rapid-preview reproduction after this change remains unverified; root preview
+state synchronization has not been established. No official process targeted.
+
+2026-10-07: Native auth roster loading/refresh, map selection, progression reads/saves, account campaign/profile/agreement reads, friend operations, and guild state/cape/command handlers now use the shared NetworkComponent application methods. These methods use the standard 3000 ms admission deadline instead of the prior per-call 500/2000 ms deadlines where applicable. Generic transitional account_request calls remain for other handlers; migration is incomplete. server_core and server_host rebuilt; six focused tests passed (network_lifecycle, progression, accounts_lifecycle, creation_response, creation_request, social_accounts). This validates service contracts and persistence, not a new live client gameplay run.
+
+2026-10-07 follow-up: Removed account_request from gw_auth.cpp. Ticket authentication, character map reads, inventory load/save and pickup, atomic trade exchange, attributes/skillbar updates, tournament balance/trim/cape purchases, and storage transfers now call NetworkComponent methods. Inventory restore chooses explicit accountStorage/characterInventory methods. Standard admission deadline is 3000 ms. Eight focused tests passed: material_storage, social_accounts, character_skills, attributes, skillbar, network_lifecycle, trade_exchange, inventory_accounts. Portal still has a generic Accounts helper; custom-client transport and complete live gameplay validation remain unfinished.
+
+2026-10-07 portal migration: Added shared login/logout/validateSession/gameAccountAlias/issueTicket operations, routed portal through them, and removed its generic Accounts dispatch helper. No generic Accounts request or account_request remains in src/apps. network_lifecycle verifies virtual transport dispatch plus real registration/login/validation/alias/ticket/logout revocation; auth_data and accounts_lifecycle also passed. Rebuilt and deployed native host. This completes these application-handler migrations, not custom-client transport or all gameplay.
+
+2026-10-07 deployed-client verification: Exact private PID6040 connected to host3248 after clearing the stale disconnected session left by host deployment. Fresh test@example.test/test login reached seven-character roster without EULA. Selected Cmon Meow (Elementalist/Assassin), Play loaded owned guild hall186; guild panel and announcement displayed. Opened inventory without crash, then /tp55 loaded Lion's Arch with named NPCs. H Account displayed persisted 85000 Tournament Reward Points. Evidence: build/reports/network-migration-world-entry.png, network-migration-inventory.png, network-migration-map55.png, network-migration-tournament.png. Client left open in Lion's Arch. Tournament account display name remains unset; no claim of complete creation/deletion or gameplay verification.
+
+2026-10-07 live creation/deletion: Using private PID6040 and deployed host3248, created exact temporary character Network Trial through native Prophecies roleplay wizard. Selected Warrior; persisted/native roster reports Warrior level1 and creation entered Ascalon City148 successfully. Creation appearance preview and spawned character nevertheless wear Mesmer-looking blue armor; appearance menus also had empty face/skin selections. This is a reproducible creation appearance/equipment defect, not a successful fidelity test. Returned through native Character Select, typed exact Network Trial into Delete confirmation, and native roster returned from8 to7 slots without disconnect. Original imported characters retained. Screenshots network-trial-created-world.png and network-trial-deleted-roster.png. Next investigate creation preview appearance/equipment data rather than changing protocol guesses.
+
+2026-10-07: Guild identity from Documents/Guild Wars/Templates/Skills is 읏vs읏 [읏vs읏]. Verified in persistent guild row (hall 186 retained), Unicode social_accounts tests, and running private 2022 G panel; screenshot build/reports/guild-korean-name-verified.png. Wall-slide jitter regression now exercises alternating held vectors over three seconds and rejects repeated stop/position packets; world_simulation passes. This does not prove the reported visible jumping is fixed; map/contact reproduction remains needed.
+
+2026-10-07: Verified live H Titles and all four faction rows (see progression-integration.txt). Read-only private pose diagnostic now includes host_ms, allowing correlation against server keyboard_stop server_ms. Built native tools/client/private_pose.cpp as build/tools/client_pose_observer.exe; usage PRIVATE_PID DURATION_MS SAMPLE_MS (max30s, verifies pinned client path/hash). Idle baseline private5132/map55 at6091.52197,4062.15063:43 samples,0unavailable, visual/authority/prediction agree; no production movement fix claimed. Capture build/reports/wall-slide-idle-baseline.jsonl.
+
+2026-10-07 controlled live movement: bounded private WASD hold support added to tools/client/control.ps1 (50..2000ms, exact private path/foreground, finally releases key). Three forward runs in map55 from6091.52,4062.15 through6486.44,4256.17 and6884.51,4451.73 to7195.42,4694.23 crossed planes0->20->0. Native pose captures258/193/193 samples with0unavailable; server release corrections0.318814/0.660815/3.52014units. Last run maximum sampled displacement8.163units/31ms and vertical delta2.101units/31ms. Reported wall jumping not established by these runs. The auth/prediction table records remain stale during locally controlled keyboard movement; distance to visual record is NOT a valid desync metric without identifying local child actor. Raw captures build/reports/wall-slide-controlled-{movement,second,third}.jsonl.
+
+2026-10-07 fresh native creation UI audit: exact private5132, visible host8524. Entered creation from roster; roleplaying -> Warrior -> female -> appearance/body -> named Codex Lifecycle -> Create. Server rejected before persistence: map490 reason=starting_world_unavailable. Initial automated input advanced past the campaign chooser; preview used campaign3/Nightfall. Subsequent deliberate Back navigation verified the chooser with all campaigns enabled. map-assets-reference.csv explicitly has490 Island of Shehkah file_hash0, and generated map asset/navigation catalog have no490 binding. User Logger capture world-13324-237035312.jsonl does contain map490 first arrival10215,6479 plane0 facing-.717372 followed by level1 Warrior equipment. This is stronger evidence than inventing a map asset ID; creation/world lifecycle remains incomplete. Face/skin/hair-color selectors also empty in live appearance panel. Need recover490 asset binding for Nightfall creation. Prophecies lifecycle subsequently verified through create/world/return/reentry/delete. Current auth/world generic account_request grep has no matches; older migration note is stale.
+
+
+2026-10-07 same-wall turning correction deployed: added regression alternating (1,.6)/(1,1.4) during contact; observed pre-fix world_simulation failure from repeated40/44. New steering direction retains contact when layered slide probe remains clipped/unblocked on allowed plane. world_simulation and layered_navigation pass; native server rebuilt and restarted through visible START SERVER.cmd after exact private host path check. Live visual wall-turn verification remains pending; no official client targeted.
+
+2026-10-07 movement experiment rejected after live regression: integrated-rate packet change worsened final snap to32.6978units. Reverted that production change and its hypothesis-only regression. Rebuilt/deployed restored server9516 via visible START SERVER.cmd; movement/navigation2tests pass. Native offline steering_replay tool and exact captures retained for further diagnosis. Existing same-contact-turning fix retained; overall wall release jumping unresolved. Private client restarted after rollback to avoid leaving a stale connection; no official client touched.
+
+2026-10-07 movement update: retained native held-path tangent .01 bias after two continuous20s private tests (release4.31/9.12units versus15.03 baseline). Native arithmetic independently verified18cases; world/navigation2tests pass. Wall-release correction remains incomplete. Guild identity 읏vs읏 [읏vs읏] remains persisted/verified.
+
+2026-10-07 movement checkpoint progress: optional validated 0x3b/0x45 reports now reconcile server position against connected layered routes and elapsed gait speed. World tests cover sparse turning, native2328ms free-space report intervals, final releases, duplicate packet/start-stop credit, nonfinite points and disconnected/invalid floors. Controlled native continuous-W turn release formerly42.10units now0 after validation; W20s wall/tip run also0 release correction,805read-only samples0errors. Movement remains incomplete: client authority engine origin still drifts~38units during turning although the owner view remains smooth; destination41 does not reset that origin, and repeated44 is unsafe for animation continuity. See docs/movement-findings.txt and controlled captures. Cape/trim immediate update queued after movement.
+
+2026-10-07 remote-view audit: native offline history gate6cases proves that a nonzero internal authority/prediction distance can be tolerated deliberately (strictly<100 in tested history branch); exact internal equality is not itself a completion requirement. More consequentially, two-client test reproduces real remote-player jumps74.53 at wall entry and36.64 at release, despite owner/server final checkpoint agreement. Added exact-private-path/hash guarded optional remote-actor read-only pose capture and isolated-peer UI control. Test peer closed after PID/full-path verification; main privateclient2552/server10216 remain open. Movement remains current priority, cape/trim update deferred. Evidence wall-remote-view*.json[l], prediction-history-2022.json and movement-findings.txt.
+
+2026-10-07 remote steering publication validated in isolated two-client run: no peer contact resets, native stop before final endpoint; max7.48units vs prior74.53/36.64 jumps. Four movement/navigation tests pass. Opposite owner turn exposes32.74unit correction at layered stair-tip20-to0; movement not complete. See movement-findings and build/reports/wall-owner-opposite. Host7872 and main12384 running latest; isolated peer closed.
+
+2026-10-07 stair-tip movement fix deployed host4960/main6904. General layered slide resumes original input after a trace-validated connected-surface transition; physical contact float rounding now stays inside sloped edge bounds. Nine angle/cadence combinations pass; four rebuilt movement/navigation tests PASS. Same live opposite-turn sequence:708 samples,0 unavailable,max7.48unit step,0 release correction; prior32.74unit stair snap absent. Cape/trim follow-up inspected: purchases already call restore_guild, which publishes changed general288 plus same affiliation158. Need native appearance refresh handling; persistence itself is present.
+
+2026-10-07 cape/trim immediate refresh fixed and live verified in stationary private client7416 map55. Native same-index guild setter skips model rebuild; changed appearance now publishes0->1 affiliation transition after new guild record. Original setter emulation3cases PASS; guild_wire test PASS. Private live probe shows colour/trim changes on cape and Guild panel without zoning and restores original automatically via CAS. Host9248/main7416 running. Full objective remains incomplete.
+
+2026-10-07 application operation migration: NetworkComponent/NetworkServer/NetworkClient and NetworkManager::execute now accept a finite Operation enum rather than independently supplied service and operation strings. Forty-four existing shared methods plus registration resolve at the internal storage boundary. Invalid enum values return NOT_FOUND before database admission; a caller cannot misroute an operation by choosing an unrelated service string. Retail packets unchanged. Payloads remain existing strings and Accounts still has its internal storage dispatcher: this is a concrete operation-boundary migration, NOT completion of typed request/result structs or a new custom-client protocol. NetworkClient remains unavailable until its actual transport exists; it never falls back to local storage. Network lifecycle exercises all45 shared client contracts, real login/create/roster/delete and listener failure/restart behavior. Network lifecycle, accounts lifecycle, storage CAS and trade exchange PASS. Storage-only import/maintenance test operations call Accounts directly; shared operations still exercise manager admission and deadlines.
+
+Operation migration full verification: all Release targets built; all122 CTest cases PASS (14.75s), including account persistence, trade/storage, network lifecycle, navigation and guild wire. Live main login/world-entry verified after deployment host10352/private12496, map55. Server and private client remain open. Captured suite log build/reports/architecture-operation-tests.log.
+
+2026-10-07 typed character request migration: NetworkComponent createCharacter/deleteCharacter/characterRoster now take CreateCharacter/DeleteCharacter/CharacterRoster structs; raw-string overloads removed. Identity stores16 binary bytes, creation accepts an optional CharacterProfile, roster has explicit unsigned offset. Retail auth/world handlers pass these structs directly instead of assembling tab/hex envelopes. Boundary encoding preserves current Accounts storage format; other operations and results still await typed conversion. Custom transport dispatch remains the existing Operation/payload virtual boundary, so this is not yet a fully typed transport protocol. Network lifecycle verifies actual typed profile persistence through roster, wrong-owner deletion rejection, owned deletion, rejected delimiter names/page offsets and no custom-client local fallback. PASS. No official client touched.
+
+Typed character deployment: full Release build PASS, eight relevant account/network/creation/inventory/trade tests PASS. Live roster/login/world-entry PASS private11868 host1060 map55, read-only pose3samples0unavailable. Client and server left open. Remaining result decoding, other operation payloads, custom transport and gameplay scope are not complete.
+
+2026-10-07 typed roster results: NetworkComponent::characterRoster returns RosterResult with binary identity, UTF-8 name, map and optional CharacterProfile. Shared internal decoder validates decimal fields, complete page counts, unique page identities, names, profile encoding and matching map before exposing records; malformed pages return INTERNAL with no partial records. Login and refreshed character selection consume typed records, removing duplicated delimiter/hex decoding. Full Release build PASS; network lifecycle, accounts lifecycle, creation request and response tests PASS. Live seven-character roster/login verified on private client7916, host13252. Custom transport and remaining operation payload/results are still incomplete.
+
+Typed roster live world-entry verification: private7916 loaded map55 actor1; read-only capture7samples0unavailable. Host13252 and private client remain open.
+
+2026-10-07 typed character mutation results: createCharacter returns CreationResult with an optional binary identity/name/map record; deleteCharacter returns DeletionResult. Storage completion strings no longer leak into these application results. Creation decoding validates the complete response and matches returned name/map to the requested creation before the retail handler uses its identity. Decoder errors do not imply rollback of an already committed storage operation. Shared request dispatch and other operations still retain internal string envelopes. Native creation response packet format is unchanged. Network lifecycle verifies malformed results, duplicate-name conflict, real persisted profile/roster, wrong-owner deletion and repeated-delete rejection. Six relevant CTests PASS and full Release build PASS. Live private11036 login and seven-character roster verified, host4532 deployed. This is progress toward the architecture, not completion of all gameplay or custom-client transport.
+Typed mutation deployment world-entry check: private11036 loaded map55 actor1; pose capture6samples0unavailable. Server/client remain open.
+
+2026-10-07 typed map transitions: NetworkComponent::selectMap now accepts SelectMap (binary account/character identities, expected_map, destination) and returns MapTransitionResult. Retail transition helper no longer constructs storage fields. Invalid zero, oversized and unchanged maps are rejected before dispatch. Existing ownership and compare-and-swap transaction remains authoritative. Network lifecycle verifies wrong owner, stale expected map, replay rejection and atomic stored profile/map update; malformed completion and unavailable custom transport remain errors. Full Release build and four network/account/portal/spawn tests PASS. Live private12868 (host11140) entered map55 and traveled to map148 successfully. Other operation payloads/custom transport/gameplay remain incomplete.
+Live return trip148->55 verified with read-only pose; server11140/private12868 remain open.
+
+2026-10-07 live creation follow-up after typed transition deployment: private12868 reached final naming page (Native Trial), Create returned019 before persistence because Nightfall490 has no map asset binding. Campaign chooser timing/blank appearance grids are previously documented; this run does not establish a new entitlement fault. Added tools/navigation/rank_map_candidates.py, an offline candidate audit that bakes DAT candidates and checks exact-plane containment for captured local entry and NPC positions. Six distinct captured490 points reduce90 bounds-only candidates to five full matches:36333,198988,216311,219215,368441 (each has a second alias retained in report). No decode/bake errors. Evidence build/reports/shehkah-point-ranking.json. Geometric containment is NOT a verified logical binding; none installed. Need correlate logical490 with a real map-file response or stronger independently identified geometry. Closed only exact private12868 for DAT read; official clients untouched. Broader character creation remains incomplete for Nightfall and appearance customization.
+Restored private1568, host11140; live map55 entry verified. Read-only DB check confirms zero Native Trial records after rejected creation.
+
+2026-10-07 Guild faction: persistent per-guild balance/allegiance and midnight UTC10% compounded decay, offline catch-up and atomic day marker. Read operation uses authenticated membership; General288 publishes balance. Granted Cmon Meow's guild10000 Kurzick, preserving name/tag/hall186/cape. social_accounts/social_wire/network_lifecycle passed3/3; Release host rebuilt. Live private client guild panel verified10000 Kurzick (build/reports/guild-faction-live.png). Host12148/private2784 left running. Alliances, donations and town ownership remain unimplemented. See docs/guild-faction.txt for rounding limitation and ownership requirements.
+
+2026-10-07 Typed world-entry authentication: AuthenticateTicket carries binary ticket/account and separate alias/character; TicketAuthenticationResult exposes validated account/optional selected character/map/roster/session expiry. NetworkComponent owns encoding, response validation and scoped payload erasure; retail auth no longer assembles/decodes that storage envelope. Decoder rejects malformed numbers/framing/account/selection without exposing identity. Network lifecycle exercises wrong account rejection without consuming ticket, successful selected character, replay rejection and unavailable custom transport. Four relevant account/network/creation tests PASS; Release host deployed5680, private5644 login/roster/Play/House zu Heltzer world entry verified. Official11512 untouched. Five candidate geometries remain for490; no speculative map binding installed. Goal remains incomplete.
+
+2026-10-07 Typed portal account/session path: LoginAccount borrows bounded password bytes; LoginResult, SessionResult and LogoutResult validate storage responses before exposing identities/tokens. Portal stores optional binary SessionToken and consumes typed login/session/ticket results. Removed raw-string login/validate/logout method overloads. Scoped erasure protects temporary credential/session envelopes. Network lifecycle verifies wrong-account/malformed login replies, invalid session identities/expiry, dispatch, revoked sessions and ticket replay. network_lifecycle/accounts_lifecycle passed2/2; full Release build passed. Live private12432 login/roster/Play/House zu Heltzer entry verified; host13264 and client remain open. Official11512 untouched. Ticket issuance change from prior turn also deployed/verified. Other application operations and custom-client transport remain incomplete.
+
+2026-10-07 Official packet evidence: live schemas correlate map514 then new-character map490 to DAT asset249289, spawn10215,6479 plane0. User confirms logging514, character creation, intro, then standing in490. Offline baker decoded target DAT asset (67planes,3448trapezoids); spawn containment confirmed. Installed asset/reference/navigation catalog bindings. Evidence build/reports/official-map-entries.json; offline tool tools/packet_logger/report_map_entries.py. Runtime rebuild and Nightfall creation validation pending. New-character arrival must remain separate from ordinary travel arrivals. Official session untouched.
+
+Shehkah deployment: full Release build PASS; creation/network relevant tests5/5 PASS after replacing obsolete490-missing-asset expectation. Enabled campaign3 first arrival490 at captured10215,6479 plane0; facing0 is default, not observed. Creation scope test rejects inheritance by normal map514. Rebuilt host started; live Nightfall creation still unverified. Skill-state migration previous turn also passed five relevant tests and full build; live attributes edit restored and skillbar swap restored with revision check. Expanded account-session test duplicate local corrected before rebuilt passing runs, superseding earlier potentially stale test runs.
+
+2026-10-07 Packet logger restart fix: stopped state3 previously could never restart. Start now resumes installed callbacks and same log; persistent pinned flusher avoids reinstall/self-recursion. Stop rejects installation race; repeated Start/Stop are idempotent. Native forwarding test verifies pause/resume markers, suppressed paused packets, original callback exactly once. Build/test PASS. New DLL staged build/packet-logger/tools, NOT deployed over official11512's loaded DLL. Official client preserved. Private12664 remains at login; Nightfall live test interrupted by logger report.
+
+2026-10-07 Live creation follow-up: duplicate490/514 catalog entries prevented host startup; removed duplicates, verified both native listeners and successful private login/roster12664. Creation reached name Cg Cg and019; log proves campaign3 last queried preview profession10 but committed appearance profession1. Changed handler to authorize final appearance profession against campaign ownership and class availability, then use that profession for persisted creation/equipment. Catalog queries no longer override final class. Full Release build and five creation/network tests PASS; host restarted/listeners verified. Live creation after this correction remains pending. Official11512 untouched.
+
+2026-10-07 Live Nightfall entry PASS: private8220 created Gg Gg (overlapping human input; preserved), log character_created map490 profession1 and creation_arrival_authorized10215,6479 plane0, then live world rendering and exploration records490. Screenshot build/reports/nightfall-creation-world.png. No deletion claimed. New character starting skills/inventory and tutorial NPC/quest behavior remain incomplete. Official process absent on inventory; deployed fixed packet logger DLL/control to bin/PacketLogger after verifying no official client running. Private server7632 remains active.
+
+2026-10-08 NPC interaction recorder initial implementation: world collector publishes bounded selected NPC identity/decoded name context without new hooks; packet logger rotates unique sanitized-name files on confirmed dialogue sender, preserves raw capture, closes on map entry/Stop. Matching agent/freshness enforced; unknown names explicit. Native tests validate unique files, name matching, pause/resume/forwarding. Packet suite1/1 and collector13/13 PASS; deployed both DLLs after verifying no official client. Live official validation pending. Quest snapshot/inventory joining and outgoing dialogue choice capture remain incomplete. User reports Aftershock missing camera shake; no invented shake parameters sent. build-wars/gw-skilldata cloned under build/research for comparison; MIT, includes skill/item/mod data; not yet imported into runtime.
+
+2026-10-09 Local wiki quest catalog: tools/quests/extract_wiki.py extracts1424 quest reference pages with Requirements/Objectives/Reward/Walkthrough/Dialogue/Notes, source path/hash and heading lines. Handles gzip HTTrack pages;0 extraction failures. Evidence build/reports/wiki-quest-catalog.json. Verified Message from a Friend100XP10gold, War Preparations250XP and Clear the Chamber darkness groups plus Terrorweb statue objective. Client IDs/choice IDs/spawn triggers remain explicitly unknown; no runtime quest completion claimed. Local wiki supplies bulk specifications; packet captures validate protocol and observed quest transitions.
+
+2026-10-09 build-wars reference integration: tools/skills/compare_buildwars.py compares bounded3433-record native2022 catalog with commit8495ca2c6125e1a03269c2932f099f7e7c09fb36.1517 external skills:1129 exact matches on compared fields,355 conflicts,33 outside2022.336 external item definitions,407 modifiers. Licensed reference copies and source hashes retained under data/reference/buildwars. Report build/reports/buildwars-catalog-comparison.json. Aftershock/Shockwave have no compared-field conflicts; camera shake still requires protocol/presentation implementation. External itemIDs not equated with native models; no runtime numeric overwrite. Full skill/gameplay scope remains incomplete.
+2026-10-09 NPC capture completeness
+----------------------------------
+Per-NPC packet files now carry the live descriptor schemas and a bounded prelude
+(128 packets / 2 seconds) to retain dialogue that precedes DialogSender129.
+Prelude is explicitly context_only, not attributed to the named NPC. Map entry
+and Stop clear it. Native x86 rebuild and packet_logger CTest passed, including
+schema inclusion, unique NPC files, bounded/expired prelude, Stop clearing,
+original handler pass-through and pause/resume. Published DLL hash matches the
+build after verifying no official Gw.exe session was running. Live dialogue
+capture is still unverified for this revision. Outgoing choices, variable-length
+bodies and joining world-collector quest snapshots remain incomplete.
+
+2026-10-09 Typed inventory reads
+-------------------------------
+NetworkComponent characterInventory now accepts OwnedCharacter; accountStorage
+accepts Identity. Both return InventoryResult with an optional validated profile
+and durable revision. World entry/reload consumes the typed result rather than
+parsing storage framing/hex itself. Invalid framing, hex, revisions and profile
+semantics fail as FW_INTERNAL with no partial record. Missing records remain
+absent; baseline creation remains world policy. Inventory writes and atomic
+trade/storage transfers still use transitional payloads and require migration.
+Full Release build and seven inventory/storage/network tests passed. Expanded
+network_lifecycle then passed with database-backed absent-state, wrong-owner,
+inventory revision2/gold12345 and bank revision1/gold54321 checks. Rebuilt host
+started as PID4012 with direct auth6112 and portal6601 listeners. No live client
+inventory window test was performed for this change.
+
+2026-10-09 Typed inventory mutations
+-----------------------------------
+SaveInventory and TransferStorage carry owned identities, expected revisions and
+validated profiles. RevisionResult/StorageTransferResult reject malformed or
+unexpected successful response revisions. All ten inventory-save and both bank
+transfer world handlers consume typed results. String encoding is now internal
+to these NetworkComponent methods; atomic SQLite persistence is unchanged.
+Release build and eight inventory/storage/trade/network tests passed. Tests cover
+custom-client dispatch/unavailable transport, invalid request rejection before
+dispatch, malformed result rejection and stale bank revision leaving BOTH saved
+balances and revisions unchanged. Trade exchange and other application methods
+still use transitional string requests; the full architecture goal is incomplete.
+No live inventory UI test was performed for this mutation migration.
+
+2026-10-09 Typed trade exchange
+------------------------------
+ExchangeTrade contains two owned participants, revisions and native offers.
+NetworkComponent validates bounds, duplicate/empty items and distinct identities
+before dispatch. TradeResult exposes both validated profiles together only when
+the returned revisions increment exactly once. The gameplay commit callback no
+longer assembles tab/comma payloads. Internal SQLite encoding remains in the
+component/storage boundary; trade_sessions continues to trigger profile reloads.
+Release build and network_lifecycle/trade_exchange/inventory_accounts passed.
+Expanded network_lifecycle additionally passed foreign ownership checks without
+mutation, two-account atomic gold exchange, stale replay rejection, custom-client
+unavailable transport and malformed-result rejection without partial profiles.
+Host restarted with auth6112 and portal6601 owned by PID12432. No live two-client
+trade UI test was performed in this turn. Other application boundaries still
+require migration; this does not complete the full architecture/gameplay goal.
+
+2026-10-09 Private-client inventory/storage validation
+----------------------------------------------------
+Verified private Gw.exe PID11936 path bin/client/Gw.exe; server PID12432.
+Logged in as local test@example.test, selected Cmon Meow and entered Lion's Arch
+map55. Inventory opened with restored armor and 74000 carried gold. Clicked
+Xunlai Chest actor10049; NPC approach completed and the vault window opened with
+20000 stored gold. Deposited one gold using the coin spinner: vault displayed
+20001, server gold_transfer outcome=committed. Withdrew one gold: second committed
+transfer restored balances. Returned via F12 to character select, clicked Play,
+re-entered map55 and opened inventory showing 74000 and the restored equipment.
+No crash or reconnect error during these branches. Screenshots:
+build/reports/typed-storage-deposit.png, typed-storage-restored.png and
+typed-inventory-reentry.png. Server log contains both committed gold transfers
+and both world-entry streams. This verifies bank gold/UI/re-entry only, not all
+item moves, merchant operations or two-player trade. Private session remains open.
+
+2026-10-09 Typed character-state reads
+------------------------------------
+CharacterName, CharacterMap and CharacterExperience now accept OwnedCharacter and
+return validated typed values. Missing experience is optional absence, distinct
+from zero; map must be1..65535. Names use the existing strict UTF-8/UTF-16 bound.
+Selection polling, travel's persisted-map lookup and world-entry name/experience
+loads no longer parse storage strings themselves. Release build and four
+network/character-change/creation tests passed, including invalid numbers/names,
+custom transport dispatch and database ownership checks. Started rebuilt host
+PID14904 and fresh verified private client PID12592. Local login/selection/Play
+entered Lion's Arch with name Cmon Meow, equipment and inventory restored;
+build/reports/typed-character-state-entry.png is the inspected screenshot.
+Character rename/unlock and several account/social/progression methods still
+require typed migration; architecture/gameplay completion remains unproven.
+
+2026-10-09 Typed rename/development unlock
+----------------------------------------
+RenameCharacter contains owned identity, expected old name and replacement.
+Both names use strict native-name validation before dispatch; successful results
+must equal the requested replacement. Development unlock accepts OwnedCharacter
+and decodes skill/attribute revisions plus bounded learned count. GM handlers now
+consume these typed results. Release build and network_lifecycle,
+development_accounts and rename_accounts passed. Typed rename database checks
+cover owner rejection, stale expected-name conflict and restoring the fixture
+name. Unlock transport/result tests cover unavailable custom transport and
+malformed responses; existing development_accounts tests cover storage semantics.
+This turn did not run the live GM commands. Other account/social/progression
+operations and custom-client transport remain incomplete.
+
+2026-10-09 Typed campaign/agreement reads
+---------------------------------------
+CampaignsResult returns a validated set and AgreementResult an optional boolean,
+both queried by Identity. Login, skill campaign mask and map unlock presentation
+consume the typed set; agreement failures do not imply acceptance. Empty campaign
+sets remain valid; duplicate/out-of-range/noncanonical/trailing-separated data
+fails without partial entitlements. Release build and auth_data/network_lifecycle/
+development_accounts/creation_request tests passed. Fresh verified private client
+PID11924 logged in against host PID8704: eula_lookup status0 accepted1, roster8,
+and the inspected screenshot typed-policy-character-select.png shows character
+selection without a terms dialog. This is one live run, not proof across all
+account policy combinations. Public string application methods remaining:20.
+
+2026-10-09 Typed account profile and alias
+----------------------------------------
+AccountProfile returns optional decoded AccountInfoProfile, validated against
+the existing239-byte maximum and native FWAP decoder. Missing profile remains
+absent and preserves login's existing fallback. GameAccountAlias returns a
+validated alias queried by Identity; portal routing consumes typed results.
+Release build and auth_data/network_lifecycle/accounts_lifecycle passed after
+removing obsolete string-signature contract test entries. Tests cover synthetic
+profile fields/absence, malformed profile data, alias validation and virtual
+transport dispatch/unavailable custom transport. No new live login test was
+performed for this revision. String application methods remaining:18; broader
+architecture and gameplay completion remains unproven.
+
+2026-10-09: Typed account registration completed. Password validation occurs
+before dispatch; serialized request and session response buffers are erased.
+Registration returns validated account/session identity. Native transport tests
+cover invalid request rejection and unavailable custom transport; durable
+registration fixtures use typed identities. Full Release build and targeted
+auth_data/network_lifecycle/accounts_lifecycle tests passed (3/3). Remaining
+public string application methods: 17. Goal remains incomplete.
+Quest reference/capture limitations are recorded in docs/quest-evidence.txt.
+
+2026-10-09: Friend reads and ignore checks now use typed account identities and
+validated results. Login friend restoration consumes decoded entries; whisper
+delivery consumes a checked boolean. Malformed list framing/text, duplicate IDs,
+invalid list types and per-type capacities cannot expose partial friend records.
+Full Release build passed after adding the decoder's direct sodium include.
+network_lifecycle/social_accounts/social_wire passed (3/3). Add/remove mutations
+remain string operations, and live two-client friend/whisper validation remains
+pending. 15 public string methods remain; shared raw dispatch remains incomplete.
+
+2026-10-09: Friend add/remove migration completed. Native login handlers and world
+chat commands now send typed identities, list type, character name and alias.
+Add validates UTF-16 bounds before dispatch, checks returned target/alias, and
+returns no partial record on malformed responses. Remove validates its success
+acknowledgement. Unknown native alias removal returns a failed transaction rather
+than constructing an invalid identity. Full Release build passed. Three targeted
+tests passed: network_lifecycle, social_accounts and social_wire. New native DB
+coverage adds a friend, converts to ignore, queries blocking, removes and confirms
+empty list/unblocked state. Existing social tests verify reopen and character
+deletion preservation. Live two-client UI testing remains pending. There are 13
+remaining public string methods; guild/progression and raw dispatch remain.
+
+2026-10-09: Typed progression/faction reads added. Account factions and character
+progression return bounded decoded profiles and revisions; absent profiles remain
+absent. Account title merging legitimately returns character revision zero before
+a durable character row exists, and this case is explicitly preserved/tested.
+Guild faction reads return checked allegiance/points; tournament points return
+checked uint32 balance including real zero. World entry, guild restoration and
+trim menus consume typed results. Full Release build and network_lifecycle,
+progression_import, progression tests passed (3/3). Live title/trim/faction UI
+verification after migration remains pending. Nine public string operations and
+shared raw dispatch remain; save/award/exchange migration is next.
+
+2026-10-09: Progression/faction mutations migrated to typed requests and revision
+results. Profiles validate before dispatch; award/exchange reject zero amounts,
+invalid faction destinations and revisions outside the storage range. Title
+selection uses the checked returned revision. Native tests verify progression
+CAS, faction initialization, Imperial awards, stale award rejection and Imperial
+to Balthazar conversion (100 spent/33 credited by existing runtime rules).
+Full Release build and network_lifecycle/progression_import/progression passed
+(3/3). Test DB fixtures only were changed. Live title-selection verification
+after migration remains pending. Five public string methods remain, plus shared
+raw dispatch and the intentionally unavailable future custom-client transport.
+
+2026-10-09: Cape read/buy and trim buy boundaries now use typed identities,
+designs, quotes and expected cape state. Cape results distinguish absent from
+valid designs. Purchase decoder checks next inventory revision and carried-gold
+limit; trim returns checked tournament balance. Existing atomic leader/ownership,
+gold, earned-trim and expected-cape rules remain in storage. World restoration,
+emblemer purchase and trim confirmation consume the typed results. Full Release
+build and network_lifecycle/social_accounts/guild_wire/guild_request passed (4/4).
+Boundary tests cover invalid quotes/offers, malformed cape bytes and response
+revision/gold bounds. Social DB tests cover debit atomicity, reopen, cancellation
+and stale cape checks. Live cape/trim UI verification remains pending. Only guild
+state and guild commands remain public string methods; shared raw dispatch remains.
+
+2026-10-09: Guild mutations now use GuildCommand with an explicit GuildAction
+enum and owned character identity. Native announcement and world chat handlers
+validate action/text before transport, then consume bounded feedback messages.
+Unknown actions are rejected before storage. Full Release build passed; four
+tests passed (network_lifecycle/social_accounts/guild_request/guild_wire). New
+DB boundary coverage creates a guild, updates its announcement and leaves it;
+existing social tests cover role permissions, ownership, invite expiry and
+durability. Only guild state reads remain public string application calls.
+Shared raw dispatch and live guild-panel verification remain incomplete.
+
+2026-10-09: Final named public string method migrated: guild reads return optional
+GuildState with identities, text, hall and members. Decoder checks bounded text,
+member count, duplicate IDs, rank range, own membership and exactly one leader;
+malformed responses expose no partial guild. All guild-panel restoration, chat
+recipient lookup, character-selection hall routing and world hall travel now
+consume typed fields. Full Release build passed. Full native suite passed122/122
+(23.86 seconds), including new guild read/mutation DB coverage and malformed
+response tests. Zero named public string application methods remain. Virtual
+request(Operation,string) is still public/transitional, and future custom-client
+transport remains unavailable. Live guild UI/hall verification after migration
+still needs doing; the overall goal remains incomplete.
+
+2026-10-09: Live private-client verification after the named API migration.
+Verified full paths for private host13488 and client11924; restarted only that
+private client, new PID11672. Logged in as test@example.test/test, reached roster
+without terms dialog in this run, selected Cmon Meow, entered map55. Guild panel
+displayed configured Unicode name, cape, leader, faction8100 and hall button;
+announcement appeared in chat. Hall button authorized and loaded claimed map186.
+Hero panel displayed imported four faction balances and titles. Selected/cleared
+Savior of the Kurzicks title: native opcodes86/87 accepted; no active title left.
+Returned to character selection and entered map55 again, with equipment, skills,
+attributes, titles and guild data restored. No crash/error in observed run.
+Screenshots: typed-guild-panel-live.png, typed-guild-hall-live.png,
+typed-factions-live.png, typed-titles-live.png, typed-api-reentry-live.png;
+session log: typed-api-live-session.log (all under build/reports).
+This verifies these branches only. Cape/trim purchases, two-client social/trade,
+creation variants, all skills/items/quests and raw dispatch remain incomplete.
+Client and host left running. Official clients were not targeted.
+
+2026-10-09: Shared application boundary split completed. NetworkComponent exposes
+46 typed pure virtual methods. NetworkServer owns serialization, validation and
+storage-result decoding; raw request dispatch is protected on the server only.
+NetworkManager storage execute is private, accessible to NetworkServer. The
+future NetworkClient implements typed FW_UNAVAILABLE stubs, with no raw request
+dispatch or local storage fallback. Native storage tests use an explicit adapter
+under tests/network_storage_adapter.h to preserve timeout/cancellation/atomicity
+coverage. network_lifecycle exercises production methods through NetworkComponent
+and separately records server serialization. Full Release build passed after
+updating direct-manager storage tests. All122 native tests passed (23.58 seconds).
+Live client retest after this final split remains pending; prior typed-API live
+evidence predates it. Gameplay/collector/content requirements remain incomplete.
+
+Creation profession durability (2026-10-09)
+-----------------------------------------
+Native summary creation now atomically inserts a revision-1 character skill
+profile with the appearance-selected primary profession, no secondary unlocks,
+and no invented learned skills. The source digest identifies the creation
+summary. Inventory and profession state roll back with the character transaction.
+Legacy creation without an appearance summary retains its absent-state behavior.
+Accounts tests cover ownership and deletion cleanup; network/development tests
+cover subsequent revision-based updates. Full build and 122 tests passed in
+24.15 seconds. Existing world entry reloads this durable profile. New campaign
+starter skills, equipment stats and tutorial quest rules remain incomplete.
+
+Starter armor correction (2026-10-09)
+------------------------------------
+Level-one PvE creation now uses local-wiki minimum armor ratings instead of
+maximum armor. Warrior physical bonus is campaign-specific; Ranger elemental
+bonus and existing energy recovery/capacity rules are preserved. Existing saved
+inventories remain intact. Evidence and limitations: starter-armor-evidence.txt.
+Native tests cover all ten profession ratings across three campaigns, durable
+armor encoding and level-one Prophecies creation inventory. Full build and
+122 tests passed in 24.57 seconds. Native item name/model/modifier presentation,
+Dervish chest health and starter weapons remain incomplete; no claim of complete
+starter inventory or live creation-flow verification for this revision.
+
+Dervish basic health and initial capacity (2026-10-09)
+----------------------------------------------------
+Explicit reviewed Dervish chest armor now adds the local-wiki +25 health bonus
+while equipped in its chest slot by a Dervish. Backpack, foreign-profession and
+appearance-only items grant nothing. Rune health combines with basic health in
+authoritative capacity updates. Initial world resources start at full adjusted
+health capacity including morale, avoiding the prior base-only initialization.
+Equipment changes preserve missing health and never resurrect. Native tests
+cover all professions/campaigns and Dervish removal/restoration/dead actors.
+Full build and 122 tests passed in 24.50 seconds. Live Dervish UI verification
+is still pending; this is not complete item modifier support.
+
+Live creation profession diagnosis (2026-10-09)
+---------------------------------------------
+Separate arena-peer development account reproduced choosing Dervish but creating
+Warrior. Named fixtures Creation Dervish / Dervish Verify are failed test data,
+not imported account characters. Evidence: build/reports/creation-wrong-profession-live.log.
+Packed appearance alone did not fix it. Pinned client FUN_00798be0 reads
+WorldContext+6a4; UI1000004e handler accepts profession data only for that ID.
+SMSG158 type64 assigns it. Preview now registers its local character before
+creation UI initialization and publishes selected composite appearance before
+profession acknowledgement. Live Dervish Live created and entered map490 with
+primary10 revision1, D1 party label, 125 health, 25 energy and four recovery pips.
+Character selection correctly displays Dervish / Nightfall / level1 / equipment.
+Evidence: build/reports/creation-dervish-live.png and creation-dervish-roster-live.png.
+Reentry additionally exposed an all-zero Play tuple; initial selected-map routing
+now accepts zero or -1 language, only before a live instance is known. Live
+reentry now succeeds and restores primary10 revision1 with 125HP/25energy.
+Map490's unverified map-center fallback landed between rocks; its development
+default now reuses the captured tutorial arrival 10215/6479. This is not evidence
+of a distinct ordinary retail travel spawn. Full final code build and 122 tests
+passed in 26.97 seconds. No main-account characters were changed.
+Final fresh login verifies map490 default at10215/6479 on open tutorial ground,
+with D1 label,125HP,25energy and four pips. Evidence:
+build/reports/creation-dervish-final-arrival.png and matching .log.
+
+
+October9 live deletion verification: Creation Dervish and Dervish Verify, the two failed profession-preview fixtures on the separate arena-peer development account, were deleted through the 2022 client confirmation dialogs. Both requests returned character_delete_2022 result=deleted; roster now has two characters. Dervish Live and Arena Test Peer were retained. Dervish Live subsequently entered map490 at10215/6479 with persisted primary10 revision1. Evidence: build/reports/creation-delete-roster-live.png and creation-delete-live.log. Main account characters were not modified. This verifies live deletion and subsequent world entry, not all campaign creation branches.
+
+October9 creation validation and Factions live check: summary-backed creation now rejects primary profession0 or11..15 before transaction commit; malformed-profile tests prove the roster stays unchanged. All122 native tests passed on the successful rebuilt Release artifacts (24.21s). Through the private2022 peer UI, Factions Live was created as a level1 male Ritualist, entered map212, returned to character select, and re-entered successfully. Roster reports Ritualist/Factions; world restores primary8 revision1 and displays100HP/30energy/four regen pips. Starter skills are still empty and weapon/tutorial gameplay is incomplete. Arrival -20304/14160 uses the development map212 default; it is NOT a validated official Factions first-arrival spawn. Face/skin/hair-color preview option panels were empty during customization and remain unfinished. Evidence: build/reports/creation-factions-live.png, creation-factions-roster-live.png, creation-factions-reentry-live.png, creation-factions-live.log and creation-profession-validation-tests.txt. Main imported characters were untouched. Host restarted after verified executable lock; no official client was running or targeted.
+
+October9 appearance investigation: native read-only creation catalog observer extended to selectable professions1..10 plus colour availability-bit counts. Ritualist catalog exists in the pinned private client; raw model counts7/7/10/9 and colour counts7/7 observed for group1. Native picker uses packed appearance group and model fallback independently from equipped item lookup. Do not add invented face/skin equipment based on empty UI. Root cause remains unresolved pending live creation-context/cache evidence. Details in docs/creation-appearance-investigation.txt. No production behavior or official-client session changed.
+October9 appearance diagnostic deployment: full Release build succeeded,
+122/122 regression tests passed (26.22s). Original native decoder198 cases
+passed independently. Restarted only verified private server host; official
+clients were not targeted. Preview appearance diagnostics are now deployed;
+blank appearance picker cause and live preview verification remain unfinished.
+Evidence: build/reports/appearance-diagnostic-build.txt,
+appearance-diagnostic-tests.txt, appearance-fields-2022.json.
+October9 continuation: native appearance evidence extended with396 original
+encoder checks and30 profession-preservation checks, all passing. UI test could
+not proceed on locked desktop; private clients preserved. No picker fix claimed.
+October9 creation rejection handling
+------------------------------------
+Expected persistence rejections (invalid request/name, missing account/entitlement,
+full roster, duplicate name) now emit the existing native394 failure response
+and consume only the rejected creation frame, leaving the preview session open.
+Conflict uses29; other expected application rejections reuse existing19.
+Success and infrastructure failures are not misclassified as user rejection.
+No created_character state is assigned until persistence succeeds.
+Full Release build and122/122 tests passed (23.34s). Added lifecycle checks then
+rebuilt accounts_test and passed accounts_lifecycle (3.40s): capacity/invalid-name
+requests leave the roster unchanged; freeing a slot permits a subsequent retry.
+Evidence: build/reports/creation-rejection-{build,tests}.txt and
+creation-capacity-build.txt; latest targeted result is in build/Testing/Temporary.
+Verified private host restarted. Live wizard presentation remains unverified
+while the desktop is locked; no official client actions performed.
+October9 runnable layout audit
+-----------------------------
+CMake developer executable defaults now point to build/tools; all *_test targets
+use build/tests in every configuration. Only server_host and client_launcher
+publish to bin and bin/client. All556 generated executable configuration paths
+passed inspection; build/reports/runtime-layout-paths.json retains the evidence.
+Release launcher build succeeded; client_launcher --check verified the pinned
+client and configured endpoint without launching another client.
+bin/client/RUN.cmd now delegates to client_launcher rather than hardcoding
+localhost and bypassing validation. Root START CLIENT.cmd uses the same path.
+No binaries or captured data were deleted. Capture packages in bin remain
+purpose-specific user tools. The client-side login API adapter still exists;
+its bridge directory is not another running server process.
+Evidence: runtime-layout-configure.txt, runtime-layout-build.txt,
+runtime-layout-paths.json under build/reports. Running sessions preserved.
+October9 creation name handling: persistence now counts native UTF-16 units
+instead of UTF-8 bytes. Strict encoding checks and previous ASCII restrictions
+remain; invalid wire UTF-16 returns existing failure19 without committing state.
+Release build succeeded and122/122 tests passed (23.19s), including multibyte
+19-unit creation,20-unit rejection, malformed encoding and unchanged roster.
+Rebuilt private host restarted; official clients untouched. Live wizard checks
+remain pending on locked desktop. Regional naming policy and Unicode case-folded
+uniqueness are not claimed. See docs/creation-names.txt and reports
+creation-unicode-build.txt / creation-unicode-tests.txt.
+October9 systematic caster-body effects: canonical native catalogue retains
+row+78 resource for all3433 skills;2077 sentinel skipped.907 rows refer to584
+unique real caster-body resources. All584 original callback/particle lookup and
+file-encoding cases passed offline. Runtime uses native metadata on successful
+implemented casts; Dash branch-local duplicate removed. Failed/cancelled and
+unsupported casts remain rejected by existing mechanics policy.
+Full Release build succeeded;122/122 CTests passed (22.60s). Rebuilt private host
+restarted, official clients untouched. Rendered visuals, target/projectile FX,
+sounds and remaining skill mechanics still incomplete. Details:
+docs/caster-body-effects.txt; build/reports/caster-body-resources-2022.json,
+caster-body-build.txt and caster-body-tests.txt. No all-skills completion claim.
+October9 target-body effects: pinned native catalogue retains row+7c for3433
+skills.877 rows reference530 unique non-sentinel target resources; original
+callback/effect table/file encoding checks passed all530 on victim actor43.
+Elemental impact now uses metadata instead of a three-spell particle whitelist,
+after accepted per-victim state. Other skill-family publication remains pending.
+Regression adds catalogue-wide bounds/sentinel checks plus real Immolate failure
+(no FX) and successful exactly-once victim publication to all five clients.
+Release build succeeded;122/122 CTests passed (24.67s). Rebuilt private host
+restarted; official sessions untouched. Live pixels, sounds, projectiles and
+remaining skill mechanics not claimed complete. See docs/target-body-effects.txt
+and build/reports/target-body-{resources-2022.json,build.txt,tests.txt}.
+October9 target FX combat integration: added native target-body publication at
+accepted per-victim success boundaries for lightning (including projectile impact),
+blindness, degeneration hexes, conditional damage, shadow damage and life-steal.
+No launch/preflight decoration and no change to unsupported mechanics. Existing
+530-resource native proof supplies resource provenance. World regression checks
+Gaze153 victim resource276 exactly once on both clients, with no packets for a
+recycled target scope. Full Release build and122/122 tests passed (25.23s).
+Rebuilt private host restarted; official clients untouched. Live rendering and
+remaining gameplay/FX families still incomplete. See docs/target-body-effects.txt
+and build/reports/combat-target-effects-build.txt / combat-target-effects-tests.txt.
+October9 live creation follow-up: reproduced blank picker on isolated peer.
+Corrected preview catalogue group from previous character's0 to campaign-derived1
+for Factions Ritualist. Native packing90 cases and122 tests PASS22.66s. Fresh
+private login confirms corrected group, but panels still blank; picker unresolved.
+See creation-appearance-investigation.txt and before/after evidence. No new
+character persisted; official clients untouched.
+October9 active creation-picker validation: Face/Hair Color/Skin Color panels
+populate on activation in the isolated Factions male Ritualist wizard. Read-only
+catalogue/context observation confirms choices present; no extra server response
+or memory patch required. A customized temporary character was created, entered
+map212 and returned to selection with exact persisted appearance1082133638.
+Deleted the temporary fixture through the client; three original peer characters
+remain. Native observer compiled and rejects invalid profession/wrong process.
+This supersedes the earlier blanket conclusion that picker panels are broken;
+other campaign/sex/profession combinations and starter gameplay remain unverified.
+See docs/creation-appearance-investigation.txt and creation-picker live reports.
+
+October9 condition-family target FX: native resource publication follows accepted
+condition spell/transfer applications and Crystal Wave damage. Enfeeble220 and
+Plague Touch278 verified exactly once to owners/peers; stale scopes publish no
+effects. Crystal Wave/Epidemic native sentinel prevents invented particles.
+Damage publication precedes Crystal Wave lethal cleanup. Release build succeeded
+and122/122 tests passed23.76s. Private host restarted; official clients untouched.
+Live rendered effects and remaining skill families remain incomplete. See
+docs/target-body-effects.txt and condition-target-effects build/test reports.
+
+October9 item catalogue configuration: config/server.txt now supports
+identification_catalog, salvage_catalog and consumable_catalog paths. The host
+passes parsed paths into its immutable NetworkManager catalogue snapshot.
+Explicit none overrides inherited environment settings; omitted keys retain
+legacy defaults. Parsing is transactional and rejects duplicate/oversized paths.
+Shipped config disables these providers until reviewed item definitions exist;
+no unsupported item outcome is fabricated. Release build and122/122 tests passed
+21.94s; updated override regression passed separately (network_lifecycle0.88s).
+Live host started with an inherited nonexistent consumable path overridden by
+config none; all three listeners ready. Reports item-catalog-settings-*.
+Gameplay catalogue population, salvage outcomes and other consumables remain
+incomplete; configuration support is not an items-completion claim.
+
+October9 earth-projectile target FX: canonical victim resource now publishes
+only at accepted earth projectile impact, before lethal cleanup. Glowstone1632
+tested exactly once to caster/victim, absent at launch and after dodge/recycled
+target. Ebon Hawk/Stoning native sentinel remains undecorated. Release build
+succeeded;122/122 tests passed26.04s. Private host restarted with three listeners;
+official sessions untouched. Projectile visuals/sounds and live rendering remain
+incomplete. See docs/target-body-effects.txt and earth-projectile-target-effects
+build/test reports.
+
+October9 storage dispatch migration: NetworkManager now passes Operation directly to Accounts; all63 storage operation branches and inventory/social/progression/development subhandlers compare enum identities.
+No operation-name serialization or string dispatch occurs on this production path. Existing offline import/maintenance tools resolve exact names once at Accounts compatibility overload.
+Fifteen maintenance identities are appended after the game contract and rejected by NetworkManager. Existing48 game identities retain their ordering; neither set is a serialized wire ABI.
+Tests cover name/enum roundtrip, unknown identity/name rejection, maintenance rejection at the manager, typed quest reads and cancellation/rollback.
+Rebuilt accounts, quest, inventory, social and network lifecycle targets passed their focused suite; development/rename were subsequently rebuilt and passed along with the updated inventory test.
+The typed public NetworkComponent API still adapts structured requests to tab-separated storage payloads and decodes AccountResult strings. Replacing that remaining storage encoding with typed records is unfinished.
+This source change and Rodgort radius/death completion are pending host deployment; the currently running host remains the prior tested build.
+October9 typed quest persistence: NetworkServer quest reads/saves now call typed NetworkManager methods under the same three-second database admission/deadline. Accounts receives OwnedCharacter/SaveQuests and returns QuestsResult/RevisionResult directly.
+No tab payload, hexadecimal profile wrapper, text revision or AccountResult parsing remains on that production quest path. FWQ1 is retained only as the persisted BLOB format.
+Legacy maintenance entry calls resolve their text fields and then use the same read_quests/write_quests SQL helpers; database logic is not duplicated.
+Typed tests prove empty/persisted records, ownership, CAS conflict, invalid profile rejection and cancellation rollback. Stored decode failure is an internal error, not a bad client request.
+Fresh quest_accounts/network_lifecycle builds and2/2 tests passed1.44s. Other account operations still need typed storage migration. Production deployment remains pending.
+October9 deployed typed operation/quest persistence plus Rodgort240 radius/corpse completion.
+Full build passed;126/126 tests passed28.71s. Evidence build/reports/typed-storage-build.txt and typed-storage-tests.txt.
+HostPID7824 SHA256 f03576ec0d5c1b7ab39d1a9d344df0c2cb87131ceb0f195ddbc56ecd49adabe2
+Private2022PID6988 passed login/world/turn/keyboard/ground-click smoke, movement159.60778629596845 units, settled pose disagreement0.0, alive5seconds.
+OfficialPID5604 preserved and responsive. This verifies deployment smoke only; live corpse-center visuals and quest objectives/rewards remain unverified/incomplete.

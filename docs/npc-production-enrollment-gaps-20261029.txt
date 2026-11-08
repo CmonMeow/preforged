@@ -1,0 +1,69 @@
+NPC production enrollment coverage audit, 2026-10-29
+Read-only audit during parent core build. No deployment/rendered claim.
+
+Current actual host paths
+- Map146 optional exact population supplements: Firestarter59000 (Flare194)
+  and Raider59001 (ordinary melee), plus bounded wander, acquire/chase/fight,
+  disengage/home/resume. Catalog load requires exact identity and walkable mesh;
+  absent/refused sidecar is logged. This is two explicit actors, not ambient
+  model-wide activation. Native actual-map patrol/combat and generic lifecycle
+  reports exist; a rendered map146 session remains unverified.
+- Owned quest75/map160 Grawl: three actors, damage-trigger ordinary retaliation
+  plus patrol. Quest71/map146 Bull: one actor, explicit owner-proximity melee
+  plus patrol. Quest43/map145 Blood Fanatics: four roster entries, owned155
+  non-spell retaliation plus patrol (objective requires three kills). Quest49/
+  map161 Brood: one owned caster with Aura180/IceSpear214 plus patrol.
+- Quest73/map161 Experiment: three waves of four existing guardians driven by
+  its separate mission policy. Do not replace this objective behavior with
+  ordinary idle patrol or duplicate the roster.
+- Scope/cycle/objective remaining guards apply to owned enrollment. Ambient
+  adapters require exact reviewed binding and full profile equality.
+
+Largest practical gap is populated encounter coverage, not another steering
+algorithm: most placed tutorial quest foes still have combat metadata but no
+hostile action controller. The shared loop works for enrolled actors, while
+these actors can be attacked without equivalent autonomous retaliation.
+
+Concrete unconfigured examples in current encounter index:
+  quest85 map146 Warrior Test: three Tads, Health35, authored armor.
+  quest81 map146 Mesmer Test: four Tads, Health35, all six armor0, Energy40/40
+    plus5 pips reference defaults. Its policy explicitly says no retaliation/AI.
+  quest83 map146 Elementalist Test: three scale-bearing actors.
+  quest86 map146 Ranger Test queen; quest37 map161 tower golem;
+  quest42 map162 five Plague Worms.
+These rows are not automatically safe ordinary profiles: known Health and
+armor do not establish weapon delivery, timing, damage, skillbook or rank.
+Some older metadata versions also leave later facts absent. No model/level
+inference or broad automatic arming is justified.
+Base data/gw/npc-combat.txt is relation-only protected/neutral population;
+its lack of AI is deliberate unknown combat data, not a missing enable flag.
+
+Highest-value next enrollment proposal
+Use existing quest81 Mesmer Test owned roster (no duplicate placements), after
+linking exact captured NPC lifetime to its action skill IDs. It already has
+explicit resources and complete authored armor, and active enemy skill use
+would make Energy-pressure practice meaningful rather than a passive target.
+Reuse owned caster/immediate infrastructure if the demonstrated skill is
+supported; otherwise add the needed reusable skill consumer. Preserve any-death
+objective completion: first kill retires the remaining owned AI immediately.
+Required facts before arming: exact skill/delivery evidence, supported effect
+plan, explicit rank/Overcast observations where needed, authored acquisition/
+retaliation and patrol tuning. Do not call Energy40/5 or armor0 measured retail.
+If only ordinary attacks are evidenced, explicitly review an authored ordinary
+profile instead of assigning a melee weapon from the NPC name or profession.
+
+Other substantive limits
+Decision timing remains polling-dependent; retained routes preserve chronology
+but do not replay historical acquisitions or casts from current target poses.
+No generic respawn/home-heal or shared group-threat policy has been recovered.
+Unsupported nav layers/unknown effect facts refuse/defer rather than bypass.
+Packet-native validation is not client animation/retail parity acceptance.
+
+Source hashes at audit (parent may change app after current freeze):
+src/apps/gw_auth.cpp 3e45fa1bd082377f5b0ee9cc7129d2b74ddeb2f0077e561d8831a78d8da4b4fd
+data/gw/npc-combat.txt 0f7b32bafac8fc34f34e82c845629cf7b904d74787bb6dfb7e7f0d7cbdad5993
+data/gw/quests/presearing-encounters.txt d3ff211bb5573ad51979b77664d6db03a30f9a2acb41091bb83f46eabd019a7b
+data/gw/quests/mesmer-test-development-combat.txt 94747d49374e56c0fc8965cc0bbbaf37246bf5aa56d284c75e54e8f063331afe
+data/gw/quests/mesmer-test-development-policy.txt 7e28ed17e05535dcca83811978cd9b98356bec4c571c409f322b27d6825198dc
+data/gw/ai/raider-development-policy.txt a12454475c3192693b5e22cc19d71ba28211b3550ec555974de29f6f32ca649a
+data/gw/ai/firestarter-development-policy.txt 243c4070ce08ea8c3b8711ce6f85e973e297b06b221593ff1a40e6ceb42793de

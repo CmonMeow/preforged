@@ -1,0 +1,11 @@
+Weapon/shield/focus and base armor stats
+=======================================
+Local May2021 Attribute_requirement.html permits unmet requirement equipment; upgrade/inherent bonuses are unaffected. Native279 field has ten-bit attribute and low-byte rank. Duplicate/invalid records deny interpretation. Exact effective ranks determine requirements, never saved allocated points changed.
+
+Unmet shield16 or randomdrop returns8; reviewed nonrandom sub16 returns5. Unmet randomdrop focus7..12 returns6; nonrandom returns3. Unknown origin remains unavailable where fallback depends on provenance. Weapon a7a8 min/max and24b8 type decoded; unmet weapon damage description is only approximately two-thirds, so no exact guessed multiplier is enabled. Actual equipment metadata provider exposes verified requirement and preserves legal unmet equip.
+
+Existing build/reports/equipment-8432.txt contains actual staffmodel1932 a7a8160b and five armorpieces a3c83c00, but map observations lack owned character UUID and do not import inventory ownership. Native item_base_armor_2022.py PASS6 executes original879a10: a3c8 gives armor numeric text944 values60/80;62c80500 gives energy text817 value5;62e80100 gives recovery text818 value1.1023 is a width test only.
+
+Runtime owned_basic_armor now uses explicit raw armor energy/recovery words for actual owned definitions. Canonical profession-derived basic armor bonuses are reserved to explicit server-owned ReviewedArmor. Unreviewed unknown metadata does not manufacture profession benefits. Duplicate fields are unavailable, unknown raw modifiers preserved. This feeds existing world energy capacity/pips refresh. gw_item_base_armor exposes per-location BASE armor; it does not replace final ReviewedArmor elemental totals or silently interpret conditional modifiers.
+
+Focused equipment_metadata_provider tests PASS captured torso5, raw armor absentenergy0, carriedarmor ignored, duplicatebase rejection. Full host/live actual captured equipment validation remains pending parent. Current durable items lack explicit shield/focus base/provenance; gameplay base shield/focus stats remain unsupported until proven catalog fields are bound. Upgrade application is separate.

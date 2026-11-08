@@ -1,0 +1,63 @@
+SIGNET OF AGONY145 / PVP3059 — 2026-10-17
+
+Implemented through the shared scoped area-damage resolver, which already
+handles player/NPC recipients. Canonical plan: caster-centered nearby radius252,
+armor-ignoring damage10..70 at Curses0..15,25s self-Bleeding, zero Energy.
+World preflights the recipients, then pays10percent maximum Health before
+self-Bleeding and victim damage, including lethal sacrifice. It returns the
+paid result to Runtime so the generic cost path cannot charge twice. PvE recharge8s;
+PvP recharge20s. Native activation.75s and caster resource259 are retained.
+World normalizes a supplied selected target to the caster, filters enemy team,
+NPC hostility, plane and radius, and does not require armor for this damage.
+Targets are not given Bleeding; the caster is. Empty-area use is permitted.
+
+FROZEN EVIDENCE
+Checkpoint20261017-npc-refresh-2; packets-1360-15821281.jsonl.
+Local starts91123/91401, endpoints91133/91414, owner25,map280.
+audit_signet_agony_checkpoint.py verifies source SHA256 from the manifest and
+both exact owner-matched sequences: generic60/145, completion58, body21/259,
+8s recharge,10percent self-sacrifice,25s Bleeding478 and targeted20/260 on foes.
+Raw modern opcode numbers are retained in the audit report rather than blindly
+reused as2022 opcodes. Native target resource2077 is a sentinel; reviewed
+targeted resource260 comes from the captured packets. Report:
+build/reports/signet-agony-capture.json.
+
+Historical references:
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Signet_of_Agony.html
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Signet_of_Agony_(PvP).html
+Native skill catalog remains pinned to the2022 executable hash in its header.
+The native duration metadata10 is not treated as the self-Bleeding duration;
+the local wiki and both captured25s condition packets establish that duration.
+
+VALIDATION AND LIMITS
+signet_agony tests both IDs at ranks0/12/20 through actual paid Runtime requests:
+player/NPC damage without supplied armor, radius and ally exclusion, zero Energy,
+caster Bleeding, Health sacrifice and lethal cleanup, cancellation/interruption,
+missing handler rejection and caster/victim visual packet completion ordering.
+Three surrounding native suites also passed.45 skill tooling tests passed,
+including four capture-sequence tests. Fixed source audit reports249 captured
+source-bound,384 awaiting binding,696 baseline skills lacking local capture.
+
+Not complete visual acceptance: no private-client rendered test was performed.
+No local PvP3059 capture is claimed; its native row and historical PvP description
+support the shared mechanics/asset implementation. Full retail ordering with
+Fragility, Fevered Dreams, sacrifice reactions and other reactive effects remains
+unverified beyond the cases below. Captured packets report sacrifice then
+Bleeding then victim events. The integrated cost path now follows that order
+internally; this does not establish exact rendered publication equivalence.
+No official client/logging process was controlled or interrupted.
+
+Release server_host rebuilt successfully after the binding and shared resolver changes.
+
+Ordering follow-up: source cost is validated along with recipient admission,
+then committed once before Bleeding. Fragility and Fevered spread are processed
+before rebasing victim results so old snapshots cannot erase their conditions
+or resurrect a recipient. Runtime rejects a self-Bleeding completion without a
+paid-cost result and suppresses living-caster observers after a lethal cost or
+self-condition reaction. Tests cover no double callback charge, missing receipt,
+stale source, no receipt channel/no mutation, a separate Fragility reaction after
+the cost, Fevered spread, lethal sacrifice, and lethal self-Bleeding Fragility.
+Broader reactive combinations, retail death-trigger ordering, exact packets and
+rendered acceptance remain verification items.
+
+Ordering validation: Release server_host rebuilt successfully. Five rebuilt suites pass: signet_agony,health_sacrifice,fevered_dreams_player_events,npc_elemental_cast,npc_elemental_area.45 skill tooling tests and fixed checkpoint source audit/publication pass.

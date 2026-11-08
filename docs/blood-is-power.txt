@@ -1,0 +1,86 @@
+Blood is Power119: guarded native Runtime binding
+
+The pinned2022 row and local historical Blood_is_Power.html revision2667365
+specify an elite Necromancer/Blood Magic enchantment for another ally:1Energy,
+33percent Health sacrifice,.25s activation,.75s aftercast,zero recharge,10s
+and+3..6 Energy regeneration at ranks0..15 (5 at12,7 at20). The unused raw
+Overcast byte99 is not a cost because specialbit0 is clear. Caster2077 is the
+no-particle sentinel;the reviewed targeted-body resource is224.
+
+Evidence:
+tools/protocol/blood_power_2022.py verifies the fixed20261017-npc-refresh-2
+packet hash,two casts86111/86216,finishes86114/86219 and target224 at86115/86220.
+It executes original.25s and target224 consumers with stubbed actor/asset services.
+Report:build/reports/blood-power-native-2022.json. The adjacent sub42/430 and
+sub6 attribute records remain context,not invented sacrifice/pip values.
+No rendered acceptance or numerical retail pip/sacrifice proof is claimed.
+
+Sacrifice:
+The historical wiki explicitly specifies half-to-even rounding and zero cost
+at1 maximumHealth. Exact integer arithmetic implements that rule for119 only:
+50max->16,150max->50,480max->158,1max->0. Other skills retain their previous
+fractional rule. The unavoidable currentHealth+1 lethal clamp remains. Zero
+loss does not generate a passive-recovery health-loss event.
+
+World ownership:
+Instance::blood_is_power preflights the canonical plan,other living ally,
+exact scopes,range,plane/LOS and owned effect/resource state. Players require
+matching nonzero team tokens. NPCs require a declared protected/allied relation,
+known Energy pool/capacity and known base regeneration,including known0.
+Neutral,hostile,stale or unknown-resource NPCs are not silently accepted.
+Catalog15 adds allied-to-players without reclassifying old catalogs or deriving
+combat relation from appearance/client allegiance. It is not per-team PvP data.
+
+Ordinary players preserve fractions/debt when promoted into the resource curve.
+The registry,zero-pip timer and timed Energy modifier are installed together;
+same-skill renewal replaces all three. Shared endings settle Energy before
+removal and publish effective pips,including expiry while Energy is full.
+Player and promoted-NPC Health boundaries preserve Energy earned up to the
+actual death crossing. NPC resource adapters do not replace NPC Health with
+player integer Health. Reviewed NPC119 removal/expiry clears the modifier while
+retaining precise resources. Unknown positive-status end behavior stays gated.
+
+Casting:
+Runtime119 requires a scoped target validator and authoritative effect hook.
+Both admission and completion validate the ally;NPC facts are checked before
+Energy payment. Generic self-healing/foe logic cannot bypass these gates.
+The native gateway wires the World transaction and forwards its paid Health
+receipt. Successful zero/lethal sacrifice is consumed exactly once;119 does
+not require or call the generic post-effect sacrifice callback. A provider
+without a payment receipt cannot publish successful completion. Shared casting
+owns1Energy,cancel/interrupt,250ms activation,750ms aftercast and zero recharge.
+Native58 precedes deferred targeted224;no2077 particle is invented.
+
+Validation:
+blood_power_policy,health_sacrifice,timed_energy,npc_blood_power and
+blood_power_world cover the plan/rounding,owned rates/expiry,ordinary fractions,
+negative player debt,Overcast ceilings,full-Energy UI,renewal/removal,known0NPC
+rate,death/credit boundaries and invalid ally/fact/lifetime rejection.
+blood_power_cast covers PvE/PvP player/reviewed-NPC fixtures,missing hooks,
+pre-payment invalid targets/unknown facts,insufficient Energy,zero/lethal and
+single sacrifice,cancel/interrupt,stale/reused player targets,caster death,
+invalid payment receipts,aftercast/zero-recharge admission and finish224 order.
+PvP NPC fixtures use global reviewed allies;they do not verify per-team NPC
+allegiance. The current host/regression result is appended after completion.
+
+Outstanding:
+Production NPC resource/relation population;NPC Overcast/debt and pre-promotion
+idle handling;per-team NPC relations and hero/party Energy UI;NPC caster AI;
+Awaken the Blood/other sacrifice modifiers,enchantment-duration equipment and
+broader reaction ordering;generic sacrifice feedback430 semantics;paired retail
+numerical resource/sacrifice captures and rendered QA. Positive resource modifiers
+do not implement Energy degeneration. Binding is not a claim these gaps or the
+full skills objective are complete. Earlier staged/unbound notes elsewhere are
+superseded for this guarded Runtime path.
+
+Final binding validation: serial Release blood_power_cast_test,blood_power_world_test,npc_blood_power_test,virulence_cast_test,overcast_world_test and server_host builds passed. All five selected CTest suites,native consumer verifier,73 skill-tooling tests,fixed checkpoint audit and backlog publication passed. Current283 bound/350 awaiting binding. Official clients/loggers/capture bytes were untouched;full skills goal remains active.
+
+2026-10-21 Energy enchantment duration integration
+Blood is Power119and Blood Ritual157now accept the same scoped,timestamp-bound equipment duration receipt. Player application installs one adjusted expiry in the effect registry,zero-Health-pip lifecycle timer and Energy ceiling/regeneration curve. Reviewed NPC recipients install that expiry in their registry and Energy curve as well. Native pips,cost,range and sacrifice plans remain immutable;the existing single paid-sacrifice receipt still prevents duplicate Health loss.
+Generalized regeneration_duration_ready to enchantment_duration_ready(skill,base,now) so Energy enchantments share prepayment and completion validation without pretending to be Health-regeneration plans. Gateway builds current equipment quotes for both119/157and passes the checked receipt into World. Existing legacy adapters remain optional;normal gateway declares the guard.
+Corrected Blessed Aura eligibility:the documented effect applies to Monk enchantments,not every spell cast by its owner. Unsupported Aura stacking still rejects Monk enchants;Necromancer119/157and Blood Renewal115can use the independently supported weapon bonus while Aura is active. A regression exercises115with an active Aura record.
+New16World cases cover119/157,player/NPC recipients,dense/coarse ticks and renewal after20to10percent weapon changes. They check exact NPC Energy units,continued bonus after native base expiry,restoration of baseline pips,correct adjusted registry expiry,and unchanged330/170Health sacrifice at1000maximum. Renewal settles the old interval and replaces its modifier without double regeneration. The existing casting suite expands21to35cases,including119/157fresh completion quotes,unknown/lost equipment capability and no duplicate sacrifice callback.
+Six current-source suites pass:energy_enchantment_duration,enchantment_duration_cast,enchantment_duration,blood_power_cast,blood_ritual_cast,blood_ritual_world. Native119fixed cast/224consumer and157five non-local/unassigned cast/281consumer verifiers pass;157is not relabeled a local capture. Coverage tooling4/4passes. Serial host94255completed successfully. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing republished. Full Monk provider stacking,other enchantment families,NPC caster equipment and rendered duration/animation checks remain open. Official clients/loggers untouched.
+
+2026-10-29 typed completion:the shared World transaction in gw_world_energy_enchantment.inl preflights recipient state,consumes the exact admitted event,rewards Renewal before sacrifice,rebuilds post-reward state and returns one paid receipt. Recipient feedback is deferred after finish/visual prefix;actual Energy gain persists after lethal caster sacrifice in native tests. See build/reports/energy-enchantment-renewal-progress-20261029.json for224new cases,old-suite hashes and remaining retail/recursive/clock/rendered gates. Ritual157still lacks local activation capture;current corrected particle evidence is the maintained index entry157.
+

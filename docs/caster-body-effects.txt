@@ -1,0 +1,25 @@
+Caster-body effects in build37130
+================================
+The pinned native skill table contains caster-body resource at row+0x78.
+2077 is the no-effect sentinel.907 of3433 rows reference584 distinct non-sentinel
+resources. tools/protocol/extract_skill_catalog.py now retains this field in the
+canonical SkillRecord and --check verifies the generated header against the PE.
+
+Native offline validation: tools/protocol/caster_body_resources_2022.py executes
+original158kind21 dispatch and effect9 consumer through the first particle call
+for all584 resources. Effect table identity, DAT file reference and native file
+encoding match each original row. Actor/allocation services are stubbed; there
+is no renderer, live process or official-server traffic in this verification.
+Report: build/reports/caster-body-resources-2022.json (hash-pinned original PE).
+
+Runtime success_body_effect looks up the retained resource instead of maintaining
+a three-skill list. It validates actor and skill bounds, skips sentinel, and
+runs only after the existing authoritative applied-success branch. Cancelled,
+failed and unsupported skills do not acquire fabricated gameplay effects.
+Dash's old branch-local publication is removed to avoid a duplicate effect.
+Native casting tests cover all3433 rows and retain exact Aftershock/Shockwave/
+CrystalWave fixtures and Dash success/failure/lifetime cases.
+
+This does not implement missing skill mechanics, target particles, projectile
+visuals, sound events, camera-shake tuning or all rendered animations. Live
+visual verification remains necessary before claiming animation fidelity.

@@ -1,0 +1,41 @@
+Signet of Disenchantment882
+==========================
+Pinned2022 Mesmer/NoAttribute51/Signet7,zeroEnergy cost,1s activation,.75s
+aftercast,15s recharge,caster976/target977. No PvP metadata split.
+Frozen20261017-npc-refresh-2 packets-1360-15821281.jsonl15919,15925..15930
+shows targeted cast60,completion58/recharge15,self21/976,target20/977,
+normalized Energy delta-.82 and integer notification-41 at completion.
+Native verifier hashes the snapshot and executes the original cast/particle
+consumers. The receipt does not prove exact prior pool,fractional loss rounding
+or removal-vs-reaction ordering for an enchanted target.
+
+World validates target lifetime,hostility,range/plane,Health and monotonic
+resources before loss. Loss is completion-time,not the zero-cost admission.
+It applies to a valid unenchanted foe too. Shared precise drain-to-zero consumes
+all positive Energy including fractional Overcast/current-pool remainder while
+preserving negative hidden debt. Shared Mind Wrack observation reacts once.
+The declared simulation policy commits loss and its reaction before target
+removal;the already-completed effect still removes the selected enchantment
+if the loss kills its caster. Retail ordering needs a focused capture.
+Caster976 and target977 emit once even when no enchantment is present. The owner
+Energy curve is reconciled through the existing absolute resource packets;
+captured floating Energy notification54 rendering remains a separate gap.
+
+Player removal uses the existing newest-enchantment path with end effects,
+covered selection and no-op handling. For NPCs,owned Ice Spear214 regeneration
+has reviewed no-reward end semantics. It is preflighted on a copy and removed
+from the current exact lifetime after resource reactions,never by restoring a
+speculative whole NPC. Unknown positive-status end behavior rejects before
+loss. NPC pointers are re-resolved after condition/death settlement. The World
+integration test has a real NPC Ice Spear cast create that enchantment,then
+strips it and verifies regeneration stops.
+
+Open:other NPC positive-status end effects,NPC casters,retail loss/removal/death
+ordering,floating Energy notification54 and rendered private-client acceptance.
+This binding does not claim every possible interaction of enchantment removal.
+Validation:four fresh native suites,69 tooling tests,native verifier and Release host pass. Fixed backlog269source bindings/364pending. Official logging untouched.
+
+NPC Drain Enchantment68 extension: shares the reviewed Ice Spear214 removal gate. Conditional rank12 Health104/Energy15 gains occur only after successful removal; Health is gain, not healing. Unknown enchantment end semantics still reject. The real NPC214 casting fixture now verifies Drain gains with missing Health/Energy and verifies regeneration stops after removal. Shatter/Rend/Strip positive NPC integration remains pending. Two fresh native suites and69 tooling tests pass; rendered acceptance remains open.
+NPC Drain68 Release server_host build passed.
+
+NPC Shatter Enchantment69 extension: reviewed214 removal is preflighted together with the armor-ignoring hit before mutation. Commit removes from the current actor, publishes status, applies actual damage and records death through World. No Drain rewards are granted. Owned NPC214 fixture verifies rank12 hit83, no source gain, and no remaining regeneration. Comparison uses the enchantment creation timestamp to exclude an unrelated0.006 Health regeneration tick; floating Health comparison has1e-6 tolerance. Two fresh native suites,69 tooling tests and Release host pass. Unknown enchantment end reactions, Rend/Strip NPC paths, lethal Shatter fixture and rendered client acceptance remain open.

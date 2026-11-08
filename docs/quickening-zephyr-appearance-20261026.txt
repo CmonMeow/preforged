@@ -1,0 +1,31 @@
+Quickening Zephyr observed appearance follow-up, 2026-10-26
+
+The fixed 20261024-all-completed checkpoint now supplies stronger identity
+than the same-tick packet alone. world-1360-15811984.jsonl line34101 in
+map280/epoch310 observes definition2937 with model-file141876, skin0,
+appearance0, flags16384, primary2, secondary0, default_level0,
+visual-adjustment bytes[0,0,0,80], no extra model files, and decoded name
+"Spirit of Quickening Zephyr". Encoded name words are3992,34034,51222,10638.
+Line34102 observes actor97 with model2937, level1, allegiance4 and the same
+decoded name. Packet line499268 independently agrees on the appearance
+header at the captured completion tick26811078.
+
+The helper now uses that exact decoded display name through the verified
+2022 literal-name serializer. It does not send modern resource-name words.
+The helper retains server definitions60000..60020 by rank, its canonical
+plan level, private-server health policy, and unknown armor. Definition
+level0 in the modern observation is distinct from actor97's observed level1.
+No field here proves caster ownership, portable2022 asset availability,
+rendered acceptance, retail health/armor, or a spirit death/lifetime join.
+
+Reproduce without any client process:
+  python tests/quickening_zephyr_appearance_capture.py
+
+The receipt test hashes both entire source files before inspecting rows:
+packets SHA256 59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6
+world SHA256 de6f061799d3db9f7406f55e5e0da20fff0c5e46daaa634e1e4d952d0fd4882f
+
+Offline receipt test passed. Native cast assertions were expanded to check
+all chosen appearance fields and that the exact name fits the2022 literal
+serializer. No native build was run for this follow-up; parent coordinates
+the serial build after all sources freeze. Official clients were untouched.

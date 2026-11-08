@@ -1,0 +1,74 @@
+Quest79 A Second Profession -- implementation policy,2026-10-30
+
+Current stage: source integrated; coordinated native validation pending.
+tools/quests/stage_second_profession_79.py reads immutable original sources and
+writes only below build/reports. It refuses any output outside that directory.
+Native policy: src/runtime/gw_quest_second_profession.h.
+Typed service: src/network/quest_second_profession.h.
+Installed evidence/catalog: data/gw/quests/second-profession-79*.
+Detached exporter staging remains under build/reports/second-profession79/.
+
+Identity/prerequisite
+Armin Saberlin in Ascalon City148 is already installed in data/gw/npcs.txt.
+Require Prophecies/pre-Searing/core primary and that primary's rewarded test.
+Further Adventures54 and Unsettling Rumors62 are NOT prerequisites (local wiki).
+All six primaries can accept. Exact current NPC lifetime/map/range and expected
+quest cycle are mandatory. Private tokens are not recovered retail dialog IDs.
+
+Objective authority
+Only a persisted selected secondary1..6, different from primary, qualifies.
+Its corresponding training quest must already be rewarded:
+Warrior75, Ranger76, Monk74, Necromancer72, Mesmer71, Elementalist73.
+A trial grant, unlocked profession bit, requested secondary, controller preview
+or failed secondary save never qualifies. This preserves missing trial blockers;
+79 does not bypass incomplete pet/minion/hazard quests.
+
+Accept before/after selection
+Accept79 normally creates active state and publishes exactly one native72 add
+and75 details. If a valid trained secondary was selected before acceptance,
+reconcile immediately after acceptance save using the same completion path.
+When accepting before selection, invoke only after successful secondary commit;
+publish the profession state before quest objective update. Failed save produces
+no completion. Expected quest cycle and revision prevent delayed completion from
+touching an abandoned/reaccepted attempt.
+
+Completion and crash recovery
+Prepare native83 objectives and76 marker, save active->completed, then publish.
+Never send72 or79 for an already present quest: original83 emits QuestUpdated,
+whereas79 emits QuestAdded. This is independently pinned by existing native
+quest serializers, not inferred by subtracting modern logger opcodes.
+On reconnect first restore the durable quest once, then reconcile an active79
+against the durable selected profession. A crash between profession commit and
+quest commit is recoverable; a crash after quest commit restores completed state.
+An Armin interaction can retry failed reconciliation. Completed/rewarded attempts
+are idempotent and produce no repeated objective update or reward.
+
+Storage fence
+Inside save_quests' existing SQLite transaction, detect changed79 progress.
+Validate exact one-record legal acceptance/abandon/completion transitions against
+the prior persisted profile; read current persisted skill profile for completion.
+Reject direct insertion of completed/rewarded79 and erased history. This avoids
+a new wire/request/schema field while preventing generic SaveQuests bypass.
+Reward79 must have exactly250XP and no item/gold/skill/unlock side effects, valid
+completed progress, rewarded primary/training and persisted chosen secondary.
+Existing revision-checked completed->rewarded plus XP transaction guarantees
+once-only payout. Failed/stale/timeout reward emits nothing and changes nothing.
+
+Text and markers
+Snapshot863 has a generic captured description and genuinely empty objectives.
+Snapshot873 chooses Elementalist-specific directions;2258 completion includes
+that checked Elementalist line. These resources must not label other professions.
+The staged catalog retains generic captured description and explicitly authored
+neutral wiki objective summaries. Existing profession-specific trials still
+control training; no invented skills, prices or profession commitment menu.
+Captured current-map completion routes exist for146/148/160/161/164/165; choose
+the route for current map. Unobserved maps retain native +infinity unresolved
+marker semantics; do not reuse Wizard's Folly coordinates on Ascalon reconnect.
+
+Required native acceptance
+All6 primaries and5 possible secondaries, primary/test/quest gates, exact Armin
+lifetime/range, stale cycles, trial-only/unlocked-only/failed-save negatives,
+preselected acceptance reconciliation, skill and quest revision races, no packets
+on CAS/timeout failure, update-not-added packet invariants, marker scopes,
+reconnect both sides of profession/quest commit, exactly-once250XP and reopen.
+Rendered playthrough and original retail NPC-choice parity remain unverified.

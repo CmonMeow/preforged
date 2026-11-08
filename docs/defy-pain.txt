@@ -1,0 +1,179 @@
+
+2026-10-21 DEFY PAIN318/3204 foundation — normal casting remains unbound
+Pinned plan validates both native rows:Strength,120Adrenaline,0Energy,0/.0,
+no time recharge,20s duration,+90..300maximum Health(rank20+370),body595.
+PvE318is type16elite skill with20armor and1..10flat damage reduction(rank20=13).
+PvP3204is type3elite stance,20armor and no flat reduction. Preserve that class
+split;do not route PvP as a non-stance copy of318.42rank/mode plans plus invalid
+rank guards pass.
+
+Native verifier defy_pain_2022.py hashes the fixed source and verifies eight
+exact PvE receipts354847..355113:Adrenaline spend notice,instant48,body595,
+20s status,+90maximum490,release,end and maximum400restoration. Native UI
+instant dispatch and595particle consumer pass. Both318/3204rows and reciprocal
+aliases are checked. Own3204cast,armor/reduction and current-Health/stacking or
+rendered behavior are not proved by that cast. Local DefyPain and PvP wiki
+references are hashed separately. Life stealing is a separate resolver;do not
+silently inherit ShieldingHands' explicitly documented life-steal protection
+when implementing DefyPain's flat damage reduction.
+
+TemporaryHealth now owns a third DefyPain family source,alongside316and347.
+Capacity,all-source bounds,earliest deadline and exact effect removal account
+for all three. DefyPain refresh/alias replacement changes only its own source;
+permanent-capacity resizing retains other bonuses. Twelve mixed-mode/rank/
+DeepWound triple-source tests verify refresh,source IDs,permanent resize,
+sequential expiry and exact final latent Health/debt.42plan tests,temporary
+Health and existing ToLimit transaction suites pass. World/casting neighbors
+and host are rebuilding. Five coverage checks,native verifier,fixed audit and
+publish pass;633captured/306bound/327awaiting/696missing remains unchanged.
+
+Required next:World318/3204Health/status/owned end/death/reset integration,
+shared20skill armor and PvE flat damage mitigation,actual PvP stance replacement,
+120Adrenaline instant Runtime and native595publication,NPC caster and rendered
+acceptance. No live World DefyPain source can be created by this pure ledger
+extension;normal318/3204admission stays unsupported. Official logging untouched.
+
+Defy foundation validation complete:serial Release build16074 exited0 for
+rebuilt temporary_health_world,endure_pain_cast,to_limit_cast and server_host.
+Seven focused C++ suites,five coverage checks,native318/3204verifier and fixed
+audit/publish pass.633/306/327/696unchanged;Defy remains unbound pending World,
+armor/reduction,stance,casting and rendered integration. Official logging untouched.
+
+2026-10-21 DEFY PAIN PvE World stage:added exact ledger/Registry-owned bonus
+resolution and stage_defy_pain_health. Canonical318only;3204explicitly rejects
+until stance replacement can retire its Health source through every producer.
+Owned mitigation requires Scope,generation,cause,rank,category,begin/end and
+Health bonus to match. Raw318/3204status injection is blocked.
+
+PvE source owns Health,status and timer atomically,refreshes only318,and shares
+expiry/death/end/reset with316/347. End handler initially omitted DefyHealth
+cleanup;new World test reproduced temporary-Health chronology mismatch and now
+passes after adding the exact source to that branch. Reset retires all three
+families. Armor+20uses the existing shared skill-armor stacking. Ranked PvE
+flat reduction applies after armor to spell and weapon damage,including armor-
+ignoring damage,stacking with ShieldingHands and clamping at0. Life-steal
+protection stays on its explicitly separate ShieldingHands path;degeneration
+also bypasses Defy flat protection. Do not apply PvE reduction to3204.
+
+World tests pass21ranks of Lightning mitigation and life-steal exclusion,
+all-three-Health coexistence/refresh/expiry,death/reset/stale Scope,PvP-stage
+rejection,raw injection rejection,ordinary weapon mitigation,WatchYourself
+armor stacking then charge expiry,armor-ignoring damage/ShieldingHands stacking,
+and unchanged5pip degeneration. Pure42mode/rank identity tests added;one fixture
+expected Registry to admit an invalid category before the owned-bonus guard,
+but Registry correctly rejects earlier. Fixture corrected;rebuild pending.
+
+Normal318/3204casting remains unbound. PvP stance replacement,120Adrenaline
+admission/instant publication,NPC caster and rendered/retail combined mitigation
+verification remain. Native frozen verifier remains capture-only;it does not
+prove the modeled flat reduction/life-steal distinction from that cast window.
+Fixed audit/backlog633/306/327/696unchanged;five coverage checks/native verifier
+pass. Shared neighbors and host are rebuilding. Official logging untouched.
+
+Defy PvE World validation complete:serial Release build25427 exited0 including
+Defy World/ownership,temporary Health World,Endure/Watch cast tests and host.
+Corrected ownership fixture rebuilt separately and passes. Seven focused C++
+suites pass,plus five coverage checks,native verifier and fixed audit/publish.
+633/306/327/696unchanged. Normal318/3204casting and PvP stance replacement
+remain unbound;rendered and retail combined-mitigation QA remain open. Official
+logging untouched.
+
+2026-10-21 DefyPain PvP World stance transaction (normal casting still unbound):
+stage_defy_pain_health now accepts the canonical318/3204family. Alias refresh
+replaces only the family's Health/status/timer contribution. PvP additionally
+replaces the current stance;PvE stays categoryother. Old Defensive345reward
+is copy-preflighted with its observed bar and committed once with its authority;
+HexBreaker credit and movement state are retired with the old stance.
+
+Generic stance application and typed HexBreaker now retire a replaced Defy
+Health source without sending a second67. Explicit end_stance already uses
+the owned end. Death excludes3204from the raw stance-only removal loop so its
+owned Health/status path publishes the sole end. Reset and natural expiry use
+the shared family cleanup. Do not use a synthetic free cast as Adrenaline proof.
+
+New stance suite passes21PvP ranks with+20armor and no PvE flat reduction,
+Frenzy/HexBreaker replacement,explicit end,expiry/death/reset,alias switching,
+PvE alongside another stance then PvP adoption,one67end,HexBreaker-credit
+retirement and Defensive reward preservation. Reward fixture initially expected
+75units from a bar containing one melee attack;the existing rule correctly
+caps reward by that one skill,so25units is expected. Corrected fixture passes.
+Low-Health replacement retains latent debt and insufficient healing still
+kills. Existing PvE World and Defensive11mode World suite pass. Ownership and
+plan suites also pass(five focused suites so far).
+
+Normal120Adrenaline casting,Runtime prior-stance cache reconciliation,
+instant/body595ordering,NPC caster,own official3204capture and rendered QA
+remain. Native verifier describes World host evidence separately from frozen
+PvE cast proof. Fixed audit/backlog633/306/327/696unchanged;five coverage/native
+checks pass. Endure/Watch cast neighbors and host are rebuilding. Official
+logging was not changed or interrupted.
+
+2026-10-21 follow-up:replacement retirement can change Health percentage across
+SerpentQuickness's threshold. New red stance regression at line37showed456
+still present after3204replacement changed658/1258Health to400/1000. Generic
+status mutation had evaluated456before retiring Defy's Health contribution.
+Moved that check after owned stance cleanup. Expanded Defy stance suite passes
+with456absent immediately,without another tick or heal. Five coverage checks
+and refreshed fixed audit/publish pass;633/306/327/696unchanged. Prior serial
+build42235exited0;updated shared header build16508is in progress. Serpent's
+existing World regression will be rebuilt before final validation. No official
+client or logger changes. Normal Defy casting remains unbound.
+
+2026-10-21 final Defy PvP World validation:
+Serial Release build 16508 completed successfully, including the shipping host,
+Defy stance and Defensive World tests. Serpent World rebuild 84090 completed.
+The freshly rebuilt serpents_quickness_world, defy_pain_stance and
+ defensive_stance_world tests all pass (3/3). This verifies the immediate
+Serpent threshold evaluation after replacement retires Defy's temporary Health.
+Earlier Endure/Watch casting regressions, five coverage checks, native verifier
+and fixed audit/publish passed. Fixed counts remain 633 captured / 306 bound /
+327 awaiting binding / 696 missing captures. Normal Defy casting, Runtime
+prior-stance cache/payment/publication, own PvP capture and rendered acceptance
+remain open. Official clients and logging were not touched.
+
+2026-10-21 Runtime stance snapshot reliability:
+A new skill_casting regression reproduced early Dash retirement when the
+status authority returned nullopt. Runtime no longer treats an unavailable
+snapshot as a successful empty snapshot. Live cached mechanics survive query
+failure; confirmed absence still clears movement state. The test failed before
+the change and passes after it. Serial Release build 36378 completed including
+skill_casting, Endure Pain casting and shipping server_host. Both focused tests
+pass. Coverage regenerated; fixed checkpoint audit and backlog publish pass,
+633/306/327/696 unchanged. This repairs shared stance infrastructure; it does
+not bind Defy Pain normal casting or establish rendered acceptance. Official
+logging was not interrupted.
+
+2026-10-21 Defy Pain normal player casting now source-bound:
+Runtime and production gateway wire the typed owned World completion. Base318
+uses pinned PvP row3204 when appropriate; explicit3204 is rejected in PvE.
+The player pays the real120Adrenaline pool, normalizes its target to self,
+uses instant48 and publishes body595 before deferred Health/status updates.
+There is no fabricated58 spell terminal or timed recharge. Rank, owner scope,
+missing authority, insufficient Adrenaline and failed completion are tested.
+Instant use during knockdown is tested. Both mode aliases and rank0/12/20 pass.
+
+The PvP completion clears the previous local stance cache after authoritative
+replacement without publishing a second67. A legal Warrior/Assassin bar tests
+paid Frenzy -> Defy -> Dash in both rulesets: PvE Defy coexists with Frenzy;
+PvP replaces it; Dash retires PvP Health while PvE Health remains. The old
+stance's later expiry cannot publish another removal. An initial replacement
+fixture incorrectly combined two elite skills; another lacked a nearby foe to
+charge To the Limit. Both fixture errors were corrected rather than weakening
+normal bar validation or Adrenaline payment.
+
+Six focused suites (five Defy suites and shared skill_casting) pass, plus five
+coverage tests and the hash-verified native body/instant verifier. Fixed audit
+and backlog publication now show633captured /307source-bound /326awaiting /
+696missing activation captures. Bindings are source coverage, not full skill
+fidelity or rendered acceptance. NPC casting/AI, own official3204 activation,
+combined-source retail capture and rendered QA remain open. The shipping host
+and Endure/Watch neighbors are rebuilding serially in build session1165.
+No official client input, restart or logger changes were performed.
+
+2026-10-21 Defy binding final validation:
+Serial Release build1165 exited0 including shipping server_host and rebuilt
+Defy/shared/Endure/Watch casting tests. Extended Defy cast rebuild9875 exited0.
+Eight focused C++ suites pass after testing replacement beyond the old Frenzy
+8second deadline (tick8300). Five coverage tests and the native verifier passed;
+fixed audit/backlog307bound/326awaiting remains current. No rendered or own-PvP
+capture claim is added. Official logging was untouched throughout.

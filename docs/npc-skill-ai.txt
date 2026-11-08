@@ -1,0 +1,147 @@
+Reviewed NPC spell admission and selection (2026-10-17)
+
+Runtime path
+World::configure_npc_spellbook binds an explicit per-lifetime host loadout.
+World::begin_npc_spell derives living player target, scope, distance, plane,
+line of sight and equipped weapon class from authoritative instance state.
+Hard-mode and martial-primary observations remain optional host context;
+unknown observations reject skills whose documented targeting rule needs them.
+It selects the first eligible reviewed slot, checks Rust disables, settles
+NPC Energy, pays the actual cost, starts a control token and stops pursuit.
+This order is authored content preference, not recovered ArenaNet priority.
+The caller still owns supported effect resolution and native presentation.
+The token alone is not a damaging/healing effect or a complete caster driver.
+Existing begin_npc_action is a separate authoritative windup primitive and
+remains available to combat reaction tests without inventing a loadout.
+
+Eligible entries require evidence, finite range, a real pinned-2022 spell,
+positive activation, bounded aftercast and supported ordinary Energy cost.
+Adrenaline, sacrifice, overcast, instant spells and costs above25 are rejected
+rather than partially paid. This initial path handles hostile NPC to player
+spell admission only; no NPC Energy or regeneration is inferred from casting.
+The actual LiveActor Energy pool is shared with drains and regeneration.
+Unknown or insufficient Energy prevents selection. Accepted casts pay once.
+Successful completion starts base recharge and aftercast. Involuntary
+interrupt/knockdown starts base recharge at prevention. Voluntary cancellation
+keeps the paid cost and starts no base recharge. Actor generations, monotonic
+clocks, action tokens, active casting and knocked-down state gate admission.
+Conditional recharge modifiers and complete NPC casting reactions (Backfire,
+Diversion, profession attributes, sacrifice and overcast) remain outside this
+initial path; do not enable a population requiring them through this API.
+
+Specific documented selection rules
+Backfire28 requires an observed spellcasting weapon, not merely a target
+skillbar containing spells. Blinding Flash220 requires a martial weapon;
+in Hard mode it additionally requires a martial primary profession. The rule
+is intentionally not generalized to all blindness or reactive hex skills.
+Local Monster_AI.html redirects to Foe behavior oldid2656731, SHA256
+b501d443839ef9436fad6e4aca3e326d009e9af9394b330124a79e4ac5d4faa9.
+Local Recharge_time.html says recharge begins on completion or prevention,
+SHA2569ad3e89d71b4afa03c4f71c6b821bb5d37782e286a1afaf8163771ab74702f97.
+Local Energy.html describes Energy as skill resource cost,
+SHA256bc13f6ddd1c100f0b38dfcbdfc40411d090f93aa5067df9a4fec813ff19930d3.
+Skill costs, base activation/aftercast and base recharge are from the generated
+pinned2022 catalog (client SHA256a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac).
+
+Experiment production content boundary
+Ice_Elemental_Shard.html explicitly describes Shards as lacking skills
+(SHA25680a1a41697cd930249dcac9d9b9b9e46e136a45a244588d908c853f0867c67b6).
+The extended offline tools/quests/audit_experiment_combat.py finds zero Shard
+skill starts in the captured encounter window; this window alone would not
+prove a complete loadout. It finds actor16 Fire Imp starting Fireball186 six times
+and Flare194 seven times, plus Shards attacking actor7 27times and actor16 once.
+The report build/reports/experiment-combat-capture-audit.json retains original
+packet file hashes, line numbers and raw packet fields. Captured modern fields
+are observations and must not be replayed as2022 opcodes.
+No current/max Fire Imp Energy, regeneration, complete summon ownership/runtime
+or full skillbar follows from those starts. No Shard spells or fabricated
+Fire Imp resource values have been installed. Nonempty production caster AI
+requires reviewed actor/loadout/resource bindings and supported effect dispatch.
+Tests use explicitly synthetic metadata and verify the functioning admission,
+selection, actual payment and interruption lifecycle without claiming retail
+NPC statistics or complete production NPC skillcasting.
+
+
+
+Further summon-specific ownership, level1/2 observations and effect-dispatch
+contracts are documented in docs/summoned-fire-imp.txt.
+
+
+External availability and alternative reviewed spells (2026-10-17)
+Spellbook now exposes eligible(slot,target,Energy,time,Availability) and accepts
+an optional host Availability callback during ordered choice. An externally
+disabled or unknown candidate is skipped; another reviewed usable slot can be
+selected. Expiry is inclusive at the authoritative deadline. Exact skill copy
+identity is preserved and unknown/unowned copies cannot become fallback skills.
+This fixes server admission consistency; it does not claim to recover retail
+AI priority or assert a captured preference between particular skills.
+
+The actual integration gap is broader than Rust: World::begin_npc_spell checked
+Rust only after selecting one spell, while World::skill_disabled_slot_locked
+already combines Power Block, Humility, Diversion and Rust per-slot authority.
+Power Block can disable a spell attribute while an unrelated reviewed spell is
+still usable. Rust itself disables active signets, and this initial Spellbook
+admits spells; do not claim ordinary Rust disables this spell loadout.
+Tests use the real PowerBlockDisables authority on Backfire/Domination with
+Flare/Fire Magic available, then verify expiry and exact-slot reset. Additional
+synthetic callback tests cover unknown timers and copy-specific availability.
+
+World integration passes the existing combined locked disable query through
+LiveActor choice and exact-slot admission under the World lock. An alternative
+is revalidated as that exact reviewed slot rather than forced to match the
+first slot under an unfiltered query. The World regression applies Diversion
+to Flare, admits Ice Spear with correct Energy payment, rejects the old
+completion token and restores Flare at the disable deadline. No new NPC stats, captured loadout,
+Universal priority scores, or population spell effects follow from this fix.
+The local Power_Block.html describes interrupting a spell/chant and disabling
+its attribute group (SHA256
+3d400a491009e85728921a4003c9110a31d07be88e22909046eb85f7d0543e78).
+The existing captured power-block-target-context.json establishes activation
+and an idle training-target body observation, explicitly not successful
+interruption/disable. The alternative-choice policy is host implementation
+built on the reviewed disable authority, not a claim that this capture proves
+retail NPC skill ordering or a successful Power Block on a casting NPC.
+
+World regression scope correction
+The live World regression uses supported NPC Diversion: apply the hex during
+Flare194, complete the actual NPC cast, finalize its recorded skill-use event
+through diversion_skill_used, then select IceSpear214 while194 is disabled.
+The test checks actual Energy payment, old-token replay rejection and exact
+Diversion expiry. It does not claim World NPC Power Block support.
+The subsequent NPC interrupt branch below replaces the earlier player-only
+restriction. The real PowerBlockDisables catalog-level test proves policy/
+authority interoperability independently; it does not prove a successful
+retail NPC interruption capture.
+
+Player-to-NPC interrupt production branch (2026-10-17)
+World::interrupt_skill now dispatches hostile NPC targets through an authoritative
+NPC branch for reviewed InterruptPlan5/23/25/61/24/931/860. It samples actual
+control tokens, skill/copy identity, active hexes, positions/plane/line of sight,
+health and relation. Unknown activating skill identity rejects type/attribute
+claims. Idle Power Block body feedback remains separate from disable success.
+PowerBlockDisables applies its attribute rule even when a known Mantra prevents
+interruption, matching existing player authority semantics.
+
+NPC Mantra of Concentration16 and Mantra of Resolve17 use registry-backed
+stance state. Concentration ends after preventing one interruption. Resolve
+pays the reviewed rank cost from actual NPC Energy; insufficient Energy still
+prevents that interruption, exhausts the pool and ends Resolve. Unknown required
+Energy/precision rejects before damage, cancellation or disable commit. Explicit
+host stance application installs typed16/17 state/timing; animation bits never
+supply protection. Known NPC Energy gain is capped at the actual reviewed
+maximum and preserves fractional regeneration until reaching that maximum.
+
+The branch stages NPC damage, control cancellation, stance removal, target
+Energy loss/gain and Power Block authority before commit. Source Energy rewards
+use the actual active spell type; a basic attack interrupted by Power Drain61
+gives no spell reward. Existing NPC death/objective attribution, Mind Wrack
+Energy observers, native damage/body/terminal packets are reused. World fixtures
+cover all seven plans across no protection/Concentration/Resolve, final
+insufficient-Energy protection, unknown resource rejection, nonspell reward,
+unknown skill identity and recycled generations. Fixtures are synthetic server
+state, not packet evidence of successful retail NPC interruption. The earlier
+Power Block capture explicitly proves only idle-target body feedback. Runtime
+NPC admission/callback wiring accepts absent player Resources only with
+matching scoped identity and the authoritative projectile target guard.
+Runtime tests cover all seven plans against valid NPCs, recycled generations
+and completion-time range/death rejection.

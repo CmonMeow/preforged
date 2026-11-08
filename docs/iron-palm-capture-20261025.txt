@@ -1,0 +1,169 @@
+IRON PALM [786] — CAPTURE RECEIPTS AND WORLD BINDING GATE
+
+Pinned 2022 catalog row: Factions Assassin/Deadly Arts, touch-range foe,
+5 Energy, 0.75-second activation, 20-second recharge, damage scale 5..50,
+caster body857. The local archived wiki says damage always applies; knockdown
+requires the target to have a hex or condition; the skill counts as a lead
+attack. These rules are not implied by the catalog scale alone.
+
+The fixed obtainable-player checkpoint has three local starts and three
+finishes in map280, packets-108988-190116609.jsonl. At lines33720/33728-33731
+and 33908/33918-33921, actor25 casts on target30, then receives finish58,
+caster body857, actor25-attributed opcode163/kind55 target damage, and a
+chain-stage opcode92. Neither finish has a same-tick knockdown packet. The
+third start at34229 has finish/body/damage at34240-34242 and target30's
+opcode162/kind63 2-second knockdown at34243. This is a useful conditional
+contrast, but the log does not show a before/after hex-or-condition snapshot
+at every hit. Damage magnitude is an observed normalized packet value, not
+proof of the caster's Deadly Arts rank or the unmitigated formula.
+The local target30 has a maximum-Health480 packet at line33703; the damage
+modifier at line33730 decodes to -0.010416667, or five Health at that maximum.
+This is consistent with rank-zero base5, but it does not independently prove
+armor behavior. The current detached resolver uses the server's
+armor-ignoring touch-damage convention; this is provisional pending an armor
+contrast capture.
+
+The separate completed Domain/Citadel session has 318 mixed-source starts.
+The hash-checked audit tools/skills/audit_iron_palm_capture.py finds 271
+same-actor finish/body857 sequences and 131 same-tick target knockdown
+candidates. It finds zero same-tick opcode163/kind55 damage packets with
+the Iron Palm caster as damage source. All 271 finish/body windows have
+same-tick damage to the target from another source. For example, start152695
+actor298->294 finishes with body857 at152750-152751; packet152753 damages
+target294 from actor247. This suggests an ownership/attribution mapping that
+still needs decoding; the packets do not directly attribute damage to
+actor298's Iron Palm. Actor247 also has an Ebon Vanguard Assassin Support2235
+endpoint at line152748. Inferring that 247 owns/summoned 298 is plausible,
+but this window does not prove the lifetime link. The Domain stream has
+simultaneous hero, player and NPC
+actions. Do not infer the hex gate from these joins. The 47 unmatched cast
+starts may be interruptions, movement,
+other casts, or limitations of the two-second join.
+
+src/runtime/gw_iron_palm.h now has a pinned-row-checked rank plan and a
+copy-only combat resolver. It always resolves damage and requests a two-second
+knockdown only when the target has a live hex or condition and survives the
+hit. Unknown hex status rejects the proposal. The focused Release test passes.
+This is not a normal cast or a World mutation.
+
+Next World binding must validate a living hostile scoped target in touch
+range, pay Energy/recharge, read hex/condition state at completion, apply
+authoritative damage and conditional two-second knockdown, publish the
+reviewed finish/body/damage/control sequence, translate chain stage to the
+2022 client, and test player and NPC targets plus immunity and interruption.
+Modern opcode92's 2022 equivalent remains unknown. The production cast is
+currently unsupported. A native sequence or mechanics test is not rendered 2022 client
+verification.
+
+Fixed sources remain immutable. The Domain report is
+build/reports/iron-palm-doa-20261025.json. Its packet/world SHA-256 values
+come from the 20261024-urgoz-doa-completed manifest. The player source belongs
+to the distinct 20261024-all-completed skill checkpoint.
+
+Native validation (2026-10-25): serial Release build of iron_palm_test and
+server_host succeeded; CTest iron_palm and lightbringers_gaze pass (2/2).
+At this detached stage the host binary was unchanged because the Iron Palm
+header was not yet included in World. Source/binary SHA-256 at that stage:
+  gw_iron_palm.h C6193551951A2AC0F14DC81032F56D423981600CA59F22F12806631639FF48DB
+  iron_palm.cpp 6C43B44C1AA9D7B08BA7E6E6D1FFABAA73AFBC6FE19CAB6DCB73215B89A2508F
+  iron_palm_test.exe 0F8FE361A5AD2C5F4B8196082AC53C568AED051E314C718011D3CC4A0183A74C
+  server_host.exe 3D98406D87A80D2D03E59056078411AA79F4D4780785105CB7FAD9EEDD0406BE
+
+World follow-up (2026-10-25): Instance::iron_palm now checks scoped hostile
+targets in touch range, reads player/NPC hex and condition state at completion,
+preflights damage plus control, then commits authoritative player/NPC damage
+and eligible two-second knockdown. An NPC with unknown knockdown authority
+rejects before damage; a reviewed knockdown-immune NPC still takes damage.
+Lethal damage has no subsequent knockdown. The normal casting Runtime and
+2022 chain-stage packet remain unbound, so this World hook is reachable only
+from trusted native calls. Defer/publication ordering, detailed armor behavior
+and rendered client acceptance remain unverified. Focused Release CTests
+iron_palm, iron_palm_world, mind_shock_world pass (3/3); serial Release host
+build passes. No official client or logger was touched.
+  gw_world_simulation.h 03936432DD0C32C5802D8AD35ECB8542FFEA98AF9091389EB61B05FDC762FC4D
+  iron_palm_world.cpp 85CD4B6A8D3D1E2BAC91A418035175DCFFAC16876FBD2D7AAA9E7CE8D0D5CE3F
+  iron_palm_world_test.exe 9B61B90397272B4E55F78DD79917C7A1C428AA807DFAE0D4C5CBBE2BE26FC193
+  server_host.exe 0C70A88584ECF20888CC0226A4A4674D31C6F292D78B907E889C58D901C6423C
+
+Lead-chain follow-up (2026-10-25): a nonlethal authoritative Iron Palm hit
+now records stage1 for the scoped victim in World::dagger_chain; lethal hits
+leave no chain. The existing 15-second expiry is a private-server policy
+shared with Dancing Daggers, not yet a measured retail Iron Palm timer. Native
+World tests cover the transition and expiry. The pinned 2022 outgoing schema
+for opcode100 is two DWORDs and one byte, a possible actor/target/stage
+carrier, but its client consumer has not been identified. Modern opcode92
+cannot be translated to opcode100 from schema shape alone. Do not enable the
+normal cast until the 2022 stage packet and post-finish publication ordering
+are verified. Serial Release host and three focused CTests pass. Current
+SHA-256:
+  gw_world_simulation.h 1F9E32CD1AAE89D8FD1427A568948E193BC3C79C7F1494992A089E909074A047
+  iron_palm_world.cpp 9D473C7E5F879B4E6652E01939A3CD20A34EC8FC1245E923DAE63B96FB5232F7
+  iron_palm_world_test.exe 5E9F50D6D7D6FB1C090AC7535F8F8FE7FB2A6844A976E5B310D914A9B0B36CC9
+  server_host.exe E370BF6BA05FD77674B77FF6F8C4CB851DA24BA795C9CA7989FEC21A3FCAD026
+
+2022 chain-candidate correction (2026-10-25): the opcode100 guess above was
+based on an outgoing schema shape only. The pinned client incoming registry
+uses opcode100 with fields [byte, word]; its callback passes those fields to
+an actor-flags consumer that writes offset 0xA4. Incoming opcode92 feeds a
+text handler, and the superficially similar opcode69 reads its two DWORDs as
+floating-point coordinates. None is a verified 2022 dagger-stage consumer.
+Reproduce offline with tools/protocol/dagger_chain_candidates_2022.py; its
+report is build/reports/dagger-chain-candidates-2022.json. The server's
+target-scoped DaggerChain now supports lead -> off-hand -> dual and 15-second
+expiry; World currently enters it through Iron Palm or Dancing Daggers lead
+hits. Later stages are native foundation only; no live off-hand/dual skill
+binding or client chain packet is claimed. Serialized Release host and the
+dagger_chain, iron_palm_world, dancing_daggers_world CTests pass (3/3).
+SHA-256:
+  gw_dagger_chain.h 5BD34E16B9416F32412EE8E990F5A64B3E1398D7122B94E3F93BC4ED15994F9B
+  dagger_chain.cpp 4D189D5BCBA7503EFD31E84A4E980001078C48C5813C40B6F29C4DE12F6A7D54
+  dagger_chain_candidates_2022.py 9BE86833DC8FAD84D79D20DE5BC5DC8B188EDB998EEAEB590947D1879D19D175
+  dagger-chain-candidates-2022.json AF6F646E51AE135B9EACE1E800B0E4DC5C71088553D7FC7FC501111134BD91B1
+  dagger_chain_test.exe 08223063850C7484F3767D7D663E4A228FC81126C8E8AEB0B07173F8B3A10ABB
+  server_host.exe 57FFA2682B49AFD23B29FA6A56B92BDDE2B15DF00C2A60B81A296E55E1B6DF7F
+
+Completed Domain checkpoint follow-up (2026-10-25): the immutable
+20261024-urgoz-doa-completed capture passes its hash and prefix audit.
+Iron Palm has 318 timing-attributed cast starts there (267 in map474 and 51
+in map445), but those starts mix player, hero, and NPC actors. The independent
+20261024-all-completed player checkpoint has three completed Iron Palm casts.
+The hash-pinned 2022 client first consumers select cast style51/0.75 seconds
+and caster body resource857; this is native-consumer evidence, not a rendered
+client test. The detached World test now checks that damage/knockdown packets
+remain deferred until explicitly published, with damage preceding knockdown.
+Serial Release iron_palm, iron_palm_world, dagger_chain CTests passed (3/3).
+
+An exploratory scan of the 2022 incoming schema registry found 419 plausible
+descriptors, 135 with four or more fields. Schema shapes do not identify the
+dagger-chain update; do not send a candidate based on this scan. Incoming
+opcodes 69, 92, and 100 were already rejected by callback tracing. The normal
+Iron Palm cast remains unbound until its required 2022 chain consumer and
+post-finish publication order are verified. Current hashes (SHA-256):
+  iron_palm_2022.py C2BA40214D3C278FEE25DA802E59CDD7D4CCB851BFCB79087C5B460CC70481E8
+  iron-palm-native-2022.json 508A781C07481968DA9F04C6C1F480188507C7B265EBC7F3B0456EA4125D5623
+  dagger_stage_schema_scan_2022.py DEB406FEB0BE1766D43ACFEAF65169A795072FD67C5725495A8D3090080EE3E5
+  dagger-stage-schema-scan-2022.json F893752C823107FFD197028D1A76E2784ED03BC00DD0FE4A1F49155E5A7B0162
+  iron_palm_world.cpp 0A4FD0DE985D2C06DD1D1EEEBCCA5A0250E25464D6DCB294889D22EC1D97C5C5
+  iron_palm_world_test.exe CE85054C206B5686E9497E100938EC53D078AFD1CEB6D41B0042DD69F7B29F9F
+
+Staged normal-cast follow-up (2026-10-26): Runtime now supports an opt-in
+Iron Palm [786] touch cast using the pinned 5-Energy/0.75-second/20-second
+catalog timing. Its scoped World completion applies rank-scaled damage,
+conditional two-second knockdown and target-scoped lead-chain state. A new
+registered test verifies player/NPC targets, full payment, finish-before-body
+ordering, cancellation, interruption, stale target and absent-hook rejection.
+The production gateway explicitly leaves iron_palm empty because no verified
+2022 dagger-chain stage consumer or rendered acceptance exists. Coverage
+therefore still classifies 786 as unsupported. This is a staged implementation,
+not a playable production skill. No official client or logger was touched.
+Serial Release iron_palm_cast_test and server_host builds succeeded. Focused
+CTests skill_casting, dancing_daggers_cast, iron_palm_world and iron_palm_cast
+passed 4/4; coverage unit tests passed 12/12. Current fixed-checkpoint backlog:
+679 captured, 384 source-bound, 295 awaiting binding, 650 missing captures.
+SHA-256 at validation:
+  gw_skill_casting.h 6BD734A179E5B895BDCB1997D2C3132D3DEABB114D060A84E3C782456784D8B1
+  gw_auth.cpp 1540B067CE5285E68B23A552707B39C03E5699DAB1848E51594B55B193689675
+  iron_palm_cast.cpp 44A6528B3A5A8E3FFEC0963B33095E861CF4C1E3139434B0CB6FEA3235B32EF8
+  skill_runtime_coverage.py EAD8FA1A49A98317BE3C6426FE3E80EA092F832F242D6EA8BD639BE976532709
+  server_host.exe 009AF8BB9D3A0855EDD5ECAEB236CBE8FC2C6DE3C91A30F385A44AC548FFF794
+  iron_palm_cast_test.exe 70F1EF6542A4010E8B637BE0059F84DF258E2D1C13A110EEDBA8212851180D7E

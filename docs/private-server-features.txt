@@ -1,0 +1,184 @@
+Private Guild Wars 2022 development services
+
+Launch START SERVER.cmd, keep its console open, then START CLIENT.cmd.
+Private login: test@example.test / test. These are not official credentials.
+One native host owns the application services and direct client connections.
+
+Character skills and attributes
+Persisted learning, skillbar, secondary profession and base attribute ranks.
+Cmon Meow explicitly received 1329 campaign-valid obtainable player skills,
+all available secondary choices, and 200 level20 attribute points through
+character_unlock. The grant preserves the bar and already allocated ranks;
+unused points are total minus allocation. It is development provenance, not
+an imported assertion about the official character's completed quests.
+Known handlers include five implemented healing skills, Earth
+Attunement169 and Dash1043. The2022 client cast both untargeted buffs in
+Regent Valley; Dash's observed movement speed was330 units/second and its
+effect expired after3 seconds. Learning a skill does not implement its combat
+effect. Other effects reject explicitly; reviewed AoE helpers still require
+authoritative world damage/condition integration.
+InstanceInfo now advertises the destination's actual explorable status.
+The guild-hall Play request kind never overrides that catalog type. Outposts
+request the diagnostic manifest; explorables receive it after the initial
+player stream, because native397 intentionally skips the outpost request.
+Fresh entry and outpost-to-explorable travel pass with the genuine flag.
+Real dependency manifests remain unimplemented; cached private DAT assets
+and the existing diagnostic empty-manifest option remain required.
+Healing Whisper958 is deployed with other-ally and half-range restrictions;
+its timing/heal/resource checks pass native tests, but live party healing is
+not yet verified. Trusted NPC casting has a separate generation-bound entry
+point; it never bypasses a player's learned/bar/profession ownership checks.
+
+Energy Storage
+Actual entry resources include three maximum energy per effective Energy
+Storage rank for primary Elementalists. Attribute edits and development
+unlock refresh the same world capacity. Current energy changes with capacity;
+negative energy is retained as debt behind the UI's zero display, repaid by
+regeneration/returns before another paid cast can spend it. Equipment bonuses
+are not inferred from visual armor. Cmon Meow's live entry displayed56energy;
+decreasing12to11 showed53, restoring12 showed56. The original200-point
+allocation was restored. Evidence is in build/reports/energy-storage-2022/.
+
+Emotes
+/dance, /sit, /afk (sitting), /stand, and synchronized dance/sit with '*'.
+Owner, observers and late joins receive state. Movement/casting cancels it.
+Additional animations require labelled sequence observations. The separate
+tools/emotes observer does not modify the position logger or attach itself.
+
+Guilds and friends
+/guild create Name | TAG, invite Name, join, leave, motd Text, kick Name,
+promote Name, demote Name, leader Name. /g Text sends guild chat.
+Private guilds are persistent; the Guild window requires native packet283
+after initial roster completion. It now shows the verified test guild.
+Guild-hall purchase, alliance administration and all native Guild window
+action buttons are not implemented merely because the window renders.
+/friends, /friend Name, /ignore Name, /unfriend Alias are supported as
+server commands. Native friend add/remove use transaction-bound replies;
+saved roster initialization still requires a private live UI test. Whisper
+routing uses authenticated account presence and recipient ignore policy.
+
+GM interface
+The local wiki's Game_master article distinguishes live GM commands from
+staging developer commands. config/private-admins.txt is the account allowlist;
+/.gm or /.dev only enables commands for already authorized accounts. It does
+not grant account permission or claim to display the official GM label.
+/.allskills applies the explicit development grant to the current level20
+character; /.s <map ID> uses normal campaign/navigation/arrival preflight;
+/.who prints current private character/map/skill/attribute information.
+Ban/mute, item spawning, fireworks and other unimplemented commands return
+an explicit unavailable response. They are not silently simulated.
+
+Inventory and Xunlai
+Per-character inventory and account-shared ordinary storage; bounded bag,
+item and slot identities. Supported item changes: move/split/merge/swap/
+destroy. Both records commit atomically before bank transfers are published.
+Xunlai opens only from a captured classified storage NPC within interaction
+range, and each transfer rechecks proximity. Empty private baseline is not
+claimed to be imported official possessions. Equip/drop/use effects, all
+storage tabs/material storage and modern-to2022 item import remain pending.
+The separate read-only items observer preserves raw captured provenance.
+NPC and chest clicks queue navigation to interaction range, then open storage.
+New movement cancels pending interaction. Regular bag container presentation
+is initialized before the UI names those bags; these unplaced references are
+not durable possessions. Native name-getter regression and a live2022 chest
+approach/Vault Box opening pass. The NPC catalog now has1,402 captured actors
+across115 maps. Existing reviewed populations are preserved; new map contexts
+remain snapshot observations rather than claims of every retail variant.
+
+Map entry without a configured point
+When a destination has a navigation mesh but no explicit configured spawn, the
+server targets the map-bounds center and snaps it to the nearest walkable point
+on ground plane0. It does not reuse a character's last logout position. A map
+without a bound navigation asset uses map-space origin (0,0) because no bounds
+are available, and loads without authoritative collision. Private /tp and
+portal travel grant all campaigns; unknown map IDs remain rejected. Origin is
+only a provisional arrival until that map's navigation asset is available.
+
+Doors and progression
+See map-portals.txt for currently enabled captured directions and the
+reverse candidate tool. Trigger rectangles are development placement, not
+decoded retail zone volumes. Arrival plane/facing travels with the grant;
+last logout positions are never used as door arrivals.
+The widened Barradin Estate exit passed a live2022 ground-click traversal
+into Green Hills County at(-7459,1458), with the captured arrival facing.
+Evidence is in build/reports/barradin-exit-2022/server.log.
+Faction has account-shared counters, caps and CAS persistence. Character
+progression has skill/hero points and validated title rank/track metadata,
+including active-title selection/hide. Unknown earned progress starts at
+zero. Gameplay awards, imported title metadata and account-wide title
+aggregation remain pending; see progression-integration.txt.
+
+Reconnect
+Build37130 auth-data replies echo the pending login's transaction, rather
+than constant1. The original native callback and a reused-client logout/
+login/world-entry run verify the previously failing reconnect correlation.
+World tickets now remain bound to account/character and permit one connection
+at a time, with a30-second reconnect window after disconnection. Successful
+map transfer invalidates the old ticket. Repeated loading requests do not
+initialize the player or inventory twice. Native reconnect-ticket tests pass;
+the2022 client's reconnect Yes button reentered Regent Valley using the same
+world/player IDs after a controlled private disconnect. Evidence is preserved
+in build/reports/reconnect-2022/server.log. This does not establish recovery
+for every crash or failure mode.
+
+Inventory rendering
+The bag container previously rendered physical file1, a52-byte INI, through
+the FFNA parser. Session-only containers now use the verified non-item
+composite path and the native generated texture. Native icon/name regressions
+and a live2022 Inventory opening pass; evidence is in
+build/reports/inventory-2022/open.png. A real captured Backpack icon remains
+unavailable. These references never become owned or transferable possessions.
+
+Authoritative skill statuses
+Reviewed self-buff handlers now register exact effect IDs in a world-owned registry,
+bound to instance and actor lifetime. Renewal/removal cannot clear a replacement
+effect or mutate a reused actor. Enchantment queries use live server state;
+status-mask updates reach peers and late joiners. Native renewal, expiry and
+stale-lifetime tests pass. Full 51-test suite passes; fresh2022 entry and
+Earth Attunement/Dash application/expiry verified in the client. Evidence:
+build/reports/effect-registry-2022/. This adds status infrastructure, not
+generic execution for unsupported skills.
+
+
+Healing Light867 is deployed with genuine target-enchantment checking at cast
+completion; conditional energy return requires a successful heal. Native tests
+verify enchanted/expired/invalid targets and missing hook denial. Live867
+casting is not yet verified. Eight reviewed skill handlers are enabled.
+NPC combat metadata now validates the actual SHA256 and actor appearances at
+host startup (142 current actors). Relation-only rows supply no invented HP,
+armor, packed allegiance or combat permissions. Full53-test suite passes;
+startup and2022 world entry evidence: build/reports/npc-combat-startup-2022/.
+The fresh smoke encountered the native stale reconnect prompt after host
+replacement; selecting No then Play entered Regent Valley successfully.
+
+
+Timed healing and instant visual effects (2026-10-03)
+Healing Breeze288/TrollUnguent446 now bind reviewed timed regeneration to live
+instance/player lifetimes. World owns65/67, distinct IDs, fractional health,
+expiry overlap, renewals and death cleanup; Breeze has primary-Monk DivineFavor.
+Native world/casting tests pass; live288/446 casting remains unverified.
+Ten semantic handlers are enabled. Casting preparation stops current movement
+and cancels emotes before activation. New movement still cancels normal spells.
+Instant skills commit before the next receive frame; subsequent movement cannot
+cancel an unapplied zero-time Dash. Dash's15848 is onlyUI notification;15821
+with pinned body resource1176 invokes the actual particle pipeline. Native
+original dispatch/particle creation proof passes and the pink body effect is
+visible in build/reports/dash-effects-2022/dash.png. Full53tests pass and fresh
+2022entry succeeds. Unsupported skills remain explicit rejections.
+
+
+Skill icon pending acknowledgment correction
+Successful casts now send58bodyfinish,226pending acknowledgment and228recharge.
+Original callbacks prove228 clears adrenaline fields rather than the separate
+bar+a8 pending reference map. Missing226 kept that map populated after229,
+so casting highlights reappeared after recharge.226 clears the marker through
+UI5b/child52 without cancelling the body action; no59 is sent on success.
+Native pending lifecycle proof and54tests pass. Fresh2022login/worldentry pass;
+idle-after-recharge screenshot/serverlog: build/reports/skill-icon-idle-2022/.
+Party-heal source and world tests are ready but its application hook remains
+unbound in this deployment; current live handler coverage remains10.
+
+
+2026-10-03: Bound reviewed party healing (287,3232,1397) to the world simulation via captured actor lifetime scope. Server rebuilt; 54/54 CTest pass. Fresh local login and Regent Valley world entry verified after dismissing stale-session reconnect prompt. Party cast rendering not yet live-tested; current character remains Elementalist/Assassin.
+
+2026-10-03: Corrected attack request37 field order to skill/copy/target, same as ordinary68. Original2022 serializers prove15-byte layout; native reproduction shows wrong37 cancellation leaves actual pending marker. Shared exact-frame parser is used by production and new skill_use_request fixture test. All55CTest pass. Reviewed RemoveHex301/CureHex2003 now bound to authoritative registry removal; focused world/casting tests pass, live cast verification pending. Fresh client12692 login/world160 successful. Restored test-removed DeathCharge/Dash and original secondary/Shadow3, preserving user's other bar edits.

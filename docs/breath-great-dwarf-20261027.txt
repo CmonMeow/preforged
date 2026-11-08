@@ -1,0 +1,63 @@
+2026-10-27 Breath of the Great Dwarf2221 production binding
+
+The normal paid spell now uses earned Deldrimor rank0..10,not the displayed
+title:10Energy,.25s activation,.75s aftercast,15s base recharge. Healing is
+50+2*min(rank,5). Current living party members within5000 units are healed
+whether burning or not;only Burning is removed. NPC companions require actual
+scoped party ownership,not proximity or team color. Healing immunity does not
+prevent cleansing. Unknown NPC healing metadata rejects before the accepted
+effect. Player primary-Monk Divine Favor remains caster-only.
+
+The party-healing family now supports deferred publication. Breath uses one
+native finish58/caster1957 prefix before condition/removal/Health feedback.
+Publication is idempotent. Resource completion is consumed once through the
+shared Ether Renewal authority. NPC healing proposals are rebuilt after player
+condition/healing callbacks so a Seed heal cannot be overwritten by a stale
+party-heal snapshot. Fragility can kill during cleansing;corpses are not healed.
+Healing-induced NPC death is recorded without inventing a damage attacker.
+Party heals also now publish positive normalized healing-number notifications
+for actual restored player Health,including capped heals;the full-Health visual
+policy and rendered display still need retail verification.
+
+Server-owned condition delivery can now target reviewed NPC lifetimes through
+the same trusted apply_condition entrypoint. It preserves condition immunity,
+Dazed interruption,Fragility and scoped credit. It is not a new client request.
+This permits burning NPC party members to be exercised through the real World
+path rather than editing a copied actor or injecting test-only state.
+
+A separate confirmed progression bug was corrected:Lightbringer is TitleID20,
+while Sunspear is17. The accessor previously read17. The checked-in GWCA enum
+and a regression with both tracks at different ranks verify the separation.
+
+278 new native cases PASS:176 rank/Health/Burning/publication combinations,
+9 Divine Favor cases,5 NPC immunity/unknown/range/membership cases,3 dead/left/
+other-condition cases,72 normal Runtime/cancel/recycle/missing-hook/rank/Energy
+cases across absent/PvE/PvP Ether Renewal,9 Fragility/Reversal/Seed combinations,
+3 NPC Deep Wound healing deaths and1 forged-plan rejection. The matrix also
+checks typed player healing-number feedback against actual restored Health.
+Native regressions cover party plans,ally/party scopes,Ether Renewal direct
+healing,Ear Bite Seed and Lightbringer title/selection behavior.
+
+Frozen local evidence:20261024-all-completed,packets-19472-19186421.jsonl,
+lines429538/429545..429550. Original2022 consumers select style52/.25s and
+caster1957 assetdd0d05010000. Generic42 supplies maxHealth430;the normalized
+kind55 notification reports60Health in that capture context. Its8second
+recharge has unknown modifiers and does not replace the native15second base.
+The archived local wiki oldid2645601 supplies rank progression and Burning
+semantics. No title rank,actual overheal amount or retail party-radius boundary
+is inferred from that one cast. Synthetic native model/asset services do not
+prove rendered private-client acceptance.
+
+Fixed source inventory:679 captured baseline skills,403 source-bound,276
+awaiting binding and650 missing local activation captures. Source binding is
+not complete gameplay/visual acceptance. The fixed manifest and manual build
+queue remain unchanged;official clients and loggers were untouched.
+
+Final validation:6 current native suites and41 Python checks PASS. The final
+serialized Release host build and --build-info exit0. Current host SHA256:
+b64fcaa30e6c8f1bb816703327ae9457d5d48866ad3cb8ee7999039d558abfe7.
+This is native mechanics/consumer verification,not rendered client acceptance.
+
+Report:build/reports/breath-dwarf-implementation-20261027.json
+Native evidence:build/reports/breath-dwarf-native-20261027.json
+Title enum audit:build/reports/breath-dwarf-title-audit-20261027.json

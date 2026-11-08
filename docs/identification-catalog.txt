@@ -1,0 +1,47 @@
+Reviewed identification provider
+
+Native opcode106 carries identification-kit ID and target ID. The direct server
+handler now asks gw_identification_catalog.h for an exact reviewed reveal, then
+uses the existing identification planner and inventory identity projection. A
+single character inventory revision/CAS commits kit debit and item reveal before
+publishing native351/312 kit refresh, or332/348 exhaustion, followed by the actual
+same-ID352 target definition and profession/customization metadata. Active trade
+and unavailable world state deny the operation. No kit charge is spent on failure.
+
+FW_GW_IDENTIFICATION_CATALOG selects a reviewed catalog. Each noncomment line is
+a lowercase evidence SHA256, TAB, and hex FWI profile containing exactly two
+items: 1 unidentified source template, 2 identified reveal template. Template IDs
+are not runtime ownership IDs. Matching includes complete source fields, quantity,
+modifiers, profession, customization and reviewed armor metadata. Actual target
+identity and placement are restored when producing the reveal. Reveal cannot
+alter those immutable fields, model/type/file/base appearance or armor authority;
+identified flag, known reveal modifiers, encoded name and reviewed value may
+change. This is an exact outcome provider, not an item generator or reroll.
+
+The provenance SHA labels review evidence; it does not automatically authenticate
+an external capture. Limits are16MiB file/read,65536-character lines,4096 recipes.
+Duplicate sources, malformed rows, immutable-field changes and read failures
+reject the entire replacement while preserving prior loaded data. Host startup
+validates an explicitly configured file before listening. An unconfigured
+provider has zero recipes and reports its missing review data honestly.
+
+No production source/reveal pair is installed by this change. Actual paired
+before/after captures, including actual kit and output definitions, are needed
+to populate the catalog. Synthetic fixture assets exist only in tests.
+
+Next consumable branch
+
+Native opcode124 is item use, already exactly parsed. The generic owned inventory
+planner deliberately returns unsupported, and the app does not consume the item.
+No authoritative consumable effect catalog currently exists. Implementation needs
+exact owned definition matching plus reviewed effect, duration, stacking/replace
+policy, permitted map modes and consumption rule. Modifier references alone or
+names such as a drink do not prove those effects. There is no production
+consumable asset installed by the identification work.
+
+Providers are now immutable NetworkManager-owned snapshots. Configuration files
+are loaded exactly once during manager construction before listeners start;
+sessions borrow const providers. File or environment changes while running do
+not affect existing or future sessions. Restart the host to adopt reviewed
+catalog changes. Configured invalid data prevents manager construction; absent
+configuration logs a zero recipe count explicitly.

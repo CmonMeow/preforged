@@ -1,0 +1,26 @@
+Aegis257 PvE: staged party selection and shared block resolver
+Pinned2022metadata: Protection Prayers15,10Energy,2s activation,.75s aftercast,30s recharge,5..11s duration,50percent block,caster469,target2077. PvP2857 is a different targeted prevention skill and is not implemented by this helper.
+Archived local Aegis.html revision2667319 describes party members within earshot; policy uses existing1012earshot convention. Party membership must come from authoritative party state, not team allegiance. Rank0..20,scope reuse,duplicates,nonfinite distance,dead/nonparty/outside members and exact range boundary are tested.
+Shared blocking now recognizes257in aggregate and attributed source selection. Aegis+Guardian yields75percent; expiry,unblockable and Rigor bypass tests pass. This alone does not enable casting257.
+Fixed cumulative checkpoint20261022-cumulative-skills: packets-1360-15821281.jsonl lines257231/257247..257250 capture actor25 start,30s recharge,finish,body469 and6s status. The6s timer may include duration equipment and must not override pinned5..11s duration. tools/protocol/aegis_2022.py validates manifest/client hashes and exact receipts, then executes native469 queue/particle consumer with model/asset services stubbed. Native consumption is not rendered acceptance.
+Remaining: authoritative party snapshot and all-member timed enchantment transaction, caster-only Divine Favor,per-recipient equipment/duration ownership,normal Runtime/gateway timing/payment/reaction integration,PvP2857,NPC caster/party roles and rendered verification. Runtime257 remains unsupported; do not increment source-bound counts for this stage.
+
+World stage: complete_aegis now selects exact current party members from parties_, settles all member health before proposals and refreshes liveness after linked effects. It prepares all registries/zero-pip timed effects before committing, publishes one finish/body469 prefix per peer, applies caster-only Divine Favor and handles same-skill replacement/expiry. Optional duration receipt is validated against caster/skill/time. World tests cover ranks0/12/20,nearby party member,outside-earshot member,same-team outsider,one body,replacement,expiry and stale source. Normal casting/payment binding remains unsupported.
+
+Normal Runtime/gateway stage:257PvE now admitted with canonical plan,10Energy,2s cast,.75s aftercast and30s recharge. Self target is normalized even with a selected party member. Current equipment/enchantment duration readiness is checked at admission/completion; production re-quotes authoritative duration at completion. World owns finish58/body469 prefix to avoid duplicates. Dedicated cast tests pass for successful party application,cost,cancel,interrupt,missing capability before/during cast and explicit PvP rejection. 2857is not substituted with PvE functionality.
+Validation: all three Aegis suites and freshly rebuilt Shield of Regeneration casting regression pass; server_host rebuild exited0. Source-bound count317;captured pending362. No running sessions restarted.
+
+2026-10-24 Profane boundary: Aegis now filters each selected party member
+against the current hostile Well of the Profane field at completion. A member
+inside receives no enchantment or status-add; a member outside receives the
+ordinary effect from the same paid party cast. The cast still publishes its
+one finish/body prefix. After the field expires, the previously blocked
+member can receive Aegis normally. This is a private server mechanics rule;
+no controlled official cast across a Profane boundary or rendered-client
+acceptance is claimed. Serial Release host build and six focused tests pass:
+well_corpse_world, protective_spirit, shield_deflection, aegis, aegis_world,
+and aegis_cast. Official client/loggers untouched.
+SHA256 src/runtime/gw_world_aegis.inl 8139388EFDDAE29E63563AD4248370B93E40A951B2B699DF9B2DE255137E391B
+SHA256 tests/aegis_world.cpp 611CC00FDFC520AF98A10312E52424DC323D294AAB84EEAC9D6AC4FE4294EA85
+SHA256 build/tools/aegis_world_test.exe 5900AF62A3D700A638F9E16170C97744D002F9D825296881037CB68038F397B5
+SHA256 bin/server_host.exe 99143E0FC4899C991D1F25A2FB17AFD519023B2BE7952422CA0E350349AC52B1

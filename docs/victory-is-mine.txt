@@ -1,0 +1,33 @@
+Victory Is Mine365
+==================
+Pinned2022 elite Warrior/Tactics21/Shout15,5Energy,zero activation/aftercast,
+15s recharge,Health10..68 and Energy3..7 per condition at rank0..15
+(rank20:87Health/8Energy). Caster624 is real;target2077 is a sentinel.
+Archived skill description explicitly says Health gain,not healing.
+Archived Shout rules give targeted shouts spell range by default and permit
+activation during another skill or knockdown. Current range is1248.
+
+Fixed20261017-npc-refresh-2 packets-1360-15821281.jsonl:
+394009..394011 at23788828 and394202..394204 at23802984 show recharge10,
+instant48 and body21/624. Captured10 differs from pinned15;unknown modifier
+context is retained as a verification gap,not used to overwrite native15.
+Native verifier hash-checks receipts and executes instant/body consumers.
+These packets do not prove current target conditions or actual resource gain.
+
+Runtime targets the selected living foe with an explicit shout-validity hook,
+separate from ordinary projectile knockdown restrictions. Instant dispatch
+preserves another pending cast. World settles source-linked resource events
+before observing target lifetime/current conditions,settles target conditions,
+and multiplies reviewed per-condition gains by the actual count0..10.
+Zero conditions is valid completion with cost/recharge and no reward.
+Health gain goes through shared Health-event/Deep Wound logic without healing
+multipliers. Energy uses shared cap,debt,Overcast and fractional projection.
+Copied IDs are handled by normal skill-slot/cooldown admission. Body624 is
+published once per valid completion even with no condition reward.
+Existing non-Victory resource-gain predicates retain their prior paths.
+
+Open:captured10 vs pinned15 modifier context,rendered QA,NPC casters,vocal/
+echo interactions,retail Energy-vs-Health reward ordering and target-plane/
+sight behavior calibration. Current spell-range geometry follows the archived
+rule,not geometry measured from these self-notification receipts.
+Validation:four fresh native suites,69 tooling tests,native verifier and Release host pass. Zero/all-ten conditions and exact15s wire recharge checked. Fixed backlog266source bindings/367pending. Official logging untouched.

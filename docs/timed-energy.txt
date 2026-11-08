@@ -1,0 +1,49 @@
+Timed positive Energy modifiers: shared resource-curve integration
+
+CeilingCurve now owns lifetime-scoped modifier metadata,not a second Energy
+pool. Current Energy,debt and fractional remainder stay in the resource owner.
+apply_energy_modifier/remove_energy_modifier require an exact owned scope and
+the event time equal to the curve cursor. The authoritative caller must first
+settle resources to that time. Same-skill replacement discards its old modifier;
+different skills add before the10-pip cap. Effect-ID collisions with another
+skill,invalid IDs/rates/durations,overflow and stale scopes reject unchanged.
+A64-entry defensive bound is not a claimed retail effect-slot count.
+
+The shared overcast::settle entrypoint partitions at modifier start/expiry
+before applying the cap and analytical moving-ceiling integration. Every
+prepare_gain,prepare_gain_units,prepare_loss,prepare_resize and activation
+consumer that already calls this entrypoint inherits the timeline. Constant
+spans use the old analytical fast path without extra segments. Settlement
+proposals copy the modifier authority and resource state;failure leaves the
+caller unchanged. Retirement clears modifier metadata. Dead actors recover
+ceiling burden but do not regenerate Energy.
+
+Release timed_energy covers long-vs37ms ticks,exact expiry,debt repayment,
+fractional carry,moving Overcast ceilings,gain/cost/resize proposals,same-skill
+renewal,removal,different-skill stacking before cap,dead actors,lifetime rejection,
+ID collision and time overflow. Existing curve,settlement,activation,resize and
+Energy-ceiling gain/regeneration suites also pass.
+
+Scope limits:
+This positive-modifier primitive does not add Energy degeneration;the existing
+resource-curve base-pip contract remains0..10. It does not apply Blood is Power,
+validate allies,publish enchantments or select a modifier's pip strength.
+World must promote an ordinary recipient into the shared owned resource curve
+without losing its existing fraction/debt,install/remove modifiers with owned
+enchantment events,and publish current effective pips including expiry at full
+Energy. NPC direct Energy integration still needs migration. Do not claim119
+bound until those World and Runtime paths and sacrifice completion are tested.
+See docs/blood-is-power.txt for native evidence and other pending mechanics.
+
+Final validation: serial Release timed_energy,overcast_curve,overcast_settlement,overcast_activation,overcast_resize,energy_ceiling_gain,energy_ceiling_regeneration targets and server_host built successfully. All seven selected CTest suites passed. Fixed checkpoint audit and backlog publication completed. No official client/logger or source capture was modified;full skills goal remains active.
+
+World player integration update: Blood is Power's staged World transaction now
+promotes ordinary recipients,owns timer/modifier replacement/removal and sends
+effective pips,including full-Energy expiry. Health boundaries settle earned
+Energy before delayed death. See docs/blood-is-power.txt. Allied NPC integration
+and the119 casting binding remain missing;earlier missing-player notes are
+superseded for the tested transaction.
+
+Current119 status: guarded player/reviewed-NPC World and Runtime/gateway binding
+is now enabled and tested;earlier missing-binding notes describe prior stages.
+See docs/blood-is-power.txt for current verification and remaining gaps.

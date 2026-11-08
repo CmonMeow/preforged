@@ -1,0 +1,20 @@
+Ally and party-member scopes
+
+Archived Ally.html SHA256:
+de5b09c43d67f01deddb8687e803c2b2d32473719f8c6e5548de61d285f2b15a
+Path: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Ally.html
+The article distinguishes allies from party members and explicitly states that
+skills specifying party members do not generally affect nonparty allies.
+
+The shared single-player-recipient healing/enchantment predicate previously
+required identical party groups even for known allied teams. It now accepts an
+explicit identical nonzero team, or an authoritative shared party when team
+identity is unknown. Known opposing teams always deny. Equality of zero team
+tokens does not establish an alliance. Own-actor targeting remains separately
+qualified by the skill's self/other-ally rule. Health, plane and range checks
+remain required; scoped World entrypoints still reject actor replacement.
+
+This does not infer alliances between different team identifiers. Future
+faction/mode alliance mappings must be supplied by authoritative mode data.
+Party-only heal recipient enumeration still uses actual party membership.
+Tests: ally_target_scope; normal weapon-spell Runtime and World regressions.

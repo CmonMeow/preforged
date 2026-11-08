@@ -1,0 +1,66 @@
+Whirling Defense450
+
+Policy reads the pinned2022 catalog and fails closed on unexpected metadata.
+Expertise0..20: round(8+12*r/15) seconds, round(5+6*r/15) damage,
+75% block; adjacent radius166. Instant stance, cost10, recharge60, body762.
+Use normal stance-category replacement and authoritative energy/Expertise rules.
+
+Retaliation is armor-ignoring physical damage to adjacent living hostile actors
+around the defender at projectile contact. It is not a weapon attack and must
+not apply attack-hit bonuses, projectile damage, or damage to a distant shooter.
+Local wiki explicitly documents the bug that another blocking source also
+triggers retaliation. Therefore the reaction accepts a resolved block outcome
+without demanding attribution to450. A melee block never triggers this damage.
+Caller must deduplicate per projectile event and revalidate scope generations.
+
+Evidence: frozen20261017-npc-refresh-2 packets-1360-15821281.jsonl lines
+484823..484827 tick26533812: cooldown60; instant48; body21/resource762;
+effect66 skill450/attribute-word0/effect106/duration8; activation227.
+tools/protocol/whirling_defense_2022.py verifies manifest SHA, exact receipts,
+pinned original client table and local wiki SHA. Output is under build/reports.
+The verifier executes the pinned native instant48 dispatch and kind21/resource762
+queue, then runs the native body consumer to its first particle creation call.
+It checks actor42, code9 payload42/762, resource-table file ID, native file-name
+encoding68cd00010000, file ID52329 and flags1. Allocation, actor lookup and asset services are stubbed;
+there are no rendered pixels, model acceptance, live processes or network calls.
+Run with build/protocol-python on PYTHONPATH for the existing Unicorn dependency.
+
+Local wiki: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Whirling_Defense.html
+SHA256 f2793d0729adff8f45be0a3e2edac7dbdebd9c02eb84e6577041623120f968fb
+Description documents duration/block/damage and adjacent AoE. Anomaly identifies
+physical armor-ignoring damage; bug note documents triggering on other blocks.
+Capture is application-only and cannot prove these mechanics. Effective rank,
+isolated chance/radius, multi-projectile order and reactive-damage interactions
+remain fidelity gaps. No claim of complete retail behavior.
+
+Integration: include policy in gw_blocking.h; increase chance array capacity and
+add450 to active stance block probability and attributed source family. Include
+gw_whirling_defense.h in simulation; admit450 in instant stance casting and apply
+plan duration through effect registry. At each final projectile block, obtain
+reaction once, snapshot adjacent foes and dispatch physical armor-ignore damage
+through normal damage/death observers. Do not trigger for a melee contact.
+Register tests/whirling_defense_policy.cpp as a runtime include-path test target.
+
+World adapter now supplied in src/runtime/gw_world_whirling_defense.inl.
+Include it inside Instance after MarkOfPainTrigger's declaration (e.g. before
+record_attack_outcome_locked). After resolved_attacks_.push_back(*resolved),
+call whirling_resolved_locked(*resolved) and log a false result. The ledger has
+already consumed the terminal event, so duplicate outcomes cannot retrigger it.
+Its whirling_resolved_retaliation policy requires explicit ranged delivery;
+unknown delivery is not treated as a projectile. No queue member or retirement
+cleanup is required. Existing begin_attack_outcome_locked snapshots delivery.
+Keep NPC450 block fail-closed: this adapter currently owns player defenders only.
+
+The adapter snapshots player/NPC base damage, commits the base batch, then
+dispatches physical Barbs and Mark of Pain observers. Player physical absorption
+is applied separately because combat::Kind lacks a physical enumerator.
+NPC-specific physical flat reduction and Winnowing remain fidelity gaps.
+Add tests/whirling_defense_world.cpp to the serial World test build. This test
+covers bow contact, Guardian-owned blocks, Rigor, removal, physical absorption,
+no duplicate tick retaliation, and no retaliation on melee blocks.
+
+Parent integration now connects instant stance casting/duration, authoritative registry guard, aggregate block probability/attribution and consumed ranged-outcome retaliation. NPC defenders with450 remain rejected because this adapter owns player defenders only. NPC physical flat reductions,Winnowing and rendered/isolated retail verification remain open.
+
+Validation: instant Runtime/World activation at ranks0/12/20, recharge and expiry plus retaliation scenarios pass. Whirling policy/World and neighboring Gladiator/Bonetti policy suites pass. server_host rebuilt. No official client or running host restarted; rendered verification remains pending.
+
+Review regression: all recipients now settle before damage snapshots, with lifetime and Health consistency checked before commit. Linked Parasitic Bond death-healing test passes and confirms retaliation preserves the intervening heal. Native instant/body762 consumer verifier also passes; rendered acceptance remains pending.

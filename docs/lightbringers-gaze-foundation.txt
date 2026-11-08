@@ -1,0 +1,227 @@
+LIGHTBRINGER'S GAZE [1814] — REVIEWED TARGET RULES, NO WORLD BINDING
+
+The fixed 20261024 Domain/Citadel session records 442 cast starts, but the
+conservative bracketing agent-name join attributes none of their actors.
+These are mixed-source packet starts, not proof that a player activated the
+skill or that any hit completed. The fixed obtainable-player checkpoint also
+has no local1814 activation; it remains on MISSING-CAPTURES.txt.
+
+The pinned 2022 row gives 5 Energy, 1-second activation, 15-second recharge,
+100 damage and a foe target. The archived local wiki says the selected foe
+must be a demonic servant of Abaddon, while each Lightbringer rank adds one
+other foe in the area; those additional foes need not be demonic. The skill
+interrupts and is disabled for 15 seconds after use. The archived rank page
+ends at rank8. No caster/target body resource is identified in the row, and
+the available packet sample has no verified skill-specific visual receipt.
+
+src/runtime/gw_lightbringers_gaze.h now checks the pinned row and builds a
+bounded rank0..8, 100-holy-damage, 15-second-disable plan. It selects a
+reviewed servant primary, then up to rank additional living hostile foes
+within the existing 312-unit area convention, ordered by distance and actor
+scope for deterministic private-server behavior. Unknown primary taxonomy
+rejects the selection. Extras may be non-servants, matching the wiki note.
+The rank accessor in gw_progression.h reads earned Lightbringer track17,
+independent of the displayed title. The private-server area/range constants
+and tie-break ordering are unverified against retail.
+
+This is a detached mechanics foundation, not an executable player skill.
+World still needs authoritative demonic-servant classification, atomic
+multi-target holy damage plus interrupts, 15-second disable handling,
+gateway title-rank/payment/cancellation wiring, native presentation packets,
+and rendered 2022 client verification. The skill remains source-unsupported
+in coverage and Domain gap reports. Its native plan test and serial Release
+host build pass. Official client/loggers were untouched.
+
+SHA-256:
+  src/runtime/gw_lightbringers_gaze.h 3948BBD1342EC2558AAC4254FE50FF5AF650C8BE2B370E18CB559BDD78496995
+  src/runtime/gw_progression.h DDC87B6C425CDD37BC6ACEB9E108DDA05E57D7D3B430C9EAA1942C8FF2C5B0CB
+  tests/lightbringers_gaze.cpp B23FE617C07140929BEE017DF211339D3150F157E0A2FFDFC7F38FEBE7229905
+  build/tests/lightbringers_gaze_test.exe 6BB1ED525E1B5EFB9B5458D0F76F0F58F34EF47AC14462F1FABB46C1D8FE791D
+  bin/server_host.exe 3D98406D87A80D2D03E59056078411AA79F4D4780785105CB7FAD9EEDD0406BE
+
+2026-10-25 fixed DoA receipt audit: tools/skills/audit_lightbringers_gaze.py
+hash-verifies the frozen packet/world manifest and writes
+build/reports/lightbringers-gaze-doa-20261025.json with packet line references.
+It finds 442 skill1814 starts (375 Domain, 67 Citadel), 410 same-actor kind58
+finishes within 2250ms, and 394 windows with source-attributed kind16 damage
+to the selected target within 200ms of the first finish. 289 start windows
+have more than one damaged recipient from that source. For example, start
+line517009 (actor40, target54) is followed by finish517129 after 750ms and
+source40 damage lines517130/132/133/134 to targets54/51/55/56 at that tick.
+This is stronger area-hit evidence than starts alone. It does not prove each
+hit came from Gaze: 3 windows have ten damage packets, exceeding the pinned
+maximum of one primary plus eight additional foes, so overlapping actions
+or timing attribution contaminate the 200ms window. The same-actor kind21
+body packets inside these windows show resources1941/1899/451, not an
+identified Gaze visual. At this audit point, the 2022 animation/interrupt
+wire and demonic primary taxonomy were missing; the skill stayed unbound. Audit script
+SHA-256 296689860B7800FE6904FFB2EB384DD6845A0D19351D2F50EF1F58EAB1F6F235.
+
+2026-10-25 native/client and taxonomy follow-up: the hash-pinned original
+2022 client executes the targeted cast [159,60,caster,target,1814] through
+style51 and a 1-second model animation. The offline proof is in
+tools/protocol/lightbringers_gaze_2022.py and
+build/reports/lightbringers-gaze-native-2022.json. No Gaze-specific damage
+or interruption consumer has been identified, and this is not a rendered
+client test. The NPC combat definition/catalog now accepts an independently
+evidenced servant_of_abaddon boolean in revision16; absent stays unknown.
+World's admission gate checks that reviewed trait, hostility, life, scoped
+identity, same plane, range and line of sight. It rejects unknown and false
+traits. The production NPC catalog is still version1 and does not yet mark
+any servant. No Gaze cast binding was published: multi-target holy damage,
+interrupts, disable and numeric/visual acceptance remain missing.
+Serialized Release server_host builds and four focused CTests pass. The
+official client and live logger were untouched.
+SHA-256 of this follow-up's tested sources/report/binary:
+  gw_npc_combat_catalog.h D8DAD81D83B7B38B47F1356A3D30F1A9E46582D579755E1103C547DE89583A06
+  gw_world_lightbringers_gaze.inl AD3D68036ECB5821D2345463B7FF0427E51FA4D8A3FFD38F128FE7B8218C5E8F
+  gw_world_simulation.h 48831F772B857173F8AD82A717268CB1679F6572C917527A7EFEBCC6DBF0A198
+  lightbringers_gaze_2022.py B03ADDA6D1F4DB33C8E1DF617EAB20EE9B149192C3C41DD25EC4BD0463B34A4D
+  lightbringers-gaze-native-2022.json 3F7C225E05CD44EB6109A6D5ECED1C2008F29062902251EBC369A5EC6B319F39
+  server_host.exe F7E1D0E3F9D3FBFD876339B03428CEFACA0120054E998CB48187F5740C86A8C1
+
+2026-10-25 effect follow-up: archived local Wiki Lightbringer.html (SHA-256
+136B762C156E995B19D4E95B7883BEC8BE74BD1DE3A0267C3D16C722E3B3E80C)
+explicitly says all Domain of Anguish monsters qualify. Lightbringer's
+Gaze.html says only the demonic primary is interrupted and additional foes
+can be non-demonic. A reviewed explicit false NPC trait still overrides the
+Domain-wide default; outside maps474/445 an absent trait stays unknown.
+The plan now assigns the interrupt only to the primary. World stages NPC
+holy damage for the primary and up to rank additional same-map, same-plane
+hostiles in area, including non-servants. It preflights all hits, commits all
+Health changes before downstream reactions, cancels only the surviving
+primary's NPC action, emits its native stop packet and defers publication.
+The synthetic World test proves two 100-Health hits, only primary action
+cancellation, no stop for the nearby foe, stale-target rejection and no
+packets before publication. This is a native NPC effect path, not a normal
+player cast or rendered-client test. Player foe recipients, full interrupt
+protection cases, the 15-second disable and Runtime payment/cancellation
+remain missing. The skill remains unbound. Five focused Release CTests pass
+and the serial Release host builds; official logging was untouched.
+SHA-256 of the tested follow-up:
+  gw_lightbringers_gaze.h 975B3C68F2BDB4530EF6C5B44BDC2C82C9BF4DE555C2AEDC69DDD51C1F082793
+  gw_world_lightbringers_gaze.inl F1243A13F2010A59E1C8CA75F29879D6BB436E7C20D23CBAE1F093D6092F630E
+  lightbringer_world_damage.cpp 707EBA1011E8F09CDA3E2B6066F8228CE1BD909A6DE485C2C079EA6DF8AA24D8
+  lightbringer_world_damage_test.exe F917F648BA7BDF1109356332AC122609411E1A4C40ADCB913A1569C4348673C1
+  server_host.exe EF88258E66865568EF560C9A4E31F426BABD1A54564272F39BA0053051FF44D0
+
+2026-10-25 mixed-target follow-up (supersedes the player-recipient gap above):
+the World stage now includes an opposing player in its ranked area-damage
+transaction, excludes a nearby party ally, and retains primary-only NPC
+action interruption. The rebuilt lightbringer_world_damage_test and seven
+related Release CTests pass. The completed Domain/Citadel packet and world
+files still exactly match the frozen 11:59 PM local manifest. Rerunning the
+DoA gap audit gives 148 observed cast-start IDs, 53 without source bindings
+(3,933 starts). No new capture was merged into the fixed player-skill
+baseline. Exact 15-second disable, normal Runtime cast wiring, full
+protection-stance cases, and rendered 2022-client acceptance are still open.
+The skill remains unbound; this is native World validation only.
+
+2026-10-25 protection validation: a rebuilt World test confirms that the
+primary takes Gaze damage under Mantra of Concentration16 or Mantra of
+Resolve17 while its spell continues, that Resolve pays 5 Energy at rank12,
+and that no interrupt-stop packet is emitted. All seven related Release
+CTests pass. This does not cover every stance/stacking interaction or a
+rendered client. Tested source and executable SHA-256:
+  gw_world_lightbringers_gaze.inl B18A1A3D0CD045335243E7DFAD525DF0335E9A31911F04095FA19E804C7FD437
+  lightbringer_world_damage.cpp ACA0582950D35206D1B24907AC845C3DE6C4909179F52BF3AA184307BE98F511
+  lightbringer_world_damage_test.exe B658D5A1751C9C318C8B2BE5C981B422C57D9419C72DE9E3E7D93F72BEF1A0F6
+  server_host.exe EE5DD9E2AB9870DDA8CBFFD6561D822D815473F6A6C34D482DE4BF0E3C4D35C8
+
+2026-10-25 armor/disable correction (supersedes the earlier armor-ignoring
+assumption): the archived local Lightbringer's Gaze page explicitly marks
+its holy damage as reduced by armor. It also says Quickening Zephyr and
+Serpent's Quickness reduce both the recharge and 15-second disable, so a
+fixed independent lockout would be wrong. Combat now has a separate holy
+kind and a reviewed neutral armor rating; World Gaze uses it for NPC and
+opposing-player recipients. Unknown neutral armor rejects the entire area
+transaction. The mixed World test checks primary armor60 ->100 damage,
+nearby NPC armor100 ->50 damage, and opposing player armor80 ->70.71 damage
+(130 integer Health after rounding), plus no partial commit on unknown
+armor. Existing primary-only interrupt, Mantra protection and deferred
+publication checks still pass. A serial Release host rebuild and rebuilt
+combat, NPC World combat, player holy and Gaze suites all pass.
+
+The production NPC catalog still lacks most reviewed general armor, and
+the player equipment pipeline does not yet populate the separate holy
+rating. Those must be resolved before exposing the normal cast. The
+modifier-aware disable owner, Runtime payment/cancellation, and rendered
+2022-client acceptance also remain open. This is native mechanics evidence,
+not full retail equivalence. Tested SHA-256:
+  gw_combat.h EF44F0CECAC5C3B09F7C77279EF1619AF1187B21732B437E66EB4F38E01E1F4C
+  gw_npc_combat_catalog.h 02A6DF0187A4C7D83F5688AE3B4498D74C68F0E60576929116FADD08EA0563BE
+  gw_world_simulation.h 3E0412A5D8C06907EBA9597994B0D66544B880FC1F97CEC1D650B8D753767DCC
+  gw_world_lightbringers_gaze.inl 2DF1D1F21FBC2D735516D93F36EB45463296EC2E87DFFFF778D040CAB11C1CB3
+  lightbringer_world_damage.cpp 33ACF65441DAE09ED0E2859B9814189F416CE3403BE17AC79C191BCA5934FBC0
+  lightbringer_world_damage_test.exe 54C7284E9F011180E144E1776473804099B39344E06750D71DD0FFAB645C768A
+  server_host.exe C25B552C9FBD05F4080C8AE42EF51CD1943499780CA7ACE39D620AF6786DF063
+
+2026-10-25 neutral equipment follow-up (supersedes the player-armor gap
+above): host equipment refresh now supplies both a uniform neutral armor
+rating when one is valid and the five native worn-location ratings. Native
+base armor, starter shield and all-damage Tormentor insignia contribute;
+Stalwart contributes only physical armor and Dreadnought only elemental.
+Gaze samples the existing 3/8 chest, 2/8 legs and 1/8 each other location
+distribution for an opposing player. The mixed World test uses an uneven
+{80,60,60,60,60} suit and confirms one sampled hit, with its armor80
+result. Unknown item properties remain unknown, not a synthetic baseline.
+Production NPC general armor and the modifier-aware disable/cast path remain
+open, as does rendered 2022-client acceptance. Six rebuilt focused CTests
+and a serialized Release host build pass. Tested SHA-256:
+  gw_armor_attribute_runes.h 1D57A01ACD6DA42737DDAC9760AF1B019034EB79B6712B0675D1F2E60F8698C6
+  gw_basic_armor_energy.h 43F92E8D521F65697B3EF83CAE2D600FEB70DA318A5A1CDCCA846927010DE474
+  gw_world_simulation.h 14A7D2E61A81B0ACC08204BCAD99DAB1ABFD49295F30F38CA10C9A4FDE2330C5
+  gw_world_lightbringers_gaze.inl 9D4A65E0944D032581E26F26E8C51C447A9B863B3AAB5580DAE2D82D212485A3
+  gw_auth.cpp 6B1A140D759FBD06947813F6A927F2CAF5453DC7D967DDE27E777D510EE26D87
+  lightbringer_world_damage.cpp 7A027929B9262B446D34B9C74A7DADF7E9FBEF863D2010B78BCAFE01957A82B8
+  lightbringer_world_damage_test.exe 115D8392D3CF2EE575D19093D17E4A48974A1A447C68C954F91B4DD011CCF23A
+  server_host.exe B59A66A9AF8D120C6CC3E809B04F406F9E3098F10F9CAE584832CD4CB7495ADC
+
+2026-10-25 recharge-linked disable calculation: the detached Gaze plan now
+calculates its disable duration through the ordinary completion-time recharge
+path. Native tests verify 15s without a modifier, 10s with an active
+Serpent's Quickness stance, and 15s after that stance expires. This removes a
+fixed-duration assumption from the plan; it does not apply an authoritative
+slot disable or bind the cast. Quickening Zephyr is not yet represented by
+the ordinary recharge engine, and the remaining World/Runtime disable,
+payment, cancellation, production NPC armor, and rendered 2022 verification
+gates remain open. Serial Release host build and cast_timing,
+lightbringers_gaze, lightbringer_world_target, and
+lightbringer_world_damage CTests pass (4/4). No official client was touched.
+SHA-256:
+  gw_lightbringers_gaze.h 30F017FDEE8222A59677C05290A6628CA18F4F6F9F301F3EE419C770D20584D7
+  lightbringers_gaze.cpp 22428A2D43D57094538FE82B55A0824940182970F9FC56DC4DBEFF6203917BFE
+  lightbringers_gaze_test.exe 9F7442945343E5DDDD47F45AD246FA67FC3F3F6824A2236036E378AE2A2EB998
+  server_host.exe 64EC7390DED8B5838833644898F18091055EDBE6A8B04AB8C7124143662BD469
+
+2026-10-25 Quickening Zephyr timing follow-up: archived local wiki revisions
+Quickening_Zephyr.html (SHA-256
+6FC39FE1CEF2B1887D70FA6869A69C6D4EB6121CCE876CE72EDB167E9AB26C19)
+and Lightbringer's_Gaze.html (SHA-256
+50117E8926B8A831D78900457EC6F5875ECF48A219401979BF83FAF24954F09C)
+say Zephyr changes Energy cost at skill-start, recharge at skill-end, and
+Gaze's disable along with its recharge. The shared recharge calculation now
+accepts a caller-proven in-range Zephyr aura at completion; Gaze's detached
+disable-duration calculation uses that same result. With the current pinned
+integer-second recharge behavior, native tests give 15s normally, 10s with
+Serpent's Quickness, and 8s with Zephyr (also 8s with both). This is a timing
+consumer, not a spawned spirit or a claim of retail half-second precision.
+World spirit lifetime/range, cast-start Energy cost, authoritative slot
+disable, normal Runtime cast, NPC armor coverage and rendered verification
+remain incomplete, so skill1814 remains unbound. Serial Release host build
+and four focused CTests pass. No official client or logger was touched.
+SHA-256:
+  gw_cast_timing.h 0C9B852B5E09F33C35BA4A375283233867DD44572F5B13BF72DA737B246798CC
+  gw_lightbringers_gaze.h F838372B40995F188DFC94B327FA706AF6AC1996AE2EC1E595FCE78B2C21FE5A
+  cast_timing.cpp 7E49BC8A3D2E29A78CAB8BB4C73696FCEBF3D4BF80B96D3D7FF5B768A30ABEAF
+  lightbringers_gaze.cpp 5E3D091308BAE8FEEEA92C48A22391A855FC7853E231B5DE7DF5787419DADABD
+  cast_timing_test.exe 8EAB9E0143547D2C78C4F98B8F7F3BF6D804AC581D036F972304924B7A5D0B00
+  lightbringers_gaze_test.exe 9941D0055775F97A019F1270F39C6627271E198FED5E13E5693BCBEB11CC34EA
+  server_host.exe 5B1BA3DCA2192A052AB0D6CB6A8EEF5AFB4E8479F0D4EE9359EAF820D3DC5CED
+2026-10-25 shared aura timing update: production Runtime now queries a scoped
+World Quickening Zephyr aura at cast start and completion for the generic
+Energy surcharge and recharge reduction. This does not enable Gaze1814:
+the separate post-cast skill disable is still not applied by Runtime, and
+production NPC neutral armor/skill475 spirit creation remain incomplete.
+The Gaze source binding and rendered verification are still open.
+

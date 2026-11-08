@@ -1,0 +1,31 @@
+Nightmare Weapon 795 — frozen contact inventory, 2026-10-24
+
+tools/protocol/nightmare_contact_inventory.py scans every packet snapshot in
+data/captures/skill-checkpoints/20261024-all-completed. It validates each
+file against manifest.json before reading events. The report is
+build/reports/nightmare-contact-inventory.json; live logger files are not read.
+
+The inventory finds 21 activation windows, matching the checkpoint audit:
+7 opcode159 untargeted starts and 14 opcode160 targeted starts. Only two
+windows have a source-matched targeted resource1159 within 12 seconds:
+
+- packets-108988-190116609.jsonl:40059, caster25; resource1159 at
+  :40090 and :40111, target30. These are the previously verified contacts
+  with zero normal/critical damage notification values.
+- packets-46120-264418546.jsonl:206480, caster129; resource1159 at
+  :207247, :207373 and :207587, target204. At :207247 the same tick has
+  paired opcode163/55 Health updates at :207245-:207246 and a nonzero
+  opcode163/16 damage notification at :207248. This gives an additional
+  observed contact shape; it does not establish the internal damage phase.
+
+These are proximity candidates. The 12-second grouping may include another
+source's effect, and a particle by itself does not prove charge consumption.
+The frozen evidence still has no controlled armor comparison, miss/block,
+lethal hit, or explicit final-charge test. The amount subtracted from weapon
+damage relative to armor and other modifiers is therefore unresolved.
+Keep 795 unbound; do not use publication order as the server damage order.
+
+SHA256 tools/protocol/nightmare_contact_inventory.py:
+FE1EF6B64D357A4BE0CFC197BB9DEA8C60ADD19E4842A6D9A6F815B06CAEB955
+SHA256 build/reports/nightmare-contact-inventory.json:
+60AEAFCD05B1EAFD501FE34A25C04791D961CD5CF92EF3D75611D3716EE93089

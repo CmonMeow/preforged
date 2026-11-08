@@ -1,0 +1,103 @@
+Tainted Flesh113: guarded Runtime/World/gateway binding;rendered QA pending
+
+Current mechanics:
+Owned self/ally/reviewed-NPC enchantment,immediate Disease cleanse and immunity
+for its exact lifetime.5Energy,1s activation,.75s aftercast,zero recharge.
+Death Magic ranks0..15 give20..44s enchantment and3..15s retaliation Disease;
+rank12 gives39s/13s,rank20 gives52s/19s. Canonical fields are checked against
+the pinned2022 native row:type6,profession4,attribute5,special4 (elite),
+duration20/44,bonus3/15,caster2077 sentinel,target214. Raw byte99 does not
+create an enabled Overcast cost.
+
+Evidence:
+Local historical Tainted_Flesh.html revision2630123 explicitly says existing
+Disease is removed on application,although the main description omits it.
+It describes melee retaliation and Disease immunity;the notes describe AI
+maintaining the enchantment on allies. AI maintenance is not implemented here.
+
+tools/protocol/tainted_flesh_2022.py verifies source SHA256 and exact fixed
+20261017-npc-refresh-2 receipts in packets-1360-15821281.jsonl:
+76198:start113 on25 at17271125;76215:finish58 at17272031;
+76216:20s effect66;76220:self21/resource214.
+76266:start113 on25 at17275015;76276:finish58 at17276000;
+76277:20s effect66;76278:self21/resource214.
+Both are local activations in the fixed inventory. Original2022 cast and
+self-particle consumers execute with stubbed actor/asset services. Report:
+build/reports/tainted-flesh-native-2022.json. This proves native/packet
+consistency,not rendered acceptance or successful retaliation/cleansing.
+Self21/214 is explicit;other-ally20/214 still needs a matching capture.
+
+Ownership and reactions:
+World validates live scopes,ally/self roles,range,plane/LOS and resource clocks.
+Registry and zero-pip timer commit together;renewal replaces only113. Disease
+removal enters shared condition reactions and clears infection-specific credit.
+Immunity is queried by Rotting Flesh,Virulence and shared Disease contagion.
+The shared player condition commit and direct application paths also reject
+Disease while owned immunity is active,covering Epidemic without relying on
+every individual spell to remember the check.
+Generic active113 insertion and reuse of an occupied113 ID are blocked;older
+fixtures use the owned path.
+NPCs need reviewed ally/Health facts;no Energy pool is invented for recipients.
+
+Once-only melee hit qualification snapshots the exact enchantment effect,rank,
+original caster/defender/attacker lifetimes,event and timestamp. Terminal hit
+consumes the snapshot before Disease mutation. Misses,blocks,bows and failed
+or cancelled resolutions do not trigger. Zero damage can still be a hit.
+The snapshot survives the defender's death from that hit. NPC attackers need
+explicit delivery metadata;unknown facts never become melee by default.
+The Experiment development AI supplies melee from its authored policy file.
+Its cadence,damage and pursuit settings remain development policy,not recovered
+retail AI. The trusted NPC strike API rejects ranged or invalid delivery values;
+legacy calls may explicitly remain unknown.
+
+Player attackers use reviewed human flesh unless a form makes it unknown.
+NPC attackers require reviewed flesh/immunity facts. Initial skill Disease does
+not require matching creature types;later contagious spread does. Shared
+condition rules preserve a longer infection's expiry and original cause.
+When a new timer wins,World records the enchantment caster's original lifetime,
+never a replacement actor with the same numeric ID. Disease enters ordinary
+condition reactions and can cause Fragility death. Player leave/quest NPC
+retirement clear target credit;retaliation validates exact effect/scope.
+
+Validation:
+Policy tests cover native rank scaling,eligibility/unknown gates,existing
+conditions,longer infections,invalid plans/casters and overflow. World tests
+cover self/ally/NPC application,Disease cleanse,expiry/removal/renewal,invalid
+targets,Fragility cleanse death and captured self214 wire form. Player retaliation
+tests cover ordinary/single skills,miss/block/bow,zero-damage hit,killing blow,
+original caster death/leave/reuse and contagion death credit. NPC tests cover
+authored melee,miss/block,unknown delivery/flesh,nonflesh/immunity,Fragility
+and reused-caster credit. Runtime tests cover self/ally/NPC in PvE/PvP,cost,
+timing,empty-target self default,cleanse,cancel/interrupt,stale/replaced targets,caster death,missing hooks
+and finish58 before214. Source binding is not complete rendered verification.
+
+Remaining verification/implementation:
+NPC defender contextual relationships and corresponding combat scenarios;
+NPC skill-caster AI maintenance;unknown production NPC traits;combined
+pre-damage reaction ordering;multi-recipient reaction cardinality/order;
+other-ally20 capture;NPC condition-producer migration and transfer-immunity
+source-removal semantics;retail modifier combinations and rendering.
+Official clients/loggers are not touched by this work.
+
+Final ownership/immunity checks additionally cover generic effect-ID collision
+rejection,direct condition application and Epidemic through the shared player
+commit path. Runtime includes implicit self targeting for an empty target ID.
+The fixed inventory retains2 local starts/2 finishes;no non-local sightings were
+reclassified.285 captured local skills are source-bound,348 await binding,
+696 remain missing local baseline captures.
+
+Validation complete for this binding milestone:server_host Release build,9
+focused CTests,73 skill-tooling tests and the fixed native receipt verifier
+passed. The canonical source-bound lists were republished at285/348/696.
+Remaining gaps above are not marked complete. Official clients/loggers were
+not inspected,restarted or interrupted. Test output labels were updated to
+refer to separate suites rather than obsolete unbound-stage status.
+
+2026-10-29 equipment duration:production passes a scoped EnchantmentDuration receipt. Both player and NPC enchantment expiry use the shared whole-second weapon bonus policy;retaliation Disease duration stays canonical. Runtime checks installed duration authority at admission and completion. New189direct+18paid tests and all5existing suites pass. See build/reports/tainted-flesh-duration-progress-20261029.json. Rendered QA and admitted Ether Renewal reward integration remain open.
+
+
+2026-10-29 admitted completion:production uses complete_tainted_flesh through the shared owned enchantment callback,with exact reaction event,pre-effect Renewal reward,revalidated/rebuilt target state and equipment receipt. Lethal Disease-cleanse reactions remove the new effect;typed callback loss cannot fall back.149new native cases plus prior suites pass;rendered/other-ally/AI/general reaction gaps remain. Animation evidence:current113entry in data/skill-capture-plan/NATIVE-EVIDENCE-CURRENT.json supersedes the old top-level default-resource report. Full evidence:build/reports/tainted-flesh-renewal-progress-20261029.json.
+
+
+2026-10-29 Renewal death gap closed:the lethal-cleanse regression now requires an empty fixture registry,including181/2860. Staged Renewal has owned zero-pip timers and death cleanup;pre-death reward events are fenced across resurrection. See build/reports/ether-renewal-lifecycle-progress-20261029.json. Paid Renewal activation and general effect-consumer/rendered gates remain incomplete.
+

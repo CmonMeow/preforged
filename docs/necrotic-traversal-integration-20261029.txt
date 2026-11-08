@@ -1,0 +1,62 @@
+2026-10-29 Necrotic Traversal97 new implementation foundation
+Canonical guarded plan now exposes rank0..20 Poison5..25s,5Energy and750ms
+nominal activation. Candidate pools preserve random eligibility rather than
+Wells' nearest-corpse rule; unknown fresh in-range eligibility refuses the pool.
+Caller supplies an unbiased random index. Claims compare exact actor lifetime,
+corpse revision/position/freshness and reject replay/overflow/forged bodies.
+Shared corpse reservations now admit explicit97 exploitation while excluding
+simultaneous quest/Well use; Well-only wrappers continue to reject97.
+Three native suites pass,including existing Well World/reservation behavior;
+34source/6backlog checks and gateway compile-only0warnings/0errors pass.
+A hash-verified fixed97 cast has750ms catalog activation versus812ms observed
+start-to-finish and one same-actor position update at completion. Selected
+start target30 is NOT proof of corpse identity. Nearby Disease483 is not Poison
+and is not attributed to97. No random distribution or Poison timer is inferred.
+97 remains unsupported/unbound: World fresh corpse pool/death revisions,
+shadow navigation/bundle drop,whole Poison/Fragility/Seed admission,paid Runtime,
+aftercast composition and rendered acceptance remain unfinished. Full goal
+and current679captured/405source-bound/274awaiting/650missing counts unchanged.
+No host relink/deployment,checkpoint move,binding publication or official action.
+Evidence:build/reports/necrotic-foundation-progress-20261029.json
+
+World integration requirements (not implemented by this foundation)
+1. Settle the shared event timeline before assembling corpse observations.
+   Cover NPC and player corpses using exact lifetime plus fresh death revision.
+   A resurrection/redeath must make a new corpse without allowing an old claim
+   to consume it. Explicit pre-exploited/non-fleshy exceptions remain ineligible;
+   missing evidence must not silently shrink the random candidate pool.
+2. Use injected unbiased index selection across all eligible bodies in spell
+   range, including other walkable layers. Do not use the currently selected
+   actor or nearest-corpse Well helper as a substitute for random selection.
+3. Use existing shadow_destination and bundle-drop proposals. The archived
+   Shadow_step page says post2013 player teleports obey shadow-step restrictions.
+   Do not teleport through disconnected geometry. Resolve whether Poison is
+   centered on the actual clipped endpoint or the chosen corpse before wiring
+   that case. A position receipt alone proves neither outcome.
+4. Preflight all Poison recipients and their immediate Fragility/Seed reactions,
+   NPC eligibility,capacity and callbacks before consuming the corpse, dropping
+   a bundle or relocating. Reacquire scoped actors after real settlement facts;
+   discard prepared copies when facts change. Never partially apply an area
+   because a later recipient has unknown immunity/healing facts.
+5. Commit the fresh corpse claim, bundle drop, relocation and conditions under
+   one World authority and one-shot publication. apply_shadow_position_locked
+   already cancels stale steering/routes/following; do not invent another
+   relocation authority. Poison uses shared condition/provenance/immunity code.
+6. Add optional paid Runtime/gateway completion with normal Energy/cancellation,
+   source lifetime, no-corpse-at-completion and retry/replay semantics. The
+   catalog has.75s aftercast, while archived shadow-step rules exempt caster
+   steps that do not exclusively target foes; resolve this composition rather
+   than using the raw catalog delay uncritically. No active Overcast is implied
+   by the catalog's inactive overcast byte under special262144.
+7. Preserve captured58completion and supported position/condition feedback.
+   Pinned caster/target body resources are2077(no body resource); do not invent
+   one from a nearby effect or interpret the Disease483 receipt as Poison.
+8. Verify legal blocked/clipped steps, multiple layers, corpse contention,
+   death/revival/recycled actors, source death/payment/cancel, bundles and full
+   Poison/reaction cohort rollback, then test rendered client behavior before
+   calling the skill complete or publishing a new binding.
+
+Reference hashes are in the progress report. Numeric range units come from
+supplied GWCA Constants::Range (Nearby252,Spellcast1248,Compass5000); archived
+wiki pages establish the terms, random corpse wording and teleport rules.
+The240 catalog AoE metadata field is not treated as a universal live radius.

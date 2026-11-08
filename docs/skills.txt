@@ -1,0 +1,148 @@
+Guild Wars skill data and capture
+================================
+
+There are three different sets. Account unlocks make skills available to heroes
+and PvP characters. Character learning is the current PvE character's own list,
+including character-specific PvE skills. The equipped bar contains eight skill
+IDs and a zero-based copy index for each. Campaign ownership is a separate
+permission and does not imply either learning or unlocks.
+
+The official client was observed externally without injection, memory writes,
+remote calls, UI control or additional login traffic. Its own character GUID
+and name match exactly one character in the existing main-account roster.
+That character has 1,081 distinct learned IDs and the account has 1,233 distinct
+unlocked IDs in the captured state. All observed IDs fit the pinned 2022
+catalogue. The current eight-slot Ritualist/Assassin bar also passes the native
+2022 bar validator with explicitly captured learning and professions.
+
+These totals do not establish completeness. The account and character lists
+overlap but are not interchangeable. PvP versions, temporary skills, passive
+effects, duplicate Signets of Capture, and newer-client additions must be
+classified before comparing a wiki or Skills and Attributes panel total.
+The capture includes 81 learned copies of skill 3 (Signet of Capture), which
+is one distinct skill ID. Adding those copies to a unique-ID count changes
+the count without adding different skill definitions.
+
+The current snapshot and comparison evidence are referenced in:
+  build/reports/official-skills-summary.json
+  build/reports/skill-coverage.json
+  tools/protocol/skill-coverage-findings.txt
+
+The reviewed 2021 wiki lists normalize to 1,329 obtainable base skill IDs:
+1,235 ordinary/account-unlockable and 94 PvE-only. The current account has
+1,233 of those 1,235 ordinary unlocks; the missing IDs are 1993 (Signet of
+Recall) and 2007 (Purifying Veil). The observed character knows 1,027 ordinary
+and 54 PvE-only IDs, leaving 208 ordinary and 40 PvE-only from that older list.
+Of the missing ordinary IDs, 206 are already unlocked on the account.
+This is the observed character's state, not a claim about other characters.
+
+The 1,329 base-ID total excludes separate PvP versions. Wiki icon rows for
+NPC-only aliases 562 and 1319 are also excluded. GWCA enum entries are not a
+complete obtainable list: the enum includes internal entries and omits some
+actual PvP variant IDs. The coverage report records these exclusions and the
+source files so the comparison can be reproduced.
+
+Client constants versus server behavior
+--------------------------------------
+
+The 2022 client contains 3,433 raw constant records, IDs 0..3432, at VA 8d84c8,
+stride 160. This includes internal/passive/item/temporary records; it is not
+a count of obtainable player skills. The catalogue used by the server is
+extracted from the hash-pinned executable, rather than wiki-derived numeric
+values. The donor's skill table contains known fractional-time transcription
+errors, so it is not a numeric input.
+
+The supported modern official client contains 3,495 raw records, stride 164.
+Do not substitute the modern structure size into the 2022 parser. Static
+constants can be read in one pass without equipping or casting every skill.
+Animation, projectile, icon and localized-string references are useful client
+metadata. References are not decoded assets, and apparent effect fields do
+not by themselves implement damage, conditions, targeting or skill scripts.
+
+The native observer's --dump-constants option captured every modern record,
+including unknown bytes. The complete raw table was independently checked
+against the hash-pinned executable file and matched exactly. The companion
+JSON is retained in data/captures/skills; its path and hash are recorded in
+build/reports/official-skills-summary.json. START LOGGER.cmd enables this
+dump once before its continuous character snapshots. The deterministic
+companion filename is reused for the same client build.
+
+build/reports/skill-constants-comparison.json compares the modern records with
+the original 2022 table. The modern high-resolution icon field shifts string
+IDs by four bytes; the new table also has 62 additional raw rows. Existing
+IDs have balance/presentation changes too: 449 common records differ in at
+least one compared field excluding the second icon reference. Those changes
+are not all player skills or server logic changes. Keep the pinned 2022
+constants as the 2022 backend input instead of silently substituting modern
+values because a skill ID appears in both tables.
+
+Some presentation is already driven by client assets and server skill events;
+other behavior requires observing the actual cast/effect lifecycle. A learned
+bitset cannot supply that lifecycle. Sounds and the interpretation of visual
+references need independent evidence before being named or wired into packets.
+
+The native skill-bar module is currently standalone. It validates captured
+learning, copy identity, actor ownership, profession, campaign, one elite and
+at most three occupied PvE-only slots (including distinct Signet of Capture copies);
+it parses 2022 edits and returns an authoritative bar after acceptance or
+rejection. Live handlers, persistence, casting and other
+mode-specific equip gates remain unfinished. Capture does not silently grant
+skills to other imported characters or produce a fabricated default bar.
+
+Capturing another character
+--------------------------
+
+Run bin/skills/START LOGGER.cmd and enter the exact official-client PID. Keep
+the command window open. CAPTURED/RUNNING indicates observation; WAITING
+explains why a stable in-world snapshot is unavailable. Change character
+normally to capture its own GUID, learned skills, bar and professions. The
+observer stays attached to that process and does not close Guild Wars when
+stopped. Outputs are written beside the executable. Inspect character identity
+in a log before sharing it; account identifiers and credentials are excluded.
+
+Exact current-build checking prevents applying a stale layout to a new client.
+Schema 4 records 51 genuine attribute slots (indices 0..50), with the agent
+record stride still 0x43c. GWCA's 54-row declaration is incorrect: its last
+three rows cover dynamic arrays and point counters. Historical schema 2/3
+attribute sections must not be semantically imported. The exact executable
+bounds and constructor proof are in tools/protocol/skills-findings.txt.
+
+Batching cast observations
+-------------------------
+
+In an eight-member area, one player and seven heroes can equip at most 64 slots
+per batch. Choose distinct IDs to avoid spending observations on duplicates.
+The batch must respect each actor's primary/secondary profession, one elite
+per bar, available account unlocks, and the required target/weapon/condition.
+Heroes cannot equip PvE-only skills; those require separate player batches,
+subject to the player's normal PvE-only restrictions. A full 64-slot batch
+does not guarantee 64 successful casts or capture every conditional branch.
+
+Prefer the static constant dump and coverage comparison first. Then observe
+only unresolved cast/effect families, with skill ID, actor role, target kind,
+attribute level, cast start/completion/interruption, recharge, resources,
+effect add/remove and timestamps. Do not infer an absent event from a slow
+poll, and do not equate a displayed animation with correct server mechanics.
+
+The existing logger records only the local player's state. It does not yet
+capture hero bars or cast/effect events. A future hero extension must bind
+actors through the local party's verified owner relation; reading every bar
+would risk mixing unrelated actors into the player's observations.
+
+Sources and version limits
+-------------------------
+
+The local HTTrack wiki snapshot is dated May 1, 2021. The server executable is
+2022; the supported official executable is post-Reforged. Keep those versions
+separate when comparing totals, constants and skill behavior.
+
+Current official wiki references (checked October 3, 2026):
+  https://wiki.guildwars.com/wiki/Skill
+  https://wiki.guildwars.com/wiki/Hero
+  https://wiki.guildwars.com/wiki/List_of_PvE-only_skills
+
+The current Skill page includes newer additions and different totals; a raw
+subtraction from the captured unique-ID list is not a verified missing count.
+The Hero and PvE-only pages document the hero/account distinction and equip
+restrictions used to plan observations. No wiki numeric rule overrides the
+independently extracted client protocol or the captured account state.

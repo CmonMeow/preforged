@@ -1,0 +1,102 @@
+Shared owned weapon preparation contacts:435/429/433
+===================================================
+One guarded definition/contact family supplies normal player Runtime/World
+bindings for Apply Poison435,Melandru's Arrows429 and Kindle Arrows433.
+No NPC casting/loadout grant is added; reviewed NPC recipients are supported.
+Definitions are pinned native metadata,not client fields or presentation bits.
+
+Definition evidence
+-------------------
+Apply_Poison.html revision2649166:24s preparation,15Energy,2sactivation,
+12srecharge;martial attacks Poison3..15s(rank0..15). Physical attacks explicitly
+includes martial weapons dealing elemental damage. It is the only preparation
+that affects nonbows. Its condition applies after the strike and covers the
+attack skill's own condition; this is not a raw-physical-damage-type test.
+Melandru's_Arrows.html revision2632706:18s elite preparation,5Energy/2s/12s,every landed arrow
+Bleeding3..25s;only the+8..28bonus requires an enchanted target. Bleeding is
+not conditional on that enchantment. Kindle_Arrows.html revision2607785:
+24s,5Energy/2s/12s,arrow Fire conversion plus separate3..24Fire damage. Its
+notes explicitly make that extra Fire hit armor-affected and separate.
+Native rows guard type19/Wilderness24,durations,costs,endpoints andresources.
+Kindle's738caster resource is real; all2077resources remain sentinels.
+
+Shared mechanics
+----------------
+An OwnedPreparationContact contains exact source Scope and owned Registry
+Entry(effectID,skill,rank,applied/expiry). Snapshot qualification validates
+category,cause,duration,rank and actual accepted Owned weapon. Bows qualify
+for allthree;other martial types qualify only for Apply Poison. Caster
+weapons cannot become martial merely by holding a physical damage code.
+Current owned parser/controller limits still apply to unsupported families.
+
+Arrows snapshot the active preparation at weapon release,as existing Read
+the Wind/Ignite delivery does. Ordinary and skill bow queues share that one
+capture point. Melee contacts sample the current owned entry. Target
+enchantment qualification is sampled at impact from actual owned player/NPC
+effects; unknown NPC enchantment presentation fails closed. Arrow snapshots
+survive preparation replacement/expiry but remain subject to existing source
+lifetime/living/equipment and recipient lifetime guards. Barrage/Volley remove
+preparations before queuing arrows. Release-vs-impact preparation phase is an
+explicit project policy; these local pages/captures do not prove retail phase.
+
+The same landed-contact path excludes miss,block and Illusionary replacement.
+Apply Poison commits after each attack's own condition,including Cyclone's
+independent actual recipients. Source copies do not convert nonhits into hits.
+Condition immunity suppresses the condition without discarding accepteddamage.
+Condition duration/fresh UI-ID capacity is checked before primary damage;
+existing scoped condition/Fragility/death authorities own actual commits.
+
+Melandru adds its conditional bonus only when the impact recipient has an
+actual enchantment,and applies Bleeding on every accepted surviving hit.
+Kindle transforms a copy of the actual weapon's element before primary armor,
+physical-only Barbs/Mark of Pain qualification and Conjure element checks.
+Fixed-damage attack replacements keep their existing primary damage kind;
+the separate qualifying Kindle Fire hit still uses its own armor/protection.
+Primary armor admission and separate Fire preflight require known Fire armor;
+unknown authority rejects before damage. The extra Fire hit uses shared armor,
+Cracked Armor/bonuses,elemental defenses,flat reduction,cap and Fire-vulnerability
+policies. It adds no attack event,critical draw or attack adrenaline. Received
+damage reactions remain normal. The primary contact owns death cleanup.
+Shared contact order is primary,Kindle extra Fire,then existing Conjure;this
+secondary ordering is project policy pending isolated retail evidence.
+
+Runtime uses existing preparation type19 lifecycle:2sbase/noaftercast,shared
+Expertise payment,12srecharge,category replacement/expiry,proper18/24s status,
+cancel/interrupt and native738 only for Kindle. Missing/lost status mutation
+capability fails closed for the new family instead of caching an unowned buff.
+
+Native/frozen verification
+--------------------------
+tools/protocol/preparation_contact_2022.py PASS:16hash-checked fixed receipts,
+three native metadata/cast/body routes and original generic serializers.
+Packet1360:Kindle476611starttick26395312;476630recharge12,476631success58,
+476632caster738,476634duration24,476635slotack tick26397203.
+ApplyPoison476741start26404093;476754recharge12,476755success58,
+476756duration24,476757slotack26406093.
+Melandru494099start26699125;494107recharge12,494108success58,
+494109duration18,494110slotack26701078.
+Native generic activation60 reaches style47,2.0seconds and exact storedskill.
+Native caster738effect reaches actor42,encodedfilef14400010000,flags1.
+These receipts prove wires/lifetimes/body resources,not condition qualification,
+armor conversion,conditional bonus,phase or secondary ordering. Native actor/
+model services are stubbed;rendered/audio acceptance remains open.
+
+Validation
+----------
+preparation_contact_test covers independent21rank arrays,player/NPC recipients,
+miss/block/enchantment/removal,release replacement/Barrage stripping/deadsource,
+elemental melee Poison after Cripple,immunity,unknown Fire armor rollback,
+Runtime cost/recharge/cancel/interrupt/losthooks/durations/738,single attack
+identity under separate Fire+Conjure,primary/secondary lethal and Cyclone.
+Focused preparation_contact_test now passes in Release (--parallel1),build34783.
+The suite additionally checks exact Melandru enchanted-target damage,regular
+Fire vulnerability and fixed Power Shot preservation: Kindle does not turn
+the fixed primary into Fire or amplify it through a Fire-only weakness,while
+its separate Fire hit still follows armor/vulnerability and Conjure rules.
+Canonical fixture corrections used reviewed Guardian duration and explicit
+NPC healing eligibility for the existing trusted Vigorous Spirit stage.
+Parent validation:29 targeted Release suites passed and the serial Release
+host build succeeded. Exact logs/executable hashes are recorded in
+build/reports/shared-families-validation.json. The fixed checkpoint audit and
+backlogs were regenerated:344 source-bound,335 awaiting binding,679 captured,
+650 missing captures. These counts do not establish rendered acceptance.

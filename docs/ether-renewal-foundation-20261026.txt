@@ -1,0 +1,714 @@
+Ether Renewal [181/2860], 2026-10-26 foundation
+
+Shared canonical PvE/PvP policy validates pinned Energy Storage catalog rows.
+PvE:5..20s,1..4 Energy and5..20 healing per enchantment at ranks0..15.
+PvP:7s,1..3 Energy and5..20 healing per enchantment at ranks0..15.
+Registry application is copied/scoped; variant renewal removes the prior family
+entry. Reward preflight counts actual active enchantment instances, excludes
+glyphs/stances and non-spell uses, and validates effect lifetime/rank/duration.
+Healing is healing, not health gain (archived wiki bug note). It must use normal
+healing modifiers, capacity and reactive authorities when committed by World.
+
+Release policy test passes rank bounds, mode-specific resources, copied state,
+variant renewal, exact expiry, non-spell exclusion, scope mismatch and forged plan.
+Four hash-pinned frozen181 receipts:packets-1360-15821281.jsonl lines150112,
+150116,150117,150118 show self60,30s recharge,finish58,rank0 five-second effect.
+Original2022 self-event158 consumers for181 and2860 use style50/1s with native
+no-body sentinel2077. No synthetic caster body is appropriate.
+Evidence/source/exe hashes:build/reports/ether-renewal-foundation-20261026.json.
+Raw test:build/reports/ether-renewal-policy-20261026-ctest.log.
+Archived descriptions:Desktop/gw/Wiki/wiki.guildwars.com/wiki/Ether_Renewal.html
+oldid2667432 and Ether_Renewal_(PvP).html oldid2628813.
+
+Still unsupported/unbound. Required next:World installation and owned duration,
+Player/NPC resource consumers, exact successful spell-event deduplication,
+healing-before-sacrifice phase (Infuse Health/Illusion of Weakness), count timing
+for enchantment completion/replacement and spell failures, Energy-zero/death
+reactions, upkeep and modifier composition, lifecycle cleanup, publication,
+normal paid-cast tests and rendered acceptance. Do not equate reward preflight
+with a completed activation or count it as production implementation.
+PvP2860 local activation is missing in this checkpoint. Numeric rewards and
+combined ordering remain wiki-based and need attributable retail verification.
+Fixed implementation checkpoint and player logging/build queue unchanged.
+
+2026-10-26 Player World completion foundation:
+Canonical status admission now validates181/2860 duration quotes and rejects
+simultaneous live mode variants. The typed ether_renewal_completed host method
+requires the exact before-spell activation cursor (scope,skill,event,time),
+settles owned resources,preflights the Overcast gain timeline and deduplicates
+before committing healing/Energy. Healing uses health_event_locked(...,true),
+including healing-hex/Deep Wound authority; Energy uses gain_energy_locked.
+The native policy and World suites both pass. World cases verify both variants,
+matching event/skill,time admission,duplicate/stale rejection,resource amounts,
+removal and explicit completion-before-Infuse ordering (100 ->140 ->70 Health).
+This explicit ordering test does NOT prove every Runtime handler calls it at
+that phase;Runtime remains unbound. It is a trusted host completion API,not
+proof that an arbitrary admitted cast has already completed successfully.
+NPC completion/resource integration,full modifier/reaction coverage,renewal
+across mode changes,all Runtime spell phases and rendered acceptance remain open.
+No Release host rebuild or source-bound count increase claimed at this stage.
+Hashes:build/reports/ether-renewal-world-20261026.json;raw CTest log alongside.
+
+2026-10-26 NPC terminal foundation:
+LiveActor installs the canonical scoped PvE/PvP family on a copied registry.
+Explicit complete_ether_renewal_action settles copied condition/Energy clocks,
+requires known regeneration/healing authority, completes the exact owned control
+token, then applies capped healing and Energy on that copy. The token authority
+rejects premature, forged and repeated terminals. Known healing immunity only
+suppresses healing; Energy still applies. The receipt retains before/after
+Health/Energy and the originating effect/count for eventual World publication.
+Non-spell, expired-effect or unknown-resource rejection leaves the action and
+live resources untouched. Both allied and hostile self recipients are supported
+without weakening the public hostile-target gain/drain APIs.
+
+Release policy and NPC suites pass:both variants/relations,healing immunity,
+forged/premature/duplicate rejection,non-spell isolation,manual removal,exact
+expiry,missing regeneration authority and capped999->1000 Health/29->30 Energy.
+Hashes:build/reports/ether-renewal-npc-20261026.json; raw CTest log alongside.
+Existing World NPC terminal producers are deliberately unchanged:they still
+need to call this primitive at their committed successful pre-effect phase and
+publish its receipt alongside Aura/Succor and damage/healing reactions. No claim
+that NPC Ether Renewal is live in gameplay;Runtime casting remains unbound.
+The earlier World binary has not been rebuilt against this updated NPC header.
+No Release host rebuild or source-bound count change claimed. Fixed checkpoint,
+player build-code queue and official logging remain untouched.
+
+2026-10-26 generic NPC World terminal integration:
+Trusted apply_npc_ether_renewal installs scoped NPC effects using the shared ID
+frontier,normal Well suppression,replaced-instance67/status65 publication and
+application observations. It is explicitly not a paid NPC cast or authored AI.
+Generic complete_npc_action now routes an active Ether Renewal spell terminal
+through its copied resource primitive,publishes the actual heal and absolute
+Health receipt,and observes the Energy transition through World Mind Wrack.
+Non-spell/no-active-effect actions keep their existing completion path.
+
+All3 Ether Renewal Release suites pass. The current World suite verifies both
+variants through generic NPC action admission,early completion rejection,actual
+Health/Energy reward andduplicate completion refusal. Hashes/raw CTest:
+build/reports/ether-renewal-world-terminal-20261026.json and adjacent log.
+Typed NPC providers remain pending:each must integrate completion/reward before
+its own Health-dependent effect calculation and preserve failure handling.
+Imbue Health specifically must calculate healing from post-Renewal caster Health.
+NPC effect-end publication/lifecycle credit tracking also remains unfinished;
+this new trusted installation must not be treated as population-ready casting.
+Player Runtime wiring,all typed providers,paid casting,combined reaction ordering
+and rendered acceptance remain open. No host rebuild or binding count increase.
+Official logging,manual player build queue and implementation checkpoint intact.
+
+2026-10-26 typed Imbue Health integration:
+The terminal adapter now supports silent speculative actor copies. Imbue first
+validates its target/control and preflights completion on such a copy. Real
+spell reactions then settle; only a surviving current caster commits Renewal
+and publishes its resource receipt. Imbue computes its heal afterward from the
+updated caster Health. A lost target uses fail_target_action; interrupts never
+reach completion; lethal Backfire cleans pending completion without rewarding.
+The shared terminal helper still does no World publication for preview copies.
+
+All4 current native suites pass (policy,NPC,World,Imbue). Imbue cases include:
+-100 Health ->120 through Renewal; target receives49.2 instead of41 at rank12.
+-200 Health ->81 through Backfire ->101 through Renewal; target receives41.41.
+-Lethal119 Backfire on100 Health produces neither Renewal gain nor Imbue heal.
+-Interrupt/target death produce no reward; duplicate terminals stay rejected.
+The interrupt fixture accounts for damage dealt by its own interrupt skill.
+Hashes/raw CTest:build/reports/ether-renewal-imbue-20261026.json and adjacent log.
+
+This establishes native private-server ordering,not a captured combined retail
+ER/Backfire/Imbue receipt. Other typed NPC providers,owned effect-end lifecycle
+publication and Player Runtime casting remain pending. No host rebuild,source-
+bound count increase or rendered verification claimed. Official logging and
+manual player capture queue untouched.
+
+2026-10-26 shared typed terminal:
+Aura of Restoration,Watchful Healing,Conjure Phantasm,Bonds of Torment and Imbue
+Health now share complete_npc_spell_terminal_locked. It preflights a silent
+actor copy,settles admitted spell reactions,then commits Renewal resources for
+a surviving caster before the producer's own effect. Terminal states separate
+unavailable actions from reaction-stopped/completed actions; stopped paid casts
+consume their terminal without rewarding or retaining stale pending casts.
+Imbue's earlier duplicate terminal logic was replaced by this shared authority.
+Target-failure branches remain outside it. No speculative publication added.
+
+All8 native suites pass:Ether policy/NPC/World,Imbue,Watchful paid cast,Phantasm,
+NPC Aura completion and Bonds World. World additionally tests active Renewal
+with real paid Aura/Watchful/Phantasm producers,exactly20 Health and4 Energy at
+rank15 before each new effect is installed. Aura's fixture uses the required
+explicit self target/range0. Hashes/raw CTest:
+build/reports/ether-renewal-providers-20261026.json and adjacent log.
+
+Flare,elemental projectiles and friendly-heal producers still need phase review
+and integration;effect-end lifecycle and Player Runtime binding remain open.
+No host rebuild or source-bound count change claimed. Retail combined ordering
+and rendered acceptance remain unverified. The player-capture list was separately
+refreshed at user's request from20261026-player-refresh-2153;implementation
+checkpoint20261024-all-completed remains fixed. Official logging untouched.
+
+2026-10-26 projectile/friendly terminal and effect-end lifecycle:
+Flare and elemental projectile producers now use the reviewed shared terminal:
+Renewal rewards at release, never again at impact. Friendly healing preflights
+its target; failure and interruption do not reward Renewal. Successful healing
+uses post-reaction/post-Renewal actor state. Exact-instance generic enchantment
+credits now publish one end on expiry, replacement, dispel and death.
+The stricter immediate-end test found death deferred its end to a later tick;
+record_npc_death_locked now retires the owned Renewal record synchronously.
+
+Six native suites pass. The freshly rebuilt Ether Renewal World suite covers
+all added consumers and immediate lifecycle behavior; three neighboring suite
+binaries precede the final death-retirement edit (recorded in report). Natural
+expiry is checked on an eligible World tick, not inside the 100ms tick throttle.
+Source/executable hashes and raw output:
+build/reports/ether-renewal-projectile-lifecycle-20261026.json and adjacent log.
+
+Player Runtime completion binding and paid NPC Renewal casting/loadouts remain
+unfinished. Both variants remain unbound; fixed implementation counts unchanged.
+Combined retail ordering and rendered acceptance remain unverified. No host
+rebuild or official client action performed; player capture queue untouched.
+
+2026-10-26 paid reviewed NPC self-enchantment producer:
+Aura and Renewal now share the owned pending self-enchantment cast lifecycle,
+its deadline dispatch and reentry guard. Existing public Aura methods remain;
+new begin_npc_ether_renewal/complete_npc_ether_renewal methods admit a reviewed
+self-only spellbook entry for181/2860, charge10 Energy, honor1s activation,
+recharge/aftercast, settle reactions and install the exact owned effect only
+on successful completion. Generic/Aura completion cannot steal a Renewal cast.
+The effect allocator reserves before application observers can reenter.
+Unknown healing or precise Energy authority rejects admission before payment.
+
+All6 current native suites pass:policy,NPC,World,Aura completion,Aura self and
+spellbook authority. Twelve paid-cast variant/scenario combinations cover
+success,interrupt,death,recast,lethal Backfire and missing healing authority.
+Authority tests reject foreign/reused self scopes,hostile/nonzero-distance self
+targets,missing owner,wrong targeting class and insufficient Energy. Shared
+Aura regression sources were rebuilt after the final producer changes.
+Hashes and raw CTest:build/reports/ether-renewal-paid-npc-20261026.json and log.
+
+This remains a reviewed host API,not an enabled production AI loadout. Initial
+installation does not retrospectively reward its own cast;the combined retail
+self-trigger/recast order is still an explicit capture/verification gap,not
+proved by these synthetic fixtures. Equipment/modifier coverage,Player Runtime
+successful pre-effect completion integration and rendered acceptance remain
+unfinished. Source-binding counts and fixed implementation checkpoint remain
+unchanged. No host build/client launch/official capture action performed.
+
+2026-10-26 atomic player Infuse completion:
+Runtime retains the exact event admitted by before_spell_effect and passes it
+through the new infuse_health_completed hook. Gateway now wires that hook to
+World's Infuse operation. Under one World lock, recipient scope/allegiance,
+range,alive state and NPC healing preflight precede Renewal settlement; Health
+loss and the recipient's heal are computed from post-Renewal caster Health.
+The completion cursor is consumed even without Renewal,so replay cannot repeat
+the sacrifice. Wrong skill/event/time and duplicate terminals reject. Existing
+trusted no-event Infuse API remains compatible for isolated host/test callers.
+NPC heal_ally policy is preserved:explicit immunity rejects,unspecified immunity
+on an otherwise healable ally is permitted. No unrelated eligibility change.
+
+All4 current native suites pass:Ether policy,NPC,World,and captured_skills.
+World includes12 Runtime-to-World cases (no Renewal,both versions;single/double
+enchantment,target loss,wrong admitted skill),plus6 NPC-recipient cases for
+valid/immune/unspecified recipients,stale scopes and retries. Exact packets assert
+one Renewal healing number precedes one sacrifice number and Infuse's target
+particle occurs once. Production server_host build succeeds;no process launched.
+Hashes/raw output:build/reports/ether-renewal-player-infuse-20261026.json and log.
+
+Only Infuse's player completion consumer is integrated here. Other spell
+producers,paid player Renewal casting,observer replacement during windup,
+combined retail order/self-trigger,PvP local activation,equipment/loadouts and
+rendered acceptance remain unfinished. Neither Renewal variant is published;
+implementation counts and checkpoint remain fixed. Official logging and manual
+player capture queue untouched.
+
+2026-10-26 atomic Imbue completion and stable health-completion route:
+Imbue now accepts the exact admitted spell event through a gateway-wired
+imbue_health_completed hook. World validates player/NPC recipients before
+Renewal settlement,then recomputes the amount from post-Renewal caster Health.
+NPC healing is preflighted on a copy;existing immunity policy is preserved.
+Successful terminals deduplicate even when no Renewal is active.
+
+Runtime now remembers whether Infuse/Imbue was admitted through the atomic or
+legacy completion route. Removing the atomic callback or required spell-reaction
+hook during windup cancels instead of silently taking the legacy path. Adding
+an atomic callback to an already admitted legacy cast does not change its route.
+This is callback-route/presence authority,not an assertion about the identity of
+arbitrary host-supplied function bodies.
+
+All6 native suites pass:Ether policy,NPC,World,captured_skills,Imbue World and
+Imbue cast. The expanded health-spell matrix contains36 Runtime cases across
+both spells/no Renewal/both variants,12 NPC-recipient cases and2 late-callback
+addition cases. It covers post-reward amounts,duplicate suppression,wrong
+admitted skill,target loss,callback loss,existing NPC immunity policy,and exact
+healing/sacrifice/target-effect packet assertions. Production server_host build
+succeeds. Hashes/raw CTest:
+build/reports/ether-renewal-player-health-20261026.json and adjacent log.
+
+Other player spell completion producers,paid player Renewal casting,retail
+combined ordering/self-trigger,PvP activation,equipment/loadouts and rendered
+acceptance remain open. Neither Renewal variant is published;fixed checkpoint
+and binding counts unchanged. Official client/logging,manual capture queue and
+all capture files untouched. No server/client process launched for these tests.
+
+2026-10-27 shared elemental spell completion:
+One admitted-event callback now covers the shared elemental spell family.
+World threads it through direct NPC effects,area impacts,Whirlwind,Earthquake
+and projectile release. Every path validates its recipients and required armor,
+conditions/control/capacity before consuming the terminal. Projectile impacts
+omit the event,so cannot reward twice. Bitter Chill1068 compares its target's
+pre-hit Health with the caster's post-Renewal Health. Signets145/3059 remain on
+their existing non-spell path and cannot receive a spell-completion reward.
+Runtime preserves the admitted callback route;loss of it or its reaction hook
+cancels instead of falling back. The existing conditional handler was reused
+rather than adding another branch to MSVC's already deep dispatch chain.
+
+40 new World cases cover20 spell plans/both Renewal variants,stale scope,
+forged terminal,replay,projectile release versus impact,and conditional Health.
+24 Runtime cases cover Flare194,Flame Burst188 and Bitter Chill1068,both variants,
+success/callback loss/reaction-hook loss/cancel. Bitter Chill retains its full
+10-second recharge when Renewal raises caster Health above its target.
+Ten native suites pass,including legacy NPC elemental casts,Earthquake,
+Whirlwind,Bitter Chill,Essence Strike,Liquid Flame and captured_skills.
+Production host builds successfully. Exact source/executable hashes and two raw
+CTest batches:build/reports/ether-renewal-elemental-20261027.json and adjacent logs.
+The frozen capture checksum still matches the original foundation report.
+
+Coverage limits:19 World plans use NPC recipients;189 uses a player recipient.
+Skill189's existing ordinary NPC recipient route remains unsupported and needs
+implementation;this report does not claim it fixed. Paid Runtime combinations
+for the remaining17 plans,combined retail ordering/self-trigger,PvP activation,
+modifiers and rendering remain unverified. Other spell families and paid player
+Renewal casting/full binding remain unfinished. No binding-count increase or
+capture-checkpoint replacement. No server/client process launched;official
+logging and the manual build-code queue were not touched.
+
+2026-10-27 Rodgort completion and all-plan paid matrix:
+Rodgort189 no longer excludes NPC recipients. Its archived article oldid2670065
+explicitly says it does not fail when its target dies mid-cast. Completion now
+uses a scoped dead-or-live validator;ordinary admission and all default foe
+validators still require a live target. World can retain a dead selected center
+and damage/burn living enemies around it. Stale scopes remain rejected.
+The nearby radius is252 from GWCA Range::Nearby (was240). Player/NPC recipients
+now share caster-attributed target337 publication,held until after finish58.
+
+The20-plan World matrix now uses NPC recipients for every plan. Paid Runtime
+coverage expands to246 cases across all20 plans,no Renewal/PvE/PvP Renewal,
+normal completion/callback loss/reaction-hook loss/cancel;Rodgort additionally
+covers a dead selected NPC and a changed scope observation. Three separate
+player-center cases cover dead targets. Recipients251 units from the center
+are hit;253-unit recipients are excluded. No effect is applied to dead victims.
+Seven native suites pass;production host builds. Fourteen binding-audit and6
+backlog checks pass. Fixed lists were refreshed against current source hashes:
+679 captured/401 source-bound/278 awaiting binding/650 missing local activation.
+This does not count a partial Renewal implementation as a completed skill.
+
+Reusable verifier:tools/protocol/rodgort_evidence_20261027.py. It verifies the
+fixed manifest/source hashes and3 damage-ID receipts,archived Rodgort/nearby
+articles,GWCA numeric range,and original2022 target337 first consumer with DAT
+25c000010000. Output:build/reports/rodgort-evidence-20261027.json. Receipts identify
+an affected actor and skill ID;caster/local completed activation is not proven.
+Target-death behavior is wiki-backed;particle parsing is native executable
+validation,not a captured paired corpse scene or rendered acceptance.
+
+The prior ordinary-NPC189 gap and missing17-plan paid Runtime matrix are closed
+at this native scope. Other completion families,paid player Renewal casting,
+NPC authored loadouts,rank/modifier combinations,combined retail/self-trigger
+order,local Rodgort completion/PvP Renewal captures and rendered particle
+placement/distribution/timing remain open. Neither Renewal variant is enabled.
+Implementation checkpoint fixed;manual build queue and official logging not
+written or controlled. No server/client launched. Hashes/raw tests:
+build/reports/rodgort-and-elemental-20261027.json and adjacent CTest log.
+
+2026-10-27: shared direct-heal completion
+Ten spell plans now use scoped World target validation and atomic resource/heal
+completion:281,282,1120,286,313,958,959,867,1686,1687. Includes allied NPCs,
+post-Renewal self thresholds,precise fractional Health,Monk-primary Divine Favor
+authority,Healing Light/Zealous own refunds and exact event deduplication.
+Monotonic completion clocks tolerate intervening World ticks; delayed/expired
+effect tests cover this family,not arbitrary cross-family concurrency.
+405 paid Runtime cases plus edge cases pass;all ten selected native suites pass.
+Original2022 first particle consumer accepts twelve actual emitted body packets
+across ten skills with actor renumbering. Assets/pixels/retail timing remain
+unverified. Ether Renewal remains unbound pending remaining completion consumers
+and its paid player-cast gate. Fixed checkpoint partition stays679/401/278/650.
+No official client/logger process controlled. See direct-heal report and wire
+consumer evidence in build/reports.
+
+2026-10-27: Gift of Health World settlement adapter (staged)
+Both player/NPC trusted Gift completion stages accept a separate optional
+spell reaction event. Existing skill-use/disable event remains distinct.
+Target eligibility,canonical plan,Divine Favor,owned bar and disable proposal
+are preflighted before Renewal settlement. Resource and heal output remain in
+the deferred publication so caller ordering is preserved. Six new cases cover
+no Renewal/PvE/PvP Renewal and player/NPC recipients,including stale target,
+wrong reaction event,exact duplicate and publication-once checks.
+This optional adapter is not wired into Runtime/gateway yet;production Gift
+retains its existing behavior. Required next work:admission-latched completion
+hook carrying both exact event identities,hook-loss tests,paid cast matrix and
+production gateway wiring. Do not count this as completed Renewal support.
+
+2026-10-27: Gift of Health cast integration
+Supersedes the staged Runtime/gateway gap above. An optional completion hook
+carries both skill-use/disable and spell-reaction identities;pending casts latch
+the admitted route. Missing completion or reaction hooks cancel without legacy
+fallback. Gateway routes player/NPC recipients through the scoped World stages.
+Tests exercise18 paid player cases across no/PvE/PvP Renewal and success,cancel,
+interrupt,replaced-target,completion-hook loss and reaction-hook loss. NPC cast
+cases preserve legacy behavior and cover both Renewal variants. Existing caster
+body-before-health-before-disable ordering checks are retained. No new captured
+skill binding or rendered parity is claimed. Original fixed captures unchanged.
+Gift integration validation:three native suites,20 coverage/backlog checks and
+production Release host build pass. Current hashes and limitations:
+build/reports/gift-renewal-integrated-20261027.json. No server/client launched.
+
+2026-10-27: Spirit Light completion integration
+Player/NPC stages accept a separate optional reaction event;Runtime latches
+its admitted completion route and gateway provides the production adapter.
+Target/proximity/sacrifice and NPC heal preview are checked before Renewal.
+The sacrifice quote is recomputed after Renewal resource settlement so prior
+Health cannot overwrite the reward. Resource/heal/sacrifice output remains
+deferred behind the cast prefix. Unknown nearby creature types reject before
+reward. Exact duplicate event rejection is tested for successful paid casts.
+21 Runtime cases cover three Renewal variants and seven encounter/terminal
+modes,including an allied NPC,spirit present/absent/unknown,cancel,completion
+hook loss and reaction-hook loss. Legacy fallback throws in these tests.
+No new rendered,retail ordering or measured spirit radius claim;the existing
+1012-unit convention remains an explicit verification gap. Neither Renewal
+variant is fully bound. Fixed capture checkpoint is unchanged.
+Validation:five fresh native suites and20 coverage/backlog checks pass;
+production Release host builds. Constructed Gift1259/Spirit1089 body formats
+pass the pinned2022 first particle consumer;assets/actors are stubbed and
+these are not exported wire fixtures. Hashes and limits:
+build/reports/spirit-renewal-integrated-20261027.json. No server/client launched.
+
+2026-10-27: Mend Body and Soul completion integration
+Scoped optional spell-reaction events now reach both trusted World stages via
+an admission-latched Runtime callback and production gateway. Preflight validates
+target,typed spirit count,removal selection and NPC preview before Renewal;
+healing and cleanse remain deferred behind cast prefix. Duplicate completion
+is rejected.24 paid cast cases cover no/PvE/PvP Renewal,self/player/NPC targets,
+cleanse,unknown spirit type,cancel,target replacement and callback loss.
+First test run correctly rejected a fixture installing Renewal at100 after
+condition time500;fixture event order was corrected,not the World clock guard.
+Constructed body1090 with renumbered actor passes the pinned2022 first consumer;
+this is not exported wire/retail/rendered evidence. Retail condition selection,
+reaction ordering and exact spirit boundary remain open. Fixed capture and
+binding counts remain unchanged;Renewal's full binding gate stays closed.
+Mend validation:four fresh native suites,20 audit checks and production host
+Release build pass. Hashes:build/reports/mend-renewal-integrated-20261027.json.
+No official or private client/server process launched or controlled.
+
+2026-10-27: Ghostmirror Light scoped completion
+Production Runtime/gateway carries the exact reaction event through player/NPC
+World completion. Target,spirit proximity and NPC heal preview are preflighted
+before Renewal;spell heals and Renewal resource output remain deferred behind
+the cast prefix. The conditional caster heal remains spirit-dependent.
+24 paid cast cases cover three Renewal variants/eight modes:ordinary target,
+nearby spirit,NPC ally,cancel,replaced target,unknown spirit type,completion
+hook loss and reaction-hook loss. Duplicate completions reject. Tests retain
+both body-before-recipient-heal checks and validate summed caster healing.
+Constructed1574/1575 contracts pass the original2022 first particle consumer,
+with stubbed actor/asset/allocation services. No exported wire,rendered,retail
+ordering or measured spirit-radius claim. Full Renewal binding remains gated.
+Ghostmirror validation:four fresh native suites,20 audit checks and production
+Release host build pass. Hashes/limits:build/reports/ghostmirror-renewal-integrated-20261027.json.
+No official or private client/server process launched or controlled.
+
+2026-10-27: Healing Ribbon scoped completion
+Player/NPC mixed recipient selection and NPC heal proposals precede scoped
+Renewal settlement;reward is once per cast,not per heal. Optional reaction
+event reaches World through an admission-latched Runtime hook and gateway.
+Callback loss cancels without fallback. Duplicate events reject before heals.
+The paid matrix has21 cases:three Renewal variants and seven modes including
+player/NPC primary,cancel,replaced primary,callback/reaction loss,and caster
+as a secondary recipient. First run caught a fixture attempting to reconfigure
+NPC population after player join;setup moved before join without changing the
+World population guard. Nearest-first secondary selection remains provisional.
+Constructed1738 body contract passes the pinned2022 first particle consumer;
+no exported wire,rendering or paired retail order claim. Full Renewal gate
+remains closed;fixed capture checkpoint and source-binding counts unchanged.
+Ribbon validation:four fresh native suites,20 audit checks and production
+Release host build pass. Hashes/limits:build/reports/ribbon-renewal-integrated-20261027.json.
+No client/server process launched or controlled;official logging untouched.
+
+2026-10-27: status-dependent healing283/1396
+The shared World producer accepts optional exact target scope and reaction
+event. Runtime latches an opt-in completion hook and gateway uses it. Forged
+plan/Divine Favor,target/range/status count validation precedes Renewal reward;
+duplicate events reject.45 paid cases cover two skills,three Renewal variants,
+legal self/ally recipients,success,cancel,stale scope and callback/reaction loss.
+Existing405 direct-heal cases and edge cases remain in the same test.
+A first edit matched an earlier healing producer;compiler rejected undeclared
+completion variables. The insertion was restricted to the status-heal method;
+no changes to the earlier producer remain. Gateway designated-field ordering
+was also aligned before its build.
+Fixed checkpoint Words of Comfort1396 has one completed local cast:source
+packets-1360-15821281.jsonl,line309365 starts it,actor25,map280. Dwayna283 has
+no local completed activation there. This shared extension does not close its
+capture gap. NPC status-heal recipients,rendered feedback and paired retail
+ordering remain missing/unverified. Non-spell paths were not changed.
+Validation:two fresh native suites,20 audit checks and production Release host
+build pass. Hashes and capture gaps:build/reports/status-heal-renewal-integrated-20261027.json.
+No client/server process launched or controlled;official logging untouched.
+
+2026-10-27: status-dependent healing NPC recipients
+Supersedes the prior NPC-recipient gap for283/1396. Shared target validation
+now supports scoped allied NPCs;Runtime admission/completion uses that route.
+The World NPC producer settles typed conditions,quotes owned effect counts,
+preflights healing on a copy,then settles Renewal once and commits the heal.
+Dwayna uses authoritative enchantment/hex counts;unowned presentation-only
+flags are not treated as zero. Words uses typed condition count. Divine Favor,
+NPC immunity,scope,range and lifetime remain validated. Target ID must agree
+with its supplied scope. Existing player/legacy producers remain available.
+The paid status matrix expands45 to75 cases,including an enchanted NPC for
+Dwayna and unconditioned NPC baseline for Words. A proposed conditioned-NPC
+fixture used a player-only condition API and failed before casting;it was
+removed rather than widening a production API solely for a fixture. The
+conditioned-NPC end-to-end case remains an explicit verification gap.
+Captures,rendered feedback,paired
+retail order and full Renewal admission gaps remain separate and unchanged.
+NPC status-heal validation:75 status matrix cases plus existing405 direct
+heals/edge cases pass;two fresh suites,20 audit checks and production Release
+host build pass. Hashes/limits:build/reports/status-heal-npc-20261027.json.
+No official or private client/server process launched or controlled.
+
+2026-10-27: conditioned NPC Words of Comfort verification
+The earlier fixture gap now has three trusted World completion cases. A typed,
+fleshy,nonimmune human NPC receives Disease via normal World transfer from an
+infected human player. Completion at that boundary verifies raw base+one
+condition bonus,condition retention,Renewal Energy for each variant and exact
+duplicate rejection. No test-only condition setter or production API was added.
+This supplements75 paid status casts and405 paid direct heals;these3 cases are
+World transactions,not additional paid casts or rendered acceptance. Test
+asserts75 status cases and reports each matrix count explicitly. Production
+source and host executable are unchanged from the prior NPC-status report.
+Validation:two fresh native suites and20 audit checks pass. Production/host
+hashes match prior successfully built NPC-status report,so no redundant host
+rebuild. Evidence:build/reports/conditioned-npc-comfort-20261027.json.
+No official client/logger or private server process was controlled.
+
+2026-10-27: six-spell condition-removal completion family
+Mend Condition275,Restore Condition276,Mend Ailment277,Purge Conditions278,
+Dismiss Condition1691 and Mending Touch1401 share an optional scoped reaction
+event in World. Runtime latches the admitted completion route;gateway uses it.
+Canonical plan/Divine Favor/party/range validation and copied removal/heal
+preflight happen before Renewal settlement. Duplicate event rejects before
+condition mutation;callback/reaction loss and replaced targets cancel without
+legacy fallback. Healing-basis behavior remains removed/remaining/enchanted
+according to the reviewed shared plan. Non-spell paths are unchanged.
+150 paid Runtime cases span six plans,legal self/ally targets,three Renewal
+variants and success,cancel,stale scope,completion loss,reaction loss. Existing
+405 direct,75 status and3 conditioned-NPC World cases remain in the suite.
+The fixed checkpoint has completed local casts for all6 plans. Constructed
+body contracts pass the pinned2022 first consumer with stubbed assets/actors;
+no exported-wire or rendered claim. NPC recipients,paired retail ordering and
+additional reaction/death branches remain open. Full Renewal binding gated.
+Cleansing validation:three fresh native suites,20 audit checks and production
+Release host build pass. Evidence/hashes:build/reports/cleansing-renewal-integrated-20261027.json.
+No official or private client/server process launched or controlled.
+
+2026-10-27: seven-plan party/area completion family
+Heal Party287/3232,Light of Deliverance1397,Divine Healing279,Heaven's
+Delight1117,Heal Area280 and Karei's Healing Circle1119 now have an optional
+exact reaction event in World,admission-latched Runtime hook and production
+gateway. Player recipient health settles before one Renewal reward per cast.
+Initial player plane filtering was removed after the broader World regression
+identified the existing contract that party-area healing spans floors/walls.
+This regression is not a new paired retail capture. All-creature plans
+280/1119 also preflight known living NPCs through generic healing regardless
+of allegiance,excluding out-of-range and explicitly immune actors;area range
+remains independent of navigation plane.
+Party-only NPC membership is still not represented by the player party model.
+105 paid cases cover7 plans/3 Renewal variants/5 terminal modes.8 World cases
+cover both all-creature spells at166/167 units,immunity and successful cross-
+plane NPC healing. The existing layered party-area regression is preserved.
+First matrix mismatch was ordinary2-pip Energy regeneration over a long cast;
+the test now settles that independently before checking the completion reward.
+No payout/timing code was weakened to match a fixed-energy assumption.
+Fixed checkpoint has local completed279/287/1117/1119 casts;280/1397/3232
+remain missing local completion. Constructed pinned caster-body contracts
+check3 nonsentinel bodies across7 rows with stubbed native consumers,not
+exported Runtime wire,pixels or effect distribution. Remaining paid Renewal
+admission,retail ordering,rendered acceptance and reaction/death branches open.
+
+2026-10-27: broader World regression corrects Rodgort radius
+After removing the erroneous new party-area plane restriction,the broader
+World test found the earlier Rodgort252 change contradicted its240 boundary
+case. Reinspection proves pinned2022 skill189 row+0x6c=float240 (modern
+constants also240). The generic GWCA Nearby252 constant and archived nearby
+wording do not override skill-specific metadata. Runtime restored240;paid
+NPC neighbors now239/241. This supersedes prior252 claims/tests in this file
+and earlier reports;the old data/receipts were not a radius measurement.
+A corrected verifier retains fixed receipts/body checks and separately reports
+generic252 versus pinned240:tools/protocol/rodgort_radius_evidence_20261027.py.
+Output:build/reports/rodgort-radius-corrected-20261027.json. Retail paired-radius
+measurement/rendering remain unverified. No fixed capture inputs changed.
+Final party/radius validation:five fresh native suites including broad World
+simulation,20 audit checks and production Release host build pass. Evidence:
+build/reports/party-and-radius-final-20261027.json and final CTest log.
+Earlier failing logs preserved;all current tested binaries/source hashes recorded.
+No official/private client/server process launched or controlled.
+
+2026-10-27: native skill-specific area metadata retained
+extract_skill_catalog.py now retains row+0x6c as float aoe_range,appended to
+the existing canonical catalog. All3433 rows extract/check against the pinned
+2022 image;1050 are nonzero,all finite and0..5000. Native Skillbar tests guard
+the inventory and Rodgort240. Rodgort now reads its own catalog field with a
+reviewed240 guard,rather than repeating a free numeric literal. No other live
+radii were automatically rewritten;metadata is not universal server-radius
+proof. This removes the specific generic-nearby substitution risk for Rodgort.
+Coverage,body-role and inventory parsers updated for30 columns. Body roles use
+absolute indices24/25 (full row),not tail offsets that shift when metadata is
+appended. Legacy comparison tools had obsolete20/24 column checks;updated to
+current30-column format. Existing body-role tests retain original IDs.
+No capture data or implementation-binding count changed. Native effect assets,
+retail radius measurement and all remaining consumers stay explicitly open.
+Native area metadata validation:full3433-row extraction --check,four fresh
+native suites (Skillbar,broad World,Renewal World,direct-heal matrix),24 Python
+checks and production Release host build pass. Comparator/catalog and family
+inventory parsers run on current30-column data. External full BuildWars repo
+comparison not rerun;its width check updated only. Evidence/hashes:
+build/reports/native-area-metadata-20261027.json. No official/private client
+or server process launched or controlled. Fixed partition remains679/401/278/650.
+
+2026-10-27 area audit/Ribbon review:30 plans,17 metadata differences;differences
+are not bug proofs. Only Ribbon's322 Area policy changed to Nearby252 after
+resolving the archived Near link. Two new World cases and pure252/253 checks
+cover player/NPC edges. Four native suites,24 Python checks,30-plan audit
+invariants and production Release host build pass. Evidence/source/wiki hashes:
+build/reports/area-audit-ribbon-20261027.json. Retail exact boundary and rendered
+behavior remain unverified. Official logging untouched;no client/server launched.
+
+2026-10-27: scoped hex-removal completion and missing target bodies
+Remove Hex301/Cure Hex2003 gain an admission-latched EffectCompletion adapter
+with exact reaction event,target generation and deferred World publication.
+Successful empty sets still trigger Renewal,while conditional Cure healing
+requires actual removal. Duplicate event rejects before another removal.
+Finish then generic21 target body precede queued removal/heal feedback. The
+prior Runtime branch had no target body for native537/1736 resources.
+120 paid cases cover2 skills/3 Renewal variants/2 recipient classes/2 hex
+states/5 terminal modes. They check health,Energy,registry state,exactly-once
+visuals and finish/body/removal ordering. Shared admission scope validation
+was added for effect removal,condition removal,status and party completion
+paths;unknown-scope requests are checked before payment in their matrices.
+Optional third test argument exports two actual native cast packet fixtures.
+The verifier checks these through pinned2022 first particle consumers and
+validates fixed modern Remove Hex generic21/537 packet274744 (source hash
+verified). This is a candidate shape match,not paired ally-target causality.
+Cure has no completed local activation in the fixed checkpoint;its generic
+form is native-tested but retail-unverified. NPC recipients/rendered assets,
+retail ordering and additional reaction/death cases remain open. Fixed source
+bindings/captures remain separate;full Renewal gate remains closed.
+Hex-removal validation:four fresh suites (core casting,captured skills,broad
+World,direct-heal matrices),24 Python checks and production Release host build
+pass. Export command:build/tests/ether_renewal_direct_heal_test.exe
+build/reports/hex-stage-direct-wire-20261027.jsonl build/reports/hex-removal-wire-20261027.jsonl
+Then tools/protocol/hex_removal_bodies_20261027.py checks exported wire/native
+consumers and fixed shape. Evidence/hashes:build/reports/hex-removal-completion-20261027.json.
+Official logging untouched;no client/server process launched or controlled.
+
+2026-10-27: owned NPC recipients for party-only heals
+Supersedes the party-only NPC consumption gap above. The five party-only
+plans287/3232/1397/279/1117 now consult existing scoped NPC->player owner
+records and the owner's current party. NPC and owner generation/group/range,
+living NPC and healing immunity remain checked. A dead but present party owner
+does not erase membership;cleared/departed/replaced owner records cannot leak
+healing. Same team/friendliness is insufficient without explicit ownership.
+NPCs receive only base healing;one Renewal reward still belongs to the cast.
+180 paid cases cover5 plans/3 Renewal variants/12 modes:caster/party-member/
+stranger ownership,clear,party departure,owner actor reuse,dead owner,immunity,
+cross-plane area recipient,outside range,stale owner and stale NPC assignment.
+Authoritative ownership comes from the trusted host entrypoint;automatic
+hero/henchman/quest ownership and party UI integration remain separate work.
+No new retail capture/rendering claim;fixed source binding count unchanged.
+Owned-NPC validation:180 new paid cases plus existing matrices;two fresh
+native suites (broad World,direct-heal matrices),24 Python checks and production
+Release host build pass. Evidence/hashes:build/reports/owned-npc-party-heal-20261027.json.
+No client/server process launched or controlled;official logging untouched.
+
+2026-10-27: Draw Conditions/Foul Feast completion
+------------------------------------------------
+The authoritative condition-transfer producer now takes an optional scoped
+spell event and deferred publication. Draw/Foul Feast preflight condition
+transfer and existing burning-immunity policy before one Renewal settlement;
+Purge Signet rejects supplied spell events. Runtime latches the completion
+route and requires retained target identity/reaction hook;callback loss cannot
+silently fall back. Foul Feast receives Disease presence from the same transfer
+receipt for its fixed2s recharge. Existing health-gain/healing distinctions are
+preserved. This does not finish allied NPC recipients or non-party ally rules.
+
+Fixed capture packets-1360-15821281.jsonl: Draw activation280037,finish280040,
+caster body280041 (21,25,554),linked ally body280042 (20,28,25,555);Foul Feast
+activation126323,finish126329. Pinned2022 metadata Draw554/555,Foul2077/2077.
+Gateway and legacy Draw paths now use linked target20 instead of generic21.
+48 paid Runtime cases cover2 spells*3 Renewal variants*8 encounter/terminal
+modes;each also checks unknown-scope admission before payment. Actual native
+cast exports go to build/reports/ally-cleansing-wire-20261027.jsonl and execute
+the pinned first particle consumers via ally_cleansing_bodies_20261027.py.
+No rendered verification or retail reaction/condition/reward ordering claim.
+Full Ether Renewal player casting remains unsupported pending other consumers.
+
+2026-10-27: Energy-drain completion family
+-----------------------------------------
+Energy Surge39,Ether Feast40,Energy Burn42,Energy Drain79 and Energy Tap80 now
+have an admitted/latching scoped completion route. Energy-drain proposals and
+known NPC Energy loss preflight occur before one Renewal reward. Effect state
+and resource publications remain deferred until the Runtime finish/target-body
+prefix. Signet of Weariness59 is not a spell and stays on its legacy producer;
+installing the new hook alone cannot make its cast admissible. Its regression
+fixture supplies the ordinary zero-Energy payment hook used by pinned2022.
+
+All five selected-target body forms are archived: packets-6468-5728843.jsonl
+92505/92577 for Surge65/Burn69;packets-30352-81363781.jsonl34528 for Feast66;
+packets-1360-15821281.jsonl43109/9627 for Drain135/Tap137. Each uses modern
+GenericValueTarget20 with target and caster identities. World previously only
+published Drain/Tap bodies in this shared producer;Surge/Feast/Burn are added
+without manufacturing AoE-neighbor body events. Native body verifier reads
+actual paid-cast exports and runs pinned2022 first consumers with stubbed
+actors/assets/allocation. This does not establish rendered pixels or timing.
+
+Player-target mechanics cover all five;NPC targets retain40/79/80 support.
+NPC39/42/59 support,all reaction/death interactions,exact retail AoE boundary
+and complete player Ether Renewal admission remain unfinished. Final results
+and executable/source hashes belong in energy-drain-completion-20261027.json.
+
+Energy-drain final validation:432 paid cases pass across five spells,three
+Renewal states,three target Energy levels,six completion/failure modes and
+supported player/NPC target classes. Additional unknown-scope checks reject
+before Energy payment. Area-player checks distinguish primary-only loss from
+Signet-style per-recipient loss;Weakness and source heal/gain remain checked.
+The separate Signet of Weariness regression rejects callback-only admission
+and retains legacy completion when the ordinary zero-Energy payment hook is
+provided. Its raw Overcast byte alone does not imply a required payment hook:
+pinned special flags do not enable that branch. Actual five emitted linked
+bodies pass pinned first particle consumers. Five native suites pass (four
+fresh builds plus unchanged pure planner suite),24 Python audit checks pass,
+and the production host builds/returns its build-info hash. Official logging
+was untouched. No rendered/full-retail parity claim or new Renewal binding.
+
+2026-10-27: Mixed NPC Energy-drain recipients
+---------------------------------------------
+New gw_world_energy_drain_area.inl owns damage/area recipient processing for
+Energy Surge39,Energy Burn42 and Signet of Weariness59. Selection is shared
+across players/NPCs for either primary actor kind;retained scopes,hostility,
+plane,range,known resource clocks,damage/condition preflight precede commits.
+Surge takes Energy only from the selected foe and bases all area damage on
+that amount. Weariness drains each nearby foe independently and applies known
+allowed Weakness. Secondary Surge NPCs do not require an Energy quote;unknown
+Energy rejects when that actor must actually be drained. No values invented.
+
+NPC damage preflight uses LiveActor copies;commit uses damage_npc_locked so
+protection,damage feedback,bonds and death bookkeeping retain their consumers.
+Weakness commits use native NPC condition/Fragility publication and credit.
+The source receives one Renewal reward per successful spell,none for signets.
+Runtime accepts scoped NPC targets for this shared family;prior hard-coded
+40/79/80-only completion target eligibility is removed.
+
+Validation:540 paid spell cases (108 added NPC cases),18 real player/NPC
+signet casts,90 mixed World transactions. Mixed cases include252/253 edges,
+other planes/allies,unknown required/unneeded Energy,condition immunity and
+NPC deaths. Six native suites pass (five fresh,unchanged pure planner suite),
+24 Python checks pass,and host builds. New wire/consumer outputs use separate
+energy-drain-npc-* filenames;prior reports/exports are preserved. Five actual
+spell bodies still match frozen captures/pinned2022 first consumers.
+
+Not completion of all game skills:401 fixed captured bindings/278 awaiting,
+650 missing activation;full paid player Renewal admission is still unbound.
+NPC casting AI,all reaction/recipient/death ordering combinations,retail area
+measurement and rendered effects/timing remain unverified. See final report
+build/reports/energy-drain-npc-20261027.json for source/executable hashes.

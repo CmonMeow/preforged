@@ -1,0 +1,187 @@
+Elemental glyph group198/199/203 canonical policy (2026-10-17)
+
+Plans and evidence
+All three pinned2022 rows are type12 glyphs,5 Energy,1s activation,0.75s
+aftercast and PvP link3433 (no alternate skill ID). Glyphs are Category::glyph,
+not enchantments, and successful new glyph activation replaces the old glyph.
+A glyph itself is not a spell and cannot trigger/benefit from a previous glyph's
+spell-specific discount, Overcast suppression or charge use. These rules must
+also replace an existing200 Glyph of Lesser Energy or another type12 glyph;
+adding198/199/203 alongside the Runtime's existing200 counter would be wrong.
+
+198 Elemental Power:25seconds,10 charges,+2 Air/Earth/Fire/Water attributes.
+199 Energy:indefinite,1..3 charges/10..25 cost discount/+1..2 elemental ranks
+at EnergyStorage0..15;rank20 gives4charges/30discount/+2ranks. Native row199
+'duration0/15=1/3' fields encode charge scaling, NOT seconds. Its ordinary base
+spell Overcast is suppressed; Arcane Languor/Iron Mist/external/passive Overcast
+remain separate effects. No guessed global Overcast immunity is installed.
+203 Renewal:15seconds,one spell charge,instant recharge for the next spell,
+including interruption. It overrides Diversion and Auspicious Incantation;
+this is a true instant-recharge marker, not merely ordinary base recharge0.
+Unknown interactions with other independent disable sources are not generalized.
+
+198 and199 rank bonuses are ALL-PURPOSE while the glyph remains active, including
+nonspell elemental skills such as Lightning Touch232, which do not consume a
+charge. Attribute IDs8,9,10,11 only; EnergyStorage12 is not boosted. Root must
+integrate the bonus into World effective attributes/publication, not only into
+spell plan ranks. Existing attribute cap/order authority remains the caller's.
+
+Local wiki source SHA256:
+Glyph_of_Elemental_Power.html revision2667483:
+76d39f56fc640c0cace51e870e327d5547cce257b36cba53e9a5d0bd3e1dbca4
+Glyph_of_Energy.html revision2670041:
+4ecce72a8f4c62b3125c39141d5ec3f82945803805f1e74a6cf199631c9c79dc
+Glyph_of_Renewal.html revision2629139:
+e09f381db5d3f5fafde09f4abfc909116849295e2b310b61f9e20918520b7d4b
+Glyph.html revision2667333:
+9f8e33f0f14535ed8bada943d22abef052abfab937039f5b0db49567d6dc8f5a
+
+Fixed checkpoint observations
+20261017-npc-refresh-current packets-1360-15821281.jsonl SHA256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+198: start157183/19070250;finish157193/19071328;self bodies360/393 at
+157194/5;timed25.0s modern66 at157196;attrs8..11 show0->2 at157197..200.
+199: start163154/19158359;finish163166/19159281;selfbody361 at163167;
+UNTIMED modern65 effect121 at163168;attrs8..11 show0->1 at163169..172.
+203: start168919/19253156;finish168936/19254156;selfbody366 at168937;
+timed15.0s modern66 at168938. All are one successful local activation in the
+checkpoint audit, not direct charge/failure or interrupted-use experiments.
+
+Important199 terminal evidence: Rust204 starts163181/tick19160000. Glyph199
+effect121 is removed163190, attributes8..11 reset163191..194, and Rust completes
+163196, all at19161015. The last-use glyph effect/rank removal therefore belongs
+to that spell's terminal event, not immediate admission. Reserve the discounted
+use after actual paid admission; retain its effect/bonus while pending.199's
+reservation remains spent even for a voluntary cancellation, as the explicit
+wiki note states. At a terminal event the helper consumes that reserved charge.
+The original200-only Runtime code removing the final glyph at payment must not
+be copied blindly to199. This single successful following-spell capture does
+not by itself prove every cancellation/failure edge case.
+
+API/ownership
+NEW src/runtime/gw_elemental_glyphs.h provides:
+- elemental_glyph(skill,EnergyStorageRank): canonical group plan.
+- prepare_elemental_glyph(ownerScope,effectId,plan,time): timed/indefinite state.
+- elemental_glyph_attribute_bonus: persistent all-purpose elemental modifier.
+- quote_elemental_glyph(state,spellSlot,reviewedCost,BASEOvercast,time): exact
+  admitted spell benefits, preserving the last-use effective bonus in the lease.
+- elemental_glyph_trigger(plan,paid_admission): reserve pending use, do not end
+  the glyph. terminal outcomes decide actual charge consumption/instant reset.
+- reserve_elemental_glyph(current,quote,event): event-bound lease; validates
+  the exact snapshot but does NOT decrement or remove the final charge.
+- settle_elemental_glyph(optionalCurrent,lease,event,outcome,time): terminal
+  proposal with accepted/supported flags, optional remaining state, consumed
+  and instant_recharge. Requires the same owner generation/effect/full snapshot
+  and event. Unknown failure/expiry-crossing returns unsupported.
+- consume_elemental_glyph is the lower-level optimistic charge proposal.
+  Root owns exactly one pending lease under the cast lock and commits/clears
+  that lease atomically; pure helpers do not prevent replay without this state.
+- elemental_glyph_recharge returns0 only for reviewed203 success/interruption;
+  World must propagate explicit instant semantics to Diversion finalization.
+
+Known and unresolved trigger rules
+Completed spells consume198/199/203. Voluntarily cancelled spells retain198/203
+but consume the already-reserved199 use.203 interrupted spells consume and
+instantly recharge.199 cancellation/interruption consume its reserved use at
+terminal. True failure is explicitly unsupported for ALL three glyphs; no
+success-only binding or guessed failed-use charge rule is installed.
+Rejected/unadmitted attempts use no charge.
+
+The cited sources do not directly resolve198 interruption, true spell failure
+for198/199/203, or a pending spell that crosses198/203 expiration. The policy
+and lease settlement return unsupported for these cases rather than silently
+choosing a retail rule. Invalid/stale identity is also rejected; callers must
+distinguish unsupported from an accepted no-consume outcome.
+Root must retain this limitation rather than convert unknown into no-consume.
+Glyphs cannot be foe-stripped as enchantments. Attribute rank and cost modifier
+ordering, protection/reactions, final-use publication and interrupted recharge
+must be integrated in Runtime/World/Auth, owned by root. No live integration or
+rendered acceptance is claimed by these pure helpers.
+
+Tests are NEW tests/elemental_glyphs_policy.cpp; root owns CMake/builds. They
+cover all supported ranks, timer/overflow boundaries, indefinite199, elemental
+and nonspell bonuses, spell-only floor0discount/baseOvercast, reservation and
+terminal outcomes, explicit unknowns, exact-snapshot consumption, expiry,
+replacement category, stale generations and final-use benefit preservation.
+
+World authority foundation (not a live skill binding)
+World owns canonical glyph state and a single spell-use lease per actor lifetime.
+apply_elemental_glyph installs a category-replacing glyph entry, publishes native
+65 timed effects for198/203 or64 untimed for199, and rejects occupied effect IDs.
+Snapshot/reservation/settlement require exact registry identity: owner,cause,
+skill,rank,category,application time and expiration. Generic removal/replacement
+and death retire the glyph/lease. Generic glyph insertion now replaces the
+previous glyph by category, including existing Lesser Energy200.
+
+Reservations use process-issued monotonically increasing spell-use events.
+A lifetime watermark prevents re-reservation of a previously admitted event,
+including after cancellation/replacement/death. Terminal settlement commits or
+clears the exact lease once; an incorrect event, recycled generation, replacement
+or regressing resource clock cannot spend its charge.199 stays visible, with
+its attribute bonus, while its last spell use is reserved. Auth's all-purpose
+elemental attribute bonuses include the exact active World glyph snapshot.
+
+This API does not pay Energy or commit instant-recharge resets by itself.
+Runtime must connect quote/reservation, actual payment/Overcast suppression,
+terminal outcome and source-aware recharge reset as one coherent lifecycle.
+Those integrations remain missing;198/199/203 remain in the unimplemented list.
+Unknown failure/198 interruption and timed expiry-crossing policies also remain
+explicit. No new skill completion is claimed from these foundation tests.
+
+New tests/elemental_glyphs_world.cpp validates timed/untimed publication, no
+invented199 expiry, reservation retention, terminal consumption, duplicate and
+re-reserved event rejection, replacement, non-enchantment categorization, effect
+collision refusal, removal-plus-ID-reuse and death cleanup. Native proof tool
+elemental_glyphs_2022.py verifies raw receipt hashes, original1s/style50 starts,
+body360/393/361/366 first consumers, original timed/untimed serializers,
+attribute8..11 receipts and199 final-use terminal removal. Actor/model services
+are stubbed; no rendered acceptance or unobserved trigger rule is claimed.
+
+Current Runtime integration:198/199 (203 still missing)
+198 and199 now have direct Runtime/Auth handlers. They validate typed hook
+capabilities before spending resources, use canonical World application and
+queue native completion58 before body360/393 or361 and the timed/untimed effect.
+Legacy Lesser Energy200 local records are retired on replacement. A typed glyph
+cannot accidentally receive an additional stale200discount.
+
+For an admitted spell World validates the exact expected glyph snapshot and
+commits modified Energy/baseOvercast plus one reserved use under one lock.
+199 suppresses native BASE Overcast only; unrelated future external Overcast
+sources are not fabricated or cleared. A failed payment reserves nothing.
+An intervening glyph replacement rejects before payment. Zero-Energy Mind Wrack
+settlement is recomputed before commit; lethal payment reactions do not refund
+Energy or leave a live pending lease.
+
+Pending casts latch their admitted effective ranks before the last glyph use
+ends. Auth computes all-purpose elemental attribute bonuses while the typed
+World record is live. Successful terminal settlement consumes198/199; voluntary
+cancellation keeps198 and consumes199; interrupted199 consumes once. For delayed
+control events the glyph settles at the safe current monotonic clock while
+normal skill recharge still begins at the original interrupt event timestamp.
+
+IMPORTANT remaining unsupported paths:198 interruption,true failed casts for
+198/199,and timed198 expiration during a pending spell. These return a diagnostic
+unsupported/stale settlement rather than invent a consumption result; a retained
+unsupported reservation currently needs glyph replacement/expiration/death to
+retire it. This is unfinished behavior,not complete retail acceptance.203 remains
+unavailable in Runtime: it needs an atomic instant-recharge/Diversion transaction
+with correct completion/control provenance and must not clear unrelated disable
+authorities merely because an existing reset API does so.
+
+Tests/elemental_glyphs_payment.cpp and elemental_glyphs_cast.cpp cover actual
+atomic resource payment,replay,expected-snapshot replacement,zero-Energy reactions,
+player casting,rank latching,all ten successful198uses,last199retention,cancel/
+interrupted199,missing hooks,delayed control settlement and original recharge
+timing. Proof tests remain separate from captured retail outcome evidence.
+
+Renewal integration step: ordered ordinary-cooldown reset authority (2026-10-17)
+CooldownCompletion now preserves original base_ms/existing_until while marking a trusted instant-recharge completion. completion_deadline resolves that receipt to its own event time rather than extending the ordinary timer. World stages cooldown clock issuance before committing prepared Diversion use, avoiding an effect/use commit without completion provenance. Per-exact-slot reset barriers survive the bounded64 completion history; World rejects stale, same-order and opaque timer resurrection after reset while allowing newer timers and leaving other copies independent. External disable authority is unchanged.
+Tests cover nonzero original base/existing inputs, copied-slot isolation, forged timer from instant receipt, opaque/stale timer rejection, barrier persistence after65 other completions, newer timer acceptance, and Diversion consumption without extension under instant recharge. Release server_host build and five targeted C++ suites pass;33skill tooling tests pass. Read-only cleanup review found no concrete new issue. Reports: build/reports/renewal-cooldown-authority-build.txt,renewal-cooldown-regressions-build.txt,renewal-cooldown-authority-tests.txt,renewal-authority-tooling.txt.
+This is necessary authority work,not a203 Runtime binding. The atomic glyph+success/control terminal API,Runtime exact-slot timer erasure/barrier delivery and interrupt suppression still need implementation. The retained World reset map currently refuses a129th distinct reset slot in an actor lifetime; a proven checkpoint-compaction protocol is required before removing that bound. No unrelated disables are cleared. Fixed checkpoint20261017-npc-refresh-2 remains633captured/242source-bound/391awaiting binding/696missing capture; source-hash-gated coverage/audit/backlog pass without counting203 complete. Official clients/loggers and raw capture data were untouched.
+
+2026-10-17 Renewal203 Runtime source binding (supersedes earlier unbound status).
+World::finish_renewal_spell atomically validates the exact203 admitted lease/slot and canonical terminal proposal, then consumes the glyph and records an ordered instant base-recharge completion. Successful spells finalize their stored Diversion use with its explicit instant override; interruptions require a retained matching control event and do not manufacture a successful use or trigger Diversion. The transaction preflights complete independent slot-disable state under the same mutex. PowerBlock/Humility/Rust and prior independent disables are preserved; only the affected ordinary skill/copy timer is reset.
+Runtime/Auth now expose203,actual5Energy/1s activation/.75s aftercast/10s recharge/timed15s effect,body366 and a paid next-spell lease. Successful/interrupted203 uses issue and validate exact reset receipts; Runtime removes only ordinary local state,retains a per-slot ordered barrier and completion watermark,then displays any surviving independent disable. Voluntary cancellation preserves203. Delayed controls settle at the current safe clock while validating their original matching control provenance; subsequent controls do not invalidate that proven first interruption. A retained/deferred interrupt now blocks all effect completion until its terminal transaction succeeds,fixing a fallthrough bug found in read-only review.
+Tests cover successful recharge suppression,voluntary cancellation,actual interrupted casts after advanced resource clocks,Diversion consumption without added recharge,independent PowerBlock,wrong owner/event/copy/outcome nonmutation,replay,receipt provenance,finish58/body366/timer65 order,unavailable-hook refusal before payment,terminal failure beyond scheduled completion followed by safe retry,and an injected second PowerBlock after Runtime's disable query. The latter must retain a nonzero UI disable packet and never execute the interrupted effect. Cleanup re-review found no further concrete defect in these fixes.
+Serial Release server_host and rebuilt test targets pass (build/reports/renewal-integrated-build-retry.txt,renewal-final-tests-build.txt);all8targeted C++ suites pass (renewal-final-tests.txt).33skill tooling tests and73captured instant native checks pass. Native elemental_glyphs_2022.py passes original1s/style50,body366,timed serializer and the bounded next-spell212 successful reset trace; its fixed report remains in checkpoint20261017-npc-refresh-2. Interruption/Diversion mechanics are historical-wiki-backed,not captured successful retail experiments. Model/clock services are stubbed;rendered-client acceptance and complete impact/body/terminal interleaving are not proved.
+Source-hash-gated coverage/audit/backlog refresh passes at the unchanged2026-10-17T09:21:07.419412+00:00 cutoff:633captured/243source-bound/390awaiting binding/696missing capture. This does not mean243fully verified skills. True failure and expiry-crossing203 outcomes,reactive terminal death interactions,live rendered acceptance and reset-barrier checkpoint compaction remain explicit verification/implementation gaps. World retains at most128distinct reset slots per actor lifetime and refuses further new ones;no unproved compaction was added. Official clients/loggers and raw captures were untouched.

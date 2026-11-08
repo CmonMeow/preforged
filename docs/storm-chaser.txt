@@ -1,0 +1,84 @@
+Storm Chaser455
+===============
+Production player Runtime/World binding; NPC casting and rendered QA pending.
+
+Mechanics:10baseEnergy,instant stance,20s recharge; Wilderness Survival24 scales
+8..20s duration and1..5Energy per elemental damage event at0..15rank. Movement
+multiplier1.25 uses the existing authoritative layered movement integration.
+All accepted earth/fire/cold/lightning hits trigger Energy, including absorbed
+zero damage. Armor-ignoring/shadow/physical damage and condition degeneration do
+not. Separate hits each trigger once. Energy gains use existing resource-clock,
+negative-Energy/Overcast and capacity machinery, not an unbounded direct refill.
+Other stance replacement, stripping, death and expiry end the owned benefit.
+The generic native caster-body metadata emits767; no2077target sentinel is used.
+Native specialbit0 is unset: unrelated raw overcast byte99 is not an Energy debt.
+
+Native source: pinned2022 SkillRecord455, SHA256
+ a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+Local historical wiki: gw/Wiki/wiki.guildwars.com/wiki/Storm_Chaser.html
+ SHA256 7f0b73605f390ffe06e379e11de95e682ac49cf379f9c0521898683aedcc1637
+The wiki explicitly describes triggering even when elemental damage is0.
+
+Frozen checkpoint:20261017-npc-refresh-2;cutoff2026-10-17T09:21:07.419412+00:00
+ packets-1360-15821281.jsonl SHA256
+ 59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6
+Owner25/map280:484915recharge20,484916instant48/455,484917body21/767,
+484919buff455/8seconds,484922speed360. Raw modern opcodes are retained in the
+capture audit; this does not imply modern/pinned2022 opcode equality.
+Tool:tools/skills/audit_storm_chaser_checkpoint.py
+Evidence:build/reports/storm-chaser-capture.json
+File hash, owner, exact source line/action, complete packets and header match
+are required. This activation sequence does not establish every hit mechanic.
+
+Validation:storm_chaser_world covers canonical rank0..20 plans,instant PvE/PvP
+Runtime payment/self-target/recharge/body,missing-authority rejection,all four
+spell/weapon elements,mixed cold/shadow,physical and poison nontriggers,zero hit,
+Energy cap,movement/removal,stance replacement,death and exact expiry.
+Existing elemental_mantras rebuilt/passed to guard the shared hit observer.
+Release server_host build passed:build/reports/storm-chaser-build.txt.
+Two rebuilt suites pass:storm-chaser-tests.txt;41tooling tests pass:
+storm-chaser-tooling-tests.txt,including four capture-corruption/ownership tests.
+
+Remaining:actual NPC casters,live rendered stance/speed/energy behavior,retail
+multi-hit/late-packet ordering and damage-event cases not yet represented by the
+reviewed shared World combat paths. No all-skills or full-rendering claim.
+Official clients and ongoing logging were not targeted.
+2026-10-17 NPC extension
+------------------------
+LiveActor::activate_storm_chaser and World::npc_storm_chaser now provide an
+explicit host/script action. World requires a nonempty review/evidence label;
+no creature is assigned this skill and no automatic priority is inferred.
+Known living scope,known relation,known Energy and regeneration,canonical rank,
+base10Energy,20s cooldown,existing disables and monotonic resource clocks guard
+activation. Neutral/protected self-activation is separate from external hostile
+targeting; public Energy targeting and NPC protection policies stay intact.
+Native action48,body767 and owned effect packets publish to interested players.
+Movement uses the NPC's own known base motion and shared1.25 interval,not288.
+The instant stance preserves an existing admitted spell/control token.
+
+NPC accepted generic elemental damage,earth multi-hit results and explicitly
+elemental caster-weapon hits now award owned Energy,including zero damage,with
+cap and clock checks before Health publication. Physical,armor-ignoring and
+shadow/chaos weapons do not award it. Resolved weapon Hit defaults have an earth
+tag; that default is deliberately not treated as proof of an elemental weapon.
+Caster-weapon impacts now require an explicit World timestamp at all callsites.
+Replacing a moving stance removes its interval; prepared damage registry rebase
+also preserves the current movement state so stripped intervals do not return.
+
+npc_storm_chaser tests direct elemental/zero/multiple/weapon paths,cap,payment,
+unknown/stale/future rejection,cooldown/expiry,neutral/protected own activation,
+stance replacement/rebase,coexisting paid spell,and host publication plus an
+actual World Flare projectile impact. Other World elemental recipient routes
+such as Immolate remain outside that existing API's NPC targeting support.
+Five rebuilt suites pass:npc_storm_chaser,weapon_elements,npc_elemental_world,
+panic_world,cry_frustration_world (npc-storm-tests.txt).41tooling tests and fixed
+checkpoint source audit/publication pass. Release host:npc-storm-host-build.txt.
+
+Still incomplete:autonomous NPC skill choice/reviewed creature loadouts,
+Expertise/other NPC cost modifiers,full reactive skill-use observers,retail
+ordering and rendered/late-entry stance presentation. The host-controlled base
+cost action is not a claim that all NPCs now use Storm Chaser automatically.
+The earlier player/NPC/rendering gaps are narrowed by the tests above,not erased.
+Official clients/loggers were not targeted.
+
+2026-10-17 follow-up: the five single-target NPC elemental recipient routes, including Immolate, are now admitted. See docs/npc-elemental-recipients.txt for tests and remaining gaps; this supersedes the earlier Immolate API limitation.

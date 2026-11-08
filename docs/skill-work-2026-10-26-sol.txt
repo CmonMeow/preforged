@@ -1,0 +1,51 @@
+2026-10-26 Sol skill work (fixed checkpoint kept immutable)
+
+Frigid Armor [1261]: NPC elemental regression added. An accepted fire hit
+settles damage while the enchantment excludes its Burning addition; Burning
+is admitted at exact expiry. Release frigid_armor_npc passes.
+
+Slippery Ground [2191]: catalog-validated PvE plan and World proposal/commit
+now handle independent Blind-or-moving qualification, adjacent radius, the
+below-rank-5 single 50% failure draw, player/NPC knockdown preflight, and NPC
+immunity/unknown susceptibility. The normal paid Runtime cast and auth gateway
+now call that World method. Native tests cover 5 Energy, 1 second activation,
+10 second recharge, target-body1824, player and NPC targets, missing hook and
+stale target; policy and World tests cover the other mechanics. Frozen receipt verifier passes four
+hash-pinned records, including start, recharge, finish and target resource;
+pinned 2022 first consumers give style51, no caster body and target1824.
+This is source-bound, not rendered 2022 acceptance. Retail knockdown packet
+ordering and NPC caster AI remain unverified.
+
+Succor [308]: detached seven-receipt frozen checkpoint and pinned 2022
+style51/1s, caster body547 and target body548 first-consumer verifier passes.
+Player-target World application, maintained upkeep, health/Energy regeneration,
+replacement/cancellation/range retirement, and once-per-successful-spell
+maintainer Energy loss are staged. Runtime opt-in cast plumbing is present, but
+production application stays disabled because NPC recipients lack the same
+lifecycle. Six focused CTests (including Mending and casting regressions) pass;
+Release server_host builds. This is not source-bound or rendered acceptance.
+Current host SHA256: 1D8DECC9F113580A15F44A070748F01AC4B9269BD18EDF3E2207CBDECB6B7789.
+
+Succor [308] staged cast validation: an opt-in Runtime-to-World test proves
+5-Energy payment, one-second completion, targeted 2022 body resource,
+maintained status and recharge; the same request is unsupported without the
+application hook. World regression proves one maintainer Energy debit per
+recipient spell completion and no duplicate/reordered debit. Seven focused
+CTest suites pass. NPC recipient upkeep, regeneration, enchantment removal,
+spell-trigger debit and rendered-client acceptance remain open, so normal
+production casting is still disabled. Test source SHA256:
+B9CEA032F2C08859896DAACE1BA4F51F7EF735231BF5867CB3A8ADD70E0EA3B6;
+Release test executable SHA256:
+E4F374D8711C2C6A78F80474183CEC84E166783E3704F24CF1F8CA97F297CED1.
+
+Serial Release build: server_host succeeds. SHA256 bin/server_host.exe:
+14F4366B03FD651D8C485C730BAD5359F97E07E7144F1E1B4F266D7FD258F072
+Source SHA256 gw_skill_casting.h:
+7DCECCC02802C8BCFC3F2E1E3CD1A777327B7EE55E8830CED84D943CC92D3F14
+Source SHA256 gw_world_slippery_ground.inl:
+42A7DFD183A76BA7BC127EFA24EE752E4AF1BAA03A862428556C65DDD8A60202
+Focused CTest skill_casting, frigid_armor_npc and three slippery_ground suites:
+5/5 pass. Coverage/backlog tooling unit tests: 18/18 pass. Fixed checkpoint
+backlog: 679 captured, 398 source-bound, 281 awaiting, 650 missing local
+activation. Official clients and capture sessions were
+not used or interrupted in this work.

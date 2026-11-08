@@ -1,0 +1,37 @@
+MIXED PHYSICAL ARMOR AT WEAPON CONTACT — 2026-10-17
+
+Attack admission now accepts reviewed physical locations even when no uniform
+scalar armor value exists. Admission and multi-target selection do not sample
+armor. Actual player weapon damage samples the reviewed location array and
+then applies existing conditions, global armor, penetration and bonus-damage
+rules. This covers ordinary physical attacks, melee attack skills, physical
+bow impacts and Cyclone Axe player recipients. NPC armor paths are unchanged.
+Fixed-damage Power Shot and Illusionary Weaponry replacement paths bypass
+ordinary armor as before. Elemental/caster weapons still require their typed
+armor state; a physical location array is not treated as fire/cold/etc armor.
+
+The existing shared physical-location map is chest3/8, legs2/8, head/feet/hands
+1/8 each. Default selection uses a uniform integer0..7. A trusted test callback
+can supply a bucket; invalid buckets reject without damage. The callback is
+not driven by client input. Actual retail RNG algorithm/timing and special
+per-skill location exceptions have not been established by this implementation.
+Historical source:
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Armor_rating.html
+
+mixed_weapon_armor tests every bucket against distinct70/60/50/40/30 ratings,
+closed-form armor-respecting base damage plus armor-ignoring skill bonus,
+ordinary/melee/Cyclone and bow hits, no admission draw, scalar fallback,
+unknown armor, wrong elemental state and invalid draw. Power Shot is verified
+without any armor state and makes no location draw. Ordinary repeated-tick
+processing does not reapply the hit or consume another draw.
+Surrounding conditional-attack, Cyclone/Barrage, Illusionary Weaponry and
+Tormentor regressions are rebuilt separately.
+
+Elemental weapon follow-up: see docs/mixed-elemental-weapon-armor.txt for the
+reviewed typed location arrays and contact integration.
+Still open: mixed elemental armor for spells, broader armor
+upgrade decoding, transformed traits, retail location/RNG sampling comparison,
+and rendered acceptance. This extends existing skill bindings, not new captured
+skills. Official logging sessions were untouched.
+
+Validation: Release server_host rebuilt successfully. Six rebuilt suites pass: mixed_weapon_armor,warrior_condition_world,cyclone_axe,barrage,illusionary_weaponry_world,tormentor_holy_fields.49 skill tooling tests and fixed source audit/publication pass;250bound/383awaiting/696missing.

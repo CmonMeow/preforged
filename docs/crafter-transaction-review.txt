@@ -1,0 +1,27 @@
+Crafter transaction review (detached, not activated)
+
+Canonical materials reuse gw_material_storage.h: reviewed GWCA model association
+plus native0x2508 material-slot property, type11 and exactly one property.
+Price alone never grants identity. The tests open over malformed definitions
+before admission, preventing snapshot rejection from masking semantic checks.
+
+All recipe factors are checked before uint64 multiplication: gold<=100000,
+quantity<=250, units<=250, byte scale<=255. The aggregate gold quote must
+remain<=100000. Material totals are checked against selected carried stacks,
+with unique IDs and native marker1 semantics; client quantities never dictate
+literal material debit. These are bounded private supported policies.
+
+All13 window-associated candidates now have independently checked originalPE
+recipe/material fixtures. Synthetic canonical material stacks test server
+transactions; no successful retail craft or final list membership/order is
+claimed. Missing complete132 remains the native panel activation gate.
+
+CAS ordering: propose, validate, identity.prepare and packet vector construction
+precede Save. identity.commit is noexcept and moves staged registry only;
+prepared.wire remains available. Profile moves and Batch move are statically
+nothrow. No post-CAS allocation was found. A trusted save callback is required
+and runtime synchronization must prevent session changes during durable CAS.
+
+Admission now explicitly rejects time older than opening time as well as the
+exact deadline. A regression covers backwards time independently of the other
+scope checks. The13recipe test is registered with its immutable fixture path.

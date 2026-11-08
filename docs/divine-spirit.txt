@@ -1,0 +1,64 @@
+CURRENT 2026-10-24: opt-in Runtime cast and World enchantment completion pass native tests; the production callback remains empty while glyph cost ordering is unresolved. The current fixed checkpoint has367 source-bound and312 awaiting binding. Historical entries below retain their original counts.
+
+DIVINE SPIRIT310 — evidence and standalone modifier stage,2026-10-21
+
+Not Runtime/gateway bound. Fixed checkpoint remains301source-bound/332awaiting. Metadata/helper existence must not count as playable mechanics or rendered animation.
+
+Pinned2022row:Monk,Divine Favor,type6,self enchantment,10Energy,.25s activation,.75s aftercast,60s recharge,duration1..14at0..15,reduction5,minimum1,caster553,target2077sentinel. Local pre-Reforged Divine_Spirit.html agrees:Monk spells cost5less,minimum1;duration1/11/14at0/12/15.
+
+Six hash-verified receipts:checkpoint20261017-npc-refresh-2,packets-1360-15821281.jsonl lines280019/280021..280024/280045. Start21408906;recharge/finish/body553/rank0timer1s at21409109;removeeffect108at21410078. Observed203ms/969ms packet gaps do not independently measure activation/duration clocks. tools/protocol/divine_spirit_2022.py executes original untargeted cast consumer(.25s) and553particle consumer on the hash-pinned executable. Asset/model services are stubbed. Report:build/reports/divine-spirit-native-2022.json. rendered_verified remainsfalse.
+
+src/runtime/gw_divine_spirit.h validates canonical plan ranks0..20and implements a standalone scoped registry cost modifier. Only an active owned self-enchantment applies;signets and spells from other professions remain unchanged. Positive Monk-spell costs reduce by5with floor1;expired/not-yet-active/removed effects do not discount. Wrong registry/scope/foreign caster reject. Zero-cost Monk monster spells are explicitly unverified and reject under the modifier rather than inventing an increased cost or a free cast.
+
+105rank/cost contexts plus classification,timing/removal/scope guards pass in divine_spirit_test after serial Release build. The frozen isolated window has no independently attributable discounted Monk cast or modifier-stack ordering. Correction:nearby modern162/kind62at280036is a cast-timing override,not an Energy delta;its targeted Draw Conditions311activation is now identified and verified.
+
+Next gates:resolve cost-modifier order against Glyphs/other reductions;add the actual paid-casting cost authority with current scoped effect snapshots;World self-enchantment completion/Divine Favor/equipment duration/replacement/expiry/stripping;normal timing/recharge/interruption/identity/duplicate-completion guards;shared spell reactions and live rendered validation. Do not apply the discount to signets,non-Monk spells,upkeep or sacrificed Health. Official sessions/loggers were not touched.
+
+2026-10-21 World enchantment/lifecycle stage:
+complete_divine_spirit(source,plan,divine,now,durationReceipt)reuses the common atomic timed-enchantment completion with exact self scope. The internal template is now named complete_simple_enchantment because its use is broader than protection. Canonical310plan/rank,live allied self/Monk Divine Favor policy,receipt scope/skill/time and expiry overflow are checked before application. It publishes finish58/caster553then actual timed status,Divine Favor and Health changes as one per-peer batch. It never publishes target sentinel2077or fabricates an NPC cast. Replacement replaces the single same-skill effect;shared expiry/death/removal remains authoritative.
+
+Staged divine_spirit_spell_cost(source,skill,cost,now)settles current resources/effects and reads the exact actor registry,not a cached Runtime discount. Missing/dead/stale actors and unknown skills reject. It is not called by normal paid casting yet. Stripping or expiry removes the discount immediately. This service does not decide stacking order.
+
+World tests:105rank/mode contexts cover primary/secondary Monk healing,forged plans,stale source,body/finish single publication,replacement and exact expiry. Two additional contexts test20percent weapon duration(11s->13s),stale receipt rejection,and Shatter Enchantment/Chilblains stripping with exactly one end packet and restored unmodified cost. Unknown skill/stale cost-service scope reject. The new World suite,pure helper,Shield of Regeneration cast,Protective Spirit cast and Chilblains World suites all pass after serial Release builds;host builds. Native verifier and five coverage tests pass. Runtime310remains explicitly unsupported in coverage tests.
+
+Remaining gates:cost-modifier stack order/payment authority;normal activation/interruption/recharge/self normalization/shared-use reactions and equipment snapshot wiring;NPC source AI;live visual/sound acceptance and residual retail ordering. No official process/logging actions or new capture scans were performed.
+
+2026-10-21 targeted cast/timing classification correction:
+The verifier now checks13frozen receipts,including Draw Conditions311targeted start(actor25,target28)at21409828,its4s recharge/finish/caster554/target555at21410078,and both intervening modern162/kind62values. Draw Conditions begins after310applies and before it expires. The start was missed by an untargeted-only inspection because it uses modern160rather than159.
+
+The apparent-.2/-.02ratio is NOT payment evidence. Pinned original old161/kind61queues actor event24. Native dispatcher77b070uses table77b9bc;event24maps to77b833,which writes its float payload into globalEAA5A0. That global is read by the actual cast-start consumer77c440. The verifier executes the real dispatcher through77b858for both captured floats and asserts the exact timing-state write,stopping before queue retirement/container services. Negative timing semantics remain unverified. No resource-change consumer is substituted and no Energy cost is inferred from these timing floats.
+
+Normal310binding and Glyph/reduction ordering remain unresolved. The staged cost formula still follows the isolated local wiki description;it has no new paid-cast validation from this window. To verify payment,need actual Energy capacity/current-resource observations with regeneration and other active modifiers accounted for,or independently identified native cost prediction logic. A targeted cast start alone is insufficient. Current301/332counts remain unchanged.
+
+2026-10-21 payment authority stage:consume_divine_spirit_spell_energy settles current resources/effects,validates the exact actor lifetime,calculates the scoped modifier and debits through the shared Energy authority under one mutex. No discounted quote is cached across unlocking. The caller still owns the ordering of modifiers supplied before this stage;normal310remains unbound until that order is reviewed. The existing public consume_energy now wraps the extracted consume_energy_locked implementation;overcast/fractional balance,Mind Wrack preflight/reaction and owner-vitals publication remain on that same path.
+
+The local Divine Spirit/Glyph descriptions and additional public searches did not establish stacking order. No timing-override packet is reclassified as Energy payment and no order is invented. World payment tests exercise5base costs,minimum1,non-Monk/signets,insufficient balance,expiry between quote and debit,strip between quote and debit,stale/backdated/invalid skill guards,and exact-zero Energy reaction. Fractional regeneration must be controlled in the last fixture:displayed zero is not necessarily a zero precise balance. Source-bound302/awaiting331is unchanged from To the Limit binding.
+
+Native evidence hygiene:reran divine_spirit_2022.py andto_limit_2022.py without redirecting their stdout onto their internally written JSON paths. Both regenerated reports parse as JSON. Their PASS lines must be captured separately from report files. No official process/logging actions occurred.
+
+2026-10-21 Divine Spirit payment stage:added exact-scope cost calculation/debit under one World lock,using extracted shared consume_energy_locked. Expiry/strip between quote and payment cannot retain an old discount. Five C++ suites pass including actual discounted debit,MindWrack zero-Energy reaction,overcast and existing DivineSpirit lifecycle. Serial host build52735 exited0;modified payment test rebuilt94350 exited0. Five coverage checks retain310unbound. Modifier-stack order remains unresolved;no normal310binding is claimed. Fixed checkpoint633/302/331/696unchanged. Regenerated DivineSpirit/ToLimit native reports without stdout/report-path collision and verified valid JSON. Official processes/logging untouched. See docs/divine-spirit.txt.
+
+2026-10-22 cost-order investigation checkpoint:
+Rechecked archived Resource_cost, Energy, Divine_Spirit and Talk_Divine_Spirit plus current public Divine Spirit/Glyph of Lesser Energy descriptions. No cited rule establishes their joint floor/order. No normal310binding added and no official-client action performed.
+
+Discriminating capture protocol for a future authorized official test:
+Use a Monk/Elementalist with Divine Spirit310, Glyph of Lesser Energy200 and a5-Energy Monk spell (Orison281 is suitable). Record exact current/max Energy and regeneration timestamps, active effect IDs/ranks/application times, spell-use start/finish/cancel, and the actual payment transaction. First measure each modifier alone. Then apply310before200 and reverse the application order; cast281 once under both in each order. Glyph rank0already reduces10, so the combined quote distinguishes final floor1 from final floor0. Repeat with a10-Energy Monk spell and control for regeneration; displayed integer Energy alone is insufficient. A non-Monk spell provides the profession exclusion control. Do not infer payment from modern162/kind62 timing overrides. Retain the full snapshots and receipts with each trial rather than only a final integer delta.
+
+Candidate predictions to test, not implementation rules:310thenGlyph yields0 for base5/10 at Glyph rank0;Glyphthen310 with a final minimum1 yields1. If both costs are0 or both1 independent of application order, that rules out a simple insertion-order pipeline but still needs a second nonzero-cost boundary to establish general composition. A zero quote entering the existing standalone310helper currently rejects; this is an explicit unresolved composition case, not confirmed retail behavior.
+
+2026-10-24 opt-in cast integration: Runtime now validates the canonical
+Divine Spirit plan and requires a callback before accepting skill310. A
+World-backed test admits a primary Monk, completes the .25s cast, applies
+one owned enchantment and receives exactly one native finish58/caster553
+body. Missing callback remains unsupported. The production gateway callback
+is intentionally empty: its existing Energy debit service has no verified
+composition order with Glyph of Lesser Energy and other reductions. This
+does not change the source-bound backlog count. The pinned native
+divine_spirit_2022 verifier and five focused Release suites pass; serial
+server_host build passes. No rendered client test or official logger action.
+Tested SHA256:
+  gw_skill_casting.h 930C04ACA36E57630ACCB8DE39C49062D3916FB1CC0075E3B48608BC13C38ADC
+  gw_auth.cpp 00ECA2DBBEBDD756C43AAF86E0E53EF77AE0B9B2A13A142E08AA648774D9BD66
+  divine_spirit_world.cpp FF4BD7D846FF41DE9A4E9F6A3877ABB1F4A055B740D0EDE0895FF0F1DCC613A7
+  skill_runtime_coverage.py EB3F1156FA5E6E3FD31D81BEF0E5D5D03F6DA0DEC2EA2FA83660661420354EAD
+  server_host.exe B59304ED2A8534D7CB8B9E9BE41A21B57843EE24C943BAFE62E9F9D5EB5A681F

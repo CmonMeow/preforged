@@ -1,0 +1,61 @@
+Lightning Bolt [1369]: player-cast World/projectile binding implemented
+
+Fixed checkpoint: 20261017-npc-refresh-2.
+Verifier: tools/protocol/lightning_bolt_2022.py CHECKPOINT
+Report: build/reports/lightning-bolt-native-2022.json
+
+The hash-checked 2022 row agrees with the historical local wiki: Air Magic,
+5 Energy, 1 second activation, .75 second aftercast, 8 second recharge,
+5..50 base lightning damage. The wiki specifies 25% armor penetration and
+a separate additional 5..50 hit if the foe is moving when struck.
+
+The frozen cast is packets-1360-15821281.jsonl line 230094; completion is
+230104. Caster resource 1180 is at 230105. Projectile synchronization is
+230110, followed by targeted impact resource 1628 at 230111 and a damage
+fraction at 230112. These receipts share the completion tick, so they do
+not establish a projectile flight speed. No second damage hit is proven.
+The verifier runs the original cast and particle consumers offline. The
+native target-body field is the 2077 sentinel; the projectile impact uses
+the distinct captured resource 1628. Treating it as an ordinary instant
+elemental spell would lose that distinction.
+
+Impact core implemented in src/runtime/gw_lightning_bolt.h. It requires an
+explicit known movement fact to begin, binds the reviewed native skill row,
+and resolves one strike at a time against the current Actor. The caller can
+commit damage reactions before supplying the next Actor state. Unknown armor,
+non-hostile targets and invalid damage do not consume a strike. A lethal hit
+suppresses the remaining strike. World now calls it after checking projectile
+aim, current target lifetime, hostility, plane, Health and lightning armor.
+Player motion is sampled from authoritative positions at impact and one
+millisecond later; NPC motion uses the existing owned movement contract.
+Unknown NPC controller motion does not invent a stationary result.
+
+The release uses the captured model403 launch and impact resource1628,
+with caster1180 published after the cast terminal. Flight uses a provisional
+2400 units/second policy matching the native +0x6c value. That field's exact
+retail flight semantics are not proven by the single same-tick capture.
+
+Release lightning_bolt_impact CTest passed: ranks 0/12/20, moving/stationary,
+25% penetration against AR80, per-hit changing flat protection, lethal first
+hit, unknown movement/armor and non-hostile/invalid damage rejection.
+
+Runtime/World test passed for player and NPC recipients, payment, cast terminal
+before launch, one caster effect, delayed damage, separate moving-target hits,
+movement starting after release and stopping before impact, fixed-aim miss,
+lethal first hit, cancellation, interrupt, absent hook, reused caster lifetime,
+unknown armor and no repeated impact. Lightning Orb regression and host build
+are recorded separately in IMPLEMENTATION-STATUS.txt after completion.
+
+Additional Release World tests pass in both PvE and PvP policy modes, including
+busy during aftercast, recharge at the aftercast boundary and one millisecond
+before the eight-second recharge ends, and admission exactly at expiry.
+An actual owned quest-wave NPC starts its authored chase after release: it
+takes two hits while moving. Knocking it down before impact leaves one hit.
+These tests exercise World movement ownership, not a supplied moving Boolean.
+
+Remaining verification: NPC casters; other moving NPC controller integration; retail
+paired moving/stationary damage, intermediate reactive/protection ordering,
+flight speed and miss tolerances; rendered projectile and impact visuals.
+The shared fixed-aim policy is a private simulation, not proof of identical
+ArenaNet flight behavior. No broad collision or PvP acceptance claim follows
+from these targeted tests.

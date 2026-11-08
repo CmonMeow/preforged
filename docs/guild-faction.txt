@@ -1,0 +1,9 @@
+Guild faction (2026-10-07)
+
+Persistent per-guild balance/allegiance resides in fw_gw_guild_faction, independent of personal spendable faction and titles. Guild panel General288 publishes the current balance. Membership is derived from the authenticated account. No client grant operation is exposed.
+
+Daily rate:10%, at midnight UTC, per https://wiki.guildwars.com/wiki/Alliance and https://wiki.guildwars.com/wiki/Faction_Transfer . Store the last processed UTC epoch day; atomically compound every elapsed day on the next read. Online guild polling updates the panel; offline days catch up before the next read. Repeated reads/restarts cannot apply a day twice; backward clock changes cannot rewind the marker. Integer remaining balance rounds down with minimum1 for a positive balance; retail fractional rounding has not been verified. Zero stays zero.
+
+Not implemented: alliance membership, alliance totals/chat, donations, town ownership/rankings, border simulation or town benefits. Town ownership needs alliance ranking within the faction and the Kurzick-Luxon border, not a fixed faction threshold. Reference: https://wiki.guildwars.com/wiki/Kurzick-Luxon_border .
+
+Tests in social_accounts cover UTC boundaries, daily compounding, offline catch-up, cancellation rollback, persistence/restart, membership privacy, zero/minimum and overflow. network_lifecycle covers shared operation dispatch.

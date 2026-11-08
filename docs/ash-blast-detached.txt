@@ -1,0 +1,75 @@
+Ash Blast 1085 — production binding, 2026-10-24
+
+Ash Blast now enters the normal paid 5-Energy/1s Runtime path. The server selects the hostile target and adjacent player/NPC recipients, preflights reviewed Earth damage, applies a 5s accuracy hex only to surviving Burning targets, and uses the shared miss-chance consumer. The target-centered World transaction, NPC-target cast, cancellation, lost-target rejection and ordered finish/caster1185/target1186/damage publication pass focused Release tests. The pinned 2022 executable accepts descriptor158/kind21 for caster1185 and descriptor159/kind20 for target1186; the newer official capture uses descriptors159/160, so its raw packet headers must not be copied into the 2022 client. The native consumer and serializer probe passes with the pinned client SHA-256 a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+
+The observed official recharge is 10s while the pinned native row says 15s; modifier/balance context remains unresolved. Captured burning-target conditional packets, exact damage/hex reaction ordering across all protections, NPC caster AI, full atomicity under every late failure, and rendered-client acceptance remain open. This is a source binding, not a claim that every retail mechanic is finished. Nine focused/neighbor CTests pass, as do the six-receipt frozen capture audit, native effect probe and twelve coverage-audit unit tests. Tested server_host.exe SHA-256 dd7aebff8406940e4c5025590449b37555988b8466dae7d2c9ce463471aedeab; ash_blast_cast_test.exe SHA-256 d759def6ea510d0ec5167adfb972caab91ea31979c375ac870b31408d4bf7cbd. Fixed checkpoint: 679 locally activated obtainable skills, 365 source-bound, 314 awaiting binding, 650 without local activation.
+
+Historical detached stage follows; its statements that the skill is unbound describe that earlier stage.
+
+Ash Blast1085 detached native checkpoint,2026-10-23
+
+Files:src/runtime/gw_ash_blast.h,tests/ash_blast.cpp,
+tools/skills/audit_ash_blast_checkpoint.py. Source/tests frozen after standalone
+validation. No shared World/Runtime/CMake edits;no process or logger actions.
+Fixed checkpoint and historical reports intact. Skill1085 remains unbound.
+
+Fixed evidence:20261022-cumulative-skills/packets-1360-15821281.jsonl,
+SHA25659e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+193905 start at19705078,caster25,target30,skill1085.193918..193922 at19706093:
+recharge10s,finish,caster1185,target1186,damage-associated Health fraction.
+Six exact receipts pass hash/byte/timestamp audit. The1015ms arrival gap is
+not independent activation-clock evidence;fraction is not raw Health points.
+IMPORTANT:observed recharge10s conflicts with native base15s. Detached plan
+retains native15s;modifier/balance context remains unresolved. No unsupported
+timing override or retail base-change is inferred.
+
+Native catalog and local skilldesc-en.json1085 describe Earth Magic9,35..65
+earth damage to target and adjacent foes,burning victims receive5s hex with
+20..75% attack miss. Canonical rank0..20 plans validate5 Energy,1s activation,
+.75s aftercast,15s native recharge and body1185/1186. Adjacent166/spell1248
+follow existing reviewed engine range conventions,not this packet window.
+
+Detached native mechanics:one recipient is copied and resolved through actual
+combat::apply,so unknown Health/armor,not-hostile and dead actors reject rather
+than inventing values. Registry and actor remain unmodified on proposal failure.
+Burning is sampled at impact via existing conditions::State;surviving burning
+victims get same-skill replacement hex with exact5s duration. Nonburning victims
+still take damage. Killed victims receive no new hex;World owns global death
+cleanup. Existing burning removal does not retrospectively end a hex. Scoped
+accuracy consumer returns active1085miss chance,usable by the existing
+combined_miss_chance probability function. It does not apply Blind or treat
+the hex as a condition. Strip/expiry immediately remove its miss contribution.
+
+Verification:standalone MSVC C++20/O2 test PASS21plans and actual earth damage,
+burning/nonburning targets,combined accuracy,adjacent inclusive boundary,expiry,
+replacement,effect collision,death,nonhostile,unknown armor and lifetime guards.
+build/reports/ash-blast-detached-test.txt
+build/reports/ash-blast-checkpoint.json
+build/reports/ash-blast-detached-sha256.txt contains exact source/exe/report hashes.
+Native C++ mechanics testing is not native2022 retail callback execution or
+rendered client verification. No production host build/deployment performed.
+
+Integration required before binding:
+1.Register tests during coordinated CMake window. Add normal1085casting with
+  live authoritative target,caster rank/level,range,payment,interrupt and own
+  recharge. Resolve observed10s versus native15s context before claiming retail.
+2.Select authoritative hostile recipients around original target at completion,
+  including target-centered adjacent radius166. Settle all actors/conditions;
+  preflight every copied proposal and commit ALL Health/hex changes together.
+  Never mutate early recipients while a later unknown-armor recipient can fail.
+3.Route actual earth-damage and hex-application modifiers/protection/reactions,
+  source generation and effect allocation/capacity through shared World authority.
+  Verify burning sample phase,zero damage/protection,death and hex application
+  order;detached single-recipient helper is not a complete World transaction.
+4.Add1085accuracy contribution to authoritative weapon miss selection with all
+  existing sources using combined probability once. Strip/expiry/death/transfer,
+  replacement,multiple attackers and NPC combat must read the actual registry.
+5.Publish actual finish/body1185/1186,damage,conditional hex and removal status
+  receipts in verified order. Validate native2022 callbacks and burning/nonburning
+  retail behavior;coordinate serial Release host tests/hashes and separate
+  rendered private-client acceptance. Preserve official logging throughout.
+
+Missing evidence/consumers:conditional burning hex and misses,adjacent AoE,
+nonzero ranks,modifier ordering,recharge-context explanation,atomic all-target
+World transaction,normal Runtime/NPC cast paths,native2022/rendered acceptance.
+No new capture count,production binding or complete1085mechanics claim is made.

@@ -1,0 +1,72 @@
+ATTACK INTERRUPT DISABLE — STAGED AUTHORITY, NOT PRODUCTION INTEGRATION
+
+gw_attack_interrupt_disable.h provides canonical reviewed340/399 plans and a
+target-lifetime-owned immutable proposal ledger. A successful action-controller
+receipt must identify the exact interrupted slot/copy,monotonic action sequence,
+valid activation interval,interruption timestamp and settled recharge deadline.
+The extra20s composes with that settled deadline. Existing longer disables are
+preserved. No guessed catalog recharge,client-selected skill,or interrupted
+spell's attribute group is substituted. Ordinary non-skill attacks do not
+produce a skill receipt and therefore receive no invented disable.
+
+Receipts are consumed only on commit of the proposed state. Duplicate/older
+action sequences reject,including after skill-disable reset. A high-water mark
+avoids an ever-growing receipt set. Expired rules are pruned on proposal.
+Scope/generation,clock,active interval,slot/copy,overflow and canonical plan
+validation precede mutation. Reset affects selected slots only. Retired owners
+cannot query or propose new state. Same-name copied slots remain independent.
+
+VALIDATION
+attack_interrupt_disable native suite passes for340/399:exact slot/copy,
+ordinary recharge plus extra20s,longer deadline preservation,immutable proposals,
+exact expiry,reset,replay/stale lifetime/future time/overflow rejection and5000
+successive receipts per skill without session-capacity exhaustion.
+
+INTEGRATION REQUIREMENTS / OPEN GAPS
+World now owns the ledger; neither skill is bound. The trusted settlement API
+requires an actual recorded control event with matching owner,epoch,stamp and
+slot/copy. No network decoder calls it. It rejects a fabricated/nonexistent
+control or a mismatched copied slot. Production attack-contact and Runtime
+settlement callbacks are not yet connected.
+The owner controller must settle normal interruption recharge and propose this
+ledger before committing damage/control/cooldown state. Failed/protected/missed
+or blocked interruptions must not create a successful receipt. Controller action
+sequences must be monotonic per target lifetime. Wire disables must be published
+only after the complete transaction succeeds. World player/copy disable reads include the ledger. Five-part reset permits
+include its revision; Keystone and Determined Shot reset transactions propagate
+that fifth authority. Selective reset and player/NPC lifetime retirement paths
+include the new map. Runtime hook types and the auth caller use five-part
+permits. NPC action settlement and actual attack producers still need integration.
+Confirm recharge/extra-disable retail ordering using an actual interrupted skill
+capture; existing standing-target receipts do not establish it. Distracting Shot
+damage/impact and Disrupting Chop contact integration remain unimplemented.
+
+World native regression verifies actual cast/control identity,wrong copy/epoch/
+owner rejection,read composition,stale reset permit rejection,selective reset
+and reconnect retirement for both plans. This does not prove the skill itself
+can be used or that normal interruption recharge settlement is atomic.
+
+RUNTIME SETTLEMENT STAGE
+An opt-in settle_attack_interrupt callback now receives ordered control origin,slot,the actually retained ordinary recharge deadline and interruption time. Normal interruption proposes its local recharge first; failed/invalid settlement restores recharge/source/order/revision state and retains the cast for retry. Missing control evidence also retains the cast. A successful independent deadline stays in the external layer instead of replacing ordinary recharge. Existing behavior is retained when no callback is installed.
+
+The auth callback is explicitly empty. Coverage refuses to bind340/399 while it is empty. Native Runtime tests use real World control and ledger commits for the base slot; copied-slot ledger isolation is tested separately at World level. They cover successful settlement,no-request,failed/invalid result rollback,retry without heal execution,and unavailable control evidence. This does not establish copied-session cast admission.
+
+Glyph of Renewal's terminal transaction does not invoke this staged callback. Its atomic combined transaction,actual attack-contact producers,NPC action settlement and retail recharge ordering are still missing. Neither attack is marked implemented.
+
+Validation: six native suites (ledger,World,Runtime,elemental glyph casting,Savage Slash World,cooldown Runtime sources) and56 tooling tests pass. Release host rebuilt. Native Runtime output verifies one interrupt terminal and displayed2s ordinary or22s extended deadline,with no replay on repeated update. These are serialized packet checks,not rendered client evidence.
+
+RENEWAL COMBINED TRANSACTION
+finish_renewal_spell now accepts an optional trusted attack-disable plan for interrupted outcomes. It proposes the exact-slot ledger before committing Renewal's reset/consumption. Invalid plan,clock or receipt leaves the glyph and ledger unchanged. The extra deadline is anchored to the original control stamp plus20s because Renewal removes ordinary recharge; processing later must not extend that timer. Independent longer authorities still compose through the normal disable read. Completed spell outcomes reject an attack-interrupt plan.
+
+The existing Runtime Renewal terminal consumes the combined independent-disable result. Native tests cover340/399 proposals,immediate/delayed processing,invalid proposal and successful retry,no spell effect,ordinary reset and scoped independent disable. The normal settlement callback is not separately invoked for Renewal. Actual contact producers must select the trusted plan for the combined terminal; production forwarding,NPC action settlement and retail/rendered behavior remain unverified.
+
+Final Renewal validation also checks exact23200ms expiry of a3200ms interruption and successful recast at that deadline. Two rebuilt native suites,56 tooling tests and Release host build pass. This tests the authored transaction semantics;retail behavior still needs capture.
+
+NPC OWNER TRANSACTION
+NPC Spellbook now exposes its stored normal recharge deadline; LiveActor checks that a token belongs to the actual reviewed pending spellbook action. prepare_attack_interrupt copies the actor,settles ordinary cancellation/recharge,then proposes the independent exact-slot ledger. Original actor and ledger remain unchanged on rejection. Manual/untracked windups cannot create a recharge receipt.
+
+World interrupt_npc_skill_with_disable commits the prepared actor and ledger under its lock and publishes an interrupt terminal after success. Existing scoped availability queries prevent the AI using the disabled copy until expiry. Tests cover zero/nonzero recharge,independent copies,paid Energy preservation,replay,stale/future tokens,untracked actions,and actual World AI admission at expiry. This is a trusted controller API;qualified skill-contact producers are not yet connected. NPC interrupt-protection breadth and retail/rendered ordering remain unverified.
+
+CURRENT340 INTEGRATION: Disrupting Chop now creates exact-slot requests at successful qualified player contact;production auth forwards ordinary Runtime settlement and Renewal automatically selects its retained source request. Reviewed NPC spellbook contact commits without restoring pre-hit Health.399 remains unbound. Earlier staging notes describe intermediate states;see docs/disrupting-chop.txt for current behavior and gaps.
+
+Current399 integration: Distracting Shot now invokes player/NPC transactions at arrow impact,with fixed damage,distinct release/aftercast phases and reviewed prior-hit-interrupt precedence. Earlier unbound notes are historical. See docs/distracting-shot.txt for remaining gaps.

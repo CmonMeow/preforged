@@ -1,0 +1,28 @@
+2026-10-27 NPC weapon and Conjure Reversal integration
+Player ordinary melee/projectiles, attack-skill contacts and Cyclone now plan
+NPC damage on a private proposal,quote conversion from the reduced amount,and
+commit current NPC state before hit reactions. Ordinary skill0 is admitted only
+through the explicit weapon API;generic spell admission still rejects it.
+Reversal consumes the positive base strike before Conjure182/207/221. Real
+healing precedes remaining loss,without replaying armor/vulnerability/caps or
+flat reduction. Follow-up damage/control uses actual survival and loss;healing-
+caused death remains a distinct receipt and receives one World death credit.
+Critical/zero-attribution wire feedback and Watch Yourself/Bonds reactions are
+retained. Whole-area Cyclone preflights NPC conversion variants before release.
+Move committed proposals rather than copying their actor state again.
+960 new cases PASS:582 real World contacts and378 typed conversion/wire controls.
+Five fresh native suites and41 Python checks PASS. Final Release host rebuild
+and --build-info pass(exit0). Fresh offline verifier checks four actual World
+packet sets plus two LiveActor critical controls through original2022 callbacks
+and serializers. Fixed self-cast/native545 particle verification also passes.
+The packet proof preserves retirement/healing/damage order,ordinary skill0,
+separate Conjure attribution and required absolute Health after critical17.
+These checks use staged Reversal and synthetic native services,not a paid307
+cast or rendered/controlled-retail verification. Conjure keeps elemental kind16
+notification while its arithmetic ignores armor;retail per-hit presentation is
+still open. NPC-owned attacks against NPCs,Seed integration/lifetime/NPC healing-
+death cleanup,other producers,paid lifetime/deferred/full life-steal work remain.
+Paid274 stays staged;307 UNBOUND. Fixed implementation checkpoint/manual queue
+preserved. Official clients/live logging untouched.
+Report:build/reports/npc-weapon-reversal-20261027.json
+Host SHA256:27f8809cf0c46efaba3663733c637b693aafbb863978ace172b1a79840044956

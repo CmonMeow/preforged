@@ -1,0 +1,185 @@
+{
+  "scope": "map146 epoch20 initial River Skale Tad actors37..40 only; exclude later ID reuse",
+  "events": [
+    {
+      "line": 53043,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84074515,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a000000260000000a000000"
+    },
+    {
+      "line": 53044,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84074515,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a300000010000000260000001f000000333333bf"
+    },
+    {
+      "line": 53064,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84076062,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a300000010000000260000001f000000333333bf"
+    },
+    {
+      "line": 53066,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84076187,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c0000002900000026000000ba000000"
+    },
+    {
+      "line": 53294,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84096796,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a000000280000000a000000"
+    },
+    {
+      "line": 53369,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84102078,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a000000250000000a000000"
+    },
+    {
+      "line": 53370,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84102078,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a300000010000000250000001f000000333333bf"
+    },
+    {
+      "line": 53379,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84102078,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000004000000270000001f00000000000000"
+    },
+    {
+      "line": 53385,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84102468,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a000000270000000a000000"
+    },
+    {
+      "line": 53390,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84102906,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000030000002700000000000000"
+    },
+    {
+      "line": 53398,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84103484,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a300000010000000250000001f000000cdccccbe"
+    },
+    {
+      "line": 53403,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84103812,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000004000000250000001f00000000000000"
+    },
+    {
+      "line": 53414,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84103828,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000030000002500000000000000"
+    }
+  ],
+  "world_identity_lines": {
+    "6285": "actors37..40 River Skale Tad model1434 level0",
+    "6317": "actor41 Fire Imp; do not attribute186 to skale"
+  },
+  "health": {
+    "captured_maximum": 10,
+    "current_catalog_wiki_maximum": 35,
+    "semantics": "modern159 kind42 is unsigned maximum Health; src/runtime/gw_combat.h publishes kind42 from Health.maximum; independently used as capacity by Monk/Necromancer capture audits and ElementalLord fraction-to-Health audit. Not percentage.",
+    "actor_capacity_packet_lines": {
+      "38": 53043,
+      "40": 53294,
+      "37": 53369,
+      "39": 53385
+    }
+  },
+  "ordinary": {
+    "start_kind": 4,
+    "starts": {
+      "39": 53379,
+      "37": 53403
+    },
+    "end_kind": 3,
+    "end_meaning": "stop/cancel, not successful release",
+    "limits": "No completed skale melee/ranged release or outgoing damage demonstrated here; delivery, damage, mastery, range and cadence must remain explicitly authored if enrolled. Actor37 begins after incoming damage. Actor39 may react to nearby combat; no inferred group threat."
+  },
+  "skillbook": "No skale skill activation in bounded84055000..84105000. Fireball186 line53066 belongs to FireImp41. Profession6 cannot establish skillbook.",
+  "proposal": "Reuse exact quest81 owned ordinary with explicit authored low damage/range/timing and damage_only trigger, optional bounded patrol as authored. Correct Health to captured10 with separate provenance. Preserve kill-any remaining/owner/cycle cleanup. No duplicate roster, no generic model arming.",
+  "sha256": {
+    "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+    "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+    "src/runtime/gw_combat.h": "e23696ca8a53af4dc80ac17f851018a79e90ea7abd3b2b83d39f47d40127f672",
+    "src/runtime/gw_weapon_hit.h": "82c81f8240f42a7cabc434df6ef10d759827d6df138c48444da67a00a3bfcb98",
+    "tools/quests/audit_monk_test.py": "800d854aecaf5ac4f2935db6c4df08421cfee70c83f806c3fd2def94a74f3cad",
+    "tools/quests/audit_necromancer_test.py": "925875c61fccf6e8b8a07d216a5bb52fabcb90c9693e3ef0ba3d81cb8b705c9a",
+    "tools/skills/audit_elemental_lord_checkpoint.py": "c32a9876bb10e283b7c0545a22d550a6e0eefb9e568b836c9593a6558c632256",
+    "data/gw/quests/mesmer-test-development-combat.txt": "94747d49374e56c0fc8965cc0bbbaf37246bf5aa56d284c75e54e8f063331afe"
+  }
+}

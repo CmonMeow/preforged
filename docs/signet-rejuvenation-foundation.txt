@@ -1,0 +1,44 @@
+SIGNET OF REJUVENATION [887] — NATIVE CAST BINDING
+
+The pinned 2022 row defines a Factions Monk Healing Prayers signet with zero
+Energy, 1-second activation, 0.75-second aftercast, 8-second recharge, and
+15..75 base healing plus another 15..75 if the target is attacking or casting
+a spell at completion. The target's own signet cast does not qualify. The
+native plan checks the row and refuses unknown target-activity facts.
+
+The completed, hash-pinned Domain of Anguish capture has 116 starts in map
+474, 110 same-actor finishes within 2250ms, and 106 matched selected-target
+opcode160/kind20/resource1012 receipts within 200ms of a finish. This is
+mixed-source evidence; it does not prove a numeric heal or rendered effect.
+See tools/skills/audit_signet_rejuvenation.py and
+build/reports/signet-rejuvenation-doa-20261025.json. The earlier audit looked
+for kind21 and incorrectly reported no target receipt; that finding is
+superseded by the corrected audit.
+
+The hash-pinned original 2022 client was probed offline. Its targeted cast
+packet selects style51 and 1-second duration. The target body packet with
+resource1012 dispatches a nonzero particle file. See
+tools/protocol/signet_rejuvenation_2022.py and
+build/reports/signet-rejuvenation-native-2022.json. This establishes the
+native consumer path, not a rendered acceptance test.
+
+World applies the completion-time conditional heal to a scoped allied player
+or healable NPC after life, team, plane, range and line-of-sight checks. It
+passes the normal healing modifiers, defers publication until after cast
+completion, and rejects stale targets. Runtime now checks target validity,
+payment, cancellation and completion before staging the heal; the host wires
+the native target body. Focused plan, World and Runtime tests cover idle,
+attack, spell, signet, hostile, stale, NPC and cancelled cases. A Release
+server_host build verifies the integration. Rendered-client acceptance and
+an official numeric-heal comparison remain open; no such verification is
+claimed here.
+
+Validated 2026-10-25: Release CTest signet_rejuvenation, _world and _cast 3/3;
+serialized Release server_host build; hash-pinned capture and offline 2022
+dispatch both pass. SHA-256 at validation:
+  gw_signet_rejuvenation.h 56F12BC60629ECCC3B07B8582279F3B01EE5210E804ABF41E17FA139F4C21CEC
+  gw_world_signet_rejuvenation.inl 51E63319DF453035EA13957C4AB1A2C7ED3A2794451E785E905ABDD4D12D672F
+  gw_skill_casting.h B3CA096541E7E7999905E09F376286297D20CF50B3EAC25700C2E3D3BB0A5D3D
+  gw_auth.cpp 0D0B9BFD7C56AAC167276014844E661D1A828233C2AE1402AB9BBF265D274DBC
+  signet_rejuvenation_cast_test.exe D7E8FA57873BBCFBD4E30325D64CACECEBDD076C63F4125B2A7D8C9885E667CA
+  server_host.exe E883275D5911BE167E488A5D89D0C51D803950F23B14850D25F03755037D52D2

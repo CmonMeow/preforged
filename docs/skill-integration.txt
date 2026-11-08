@@ -1,0 +1,341 @@
+Captured character skills: bounded native integration
+==============================================================
+Implementation update: 2026-10-03. gw_character_skills.h now implements the
+bounded versioned codec and owner-private initial restoration. Accounts provides
+gw-character-skills-get/import and gw-character-bar-save with ownership, revision
+CAS and foreign-key cascade. tools/skills/import.cpp is the native explicit
+schema4/exact-hash/selected-GUID importer, using its bounded JSON parser.
+tests/character_skills.cpp covers codec, strict parser, provenance, association,
+restoration order and cancellation; tests/accounts.cpp covers storage ownership,
+CAS, absent data and deletion. gw_auth.cpp live wiring is integrated separately.
+The remaining blueprint sections below describe policy/evidence and remaining
+requirements; old 'proposed' wording is historical, not a claim all is complete.
+Casting/gameplay effects remain separate from restoration and bar persistence.
+Native casting slice: gw_skill_casting.h now implements timed activation,
+aftercast, atomic energy consumption via the instance, server recharge deadlines
+and ready notification for Orison of Healing281, Word of Healing282, Heal
+Other286 and Healing Touch313. Pinned2022 scales and costs are authoritative;
+reviewed local wiki supplies Word's below50% bonus and DivineFavor/doubleTouch.
+Only live legal party/self targets are admitted; dead/removed/out-of-range targets
+cancel safely. Other skills are cancelled explicitly without spending energy or
+inventing effects. Attack chains, spirits, enchantments, conditions, resurrection,
+damage and HealingSignet's casting armor penalty remain unsupported. Cast visual
+activation is intentionally not fabricated; pending/recharge lifecycle is proven.
+Initial restoration no longer sweeps all internal catalogue IDs. A caller may
+explicitly provide previous proven learned IDs for zero-count removal; otherwise
+only the current captured learning/copies are restored. Wire fixtures alone do
+not establish semantic safety for internal IDs or cross-character resets.
+No server/client process, official login or build was performed for this audit.
+The standalone validator now implements the proven three-PvE-slot restriction;
+live integration and persistence are implemented. Paths are project-relative unless stated.
+
+Scope and proven input
+----------------------
+The first slice imports one explicitly selected, already owned character's
+captured learned skills, duplicate counts, professions and eight-slot bar; it
+restores them on private world entry and persists supported bar edits. It does
+not implement casting, recharge, resource consumption, damage, capture-signets,
+attributes, secondary-profession changes, hero bars or automatic skill grants.
+
+Use the corrected schema-4 capture under data/captures/skills, retaining each
+snapshot's preceding start event and exact supported modern executable hash.
+Do not treat schema/hash as snapshot-local fields: the observer establishes
+them in the start event. Require stable in-world state and a complete snapshot.
+The currently reviewed character has 1,081 distinct learned IDs and 81 copies
+of skill 3, Signet of Capture. Its account has 1,233 unlocked IDs. These sets
+are separate. The identity-redacted comparison is build/reports/skill-coverage.json.
+No name, GUID, email or account identifier is reproduced in this blueprint.
+
+The private runtime target is build 37130, pinned 2022 executable SHA256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+src/runtime/gw_skill_catalog_generated.h extracts 3,433 records, IDs 0..3432,
+from VA 0x8d84c8, stride 160. This is an internal catalogue, not an obtainable
+skill list. Retain original capture/raw modern records privately; never silently
+substitute modern costs, attribute rules or 164-byte offsets for 2022 values.
+Current captured IDs fit the 2022 range, and the captured bar passes the existing
+standalone validator. This says nothing about uncaptured roster characters.
+
+Current code and insertion points
+---------------------------------
+src/network/network.cpp, NetworkManager::execute:
+  Direct, serialized Accounts execution through a timed mutex; no bridge/network
+  hop. Characters operations are admitted only with the gw-character- prefix.
+  New operations belong here and in Accounts, preserving this single-host design.
+  NetworkClient currently has unavailable transport stubs; it can gain matching
+  operation wrappers later without inventing a second server-side transport.
+
+src/runtime/accounts.cpp, Accounts::Impl constructor and execute:
+  SQLite FULLMUTEX, WAL, synchronous FULL, foreign keys ON. Transaction begins
+  IMMEDIATE and rolls back unless committed. Existing character/experience
+  operations enforce account plus character ownership; there is no skill table.
+  Runtime busy timeout is 20 ms, so storage failure is a normal handled outcome.
+  gw-character-profile-import[-utf8] can replace a generated character primary
+  key with the captured UUID; it also resets unrelated map/position/XP fields.
+  Do not reuse that broad import operation to save a bar or refresh skill data.
+
+src/runtime/gw_token.h:
+  Use parse_uuid and existing raw-token conversion. Canonical GUID text reverses
+  the first three groups relative to the database's 16 raw bytes. A naive
+  punctuation-removal/string match binds the wrong key. Identify by exact owned
+  captured UUID, never roster order, current actor, map, name alone or first slot.
+
+src/apps/gw_auth.cpp, TransferRegistry::issue/consume and handle_game:
+  The consumed Grant carries authenticated account+character and a newly allocated
+  actor. Load skills by that pair after consume, before local character init.
+  Do not persist actor IDs. Rebind SkillbarState to the new actor on each world
+  entry/travel/reconnect; creation-preview map type 11 is a different path.
+  Grant caching should not become the durable skill source. Load current revision
+  from SQLite, including actual campaign permission from the same owned account.
+
+src/apps/gw_auth.cpp, roster decode and final spawn branch:
+  Roster decode caches appearance, level and equipment, not secondary profession.
+  The final CMSG 0x86 branch currently sends SMSG 55 attribute state, then 165/182
+  with primary from appearance and secondary zero, and later 34/365. It sends no
+  181/218/220/217. The player-stream 0x8e branch joins the world earlier.
+  Integrate the bounded skill init into final spawn after agent/attribute context
+  exists and before controlled-actor/UI completion, not the auth roster stream.
+  For uncaptured characters, gw_summary_2022.h proves secondary metadata in
+  summary DWORD+28 bits 10..13; that supplies no learning or equipped bar.
+
+src/runtime/gw_skillbar.h, Policy/validate/SkillbarState:
+  Existing validation covers actor ownership, can_change, eight slots, catalogue
+  ID, character learning, available unique (skill,copy), primary/secondary,
+  campaign permission, one elite and three PvE-only slots. restore validates an entire saved bar;
+  apply mutates its state only on accepted edits and returns snapshot(create=0).
+  CMSG 90..93 currently reaches unsupported fallthrough in handle_game. Route
+  complete parsed requests through parse_request/SkillbarState before that path.
+  Malformed framing remains a protocol error; a well-framed rejected edit must
+  reconcile with a bar snapshot, not disconnect the client.
+
+Persistence and explicit import
+--------------------------------
+Proposed new native codec, src/runtime/gw_character_skills.h (not yet present):
+  Versioned, bounded profile containing capture-presence flags, primary,
+  secondary, raw profession mask, sorted learned (ID,copy-count) pairs, exactly
+  eight (skill,zero-based-copy-index) slots and source schema/hash references.
+  Keep raw actor IDs, map coordinates, account strings and passwords out of it.
+  Bound ID to 1..3432, reject duplicated IDs, require copy-count >=1, and bound
+  count consistently with the observer's accepted maximum (currently 65,535).
+  Every explicit duplicate must have its learned bit set; each equipped copy
+  must exist and each (ID,copy) appear only once. Empty slot requires copy zero.
+  Distinguish absent/uncaptured data from explicitly captured empty learning/bar.
+  Primary 1..10, secondary 0..10; permit only known mask bits 0x7fe. Do not require
+  the primary bit in that mask: the observed raw mask 0x6fe lacks its primary bit.
+  Its broader interpretation is not proven; preserve it rather than normalizing.
+
+Proposed table fw_gw_character_skills:
+  character TEXT PRIMARY KEY REFERENCES fw_gw_characters(id)
+    ON UPDATE CASCADE ON DELETE CASCADE;
+  format_version, revision, profile BLOB, source_capture_hash.
+  Character-ID migration must retain the profile; deletion must remove it.
+  Account deletion already cascades through the character parent.
+  Keep account-unlocked bitwords in a separate account-owned table/blob if imported.
+  Account unlocks must never become Policy.learned or SMSG 218 character learning.
+
+Proposed Characters operations:
+  gw-character-skills-get(account,character) -> presence,revision,profile;
+  gw-character-skills-import(account,character,expected-revision,source,profile);
+  gw-character-bar-save(account,character,expected-revision,eight-slots).
+  Each query/update must join or predicate fw_gw_characters.account+id. The bar
+  save updates only the mutable bar and revision, never captured learning/profs.
+  Character ID alone is insufficient authorization. Missing/deleted parent must
+  fail without recreating a profile. Bound decoded blobs, hex and field lengths.
+
+A full 1,081-ID profile exceeds legacy FW_MAX_PAYLOAD=768. NetworkManager's direct
+execute path does not impose that framing limit, but new operations must enforce
+their own documented bounds, e.g. <=32 KiB decoded profile/<=64 KiB hex. Do not
+widen unrelated legacy framing limits or split the learned list into lossy pages.
+A revision plus eight slot pairs is a small bar-save request.
+
+Use an explicit native import mode before server listeners start, or a bounded
+native developer tool. No startup auto-import and no implicit first-character
+selection. A JSON parser is not currently present in the project; select a proper
+bounded parser for this tool, not regular expressions. The importer must reject
+foreign/missing GUID, wrong source hash/schema and incomplete association. Match
+the already imported private roster's UUID exactly. If roster migration is needed,
+perform it deliberately before importing skills with the host stopped.
+Import once; repeat identical source can be idempotent. Replacing existing private
+state requires an explicit expected revision. Never overwrite accepted private
+bar edits each launch merely because an old capture file is still present.
+Attributes are outside this slice. Historical schemas 2/3 read invalid extra
+attribute rows; schema 4's correct 51-row data can be preserved for later work.
+
+Atomic edits, revision/CAS and reconnect
+---------------------------------------
+There is no existing single-character active-world lease. Test login removes old
+SQLite login sessions, but an already validated world connection never checks
+that session again. TransferRegistry consumes tickets; WorldDirectory reserves
+actor IDs, not exclusive character ownership. Two world sessions can therefore
+carry the same durable character. SQLite serialization alone does not prevent
+the older one overwriting the newer one's saved bar.
+
+For each accepted CMSG edit:
+  1. Clone the current SkillbarState; apply to the clone using owned actor,
+     durable learned/profs and authoritative campaign/mode policy.
+  2. If rejected, send current authoritative 217 create=0; do not write SQLite.
+  3. If accepted, UPDATE owned row WHERE revision=expected_revision in a
+     transaction, increment revision, and commit before emitting acceptance.
+  4. Only after commit assign the clone/current revision and send 217 create=0.
+  5. On busy, timeout or save error retain the old state and send its snapshot.
+     On CAS conflict reload the latest owned profile/revision, validate/restore
+     it and send that snapshot. Do not blindly retry the stale proposal.
+
+The permission/deadline check must precede commit; a second denial after a
+successful commit would create an ambiguous reported failure. Inability to
+reload after a conflict must not authorize an overwrite. No success packet may
+precede durable commit. An explicit session-lease system could supplement CAS
+later, but should not be assumed to exist during this implementation.
+
+Per-connection requests are sequential; keep state/profile revision connection
+local. Do not put a mutable bar in shared map state under unrelated actor IDs.
+Reload on travel/reconnect so committed private edits win over the source capture.
+Do not persist session positions with skill saves: map entry still uses spawns.
+
+Initial wire ordering and privacy
+---------------------------------
+After joined local actor and its attribute context exist, before SMSG 34/365:
+  165 owned actor primary/secondary;
+  182 owned actor primary/secondary and existing unlabelled boolean value;
+  181 full raw profession DWORD mask (182 creates the state, 181 requires it);
+  218 character learned bitwords;
+  220 silent copy-count restoration;
+  217 actor eight-slot bar with create=1.
+profession_packets_2022 already returns 182 then 181. Do not squeeze the unlock
+mask into 182's last BYTE: the pinned callback explicitly coerces it to boolean.
+Keep its existing zero until that boolean's purpose has independent evidence.
+
+218 replaces learned bits but does not clear the separate duplicate vector.
+Send 220 count=1 for every current learned ID, then captured counts >1. If an old
+duplicate ID is absent after character change, it needs explicit 220 count=0.
+Prove/implement clearing of the old duplicate set on the reused client context;
+do not assume 218 clears it. Use the verified duplicate list or a separately
+proven bounded reset strategy. 219 is a positive new-learning UI notification;
+it is not initial silent restore and count zero asserts. Stored copies may exceed
+eight: preserve Signet of Capture count 81; the bar still has eight slots.
+
+181,217,218,219,220 are owner-private state. In particular 218/219/220 have no
+actor field: broadcasting them would overwrite peers' personal learning. Send
+through only the authenticated owner's encrypted channel, not Instance broadcast,
+join presentation or NPC packet machinery. 165 can describe public professions,
+but the first bounded slice can keep its initialization owner-only.
+
+Instance::join caps public presentation at 12 packets, each 2..18 bytes. The
+existing level+appearance+two packets for each of five armor pieces already uses
+all 12. Appending public 165 would exceed the cap and throw. If peer profession
+presentation is later required, change the explicitly bounded metadata design or
+cap/tests intentionally; never append private skill packets to solve it.
+
+Reliable equip restriction evidence and remaining gaps
+-------------------------------------------------------
+May-2021 local wiki baseline: 1,329 obtainable base IDs =1,235 ordinary +94
+PvE-only. Root path: ../gw/Wiki/wiki.guildwars.com/wiki. Numeric classification
+and article hashes are in build/reports/skill-coverage.json. All 94 PvE-only IDs
+have pinned SkillRecord.special &0x80000; none of the 1,235 ordinary IDs does.
+third_party/gwca-current/include/GWCA/GameEntities/Skill.h::IsPvE uses that same
+mask. Header SHA256:
+badf21e8f5abe132b5aac4de37bad1314b23fb5689784c6305118cdf79fc6d44.
+The pinned generated field 'special' is available now; no new guessed field is
+needed for that classified baseline. special&4 is the proven elite flag already
+used by validate. equip_type is 1 for all 94 PvE and all 1,235 ordinary rows;
+it does not distinguish these restrictions by itself.
+
+List_of_PvE-only_skills.html SHA256
+d5980d4e3df76581fa066a5b47c7f7462960c00583735229d036a7194b90cc33:
+  PvE-only learning belongs to a character, cannot be account-unlocked, and at
+  most three PvE-only skills may be equipped. Special temporary/title skills are
+  not automatically the same class merely because they are encountered in PvE.
+Signet_of_Capture.html SHA256
+d8c041166f5af455ae717e709ab871c8d685235fd8eb4c829b28d7d22b39e909:
+  Signet of Capture counts as PvE, cannot be equipped in PvP/by heroes, and at
+  most three copies can be equipped. Count equipped slots, not distinct IDs.
+  It is NOT exempt from the maximum-three rule. Its extra pinned special bit
+  0x10 is unlabelled here; do not invent an exception from that bit.
+Skill.html SHA256
+41a2081fc87ffc4bc205cafad539b85ee24c6f20985a68f976bb7ad01ec3f90d:
+  Only one Kurzick/Luxon allegiance's skills may be equipped together, although
+  all 20 may be learned. Normal skill changes are allowed in staging areas.
+  Multiple elites obtained by capturing are a temporary zone-local exception;
+  normal zoning removes extras, retaining the rightmost. Capturing is not in
+  this first slice; normal saved/restored bars retain the one-elite validator.
+
+The standalone validator now uses special&0x80000 for the three-equipped-slot
+rule, including each Signet of Capture copy; three/four-slot and rollback cases
+are in tests/skillbar.cpp. Live policy should use the classified player IDs. Never
+infer that every internal catalogue row with this flag is an obtainable skill.
+Current GWCA IsPlayable uses special&0x2000000==0, but that complement alone is
+not an authoritative obtainable allowlist: catalogue includes passive/equipment
+records. Use explicit proven player classification for future grants/equips.
+
+Unresolved before claiming complete equip gates:
+  - Exact pinned caller branches for special&0x80000 and any temporary exceptions
+    have not been mapped in this audit; the rule above is wiki+catalogue evidence.
+  - Kurzick versus Luxon family mapping for each numeric ID, and any title/rank
+    prerequisites, need a reviewed mapping. GWCA exposes a title WORD at +0x2a,
+    but the generated runtime catalogue does not export it, and its values are
+    not yet proven to encode allegiance. Do not guess from campaign/profession.
+  - MapRecord.type is not already proven to equal GWCA InstanceType. World/map
+    public-district logic recognizes types 0/3/15, while guild-hall map 360 has
+    type 2. Do not deny its staging edits because it is not a public district,
+    nor enable edits in unknown combat maps from the client's request alone.
+    Use explicit reviewed staging modes/maps for the initial supported slice.
+  - PvP variants, temporary transforms, internal/equipment skills and newer IDs
+    require their own policies. Existing modern capture has zero PvP/Codex IDs
+    and zero IDs outside the classified base list. Preserve unsupported raw data
+    and fail an incompatible import clearly; never replace a slot with a guess.
+  - Profession-unlock mask semantics and 182's final boolean remain unlabelled.
+    Captured restoration is supported; deriving new values is not.
+
+Meaningful verification before live enablement
+-----------------------------------------------
+Native tests should demonstrate:
+  1. Exact own UUID association, canonical/raw endian conversion, wrong account,
+     wrong schema/hash/start event, incomplete capture and unsupported modern IDs.
+     No unselected roster character receives the captured character's state.
+  2. Absent versus explicitly empty profile; native roundtrip and truncation/size/
+     duplicate-ID validation; 81 copies, valid index 80, invalid index 81; separate
+     account unlocks. Mask 0x6fe accepted without a primary-bit invention.
+  3. ON UPDATE cascade through existing profile-ID migration; character/account
+     deletion cascade; foreign/deleted save fails without profile resurrection.
+  4. Transaction rollback on failure/busy/cancel; two stale session revisions,
+     exactly one successful CAS, conflict reload, no success before commit;
+     persisted bar restored after reconnect/travel using a different actor ID.
+  5. Valid/denied CMSG 90..93 optimistic edits, actor ownership, slot/copy/profession/
+     campaign/one-elite checks, three PvE slots including repeated capture copies,
+     reviewed staging versus unknown mode. No fake casting/recharge success.
+  6. Byte fixtures against skill-copies-2022.txt, 182-before-181 and 217 create=1
+     after actor/attribute but before 34/365; 219 excluded from initial restore;
+     duplicate clearing across character switches; owner-only learned/count state
+     with a second peer present; full-armor presentation remains within its cap.
+
+Then one private-client test of K, bar reorder/load/move/remove and reconnect,
+with server logs confirming revision and actor ownership, can validate the wire
+integration. It must not be presented as combat implementation or complete rules.
+
+Live integration validation, 2026-10-03
+Attributes and skill-bar edits now persist through owned-character revision CAS.
+Secondary profession changes save the roster, bar and base ranks atomically.
+A V E Y entered map138 with 1081 learned skills, captured bar and 200 points;
+Communing decreased3->2 and increased2->3 through the actual client UI.
+Correct creation order is55,165,182,181,58/56/57,learned/bar. Sending58 before182
+caused constchar.cpp profession assertion; the live ordering fix passed entry.
+/age returned real map elapsed time in the client. Account lifetime remains unknown.
+Innate energy regenerates at2pips using fractional simulation time. Armor bonuses,
+rune/effect attribute bonuses, negative energy debt and unimplemented skill effects
+are not fabricated. The healing slice is four skills, not all learned skills.
+
+2026-10-03 self effect extension (native offline proof)
+Earth Attunement169 and Dash1043 now have timed effect instances via65 and67.
+The original65 callback8738d0/79eec0 reads the last field as FLOAT duration,
+not GWCA's historical timestamp label. Duration55s at Earth12 comes from pinned
+36..60 endpoints; Dash lasts3s and multiplies authoritative speed by1.5.
+The39 packet changes base speed220->330. The43 fraction remains<=1: native
+5c17d0 asserts the maximum1, and must never receive1.5. The39 descriptor59b0ec
+has no trailing BYTE. Original serializer fixtures are self-buffs-2022.txt.
+Earth-use refunds1+30% of base energy, rounded half-to-even as localwiki notes.
+Own initial attunement cast ordering remains an inference requiring gameplay
+validation; the local article does not explicitly state first-cast refund.
+Buffs expire/reset on death and are not persisted across map sessions. Unsupported
+skills still explicitly cancel rather than leaving pending UI or claiming effects.
+Cmon's current bar also has targeted/AoE offensive skills; captured outpost NPCs
+have no proven hostile health/armor state, so they remain nonattackable. Reviewed
+empty hostile AoE can complete normally once the authoritative callback is wired.

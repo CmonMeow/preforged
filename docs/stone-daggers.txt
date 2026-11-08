@@ -1,0 +1,52 @@
+Stone Daggers172: mechanics/proof stage, not World/Runtime bound
+
+Pinned2022 row and local Stone_Daggers.html revision2606928 establish two
+projectiles, each8..33 earth damage at EarthMagic0..15,5Energy,1s activation,
+.75s aftercast,no recharge and no PvP split. Overcast adds1..5seconds Bleeding
+per projectile. The wiki SHA256 is
+7a22d931b06558f706c11fb23996d6c4edf1a2287b6a53043aa9d8933fa810a3.
+Its projectile artwork/name does not change the damage to physical/piercing.
+
+gw_stone_daggers.h owns a canonical native-row-guarded plan and an immutable
+single-impact proposal. A real flight must call it separately for each hit:
+armor/protection and death are resolved per projectile, not on doubled damage.
+It preserves condition refresh rules, rejects unknown required Overcast/armor/
+immunity inputs, skips Bleeding on a lethal hit and leaves original state
+unchanged on every rejected proposal. The shared combat level/armor formula
+and fractional damage convention are retained, not independently measured here.
+
+Fixed checkpoint20261017-npc-refresh-2,cutoff2026-10-17T09:21:07.419412+00:00:
+packets-1360-15821281.jsonl SHA256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+Three starts140979/141120/141181 have finishes140999/141128/141198;
+body307 appears immediately after each finish. Model306 launch pairs are
+141001+141013,141130+141143,141200+141213. Corresponding same-source/target
+damage pairs are141007+141017,141136+141147,141206+141219. The launch gaps
+are484/500/578ms; server-frame measurements support a roughly half-second
+cadence but do not prove an exact500ms timer or how the second shot aims.
+
+tools/protocol/stone_daggers_2022.py verifies manifest hash and exact immutable
+receipts, then executes original cast1s/style51,body307 and both model306
+action11/state6 launch consumers. It writes stone-daggers-native-2022.json to
+that fixed checkpoint. Actor/model/queue services are stubbed; this is not
+rendered acceptance. Associated damage is not an isolated armor experiment.
+
+tests/stone_daggers_policy.cpp passes rank endpoints,per-hit flat reduction,
+two distinct hits,conditional Bleeding,unknown inputs,immunity,lethal first hit,
+canonical-plan refusal,overflow and timer refresh. Reports:
+build/reports/stone-daggers-policy-build-retry.txt,
+build/reports/stone-daggers-policy-tests.txt,stone-daggers-native.txt.
+
+Remaining: World mixed player/NPC flights and scope/range/LOS checks; second
+launch scheduling/aiming; dodge/collision and death/map cleanup; authoritative
+Overcast sampling time; condition immunity/Fragility/FeveredDreams delivery;
+Runtime/Auth payment/cancel/interrupt and terminal/launch ordering; rendered QA.
+172 stays CAPTURED-NEEDS-IMPLEMENTATION. Neither proof nor policy increments
+source-bound skill counts. Official clients/loggers and raw captures untouched.
+
+2026-10-17 Stone Daggers172 World/Runtime source binding (supersedes policy-only status).
+World now commits two scoped model306 earth projectiles, publishes the second separately, resolves each hit independently and applies Overcast Bleeding through existing player/NPC condition,Fragility/FeveredDreams/death paths. Auth/Runtime pays native5Energy once,uses1s cast/.75s aftercast/no recharge,rechecks lifetime/target,cancels/interruption without releases,and emits finish58 then body307 then launch. Exact target impact20/resource306 comes from the three immutable captured pairs,not the row2077 sentinel.
+Important provisional simulation policies remain:1800speed/shared32hit tolerance,500ms second-release spacing,completion-time endpoint/Overcast for both missiles,and persistence of both committed missiles after caster death. At second publication the current caster position determines flight duration to the latched endpoint; the endpoint is not homed. These are explicit host behaviors,not proved retail moving-target/Overcast sampling rules. World validates current and predicted first aim LOS,second-release LOS,planes and scoped identities. Scope removal/reuse and movement dodge cannot damage a replacement or off-path target.
+Deferred first launch stays unopened until exact pending model306 bytes are accepted and recipient-enqueued underWorld lock with a trusted publication clock. Arrival and second-release500ms are rebased after enqueue. Untimed,forged,duplicate or unrelated launches cannot open the pending flight. A late second publication also receives its full encoded flight interval. Stale health/resource/position samples preserve flights rather than silently discarding them; target/source movement cursors and NPC motion clocks are included.
+Serial Release server_host build passes before the subsequent AI source integration (stone-daggers-integrated-build.txt). Six rebuilt suites pass(stone_daggers_policy,stone_daggers_world,barrage,elemental_glyphs_cast,shard_storm_world,ice_spear_world;stone-daggers-final-tests.txt). Tests include player/NPC damage/Bleeding/immunity,missing armor,death,map departure/generation reuse,dodging,late publications,resource/position-clock retry,forged/duplicate launch refusal and a corner navmesh with clear current target but obstructed predicted endpoint.33tooling tests and original three-twin-launch/native target306 consumers pass. Model/queue services stubbed;rendered QA remains unverified.
+Fixed checkpoint20261017-npc-refresh-2 coverage/audit/backlog refresh reports633captured/244source-bound/389awaiting binding/696missing capture,with unchanged cutoff. This counts source integration,not complete retail behavior. Full animation cadence,moving-caster/target behavior,Overcast timing and collision/condition edge cases remain verification work. Official clients/loggers and raw capture data untouched. Separate autonomous NPC Flare AI integration is in progress and not yet validated;do not treat this skill validation as proof of complete combat AI.

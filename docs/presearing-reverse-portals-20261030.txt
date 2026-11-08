@@ -1,0 +1,44 @@
+Pre-Searing reverse doorway evidence and authored gates --2026-10-30
+
+Runtime authority: config/map-portals.txt. Historical capture/checkpoint files
+remain immutable. The earlier transition-event-only audit missed old world7412
+records and world52044 sessions whose local actor observation was unavailable.
+Captured reverse arrival evidence exists for all three requested Lakeside exits.
+
+Old world-7412-29734296.jsonl local_entry_candidate/map epochs establish:
+160->146 line1517 arrival(-13891,10107),plane0,facing0;
+161->146 line1892 arrival(-12914,-20062),plane0,facing0;
+162->146 line1636 arrival(3795,-19624),plane0,facing2.448958.
+These earliest loading observations retain travel_method unknown; no recovered
+retail trigger shape or source departure coordinates are asserted.
+
+Raw packets-52044-191877156.jsonl independently proves160->146 via INFO410
+line92085, FILE406 line92260, controlled player spawn32 line92363 and local
+actor selection34 line92366. The outgoing actor9's final41 is a future movement
+goal, not its observed departure position. It was not imported as a trigger.
+The same raw stream proves162->161 arrival(19849,-10398,0),facing2.44895816,
+and161->162 arrival(-24248,-12108,0),facing1.43474317. Spawn32 plus selection34
+pin the player actors and facings. Movement goals establish actual outgoing
+bridge surfaces5 and9; reflecting arrival facings would choose wrong lanes.
+
+New bounded approach strips are private developer-authored geometry:
+160->146 asset113190 plane0 cells401/472 x22100..22150,y12864..13152;
+161->146 asset113355 plane0 cell368 x9600..10300,y19800..19840;
+162->146 asset113437 plane0 cell1633 x-15200..-14600,y17000..17040;
+162->161 asset113437 plane5 cell2 x-26050..-26000,y-13180..-13010;
+161->162 asset113355 plane9 cell2 x20000..20050,y-10080..-10000.
+Whole rectangles pass native Catalog::validate; the first uses its exact
+connected-cell union proof. These strips provide walkable development exits;
+they do not claim full retail doorway width or exact retail activation time.
+All existing directions, Foibles correction and captured arrivals are retained.
+No navigation implementation or production waypoint exception was added.
+
+Native regression requires three exact collision-qualified lanes per new gate,
+general LayeredMesh routing from captured opposite-direction arrival anchors
+(including genuine0->5/9 connectors), exact captured arrivals/facings, once-only
+crossing, arrival suppression, wrong-direction and wrong-floor rejection.
+Fresh results/hashes: build/reports/presearing-reverse-portals-progress-20261030.json.
+Focused immutable evidence: build/reports/presearing-reverse-arrival-evidence-20261030.json.
+Full search inventories and phase-specific results are linked in that report.
+Rendered walking and retail trigger verification remain pending. Official
+clients/loggers and capture/checkpoint data were never changed.

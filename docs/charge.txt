@@ -1,0 +1,95 @@
+
+"Charge!"364 staged implementation (2026-10-21)
+
+Pinned2022 skill row is an elite Tactics shout:5Energy,instant activation and
+no aftercast,20s recharge,33percent speed,5..13seconds at rank0..15 (16at20),
+caster body622 and target sentinel2077. First frozen packets1360 lines387927,387929,
+387930,387931,387933,387934at tick23642843prove instant notification,622body,
+rank-zero5second status and20second recharge. charge_2022.py verifies the frozen
+file hash against the checkpoint manifest and executes original native622body
+consumer with asset stubs. No rendered acceptance is claimed. Second batch388262/388264/388265/388266/
+388268/388269at23669187repeats instant/body/status/recharge. Speed updates
+388271/388272for actors25/28are383.039978,consistent with288*1.33;source
+attribution and full recipient population are not established by those alone.
+The verifier now checks14receipts across both batches.
+
+Local historical wiki _Charge!_.html says ALL allies in earshot,not only party
+members;it removes Crippled initially. A fresh later Crippled still applies.
+Therefore Watch Yourself's player-party selector cannot be reused as-is. Future
+World selection must admit true allied players/NPCs,range/allegiance/lifetime,
+and condition publication/reactive processing before normal paid casting is
+counted. Neutral/unknown NPC metadata must not be guessed into allies.
+
+New gw_charge.h validates all native row fields and21ranks,prepares exact owned
+status and a pure Crippled-only cleanse proposal. gw_movement_effects.h consumes
+valid364other-category records with the shared1.34combined cap and usual Dash
+exception. Initial-cleanse proposal does not mutate live conditions;World must
+settle already-travelled movement,commit the cleanse and publish its reactions.
+Tests cover all ranks,expiry,removal,renewal,combined cap,new Crippled,unchanged
+Poison,invalid scope/effect/plan and the consumed slow segment before cleansing.
+
+364remains unsupported by Runtime and a negative dispatcher-coverage case. No
+source-bound count advance. Missing work:atomic all-ally World application,
+condition/reaction/status publication,normal casting/payment,recharge/vocal/
+echo interactions,modified shout duration,NPC caster and full rendered QA.
+The native capture does not independently demonstrate selection or cleansing.
+Official sessions/loggers and Opus's profession quests were not touched.
+
+Final stage validation:serial build23978exited0,including shipping native host.
+Charge and player_movement_baseline current CTests pass;native14receipt verifier
+and five coverage checks pass. Fixed audit/publish retains633captured,308bound,
+325awaiting,696missing. Host identity in build/reports/charge-foundation-host.txt;
+validation scope in build/reports/charge-foundation-validation.json.364remains
+unsupported/unbound until real World/casting implementation. Official sessions,
+Opus profession quests and tester folder untouched. Goal remains active.
+
+2026-10-21 World and normal-casting implementation supersedes staged-only notes:
+Added stage_charge_allies with all same-team published living players in earshot,
+independent of party membership,and reviewed allied/protected NPC recipients.
+It does not apply the party-only heal selector or a line-of-sight gate. Neutral,
+unknown,hostile,out-of-range and dead recipients are not guessed into allies.
+NPC allegiance/content associations remain limited to reviewed metadata;this is
+not proof of complete PvP-NPC team relationships or every neutral quest actor.
+
+Every selected recipient passes registry/timer/lifetime/clock preflight before
+new Charge effects commit. Due authoritative resources may settle during that
+preflight;rejection does not apply/cleanse Charge on earlier recipients. Initial
+Crippled removal uses existing condition-removal/Fragility handlers;other
+conditions remain. A cleansing death does not receive a new speed effect. World
+settles old movement before cleansing/applying,retains registry lifetime and
+uses deferred outbox publication so normal casting can prepend48/body622.
+NPC copies preserve their combat/control authority and use owned registry/speed
+replacement. No guessed NPC base speed or extra multiplier packet is added;
+existing authoritative motion integrates the recipient's movement timeline.
+
+108World cases pass across21ranks,range boundary/allegiance/dead recipients,
+independent parties,scope/future rejection,deferred publication,expiry,new
+Crippled,Fragility death,NPC recipient renewal and real player movement distances
+before/after cleanse,boost,snare and renewal. Protected-NPC fixtures correctly
+have damage/condition flags disabled;the engine guard was not weakened. Future
+resource fixture uses consume_energy(at2000),not an invalid morale argument.
+
+Normal Runtime364 and typed production hook now use five Energy,instant action,
+20second recharge,self normalization and Tactics duration.44casting contexts
+pass PvE/PvP,ranks0/12/20,missing hook/energy/stale owner/rejected completion,
+knockdown use,ordered48/622/status publication,no duplicate58,zero Vigorous
+spell-heal for the shout,and preserving an already-running Orison. The latter
+fixture stubs Orison's base heal to isolate continuation,not claim Orison QA.
+Five coverage-tool checks and14receipt native verifier pass. Runtime source
+binding now exists;shipping/neighboring builds are still running at this entry.
+
+Remaining:rendered/asset acceptance,neutral or team-specific NPC content
+classification,vocal/echo/modified shout-duration interactions,autonomous paid
+NPC caster and retail combined/fatal reaction ordering. No official session,
+profession quest or distributed tester folder was changed.
+
+Final World/casting validation:serial shipping/neighboring build3612exited0.
+All five current suites pass:Charge pure plan,108World cases,44cast cases,
+Watch Yourself casting and player movement baseline.14receipt native verifier,
+five coverage checks and fixed audit/backlog publication pass. Counts now
+633captured obtainable,309source-bound,324awaiting binding,696missing captures.
+Host SHA2566614dc4b0ed9c494c7525bedb657ab7af06379ccfcb90793e458149c235aa875;
+report build/reports/charge-world-casting-validation.json. Source binding is not
+full retail/rendered acceptance;remaining gaps above retained. Existing clients
+and hosts were not restarted;official logging,Opus quests and tester folder
+untouched. Goal active.

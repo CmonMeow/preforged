@@ -1,0 +1,16 @@
+
+2026-10-17 Distortion11 integration supersedes earlier UNBOUND notes:
+Runtime now admits instant self stance through owned status mutation,canonical
+rank duration and captured caster-body resource23. Player blocking includes
+75percent Distortion with source attribution;2Energy is charged only when this
+source blocks. Current block remains successful when insufficient Energy ends
+the stance. Explicit authored policy preserves a sub-2Energy remainder; retail
+partial-loss behavior remains unverified. Guardian-first source order also needs
+retail verification. Bypasses/misses/expiry/replacement never charge this stance.
+Actual World and casting regression,block-attribution,and Reflexes stacking
+suites all pass (distortion-integration-tests.txt);34tooling tests pass.
+NPC defensive stance handling,rendered client acceptance,reactive interleaving
+coverage and retail insufficient-Energy/source-order capture remain outstanding.
+Full server build is in progress in distortion-server-build.txt at this entry.
+
+Distortion final validation update: serial server_host Release build completed exit0 (distortion-server-build.txt). Fixed-checkpoint audit and publication passed:633captured,246source-bound,387awaitingbinding,696missingcapture. These counts describe source integration,not complete mechanics/rendered verification.

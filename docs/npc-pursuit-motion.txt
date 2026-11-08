@@ -1,0 +1,31 @@
+NPC pursuit across navigation corners (2026-10-22)
+
+The hostile caster movement helper previously consumed only route waypoint1
+per scheduler tick. For a route (0,0)->(0,50)->(100,50)->(100,0), a movement
+budget of175 stopped at (0,50), discarding125 units of reviewed travel time.
+Both approach and return-home movement slowed at every route corner. Dividing
+the same elapsed interval into shorter ticks produced a different position.
+The helper also limited a detour segment by direct goal distance minus stopping
+range, although a navigation detour can initially lead away from the target.
+
+gw_npc_pursuit_motion.h spends the authoritative movement integral across all
+available planar route segments, preserving corners, and stops at the first
+entry into the goal's stopping circle. Duplicate route points consume no time.
+Invalid geometry/budgets fail before movement. The World helper still uses the
+existing navigation route, movement modifiers, aftercast/knockdown integration,
+host-authored speed and stopping range. Plane transitions remain unsupported.
+Flare, elemental and mixed ordinary-attack approach all use this shared helper.
+
+Local Foe_behavior.html oldid2656731 documents approaching to use point-blank
+area skills. Aggro.html oldid2655578 documents aggression and loss of aggro.
+These establish the behavioral context, not the route algorithm or timings.
+This is a server movement integration correction, not packet proof of retail
+speed, navigation tolerance, leash radius or target/skill priority. Frozen
+official skill captures were not used to infer any new movement numbers.
+
+tests/npc_pursuit_motion.cpp compares whole-interval versus split-interval
+movement across corners and exercises exact stop-circle entry, a detour away
+from the goal, crossing a stop circle before a farther waypoint, duplicate
+points, zero movement, and invalid input. Add npc_pursuit_motion to the parent
+CMake test list. Existing npc_flare_world/npc_elemental_world/npc_ordinary_world
+exercise the integrated callers. No official client or capture was touched.

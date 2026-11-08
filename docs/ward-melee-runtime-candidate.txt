@@ -1,0 +1,55 @@
+Ward Against Melee176 implementation candidate, 2026-10-23
+
+Validation is pending the coordinator's serial Release build. This note does
+not publish a source-bound status or claim rendered client acceptance.
+
+Pinned2022 row: Elementalist/Earth Magic, type11,15Energy,1second activation,
+.75second aftercast,30second recharge,5..20seconds at ranks0..15,50percent
+melee block,caster315,target2077. Rank20 extrapolates25seconds through the
+existing canonical interpolation. Fixed checkpoint20261022-cumulative-skills:
+packets-1360-15821281.jsonl lines141088,141100..104,141108. Modern15second
+recharge and921ms observed activation do not overwrite pinned30seconds/1s.
+
+Runtime typed WardMeleePlan fails closed without the World hook. Completion
+publishes finish58, caster315, positional resource900, skill176 effect65.
+The native proof retains all7 exact receipts and executes pinned cast/caster,
+ground consumer874bd0, ground serializer60be08 and status serializer60b9ac.
+Ground356 remains an unassigned temporal neighbor. Native services are stubbed;
+rendered ground lifetime and removal are not established by this proof.
+
+World owns immutable center, caster Scope/UI effect ID, cast team, plane,
+creation and half-open expiry. Live eligibility shares Ward175's authoritative
+player position and NPC placement/team query. Spirits and unknown NPC creature
+types fail closed. NPCs with exact quest ownership use that owner's team;
+unowned allied NPCs require all current player teams to agree. Mixed-team
+unowned NPC allegiance remains unavailable and is denied.
+
+Explicit provisional private policies: radius322 follows archived in-the-area
+convention; same-plane admission is a navigation barrier. Same-skill overlap
+selects one earliest inserted active Ward176 and never stacks two Ward chances.
+Personal block sources precede the environmental source in the existing
+single-draw partition. Ward caster Scope namespaces UI IDs, so a recipient's
+Weapon of Warding and another caster's Ward may share a numeric effect ID.
+Stationary fields persist after source death/departure until expiry; UI removal
+is only sent to a matching current source lifetime. These choices are not
+claims of recovered retail overlap/vertical/source-death ordering.
+
+Contact producer audit: player ordinary weapon vs player/NPC uses explicit
+weapon delivery; direct melee skills vs player/NPC and Cyclone are melee;
+NPC ordinary vs player and opposing NPC uses Reviewed delivery; legacy NPC
+melee vs player is melee; quest guardian weapon contact uses explicit supplied
+delivery and unknown fails closed. Ranged and caster projectiles do not gain
+Ward176 block. Existing prior miss, unblockable and Rigor bypass preserve zero
+block draws. NPC attribution is retained in a typed internal resolver; existing
+unsupported NPC personal reactive sources remain fail-closed.
+
+New focused tests: ward_melee_cast, ward_melee_world, ward_melee_npc_world;
+extended ward_against_melee_policy. Tests cover native packet order/resources,
+cancel/interruption/stale generation, player skill/ordinary/Cyclone contacts,
+player route exit/reentry, contact with an already moving target and moving
+half-open expiry, personal-effect collision/Weapon of Warding composition,
+no Distortion cost/Bonetti gain/Gladiator retaliation for a Ward-attributed
+block, NPC->NPC/player melee, ranged/spirit/area exclusions, exact NPC expiry,
+and mixed-team owned NPC admission. Existing175 tests must be rerun because
+live eligibility is now shared. Actual NPC movement through a field and
+rendered client visuals remain separate unverified scenarios.

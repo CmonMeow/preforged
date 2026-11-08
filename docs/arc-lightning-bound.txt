@@ -1,0 +1,38 @@
+Arc Lightning [842] source binding, 2026-10-24
+
+Fixed capture: data/captures/skill-checkpoints/20261024-signet-infection-bound,
+packets-1360-15821281.jsonl lines 182612, 182631, 182632, 182633 and
+182635. One locally attributed cast starts at tick19504171, completes at
+19505609 with an eight-second slot timer, and publishes target resources
+988 then 989. Independent frozen casts repeat this primary pair, and one
+has resource989 on a second actor without resource988. The pinned 2022
+executable consumes a 1.5-second cast and
+both target particles. tools/protocol/arc_lightning_2022.py checks hashes,
+packets, skill metadata and native consumers. Its JSON report is under
+build/reports/arc-lightning-native-2022.json.
+
+The normal cast hits only the selected foe for rank-scaled 5..40 lightning
+damage with 25 percent armor penetration. If Overcast is active at completion,
+the server also hits at most two nearby foes for rank-scaled 15..85 damage.
+Mixed player/NPC candidates are chosen by distance then actor ID under an
+explicit deterministic server policy. This is not claimed as ArenaNet's
+tie-break rule. Both target types and stale lifetimes are checked. The
+captured target988 and989 particles both accompany the primary hit; a
+secondary recipient receives resource989 only. The World
+test exercises single-hit, two-recipient cap, NPC primary/secondary,
+stronger splash, forged plan and normal paid Runtime activation.
+
+Validation: serial Release host and focused lightning test builds; focused
+5/5 and full CTest 860/860 passed. Other old test binaries in the full suite
+were not all rebuilt after the shared header edit, so that result is a broad
+smoke test; the focused binaries and server host were rebuilt.
+server_host.exe SHA256 5F0B80C389841BD887653BB36F47191496016695F14D699EE788D46E43120FDC
+arc_lightning_world_test.exe SHA256 84EAB4E087E55C96B6D34AEE19557EC0B506DC31443FC3E2FEDD4E9253CF5CE7
+Full CTest report SHA256 FA6D284D3A05F11E483B46659DE77425B26F2A80709CDA7DE6799DE462A03D13.
+
+The isolated packet window does not prove whether the caster was Overcast,
+which foes received secondary damage, equal-distance selection or retail
+damage values. Rendered client pixels and sound remain unverified. The
+two-recipient selection and secondary target989 timing need a controlled
+retail capture; autonomous NPC casting is not integrated. These remain
+explicit verification gaps despite the source binding.

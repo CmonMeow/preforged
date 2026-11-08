@@ -1,0 +1,280 @@
+Echo74/Arcane Echo75 staged core,2026-10-17; both remain UNBOUND.
+
+Evidence extraction:tools/skills/audit_echo_checkpoint.py verifies frozen source
+hashes and extracts complete owner-scoped action/slot/cooldown packets only.
+build/reports/echo-capture-sequences.json has2windows/148events from refresh-2.
+Modern official opcodes are retained;they are not presumed pinned2022 wire IDs.
+
+Echo:packets-1360-15821281.jsonl:38516 starts74 at16614218.
+Next1341 starts at+1735ms;slot replacement217 atline38553/+2766ms
+precedes its finished58 atline38559 in the same tick.
+Restoration217 atline39066/+32766ms:copy lifetime exactly30000ms.
+Restoration229 atline39067 publishes10s original cooldown.
+Arcane Echo:startline9471/tick15983671.Next76 starts at+2750ms;
+replacement217 atline9507/+3750ms precedes finished58 atline9513.
+Restoration217 atline9724/+23829ms:observed copy lifetime20079ms.
+Restoration229 atline9725 publishes20s original cooldown.
+Initial observed cooldowns5/10s may include caster/weapon modifiers;native
+baseline10/20s is retained. Both copied slots use raw modern copy0xffffffff.
+Do not replay that value blindly into2022 pending-reference lanes:the earlier
+native copy-boundary probe demonstrates cross-skill aliases above65535.
+
+Native catalog and historical individual wiki descriptions agree on30/20s arm
+and copy durations,Echo's self/Signet of Capture exclusion,Arcane Echo's self
+exclusion and non-spell termination. Arcane Echo's restore20s independent disable
+is explicitly documented. Echo's observed restore10s is labeled observed
+cooldown;its interaction with recharge resets is not established here.
+
+New gw_echo.h proposes scoped registry consumption plus copy intent from an
+already-confirmed completed use. It never installs a skillbar grant or mutates
+live registry state. Echo copies skill types broadly;Arcane Echo copies spells,
+otherwise ending without copy. Self/Capture exclusions produce no proposal.
+One C++ policy suite and36skill-tooling tests pass,including snapshot tamper,
+header mismatch,partial/wrong-actor/out-of-window packet exclusion.
+
+Next:extend shared temporary skill-slot authority with root original identity
+and replaceable leaf lifetime,so nested Echo/Inspired Hex copies restore the
+original slot instead of letting an obsolete outer timer overwrite a newer copy.
+Do not add an independent competing bar manager. Bind arm,completed-use trigger,
+slot publication,copy authorization,expiry and restoration cooldown atomically.
+Cancellation/interruption/failure trigger phases still need explicit evidence.
+Native pending/ack order and client-rendered behavior require verification.
+Historical reference hashes:
+Echo.html SHA25672c9641e529d97c210d7f61143c496a66d3375277eae310e897625ae2a7181ef
+Arcane_Echo.html SHA256e9c27567acc4262f1061cb5a7682388c68927d2e956abca8143e864bb2be9cba
+
+Echo core validation update:fixed-checkpoint source coverage,audit and publisher
+completed successfully (echo-core-*.txt).247source-bound/386awaitingbinding;
+both Echo skills remain in captured-needs-implementation. No production runtime
+source includes the new core yet,so no server binary change is claimed.
+
+2026-10-17 shared temporary-slot authority (Echo still UNBOUND):
+New gw_temporary_skill_slots.h owns the existing capability/lifetime machinery;
+gw_temporary_hex_slots.h provides compatibility aliases,not a second manager.
+Nested Echo/Arcane Echo/Inspired Hex replacements retain the first learned root
+slot and its restoration cooldown kind,while the newest leaf owns the timer.
+An old leaf's expiry cannot overwrite a newer copy;new generations invalidate
+old cast grants. Completed-use proposals carry immutable observation time.
+Copy IDs above65535 reject to avoid native pending-key collisions. Copy0 is
+preserved when unique:the existing Hex session legitimately uses0 when the
+copied skill is absent from the ordinary bar. The duplicate-pair check remains.
+Tests prove ArcaneEcho->Echo->spell restores Arcane Echo at the inner30s expiry,
+and Echo->InspiredHex->hex restores Echo after the inner20s lease. Root ordinary
+eligibility remains valid without learning the copied skill.4focused tests and
+6combined copy regression suites pass (echo-shared-slots-regressions.txt).
+Session/world transaction hooks,arm/use triggers,network slot publication,
+restoration cooldown application and native/rendered Echo tests remain missing.
+Source coverage/audit/publisher passed;247bound/386awaitingbinding unchanged.
+Full server build in progress in echo-shared-slots-server-build.txt at this entry.
+
+Shared-slot validation update:serial server_host Release build completed exit0 (echo-shared-slots-server-build.txt).6copy regression suites pass and fixed-checkpoint coverage/audit/publication passed.247source-bound/386awaitingbinding unchanged. Echo and Arcane Echo remain UNBOUND;shared session and casting hooks are the next missing integration.
+
+2026-10-17 Echo World/session transaction (still UNBOUND):
+TemporarySkillSession now owns both existing Hex and prepared Echo changes;
+HexCopySession remains a compatibility alias. Echo plans retain source/used
+slot identity and immutable event time. Prepared Echo work checks session
+revision; no bar/capability changes occur until a matching World-only minted
+EchoConsumption receipt arrives. Successful commits are non-allocating and
+cannot replay against the new session revision.
+World independently rechecks owner generation,Health/resource time,current
+Echo instance/attributes,current owned bar and exact single-slot transition.
+Bar membership/adrenaline state is staged together with real enchantment
+removal. It never replaces the complete registry with an old proposal; unrelated
+new effects survive. A non-spell Arcane Echo end changes no skillbar slot.
+Tests cover effect renewal,extra slot edits,session revisions,World bar edits,
+recycled actor IDs,future resource time,replay,unrelated new Distortion state,
+non-spell end,scoped copied-cast eligibility and expiry/restoration metadata.
+7combined copy/World/session regressions pass (echo-session-regressions.txt).
+Full server build running at this entry (echo-session-server-build.txt).
+Remaining:trusted completed-use/casting arm hooks,allocator for non-Hex copies,
+slot-update delivery,simultaneous-arm batch handling,restoration cooldown
+application,native pending/ack and rendered verification. No Echo network
+request or account-learned capability is enabled by this stage.
+
+Echo session validation update:serial server_host Release build completed exit0 (echo-session-server-build.txt).7copy/session/World regression suites pass;fixed-checkpoint coverage/audit/publication passed.247source-bound/386awaitingbinding unchanged. Echo/Arcane Echo remain UNBOUND until casting,allocator,slot delivery/restoration cooldown and native/visual integration are complete.
+
+2026-10-17 Echo allocation/slot-packet driver (still UNBOUND):
+TemporarySkillIds is the single lifetime allocator;HexCopyIds is an alias.
+Echo allocation admits the reviewed completed-use proposal,while the old Hex
+API still rejects non-Hex requests. Copies remain within native16-bit lanes
+and committed identities are not reused during the actor lifetime.
+Both Echo and Inspired Hex now stage the allocator copy and commit its cursor
+only after World/session publication succeeds. A missing-authority regression
+proves the next successful Hex grant still receives copy1 after a rejection.
+Echo's driver prepares native216 owner-slot packets before any World removal;
+failed bar publication changes neither session nor allocator. A no-copy Arcane
+Echo end now also compares the complete World bar against the session snapshot.
+Tests cover Echo spell/nonspell copies,Arcane spell copy/nonspell end,stale bar
+rejection,exact native packet bytes,original-root restoration and nonreused IDs.
+4focused suites pass (echo-copy-driver-final-tests.txt).
+
+The returned packet batch is not yet delivered by a Runtime/Auth Echo hook.
+Raw modern captures use copy0xffffffff;private allocator1..65535 follows the
+existing server pending-key policy. Native copy eligibility/profession/learning
+services and rendered acceptance need verification beyond the earlier stubbed
+native slot/pending probes. Do not claim raw official copy identity parity.
+Remaining:arm mapping to exact source slot,effect/use hooks,simultaneous-arm
+batch behavior,restoration cooldown/disable publication,interruption/failure
+phase evidence and client visual acceptance. Source counts remain unchanged.
+Full server build in progress in echo-copy-driver-final-build.txt at this entry.
+
+Echo driver validation update:serial server_host Release build completed exit0 (echo-copy-driver-final-build.txt).4allocation/transaction/cast regression suites pass;fixed-checkpoint coverage/audit/publication passed.247source-bound/386awaitingbinding unchanged. Runtime/Auth delivery and restoration cooldown wiring remain unfinished;Echo skills remain UNBOUND.
+2026-10-17 Copy restoration Runtime consumer (Echo 74/75 remain UNBOUND):
+World expiry now mints scoped receipts anchored to the original copy expiry,
+not the processing time. Arcane Echo's independent disable is a separate World
+layer; normal Echo uses a provenance-checked ordinary cooldown source.
+Runtime::consume_copy_restoration stages all timers before publication, checks
+current owner/bar, validates independent deadlines against World, and tracks
+per-slot receipt ordering. Duplicate delivery sends no timer packet; late
+receipt delivery does not extend recharge; expired receipt delivery emits none.
+The focused World/Runtime regression now verifies timer packet bytes, ordinary
+source import, Arcane disable survival across ordinary disable reset, copy
+isolation, exact deadlines, duplicate/late delivery and malformed proposals.
+Four focused suites pass in copy-restoration-consumer-tests.txt. The first two
+were rebuilt for the new consumer; echo_copy_commit/inspired_hex_cast were
+existing binaries. Full server build recorded separately.
+Still missing: Auth must consume the receipt after restored slot216 delivery;
+casting arm/completed-use hooks, simultaneous arms, native eligibility and
+rendered validation remain. No new supported skill or account grant enabled.
+Independent reset exceptions and interruption/failure trigger phase still need
+retail evidence. Tests do not establish those retail semantics.
+Validation update: copy-restoration-consumer-build.txt confirms serial Release server_host build exit0. Official clients and loggers were not targeted.
+2026-10-17 Auth restoration delivery:
+The live session loop now calls expire_temporary_copy instead of the legacy
+wrapper which discarded its World receipt. It sends each restored native216
+slot identity first, then imports nonempty cooldown receipts through Runtime,
+then performs the normal update and cooldown-source publication. Empty ticks
+do not import receipts or create recharge timers. Receipt rejection produces
+an explicit session diagnostic rather than silently omitting recharge.
+Serial Release server_host build passed: copy-restoration-auth-build.txt.
+Echo remains UNBOUND: this delivers expiry state but does not yet arm/copy Echo
+from a live cast. Exact source-slot arm binding, completed-use integration,
+simultaneous arm semantics and native/rendered verification are still pending.
+Validation update: rejection/retry coverage rebuilt and all four focused suites passed in copy-restoration-auth-tests.txt. No official process/input actions performed.
+2026-10-17 Echo arm source identity (still UNBOUND):
+World now retains the exact casting Slot plus owned effect instance for each
+Echo enchantment. Active insertion requires that slot to exist in the owned
+bar, the canonical duration/rank, a live resource clock, and valid lifetime.
+Generic insertion without the source slot fails. Copy offers require both the
+armed source and completed-use slot in the current authoritative bar and the
+same effect instance. Renewal, removal, actor replacement and stale proposals
+cannot borrow another effect's binding. End paths remove matching arm records.
+The source slot is supplied by trusted server code, not parsed from a client
+claim. A completed-use receipt/casting hook is still needed before enabling it.
+Release server_host build passed in echo-source-binding-build.txt; fixed
+checkpoint audit and publication passed with unchanged implementation counts.
+Remaining: Runtime arm/use hooks, atomic simultaneous arms, nested arm/copy
+expiry semantics, native eligibility and rendered validation. No new supported
+skill is enabled by this change.
+Validation update: all three rebuilt suites pass, including present-but-unarmed copy rejection (echo-source-binding-tests.txt). Official logging was untouched.
+2026-10-17 Finalized-use admission (Echo remains UNBOUND):
+EchoUseProposal now carries a completion event identity. World accepts it only
+when its retained finalized cooldown-use history has the same owner, skill/copy
+slot and completion time. Each arm mints an ordering stamp from the same World
+clock; the completion must follow it even when both occur in one millisecond.
+Prepared/aborted uses and arbitrary skill/time claims cannot authorize a copy.
+Commit rechecks the event against World history, alongside exact arm/slot/effect.
+The existing trusted skill-use finalization channel supplies this evidence;
+there is no new client-controlled completion flag or second history manager.
+Pure offline planning remains separate from World admission. The driver still
+has no live Runtime caller; arm/use hooks and simultaneous-arm transaction are
+required before enabling Echo74/75. Retail failure-trigger timing and native
+copy eligibility/rendering remain verification gaps.
+Restoration tests now explicitly reject publishing an isolated Runtime snapshot
+that has not processed the preceding World completion notice. Provenance checks
+are not bypassed to make those tests pass; an acknowledged snapshot is tested
+separately. This watermark must be preserved by the eventual live hook.
+Negative-event validation found and fixed an admission ordering bug: an invalid
+future-time offer advanced the resource clock before its completion event was
+rejected. Echo now validates event/slot/time/order first, then settles resources.
+The rebuilt negative test passes valid retry at the original time after that
+rejection, plus prepared/aborted events and same-millisecond pre-arm completion.
+The initial failing run remains in echo-completion-admission-tests.txt for
+traceability; final rebuild/test evidence is recorded in echo-completion-clock-*.
+Final validation: serial Release server_host build exit0 (echo-completion-clock-build.txt); three rebuilt suites pass (echo-completion-clock-tests.txt); fixed checkpoint publication unchanged. No official process or input actions performed.
+2026-10-17 Opt-in Runtime Echo hooks (production still UNBOUND):
+Runtime has arm_echo and completed_skill_use callbacks. Echo arming uses its
+exact skill/copy Slot, canonical owned timer and native effect add; ordinary
+spell body metadata emits128/129. The completion observer is called only with
+matching World cooldown completion provenance, after local recharge recording
+and before native completion/pending packets, preserving observed slot-before-
+finished ordering. Pending work retains owner/hook presence requirements.
+Tests exercise both74/75 through Runtime cast, subsequent Orison281 cast,
+World finalized-use admission, shared session/allocator and native216 delivery.
+They cover cancellation, interruption, rejected arm application and missing arm
+hook; no copy observer is notified on those failures. Orison healing itself is
+a successful test callback; this is not another Orison mechanics validation.
+Packet assertions cover128/129 body metadata and216 preceding58, not rendering.
+Production Auth explicitly leaves both new hooks empty until simultaneous-arm
+transactions and nested timing are integrated. supported() still excludes74/75.
+The coverage verifier requires both staged hooks to be explicitly empty and
+rejects declaring74/75 supported in that state.37tooling tests pass, including
+this negative guard. No supported-skill count increase is claimed.
+Final validation: echo-runtime-hooks-final-build.txt server_host Release exit0; echo-runtime-hooks-tests.txt2focused suites pass; echo-runtime-hooks-tooling-tests.txt37tests pass; fixed checkpoint audit/publication pass. Official logging untouched.
+2026-10-17 Atomic Echo batch transaction (production still UNBOUND):
+World commit_echo_uses revalidates all finalized-use proposals against one bar
+and one event before consuming either enchantment. It stages common bar/pool
+publication and receipts, then removes both owned effects. Single-use World
+commit delegates to this transaction, avoiding a competing mutation path.
+TemporarySkillSession prepares/commits one shared batch of copy capabilities;
+commit_echo_copies stages the lifetime allocator, both native216 packets and
+session state before the World commit. Failure spends no allocator identity.
+The regression exercises two copies of one spell with distinct IDs, Echo's
+non-spell copy together with Arcane Echo's no-copy end, invalid second source,
+duplicate source, stale second effect and valid retry after rejected batch.
+Three rebuilt suites pass (echo-batch-tests.txt). Fixed checkpoint source audit
+and publication run separately. These tests prove transaction behavior for
+reviewed per-arm rules, not ArenaNet's simultaneous-arm ordering or rendering.
+Remaining: Auth observer gathers and invokes one batch, nested armed-copy timer
+semantics, full native eligibility and rendered acceptance. Hook empties and
+supported() exclusions remain until those integration/verification gates pass.
+The batch bar publication now invalidates the prior local cooldown snapshot,
+so World cannot treat old-bar cooldown evidence as current during the interval
+before Runtime republishes. The regression first publishes an acknowledged
+snapshot and verifies it becomes unavailable after a successful copy batch.
+This also fixes the single-copy path because it delegates to the same World
+transaction. Final rebuild evidence is in echo-batch-final-build.txt.
+Final validation: echo-batch-final-build.txt confirms Release server_host exit0; echo-batch-tests.txt3rebuilt suites pass; fixed checkpoint audit/publication passed. Official logging untouched.
+2026-10-17 Auth completion observer integration (Echo arming still gated):
+observe_echo_completion validates the exact retained World completion receipt,
+owner and current World/session bar, discovers eligible armed source slots, and
+commits one shared batch. Auth now uses it and sends its prepared native packets.
+It does not accept a source list or completion flag from client input.
+The arming callback remains explicitly empty; coverage rejects supported74/75
+while it is empty. Runtime tests use the same discovery helper, including own
+Echo completion with no eligible source and a subsequent real copy transaction.
+Review fixed an important ordering issue: a completed copying skill can already
+have replaced its own used slot before the observer runs. Used-slot current
+membership is not required when World finalized-use provenance proves that use;
+source-arm membership and exact receipt equality are still mandatory.
+A regression performs real Inspired Hex removal/copy and finalization before
+Echo observes it, preserving both copied slots. Forged receipt ordering rejects.
+Three rebuilt suites pass in echo-observer-tests.txt;37tooling tests pass in
+echo-observer-tooling-tests.txt. Final host build is recorded separately.
+Historical Echo/Arcane Echo notes establish inner completed-copy duration/root
+restoration, but do not settle whether simply arming a copied Echo extends its
+old slot expiry before another skill completes. No new timing rule was invented.
+Remaining: resolve this boundary from packets/native behavior, enable arming,
+verify full native copied-skill eligibility and perform rendered client tests.
+Production source-bound counts remain unchanged; official logging untouched.
+Final validation: echo-observer-final-build.txt confirms Release server_host exit0;3rebuilt suites and37tooling tests pass; frozen checkpoint source audit/publication passes. No official process/input actions performed.
+2026-10-17 Native gate evidence update:72direct-command cases+2mode/recharge
+controls pass with original gate code; see docs/copied-request-native-gates.txt.
+Earlier request proofs bypassed recharge and a cached row-mask branch. Actual
+UI/copy eligibility and rendering remain gaps, so arming stays gated. This
+probe touched no official process, network, account or capture session.
+2026-10-17 Native button and restoration feedback:
+Original2022 availability/button/target-selection probes pass33cases/controls;
+no rendered UI or general learning/profession claim. Native216 clears old slot
+recharge, exposing a UI refresh gap when an existing deadline survives identity
+restoration. Auth now imports restoration timers without intermediate feedback,
+then refreshes every restored slot from current World/local authority. This also
+handles expired receipt timers and longer preexisting disables; no new timer is
+invented. Unavailable authority rejects before any refresh packets are emitted.
+See docs/copied-request-native-gates.txt and copy-restoration-feedback-* reports.
+Validation: copy-restoration-feedback-build.txt Release server_host exit0;copy-restoration-feedback-tests.txt2rebuilt suites pass including actual Diversion12 extension;copied-button-tooling-tests.txt37tests pass;fixed checkpoint audit/publication unchanged. Native copied-button-native-2022.txt33cases/controls pass. Official logging untouched.
+
+2026-10-22 production arming integration:
+Auth now binds arm_echo to the exact owner/current session bar and World status_mutation with the original copied Slot identity. World retains the ordered bar/effect receipt; completed_skill_use already feeds the finalized-use observer and shared atomic copy transaction. Generic supported74/75 now reflects this source binding. Empty/missing production arming still fails the coverage audit. Runtime/session/World copy-restoration,atomic copy commit and nested slot tests pass; five tooling coverage tests pass.
+This enables the existing reviewed behavior, not complete retail fidelity. Copied-Echo arming itself currently preserves the temporary slot's existing expiry until a later completed-use replacement installs a new grant. Whether retail extends that old expiry merely on arming remains unresolved; this boundary is not proved by tests. Full copy eligibility, failed/cancelled other-skill consumption semantics, simultaneous arms and live rendered verification also remain open.
+A fresh immutable-checkpoint scan at20261022-cumulative-skills found40audited local activation windows and12101 scoped action/status/slot events; report build/reports/echo-current-checkpoint.json. These windows overlap; totals are not distinct skill uses or proof of nested-arm behavior. No official client or live capture was touched.

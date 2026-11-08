@@ -1,0 +1,217 @@
+VIGOROUS SPIRIT254: native evidence and standalone trigger selection,2026-10-21
+
+Not bound to normal casting. Counts remain633captured/307source-bound/
+326awaiting/696missing. Standalone plan/selector tests are not World healing,
+event consumption or rendered acceptance.
+
+Pinned2022row:Monk,Healing Prayers13,type6,5Energy,.25s activation,.75s aftercast,
+4s recharge,30s duration,5..20healing at rank0..15 (25at framework rank20),
+caster2077sentinel,target465. No Overcast is granted from an unused row byte.
+The local pre-Reforged Vigorous_Spirit.html says each attack or spell heals the
+enchanted ally. Multiple attacks can heal multiple times;multiple hits from
+one attack heal once. A hit is not required,including Illusionary Weaponry.
+
+tools/protocol/vigorous_spirit_2022.py hashes the fixed checkpoint source against
+its manifest and verifies12exact receipts in packets-1360-15821281.jsonl,
+lines252448..252480. One cast starts20928906,finishes20929171,publishes465and
+effect118with30seconds/rank0,and releases the slot20929984. Two following attack
+cycles contain self-heals with ratio1010729722(~5/430). The first heal20930671
+precedes recorded target damage20930906. This supports attack rather than
+on-hit triggering but does not prove exclusive causal attribution or all edges.
+
+The verifier executes the pinned native.25s cast consumer and465particle
+consumer with asset services stubbed. Reportbuild/reports/vigorous-spirit-native-
+2022.json retains rendered_verified=false. No live client/logging actions.
+
+src/runtime/gw_vigorous_spirit.h validates the row and selects owned healing
+from trusted internal action events. One event represents one actual attack;
+it must not be called per damage recipient or collision hit. Completed spells
+are classified by the existing spell helper;non-spell skill completions grant
+none. Ally enchantment causes are permitted. Exact recipient scope,rank,
+category,effect lifetime,expiry/removal and equipment-extended lifetimes are
+checked. This read-only query deliberately does not claim token replay safety;
+the World committing producer must own consumption and action identity.
+
+Tests cover21ranks,self/ally causes,attack/spell/non-spell classification,
+exact begin/end,stale scopes,zero event IDs,stripping and extended duration.
+Invalid21rank is rejected by the registry itself;the fixture now checks that
+admission instead of attempting to forge an invalid registry entry. Tests pass.
+
+Next work:atomic player/NPC enchantment application with duration/Divine Favor,
+one shared replay-safe trigger per actual attack (including dual attacks and
+miss/block) and completed spell,healing modifiers/caps/death,paid normal casting,
+interruption/cancel edge evidence and rendered QA.254remains a negative binding
+coverage case. Divine Spirit310cost/Glyph modifier order is still unresolved;
+local Talk/Effect_stacking references did not resolve it in this pass.
+
+2026-10-21 Vigorous Spirit World stage and tester package validation:
+Added owned player/NPC enchantment application through the common atomic
+completion,with465body,self/ally routing,Divine Favor,registry replacement,
+equipment duration and shared expiry/strip/death. Added a trusted staged World
+healing service with at most three latest receipts per actor and exact lifetime;
+latest exact retries are idempotent,older/conflicting/backdated events reject.
+It reuses the actual player/NPC healing pipelines and publishes actual capped
+healing. Application/trigger tests cover42rank/self/party contexts plus rejection,
+DF,caps,duration,NPC allowed/suppressed healing,expiry and replay. Corrected
+fixtures that omitted party admission or supplied1000as a morale value.
+Normal action-producer and paid254casting wiring remains pending;no source-bound
+count advance or rendered acceptance is claimed. Cross-caster feedback/source
+attribution and interruption/cancel/self-application ordering still need evidence.
+Serial host build31806and focused builds completed successfully. Vigorous pure,
+World and neighboring Divine Spirit World tests pass. Coverage checks,fixed
+audit and backlog publish retain633/307/326/696. The separate tester-folder smoke
+boot reached ready;see docs/tester-package.txt. Official logging was untouched.
+
+2026-10-21 Vigorous ordinary-action producer stage:
+Player ordinary melee releases now commit healing before the contact/hit path;
+wands/bows commit it after successful projectile admission and before flight
+resolution. Per-target impacts do not call the trigger. Shared completed-skill
+callbacks classify spells before allocating a distinct World-owned healing
+receipt. Non-spell skill completions do not grant healing. Inactive254does not
+allocate a receipt. Latest receipt identities remain ordered per actor/kind.
+
+The new vigorous_spirit_actions suite passes22contexts:three ordinary weapon
+classes against players with hit/miss/block/cancel,melee/bow against NPC targets
+with the same outcomes,and Runtime success/cancel completion delivery. It checks
+pre-impact melee feedback,one heal despite repeated ticks/projectile impact,
+and no completion heal for a cancelled cast or a non-spell skill. The Runtime
+fixture isolates callback delivery from Orison's separately tested base heal;
+it does not constitute rendered or full Orison verification. Bonetti fixtures
+need an observed skill bar and its correct10second duration;both are supplied.
+
+Three rebuilt suites pass:Vigorous actions,World lifecycle,and existing Spiteful
+Spirit damage/release regressions. Five coverage checks,native12-receipt verifier
+and fixed audit/publish pass. Counts633/307/326/696remain. Host build41629is still
+running.254normal casting,skill-attack/multi-attack/area producers,NPC attackers,
+self-first-application versus refresh and cross-source/combined-effect retail
+ordering remain open. No inferred order with Spiteful is claimed as retail proof.
+The tester folder and official sessions/loggers were not modified.
+
+Vigorous producer validation complete:serial Release build41629exited0,
+including shipping server_host and the three rebuilt focused suites. All three
+suites passed after the current source rebuild. Host identity is recorded in
+build/reports/vigorous-actions-host.txt. Normal254casting remains unbound;the
+fixed307bound/326awaiting counts and explicit verification gaps are unchanged.
+
+2026-10-21 NPC ordinary/quest action producers:
+Added Vigorous self-healing at committed ordinary NPC melee/ranged releases,
+before impact, plus trusted quest weapon releases against players/guardians.
+A hostile NPC uses the shared self-heal primitive rather than the ally-only
+relation gate. Explicit false healing policy suppresses healing; unknown policy
+rejects staged application. NPC254 uses common status-removal credit handling.
+The self-buff entry is a trusted effect stage, not paid NPC spell admission.
+
+New vigorous_spirit_npc_actions passes23contexts:16 ordinary cases covering
+melee/ranged, healing allowed/suppressed, hit/miss/block/control cancellation;
+unknown policy rejection; six quest cases including range rejection and direct
+non-attack damage exclusion. Repeated ticks/projectile impacts do not repeat the
+heal. Initial test failure was a fixture scheduling error:tick1499 sets the
+100ms scheduler past1500; tick1400 now checks the pre-release boundary instead.
+Direct guardian damage requires unknown weapon delivery, not forged melee.
+Native12-receipt verifier and five coverage-tool tests pass. Neighboring rebuilt
+suites and shipping host validation remain pending at this entry.
+
+Normal254 casting, attack-skill release producers (including each Barrage/Volley
+arrow versus one Cyclone/Whirlwind action), NPC spell completion, combined-effect
+ordering and rendered verification remain open. No binding-count advance is
+claimed. Official clients/loggers and the distributed tester folder untouched.
+
+Shipping host validation:serial Release build90305exited0;new native host hash
+is de05461c79933bacfa4fee47e573b87c4d163fb35ddeec308b06ad0541f86e46.
+Identity recorded in build/reports/vigorous-npc-host.txt. No server/client was
+launched for rendered acceptance;--build-info starts no listeners. Local tester
+folder remains on its previously packaged binary and saved database.
+
+Final NPC producer validation:serial focused rebuild15990exited0. Five current
+CTest suites pass:vigorous_spirit_world,vigorous_spirit_actions,
+vigorous_spirit_npc_actions,shield_deflection_publication,npc_ordinary_world.
+Native12-receipt verifier,five coverage-tool tests,fixed audit/backlog publication
+and shipping host build succeeded. No rendered acceptance or complete254binding
+claimed. Remaining work is unchanged:paid254casting,attack-skill multiplicity,
+NPC spell completions,combined-effect ordering,rendered QA. Goal remains active.
+
+2026-10-21 Vigorous paid casting:
+Runtime254 now has a typed application hook wired to the real World completion.
+It uses exact scoped ally/self/reviewed-NPC validation at admission/completion,
+5Energy payment,250ms activation,750ms aftercast,4s recharge,HealingPrayers rank,
+equipment-adjusted30s enchantment duration and Monk Divine Favor. The World
+publishes one completion58,465body and owned status atomically;Runtime suppresses
+duplicate visual/terminal publication. Lost capabilities,stale target scopes,
+interruptions and cancellation do not apply the enchantment.
+
+New vigorous_spirit_cast suite passes97contexts:91admission/completion/payment,
+player/self/NPC/secondary/immune/duration/status/expiry cases and six end-to-end
+completed-action callback cases for self first application,self refresh and
+casting on another ally while already enchanted,with success/cancellation.
+The callback cases establish current engine ordering only;retail self-first/
+refresh attribution remains unproven. NPC unknown-healing metadata is not
+silently assumed;the effect stage rejects it. These authored fixtures do not
+constitute a full rendered client test.
+
+Coverage now records254as source-bound through a paid production hook. That
+must not be read as all behavior complete:attack-skill/multiple-attack releases,
+NPC spell completion,combined-effect retail order and rendered QA remain open.
+Five coverage-tool checks and native12receipt/.25s/465consumer verifier pass.
+Shipping host and neighboring regression rebuilds are running at this entry.
+No official client/loggers,quest content or tester folder modified.
+
+Shipping host linked successfully for paid254casting;SHA256
+32a14696dcb1037895f9a6727aaf8994b76d700f55599ad0c1439b7f8abf01c0.
+Identity in build/reports/vigorous-casting-host.txt. Fixed checkpoint audit and
+backlog publish succeeded:633captured,308bound,325awaiting,696missing captures.
+Source counts do not close the remaining producer/retail/rendered gaps above.
+
+Final paid-casting validation:serial build95006completed exit0 for shipping
+host plus rebuilt Vigorous actions/World/NPC actions and Shield of Deflection
+casting. Four Vigorous CTests and94neighboring Shield of Deflection casting
+contexts pass. Native receipt verifier and five coverage-tool tests pass.
+Report:build/reports/vigorous-casting-validation.json. Remaining fidelity gaps
+above are still open;goal active. Opus's profession-quest work and official
+clients/loggers were not changed.
+
+2026-10-21 attack-skill and NPC spell release producers:
+Current generic single-melee releases (including Illusionary Weaponry replacement)
+now trigger254before miss/block/hit resolution. Bow skill arrows trigger once
+after each committed projectile admission. Barrage/Volley trigger per emitted
+arrow;Cyclone triggers once after complete recipient preflight,including empty
+area success. Recipient outcome IDs are not reused as attack counts. Invalid
+plans or an unreviewed selected recipient do not grant healing. Unselected
+recipients beyond the arrow cap do not invalidate the selected release batch.
+
+New vigorous_spirit_skill_attacks passes92World contexts:axe/sword/hammer,bow,
+dual-arrow skill,player/NPC recipients,hit/miss/block,forged rejection,Cyclone/
+Barrage/Volley counts0/1/3/7,unknown armor and Illusionary replacement. Called
+Shot403is unblockable;its fixture expects a hit rather than inventing a block.
+No projectile impact or repeated tick repeats release healing. The historical
+wiki distinguishes multiple attacks from multiple hits;see hashed references
+and test scope in build/reports/vigorous-attack-boundaries.json. These authored
+boundary tests are not new retail captures or rendered verification.
+
+NPC Flare/elemental completion previously called the shared action service only
+when Spiteful credit existed. Removed that unrelated gate:successful released
+spells now notify shared completion,so254works alone. New NPC spell suite passes
+20contexts across legacy Flare controller,elemental Flare,Firestorm,Phoenix and
+Ice Spear,healing allowed/suppressed and knockdown cancellation. No cancelled
+windup or repeated tick heals. NPC254enchantment application remains a trusted
+stage,not an autonomous MonkAI paid cast. Native visual and coverage-tool checks
+passed before this final source formatting;shipping/regression builds running.
+
+Remaining fidelity:combined reactive-effect/fatal ordering,retail self-first/
+refresh attribution,actual asset rendering,and any future attack families must
+provide their real release counts. No all-game attack/AI fidelity claimed.
+Official clients/loggers,profession quests and tester folder remain untouched.
+
+Retail evidence limitation:empty-area Cyclone still counts the admitted circular
+attack in the current engine. That authored boundary policy is exercised by the
+new suite but has no new empty-area retail receipt. Combined/fatal and empty-
+area/self-first/refresh ordering should be verified from retail capture before
+claiming exact behavior for every boundary.
+
+Final release validation:serial build98966exited0,including native host and six
+current rebuilt suites. Vigorous skill attacks92contexts,NPC spells20contexts,
+Barrage,Cyclone Axe,NPC Flare World and NPC elemental World all pass. Native
+12receipt verifier,five coverage checks and fixed audit/publish pass. Counts
+remain633/308/325/696. Host SHA256
+360f3e0c754ae17066a65c0696bcd4c57b2c6917e1dcbd77b1c615b9523d7a36;
+report build/reports/vigorous-releases-validation.json. No rendered acceptance
+claimed. The goal remains active with many captured skills awaiting binding.

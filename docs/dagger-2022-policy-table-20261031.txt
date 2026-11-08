@@ -1,0 +1,96 @@
+DAGGER FAMILY PINNED2022 POLICY / LATER CAPTURE COMPARISON
+2026-10-31, read-only local sources; no production override or build.
+
+Authority order: original2022 skill catalog numeric row; local2021 wiki
+mechanics/explicit progression; later fixed2026 capture packet observations.
+Later observations expose discrepancies; they do not overwrite2022 rows.
+Catalog source: src/runtime/gw_skill_catalog_generated.h, pinned PE SHA256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+Oldwiki root: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki.
+Pages are2021 mirror material and were read directly, rather than assuming
+the later gw-skilldata description archive represents the old snapshot.
+
+ID  Skill                E  catalog activation/recharge  rank0..15 values
+775 Death Blossom        5  0/2s        +20..45; adjacent20..45
+776 Twisting Fangs      10  0/15s       +10..20; Bleeding/Deep Wound5..20s
+777 Horns of the Ox      5  0/12s       +1..11; conditional knockdown
+778 Falling Spider       5  0/8s        +15..35; Poison5..20s
+779 Black Lotus Strike  10  0/6s        +10..31; hexed target Energy5..13
+780 Fox Fangs            5  .5s/3s      +10..35; unblockable
+782 Jagged Strike        5  .5s/1s      Bleeding5..20s; no bonus damage
+783 Unsuspecting Strike 10  0/2s        +19..31; >90percent Health +15..75
+
+All have zero catalog aftercast, profession Assassin7, dagger requirement8,
+target foe5, native no-body sentinel2077. Attribute Dagger Mastery29 for
+775/777/778/780/782; Critical Strikes35 for776/779/783. Catalog overcast99 is
+sentinel data, not an actual99Overcast charge. special32768 marks dual rows
+775/776/777; remaining reviewed rows special0. PvP aliases:775->3061,
+780->3251; others3433 sentinel. Do not promote aliases without their own
+reviewed plans/captures. Catalog area field156 for775/777 is evidence about
+those skill rows, not license to use another universal adjacent radius.
+
+Oldwiki agrees with these costs, base recharge and displayed rank0/12/15
+progression. Exact damage interpolation uses0..15 endpoint values, not the
+middle rank12 number. Oldwiki notable mechanical notes:
+* Death Blossom adjacent damage is armor-ignoring; ordinary attack bonus and
+  per-strike collateral must still use shared actual damage authority.
+* Twisting Fangs applies BOTH conditions on EACH of its two attacks; Deep Wound
+  covers Bleeding. One merged post-dual condition application would lose this.
+* Falling Spider is offhand with knocked-down exception, not a generic demand
+  for lead stage1. Shared ledger's current offhand() requires stage1, so a
+  future implementation needs a reviewed exception transition API.
+* Horns qualification refers to struck foe's allies, not the caster's allies.
+* Jagged page explicitly says activation actually .25s despite displayed .5s.
+  Catalog activation must remain .5s metadata; actual execution timing is a
+  separate reviewed attack-timing policy. Current detached policy windup500
+  is provisional and MUST NOT be mistaken for settled native timing.
+
+Later fixed checkpoint recharge observations (source file short names below)
+108988=packets-108988-190116609.jsonl;
+1360=packets-1360-15821281.jsonl.
+775:1360:710809=2 ->710812=0 on failure.
+776:1360:710851=15 ->710854=0 on failure; repeated710906/710909.
+777:1360:710872=12 ->710875=0 on failure.
+778:108988:21411=8 on failure;22395=8 on successful stage2 frame.
+779:108988:21284/21800/22352=6;1360:750560=6.
+780:108988:21312=3 successful;21607=3 ->21610=0 failure;
+    1360:750190/750593=3 successful.
+782:108988:21337=2;1360:750168/750611=2, all versus2022 base1.
+783:108988:21361=2;1360:750223/750633=2.
+The sole observed base recharge discrepancy in these eight is Jagged1vs2.
+The failure resets are separate phase behavior, not a changed base recharge.
+No numeric damage/rank balance difference is established by normalized damage
+packets alone. The target's armor/mastery/critical/resource context is missing.
+
+Jagged observed elapsed start->finish:10898821334->21338 is203ms;
+1360750161->750169 is172ms;750608->750612 is140ms. Fox observed examples
+are203ms at10898821309->21313,156ms1360750187->750191,156ms750590->750594.
+These durations require IAS/timing-context review; they do not prove500ms
+actual windup, nor establish a modern balance patch date. Preserve exact
+metadata and choose execution policy explicitly before binding either skill.
+
+Oldwiki source SHA256 (filename.html)
+Death_Blossom 15e839351942c77b88809e864f00f1d10d312b8ec396b6f2d7346e03a7425477
+Twisting_Fangs 1aa0a4c96d694cc0ab5b3d3a9588e0eeea3fcf5aae718c2b740191eee34096b6
+Horns_of_the_Ox 205b9c4e895e8c7c30baf6e06ecd3ca4e7223e7643b8e37ebf8f0b1b49364d8c
+Falling_Spider 7a8997a719f03dce852f9cd122452e82c390a87eabdf432fc9aef293a54087bc
+Black_Lotus_Strike a8ff5f9bb115117dd85e19c1f62adf63679372cdf72e9f868d4e8b3632fc6abc
+Fox_Fangs 0fbadcfa2b0be7753ba025465047006cdcd04c3b0ea53959e680fb4650567764
+Jagged_Strike c0d24d75780bf40443a7f1958124a62583c32162ae3abce7f4c1d9b7d1e92fd2
+Unsuspecting_Strike 0d3d27480ca52828e964b1f2b3d35672b5726eb48c959ab8d113054d76f011a9
+
+Detached composition extension prepared
+src/runtime/gw_dagger_transaction_detached.h and unregistered
+tests/dagger_transaction_detached.cpp compose canonical contact proposal with
+copied Actor/conditions state through two caller-provided PURE callbacks.
+Damage callback uses shared weapon/protection arithmetic and separate bonus;
+condition callback uses shared modifiers/immunity/application reaction policy.
+Results validate exact target/generation, accepted Hit/Health consistency,
+condition-copy validity and survivor-only chain proposal. Input state remains
+untouched on success or refusal. Callback purity is a required caller contract,
+not an enforced sandbox; World callbacks that capture/mutate live state would
+violate this helper's purpose. No resources, replay, publication or production
+registration is owned here. Survivor-only lethal behavior remains private
+policy pending retail evidence. Test source covers copied success/refusal,
+lethal damage, application-reaction death, Fox bonus, forged hit and stale
+generation. Neither native test nor build was run for this extension.

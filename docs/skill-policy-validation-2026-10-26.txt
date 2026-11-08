@@ -1,0 +1,28 @@
+Native Release validation, 2026-10-26
+
+Build: server_host, selfless_spirit_policy_test,
+selfless_spirit_registry_test, elemental_lord_policy_test, progression_test;
+serialized --parallel 1. Focused CTest: 7/7 passed, including the three
+Signet of Corruption regressions. Selfless Spirit fixed-capture and
+cost-window verifiers passed. Scourge Healing fixed-capture verifier passed.
+
+SHA256 bin/server_host.exe:
+607267738BB3549E642BE82783B108593FD022BDAD93FC45511348C04876A337
+SHA256 src/runtime/gw_selfless_spirit.h:
+19BF2A76021E4A313B7B041EB1731A23197F4CEE2123BCCE1B6CAB4CE91A79A6
+SHA256 src/runtime/gw_selfless_spirit_registry.h:
+C1B4EE705C10EE2B2F31A43D37B7B467986A43CC6DDA77F5021A385C62044E1A
+SHA256 src/runtime/gw_elemental_lord.h:
+BC02424CCC136079B744363169460A8C29BFB4914C5C3FB203D10240C370ABAF
+SHA256 src/runtime/gw_progression.h:
+25D764ED2E927E74A8FADA8654546F121AB80F9BC886B863482DBFCAF139AFED
+SHA256 build/tests/selfless_spirit_policy_test.exe:
+3E3C64078DED6A640AB21676BEAF25B582105CE36F5DBF57AE3F45E079F404A7
+SHA256 build/tests/selfless_spirit_registry_test.exe:
+8C113F0F4953854D80CDF07AFB5C89F36B01BA28A57E583BB11B79E3444959D4
+SHA256 build/tests/elemental_lord_policy_test.exe:
+81F875449579309EADE2FD44755D18F5C85687883E66C5C6634B62595A7B2BEF
+
+Selfless Spirit and Elemental Lord remain unbound. These tests prove native
+policy and lifecycle staging, not client rendering or playable mechanics.
+The official client was not touched.

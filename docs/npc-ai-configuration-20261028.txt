@@ -1,0 +1,102 @@
+NPC AI configuration and evidence boundary, 2026-10-28
+
+Native implementation guide. Final typed-immediate build97509 was running when
+this document was saved; consult the root's final report for verified results.
+No rendered-client behavior or measured retail patrol/stats claim is implied.
+
+Existing usable loop
+Controllers retain exact source Scope (instance, actor, generation), home pose
+and authored speed/acquire/follow/leash policy. Idle movement is opt-in. Generic
+hostiles acquire candidates in their authored acquisition radius; committed
+positive damage can provoke them within follow/home leash even outside acquire.
+Memory retains observed foes; no group IDs or retail threat weights are invented.
+Supported attacks/casts respect action, resource, geometry and lifetime checks.
+Losing targets or reaching the home leash starts return; return has priority
+over idle, and patrol resumes after return and pause. Knockdown, windup and
+aftercast constrain actual movement budgets. Navigation/LOS/collision remain
+authoritative; routed corner positions are published in order. Actual client
+interpolation of that packet sequence is not established by native tests.
+Unavailable routes are distinguishable from deferred observations, zero budget,
+valid detours and unsupported layers; no unmeasured combat timeout is supplied.
+
+Configuration APIs
+1. configure_npc_hostile_ordinary(FlarePolicy,ordinary::Reviewed,now): existing
+   hostile NPC with known living Health plus explicit attack damage/type,
+   timing/range/delivery evidence. No Energy or fake spellbook is required.
+2. configure_npc_flare_ai / configure_npc_elemental_ai: reviewed spell-capable
+   NPCs using the existing projectile/elemental effect drivers. Rank, spellbook,
+   resource observations and relevant target armor/Overcast observations are
+   required by the selected effect. Merely listing a skill is not effect support.
+3. configure_npc_immediate_ai(FlarePolicy,vector<activated::Reviewed>,now):
+   existing hostile NPC with living Health and known Energy/regeneration; each
+   Reviewed record contains Slot, canonical ShadowPlan and evidence. Today only
+   Vile Touch155 passes the complete consumer constraints. It is a non-spell
+   skill: pinned2022 type10, not modern reference type38. Its inactive raw
+   Overcast field is ignored using the native special bit. Dark Pact133 sacrifice,
+   Obsidian Flame219 active Overcast and life-steal followups remain rejected.
+   No immediate spell effect support is established by the new155 tests.
+4. configure_npc_wander(source,wander::Policy,now): enroll an existing generic
+   controller with bounded offsets, pause and leg timeout plus policy evidence.
+   It does not assign Health, armor, Energy, rank, allegiance or attack data.
+   Generic APIs reject quest-owned actors and competing control ownership.
+5. arm_grawl_melee(owner,cycle,now), then arm_grawl_wander: existing quest75
+   roster only. arm_brood_caster then arm_brood_wander: existing quest49 only.
+   Both preserve owner/cycle/exact lifetime and require actual health loss;
+   proximity alone does not trigger these quest-owned encounters.
+6. npc_ai_coverage reports placed/reviewed/active/unknown-health/wandering counts.
+   npc_pursuit_movement_snapshot(source) reports timestamped movement outcomes.
+
+FlarePolicy is currently the shared motion-policy type, even for ordinary and
+immediate controllers. Its legacy flight fields must validate, but immediate155
+does not launch a projectile. Do not interpret that validation as flight evidence.
+Ranks and authored values must carry provenance. Unknown metadata stays unknown.
+configure_activated_skillbook / begin_activated_skill on LiveActor provide typed
+spell/non-spell action authority with one Energy/recharge/aftercast ledger.
+Existing configure_spellbook / begin_spell remain spell-only wrappers. Effects
+must still use a World driver, not directly bypass its scoped damage admission.
+
+Production enrollments and limits
+Host calls Grawl melee/wander for existing quest75 (map160), and Brood
+Aura/IceSpear/wander for existing quest49 (map161), after successful quest arming.
+Grawl captured Health80 and Brood captured Health100 are preserved; armor,
+resources/ranks and movement parameters have the individual policy's stated
+authored or reviewed provenance. Shared patrol offsets (+/-80 cross), pause1200
+and leg6000 are authored development settings. See:
+  data/gw/ai/hostile-patrol-development-policy.txt
+  data/gw/quests/grawl-melee-development-policy.txt
+  data/gw/quests/domination-magic-ai-development-policy.txt
+Quest73 Shards use their existing guardian-assault objective driver, not this
+idle patrol opt-in. Relation-only canonical populations remain unenrolled.
+Blood Fanatics are NOT activated by the immediate155 API work. Their existing
+quest43 catalog has captured Health120 but no Energy/regeneration/rank policy.
+See docs/npc-blood-fanatic-activation-audit-20261028.txt for exact hashes/limits.
+
+Proposed future explicit development enrollment for quest43/map145
+This is a proposal only; no runtime/host/catalog change is made by this file.
+Use the four existing templates20100..20103/definition70/model_file116378/level2
+already created by spawn_kill_encounter. Do not spawn duplicates or fabricate
+the uncaptured fifth actor. Preserve existing Health120 and authored armor0.
+Create a separately sourced policy (rather than silently changing the meaning
+of an old hash), explicitly choosing e.g. Energy40/40, regeneration4 pips and
+Death Magic0 for private development. These are deliberate test/playability
+values, NOT measured/inferred retail NPC stats. Rank0 gives canonical155 damage20;
+cost10, activation750ms, aftercast750ms and recharge2000ms come from pinned skill
+metadata, not new per-NPC guesses. No ordinary fallback until its profile exists.
+Bind resource fields via an appropriate versioned combat catalog (Energy fields
+require v7+, pips v8+) with authored source hashes and explicit rank provenance.
+
+Add reusable owned-immediate enrollment taking owner,quest,cycle,source,motion
+policy,reviewed book and now; validate current objective remaining membership,
+exact owner generation/source lifetime/assignment and existing bound resources.
+Keep one controller per actor. Add a reusable owned damage-trigger gate with
+the same validation ordering as Brood, plus source-scoped retirement and optional
+bounded idle policy. Do not remove the generic API's quest-ownership rejection.
+Then host's existing periodic quest arming block (gw_auth.cpp near Grawl/Brood)
+may arm quest43 on map145 only after the owned API succeeds. Enrollment must be
+idempotent across repeated ticks and quest restoration; expose eligible/enrolled
+counts and explicit missing-policy reasons. Broader proximity activation would
+need a separately stated authored quest policy, not be implied by this proposal.
+Required tests: owner/cycle/replacement isolation, missing Energy/rank rejection,
+155 touch pursuit, cast cancellation, Seed/protection, no spell-only bonuses,
+leash/return/idle, visibility ordering and no duplicate populations. Native test
+success still leaves rendered private-client verification separate.

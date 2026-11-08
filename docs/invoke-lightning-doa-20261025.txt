@@ -1,0 +1,36 @@
+Invoke Lightning [1664], fixed Domain/Citadel follow-up (2026-10-25)
+
+The immutable 20261024-urgoz-doa-completed checkpoint contains 97
+timing-attributed starts: 80 in Domain of Anguish (474), 17 in Ebony
+Citadel of Mallyx (445). The all-skills checkpoint has 16 other/unassigned
+starts and no local player activation; these independent scopes are not
+additive, and neither identifies the caster from timing alone.
+
+The pinned 2022 client first consumers accept style51/1-second cast and
+target resource1640. The native row gives 10 Energy, 5 Overcast, 1-second
+cast, 6-second recharge, rank damage10..90 and 25-percent penetration.
+See build/reports/invoke-lightning-native-2022.json. The official Wiki notes
+that a third strike can be near the second foe while farther from the first:
+https://wiki.guildwars.com/wiki/Invoke_Lightning
+
+The shared lightning World path now selects up to two further hostile player
+or NPC recipients as a chain, preserving generation, plane and reviewed
+lightning armor gates. The first candidate within 322 private-server units
+of the primary becomes the second anchor; the next is selected relative to
+that anchor. Distance then actor ID breaks ties until retail selection
+ordering is captured. Damage is native lightning with 25-percent armor
+penetration. A primary or secondary receives the reviewed target resource
+once, after the paid cast terminal in the native Runtime test. The native
+target first consumer does not establish the exact retail packet sequence.
+
+Serialized Release server_host builds. Focused Invoke Lightning, Arc
+Lightning, Mind Shock and Essence Strike World CTests pass (4/4). The
+fixed DoA gap review falls to 50 unsupported IDs. Rendered client
+acceptance, exact retail bounce radius/tie-break, NPC caster behavior,
+and the Wiki's reported extra visual-only strikes remain unverified.
+
+SHA-256 gw_lightning.h F22739A411D90849474E95FC8E89F481B8A3D74C102509D029A0A4A6AF02F5E1
+SHA-256 gw_skill_casting.h 12D3FF3CA7F9C11CDF3D324F7B42F81DB8310A3AB8CFC562D94095B0D8A10D97
+SHA-256 gw_world_simulation.h 9D4B666719C7812B65E6C228FB0ECB053E5848C3241B16832C89F0AE65539293
+SHA-256 invoke_lightning_world.cpp EBF4323148BFE470FE2266AF1D40F1F1E544AE00A0D8FDFB07B43739ED7464E3
+SHA-256 server_host.exe 3D28D5892EFA06FB44AA6C1A87C4FF465F9142CAE18796AAAA115BDC3AB2F3A6

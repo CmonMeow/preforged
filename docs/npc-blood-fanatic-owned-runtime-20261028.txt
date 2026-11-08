@@ -1,0 +1,42 @@
+Owned quest43 NPC AI integration (10 native suites pass; gateway compile zero warnings/errors)
+
+The new owned-immediate API is included in World. Existing exact scoped
+quest actors wander until committed damage activates pursuit of their owner.
+The same LiveActor authority owns Vile Touch155 payment, activation, aftercast,
+recharge, interrupts, touch range and reactive damage. No Flare194 fallback.
+The host arms existing quest43 actors every objective poll, idempotently;
+changed remaining/armed/unsupported/owner reports are logged once per change.
+Four captured template identities are validated before runtime ID remapping.
+Captured Health120 provenance is retained. Energy40/40,4pips,DeathMagic0,
+patrol offsets/timing and engagement distances are authored development tuning.
+No ordinary weapon profile has been supplied or inferred from model/level.
+
+Damage before the first enrollment poll is retained via the lifetime Health
+loss revision. Returning takes priority over new damage; arrival clears the
+trigger. Owner/quest/cycle/remaining membership guards run before former-owner
+clocks. Exact scoped retirement leaves a tombstone until the motion controller
+is removed so generic acquisition cannot reactivate an invalid owned actor.
+Population reset clears owned bindings. Elemental controller replacement drops
+the old owned binding only after its normal preflight succeeds.
+
+Pre-begin Mind Wrack caster Health settlement can retire a linked NPC skill
+controller. The immediate helper now reacquires controller and participants,
+requires exact scopes and living Health before skill selection. The detached
+regression npc_immediate_prebegin_retirement_world.cpp still requires a narrow
+friend declaration and native execution; it does not claim public tick ordering.
+
+Current source supersedes the proposed-only enrollment section in the earlier
+npc-ai-configuration-20261028.txt and detached integration handoff. Those files
+are retained as historical design evidence. Final executed test/hash report:
+build/reports/npc-owned-immediate-progress-20261028.json (written after validation).
+
+Remaining: rendered client verification, quest43 ordinary attacks, owned-source
+reaction-death combination, departure during paid windup, and the callback
+retirement regression. No measured retail patrol/threat-policy equivalence.
+This does not complete general NPC AI, every skill consumer, or the active goal.
+No host deployment or official-client/logger action is part of this integration.
+
+Follow-up2026-10-28: the narrow prebegin retirement regression is now registered
+and native-executed for lethal and surviving linked-degeneration cases. See
+build/reports/bile-timeline-provider-progress-20261028.json. This closes that
+specific uncompiled-test gap, not the other owned AI/rendered requirements.

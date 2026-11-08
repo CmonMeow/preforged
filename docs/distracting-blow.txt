@@ -1,0 +1,111 @@
+Distracting Blow325: staged policy/native evidence,not Runtime-bound
+=================================================================
+Pinned2022 No Attribute51 Melee Attack14,requirement185,5Energy/0adrenaline,
+0.5s activation/0aftercast/10s recharge. Both2077 body fields are sentinels.
+Local article specifies zero damage and interruption of the primary foe plus
+foes adjacent to it. Notes distinguish one ordinary primary attack from the
+area interruption:do not award every adjacent foe a weapon hit/adrenaline gain
+or ordinary bonus damage. IW replacement and scythe contacts require explicit
+handling,not a generic attack loop doing zero damage to every nearby actor.
+
+Frozen checkpoint20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+354803..354809 at22957015/22957187 and354983..354989 at22969421/22969593.
+Both show start50,10s recharge,success46 and release227. Observed172ms intervals
+are not a fixed server-release rule. Original2022 action21/style41/state45
+selects0.5seconds from the skill despite supplied1.75s ordinary weapon interval.
+Asset/actor/clock services are stubbed;no rendered acceptance is claimed.
+Native row108 contains float72;its semantics are retained opaque. It is not
+silently converted into server range166. Pure area policy currently uses the
+project's established adjacent166 convention,not a new measured retail radius.
+
+Pure gw_distracting_blow.h validates the pinned row and stages primary-centered
+recipient/action selection. The caller supplies settled positions and eligibility
+from authoritative hostility/life/layer checks. Exactly current primary must
+exist and be eligible;source cannot be primary. It selects primary first,then
+eligible adjacent actors within166. Source is excluded. Unknown selected actions
+reject the whole proposal before any interruption. Duplicate/reused actor IDs,
+foreign lifetimes,nonfinite positions and stale primary generation reject.
+4096sample cap is a defensive server bound,not a claim of a game target limit.
+No actor,condition,protection charge or resource is mutated by this helper.
+
+Important mechanics evidence still to resolve:
+Archived Talk_Distracting_Blow.html has a dated2009 community test reporting
+separate area interruptions per scythe contact and extra interruptions with
+Dazed,measured through Mantra of Resolve Energy loss. This is community testimony,
+not a causal packet proof. Do not collapse all families into one interruption
+attempt or propagate this report to Skull/other attacks without their evidence.
+Current article also states scythe/IW/additional-hit differences. Whether a
+missed/blocked primary swipe suppresses secondary interrupts is not proven by
+the two idle-target windows. Existing nonlocal325/observer captures should be
+examined before requesting new captures. Preserve this uncertainty explicitly.
+
+Pending World/Runtime:zero weapon damage distinct from absent/fixed damage,
+primary hit/accuracy/block rules vs area effect gating,complete target-set
+preflight and atomic interrupt protection,adrenaline/Zealous/Conjure/IW rules,
+scythe/Dazed repeated-interruption ordering,5Energy/10s lifecycle and native
+animation publication. No attack_skill325 or Runtime support has been enabled.
+
+Validation:distracting_blow_policy_test and native verifier pass. Frozen report:
+build/reports/distracting-blow-native-2022.json,including file/wiki/talk hashes.
+
+Immutable contact-window analysis added (supersedes inspect-next note):
+tools/skills/analyze_distracting_blow.py verifies every input packet snapshot
+hash before scanning. It matches325 source starts to unreplaced same-source46
+finishes and retains nearby primary/secondary terminal notifications. It pairs
+following35 interruption markers only with the latest matching actor stop;this
+confirms an interruption notification,not its responsible caster/skill. It never
+uses movement destinations as current positions or invents miss/block outcomes.
+
+Fixed20261017-npc-refresh-2:91 starts/91 matched finishes,74 windows with primary
+stop candidates,32 with secondary stop candidates,and12 with secondary35 markers.
+Latest20261018-session-complete:92/92,74 primary,33 secondary,and12 secondary35
+marker windows. Reports are separate:
+build/reports/distracting-blow-contact-windows.json
+build/reports/distracting-blow-latest-contact-windows.json
+Each contains input/tool hashes,receipt lines,last-observed action metadata and
+explicit causality_proven=false. Window limits are analyst filters,not mechanics.
+
+Useful fixed candidate:packets-110488-195213578.jsonl275158 is325 source23,
+primary317. At198910531,source46 appears275177;primary317 stops59/35 at275178..79,
+and actor354 stops59/35 at275180..81. Both foes were last observed starting133
+at275108/275113. No other skill starts occur in that short contact window,but
+older projectile/field/control effects still confound attribution. Geometry,
+agent lifetimes/current actions and primary accuracy/block are not proven.
+Do not promote this to a causal area/gating proof or mark325 implemented.
+
+Seven new analysis tests cover correlated-only labeling,replacement matching,
+unknown/incomplete/wrong-direction records,clock resets,large gaps,confounding
+starts and nonduplicated interruption-marker pairing. No live logger/client is
+accessed. Primary failure gating and scythe/Dazed cardinality remain unresolved;
+this is skill-specific work,not a reason to stop the broader implementation goal.
+
+Shared area-interruption review found and corrected existing Panic NPC protection
+and terminal publication defects. Panic now preflights shared NPC Mantra costs,
+commits exact current control tokens without replacing whole actors,and publishes
+ordinary/attack-skill/other-skill stop3/49/59. This provides a tested pattern for
+the eventual325 recipient transaction;it does not resolve325 primary-hit gating
+or scythe/Dazed repeated-attempt rules. See docs/panic-npc-protection.txt.
+
+2026-10-21 attempted-contact preflight:the existing primary-centered area/action
+selector is preserved. distracting_blow_contacts validates a distinct ordered
+weapon-recipient subset supplied by World:primary first,one attempted recipient
+for axe/hammer/sword/daggers,at most three for scythe. Every selected contact must
+be an exact current eligible member of the area proposal;duplicates,stale scope,
+allies/ineligible actors,source,ranged weapons and excess contacts reject.
+These are attempted recipients,NOT landed hits. Accuracy/block and interruption
+protection resolve later. A missed primary's relationship to the area effect is
+still unknown and is not encoded by this helper. No zero-damage primary or
+secondary attack is passed through the ordinary damage pipeline yet.
+
+Validation:existing selector regressions plus new melee/scythe cardinality,
+ordering,eligibility and identity tests pass in distracting_blow_policy. Eight
+hash-verified packet receipts/native attack consumer pass via the existing
+offline verifier. Seven contact-window analysis tests and five coverage tests
+pass;325is now explicitly included in the negative binding checks. No production
+binding/count advance or rendered verification is claimed. Source count302and
+awaiting331remain unchanged;official client/loggers untouched.
+
+Repository correction during this pass:an initially duplicated stage was replaced
+with the recorded original selector/tests (including its registry/limits include
+repairs),and the duplicate CMake target was removed before building. Only the
+separate attempted-contact validation and its extra regressions remain added.

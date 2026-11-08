@@ -1,0 +1,90 @@
+Stoneflesh Aura [1375], 2026-10-26
+
+Canonical detached policy validates the pinned catalog: Earth Magic enchantment,
+10 Energy, 2-second activation, .75-second aftercast, 15-second recharge,
+1..31 flat reduction and 5..15-second duration at ranks0..15.
+Transactional registry insertion rejects stale scopes, invalid IDs, overflow
+and forged plans; renewal replaces the exact prior same-skill entry.
+Damage adapter preserves life-steal protection separately. Critical adapter
+suppresses bonus damage and Critical Strikes Energy without erasing the
+critical event. World must call these once per copied damage/strike input.
+
+Release policy suite passes: rank range, exact expiry, renewal, stale identity,
+armor-respecting/ignoring damage, zero floor, life-steal separation and critical
+reaction preservation. Hashes:build/reports/stoneflesh-aura-policy-20261026.json.
+Raw test:build/reports/stoneflesh-aura-policy-20261026-ctest.log.
+Original2022 callback/body probe and frozen capture hash:
+build/reports/stoneflesh-aura-candidate-native-2022.json.
+Archived wiki:Desktop/gw/Wiki/wiki.guildwars.com/wiki/Stoneflesh_Aura.html,
+oldid2670035. Packet evidence establishes timing/body, not damage mechanics.
+
+NOT production-bound. Remaining: paid Runtime/World application, equipment
+modified duration, Player/NPC damage and critical consumers, damaging-strip
+ending context, cancellation/expiry/death/transfer cleanup, packet publication,
+World/cast regressions and rendered acceptance. No source-count increase.
+Official logging was neither controlled nor interrupted.
+
+2026-10-26 NPC recipient integration:
+Exact-lifetime trusted application now copies/preflights a live NPC and installs
+its canonical scoped enchantment. Shared incoming spell damage consults the
+validated active plan; separately resolved ordinary/caster weapon damage applies
+the cap before flat reduction. Removal, same-skill renewal and exact expiry
+restore ordinary damage. Active lookup rejects stale ownership and unbounded
+or out-of-range duration records. Native NPC tests cover all eight damage kinds,
+ordinary weapons, renewal, removal and expiry; policy and Frigid Armor NPC
+regressions also pass (3/3). Source/executable hashes:
+build/reports/stoneflesh-aura-npc-20261026.json; raw test log alongside it.
+No Release host rebuild or production cast binding is claimed for this stage.
+Remaining: Player World paths, NPC critical strike preparation, damaging-strip
+ending context, paid casting/duration quotes, packet publication, full lifecycle
+and rendered acceptance. Prior policy-only report remains historical evidence.
+
+2026-10-26 Player World and critical preparation:
+Player admission validates canonical rank and exact base/equipment-quoted expiry.
+Shared incoming spell/strike paths now include the flat reduction while keeping
+life-steal protection separate. All four existing Player critical-suppression
+sites and three NPC-target weapon preparation sites now apply Stoneflesh's
+critical damage/Energy suppression without clearing the event. NPC helper tests
+cover critical flags and exact expiry; these are not a full rendered critical
+combat acceptance test. World regression covers earth AoE, lightning penetration,
+fire, projectile, physical/armor-ignoring spells, touch damage and melee attack.
+Four Release suites pass, including the neighboring Frigid Armor Player suite.
+Hashes:build/reports/stoneflesh-aura-player-20261026.json. Raw CTest log alongside.
+
+Still unbound in Runtime/gateway. Next: preserve removed Stoneflesh for damaging
+strip (current removal order drops it before Shatter computes its hit), paid
+cast/duration publication tests, full World critical/reaction regression, NPC
+lifecycle audit and rendered acceptance. No Release host rebuild claimed.
+Partition unchanged:679 captured/400 source-bound/279 awaiting/650 missing.
+
+2026-10-26 continuation note: removal-context and paid-cast source integration
+now passes the four Stoneflesh Release suites; Release host also built. This is
+not final publication: packet-order audit found generic Runtime status precedes
+finish/body; correct to captured recharge -> finish58 -> body1184 -> status,
+then assert ordering and rebuild before publishing the new source-bound count.
+Current user-requested capture queue refresh is separate from implementation
+checkpoint20261024-all-completed. No rendered acceptance claimed.
+
+2026-10-26 FINAL SOURCE INTEGRATION (supersedes staged notes above):
+Production1375 normal paid casting is enabled. Canonical rank, resource cost,
+self-targeting, exact EnchantmentDuration quote and snapshot reconciliation are
+required. World Player/NPC damage and critical consumers are connected. An
+exact-scope/time removal capability preserves reduction on Shatter's hit without
+restoring the removed enchantment or allowing later unrelated damage protection.
+Runtime publication follows frozen recharge -> finish58 -> body1184 -> status;
+its cast suite asserts this order and exactly one finish/body.
+
+Final four Stoneflesh Release suites pass. The host Release build passes.
+Fourteen coverage checks and six backlog checks pass. Reusable verifier
+ tools/protocol/stoneflesh_evidence_20261026.py verifies five fixed receipt lines
+and the original2022 self-event158 style48/2s/body1184 first consumers. The generic
+targeted-event159 helper returns style49 and is NOT the captured self-cast path.
+Hashes and raw test log:build/reports/stoneflesh-aura-integration-20261026.json
+and build/reports/stoneflesh-aura-integration-20261026-ctest.log.
+
+Fixed implementation partition:679 locally activated,401 source-bound,278
+awaiting,650 missing local activation. The separate20261026-player-resume queue
+and official live logs are preserved. Open: rendered2022 visual/audio acceptance,
+retail combined modifier/reaction ordering, full World critical-event reactions,
+authored NPC casting/loadout AI and population-wide lifecycle verification.
+Native mechanics/first-consumer checks do not prove those remaining boundaries.

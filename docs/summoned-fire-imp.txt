@@ -1,0 +1,57 @@
+Summoned Fire Imp projectile effect slice (2026-10-17)
+
+The dedicated gw_summoned_fire_imp.h module prepares delayed authoritative
+Flare194 single-target and Fireball186 adjacent fire-damage results using the
+existing reviewed ElementalPlan/elemental_target resolvers. Skill186 is Fireball,
+not Immolate191. No burning or overcast effect is invented for this loadout.
+This module is not yet connected to World/Auth or a production summon loop.
+
+Evidence
+The correct creature is Fire_Imp_(summon).html, revision2641613, SHA256
+1624c36279ce577fc2c54d18f44afebb263b93a4c4451be02019d557ba972f78.
+The ordinary foe Fire_Imp.html has a different loadout and must not supply the
+summon's stats. The summon page lists Fireball186, Flare194 and Glyph of
+Restoration1376. It gives FireMagic14/EnergyStorage9 at level20 only; it does
+not supply a lower-level rank table or a directly usable current/max Energy
+pool. It says the initial level matches the summoner, the Imp gains XP and
+levels faster than its owner, and the Imp disappears when its owner leaves.
+
+The offline Experiment audit retains source hashes and observation lines in
+build/reports/experiment-combat-capture-audit.json. Actor16 Fire Imp is observed
+at levels1 and2, starts Fireball186 six times and Flare194 seven times in this
+window. There are no direct owner fields in the world capture. Neither damage
+credit IDs nor allegiance/display name alone authenticates summon ownership.
+The level20 wiki rank must not be applied to this captured low-level Imp.
+
+Host integration contract
+1. Maintain a generation-safe summon ownership binding. On summon creation,
+   validate the real owner and current level; on XP/level changes use reviewed
+   rank inputs. On owner departure retire the summon. Do not infer current
+   ownership from a display name, body model, allegiance or damage cause ID.
+2. Use one actual per-NPC Energy authority. The existing LiveActor hostile-only
+   payment method cannot simply be reused for an allied summon. Add a reviewed
+   allied summon resource path rather than charging the owner or creating a
+   second disconnected Energy pool. Unknown Energy/rank prevents a launch.
+3. Admit the owned Fireball/Flare through action control, pay real costs and
+   issue Payment with matching NPC scope, slot, sequence, admission time and
+   before/after/max Energy. Finalize the live control token exactly once before
+   launch. The helper verifies receipt consistency; the World must authenticate
+   the receipt and prevent duplicate token launches under its instance lock.
+4. Launch using actual caster/target positions, plane, hostility and line of
+   sight. Pass an explicitly authored projectile Policy; speed/hit tolerance
+   are existing private simulation tuning, not recovered retail measurements.
+5. Retain the move-only projectile. At impact provide current owner/caster
+   binding and live recipient generations, health, fire armor and hostility.
+   Stale ownership/target, missing owner or dead caster consumes this slice's
+   release. Caster-death/owner-leave projectile cancellation is conservative
+   host policy; the capture does not establish retail in-flight behavior.
+6. Commit all returned recipient proposals atomically. Missing required armor
+   returns unsupported with no partial proposals. Apply authoritative NPC death,
+   objective/XP credit and native packets separately. Actual caster remains
+   the Imp; credit_owner is separate and must not rewrite caster identity.
+
+Fireball blast checks the explicit launch aim point and existing166-unit
+reviewed adjacent radius. Flare hits only its selected live target. Selected
+projectile dodge/miss behavior uses the explicit private hit-radius policy.
+No guessed patrol, threat scores, glyph healing, skill cadence, low-level
+attributes, initial Energy, regeneration or summon-item activation is installed.

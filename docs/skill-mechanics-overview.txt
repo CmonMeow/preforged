@@ -1,0 +1,126 @@
+Skill mechanics: implementation structure and next work
+=====================================================
+Reviewed 2026-10-23. This is an architecture map, not a completion claim.
+
+One skill record is not one combat implementation
+------------------------------------------------
+The native catalog describes IDs, costs, profession/attribute, targeting,
+activation/recharge and animation resources. It does not fully describe effect
+semantics. A reviewed skill plan combines those constants with captured and wiki
+evidence; shared World authorities execute the plan. Individual skill IDs still
+need reviewed rules and exceptions, but must not duplicate damage, resource,
+movement, interruption or status lifetime algorithms.
+
+The fixed checkpoint's 330 captured but unbound IDs are grouped by native type
+and target in build/reports/skill-family-inventory.json. Its largest buckets
+contain 51 type4/target5, 45 type6/target0, 28 type14/target5 and 25
+type5/target5 IDs. Those are planning buckets only: each ID still needs its
+reviewed effect, recipient set, ordering, resource rules and presentation.
+The report also retains the 650 missing local activations separately, so a
+shared implementation does not silently turn missing captures into evidence.
+
+Existing execution layers
+-------------------------
+1. gw_skill_catalog_generated.h: pinned native metadata, not implementation.
+2. gw_skill_casting.h: admission, exact actor/slot ownership, payment, windup,
+   cancellation, completion and recharge. App hooks supply server authority.
+3. Typed effect plans: gw_weapon_attack_skills.h, gw_condition_spells.h,
+   gw_heal_effects.h, gw_elemental_damage.h and other reviewed family helpers.
+4. World: scoped recipient validation, clocks, armor/protection, ordered reactions,
+   precise resources, status registries, projectiles and authoritative commits.
+5. Wire presentation: native serializers/body resources and status publication.
+   A successful mechanics test does not prove rendered animation or sound.
+
+Keep the records separate
+-------------------------
+Static Skill metadata is not a live cast. A cast owns its action token, paid
+cost, selected scopes and completion time. A typed effect plan resolves reviewed
+rules and attributes; an owned effect retains the source provenance, recipient
+lifetime and expiry. An immutable attack outcome supplies hit/block/critical
+facts to reactions. Publication follows the authoritative commit.
+
+Those records must not be collapsed into one mutable Skill object. An arrow
+can retain its preparation from release even after the preparation is replaced;
+a recipient-owned weapon spell can survive its caster departing. Conversely,
+an uncompleted cast must not survive its source being replaced by a new actor
+generation. Shared algorithms need these distinct lifetime contracts, rather
+than a universal requirement that every effect's caster remain alive.
+
+Player casting and NPC casting should feed the same reviewed effect families.
+Their action selection differs: a player requests a skill, while AI selects
+from an explicitly admitted skillbook and target policy. Neither path should
+duplicate healing, damage, resource settlement or condition formulas. Captured
+NPC skill use establishes capability; missing attributes, Energy or target
+priorities remain unknown until separately evidenced or explicitly authored.
+
+Shared families and reusable facts
+---------------------------------
+Weapon attacks: one AttackPlan and immutable hit result; weapon requirements,
+bonus slices, accuracy/block, critical event, contact conditions and interrupts.
+Keen Arrow and Critical Chop now consume the same critical event. They do not
+roll critical chance independently. Critical damage suppression, event immunity
+and attribute Energy denial are separate facts.
+
+Damage and healing: preserve damage type, armor interaction, healing versus
+Health gain/loss, life steal and sacrifice. Similar numbers do not imply the same
+reaction rules. Area effects need a reviewed recipient set and preflight before
+mutation; a single-target handler cannot safely stand in for every area skill.
+
+Conditions/hexes/enchantments/stances: shared scoped duration and replacement
+registries, ownership, removal, regeneration and expiry. Per-skill plans specify
+qualification and triggers; client visual state is not authoritative status.
+
+Resources: shared exact Energy/capacity/Overcast/debt and adrenaline authorities.
+Bonuses use qualified committed outcomes, and respect caster death and replay.
+
+Actions: shared interruption/protection, recharge/independent disable, knockdown,
+aftercast and movement ownership. An interrupt and a voluntary cancel must not
+be represented by one generic cooldown rule.
+
+Summons/pets/spirits: actor lifetime, allegiance, ownership, skillbar, AI and
+recipient rules are required as well as skill data. Existing fire-imp support
+does not establish a complete general summon system.
+
+Shared preparation family
+-------------------------
+Preparations can reuse owned replacement/expiry and weapon contact outcomes.
+Apply Poison, Melandru's Arrows and Kindle Arrows now use one reviewed family.
+Their effects are not interchangeable: Melandru's Bleeding is unconditional on
+a landed arrow while its bonus requires an enchanted target; Apply Poison
+qualifies martial weapons; Kindle converts arrow damage and adds a separate
+armor-affected Fire hit. Do not collapse these into an untyped damage bonus.
+Arrow release snapshots and primary/Kindle/Conjure ordering are explicitly
+documented private policies; retail phase/order and rendered acceptance remain
+open. Focused Release mechanics tests pass. See weapon-preparation-contact-family.txt.
+
+Marksman's Wager and Disrupting Accuracy now consume shared per-arrow outcomes
+and critical events respectively. Owned release snapshots preserve the effect
+that existed when each arrow was released; misses, blocks, cancellation and
+expired recipients remain distinct outcomes. Choking Gas cannot use a
+landed-hit-only hook: its area interrupt can qualify despite a miss or block.
+
+The next reviewed family is weapon spells: recipient-owned replacement,
+duration, regeneration, armor and attack-trigger consumers. Resilient Weapon,
+Weapon of Warding and Wailing Weapon are planned together; no weapon-spell
+implementation is claimed by that plan. See weapon-spell-family-plan.txt.
+
+Evidence and acceptance
+-----------------------
+The fixed implementation checkpoint is 20261022-cumulative-skills. Later captures
+remain distinct until deliberately checkpointed. Coverage is regenerated from
+the actual dispatcher and runtime source hashes, then audited against that
+checkpoint. Captured, source-bound, mechanics-tested and visually verified are
+different states; metadata availability never counts as implemented.
+
+Current lists: data/skill-capture-plan/LATEST-CAPTURED-NEEDS-IMPLEMENTATION.txt,
+LATEST-CAPTURE-MISSING.txt and the checkpoint's verification records. The source
+coverage tool is tools/protocol/skill_runtime_coverage.py. Keep unresolved
+mechanics and animation evidence in the per-family documentation rather than
+marking an entire family complete because a few member skills pass.
+
+The generated build/reports/skill-mechanic-routes.txt lists actual dispatcher
+helper routes and their member IDs. It distinguishes explicit supported IDs
+from shared helper routes rather than inferring mechanics from native type or
+skill description text. Counts can overlap and do not establish completion.
+The JSON coverage also records these routes, and fingerprints the reporting
+code so later parser edits invalidate the previous checkpoint audit.

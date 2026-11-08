@@ -1,0 +1,40 @@
+Vapor Blade866
+
+Pinned2022 plan: Elementalist Water Magic11,10Energy,5Overcast,1.5second
+activation,.75second aftercast,7second recharge. One cold hit scales15..135
+(rank12=111,rank20=175). Any owned target enchantment halves the base hit before
+armor and flat protection;multiple enchantments do not halve it repeatedly.
+Health remains precise internally;unsigned player UI Health rounds upward through
+the existing public projection. No second damage hit or arbitrary rounding is
+introduced by this skill.
+
+World settles current target state and reads the owned enchantment registry at
+completion. A mere model/presentation bit is insufficient. NPC recipients use
+LiveActor's reviewed owned enchantment count;unknown count or cold armor rejects
+before damage. The real214 NPC enchantment producer is covered in regression.
+The shared elemental transaction retains exact scope/hostility/layer/range/clock
+validation and current condition/armor effects. Player target body998 is queued
+through the existing deferred completion visual path with caster999 and finish58.
+
+Runtime uses existing production elemental and atomic Overcast activation hooks.
+Energy and Overcast are charged once at activation;cancel/interruption consume
+that admitted cost without applying damage. Missing hooks reject before payment.
+Target replacement cannot inherit the old generation's cast. The7second normal
+recharge and PvE/PvP execution use existing shared authority and timing machinery.
+
+Evidence: tools/protocol/vapor_blade_2022.py verifies frozen local866 cast,finish,
+caster999,target998 and7second recharge receipts,plus original pinned1.5second
+cast and both particle consumers.1453ms captured elapsed time is not asserted as
+an unmodified cast deadline. There is no paired enchanted/unenchanted retail
+measurement here;conditional mechanics follow the local historical wiki and
+explicit C++ regressions. Actor/asset services in native probes are stubbed.
+
+Regression covers ranks0/12/20,one fractional half hit,unknown enchantment facts,
+flat protection,0/1/2/expired owned enchantments,forged plans,unknown NPC armor,
+real NPC214,midcast enchantment addition/exact expiry,cancel/interrupt,missing
+hooks,target replacement,atomic10Energy/5Overcast,7second recharge and both modes.
+Remaining:focused retail fractional/protection ordering/threshold captures,
+NPC casters and rendered client acceptance. This skill does not implement
+unrelated enchantments or change the official collector.
+
+Validation complete: six rebuilt native suites and71 skill-tool tests pass;the final Vapor regression covers insufficient-Energy rollback and exact finish/caster/target ordering. Release server_host build passed. Fixed implementation checkpoint now278source bindings/355pending. Official logging was preserved.

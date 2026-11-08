@@ -1,0 +1,82 @@
+Shared friendly NPC ordinary attacks: integrated adapter stage
+
+New gw_npc_ordinary_recipient.h feeds actual LiveActor NPC pose/known armor
+into the existing ordinary Ledger. Missing armor stays unknown; stale Health/
+Energy clocks yield unobserved/deferred pose. It never manufactures a Player.
+Contact mutation delegates to existing LiveActor weapon damage so Health-loss
+receipts/protections remain shared. World must still authorize source control,
+accuracy, shared NPC block, pre-hit/on-hit and reactive effects before commit.
+The new test uses an explicitly synthetic5damage/750ms/2000ms profile, never
+Rurik's observed amplified31/61/94 damage as a guessed base weapon range.
+
+Useful existing seams
+gw_world_npc_ordinary.inl already has recipient-generic Ledger/Pose releases;
+npc_ordinary_target_locked and begin_npc_ordinary_locked currently require a
+Player. Impact resolution separately needs Player armor/block/Health adapters.
+LiveActor.begin_action and ordinary_action_ready already support living allied
+NPC sources and share healing-book aftercast. No new Energy or control store
+is needed. Outgoing attacks must retain the existing npc_ordinary_ai_ ledger,
+delivery/outcome IDs and immutable released projectile behavior.
+World npc_block_contact_locked accepts a LiveActor and is already reusable.
+damage_quest_guardian demonstrates NPC-to-NPC shared miss/Empathy/block/
+qualify/dazed/on-hit ordering, but its wave/guardian eligibility and inverted
+hostility are intentionally narrow; do not loosen it into a generic attacker.
+
+Integrated World behavior
+1. Add NPC branch to target snapshot using the new adapter, keeping exact
+   source/recipient scopes, plane/position and clock deferral.
+2. Factor existing ordinary begin wrapper around Scope/typed recipient facts;
+   require explicit friendly source profile and hostile NPC target. Obtain the
+   attack token from source LiveActor; one existing ledger accepts it.
+3. Reuse ordinary release/impact handling. Branch only recipient combat
+   adapters; call existing NPC block/armor/Health methods and all shared
+   reaction/outcome hooks. Re-find both actors after each reactive callback.
+4. Preserve released deliveries after source death/recycling without adopting
+   a new source generation or new target. Source rank/profile remains bound
+   to admitted release, not guessed from current actor appearance.
+
+Scoped allied kill credit
+World already exposes record_npc_death_locked(Player* source,...), and the
+Judgment NPC retaliation path calls it with nullptr. That records no fictitious
+Player damage journal but retires target-owned resources and updates quest
+objectives by exact target Scope in objective.remaining/assigned. This can
+credit an allied kill without inventing a human attacker. The pending credit
+remains owned by each actual player objective/cycle/credit_id; target generation
+replacement cannot inherit it. Before enabling quest-bound allied aggression,
+require source binding and target assignment to the same current owner/cycle,
+or a separately explicit shared encounter policy. Never search by model alone.
+Tests must cover final allied hit, existing assigned objective completion once,
+duplicate death/replay, unrelated owner's actor and reset/reconnect generations.
+
+No quest46 or new source profiles are activated by this detached stage. The
+qualified Creature baseline is authored resource/armor policy; attack timing,
+range, mastery and damage still need explicit profiles and evidence labels.
+
+The adapter and World ordinary branches are now included, with actual normal
+World tick processing. Friendly profiles explicitly enroll one source, weapon
+profile and optional owner/quest/cycle; begin selects a real hostile NPC and
+the same ledger continues the selected attack while control/cadence permit.
+Healing selection runs first when idle. This stage holds position; no implicit
+range, movement or proximity acquisition is manufactured. Generic unbound
+profiles cannot attack quest-owned targets. A bound profile must match the
+target's current owner/cycle/objective; the source need not itself be a kill
+target. Reset/reconnect requires reenrollment after pending work is retired.
+
+Armor is resolved once by weapon::resolve. LiveActor apply_weapon_damage /
+apply_caster_weapon_damage call weapon::apply_resolved, which commits that
+already-resolved amount (with protection cap), without another armor roll.
+Qualification reactions revalidate the exact living recipient before commit.
+An already released delivery survives a source killed by a contact reaction,
+matching the existing NPC-to-player released-delivery policy; no stale source
+snapshot is assigned afterward. Target death from the primary hit records
+nullptr-source credit once; Barbs/other reaction-owned deaths own their own end.
+
+Known test-authority boundary: shared qualify/finish invokes Judgment and
+Insidious hooks, but friendly NPC targets currently cannot legitimately receive
+Insidious through the hostile-only catalog admission. Judgment NPC opposing-
+caster ownership is also not enabled. Do not fabricate an enemy caster or add
+a test-only effect installation path to claim those combinations validated.
+They require separate reviewed opposing-NPC cast/target authority. Current
+regressions cover scope, armor once, shared control/healer aftercast, normal
+contact Health and exact owner/cycle credits; existing reactions remain routed
+through the same shared contact hooks.

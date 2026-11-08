@@ -1,0 +1,9 @@
+Barbed Signet131NPC flesh eligibility —2026-10-29
+
+Archived Bleeding.html64states Bleeding only affects fleshy creatures. The shared condition-spell NPC branch previously ignored the authored flesh trait. A regression reproduced Bleeding and Fragility damage on a known non-fleshy primary. Historical failing executable/source/test hashes are in condition-flesh-repro-20261029.json.
+
+NPC Bleeding candidates now query their exact lifetime's reviewed flesh fact after range/plane/allegiance/living selection. Known non-fleshy candidates are skipped without condition or Fragility mutation. Unknown in-range candidates refuse the whole condition cohort before prepared actor copies are installed. Unknown out-of-area actors do not block it. Primary eligibility is tracked independently from whether it receives a condition: an immune primary still completes a valid cast and permits a nearby fleshy recipient; an entirely immune cohort completes with no new condition. No flesh trait is inferred from names or guessed from appearance.
+
+Six native scenarios cover fleshy pairs,mixed immunity,fully immune groups,unknown primary,unknown later recipient,and irrelevant far unknowns. Every scenario checks condition state and corresponding Fragility Health loss; refusals produce no new packets. Barbed player/NPCdirect/paid target-particle ordering and generic NPC Fragility suites also pass. Source/backlog/gateway results are linked in condition-flesh-progress-20261029.json.
+
+This is a131generic condition-spell path fix,not a universal LiveActor/apply_condition immunity migration. Other condition ingress/transfer/spread producers,player form classification,and immune-target visual feedback still need review. Existing authored base Bleeding duration remains pending equipment evidence. Native mechanics tests do not prove rendered client behavior. No skill binding/checkpoint update,host link/deployment or official client/logger action.

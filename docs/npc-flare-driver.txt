@@ -1,0 +1,88 @@
+Autonomous hostile Flare controller (2026-10-17)
+
+The previous World had reviewed spellbook configuration and explicit
+begin_npc_spell, but no general tick caller that acquired a target, approached,
+started a paid spell, completed it and dispatched its effect. The guardian quest
+driver only drove authored weapon strikes. Admission tests alone did not make
+an autonomous spellcaster. This opt-in controller closes that vertical gap for
+Flare194 against player targets.
+
+Host API configure_npc_flare_ai(FlarePolicy,now) requires a live generation-bound
+hostile NPC with reviewed actual Energy. Fire Magic,combat level,movement speed,
+acquisition/follow/leash ranges,projectile policy and provenance are explicit.
+Unknown Energy cannot configure; unknown target Fire armor cannot start a paid
+cast. No stock NPC loadout,rank,Energy maximum or regeneration is guessed from
+a display name or level. Existing quest-owned actors/motion are rejected to
+avoid two competing drivers. Configuring during a cast/projectile is rejected.
+
+The World tick hook drive_npc_flare_locked(now) autonomously acquires a published
+living same-plane player within the authored radius. Nearest distance with
+actor-ID tie-break is an explicit deterministic private-server policy,not a
+recovered retail threat score. Target scope/generation is retained until death,
+publication loss,plane mismatch,follow/leash break,then the actor returns home
+before reacquisition. Movement uses layered routing when available and existing
+NPC movement-integral authority for speed conditions/control pauses. It does
+not cross a plane via an invented straight-line route.
+
+In spell range/line-of-sight it calls LiveActor's real Spellbook admission and
+payment,with World per-slot disable authority. It honors native activation,
+aftercast,recharge and interruption epochs. Completion invokes the same World
+before-spell-effect reaction authority (including Backfire) before release.
+The delayed projectile keeps a fixed release aim and uses explicit host flight
+speed/hit tolerance. Misses or stale/dead targets receive no damage. Accepted
+hits use existing native Flare plan,reviewed Fire armor,incoming spell modifiers,
+damage/health/death publication and passive-recovery bookkeeping. It cannot
+damage before paid cast completion plus flight; repeated same-time ticks cannot
+replay the action. Late polling never accumulates multiple historical casts.
+
+Evidence versus authored policy
+Pinned2022 skill row194: actual Energy5,activation1s,aftercast0.75s,recharge0;
+damage endpoints20..65 at FireMagic0..15. Native source client SHA256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+The existing elemental194 resolver supplies the damage/range/projectile plan.
+
+Local wiki Foe_behavior.html oldid2656731 SHA256
+27ffaed2f3f99aa152e6db56f7cc7b3bb75370ae111d80e45f917bb038e8009f
+describes limited skill sets,aggression and qualitative nearby/weak-target
+preference. It does not define this controller's radii,speed,tie-break,rank or
+flight parameters. Those stay visibly authored configuration.
+
+Existing offline Experiment capture audit docs/npc-skill-ai.txt and
+docs/summoned-fire-imp.txt records actor16 Fire Imp starting Flare194 seven times
+and Fireball186 six times. These prove observed NPC skill identities,not this
+hostile controller's loadout,resource pool or target scoring. Fire Imp summon
+ownership and low-level Energy/rank remain unknown; the controller does NOT
+silently bind that captured summon or borrow its owner's Energy. Official
+clients/loggers/processes and raw captures remain untouched.
+
+tests/npc_flare_world.cpp is an authored synthetic World population. Its only
+driver is World::tick: acquisition from outside spell range,approach,actual
+paid casting and health loss;PowerBlock interruption prevents release;target
+death stops pursuit;unknown Energy/armor and distant targets fail closed.
+This tests an end-to-end supported controller,not captured NPC statistics.
+
+Remaining scope: production content must opt in with reviewed or explicitly
+authored bindings. No default official population is changed. One hostile spell
+and player targets are supported;multi-skill tactical priorities,healing/support,
+summon ownership,party coordination,retail aggro scoring,kiting/scatter,patrol
+and calibrated projectile prediction are not claimed. Flight currently aims at
+the target's materialized release position,without an invented velocity model.
+Live rendered acceptance remains separate from offline World regressions.
+
+Review corrections: release rechecks current same-plane line of sight after
+the paid windup; stepping behind a wall does not queue a shot or refund Energy.
+Same-scope future target Health/Energy/movement/active-steering clocks defer an
+in-flight impact; future NPC Health/condition clock or refused action completion
+retains the paid token. Released shots survive caster Health loss while the
+same NPC lifetime exists. That last lifetime policy is explicitly authored;
+the available captured Imp starts do not prove a caster-death flight experiment.
+Retired/recycled caster generations still cannot own a hit. Regression fixtures
+now bind their appearance level20 to combat metadata level20 explicitly.
+
+2026-10-17 Autonomous NPC Flare vertical slice: offline World regression PASS.
+Sol supplied opt-in host-configured hostile NPC autonomous acquisition,approach,paid native Spellbook Flare194 casting,control interruption,projectile damage,Energy exhaustion,leash and return-home. Root connected driver before World consumes NPC movement,added test target,and extracted before_spell_effect_locked without changing its existing effect logic. No production NPC loadout or missing health/Energy/armor was invented;actual authored/reviewed NPC inputs are required. Nearest-player tie scoring,acquire/follow/leash/speed and released-shot caster-death behavior are explicit host policies,not reconstructed retail constants.
+Read-only cleanup review caught release LOS and stale sampled-clock issues;release now traces current same-plane segment,paid casts retain their tokens when NPC condition clocks are newer,and released shots defer on same-target newer resource/position/steering clocks. Root also guarded World tick against rewinding active future steering. Fixture metadata level was corrected,and a purported future-NPC-clock damage test was replaced with actual Weakness application because plain damage does not create a missing condition clock.
+The npc_flare_world target builds and final CTest passes(build/reports/npc-flare-world-condition-build.txt,npc-flare-world-final-tests.txt),including tick-only acquisition→approach→payment→cast→damage,finite Energy exhaustion,interruption,targetdeath/return,unknown Energy/armor refusal,out-of-radius exclusion,release obstruction,future health/move/steering samples,paid-condition-clock retry and released-shot casterdeath. This proves a basic autonomous offline loop,not a full playable Guild Wars AI,rendered visual acceptance or production NPC population integration. General loadouts/selection,melee,kiting,scatter,patrol and production content bindings remain unfinished. docs/npc-flare-driver.txt records limits.
+Server_host integration build is IN PROGRESS in build/reports/npc-flare-server-build.txt at this entry;do not infer successful deployment from the test-target build. Source-hash-gated coverage/audit/backlog pass at fixed checkpoint20261017-npc-refresh-2:633captured/244source-bound/389awaiting binding/696missing capture. No new skill-count credit for AI driver work. Official clients/loggers and raw captures untouched.
+
+2026-10-17 correction: full server_host Release integration build completed successfully (build/reports/npc-flare-server-build.txt); the earlier IN PROGRESS entry is superseded. Production population and rendered acceptance remain unverified.

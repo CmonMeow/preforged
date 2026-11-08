@@ -1,0 +1,71 @@
+Finite-charge weapon-spell foundation: 792/2868 integrated, 795 unbound
+
+Files: gw_weapon_spell_charges.h,gw_attack_outcome_delivery.h;
+existing gw_attack_outcomes.h exposes only an opaque producer frontier;
+existing gw_effect_registry.h gains explicit noexcept member/ADL swap.
+Test target: weapon_spell_charges_test. Actual792/2868 integration is documented
+in docs/splinter-weapon-integration.txt;795 metadata remains staged with no normal
+admission. Native proof charged_weapon_spells_2022.py now passes28 frozen receipts,
+three native cast/metadata cases, three particle consumers and targeted1152 wire.
+Evidence strengths and remaining phase/presentation policies are recorded there.
+
+Plan guards match pinned2022 and retain primary/effectiveSpawning snapshot.
+Owned identity includes source+recipientScope,exact effectinstance/cause/skill/
+rank/category/applied/expires and canonicalplan. Existing World effectinstance
+allocators increase across a recipient lifetime,so one high-water mark rejects
+old effect reattachment without keeping an unbounded effect-history set.
+
+Caller retains exact effect identity with each event anchor. Replacing the spell
+invalidates an old proposal; retry must not reselect a new effect. Explicit
+ChargeConsumption consume/ignore has no default and concerns the charge only;
+caller-authored Health payload is independent. Neither helper calculates damage,
+AoE selection,life steal,healing,armor or reaction order. Actual landed hits need
+pre-damage qualification and known delivery; scopes,clocks,Health revisions and
+all affected mutations validate before any live value changes. All allocating
+proposal/Registry work precedes atomic noexcept swaps. Unrelated Registry changes
+are preserved; concurrent Health changes reject a stale proposal rather than
+rewind them. Last charge removes the exact owned effect. Recipient generation
+retirement is terminal; caster departure alone does not erase retained provenance.
+
+Producer completion is NOT consumer delivery. AttackOutcomes.finish removes a
+pending event before its consumer receives the result. Its raw completion token
+therefore cannot authorize charge receipt retirement. AttackOutcomeDelivery owns
+one producer and reserves a queue node before producer finish; capacity or producer
+failure leaves the producer pending/queue unchanged as applicable. Returned events
+are queued before exposure and must be acknowledged only after charge commit or
+explicit no-effect handling. Buffered reads preserve actual completion sequence,
+including equal-time reverse-ID completions. The consumer frontier is bounded by
+BOTH earliest pending producer ID and earliest unacknowledged completed ID.
+
+Charge receipts prune only using this opaque consumer frontier. A scalar sealed-
+through barrier rejects replay after erasure. No permanent4096event lockout and no
+silent eviction:4096is backpressure capacity; acknowledgement+frontier retirement
+reclaims space. Pending low-ID projectiles hold the frontier back. Retirement of
+the producer stops new results but does not pretend buffered outcomes were handled.
+Old actor-generation tokens cannot retire a recycled recipient's receipts.
+
+World adapter contract (now used by792/2868):
+- Enroll the single delivery owner before charged outcomes can be exposed; route
+  every relevant producer finish through it. Do not create a shadow ledger.
+- Preflight delivery capacity before Health damage under the existing Worldmutex.
+- Settle and snapshot actual Registry/charge/Health stores at the reviewed contact
+  phase; commit atomically to those stores. The helper snapshot is not a second
+  live Health authority and does not authorize late Health rewinds.
+- Consume/handle outcome,then acknowledge,then obtain consumer frontier and retire
+  receipts. Never retire to a producer-only watermark or skip buffered outcomes.
+
+Still unresolved,therefore no normal bindings:
+792:failure-outcome charge behavior;up-to4adjacent secondary selection excluding
+original target;armor-ignoring physical damage and Mark of Pain/Barbs cardinality;
+reviewedPvP alias. Native caster/target2077 are sentinels,captureonlyshared1155.
+795:attack damage reduction phase relative to armor/mitigation and life-transfer/
+lethal/reaction ordering. Wiki explicitly says every hit counts and misses do not;
+it does not establish the damage phase. Do not infer792failure semantics from795.
+
+Validation status: first compile failure fixed via explicit noexcept swaps and
+self-contained<string> include; subsequent compile passed but expiry-minus-one
+fixture had inconsistent before_damage timestamp,now corrected. Full focused
+rerun pending. Tests include atomic rejection,replay,replacement,expiry,retirement,
+raw-vs-consumer token distinction,delayed/buffered/canceled delivery,4096capacity
+recovery,10000acknowledged contacts and5000effect replacements. Rendered/client
+acceptance and production integration are not claimed.

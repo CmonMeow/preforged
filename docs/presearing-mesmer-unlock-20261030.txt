@@ -1,0 +1,37 @@
+Mesmer secondary progression audit -- 2026-10-30
+
+Read-only local source:
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/A_Second_Profession.html
+SHA256 fdd610f3fd643e6679b9ed367796a7e2ba4fd29cb0e394078b95e09b3b9897bf
+The Second Profession - Mesmer walkthrough and Notes both require completion
+of A Mesmer's Burden before taking Mesmer as secondary. This is content policy;
+it does not recover the original selecting CtoS NPC dialogue identifier.
+
+Existing installed quest71 already provides the Rogue Bull objective,
+Conjure Phantasm31/Ether Feast40/Imagined Burden76 acceptance grants, trial
+permissions, completed/rewarded progression and250XP. Quest71 provenance:
+data/gw/quests/mesmer-burden-evidence.json and mesmer-burden.fwqc.
+Installed quest rule wiki SHA256:
+2c10e65c372892a831c87842c5f71b42d667c4540ce57c6993b6be9b35b43663
+
+Audit found that the reward unlock helper and production caller only admitted
+quests73 and75, leaving rewarded Mesmer trials unable to select Mesmer.
+The implemented repair adds71 to the reviewed quest policy, preserving temporary
+skills until explicit decoded profession selection and persisting quest/XP/
+unlock together under the existing quest and skill revision fences.
+
+Native test changes (fresh coordinated tests PASS; rendered acceptance pending):
+character_skills_test: trial selection denial before reward, Mesmer unlock and
+explicit selection, missing-grant and auxiliary/uninstalled-quest rejection.
+quest_accounts_test: primary-test admission, exact acceptance trial grants,
+completion boundary, stale-skill and timeout rollback, exactly-once250XP,
+reopened unlocked state and explicit selected-secondary persistence.
+quest_wayward_wizard_test: initial and abandoned/reaccepted cycle guards.
+The Wayward acceptance planner previously ignored its expected cycle; it now
+checks the planned attempt just as the other conversation quest planners do.
+
+Still outside this repair: Ranger's Companion76, Monk's Mission74 and
+Necromancer's Novice72 are absent or staged. Charr at the Gate46 has staged
+objective and reward helpers but lacks production encounter/menu installation.
+No repeat captures, original checkpoint writes or official client actions.
+Native mechanics validation does not establish rendered end-to-end playability.

@@ -1,0 +1,34 @@
+Ward Against Foes 177 — 2026-10-23 intermediate skill work
+
+The fixed 20261022 checkpoint contains one locally attributed cast/finish.
+Completion-adjacent packets include caster resource316 and two ground packets
+(resource356 with actor0; resource900 with actor25). The pinned2022 cast,
+caster-particle and ground consumers accept their mapped packets. The
+association and lifetime of either ground resource remain unverified; both
+resources also occur near the other Ward casts. No rendered pixels were tested.
+
+The archived local wiki describes an 8..20s non-spirit foe-only 50% movement
+slow in the area. The detached gw_ward_against_foes.h policy validates pinned
+metadata (15 Energy, 1s cast, 20s recharge, caster316), authoritatively
+supplied foe/living facts, instance/plane identity and 322-unit membership.
+Its segment policy returns entry and exit fractions of a straight route edge,
+plus a one-ward travel time that handles expiry during the crossing. A World
+adapter can split travel at the exact boundary. The 322
+range and same-plane gate are private conventions; no exact retail distance
+or vertical rule is claimed. A ward starting while movement is underway,
+interacting snares, overlapping wards and moving effect publication still
+require World integration.
+
+Validation: build/reports/ward-foes-native-run.txt and
+build/reports/ward-foes-tests.txt pass; build/reports/ward-foes-build.txt is the
+serial Release build. Ward177 remains in CAPTURED-NEEDS-IMPLEMENTATION.txt.
+
+Production movement audit: World click routes are timed in move_locked and
+advanced in tick/materialize_click_position. Keyboard steering uses steer and
+advance_steering, while ordinary, escort and AI NPC routes currently use
+LiveActor movement_integral. These are separate authoritatively simulated
+paths. An initial-speed-only Ward177 patch would mis-time routes crossing the
+field and disagree with client prediction. The binding must publish native
+speed changes at field entry, exit and expiry, preserve nav/collision checks,
+and apply the same location-aware result to NPC route integration. No World
+claim is made until those producers have been tested together.

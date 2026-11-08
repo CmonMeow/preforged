@@ -1,0 +1,136 @@
+Current deployed checkpoint: build/reports/pet-quest-deployment-20261030.json.
+Canonical SHA256046cc19aa63d382897926e91ecb0975cd22f25a47b5b1587f3bf775f011b1a6e.
+Six focused pet suites, five quest/network/pre-skill suites, actual population
+merge regression and isolated encrypted initial World handshake PASS. Normal
+Charm411/Comfort436 remain unbound; shrine recovery and rendered acceptance
+remain incomplete. Quest76 source/storage integration is present and tested.
+Hamnet2026-10-30 capture is preserved separately with manifest;61,529 packet
+records and5,831 world rows verified. Directory0byte metadata was stale, not
+lost capture. Earlier deployment hashes and counts below are historical.
+Verified deployment update (2026-10-30): canonical bin/server_host.exe SHA256
+21e026f3a8b7e446e03a0303b0a369f4c553b7ea315ad2e286d1526e20d88388
+matches build/reports/stalker-gate-deployment-20261030.json. This supersedes
+older canonical hashes below. Shipped Stalker content passes67 native checks;
+Northlands gate passes57; six pet suites pass. Initial world handshake passes.
+Normal Charm Animal411 and Comfort Animal436 bindings remain disabled pending
+remaining effect integration. Rendered client acceptance remains unverified.
+Official clients were not touched. Older counts below are historical batches.
+Latest: quest89 The Path to Glory and owned-pet combat consumers tested and deployed.10 focused native suites plus56 source checks pass; host handshake passes. Pet411/436 still unbound. Earlier checkpoint test counts below describe prior batches.
+
+Current follow-up: quest80 and pet World consumers are included;19 focused native suites and56 source checks pass. Shared-crossing float quantization is corrected without wider collision tolerance. Normal pet skill bindings remain disabled.
+Earlier integration notes below are historical where explicitly marked draft.
+
+Pre-Searing current checkpoint --2026-10-30
+
+Latest tested host/evidence: build/reports/presearing-pet-glory-progress-20261030.json.
+Canonical host cb608aec0b108afc3c8bdc6b0b444bd9b71e633585f94c7614415d8763c693a1.
+Regular quest source inventory:19 installed,2 staged,35 missing of56; see
+docs/presearing-quest-inventory-20261030.txt. Source installation is not rendered
+playability. Nine level10+ Vanguard daily quests remain explicitly deferred.
+Current portal catalog covers20 of28 regular directed connections; additional
+Academy mission mechanisms remain missing, separate from those28 directions.
+
+Latest integration
+- Mesmer71 reward unlocks eligible secondary selection; stale Wayward55
+  acceptance cycles are rejected. Persistence/replay/rollback tests pass.
+- A Second Profession79 now has acceptance, committed-secondary objective,
+  failed-save/reconnect reconciliation, scoped captured markers and exactly-once
+  250XP reward. Completion emits objective+marker updates, not QuestAdded.
+  Neutral objective text is explicitly authored; it is not a recovered literal.
+- Monk84 discovery/follow/arrival require a living published owner; existing
+  Gwen routes stop once while unready and resume durable progress on readiness.
+  Player-death pause/resume is a private policy, not a recovered retail rule.
+- Foibles corridor lanes repaired; captured160/161/162->146 returns and
+  Regent Valley<->Wizard's Folly layered bridges added.33 native doorway lanes
+  and negative controls pass. Exact captured arrivals; authored trigger bounds.
+- Retribution weaker recasts retain stronger indefinite rank:441 rank-pair
+  cases pass.192 actual World protection/Reversal/Seed cases pass.248 remains
+  unbound pending other required consumers.
+- Pet ownership/profile, exact adoption CAS/storage/network adapters, native
+  PetAdd/control/particle proof and typed current-lifetime relation/revive
+  primitives added. Concurrent/timeout/reopen/delete tests pass. World pet
+  consumers are now included;411/436 are NOT enabled. Full AI, paid casting, PvE
+  modifiers, layered follow and reviewed base attacks remain unfinished.
+
+19 selected native suites pass, plus56 source checks. Isolated
+encrypted login/roster/initial World handshake passes, not full initialization.
+No rendered acceptance or official-client interaction claimed.
+
+Next: finish companion World/casting consumers; remaining pre skills; implement
+the37 missing quests and complete2 staged quests; remaining eight directed gates,
+Northlands lever/timer/collision authority and Academy. Fresh navigation tool
+reproduces a thin cross-plane float-quantization defect near Northlands; repair
+the general crossing algorithm, not an exact route or widened tolerance.
+Details: build/reports/presearing-remaining-gates-audit-20261030.json and
+docs/pet-integration-ownership-20261030.txt.
+
+Earlier checkpoints below remain historical evidence.
+Original pre population/portal evidence: build/reports/presearing-progress-20261030.json.
+39/44 wiki-listed pre skills have effect bindings. This does NOT prove39
+visually verified or fully playable skills. Missing paid bindings: Charm
+Animal411, Comfort Animal436, Retribution248, Reversal of Fortune307,
+Animate Bone Horror83. Reversal has staged consumers; do not enable until its
+required damage/healing, lifetime and paid-completion consumers are complete.
+
+Exact baseline Tad combat enrollment and primary-only Gwen initial placement
+are integrated. Tad stats/ordinary attacks remain authored development tuning,
+not measured baseline. Shared room escort placement follows its creator's
+primary; mixed-party selection is not retail verified.
+
+Ashford146/164 east/west doorway lanes and Catacombs145->164 floor0->47
+lanes pass pinned-mesh collision/portal regression. The prior Ashford
+northward facing-based gate missed the walking corridor. Catacombs had a
+70-unit trigger across a249-unit doorway. Expanded only walkable planes;
+existing portal identity, plane, cooldown and suppression tests retained.
+These are development bounds, not recovered official trigger geometry.
+
+Native tests and isolated encrypted login/roster/initial World handshake pass.
+Canonical bin/server_host.exe matches tested candidate. Official clients were
+not touched. Rendered testing pending bridge1 access; not claimed complete.
+
+Completion work: six profession quest playthroughs and side-quest acceptance,
+objectives, reward persistence; all pre skills and pet/minion behavior; merchant/
+collector exchanges and item stats; all pre doorway approaches; friendly/enemy
+AI and dialogue-conditioned escort; authoritative movement/collision and NPC
+visibility; party/reconnect regression. Use captures/wiki before requesting
+repeat captures. Historical pre scope/status files contain older checkpoints.
+
+2026-10-30 latest: Retribution committed base-attack consumer passes102 World
+cases plus nested publication checks;11 sealed-receipt validation cases and
+out-of-order projectile delivery pass. Eight selected native suites,56 source
+checks and15 immutable original-client receipts pass. Direct attack-skill and
+quest-NPC handoffs repaired. NPC recipients, extra damage classification and paid
+casting remain unfinished;248 stays unbound and pre remains39/44. Canonical
+1910fc4eb26ff3c00885f502817202311badfb2cddae837ab8e52ad77022013c passes
+initial encrypted World handshake, not full initialization. Bridge1 exposes no
+native app/tab; no rendered acceptance claimed. Official sessions untouched.
+
+2026-10-30 projectile followups: Disrupting Dagger, Stone/Dancing Daggers and Water Trident now evaluate NPC survival after shared conversion; player Stone/Trident previews use current scoped conversion projection. No duplicate raw HealthLoss; no condition/chain/interrupt/knockdown on healing-caused death. Shared NPC motion query distinguishes current standing AI from owned pursuit, rejecting stale/future cursors.961 player/NPC cases and26 selected suites pass;55 source/publication/backlog checks pass. Native original-client evidence revalidated for4 families; fixed checkpoints unchanged. Canonical host9be205d9...46bb75b passes isolated encrypted login/roster/initial world handshake, not full initialization/rendered play.307 remains unbound; counts679/408/271/650 unchanged. Dancing2022 chain publication, retail timings and rendered acceptance remain open. Report build/reports/projectile-followups-progress-20261030.json.
+
+2026-10-30 controlled spirit impact conversion: settles recipient events and reacquires scoped recipient/owner before shared Reversal-or-damage commit. Existing owner credit is retained; released shots survive summon expiry/owner death, owner departure retires them.180 new rank/ordinal/HP/conversion/healing-death/lifetime cases PASS; fresh controlled spirit policy and961-case projectile suites PASS;55 source/publication/backlog checks PASS. Fixed all-completed checkpoint and original2022 attack-body/launch/arrival consumers revalidated without modifying checkpoint files. Synthetic native services; no rendered or retail combined-order/attribution proof. Canonical host ed9758580d8920dd5ceac543cd776d6d34a172f97d1e429c2f3bb6603153ba57 passes encrypted login/roster/initial World handshake, not full player initialization. Header raw call audit now finds only raw helper forwarding and public trusted damage_npc; no production caller of the public API found. Unbound Aneurysm/Spiritual Pain and external caster lifetime/paid307/full life-steal/broader Seed work remain open.307 remains UNBOUND; fixed counts679/408/271/650. Official clients/loggers untouched. Report build/reports/spirit-reversal-progress-20261030.json.
+
+2026-10-30 NPC recipient Reversal caster identity: trusted staging accepts exact external player/NPC caster scopes; separate generation-aware credit retains identity through death/departure, replacement retires prior credit, tick prunes consumed/expired/removed recipients. Recipient publication ownership remains separate. Damage, weapon, elemental, reactive and life-steal serializers use current caster generation; absent/reused casters receive no attributed healing popup while absolute Health persists.254 new World cases across4 routes and7 caster states PASS;6 fresh native suites PASS;28 actual World traces pass original2022 Health serializers. Fixed self-cast545 particle reverified; external-target form/rendered remains UNVERIFIED.55 source/publication/backlog checks PASS with updated generation-aware consumer mutation guard. Isolated encrypted login/roster/initial World handshake PASS, not full initialization. Canonical host2cf99f4175dbc33b697c4ffc50e09db5156a05bcd8cf4933d480c676baf43dbe.307 remains UNBOUND: player-recipient lifetime, paid ally-target completion/duration/Divine Favor, full life-steal/broader Seed and retail departure/replacement policy remain open. Counts679/408/271/650 unchanged. Official clients/loggers untouched. Report build/reports/reversal-caster-progress-20261030.json.
+
+2026-10-30 Reversal player/ally World completion: player recipients now retain full external caster-generation identity; projections/commits validate ownership, owned ends remove credit, feedback reacquires original caster after healing/end callbacks and suppresses reused/departed identities. World307 completion reuses simple-enchantment admission, sealed duration, Divine Favor, application reactions and publication; NPC typed application accepts adjusted duration.766 new cases PASS, including24 Ether Renewal completion/duplicate-receipt cases.5 fresh native suites PASS;16 player and28 NPC actual World packet traces pass original2022 Health serializers. Constructed ally-target545 reaches original particle consumer; fixed self-cast receipt reverified. Ally-target retail form/rendered pixels/sound remain UNVERIFIED.55 source/publication/backlog checks PASS. Initial encrypted login/roster/World handshake PASS, not full initialization. Canonical host e0374676437996cdc142cadc58f4ffdea52ee42c20dbce4710415b62864a1f2a.307 remains UNBOUND: Runtime/gateway paid admission/cost/cancel/aftercast/publication, full life-steal/broader Seed, NPC-caster to player producer, retail departure/rank replacement and NPC Divine Favor healing-death acceptance remain open. Source binding counts679/408/271/650 unchanged. Official clients/loggers and fixed captures untouched. Report build/reports/reversal-player-completion-progress-20261030.json.
+
+2026-10-30 full Reversal life-steal family:153/156/1077/902/1076/2189 and area110 now use real healing -> retirement -> source gain -> recipient loss. Source cap and wound capacity settle through current World Health; life-steal gain bypasses healing penalties; zero payout is not a Health event; actual survival gates Weakness and conditional Energy remains successful-use reward. Timed normal NPC transfers now use reduction authority and wound settlement.2336 new cases and10 fresh suites PASS;55 source/publication/backlog checks PASS.8 actual World traces pass original2022 serializers;9 fixed packet receipts reprove bounded28heal/17loss ordering. Source cap and combined overkill remain UNKNOWN in that retail capture; conversion-before-overkill is explicit private inference. Fresh fixed/native Blood Drinker/Aggressor/Angorodon animation proofs PASS, with synthetic assets, not rendered. Fixed checkpoint files unchanged during verification. Isolated encrypted login/roster/initial World handshake PASS, not full initialization. Deployed095b61d0801d2c8e2546895077f6431aa42ba6938bac538350685a6053d695ed.307 UNBOUND: conditionalShadow/Feast-zero-damage/Strip residual307 transfers, weapon/periodic/monster producer audit, paid admission/cost/cancel/aftercast, NPC caster/player and Divine Favor death, broader Seed/lifecycle and retail departure/rank replacement/rendered acceptance remain open. NPC299 producer not proved by this change. Counts679/408/271/650 unchanged;official clients/loggers untouched. Report build/reports/reversal-full-life-steal-progress-20261030.json.
+
+2026-10-30 compound transfer prerequisite: Shadow102/1067, Feast151 zero-first-hit and Strip143 residual Reversal now share healing -> retirement -> actual source gain -> recipient loss; preserve original above-half/hex/removal qualification. Strip NPC ordinary transfers now settle reduction/wound state. 2892 new cases,9 fresh regressions,55 source/publication/backlog checks and32 original2022 serializer traces PASS. Updated prior explicit-rejection regression to require supported conversion. Source-cap/combined-overkill policy remains private inference; bounded retail ordering only. Isolated login/roster/initial World handshake PASS, not full initialization/rendered play. Deployed d52fc2889c7f78795e42da79914292517420465713bb407c96ae4ff2f10dbf4a.307 stays UNBOUND; other producer/lifecycle/paid casting consumers remain. Counts679/408/271/650 unchanged. Pre-Searing remains39/44 bindings, incomplete. Official clients/loggers untouched. Report build/reports/presearing-compound-progress-20261030.json.
+
+2026-10-30 Reversal NPC Divine Favor healing death: immediate null-credit death callbacks, exact-lifetime reacquisition and corpse effect/publication/caster-credit retirement added to World307 completion.216 new cases (9 lethal wound-debt cases),766 completion and2892 compound regression cases PASS;55 source/publication/backlog checks PASS. Healing-immune NPC admission remains explicitly refused; protected NPCs reject combat conditions. This does not prove immune conversion or other simple-enchantment death paths. Isolated encrypted login/roster/initial World handshake PASS, not full initialization/rendered play. Deployed0f43bbd8aed0ab98a3c5340333f99514c3cac070328710f8e9a5a2cde6045330.307 remains UNBOUND; NPC caster/player producer, replacement/lifetime/producer audit and paid Runtime gates remain. Fixed counts679/408/271/650 unchanged, official clients untouched. Report build/reports/reversal-divine-death-progress-20261030.json.
+
+2026-10-30 Soul Leech transfer consumer: current reserved spell reaction routes positive Reversal inputs through shared healing -> retirement -> source gain -> recipient loss; preserves owner/event qualification, zero reduced input, actual survival and duplicate suppression, and reacquires NPC scope after condition advancement.443 new cases,5 fresh native suites and55 source/publication/backlog checks PASS. Original2022 cast/body237 and4 frozen receipts revalidated to new report, not triggered-transfer/combined-order/rendered proof. Source-cap/overkill policy remains private inference. Isolated login/roster/initial World handshake PASS, not full initialization. Deployed52447b4e82f7b5a53907ef732afb517f6b2822669370c27ab7111b80c26b29bc. Soul128 binding already exists and is unchanged despite stale gated comments;307 remains UNBOUND.21 candidate call sites inventoried, not exhaustive proof; Insidious/Mark/Nightmare/periodic/weapon/monster review remains. Fixed counts679/408/271/650 unchanged;official clients untouched. Report build/reports/reversal-soul-leech-progress-20261030.json.
+
+2026-10-30 Insidious Parasite transfer consumer: qualified player and NPC hit reactions now route positive Reversal inputs through shared conversion before attack damage. Current hex ownership, NPC scope/placement and actual Health authority are rechecked. Misses and zero reduced inputs do not consume Reversal; successful zero-damage hits still qualify. 1,743 new cases across ordinary, single, Cyclone and NPC attacks, seven fresh suites and 55 source/publication/backlog checks pass. Existing committed-contact completion after reaction kills attacker is explicitly PRIVATE and retail-unverified; local wiki proves before-damage transfer only. Native cast/body 230 reverified from frozen activation/body receipts, not triggered transfer or rendered proof. Verifier now defaults to build/reports and refuses checkpoint output; no frozen data modified. Isolated encrypted login/roster/initial World handshake passes, not full initialization. Deployed 77ab6c5c523b2ce1e057c1a8ccbc5d55086f27b853c37f5222a657dec2c0e5c6. Skill 123 remains bound; 307 remains unbound. Fixed partitions 679/408/271/650 unchanged. Official clients untouched. Remaining Mark/Nightmare/periodic/weapon/monster consumers, paid307 and lifecycle work remain. Report: build/reports/reversal-insidious-progress-20261030.json.
+
+2026-10-30 Mark of Subversion conversion: owned allied-spell reaction preflights current Health/reduction and Reversal before consuming Mark. Selected spell still fails after full conversion, zero input or healing death; registry snapshots cannot restore the consumed Reversal. Scoped NPC state is reacquired after condition settlement. 881 new cases, five fresh suites, 55 source/publication/backlog checks and eight actual World traces through original 2022 Health serializers pass. Frozen cast/body 235 and four receipts reverified outside checkpoint. Existing Mark-removal-before-transfer ordering remains private; retail combined ordering, rendered Runtime failure UI and source-cap/overkill proof remain open. Isolated encrypted login/roster/initial World handshake passes, not full initialization. Deployed 99ef6906acce344dcaf2ff4d507001c1b3bd194db996d62904f4962b4f77cb4b. Mark 127 stays bound and Reversal 307 stays unbound. Fixed partitions 679/408/271/650 unchanged. Official clients untouched. Remaining Nightmare/periodic/weapon/monster review and paid307/lifecycle work remain. Report: build/reports/reversal-mark-progress-20261030.json.
+
+2026-10-30 paid friendly NPC-to-player Reversal service: explicit reviewed rank/capability enrollment shares the existing NPC Energy, spellbook and action controller. Typed scheduled completion prevents generic bypass/duplicates, validates current target geometry/readiness/lifetime, and handles Profane, application reactions, Monk Divine Favor and lethal healing. 92 new World cases, seven fresh suites, 55 source/publication/backlog checks and six original2022 cast/impact consumer traces pass. One reviewed spellbook capability per source; no production loadouts, autonomous priorities, hostile/self/other-NPC casts or equipment modifiers are inferred. Native actor/model services are synthetic; retail NPC form, rendered pixels/sound and player Runtime307 remain unverified/unbound. Nightmare795 is captured but unsupported with detached contact policy only; linked drains109/126 are degeneration, and negative controls preserve Reversal. Numeric weapon/monster producer review remains. Isolated encrypted login/roster/initial World handshake passes, not full initialization. Deployed 4d3875991803f78c40ee1f13977c6a1cd81cbee9135f86078c5f94806554acae. Fixed partitions679/408/271/650 unchanged. Official clients/captures untouched. Report: build/reports/npc-reversal-progress-20261030.json; classification: build/reports/reversal-input-classification-20261030.json.
+
+2026-10-30 staged paid player Reversal: 160 Runtime/World cases and four fresh native suites pass; 56 source/publication/backlog checks pass. Five Energy, quarter-second activation, aftercast/recharge, exact target lifetime, duration readiness, self/allied player/affirmative-healing NPC admission, cancellation/interruption, DF, exact publication, conversion and expiry covered. Production307 remains UNBOUND with both callbacks explicitly empty and mutation-guarded. Pre remains39/44; pets/minions/Retribution, producer/reapplication/overlap and rendered acceptance remain open. Canonical47c2447f17e88f7930796b0e788840e15f18bad667dfd8ba6c75117cb15b3a7e passes isolated encrypted login/roster/initial World handshake, not full initialization. Visual attempt returned uniform pixels; owned private test sessions stopped, official clients untouched. Fixed partitions679/408/271/650 unchanged. Report build/reports/presearing-reversal-cast-progress-20261030.json.
+
+2026-10-30 Enchanting weapon admission fixed: reviewed10..20%22B8 suffixes retain base attacks; duplicate/malformed properties reject.64 ownership cases,12 actual World plain/10%/20% equal-damage comparisons,160 paid Reversal regressions on physically equipped gear and56 source/publication/backlog checks pass. Existing exact starter/Arthur predicates unchanged; no arbitrary upgrade or Vampiric producer enabled. Three fresh native suites. Canonical97dda0ee4eff3c6db2cf7cb28ed94021caed528023718f47a929ca0b4bea9b7f passes isolated login/roster/initial World handshake, not full initialization/rendered play. No official clients touched.307 remains unbound; fixed679/408/271/650 unchanged. Report build/reports/enchanting-weapon-progress-20261030.json.
+
+2026-10-30 Retribution248 staged foundation: pinned plan, scoped/application-sequence maintained ownership and exact ends, settled-attack journal, shared maintained wires.1029 arithmetic/qualification cases plus lease/replay/upkeep tests,21 C++ wire ranks through original serializers,15 fixed receipts, six fresh native suites and56 source checks pass. Bounded11attack/3return supports truncation, not full receiver/rounding order; overkill policy remains private. Lower-rank overwrite refused pending rank preservation. World damage/upkeep/end/NPC and paid Runtime/gateway remain unfinished;248 stays UNBOUND, pre39/44 and fixed679/408/271/650 unchanged. Original native454self plus constructed ally form use synthetic services, not rendered proof. Canonical7095b1c6adfddc556672bd7944dd7942c84942561f96ec06c7019288f93f1564 passes isolated initial encrypted World handshake, not full initialization. Official clients/captures untouched. Report build/reports/retribution-progress-20261030.json; next work docs/retribution-current-20261030.txt.
+
+2026-10-30 Retribution player World lifecycle: scoped lease application, shared Energy/range upkeep, cancellation/generic removal, death/departure and late-observer records.126 cases and seven selected native suites pass, plus56 source checks and12 actual World application/end traces through original2022 serializers/maintained/454particle consumers. Untyped active248 status insertion refused. Dense fixtures drain simulated transports while retaining all packets for once-only assertions. Mending coexistence/replacement and lethal Soul Barbs application cleanup covered. NPC, reflected attacks, admitted Renewal, lethal DF/Profane and paid Runtime/gateway remain open;248 unbound,pre39/44,fixed679/408/271/650 unchanged. Canonical736eb4d6d87a93ae6a6f5181a93af2cf70674ed3dd8e3f712b7f3b3551cb94b7 passes isolated initial encrypted World handshake,not full initialization/rendered play. Official clients/captures untouched. Report build/reports/retribution-world-progress-20261030.json.

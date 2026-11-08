@@ -1,0 +1,26 @@
+Typed faction mutations — 2026-10-09
+
+Faction awards and Imperial exchanges now pass typed requests from NetworkServer
+through serialized NetworkManager admission to Accounts. Each mutation reads,
+validates and commits within one SQLite transaction with optimistic revision
+checks. Existing caps, lifetime totals, exchange ratios and insufficient-balance
+behavior retained. Invalid target/zero amount rejected without dispatch. Offline
+adapters use the same implementations; duplicated SQL mutation branches removed.
+
+Rebuilt network_lifecycle, progression and accounts_lifecycle passed. Direct
+Accounts tests cancel at the final precommit check and verify award balance and
+exchange debit/credit both roll back. Existing tests cover all four awards,
+invalid requests, revision conflict, caps, totals and successful exchange.
+
+Pending deployment and live verification. The running host remains the previous
+verified typed faction-profile build. Many remaining application operations and
+custom-client transport still need implementation; the goal is not complete.
+
+Deployed 2026-10-09, host PID7032 SHA256
+b3c5efd9c0705cb7a8a92bb14485c04f88d97708c6091760c8d7122f7bd608e4.
+All126 rebuilt CTest checks passed in30.55 seconds. Client PID4696 passed login,
+map55 entry, keyboard and ground click; 163.566 units movement, zero native pose
+disagreement, alivefive seconds. Official client PID5604 retained.
+Mutation correctness is proven by isolated storage/network tests, including
+final-precommit cancellation. No live account faction was spent or awarded
+for this deployment check. Smoke and full-test reports preserved in build/reports.

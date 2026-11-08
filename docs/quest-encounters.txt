@@ -1,0 +1,128 @@
+Quest encounter activation
+
+The native host accepts an optional quest_encounters path in server.txt.
+Its default is none. Content must also exist in the configured quest catalog.
+The manifest starts with:
+gw-quest-encounters 1
+Each subsequent row is:
+kill QUEST MAP APPEARANCE_FILE COMBAT_FILE POPULATION_SHA256
+File paths are relative to the manifest; quote paths containing spaces.
+
+The loader verifies the appearance hash, matching map, combat bindings and
+explicit living hostile state. Host startup additionally checks placements
+against the map's exact navigation mesh. Unknown combat ratings are not filled
+with invented defaults. Template actor/definition IDs are remapped on activation.
+
+Acceptance prepares and validates the encounter before the account transaction.
+Only a successful transaction publishes the creatures and objective. The commit
+callback runs under the instance mutex and must not call back into Instance.
+Kill tracking binds exact actor lifetimes to the durable quest cycle. Completion
+remains pending until its account transaction succeeds. Abandonment and leaving
+remove owned encounter creatures; reconnect snapshots omit removed creatures.
+An active Warrior Test restores its encounter when entering its configured map.
+Completed or rewarded quests do not restore that encounter.
+
+Current configuration enables Warrior Test's three captured River Skale Tads,
+wiki health35 and captured map146 Van placement. Armor0 and comparison token2
+are explicit temporary development content; see the adjacent policy file.
+quest_givers loads a supplemental native NPC catalog, remapping isolated actor
+and definition IDs while preserving the base combat population bindings.
+Reviewed retail armor, enemy AI/attacks and live2022 quest verification remain.
+This mechanism alone does not make pre-Searing playable.
+
+Wave content (prepared, not enabled in host configuration)
+Native load_quest_waves reads a separate manifest:
+gw-quest-waves 1
+wave QUEST MAP ONE_BASED_INDEX APPEARANCE_FILE COMBAT_FILE POPULATION_SHA256
+Wave numbers must be contiguous per quest, maps and group sizes must match.
+All population hashes and hostile combat evidence use the kill loader checks.
+The controller additionally requires the manifest count/size to match the bound
+objective before publishing any wave. data/gw/quests/experiment-waves.txt is the
+three captured groups for quest73; temporary armor policies remain explicit.
+This file can be loaded through quest_waves; it is disabled by default. Guardian content, atomic
+acceptance and auth-loop integration are still required before activation.
+
+Atomic wave acceptance
+Instance.accept_quest_waves stages the objective and first group together before
+calling durable acceptance. It validates every configured group's living hostile
+metadata, native population and installed navigation. Save failure publishes
+neither objective nor creatures, so retry uses the same clean starting state.
+The guardian must exist with its exact lifetime, map and living health profile.
+Callbacks execute under the instance lock and must not reenter the world.
+This API is ready for quest NPC integration but is not enabled in the host loop.
+
+Host wave loading
+server.txt now accepts quest_waves=PATH or quest_waves=none (default omitted).
+The host loads the wave manifest, requires configured quest content, rejects a
+quest shared with the kill manifest and validates every group against its map
+navigation before startup. NPC/dialog acceptance is still not wired for waves;
+keep Experiment disabled until guardian content and behavior are integrated.
+
+
+Experiment routing checkpoint
+Quest73 acceptance/dialog and wave polling are now routed in gw_auth, but the
+quest stays disabled. Offer requires exact living neutral guardian combat state;
+reward requires the wave objective completion and survives no guardian death.
+Aziure combat binding, NPC behavior and active/completed reconnect restoration
+remain necessary before activation. Existing supplemental givers are noncombat.
+
+Wave reconnect policy
+Host world entry restores configured active wave quests through atomic initial
+encounter publication, restarting at wave one. Partial wave kills are not durable.
+A durable completed quest restores a completed objective bound to the current
+living neutral guardian, without enemies. Old player/guardian lifetimes are
+rejected. The host resolves the named giver uniquely and rejects ambiguous or
+missing guardian bindings. Reward acknowledgment clears the restored objective.
+This restoration does not establish guardian AI or make disabled quest73 playable.
+
+Neutral giver combat binding
+Optional quest_giver_combat=PATH binds evidence to the unmodified quest_givers
+population hash before merging it. Named nonservice neutral living guardians
+are accepted; hostile supplements are rejected. Actor/definition IDs in combat
+bindings are remapped with appearance IDs. Base combat bindings remain intact.
+aziure-development-combat.txt references the existing giver population and the
+captured Aziure identity. Health100/armor0 are explicitly authored temporary
+values in aziure-development-policy.txt; they are not retail measurements.
+Default configuration does not enable this profile or Experiment. Enemy attack
+behavior and live quest verification are still required.
+
+Quest NPC chase motor
+Trusted chase_quest_guardian validates exact living hostile quest-owned actor,
+active wave owner and exact living neutral guardian. Layered navigation computes
+the route on installed planes; disconnected banks are rejected. Explicit speed
+is authored policy (bounded0..440), not reconstructed retail speed. Simulation
+ticks advance actor coordinates by elapsed time through route segments and
+publish pinned2022 destination/speed/stop packets. Reconnect uses updated NPC
+positions. Death/failed wave/owner departure invalidates or retires motion.
+This motor is not automatically scheduled yet; attack cadence/retargeting and
+live animation verification remain. Experiment remains disabled.
+
+Development guardian AI scheduler
+Host wave polling drives quest73 through a labeled temporary policy: speed220,
+range128, base physical damage5, cadence2000ms. Exact quest owner/cycle and
+active wave select owned living enemies; guardian identity is server-owned.
+Enemies chase via layered navigation, stop in attack range and wait for their
+first strike. One delayed poll produces at most one hit per enemy, without
+catch-up burst damage. Physical armor/Weakness/Blind use existing combat paths;
+ordinary attack packets preserve zero skill attribution rather than a fake spell.
+Impact currently publishes attack start/finish together: proper windup, retail
+aggro/retargeting and live animation verification remain. This is explicitly
+development behavior, not a reconstructed ArenaNet AI policy. Default quest73
+configuration remains disabled until integration and live tests are complete.
+
+Current correction: quest73 default development wave configuration was enabled after atomic acceptance/persistence/nav/guardian tests. Earlier disabled entries above are historical; a native-client quest playthrough remains unverified. NPC combat catalog5 adds lightning armor/evidence as fields29/30 (zero-based) after existing29fields; missing remains unknown.
+
+Collection encounters: gw-quest-encounters 2
+scale 83 146 APPEARANCE_FILE COMBAT_FILE POPULATION_SHA256
+
+Version1 retains kill-only semantics. Version2 also accepts the explicit
+Elementalist Test scale kind; unimplemented collection kinds/quests are rejected.
+Both populations use the same hash, hostile-state and placement validation.
+Collection rows load into loot_encounters, never kill_encounters. Output is
+replaced only after the full manifest validates. Do not copy Warrior Test's
+population into this row: the scale-source population must be separately reviewed.
+The native session filters offers without a configured collection, activates
+atomically on acceptance, restores active encounters on entry, and processes
+only owner/quest/cycle-bound pending deaths. Collection completion checks carried
+inventory and turn-in uses atomic item/XP/skill/quest storage. The 60-second floor
+reservation is development policy, not measured retail allocation timing.

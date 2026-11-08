@@ -1,0 +1,37 @@
+Rip Enchantment955
+===================
+Pinned2022 row:Necromancer Curses Spell,5Energy,1s activation,.75s aftercast,
+15s recharge,one enchantment removed,Bleeding5..25seconds(rank12=21),caster
+body1623,target sentinel2077. Archived Rip_Enchantment.html supplies conditional
+semantics:Bleeding only if an enchantment was removed. No source sacrifice or
+Health/Energy gain is part of this skill.
+
+World validates hostile exact lifetime,plane,range1248/navigation,clock and
+canonical plan. Newest enchantment ends first;Bleeding only applies if the target
+survives that end. Player condition applications use shared commit_conditions,
+including Fragility and Fevered events;the enchantment-removal transaction now
+dispatches the completed condition boundary. Unknown NPC enchantment endings
+remain rejected before removal. Reviewed owned214 NPC regeneration can be stripped;
+condition-immune NPCs still lose the enchantment but receive no Bleeding. Fresh
+NPC lifetime/placement is resolved after reactive condition callbacks,not restored
+from a proposal. Clock overflow and player condition-effect allocation preflight
+before removal. Caster1623 is emitted once on completed valid effects,including
+an unenchanted no-op;the observed capture alone does not prove target state.
+
+Tests:rip_enchantment ranks0/12/20 conditional application,exclusive expiry,
+newest only,no source reward,forged/stale rejection,Fragility17 damage,Fevered
+nearby propagation at this boundary,cancel/interrupt/replaced target/missing hook,
+Energy payment and15s cooldown. Shared NPC casting fixture tests actual214
+removal,Bleeding degeneration,and stripping a condition-immune NPC without Bleeding.
+
+Evidence:immutable20261017-npc-refresh-2 packets-1360-15821281.jsonl lines106795,
+106807..106809 record source25,target30,cast,15s recharge,completion,caster1623.
+Offline native verifier executes original2022 cast and caster-effect consumers,
+checks SHA-verified exact receipt bytes,native row and wiki hash. Report:
+build/reports/rip-enchantment-native-2022.json. Actor/model/asset services stubbed;
+this does not establish rendered animation acceptance or official conditional result.
+
+Open:other NPC positive endings,NPC casters,retail multi-effect reaction ordering,
+full condition/hex interaction coverage,and rendered private-client validation.
+
+Validation:seven freshly rebuilt native suites pass(rip_enchantment,signet_disenchantment,lyssa_balance,gaze_contempt,enchantment_removal,necromancer_enchantment_removal,fevered_dreams_world_spread).69 tooling tests,native consumer verifier and Release server_host pass. Fixed checkpoint272source bindings/361pending,696missing baseline captures;latest hunting list preserved. During validation the user requested official logging:both existing packaged loggers attached to verified official PID21464 without restart and actual records were read. Ongoing captures remain separate from immutable implementation evidence.

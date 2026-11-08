@@ -1,0 +1,99 @@
+CURRENT: Generic attack admission is enabled. Dedicated normal Runtime/World tests pass for200-adrenaline payment, other-pool reduction, low-rank failure, Blind, cancellation/interruption, stale target and caster death. Target-centered adjacent knockdown follows a successful primary hit; only primary receives weapon damage. Earlier staged integration notes below describe implementation history. Stonefist, NPC caster routing, isolated retail area/failure calibration and rendered verification remain pending.
+
+Earth Shaker 354: Runtime and World integrated; rendered verification pending
+============================================================================
+Native 2022 row: elite Hammer Mastery19 attack14, requirement16 (owned hammer
+item type15), 200 adrenaline, zero Energy/recharge/activation/aftercast, no
+bonus damage, 2-second knockdown, caster-body sentinel2077, target-body606.
+The original body consumer uses weapon interval times its animation modifier;
+the observed766/766/797ms releases are not a universal server release time.
+
+Archived Earth_Shaker.html (last edited2020-10-23), SHA256
+fff4fce160da5739468ce88033a5ea858f494796dd4bf6cff223cc39e78315cd:
+Only primary receives weapon damage; the attack must hit to cause knockdown.
+Area is centered on the TARGET, including target and adjacent foes. Rank0..4
+has50% skill failure, rank5+ none. No extra weapon hits, condition triggers,
+adrenaline awards or damage are generated for area recipients. Server adjacent
+166 is an existing convention, not a radius derived from an opaque native row.
+
+Frozen20261022-cumulative-skills/packets-1360-15821281.jsonl:
+374590/374596/374601,374734/374739/374744,374883/374886/374892 are start50,
+success46,release227 triples. Target-body606 follows each success, including
+the first two windows whose outcome is kind38. Only the third has captured
+primary damage and 2-second knockdown63 at374891. This directly demonstrates
+why completion/body packets alone cannot establish knockdown success.
+
+Run offline verification with:
+  $env:PYTHONPATH='build/protocol-python;tools/protocol'
+  python tools/protocol/earth_shaker_2022.py
+Output:build/reports/earth-shaker-native-2022.json. Passed15 exact receipts
+against manifest SHA256, hash-pinned original metadata, two body consumers,
+success/interruption consumers, and original606 particle consumer (recipient43,
+encoded file485700010000). Asset/model services are stubbed; no rendered claim.
+
+gw_earth_shaker.h validates the entire family-specific metadata, supplies the
+rank failure predicate and target-centered eligible recipient selection. It
+rejects forged plans, invalid rolls, invalid/stale scopes, duplicate actor IDs,
+foreign instances and nonfinite positions. Primary can become ineligible after
+lethal weapon damage; its retained contact position still centers secondary
+selection. This lethal-hit interpretation remains a targeted capture gap.
+
+Integration required before source/runtime support can be advertised:
+1. Add earth_shaker_test from tests/earth_shaker.cpp and register CTest. Its
+   checks stay enabled in Release. Parent owns serialized compilation.
+2. DONE:354 now has a canonical zero-bonus hammer15 earth_shaker_attack_plan and primary
+   knockdown flag. Ordinary500ms contact is the existing server policy, not a
+   new measured retail timing. Native adrenaline accounting remains owned by
+   casting. Do not wire only the ordinary single-target attack_knockdown helper:
+   the area/failure mechanics are required.
+   Generic attack_skill(354,rank) remains DISABLED so Runtime auto-admission
+   stays closed until World is wired. Only the explicit owner factory (or the
+   fourth attack_skill argument true) constructs this canonical plan. Parent
+   must explicitly enable this after installing the area/failure transaction.
+3. At the authoritative resolution point, sample one independent failure roll
+   using earth_shaker_fails. Failure spends costs but performs no weapon hit or
+   area knockdown. Repeated/provisional resolution must not redraw that roll.
+   ConditionContact now appends optional<double> earth_shaker_failure_roll. It
+   is REQUIRED at every rank; missing or invalid rolls reject resolution instead
+   of silently executing this skill through an old single-target World route.
+   resolve_attack_skill returns zero damage/refund/adrenaline and skill_failed
+   true on failed rolls (missed also true). World must distinguish skill_failed
+   before its generic miss reaction so skill failure cannot trigger miss hexes.
+4. Resolve one ordinary primary weapon attack. Miss/block/dodge/obstruction
+   suppress all knockdowns. On a qualified hit, retain target contact position,
+   settle primary damage and call earth_shaker_recipients with current lifetime,
+   hostile/alive/layer eligibility. Apply each returned2-second control through
+   the existing immunity/Stonefist/duration/interrupt machinery. Do not require
+   primary knockdown susceptibility to knock down eligible adjacent foes.
+   earth_shaker_attack_recipients wraps the area helper with canonical AttackPlan
+   validation and the same retained contact roll. attack_knockdown also respects
+   missing/invalid/failed rolls; skip that ordinary primary call when the area
+   path applies all returned recipients, or primary will be processed twice.
+5. Emit primary target-body606 from skill lifecycle independently of successful
+   knockdown, consistent with all three captured windows; use existing attack
+   completion/stop routes. Add world tests covering multiple hostile/neutral,
+   dead/immune/player/NPC recipients and successful blocked/missed controls.
+
+Outstanding:shared Runtime binding, execution of world regression tests, causal
+multi-recipient/radius and low-rank retail captures, lethal-primary behavior,
+NPC caster routing and rendered native visual acceptance. No official process
+was opened, stopped, injected or otherwise targeted for this work.
+
+World integration follow-up (source wired, parent serial compilation pending):
+gw_world_earth_shaker.inl stages an authoritative target-centered control set
+before weapon damage, rejecting unknown adjacent NPC susceptibility. It uses
+existing World knockdown methods for immunity, interrupts, deadlines and wire
+publication. Only the primary has an AttackResolution/weapon hit. Skill failure
+uses a separately sampled, retained variate and closes its attack as cancelled,
+so generic miss reactions such as Price of Failure do not run. Rank5+ passes
+an explicit successful fact without drawing randomness. Primary immunity does
+not protect adjacent foes, and lethal-primary hits retain their center/set.
+The current World control methods have no Stonefist duration hook; this remains
+a pre-existing modifier gap, not a claimed feature of this integration.
+tests/earth_shaker_world.cpp covers player/NPC-primary, rank failure, Blind,
+block, immunity, already-down, lethal-primary, radius/team/neutral, control
+expiry and no-secondary-damage/outcome tests. Shared admission stays disabled
+until these tests and Runtime wiring are validated by the parent.
+
+Parent validation: earth_shaker_world CTest passes after correcting Balanced Stance fixture duration. Normal Runtime admission remains disabled pending normal-cast cost/failure/lifecycle tests. World helper coverage is not proof of normal client support.
+

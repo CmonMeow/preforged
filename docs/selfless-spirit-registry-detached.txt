@@ -1,0 +1,47 @@
+Selfless Spirit detached registry proposal, 2026-10-26
+
+Files: gw_selfless_spirit_registry.h, tests/selfless_spirit_registry.cpp.
+Standalone optimized MSVC C++20 build/run passed. No production binding,
+World/CMake change, normal payment, target interpretation or client action.
+
+The helper consumes the parent's canonical gw_selfless_spirit.h read-only.
+prepare_selfless_spirit_entry validates canonical rank/plan, exact owner,
+effect allocation and time overflow. Optional equipment duration must be the
+existing EnchantmentDuration receipt bound to skill/base/owner/time. Without
+that receipt it uses canonical base duration only. It never guesses target
+semantics or equipment duration from an arbitrary number.
+
+stage_selfless_spirit_registry works on a copied Registry. It expires due
+entries, removes both currently active faction aliases, preserves unrelated
+live enchantments and applies one new self-enchantment. The result includes
+every retired entry so World can publish each lifecycle removal and clean all
+parallel stores. It rejects effect-ID collisions and leaves the source registry
+untouched. The input must be an authoritative current registry containing no
+future-dated applications; Registry's active API cannot enumerate future
+allocations. This precondition is explicit, not established by the helper.
+
+live_selfless_spirit_entry returns one newest live faction alias, requiring
+owned scope, canonical plan, self cause, enchantment kind and finite expiry.
+Outer nullopt is invalid authority/data; engaged outer optional with empty
+inner optional means no active effect. Exact expiry is inactive. Removal,
+clear/death and scope changes immediately prevent use. It does not cache a
+discount or prove the integrity of a trusted entry's equipment-adjusted timer;
+duration provenance remains World's application transaction responsibility.
+
+Integration: settle World effects first under its mutex; supply the admitted
+canonical title rank, authoritative equipment duration and fresh allocation;
+stage the registry together with health_effects, regeneration/status trackers,
+application observations and effect allocator. Commit all stores and receipts
+atomically, then publish the normal completion/body553 and removal/addition
+packets in reviewed order. The helper's expired-entry list can include unrelated
+due effects, requiring their normal end consumers; do not publish only aliases.
+Do not bypass enchantment stripping, observer delivery, death or transfer paths.
+For payment, inspect the committed registry under the same lock as debit; a
+previous quote is invalid after stripping or expiry. No recipient fact is
+inferred here and no composition with glyphs/Divine Spirit is chosen.
+
+Focused tests cover cross-alias replacement, source copy preservation,
+unrelated live enchantment preservation, base duration rank0/rank12, exact
+expiry, before-application absence, stale generation, collision/forged plan,
+overflow, explicit stripping and clear/death semantics. Equipment duration
+receipt success/failure and full World publication remain integration tests.

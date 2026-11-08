@@ -1,0 +1,135 @@
+Skill control and damage transactions: implementation review, 2026-10-14
+
+Status
+Read-only follow-up to the fixed-location damage-field batch. This document
+describes work still required, not completed skill coverage. Runtime source was
+frozen for the parent's full 155-target build and CTest validation.
+
+Local evidence
+Root: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/
+Knock_down.html
+ SHA256 9b9a082a2cfc25c2914ad4ed009acdf8766366086ebe36c76223f87a8101ccba
+Hammer_Bash.html
+ SHA256 913b240388fe70fba413bf8bc5f77e1412f1ee9ae20c8393376906469de80e92
+Bane_Signet.html
+ SHA256 e9fe2172bfbcd2d78641cdd7b2054e381d222b26a6f9bc40bb4f4c19604aebcc
+Reversal_of_Fortune.html
+ SHA256 5a79f60142cd4eb9d922e08839d4a30425d8029ff2d8693aec313632bcfbbb2e
+Retribution.html
+ SHA256 1650f0f8ef5f0ab052d99845698ab115cbea095983a306f3ef6fdba5df1184d9
+These snapshots support mechanics; they do not establish hidden traits of each
+production NPC, equipment modifiers, AI timings, or additional packet layouts.
+
+Existing motion timing audit
+advance_npc_motion_locked has two callers. refresh_npc_movement_locked settles
+damage fields before acquiring its motion iterator; tick settles before motion
+advancement and movement-history pruning. The five reviewed chase/follow entry
+points also settle before retargeting. No direct motion-advancement bypass was
+found. Timestamp-free population/spawn APIs remain a chronology boundary: they
+cannot prove whether a newly inserted NPC existed at an overdue pulse time.
+
+Knockdown and action cancellation
+The wiki describes a default two-second knockdown, no reapplication while still
+down, and restrictions on movement, weapon switching and activations with a cast
+time or aftercast. Stun immunity and exceptional creatures require independent
+evidence. Stonefist and other extensions must not be inferred from appearance.
+
+The existing player Stoning branch in gw_world_simulation.h sets
+knocked_down_until and emits the reviewed gw_knockdown_wire.h opcode161/kind63
+packet. It does not increment attack_interrupt_epoch or cancel ordinary intent.
+The gateway cancels Runtime casting when world.knocked_down is currently true.
+If the next gateway pass occurs after recovery, a cast begun before knockdown
+can evade that check. The weapon-only epoch in gw_skill_casting.h protects only
+pending weapon activations; it is not a general control epoch.
+
+Proposed transaction:
+1. Settle chronological health/motion, validate original actor lifetime, current
+   life state, clock, susceptibility and duration without partial mutation.
+2. Increment a lifetime-scoped control epoch on accepted knockdown. Capture it
+   for all affected pending activations; compare it at completion even after
+   recovery. Preserve cooldowns, spent signets and already-paid costs.
+3. Cancel ordinary attack intent and pending interaction/approach, stop movement,
+   reset NPC authored attack scheduling, and publish the existing knockdown wire.
+4. Keep NPC pause intervals until movement consumes them. Integrate zero travel
+   during pauses separately from MovementEffects, whose .5 lower clamp models
+   movement modifiers. Preserve Burden/Dash histories and route identity.
+5. Resume a valid NPC route after recovery with reviewed movement publication;
+   reject stale actor generations and backwards updates. Do not publish zero as
+   an invented movement base speed or turn stun into an ordinary slow.
+
+NPC LiveActor last_attack_event_/last_attack_time_ are Empathy reaction dedupe,
+not action state. quest_npc_attack_due_ is authored cadence, not evidence that an
+NPC is currently attacking. Bane's conditional knockdown needs a real action
+phase or an explicitly authored fixture, not an inference from those counters.
+No production NPC spell activation/cancellation pipeline should be claimed from
+the current instant quest attack driver. conditions_allowed is not susceptibility.
+Append an independently evidenced optional knockdown trait to reviewed content;
+unknown must remain unknown. Define immunity behavior separately from damage.
+
+Released projectiles must not simply be erased with the source action. The wiki
+also documents a source-knockdown projectile-delay bug; faithful delay behavior
+needs a reviewed timing policy. This limitation must remain explicit.
+
+Hammer Bash331 and Bane Signet296
+Hammer Bash costs exactly 130 adrenaline units, loses all adrenaline, and knocks
+down on a successful hit. Existing adrenaline::State::spend zeros the selected
+pool and subtracts25 from others; add a reviewed all-pools drain retaining pool
+disable clocks and combat lifetime. Do not call reset as a substitute. Verify
+miss/Blind still pays the skill's cost but does not knock down. Use owned hammer
+evidence and the existing melee range/impact transaction.
+Bane deals 26+2*rank holy damage and conditionally knocks down an attacking target.
+NPC holy light-sensitivity and knockdown susceptibility are independent traits.
+Player holy damage still needs authoritative Tormentor's equipment handling.
+Do not count either skill complete from a planner or dispatcher binding alone.
+
+Required control tests
+Knockdown during attack and spell windup; Runtime next update after recovery;
+delayed motion tick spanning pause start/end; overlap with Burden; exact recovery
+boundary; repeat knockdown rejection; immunity and unknown-trait cases; actor ID
+reuse; death during pause; interrupted attack deadline cannot produce a stale
+strike; released projectile lifetime remains separate; all-adrenaline drain on
+miss; insufficient adrenaline remains atomic.
+
+Reversal of Fortune307
+Eight-second enchantment. At rank12 the conversion limit is67 (15..80 at0..15).
+It converts the next incoming damage or life steal after damage reduction into
+healing up to that limit. Healing happens before excess damage, so low-health
+survival and full-health overflow differ. This is healing, not raw health gain;
+Deep Wound and future healing modifiers belong in that stage.
+
+Current incoming_strike_locked/incoming_spell_actor_locked are read-only scalar
+modifiers. health_event_locked is too late: callers have already computed hits,
+death, adrenaline, reactions and publication, often by mutating a temporary
+Actor. A negative-health-delta patch would lose ordering and source semantics.
+Introduce a prepared incoming event with original source/target Scope, event
+identity, category (attack, direct damage, life steal, sacrifice, degeneration),
+raw/resolved damage, healing conversion, excess loss, final health and consumed
+effect identity. Validate and prepare first; atomically consume the enchantment,
+apply healing then excess, publish actual results and process death once.
+Keep sacrifice and degeneration distinct; do not let every negative delta consume
+Reversal. Life steal needs coordinated recipient gain rather than changing only
+the victim after the drain result has already credited its source.
+
+Required Reversal tests: below/at/above conversion cap; full versus low health;
+Deep Wound; Shielding reduction before conversion; life steal both sides; lethal
+excess; zero damage trigger semantics reviewed before implementation; simultaneous
+events consume once; expiry/removal; lifetime replacement; no adrenaline/death
+publication for damage that was actually prevented.
+
+Retribution248
+Maintained enchantment, upkeep1, reflects33% of final attack damage capped5+rank,
+as holy damage. Wiki says positive reflected damage rounds up to a minimum1.
+Indirect attack-associated damage such as Hundred Blades is excluded; do not
+treat Ignite blast damage as the original weapon hit. Returned damage uses
+post-protection attack damage. Source and owner lifetimes and allegiance must be
+validated. A reflected event must not recursively masquerade as an attack.
+
+Needs actual maintained-enchantment energy upkeep/removal and reviewed indefinite
+effect publication, not an invented long timer. Reuse the prepared incoming-event
+foundation to enqueue a typed reflection after the original hit. Resolve source
+death/absence, target death, ordering against Reversal, and multi-hit events
+explicitly. NPC holy traits and player equipment limitations still apply.
+
+These foundations should precede broad bindings of other knockdown, damage
+interception and reflection families. Pet/minion skills additionally require real
+ownership/spawn/action controls and cannot be substituted with these transactions.

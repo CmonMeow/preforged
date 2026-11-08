@@ -1,0 +1,39 @@
+Signet of Corruption (1950 Kurzick, 2093 Luxon) — native source binding
+
+Fixed capture checkpoint: data/captures/skill-checkpoints/20261024-all-completed
+Catalog: pinned 2022 client rows 1950 and 2093. The catalog confirms
+Necromancer / allegiance rank / signet / PvE-only, 1 second activation,
+0.75 second aftercast, 20 second recharge, and rank-scaled values.
+Gameplay reference: https://wiki.guildwars.com/wiki/Signet_of_Corruption
+Evidence: data/skill-capture-plan/SIGNET-OF-CORRUPTION-RETAIL-EVIDENCE.json
+Verifier: tools/protocol/signet_of_corruption_capture_2022.py
+The fixed Luxon 2093 capture has two local starts and two finishes on map 280.
+Both show a 20-second recharge, caster kind21 resource1621, and three target
+kind42 resource480 / kind55 -0.0625 pairs. One shows self kind54 value2.
+There is no targeted kind20 body packet in the activation windows. Kurzick
+1950 has no local cast in this checkpoint and remains on the missing-capture
+list. The verifier checks exact packet words and source-file hashes.
+
+The native Runtime admits earned-rank PvE casts, checks hostile target range
+at start and finish, pays the normal cast/recharge transaction, and publishes
+the catalog's caster body effect. World selects target and nearby hostile
+players/NPCs on the same plane, applies rank-scaled armor-ignoring damage,
+and grants 2 Energy per affected foe with a condition or hex, capped by rank.
+A foe with both qualifies once. Stale targets, dead targets, and wrong team
+are rejected. The binding is counted only after these consumers passed.
+
+Validation: Release server_host built; policy, world, and casting tests 3/3
+passed; 12 runtime-coverage tests passed; retail verifier passed. Native
+casting test checks caster body1621 once. The backlog now reports 396/679
+captured skills source-bound, 283 awaiting binding, 650 missing capture.
+
+Not yet verified: rendered client effect, retail per-target health outcome,
+NPC-caster AI, and intermediate-rank damage/resource rounding. The fixed
+packets identify completion and affected targets but do not prove every
+visual or damage calculation. Official client and logging were untouched.
+
+Tested host SHA256: 72EE1DD347E08B60331C62EB90FAC42B97F75C2279F67715D0B2DD98BC1D62BB
+Source policy SHA256: 067BA41DF537F930D8A05FBD11A63FAF12C492E7413DCE5CB41D3E379F45C7CC
+Source World SHA256: 5076EC94C3FE0960C89B1DD9F22D16A2BF2335A280C1772BD40B54C4AD5D5FE5
+Source Runtime SHA256: A148CC699A57365E4834C0854E4664A7877BF73EBBDD65F6E288E03A58BA4793
+Cast test executable SHA256: 16E488F75BAE81A1BAD92A059ED825C9A75841BCEDC87D903055F1A926BC436F

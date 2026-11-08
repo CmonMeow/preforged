@@ -1,0 +1,18 @@
+Character creation names
+========================
+The native2022 creation frame uses a bounded UTF-16 name field (19 units).
+Persistence receives UTF-8, so byte count is not the native name-length bound.
+Creation validates strict UTF-8, converts through character_name_to_utf16 with
+max_units19, and retains the previous ASCII letter/digit/space/hyphen/apostrophe
+policy. Non-ASCII scalars use the same Unicode conversion as roster import;
+this does not assert every regional official-server naming policy is reproduced.
+Malformed input, controls, overlong encoding and names above19 units are rejected
+before a transaction. Valid multibyte names persist without rewriting bytes.
+SQLite's NOCASE uniqueness is ASCII-oriented; complete Unicode case folding is
+not claimed or implemented by this change.
+A complete wire name with invalid UTF-16 encoding returns the existing creation
+failure19 and leaves the preview open. Structurally invalid/truncated frames keep
+the framing layer's existing invalid/incomplete handling.
+Tests in accounts.cpp exercise19 Korean units,20-unit rejection, malformed UTF-8,
+disallowed ASCII, and unchanged roster after rejection. Live regional naming UI
+has not been verified while the Windows desktop is locked.

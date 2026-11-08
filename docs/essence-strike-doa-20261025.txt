@@ -1,0 +1,35 @@
+Essence Strike [1227], fixed Domain of Anguish follow-up (2026-10-25)
+
+The immutable 20261024-urgoz-doa-completed checkpoint has 38 timing-attributed
+cast starts for 1227 in map 474. This does not identify the actor or prove a
+completed hit. The older all-skills checkpoint has 29 other/unassigned starts
+and zero local player starts; the two scopes must not be added together.
+
+The pinned 2022 client first consumers return cast style 51 / 1 second and
+target-body resource 1086 (see build/reports/essence-strike-native-2022.json).
+The current plan matches the native 5 Energy / 1 second / 8 second row, rank
+damage 15..60 lightning and conditional spirit Energy 1..9. The latter
+requires a completion-time living-spirit census within the existing 1012
+private-server earshot convention. Unknown NPC creature identity rejects the
+transaction; it is not silently treated as absence. The exact retail radius
+has not been measured. The official Wiki description and earshot definition:
+https://wiki.guildwars.com/wiki/Essence_Strike
+https://wiki.guildwars.com/wiki/Earshot
+
+The generic paid Runtime now reaches World for Essence Strike. World uses the
+reviewed lightning armor, authoritative player/NPC hit, conditional Energy,
+and target resource 1086 after the successful spell terminal. Native tests
+cover present/absent/unknown spirit cases, player and NPC recipients, rank
+scaling, forged plans, paid cast and packet ordering. Seven focused Essence,
+elemental and spirit tests pass. Serialized Release server_host builds.
+
+This is source binding and native first-consumer verification, not a rendered
+client or official spirit-condition comparison. NPC-sourced casting, caster
+death during completion, detailed interruption/protection and full live
+2022 visual/audio acceptance remain open.
+
+SHA-256 gw_essence_strike.h 885517C8C74AE5D6122F885466D64A7CE01212E89BB018D842ECB59D84EDCA5A
+SHA-256 gw_elemental_damage.h 3F49ADCBDEA4B48894E9CCA37C85A06FA1AC5535EE0A6B9D3F5807FE46929466
+SHA-256 gw_world_simulation.h D531093C15BA9798FF9F84B54498E536A875A4B4E695584B01EF70BC400650BD
+SHA-256 essence_strike_world.cpp 4DCD70E8482B570C1EF229492A5207D8F3E2DBAC95CC7A814629CDAC77290B48
+SHA-256 server_host.exe 84642AC9FB900C0DEBA3C2ED604CFBB16AFCD35D5E0662761A2FE028D49B651F

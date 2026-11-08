@@ -1,0 +1,93 @@
+Honeycomb and Rainbow Candy Cane consumables
+
+Local pre-Reforged wiki Honeycomb.html: party receives5percent morale, capped
+at10percent; no skill cooldown reset; prohibited inPvP; cannot consume when all
+party members already have10percent. Rainbow Candy Cane has identical effect.
+Old GWCA ItemIDs.h records Honeycomb26784 and RainbowCandyCane21489 model IDs.
+These identify the supported family, not complete item assets. The capture audit
+build/reports/consumable-capture-audit.json found277 worn-equipment events and no
+carried/merchant consumable definitions; no production item is fabricated.
+
+Set consumable_catalog=PATH in config/server.txt for immutable host configuration.
+Relative paths resolve from the project root; spaces in paths are supported.
+consumable_catalog=none explicitly disables loading, overriding any inherited
+FW_GW_CONSUMABLE_CATALOG. Omitted settings retain the legacy environment default.
+The shipped config explicitly disables all three catalogues until reviewed data
+is available. Each reviewed
+row is evidence SHA256, TAB, hex FWI profile containing exactly item1, quantity1,
+with complete captured Honeycomb/Rainbow definition and available metadata.
+Evidence hash is a review label, not authentication. Matching preserves all
+asset fields/modifiers/profession/customization, normalizing only identity,
+placement and stack quantity. Limits16MiB,65536-character lines,4096 recipes;
+invalid configured input fails host construction before listeners.
+
+Opcode124 verifies actual carried ownership, trade lock, scene and supported PvE
+instance mode (map types1/4; no arena match). A proposal debits exactly one unit,
+using312 for remaining quantity or332/348 for exhaustion. World locks the actual
+party/lifetime snapshot, rejects fully capped or unavailable party state, commits
+inventory CAS first, then raises every supported player member by5 up to110.
+Unrelated players receive no effect. Failed CAS consumes nothing and changes no
+morale. No skill cooldowns are modified. Player health/energy capacities scale
+base health and innate+EnergyStorage energy only; equipment bonuses remain
+unscaled. Fractional capacity uses explicit private integer-floor policy. Health
+capacity changes preserve missing health, Deep Wound and dead-state semantics;
+energy capacity preserves energy debt. Equipment refresh retains current morale.
+
+Heroes/henchmen are not yet owned runtime party actors. World morale application
+currently covers the connected player members represented by party::State. A
+missing modeled member/capacity denies rather than inventing resources. Morale is now authenticated character-session state and persists across PvE
+zone transfer and reconnect tickets; entering staging/outpost or PvP resets it.
+Fresh authentication creates a new future binding without sharing another
+character�s state. Host restart resets this in-memory effect. Outpost use is deliberately restricted
+until its permitted/recharge/reset behavior is reviewed.
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Honeycomb.html SHA256 23d871e7f855fe07646ee7e442aaa7d9defd8cc4df6c234374f1c952d4c1495c
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Morale_boost.html SHA256 708a3ed814acdbccaf1f466b05e3a2a518736a7ed9775795800eb038834dcaf4
+C:/Users/CmonMeow/Desktop/gw/GWCA/ItemIDs.h SHA256 25ea3387bd4cb06525f9cc924bcff6f3f1f66474aac2b8ec40c80f1dd9c91d09
+
+Continuity ownership
+
+Grant carries a session-owned shared Morale object, keyed internally by account
+and character tokens; the object itself contains only opaque world actor scope
+and percent. Expired bindings are pruned, bounded to4096, and fresh login clears
+future bindings for that account. Each world actor claims the state with instance,
+actor and generation. Honeycomb locks all current session states in pointer order
+through owned CAS and effect publication. Stale actors cannot publish or consume
+a new item after another world claims the state. Reconnect reuses its retained
+ticket state. Outpost/PvP reset occurs only when the new actor actually joins,
+not when a transfer ticket is issued or fails. Death does not silently discard
+morale; existing Deep Wound/dead capacity rules still prohibit resurrection by
+capacity changes. Automatic15percent death penalty is not added in this slice.
+
+Local Morale_boost.html line90 proves morale/DP remain until entering an outpost.
+Pinned gw_attributes.h request-instance table identifies1/4 activePvE; type2 is
+staging, correcting the initial whitelist. Honeycomb and Rainbow wiki descriptions
+do not establish outpost use permission. Generic Consumable.html town-sweet text
+is insufficient to prove these particular items� outpost effects. Outpost use
+remains explicitly unsupported pending actual observed acceptance/effect; this is
+not claimed as a verified retail prohibition. Rainbow collector table mentions a
+Mandragor Root Cake town-sweet description, not Rainbow�s own effect.
+
+Elixir of Valor extension
+Model21227 is pinned in GWCA ItemIDs.h. Local Elixir_of_Valor.html describes
+party-wide10percent morale, no instant skill recharge, and PvP exclusion.
+The exact-definition catalog now accepts this reviewed model alongside the two
+5percent items. Its typed plan applies10 rather than5 through the same ownership,
+revision, current party authority, continuity and atomic debit operation. No
+production definition is fabricated; model identity alone is still insufficient.
+Pumpkin Cookie is not accepted because Sweet Tooth progress must also be committed;
+Seal of the Dragon Empire is handled by the separately reviewed self/recharge plan below.
+Elixir_of_Valor.html SHA256 a565161c1f599897256014a8f1b239793cd41d01b9ea3ac4c02a048e3468cd61 (effect text line84).
+
+Seal of the Dragon Empire extension
+Model30211 is pinned in ItemIDs.h, but that file's party-wide comment is incorrect:
+Morale_boost.html line70 explicitly says user only. Seal_of_the_Dragon_Empire.html
+notes instant skill recharge and consumption denial at10percent morale. The typed
+reviewed plan gives only the user10percent and schedules native229 recharge through
+the existing audited Runtime::morale_boost method (ordinary cooldowns plus spent
+Resurrection Signet). The owning session drains a generation-scoped once-only flag
+before processing a skill request and before periodic update. Failed inventory CAS
+never schedules recharge, and other party members never receive it. An in-progress
+activation and aftercast remain intact; this clears recharge, not active casting.
+No Seal production definition is created. Exact reviewed catalog identity remains
+required. Pumpkin Cookie still requires durable Sweet Tooth progress transaction.
+Seal_of_the_Dragon_Empire.html SHA256 3143fe9a553cff0e6cd41d25e9ee5d58ce9320ec25a00ea69af8df7e442bd9e1; recharge notes line111. Morale_boost.html SHA above, user-only line70.

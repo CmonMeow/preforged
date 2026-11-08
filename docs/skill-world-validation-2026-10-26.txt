@@ -1,0 +1,24 @@
+Native Release validation, 2026-10-26, Selfless Spirit World stage
+
+Serialized build: server_host, selfless_spirit_world_test,
+chilblains_publication_test, progression_test. Focused CTest: 10/10 passed.
+Selfless Spirit fixed-capture and cost-window verifiers passed. Elemental
+Lord fixed-checkpoint exact-wire verifier passed. No official client action.
+
+SHA256 bin/server_host.exe:
+F96E6B1F9E86B567261AE7A5488A81BAD109C1F0F36FA883995D8F6742340113
+SHA256 src/runtime/gw_progression.h:
+9B19BBE00F5161AEEC9E5A18B5B634E8CA8351D8F11F8B0F2DD24E8C369B39E5
+SHA256 src/runtime/gw_world_simulation.h:
+AC5CF1CF2B6B6820898C2C6CB78506EAED1657FD9E55FCF2D5EF62B909397291
+SHA256 src/runtime/gw_world_selfless_spirit.inl:
+5C176F8E62640595FEAE2A11E92663FC1BC6DA93AF6D14AB91B200E4AEA2D4E0
+SHA256 src/runtime/gw_world_chilblains.inl:
+B4B434595A2A7ABB2663A462653665CCF527A903A0A6BDBEE8A1E59C5B9A77BA
+SHA256 build/tests/selfless_spirit_world_test.exe:
+4E708B53A8DE31AB6BE5A4868EBAED5619916CAB8E71FA83C28BC5A7ACA9F0DA
+
+Selfless Spirit's World effect application is wired. Its normal client cast
+and every Energy payment branch remain unbound, so no skill coverage is
+claimed. Elemental Lord remains unbound because the captured healing
+arithmetic is not isolated. Tests do not prove client rendering.

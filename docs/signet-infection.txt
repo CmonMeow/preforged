@@ -1,0 +1,86 @@
+Signet of Infection 2229 — rank and animation evidence, 2026-10-24
+
+CURRENT SOURCE BINDING (2026-10-24): The native server now admits the learned
+PvE signet through the ordinary paid cast path, snapshots the authoritative
+Ebon Vanguard title rank at start, and commits the rank-scaled Disease effect
+at completion only if the scoped foe is Bleeding. Player and NPC immunity and
+stale scopes are covered. The fixed local 2022 casts include the caster1945
+body, and the new cast regression verifies exactly one such body packet and a
+10s recharge packet. The server_host Release build, six focused/neighbor CTest
+suites, 12 coverage-audit unit tests, pinned native verifier, and new immutable
+20261024-signet-infection-bound checkpoint audit pass. That checkpoint has679
+locally activated baseline skills,368 source-bound,311 awaiting binding and650
+without local activation. Earlier "unbound" notes below are historical.
+Rendered-client pixels/sound, exact retail timing when Bleeding ends during
+the cast, and broader NPC-caster coverage remain unverified. No official
+client or logger was stopped or restarted.
+
+Tested SHA-256: gw_progression.h C45CC0DB9A2041066060DBC08465AE6AD726C9D5B2BF811C72C76FD56E3403E2;
+gw_condition_spells.h E86F11C9668588EFF72D1FC24F58E4D301356C21BB3B5548D2A0343DF2201E1C;
+gw_world_simulation.h 9061F948C69B1E37B0D72574D78921F0CE33E3118A7E98EB83746782B99A8977;
+gw_skill_casting.h 355093C4FC77423C587273C7432206880A17603453A5B3A25BF64D001CB860A7;
+gw_auth.cpp 9318F30F816D83845EAD800970425B478C9022181C195611278F5413C8C2A34F;
+signet_infection_world.cpp 01E00539758C9F3B663D11C80A04BD4FE6945F7B15BBE6AC7D663053B77E6DE3;
+server_host.exe E2B6F861FBE33FBF4B6B72773B3DE3647EE9C517E504B215DBD094195AD583B4.
+
+The immutable 20261024-signet-sorrow-bound checkpoint has two local cast and
+finish pairs in packets-19472-19186421.jsonl at lines 425167..425179 and
+425849..425865. Both completions include caster body resource 1945. The
+hash-verified verifier executes the original pinned-2022 targeted cast and
+body consumers, and confirms the native 1s activation, .75s aftercast, 10s
+recharge and 1945 caster particle metadata. It does not establish that the
+target was Bleeding or that Disease was applied. Asset/model services are
+stubbed, so rendered pixels and sound remain unverified.
+
+The saved pre-Reforged wiki gives Ebon Vanguard ranks 0..10 durations
+13,14,16,17,19,20,20,20,20,20,20 seconds and requires a Bleeding foe.
+The native row's attribute 51 is a title marker, not an allocated profession
+attribute. gw_condition_spells.h now contains a rank-aware immutable plan and
+a bleeding-at-completion predicate. It validates the pinned row; it does not
+feed an invented rank through the ordinary attribute array.
+
+Normal casting and World Disease application remain unsupported. Before
+binding, Runtime needs an authoritative Ebon Vanguard rank from the current
+character progression profile; World needs a Bleeding check at completion,
+exact scoped hostile recipient validation, disease immunity/creature-type
+handling and disease credit. Then test successful and unsuccessful player/NPC
+targets, expiry, rank changes between start and completion, resource/recharge
+events, native body ordering and rendered client acceptance. No skill binding
+or backlog count changed. The official client and loggers were untouched.
+
+Progression update (2026-10-24): gw_progression.h now resolves Ebon Vanguard
+from TitleID 40's current earned tier, independently of the displayed title.
+An absent track returns rank 0; an invalid rank reference or out-of-range tier
+is rejected. The focused Release progression test passes. Runtime is not yet
+wired to this lookup, so 2229 remains unbound.
+
+World update (2026-10-24): a separate validated signet condition plan now
+uses the rank-derived duration and requires the selected foe to be Bleeding
+at completion. World handles player and NPC recipients, rejects stale scopes,
+checks NPC flesh/Disease immunity, applies Disease only on eligible targets,
+and records NPC Disease credit when the condition is renewed. An unbled or
+immune foe consumes the otherwise valid cast with no Disease. The dedicated
+signet_infection_world, existing condition_spells and captured_skills Release
+tests pass. The large captured_skills regression needed an 8 MiB Windows test
+stack to avoid its existing monolithic main overflowing the default stack.
+Runtime admission is still disabled: title rank has not been snapshotted at
+cast start, and no native 2022 cast-to-effect integration or rendered-client
+verification has been completed. The source-binding count remains unchanged.
+
+Tested SHA-256: gw_condition_spells.h E86F11C9668588EFF72D1FC24F58E4D301356C21BB3B5548D2A0343DF2201E1C;
+gw_world_simulation.h 9061F948C69B1E37B0D72574D78921F0CE33E3118A7E98EB83746782B99A8977;
+signet_infection_world.cpp 99E19E6929FB0BCABABEA3485E597C81B4DF937FD3BAE4DB20301A5DBF2DAC2F;
+signet_infection_world_test.exe BD12C3F540D6FA938A4B2EE4EA64587F3CD21CA7E61E3D3443B4535256A505AB.
+
+Validation: fresh Release condition_spells CTest passes all title ranks and
+Bleeding boundaries. Serial Release server_host build passes; runtime coverage
+still marks 2229 unsupported. Hash-pinned native verifier passes both casts.
+
+SHA-256:
+  frozen packet file 3AD1E5C22B193F7F980BDDABF6027E860C4381C38859377FAF42C81100937DFB
+  saved wiki 232469C040925AFFA77B32D6812A6C1F11CB59B68496CC431F7FBA9B0A9693B4
+  pinned 2022 client A6FB3C51A52EC5528156B690DC63B4BA51C4B95690D15877D5B49FC3C7DC57AC
+  gw_condition_spells.h B74E6DEE704EABA3A02E7CC72B2FB4880FFFBA06F1FA15281CFF3C664E7504F8
+  condition_spells.cpp C82806D49700E8BFF2DF5B10A1B9212DE1236EB387810BF9A4D37D5753A3F00A
+  signet_infection_2022.py 969AE2511ADF0594FF56CC05358B32758404C04633402112CD48156F982FE513
+  server_host.exe 440BB5A88FB4EF366745E42E5FC521FC89F5097082C03F060E6422179A44027F

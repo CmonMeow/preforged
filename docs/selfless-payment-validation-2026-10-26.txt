@@ -1,0 +1,46 @@
+Selfless Spirit native payment integration receipt, 2026-10-26
+
+Serialized MSVC Release build (--parallel 1): server_host and all added
+Selfless payment tests built. CTest regex selfless_(spirit|target|runtime):
+9/9 passed. Separate reactive test covers both aliases, ordinary/Overcast/
+typed glyph payments, PvE/PvP Mind Wrack exact-zero, lethal cleanup, lease
+replay, and zero-cost floor. Separate NPC test covers allied, hostile and
+retired scopes in those three payment routes. The Runtime semantic-target
+test covers legacy ally heals, condition/hex removal and self/party negatives.
+Six neighboring suites (generic casting, Mind Wrack resource and interrupt,
+elemental glyph payment, Chilblains and Divine Spirit payment) also passed.
+Frozen capture verifiers selfless_spirit_capture_2022.py and
+selfless_spirit_cost_windows_2022.py passed in the preceding host build turn.
+No official client action or rendered private-client verification occurred.
+
+Later isolated private-client attempt: launched bin/server_host.exe PID71188
+and bin/client/Gw.exe PID60432, after confirming no Guild Wars processes were
+running. The client reached auth hello, then the host logged an auth deadline;
+no character or skill cast occurred. The GDI screenshot helper returned a
+blank surface, so this attempt cannot establish rendered behavior. Both
+processes were stopped by verified PID and absolute executable path. No
+official client was launched or touched.
+
+Second isolated attempt used host PID50400 and private client PID57044. The
+existing path-verified private control helper refused to send login input
+because the client could not acquire foreground. This corroborates that the
+desktop session cannot provide a trustworthy UI test now. Both exact-path
+verified processes were stopped; official clients remained untouched.
+The private control helper now rejects uniform screenshot pixels and removes
+the stale image rather than leaving a false visual receipt; its PowerShell
+syntax check passed. This does not repair the unavailable desktop foreground.
+
+SHA256 bin/server_host.exe:
+61C608B89455270D83C051ABFD1A8C27F68A00A329AC86419DBD3AE4BD4F7B1E
+SHA256 src/runtime/gw_skill_casting.h:
+56A811277D366BFF12D2EC575E1DC058CB0841B5E102A2A01E319E75E74DF95D
+SHA256 src/apps/gw_auth.cpp:
+8F290C5F26904244023D306E0E7390A2FFF0D82FD68BE3B9D787E5F9C04B5379
+SHA256 tests/selfless_spirit_reactive_payment.cpp:
+2E313CFD258BAC81949D2B4C3AB6F937C28505B78125651B1F49DBE056436E53
+SHA256 tests/selfless_spirit_npc_payment.cpp:
+1CB97255DFD06CB3FBEA184C365E83DF63451AAF51025FC01B10E85080ABA72D
+
+Published source-bound coverage remains unchanged. Native tests prove specific
+mechanics paths, while modifier order and actual 2022 client acceptance need
+stronger evidence before publication.

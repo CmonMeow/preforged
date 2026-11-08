@@ -1,0 +1,45 @@
+GHOSTMIRROR LIGHT [1741] — NATIVE CAST, WORLD HEALS AND CAPTURED VISUALS
+
+The pinned 2022 row identifies a Nightfall Ritualist Restoration Magic
+spell: 5 Energy, 1 second activation, 3 second recharge, other-ally target,
+15..90 Health across ranks and resources 1574 (caster) and 1575 (target).
+The archived local wiki describes a heal for the other ally and an equal
+heal for the caster only if a spirit is within earshot of the caster.
+
+The frozen 20261024 Domain/Citadel session has 389 timing-attributed starts.
+A separate hash-checked receipt audit finds 354 starts with a finish followed
+by caster1574 and target1575 packets for the same actor/target within two
+seconds. This is stronger animation packet evidence than the row alone, but
+the join has no cast ID and cannot prove the client rendered the visual or
+that Health increased. The remaining 35 starts are unresolved, not failed.
+Actor-name bracketing found names for all 389 starts; it cannot prove those
+actors' player, hero or monster ownership. The fixed obtainable-player
+checkpoint still has no local1741 activation, so Ghostmirror Light correctly
+remains on MISSING-CAPTURES.txt despite the mixed-source Domain evidence.
+
+The native Runtime now admits a learned1741, charges 5 Energy, validates the
+scoped other-ally target at start and finish, and calls a World transaction.
+World heals an allied player or explicitly healable allied NPC and, only when
+a typed living spirit is near the caster, heals the caster. An unidentified
+nearby creature makes the spirit query unknown and rejects the effect.
+Health packets are deferred until after native finish/recharge, caster1574
+and target1575. Normal cancellation and recycled target scopes do not stage
+the effect. Ten related CTests (Ghostmirror, Mend, Spirit Light and Gift), serial
+Release host build, fixed checkpoint audit and coverage report pass.
+
+The 1012-unit earshot is a private-server convention; retail boundary and
+NPC casting AI remain unverified. These native tests verify emitted packets,
+not Guild Wars 2022 rendering. Official client/loggers were untouched.
+
+SHA-256:
+  src/runtime/gw_ghostmirror_light.h 786406B4A9C8B2EB7BBFF41BA84E28A5E6E32A1F2F01DCFB96A3259873DCFF5B
+  src/runtime/gw_world_ghostmirror_light.inl 61D364864F1E1F786F120F60812B1B09DB1F6FD7025FBCDBA18EB50B214EE0C7
+  src/runtime/gw_skill_casting.h 36369BB94C5F1FE13DA1612F8E0C6B9ADC05A8B0CD7CCA8CD08015FE1173B09E
+  src/runtime/gw_world_simulation.h 7BEF5F27B629D710419A18ABE1B2326A141ED57B15C9D2F40866CB826D4BE427
+  src/apps/gw_auth.cpp 2C79A2A2E183D9B3D574668D76757AA4E63798B19D7D6D67800897EE56AE94AB
+  tests/ghostmirror_light_cast.cpp D1562888310F8E6BCD95BA0FE314316B7136FC8298F33D848E5CC1E7CF554C85
+  build/tests/ghostmirror_light_cast_test.exe 315C4C6792E0DD4D08E806640603CA1FB87D84BCB7ACB98674EC1549EC501143
+  bin/server_host.exe 2237F8D002BD53A08681B965928749BE062C9B4B863607E43169A6CF4AEE675F
+  tools/skills/audit_ghostmirror_light_capture.py 1C7580D2C28C8613735ACE4DF369786728DF3B98F095934DA1413F443AFA9EDB
+  build/reports/ghostmirror-light-doa-20261025.json B78A2486BA1D88397EBC372CB4B2308D53251530E187688E55C7F27EC0363643
+  build/reports/doa-skill-gaps-20261025.json 08F72901F6BDED9AB63F7FE79A15F858D5B1D4CA2633F543D3ABF6AFD0A02B33

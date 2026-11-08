@@ -1,0 +1,38 @@
+Precise Energy rewards / Drain Delusions prerequisite
+=====================================================
+Kernel:src/runtime/gw_overcast_settlement.h prepare_gain_units accepts the
+existing1/300000-Energy grid directly. Existing prepare_gain remains a whole-
+point wrapper through the same implementation. Resource settlement,debt first,
+positive ceiling,optional skill reward ceiling,Overcast recovery and fractional
+tails retain one projection. Requested uint64 units are capped before narrowing,
+so oversized gains cannot wrap into a negative amount. This is not a client API;
+calling skill transactions still own authorization/replay and resource causality.
+
+New tests/precise_energy_transfer.cpp demonstrates2.5Energy drained to zero at
+4x gives10 exactly while retaining caster's.25 tail. It covers full-cost rejection
+versus drain-to-zero,negative fractional debt including a one-unit tail,skill cap,
+ordinary regeneration before the event,Overcast's fractional opening99units,
+UINT64_MAX saturation,five fixed whole-point compatibility cases,1000 one-unit
+rewards without drift,and dead/stale/time/tail rejection. These tests demonstrate
+simulation arithmetic,not a retail measurement of fractional Drain Delusions.
+
+Drain Delusions1337 remains UNBOUND. Native row indicates5Energy,.25s cast,.75s
+aftercast,12s recharge,1..5 loss and4x multiplier,target body49. Archived
+Drain_Delusions.html requires one Mesmer hex removal and reward from actual
+Energy lost. Fixed20261017-npc-refresh-2 captures one local activation at
+packets-1360-15821281.jsonl32507 tick16494406 and completion32513 tick16494687.
+Those records alone do not establish fractional reward notification rounding.
+
+Remaining before binding1337:canonical plan;same-transaction newest Mesmer hex
+selection/removal,end reactions and current lifetime revalidation;actual precise
+player/NPC loss;caster debt/cap/Overcast gain;Mind Wrack ordering/death;unknown NPC
+Energy/hex semantics;Runtime/hook/production wiring;cancel/target/control tests;
+immutable packet/native cast/body verification;rendered acceptance. Existing
+integer drain skills have independent review gaps and are not silently changed
+by this arithmetic prerequisite. No source coverage increase is claimed here.
+
+Native evidence now verified:tools/protocol/drain_delusions_2022.py checks frozen receipt32507,32512..32514,32518..32520 against manifest SHA and executes original2022.25s cast/target49 consumers. Integer notifications show target-1,caster+4,with.08 normalized caster gain,and12s recharge. Report build/reports/drain-delusions-native-2022.json pins packet/client/wiki/tool hashes. This supersedes native consumer/receipt verification as a pending step above;fractional notification rounding and rendered QA remain open. No process/network used by verifier.
+
+Validation:six freshly rebuilt native suites pass(precise_energy_transfer,overcast_settlement,energy_ceiling_gain,endurance_resources_world,debilitating_shot,mind_wrack_resource_events),69 tooling tests,native verifier and Release host pass.274source-bound/359pending remains unchanged,including1337 unbound. Current fixed checkpoint republished with new source hashes;latest hunting list and official logging untouched.
+
+Superseding integration status:Drain Delusions1337 is now source-bound through canonical plan,World player/reviewed-NPC removal/precise loss and reward,Mind Wrack ordering and Runtime/production hooks. Six rebuilt native suites,69 tools,native verifier and Release host pass. See docs/drain-delusions.txt for exact supported cases and remaining gaps;older UNBOUND/prerequisite-only notes describe the previous stage. Fixed source coverage275bound/358pending.

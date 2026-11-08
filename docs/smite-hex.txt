@@ -1,0 +1,35 @@
+Smite Hex302
+============
+Pinned2022 metadata:Monk,Smiting Prayers14,Spell5,5Energy,1s activation,
+.75s aftercast,12s recharge,10..85 damage at0..15 (110 at20).
+Caster2077 is a no-effect sentinel;target body536 is real.
+
+Frozen20261017-npc-refresh-2 packets-1360-15821281.jsonl:
+274756 tick21299343 self60 skill302;
+274764 tick21300375 recharge12;
+274765 success58;
+274766 self body21 resource536.
+tools/protocol/smite_hex_2022.py hash-checks the original snapshot and executes
+the pinned2022 cast/success/body consumers. Original cast action25/style50/1s
+and effect536 resolve to the selected actor.1032ms is batching,not extra delay.
+No causal hex-removal,area-damage or Divine Favor observation is inferred.
+
+Shared Shatter transaction now accepts a strictly revalidated Smite plan:
+current living ally,scope/range/plane/line check,newest hex of any profession,
+conditional322 area against current foes.322 is the project's in-the-area
+convention from the archived wiki,not derived from this self-use receipt.
+Holy damage uses independently reviewed NPC light sensitivity and player holy
+equipment traits/bonus. Unknown selected damage facts reject before removal.
+Non-Holy Shatter plans retain their prior behavior.
+
+Divine Favor uses actual primary-Monk authority and3.2-per-rank rounded healing,
+even on a valid unhexed ally. It passes through current healing modifiers/cap.
+NPC healing eligibility remains explicit. Primary removal/healing and area
+damage are preflighted under the World lock;remaining target lifetime checks and
+normal cast cancellation/interrupt/recharge are shared Runtime behavior.
+Effect536 is published once,including an unhexed self use,matching the capture.
+
+Open:rendered client QA,NPC casters,retail removal/Divine Favor/damage ordering,
+exact radius calibration and an allied-NPC hex-producing source for integrated
+removal+Divine Favor tests. This is not proof of all Monk skills.
+Validation:Smite Hex and both Shatter native suites pass after fixture corrections;69 tooling tests,native verifier and Release host pass. Fixed backlog264source-bound/369pending. Known NPC healing immunity skips DF;unknown healing eligibility rejects before removal.

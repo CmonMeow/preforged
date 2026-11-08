@@ -1,0 +1,42 @@
+HOLY STRIKE312 — 2026-10-17
+
+The reviewed holy-damage dispatcher now includes Holy Strike against NPCs with
+known holy vulnerability. Native type10 (skill), Smiting Prayers14,5Energy,
+.75s activation,8s recharge,10..55 base/bonus at ranks0..15, touch range144.
+At effect completion the authoritative NPC knockdown state is sampled. A down
+target receives an additional damage slice of the same magnitude; a lethal
+first slice stops processing. Both slices use existing holy vulnerability,
+protection and death handling. Armor is not required for holy damage. Unknown
+light sensitivity rejects rather than silently assuming ordinary vulnerability.
+Summoned status does not multiply Holy Strike; Banish's separate rule remains.
+
+The existing HolyPlan now carries the conditional bonus. Legacy Banish/Bane
+callers retain defaults. Holy completion returns deferred visuals so resource556
+is emitted after success58, and canceled/rejected casts discard it.
+
+EVIDENCE
+Fixed20261017-npc-refresh-2, packets-1360-15821281.jsonl:
+280087 activation,280096 completion,280097 targeted20/556; owner25,target30,map280.
+audit_holy_strike_checkpoint.py verifies manifest SHA256 and exact matching
+start/completion,8s recharge,556 and victim damage, including body-after-success.
+Report: build/reports/holy-strike-capture.json. Modern opcode numbers are kept
+as raw evidence; the shared2022 wire serializer supplies the older numbering.
+Native row312 agrees with resource556; caster2077 sentinel is not fabricated.
+Historical mechanics: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Holy_Strike.html
+
+VERIFICATION AND REMAINING WORK
+holy_strike_cast tests ranks0/12/20, ordinary/light-sensitive NPCs, no armor,
+touch-range rejection, knockdown present/gained during cast/expired before
+completion, separate slices, lethal first hit,5Energy payment, cancellation,
+interruption, stale target identity, deferred556, forged plans and no replay.
+The normal captured impact does not prove the bonus branch's retail packet
+sampling or two-slice protection ordering; the extra-slice policy follows the
+historical 'additional holy damage' description and needs a down-target capture.
+Player follow-up: reviewed ordinary-human equipment now admits player recipients;
+unknown equipment still rejects. See docs/player-holy-damage.txt for the
+inventory decoder, tests and remaining transformation/Tormentor gaps.
+NPC casters and rendered client acceptance are also unfinished. A source
+binding is not a claim that all recipients or visual behavior are complete.
+Official logging sessions were not controlled or interrupted.
+
+Validation: Release server_host rebuilt successfully. Three rebuilt suites pass: holy_strike_cast,holy_damage,signet_agony.49 skill tooling tests pass. Fixed source audit/publication:250 bound,383 awaiting,696 missing local capture.

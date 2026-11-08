@@ -1,0 +1,86 @@
+Mind Burn185 implementation and evidence (2026-10-17)
+
+Mechanics and evidence
+Pinned2022 row185 is an elite Fire Magic spell, cost5 Energy,5 Overcast,
+activation1s,aftercast0.75s,recharge5s;scale15..60 and bonus1..10. PvP link3433
+is the no-variant sentinel, so this implementation uses185 in both modes.
+Generated catalog SHA256e5ff533a1b8a0c222b9538f97719d3cc5a2c0d04c2a820a4c3f6a4e78baac7ff;
+pinned client SHA256a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+Local Mind_Burn.html revision2629704, SHA256
+55831e40ddd212089a5cd2731fe249d3ca37a6914c41f6437932811317083258,
+says selected foe and adjacent foes receive15..60 fire damage; bonus damage
+and burning1..10seconds require more Energy. Its explicit anomaly note says
+that condition is checked INDEPENDENTLY for each recipient. The base primary
+predicate therefore must not be copied to all secondary targets. Adjacent
+geometry uses the existing server166-unit convention. Exact geometry is not
+calibrated by the observed single-target capture.
+
+Captured local activation: checkpoint20261017-npc-refresh-2,
+packets-1360-15821281.jsonl SHA256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6:
+line157023/tick19060156 skill185 actor25->target30;
+line157034/tick19061171 completion58;
+line157035 modern160 type20,target30,caster25,body331;
+lines157037/38 two equal modern163 type16 target30,caster25 damage modifiers;
+lines157039/40 condition reaction modern159 type6 and modern241 target30 flags2.
+The fixed checkpoint audit records one local start and one completion.
+These packets support timing/two damage notifications/condition feedback on
+one target. They do not measure caster/recipient precise Energy, independent
+secondary-target comparisons, adjacency distance, immunity or rendering.
+The per-recipient anomaly comes from the explicit wiki note, not this capture.
+Modern packets must not be replayed directly to the2022 client.
+
+API and integration contract
+- mind_burn(185,rank) returns a canonical pinned plan, rank0..20 only.
+- mind_burn_target(plan,Actor,conditions,casterLevel,casterId,
+  optional casterEnergyUnits,optional recipientEnergyUnits,
+  optional burningAllowed,time) stages one recipient.
+- mind_burn_area(plan,casterScope,selectedScope,casterLevel,
+  optional casterEnergyUnits,contacts,time) stages the full adjacent batch.
+Each MindBurnContact carries its own generation-bound actor, conditions,
+precise Energy, completion-time position/plane, hostility and condition policy.
+
+World must settle caster payment/Overcast/debt/regeneration and each target's
+resources before taking authoritative signed300000-units/Energy snapshots.
+The comparison is strict greater-than, including fractions and negative debt.
+Unknown Energy rejects rather than silently providing only a base hit. World
+must validate caster/selected live generations, range/LoS and selected hostility
+at completion. The pure area helper centers on the current selected position,
+uses same-plane recipients and returns no partial proposals if required data
+for any in-area foe is missing. Out-of-area, allied, dead and cross-instance
+contacts are excluded; duplicate actor identities are rejected.
+
+Each qualifying recipient takes two separate armor-resolved hits; per-hit
+protection/reduction is not collapsed into a single doubled amount. Death on
+the first hit stops later hits; death on either hit suppresses burning for that
+recipient without suppressing independently eligible adjacent recipients.
+A living advantage recipient requires known condition admission. Known burning
+immunity suppresses burning only, preserving damage. The existing conditions
+state owns refresh/source retention and deadline checks; overflow rejects the
+staged batch. Damage and condition proposals remain separate for existing
+World commit/Fragility/death/attribution/publication machinery.
+
+Live integration
+World stages all mixed hostile same-plane recipients at completion, rejects
+unknown required in-area Energy/armor before damage, and preserves independent
+signed precise Energy comparisons after payment/Overcast/regeneration.
+Player and NPC damage, condition reactions and death attribution use existing
+authoritative commit paths. Unknown source/target generations and LOS/range
+failures do not apply the skill. Runtime admits scoped NPC targets without
+invented player Resources and pays5Energy/5Overcast once at activation.
+Cancellation, interruption and target loss prevent completion. Deferred impact
+body331 and damage packets follow native terminal58 in the completion batch.
+Condition feedback uses existing commits; full retail packet interleaving is
+still unverified.
+
+Tests/mind_burn_policy.cpp covers exact Energy comparisons, mixed-primary/splash
+advantages, separate hits, armor/protection, death, immunity/unknown inputs,
+burn refresh/overflow,166 boundary, scopes/duplicates and atomic rejection.
+Tests/mind_burn_world.cpp covers mixed player/NPC recipients, different Energy
+outcomes per recipient, allied/distant exclusion, unknown NPC Energy/armor
+nonmutation, player/NPC Runtime admission, payment, cancellation/interruption,
+stale target rejection, absent-hook refusal and success-before-impact ordering.
+Native tool tools/protocol/mind_burn_2022.py verifies immutable raw receipts,
+original1s/style51 cast consumer,target-body331 and success action22. Services
+are stubbed; no rendered QA or captured multi-recipient Energy comparison is
+claimed. That comparison is documented by the historical wiki.

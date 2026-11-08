@@ -1,0 +1,50 @@
+Screaming Shot1719
+==================
+Pinned2022 Ranger/Marksmanship25/BowAttack14:10Energy,zero fixed activation/
+aftercast,8s recharge,weapon requirement2;bonus damage10..25 and Bleeding5..20s
+at rank0..15 (rank20:+30damage/25s). Both2077body resources are sentinels.
+Local wiki Screaming_Shot.html revision2575420:Bleeding requires target within
+earshot. Existing project earshot1012and same-plane eligibility are used.
+Same-plane policy is not proof of retail cross-plane range behavior.
+
+Normal Runtime admission reconstructs guarded bow plan and uses existing paid
+weapon release and flight. At actual arrow impact, World samples current caster
+position and target position. Damage can land outside earshot;only Bleeding is
+conditional. Miss/block do not apply Bleeding. Lethal hits do not add conditions
+to corpses;known NPC immunity still allows the normal hit. Existing condition
+ownership,duration,expiry,publication and generation checks remain authoritative.
+
+Ordinary arrows share one observation frontier across next-deadline selection,
+fact checks and dispatch:arrival versus current scoped source/recipient Health,
+Energy,motion and attack-outcome clocks.908/909also preserve their known source
+bar frontier. An observed future clock defers a retained arrow until observation
+is legal rather than cancelling or stalling at the old arrival. Reused actor
+numbers contribute no clocks from their replacement lifetime. Other projectile
+queues are not included in this change and retain their separate boundaries.
+
+Offline verifier tools/protocol/screaming_shot_2022.py hashes fixed checkpoint
+20261022-cumulative-skills and pinned Gw_2022.exe;report is
+build/reports/screaming-shot-native-2022.json. Six frozen packets-1360 receipts:
+534452start27474437;534465recharge8/534467slot ack27475421;
+534906start27515671;534914recharge8/534916slot ack27516593.
+Three original attack-body runs verify style41/state45 with supplied weapon
+interval/modifier;original targeted-start serializer verified. The selected receipts
+contain no paired melee46finish;they do not establish impact earshot,condition,
+rank,damage or complete publication order. No2077FX is fabricated.500ms release/2500speed remain existing
+private policies,not calibrated retail animation/flight claims.
+
+Focused tests cover independent21rank values,1012boundary,player/NPC hits,
+miss/block,lethal/immunity,condition expiry,current source movement entering and
+leaving earshot after release,normal Runtime cost/cancel/interrupt/missing hook,
+8s recharge boundary,body sentinels and retained future-motion/resource clocks.
+Initial focused tests passed in Debug. Parent rebuilt both focused suites in
+Release and all seven focused/neighbor Release tests passed:screaming_shot,
+bow_self_disable,called_shot,concussion_shot,determined_shot_policy,
+projectile_attack_outcomes and projectile_miss_state. Native verifier passed.
+Serial Release host build passed;SHA256
+AAD79197D8BE59B7CFD2E346B7A1162FABAE4F44CF03F3023FDF3B2B3916E1D5.
+No live host deployment or rendered client test was performed.
+NPC caster loadout/AI,rendered/audio acceptance,retail condition-rounding/global
+condition interactions and full packet ordering remain unverified.
+Distracting Blow325 remains staged with its documented contact/area blockers;
+no325binding or inferred miss/block/scythe cardinality was added by this work.

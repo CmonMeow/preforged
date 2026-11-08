@@ -1,0 +1,40 @@
+Automatic health recovery integration, pinned2022 private server
+
+Evidence: local2021 Health_regeneration.html and Natural_regeneration.html.
+Automatic recovery max7pips, each2health/second. Combined regeneration and
+degeneration capped after addition at[-10,+10]. Negative external health
+regeneration prevents a quiet recovery window unless counterbalanced to>=0.
+
+Reset quiet timer on nonzero health loss (including sacrifice), attacks,
+targeting an enemy spell/signet, or being targeted by an enemy spell/signet.
+Targeting resets even when canceled. Zero-damage incoming attacks do not reset.
+Self healing, PBAoE spells (wiki explicitly names Shockwave), enemy shouts and
+well spells do not reset merely because activated. Damage inflicted by these
+skills still resets the damaged target's timer.
+
+Exact retail ramp thresholds are NOT established by the wiki: it says a few
+seconds initially and every few seconds thereafter. development_schedule is an
+explicit tunable approximation:1pip at5s, then one additional pip every3s,
+reaching7at23s. These values are server policy, not captured retail evidence.
+Replace Schedule thresholds after a timestamped official observation.
+
+State must be per actor lifetime and map instance. On world entry/revival start
+new State. Before any reset/removal/source mutation, integrate to currenttime.
+For each State.segments(now), feed segment.end and segment.pips together with
+other sources to existing health_regeneration::State.advance, which applies
+combined cap and handles source-expiry boundaries. Then State.commit(now), and
+only then State.record(Event,now) or State.inhibit(now).
+Never apply the final pip count retroactively to an entire delayed tick.
+
+Property44 uses native generic float descriptor161 for health regeneration.
+Energy audit proves43stat0/44stat1, capacity-normalized persecond resourcevalue.
+At full health, the displayed automatic contribution is zero. Skill-granted
+regeneration and condition degeneration remain represented. The quiet timer
+is preserved; losing health still performs its normal combat reset.
+Health pips therefore use2*pips/maxhealth as the wirefraction; send aftercapacity
+and whenever effective pips change. Dead actors show0. This packet is a display
+of server-authoritative recovery, never a substitute for updating actualhealth.
+
+Tests/passive_recovery.cpp checks threshold/lagged-tick integration, correct
+combat-reset exceptions, monotonic clocks, invalid schedules and overflow.
+Its3s/1s schedule is a fixture, deliberately not asserted retail timing.

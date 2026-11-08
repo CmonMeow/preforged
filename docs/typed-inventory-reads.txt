@@ -1,0 +1,26 @@
+Typed inventory/storage reads — 2026-10-09
+
+Character inventory and account storage now return validated native profile
+records directly through NetworkManager admission and Accounts SQLite reads.
+No production tab/hex requests/responses in these two reads. Ownership,
+account existence, positive stored revisions, profile kind validation and
+request expiry retained. Offline read adapters share the same implementation.
+
+Rebuilt network_lifecycle, inventory_accounts and accounts_lifecycle pass.
+Added direct Accounts checks for exact item definition/profile roundtrip,
+foreign character ownership, missing bank/account and deadlines. Existing
+inventory suite retains transfer, trade, identity and persistence coverage.
+
+Not deployed yet. Running host remains the previous verified faction-mutation
+build. Inventory saves, trade and storage transfers still require typed
+migration. Full build/deployment and actual inventory/bank UI verification are
+pending. This does not complete the overall architecture or gameplay goal.
+
+Deployed 2026-10-09: SHA256
+669335ea4f8e642a709c3202a96b49bd4215109c8e811e2ef8b4021842a943ac.
+All126 rebuilt CTest checks passed (28.86 seconds). Live client PID6184 passed
+login, map55 entry, keyboard and ground movement with zero native pose mismatch.
+Inventory opened successfully and displayed equipment, gold and backpack slots;
+client remained responsive. Screenshot typed-inventory-reads-live.png preserved.
+No claim of complete items or bank interaction: bank UI not tested this pass.
+Official client PID5604 preserved. Writes/transfers remain to migrate.

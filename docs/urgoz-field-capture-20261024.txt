@@ -1,0 +1,42 @@
+Urgoz's Warren field capture — fixed prefix, 2026-10-24
+
+Source: data/captures/field-sessions/20261024-urgoz-prefix/manifest.json.
+The snapshot copied complete-line prefixes of the official PID61244 packet and
+world logs without stopping either collector. It is separate from the
+20261024-signet-infection-bound skill implementation checkpoint. The later
+Domain of Anguish session may still be growing in the live originals.
+
+Map266 appears in four distinct instance epochs (10,20,22,25). The long epoch22
+session has NPC, quest, ground-item and loot observations. Across all visible
+map266 samples the world collector has 482 distinct (epoch, agent) NPC keys,
+including 228 with raw allegiance3 and 138 with raw allegiance4. These are
+visible actor observations, not fixed population or validated spawn tables.
+The captured names include Urgoz, Maddened Dredge variants, wardens, Brooding
+Thorns, Thorn Wolves, Greater Blood Drinkers and many spirits. Agents can be
+reused during a single instance, so a late name snapshot cannot label every
+earlier skill packet from the same numeric actor. Do not generate complete NPC
+skillbars from a static actor/name join.
+
+Urgoz is sampled as actor652/model3805 with raw allegiance3 immediately before
+and after five targeted cast starts of skill1307 (Forest's Binding); each start
+has a subsequent same-actor finish. The hash-checked receipt and exact packet
+and world lines are in build/reports/urgoz-boss-20261024.json. The local wiki
+identifies skill ID1307. The five target actor IDs are247,248,248,250,246.
+This proves use of that skill by the sampled boss, not its range, snare,
+enchantment removal, damage, exact AI timing or 2022 animation. The earlier
+monster hunt list's zero-sighting line is historical until a completed-session
+refresh; this field receipt must remain associated with its own cutoff.
+
+In epoch22, the logger recorded 278 loot notifications in map266 and 359
+distinct observed ground-item agents; 854 ground-item sample rows include
+repeated sightings. The log includes Halloween Trick-or-Treat Bag drops, so
+these item observations are seasonal and cannot define the ordinary loot table.
+Loot notifications provide reported source and item names, but some messages
+refer to hero-used items and lack a source agent ID. Ground snapshots expose
+no drop-source agent. Neither stream alone proves exact source/item pairing,
+drop chance or chest contents.
+
+The snapshot also reaches maps450 and474 in the Domain of Anguish region, but
+this review intentionally does not freeze or classify the continuing session
+beyond the fixed prefix. Official client and both live logger files were not
+modified or stopped for this review.

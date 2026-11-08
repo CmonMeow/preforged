@@ -1,0 +1,44 @@
+PLAYER HOLY DAMAGE — 2026-10-17
+
+Banish252, Bane Signet296 and Holy Strike312 now admit player recipients with
+reviewed ordinary-human equipment state. World retains generation-bound known
+holy traits and a separately reviewed flat holy vulnerability. Unknown state
+rejects. Same-team, stale/future clocks, plane, distance and navigation checks
+precede damage. Holy Strike samples knockdown at completion; Bane Signet uses
+the actual ordinary/melee attack interval for its knockdown. Each slice uses
+the current damage-protection path, flat vulnerability and death handling.
+
+Production refresh_energy_capacity publishes this state on equipment refresh.
+gw_player_holy_equipment.h recognizes authored basic armor plus the existing
+reviewed attribute/passive runes and Survivor/Radiant modifiers. Empty slots are
+unarmored. An opaque word, unreviewed captured armor, invalid profession/type,
+duplicate slot or unsupported modifier returns unknown and clears cached state.
+Appearance/model ID is never interpreted as a holy trait or upgrade identity.
+Ordinary authored human characters are not summoned/light-sensitive NPCs.
+Future transformations must supply or clear their authoritative trait state;
+this is not support for all transformed forms.
+
+TORMENTOR'S INSIGNIA
+The local historical Tormentor's_Insignia.html lists stacking global holy
+vulnerability:6chest,4legs,2each other piece (maximum16). The World reviewed-state
+API can receive that explicit aggregate, and tests verify a6point increase
+before protection on every slice. The inventory decoder now recognizes its
+native0x253003d8 word, owned upgrade application and per-piece armor+10.
+See docs/tormentor-holy-fields.txt for source identity and mixed-armor limits.
+Reference: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Tormentor's_Insignia.html
+Holy damage reference: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Holy_damage.html
+
+player_holy_damage covers reviewed/opaque gear, zero versus unknown bonus,
+all three skills at ranks0/12, armor-independent damage, flat vulnerability,
+Shielding Hands, knockdown, Bane versus an attacking player, team/range/lifetime,
+clearing, future clocks, forged plans and lethal hits. A paid Holy Strike Runtime
+cast verifies target556 after success; leave/rejoin cannot inherit prior traits.
+Existing NPC Holy Strike/Banish regression suites are also rebuilt and tested.
+
+Still open: rendered client acceptance, retail extra-slice sampling, mixed armor
+sampling, transformations and broader equipment/reactive effects.
+Periodic holy-field recipients now use this equipment state per pulse.
+No additional captured binding is
+claimed by extending these already-bound skills. Official logging untouched.
+
+Validation: Release server_host rebuilt successfully. player_holy_damage,holy_strike_cast,holy_damage3/3 pass;49 tooling tests pass. Fixed npc-refresh-2 source audit/publication:250 bound,383 awaiting,696 missing capture.

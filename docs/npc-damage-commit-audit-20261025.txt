@@ -1,0 +1,39 @@
+NPC DAMAGE COMMIT AUDIT — 2026-10-25
+
+Scope: src/runtime/gw_world_simulation.h at SHA-256
+0841959AA43598596906F5C77F8C97F82160B5E8ADD6E2982DDC8AFE64815613.
+This is a source-level audit of this header's LiveActor::apply_damage calls,
+not proof about every helper in the repository or rendered 2022 behavior.
+
+The central World.damage_npc_locked commits NPC Health and forwards positive
+actual Health loss into Bonds of Torment before death retirement. Calls that
+damage a copied/proposed NPC for validation and then commit through that
+central function include periodic pulses and Lightning Surge, lightning
+area/projectile spells, Whirlwind and elemental area spells, Mind Burn/Freeze/
+Shock, water hexes, Freezing Gust, Necrosis, Earthquake, Ear Bite, and Mind
+Wrack's reactive damage. The preflight copy is not itself a Bonds trigger.
+
+Live/direct commits found in this header have an explicit Bonds forwarding
+call after their accepted positive NPC Health loss: Soul Barbs, Conjure,
+Ignite Arrows, Keystone Signet, Cry of Frustration, damaging interrupts,
+Backfire, Shatter Enchantment, Unnatural Signet, Shatter Delusions, and
+Spiteful Spirit. The direct and central paths have focused tests in their
+skill suites; coupled bonded-recipient regressions specifically cover Soul
+Barbs, Backfire, Ignite Arrows, Keystone, Cry, Shatter Delusions, Unnatural
+Signet, Shatter Enchantment, and Spiteful Spirit. The Spiteful lethal case
+confirms actual remaining Health propagates before NPC retirement.
+
+Do not generalize this audit to damage from other headers, condition ticks,
+NPC-to-NPC recipients, autonomous monster AI, Hex Breaker reactions, or client
+visuals. Those remain separate verification/implementation gaps. The fixed
+Urgoz/DoA field capture in data/captures/field-sessions/20261024-urgoz-doa-
+completed was not modified.
+
+Validation: serial Release captured_skills_test rebuild against the World
+header above; CTest captured_skills passed1/1. Its SHA-256 source is
+5A39D8C28EF711425BEEA03FED6CA3CDE774FED501B4C5352E10F78519684889;
+the rebuilt test executable is
+ED31A0FCB1D4EC39CD8FF07A0E520A8B051F180D31E85079CD425EE22292E23E.
+The last serial Release server_host build from that unchanged World source is
+FB4D9D222CD6EF96B974275229A07DCE219F734C2BC1CFA9C60C96FFCB67C509.
+No official client or logger process was touched.

@@ -1,0 +1,263 @@
+INVENTORY SECTION: AUTHORITATIVE REQUIREMENTS AND EVIDENCE
+
+Scope: supported native2022 client. Local May2021 wiki under Desktop/gw/Wiki/
+wiki.guildwars.com/wiki is read-only reference. Mechanics from these pages are
+not proof of a raw protocol modifier ID. Native item decoder audit is separate.
+No item instances, ownership, upgrades, sale prices or captured provenance are
+invented by this rules helper. Every live mutation needs owned persistent items,
+transaction/CAS, atomic debit plus result, bounded wire and reconnect restore.
+
+Equipment/runes/insignias
+  Rune.html: armor suffix upgrades, profession runes only primary-profession
+  armor. One suffix slot per piece; replacement destroys prior upgrade unless
+  separately salvaged. Attribute bonuses same attribute strongest1/2/3, while
+  every equipped major(-35)/superior(-75) penalty stacks even redundant.
+  Rune_of_Vigor.html: strongest30/41/50 only. Rune_of_Vitae.html:+10 stacks.
+  Rune_of_Attunement.html:+2Energy stacks. Base ranks stay separate from gear.
+  Insignia.html: separate prefix slot; replacement overwrites prior component.
+  Survivor chest15/legs10/other5health; Radiant chest3/legs2/other1energy.
+  Armor.html: defense applies to struck body location; never sum five armor
+  ratings/conditional insignia into one global AR. Shield/global bonuses are
+  distinct. Conditional armor, absorption, headgear attribute choice, weapon
+  requirements, focus/shield, attack speed, weapon damage, energy pips and
+  customization need individually decoded semantic components and tests.
+  Helper gw_equipment_rules.h implements only explicitly listed static rules.
+  Raw ItemModifier identifier/arg1/arg2 must be proven before calling it.
+  Dreadnought_Insignia.html: Warrior-only +10 armor against elemental damage,
+  local to the worn piece. Exact modifier0xa53003f4 is named by pinned Toolbox
+  PriceCheckerModule.cpp:228 (commit ef3d3670d0d6343471341373680aafd9de911447,
+  SHA256 b8fe50e4683eaa4a0e9f4d9ba6caf31806b353e0caa8080740acca7cddd480a2).
+  Installation replaces only the insignia and preserves rune/opaque modifiers.
+  Per-location and uniform-armor providers now distinguish physical/elemental
+  insignia benefits. Dreadnought adds no Health/Energy or holy vulnerability.
+  Tests cover profession/duplicate rejection, atomic installation/replacement,
+  mixed chest-only protection, full-suit90 elemental/100physical Warrior armor,
+  persistence and actual weapon hits for all four elements plus physical across
+  all eight body-location buckets. No new captured item grant is fabricated.
+  Stalwart_Insignia.html: all professions, +10physical armor local to the worn
+  piece. Pinned Toolbox PriceCheckerModule.cpp:206 identifies0xa53003ce with
+  the same source hash above. The physical/elemental provider grants Stalwart
+  only on the physical channel, preserving existing profession base bonuses.
+  All ten profession tests cover installation, mixed/full suits and persistence;
+  Dreadnought replacement removes its elemental benefit instead of stacking.
+  Actual-hit tests exercise both insignias against four elements and physical
+  hits at all eight locations. Neither adds Health/Energy/holy vulnerability.
+
+Bags/storage
+  Bag.html: two equipped bags,5base slots. Nonempty bags cannot be unequipped,
+  traded or stored; nested nonempty containers impossible. Rune_of_Holding:
+  bag5->10 only. Superior_Rune_of_Holding: bag5/10->15. Rune_of_Belt_Holding:
+  belt5->10 only. None works on EquipmentPack/backpack/storage. Holding runes
+  cannot be salvaged back; invalid upgrade consumes nothing.
+  Equipment_Pack.html: sizes5/10/15/20, weapons/armor/costumes only, no equipment
+  customized for another character. Do not treat it as generic bag storage.
+  General move/split admission now checks native type1/index4 packs, including
+  both legs of swaps and shared storage-transfer proposals. Item categories
+  use local gw/GWCA/Constants.h ItemType (lines95-100): weapon/offhand classes,
+  five armor types, costume headpiece44 and costume45. Unknown types reject.
+  Synthetic tests in tests/inventory.cpp verify atomic rejection, allowed
+  categories, relocation persistence and bank-withdrawal admission. Pack
+  admission also uses explicit character context passed through inventory
+  and storage policies. Present-empty customization is uncustomized; absent
+  metadata is unknown and rejects pack admission. Nonempty owners must match
+  the current character. Unequip and displaced equipment swaps use the same
+  rule. Synthetic inventory/equipment tests cover owner, unknown metadata,
+  alternate-character withdrawals and both swap legs. Existing saved
+  profiles are not reclassified or silently repaired by this admission rule.
+  Ground pickup and trade now filter both empty capacity and merge targets
+  through the same pack admission. Existing allocation order is unchanged.
+  Pickup receives the session character name; trade reads both recipient names
+  within its database transaction, independently of caller offer data. Tests
+  cover material-only capacity and legacy invalid stacks, exact owner matching,
+  eligible gear, and atomic two-account database rejection/commit.
+  Equipment_Pack.html and official Game_updates/20090423.html establish the
+  item-category restriction. Reviewed native packet/lifecycle notes do not
+  establish an automatic-placement exclusion for packs. User feedback page
+  Feedback_User/Gwynna_Vive/Equipment_Pack.html describes weapons filling the
+  pack last; this is corroboration only, not native/official ordering proof.
+  Collector exchange applies shared admission to the finalized reward after
+  owner customization, for both merges and free slots, preserving allocation
+  order. Exact Brownlow pouch/egg tests reject pack-only capacity and legacy
+  egg merges without debit or persistence calls; Savich owner-customized armor
+  remains eligible. Later ordinary-bag placement retains exact trophy debit.
+  Xunlai account-shared bank entitlements, material stack slots and permissions
+  must remain separate from character bags. Atomic character+bank CAS must
+  prevent duplication, stale revisions, arbitrary tabs and container IDs.
+  UI container presentation IDs must never become owned durable items.
+  Trade admission rejects interaction0x100 in addition to existing restricted
+  classes and equipped/installed placement. This uses direct trade evidence:
+  pinned Toolbox InventoryItem.h:58 IsTradable and InventoryManager.cpp:2633
+  CanOfferToTrade, not an inference from the drop predicate. Header SHA256:
+  dfb638cbaf2a1b6db93a4cdc060d56208c7b4f9e9178c1d4cedaba993ee7b8b7.
+  Local Trade.html164ff documents nontransferable bonus/event possessions.
+  Shared offerable(profile,id) supports UI and final transaction admission;
+  customization alone remains tradable. Tests cover each participant, all
+  individual interaction bits, existing restrictions and atomic database
+  rejection preserving items, gold and inventory revisions on both sides.
+
+Dye
+  Installed-container dye eligibility is proven by original352->318 followed
+  by native4f22b0 in tools/protocol/dye_semantics_2022.py: local owner accepts,
+  foreign owner and interaction200 reject. Original352 color refresh preserves
+  the installed owning-bag links and slots without ordinary317 placement.
+  build/reports/dye-semantics-2022.json records15 offline synthetic cases.
+  Durable bag0 therefore resolves through its unique owned Bag.container link.
+  Bag.html192-195 requires single colors for containers. Both carried and
+  installed type3 targets reject mixtures, including a legacy multi-color vial.
+  Tests preserve installed identity, capacity, contents, vial debit and codec;
+  no rendered icon/asset behavior is inferred from these synthetic fixtures.
+  Dye.html: preview then Apply consumes actual dyes; Cancel consumes nothing.
+  Up to4vials, mixed use requires at least2different colors. Dye eligibility
+  differs by item; some nondyeable. Do not globally accept all modelIDs.
+  Bag.html: containers single-color only and changes inventory icon, not player
+  appearance. Dye data/modifier encoding must be native-proven; commit item
+  color + each vial debit atomically, publish owner inventory plus equipped
+  appearance only when relevant. Historical dyes do not stack with current.
+
+Celestial Sigil
+  Celestial_Sigil.html: trophy used through guild-hall purchase service, not
+  an armor upgrade or a generic use-heal. Nonstackable; post2013 cannot identify,
+  can salvage/sell. Legacy identity changes identify policy. Guild ownership,
+  leader permission/hall selection/payment belong in guild service transaction.
+  No immediate fake guildhall creation on item use.
+
+Identification/salvage
+  Identification_Kit.html/Salvage_Kit.html/Expert_Salvage_Kit.html: typed kit
+  uses, eligible item/identified state, actual modifiers/value and native dialog
+  sequences need audit. Basic versus upgrade extraction and destructive risk
+  must be explicit. No fabricated rare material/result distribution. Each
+  attempt debits one kit use and consumes/transforms target only in one owned
+  transaction. Perfect/retention probabilities need reviewed kit-specific data.
+
+Consume/equip/drop/pickup/gold
+  Typed consumable effects, durations, stacking, cooldowns and campaign/map
+  restrictions require reviewed definitions. Generic use cannot simply delete
+  arbitrary items or succeed without an effect. Actual equip moves must respect
+  type/slot/profession/requirements/customization and resource modifier changes.
+  Unequip requires available valid storage; do not overwrite occupied slots.
+  Drop debits durable inventory and creates explicit owned world item identity;
+  pickup reconciles world generation/range/ownership/quantity and capacity in
+  one transaction, preventing double pickup. Gold stack/drop and character/
+  bank maxima must be independently reviewed, never inferred from ordinary
+  item quantity. Prices cannot be inferred from trader supply/demand guesses.
+  Destroy needs genuine client confirmation semantics and durable removal.
+
+Completion gates
+  Every operation: real captured or intentionally provisioned private item,
+  correct native client request/response, ownership + stale generation checks,
+  invalid request no debit, CAS rollback, reconnect persistence, duplicate
+  replay resistance and private live UI proof. Tests/helpers alone do not
+  establish an end-to-end completed Inventory section. Current helper is not
+  yet bound to raw decoded upgrades or live equip state.
+
+Equipment proposal layer (new helper, pending core wiring)
+  gw_equipment_proposal.h requires trusted semantic Reviewed record keyed by
+  actual owned item. Native item type->slot mapping proven by pinned878380:
+  main0,offhand1,chest2,legs3,head4,feet5,hands6,costume7,costumehead8.
+  CMSG77 firstBYTE is equipment-slot selector, not itemID. Resolve actual owned
+  source from equipment bagtype2/index21. Equip occupied slot uses332old,
+  330new,equippedslot then317old,vacatedsource; no348deletion. Quantity/identity
+  unchanged; proposal preserves currentprofile until durable CAScommit.
+  Unknown semantic metadata, wrongprofession/customizedowner or unsupported
+  coupledhand semantics deny without mutation. Unequipoccupieddestination
+  conservatively denies. Two-handed displacement and4weaponsets326/327 remain.
+  IMPORTANT requirement deficit is currently conservatively denied; retail
+  permits underrequirement gear with reduced benefits. That fallback stat
+  behavior is not implemented, so this is a bounded subset not complete retail.
+  Native metadata audit:352alone lacks profession/customizedowner.345supplies
+  itemprofession (default11unknown);313supplies ownername. Do not inferthese
+  from inventoryname/model or generated private appearance.
+  Core integration must CAS proposedprofile, publish appearance/resource/stat
+  recomputation from reviewed modifiers, send313/345metadata and reconnect
+  initialization foractual owned equipment. Wireplacementalone is incomplete.
+  Equipment requirement correction: native audit/local Attribute_requirement
+  confirms belowrequirement items remain equippable. Proposal now accepts them
+  after metadata bounds; statprovider must compute reduced basebenefits. Earlier
+  conservative hardgate statement above is superseded. equipment_proposal_test
+  configured/built/PASS including conservation/selector/native occupiedswap.
+
+Raw modifier adapter progress
+  gw_item_modifiers.h retains everyrawDWORD; exactGWCAidentifier=highWORD,
+  arg1=middleBYTE,arg2=lowBYTE,arg=lowWORD. Native7c67b0 appends C0000000
+  itself. Capturedmemory requires one trailing sentinel stripped; wire rejects
+  sentinel anywhere, max64. This prevents captureadapter replay assertion.
+  Public source https://github.com/gwdevhub/GWToolboxpp/blob/
+  54333c43dc3e6817945dabb63113296ee0048e64/GWToolboxdll/Modules/InventoryItem.cpp
+  reviews2458uses(arg2),25E8kitkind(arg1)1identify/2expert/3basic/6perfect.
+  Adapter requires explicit uses and unambiguous kind, not fallback fake1use.
+  This source-level kit decoder is not native2022 kit use/asset proof; catalog
+  eligibility and effect/dialog transaction remain required before live use.
+  Attribute/rune/Vigor/insignia modifierIDs are still unknown;25220001 test
+  remains opaque. No model/nameclassification guesses or fabricatedpossessions.
+
+Authoritative equipment metadata provider
+  gw_equipment_metadata_provider.h exposes
+  equipment::metadata::reviewed(Profile const&,Definition const&)->optionalReviewed.
+  Looks up actualownedID and compares complete352encoding to defeat forged type,
+  quantity, rawmods or definitions under an existingID. Type-to-slot exactnative
+  mapping; twohandedinteraction200000 fromnative7c8f10 (weaponsets audit).
+  Profession must be explicit0..10; absent/11unknown denies. Customized metadata
+  must be explicit; absentunknown denies, presentempty means genuinely observed
+  nullowner. Native313ownerUTF16 converts safely toUTF8 for exactcharactername
+  comparison, preserving nonASCIIidentities and rejecting invalidsurrogates/NUL.
+  No armor/runemodel inference and no attribute-requirement equip gate.
+  Remaining blockers: actual capture/store profession and owner-null status,
+  initial313/345replay, immutablecatalog/proven rawmodifier→stat semantics,
+  body/equipment composite/dye appearance, fallbackstats on underrequirement,
+  authoritative resource/rank bonus resize, and live equip/reconnect validation.
+
+Raw stat decoder follow-up: source audit pinned ToolBox ef3d3670d0d6343471341373680aafd9de911447
+  Read-only sparse research checkout build/research/toolbox-modifiers.
+  ItemDrops.cpp PendingDrop constructor usesA7A8 minarg2/maxarg1,
+  24B8rawdamagekindarg1. gw_reviewed_item_stats.h implements onlythese
+  explicitfields; absentkind staysunknown, duplicates/invertedrangesdeny.
+  Tests use synthetic raw15..28 fixture, not fabricatedcaptureditem.
+  CONFLICT2798: ItemDrops requirementattributearg1/valuearg2low4,
+  GWMarketWindow attributearg2/valuearg1low4. Need pinnednativefield proof;
+  decoder leavesit opaque, doesnot select preferred guess.
+  PlaystyleRestrictionsWindow21E8lowarg2runeTier and27E9/27EAmajor/superiorVigor
+  provide hints on runeitems, not proof of equippedarmorstatdecoder/attributearg.
+  Stillunresolved: basearmor/health/energy;Vitae/Attunement IDs; attribute-ID
+  semantics andappliedrune/insigniarepresentation, conditionalbonuses/upkeep,
+  capturedresource/stataggregates. Theseareclearblockers, notfilledbydefaults.
+
+Transient bank+character transfer capacity fixed
+  gw_inventory Bounds enum durable(default512)/combined_transfer(1024), with
+  latter permitted only trusted storage_transfer move/split. Encode/decode and
+  partitioned result validation stay512 perownershipdomain. No fakebagindexes.
+  Native inventory_test passed608combined329char+279bank move and609split,
+  unchanged input identity/codec, finaldurable roundtrip, combined persistence
+  refusal anduntrusted combined permission denial. This is internal proposal
+  capacity only, not an account entitlement or physicalslot expansion.
+
+Offline captured inventory importer (tools/items/import.cpp)
+  Usage: items_import CAPTURE_JSONL CHARACTER_GUID ACCOUNT_GUID character|bank OUTPUT
+  Reads only a supplied file. Never opens a client, logs in, or writes the account
+  database. Account GUID is an explicit operator ownership binding, not account
+  ownership authenticated by the observation itself. Character GUID must match.
+  Exports the current native inventory codec plus an ownership sidecar; consumers
+  must independently enforce account/character ownership before any DB import.
+  Exact supported observer provenance is mandatory. Schema1 is rejected because
+  it omits four weapon-set pointers/active set and named352 fields. Schema2 needs
+  wire_unknown1, wire_dye, wire_materials, wire_unknown2 for each definition and
+  weapon_sets[{weapon,offhand} x4]/active_weapon_set for character snapshots.
+  No unknown values or set references are invented. Captured native modifier
+  terminator is stripped once through the audited adapter. Bag/item ownership,
+  references, bounds, metadata, and codec roundtrip are validated. Unsupported
+  material/unclaimed bags are outside this carrying/equipped or bank domain.
+  Nonzero container references without an owned placed container definition are
+  rejected; the present codec cannot represent an unplaced bag-container item.
+  No real input snapshot is presently available for an end-to-end import test.
+
+Installed bag-container evidence (original2022):
+  Callback7c45e0 takes318 containerID, looks up ItemContext.item_array[id],
+  calls7c77c0 with Item*. The initializer stores the pointer at Bag+0xC and
+  reverse-links Item+8 (bag_equipped); callback marks Item+0x40 bit4.
+  This is NOT an ordinary slot: no Item.bag/slot placement is assigned.
+  Observer schema2 now dereferences only an exact item-table member, verifies
+  bag_equipped equals that owned bag, bag is null, type3/quantity1; emits real
+  container_item ID and container_definition with complete observed fields.
+  Persistent optional placement should allow bag0/slot0 only for these referenced
+  container items; every other unplaced item remains denied. Publish352+345/313
+  BEFORE318, since318 resolves pointer once; publishing a missing352 afterwards
+  does not repair the bag link. Never publish317 for an installed container.

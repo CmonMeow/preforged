@@ -1,0 +1,40 @@
+MIXED ELEMENTAL ARMOR FOR WEAPON HITS — 2026-10-17
+
+Reviewed equipment now projects both physical and elemental armor location
+arrays. Base armor plus the independently reviewed physical/elemental bonus
+and recognized Tormentor piece bonus are kept separate. Warrior physical and
+Ranger elemental basic-armor bonuses therefore do not bleed into other kinds.
+The production equipment refresh publishes elemental locations after the scalar
+stats. Unreviewed pieces, invalid slots/types/professions and duplicate worn
+locations remain unknown.
+
+World stores distinct earth/lightning/fire/cold location states. The current
+equipment provider's generic elemental rating initializes all four; individual
+element-specific unknown upgrades have not thereby been decoded. A typed scalar
+update clears its corresponding location state so an explicit new rating cannot
+be shadowed by an older array. A scope-matched location update can clear all four.
+
+The shared weapon admission/contact path now recognizes these arrays. Actual
+elemental melee, physical-bow-category elemental arrows, and caster-weapon
+contacts use the same3/8chest,2/8legs,1/8other location weights as reviewed
+physical weapon hits. A physical array is never substituted for an elemental
+array. Unknown caster damage types remain unsupported. Typed scalar fallback
+still works when no location array exists. Armor-ignoring Conjure bonuses do
+not sample again or acquire armor dependence.
+
+mixed_elemental_weapon_armor checks all four elements/all eight buckets with
+melee,bow,staff and matching Conjures, physical/elemental separation, reviewed
+Warrior/Ranger armor bonuses, scope/bounds validation, clearing and explicit
+scalar replacement. Expectations use the closed-form20base weapon damage
+armor factor, separate armor-ignoring skill/Conjure bonuses and fixed buckets.
+No client input chooses the bucket. Default RNG timing/algorithm and skill
+exceptions still need retail comparison.
+
+Still unfinished: mixed-location elemental SPELL damage. Spell recipient paths
+continue requiring their reviewed scalar armor; no weapon sampling rule or
+average is silently assigned to spells. Also open: other opaque upgrades,
+transformed traits, broader reactive combinations and rendered client checks.
+No additional skill binding is claimed by correcting these existing paths.
+Official logging sessions were not controlled or interrupted.
+
+Validation: Release server_host rebuilt successfully. Seven rebuilt native suites pass: mixed_elemental_weapon_armor,mixed_weapon_armor,conjures_player_hits,conjures_melee_hits,elemental_mantras,tormentor_holy_fields,energy_regeneration.49 skill tooling tests and fixed source audit/publication pass;250bound/383awaiting/696missing.

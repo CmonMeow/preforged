@@ -1,0 +1,32 @@
+Elemental pursuit readiness — explicit development policy
+
+The existing elemental controller's hypothetical-range spell-selection probe
+also required paid readiness. An otherwise supported caster with no ordinary
+profile therefore made no new chase decision while Energy was insufficient,
+all skills recharged, or the projectile ledger had no admission capacity.
+
+The new fallback selects only movement geometry from the first authored book
+entry whose existing supported predicate has known target armor, required
+Overcast and disable observations. Actual in-range ready skills and an explicit
+ordinary fallback retain priority. The fallback does not reserve capacity, pay
+Energy, create a token, bypass recharge/aftercast, or manufacture an attack.
+Navigation, LOS approach, strict skill reach, leash and retained forward-route
+authority remain unchanged. Unknown book prerequisites still refuse movement.
+
+This is an authored private pursuit choice, not a captured retail threat,
+recharge, movement or skill-priority measurement. Captured actor capabilities
+and catalog skill plans remain unchanged; no NPC stats or roster enrollment
+are added. Explicit ordinary profiles remain optional and separately reviewed.
+
+New regression: tests/npc_elemental_pursuit_readiness_world.cpp. It checks
+empty-Energy pursuit without casts/payment/ordinary attacks; authored resource
+regeneration enabling real skill damage; return and subsequent idle movement;
+and missing armor/Overcast authority refusing chase until explicitly known.
+At creation this test is uncompiled; consult the subsequent coordinated native
+build/hash report for verification. No client/rendered/deployment claim.
+
+The larger fixed-decision scheduler and historical-input ingress remain open.
+This change improves supported poll-driven decisions; it does not replay missed
+combat/wander decisions or claim full coarse/fine AI equivalence.
+
+Coordinated verification: native pursuit readiness test passed; Succor NPC and Signet Sorrow consumers passed. Gateway compile-only passed with0errors/0warnings. Executable hashes: build/reports/npc-pursuit-succor-native-20261029.json. Source manifest: build/reports/necrotic-npc-source-hashes-20261029.json. No host relink or rendered verification.

@@ -1,0 +1,29 @@
+NPC enchantment-removal integration
+==================================
+Sources: src/runtime/gw_enchantment_removal.h; local archived wiki pages
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Rend_Enchantments.html
+and Strip_Enchantment.html. Strip steals once if any enchantment is removed;
+Rend costs caster Health per removed Monk enchantment, not per removal generally.
+Pinned 2022 native rows remain the scaling/activation/body authority.
+
+World admits player casts68,69,141,143,882 against hostile exact-lifetime NPCs.
+The only currently reviewed NPC enchantment ending is owned Ice Spear214
+regeneration. Entire selected removal set is preflighted before mutation, with
+conditional damage/life stealing preflighted against the post-removal actor.
+Unknown positive-status end semantics reject; no invented reward or partial strip.
+Rank-zero Strip removes nothing and steals nothing. Non-Monk214 gives no Rend
+Health loss. Strip's conditional helper is excluded from unconditional life-steal
+skill selection. Transfers use existing life-steal cap/overkill/Health-gain rules.
+No speculative whole NPC is restored after a causal callback.
+
+Tests: tests/signet_disenchantment.cpp drives real owned NPC214 casting, then
+all five removals at the same timestamp, with healthy and20-Health NPC variants.
+Checks conditional source gain, rank-zero no-op, damage/steal amount, lethal cases,
+stopped regeneration and exact targeted body emission. Existing player-removal
+suites cover multi-removal and Monk Health cost, plus Shielding Hands interactions.
+
+Gaps: other NPC enchantment end effects, actual NPC Monk-enchantment producers,
+mixed known/unknown multi-removal fixture, NPC casters, cross-effect retail reaction
+ordering, rendered client acceptance. This is not complete all-skill implementation.
+
+Validation: three freshly rebuilt native suites pass (signet_disenchantment, necromancer_enchantment_removal, enchantment_removal);69 skill tooling tests pass; Release server_host build passes. Fixed20261017-npc-refresh-2 audit/publish remains269source bindings/364awaiting binding,696missing baseline captures. These are coverage counts, not complete mechanics claims. Official clients/loggers untouched.

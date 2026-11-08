@@ -1,0 +1,24 @@
+Signet of Mystic Wrath [1689] source binding, 2026-10-24
+
+Fixed capture: data/captures/skill-checkpoints/20261024-signet-infection-bound.
+Packet file packets-1360-15821281.jsonl, lines 313594 (start), 313619
+(20-second slot timer), 313620 (finish), 313621 (target resource1658).
+The hash-pinned 2022 client consumer accepts the two-second cast and target
+particle. Run tools/protocol/mystic_wrath_2022.py; detailed receipts and
+hashes are in build/reports/mystic-wrath-native-2022.json.
+
+The server counts the caster's active enchantments at completion, then deals
+5+2*rank holy damage per enchantment, capped at 100 before reviewed target
+traits. Scoped World handles player and NPC foes, rejects stale targets and
+noncanonical plans, and emits the native target body. A normal paid Runtime
+cast was tested through the World callback. The rank formula and cap come
+from the local wiki and pinned skill metadata, not isolated packet damage.
+
+Validation: serial Release host/test build; 859/859 full CTest passed.
+server_host.exe SHA256 88DD655DCF7CA1F4A0E8B0298A75F40FB992A73FDFFBE6A5CE767ECE1C0202D4
+mystic_wrath_world_test.exe SHA256 163B823940200062AB74FC832830955E9C459D9C0FDB23197553BC93F79F7B18
+Full CTest report SHA256 4531CFBA376BF070E8EDBAF4F8FB0B5ECA5B5AD932798EB4C9251C946F395543.
+The World test includes a reviewed NPC catalog with both ordinary and
+light-sensitive targets, a forged NPC damage plan, and stale NPC lifetime.
+Rendered client acceptance and retail enchantment-count damage isolation
+remain open. This source binding is not a claim that every game skill works.

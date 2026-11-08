@@ -1,0 +1,124 @@
+Next captured NPC caster integration audit (2026-10-17)
+
+Reproducible output
+python tools/ai/audit_npc_combat_candidates.py --capture data/captures/world-8432-209740140.jsonl --wiki C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki --output build/reports/npc-caster-binding-candidates.json
+The tool reads immutable capture/wiki inputs and records exact line,actor,map,
+instance epoch,model,level,allegiance,pose,wiki revision and SHA256. It never
+modifies captures or attaches to any client/logger/process. The capture hash is
+aa354d883dd255006315f871eee992fd27f2d372e7562d38f50b740aaf1fbaa2.
+
+Strongest concrete candidates
+Mursaat Elementalist: line1507,map22,epoch64,actor42,model2293,level24;
+line1824,map24,epoch79,actor30,level24. Wiki oldid2579587 explicitly supplies
+Air15 and EnergyStorage15,Chain Lightning,Enervating Charge,Glyph of Concentration,
+Thunderclap,Spectral Agony; Lightning Orb is Hard-mode-only. These ranks are
+better grounded than guessed normal-mode Fire Magic for the current Flare NPC.
+
+Siege Ice Golem: line1824,map24,epoch79,actor25,model2707,level24. Wiki
+oldid2614143 supplies EnergyStorage15,Water12 normal/17 hard,Deep Freeze,Rust,
+Water Trident,Stun Immunity. The Sorrow's Furnace variant lists only Rust and
+Water Trident; no merged universal bar is justified. Native stun immunity can
+be reviewed independently of an unknown Energy pool. Capture difficulty still
+needs binding; captured level24 alone is not a trusted global mode flag.
+
+Charr Shaman: line2321,map28,epoch94,actor116; line3149,map13,epoch130,actor18;
+model1649,level7. Wiki oldid2554908 supplies normal Healing0/Smiting4 and
+Bane Signet,Banish,Heal Area,Infuse Health. This is a useful later support-AI
+slice,requiring allied NPC target selection/sacrifice/signets,not just hostile
+projectiles. Hard/Titan-quest variants differ.
+
+Charr Flame Wielder: line2967,map32,epoch121,actor34; line3149,map13,epoch130,
+actor19;model1644,level8. Wiki oldid2568315 lists Conjure Flame,Flare,Lava Font,
+but only supplies Fire16 for HARD mode. Applying that rank to these level8
+normal-looking observations would invent a fact. This candidate is NOT ready
+for the current driver without an independently reviewed normal Fire rank.
+
+All page hashes/revisions appear in the JSON audit,not filename-derived claims.
+None of these world observations carries NPC Health or Energy. Positions are
+explicitly flagged observed_positions_not_spawns. Monster.html redirects to
+Creature oldid2590376; it describes profession Energy as 'usually' and extra
+regeneration as 'generally'. Its SHA256 is
+67eac2a830baf7c4b6021164d2f3060ee75dfc5f204a14539beea5f534c5db65.
+That is not proof that this Mursaat has85 Energy or5 regeneration pips. No such
+numbers,full resources,respawns or patrol anchors were installed in production.
+
+Exact integration gaps and recommended next coding slice
+Auth currently calls instance.configure_npcs(npcs.for_map(map)) around1496.
+The reviewed NPC combat catalog binds identity/relation/resources but has no
+caster policy or reviewed skill-plan rows; Auth never calls configure_npc_flare_ai.
+Therefore passing the World tick regression does not enable an official NPC
+population. First add a provenance-gated optional AI content catalog,joined to
+the existing native appearance binding (map,actor,definition,model/skin,flags,
+appearance,level),not a display-name match. Require explicit spawn Health,
+Energy,maxEnergy,regen and plan ranks,plus distinct authored movement policy.
+Absent fields stay disabled; do not fill them from generic profession defaults.
+Use an explicitly authored private training population when measurements are
+missing rather than labeling an authored resource pool as captured retail data.
+
+Yes,the next controller should generalize to reviewed multi-skill loadouts.
+Replace FlarePolicy.fire_magic with immutable per-slot reviewed plans/ranks,
+and keep host-authored order explicit. Existing Spellbook::choose/eligible and
+World combined disable availability already provide actual cost/readiness and
+fallback. Do not create a second resource pool or prioritize by invented scores.
+Suggested ReviewedNpcCast contains Slot,plan variant,evidence and target class.
+PendingNpcCast must own token,target scope,paid action/event,plan/rank snapshot;
+an in-flight projectile must own its own target scope and plan,not the mutable
+controller's selected target. A bounded independent projectile queue is needed
+before overlapping casts/releases; the current one-shot flag gates new casts
+until impact. Limit/overload behavior must reject before payment.
+
+Best dispatch increment is Mursaat Enervating Charge and Chain Lightning using
+the documented Air15,or Siege Golem Rust/Water Trident with explicit mode.
+World's current lightning/water/hex APIs assume Player caster and Player-owned
+credit/resource structures. They cannot simply be invoked with a NPC actor ID.
+Extract NPC-source recipient/protection/condition/kill/provenance transactions
+before enabling those plans. Chain Lightning needs atomic primary/secondary
+recipients;Water Trident needs projectile knockdown immunity/protection;
+Rust needs NPC-caster hex ownership,expiry and activation/recharge interactions.
+All must reuse before_spell_effect_locked,actual Mind Wrack Energy settlement,
+control token finalization and native packet identity. A generic damage amount
+callback would bypass these rules and is not sufficient.
+
+Required next regression matrix: mixed bar first-slot disabled=>second usable;
+failed first effect does not double-pay another;exact copied-slot identity;
+source/target generation retirement;NPC Backfire death before effect;resource
+exhaustion/regeneration;target clocks ahead;movement/LOS changes during windup;
+one in-flight shot while next spell becomes eligible;queue bound before payment;
+same-event primary/secondary protection or condition refusal has no partial hits.
+
+Targeted future observational procedure (NOT executed)
+Use a separately authorized manual official session; leave existing official
+clients/loggers alone. Record map,instance epoch,mode,exact actor/model/level,
+all source skills/glyphs/effects,local attribute rank,armor and times. Capture
+NPC spawn/idle baseline and a continuous combat window including every cast,
+cancel,interrupt,resource-affecting effect and death. Never treat a remote memory
+Energy field of0 as a measured0 unless its synchronization is independently
+validated. Existing npc_observations cannot answer resource questions.
+
+For max Energy,controlled Energy loss without target damage can approach0;
+Mind Wrack provides a documented0-transition cue. Aneurysm then restores missing
+Energy and deals damage per point (Domination12 gives3). Its historical page
+SHA256 is0c4608b0cbcc463e9fe8c40823c6a30745bbb46704844c367120451f0c33850b.
+But do NOT divide one damage packet by3 and call that maximum Energy: regeneration
+during the cast means some Energy already returned;protective reductions,Overcast
+(explicit Aneurysm anomaly),integer rounding,lethal truncation or unknown damage
+normalization can invalidate that inference. Validate an absolute-damage channel
+or recorded numeric combat text; raw normalized health deltas alone are not
+absolute damage without independently known maximum Health.
+
+Repeat drained0->Aneurysm at multiple accurately timed delays and fit compatible
+integer maxima/regen rates,retaining uncertainty and fractional/rounding bounds.
+Discard windows containing NPC Energy use,gain,glyph discounts,Overcast,capacity
+change,protection or unobserved actions. For regeneration independently,start
+from Aneurysm's known full state,apply a reviewed known drain (Energy Burn's
+damage9 per point can audit actual drained amount),wait controlled intervals,
+then use Aneurysm to measure remaining deficit. Repeated delays bound pips;
+one sparse cast cadence does not prove regeneration or maximum capacity.
+
+For unknown normal Fire rank,record several clean Flare hits against a local
+player with reviewed Fire armor and no incoming damage/attribute modifiers.
+Compare pinned2022 rank candidates after actual source level/armor rounding;
+report all matching ranks until observations distinguish them. Prefer direct
+timed condition/hex duration evidence for rank when source effects do not alter
+duration. The known Mursaat/Golem wiki ranks can guide a hypothesis but must not
+turn a mismatching capture into a forced rank or erase difficulty variants.

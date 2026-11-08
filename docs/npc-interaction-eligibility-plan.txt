@@ -1,0 +1,43 @@
+Shared native NPC interaction eligibility: detached test/implementation plan
+
+Implementation and CMake registration now staged. New test source
+npc_interaction_eligibility.cpp exercises World API
+can_interact_npc(ownerScope,npcScope,now); coordinated build validation pending.
+
+World API plan, coordinated with AI ownership: one lock verifies exact current
+player/NPC scopes, rejects a future health clock, settles current player health,
+requires positive precise/current health, then reuses existing plane/range160
+and navigation reachability. The lookup nearby_npc_name keeps its current
+semantics for unrelated consumers. The native service app path uses this gate
+for panel opening, transaction admission and pre-CAS recheck across crafting,
+merchant and collector. Generic collector fallback must share the same gate.
+
+Detached test has live controls for all3 real native bindings, then invokes
+actual World::kill while retaining panel/range, proving name lookup alone is
+insufficient and admission must reject without inventory change. It also checks
+stale player/NPC generation, wrong instance, and earlier health clock. This is
+mechanics coverage, not a network harness or actual Accounts/CAS test.
+
+Still missing: a current negative-regeneration health settlement that kills
+exactly at interaction time; nav wall/plane/distance boundaries in this new
+specific test (existing shared navigation tests cover underlying geometry);
+The generic collector fallback dead-panel regression, durable inventory3
+craft/reconnect projection and equipped canonical-material denial are now added
+to this stage and await coordinated validation.
+
+Remaining transaction limits: World range/lifetime checks and SQL CAS are not
+one atomic distributed lock. Static Arthur does not move but other sources can
+change between released World checks and persistence. Avoid holding a World
+lock through account callbacks because those paths can re-enter World.
+
+Menu IDs remain connection-local16bit and shared between native services.
+Thirteen-item panels exhaust the pool after approximately425 openings; failure
+is closed until reconnect. They are not durable request nonces across a new
+authenticated connection. Current-opening snapshot/revision CAS and fresh IDs
+prevent duplicate commits within the admitted connection/opening contract.
+
+If transport fails after durable commit but before completion203, the item/gold
+change remains saved and reconnect reloads it. No rendered network-drop test
+currently proves the full UI recovery. There is no successful retail craft
+capture; original native controller, serializers and synthetic mechanics tests
+are distinct from that missing observation.

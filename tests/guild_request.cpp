@@ -1,0 +1,4 @@
+#include "gw_guild_request.h"
+#include <stdexcept>
+void check(bool b){if(!b)throw std::runtime_error("guild announcement request regression");}
+int main(){using namespace fw::gw;guild::AnnouncementRequest r;std::vector<uint8_t> p{188,0,0,0,0,0,4,0,'T',0,'e',0,'s',0,'t',0};check(guild::parse_announcement(p,r)==world::FrameState::complete&&r.body==u"Test"&&r.transaction==0&&r.consumed==16);for(size_t n=0;n<p.size();++n)check(guild::parse_announcement(std::span(p).first(n),r)==world::FrameState::incomplete);p.push_back(5);check(guild::parse_announcement(p,r)==world::FrameState::complete&&r.consumed==16);p.resize(8);p[6]=p[7]=0;check(guild::parse_announcement(p,r)==world::FrameState::complete&&r.body.empty());p[6]=0;p[7]=1;check(guild::parse_announcement(p,r)==world::FrameState::invalid);p={188,0,0,0,0,0,1,0,0,0};check(guild::parse_announcement(p,r)==world::FrameState::invalid);}

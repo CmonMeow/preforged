@@ -1,0 +1,66 @@
+NPC AI roster readiness audit, 2026-10-28
+Read-only source/data audit. This report enables no content or AI.
+
+No additional roster has fully measured Health, final armor and attack timing.
+The combat-enabled rosters below retain explicit private development values.
+Canonical data/gw/npc-combat.txt is relation-only and supplies no default Health.
+
+Safest incremental candidate: existing quest49 River Skale Brood
+  Map161, template20091, definition60, model_file82023, level4.
+  data/gw/quests/domination-magic-development-combat.txt
+  data/gw/quests/domination-magic-ai-development-policy.txt
+  docs/npc-brood-caster-activation-plan.txt
+  Captured Health100; final armor0 authored. Aura180 and IceSpear214 capability
+  comes from wiki plus same-profile packets, not the exact original quest actor.
+  Energy40/40, positive pips5, Water rank4 and initial Overcast0 are explicit
+  development policy; Aura Energy Storage0 is wiki-backed.
+  Already production-enrolled by arm_brood_caster, retaining owner/quest/cycle.
+  Bounded owned idle wandering could extend this actor without inventing stats;
+  it needs explicit activation and untriggered idle dispatch. Do not duplicate
+  it or apply this skillbook to arbitrary nearby actors sharing appearance.
+
+Already active, different mission: quest73 Experiment Ice Elemental Shards
+  Map161, templates20300..20311, definition7, model_file129706, level1.
+  data/gw/quests/experiment-wave-{1,2,3}-development-combat.txt
+  data/gw/quests/experiment-ai-development-policy.txt
+  Wiki Health80; armor0 authored. Captures support ordinary attacks against
+  guardian/player/summoned ally. Melee damage5/range128/period2000ms and movement
+  are authored. Production drives guardian assault plus bounded owner pursuit.
+  Replacing that mission with generic idle wandering would change quest logic.
+
+Not ready for automatic fighting enrollment
+  Quest81/map146 Mesmer-test skale, templates20020 onward:
+    mesmer-test-development-combat.txt; wiki Health35, armor0 and Energy40/40
+    plus pips5 authored. Missing bound attack profile, spellbook and ranks.
+  Quest43/map145 Blood Fanatics, templates20100..20103:
+    power-of-blood-development-combat.txt; captured Health120, armor0 authored.
+    Missing Vile Touch AI/rank/resource profile and ordinary attack profile.
+  Quest71/map146 Rogue Bull, template20081:
+    mesmer-burden-development-combat.txt; captured Health80, armor0 authored
+    despite wiki high-armor description. Missing ordinary attack/Bull's Charge
+    profile. Do not infer those from its name or level.
+  Quest42/map162 Plague Worms, templates21001..21005:
+    marksmanship-development-combat.txt; wiki Health80, armor0 authored.
+    Existing policy explicitly preserves immobility. Missing attack/burrow AI;
+    these must not receive wandering just because combat Health is present.
+  Quest37/map161 Tower Golem, template20200:
+    tower-development-combat.txt; Health100 and armor0 authored for objectives.
+    Missing attack profile and measured lightning weakness. Not an evidence-led
+    generic enemy enrollment candidate.
+  All abbreviated combat file paths above are under data/gw/quests/.
+
+Route evidence limits
+  Missing start/end nav cells, a missing route, unsupported layer transitions,
+  unavailable historical movement/ward observations, zero travel budget, and
+  valid route progress are distinct outcomes. A valid detour can initially
+  increase straight-line distance. A held action or absent clock observation
+  does not prove an unreachable foe. The current planar controller does not
+  traverse an intermediate layer merely because LayeredMesh finds a route.
+  Structured movement outcomes should precede any future retry/disengage
+  policy. No retail timeout, threat weights or group identity is recovered by
+  this audit; no teleport or collision/LOS bypass is justified.
+
+Verification boundary
+  Native AI regressions establish implementation behavior, including source
+  epochs, target lifetimes and geometric movement. They do not establish retail
+  tuning or rendered-client behavior. Official capture clients remain untouched.

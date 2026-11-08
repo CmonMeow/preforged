@@ -1,0 +1,90 @@
+Guild Wars 2022 exploration implementation
+=======================================
+
+The server reveals exploration from its authoritative player position after
+world entry, sampling every 200 ms. This interval is local server policy, not
+a measured ArenaNet update interval. It does not restore logout coordinates;
+map entry still uses the configured arrival point.
+
+For a map with a usable primary AreaInfo world rectangle and the original
+FFNA MAP_INFO bounds, the cell is:
+
+    cellX = floor((rect.left + (playerX - terrain.minX) / 96) / 32)
+    cellY = floor((rect.top  + (terrain.maxY - playerY) / 96) / 32)
+
+Y is inverted. One cell spans 3,072 game units on each axis. The map rectangle
+is extracted from the hash-pinned 2022 executable, rather than fitted from
+player routes. Terrain bounds come from the original map source bounds, not
+the bounding box of the walkable collision mesh. Nonfinite inputs, invalid
+rectangles/bounds and positions outside the continent grid are rejected.
+
+One reveal marks the center cell and its eight neighbors: a clipped 3-by-3
+square in the quantized grid. It is not a demonstrated circular radius.
+The client handler FUN_00793ce0 applies this same footprint and publishes the
+exploration UI update. At ordinary movement speed, 200-ms position samples
+cannot cross an entire 3,072-unit cell between samples.
+
+The continent determines the grid dimensions. These are extracted from the
+client's world-map dimension table. All entries, including maps without a
+reveal transform, restore the appropriate continent grid so opening the
+global world map preserves the client's texture/fog dimension invariant.
+
+The 2022 wire protocol uses:
+
+  138: uint16 opcode, uint32 width, uint32 height, uint32 compressedByteCount.
+  137: uint16 opcode, uint16 DWORDcount, DWORDcount words of compressed data.
+       Each chunk contains at most 64 DWORDs. Only the last chunk is padded
+       to a DWORD boundary; the byte count in 138 excludes this padding.
+  139: uint16 opcode, uint32 centerX, uint32 centerY.
+
+Restore data contains consecutive 16-row bands. Each band starts with a
+little-endian uint16 encoded-byte length, followed by alternating zero and
+one run lengths. The first zero run is encoded as its actual length; every
+subsequent run is encoded as length minus one. Byte 255 continues the same
+run; even an exact multiple of 255 ends with a zero byte. The next run flips
+the bit value. The retail serializer and decoder were checked independently.
+
+Native saves live under data/gw/character-settings/<account>/<character>/
+exploration-<continent>.bin. The little-endian format is uint32 magic EXP1
+(0x31505845), uint32 width, uint32 height, then width*height/32 uint32 words.
+Bit index is y*width+x, stored in word index/32 with mask 1<<(index%32).
+Characters and accounts have independent save paths; maps on the same
+continent share that character's progress.
+
+Writing OR-merges saved bits with the current session, writes a temporary
+file and replaces the destination atomically on Windows. It keeps another
+session's newly saved bits out of this session's in-memory mask: otherwise a
+later visit could incorrectly suppress the reveal packet to this client.
+Both sessions' progress is preserved on disk and reconnect restores the union.
+
+A missing save begins empty. Malformed saves are preserved with a unique
+.corrupt-* suffix before a new save is written. Unreadable files and other
+storage failures are logged explicitly; that session continues to reveal
+exploration in memory with persistence disabled, without overwriting the
+unreadable file or disconnecting the player. A later reconnect retries storage.
+
+Primary exploration rectangles are usable in 323 of 393 prepared maps.
+The other 70 do not receive fabricated position-based reveal coordinates.
+Some have alternate rectangles used in observer mode; these must not be used
+as a fallback for ordinary play. Guild hall 360 has zero primary/alternate
+rectangles, but its compass loads texture 167915 locally. Its 224-by-288
+local UI rectangle and +/-4500 texture cache are visual texture management,
+not a separate persistent fog grid. Keep continent 3's 64-by-128 restore for
+the global world map and omit 139 position marks there. Do not substitute
+another guild-hall map's flags or invent local exploration dimensions.
+
+Regression coverage is tests/exploration.cpp. It checks the conversion,
+clipping/idempotence, compression boundaries, an independent decoder,
+concurrent sessions, character isolation, corrupt-save preservation and I/O
+failure handling. Live private-client inspection matched 30 cells in map163
+and 73 cells after reconnect in map57 with zero differing bits. A deliberately
+locked save did not prevent world entry; releasing the lock and reconnecting
+restored the original 73 cells exactly. Reports are under build/reports.
+
+Production files: src/runtime/gw_exploration.h, the generated rectangle and
+dimension headers, and the world-session loop in src/apps/gw_auth.cpp.
+Extraction tools: tools/protocol/extract_exploration_rects.py and
+extract_world_map_dimensions.py. Exact reverse-engineering addresses and
+custom-map branches are documented in tools/protocol/exploration-findings.txt.
+The old official exploration logger and raw captures are no longer required
+by this implementation. The NPC/map position logger is separate.

@@ -1,0 +1,25 @@
+Monk84 escort owner readiness -- 2026-10-30
+
+The native escort controller previously checked the owner's scoped lifetime
+but accepted its retained pose while that player was dead or had not completed
+NPC publication. Already accepted Gwen routes checked the same lifetime/cycle
+without owner readiness and continued toward that pose.
+
+Bounded private policy: only a living owner ready for NPC publication may
+discover Gwen, drive a follow route, or pass spatial arrival. Existing escort
+motion is retired through the shared validity path while its owner is unready,
+using the existing movement-stop packet. The objective remains in its current
+state, so returning to readiness resumes the same cycle without recreating
+blockers, losing completion, granting reward, or manufacturing quest failure.
+Existing participant lifetime, NPC death, map and disconnect checks remain.
+
+This owner readiness policy is authored private behavior. Local Monk_Test.html
+lines116-123 establish rescuing/leading Gwen and blockers; they do not establish
+retail behavior after player death. Existing captured actor identities and
+unknown participant Health are retained. No captured data or immutable
+checkpoints are changed. General Gwen favor/dialogue-follow/flute healing is
+outside this bounded Monk Test change.
+
+Regression: tests/quest_escort_owner_liveness_world.cpp uses captured Monk
+participant/blocker metadata with synthetic geometry. Native test and rendered
+verification results are reported separately by the coordinating agent.

@@ -1,0 +1,30 @@
+Energy Drain79 / Energy Tap80 (2026-10-22)
+
+Normal World and casting now accept scoped hostile NPC recipients with reviewed
+Energy and regeneration. Unknown resource clocks fail admission. Integer loss
+is bounded by available Energy, with positive fractional remainder preserved;
+gain uses the original multipliers3/2 and the caster shared debt/Overcast path.
+Victim exact-zero Mind Wrack settles once, including lethal reactions, before
+caster gain. This does not establish retail fractional transfer consequences.
+
+Completion retains the cast-time target lifetime. Cancel,interrupt,missing hook
+and changed target generation produce no transfer. Missing completion hooks
+fail without bad_function_call. Successful completion sends finish58 then the
+captured target effect135/137 without treating sentinel2077as a caster effect.
+
+Evidence: fixed20261022-cumulative-skills packets-1360-15821281.jsonl lines
+9614,9625,9626,9627,9635for80 and43089,43107,43108,43109,43126for79.
+tools/protocol/energy_transfer_2022.py verifies all10receipts, native row timing,
+effect consumers and original2022target serializers. Native casts1s/2s,5Energy,
+base30s recharge. Captured79effective20s context is not independently explained;
+no hardcoded20s override was added. Existing recharge modifier path remains.
+
+Tests/npc_energy_transfer.cpp covers ranks0..20,bounded Energy/caster ceilings,
+player and NPC recipients,unknown/neutral/range/plane/stale/forged rejection,
+positive-fraction versus exact-zero reactions,lethal/repeated zero handling,
+Overcast usable ceiling (maximum remains100,current capped95for219), and
+Runtime cancel/interrupt/missing hook/changed target scope.
+
+Limits: NPC caster AI,full retail resource/reaction/recharge ordering,retail
+fractional gain semantics and rendered animations remain unverified. Native
+asset/model services are stubbed. Source support is not deployment evidence.

@@ -1,0 +1,50 @@
+Demonic Flesh130 implementation and evidence (2026-10-17)
+
+Fixed checkpoint: data/captures/skill-checkpoints/20261017-npc-refresh-2.
+Cutoff UTC: 2026-10-17T09:21:07.419412+00:00. Raw captures remain unchanged.
+Local Demonic_Flesh.html revision2654974 SHA256
+0fd478f552bc0a66f2b319831df5124c3c7d9c7501fb63e4c8523c6eb4771409.
+
+Native130: BloodMagic,5Energy,1second activation,.75aftercast,30second
+recharge. Canonical damage5..20 and duration30..60seconds scale0..15;
+rank20 extrapolates through existing skill interpolation. The native stale
+bonus80..200 field is not a Health buff in this balance version.
+
+World owns the self enchantment and its timed registry/removal lifecycle.
+Runtime reserves a successful-use observation at terminal completion before
+the main effect callback. World latches the actual selected target allegiance,
+active enchantment plan and adjacent166-unit eligible recipient generations.
+The selected foe is excluded. Failed effects cancel the reservation; successful
+effects commit immediately, before cooldown or other observers can return.
+Tick delivers committed collateral once per retained recipient. Future resource
+clocks defer that recipient, without discarding the committed skill use or
+resampling the expired/replaced enchantment and moved/replaced selected foe.
+Retired/dead recipient generations are skipped. Source departure retires
+attribution; same-generation source death after successful use preserves the
+committed reaction. These deferred-lifetime/ordering policies need retail
+capture verification. Queue capacity is reserved before the primary effect.
+
+Both activation resources239 and240 are caster body layers: fixed raw
+packets-1360-15821281.jsonl lines81211/81212. Treating row target240 as a
+collateral-victim effect would contradict that evidence. Line81197 starts130;
+81209/81210 show30second recharge and finish;81213 is the30second rank0 timer.
+tools/protocol/demonic_flesh_2022.py verifies the immutable receipts, original
+2022 activation/body consumers and timer serialization. Services are stubbed;
+this does not prove rendered acceptance or the reactive recipient sequence.
+
+Validation pending latest integrated build: demonic_flesh_policy and
+demonic_flesh_world. The latter covers actual Runtime payment/cancel/interrupt,
+native finish239/240 order, ownership/replacement/expiry/death, exact radius,
+mixed player/NPC collateral, selected/allied exclusion, replay/capacity and
+resource-clock/selected-generation races interposed in primary callbacks.
+
+Still missing: a captured isolated reaction experiment, full failed dagger
+sequence/blocked attack integration tests, enchantment-duration modifiers,
+NPC-source Demonic Flesh, broader PvP validation and live rendered acceptance.
+The native pvp_skill3433 value is the no-variant sentinel, not another skill.
+No global skill completeness or retail AI parity is claimed.
+
+Latest validation: demonic_flesh_policy and demonic_flesh_world2/2 PASS;
+full Release server_host integration build PASS in
+build/reports/demonic-ai-integrated-build.txt. The pending-build statement
+above is superseded. Native consumer proof is build/reports/demonic-flesh-native.txt.

@@ -1,0 +1,302 @@
+Shield of Absorption1399 -- staged, no production binding
+
+Wiki oldid2669884 describes 5 damage reduction on first hit,10 on second,
+and another5 per hit until enchantment ends or is recast. Native row1399:
+5Energy,1second,.75aftercast,10second recharge,ProtectionPrayers duration3..7,
+caster2077sentinel,target1650. Captured local start/finish:
+20261024-all-completed/packets-1360-15821281.jsonl lines309418/309425.
+
+New target-lifetime counter prepares without mutation and commits once per
+monotonic event. It revalidates current enchantment identity,rank,lifetime and
+expiry; renewal resets hit count. Failed preflight must discard its receipt.
+Native test passes ranks0..20,100 consecutive hits,renewal,expiry,removal,
+forgery,duplicate/stale events and backward clock. This does not yet decide
+which damage categories count as hits or attach reduction to actual damage.
+
+Next: connect player/NPC resolved damage transactions and their speculative
+copies; verify Reversal and other protection/reaction ordering; implement paid
+cast/DivineFavor/duration/removal and original native particle consumers.
+Do not bind1399 until those consumers are complete. Source-bound total stays405.
+See build/reports/shield-absorption-foundation-20261028.json.
+
+Application/animation follow-up:
+Prepared receipts bind the registry application sequence and exact transaction
+clock. Same-fields same-tick recasts reset the counter; stale prepared hits
+cannot commit to the new application. Copied speculative counters are tested.
+Frozen lines309418/425/426/427 prove self cast,finish,particle1650 and rank0
+three-second status115. Original2022 native particle consumer passes. Ally
+particle routing and rendered acceptance remain unverified. See native report.
+
+Staged NPC damage consumers:
+LiveActor owns the target-lifetime counter and server event sequence. Direct
+spell damage adds reduction in the flat-reduction phase; resolved weapon damage
+subtracts after the existing cap/Stoneflesh step. Counter commit occurs only on
+accepted damage. Trusted stage_shield_absorption installs an enchantment for
+integration tests; there is no client producer or paid production binding.
+Fresh NPC tests cover cumulative reduction,negative-input rejection,renewal,
+and expiry through both damage paths. Ether Renewal NPC regression also passes.
+
+Required next: player damage consumers; World proposal rebase/concurrent counter
+ownership; protection/Reversal/Seed ordering; classify zero-damage and life-steal
+inputs; paid ally cast/removal/DivineFavor. Do not enable1399 yet.
+
+Read-only subagent review and follow-up:
+The spell Reversal path resolved incoming damage on raw but assigned proposed,
+losing the accepted absorption step. It now copies only raw's absorption state
+and event counter after successful Reversal conversion; healing/removal remain
+from proposed. Regression confirms next50-damage hit becomes40,not45.
+Weapon conversion has analogous reset at prepare_npc_weapon_hit_locked; still
+open. World registry rebasing does not re-resolve stale damage/counter proposals.
+Future receipt must validate lifetime,application sequence,prior counter and
+raw damage inputs under World lock,then rerun stale proposals before mutation.
+Base-zero versus positive-reduced-to-zero classification remains unresolved.
+Cap-before-flat and discarded-copy tests pass. Skill remains unbound.
+
+Weapon Reversal follow-up (supersedes earlier lost-counter finding):
+Both conversion paths now adopt a verified counter-only incoming transaction.
+The adoption checks recipient lifetime,exactly one event advance,application
+sequence and reconstructed counter state; it rejects renewal mismatches and
+keeps Reversal healing/removal from the converted proposal. Direct weapon
+conversion and forged-renewal rejection pass. World regression compilation is
+pending; a full1399 World fixture and general stale-proposal rerun remain open.
+
+World Reversal target rebuilt and its regression passed after adoption wiring.
+The existing regression is not a1399-specific end-to-end World test.
+
+End-to-end World1399 fixture now passes six paths with307 conversion:
+projectile ordinary,melee ordinary,PowerAttack,elemental attack,Cyclone and
+armor-ignoring spell. Each follows with a PowerAttack,proving the next hit uses
+10 reduction. Trusted stage_npc_shield_absorption supplies status/owned credit;
+no client cast producer is enabled. The first failed fixture used an invalid
+physical wand damage type; corrected fire-wand fixture passes. Player damage,
+stale proposals and zero-damage classification remain open before binding.
+
+Stale-proposal follow-up:
+LiveActor::refresh_damage_proposal reconstructs from current authority and raw
+Damage,then resolves damage/control on that copy. Keystone commits use this
+rather than rebasing only hexes onto already-resolved Health. A prior death is
+skipped; stale lifetime or invalid re-resolution cannot silently replace state.
+Tests prove an intervening hit changes the next reduction to10,and renewal
+changes it back to5 while preserving current Health. Fresh Keystone World
+regression passes. Remaining NPC batch families still need assignment audit;
+this does not establish all transaction paths or player integration complete.
+
+Ignite Arrows now refreshes current NPC damage before assignment. Fresh tests
+verify arrow5 reduction then explosion10 reduction,and nearby first5 reduction.
+Read-only helper audit recorded remaining families in npc-proposal-audit-20261028.txt.
+
+NPC AoE consumers:
+Shockwave/Aftershock accept a pure optional damage resolver; NPC supplies a
+transaction-local absorption counter,advancing it per accepted slice and
+committing only after the full AoE is valid. Ash Blast uses a corresponding
+single-hit quote on its copied actor. Three Shockwave slices at rank0 reduce
+to10/5/0 damage,and next50 damage becomes30. Refused conditions discard all
+speculative counter steps. AshBlast35 becomes30,next50 becomes40. Four fresh
+NPC/AoE regressions pass. World-facing fixtures/player consumers remain open.
+The earlier AshBlast/hex-removal migration now passes all four World suites.
+
+Player spell consumer in progress:
+combat Actor/Hit now carry an optional server-only cumulative-reduction receipt.
+Player spell proposals stamp the owning application,event,prior hit count and
+clock. Shared resolved/weapon commit gates validate it; Reversal validation
+failure restores the prior counter. Existing armor absorption field is separate.
+EnergyBurn's legacy Health assignment bypassed that gate; it now reruns current
+incoming spell damage and uses shared resolved commit. Consecutive EnergyBurn
+and Reversal-overlap tests pass. Broad Reversal regression is rebuilding.
+Weapon preview,multi-slice player AoE and remaining legacy commits are unfinished.
+No1399 cast binding or full host rebuild is claimed by this player-stage test.
+
+Player weapon proposal follow-up:
+Player weapon resolution now applies cumulative reduction after the existing
+flat/equipment phase and attaches the same counter receipt to resolved Hit.
+Ordinary/attack/Cyclone preview variants use the typed helper; no preflight
+advances live counter. Two actual PowerAttacks verify5 then10 reduction with
+and without Reversal. The broad Reversal World regression also passed.
+A final finite-input guard rebuild is in progress. NPC-origin player contact
+legacy commits,multi-slice sequence handling and unconverted direct damage
+families remain before binding. Neither host nor rendered QA is claimed.
+
+NPC-origin attacks against players:
+Quest NPC contact now prepares the same weapon receipt and uses shared weapon
+commit instead of assigning Health directly. Attack timing/start/finish remain
+published before damage; received-hit protection,Reversal and Seed use shared
+authority. New World tests verify two NPC hits advance5/10 reduction both with
+and without Reversal. Seventeen source-audit tests pass; existing NPC attack
+regression targets are rebuilding. Player multi-slice and paid producer open.
+
+Player earth sequence:
+A copied per-slice resolver advances reduction receipts and projects Reversal
+healing/removal before the next slice. World re-resolves each player from current
+state and commits hits through the shared reaction authority. Shockwave checks
+projected survival rather than incoming killed flag; Aftershock bonus does too.
+Tests pass three reduction steps and a fourth on following EnergyBurn,Reversal
+overlap,one-HP conversion survival,and separate Aftershock knockdown bonus.
+Fresh original Shockwave/Aftershock/NPC regressions also pass. WatchYourself
+sequence rebuild remains pending. Other multi-hit families/condition merges,
+paid cast and full host/rendered validation remain open.
+
+Condition merge and single-hit family follow-up:
+Earth AoE merges only its intended applications onto current conditions,
+preserving unrelated newer Burning and longer Weakness. Pure merge and player
+World tests pass. LightningJavelin impacts and Kindle Fire bonus now use shared
+reaction commit. Two ordinary arrows prove separate primary/bonus steps; two
+Javelins followed by EnergyBurn prove the third step. Original preparation
+regression passes. Failed fixtures used an unsupported sword and then a
+multi-arrow bow skill; final fixture uses single ordinary arrows.
+Remaining bypasses tracked in player-reduction-consumer-audit-20261028.txt.
+No1399 paid binding,full host or rendered acceptance claimed.
+
+Fresh twin-projectile integration PASS: Stone Daggers hits consume reductions5/10, including first-hit Reversal conversion; subsequent Energy Burn consumes15. Existing aggregate player suite remains passing. Four fresh projectile regression suites also passed. Source/executable hashes in player-projectile-receipt-verification-20261028.json.1399 remains staged/unbound; no rendered claim.
+
+NPC offensive projection foundation: Recipient/Ledger forwards optional DamageProjection through elemental and Ice Spear targets. Water target survival branches now inspect projected Health. Fresh npc_offensive_plan/npc_elemental_ai/water_projectiles_policy tests PASS, including lethal incoming hit converted to survival with Immolate Burning retained and Ice Spear projection refusal. World does NOT yet supply this projection or migrate its aggregate commits.1399 stays unbound. Evidence npc-offensive-projection-progress-20261028.json.
+
+NPC Flare now preflights/commits shared reactive incoming hit before publishing; direct aggregate Health overwrite removed. Explicit NPC damage-publication filtering passed into shared helpers. Fresh npc_flare_world PASS including consecutive5/10 reductions with/without307. Related player and Reversal native builds still running session86770; no stale-result claim.1399 unbound.
+
+NPC elemental World migrated to fresh per-contact projected preflight/shared reactive commit; aggregate Health overwrite removed, intended Burning merges into current condition state. Fresh npc_elemental_world PASS including1399+307 lethal-looking Immolate survival/Burning. Capacity regression compiling session23105. Helper read-only transaction review pending;1399 still unbound. Flare/player/Reversal all three fresh suites passed.
+
+Fresh demonic_flesh_world PASS after shared reactive migration. Collateral damage17 reduces to12 then7 under1399;307 converts first hit while second still uses10 reduction. Duplicate committed-use replay remains rejected. Source/executable hashes in demonic-absorption-progress-20261028.json.1399 remains unbound; other consumers and paid producer/rendered verification outstanding.
+
+Water publication foundation staged: World captures nested per-outbox feedback when requested, Runtime movement branch forwards publication/early visuals, gateway requests boundary. Native status-order/idempotent callback tests rebuilding session77254. This phase does NOT yet migrate water damage/projection/ID/Rust. Gateway host not rebuilt.1399 remains unbound.
+
+Water integration staged: projected player/NPC survival, shared damage commits, reserved player IDs and reused NPC IDs, current Rust action checks. Production callback path queues authoritative feedback in causal order, including damage before Seed. Fresh rust_world PASS; water fixture307 required explicit NPC healing admission, corrected and rebuilding session33646. Legacy direct completion-vector callers with Seed remain an open ordering limitation. No binding or host/rendered claim.
+
+Water integration fresh verification PASS: water_damage_hexes, rust_world, shard_storm_world; four water-projectile Python audit tests PASS. Player1399 reductions and307 lethal-looking survival retain nonzero movement-hex effect; NPC1399/307 conversion/survival covered. Causal outbox feedback preserved, legacy vector cosmetics-only contract removes pending Seed/damage deferral issue. Helper review found no further concrete regression. Hashes/current remaining tasks: water-absorption-integration-progress-20261028.json. Host build and rendered verification still pending;1399 not bound.
+
+Aneurysm/SpiritualPain player trusted paths migrated and fresh native suites PASS alongside shield_absorption_player. Consecutive1399/307 overlap covered. Aneurysm refreshes damage after Energy callbacks without recomputing established deficit; shared helper now preserves explicit armor-ignoring reaction classification.18 source coverage tests PASS, including mutation of required reactive commit. These skills remain gateway-unbound. Evidence direct-spell-absorption-progress-20261028.json.1399 remains unbound with production consumers outstanding.
+
+Crystal Wave/Finish Him production player consumers migrated to shared reactive damage. NPC FinishHim uses matching Reversal-aware preflight/commit. Fresh finish_him_world and aggregate player suite PASS, including5/10 reductions and307 overlap. Added separate NPC1399/307 progression test rebuilding session96107. Review notes existing NPC Fragility order difference remains open; no parity claim.1399 unbound.
+
+YouMoveLikeADwarf and UnnaturalSignet production consumers migrated: player shared reactive authority and NPC matching Reversal-aware preflight/commit. Fresh Dwarf/Unnatural/PvP native suites PASS;18 source-coverage tests PASS. Tests cover player1399/307 progression, Dwarf knockdown+Crippled retained, independent Unnatural primary+adjacent counters. Additional NPC overlap and Dwarf Fragility reaction-death tests remain pending. Evidence dwarf-unnatural-absorption-progress-20261028.json.1399 still unbound; no host/rendered claim.
+
+Fresh Ignite and Keystone consumer verification PASS: Ignite primary weapon/explosion consumes successive steps while adjacent counters advance independently, including307 primary conversion; Keystone interruption plus successive collateral reductions.18 coverage tests PASS. Current hashes/pending: ignite-keystone-absorption-progress-20261028.json.1399 still unbound.
+
+AccumulatedPain1052/3184 production damage migrated. Fresh native wound-spells packet fixtures and aggregate player suite PASS. Both PvE/PvP consecutive5/10 reduction and307 conversion tested; two-hex DeepWound admission/maxHealth900 and subsequent second-step damage PASS. Nine audited production direct-damage families remain. Feast split audit confirms NPC combined result bypass; implementation still required. Host binary predates Wound source.1399 unbound.
+
+Feast split foundation: added typed NPC apply_feast_followup primitive, no shadow application/1399 advancement. Fresh NPC suite PASS: separate full steal, caster gain cap, later correctcounterstep, forged/stale/backwardclock refusal,307-positive-steal refusal without mutation. Combined WorldFeast and old LiveActor combined helper remain unchanged pending integration; do not remove Feast from current blockers. Typed existing player/NPC Reversal-life-steal transactions can support zero-shadow307 case. Evidence feast-absorption-split-audit-20261028.json.1399 unbound.
+
+Feast World split implemented: shadow shared damage authority, saved pre-shadow hex qualification, scoped recipient/source reacquisition, independent steal-only NPC primitive, typed player/NPC307 life-steal conversion reuse. Both phases preflight projected survival across selected recipients; late callback refusals are counted rather than returning false after committed damage. Fresh conversion player/NPC regressions and Feast World/cast regressions PASS. New1399/307 zero-shadow overlap matrix and current transaction review remain pending; obsolete combined NPC helper still referenced only by protective_spirit test, removal planned. Feast remains current blocker until these checks complete.1399 unbound; host predates current sources.
+
+2026-10-28 Feast phase verification: serial native build completed; fresh feast_of_corruption_world and protective_spirit both pass. Eight new overlap cases cover player/NPC, thirteen prior reduced-zero hits versus initial absorption, and Reversal present/absent; a second Feast checks counter progression. Removed obsolete combined NPC Feast helper. Python observer audit has 3 passing tests. Remaining direct-damage families reduced from nine to eight. Skill1399 remains staged/unbound; no new binding/rendered claim. Current host predates Wound/Feast. Retail conversion payout and callback-driven protection changes remain verification gaps.
+
+2026-10-28 Judgment262 migration: shared player reactive and NPC Reversal-aware preflight/commit, including departed-caster null attribution; exact scoped actors reacquired after admission settlement. Fresh shield_judgment_world, shield_judgment_npc and shield_judgment_lifetime pass. Player/NPC first and second cumulative steps and third external damage confirmed; rank0 Reversal overlap survives at4 Health from10. Runtime coverage18 tests pass. Seven production direct-damage families remain. Latest host e42f6c280094f1c804504590e865ba053ae414fa7c811201d85c0b424a1f5414 includes Feast but predates Judgment. No new skill binding or rendered claim;1399 staged/unbound. Manual build queue hash unchanged2a3d4b8d9173925b6199d00f65170997585af055ecdf5859f07fc771987c0686.
+
+2026-10-28 Whirling450 migration: scoped recipients and fresh per-hit shared player/NPC commits replace direct Health/copy-back. Actual committed loss drives explicit Barbs/Mark after base hits; shared Seed/conversion/end reactions occur during the batch. Optional NPC death deferral preserves delayed explicit cleanup and defaults false elsewhere. Eight player/NPC/equipment/Reversal fixtures plus a later-recipient Seed healing fixture pass; third hits prove counter progression; reaction hexes do not trigger on converted/reduced-zero hits. Final whirling_defense_world and reversal_npc_world pass; player/world life-steal, reversal_fortune_world and18 source-coverage tests passed in this phase. Six direct-damage families remain. Final host build79115 running.1399 remains staged/unbound; no rendered claim.
+
+Whirling final host build completed; --build-info exited0 without starting listeners. SHA256=f28797a2d4f04ee3f968b39714bb18a268607d24c3c1ae1e37851d61542d98a2. Current canonical consumer report now identifies this host as matching latest source. Native mechanics evidence is not rendered client evidence.
+
+2026-10-28 IronPalm786 migration: shared protection authority and projected admission/actual survival for knockdown and lead; completion-time qualification retained. Per-Outbox publication forwarded through Runtime/gateway; legacy vectors cosmetics only. World8 overlap cases, Seed damage-heal-control order/idempotence, paid-cast and chain-wire tests pass;18 source coverage tests pass. Five direct-damage families remain. Putrid Bile interaction and current host build41789 running. No new binding/rendered claim;1399 staged/unbound.
+
+Iron Palm final interaction regression passed: putrid_bile_world. Four native suites pass in final log. Current host built, --build-info exited0, SHA256=da498759592b55efb36b034e621a94144f19934b2d730da1beb4bc635c42e42c. No listeners or official clients launched. Rendered/retail timing and further callback retirement cases remain pending.
+
+2026-10-28 AshBlast1085 migration: hex-only current registry primitive plus shared player/NPC damage authority; saved impact Burning, projected survival admission/current survival followup; selected HexBreaker recheck. Fresh per-hit state replaces combined snapshot copyback. Native Ash policy/NPC/World/cast suites pass including16 protection overlap cases, three-step1399 progression, converted low-Health survival, replacement and idempotent publication;18 source coverage tests pass. Exact NPC condition clock settlement is required before typed followup. Four direct-damage families remain. Host build50885 running.1399 remains staged/unbound; no new binding/rendered claim. Capacity exhaustion is reviewed source behavior; further World callback fixtures remain pending.
+
+Ash Blast current host built; --build-info exited0, SHA256=bbaa2372b6fbb33745fd6d6c82552ddd94c88e7e0d830d216cf987d62bbcbc5a. No listeners or official clients started. Manual capture queue hash remains2a3d4b8d9173925b6199d00f65170997585af055ecdf5859f07fc771987c0686. Four remaining direct-damage families do not describe all missing game skills;1399 still staged/unbound.
+
+
+Splinter792/2868 migration verified (2026-10-28): fresh scoped shared player/NPC damage,
+independent protection counters, Reversal conversion, no aggregate Health restore, charge/contact
+commit before callbacks prevents replay. Source attribution resolved after Seed admission;
+NPC attribution remains separate from player kill credit.12 progression combinations,4 reduced-zero
+contacts, Seed later-recipient healing and existing lifecycle/retry cases pass.3 native suites and
+18 source-coverage tests pass. Host rebuild and --build-info exit0; SHA256 ae310fe19b89492b611d044bd12b49fa12c56f1e8f1f5d18673b234f8e1d0c36.
+Remaining production direct-damage families:3 (enchantment removal, hex-removal area, Chilblains).
+1399 remains staged/unbound. Rendered/callback retirement verification still pending.
+Evidence:build/reports/splinter-absorption-progress-20261028.json.
+
+
+Chilblains exact-removal foundation (2026-10-28): scoped NPC application leases,
+explicit removed/absent/replaced outcomes, current-state end reactions, settled-clock commit.
+Native Chilblains NPC and absorption NPC suites pass. Tests include same-ID identical renewal,
+307 consumed by damage,1399 counter retention and removal, Watchful early gain, delayed expiry.
+World144 still uses its prior consumer; no migration/binding completion claimed. Host predates
+these foundation source additions. Evidence:build/reports/chilblains-exact-removal-progress-20261028.json.
+
+
+Chilblains NPC World integration (2026-10-28): Reversal-aware preflight, fresh shared
+actual damage, exact removal at actual order boundary, no copied actor restore.
+Explicit protection removal feedback/credit, aura/simple/Watchful ends and deferred
+death preserved. Four order/conversion overlaps verify next-hit counters and once-only67.
+Six Chilblains suites pass; four World-including targets freshly rebuilt. Player
+consumer and self-Poison current-condition rebase remain pending; family count stays3.
+Host predates these edits. Evidence:build/reports/chilblains-npc-shared-progress-20261028.json.
+
+
+Chilblains shared player/NPC migration verified (2026-10-28): current protected damage,
+Reversal and Seed through shared authority; exact removals selected at actual order
+boundary; no actor/Health snapshot restore. Final Poison uses current scoped caster
+conditions. Seed admission self identity uses scope; protection re-quoted after
+settlement.4 player +4 NPC order/conversion cases and2 Seed order cases, existing
+Watchful/Poison/lethal/publication regressions,7 native suites and19 source tests pass.
+Host rebuilt; --build-info exit0; SHA256 7f4e33f2af01a5143e0426acb00b54e506315487fad351e98af911cd2c9235fa.
+Remaining production direct-damage families:2 (69 and27/67/302 removal families).
+1399 stays staged/unbound. Broader end support, callback/capacity and rendered
+verification remain open. Evidence:build/reports/chilblains-shared-progress-20261028.json.
+
+
+27/67/302 NPC collateral migration (2026-10-28): exact NPC hex application leases,
+shared Reversal/protection preflight and fresh commit, per-recipient holy sensitivity,
+scoped deferred death after callbacks, no copied actor restore in collateral damage.
+5 native suites and19 source tests pass;6 skill/conversion cases cover2 independent
+NPC counters and Smite sensitivity. Player direct hits and allied-primary NPC copied
+proposal remain pending; family count stays2. Host predates these edits;1399 unbound.
+Evidence:build/reports/hex-area-npc-shared-progress-20261028.json.
+
+
+Allied-primary NPC removal/healing (2026-10-28): scoped current-state projection and
+commit replace retained pointer/old proposal. Original hex lease preserved; current
+Divine Favor permission/Health determines feedback and death cleanup. Real NPC31
+application then67/302 tests cover6 healing-permission combinations, unchanged protection,
+once-only removal/gain, no-hex DF/no repeated collateral, no later degeneration/end.
+4 native suites and19 source tests pass. Host rebuilt and --build-info exit0; SHA256
+55ec8d46c38fb8297b985512bcc900652e69711544beedabb004e17d7b551ec0. Primary-player damage/end projections and broader World end
+credits remain pending; family count2 and1399 staged/unbound unchanged.
+Evidence:build/reports/hex-area-allied-progress-20261028.json.
+
+
+Player hex-end local view foundation (2026-10-28): exact application lease, copied
+removed registry/conditions,44 Deep Wound and2054 Cracked Armor, existing duration
+renewal,Health/max/debt and optional TemporaryHealth projection. Derived Fragility
+obligations are NOT applied damage. World-end handling remains mandatory for every
+consumer, including inert local projections.126 rank/skill/life cases plus renewal,
+forged/stale/invalid input,existing-condition and temporary-capacity tests pass.
+Not included by production runtime; no host rebuild or binding claim. Primary-player
+consumer,Fragility/protection composition and external end projections remain pending.
+Family count2 unchanged. Evidence:build/reports/player-hex-end-view-progress-20261028.json.
+
+Deep Wound packet settlement: reproduced baseline stale positive fraction, corrected raw-Hit vs authoritative Health separation. Four native suites and 19 source checks passed. Host rebuild pending. One review agent updated staged projection/tests and reviewed runtime; no official-client actions. See build/reports/wound-debt-settlement-progress-20261028.json.1399 remains staged/unbound; production families69 and27/67/302 still pending.
+
+Deep Wound settlement final: four native suites and 19 source checks pass; server_host Release build and --build-info exit0. Host SHA256 e4d46cfde89cb3ad6777fb68c82e2fabf3c6c32d9aebf527520be00f731d7107. No rendered validation or official-client action.
+
+Player27/67/302 damage commit migration: candidates retain scoped identity; exact primary application sequence; real end and Divine Favor precede fresh shared reactive hit. Four native suites plus19 source checks pass, including6 primary/adjacent1399/307 cases and Seed healing of later recipient. Full end admission remains pending;1399unbound. Host rebuild pending. See build/reports/hex-area-player-shared-progress-20261028.json.
+
+Player hex-area host built, --build-info exit0, SHA256 4894a4324d4adc84c5ba004c31e53925098f2777af5fb692eaa9c4e656198af1. Native verification only; no official clients targeted.
+
+Shatter Enchantment69 shared player/NPC damage migration plus exact NPC removal leases and EndingStoneflesh propagation. Four native suites and20source checks pass; host build pending.1399 remains staged/unbound, full pre-end admission/rendered checks still open. Potential NPC Deep Wound Reversal receipt arithmetic issue identified for next regression. Report:build/reports/enchantment-shared-progress-20261028.json.
+
+69 migration host built and --build-info exit0; SHA256 f932ee4b9fce90168c7ade5a5fbd3f6473dfdfb4a61cce8df022e57f88014c38. Clarification of investigation note: Reversal healing settles debt first, so a Reversal packet bug is not established. Ordinary NPC apply_damage_impl raw assignment needs a latent-debt regression next. No rendered/official-client actions.
+
+NPC ordinary latent Deep Wound debt: baseline failed; sealed actor/generation/Health/damage/capacity evidence now permits exact settled arithmetic while unproved Hit arithmetic remains strict. Spell/weapon settlement and307 stale-evidence reset tested. Four native suites and20 source checks passed. Host rebuilding; broader NPC commit helper audit and rendered validation open.1399 remains unbound. Report:build/reports/npc-wound-settlement-progress-20261028.json.
+
+NPC latent-debt host Release build and --build-info exit0. SHA256 040afbf71f6580fca15352f17c714e4cd6599a6f9af338c188c44b2cc96fc5e5. Next audit:other NPC damage helpers and copying/rebasing Hit settlement evidence; shared player publication may now reuse sealed settlement instead of packet replacement. No official-client or rendered actions.
+
+Shared player settlement now uses sealed evidence directly; manual packet replacement removed. PreparedHealthDamage captures/validates before/after capacity and commits once; remains Health-only primitive. Four suites and20source checks pass. Broader NPC audit found two real additional consumers, elemental and earth area; blocker list corrected to include them. Host rebuilding. Report:build/reports/shared-health-settlement-progress-20261028.json.
+
+Shared settlement host built and --build-info exit0. SHA256 47b1244f27a710071f91be2617b74d9398d4fd5c26323230e6f1a158b36df313. Elemental/earth-area production blockers remain explicit;1399unbound, no official-client actions.
+
+NPC elemental per-slice1399/307/debt migration and earth-area debt fix:5native suites+20source checks pass. Earth-area307 and Worldcondition/Fragility boundaries remain open;1399unbound. Hostbuilding. Report:build/reports/npc-elemental-area-settlement-progress-20261028.json.
+
+Elemental/area settlement host built, --build-info exit0, SHA256 c07f8eae2b38b9f473a64eb1e749780402a828ced24b15e7a8fe6aac4df1d9c2. Five native suites+20source checks pass. NPC earth-area307/Fragility boundaries remain pending. No official clients targeted.
+
+NPC earth area174/937: shared protected slices/307receipts, actual Watch/Bonds and finalFragility publication implemented; Fragility307adopts1399counter. Four native suites and21source checks pass. Conditions still batch-installed beforeFragility and World Bonds remains post-aggregate: explicit ordering work pending. Host rebuilding. Report:build/reports/npc-earth-reversal-progress-20261028.json.
+
+NPC earth307/feedback host build and --build-info exit0. SHA256 c5b546110377b1fb7b852cf454a344586f3fa9116847a7add5c9d3d32b21251e. Four suites21source checks pass; per-condition Fragility and Worldcallback interleaving remain unfinished;1399staged/unbound. No official-client actions.
+
+NPC174/937now commits each damage/condition/reaction from current scoped authority instead of restoring aggregate actors. Copied admission applies immediate condition reactions. Lethal firstWeakness stops laterhits/conditions; Bonds feedback order and singledeath validated. Four native suites+21source checks pass. Player branch stillbatches conditions and is explicitly listed pending;1399unbound. Hostbuilding. Report:build/reports/npc-earth-condition-order-progress-20261028.json.
+
+NPCearthconditionsequence host built and --build-info exit0. SHA256 ca8d46c57184b4f40d320c4eaf4dc0e1b3b970aa4bec84264c3bcf971b5825a3. Four native suites and21source checks pass; player condition sequence/full end admission/rendered verification remain pending.1399staged/unbound; no official-client actions.
+
+Player174/937fresh scoped damage/condition sequence and local1399/307/DeepWound/Fragility projection integrated. Eight new World fixtures, five native suites and21source checks pass. Host build and --build-info exit0; SHA256 fd093f8e5ed69fe6d7a8b16e14151c0fac23e00284fe831e1f6dae30ad692373. Full external callback admission and rendered verification remain pending;1399staged/unbound. Fixed checkpoint unchanged; official clients untouched. Report:build/reports/player-earth-sequence-progress-20261028.json.
+
+Player174/937shared Seed batch admission:unknown laterNPC refuses before earlierdamage/counters; allowed/immune and zero/conversion controls pass; earlier healing changes later survival in shared copies. Six native suites and21source checks pass; host build-info exit0, SHA256 bb8c0c3a59a490e45ae7cd269f0de71ace983d04d2f4e284e082002f6a88a158. NPC-origin/end feedback and EnergyBurn/SurgeSeed omission remain explicit;1399staged/unbound. Report:build/reports/player-earth-seed-admission-progress-20261028.json.
+
+Energy39/42/59now shares scoped protection/Seed/condition admission and actual reactive commits. Baseline missingheal reproduced;12native suites,22source checks and6backlog unit checks pass. Host build-info exit0,SHA256 75952b6d135ff48ec1da80fcef086179b7daea8bf2f6bfee43e0c28bb93b7a81. Paid274producer is absent; latentNPCfeedback separated from currentproduction reachability.1399staged/unbound; fixedcheckpoint unchanged. Report:build/reports/energy-area-seed-progress-20261028.json.

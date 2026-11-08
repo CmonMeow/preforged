@@ -1,0 +1,44 @@
+Gladiator's Defense372
+======================
+
+Player Runtime/World binding:instant self stance,5Energy,30s pinned recharge,
+Tactics duration5..11,75% attributed blocking and5..35 armor-ignoring retaliation.
+The exact block effect instance must select this stance;ordinary ranged attacks,
+misses,unblockable/Rigor bypass and blocks by Guardian or another source do not
+retaliate. The retaliation proposal retains both generation-owned scopes and
+the contact time. It is consumed only after the server's attack ledger accepts
+the matching block outcome,then uses the existing protected damage/death path.
+
+Ordinary melee and attack-skill contacts attach proposals to their server event.
+Quest NPC melee attacks use the same player-defender path. Cyclone Axe keeps
+proposals local during preflight and registers them only after recipient outcome
+reservation succeeds;failed preflight cannot emit retaliation. Outcome handling
+consumes proposals before damage callbacks to avoid duplicate/recursive emission.
+Scope retirement discards queued reactions. Generic stance replacement/removal,
+expiry and death retain the existing owned registry lifecycle.
+
+Fixed implementation checkpoint20261017-npc-refresh-2:
+packets-1360-15821281.jsonl lines398683..398687 at23897859 contain recharge20,
+instant48,body631,effect application5seconds/attribute word0 and pending release227.
+Original2022 instant dispatch and631 particle consumer pass
+ tools/protocol/gladiator_defense_2022.py. Report retains tool/client/wiki/capture
+hashes. Native pinned row:5Energy,30s recharge,Tactics duration5..11,75% block,
+5..35 retaliation. Historical wiki independently lists armor-ignoring retaliation
+on melee attacks blocked by this stance. Captured20 vs pinned30 remain separate;
+modifier context is not exhaustively known.
+
+Policy tests:rank0..20,invalid21,exact selected effect,competing Guardian block,
+ranged/miss,wrong instance,scope mismatch,self target,expiry/removal,Rigor and
+unblockable bypass. World tests:ordinary melee,melee skill,Cyclone,failed Cyclone
+preflight,ranged exclusion,Guardian attribution,Rigor,Blindness,explicit removal,
+lethal player retaliation,NPC attacker retaliation,and actual Runtime5Energy/
+30s recharge/10s rank12 lifetime/body631 once.
+
+Remaining verification:retail competing-source and simultaneous terminal ordering,
+source-level readiness without an equipment refresh,NPC stance casters,exhaustive
+reaction/protection interactions,network stress and rendered acceptance. Cyclone
+retaliations settle after recipient damage under the existing batch policy;
+retail relative ordering requires comparison. Native model/assets are stubbed.
+Application packets alone do not prove retail block frequency or damage ordering.
+
+Validation completed:six freshly rebuilt native suites and61 skill-tool tests passed;original native instant/body verifier passed;Release server_host rebuilt. Later capture-audit extension adds a62nd tooling test. No official session was interrupted.

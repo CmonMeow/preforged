@@ -1,0 +1,20 @@
+Follow-up admission requirement (not implemented by known-immunity fix)
+
+For unknown flesh on a potential Bleeding/Poison arrow contact:
+- Resolve miss/block first, since those contacts need no secondary eligibility.
+- Preflight complete direct hit plus absorption/protection, linked reactions,
+  lethal outcome and preparation/conjure outcomes using scoped immutable facts.
+- Source qualification can drain/heal source and alter threshold bonuses;
+  preserve that ordering in the projection rather than moving it arbitrarily.
+- Only surviving condition-enabled recipient requires a known flesh trait.
+- Unknown required trait refuses the whole projected contact before qualifier
+  effects/charges/damage; no partial hit followed by rejected condition.
+- Known immune keeps all direct-hit consequences and skips secondary/Fragility.
+- Revalidate source and target scopes after real due-effect settlement and use
+  a single commit/publication authority; existing recursive reaction gaps apply.
+
+Tests still required: unknown surviving/refusal rollback with Insidious and
+Endurance, lethal unknown bypass, condition-disabled unknown bypass, absorbed
+hit preserving recipient survival, preparation/conjure death, retirement during
+linked callbacks, complete packet order and rendered2022acceptance. Current
+24case suite proves known trait behavior only, not these missing cases.

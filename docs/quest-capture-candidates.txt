@@ -1,0 +1,27 @@
+Quest content candidate workflow
+
+Native developer tool: build/tools/quest_capture_candidate.exe
+Usage: quest_capture_candidate.exe saved-capture.jsonl snapshot-line quest-id new-output.fwqc
+
+Use a saved immutable capture. Select a quest_snapshot_changed line and an ID
+actually present on that line. The tool hashes the same input stream from which
+it selects the row, retains encoded UTF16 units, and validates the candidate
+through the server's FWQC1 reader. Output is exclusively created: an existing
+capture, candidate or reviewed catalog cannot be replaced. It does not connect
+to either server or modify character/account progress.
+
+Missing x_bits/y_bits, malformed markers, missing category/name/NPC codes,
+partial details, duplicate identity and fields outside 2022 bounds are errors.
+Captured empty text is preserved. Both unloaded detail fields remain unloaded.
+No localized names or coordinates are invented and no text is truncated.
+
+Candidates retain context-dependent objectives and flags. They do not establish
+acceptance prerequisites, quest-specific triggers, enemy spawning, rewards or
+repeatability. Modern encoded resource compatibility with the 2022 DAT still
+requires validation before configuring quest_catalog. This tool does not change
+that configuration or automatically publish captured content.
+
+Verification: quest_capture_candidate, quest_state, quest_accounts and
+quest_wire passed. CLI exported a synthetic fixture with its actual SHA256 and
+refused a second export to the existing destination without changing it.
+Earlier captures lack exact marker bits and are not silently converted.

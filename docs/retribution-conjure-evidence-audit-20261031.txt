@@ -1,0 +1,36 @@
+READ-ONLY OFFICIAL CAPTURE AUDIT — 2026-10-31
+Tool: tools/protocol/audit_retribution_conjure_coexistence.py
+Full report: build/reports/retribution-conjure-coexistence-v2-20261031.json
+Focused report: build/reports/retribution-conjure-focused-20261031.json
+
+Result: no observed receipt can decide Conjure classification. This is a completed
+corpus search, not an assumption that Conjure is excluded.
+61 bounded sources,3,779,345,473bytes searched:58 pinned20261024 snapshots plus
+three later raw PacketLogger sources. All58 fixed SHA256 hashes match manifest.
+Inventory of noncheckpoint data/captures and bin packet archives found no larger
+or new packet file omitted from these bounded sources. Historical snapshots are
+prefix duplicates; semantic World logs were hash-verified but have no packet hex.
+No official log, checkpoint, client, or collector was modified or targeted.
+
+Exactly ONE complete observed Retribution proc exists:
+packets-110488-195213578.jsonl:614448 tick203997859
+159/10 attacker23 skill248;614449 returned3HP to23 attributed caster51;
+614451 attack11HP onto protected99 attributed attacker23.
+Prior targeted cast at612556 tick203985984 is160/60 caster51,target99,skill248.
+Correlated semantic World row24621 tick203995937 maps to274,instance_epoch41.
+This is scope correlation, not an invented per-actor lifetime proof.
+
+All Conjure markers in this file occur AFTER this return: earliest182cast is
+line829022 tick207019765,3,021,906ms (~50min22sec) later. No observed Conjure cast,
+maintained status, or timed-effect marker precedes it in that file. The bounded
+return window has no Conjure proc/bonus notice. Hidden/offscreen state is unknown.
+The other three files containing both Retribution and Conjure markers have ZERO
+Retribution return procs:packets-1360-15821281,19472-19186421,40172-93822296.
+Other Retribution self-stage file30352-81363781 has no Conjure markers or returns.
+
+Search covers complete StoC159/160 event10/60/61,63/65 maintained skill records
+and66 timed effects. It does not claim a universal packet taxonomy proof. There
+is no base+bonus+return sample to choose combined,per-component,or excluded policy.
+Do not use temporal co-occurrence of skill names as a mechanic receipt. The gap
+requires an authorized new official comparison capture or stronger existing
+retail evidence, not a speculative attack-journal change.

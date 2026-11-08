@@ -1,0 +1,75 @@
+
+2026-10-06 map-object playback repair:
+Match6 StoC/manipulate_map_object_events.txt contains MAP_OBJECT and
+MAP_OBJECT_STATE records which the adapter previously reported unsupported.
+Retail37130 registry RVA60D148 descriptor62717C =269,WORD,BYTE,DWORD;
+RVA60D16C descriptor6271A4 =272,WORD,DWORD,DWORD.
+Callbacks877AE0/877B40 dispatch7BDA30/7BDAB0. Animation uses the native
+9E3108 index table; state applies a value/mask to DAT object flags.
+Original serializer fixture object55597 animation3 flags3 =0d812dd90303000000;
+state value1 mask1 =10812dd90100000001000000 (wire high-bit flag removed
+by server framing). The adapter now preserves these records at capture time
+without looking up a living actor. Animation indices above9 remain diagnosed
+unsupported pending enum verification. DOOR_* summaries are not replayed too,
+to avoid duplicate animation/state updates from the same capture.
+Build server_host succeeded. observer_wire,observer_replay,guild_wire,
+guild_hall_wire all passed. Live bridge rendering still requires verification.
+Outstanding: non-player replay identities including guild lords; second host
+guild mapping in match6 (team1 known Kitten Pounce, team2 unresolved numeric
+folder token150785); cape purchase and guild trim NPC interactions.
+
+2026-10-07 vine bridge correction:
+Objects55597/5733 are gates, not the two vine bridges. The original match6
+manipulate_map_object_events records bridge51238 growth at91057ms and
+bridge39278 growth at243565ms, both animation16 flags2. The previous
+adapter quarantined every animation above9, so these events were dropped.
+Pinned2022 handler7BDA30 loads DWORD table9E3108[index]; entry16 is303419C9,
+matching the vine-growth segment identified in downloaded observer source.
+Allow this verified entry alongside0..9; other entries remain quarantined.
+tools/protocol/vine_bridge_2022.py verifies the handler instructions, hash,
+and both packets through the original serializer60D148. Fixtures are in
+tests/fixtures/vine-bridge-2022.txt. observer_wire and observer_replay pass.
+Native read-only tools/observer/map_objects_client.cpp confirms both objects
+exist in private2022 map168 (indices47/35), rendered and initially hash31D3EDC8
+flags7. Gadget agents21/22 are the seed interaction markers, distinct from
+the animated bridge geometry; missing gadgets alone do not explain growth.
+Earlier references to55597 as a vine bridge were incorrect.
+Live rebuilt server10512/private client9912: at source107774ms object51238
+has hash303419C9 flags4 and a render object;39278 remains31D3EDC8 flags7,
+as expected before its243565ms growth event. Evidence is
+build/reports/vine-match6-transition.jsonl. This verifies native animation
+state delivery, not a completed visual crossing test. New full replay timeline
+regression asserts51238 animation16 actually emits at91057ms. Tests2/2PASS.
+
+2026-10-06 recorded Guild Lords:
+Replay loader now admits archived AGENT_ADD living NPC model0x200000AA
+when its Agents snapshot file exists. Visual definition is derived from the
+captured NPC definition whose model_files includes184673, corroborated by
+build/research/gw-observer/ReplayMapData.h model170->DAT0x2D161.
+No player body or invented NPC model is substituted. Properties85 and model
+files86 precede spawn32; captured teams/positions/surfaces/effects/professions
+and normal skill/combat events drive playback. Lords are excluded from player
+party roster and default camera focus. Other NPC model definitions remain work.
+Archived observer LookupGuildNpcMaxHealth defines model170 capacity1680;
+when snapshots omit it, use that capacity (1344 under recorded Deep Wound).
+Actual nonzero snapshot capacity takes precedence. LORD_DAMAGE accounting
+summaries are not replayed as extra hits: normal DAMAGE/HEAL already carry them.
+Focused observer_party/observer_wire/observer_replay tests3/3PASS; rebuilt
+single native server. Match6 live2022 connection actors18, host_begin14577859.
+Read-only observer_verify_client private PID4224, exact bin/client/Gw.exe:
+1170 actor observations, unavailable0. Each Guild Lord27/28 has65 samples,
+maximum XY error0, floor0/2, rendered Z matches captured within0.001.
+Evidence build/reports/guild-lord-client-poses.jsonl and guild-lord-server.log.
+All-actor worst error69.5886154 remains; do not claim movement fully verified.
+Cape/trim NPC purchase interactions and unresolved second guild host mapping
+are still outstanding. Guild-lord live AI outside replay is not implemented
+by this replay change.
+
+2026-10-07 status reconciliation:
+The outstanding cape/trim and second-host notes above are superseded by
+observer-playback.txt (both recorded guild cards live verified) and
+guild-integration.txt (Tolkano menu/confirmation and claimed-hall button live
+verified). Guild-lord/defender playback exists; autonomous live GvG NPC AI
+remains outstanding. Match6 both vine objects reached their growth state;
+physical crossing is not yet claimed. Rechecked observer_party, observer_wire,
+observer_replay, npc_dialogue, social_accounts, npc_catalog and npc_wire:7/7 pass.

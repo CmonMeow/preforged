@@ -1,0 +1,26 @@
+Private2022 live verification, October9
+
+Verified private host PID8408 and executable Desktop/gw-server/bin/server_host.exe.
+Official PID5604 remains open with its capture intact. Private cleanup checked
+PID16332 and its full project client path before closing that window; it never
+targeted the official client. The replacement private client is PID1608.
+
+First live run authenticated test@example.test/test, entered the claimed hall
+map186, accepted keyboard rotation and movement, and survived15seconds after
+input. Its saved Hero and Inventory panels covered the ground-click location,
+so this run's ground_click step did not prove ground movement.
+
+With panels closed, the next ground click changed position and settled with
+visual, authoritative and predicted coordinates equal. The smoke tool now hides
+UI for its ground-click segment, restores it afterward, and uses the existing
+native read-only2022 pose observer. It requires actual displacement and checks
+character/map context, instance clock and pose agreement before recording
+ground_click_movement_observed.
+
+Second live run: login, world_entry, turn_left, move_forward and observed ground
+movement passed. Displacement159.62578048527948 game units; settled visual vs
+authoritative/predicted disagreement0.0. Client survived5seconds after input.
+Report: build/client-check/smoke.json. No world handler error or client crash
+was detected by this bounded test. It does not prove all routes, wall sliding,
+map portals, NPC interactions, skills or inventory behavior. The running host
+was not replaced with the latest rebuilt core during these checks.

@@ -1,0 +1,98 @@
+Spirit Light [915] — detached mechanics checkpoint, 2026-10-24
+
+The fixed 20261024-all-completed checkpoint has one locally attributed start
+and finish on actor 25 in packets-108988-190116609.jsonl, starting at line
+107485 and finishing at tick 192188812. The completion window includes a
+target effect carrying resource 1089. This is one cast, not an independent
+test of spirit proximity, sacrifice, target policy or rendered animation.
+
+The pinned pre-Reforged 2022 row specifies Ritualist Restoration Magic,
+5 Energy, 1 second cast, 0.75 second aftercast, 4 second recharge, 17 percent
+Health sacrifice, raw heal scale 60..180, no caster-body effect and target-body
+resource 1089. The archived skill description says the sacrifice is waived
+when any spirit is within earshot of the caster.
+
+gw_spirit_light.h now validates that row and provides a rank 0..20 heal quote
+with a typed completion-time spirit-proximity fact. Unknown proximity rejects
+the quote; present spirits waive sacrifice; absent spirits use the shared
+Health-sacrifice resolver. This policy does not mutate World, pay Energy,
+validate an allied target or emit packets. The Release spirit_light_policy
+test passes all ranks, both proximity outcomes, unknown/invalid facts,
+forged plan and lethal sacrifice. Source SHA-256:
+1f8ea86453997a6a78097d1727c2121a4576f4c4d0d0c7587643b017ec460894.
+Test executable SHA-256:
+285bded7771b82d0bee3084ef9fd176b90d07173a00864857eeb09c8cd68896d.
+The read-only audit_spirit_light_checkpoint.py checks six exact receipts and
+the immutable packet-file SHA-256. Its report is build/reports/spirit-light-checkpoint.json.
+The pinned-2022 offline native probe executes targeted descriptor159/kind20
+with target actor43, caster actor42 and resource1089, then checks the original
+particle consumer and serializer. It passes; report:
+build/reports/spirit-light-native-2022.json. The model/asset services are
+stubbed, so this is dispatch evidence, not rendered acceptance. The newer
+official capture descriptor must not be copied unchanged into the 2022 client.
+
+Binding gates: authoritative living-spirit earshot query at cast completion;
+other-ally/self target rules and range; atomic Energy, conditional sacrifice,
+raw heal and shared healing modifiers; loss/death reactions; normal Runtime
+casting and target effect publication;
+NPC caster behavior and rendered client acceptance. Skill 915 remains in
+CAPTURED-NEEDS-IMPLEMENTATION. Fixed inventory remains 679 captured,
+365 source-bound, 314 awaiting binding and 650 without local activation.
+
+2026-10-24 World-query follow-up: the private World can now report a living,
+typed NPC spirit within its existing 1012-unit earshot convention. A nearby
+NPC with unknown creature type keeps the result unknown; stale caster scope,
+off-plane and dead actors are rejected. This is a conservative World fact,
+not proof of the official radius or support for player-summoned spirits.
+Release tests pass 842/842. World query source SHA-256:
+F690DDA33AA597E8D16C5005AB5875A938751D598C2D16A81A1BAD0609E6EF5D.
+Host SHA-256:
+D7B066292AD9BE54C3C9A10760C0FD311109BF56ECDECE4DC051BDDBB3E2A444.
+The cast remains unbound until summoned-spirit registration and the atomic
+Energy/sacrifice/heal transaction are implemented and verified. No client
+rendering test was run for this change.
+
+2026-10-24 completion-stage follow-up: World now stages a player-target heal
+and the conditional caster Health sacrifice under one instance lock, after
+checking current scopes, party/ally eligibility, range, living Health and the
+spirit result. It defers the Health packets until the caller publishes the
+cast completion. The Release test covers spirit present/absent/unknown,
+rejected self and stale targets, packet deferral and lethal sacrifice that
+still heals the ally. The host and all 842 Release tests build/pass. Tested
+World source SHA-256:
+07E5A048A32DFA76468AD09B16E2F8E810CF625899DD2E76D178ECD424FEB17F.
+Test source SHA-256:
+73598EC94C91FC0813203DC04212AA23A2AD926CA2DC165BBD316D798590D2B9.
+Host SHA-256:
+A82F240721ACC7DA87FFD3815D56F4A658BE2CBA32F94988CEAA09CD75CEA62F.
+This stage has no Runtime admission or Energy payment integration, does not
+heal NPC allies, and does not publish the target visual. No in-client cast
+was performed; skill 915 remains unbound in the published backlog.
+
+2026-10-24 production casting integration: Spirit Light915 is now source-bound
+for normal player casts through the 2022 Runtime and the existing World. The
+Runtime checks other-ally target scope at admission and completion, pays the
+catalog's 5 Energy through the shared cast path, and calls the World stage
+once. The stage heals a player or reviewed allied NPC, consults typed living
+NPC spirit proximity at completion, and applies the 17-percent Health cost
+only without a nearby spirit. Its paid-loss receipt prevents a second generic
+sacrifice. The cast publishes the pinned targeted159/kind20/resource1089
+visual and native recharge/cast terminal before releasing deferred Health
+packets. Missing-hook, self/foe, cancellation, unknown-proximity and
+successful player/NPC target paths are tested. The source-binding audit now
+reports 679 captured / 366 bound / 313 awaiting / 650 uncaptured; six frozen
+capture receipts and 12 coverage-tool tests pass. The full Release suite
+passes 843/843. Tested host SHA-256:
+2898D482DB6195B30BF3F0CA1C3E4C8104330736C430D986C83C7B42BC03C8BB.
+Runtime source SHA-256:
+4DEA5652A8947ECAD7188FF885BDEAA4B17BEF38B5C24DBC6D7203519844EA2C.
+World source SHA-256:
+F807630768408B4074A2B235E66E5A74AF04EAE1214C40C746FA2123BF84CC8E.
+Cast-test source SHA-256:
+54606D0097EBDBDFDB273B48938696DD3B235934F4FF5E2BE55399C5621B77F0.
+Remaining verification: the 1012-unit earshot is a private convention, not
+an official measurement; skill-created dynamic spirits and NPC-caster AI are
+not implemented here; the one official receipt does not prove retail effect
+ordering under every modifier; and no rendered 2022 client cast has yet been
+observed. Energy is paid by Runtime at activation, while Health/heal commit
+at completion under one World lock, consistent with the server's cast model.

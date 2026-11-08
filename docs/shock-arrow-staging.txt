@@ -1,0 +1,63 @@
+2026-10-22 Shock Arrow1082 normal source binding
+
+Runtime snapshots Air and EnergyStorage ranks into the canonical Lightning
+plan,pays5Energy,casts1s,and uses8s recharge/.75s aftercast. Completion queues
+the existing authoritative player/NPC projectile lane with native2400speed,
+exact caster/target Scope and impact-time position/plane/hostility/armor gates.
+The release publishes caster1180then projectile1179 through deferred completion;
+an admitted impact emits targeted1181and one credited lightning hit with25%AP.
+No extra body is manufactured from native target2077sentinel.
+
+At impact the World samples the target's current Cracked Armor before damage.
+An admitted contact returns5+floor(EnergyStorage/2)Energy when that condition is
+present,including a lethal target hit. A condition applied after release counts;
+one expired before impact does not. The caster's existing precise resource event
+settles before the hit;gain_energy_locked repays negative debt and preserves
+fractional Energy and Overcast capacity. A dead source gets no reward. Removing
+the source lifetime drops its queued projectile;actorIDreuse does not inherit it.
+Damage and Energy stay in their existing World authorities,with no new pool.
+
+Sources
+Archived local Shock_Arrow.html gives projectile lightning damage5..50,25%AP,
+and return5+one per2EnergyStorage ranks. Native row1082 independently fixes
+Air8,5Energy,1s/.75s,8s,5/50damage,bonus5/5,caster1180,target2077. The helper
+checks all these native values.
+PinnedPE SHA256a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+Skill tableVA0x8d84c8,row1082*160:+0x6c float2400,+0x78caster1180,
++0x7ctarget2077,+0x84impact1181,+0x88projectile1179.
+
+tools/protocol/shock_arrow_2022.py passes against fixed checkpoint
+20261022-cumulative-skills. Its report build/reports/shock-arrow-native-2022.json
+hashes the manifest and7exact receipts in packets-1360-15821281.jsonl:
+189032start19626328;189038recharge8s;189039finish19627234;
+189040caster1180;189041projectile1179same tick;
+189046target20actor30/caster25/resource1181and189047damage at19627343.
+Original consumers prove native1s cast,1180caster/1181target actor placement,
+projectile1179action11/state6 and serializer60be2c. The frozen906ms activation
+and109ms finish-to-impact interval have unknown modifiers/distance;native1sbase
+and2400metadata are retained without claiming distance/speed calibration.
+
+Validation
+Parent reports five focused rebuilt suites passing,including:
+shock_arrow_policy:all441Air/EnergyStorage rank pairs,Cracked Armor boundaries,
+canonical plan/unknown armor gates,lethal qualification and exact wire resources.
+shock_arrow:actual player/NPC Runtime/World launches,cancel,interrupt,missing hook,
+snapshotEnergyStorage13,present/expired/late Cracked Armor,source lifetime reuse,
+lethal and unknown armor cases,plus finish/caster/1179launch/1181impact ordering.
+The moving-target miss uses600distance/.25sflight:the earlier200distance/84ms
+fixture allowed less than32units of normal movement and could not establish a
+miss outside the configured hit bubble. This was a test geometry correction.
+shock_arrow_energy:actual player/NPC negative debt from in-flight equipment
+capacity reduction repaid by11Energy;paired positive-fraction controls;fullcap;
+positive and negative Overcast ceiling fractions;source death/retirement and
+condition qualification before lethal damage. Fixtures assert initial resources
+and explicitly use20baseEnergy,2innate pips plus armor80/-2forflat Energy.
+Overcast lowers the ceiling;it is not an unconditional Energy subtraction.
+
+Limits
+Frozen receipts do not independently establish Cracked Armor,Energy return,
+target armor or damage ratio. Native actor/model/queue services are stubbed;
+rendered/audio acceptance,whole resource/damage/recharge publication order,
+NPC casterAI,broader reactive combinations and speed calibration remain open.
+The parent owns final host/regression build and audit/list publication. No
+official client/logger/process actions were performed for this implementation.

@@ -1,0 +1,59 @@
+Arthur native crafting integration: PRIVATE_ARTHUR_WIKI_CATALOG_V1
+
+Only Arthur Ayala [Weapons], map148. Thirteen exact same-owner candidate
+353 definitions and original recipe/material table entries are exposed by an
+explicit wiki-backed server catalog. Arthur wiki SHA
+1b4c6ec592883020e9cd0b4e70bfe49a41e5a222b3deaa6aa2ef301a0eaa11cf
+lists all13 service choices. Missing retail132 payload is not reconstructed;
+list ordering is private and repeated-cost focus name joins remain unasserted.
+Exact native encoded names are retained, without invented string labels.
+
+Original owner195, definitions352, list131 and type3/float1 heading201
+serializers and original panel consumer are exercised offline by
+crafter_panel_2022.py. Sixteen fixtures compare with runtime panel output.
+No generic dialogue menu substitutes for the native crafting panel.
+
+Weaponsmith wiki SHA
+9d47dcaecc840017c486559ae21e196122f49ef4d215a51122c04c8429a18c68
+establishes crafted weapons are not automatically customized. Trusted catalog
+therefore explicitly issues profession0 and empty customization; strict unknown
+metadata handling remains unchanged. Actual captured requirement modifiers
+remain intact (including Hammer3/Sword3). Those attribute thresholds affect
+base benefits, not permission to equip.
+
+Exact9 focus definitions have62c80300/a3c80500. Original879a10 formatter
+emits Energy3/Armor5, independently agreeing with wiki. Bounded full-definition
+identity plus known metadata gives intrinsic AR5 to physical/elemental uniform
+and body-location armor paths. Effective physical offhand ownership gates both
+AR5 and existing Energy3. Staff suppression preserves stored offhand and removes
+its benefits; returning to a one-handed mainhand restores them. No unknown
+focus or broad positive-armor modifier is granted this new intrinsic armor.
+
+Normal72/75 dispatcher gives active crafter binding its own scope. Original
+crafter operation is75/type3, not72: marker1 means selected material stack,
+server recipe derives actual partial debit. Recipe quote, exact inventory
+snapshot/revision, NPC instance/generation/range, monotonic deadline, and
+nontrade scope are checked before durable item/gold CAS. Selected stack policy
+is carried ordinary250 stacks only, using reviewed canonical model+2508slot.
+Private deterministic debit order follows request order; original remainder
+stack identity is not claimed without a successful retail craft capture.
+
+Commit success publishes item packets and native gold updates before203BYTE3,
+then reopens with fresh menu IDs/snapshot. Failure sends no completion ack and
+mutates no authoritative inventory. Existing merchant and collector branches,
+including generic unsupported-collector fallback, remain intact.
+
+Tests registered: arthur_focus_items, crafter_panel. Existing crafter_transaction
+covers13 exact recipes, selected stacks, capacity failure, CAS failure/replay.
+The initial shared-playability stage passed18Release suites and rebuilt the
+host, pinned in build/reports/shared-playability-validation.json
+(created2026-10-23T13:25:44.736256Z, hostSHA
+0f6df63979aa0cc434dc2a02c726fe1e579d1459dede96e7f4268dfed6203072).
+Original native panel, completion and modifier proofs passed independently.
+Rendered crafting acceptance and an observed successful retail transaction
+remain outstanding. Later living-player eligibility/inventory3 regressions
+are a new implementation stage and await their own coordinated build.
+
+Next-stage bounded weapon support: arthur-weapon-base-integration.txt records
+the exact4 base-attack adapter and remaining Health/Charr equipped-stat gaps.
+This is distinct from the initially validated native crafting transaction.

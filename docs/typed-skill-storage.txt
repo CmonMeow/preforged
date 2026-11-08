@@ -1,0 +1,32 @@
+Typed skill storage migration — 2026-10-09
+
+NetworkServer::characterSkills and saveSkillbar now call NetworkManager typed
+methods directly. Manager admission remains serialized with a three-second
+request deadline. Accounts reads/updates skill profiles directly from SQLite,
+without tab/hex request or response serialization on the production path.
+
+Offline skill get/bar-save adapters share those same implementations. Full
+profile import remains an offline operation. Saving a bar changes only the
+profile and revision; the captured source hash is preserved. Existing learning,
+profession and ownership validation applies. The SQL transaction rolls back if
+the request expires after update and before commit.
+
+Validated by rebuilt network_lifecycle, quest_accounts, development_accounts
+and accounts_lifecycle tests: all four passed. The isolated quest-accounts
+fixture also covers missing profiles, foreign ownership, stale revisions,
+invalid skill IDs, cancellation at the final pre-commit check and profile
+preservation. No production account database was changed by these tests.
+
+The currently running host has not yet been replaced. Linking/publishing and
+private-client smoke verification remain required before claiming live use.
+Other application operations still contain legacy serialization; this is not
+completion of the overall architecture migration.
+
+Deployment verified: Release host SHA256
+7cb7f25b925cc0200ece16b6444e3a064bb18883d87366186c35088d1cea65bb.
+All 126 rebuilt CTest checks passed (29.51 seconds). Live private client PID12544
+logged in, entered map55, turned, moved by keyboard and ground click, and remained
+alive through a five-second post-input hold. Ground movement was 163.589 units;
+read-only native pose comparison reported zero disagreement. Native skillbar
+snapshot is in build/reports/typed-skill-storage-live-bar.json. Official PID5604
+remained running throughout. Host PID5132 serves the new build.

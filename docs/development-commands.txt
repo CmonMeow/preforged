@@ -1,0 +1,99 @@
+Developer and GM command evidence and integration
+
+Sources: local mirrored2021 Game_master.html#GM_commands,#Developer_commands,
+#Staging_server_commands and Commands.html. These are community descriptions,
+not recovered ArenaNet command handlers. Declaration is not implementation.
+
+Verified GM family:
+/.gm toggles GMlabel; /.die selfdeath(noDeathPenalty,doesSoulReaping);
+/.examine selectedplayer accountstatistics; /.fireworks outpostfireworks30min;
+/.mute selectedplayerchatblock; /.resurrect resurrection;
+/.teleport lastclickedlocationoncompass.
+GMpowers require specially-enabledaccounts; GMlabeltoggle never grants authority.
+
+Verified developer family:
+/% text devchat; /.dev developercommands;
+/.s mapID travel; /.unspawn removesfoes;
+/.joinguild guild tag; /.guildhall and /. guildhallchange;
+/.unmute; /.who playerinformation; /.write gamerecordofopen districts;
+/.guildtrim values0none,1bronze,2silver,3gold,9obsidian.
+
+Staging documented actions:
+/.allheroes,/.allitems,/.allmissions,/.allskills unlockcorrespondingdata;
+/.exp number givesexperience,maximum50000atonce;
+/.faction0Kurzick/1Luxon10000 givesfaction;
+/.gold100000 gives100platinum;
+/.loot itemalias givesitem(examplesigil);
+/.p positionXYZ; /.rp10000ormaxBalthazarfaction;
+/.run1..9 altersrunspeed; /.titlepoints title0..42 points changesstatus.
+
+Staging uncertain effects (must not claim implemented from inferred names):
+/.ascend,/.chest,/.crash,/.damage,/.disconnect,/.fame,/.heal,/.hotkey,
+/.item,/.lockup,/.mission,/.playtime,/.quest,/.respawn,/.ressurect,
+/.spawn,/.t,/.trigger,/.unlock.
+Verified existence but undocumented live effects:
+/.dp,/.event,/.ip,/.m,/.mark event player,/.monitor,/.partysize,
+/.time,/.w,/^. The wiki also calls /.mute unknown in this section while its
+GMsection documents selectedplayerchatblock; preserve that provenance conflict.
+
+Ordinary pet commands:
+/namepet name and /petname name rename the user's own animalcompanion;
+emptyargument restores that animal's defaultname. No pet exists in currentserver
+state, so parser cannot invent success or target another player's companion.
+
+Private extensions, explicitly not asserted official:
+/kill playername-or-ID is root's authorized sameinstance developmentcommand.
+/setname playername-or-ID = newname is the implemented private grammar.
+Localwiki contains no /setname after a complete recursive search.
+Only /.gm is admitted as the GMtoggle; undotted /gm is unknown.
+
+Parser:
+development::parse UTF16 -> Request kind,declaration,keyword,target,text,numbers.
+Only keyword lowercased. Names preserve case/unicode. Rename uses existingstrict
+UTF16namecodec max19units/noinvalidsurrogates/controls. It does not implement
+retailletter-onlynamepolicy, globaluniqueness or authorization itself.
+requires_authorization() is true for GM/developer/staging/privateoperations;
+ordinarynamepet false stillrequires actualownedpet validation in dispatcher.
+Unknown-effects tier must produce explicit unsupportedresponse, never success.
+
+Durable rename proposal (not implemented by parser): resolve target to owned
+liveScope, accountID and characterGUID within thisworld; privileged caller must
+pass authorization independently of GMlabel. Accounts operation should verify
+accountownsGUID, expectedoldname, globalnewnameuniqueness inside atransaction;
+keep GUID, summaries, inventory, skillbars, queststate unchanged. Persistfirst,
+then update publicagentname and cachedgrant/roster; version/lifetime CAS prevents
+renaming a replacementactor after leave. Decide separately whether customized
+item ownership is GUIDbased; displaystringrename alone must not grantotheritems.
+NPCdisplaynames andpetnames are different typedoperations, not characterrename.
+
+Durable rename backend implemented:
+gw-character-development-rename fields: account hex, character GUID hex, expected
+current UTF-8 name, new UTF-8 name (tab separated). BEGIN IMMEDIATE protects
+ownership, exact old-name compare-and-swap, global ASCII case-insensitive name
+uniqueness, and deadline rollback. Only fw_gw_characters.name changes; all GUID
+references remain intact. gw-character-name-get returns the current owned name.
+rename_accounts_test covers ownership, stale names, duplicate names, cancellation,
+inventory identity/revision, roster GUID, and restart durability.
+Live command is authorized by private-admins plus enabled /.gm mode. Same-map
+target scope and exact current name are held through durable commit. Native88
+then updates the existing player record, preserving published appearance/fields
+and never spawning a new agent. Evidence: tools/protocol/player_rename_2022.py
+and tests/fixtures/player-rename-2022.txt execute original native792080 against
+a pre-existing record and prove replacement name + retained lifetime/sentinels.
+Owning auth/world sessions refresh roster, selectable names, grant and presence.
+Exact cosmetic label repaint timing still needs live client verification.
+
+Live observation: native88 changes the player record and chat sender, but does
+not by itself refresh inventory-title or party-row UI caches. The affected
+party now receives a complete existing465/458/466/433 roster rebuild after
+commit. This is covered by the world test; cosmetic repaint still requires
+client validation. Inventory owner-title refresh is under native380 callback
+audit. Do not treat record-name replacement as proof of all UI cache refresh.
+
+Owner-name refresh evidence completed: native380 callback7ccb50 copies max20
+UTF16 units to CharContext+74, without mapload gates or scene/event changes.
+Offline tools/protocol/owner_name_2022.py verifies repeated standalone updates
+and surrounding sentinels; fixture owner-name-2022.txt. Rename sends380 only
+to the renamed actor's owning outbox, never peers; all peers receive88 and
+the affected party receives a rebuilt roster. No forced map transfer needed.
+Inventory/party title repaint still requires root live validation.

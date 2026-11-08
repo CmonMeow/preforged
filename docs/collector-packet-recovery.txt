@@ -1,0 +1,34 @@
+Completed-session collector item recovery (2026-10-23)
+
+The current GWCA DLL GetMerchantItems export at RVA f78e dispatches transaction
+types 1, 11, 12 and 13 to UI frame lookup. CollectorBuy (2), CrafterBuy (3) and
+SkillTrainer (10) return zero without looking up a frame. Original DLL emulation
+verifies these branches against the pinned binary:
+tools/protocol/merchant_snapshot_types_gwca.py
+build/reports/merchant-snapshot-types-gwca.json
+This explains unsupported collector snapshots. Missing ordinary merchant type 1
+snapshots remain a separate issue. Null UI fixtures do not prove live stock.
+
+The packet logger retains general item definitions (353/354) and bounded window
+item lists (132). Recover them offline with:
+python tools/quests/recover_item_windows.py CHECKPOINT PACKET_FILENAME REPORT.json
+The tool verifies the frozen packet SHA256, exact supported schemas, array
+bounds and used modifiers/names. List order comes from packet 132. Only
+definitions after the current window owner (196) are joined. A repeat
+window reusing cached IDs retains null evidence rather than an assumed mapping.
+No NPC name, profession, purchase success or reward claim is inferred.
+
+Latest output:
+data/captures/skill-checkpoints/20261023-session-52044-complete/item-windows.json
+Five collector windows retain ordered lists with ten item references. Eight
+references have definitions received within their own window. Four windows
+have every referenced definition; one repeated window has two unresolved
+references. Three other owner windows have no heading (197) and are explicitly
+incomplete. This does not establish five unique collector NPCs.
+For collector type 2, the first ID is the cost and remaining IDs are offers.
+Labels remain encoded and owner IDs remain unresolved to persistent NPC identity.
+Merchant window packet 202 is outside this collector-style recovery.
+
+Five regressions pass: packet order independent of definition order, no stale
+definitions across windows, incomplete lists, oversized arrays and names using
+all 64 inline units. This recovery does not alter the runtime collector catalog.

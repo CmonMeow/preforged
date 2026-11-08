@@ -1,0 +1,63 @@
+2026-10-23 skill follow-up
+
+Meekness 1260
+- Pinned 2022 metadata: 2s activation, 15s recharge, 17% Health sacrifice.
+- The fixed capture shows eight exact packets around one cast, including caster
+  body resource 246 and three targeted body resource 247 packets. The modern
+  capture's roughly 953ms finish and 20s recharge differ from pinned metadata;
+  the source retains the pinned client values until the cause is understood.
+- The normal player dispatcher, World effect and player/NPC attack slow are
+  bound. The shared completion publishes finish, caster and target effects in
+  that order. This is source/mechanics verification, not a rendered client test.
+
+Ward Against Elements 175
+- The local archived wiki describes a stationary ward lasting 8..20s at Earth
+  Magic 0..15, granting non-spirit allies in the area +24 armor against elemental
+  damage. The source policy uses the project's 322-unit in-area convention.
+- A detached pure policy and Release test cover caster-owned creation, expiry,
+  map separation, area boundary, ally/spirit gating, elemental-only armor and
+  actual lower damage through the shared combat resolver. Duplicate same-skill
+  wards currently select one +24 bonus; this is a provisional policy, not a
+  recovered server stacking rule.
+- The frozen capture proves one cast start/finish, caster resource314,
+  completion-adjacent ground resource900 and an effect175 application. The
+  original 2022 cast, particle, ground and effect consumers accept their mapped
+  packets. Ground900 ownership, lifetime and removal are still not recovered;
+  another adjacent ground packet (resource356) remains unattributed. The policy
+  is not included in the World cast path, so 175 remains unsupported in the
+  current coverage audit.
+
+Ward Against Melee 176
+- A separate detached policy validates the pinned 1s cast, 30s recharge,
+  5..20s duration and 50% melee block. It admits only living non-spirit allies
+  in the same map instance and plane, within the archived 322-unit area.
+  Same-plane admission is a private navigation constraint, not a recovered
+  retail vertical-range rule.
+- It returns a source-attributed block candidate to the existing block
+  resolver; tests cover melee-only admission, misses, unblockable attacks,
+  Rigor Mortis and independent Guardian composition. It is not a live World
+  ward or Runtime cast binding.
+- Seven frozen receipts include the cast/finish, caster315, two ground packets
+  and an effect176 notification. Native cast and caster consumers plus two
+  serializers pass. Modern recharge15s differs from pinned30s; the pinned
+  value remains authoritative for this 2022 client. Ground resource900 also
+  occurs next to Ward175, and its exact ownership/expiry remain unverified.
+
+Validation
+- build/reports/meekness-native-run.txt: exact frozen receipt/native proof PASS.
+- build/reports/ward-elements-native-run.txt: exact frozen receipt/native
+  consumer proof PASS; no rendered client confirmation.
+- build/reports/ward-melee-native-run.txt and build/reports/ward-family-tests.txt:
+  seven-receipt native proof and five Release family tests PASS.
+- build/reports/meekness-final-build.txt: serial Release Meekness, Ward policy,
+  Faintheartedness and server_host build PASS.
+- build/reports/meekness-neighbor-build.txt and
+  build/reports/meekness-regression-tests.txt: 8 rebuilt CTest suites PASS.
+- build/reports/meekness-coverage-tests.txt: 8 coverage-tool tests PASS.
+- build/reports/meekness-audit-stage.txt and meekness-publish-stage.txt: fixed
+  checkpoint 679/351/328/650. No official client was touched.
+- build/reports/meekness-ward-validation.json records source/host/test hashes.
+  The rebuilt host was started and an owned private client entered map146,
+  completed keyboard/ground-click movement and stayed alive for the bounded
+  smoke (build/client-check/smoke.json). This did not cast or render Meekness
+  or either Ward skill in-client. Official clients were untouched.

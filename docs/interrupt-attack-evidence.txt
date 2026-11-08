@@ -1,0 +1,49 @@
+INTERRUPT ATTACKS — PINNED2022 AND FIXED CAPTURE REVIEW
+
+tools/protocol/interrupt_attacks_2022.py validates four native rows against
+explicit reviewed specifications and runs12 synthetic attack-body consumers.
+It hashes every referenced complete capture file and verifies the original
+actor/tick/bytes and packet layout for each activation and terminal receipt.
+Report: build/reports/interrupt-attacks-native-2022.json.
+Fixed checkpoint20261017-npc-refresh-2; official live logs are not consulted.
+
+325 Distracting Blow: no attribute,5Energy,.5s activation,10s recharge.
+Two local starts/two completions. Historical description: no damage,interrupt
+primary foe and adjacent foes. Cannot use ordinary damage plus target-only
+interrupt as a substitute. Need mixed-recipient atomic admission and per-foe
+miss/block/protection/active-action handling.
+
+329 Skull Crack: no attribute,220 native adrenaline units,.5s activation.
+One local start/completion. Target body resource576. Historical wiki says
+Dazed10s; native bonus fields are15/15. Metadata is not proof of live condition
+duration. Only an eligible spell interruption should cause Dazed; ordinary
+attacks/actions may be interrupted without condition. Resolve duration from
+native handler or actual effect application capture before claiming fidelity.
+
+340 Disrupting Chop: Axe Mastery18,150 native adrenaline units,normal weapon
+activation. One local start/completion. Skill metadata has20/20 scale fields.
+Historical description: interrupt action,disable interrupted skill an additional
+20s. Need actual interrupted slot/copy identity and authoritative disable
+composition; do not disable an unrelated selected skill or every skill.
+
+399 Distracting Shot: Expertise23,5Energy,.5s activation,1.5s aftercast,
+10s recharge. Damage1..16,additional disable20s. One local start and NO local
+completion. It must not inherit Savage Shot's normal weapon damage plus bonus.
+Need reviewed damage/armor policy and successful impact/disable capture.
+
+ANIMATION EVIDENCE
+All four GenericValueTarget50 consumers emit native event21,attack style41,
+body state45 with the correct skill identity. Three independent timings each:
+weapon intervals1.33/1.75 and modifier1.5. Fixed activation uses activation
+times modifier (.5 becomes .75); zero activation uses weapon interval times
+modifier. Terminal46 maps to event17;cancel49 maps to event19. Synthetic actor
+and model handles establish code behavior,not rendered acceptance. Target
+resource2077 is a sentinel; no effect is invented. Skull Crack576 is metadata,
+not proof the Dazed predicate was met in a standing-mannequin skill test.
+
+All four remain unbound. Broader runtime implementation,conditional outcome
+captures,protection/disable ordering,NPC action identity and rendered QA remain.
+
+Superseding340 status: Disrupting Chop now has player/reviewed NPC contact and ordered exact-slot settlement;see docs/disrupting-chop.txt. Its capture still does not prove conditional disable/rendering.325/329/399 remain unbound.
+
+Bow lifecycle correction:399's missing generic46 is expected in the reviewed bow windows,not evidence of failed/incomplete capture. Exact pending-slot release exists. See docs/bow-terminal-lifecycle.txt for28 hashed windows and remaining damage/timing/disable requirements.

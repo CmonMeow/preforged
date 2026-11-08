@@ -1,0 +1,193 @@
+NEXT CAPTURED FAMILY: DAGGER ATTACK CHAINS (2026-10-31)
+
+Scope and recommendation
+Implement shared target-scoped dagger-chain attack admission and contact
+transactions next. First delivery: Jagged Strike782, Unsuspecting Strike783,
+Black Lotus Strike779 and Fox Fangs780. Follow with conditional off-hand
+Falling Spider778, then dual attacks Death Blossom775, Twisting Fangs776 and
+Horns of the Ox777. These eight are listed in the current
+data/skill-capture-plan/CAPTURED-NEEDS-IMPLEMENTATION.txt. They have 30 local
+starts and 30 local finished events in the immutable all-completed audit:
+775:1,776:2,777:1,778:10,779:4,780:6,782:3,783:3.
+Finished-event counts do not prove successful damage or valid prerequisites.
+
+Why this family
+It turns the existing lead-only World chain producers into a reusable actual
+weapon-attack chain. Existing dagger skills Dancing Daggers858 and Iron
+Palm786 already feed the ledger. Eight bindings share equipment, paid attack
+admission, contact outcomes, exact target lifetime, stage transition and
+native chain publication. This offers more shared infrastructure than one
+additional isolated damage spell. It is a proposed next feature after ongoing
+Reversal/Retribution work, not a request to interrupt those owners.
+
+Evidence boundary
+Use ONLY data/captures/skill-checkpoints/20261024-all-completed here. Its
+captured-skills.json records source manifest SHA256
+1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376.
+Current unsupported status comes from current backlog, not the historical
+runtime_status fields embedded in the fixed checkpoint. No checkpoint files
+were changed. No build, production implementation or rendered verification
+was performed for this recommendation.
+
+Exact retail receipts (one-based physical JSONL lines)
+File packets-1360-15821281.jsonl, local caster25, target30, map280:
+750161 tick34455187 opcode160 kind50 skill782 starts Jagged Strike.
+750169 tick34455359 opcode159 kind46 caster25 precedes:
+750170 opcode92 caster25 target30 stage1,
+  hex 5c000000190000001e00000001000000;
+750172 same tick opcode163 kind17 target30 source25,
+  hex a3000000110000001e00000019000000898888bb;
+750173 opcode159 kind6 target30 value23;
+750175 opcode162 kind44 target30 normalized modifier cdcc4cbc.
+These are observable ordered packets; condition23 and modifier cannot alone
+establish the full duration/rank/armor rules.
+750187 tick34456375 opcode160 kind50 skill780 starts Fox Fangs.
+750191 tick34456531 opcode159 kind46 caster25 precedes:
+750192 opcode92 caster25 target30 stage2,
+  hex 5c000000190000001e00000002000000;
+750193 opcode163 kind16 target30 source25,
+  hex a3000000100000001e00000019000000bcbbbbbc.
+This is a concrete successful lead-to-offhand packet sequence. Note stage
+publication PRECEDES damage here; do not copy Iron Palm's different ordering
+as a universal dagger transaction order.
+
+Dual negative/control windows in the SAME file:
+710803 tick32800812 skill775;710810/710818 kinds46/47;
+710811/710819 opcode160 kind38 target30 source25 value2.
+710844 tick32804656 skill776;710852/710856 kinds46/47;
+710853/710857 kind38 target30 source25 value2.
+710867 tick32806078 skill777;710873/710881 kinds46/47;
+710874/710882 kind38 target30 source25 value2.
+Do not count these as successful dual damage or condition proof. The repeated
+two-terminal structure is a valuable native consumer/failed-prerequisite
+investigation target; kind38 semantics still need explicit verification.
+
+Local wiki mechanics
+Source: build/research/gw-skilldata/data/json-full/skilldesc-en-gww.json,
+skilldesc keyed by decimal skill ID. Local archive, not live browsing.
+782: lead applies Bleeding5..20s on hit.
+783: lead bonus19..31, additional15..75 if target above90percent Health.
+779: lead bonus10..31; gain5..13 Energy when struck target hexed.
+780: must follow lead, unblockable, bonus10..35.
+778: must strike knocked-down foe, bonus15..35 and Poison5..20s.
+775: must follow offhand, bonus20..45 plus20..45 adjacent-foe damage.
+776: must follow offhand, bonus10..20 and Bleeding/Deep Wound5..20s.
+777: must follow offhand, bonus1..11; knockdown if target has no adjacent ally.
+Descriptions use wiki displayed rank range; derive actual interpolation and
+cost/activation/recharge/weapon/type from pinned2022 row and assert them.
+Do not silently treat displayed rank12 endpoint as catalog rank15 endpoint.
+
+Current hooks and missing integration
+src/runtime/gw_dagger_chain.h: DaggerChain stores exact target Scope,
+stage/current and15s deadline, has lead/offhand/dual mutators and clear.
+offhand currently accepts only stage1; dual only stage2. These mutators
+exist but their existence is not an implemented paid weapon attack.
+src/runtime/gw_world_simulation.h:
+  Player::dagger_chain; dagger_stage near9611;
+  Dancing Daggers impact lead producers near9768/9789;
+  Iron Palm paid completion stage producer near12505..12546;
+  iron_palm_wire_expiries cleanup near18270.
+src/runtime/gw_weapon_attack_skills.h: AttackPlan, attack_skill and
+resolve_attack_skill are the existing reviewed weapon-plan pipeline.
+World ordinary_hit_locked / ordinary_npc_hit_locked and paid attack branches
+near7756..7908 already own miss/block/critical, exact hit outcomes and shared
+reactions. Extend this authority; do not add an independent direct-damage
+spell pretending to be a dagger attack.
+docs/iron-palm-chain-consumer-20261026.txt and
+tools/protocol/iron_palm_chain_2022.py prove original2022 incoming opcode91
+schema/callback behavior for stage1/2/3/clear. Modern92 is NOT native2022.
+Native service stubs and serializer proofs do not prove rendered animation.
+
+Implementation sequence and acceptance gates
+1. Build a detached, manifest-hashed receipt audit for all30 local starts.
+   Join kinds46/47, damage, conditions and92 stage within the SAME actor,
+   target and lifetime; retain intervening ordinary attacks. Record mismatch,
+   block/miss/failure and absent-stage windows rather than smoothing them.
+   Decode native attack animation and two-hit dual failure consumers offline.
+2. Add a canonical dagger attack plan and typed chain requirement/result:
+   lead, offhand, dual and knocked-down exception. Separate admission from
+   contact eligibility, choose explicitly which phase consumes/advances chain,
+   and derive valid/failed payment/recharge behavior from receipts. Admission
+   and contact must reject stale target generations and wrong equipment.
+   Do not infer success from Runtime finishing or from any damage modifier.
+3. Integrate782/783/779/780 into existing paid attack pipeline, reusing shared
+   player/NPC conditions, precise Energy gain and current hex/Health facts.
+   Fox bypasses block, not Blind/miss. Stage update requires the reviewed
+   successful contact; replay cannot pay/refund/apply conditions twice.
+   Generalize Iron Palm-named wire expiry ownership to chain publication;
+   preserve target switching, deadline refresh and old-target cleanup.
+4. Add778 using actual timed knockdown state at the reviewed phase. Add
+   dual support only after an explicit two-strike transaction owns per-strike
+   damage/outcome/critical/reaction and shared payment/stage effects. Reusing
+   bow arrows=2 is insufficient evidence for melee dual ordering.
+5. Add775 mixed player/NPC adjacent collateral via shared scoped area damage;
+   776 condition ordering with shared Deep Wound;777 current allied-neighbor
+   geometry and trusted knockdown. Review lethal first-strike behavior,
+   target switching between strikes, and reaction-driven deaths.
+6. Native mechanics tests: valid/invalid chain, exact expiry, target change,
+   interruption, stale scope, missing weapon, miss/block/unblockable,
+   conditional facts changing after admission, two-strike partial outcomes,
+   replay, reaction deaths and mixed NPC/player area recipients. Verify exact
+   original2022 bytes plus actual consumer first, then normal paid Runtime
+   ordering. Only promote bindings after required consumers pass. Coordinate
+   ownership/freeze and serialized builds with parent; no build authorized by
+   this analysis alone.
+
+Open evidence gaps
+Successful dual contacts are not established by the quoted early dual windows.
+Need locate later valid offhand-to-dual examples before encoding timing,
+per-strike condition application, chain clearing, failure payment and damage.
+Retail exact15s threshold, same-stage refresh beyond Iron Palm, chain death/
+switch/blocked-contact semantics and NPC caster ownership require review.
+Numeric weapon/critical/double-strike authority must be present for actual
+dagger equipment; metadata weapon support alone is insufficient. Current
+Player-only ledger does not supply an NPC caster implementation. Neither the
+captured actor's rank nor normalized damage proves base formulas. Rendered
+2022 animation, UI stage persistence and two-strike feedback remain acceptance
+work after mechanics/native consumer tests.
+
+DETACHED POLICY PREPARATION (2026-10-31)
+Added src/runtime/gw_dagger_attack_policy.h and unregistered
+tests/dagger_attack_policy_detached.cpp. Correct IDs are Jagged Strike782 and
+Fox Fangs780;775 is Death Blossom. This is source preparation, not a tested
+implementation or a production binding. Parent owns native build scheduling.
+
+The canonical policy asserts pinned2022 rows: both5Energy/.5s activation/
+zero aftercast/dagger requirement8/Dagger Mastery29, Jagged1s recharge and
+Fox3s recharge. Catalog overcast99 is an original sentinel, not99Overcast to
+charge. Rank0..20 Jagged Bleeding interpolates5..20seconds; Fox bonus10..35,
+unblockable. The policy deliberately does not call valid(AttackPlan), whose
+current canonical dispatcher excludes these skills.
+
+Integration contract for parent:
+* Runtime/World admission near World attack_skill call7177 should use the
+  canonical detached plan only after adding an actual reviewed AttackPlan
+  branch and all required native attack consumers. Check item_type32 plus
+  non-caster weapon and exact current source/target Scope. Fox needs stage1
+  on that target. Repeat eligibility at final contact; initial acceptance does
+  not reserve a lead indefinitely. Failure cost/recharge/animation remains
+  explicitly outside this policy until failed-prerequisite evidence is decoded.
+* Shared final contact branches near7756..7908 must supply a QualifiedHit
+  after accuracy/block, current hostile geometry and recipient validation.
+  Fox's unblockable flag must flow into both player and NPC block resolution;
+  it must not skip shared miss/Blind/critical/weapon-damage authority.
+* dagger_contact_proposal returns copies of before/after DaggerChain, exact
+  source/target/event/time, bonus/Bleeding and whether stage changes. It does
+  not commit Health, conditions, payment, packets or chain. World must own
+  event replay prevention and atomic commit. dagger_chain_matches is only an
+  optimistic snapshot check, never a replay token. Preflight before shared
+  reactions, then reacquire exact surviving actors; stale/dead actors cannot
+  receive conditions/stage. Miss/block/cancel do not enter this helper.
+* Reuse shared Bleeding duration/modifier/reactive application; do not directly
+  insert a condition in this header. Reuse ordinary physical weapon damage
+  plus Fox armor-ignoring bonus, rather than an invented direct spell hit.
+* Replace Iron Palm-specific wire-expiry ownership with a shared stage owner.
+  Stage1->2 must schedule its own exact deadline. Frozen Jagged/Fox stage
+  precedes damage, so integration requires a reviewed deferred attack batch;
+  it cannot blindly reuse Iron Palm finish/damage/stage ordering.
+* Existing ledger15s timeout and same-stage silent refresh are retained as
+  current policy, not new evidence. Test file exercises rank plans, target and
+  generation isolation, expiry, refresh, transitions, snapshot mismatch,
+  forged plans, invalid equipment, timestamps and scope. No tests were run.
+  World integration still needs actual paid success/failure, precise damage,
+  shared Bleeding, native attack feedback, reaction death and replay tests.

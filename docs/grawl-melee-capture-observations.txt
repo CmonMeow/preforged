@@ -1,0 +1,57 @@
+Exact Grawl Invasion75 capture observations, 2026-10-23
+
+Reproduction:
+python tools/ai/audit_capture_behavior.py data/captures/pre-searing-warrior-ele-2026-10-09 --output build/reports/ai/grawl-warrior-ele-source-audit.json
+python tools/ai/audit_action_sequences.py build/reports/ai/grawl-warrior-ele-source-audit.json --output build/reports/ai/grawl-warrior-ele-action-sequences.json
+python tools/ai/audit_grawl_melee_evidence.py
+Output build/reports/ai/grawl-melee-evidence.json includes exact raw packet
+hex/line/tick, lifetime bounds, world movement line pairs, quest snapshots and
+full source hashes. Every source is rehashed against the action audit.
+
+Archive world-13908-99220828.jsonl SHA256
+3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff
+(same world hash as existing Grawl combat content).
+Archive packets-13908-99235906.jsonl SHA256
+3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a
+Both are in data/captures/pre-searing-warrior-ele-2026-10-09.
+
+Exact three quest actors: map160, epoch24, Grawl Invader model1437, level1,
+allegiance3, source lifetimes24:26:1,24:29:1,24:30:1. Fifteen ordinary starts
+target actor9. Quest75 is present notcompleted at world3195/tick100494937,
+3356/100554937 and3425/100577937; completed at3460/100589937.
+Identity/quest concurrence does not measure a retaliation trigger or priority.
+
+Initial exchange correlation supports the bounded retaliation direction:
+26: player9 attack start34440/tick100540953; negative type16 float26/9 at
+34452/tick100541421; NPC attack34454 at the same tick.
+29: player start35085/tick100565078; negative float35113/tick100565578;
+NPC start35115 at the same tick.
+30: player start35504/tick100579093; negative float35525/tick100579765;
+NPC start35528/tick100579921 (156ms later).
+These are source-scoped initial observed exchanges. They do not prove absence
+of prior aggro, a universal damage-only trigger, or exact response latency.
+
+Three source timing53 packets (raw two-float fields):
+34453 tick100541421 source26:2.4750001430511475,1.0
+35114 tick100565578 source29:2.4750001430511475,1.0
+35527 tick100579921 source30:2.0249998569488525,1.0
+The native timing serialization provides a useful comparison seam, but these
+varying values do not establish one retail period for all three actors.
+Twelve start-to-start spacings have min1766ms, median2484.5ms, max3063ms.
+No successful finish is matched. One stopped action starts packet35580 at
+100582265 and stops35604 at100582781 (516ms); a canceled interval is not a
+completed attack windup. Existing2000ms period/750ms windup remain authored.
+
+Seventy-one nonzero consecutive world position steps stay within exact source
+lifetimes/identity. Maximum sampled displacement rate149.000589 units/sec.
+Example actor30 world3376/instance71765 (11676.147461,3974.269531) to
+world3380/instance72765 (11813.783203,4031.344727), distance149.000589.
+This precedes actor30's first admitted attack; it may be patrol movement.
+Sparse chord rates cannot establish route length, pursuit speed, collision,
+turn delay or teleport exclusion. Do not relabel authored220 as captured149.
+
+Forty-five modern163 float events involving these exact lifetimes are retained
+with raw field order. Example34500/tick100542640:kind16,actors9/26,
+float-0.0416666679084301. Without verified event semantics, victim Health at
+the event, armor/conditions/critical facts, this does not prove base damage.
+No new damage/speed/timing constants are installed by this evidence audit.

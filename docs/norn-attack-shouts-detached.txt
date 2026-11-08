@@ -1,0 +1,24 @@
+NORN ATTACK SHOUTS 2354/2355 — DETACHED MECHANICS, 2026-10-26
+
+The fixed capture checkpoint remains unchanged. The catalog-checked C++ plans
+cover Norn rank 0..10 progression for Dodge This! and I Am the Strongest!.
+The latter has a successful-hit charge state: blocked/missed contacts must not
+consume a charge; each successful target contact does, including multiple
+contacts from one scythe swing. Its effect expires after 7h30m, and reapplying
+it while active ends the effect. The native test exercises these invariants.
+
+Evidence: frozen catalog rows2354/2355; fixed 2022 instant-start receipts and
+first body consumers in docs/norn-shouts-next.txt; Guild Wars Wiki pages
+https://wiki.guildwars.com/wiki/%22Dodge_This!%22 and
+https://wiki.guildwars.com/wiki/%22I_Am_the_Strongest!%22.
+
+Subsequent work bound I Am the Strongest! to production casting and weapon
+contacts; see docs/i-am-the-strongest-binding.txt. Subsequent work also bound
+Dodge This! with per-attack reservation; see docs/dodge-this-binding.txt.
+The detached mechanics below are historical and the binding records govern
+current status. Neither skill has rendered-client verification.
+
+Release test: ctest -C Release -R ^norn_attack_shouts$ passed 1/1.
+SHA256 gw_norn_attack_shouts.h AD368891B3E7956F474A6C72F291A150D325C2BF62AEDBE56350CBAB9DB6AF22
+SHA256 norn_attack_shouts.cpp A01A0AB639338380CED26FAD21DF6EAB4EC75FD62F967CDF30D230967A9F612D
+SHA256 norn_attack_shouts_test.exe FAC04F8B1F62294E3799639034095AEE15A86777DBEC4090A4BBE0E22DD2EDE3

@@ -1,0 +1,36 @@
+Castigation Signet2006 - source integration and evidence
+
+Normal HolyPlan/Runtime/World now admit the canonical rank0..20 plan:
+zero Energy,1s activation,.75s aftercast,20s base recharge,26+2*rank holy
+damage and interpolated1..10 Energy if the foe is attacking at completion.
+Player equipment and NPC reviewed holy traits remain authoritative; undead
+holy damage scaling does not multiply the Energy reward. Qualification survives
+a lethal hit. Shared gain handles debt,fractions,Overcast and the Energy cap.
+Future NPC Health authority is rejected before source resource settlement.
+The normal deferred holy lane publishes target1829 after cast completion;
+caster2077 is the native sentinel and is not fabricated into an effect.
+
+Evidence: tools/protocol/castigation_signet_2022.py pins the2022 executable,
+archived wiki and five receipts in20261022-cumulative-skills. Native consumer
+and targeted serializer pass. Captured effective recharge15s has unknown
+modifier context; native/wiki base20s is retained. Frozen receipts do not
+independently prove target attack state,conditional Energy or exact damage.
+
+Test: castigation_signet covers player/NPC attack/spell/idle/exact-end states,
+reviewed/unknown holy traits,lethal targets,full/debt/fractional Energy,forged
+plans,future clocks,Runtime cancellation/interruption/missing hook and recharge.
+The parent serial build and tests are pending at this document's creation.
+Rendered/audio acceptance,full publication order and NPC caster AI remain open.
+Original asset/actor services in offline probes are stubbed;native execution
+is not evidence of successful rendered client playback.
+
+Parent validation update2026-10-23:
+Rebuilt castigation_signet test passes,including the withdrawn holy completion
+hook regression. The missing Runtime whitelist admission and bad_function_call
+were corrected before calling this source-bound. Native five-receipt verifier
+also passes. Final host build remains pending; no live deployment implied.
+
+Final serial host build and six focused CTest suites passed2026-10-23.
+Host SHA256: F6A4C8642142A54723BEE332F65A8B8B1A118FFC753E0C08EED50157C89A350E
+Binary rebuilt only;no running-server restart or rendered client acceptance claimed.
+

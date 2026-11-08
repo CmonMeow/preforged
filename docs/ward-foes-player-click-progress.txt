@@ -1,0 +1,62 @@
+2026-10-23 Ward Against Foes [177] player click-route checkpoint
+
+2026-10-24 held-key publication follow-up: World now sends a position,
+composed native base speed, gait/direction speed and renewed legal destination
+when an already moving foe enters or exits the field. A field cast around a
+moving foe settles pre-cast movement first and publishes the slow immediately.
+Starting held input inside the field publishes its initial slow, including
+backward gait; a late-joining player receives the composed speed in the
+existing-actor snapshot. Release World regressions exercise these paths.
+Boundary precision is one 20ms steering slice, not an exact recovered retail
+wire timestamp. Turn/collision sliding and all alternate NPC movement
+controllers still need a production acceptance audit, so normal Ward177
+casting remains gated and the fixed skill backlog is unchanged.
+The serial Release host build and the configured CTest suite (857/857) pass.
+Current tested SHA-256: World header
+881865FEE65119184AFA41184D6DEDA314F34013355C572B81BF3AD18FAED16C;
+Ward implementation 0301916CBFD3800835531DC30A9EE0C040D06A04F28DF7E04F1346B0C454C75D;
+World test EA41279DC0C8749317794E6C0B3CF6EB5A461137BD3F7AC6277961265B01F404;
+server host 51FCFCCBF9FC23E535062FBAFA7792E90FC307F27BBDCBB17632B7481B6C619D.
+
+2026-10-24 held-keyboard authority follow-up: World now advances a hostile
+player's held input in bounded 20ms slices while an eligible stationary Ward
+can be crossed. Each slice samples the field at its start and applies the
+same factor to server displacement and checkpoint movement credit. A
+team-matched player remains at ordinary speed. World tests cover entering
+an existing field and casting the field after held input has begun; both
+pass in Release. This bounds crossing error to one keyboard slice rather
+than applying the final position's factor to an entire sparse input interval.
+The gate still excludes Ward177 from the production gateway: precise
+entry/exit client speed publication, turns/sliding at the boundary, and
+full movement-producer agreement remain unverified. The fixed capture and
+missing-implementation lists are intentionally unchanged.
+The serial Release host build succeeds, 11 relevant movement/ward tests pass,
+and the configured CTest suite passes 857/857. World source SHA-256:
+7FC5EBD52A686CC43AD291F9BBF4591BFA9366E290880AD7637247211ABE270F.
+Ward World-test SHA-256:
+FC64D98C2F6670A922CDBC1865B4B7DE5F9F7B3E5939C447535BF185B23E11A2.
+Server host SHA-256:
+35CA4877C93D8B2644758BE6EBB6986A6CA128538A13D8221071A4FFD2996056.
+
+World now projects the current click leg using the same historical field
+geometry and movement-effect composition used to schedule its arrival. A
+regression covers a foe crossing the ward boundary; another covers a ward
+cast after the foe has already begun moving. In the latter case World settles
+the old leg at cast time, reschedules its remaining distance and emits a
+position/speed/destination renewal. The field is stationary, foe-only and
+retained across caster departure until its own expiry.
+
+This is server-side click-route mechanics evidence, not live-client proof.
+The current server tick publishes a position, composed speed and renewed
+destination when its sample crosses a field edge or observes expiry. The
+packet test verifies a slowed entry. Exact transition-time publication,
+held-keyboard steering, queued multi-leg projection, and the field-history
+retirement watermark still require integration/verification. Movement-effect
+boundaries now rebase a Ward click leg before effect history is discarded;
+their multi-effect overlap needs broader coverage.
+Skill177 therefore remains unbound in production. The current installed
+private host has not been restarted to include this checkpoint.
+
+Focused checks: ward_foes_world and melandru_resilience passed in Release;
+the route, history, NPC-route and player-wire tests also passed in the
+previous build. Full host rebuild and rendered client test remain pending.

@@ -1,0 +1,94 @@
+NPC Angorodon's Gaze completion authority design (2026-10-22)
+Read-only runtime audit; this document does not enable any caster or skill.
+
+Evidence and limit
+The frozen identity audit in build/reports/ai/new-skill-npc-identity-joins.json
+finds six hostile Angorodon starts of2189, model6357/level26/map558.
+Exact archive hashes, packet765067/tick206263875/source84:197:2 and
+packet765704/tick206268765/source84:196:2 are recorded in
+docs/new-skill-npc-ai-boundaries.txt. Nearby targets include Tahlkora and Livia.
+This proves NPC spell use, not rank, target lifetime, condition qualification,
+Energy amount, completion success, or universal selection priority.
+
+Existing authority and missing primitives
+gw_life_stealing.h::life_steal(2189, rank) validates the reviewed metadata and
+produces the canonical two-Health plan; steal_life computes transfer and capped
+source gain independently of armor/healing multipliers, with overkill limited
+to target Health plus one. Shielding reduction is explicit for player victims.
+gw_world_simulation.h::life_steal_locked currently requires a player caster in
+both recipient branches. It cannot be reused for an NPC merely by changing
+scope lookup. LiveActor::apply_life_steal is a hostile NPC VICTIM mutation and
+does not commit source Health or settle wound debt. LiveActor::heal applies
+healing modifiers and wound healing semantics; it must not implement stolen
+Health gain. actor() is const. A narrow owned non-healing Health event primitive
+with exact lifetime/time and wound accounting is therefore required for both
+NPC source gain and general NPC victim loss; do not cast away constness.
+
+Completion transaction under the Instance mutex
+1. Validate canonical2189 plan and exact pending spell token/source/target
+   scopes; consume completion once through the actual NPC book lifecycle.
+   Admission pays5 Energy once and retains its ordinary zero-Energy event.
+   Completion never pays again, rewinds recharge, or restores an old actor.
+2. Resolve source in npc_combat_ plus placement, exact generation, living
+   Health, reviewed Energy/rank, spell ownership, source control, plane/range
+   and navigation line. Resolve recipient separately by population/relation.
+   Reuse the established interruption/aftercast lifecycle, not ElementalResult.
+3. Settle source Energy using settle_mind_wrack_caster_locked and actual
+   advance_energy; settle source and recipient condition/Health boundaries.
+   These operations may publish legitimately due events or kill actors.
+   Re-find both exact scopes afterward. Reject stale clocks/generations,
+   dead source/victim, changed target relation, or lost action ownership.
+   No transfer preview or rejected effect emits life-steal/Energy packets.
+4. Snapshot source condition_snapshot after settlement immediately before
+   transfer. angorodons_gaze_energy(canonical, conditions, now) qualifies the
+   CASTER, not victim. Expiry at now must fail qualification; condition applied
+   during windup and still active at now qualifies.
+5. Build fresh source/recipient proposals from their settled authorities.
+   Compute steal_life against current Health and supported life-steal reduction.
+   Apply source non-healing gain and victim non-healing loss to proposals with
+   wound accounting; reconcile actual committed Health and killed flags.
+   Preflight conditional source gain_energy on a fresh clone, preserving
+   precise fractional Energy and cap. gain_energy rejects pending energy_zero_,
+   so resolve that owner event BEFORE preview; never erase it to grant reward.
+6. Commit the complete validated pair under the same lock, then publish
+   life_steal_packets and reviewed life_steal_target_2022 visual once. Publish
+   source/victim fractions from reconciled authorities, death/effects, player
+   owner vitals, passive recovery Health-loss event and existing death cleanup.
+   No armor-damage hit, ordinary outcome, Divine Favor or healing reaction.
+   Conditional gain uses captured precise before/after Energy with
+   observe_npc_mind_wrack_energy_locked. Preserve reactions and owned-end
+   effects: no whole-actor assignment after that observer. Pending zero events
+   from payment must resolve even if reward would make Energy positive.
+
+Population coverage must be explicit
+Source: reviewed hostile NPC with actual LifeActor book, Health, Energy and
+condition authority. No fabricated resource pool for unknown captures.
+Recipient player: use Player scope, current Health/resources and
+shielding_reduction_locked; health_event_locked handles player wound debt;
+kill_locked/owner_vitals/passive recovery remain authoritative.
+Recipient allied/protected NPC: needed to reproduce observed hero targets;
+existing hostile-only apply_life_steal cannot authorize this. Require an
+explicit hostile-NPC versus allied/protected relation predicate, damageable
+living Health and typed life-steal reduction authority. Unknown reduction or
+relation fails closed rather than silently treating it as zero.
+Recipient hostile NPC: reject same-side unless a reviewed hostility relation
+explicitly permits it. Never equate actor-ID inequality with hostility.
+Missing/recycled source or recipient: no transfer/reward/publication. Do not
+fall back between players_ and npc_combat_ after a scope mismatch.
+
+Meaningful tests before enabling AI selection
+Pure proposal: armor independent, healing hex independent, capped source gain,
+low victim Health overkill, zero transfer, supported reduction, wound debt.
+World NPC->player and NPC->allied NPC: both Health authorities, fractions,
+target visual, owner vitals/death cleanup; no heal/ordinary damage outcome.
+Condition boundaries: source only, victim only, expiry at completion,
+application during windup, source unconditioned; Energy cap and fractions.
+Zero owner:5-Energy cast payment reaches zero under Mind Wrack/energy-zero
+hex; observer damage/death and effect end occur once before any reward and
+cannot be overwritten by staged actor. A lethal payment prevents completion.
+Staleness: respawn both sides, dead/removed target, plane/range/line change,
+Health/Energy clock rollback, canceled/interrupted/replaced token and replay.
+Rejected transaction changes neither side's transfer Health/Energy and emits
+no transfer visuals; separately due clock/reaction events remain legitimate.
+Selection stays disabled until the above recipient populations and exact
+completion binding exist. Captures supply capability, not arbitrary weights.

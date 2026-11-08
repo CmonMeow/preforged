@@ -1,0 +1,41 @@
+BULL'S STRIKE332 — 2026-10-18
+
+Native reviewed melee attack: Strength17,5Energy,10s recharge,zero activation
+with shared500ms attack contact. Bonus5..30 at ranks0..15 and2s knockdown
+apply only when the foe is moving at contact. Stationary foes take the normal
+weapon hit. Miss/block never grant the conditional bonus or knockdown.
+Knockdown immunity and existing death handling remain authoritative.
+
+Player movement uses accepted current and future navigation positions at
+contact, not a requested destination alone. NPC movement uses validated scoped
+quest routes, current movement integral and remaining goal distance. Paused,
+completed and future-clock routes cannot qualify. Autonomous caster controllers
+without validated route authority remain unknown and reject moving-qualified
+attacks. This shared query also enables Griffon's Sweep326 against reviewed
+static/routed NPC targets, replacing its former blanket NPC rejection.
+
+CAPTURE EVIDENCE
+Fixed checkpoint20261017-npc-refresh-2; packets-1360-15821281.jsonl.
+Activation359529/contact359540 and activation359707/contact359711.
+Owner25,target30,map280. Manifest SHA256:
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6
+Review report: build/reports/bulls-strike-capture.json.
+audit_attack_checkpoint.py verifies exact activation/tick, skill recharge10,
+same-frame completion46 and negative physical float16 with matching actors,
+plus matching pending release. A preceding autoattack completion is excluded.
+Physical damage has no skill ID: this is frame/actor correlation, not proof of
+exact magnitude or causality. Native caster/target2077 are sentinels; no body
+resource is invented. These standing-target captures do not verify the retail
+moving-target bonus, knockdown branch or rendered attack animation.
+
+VALIDATION
+Release server_host and five selected native targets rebuilt serially.
+bulls_strike,hammer_control_world,warrior_condition_cast,world_weapon_attacks,
+illusionary_weaponry_world all pass.55 skill tooling tests pass.
+Bulls suite covers ranks0/12/20, stationary/moving/stopped/completed routes,
+Blind/Escape,lethal contacts,NPC immunity/unknown movement and paused knockdown,
+paid Runtime contact,cancel/interruption/stale scope and repeated update.
+
+Remaining: autonomous NPC caster movement authority,retail moving-target
+capture,broader recipient interactions and rendered client acceptance.
+Official clients/loggers were not controlled or interrupted for these checks.

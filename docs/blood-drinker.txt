@@ -1,0 +1,55 @@
+Blood Drinker1076 — native private-server implementation,2026-10-22
+
+Evidence: local Blood_Drinker.html oldid2591436 describes20..56..65life
+stealing at Blood Magic0..12..15,plus10second self-Bleeding when caster Health
+is above50percent. Pinned2022metadata agrees:5Energy,2second activation,.75
+aftercast,8second recharge,threshold50,duration10,caster1177,target1178.
+
+Fixed checkpoint20261022-cumulative-skills contains one verified local activation
+in packets-1360-15821281.jsonl:111982target30start at17827578,112006recharge8,
+112007finish58,112008caster1177,112009targeted1178at17829656,112010Bleeding478,
+112023pending release at17830437. The Bleeding timer in this modern trial is6s;
+its modifier/rank context is unknown. It is not evidence to replace the pinned
+base10s. audit_echo_checkpoint --skills1076 --include-targets verifies frozen
+hashes/start receipt and produces blood-drinker-checkpoint.json (1window/59events).
+blood_drinker_2022.py verifies7exact frozen receipts and executes original
+2022targeted cast,untargeted caster1177and targeted victim1178consumers. Asset
+services are stubbed;this does not prove rendered fidelity.
+
+Runtime uses the normal paid cast/cancel/interrupt/recharge path and a dedicated
+completion hook,not plain life-steal fallback. World preflights the target and
+self-condition before mutation. The Health threshold is checked before the
+transfer. Bleeding is committed before stealing;Fragility/Fevered reactions are
+retained and the transfer is recalculated rather than overwriting them. Death
+from those reactions prevents the transfer. Existing longer Bleeding survives.
+Victim particle retains both victim and caster IDs and is returned for Runtime's
+finish58,caster1177,target1178completion order. Resource/condition packet ordering
+relative to that batch still requires retail acceptance. Low-level pure life
+transfer is deliberately independent of World condition side effects.
+
+Tests cover all21ranks x4Health boundaries xplayer/NPC,invalid/stale/self targets,
+forged plans,longer-condition lifetime,nonlethal/lethal Fragility before transfer,
+normal paid completion,cancel,interrupt,missing hook and hook loss before finish.
+No persistent learned skill or account data changes are made. No official-client
+input,restart or logger action. Global condition-duration modifiers,NPC caster
+AI,full reactive combinations and rendered animation/sound remain incomplete.
+
+Validation: blood-drinker-build.txt and blood-drinker-host-build.txt record serial
+Release builds. blood-drinker-tests.txt3selected CTest suites pass;the expanded
+Blood Drinker suite includes168rank/Health/target contexts and the reactive/cast
+controls described above. Five Python coverage tests pass and explicitly require
+the production completion hook. Host hash DA003A6E931F543CE1918C6488390A3499476007B76480FFC0B55946D5735623;
+not restarted/deployed. Fixed audit/backlog now679captured/320source-bound/
+359awaiting-binding/650missing-capture. Live official logs were not rescanned.
+Final regression rebuild blood-drinker-regression-build.txt also completed;
+blood-drinker-final-tests.txt4/4fresh affected CTest suites pass,including shared
+Mimicry casting and life-steal wound feedback. Five hook-coverage tests pass.
+
+2026-10-22 completion API consolidation: the production deferred hook is now
+complete_life_steal,shared with Blood of the Aggressor902. BloodDrinker still
+requires that hook and cannot fall back to the plain life_steal callback. The
+unused plain hook is no longer required for1076/902admission. Focused regression
+passes;earlier blood_drinker hook names above describe the historical stage.
+
+2026-10-29 production adapter correction:the gateway previously filtered the completion callback to1076/902and therefore rejected2189despite successful tests with separate callbacks. Production and138new integration cases now share gw_life_steal_completion.h;all6single-target family members retain the selected completion path and defer their existing particles after finish.42source+6backlog checks and old mechanic suites pass. See build/reports/life-steal-adapter-progress-20261029.json. Admitted Renewal,full transfer/protection/reaction/lifetime integration and rendered acceptance remain incomplete.
+

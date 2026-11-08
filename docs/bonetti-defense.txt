@@ -1,0 +1,50 @@
+Bonetti's Defense380: reviewed policy and capture evidence
+========================================================
+
+Player Runtime/World binding integrated. Pinned2022 and historical wiki agree:200 native
+adrenaline units(displayed8 strikes),zero Energy/no recharge,instant Tactics
+stance,duration5..11,75% block against melee/projectile attacks. Only melee
+attacks blocked by this stance grant5 Energy. It ends on accepted skill use;
+ordinary attacks and rejected skill requests must preserve it.
+
+Frozen checkpoint20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+383629..383633 at23576828:adrenaline-spend210,instant48,body639,
+application66 duration5/attribute word0,effect104,pending release227.
+ tools/protocol/bonetti_defense_2022.py checks hash-pinned receipts/native row,
+original instant dispatch and native639 consumer. Rendered assets are stubbed.
+The application alone does not prove block/reward behavior or initial balance.
+
+Staged policy headers validate the native row,rank0..20 and exact duration.
+Melee reward proposals require a matching active owned effect instance selected
+by attributed blocking;wrong effect/source,ranged/cross-instance/expired contacts
+reject. Accepted-use proposals validate the generation-owned registry and exact
+skill/copy against the current published bar,then remove the stance immutably.
+They require a trusted post-payment callback and do not authenticate payment.
+
+Fresh bonetti_defense_policy test passes rank/reward/source/ranged/scope/expiry,
+bar copy/future-time rejection,immutable removal and duplicate cleanup.
+World block probability/source family and committed Energy reward are wired.
+The block's exact server event owns a proposal;only its matching committed
+block consumes the reward. Shared gain logic handles debt,cap and Overcast.
+Cyclone retains proposals locally until preflight/reservation succeeds.
+Runtime spends200 native adrenaline,emits639 once and removes the stance on
+accepted skill use,including instant skills. Denied uses preserve the stance.
+The common skill-use ending path now supports both Berserker and Bonetti;
+ordinary attacks never call it. Scope retirement clears queued rewards.
+
+World tests cover attributed melee gains,Energy cap,Blindness,Guardian block,
+Rigor/removal,ranged exclusion,ordinary attacks,Cyclone success/failed preflight,
+fractional Overcast headroom,negative-Energy debt repayment,actual200-adrenaline
+spend/no Energy,body639,denied insufficient adrenaline and accepted instant ending.
+Additional World cases verify two NPC melee blocks return5Energy each to the
+player(up to30),without damaging the NPC;expiry,replacement and death suppress
+further rewards and remove the stance.
+Native verifier and62 skill-tool tests pass. Wider regressions/Release build are
+recorded in the current implementation status after they complete.
+
+Remaining:NPC stance casters,
+retail simultaneous-resource/competing-source ordering,concurrent bar admission,
+exhaustive death/renewal stress and rendered acceptance. The fixed packet window
+proves spend/application/body dispatch,not actual reward causality or block rates.
+
+Final validation:six freshly rebuilt native suites,62 tooling tests and native verifier pass;Release server_host rebuilt. Fixed checkpoint counts259 bound/374 awaiting. Latest capture inventory and nonplayer hunting checkpoint remain separate.

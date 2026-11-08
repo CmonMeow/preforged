@@ -1,0 +1,128 @@
+NPC Aura180 owned-file implementation phases (read-only plan, 2026-10-23)
+No runtime, app, CMake or test changes are authorized by this document alone.
+
+Delivery objective
+Existing Domination Magic49 Brood on map161 casts self Aura180 and offensive
+Ice Spear214 against its quest owner, allowing the granted Backfire interaction.
+Reuse real Energy/control/recharge/aftercast/interrupt/death/visibility and quest
+restoration. Species/map captured evidence and exact quest-content limits are
+in npc-brood-caster-activation-plan.txt. All0EnergyStorage attribution comes
+from Brood wiki, not from level4 or packet timing.
+
+Phase1: shared typed Aura authority and actual self target
+Own gw_aura_restoration.h: add canonical AuraPlan180 validated against native
+record, rank<=20,60s duration, .25s activation/.75s aftercast/20s recharge,
+5Energy. Retain aura_restoration as the single completion-heal/cost formula.
+Add immutable pre-completion ownership/quote containing exact source scope,
+effect instance, rank, application/expiry and completed spell identity/event.
+Validate active ownership at completion; no heal or Energy mutation in quote.
+First application has no old ownership; renewal may quote its still-active old
+Aura. The enchantment is not consumed by a trigger and ordinary attacks,
+signets, glyphs and canceled/failed casts cannot trigger it.
+
+Own gw_npc_skill_ai.h: introduce explicit named self-target admission for180,
+requiring target.scope==bound source, nonhostile, distance0, actual living source
+facts. Bind Spellbook owner from LiveActor.configure_spellbook rather than
+guessing it from a target or waiting for first selection. Keep existing foe
+rules and1392 ally behavior unchanged. Never mark self hostile or substitute a
+foe for captured null target. Separate self and foe fact views can select from
+the same paid book; they do not create parallel action control or cooldowns.
+Self ReviewedSpell may use range0 only for the explicit validated self class;
+retain existing positive-range validation for every existing foe/ally entry.
+Own catalog configure_spellbook seam only, coordinated with skills agent.
+
+Phase2: NPC owned enchantment and real completion healing
+Own narrow gw_npc_combat_catalog.h methods: apply_aura with canonical plan,
+exact lifetime/effect/time, living Health and explicit healing permission;
+read active owned Aura; consume a one-shot completion quote/event; compute
+healing on clone using existing heal (actual healing modifiers/wound semantics).
+Preflight optional1Energy via precise gain_energy only after due zero-Energy
+owners settle; rank0 Brood has no1Energy reward but generic helper must keep
+rank>=8 correct. Use exact owned registry/effect instance and same-skill replace.
+
+New AI-specific World INL gw_world_npc_aura.inl: follow existing Watchful1392
+paid self-cast lifecycle, but share typed Aura authority rather than fake a
+target-only ElementalResult. Admission reserves owned effect capacity before
+payment, uses source self facts, exact token/sequence, disable authority and
+real Energy observer; publish untargeted native skill start. Completion settles
+source clocks, re-finds lifetime/action/ownership, snapshots old Aura BEFORE
+renewal, completes actor action and executes existing before_spell_effect
+Backfire/Soul Leech reactions. A killed or replaced source cannot install/heal.
+Commit owned enchantment and current real healing; publish effect add/end,
+Health delta/fraction, native completion/body and status through Outbox filter.
+No whole-actor assignment after owned reactions/zero observers.
+
+Reuse one completion-heal helper for self Aura and all bound NPC offensive
+spell completions, not just214. Quote old Aura before effects/replacement;
+finalize only after successful completion and before leaving the locked effect
+transaction. Source scope+actual action/event make replay a no-op/rejection.
+Keep already released projectiles independent of the source's later Aura/death.
+Audit/order parity against player Runtime1552 and2030: player captures oldAura
+before renewal, uses unmodified spell cost, then real heal/restore hooks. Factor
+the quote/formula only; retain Runtime's existing registration/owned-reaction
+order. Do not introduce duplicate player healing from both World and Runtime.
+
+World header changes only after coordination: include new INL after existing
+NPC drivers and add its next-deadline/dispatch to the existing timed-effect
+boundary alongside npc_watchful casts. This avoids local scheduler guesses and
+preserves future authoritative clocks. No changes to shared weapon contact.
+
+Phase3: exact live quest49 caller and explicit content profile
+Extend elemental controller with optional owner/quest/cycle binding reusing
+Grawl lifecycle guards and no-op already-bound path. Self Aura has its own
+typed pending state but shares actor spellbook/action token; offensive ledger
+continues to own214 projectile/reservation/Overcast. Selection policy is explicit
+authored: after damage-triggered owner engagement, maintain Aura when absent,
+otherwise select the ready reviewed offensive spell; do not renew repeatedly
+while active or claim this preference is recovered retail priority.
+Existing source Book contains180+self and214+foe; no ordinary fallback numbers
+are invented unless separately reviewed and bound. Effect capacity gates apply
+to the correct family, and an owned reservation cannot reject its own begin.
+
+Data changes: preserve exact quest49 actor identity/HP100, add explicit reference
+Energy40/40 and5pips as existing Mesmer81 policy precedent, not measurement.
+Wiki fixesEnergyStorage0. Water rank remains unknown: choose an explicit
+authored reviewed rank4 for the bounded initial profile, never present it as
+derived from level or note damage. Reuse authored speed220, follow1500 and
+home leash2000 from current quest combat development policy. Trigger is owner
+Health-loss retaliation, not automatic proximity. Ice Spear uses its existing
+canonical1200 flight policy (itself a documented calibration hypothesis),
+not a new independently claimed retail velocity.
+InitialOvercast0 must be explicitly authored and installed as an observation
+for the exact new source; unknown is never automatically zero. Motion speed,
+acquire/follow/home leash and flight tolerances remain named authored settings.
+Update the metadata version/resources, source-policy hashes and encounter
+binding digest consistently; validate with actual existing catalog loader.
+Use existing metadata version11 (46fields), rather than adding a format:
+resource current/maximum/evidence at33/34/35, pips/evidence36/37; preserve or
+leave unknown holy traits38..41 and knockdown42/43; healing_allowed=true and
+its explicit Brood-wiki evidence at44/45. This is a source self-heal trait
+binding, not permission to heal every unspecified NPC.
+
+App caller: arm_brood_caster(owner,49,cycle,now) from existing active quest49
+periodic/restoration path in gw_auth.cpp, exact map161 and actual remaining
+objective scopes only. Validate immutable source template identity/HP rather
+than mutable DeepWound Health. Revalidate owner generation/cycle/remaining,
+life/plane/position/publication/clocks every drive. Retirement prunes only these
+owned controllers after iteration. Abandon/reset/death/map leave/reconnect must
+not transfer old action/Aura/Overcast/flight ownership to another generation.
+
+Phase4: meaningful checks before final host build
+Pure shared parity: first/renewal/expiredAura, allspelltypes versus nonspells,
+unmodifiedcost, rank0/8/20 andPvP scaling, exactinstance/event replay.
+LiveActor: healing modifier/wound/cap behavior, optionalEnergy fractions/cap,
+source clocks and zero-Energy reactions; no heal after lethal Backfire.
+World: actual self-target180 untargeted packet, paidtoken/aftercast/recharge,
+interrupt/knockdown/failed replay, correct old Aura renewal and remove/expiry.
+Existing quest49 content loaded through real catalog+host arming: damage
+retaliation ->Aura ->IceSpear; player Backfire damages source; real projectile
+damages player; source death/target replacement/reset/reconnect clean up.
+Regression: current elemental capacity, replacement, Watchful1392, Grawl75,
+owned effect visibility and shared player Aura tests. Root serializes builds.
+
+Ownership and ordering
+AI agent owns new Aura header/INL/tests and NPC skill/elemental driver sections.
+Catalog-only Aura/book seams must be announced; skills agent owns other catalog
+and player dispatcher work. Parent approves shared World include/deadline hooks,
+data hashes and app quest hunk. No concurrent builds/source writes; prepare
+reviewable concrete phases and freeze before root's combined build.

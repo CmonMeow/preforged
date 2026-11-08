@@ -1,0 +1,227 @@
+Reviewed multi-skill NPC elemental release pipeline (2026-10-17)
+
+Implemented NEW gw_npc_elemental_ai.h and a dedicated World integration fragment
+gw_world_npc_elemental.inl. Root owns its shared includes/tick hook and CMake;
+Auth/production content binding remains separate.
+This supplies a substantial next step beyond the autonomous single-Flare loop:
+reviewed exact-slot plans,prepayment bounded-capacity reservation,actual paid
+action binding,independent cast/flight lifetimes and atomic multi-recipient
+effects. Supported plans are Fireball186,Flare194 and Immolate191. Native
+ElementalPlan/elemental_target remain the sole damage/condition formulas.
+
+Evidence
+The offline Experiment audit records Fire Imp actor16 using Fireball186 six
+times and Flare194 seven times,including different selected targets. Source
+data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl
+SHA2563632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a:
+line24904/tick100080265 source16,target17,skill186;
+line25032/tick100084687 source16,target18,skill194;
+line25091/tick100086671 source16,target19,skill194;
+line25156/tick100089125 source16,target20,skill186.
+These establish NPC multi-skill identities and observed targets,NOT a universal
+priority,resource pool,Fire rank or a simultaneous-flight timing rule.
+The captured Imp levels1/2 cannot inherit the level20 wiki summon Fire14 rank.
+Allied summon ownership/resource admission remain separate unresolved work;
+this module does not silently bind that summon to hostile LiveActor admission.
+
+Pinned2022 native source SHA256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+and existing reviewed ElementalPlan give per-skill costs,timing,Fireball adjacent
+blast,Flare single projectile,and Immolate damage/Burning. Immolate is an
+explicit supported effect family,not a claim that the captured Imp used it.
+Queue capacity,loadout order,flight speed and miss tolerance are host-authored
+policy. No current/max Energy,regen,rank or priority defaults were invented.
+
+API and ownership
+Ledger(sourceScope,actualLevel,vector<Reviewed>,explicitFlightPolicy,capacity)
+validates1..8 exact skill/copy plans with provenance and capacity1..64. Each
+Reviewed carries Slot,canonical ElementalPlan and evidence. reviewed_spells()
+produces the existing LiveActor::configure_spellbook input;plan(slot) returns
+a copy of its immutable plan. LiveActor remains the ONLY Energy,readiness,
+aftercast,recharge and action-control authority. The ledger owns none of them.
+
+1. World calls LiveActor::choose_spell with current target facts and combined
+   external disables. Reserve that exact chosen slot via ledger.reserve before
+   actual payment. Full flight capacity or an existing reservation/cast rejects
+   here,not after Energy has been spent. Reservations include unique ID,time,
+   plan snapshot and target generation. Unsupported copies cannot reserve.
+2. Under the SAME World lock begin_spell pays actual NPC Energy. On failure,
+   abort(reservation). On success,accept(reservation,token,Payment) binds the
+   exact native-cost before/after/max Energy receipt,time and action sequence.
+   This is a trusted host receipt,never client input. No second Energy pool or
+   owner-funded summon payment is introduced. The current receipt contract is
+   native cost;NPC cost-modifier authority must be added before modified costs.
+3. prepare_release(token,sourcePose,targetPose,currentEpoch,freshLOS,time,vx,vy)
+   proposes the immutable release. Pose.clock is the maximum authoritative
+   Health/Energy/movement/steering clock. Future clocks retain the paid cast;
+   wrong epoch,stale lifetime,death,plane mismatch or lost LOS proposes no shot.
+   Explicit target velocity is optional;zero is the current authored stationary
+   release-aim policy,not recovered retail prediction.
+4. World finalizes the REAL action token and before_spell_effect_locked,then
+   commit_release(proposal,reactionSurvived). Failed authoritative completion
+   must leave the ledger pending. Confirmed interruption uses cancel(token,time)
+   with LiveActor's actual control/recharge transaction. Lethal Backfire queues
+   no effect and never refunds payment. Prepared proposals cannot be replayed
+   after cancellation or a different preparation.
+5. Each Release owns its target,plan,rank,paid token,aim,plane and arrival. A new
+   selected target or next paid cast cannot retarget a previous projectile.
+   Multiple flights may coexist while aftercast/readiness control the next
+   cast;an in-flight projectile is not a global spellcasting lock.
+6. prepare_impact(id,currentSourceScope,contacts,time) proposes all accepted
+   primary/secondary results. Contacts carry authenticated generation,actual
+   Health,reviewed Fire armor,incoming spell protection modifiers,conditions,
+   hostility,pose and latest authority clock. Fireball uses its adjacent radius;
+   Immolate includes owned Burning proposal. Allies,outside-radius contacts and
+   the source are excluded. Unknown armor,duplicate/invalid recipients or an
+   ahead clock returns NO partial hit proposals. Deferred/unsupported releases
+   stay retained;miss/stale/hit are terminal candidates. Released source Health
+   loss does not cancel a shot;source generation replacement does.
+7. World commits ALL recipient Health/condition/protection/death/credit/packet
+   changes together with commit_impact(proposal). All these helpers must remain
+   under one World lock;the ledger cannot authenticate mutable recipient state
+   across an unlocked callback. commit_impact authenticates release identity
+   and terminal status,not a client-supplied damage claim. Unknown effects must
+   not be converted to fabricated hits or partial area damage.
+
+Exact next World integration patch (root-owned)
+Replace FlareController.cast/shot with a Ledger (or an owned optional Ledger)
+and current target/pursuit state. Add a host config entrypoint accepting reviewed
+plans,actualLevel,explicit flight/capacity and existing movement policy. Retain
+the current target acquisition/LOS/future-clock/return logic rather than create
+parallel navigation. Configure LiveActor once from reviewed_spells(). After
+choose,capacity reserve,actual Energy payment/Mind Wrack reaction and accept
+must share the World mutex. On reactive admission death cancel the bound cast;
+the actual cost remains spent. Root must preflight all trusted acceptance inputs
+so no queue-capacity failure can occur after payment.
+
+At tick completion derive each release's own target scope,not mutable current
+target. Prepare fresh LOS and maximum source/target clocks;complete_action and
+before_spell_effect_locked before committing release. Then resolve independent
+released IDs with current recipients. For Fireball gather eligible hostile
+players around the stored aim plus the selected primary;apply existing incoming
+spell actor modifiers and preflight condition/death capacity for all recipients
+before mutation. Burning commit must use the existing World condition registry,
+cover order,attribution,Fragility/death handling and packets,not merely replace
+a local conditions vector. Do not call Player-caster effect methods with an NPC
+ID or rewrite damage credit to an unrelated player. No Auth production loadout
+binding exists until the separate provenance-gated AI content catalog is wired.
+
+tests/npc_elemental_ai.cpp uses real LiveActor configuration,choose,payment,
+completion,cancellation and Energy loss with an explicitly authored50Energy,
+zero-regen,level20/rank12 fixture. It covers disabled-first fallback,overlapping
+Fireball/Flare flights with target changes,capacity-before-payment,actual cost,
+exact Immolate copy17,Burning,area boundary166,ally exclusion,future clocks,
+unknown secondary armor,no partial proposals,failed payment reservation abort,
+stale generations,miss,cancellation/release replay and same-lifetime caster
+death after release. These are offline pipeline regressions,not retail stats or
+live rendered acceptance. No build was run by this agent;root owns CMake/MSBuild.
+
+World integration fragment and offline acceptance target
+NEW gw_world_npc_elemental.inl implements configure_npc_elemental_ai(movement,
+reviewedPlans,capacity,time),npc_elemental_ai_snapshot and the locked tick driver.
+It reuses the existing Flare movement/event helpers;it is included inside
+Instance AFTER gw_world_npc_flare.inl. Root must include gw_npc_elemental_ai.h
+at file scope and call drive_npc_elemental_locked before consume_movement.
+All state is declared in the new fragment;no extra shared member edits needed.
+
+The new configure API rejects quest ownership/motion,old Flare ownership,
+duplicate controllers,unknown actual Energy and level mismatch. Existing Flare
+configuration cannot later attach to the same actor because LiveActor's spellbook
+is configured once. Single-spell or mixed reviewed bars are both accepted.
+It chooses/adopts a real LiveActor slot,reserves queue capacity before payment,
+accepts the exact payment receipt,and observes actual Mind Wrack Energy reactions.
+Each completed cast uses its own target scope,latest source/target clocks,fresh
+LOS,actual action completion and before-effect reactions. Released projectiles
+resolve independently while another eligible spell is casting.
+
+At impact all potentially relevant player clocks and Health settlement precede
+the final contact snapshots. Unknown Fire armor or condition-instance capacity
+rejects the whole proposed area impact without partial hits. Area damage is
+committed for all recipients before condition/death reactions. Existing Mantra
+reward,Fire armor,Shielding Hands,protection modifiers,Burning registry/cover
+order/Fragility,Health/death and native packet helpers are reused. Conservative
+future-clock checks can defer an area shot for another published same-plane
+player whose latest position is not yet queryable;no invented past position is
+used to exclude that player from the possible blast.
+
+NEW tests/npc_elemental_world.cpp exercises ONLY World tick for mixed autonomous
+Fireball/Flare,an in-flight Fireball while Flare casts,per-recipient Mantra Fire
+protection and actual Energy reward,Immolate's owned Burning and lethal-hit
+cleanup,unknown secondary armor with atomic retry,capacity before payment,
+future secondary clock,Backfire death before release,released caster death and
+duplicate-controller rejection in both directions. Proposed target is
+npc_elemental_world_test. Build/runtime results must be reported by root;source
+presence alone does not prove acceptance. No default official population or
+Auth loadout has been enabled,resource/rank inputs stay explicit,and allied
+summon ownership plus non-elemental support/tactical AI remain out of scope.
+
+Retired-generation handoff: same-scope controllers remain exclusive,but a newly
+configured NPC generation may replace a retired elemental or Flare controller
+after ALL new lifetime/resource/level/book checks succeed. Old generation casts
+and flights are then discarded;they cannot hit the reused actor's opponents.
+The World regression renews the real NPC population,checks failed replacement
+preflight,checks stale Fireball cannot damage either target,and then checks a
+new-generation Flare and a retired-Flare-to-elemental handoff. Impact source
+generation is re-read after recipient Health/lifetime settlement,not trusted
+from an earlier lookup. Existing Flare-to-Flare retired busy-state behavior is
+a separate legacy API concern owned by root.
+
+Capture-backed visual receipts and timing review
+NEW gw_npc_elemental_wire.h uses the EXISTING pinned2022 generic integer and
+targeted-body layouts,not a guessed projectile-flight message. Fixed checkpoint
+packets-1360-15821281.jsonl SHA256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6:
+Fireball finish145868 then caster21/resource332 at145869,tick18488671;
+Fireball targeted20/resource344 at145875/145879/145881/145884;
+Immolate targeted20/resource339 at150210,tick18572625;
+Flare targeted20/resource344 at157074/157075,tick19063328.
+Modern159/160 correspond to pinned2022 opcode158/159,matching the repository's
+existing integer/targeted-body serializers. Successful Fireball release emits
+caster332;accepted affected targets emit344 for186/194 or339 for191. World
+outbox regressions inspect actual actor/resource/target packet fields,and a
+Backfire-killed source must not emit successful332. Extra primary duplication
+seen in the capture is not generalized without an independent event binding.
+No explicit projectile-flight/synchronization packet was established here;
+rendered flight acceptance remains incomplete even when Health tests pass.
+
+Pinned186 activation is1.5seconds. Initial World fixtures incorrectly assumed
+2seconds;they now derive actual completion from the paid snapshot token,native
+aftercast and explicit projectile policy. The mixed-flight assertions therefore
+test real overlapping cast/flight windows rather than convenient fixed ticks.
+
+Known future Health/Energy clocks on a queryable outside-radius player no longer
+delay an unrelated area impact or trigger its contact preflight. Unknown future
+movement still conservatively defers when the past position cannot be queried.
+The unknown-secondary-armor regression now also checks that primary Mantra
+receives NO Energy reward until all area recipient proposals are accepted.
+
+Named Fireball dead-primary exception is now implemented: historical Fail.html
+oldid2625489 SHA256
+e9753d630481f17d7a400327c807894bd1892402890a2196e66dc75bedbdc51c
+explicitly lists Fireball as succeeding when its selected foe dies during
+activation. Canonical186 alone may retain the same-generation dead target as
+its position/plane anchor. At impact that anchor requires authenticated actor
+identity and known zero Health;the corpse receives no damage,but living
+adjacent foes can receive the normal blast. Recycled/missing primary scope
+remains stale. Actual World regressions kill the primary during windup and
+after release;the pure regression rejects a recycled corpse anchor.
+
+Flare/Immolate true failed-target recharge still needs explicit authoritative
+failure classification instead of ordinary successful completion. That remains
+an implementation gap;no generic AoE exception or invented failure API was added.
+
+NEW reusable gw_effect_capacity.h checks condition-instance capacity without a
+test-only World mutator. Zero additions require no ID even for an exhausted
+cursor;one addition accepts the last uint32 ID;only counts beyond remaining IDs
+fail. The World impact preflight uses this helper. tests/effect_capacity.cpp
+covers zero,last ID,post-last cursor,zero-invalid-positive-ID and large-count
+overflow boundaries. Proposed standalone target effect_capacity_test.
+
+Latest root integration/validation: shared World includes and tick hook installed;
+all native new targets built, full Release server_host PASS in
+build/reports/demonic-ai-integrated-build.txt. Pure/World/capacity/arena death
+CTest4/4 PASS in build/reports/npc-elemental-final-tests.txt. Root corrected
+invalid fixtures (population replacement requires no joined players; malformed
+morale/name inputs are rejected). These are offline results, not rendered QA
+or production NPC resource/loadout bindings. Explicit projectile flight visuals
+and true failed-target recharge remain open.

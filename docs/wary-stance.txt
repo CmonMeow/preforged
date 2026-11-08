@@ -1,0 +1,146 @@
+Wary Stance377: policy and version-pinned evidence
+=======================================================
+
+Not production-bound. Historical wiki:10Energy,10s recharge,Tactics duration
+1..6,blocks attack skills and gains5Energy plus adrenaline per successful block;
+ends on skill use. Ordinary attacks are not eligible. Pet attacks explicitly
+excluded because their activations buff the pet's next contact.
+
+Pinned native metadata agrees on cost/recharge/duration/body636. The native
+scale fields are5/5 and bonus fields35/35. The35 is preserved as a raw parameter;
+neither this application capture nor the wiki description establishes its live
+adrenaline unit or causal pool delta. Do not substitute an assumed25-unit strike.
+
+Fixed checkpoint20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+378911..378916 at23471484 show recharge10,instant48,body636,removal68/effect91,
+application66 duration1/attribute word0/effect91,pending release227.
+ tools/protocol/wary_stance_2022.py verifies source/client hashes,native metadata,
+original instant dispatch and original636 consumer. Model/assets are stubbed;
+rendered acceptance remains open. The next207 sample25 has no exclusive causal
+block/reward attribution and must not be used to guess the reward formula.
+
+Staged gw_wary_stance.h validates row/rank,duration and target contact eligibility.
+Native Attack14 is eligible;ordinary0,spell and PetAttack20 are not. Invalid IDs
+or malformed active rank fail closed. Fresh policy test covers melee/ranged
+attack skills,all native pet rows,ordinary/spell,expiry and invalid rank.
+
+Staged World contact integration now forwards the actual skill ID from melee,
+ranged/projectile and Cyclone plans. Ordinary and quest-NPC ordinary contacts
+supply0. Both aggregate and attributed resolvers receive the same classification;
+qualified Wary contributes probability1 and its exact effect instance. Existing
+unblockable/Rigor bypass remains separate from accuracy and cannot turn a miss
+into a hit. Runtime support is deliberately absent while rewards/ending are
+unfinished;this is contact plumbing,not a complete skill binding.
+
+Five fresh native suites cover staged Wary melee/bow/Cyclone blocking,ordinary
+exclusion,Rigor/miss/expiry,plus Bonetti/Gladiator/block-attribution regressions.
+62 skill-tool tests pass. Retail competing block-source order remains unresolved.
+The local/wiki/buildwars descriptions and a web reference check did not establish
+an exact adrenaline delta;community guesses are not used as implementation proof.
+Reference:https://wiki.guildwars.com/wiki/Wary_Stance
+
+Accepted-use ending is now integrated with the shared post-payment callback.
+World validates the exact copied slot/current generation/bar timestamp and removes
+the owned effect. Energy/policy denial and ordinary attacks preserve it;the
+Runtime rejects requests when an active Wary lacks the ending callback.
+
+Remaining requirements:post-outcome Energy/adrenaline rewards,
+Runtime admission/cost/body/expiry and full lifecycle/NPC regressions. Targeted
+reward capture remains required;NPC casters,retail ordering,concurrent bar admission
+and rendered acceptance remain unverified. See TARGETED-WARY-CAPTURE.txt.
+
+2026-10-24 reward proposal stage: gw_wary_block_reward.h now turns an exact
+attributed player block into a 5-Energy proposal only when the actual incoming
+skill is an attack skill, the active Wary effect instance matches the block
+source, and attacker/owner scopes are valid and distinct. It rejects ordinary,
+spell, pet, miss, hit, stale instance, wrong source and expired cases. This
+proposal is not called by World yet; no Energy or adrenaline is granted in
+production. The 5-Energy value comes from the saved wiki description, while
+the native adrenaline parameter 35 remains uninterpreted. Runtime377 remains
+unsupported and the fixed checkpoint/backlog counts are unchanged.
+
+Fresh Release wary_stance_policy test passes; existing Wary World, Bonetti
+World and block attribution suites pass. The executable test verifies policy,
+not a rendered client or final contact transaction. SHA-256:
+  gw_wary_block_reward.h E58552EFF377B1FAC801A9135B2670E0EE59129F8A16E7A47DA93C26C4A91758
+  wary_stance_policy.cpp 255FF6E683214601B8D484012327C46D4B260C15F5D948FF97F66F220E30C256
+  wary_stance_policy_test.exe 603E80F9292CDF4F07E325A3D9A55FB85090EC30C642B3669C8B55D7CED5ABC2
+Official client and loggers were untouched.
+
+2026-10-24 authoritative Energy reward integration: World now reserves the
+exact Wary proposal at player melee/ranged contact (including Cyclone Axe's
+multi-recipient path), then pays 5 Energy only after the same event finishes
+as a block against the same attacker and defender generation. The proposal is
+erased on final outcome; player retirement and departure purge pending entries.
+The shared Energy authority applies maximum Energy/overcast and publishes the
+owner's new vitals. Ordinary attacks, miss, Rigor/other bypass, expired or
+removed Wary, and another block source do not earn this reward. Fresh World
+tests cover melee, ranged and Cyclone rewards, repeated distinct contacts,
+post-removal exclusion and previous Wary block regressions. This is a real
+server-side Energy consumer, but 377 is still not playable: normal Runtime
+admission/body/status and the adrenaline reward remain unfinished. No new
+source binding or rendered-client verification is claimed.
+
+Serial Release server_host build and five focused native suites pass. The
+hash-pinned 2022 Wary instant/body636/application verifier passes against the
+unchanged 20261024-signet-sorrow-bound checkpoint. Tested SHA-256:
+  gw_world_simulation.h C6DE9012D4501DFF3E789D09731CF8ED56512A1482C1135505759E3D0AB6FFCD
+  gw_wary_block_reward.h E58552EFF377B1FAC801A9135B2670E0EE59129F8A16E7A47DA93C26C4A91758
+  wary_stance_world.cpp 14D2782FFCFC68B1E4ABEA1F146DF7A078A5FFA8E22A86BB5E0E4DE6B4828DA2
+  server_host.exe 1322709987936066346136D309EC421E3393D414FD4A6EC026705849794D8DFB
+  wary_stance_world_test.exe 0D3FBB27C473F167401CF861E1C9A804F1468281F9D950B7497305640715F211
+Official clients and loggers were untouched; host was built, not restarted.
+
+2026-10-24 gated normal-cast follow-up: Runtime now recognizes377 as a
+validated instant Tactics stance only when a trusted reward-ready capability
+is explicitly present and returns true. The production gateway omits it, so
+the skill remains unavailable there and is not counted as source-bound. The
+gated path pays10 Energy, emits original kind48 and caster body636, applies a
+ranked World stance with checked lifetime, and records10s recharge. World
+rejects malformed377 status mutations before publishing an effect. The
+capability gate prevents a partial release until the actual per-block
+adrenaline credit has an authoritative consumer; the existing exact-instance
+5-Energy reward alone does not satisfy the retail description.
+
+Fresh serial Release server_host and wary_stance_cast_test builds pass.
+Focused CTest passes6/6: wary_stance_cast, wary_stance_policy,
+wary_stance_world, bonetti_defense_world, battle_rage_cast and skill_casting.
+The native2022 verifier passes frozen instant/body636/application and the
+original body consumer. Twelve coverage-tool unit tests pass and the explicit
+production hook audit passes. No rendered private-client test was performed.
+Tested SHA-256:
+  gw_cast_timing.h 53D31F71F7A193F3E49F4F9BA594D836FB7F8FCDEA9BC21A5705A3E8B4013EB9
+  gw_skill_casting.h 4B08239DDD22861EB34A1F4948D19ECC7510B0DD6497FE8E33F75AA6C5A3DCAB
+  gw_world_simulation.h 81CD6E0E92282560EED25E1C97588370085E5B69DBD47F5A6E1E21090742ED44
+  wary_stance_cast.cpp B0DFA23FC64F7887CFF697ACF08A1494E6882471EB0531C15EA6D4AD8D55D8CE
+  server_host.exe 228E9AF44043BA7AAE4AAE82A099FB8DEC2835A8F678AA348FB4E447683380E7
+  wary_stance_cast_test.exe F0457F9B665455E40FF029F5952069DA0374EECEEF5722FBD9D90B57D4E5BF95
+Original official capture files and client processes were untouched.
+
+2026-10-26 production binding: exact attributed player attack-skill blocks
+now grant both 5 Energy and 35 native adrenaline units through the shared
+bar pools. The value35 is the pinned catalog parameter; interpreting it as
+native adrenaline units is a private-server inference supported by the
+historical skill description, not an isolated retail reward capture. The
+normal learned/paid instant Runtime path and production capability are
+enabled. The owned stance blocks eligible melee/ranged/Cyclone attacks,
+expires at ranked duration, and ends on an accepted skill use. Ordinary,
+pet, missed and other-source contacts do not grant Wary's reward.
+
+The frozen 20261017-npc-refresh-2 first-consumer verifier passes instant48,
+caster body636 and the application record. Serial Release host and six
+focused/neighboring CTests pass; twelve coverage-tool tests pass. The fixed
+20261024-all-completed backlog now reads679 local,391 source-bound,288
+awaiting implementation,650 missing local activation. Rendered client,
+retail reward delta/order, competing block sources, pet edge cases and NPC
+skill-caster behavior remain unverified. No official client/logger was touched.
+
+SHA256 gw_wary_block_reward.h 932D8B5C07F5B88329CF1CEB5CBEFDBC8C1F35B8F62D2C00B71DFCE334FE7EA2
+SHA256 gw_world_simulation.h 98C910005C982471F0E8382C2E2A4DAC9DDBFC0235D52DE1839BE1D5664BF9FC
+SHA256 gw_skill_casting.h 01A2D03EDE9CC6720627EF69638C477B5A8A58C9AD1B27727E15787D94CF624B
+SHA256 gw_auth.cpp 10BCD6F4A98ED558E2619A4DB2429B9B01F65DE779F0052E9B2BACF42C985064
+SHA256 wary_stance_world.cpp 9E2E2626EC03A9DDC1F9559733C8A965937B6DF311E2CB9839D8C79440327979
+SHA256 wary_stance_2022.py 7DDFB8A45AE23266A06722D021D79F4DD410F7007930047459679CBCBA065E75
+SHA256 wary_stance_world_test.exe 2755E0F99AF3934E42AC374AA739BF9B703E755422F8E9FC6C7004B4193EB16F
+SHA256 wary_stance_cast_test.exe 23A4311CE5AC1528BE4E9115711FC28E7BA229E1C758C4A5DE45F9569811BF9D
+SHA256 server_host.exe 16EEA41C4C1358F3775C65054B0543ECB7B0B5CDF693F353B5495F64DE0A4F5C

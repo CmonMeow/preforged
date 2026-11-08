@@ -1,0 +1,265 @@
+Native GW2022 inventory and account bank integration
+==================================================
+Production APIs: src/runtime/gw_inventory.h and gw_storage.h. No official
+inventory capture currently exists; captured character appearance is not an
+item definition and must never become invented armor/modifiers/prices.
+
+Persistence contract (root implementation):
+  gw-character-inventory-get accountUUID characterUUID
+  -> 0 if absent, otherwise revision TAB encodedProfileHex.
+  gw-character-inventory-save accountUUID characterUUID expectedRevision profileHex
+  -> newRevision. Ownership checked and revision CAS in transaction; absent
+     revision0 initializes explicit private baseline, never replaces on login.
+  gw-account-storage-get accountUUID -> 0 or revision TAB encodedProfileHex.
+  gw-storage-transfer-save accountUUID characterUUID charExpected bankExpected
+       characterProfileHex bankProfileHex -> charNewRevision TAB bankNewRevision.
+     BOTH ownership domains and BOTH revisions validated/updated in ONE
+     transaction. Never save one half, never publish packets before commit.
+Character FK deletion cascades only character inventory; account bank persists.
+Only trusted server proposals may supply blobs. Client requests never contain
+a profile or acquire bank permission by naming its bag ID.
+
+Inventory baseline is empty backpack20 + equipped9. Bank baseline is empty
+first ordinary Xunlai tab20; unlocking it is private server policy, not a claim
+that an official capture proved its purchase. Storage visibility and access
+require authoritative chest interaction. No global chest-open flag across users.
+Restore only into newly initialized client inventory, never replay occupied
+placements. Definitions precede locations, bags precede definitions. Owner only.
+On denial use individual item reconciliation, no complete occupied replay.
+
+Pinned client SHA256:
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+CMSG42 drop DWORDitem BYTEquantity;46 equip DWORDitem;77 unequip BYTEslot
+WORDbag BYTEslot;103 destroy DWORDitem;112 move DWORDitem WORDbag BYTEslot;
+115 split DWORDitem DWORDquantity WORDbag BYTEslot;124 use DWORDitem.
+tools/protocol/inventory_2022.py reproduces descriptor and retail serializer
+fixtures under tests/fixtures/inventory-2022.txt.
+SMSG323 inventory,318 bag,352 immutable definition,317 initial placement,
+330 move,312 quantity,332 detach. Callback330 7c4ac0->7c91e0 removes prior
+placement then adds. Add7c83d0 asserts destination empty. Swap therefore
+detaches destination332, moves source330, places destination317. Callback332
+7c4bd0->7c92e0 removes placement; it does not delete immutable definition.
+
+Implemented proposals: regular bag move, split, compatible stack merge(cap250),
+occupied-slot swap, explicitly permitted destroy. Bank deposit/withdraw reuses
+the same conservation rules and partitions durable ownership after proposal.
+Definition fields and modifier/name bytes remain opaque and preserved.
+
+Limitations: equip/unequip/drop/use reject safely; no fake item consumption,
+world-ground pickup actor, stat bonuses, customization rules or appearance.
+Account bank item IDs must be disjoint from character IDs within session;
+collision rejects until session presentation ID mapping is implemented.
+Transfers preserve native bag types/indexes and support five regular bags,
+one equipment bag and fourteen ordinary storage tabs. Explicit trusted transfer
+permission follows chest/ownership checks. Material storage, tab entitlements
+and live populated-tab UI tests remain unfinished. No official possession import.
+
+Xunlai opening now proven:
+SMSG130 descriptorRVA60bc94 fields[130,0x10agent,0x104type,0x404data],
+callback874630->793980. Type0 branch79399c extracts data&1 and data&2
+and publishes UI10000040 with agent/flags. OldGWCA ItemMgr.cpp
+OpenXunlaiWindow explicitly uses agent0/type0/data3; server helper requires
+actual authorized NPC agent instead of client convenience emulation0.
+storage::open_packets(bank,npc,bags_already_present) restores bank only on
+first initialization then130; subsequent opens130 only. Never emit duplicate
+323 (its callback7c4800 asserts existinginventory), or occupied bag placements.
+Server handles CMSG55 InteractLiving(actor,calltarget) by authoritative NPC
+classification, same-map liveactor and interaction-distance checks. Only after
+that root sets per-session chest_open and sends bank definitions/130. CMSG57
+dialog response is not necessary for direct Xunlai chest opening; dialog/menu
+NPC variants may require separate approved dialog. Invalidate bank access on
+mapchange/sessionend, and check continued proximity on each transfer; client
+window visibility is not authorization. CMSG79 gadget variants require proven
+Xunlai gadget classification and are not automatically treated as storage.
+Gold320 is an ADD operation(7c4710->7c8550), not an absolute setter; do not
+replay balances on every chest opening. No gold transfer implemented here.
+
+Storage crash regression (2026-10-03)
+Private PID5552 latest report asserted ptr at itcliapi985. Relocated return
+7c345e resolves7c3420, caller854225 resolves storage/inventory panel initialization.
+854209 calls7c4080, which returns true ONLY bag index<=4, so the missing pointer
+was a regular backpack container, not the account bank tab. Baseline backpack
+had durable container0; opening Xunlai also creates regular inventory panels.
+
+storage::restore_character sends real owned definitions first, then session-only
+unplaced regular bag text anchors352, then318 referencing those IDs, then owned
+placements. IDs60000..60004 are reserved presentation references. They are never
+added to durable character items, and neither movement/transfer nor future split
+allocation can claim them. Real owned container definitions precede bag creation.
+Bank restore remains ordinary empty20-slot account storage, no invented items.
+
+Native metadata proof: tools/protocol/storage_name_2022.py executes original
+7c3420 with a synthetic game/item context. Missing pointer reproduces985; valid
+unplaced named container reaches original formatter dispatch without an assertion.
+A Unicorn memory-read hook confirms Item.file+1c is not read by this getter.
+7c3420 and metadata generation7c6fe0 pass type/modifiers/base-name to8787e0.
+The file1 nonrendered anchor satisfies352's file!=0 guard; storage slot icons
+854b50 reference only placed item IDs returned7c3060, so the unplaced container
+is not bound to an asset icon. Complete live-client regression is still required.
+
+CMSG79 is gadget interaction (actorDWORD andBYTE);55 is living NPC interaction.
+Both now share authorized open_npc_dialogue and the server's approach/deferred
+interaction path. Actual actor, same plane/range and Xunlai classification remain
+required. These controls do not allow arbitrary gadget/NPC IDs to open storage.
+
+
+2026-10-03 full-tab transfer regression: five regular bags plus equipment and fourteen ordinary bank tabs, deposit into tab index20 slot19, persistent roundtrip, default movement permission denial and closed-chest denial all pass. Inventory and inventory_accounts tests pass. Source compiled; deployed host still precedes this change.
+
+2026-10-03 deployed: destroy and fully consumed merge source now send332detach then348definition-delete. Trailing0xc0000000 native modifier terminator denied before352 to prevent duplicate-terminator assertion. Native item gameplay audit passes12cases; full56CTest pass and localclient13768 world160 verified after stale-session prompt. Condition275..278 hook bound to finished world state. Equipment proposal helper tests registered; live equip/stat/appearance integration still pending.
+
+2026-10-03: Request77 equipment selector now stored separately from item ID. owned_request_item resolves only equipped bag type2/index21; app bank routing excludes unequip and denial reconciliation uses the actual owned equipment identity. Native77 field regression and equipment proposal tests pass. Source/core compiled; latest running host still predates this parser change.
+
+FWI2 metadata persistence: optional item profession and customization preserve unknown versus known-uncustomized state. FWI1 remains readable with unknown metadata; writes useFWI2. Every actual item definition publication is followed by345 and nonempty313 when known, because352 resets both fields in the native client. Split, bank transfers and merge compatibility preserve metadata. Codec migration, metadata wire fixtures, split/bank preservation, known-empty distinction and different-owner merge tests pass. Source/core compiled; running host predates this metadata change.
+
+2026-10-03: Production352 generation now runs bounded raw modifier validation, rejecting native terminators anywhere in wire modifiers. Capture adapter strips one proven final terminator and preserves other opaque codes. Source-reviewed kit kind/uses decoder is tested but not bound to use/salvage gameplay. Inventory/item_metadata/item_modifiers tests pass. Weapon-set and ground identity work continues; Inventory section is not complete.
+
+2026-10-03 weapon-set persistence and pending-state handling:
+Profile format FWI3 appends four mainhand/offhand pairs plus active index.
+FWI1/FWI2 remain readable; only actual equipped hands reconstruct legacy set 0.
+Set references are validated against owned carry/equipment items and retired on
+bank deposit or deletion. Restoration sends memberships after item placement.
+Request 48 persists selection via character-inventory CAS. Changed selection
+uses 327; unchanged/denied selection uses proven 315 action 3 cancellation,
+because unchanged 327 emits no native UI completion event. Original build37130
+execution validates that cancellation ignores its payload and clears pending.
+Source compiles and focused tests pass; this change is not yet deployed to the
+running host. Equipment statistics, actual item catalog and ground application
+bindings remain incomplete; the inventory section is not complete.
+
+2026-10-03 deployed inventory foundation:
+Native equip46/unequip77 now route through reviewed equipment metadata and the
+existing character-inventory revision/CAS transaction. Active hand membership
+updates after placements; inactive set references survive ordinary swaps.
+Original2022 two-handed proof passes10 cases: offhand remains equipped but
+inactive, so blanket two-handed rejection removed. Metadata provider requires
+explicit profession/customization and exact owned definition; unknown entries
+are logged as equipment_metadata_unavailable rather than invented possessions.
+Full native build and62CTest passed. Running host10184 uses these changes.
+Private client11352 launched; foreground acquisition failed twice and fresh
+passive screen capture was blank, so no live login/equipment success is claimed.
+No official client process was targeted. Stats/appearance provider, actual item
+catalog, session-global identity mapping and ground request bindings remain.
+
+2026-10-03 identity namespace correction (source, not yet deployed):
+Accounts now permit matching numeric item IDs in separately owned character
+and account-storage records. Regression persists both different definitions
+and reads each unchanged; CAS, wrong-owner and rollback checks still pass.
+Existing app presentation must be remapped before deployment of populated
+profiles: item IDs, bag IDs, container references and weapon memberships all
+share native session contexts. Work continues on stable per-session wire maps
+and staged reverse projections committed only after database CAS succeeds.
+
+2026-10-03 session identity integration deployed:
+Character/account durable item and bag identities now map into distinct stable
+session wire identities. Container and all four weapon-set references map too.
+Existing inventory/equipment/storage proposals run entirely on wire profiles;
+all three CAS paths persist staged durable projections and commit the session
+registry only after successful database commit. Cross-owner transfers allocate
+fresh destination logical IDs while retaining wire identity for the client.
+Retired wire IDs are not reused; owned1..32767, future ground32768..59999,
+presentation60000..60004 are explicit private allocation pools, not retail facts.
+Tests cover overlapping durable items/bags, transfers/splits, references,
+failed CAS, retirement, invalid projections and exhaustion. A database-backed
+regression deposits character item1 alongside bank item1 without overwriting
+and verifies reconnect. All64CTest pass; updated host15240 ready. Live client
+UI remains unverified while foreground access is unavailable; no official
+client was touched. Ground entry/request integration and full item gameplay
+remain unfinished.
+
+2026-10-03 ground inventory binding (source compiled, not deployed):
+CMSG42 debits owned carrying items in nonstaging gameplay, reserves disjoint
+instance floor wire IDs32768..59999 and commits the durable identity projection
+inside world.drop_ground_item. CMSG61 resolves the exact floor actor scope,
+credits the full quantity or nothing, and commits inside the exclusive world
+pickup claim. Definition/customization/profession metadata is preserved;
+new possessions receive low-pool identities, never persistent floor IDs.
+Nearby pickup uses explicit private160-unit policy, not a retail range claim.
+World join snapshots floor definitions/actors under its subscription mutex.
+Focused inventory/identity/ground/world tests pass. No live UI proof yet;
+distant pickup approach, dropability modifiers, actor allocator coordination,
+trade/map-specific rules and recovery/reconciliation remain completion gates.
+Combined character+bank transient transfer supports up to1024 items with
+trusted combined_transfer bounds; durable codec and each final domain stay512.
+608-item move/609-item split regressions preserve quantities and identities.
+Running host15240 still predates these ground/capacity changes.
+
+2026-10-03 distant pickup integration (source compiled, not deployed):
+Request61 now authorizes an exact ground scope and starts authoritative routed
+movement when outside the explicit private160-unit pickup radius. World stores
+a bounded120-second intent; ordinary steering/movement/follow/NPC interaction
+cancels it through the shared interaction cancellation path. Arrival checks the
+same item lifetime, ownership, living player, plane and actual current position;
+then consumes the intent once and invokes the same exclusive inventory CAS.
+The root app now uses one pickup transaction function for nearby and arrived
+requests. Ground/world focused regressions pass including steering cancellation,
+no premature pickup and exact one-shot arrival. Live behavior and item-specific
+drop predicates remain unverified; Inventory is not complete.
+
+2026-10-03 ground/drop foundation deployed after full native build:
+All66CTest pass. Host14744 ready on portal6601/auth6112/world6113.
+Includes atomic42drop/61pickup, distant approach/cancellation/arrival, floor
+entry snapshots, combined bank capacity and restricted-item100 denial.
+Native drop predicate4dadc0 (drag5) proved38cases: explorable, no cinematic,
+interaction100clear. Server currently does not initiate cinematics; any future
+cinematic subsystem must supply its active state to the proven drop gate.
+Private player actor pool1..32767 is disjoint from floor32768..65535, including
+pending transfers; NPC reserved actors remain excluded. This is allocation
+policy rather than inferred retail numbering. Item transaction serializers/
+callbacks have35nativecases and exact regression fixture; identify/salvage/dye/
+upgrade recipes/outcomes are NOT yet bound or claimed implemented.
+No live UI success claimed while foreground unavailable; official untouched.
+2026-10-03 gold persistence and capture exporter deployed:
+Full Release build and all68CTest pass. Host1144 ready portal6601/auth6112/world6113;
+normal host console shown. Private client11352 left open; official sessions untouched.
+FWI4 appends durable gold to FWI3; FWI1..3 migrate to zero gold. Session ownership
+projection preserves gold. Native request122 conserves carried+stored totals,
+enforces100000/1000000 caps and nearby authorized open chest, and commits both
+ownership records atomically before publishing native delta319/320/334/335.
+Fresh native inventory323 initializes zero; initial restoration publishes deltas
+once, and storage opening does not replay balances. Source native proof12cases
+and4000 planner cases pass; no live UI bank-transfer success claimed.
+Native offline items_import exports validated schema2 observations with explicit
+ownership manifest, all weapon sets and opaque item fields; it never writes DB.
+Separate Win32 observer build and --self-test pass without opening any process.
+Identification/salvage/dye/upgrades, item stats, material storage, gold dropping,
+and complete live inventory validation remain completion gates. Inventory and
+whole project goal remain incomplete; do not move to another section yet.
+2026-10-03 transaction error handling and installed-container audit (source pending deploy):
+Native rejection proof PASS17 confirms355/362 close existing enabled dialogs;
+absence of a dialog is a no-op, not universal waiter reset. Main world dispatcher
+now frames and parses104/106/117..121/125..128 explicitly, reports unavailable
+outcomes, never debits ingredients on rejection and emits proven dialog cancels
+where applicable. This is error handling, NOT completed identify/salvage/dye.
+Installed container318 resolves real itemID into Item*, stores Bag+c and backlink
+Item+8; ordinary Item.bag is null. Observer now dereferences/validates exact
+ItemTable identity instead of emitting a pointer as itemID. Profile/import work
+in progress to retain these real container definitions without invented slots.
+Fresh passive private11352 screenshot is solid blank; no usable live UI evidence
+or input claimed from that observation. No official process was targeted.
+2026-10-03 installed containers and item-request rejection deployed:
+Release full build and69CTest pass; inventory/identity latest targeted rebuild
+also pass. Host15288 ready with console shown. Client11352 preserved; official
+clients untouched. Strict FWI4 stores installed container as bag0slot0 only for
+unique referenced type3quantity1 item; no arbitrary unplaced item admission.
+FWI1..3 explicit legacy relation migration validates old slots before moving.
+Ownership projection/CAS/reload retain exact real IDs and installed references.
+Definitions and metadata precede318; no317 for installed containers. Ground,
+equipment and ordinary/bank mutation paths safely reject installed sources.
+Schema2 capture now validates ItemTable/backlink and records realcontainerID
+plus complete definition; importer ownership checks and negativecases pass.
+Identification planner registered/native3proof/C++PASS; kit charge update351
+plus312 refresh, last-charge332/348, target sameID352 plusmetadata. Requires
+explicit authoritative reveal; no hiddenproperties/kitresalevalue fabricated.
+Main dispatcher still REJECTS unavailable outcomes with explicit feedback;
+planner not bound to success without authoritative item recipe/provider.
+Native original bag-link fixture audit pending; no live UI success claimed.
+Inventory and full goal remain incomplete.
+2026-10-03 live follow-up:
+Native installed-container proof passed both cases (item_container_2022.py).
+Guild-hall visited context fix passed live map6 entry, map UI, inventory and guild panel.
+NPC catalog CRLF service classification regression failed before stripping terminal CR, then passed. Private PID7292 interacted with Lion's Arch Xunlai Chest10023: storage=1; native Vault Box opened, no crash (build/reports/xunlai-live.png). Inventory remains empty; item transfers not claimed live validated.
+Native WORLD188 guild panel save now persists through account guild service and sends302. Private7292 UI OK saved existing draft ggg, transaction0/body3; chat rendered Guild Announcement by Cmon Meow: ggg. Travel55 reloaded persisted announcement. Evidence build/reports/guild-announcement-live.png. No duplicate generic chat packet added.
+Current host7208 contains these fixes; FWI5/material production source is under agent regression testing, not deployed yet. Baseline full70 tests passed; added isolated material/guild tests passed before fixture refinement. Full72 suite pending stable production material headers.
+2026-10-03 Lion's Arch capture refresh:
+Imported world-6784-190402640.jsonl epoch4: exact 35-actor base plus 15 hash-pinned same-instance visibility supplements, 50 named actors total, no excluded navigation placements. Four Xunlai Chests, two Xunlai storage agents, Firstwatch Sergio and henchmen are present. Native catalog validation passed eight maps/162 NPCs; map55 produces150 packets and6 storage actors. Updated live rendering/interactions not tested; catalog loads on next server start.
+Removed obsolete nameless binaries from bin/capture; current named logger remains bin/GuildWarsLogger. Build artifacts now stage in build/capture/staged and packaging uses staged controller. Preserved all old nameless capture logs, including world-8512-185810437.jsonl, as position/arrival evidence; absence of names/definitions does not invalidate positional observations.

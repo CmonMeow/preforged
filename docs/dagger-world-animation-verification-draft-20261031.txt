@@ -1,0 +1,43 @@
+DAGGER WORLD + FIRST ANIMATION CONSUMER VERIFICATION (detached)
+
+New, unregistered/unbuilt:
+ tests/dagger_world_trace_export_draft.cpp
+ tools/protocol/dagger_world_native_2022_draft.py
+Parent builds exporter serially, captures stdout JSONL below build, then runs
+checker TRACE.jsonl --executable build/tests/EXPORTER.exe --output build/reports/NEW.json
+using existing protocol-python dependencies. No process/network/rendering or
+capture/checkpoint changes occur. Native verification has NOT run yet.
+
+Accepted exact fields and original consumers:
+1. Chain wire <HIII>:91,caster,target,stage0..3. Schema91,0x10,0x10,0x404;
+   descriptorRVA0x60bacc,callbackVA0x873df0. Native local-caster gate and target
+   lookup, componentkind3 stage+0x1c. Clear removes component, targetflag+0x1b0=0,
+   UI0x1000000a payload[target,0]. Nonzero stage precedes actual primary damage.
+2. Attack50 <HIIII>:159,50,source,target,skill. First action21 has payload
+   [target,0,skill]. Body0x77c0e0 executes to first model/body call; record native
+   style/state/seconds/storedskill. Do not invent equality to World250mswindup.
+3. Finish <HIII>:158,46,source,0 ->action17. Failure/stop158,49,source,0 ->action19.
+4. If observed:158/159 kind60 ->action25;161 kind61,actor,floatbits ->action24.
+5. Actual162 kind16/17,target,cause,fraction is only the contact chronology
+   boundary. Conditions/registry packets require their independent proofs.
+
+Evidence layers, reported separately:
+- FIXED RETAIL: immutable manifest-verified IronPalm786 lead1/clear0 receipts
+  and reset chronology (~15s, not exact server time). They are NOT successful
+  782/780/776 dagger receipts. No fabricated dagger success capture.
+- GENERATED WORLD: real owned opt-in lead782/offhand780/dual776 on player/NPC,
+  invalid offhand, miss, tick16000clear. Export actual hex, stage, HP, acceptance.
+  World-only API may emit NO cast50/failure49; observed counts stay zero.
+- CONSTRUCTED ORIGINAL INPUTS: separate8skill start50 and endpoint46/49 packets
+  through pinned2022 serializers/first consumers. Never count these as actual
+  World starts, paid Runtime/gateway behavior, or retail successful attacks.
+- RENDERED: pixels/sound remain UNKNOWN. Actor/model/component/asset services
+  are synthetic stubs; first consumer is not a rendered animation test.
+
+Review gates:
+Exporter must pass native mechanics first. Checker validates original serializer
+and first consumers, scope fields, stage-before-damage and clear. Missing actual
+cast/failure remains an explicit gap. Record pinnedPE/tool/fixture/executable SHA
+separately. Preserve all historical checkpoints. Authorized private-client visual
+acceptance still needs dagger model, dual left/right animation, HUD chain target,
+failure/clear, actual release/hit cadence, condition indicators and sound.

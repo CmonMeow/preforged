@@ -1,0 +1,66 @@
+Shared weapon-spell implementation: 787, 793, 794 and PvP2893
+
+Current state
+Normal client casting and scoped production hooks are implemented. Runtime
+retains the resolved rank, primary profession and Spawning Power for the cast;
+completion revalidates exact actor lifetimes and typed capabilities. Player and
+reviewed NPC recipients use one recipient-owned category replacement contract.
+Casting does not require the recipient to hold a weapon. Caster death/departure
+does not by itself remove a committed recipient-owned effect.
+
+The shipping host and29 focused/neighbor Release suites were rebuilt and pass.
+The Runtime matrix covers64 cases; the additional acceptance matrix covers70.
+The owned private2022 client passed login, Ascalon146 entry, keyboard and ground
+movement. This smoke test does NOT establish rendered weapon attachment
+lifetimes. Exact source/executable/proof hashes and limits:
+build/reports/weaponspell-ai-crafting-validation.json.
+
+Mechanics and shared consumers
+787 Resilient Weapon reads actual condition/hex state for Health regeneration
+and+24armor. Both weapon and typed spell armor paths participate. A narrow
+EndingHexContext from the owned Registry qualifies the closing Lightning Surge
+hex at its exact expiry damage boundary; it does not rewind general actor state.
+Own weapon-spell expiry at the same boundary denies that bonus.
+
+793 Weapon of Warding uses shared regeneration and independently attributed
+50percent blocking. Only an exact active owned effect can supply the block
+entry; raw metadata/Registry resemblance does not authorize the benefit.
+
+2893 is the reviewed native PvP variant of793, with8s recharge and ending on
+accepted logical attack release. Runtime retains the original793 owned skill
+slot/copy. Failed admission does not remove the effect; a released arrow later
+cancelled does not restore it. The precise retail ending phase is not proven.
+
+794 Wailing Weapon uses immutable pre-damage attacking-target facts and the
+shared resolved-hit/protection authorities. Ordinary attacks and attack skills
+qualify; spell-only action does not. Native attack interrupts and Wailing do not
+consume protection twice for the same qualified hit. A noncritical Critical Chop
+can still receive Wailing's independent interrupt. Multi-arrow contacts resolve
+individually. Actor retirement, death and generation changes cannot inherit an
+old receipt. Existing NPC outgoing primitives share this producer; autonomous
+friendly-NPC weapon-spell casting and combat enrollment remain separate work.
+
+Lifecycle and timing
+Player/NPC regeneration settles old intervals before replacement, early removal
+or expiry. Exact recipient death retires Registry/presentation ownership. Source
+provenance is retained without requiring the original caster to remain live.
+Spawning Power uses an immutable effective attribute snapshot and the archived
+4percent-per-rank text with nearest-second, exact-half-down rounding. Two of306
+archived table cells disagree with that textual rule; the implementation's
+choice is explicit private policy, not a recovered server formula.
+
+Native evidence
+weapon_spells_2022.py verifies22 frozen receipts, original casts/serializers and
+particle consumers. weapon_spell_policy_2022.py independently reviews duration
+tables and native2893 metadata. Target/body resources are7871282/1167,
+793/28931154,7941156 and shared1155; sentinel2077 is never emitted.
+World owns these visuals, avoiding duplicate generic Runtime caster particles.
+Pinned2022 Wailing recharge25 differs from modern frozen capture15;25 is retained
+for this version, with the discrepancy open.
+
+Verification limits
+A source binding is not an all-mechanics or all-animations completion claim.
+Rendered attachment/expiry, independent PvP activation and retail ending phase,
+NPC caster enrollment, wider combined-status behavior and version discrepancies
+remain explicit verification work. New charge-based792/795 helpers are detached
+work and do not become supported merely because they use this family.

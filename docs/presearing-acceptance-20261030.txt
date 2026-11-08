@@ -1,0 +1,35 @@
+Current validation update (2026-10-30): regular quest source inventory is20/56,
+with34 missing and2 staged. Quest76 policy/storage and existing quest/network/
+pre-skill regression suites pass (ranger-companion-progress-20261030.json).
+Pet observer/cast/Guard/layered/World/profile six-suite batch and49 source checks
+pass (pet-observer-progress-20261030.json). Owner-death continuation correction
+is newer and still building; its fixture needs a reviewed name-length correction.
+Canonical remains21e026f3a8b7e446e03a0303b0a369f4c553b7ea315ad2e286d1526e20d88388.
+Normal411/436 bindings, automatic shrine/wipe recovery and rendered playthrough
+remain incomplete. Earlier integration counts/hashes below are historical.
+Pre-Searing completion acceptance
+
+Scope: regular pre-Searing; level 10+ daily quests are deferred, not a prerequisite. Use existing combined captures and local wiki; no repeat full playthrough requested.
+
+Latest tested integration: build/reports/presearing-integration-progress-20261030.json.
+Canonical d4440ac3977edf52c1e9cfd9cb43810331000ccb25420b6b19cee286aff06580.
+17 selected native suites and56 source checks pass; login/roster/initial World
+handshake passes, not full player initialization.17/56 regular quest rules are
+installed and20/28 directed regular gates configured, with explicit staged/
+missing inventory and all rendered acceptance unverified.39/44 pre skill effect
+bindings remain; pet/profile primitives are not normal411/436 support.
+Quest79 neutral objective and portal triggers include explicit authored policy.
+Current limitations and next consumers are in docs/presearing-current-20261030.txt.
+The checkpoints below predate this integration.
+
+Order of work
+1. All 44 obtainable skill effects through paid casting, including pets/minions and Reversal consumers. Current binding count 39/44 is not playability proof.
+2. Six primary profession quest chains and secondary trials: admission, prerequisites, objective-updated notification, exactly-once rewards and reconnect persistence.
+3. Side quests and collectors: captured menus, inventory exchanges, XP/item/skill rewards and quest-conditioned actor transitions.
+4. Every pre portal in both directions, spawn placement and authoritative collision for click, keyboard and pursuit.
+5. AI combat, escort dialogue/follow, leash, visibility and reconnect.
+6. Rendered end-to-end profession and side-quest playthrough against the tested canonical host.
+
+Baseline evidence: build/reports/presearing-baseline-tests-20261030.json contains 19 passing previously built executables with hashes. This is regression baseline only, not a fresh-source or rendered acceptance claim.
+Visual access: attempted bridge1 inventory and local PID/path-verified private client on2026-10-30. Inventory exposes no native apps or tabs; local CopyFromScreen/PrintWindow returned uniform pixels. No rendered acceptance claimed. Owned private test client/host were stopped; official clients untouched.
+Current native/source work: Retribution248 committed base-attack consumer passes102 World cases plus nested outbound checks;11 sealed-receipt cases and out-of-order delivery pass. Eight selected suites and56 source checks pass;15 fixed original-client receipts revalidated separately. Additional damage classification, NPC recipients/casters, admitted Renewal and paid Runtime/gateway remain unfinished;248/307 remain unbound and pre remains39/44. Canonical1910fc4eb26ff3c00885f502817202311badfb2cddae837ab8e52ad77022013c passes isolated initial encrypted World handshake, not full player initialization. Latest evidence:build/reports/retribution-attack-progress-20261030.json; exact next work:docs/retribution-current-20261030.txt.

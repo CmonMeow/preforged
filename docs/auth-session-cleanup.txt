@@ -1,0 +1,32 @@
+2026-10-09 authentication session ownership
+
+Ticket authentication now returns an internal GameSessionLease containing
+account identity and the parent session hash. Neither is a new client wire
+field. The hash is not the bearer login token and cannot authenticate a user.
+The auth handler acquires cleanup immediately after successful authentication,
+before roster/profile initialization. Every subsequent exit path releases it.
+
+NetworkComponent/NetworkServer/NetworkManager/Accounts provide typed
+releaseGameSession. It bypasses the transitional operation/payload adapter,
+uses the manager's three-second admission deadline, and deletes by both
+account and hash in a transaction. Cancellation before commit rolls back.
+Ticket children cascade. NetworkClient returns unavailable until its custom
+transport is implemented.
+
+Portal expiry and graceful shutdown also revoke portal-owned login tokens,
+including sessions never handed to an auth connection. Tokens are collected
+under the portal lock and revoked outside it. Abrupt server process termination
+cannot run destructors; abandoned sessions still expire through stored limits.
+Database/admission failures are reported and retain that expiry fallback.
+
+Native network_lifecycle regression: six consecutive authenticated launches
+and releases; wrong-account rejection; repeated-release rejection; revoked
+bearer session no longer validates; direct precommit cancellation preserves
+the session. Login attempt throttling remains independent and unchanged.
+
+Live deployed private2022 PID16180: empty test account authenticated, reached
+creation preview, stayed alive, and closed via its window. Server logged
+AUTH account_session_released status=0. No official-client process action.
+Evidence: build/reports/session-cleanup-live.json, session-cleanup-server.log,
+session-cleanup-full-tests.txt. Existing leaked sessions are not bulk-revoked
+for imported accounts. Explicit disposable fixture maintenance remains separate.

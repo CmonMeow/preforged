@@ -1,0 +1,273 @@
+Reviewed NPC combat content and lifetime integration (2026-10-03)
+
+Version12 flesh eligibility (2026-10-18): append fleshy and fleshy_source
+after the46 version11 fields,for48 fields total. fleshy is0,1,or '-' for
+unknown. Known true AND known false require a declared evidence source; an
+unknown value must use '-' for its source. Versions1..11 remain readable and
+leave this fact absent. LiveActor retains it by lifetime; stale lifetimes do
+not expose a fact. Neither appearance nor a model/name is used to infer flesh.
+Virulence's staged World transaction uses this fact: non-fleshy recipients
+skip Disease/Poison but can receive Weakness; an unknown conditioned recipient
+rejects before applying any of the three. Other condition entry points still
+need migration to flesh-sensitive eligibility. Species/contagion is separate.
+Existing production catalogs are not automatically upgraded or populated.
+
+Version13 adds creature_type and creature_type_source after the48 version12
+fields,for50 fields total. Keys are reviewed server-content taxonomy labels,
+not retail model IDs:1..64 lowercase ASCII letters/digits/underscore/hyphen,
+excluding '-'. '-' means unknown and requires a '-' source. A known key needs
+a declared evidence source. LiveActor access validates the full lifetime.
+Versions1..12 do not gain an inferred type. No production taxonomy was populated
+as part of adding this schema. Disease contact and actual propagation are
+separate mechanisms; sharing a type alone does not establish a transmission.
+
+Catalog and instance implementation:
+  src/runtime/gw_npc_combat_catalog.h
+  tests/npc_combat_catalog.cpp
+  tests/npc_world_combat.cpp
+The host now attaches validated definitions to map actors. Instances retain
+generation-scoped living combat state, publish reviewed health after appearance
+and spawn, and use current health for subsequent joining-client snapshots.
+Flare's real casting controller can target such NPCs without inventing a player
+energy profile. Its projectile flight/impact uses reviewed fire armor and emits
+an exact actor death once. begin_kill_objective binds an explicit encounter to a
+quest attempt before combat. Kills update only assigned lifetimes; the session
+controller persists pending completion and acknowledges it after successful
+storage. take_npc_deaths remains available for detailed event consumers. Actual
+pre-Searing encounter activation is still unfinished.
+Version2 rows retain the21 version1 fields and append fire_armor, cold_armor,
+fire_armor_source, cold_armor_source. Missing ratings use '-'; present ratings
+require declared evidence references. Version1 catalogs remain supported.
+Version3 appends physical_armor and physical_armor_source to the25 version2
+fields. This is a reviewed final aggregate rating for the current basic attack
+policy, not a recovered per-body armor distribution. Older versions have no
+physical rating and cannot silently acquire one from elemental armor.
+Ordinary melee attacks now target living hostile NPCs using this rating. Earth
+caster weapons use the reviewed earth rating and authoritative projectile flight.
+Both use the existing attack timing, equipment revision, actor lifetime, range,
+line of sight and zero-skill-attribution publication. Dead NPCs cannot yield a
+second death; exact quest groups receive ordinary-attack kills. The native account
+integration now uses real timed sword attacks to finish its synthetic encounter.
+Damage sampling remains the existing private deterministic midpoint policy.
+Production NPC appearance populations now include additional captured maps.
+Combat definitions remain relation-only: the only numeric foe definitions are
+explicitly authored SYNTHETIC native test fixtures. No official capture action
+or process change is part of the catalog preparation tool.
+
+  tools/capture/prepare_npc_combat.py prepares a production RELATION-ONLY catalog
+  data/gw/npc-combat.txt and identity-free npc-combat-provenance.json. Exact
+  selected snapshots and same-instance visibility supplements bind each
+  installed actor; actor definitions, level, names, position, model files and
+  the complete population file SHA256 must agree before output is written.
+  Captured allegiance1 (Ally_NonAttackable) maps to protected. Allegiance6
+  (Npc_Minipet) maps to a conservative neutral/nonhostile private-world policy,
+  which is not a claim of immunity, invulnerability or a complete packed faction.
+  Other observed allegiances map to unknown. They can be displayed at captured
+  locations, but unknown relation carries no combat permissions and no inferred
+  player-hostile meaning.
+  All relation-only records have damageable0 and conditions_allowed0. Health, armor and packed
+  allegiance remain absent. Source file/record hashes and exact line numbers are
+  recorded without names, GUIDs or account information. The raw capture source
+  remains private; this catalog does not require reading it at runtime.
+
+Current combat limits
+  Captures provide appearance, observed level and position but do not by
+  themselves establish NPC maximum health, initial health, final earth armor,
+  immunity or whether an actor attacks players. See
+  tools/protocol/npc-combat-findings.txt and npc-population-provenance.json.
+  GWCA Agent.h285 describes max_hp as working only for the local player; a
+  remote actor's fraction/model/profession is not a health-capacity measurement.
+  Constants.h124-125 normalizes allegiance; this is not the full packed native
+  word used by packet47. Definition flags are neither allegiance nor effects.
+
+  Local Wiki Charr_Ash_Walker.html109,133-135 explicitly gives earth armor20
+  at LEVEL6 (revision2554922, edited2013); no health-capacity field is present.
+  Charr_Axe_Fiend.html122,146-148 gives an earth armor RANGE53..55 at LEVEL8
+  (revision2554906, edited2013). Do not select its midpoint or apply these values
+  to other levels, maps, hard-mode variants, similar models or town actors.
+  These enemy identities have not been bound to a reviewed installed population.
+  The local2021 snapshot predates2022 and modern Reforged captures; it is useful
+  variant-specific evidence, not a universal server data table.
+  Armor_rating.html notes that many PvE creatures do not follow3*level+profession
+  armor. Health and damage defaults must not be reconstructed from that formula.
+
+  Local source SHA256 values:
+  Charr_Ash_Walker.html
+    bcbb37d3eacb20560435faa2c087f8519599083aa6cd94647ff60318375cfd29
+  Charr_Axe_Fiend.html
+    a219e345746c1284b4ea1370c6fb18568151a8699f33d3c412eae2b51800f80d
+  Armor_rating.html
+    2442586a0f5aa3459001f03f76e9eb724617fea1cad1b9ba45120989827b241c
+  Health.html
+    3f1f01c27e556a4f85f5826652e97494d777eb853044bf035704b0d24338a895
+  Local Wiki root: Desktop/gw/Wiki/wiki.guildwars.com/wiki (read-only donor).
+
+Line schema, version1
+  gw-npc-combat 1 <exact_population_file_sha256>
+  source <token> <wiki|capture|authored> <source_file_sha256> <reference>
+  npc <map> <actor> <definition> <model_file> <skin_file> <appearance>
+      <definition_flags> <level> <relation> <packed_allegiance|->
+      <maximum_health|-> <spawn_health|-> <earth_armor|->
+      <damageable:0|1> <conditions_allowed:0|1>
+      <relation_source|-> <health_source|-> <armor_source|->
+      <allegiance_source|-> <conditions_source|->
+  NPC rows occupy one physical line,21 whitespace-separated fields including
+  "npc". References containing spaces may use standard double-quoted strings.
+  Only whole comment lines beginning# after whitespace are ignored; a# in a
+  quoted URL/reference remains part of the reference. SHA256 is64 lowercase hex.
+  Numeric fields are decimal, armor may be signed, initial health may be fractional.
+  Sources may precede or follow NPC rows; every applicable field must resolve
+  its own evidence token. Inapplicable fields require"-" rather than an invented
+  source. Duplicate sources/actors, nonfinite or mismatched health, missing
+  evidence, oversized rows and unsupported schema versions reject the catalog.
+
+  Relation is unknown, protected, neutral or hostile-to-players. It is explicit
+  private-world player relation, not a inferred captured allegiance byte and not
+  a general PvP team/faction model. Packed allegiance is separately optional and
+  never synthesized from that relation. Condition eligibility is separately
+  reviewed; an observed living model is not proof of immunity or susceptibility.
+  Missing health/armor remain optional. Damageable requires reviewed capacity AND
+  reviewed initial health. Knowing capacity alone must not invent a full-health
+  spawn. Protected actors cannot be damageable or receive conditions. The caller
+  marks known service NPCs protected_service; binding rejects any attempt to turn
+  them hostile, damageable or condition recipients.
+
+  This parser validates structure, references and population revision. It does
+  not download/open source files or establish that a numeric assertion is true.
+  Content review verifies actual source hashes and exact variant scope before
+  deployment. The caller computes the exact installed population FILE-byte SHA,
+  including newline representation; this binds metadata to the same revision.
+
+World integration contract (root-owned, not wired by this standalone slice)
+  Namespace fw::gw::combat::npcs.
+  1. Parse a temporaryCatalog=load_catalog(input,actualPopulationSHA).
+     Convert each installed Instance::Npc into Observed{Binding,protected_service}:
+       Binding{map,n.id,n.definition.id,n.definition.model_file,
+         n.definition.skin_file,n.definition.appearance,n.definition.flags,
+         n.definition.level}.
+     The population hash also pins all remaining definition/placement fields.
+  2. Catalog::validate_population(span<Observed>,actualPopulationSHA) validates
+     the WHOLE reviewed catalog against the installed population before any
+     instance publication. Missing rows are permitted and supply no defaults;
+     extra or mismatched rows reject. Catalog::bind(observed,SHA) independently
+     checks one matching row/service restriction or returnsnullptr when absent.
+     Existing installed appearance/service actors remain valid without combat rows.
+  3. While creating an instance, construct LiveActor(definition,Lifetime{
+       world_id,instance_generation,actor_generation,map_id,actor_id}).
+     All generation/world/actor tokens must be nonzero. Generate a fresh token
+     whenever an actor ID or an instance is replaced; never reuse the token just
+     because the numeric actor ID is the same. Fresh state uses ONLY explicit
+     spawn health, base earth armor and relation, with effects0/empty conditions.
+     Prepare a replacement map entirely before swapping it under the worldmutex.
+     Catalog changes do not overwrite an existing actor's current health.
+  4. Every pending effect and trusted NPC skill hook carries that fullLifetime.
+     matches/actor/condition/damage APIs reject stale world/map/instance/actor
+     generations. They do not implement locks: hold the Instance mutex throughout
+     checking caster and target lifetime, life, relation, current position/plane,
+     range/LoS, mechanics preflight, mutation and outbox batch enqueue. Do not keep
+     mutable actor pointers beyond that transaction. Root NPCcast energy/ranks,
+     skill loadout and AI need their own reviewed content; this catalog adds none.
+  5. LiveActor::apply_condition/has_condition/remove_condition/expire_conditions/
+     clear_conditions all require the lifetime. Conditions start empty; actor ID
+     reuse starts empty again. Same-condition reapplication retains the longest
+     remaining duration. Eligibility is not hostility: world targeting must still
+     validate which caster may apply an effect. Do not use these APIs as a bypass.
+  6. final_earth_armor(handle,now) returns reviewed base armor adjusted for current
+     CrackedArmor. apply_damage(handle,Damage,now) uses that value on a temporary
+     Actor, then commits only health/effects. It never permanently overwrites the
+     base rating, so expiry restores that rating. It only damages explicit
+     hostile-to-players actors. Missing health/armor and dead targets retain the
+     existing combat::Reason gates; armor-ignore still works without an armor value.
+     World preflight remains required before any multi-strike/condition transaction.
+  7. After native spawn32, publish combat::health_packets_2022 for actors with
+     known valid health; for latejoin/reconnect publish CURRENT state rather than
+     catalog spawn health. Publish full240effects when restoring currentconditions
+     as needed, including after expiry/removal. Send no health packets for unknown
+     actors. packed_allegiance(handle) returns only explicitly reviewed fullwords;
+     any47 publication must follow spawn and must not send normalizedenum3.
+  8. combat::damage_packets_2022(caster,hit) must be enqueued atomically to preserve
+     global kind10 skill attribution. On first death root cancels pending skills/
+     movement/AI and clears conditions as part of its reviewed death transition.
+     Respawning requires a fresh actor-generation token; do not merely clear death.
+
+Native tests and scope
+  tests/npc_combat_catalog.cpp covers absent defaults, strict provenance, every
+  appearance binding field, wrongpopulationSHA, service protection, malformed
+  quoting/rows, duplicate/overflow fields, unknownarmor vsarmor-ignore, fractional
+  explicitspawnhealth, CrackedArmor expiry retaining baseAR, staleworld/map/instance/
+  actor handles, dead targets, respawncondition isolation and failedreplacement
+  leaving installedstate untouched. Values are synthetic, not proposedretailstats.
+  Optional native test arguments are population-file, combat-catalog-file and
+  actual-population-SHA256. These bind generated rows to a real population
+  revision and assert absent statistics, no packed allegiance and no damage or
+  condition enablement for actors with relation-only records.
+  This provides a usable future reviewed foe-state API. It does not claim spawned
+  enemies, enemy AI, weapon attacks, loot, complete skill mechanics or NPC health
+  gathered from the official server.
+
+Catalog v6: appends general_armor and general_armor_evidence after the v5 lightning
+fields (33 fields including npc). Older versions leave general armor absent.
+This is the reviewed final rating for nonphysical, nonelemental weapon damage;
+never infer it from earth/fire/physical ratings. Values and evidence are required
+independently. Native raw damage types6/7 (chaos/dark) use this field for ordinary
+NPC caster-weapon attacks. Fire vulnerability does not multiply those hits.
+Source mechanics: local Chaos_damage.html SHA256
+c8cc8a44b3a273454bb59a5d743965e8b635ac6944a2eb08689406b7baa3e62f
+and Dark_damage.html SHA256
+6d88dfb0525b280f35105a24c432aad235d41a4b54a0c787354dc3987945a0ba.
+Player-versus-player general armor and production NPC values remain separate work.
+
+Catalog v7 appends spawn_energy, maximum_energy and energy_evidence (36 fields).
+Use '- - -' for unknown energy. A known empty pool is0 with a positive capacity;
+partial pools, capacity0, current>capacity and absent evidence are rejected.
+Live energy belongs to the actor lifetime and is recreated only with that actor.
+No NPC energy regeneration is inferred. Ether Feast40's NPC transaction checks
+hostility/lifetime/health/range/plane/line of sight, then loses actually available
+energy and heals the caster atomically. Unknown energy denies application.
+
+Catalog v8 appends energy_pips and energy_pips_evidence (38 fields). Values0..10
+are positive/zero regeneration; '-' leaves regeneration unknown. Pips require
+an existing energy pool and their own evidence. Live regeneration retains fractional
+pip-ms using the existing player resource integrator; one pip yields1energy/3s.
+Backward actor clocks reject energy transactions. Unknown regeneration does not
+invent a rate. NPC energy has no persistence across retired actor lifetimes.
+
+Catalog v14 appends disease_immune and disease_immunity_evidence (52 fields).
+Values0/1 mean reviewed susceptible/immune;'-' remains unknown. Both true and
+false require a declared evidence source. Missing/inapplicable/undeclared
+evidence and invalid booleans reject the catalog. Versions1-13 retain unknown
+Disease immunity. This is independent of flesh and creature type. Generic
+conditions_allowed=false and active owned Tainted Flesh113/Avatar of Grenth1520
+prove immunity;conditions_allowed=true alone does not prove susceptibility.
+Live facts are lifetime-bound;stale handles return unknown. No production NPC
+facts are guessed or mass-migrated by this schema addition.
+
+Virulence update2026-10-18: the guarded Runtime/gateway path is now enabled. Known fleshy NPCs require an explicit Disease-immunity fact before a triggered application;known nonfleshy NPCs can receive Weakness without that irrelevant immunity fact. Disease immunity skips Disease alone. See docs/virulence.txt for verification and outstanding production data/form/lineage gaps.
+
+Catalog v15 retains the52 version14 fields and adds relation token
+'allied-to-players'. Older versions reject that token. It represents an
+explicit reviewed player ally that may be damageable/conditioned;it is distinct
+from the invulnerable 'protected' role and from neutral creatures. Existing
+relation evidence is required. No NPC is reclassified from appearance,name or
+packed client allegiance. Per-team PvP NPC allegiance remains separate work.
+
+Blood is Power NPC Energy integration:
+LiveActor accepts119 only for a living protected/reviewed ally with explicit
+Energy capacity/current and a known regeneration rate,including known0pips.
+The owned resource curve preserves fractions across positive pip changes,
+expiry,renewal and removal. It is not an NPC Overcast/debt implementation.
+Timed Energy requires Health settlement first. World's NPC advancement retains
+the returned death update and credit,then advances the remaining dead span
+without regeneration. Energy earned up to the exact death crossing remains.
+Pruning/clearing modifiers retains the resource owner and fractional state.
+Reviewed119 endings now stop its modifier;unknown positive-status endings
+remain rejected. Timestamp-free NPC Energy callers must already have settled
+the current event,as before;the timed owner's clock barrier rejects a future
+Energy advance before Health. Legacy pre-promotion idle-time handling and
+NPC Overcast/debt/caster AI need further resource-system verification.
+
+World119 supports these reviewed NPC recipients with the same required paid
+sacrifice output and deferred target224 form as player recipients. It emits
+public status/target visuals;NPC/hero party Energy UI is not claimed.
+Runtime119 is now wired through the scoped ally validator and paid-sacrifice
+completion path;see docs/blood-is-power.txt for tests and remaining gaps.

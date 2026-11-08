@@ -1,0 +1,55 @@
+Sunspear Rebirth Signet [1816] — source binding, 2026-10-24
+
+The native C++ host accepts a paid three-second targeted signet cast on a
+dead member of the caster's party. It snapshots earned Sunspear rank 0..10
+from title track 17 at cast admission. At completion, World verifies the
+same living caster and dead target lifetimes, restores full Health and
+10% of maximum Energy per rank, clears death state, and relocates the
+target to the caster's current position/plane with opcode 44 and stop
+publication. The signet is spent after a successful cast until a genuine
+morale boost or map reset. Normal resurrection prerequisites and shared
+World clocks still apply. The plan rejects forged rank or Energy values.
+
+Fixed capture: data/captures/skill-checkpoints/20261024-signet-infection-bound.
+packets-19472-19186421.jsonl SHA-256
+  3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb
+is listed in its immutable manifest; see the verifier report for its
+independently checked digest. Lines 469960, 469993, 469994 and 469998
+record actor25 casting at actor26, completion about 2.969 seconds later,
+the spent-slot event, and actor26's new position. Subsequent lines include
+actor26 vitals. This is stronger than activation evidence alone, but does
+not isolate a skill-specific particle/body.
+
+tools/protocol/sunspear_rebirth_2022.py verifies those receipts against
+the frozen SHA-256 and executes the hash-pinned 2022 client cast consumer
+and position handler offline. The cast consumer reaches model lookup with
+stored skill1816, three seconds and style49. Opcode44's native handler
+updates both original position stores. The consumer stubs DAT/model
+services, so no rendered pixels or exact asset identity are proven.
+Report: build/reports/sunspear-rebirth-native-2022.json.
+
+Validation:
+- Serial Release build: server_host, skill_casting_test,
+  gw_world_simulation_test, progression_test, sunspear_rebirth_world_test.
+- Focused CTest: skill_casting, progression, sunspear_rebirth_world 3/3.
+- Full Release CTest: 858/858. Its world_simulation mega-test now reaches
+  and passes the new resurrection case. The preceding movement assertion
+  checks forward travel within the navigation slide's 0.2-unit cell-seam
+  clearance rather than demanding an exact 7.2-unit straight displacement.
+  The standalone world test also passes. Transcript:
+  build/reports/sunspear-full-ctest.txt (SHA-256
+  1eb32988b030508f7d9c7e5e4cdb2df8570c3bbacf1096e6587c51ad52326ea0).
+- Fixed capture audit and backlog publication: 679 locally captured,
+  371 source-bound, 308 awaiting binding, 650 without local activation.
+
+Tested SHA-256:
+  server_host.exe a057bc181e7282c03eac4587bc18a10cccc2c1f6a0e1b135eeea07c8e0330cab
+  skill_casting_test.exe 274a41628972a727e82346203ac921d63337eb8b5fa069d3f53f303dacd2c1ad
+  sunspear_rebirth_world_test.exe eaa8540f4537ed9003b9355846d6d395ac581e4b1f1d9fb0adec9775c35a0f28
+  progression_test.exe 07dd0723c6147e60bebf4fc54dbbcfc42f04bcdd6bff5e6d815da09fdeaf1098
+  gw_world_simulation_test.exe 2e141dadeab9ab2b7004731ff94b964bb1ac8771fc54272910933258290063de
+  sunspear_rebirth_2022.py 6ceadf84a311dff0ca7e7c780422a2760cd3a05478daa6f19a0dadf27443589c
+
+Remaining: rendered 2022 client acceptance, exact skill-specific visual
+asset/body, retail Energy rounding at ranks other than the checked 7,
+cross-plane/range/party edge captures, and retail handling of rank zero.

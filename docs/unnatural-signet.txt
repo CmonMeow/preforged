@@ -1,0 +1,51 @@
+Unnatural Signet934 / PvP3188
+========================
+Pinned2022:Mesmer/Domination2/Signet7,zeroEnergy,1s activation,.75s aftercast,
+10s recharge,primary15..75 and conditional secondary5..50 at rank0..15.
+At rank20:95primary/65secondary. Body982 targets the primary,caster2077 sentinel.
+
+Frozen20261017-npc-refresh-2 packets-1360-15821281.jsonl21933,21954..21956:
+targeted60 caster25/target30/skill934;recharge10;success58;targeted20/body982.
+Native verifier hashes these receipts and executes pinned targeted-cast/success/
+particle consumers. Observed969ms contains unknown modifiers/batching;native
+base1s is retained. It is not a fixed969ms activation rule or rendered proof.
+
+World validates the current primary lifetime,hostility,Health,plane and1248
+range. The target always takes the primary hit. Other foes within166 receive
+the secondary hit only when the current primary is hexed or enchanted.
+The primary never receives both hits. Archived concise description explicitly
+says OTHER adjacent foes. Area gate is sampled before primary damage,so a
+lethal primary hit does not erase the conditional secondary effect.
+A primary-only hit does not depend on an irrelevant adjacent actor's timeline.
+Selected player/NPC Health timelines settle before preflight. Active NPC routes
+are refreshed before area selection. Preflight uses current authoritative
+damage inputs;commit re-resolves each lifetime/current actor rather than
+assigning a speculative whole-NPC copy after death/quest callbacks.
+Retired/dead/no-longer-hostile contacts are skipped. Damage uses existing
+armor-ignoring/reduction/death/adrenaline publication paths. Body982 emits once
+for the original primary lifetime. Cancellation,interruption,late target
+replacement,aftercast and recharge share the Runtime signet lifecycle.
+
+PvP3188:10..60 primary/secondary,20s recharge,and ten-second disables of
+current non-Mesmer skills except signets. Native934 in a PvP instance resolves
+to3188 metadata for activation/recharge and to the PvP damage plan.
+World preflights every damage recipient and the full current-bar disable
+proposal before committing either. The original completion event identifies
+the application;replay/stale/invalid disable proposal fails before any damage.
+Runtime requires sequenced skill-use hooks in PvP;partial legacy adapters fail.
+Current copied slots are stored independently. Mesmer skills and every signet
+are excluded;new copies added after application do not acquire old disables.
+Removed/reinserted original copies retain their deadlines. Expiry/renewal,
+owner retirement and replay after reset preserve the same lifetime authority.
+Disable queries and optimistic reset permits now include a sixth independent
+source via shared DisableRevisions. Flourish/Keystone/Determined reset the
+exact selected keys in all sources together. Runtime refresh publishes the
+current authoritative slot timers;there is no parallel local-only disable map.
+
+Open:local PvP activation/disable capture,retail damage/disable event ordering,
+NPC casters,owned NPC enchantment-producing
+integration,quest-spawn boundary ordering,exact range/plane calibration and
+rendered private-client acceptance. The native receipt does not establish area
+geometry/damage or all reactive ordering.
+Validation:three fresh native suites,69 tooling tests,native verifier and Release host pass. Fixed backlog268source bindings/365pending. Official clients/loggers untouched.
+Current validation:six fresh native suites,69 tooling tests,native PvE/PvP cast verifier and Release host pass. PvP mode and six-source reset authority are connected;local PvP capture/rendered QA remain open.

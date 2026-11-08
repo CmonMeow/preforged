@@ -1,0 +1,46 @@
+Target-body effects in build37130
+================================
+Canonical SkillRecord now retains original row+0x7c target-body resource.
+2077 means no target-body effect.877 of3433 rows reference530 distinct real
+resources. The hash-pinned extractor --check verifies both caster and target
+fields against the original executable.
+
+Run tools/protocol/caster_body_resources_2022.py --target for original callback,
+effect9 lookup and file encoding on victim actor43. All530 paths passed; report
+build/reports/target-body-resources-2022.json preserves per-resource skill IDs,
+DAT files and first particle call. Actor/allocation services remain stubbed;
+this is not rendered/live validation.
+
+Runtime target_body_2022 uses canonical metadata rather than the previous three
+spell list. Publication now follows accepted per-victim effects in elemental,
+lightning, earth projectile, blindness, degeneration hex, conditional damage, shadow damage and
+life-steal, condition-spell, condition-transfer and Crystal Wave handlers and
+broadcasts to owner/peers. It does not publish at launch
+or preflight. The delayed Fireball branch still reaches the impact reducer only
+when its projectile lands; its target-body sentinel emits no invented resource.
+Remaining skill families require explicit integration at their authoritative success
+boundary; extracting their resource does not claim they are implemented.
+
+Tests verify the entire target-resource/sentinel table, actor/ID bounds, existing
+Searing Flames/Glowing Ice/Glowing Gaze fixture bytes, and actual Immolate:
+no effect after missing-armor rejection; native victim resource339 exactly once
+per connected client after accepted damage/condition application.
+Vampiric Gaze checks original victim resource276 once on caster and victim;
+a recycled target scope produces no packets and cannot decorate its replacement.
+October9 condition-family integration: Enfeeble117 publishes native victim220
+once to all five test clients after Weakness commit. Plague Touch154 publishes
+victim278 once to caster and target after transfer commit. Recycled target scopes
+publish nothing. Crystal Wave217 and Epidemic78 have native sentinel2077 and
+emit no invented target-body particle. Crystal Wave damage is now published
+before lethal cleanup. Release build and122/122 tests passed23.76s; reports
+condition-target-effects-build.txt and condition-target-effects-tests.txt.
+Live rendering, sounds, overhead/projectile resources and other gameplay families
+remain incomplete and are not covered by this change.
+
+October9 earth projectile integration: accepted impact uses native target-body
+metadata after committed damage and before death cleanup. Glowstone1661 has
+victim resource1632; Ebon Hawk1374 and Stoning171 have sentinel2077. World tests
+verify no Glowstone target particle at launch, exactly once to caster/victim
+after hit, and none after dodge or target lifetime replacement. This does not
+implement a missile visual or sound. Release build and122/122 CTests passed
+26.04s; earth-projectile-target-effects build/test reports preserve results.

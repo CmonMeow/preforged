@@ -1,0 +1,36 @@
+Lyssa's Balance877
+==================
+Pinned2022 native row:Mesmer NoAttribute Spell,5Energy,1s activation,.75s
+aftercast,15s recharge,caster sentinel2077,target body958. Archived primary
+wiki Lyssa's_Balance.html:remove one enchantment unless the caster has MORE
+enchantments than the target. Equal counts are allowed;zero target entries
+is a normal no-op. This is not remove-all or a strict target-greater rule.
+
+World settles source/target Health and owned effects,checks current exact hostile
+lifetime/plane/range1248/navigation,then compares active enchantment counts at
+completion using existing Registry::count. Expired/future entries and other
+categories do not count. A false predicate records enemy-targeted spell use
+without removal or rewards. Otherwise normal newest-enchantment removal/end
+reactions apply. NPCs expose current owned count;an unowned enchantment bit
+without count is unknown,not guessed. Positive NPC ending support remains owned
+Ice Spear214 only,with no speculative whole-actor restoration.
+
+Tests:lyssa_balance matrix0..3 caster/foe entries,equality,newest exactly one,
+source untouched,no Health/Energy reward,forged plan,friendly/stale scopes,
+registry expiry/future/wrong generation,completion count additions/expiry,
+cancel/interrupt/retired target/missing hook and native15s cooldown. Shared
+signet_disenchantment fixture exercises actual NPC214 casting,successful877
+removal/body958,and no-op when caster has two enchantments versus NPC one.
+
+Evidence:20261017-npc-refresh-2 packets-1360-15821281.jsonl lines15782 and
+15796..15798:cast source25/target30,finished,recharge15,target body958. Native
+verifier executes original2022 consumers offline and pins client/capture/wiki/
+tool hashes in build/reports/lyssa-balance-native-2022.json. Model/asset lookup
+services are stubbed;this is consumer verification,not rendered visual QA.
+
+Open:other NPC positive-status endings,NPC casters,unowned NPC effects,retail
+failed-comparison visual behavior and rendering. Packet receipt does not prove
+the relative enchantment counts in that official cast. Maintained enchantments
+on other allies do not count as enchantments affecting this caster.
+
+Validation:five freshly rebuilt native suites pass(lyssa_balance,gaze_contempt,signet_disenchantment,enchantment_removal,necromancer_enchantment_removal);69 tooling tests and native consumer verifier pass;Release server_host build passes. Fixed checkpoint271source-bound/362pending,696missing baseline captures;latest hunting list preserved. Official clients/loggers untouched.

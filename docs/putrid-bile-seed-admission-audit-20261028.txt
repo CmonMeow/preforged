@@ -1,0 +1,30 @@
+Putrid Bile2058 remaining reactive-consumer audit, 2026-10-28
+
+Current source evidence (not a completion claim):
+- gw_world_simulation.h::putrid_bile_death_locked selects player-then-NPC
+  candidates, preflights Reversal separately, then commits player damage through
+  commit_player_resolved_hit_locked. This omits the shared Seed reaction path.
+- Its NPC candidate loop retains LiveActor references across condition
+  settlement; exact source/target lifetimes must be reacquired after callbacks.
+- Both kill_locked and record_npc_death_locked call take_death before invoking
+  the explosion. gw_putrid_bile.h::PutridBileLinks::take_death erases the link
+  before checking expiry/returning it. The void explosion has multiple early
+  returns for unknown/future facts, so a simple new refusal cannot be retried
+  from the consumed link. Do not merely replace the commit helper and declare
+  atomic lifecycle coverage.
+
+Required next implementation/verification:
+1. Preserve one immutable scoped death event/reservation until its admission
+   succeeds or its explicit terminal disposition is known. Keep one-explosion
+   ownership and expiry-at-original-death semantics; no recreation on reconnect.
+2. Project the whole ordered damage/protection/Seed cohort. Reacquire authority
+   after preparing recipient facts. Include recursive death explosions and
+   linked-end capacity/retirement in the admission boundary, not partial commits.
+3. Commit fresh reactive hits and exact NPC lifetimes. Do not borrow replacement
+   IDs or their future clocks; keep original caster credit and death position.
+4. Native cases must include unknown late Seed facts, earlier healing changing
+   later survival, absorbed/converted/zero damage, chained Bile deaths, source
+   departure/replacement, callback retirement, expiry, repeat/death replay and
+   packet ownership/order. Rendered acceptance remains a separate gate.
+
+No runtime, binding, host, capture checkpoint or client change by this audit.

@@ -1,0 +1,76 @@
+Ambient population caster enrollment: native-tested and gateway-integrated; not rendered or deployed
+
+Files: src/runtime/gw_world_npc_population_ai.inl and
+tests/npc_population_caster_navigation_world.cpp. Include the inl inside
+Instance after gw_world_npc_wander.inl. No new persistent state/cleanup map.
+
+API configure_npc_population_elemental(source, expected Binding, FlarePolicy,
+vector<elemental::Reviewed>, wander::Policy, now) returns NpcPopulationEnrollment:
+armed / already_armed / identity_mismatch / unknown_combat /
+conflicting_controller / deferred / invalid_policy.
+It binds an existing exact non-quest lifetime. Caster and patrol are enabled
+together after preflight. Repeat enrollment verifies configuration and preserves
+paid cast, recharge, Energy, home, acquired target and patrol deadlines. Changed
+configuration conflicts instead of silently restarting behavior. Quest actors,
+missing Health/Energy/pips/final armor, stale source and other controllers refuse.
+No health, Energy, armor, weapon or creature traits are inferred by this API.
+
+Captured candidate: Bandit Firestarter, map146, lifetime3:50:1.
+data/captures/pre-searing-four-professions-2026-10-11/
+  world-30352-81344734.jsonl
+  SHA256 1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6
+  packets-30352-81363781.jsonl
+  SHA256 a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02
+World342: definition1420, model_file116226, model_files[116642], flags12,
+primary6, level1, encoded name[3881,39821,49912,32497].
+Packet7016: native32 actor50 creation at(-1043.382202,9962.748047),plane0,
+direction(1,0). Creation may be visibility entry; persistent placement is an
+explicit authored reuse of that coordinate, not proof of retail spawn center.
+Packets7278/7302: skill194 start/finished, ticks81650718/81651750.
+Packet7327: another194 start at81652500; nearby world samples change pose from
+(65.835449,5644.402832) to(93.349121,5537.288086). These are sampled motion,
+not a recovered route, exact speed, home position or acquisition decision.
+Packet7494 at81660968: IntegerValue(kind42,actor50,value100), maximum Health.
+Lifetime ends at packet8950 as despawn; disappearance is not proof of death.
+Observed packet opcodes are modern capture format, not pinned2022 wire replay.
+
+Local wiki Bandit_Firestarter.html oldid2663400, SHA256
+ed499cb6c1e825e8703ed5e4d2140326856eb03ae7a560a0e96a702a3b26bcff
+lists normal level1 Flare and Health100. Do not import level15 event skills.
+
+Proposed separately named authored development policy:
+final armor0, full initial Health100, Energy40/40, regeneration4pips,
+FireMagic0; speed220, acquire1000, follow1500, home leash2000,
+projectile speed1000/hit radius32, max flights4; patrol offsets80 cardinal,
+pause1200ms, leg timeout6000ms. These values are authoring choices, not captured
+rank/resources/armor/timing. Current elemental194 consumer supplies canonical
+skill cost/damage/cast/cooldown; no ordinary profile, Aura, or made-up skillbook.
+Missing body/condition metadata must remain unknown or separately authored.
+
+Parent integration needed:
+1. Select one unused stable template ID and export exact captured appearance
+   into a distinct map146 development population catalog, not a second quest NPC.
+2. Bind combat metadata with captured Health/capability and authored policy
+   provenance. Do not apply this policy to every matching appearance.
+3. After actual population installation, call API using exact runtime Scope and
+   catalog Binding, target-empty policy, book194/rank0 and bounded patrol.
+   Preserve returned refusal diagnostics; retry does not reset active behavior.
+4. Register dedicated test and coordinate source-frozen Release build.
+The current base catalogs contain no Firestarter116226 row. Real map146 mesh
+must validate the selected creation coordinate; do not bypass navigation if it
+fails. Synthetic test translates the identity to a connected/disconnected wall
+fixture and samples every published movement leg for walkability.
+
+Test design: unknown metadata/stale scope refusal without partial enrollment;
+idempotent idle and paid cast; idle detour/unavailable route; proximity acquire,
+paid Flare hit vs disconnected no-hit; live target pull beyond leash or target
+death, return/resume; target disconnect and same-ID replacement cannot inherit
+old paid casts. No rendered-client or deployment claim. Full historical fixed
+decision scheduling, threat/groups, ordinary weapon statistics remain missing.
+
+Verification: build/reports/earth-population-progress-20261029.json. Both dedicated native tests pass, including real map146 navigation. Startup accepts exact catalog; isolated network test uses fixture map148 and does not establish rendered map146 gameplay. Historical parent integration checklist above is now completed in source. Full AI parity remains open.
+
+
+2026-10-29 Ambient caster full plan identity follow-up
+Read-only review caught that reviewed-spell slot/copy/range/evidence excludes damage plan rank. Enrollment now compares full canonical offensive::Plan as well; identical rearm preserves paid action/Energy, altered rank conflicts instead of reporting already_armed. Existing lifecycle regression expanded and passes on current helper. Serialized gateway/core+host rebuild and fresh isolated network smoke pass; startup still validates exact map146 supplement. Current13source hashes/current executable/checkpoint:build/reports/npc-population-plan-fix-progress-20261029.json. Earlier earth-population-progress retains historical pre-fix six-suite evidence. No deployment/rendered/retail-parity claim; official sessions untouched.
+Next explicitly audited Renewal consumer gaps (not an exhaustive all-spell list):82Mantra of Recall,1262Healing Ring,182/207/221Conjures lack event-aware gateway/World completion; shared complete_simple_enchantment template also needs admission/reward integration for245Protective Spirit,259Shield of Deflection,261Shield of Regeneration,262Shield of Judgment,274Healing Seed and310Divine Spirit. These remain open alongside the complete master missing-implementation/capture/verification lists.181/2860stay unbound.

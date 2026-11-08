@@ -1,0 +1,23 @@
+NPC Aura completion phase: scoped capture observation
+
+Archive: data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl
+SHA256: a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02
+Scope: map161, epoch16, actor37 lifetime1, level4 model1436 River Skale Brood.
+Exact packet rows: build/reports/ai/brood-aura-completion-phase.json.
+
+Aura180 untargeted start is line28674/tick82659265; its finish is
+line28683/tick82659578. During this lifetime, seventeen positive type55
+float packets name actor37 as both source and recipient, each approximately
+0.1 Health fraction. Each arrives953..1047ms after the preceding Ice Spear214
+start and immediately before that spell's native58 finish at the same tick.
+Example: start28922/tick82667218, positive self float28947/tick82668171,
+finish28948/tick82668171. No observed pair places this self gain at start.
+
+Observation: repeated self-positive float/completion alignment in this scope.
+Inference: with the preceding Aura and reviewed Ice Spear behavior, these
+packets support completion-phase Aura healing. Floats carry no skill ID;
+this is attributed evidence rather than an explicit Aura trigger identifier.
+The capture does not prove universal ordering within a server simulation tick,
+interruption behavior, or every possible spell. The implementation's existing
+player/NPC completion phase now has scoped NPC capture support beyond code
+parity; its broader mechanics still rely on the reviewed shared formula.

@@ -1,0 +1,25 @@
+2026-10-09 direct typed map transition
+
+NetworkServer.selectMap now directly invokes NetworkManager/Accounts with
+SelectMap; no transitional operation/payload framing is used in production.
+The legacy offline adapter parses once and invokes the same helper. Its map0
+fixture remains explicitly allowed only in offline maintenance; production
+rejects zero/out-of-range/same-map requests. NetworkClient is unavailable.
+
+Ownership and expected-map compare-and-swap remain enforced. The transaction
+validates the profile's current map, updates profile and map_id atomically,
+and clears old coordinates. Admission expiry before commit rolls back. World
+entry still selects map arrival/spawn; this operation does not save position.
+
+Focused network_lifecycle/accounts_lifecycle/rename_accounts all passed.
+New post-write cancellation test verifies saved map and encoded profile remain
+unchanged. Existing tests retain stale/foreign owner rejection and profile map
+consistency. Full evidence: build/reports/typed-map-transition-full-tests.txt.
+
+Rebuilt/deployed host, private2022 PID10360: imported main authenticated and
+entered449; /tp55 loaded Lion'sArch with150 NPC packets; /tp449 loaded back.
+Skills1329 learned and attribute revision43 restored. Evidence:
+build/reports/typed-map-transition-live.json and typed-map-transition-server.log.
+An attribute edit after return was rejected actor-not-owned. That separate
+issue remains open; no claim of all input branches passing. No official client
+was launched or targeted. Full project/skills/gameplay goal remains incomplete.

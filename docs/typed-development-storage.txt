@@ -1,0 +1,32 @@
+Typed rename and development unlock storage (2026-10-09)
+
+NetworkServer renameCharacter and unlockDevelopmentCharacter now call typed
+NetworkManager and Accounts methods. Neither uses request(Operation,string) or
+string response decoding. Existing offline development tools share the same
+native transaction helpers in accounts_development.inc. NetworkClient transport
+remains explicitly unavailable, not silently routed through local storage.
+
+Rename validates names, requires owned character and exact expected old name,
+checks the global case-insensitive namespace, then compares-and-swaps the name.
+Cancellation after UPDATE rolls back. Development unlock requires owned level20
+summary and matching profession profile, filters learned skills/professions by
+owned campaigns, grants the existing obtainable player skill catalog and the
+200-point development attribute entitlement. Granting again is idempotent and
+preserves revisions. Corrupt campaign IDs and invalid/overflowing stored profile
+revisions are rejected. Skills and attributes commit or roll back together.
+This grants availability metadata, not implementations for unsupported skills.
+
+Native regressions verify no transitional dispatch, missing ownership, rename
+precommit rollback, stale rename conflict and restoring original name, level-one
+unlock rejection, unlock rollback after writes, complete learned catalog/200
+points, repeat grant revisions and isolated temporary-character cleanup.
+Focused network_lifecycle, rename_accounts and development_accounts passed in
+2.29 seconds. Full build/test/live results follow after completion.
+Final verification: Release build succeeded; all 126 tests passed in26.93s.
+Rebuilt private PID16472 logged in and entered map449. /.gm then /allskills
+returned the native unlock success message. Restored GM mode off. Retained live
+screenshot typed-development-allskills-live.png and typed-development-live-server.log.
+A subsequent login/world test uses the corrected log-replacement tracking in
+smoke.py. Initial automation timeout was a truncated-log cursor error; its client
+had reached selection successfully. No official process was used or restarted.
+Subsequent private PID1644 login/world test passed; learned1329, skill revision18 and attribute revision43 unchanged after the repeat live unlock. Server and private client remain open.

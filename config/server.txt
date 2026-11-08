@@ -1,0 +1,22 @@
+# Local defaults. For LAN use bind=0.0.0.0 and your PC's LAN IPv4 as public_host.
+# public_host is the world endpoint returned to clients; never use 0.0.0.0 there.
+bind=127.0.0.1
+public_host=127.0.0.1
+auth_port=6112
+portal_port=6601
+
+# Reviewed item catalogues. Paths are relative to the project root.
+# "none" explicitly disables a catalogue, including inherited environment values.
+# Replace none with a reviewed file when available; malformed files fail startup.
+identification_catalog=none
+salvage_catalog=none
+consumable_catalog=none
+# Warrior Test captured stages; Tad armor is an explicit temporary development
+# policy in data/gw/quests/warrior-test-development-policy.txt.
+quest_catalog=data/gw/quests/presearing.fwqc
+quest_encounters=data/gw/quests/presearing-encounters.txt
+quest_givers=data/gw/quests/actors/presearing-givers.txt
+quest_waves=data/gw/quests/experiment-waves.txt
+quest_giver_combat=data/gw/quests/aziure-development-combat.txt
+quest_corpses=data/gw/quests/presearing-corpses.txt
+quest_escorts=data/gw/quests/monk-test-escorts.txt

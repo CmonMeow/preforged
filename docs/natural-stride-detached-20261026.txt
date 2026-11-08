@@ -1,0 +1,56 @@
+Natural Stride1727 detached consumer, 2026-10-26
+
+Fixed checkpoint20261024-all-completed has one local kind48 activation:
+packets-1360-15821281.jsonl line539798, tick27588484, actor25, map280.
+Whole packet SHA256:
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6
+Hex9f0000003000000019000000bf060000 is instant48, not a timed cast.
+The original pinned2022 offline consumer delivers instant UI and resolves
+caster body724; target2077 is the native no-body sentinel. No assets render.
+
+Archived Natural_Stride.html SHA256:
+051c1d1035ef94beb1839de5ea4ebf4fc723b96919d756c74ddac8d88e7289d9
+The description gives33percent movement,50percent incoming attack block,
+and rank0..15 duration1..8seconds, ending on becoming enchanted or hexed.
+Its explicit note distinguishes NEW applications from preexisting effects:
+starting while already enchanted/hexed does not immediately end the stance.
+This is the main integration hazard; a current-status Boolean is incorrect.
+
+Detached gw_natural_stride.h validates pinned catalog metadata, produces the
+rank0..20 plan, selects a canonical active stance, and consumes committed
+Registry::ApplicationEvent observer snapshots to remove the exact stance
+instance. Same-tick order follows the existing registry sequence. Delayed
+old observations cannot remove a replacement stance. No body packet,
+payment, movement or block mutation is emitted by this detached helper.
+
+Integration required before production binding:
+- Runtime: admit1727 only with completed host consumers; pay5Energy through
+  normal Expertise/glyph/aura path, instant activation,12s recharge; apply
+  canonical timed stance using category replacement and native body724.
+- World player/NPC stance application: register observe_applications(owner,
+  1727) before committing the stance; share the existing application drain
+  in commit_applications_locked (near World line1650). Dispatch
+  each committed event to natural_stride_application, preserving other
+  observers; publish exact removal and settle movement to event time first.
+- MovementEffects::apply near gw_movement_effects.h:84: add canonical1.33
+  stance interval. Cover held/click player motion and moving NPC consumers,
+  exact early end, category replacement, expiry and death/retirement.
+- Shared player/NPC attack block source selection: active_natural_stride
+  contributes an attributed50percent source to existing block composition,
+  including ordinary, skill and ranged/projectile contacts. Do not roll
+  independently of shared competing-source/block dedup authority.
+- Register focused native test and add normal Runtime-to-World payment,
+  movement/block and newly-applied-effect termination tests before coverage.
+
+Validation performed:
+  PYTHONPATH=build/protocol-python;tools/protocol;tools/skills
+  python tests/natural_stride_evidence.py
+PASS fixed local receipt + original2022 first consumers. Report:
+  build/reports/natural-stride-detached-20261026.json
+Native tests/natural_stride.cpp is saved but NOT compiled/run per parent
+freeze. It covers21ranks, preexisting hex/enchantment, new same-tick ending,
+duplicate events, stale scope and delayed application against recast.
+No shared runtime/Auth/CMake edit, production coverage publication, build,
+or official client action was performed. Rendered acceptance and capture
+mechanical contrasts remain open; this is a detached foundation.
+

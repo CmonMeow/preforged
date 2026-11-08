@@ -1,0 +1,39 @@
+"Save Yourselves!" [1954 Kurzick, 2097 Luxon] — native binding, 2026-10-26
+
+Evidence
+- The immutable 20261024-all-completed checkpoint has one local Kurzick
+  activation and two local Luxon activations. Each has an opcode228 begin,
+  opcode159 kind48 instant animation, opcode159 kind21 body596, and opcode227
+  end in that order on one tick. The generic audit's completion count remains
+  zero because it does not classify this instant-shout sequence.
+- tools/protocol/save_yourselves_2022.py verifies the three sequences and
+  records exact file/line receipts in data/skill-capture-plan/
+  SAVE-YOURSELVES-RETAIL-EVIDENCE.json.
+- The pinned 2022 skill catalog gives both skills eight strikes of Adrenaline,
+  no Energy or recharge, PvE-only, and ranked duration4..6 seconds.
+- Guild Wars Wiki ("Save Yourselves!") documents +100 armor
+  to other party members within earshot; the title progression reaches six
+  seconds at rank5 and plateaus thereafter.
+
+Implementation
+- The matching Kurzick or Luxon title track supplies rank; the displayed title
+  and opposite faction's rank do not.
+- Native Runtime pays Adrenaline and publishes the captured instant/body
+  packets. World snapshots player and owned NPC party recipients within
+  earshot, excluding the caster, and publishes their timed status effects.
+- The existing capped armor path gives those recipients +100 armor against
+  armor-respecting weapon and spell damage. NPC expiry publishes one removal.
+
+Verification
+- Native policy/cast/World tests pass for both variants, rank0..12, missing
+  rank, PvP rejection, payment, caster exclusion, distance, hostile exclusion,
+  player spell damage, NPC melee and ranged damage, publication and expiry.
+- Neighboring skill-casting, Shields Up! and Watch Yourself! regressions and
+  all12 coverage tests pass. Release host builds.
+- The fixed capture contains no party recipient, so rendered recipient status,
+  retail damage reduction, and full live-client acceptance remain unverified.
+
+Tested host SHA256
+- bin/server_host.exe: 6088D9AA55BCA4CC51F9865E70B72FEF430F1DB401A12337A88ACDCE69D53A31
+- src/runtime/gw_save_yourselves.h: 02EC9C74982C0C09EF48DA16E7D1F4F489167C06F5D7A6413EF2EAB648E26892
+- src/runtime/gw_world_save_yourselves.inl: 971386DCC03EEA3B7F05200DAEF984AF87240CD0D696420A9E235549F034F4F5

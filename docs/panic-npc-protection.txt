@@ -1,0 +1,35 @@
+Panic52 NPC interruption protection/terminal correction
+======================================================
+During the Distracting Blow area-transaction review,Panic's existing NPC loop
+was found to preflight cancellation on a copied LiveActor and then swap that
+copy into the world. It did not consult Mantra16/17 and emitted only ordinary
+attack stops. Spell/control invalidation therefore could omit the client terminal
+message. Swapping an old actor copy also risks restoring older effects/state
+after another recipient reacts during the same batch.
+
+The loop now preflights every current NPC action token and shared Mantra
+protection before the Panic use receipt or any protection charge is committed.
+Unknown Resolve Energy rejects the batch. The commit uses current actors,
+checks exact expected tokens and skips actions changed by earlier reactions.
+Protected actions consume the current reviewed protection once;unprotected
+actions cancel in place. No staged whole-actor restoration occurs.
+
+NPC terminals distinguish ordinary attack3,known native Attack-type14 skill49,
+and other skills59. The NPC control enum's legacy Action::spell includes generic
+skills;presence of a skill slot does not itself prove a spell. Unknown-slot host
+spell tokens retain existing generic cancellation behavior;this does not make
+unknown spell metadata usable for spell-only damage/condition predicates.
+
+New panic_npc_protection tests cover Concentration one-charge retention/next
+attempt,Resolve20->10->0 and eventual unprotected cancellation,unknown Energy
+preserving a player's protection and retrying the same uncommitted Panic use,
+known spell/unknown-slot skill/Attack-type skill/ordinary attack terminals.
+Fixture stance identity is read from the native20-byte effect application
+(skill field is16bit),not guessed from NPC effect allocation order.
+
+Remaining:retail multi-recipient protection/reaction ordering,notification35
+breadth and rendered acceptance. This corrects an existing binding;it does not
+claim Distracting Blow325 or every NPC interruption path is implemented.
+
+Validation:four native suites,69 tool tests and Release host pass. Fixed audit
+refreshed262bound/371pending. Official logging untouched.

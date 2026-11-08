@@ -1,0 +1,67 @@
+Transactional NPC ordinary-to-spell replacement (2026-10-22)
+
+gw_npc_spell_replacement.h is a standalone staged-actor primitive. It requires
+the exact live source action token and exact ordinary target lifetime. Only an
+unreleased active ordinary windup may be replaced; now>=completes rejects.
+It clones LiveActor, cancels only the clone, then uses the real reviewed
+choose_spell/begin_spell interfaces to select and pay once on that clone.
+The real actor, epoch, pending action, Energy, cooldowns and stances remain
+unchanged on rejection. Successful completion/recharge/aftercast and Mantra
+state stay under the original LiveActor authorities.
+
+The Prepared value retains the original token, target scope, time, Health clock
+and precise Energy snapshot alongside the proposed paid spell actor and its
+before/after Energy. current() rejects wrong-time/target/token/source/resource
+replay. It does not serialize every possible external mutation: callers MUST
+hold the same World lock with no mutable callbacks between fresh preparation
+and immediate actor/ledger commit. In particular, copying an actor across an
+owned-effect settlement and later overwriting it would be incorrect.
+
+World integration (wired through the ordinary driver and both caster INLs)
+1. Under World lock validate source lifetime, ordinary ledger pending token,
+   target lifetime/publication/living/plane/current pose, range and sight. Pure
+   preview on a copy may reject without observable cancellation or payment.
+2. If potentially usable, settle due World-owned Mind Wrack caster/owned ends
+   and NPC Health boundaries using the same authorities as normal admission.
+   These are chronological settlements, not side effects of a preview. They
+   can kill or retire the source. Re-find source and target after settlement.
+3. Build actual fresh target facts and pure combined disable/capacity/armor
+   availability. Prepare again using the current LiveActor. Preserve the real
+   pre-payment pool/fraction snapshot for the existing Energy observer.
+4. Clone the ordinary ledger and cancel its exact matching pending windup.
+   Do not touch released flights or existing release outcome records. For the
+   elemental driver, reserve and accept payment/token in a cloned effect
+   ledger before committing anything. Failure discards all proposed copies.
+5. Revalidate current(), exact pending token/target, source/target lifetimes
+   and now, then immediately move-commit actor and both ledgers in the lock.
+   No callbacks between fresh preparation and these commits. Cancel once.
+6. Publish exactly one ordinary native stop, then run the existing actual
+   Energy/Mind Wrack observer from the original pre-payment snapshot. That
+   observer can kill the source; never overwrite its result with the staged
+   actor. Revalidate source survival/epoch before publishing spell start.
+7. A still-live source owns its newly paid cast. Its normal driver handles
+   future interruption, recharge, completion and effects. If the Energy
+   observer kills it, clear the pending effect cast just as normal admission.
+
+NPC attack outcomes begin at actual ordinary release in the existing World
+implementation. A replaced windup has no released outcome/projectile to cancel;
+do not manufacture an extra outcome. Previously released flights/outcomes are
+independent and must survive replacement. Native stop represents the cancelled
+windup and must precede the new spell-start packet at the same server tick.
+
+The captured twelve same-tick stop/spell pairs demonstrate a replacement
+capability, not its trigger or universal priority. Using existing configured
+spell order for a now-admissible replacement remains explicit host preference.
+No replacement capability should infer missing NPC Energy or supported effects.
+
+tests/npc_spell_replacement.cpp covers no-mutation rejection, exact source/
+target/token/time, payment once, unknown/insufficient Energy, alternative
+disabled spell, future source clocks, knockdown, ordinary completion boundary,
+preserved Concentration/Resolve and successful spell aftercast. It is currently
+standalone; parent must register/build it. No native build was run by this agent.
+tests/npc_spell_replacement_world.cpp additionally covers same-tick stop before
+spell-start, actual regeneration funding one payment, rejected replacement
+retaining the attack, lethal Mind Wrack after payment without stale-actor
+overwrite, and a prior ordinary projectile/outcome surviving later replacement.
+Shared gw_world_simulation.h includes the helper immediately after the existing
+gw_npc_combat_catalog.h include; that include is the only shared-header change.

@@ -1,0 +1,152 @@
+"FINISH HIM!" [2353] — DETACHED NORN EFFECT, 2026-10-26
+
+The fixed 20261024-all-completed checkpoint has two local instant starts in
+map280 (packets-19472-19186421.jsonl lines401154 and509278), no attributed
+hit or condition packets. tools/protocol/finish_him_2022.py verifies the
+snapshot SHA-256 against its immutable manifest, decodes both opcode159/
+kind48 starts, and checks the hash-pinned 2022 first consumer. That consumer
+delivers skill2353 to the instant UI event. Both caster and target body
+resources are the native no-body sentinel2077. No rendered effect, sound,
+hit, condition, or live 2022 client acceptance is inferred from this.
+
+The pinned catalog row records 10 Energy, zero activation/aftercast, 15s
+recharge, damage44..80 and condition duration12..20. The bundled local wiki
+identifies this as a Norn-rank shout and states that a foe below half Health
+takes damage plus Cracked Armor and Deep Wound. The initial detached C++
+resolver used an unverified ten-rank interpolation and applied damage before
+the conditions; the correction below supersedes those rules. The
+condition-immunity/authority input must be known; it never guesses. The
+native test covers all ranks, midpoint/endpoints, strict 50% boundary,
+surviving and lethal hits, both conditions, forged plan, and condition
+immunity. Serial Release build and CTest finish_him pass.
+
+At this initial checkpoint the header was not included in World or Runtime.
+It did not make the skill playable or change the production host. World needed scoped hostile
+target/range checks, actual damage and condition commits with reaction
+ordering, then paid Runtime casting, Norn-title sourcing, packet publication
+and rendered client verification. The listed 1248 range is a provisional
+shared ranged-target policy, not proven by the two cast receipts. No
+official client or logger was touched.
+
+SHA-256 at validation:
+  gw_finish_him.h AEC05214AE86A294CC843536244CC495044D56FC6DEB6235A4EAE4BF84CA17A7
+  finish_him.cpp 911A667875784EB09BA070FE5E500A6AC2B782764AC2D218E1EAD35C096E9F99
+  finish_him_2022.py CAAD3E230571BE1D7C6B43934056B169810EA4835FC8B40CAA415BE423EC1A83
+  finish_him_test.exe B2025BE1B3E0E0A0F07F08A138E49D84ADECB9AB9C7D1205B1607DD86269B35F
+
+Trusted World completion follow-up, 2026-10-26:
+  Instance::stage_finish_him now validates a live hostile scoped player or
+  NPC target, same plane, source range and LOS. It preflights the strict
+  below-half test and armor-ignoring hit, commits player/NPC damage, and
+  initially applied damage then Cracked Armor and Deep Wound to survivors through the shared
+  condition authorities. An NPC with authored condition immunity still takes
+  the damage. The World test covers exact half Health, below-half player
+  damage and two deferred condition-add packets, stale target rejection,
+  NPC condition-allowed and condition-forbidden recipients. Deep Wound's
+  shared 100-Health cap is observed on a 1000-Max-Health NPC. The detached
+  resolver was corrected to preserve damage when conditions are forbidden.
+
+  World holds its effect packets for a completion callback; the normal
+  client cast remains unbound. Source range1248 remains an explicit private
+  policy pending retail evidence, and the two local instant starts contain
+  no attributable damage/condition receipt. NPC end reactions, damage
+  modifiers, Runtime Norn-title sourcing/payment/recharge and rendered
+  acceptance require further checks. Serial Release host and focused native
+  test builds pass; finish_him, finish_him_world, wound_spells and
+  spiritual_pain_world CTests pass 4/4. No official client/logger was touched.
+
+  gw_finish_him.h 3DE0260FBB1C59A2B268A47493B9E4F55F982900C956394F06425334E329CE49
+  gw_world_finish_him.inl 51E59D4E8933E8F8EDAA196DE37A451A89221AE7EE5E3CF94C9E6B6345D2D978
+  gw_world_simulation.h 5844F40B1F2D18B2A79E35DB507E81909872F7B7AA140321C91A52D636D9DDB6
+  finish_him.cpp 75081DCA501877ACD095A5CF39174E9093B1ACB97CEC734C0782BB32796EE110
+  finish_him_world.cpp 14E23FB6BA78F15FC0DC88E03BC8D3C82233F87EF008C56C80F6B6C6C042F218
+  finish_him_test.exe D1341402FCFF93712BA0F96089D66EE7EF36CC741661688FDFA2DFB12F03666B
+  finish_him_world_test.exe 44DD9D9506EDC4992BD760A9D61FCCDE9D3C74BD10D37CD65A954EB39F7DD0B3
+  server_host.exe A41667CE18518816B1BC3C5E0B12AD22F50F9D66D59B9C682568588B6AA8DC55
+
+Opt-in Runtime cast follow-up, 2026-10-26:
+  Runtime now uses the earned Norn rank for skill2353, admits the zero-time
+  instant shout through normal 10-Energy payment and 15-second recharge,
+  retains its scoped foe target, and calls the trusted World completion.
+  The native cast test verifies the missing-hook gate spends no Energy,
+  and the supplied hook spends 10 Energy. At exactly half Health there is
+  no hit; below half, the target takes 44 armor-ignoring damage and the
+  shared Deep Wound authority also lowers current Health by up to 100.
+  Both condition-add packets publish with completion. The normal player
+  gateway explicitly leaves the callback empty. Coverage identifies2353
+  as unsupported/staged, not an implemented production binding.
+
+  The fixed snapshot has no attributed retail hit or condition outcome;
+  rank interpolation, client particles/sound, range, condition ordering
+  and rendered acceptance still need evidence. The final serial Release
+  server_host and cast test build passed. CTests finish_him,
+  finish_him_world and finish_him_cast passed 3/3. No official client or
+  logger was touched.
+
+  gw_skill_casting.h 12931AF411F38F24754F9181E76FACFA38E294B8E05E878FA5C9C753B9CE2D91
+  gw_cast_timing.h 687F7D0D5ABF80542DFE13C1F10A22C9215D4EDD34492FF274EAFD1967016087
+  gw_auth.cpp D4B9E6B7A1DDCBE02FA8BA05EA99DCD5E5A5C55137735357AB6103D667A47A56
+  finish_him_cast.cpp B097BFB0731F83838876193543451C120F092C22E39B7974FFD125348CA4E4B5
+  server_host.exe E4D86912C01E8AF7AD570B82614FFE997812993E3C79430E75CE7081BA19B38B
+  finish_him_cast_test.exe 8D987EB85E498CCAE61255F8A630BFB2C07EE85DF43DF12EA01E82D5C336A132
+
+Mechanics correction, 2026-10-26:
+  The official Guild Wars Wiki's Finish Him progression is rank0..5 damage
+  44,51,58,66,73,80 and duration12,14,15,17,18,20 seconds; ranks6..10
+  retain the rank-5 result. Its note specifies that Deep Wound precedes
+  the damage. Runtime and World now use that progression and apply Cracked
+  Armor then Deep Wound before the 44..80 armor-ignoring hit. The World
+  re-evaluates damage after condition reactions; a near-death recipient
+  can die from the subsequent hit. The detached proposal and player/NPC
+  World tests cover that boundary, including condition-immune NPC damage.
+  Source: https://wiki.guildwars.com/wiki/%22Finish_Him%21%22 and
+  https://wiki.guildwars.com/wiki/Norn_title .
+
+  Serial Release server_host build and all three focused CTests pass.
+  The offline first-consumer verifier reran with Unicorn2.1.4 supplied from
+  build/python-deps. It confirmed the frozen capture SHA-256
+  3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb,
+  two local instant starts, instant48/UI delivery and native no-body2077
+  sentinels; it cannot prove hit or condition presentation. The wiki also notes a temporary-Health bonus
+  threshold bug that this private World path does not yet reproduce.
+  Production gateway remains staged/empty; no rendered client test occurred.
+
+  gw_finish_him.h 198B3E88A0DFB2C86494C660AC3F85AFB8C981048062C648EAD83BEAE3550585
+  gw_world_finish_him.inl 452F920CD6CD233182AE1E73435298A56F4B26D876BFE0B909C1745CF3ED8CFA
+  finish_him.cpp 0CEB28C3CF983478ACB7A8B7B5A5A47EF4AD38BF716DF1B395BC0D5EE785EB32
+  finish_him_world.cpp FD4BAA1C45049A874030C446F4D680062E824B16698EB578F7D41A1011567F93
+  server_host.exe 8973C6E23503D00BD236803E352034191D42763BE291EE47D97FBE8C0D1C64A6
+  finish_him_test.exe 8725EC3C49880FB9E41BB3F027A9B5E1EF19B4E371D350BAEFACF775967AA0B6
+  finish_him_world_test.exe 9710F8AC0D04D727278238DCA94390925C7547F994017477740C284DF3AD81C6
+  finish_him_cast_test.exe 9A2A323FEEB7E3E84A436C35217DAE611D12409C0A943FA4AE79C4237FF766A3
+
+Production binding and temporary-Health correction, 2026-10-26:
+  The official Wiki notes that skill-provided Health bonuses do not raise
+  Finish Him's below-half threshold. The trusted player World path now
+  compares against permanent Health (less an active Deep Wound reduction)
+  while using actual current Health and capacity for the subsequent effect.
+  Detached and World tests prove a 540/1090 Endure Pain target does not
+  qualify against its 1000 permanent Health threshold. The paid Runtime
+  completion now revalidates hostile player/NPC targets through the foe path
+  and invokes the production World callback. The cast test deliberately
+  makes allied-heal validation reject, yet verifies both foe types cast.
+
+  The fixed checkpoint still has only two instant starts. The pinned2022
+  offline verifier confirms instant48 UI delivery and native no-body2077
+  sentinels, not the actual retail hit/condition outcome. Exact range1248,
+  NPC temporary-Health bonuses, reactive packet ordering and rendered
+  private-client behavior remain unverified. The gateway is source-bound;
+  it is not a claim of full retail parity. Serial Release host and three
+  focused CTests pass. The frozen checkpoint remains unchanged; the
+  regenerated backlog is 679 captured/386 source-bound/293 awaiting,
+  with 650 baseline skills lacking local activation evidence.
+
+  gw_finish_him.h 8C34F49F7D66D3FE00559C695079ACEA3F502BB06819FD0927277E140DB1D2BF
+  gw_world_finish_him.inl 961DC3B40AE385FF0198A912CAD09A4EDC73DFF9830CCCC3167F89E6179D08D4
+  gw_skill_casting.h EA152BEB821E7A02A4E11A9CAE2AD8BFD4339ED9A102C71247BFCC54BAE9FDAD
+  gw_auth.cpp AD0C3AC8210F9DF41899E448DB39041804CB26A54DF5309DDF4556AB0FFC85BD
+  finish_him.cpp 6BB2562BD23DB96C45BBEF2E0C7CB79C1D1D8DCD31CF43B2C2F0D913E1485B24
+  finish_him_world.cpp 446F201819E6FDEFD3FF881EFBBD08E59842A82E28F37460EF71D25E3F758A4B
+  finish_him_cast.cpp CD8A67E8FDED5DF92EEAB8ACD6B2B7C558AE9015D96B5ABF498C8C417B563B84
+  server_host.exe 14DDBA9D0BFE70EAA3CBBE387B8261CE31FA692DE0A8BD6CAE21BD89FDDD8AAB
+  finish_him_cast_test.exe 79730864550547B4DAE20B07EEF1872F125B99F48F0416C27023631889CEAC7A

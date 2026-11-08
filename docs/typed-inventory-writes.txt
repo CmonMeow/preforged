@@ -1,0 +1,32 @@
+Typed inventory saves/storage transfers — 2026-10-09
+
+NetworkServer saveInventory/transferStorage now call NetworkManager typed methods
+with serialized admission and deadlines. Accounts shares one SQLite transaction
+helper for character saves and character+bank transfers. Ownership, native
+profile validation, both expected revisions and final precommit cancellation
+retained. Transfers update both profiles atomically; source records do not pass
+through tab/hex application dispatch. Offline adapters use this same helper.
+Removed duplicated legacy inventory save/transfer SQL. Trade remains legacy.
+
+Three rebuilt suites pass: network_lifecycle, inventory_accounts and
+accounts_lifecycle. Added direct Accounts final-precommit cancellation tests for
+single save and two-record transfer, verifying existing inventory revision and
+absent initial bank are unchanged. Existing suite covers successful deposits,
+withdrawals, stale revisions, foreign ownership and durable identity.
+
+Not yet deployed. Host still runs the verified typed inventory-read build.
+Full build/deployment and native inventory/bank interaction are pending.
+Broader item/gameplay and custom-client work remains incomplete.
+
+Deployed 2026-10-09, SHA256
+e936bf497d440e428a84148e25f94f9f543a8af643a66f5dd6c019d1ba78efe1.
+All126 rebuilt CTest checks passed (29.69seconds). Private client PID15680
+passed login, map55 entry and both movement styles with zero native pose
+mismatch. Native UI chest armor moved equipment->backpack, opcode77 committed,
+then backpack->equipment, opcode46 committed. Visible appearance updated both
+ways and original equipment restored. This exercises the typed save path live.
+Storage transfer correctness remains proven by isolated transaction tests;
+actual Xunlai bank UI transfer not yet verified. Official PID5604 preserved.
+Reports/screenshot saved under build/reports/typed-inventory-writes-*.
+
+Live native 2022 verification on 2026-10-09: equipped chest armor -> backpack -> Xunlai bank -> backpack -> equipped, with accepted committed opcodes 77/112/112/46 and appearance restored. Evidence in build/reports/typed-bank-item-live.txt. Storage tab II switching remains unverified.

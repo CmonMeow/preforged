@@ -1,0 +1,152 @@
+Observer capture and private observer mode investigation, 2026-10-04
+
+Confirmed in the project's current GWCA headers:
+- Context/CharContext.h: observer_matches (Array<ObserverMatch*>), observe_map_id,
+  observe_map_type and current_map_id/type. These are modern-client memory
+  layouts, not automatically valid addresses or layouts for the 2022 client.
+- GameEntities/Match.h: match_id, duplicated ID, map_id, age in minutes, type,
+  title, team count, two team descriptors (ID, cape, encoded team name).
+  Match types include guild battles, Heroes' Ascent, uploaded games and 1v1.
+  Enum presence does not prove every mode is available on official servers.
+- Managers/MapMgr.h: GetIsObserving(), GetInstanceTime().
+- GameEntities/Agent.h: agent identity, x/y/plane, elevation, facing and velocity.
+- Packets/Opcodes.h: movement tick30, base speed39, stop40, destination41,
+  speed/gait43, position44, rotation46. Constants alone do not establish modern
+  packet payload layouts. Current modern StoC.h does not declare these movement
+  structures; our 2022 serializers are backed by separate native analysis.
+- StoC InstanceLoadInfo carries is_observer.
+
+Toolbox source inspected locally:
+  build/research/toolbox-modifiers/GWToolboxdll/Modules/ObserverModule.cpp
+  build/research/toolbox-modifiers/GWToolboxdll/Windows/ObserverExportWindow.cpp
+It records combat-related packet events, agents, party statistics and health
+snapshots. Its existing export is not a complete timed movement-input recording.
+
+External research:
+  https://gwobserver.com/
+  https://github.com/MC92-hash/GuildWarsObserver
+The published project demonstrates 3D match replay. The inspected MatchReplay
+reference reads timed actor-position frames and interpolates between them.
+That is useful evidence for trajectory replay, not evidence of recorded W keys,
+mouse clicks or client-to-server intent. Public code has a community licence
+restricting reuse for replay/observer products; keep it research-only and build
+our implementation independently. No code/data was imported into production.
+Reference files are under build/research/gw-observer.
+
+Capture design (not implemented or attached by this investigation):
+A separate native tool, leaving the stable spawn/item logger untouched.
+Record client build/hash, schema, map, navigation asset identity if verified,
+observer flag, match descriptor, initial actor roster and equipment/state.
+At 20-50Hz record every available actor's position, plane, facing, velocity,
+state and speed-related fields with instance time and local monotonic time.
+Record actor addition/removal, loading boundaries, missing samples and dropped
+records explicitly; do not mistake a disappearance for death or a teleport.
+Sampling is observational client state, not exact network event timing.
+
+For precise movement playback, additionally capture the incoming movement
+commands and server tick/order on the game thread using independently validated
+modern layouts. Preserve raw fields and label meanings not yet verified. Do
+not enable the omitted GWCA StoC hooks in the stable logger: earlier startup
+and chat regressions require a separate audited implementation/test session.
+Record combat, speed effects, knockdowns and teleports so ordinary walking tests
+can exclude exceptional movement instead of fitting the wrong movement speed.
+
+Testing:
+1. Received update -> our movement simulation -> next observed position.
+   Compare elapsed-time displacement, stopping delay, facing, animation state,
+   floor crossings and correction magnitude; keep packet time separate from
+   render/interpolation time.
+2. Reconstruct inferred directions only when velocity and speed are known and
+   the actor is not teleporting/knocked down. Label them inferred, never original
+   keyboard input. Observer mode does not expose proven player W/R/click intent.
+3. Treat observed segments as collision/traversal evidence. Test pathfinding
+   only where a destination is actually known. Manual steering is not a shortest
+   route oracle. Preserve multiple maps and unseen held-out traces for validation.
+4. Modern official captures require normalization before 2022 replay; no blind
+   forwarding of modern packet bytes to the private client.
+
+Private observer architecture:
+- Match catalog: ID/map/type/teams/start time/result/availability and retention.
+- Replay stream: an initial snapshot plus ordered timed world events recorded
+  once per match from the authoritative simulation. Exclude account credentials
+  and gameplay-private inventory from spectator snapshots.
+- Spectator session: map load with observer flag, no controllable combat actor,
+  team/agent/appearance state, initial snapshot then events at playback clock.
+- Joining partway through is unverified and is not a feature requirement.
+  Capture official start/join behaviour before designing this part.
+- Completed matches can reuse the same archive. Delay is a policy/configuration
+  choice. End-of-match, exit and reconnect are explicit session states.
+- Route gameplay input away from combat/trade simulation for spectators; camera
+  controls remain client-side where supported.
+- Implement B-menu catalog and join responses from verified 2022 behaviour,
+  not guessed opcodes or modern CharContext offsets.
+
+Still requires direct official-client capture:
+B-menu list request/response, selected-match join/handoff, descriptor wire format,
+observer initialisation differences, late join, exit and match-ended behaviour.
+No Gw.exe processes were running during this investigation, so none of these
+live behaviours or a new collector attachment was tested. No official client
+was started, closed or modified.
+
+Live follow-up: official PID3536 was verified against its full Guild Wars path
+and supported SHA256. Separate tools/observer native external recorder built
+and collected a 5-second trial:81 frames,0 failed frames. A longer recording
+contains16 players, movement, skill IDs, animation and health changes. Catalog
+reads fail descriptor validation, and the header-labelled observe fields do
+not yet have verified modern native semantics. Keep those fields raw; do not
+claim the B-menu catalog was captured. No game hooks, writes or restarts used.
+Sampled health changes cannot establish source damage, armor or exact combat
+event ordering. The current recorder captures state, not combat packets.
+
+
+Downloaded GW Observer source/corpus follow-up:
+User-provided source ZIP: Downloads/GuildWarsObserver-master.zip.
+Application: Downloads/GWObserver. Its MatchCache/index_cache.json has3356 entries.
+Initially only index_cache.json and its etag were present. The download audit
+below supersedes that initial observation.
+
+The full source uses a richer recording than the simple MatchReplay example:
+StoC/agent_events.txt[.gz]: timed MOVE_TO_POINT, actor, destinationXY and plane.
+Separate skill, attack-skill, basic-attack, combat, lifecycle, equipment, model,
+energy, sound, map-object, door and flag event files are parsed independently.
+Agent snapshots include position, facing, velocity, health fraction, conditions,
+casting/skill state, weapon attack speed, attack-speed modifier, animation state.
+CloudReplayProvider::EnsureMatchAvailable downloads a per-match .tar.gz archive
+and extracts it into the local MatchCache. Metadata lives in infos.json.
+
+For damage tests, preserve source/target/type/value fields and verify their units
+before converting to absolute damage. Snapshot max_hp can be stale when the
+observer camera is on another actor; newer recordings include max_hp_is_live.
+Require live/reliably reconstructed HP for absolute-damage comparisons. Armor,
+attributes and runes can be inferred from combat evidence; distinguish inferred
+values from directly captured equipment/values. PvP/PvE and patch differences
+must be tagged before applying the data to 2022 skill mechanics.
+
+No cloud credentials were extracted or used outside the normal application,
+and no restricted third-party implementation was copied into production.
+The independent recorder stopped when the user closed the official client.
+Full source reference files are
+retained under build/research/gw-observer for this investigation only.
+
+2026-10-04 downloaded corpus:
+Nine complete matches downloaded using the installed viewer's normal browser,
+including matches selected through Shockwave/Aftershock filters. Replay windows
+were closed after downloads. Original payloads remain in
+C:/Users/CmonMeow/Downloads/GWObserver/MatchCache.
+25,596,304 bytes across seven map IDs: 167,168,171,356,358,541,542.
+All gzip records read successfully: 944,778 agent snapshot lines,
+142,022 agent event lines, 37,668 combat lines; 286 distinct skill IDs in
+skill_events. These IDs are event coverage, not 286 implemented server skills.
+Repeatable audit: tools/observer/audit_match_cache.ps1.
+Per-match counts, versions, durations and skill IDs:
+build/reports/observer-match-corpus.json.
+
+These are GvG recordings, not a verified Heroes' Ascent corpus. Preserve exact
+line order when several movement messages have identical timestamps. They
+record server movement destinations and sampled actor state, not original
+keyboard/mouse input. Combat values include fractional health values; absolute
+damage and armor require unit/max-HP validation. The 2026 skill balance and
+protocol must not be blindly forwarded into the 2022 client.
+The first movement replay checks should compare velocity, heading, stops,
+corner crossings and timing against snapshots. Collision checks additionally
+require matching navigation meshes; map542 is not currently in our catalog.

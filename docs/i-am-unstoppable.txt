@@ -1,0 +1,35 @@
+I Am Unstoppable! [2356] — fixed-capture implementation, 2026-10-24
+
+The completed official logging session is preserved in the immutable
+20261024-signet-infection-bound checkpoint (manifest SHA-256
+CC21124AC10039DE2A9C56EE00E288AE5737D8D353C7849CB8267742D2FB349B).
+It contains 26 locally attributed instant activations. A pinned four-packet
+window in packets-1360-15821281.jsonl at lines 602339–602342 records the
+30-second recharge, instant action 48, caster body 1908 and a 20-second
+timed status. The offline 2022 native consumer verifier passes. No official
+client or logger was modified or restarted for this work.
+
+The private-server Runtime now pays 5 Energy, requires a valid Norn rank
+snapshot, dispatches the instant shout and starts the 30-second recharge.
+World owns the 16–20-second effect, removes existing Crippled, rejects new
+Crippled and knockdown during its lifetime, and adds 24 armor to incoming
+armor-respecting spells and weapon strikes after ordinary armor penetration.
+Effect ownership is scoped to the current character generation. The gateway
+binds Runtime to the authoritative World and progression rank.
+
+The intermediate-rank duration formula is an inference from the pinned
+endpoints, not an independently observed retail rounding rule. The exact
+client-rendered animation, sound and visible armor display remain unverified.
+NPC caster behavior is not part of this binding. Source binding therefore
+does not imply complete retail fidelity.
+
+Focused Release World, policy, weapon-attack and progression tests pass.
+The complete configured Release CTest suite passes 857/857, and the
+coverage/checkpoint/backlog tooling suite passes 25/25.
+The native verifier is tools/protocol/i_am_unstoppable_2022.py; its report is
+build/reports/i-am-unstoppable-native-2022.json. The frozen skill audit now
+reports 679 locally captured baseline skills, 369 source-bound, 310 awaiting
+binding and 650 without local activation evidence. The Release server host
+SHA-256 is 6B35350B7AD5079582B07F790D21F6217AAF41D2F2E792D2FD43A12E8761FDAC.
+World-test SHA-256: 7BE11236E54F6A2CDD9399571FF3810F3CCEF81742DC4BDAD1E02262816E8DDF.
+Policy-test SHA-256: FF28BA77D30C3DAC0D462060DD0AA00855089DA87B373C85A29223B9C0F9C1F9.

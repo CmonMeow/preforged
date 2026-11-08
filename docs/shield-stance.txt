@@ -1,0 +1,69 @@
+Shield Stance 378 â€” staged policy and equipment authority
+=======================================================
+
+Balance reference: historical local wiki Shield_Stance.html (revision2667481).
+Duration1..6 seconds at Tactics0..15;75% block while wielding a shield;
+damage reduction2 per effective Strength rank,capped15. No movement penalty.
+Native pinned2022 row matches5 Energy,15s recharge,instant stance,Tactics21,
+duration1/6,scale75/75,bonus15/15,caster body637,target body sentinel2077.
+
+src/runtime/gw_shield_stance.h validates that row and provides:
+- Duration policy for ranks0..20.
+- Revision-bearing equipment facts from the authoritative owned inventory and
+  active weapon set. A focus is not a shield. A two-handed weapon suppresses
+  the effective shield while preserving the stored offhand reference.
+- Contact-time effect selection plus current effective Strength and equipment
+  inputs. Unknown ownership/Strength rejects; it never grants guessed defense.
+  Selection respects application/expiry boundaries; expired effects grant none.
+
+tests/shield_stance_policy.cpp covers all supported ranks/Strength values,
+shield/focus/empty sets,two-handed suppression,invalid ownership/bags/quantity,
+zero revision,invalid active set,unknown facts,expiry and replacement selection.
+
+Fixed evidence:20261017-npc-refresh-2,packets-1360-15821281.jsonl.
+Lines383448..383452 and383764..383768 each contain same-tick recharge15,
+instant48,body21/resource637,effect66 rank0 duration1s,pending-slot release227.
+tools/protocol/shield_stance_2022.py verifies whole-source manifest SHA256,
+exact windows/identity/order/ticks,pinned PE row and original native dispatch
+and particle consumer. Report:build/reports/shield-stance-native-2022.json.
+Native asset/model services are stubbed; this is not rendered visual approval.
+
+Production binding
+==================
+Runtime accepts378 through the instant stance path: self-target,5 Energy,
+15-second recharge,owned registry replacement/effect duration and one native
+caster body637 publication. Required mutation/snapshot hooks must be present.
+World validates lifetime and exact duration; death removes the registry entry.
+
+The normal inventory/attribute refresh in gw_auth now publishes current effective
+shield and Strength into generation-scoped World state. Revisions and event
+timestamps reject stale updates. Due damage fields settle with the previous
+facts before a change is committed. Unknown equipment invalidates protection
+queries rather than retaining guessed shield benefits. Two-handed suppression
+is evaluated by the owned inventory policy before publication.
+
+Player block contact includes378 in the existing one-draw attributed sources;
+Rigor Mortis/unblockable bypass remains separate from other contact failures.
+Shield reduction adds to Shielding Hands after damage multipliers/armor in
+reviewed strike and combat::Actor damage paths. Separate life-steal protection
+preserves Shielding Hands without applying Shield Stance to health stealing.
+Health degeneration and explicit sacrifice paths do not use this protection.
+
+tests/shield_stance_world.cpp exercises75% block at controlled draws,unblocked
+damage,shield removal/re-equipping,current Strength,stale and unknown facts,
+expiry/replacement/removal,Rigor Mortis bypass,World shadow damage plus life
+stealing,Runtime Energy/recharge/self-targeting/body publication and death.
+
+Remaining verification gaps
+===========================
+NPC casters/equipment ownership are not enabled; this binding is player-owned.
+Rendered acceptance,live captured block/reduction attribution,mixed protection
+ordering against official behavior,and reconnect/equipment-race stress remain
+unverified. Packet/native evidence is not proof of rendered acceptance.
+
+Validation: freshly rebuilt shield_stance_policy,shield_stance_world,escape_world,
+block_attribution,shadow_damage,feast_of_corruption_policy all pass.61 Python
+skill-tool tests pass; native receipt verifier passes; Release host build passes.
+Historical Life_stealing.html explicitly distinguishes life stealing from damage
+and lists Shielding Hands as protection against both; Shield Stance is not listed
+as a life-steal protection skill. This is the basis for the separate channels.

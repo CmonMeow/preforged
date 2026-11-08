@@ -1,0 +1,37 @@
+Fractional native adrenaline units
+=================================
+
+gw_adrenaline.h now retains half of a native unit independently per exact
+skill/copy pool. One strike is25 native units;the pinned Berserker Stance
+policy's3/2 ratio therefore gives37.5 units per ordinary25-unit gain.
+Two such gains total75,without a systematic loss or excess from per-hit rounding.
+
+State::gain_halves takes an integer count of half-units. State::gain remains
+the existing whole-unit interface and forwards twice its input. Existing hit
+and damage callers still use their previous whole-unit amounts;this change
+does not enable Berserker Stance or change damage-to-adrenaline quantization.
+Modifier selection,stacking and gain eligibility remain the World's job.
+
+Pool::half is0 or1. Exact balances survive whole-unit gains and bar reordering,
+stay isolated by skill/copy,and are clipped at each pool's native cost. Spending
+clears the selected pool and subtracts25 units exactly from the others:25.5
+becomes0.5. Spending all,disable,reset/death and25-second decay clear fractions.
+Invalid bar proposals leave the old state intact. Saturation clamps the input
+before addition,including UINT64_MAX half-unit input;no overflowing sum occurs.
+
+snapshot_2022 preserves the existing packet208 format and sends whole units.
+Fractions remain server-side;readiness cannot occur before the exact integer
+cost is reached. This is conservative presentation,not proof of retail
+half-unit storage or UI rounding. snapshot validation rejects malformed half
+values and a fractional balance beyond a full pool.
+
+tests/adrenaline_fraction.cpp covers exact repeated gains,readiness thresholds,
+bar reorder/copies,whole/fraction mixed gain,caps,25.5 subtraction,disabled
+pools,invalid bar rollback,overflow-safe saturation,all-pool spend,decay/reset,
+and unchanged native wire format. Existing adrenaline.cpp retains the baseline
+whole-unit and native serialization fixtures.
+
+Remaining:connect reviewed modifier policy to World gain paths;validate all
+eligible sources and stacking/caps;capture retail rounding/readiness behavior;
+test Berserker Stance's accepted-use ending before attack-skill windup. The
+fixed modern capture's207/sample50 still has no exclusive modifier attribution.

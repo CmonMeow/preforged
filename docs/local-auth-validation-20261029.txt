@@ -1,0 +1,32 @@
+Native local auth probe,2026-10-29
+
+Run tools/diagnostics/host_startup.ps1 -PortalLogin -AuthHandshake after building
+isolated host,presearing_test_account and local_auth_handshake. Ports are fixed
+loopback26112/26113/26601; marker-scoped generated database/content are isolated.
+Official clients,credentials and imported account data are never involved.
+
+Probe reads only first200bytes of fixture DH blob (public parameters/Y),not
+server secret exponent. CNG generates an independent fresh512bit legacy client
+key with those parameters. It derives shared secret through existing DH code,
+uses server seed and compatibility cipher, sends encrypted computer info/hash,
+and checks decrypted18byte2022SessionInfo. This is compatibility verification,
+not a claim of modern authenticated transport security.
+
+Portal user/ticket are transferred only over probe stdin,not commandline/file.
+Probe sends2022hello and transaction0x1020304login for explicit fixture alias.
+It requires ordered AccountInfo including nonzero agreement version,empty new
+account settings with same transaction,and success result with that transaction.
+Fixture roster is empty; no character stream/world entry/rendered UI is proved.
+Logs verify ticket status0,authenticated completion and account-session release.
+Native probe/socket operations are bounded. Initial probe read failed because
+fw::tcp::connect returns nonblocking; explicitly switching this owned probe socket
+to blocking with5second send/receive deadlines fixed the harness error. It was
+not evidence of a server handshake fault. Final repeated run passes.
+
+Final hashes/status:build/reports/local-auth-progress-20261029.json.
+Owned fixture host is terminated after probes; graceful host shutdown remains
+unverified. No canonical host deployment,skill binding or checkpoint change.
+
+Nonempty follow-up: host_startup.ps1 -PortalLogin -AuthHandshake -CharacterRoster passes with synthetic Protocol Hero. Seeder flag is marker/database-path restricted. Probe validates native roster summary/selection and initial Play map148transfer endpoint. Empty-roster control also passes after change. Generated harness now includes explicit spawn configuration omitted by original startup-only test. Final evidence:build/reports/local-roster-progress-20261029.json. No world socket/loading/rendered skill validation yet.
+
+World channel follow-up: host_startup.ps1 -PortalLogin -AuthHandshake -CharacterRoster -WorldHandshake passes. Native --world validates scoped64bytepreface,grant consumption,separate seeded cipher and15byte2022InstanceInfo(op408). Ephemeral client DH key may be reused within this single local probe; world/auth cipher states and server seeds are separate. No map request or player initialization is sent/proved. Source/log/exe evidence:build/reports/local-world-progress-20261029.json. Canonical deployment/official clients unchanged.

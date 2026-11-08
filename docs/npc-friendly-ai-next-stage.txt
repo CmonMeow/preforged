@@ -1,0 +1,41 @@
+Detached autonomous friendly healing stage
+
+gw_npc_friendly_heal_selection.h requires explicit authored threshold,
+priority, hold-position/follow bounds and evidence. It selects only current
+eligible ally snapshots; active actions and unavailable spells yield no new
+action. Declared-order and lowest-Health-fraction are named authored policies,
+not claimed captured retail weights. No hardcoded healing threshold exists.
+
+gw_world_npc_friendly_heal_ai.inl now participates in normal World ticks,
+but only for explicitly enrolled healer/selection profiles.
+It scans current allied scopes then feeds the existing begin_npc_friendly_heal
+queue; that queue revalidates and owns cost, action, cooldown, effects and
+completion. The World stage supports hold-position only and rejects
+follow configuration until a separate reviewed motion profile is supplied.
+The pure selector can express an approach decision but does not move or heal.
+No encounter is activated and no hidden second Energy/control owner exists.
+
+Academy_Monk.html local SHA256:
+a2008ae4f558146c859701e9bfca68acbcb78a495d773a60341f77cf0d9a4588
+Interactions agent identified explicit Healing Prayers7 / Divine Favor6,
+Heal Other/Orison and notes prioritizing healing/following injured allies.
+These ranks are recoverable wiki facts. They do not establish maximum Energy,
+weapon damage, armor, exact thresholds or target tie-breaking. Resource and
+motion policies remain explicitly authored pending separate evidence.
+
+Friendly ordinary attacks remain a separate real authority gap. Existing
+ordinary NPC AI resolves outgoing contacts only against players; hostile NPC
+target snapshots, shared allegiance gates, NPC recipient armor/block/condition
+contexts, kill attribution and exact source control all need reviewed support.
+Simply swapping an actor ID into a player target path would fabricate state.
+Next implementation should factor recipient-kind snapshots/contact commit,
+reuse the existing ordinary ledger/token and NPC LiveActor damage authority,
+and retain shared pre-hit/reaction/block/on-hit ordering for both populations.
+Captures show Rurik/Guard/Monk attacks but do not by themselves provide unknown
+damage/weapon profiles. Quest46 activation must await explicit source and
+recipient stats plus objective kill-credit ownership for allied NPC kills.
+
+World enrollment with positive Divine Favor requires known captured Monk
+primary3. Unknown/non-Monk primary profiles must use Divine0; unsigned rank
+alone grants no profession bonus. Synthetic enrollment tests declare primary
+explicitly. Quest46 still has no production enrollment/activation.

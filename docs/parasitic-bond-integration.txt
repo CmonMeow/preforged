@@ -1,0 +1,59 @@
+Parasitic Bond world integration requirements
+
+Status: not enabled; this is remaining work, not a completed skill binding.
+Evidence: fixed checkpoint/parasitic-bond-capture-evidence.json and
+parasitic-bond-native-2022.json; archived Parasitic_Bond.html and Talk_Parasitic_Bond.html.
+
+The existing world tick advances player health in actor-ID order. Each
+advance_health_locked call partitions its own conditions/regeneration boundaries.
+A target's later expiry/removal callback can therefore find that the caster was
+already advanced past the return's true timestamp. Simply calling a heal at
+max(event_time,health_updated),or dropping a stale timestamp,is incorrect.
+
+Before advancing an affected health cursor to T,process all due linked-return
+boundaries <=T chronologically. Advance source/target to the boundary,consume
+the ledger entry before callbacks,then apply actual healing/modifiers/death
+cleanup before proceeding. Recursion guards must not lose pending returns.
+Never revive a corpse with an overdue callback. Test both source/target ID
+orders and sparse vs dense tick cadence; green single-actor expiry tests alone
+cannot establish this behavior.
+
+Required integration tests:
+- Native20second degeneration and rank0/12/20 caster healing,cap/DeepWound/Defile.
+- Same-caster renewal produces no immediate heal and only the renewed return.
+- Target death/removal heals at the actual end event;caster death first removes
+  outgoing hexes and all returns,without healing a corpse.
+- Death/resurrection,leave/rejoin and reused IDs cannot inherit stale links.
+- A delayed return before an otherwise lethal later degeneration slice can
+  affect survival;simulate both ID orders and one long tick vs100ms ticks.
+- Same-time deaths/returns need an explicit private-server ordering policy;
+  do not claim unmeasured retail ordering.
+- Cross-caster replacement must cover the documented double-heal anomaly;
+  recipient/rank/timing still need evidence. The same-caster ledger API must
+  reject being used as a substitute for that distinct operation.
+- Player and combat NPC targets need expiry/removal/death integration.
+- Casting gates,scoped target validation,1second activation,2second recharge,
+  caster183 and target184 native body publication,cancel/interrupt and reconnect.
+
+The standalone ledger provides exact deadlines,exactly-once end consumption,
+full actor lifetimes,atomic same-caster renewal and caster-death invalidation.
+It neither polls target presence nor supplies an assumed cross-caster policy.
+
+Streaming ledger API is now implemented and tested. dispatch_due(T,callback) consumes one deadline before callback invocation;later entries remain available to take_caster/discard/renew_same_caster. A deadline index avoids scanning all links for each event. Nested dispatch is suppressed. Callbacks must advance Health only to returned.at;advancing to the outer horizon while dispatch is suppressed would still violate chronology. Bulk expire remains a collection API and must not drive world callbacks. Tests use real regeneration::State to show that the20second heal leaves10HP after40seconds of-3pips,for both actor ID orders and100ms/single40second cadence. Advancing straight to40seconds first leaves a corpse. Production world wiring is still required.
+
+Player-world integration update: apply_parasitic_bond now commits scoped player hex/degeneration/ledger state. advance_health_locked settles streaming return deadlines first;normal removal and caster/target death perform Health transactions and lifecycle cleanup. Focused world tests pass rank magnitudes,early removal,renewal,Defile,leave/rejoin,real sparse/dense wire Health,actor ordering and lethal DeepWound cancellation of future returns. Dispatcher remains unbound. NPC target lifecycle and cross-caster replacement remain required. Existing integer Health ceil drift under dense ticks is separate from the validated published fraction;do not claim exact integer cadence equivalence.
+
+NPC recipient stage: LiveActor.apply_parasitic_bond now stages the canonical hex without inventing caster-side healing. advance_conditions includes its one-pip contribution and reports actual death_time/cause. Focused recipient tests pass. The world must commit this staged recipient with its return ledger,deliver early returns at actual death_time,and discard links on retirement. Streaming natural-expiry dispatch must not consume a link before earlier NPC degeneration death is discovered;simply advancing that NPC after taking the natural return would misdate healing. Multiple NPC death forecasts must be ordered chronologically before advancing a shared caster past them. This world orchestration remains unimplemented.
+
+NPC forecast helper now registered/tested in gw_parasitic_npc_timeline.h. It advances value snapshots only and stops at the earliest return. Caller must also bound forecasts by external damage-field/action boundaries and caster Health events. Newly reproduced PRIORITY bug:with caster100HP andBleeding,the caster dies before20second expiry. Dense100ms world ticks leave target467HP;single40second tick leaves460HP. Natural dispatch currently consumes the return before advancing its caster,so caster-death cleanup cannot find that outgoing link. Resolve earliest caster-death time before natural consumption;do not merely clamp a stale heal or weaken the regression. Diagnostics source tools/diagnostics/parasitic_caster_death.cpp. This case remains outside the186 passing registered tests.
+
+EARLY PLAYER DEATH CORRECTION:participant preparation now stops at the earliest known condition/Health source/passive recovery/degeneration death boundary before consuming a return. Participant set includes both casters and victims,so mutual bonds and early target death cannot advance another player too far. World zero crossings are resolved inside the integration segment,with control/death cleanup at that timestamp. Shared gw_health_timing.h normalizes sub-millisecond arithmetic noise for players and NPCs. Registered tests now cover the original467-vs460 failure,mutual-bond healing in both ID orders,early victim death extending caster survival,and NPC1ms/100ms/delayed death equivalence. Focused gates pass;full rebuild pending. NPC event orchestration still needs to combine read-only death forecasts with these player boundaries and the next external damage-field/action deadline before committing participants.
+
+2026-10-15 external event boundary: prior death-timing full Release build and186/186 CTest passed21.31s. Added value ledger snapshots and damage-field next-deadline query. Focused NPC timeline regression commits actual lethal8HP pulse at1100 before obsolete5100degeneration death,consumes one30HP return,and checks no duplicate expiry. This is staged caller-contract validation;NPC world orchestration and skill99 casting remain unbound. New full rebuild pending.
+2026-10-15 archive audit: search_archived_skill_casts.py scanned all five archived pre-searing packet files (155574160bytes),hashed inputs and found zero additional kind60/skill99 cast starts. It never reads active collector logs. Cross-caster replacement remains unresolved by these archives.
+
+2026-10-15 NPC world integration: registered parasitic_bond_npc_world now passes ranks0/12/20,expiry,5100ms degeneration death across1ms/100ms/40s ticks,same-caster renewal,caster death/departure,Fire Storm kill2100ms,stale lifetimes,cross-caster rejection rollback and no duplicate healing. Global settlement forecasts NPC deaths bounded by field pulses and player Health boundaries. Focused NPC/player/field suites3/3 pass0.06s;12 tooling tests pass. Prior external-boundary full186/186 passed22.31s. New full187test rebuild pending. Skill99 dispatcher still unbound;cross-caster policy,NPC casting,general NPC cleansing and rendered acceptance remain incomplete.
+
+2026-10-15 supplementary archived observer evidence:51skill99starts,45next-finish and sixnext-stop markers by one caster;four repeat-start candidates within20seconds.90self-Health events lack skill attribution. No cross-caster case found. Supplement is separate from frozen575local capture inventory. Native mixed NPC/player probe passes100ms/40s cadence:NPC death5100ms,30HP return extends bleeding player death to21767ms;registered regression pending active full build completion.
+
+2026-10-15 validated NPC world integration:all-target Release build succeeded;187/187 CTest passed21.54s. Mixed NPC/player death/return scenario registered in parasitic_bond_npc_world and recompiled;full187/187 suite passed20.61s. Reports:parasitic-npc-world-full-build.txt,parasitic-mixed-registered-full-tests.txt. Dispatcher/cross-caster policy/NPC casting/general cleansing/rendered acceptance remain gaps.

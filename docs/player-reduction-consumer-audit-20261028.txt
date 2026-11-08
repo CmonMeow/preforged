@@ -1,0 +1,94 @@
+Player cumulative reduction consumer audit --1399 remains unbound
+
+Implemented shared receipt paths: resolved/reaction commit,weapon commit,
+EnergyDrainArea,NPC quest-player weapon,earth AoE per-slice projections.
+LightningJavelin and Kindle bonus migrated; fresh integration and preparation
+regression tests pass.
+Do not advance counter merely in record_hit_locked: stale damage and repeated
+preflight receipt amounts would remain wrong,with no reliable rollback.
+
+Read-only helper found remaining migration families:
+- NPC elemental casts and NPC Flare included consumers.
+- Player Ignite,Keystone,hex-removal AoE,AshBlast,WhirlingDefense direct commits.
+- Stoning,DisruptingDagger,Dancing/StoneDaggers,water projectiles and water-hex damage.
+- Enchantment removal damage,UnnaturalSignet,FeastOfCorruption shadow component,
+  IronPalm,CrystalWave.
+- Included Judgment,FinishHim,YouMoveLikeADwarf,SpiritualPain,DemonicFlesh,
+  Chilblains,Aneurysm,SplinterWeapon consumers.
+
+Fresh single hits should use shared receipt-aware commit and actual survival
+for control/feedback. Composite skills require copied per-slice projection and
+ordered receipt commits,re-resolving current recipient after callbacks.
+Life stealing/health loss remain separate classification;no automatic1399
+admission to those paths is inferred. Zero base versus positive-reduced-zero
+classification remains a retail evidence gap.
+
+Earth condition merge now applies only intended cast conditions onto current
+state; fresh tests preserve unrelated Burning and longer Weakness after preview.
+Original Shockwave and player1399 overlap tests pass after merge.
+
+Focused helper review: NPC elemental Recipient/offensive::target/Ledger need optional DamageProjection forwarding; elemental_target already supports it. Ice Spear214 water target needs projection too. Flare must project before selecting survival-dependent additions. Commit incoming slices through shared authority, never aggregate projected Health. Preserve NPC visibility, merge only intended conditions, and refresh later recipients after callbacks. No edits by helper.
+Four fresh projectile regressions passed: stone_daggers_world, dancing_daggers_world, disrupting_dagger_world, water_trident_world. Twin Stone Daggers1399/307 integration added; serial build pending.
+
+NPC Flare and reviewed single-slice NPC elemental World consumers migrated and fresh regressions PASS, including review capacity/lifetime guards. Demonic Flesh collateral migrated to shared reactive authority; fresh1399/307 progression and duplicate test compiling session78292. Water damage-hex consumer remains open, including Reversal survival-dependent hex admission and stale reserved effect IDs after reactions.
+
+Water damage-hex player consumer migrated with shared1399/307 authority, projected survival, pre-callback effect reservation, fresh Rust action, NPC matching conversion commit, causal packet ordering. Three fresh native suites/four Python tests PASS. Previous water consumer/legacy Seed ordering findings superseded by verified integration report. Other listed consumers remain open.
+
+Production reachability audit (helper, current gateway+Runtime): FinishHim2353,YouMoveLikeADwarf2358,ShieldOfJudgment262,Chilblains144,SplinterWeapon792,UnnaturalSignet934/3188,IronPalm786,CrystalWave217 reachable. IronPalm coverage exclusion does not itself gate execution. Aneurysm2055 gateway explicitly empty; SpiritualPain1336 lacks production hook. Their player trusted-path migrations now pass native tests, but prioritize these eight production routes next. Shared armor_respecting context preserves false classification;18 source coverage/mutation tests PASS after updating required helper-call signature. No new bindings.
+
+Crystal Wave production player damage migrated and tested; FinishHim player/NPC migrated and tested with1399/307 progression. Pending NPC FinishHim Fragility condition/reaction parity documented. These two no longer direct-counter bypasses; other production consumers remain. Evidence crystal-finish-absorption-progress-20261028.json.
+
+YouMoveLikeADwarf/UnnaturalSignet player counter bypasses migrated; native Dwarf+Unnatural+PvP suites PASS. NPC commit path now matches Reversal-aware preflight. Additional NPC overlap tests pending. Prior reachable-consumer list is prioritization, not exhaustive; earlier area/removal/weapon-reaction consumers still need audit/migration.
+
+Ignite explosion/Keystone collateral player direct commits migrated to shared reactive authority; NPC preflight+commit matched forReversal. Scoped recipients reacquired after reactions; Keystone cancels only matched preflight action and refreshes damage after interruption. Fresh Ignite/Keystone native suites +18 source coverage tests PASS. Specific later-quest-NPC retirement and interrupt-driven protection-change cases remain unverified.
+
+Shatter69 transaction review: a cloned registry alone cannot preflight arbitrary enchantment endings. Damage admission needs scoped registry/Health/max/DeepWound/counter/clocks plus prepared ending receipts. Seed preparation must accept the intended post-removal274 entry while still settling real nearby recipients, then revalidate the exact selected application sequence before removal. Watchful gain, temporary Health, Recall, maintained upkeep and cross-actor callbacks require actual end proposals. Partial shared-commit candidate was reverted rather than allowing a new post-removal rejection. Candidate fixture and review retained in build/reports/shatter-player-absorption-review-20261028.json.
+
+Next IronPalm786: shared player Seed/protection preflight and actual commit; derive knockdown/lead eligibility from projected then actual survival, not raw lethal hit. Preserve pre-hit hex/condition qualification. NPC duplicate bare-actor/protected evaluation must become shared Reversal-aware authority. Reacquire source/target after callbacks. Existing deferred vector needs causal publication callback, not Health delayed behind synchronous Seed. Tests:1399 progression, raw-lethal307 survival granting lead/knockdown, true death granting neither, callback retirement and damage-Seed-control ordering.
+
+
+Chilblains144 next-consumer review (2026-10-28; read-only helper):
+Preserve captured damage-then-removal. Scope recipients and exact removal application sequences;
+preflight shared protected damage/Seed and NPC Reversal conversion before mutation. Commit fresh
+shared damage, then typed exact removal/end receipts; never restore the combined NPC proposal.
+If damage consumes307, skip its absent exact scheduled removal rather than selecting another.
+Review player removal support for1399/307 (current whitelist rejects them). Alternate removal-first
+order requires a separate post-removal mitigation projection. Retain captured publication and
+self-Poison dependencies; flush settlement feedback on refusal. Required overlaps:1399/307 removal,
+Seed, Watchful gain, independent area counters, exact replacements, Poison/Fragility self-death.
+No production change made from this review.
+
+
+Chilblains player-side next step (2026-10-28): leases must retain scoped Entry and
+Registry application sequence. Select at actual damage/removal boundary, skip stale
+leases without retargeting replacements. Shared reactive protected damage+Seed must
+be preflighted before mutation and recomputed on current authority per recipient.
+Remove-first needs an explicit supported end-state projection, not registry erasure
+alone (Health/resources/maintained effects may change). Existing removal machinery
+owns real end reactions; never restore preview actor state. Final self-Poison must
+be recomputed from current scoped caster conditions after recipient reactions.
+Required fixtures:1399 then removal/next hit;307 consumed then next newest removal;
+Seed changes later recipient; same-ID renewal; Watchful survivor/lethal; caster
+condition changes preserved; end-triggered deaths; remove-first unsupported ends.
+
+
+Remaining removal-first foundation (helper review,2026-10-28): reuse Chilblains
+value-owned admission/exact sequences, NPC exact enchantment removal and shared
+protected damage. NPC hex removal needs exact application leases. Missing complete
+primitive: prepared player end admission view with exact entry/sequence and projected
+registry,Health/Deep Wound/capacity/resources. Reuse pure temporary-Health/Watchful/
+Recall/Mending planners; never run World-mutating removal on a preview Player.
+27/67/302 require projected primary end state then fresh scoped collateral, retaining
+302 per-recipient holy adjustment and Divine Favor. Registry-only removal is valid
+only for explicitly inert ends, not full69 support.
+
+
+Primary-player end inventory (read-only helper,2026-10-28):69 and27/67/302 have no
+narrow end whitelist; actual removal dispatches the full World end handler.
+Prepared end-state view must use pure authorities:temporary Health316/347/318/3204/
+1411 prepare_temporary_health_end;1392 watchful_early_gain;end_healing;44/2054 wound/
+degeneration end condition;Illusion of Haste end Crippled;290 prepare_mending_end;
+82 prepare_recall_end/prepare_recall_energy;owned Energy hex prepare_energy_hex_end;
+99 copied Parasitic ownership/return.823 Burning Speed cross-actor end and925 movement
+return require separate World transaction projection. Never execute the imperative
+World removal on a copied player: it would mutate real ownership and publication.

@@ -1,0 +1,60 @@
+Signet of Strength944 detached checkpoint,2026-10-23
+
+Files:src/runtime/gw_strength_signet.h,tests/strength_signet.cpp,
+tools/skills/audit_strength_signet_checkpoint.py. No shared/CMake/process edits.
+All official clients/loggers untouched. Fixed checkpoint remains unchanged.
+944 stays unbound:the detached consumer supports landed hits only.
+
+Evidence:20261022-cumulative-skills/packets-1360-15821281.jsonl,hash
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+394076 start944 at23792625;394083..394086 at23793656 contain45s recharge,
+finish,caster1028 and permanent status944/rank0/effect67.394096 attack25->31
+at23794390;394104 removes67 at23794953,followed by394106 damage fraction.
+394119 records a later damage fraction. Nine exact receipts are hash verified.
+The damage fractions are not converted to Health points without independent
+target maximum evidence. Arrival gaps are not independent activation clocks.
+
+Local description944 says next1..16attacks deal+5damage. Pinned2022 catalog
+validates Warrior Strength17,signet,1s/.75s activation/aftercast,45s recharge,
+zero Energy,1..16charges,+5bonus and caster1028/target2077 sentinel. Canonical
+rank0..20plans retain1+rank attacks. Detached ledger accepts a self-owned
+permanent Category::other record,retains exact scope and application time,
+rejects effect-ID reuse,tracks remaining charges,and consumes a validated
+landed attack once. Final charge removes its exact status instance. It returns
+the+5bonus for production damage integration;it does not invent damage type,
+armor processing or packet delivery. Registry+ledger copies must commit with
+actual damage under World lock. QualifiedHit remains trusted server input.
+
+Native MSVC C++20/O2 standalone test passes21rank plans plus melee/ranged
+landed-hit charges,final status removal,copy isolation,duplicate receipt,
+out-of-order projectile IDs,replacement replay preservation,stale generation,
+invalid target/delivery,preapplication release,strip and retirement controls.
+Report:build/reports/strength-signet-detached-test.txt.
+Evidence:build/reports/strength-signet-checkpoint.json.
+Hashes:build/reports/strength-signet-detached-sha256.txt.
+Source/tests frozen after verification. No host build/deployment or rendered
+client test performed. C++ testing does not establish retail2022 callbacks.
+
+Required integration before binding:
+1.Register test during coordinated CMake ownership window. Build production
+  self-status completion path with actual actor generation,normal signet
+  casting/interrupt/skillbar eligibility,45s recharge,1028 body and status65.
+2.Resolve charge policy for misses,blocks,dodges,obstruction,cancellation,
+  replacement,target retirement,multi-hit and multi-target attacks. The current
+  landed-hit-only API deliberately supplies no default for these outcomes.
+3.Resolve whether attacks released before application or while a previous
+  instance was active inherit a newly applied charge. Current detached policy
+  rejects preapplication release as a fail-closed restriction,not retail proof.
+4.Insert bonus in actual weapon damage pipeline with reviewed damage type,
+  armor/modifier ordering,Health reactions and exact charge/status end commit.
+  Ensure one attack cannot consume once per reactive or damage packet callback.
+5.Use authoritative attack delivery/frontier to prune replay receipts. Current
+  ledger retains receipts across replacement,with4096 safety cap and terminal
+  retirement only;unbounded live sessions require a safe retirement consumer.
+6.Connect strip/death/transfer/replacement/expiry policy and exact status-end
+  wire ordering,then test player/NPC/ranged contacts and native2022 consumers.
+  Coordinate serial Release host tests/hashes;rendered verification is separate.
+
+Missing:normal runtime/World damage and nonhit consumers,receipt pruning,
+multi-hit/target policy,retail phase/armor proof,NPC casting and rendered
+acceptance. No production binding or complete-mechanics claim is made.

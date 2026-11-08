@@ -1,0 +1,41 @@
+THRILL OF VICTORY324 — EVIDENCE STAGE, NOT IMPLEMENTED
+
+tools/protocol/thrill_victory_2022.py reads the hash-pinned offline2022 client.
+Verified row324: type14,Tactics21,5Energy,8s recharge,no adrenaline cost,
+zero activation,melee weapon requirement185. Damage endpoints20..40,
+adrenaline endpoints1..2 at ranks0..15. Historical local wiki describes bonus
+damage on hit and additional adrenaline when attacker Health exceeds foe Health.
+The relative-health predicate must not be confused with Bull's moving predicate
+or Counterattack's Energy reward. Native caster/target2077 are no-effect sentinels.
+
+Three synthetic native attack consumers verified GenericValueTarget50 becomes
+event21 and attack style41/body state45,skill324; duration is weapon interval
+times timing modifier. Terminal46 becomes event17,cancel49 becomes event19.
+Output: build/reports/thrill-victory-native-2022.json with client/tool/wiki hashes.
+This is native consumer execution with synthetic model handles,not rendered QA.
+
+Fixed20261017-npc-refresh-2 has two hash-verified local receipts:
+packets-1360-15821281.jsonl,starts354785/354924,ends354790/354928.
+Owner25,target30,map280. audit_attack_checkpoint.py requires matching exact
+activation,8s skill recharge,same-frame completion and negative physical damage
+with matching actors,and pending release. Damage has no explicit skill ID;
+correlation does not prove exact damage or conditional adrenaline attribution.
+Output: build/reports/thrill-victory-capture.json.
+
+IMPLEMENTED
+Canonical guarded plan,unconditional damage bonus and strict absolute current
+Health comparison sampled immediately before weapon contact. Bonus reward uses
+rounded1+rank/15 strikes (wiki progression changes from1 to2 at rank8).
+Successful hits grant the ordinary strike plus conditional strikes to eligible
+owned pools,subject to existing cap,disable and adrenaline-forbidden rules.
+Miss/block return before rewards. Missing Health authority rejects the plan.
+Player casters support player and reviewed NPC recipients; autonomous NPC
+casters do not yet supply the required Health predicate/reward authority.
+
+The packet receipts do NOT establish retail Health sampling before versus after
+damage,absolute versus percentage comparison,or conditional reward attribution.
+Current absolute pre-contact semantics follow the historical description and
+shared contact predicates; these edge cases require a retail capture before
+claiming full fidelity. Rendered acceptance remains unverified.
+
+Additional regression coverage: Soothing Images blocks ordinary and bonus gain; exact expiry restores both without deferred rewards. Independent copied pools cap correctly. Lethal contacts grant one reward and subsequent dead-target attacks reject. A later trusted Health-capacity update prevents backdated contact. Disabled-pool expiry is checked against the actual resolved reward. thrill_victory,adrenaline and control_hexes suites pass.

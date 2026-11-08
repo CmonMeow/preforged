@@ -1,0 +1,119 @@
+Shared weapon critical foundation
+=================================
+This adds no new skill bindings and changes no source-bound skill count.
+The chance formula is an explicit community model, not recovered retail RNG.
+
+Evidence
+--------
+Local Critical_hit.html revision2664678 and Damage_calculation.html revision
+2664686 describe critical damage, multiple independent chance contributions,
+and the uncertain community damage model. The latter embeds formula43:
+ .05*2^((8*La+4*w+6*min(w,(La+4)/2)-15*Ld-100)/40)*(1-.01*w)
+ +.01*w-[WeaponCritChance]
+The bracketed final term is a known item penalty, not a silently assumed zero.
+Odd-level thresholds remain fractional in this probability calculation.
+Critical Strikes supplies an independent rank/100 chance for Assassin primary.
+The source/target level20,mastery12,penalty0 weapon example is exactly.1255;
+level19 versus20 atmastery12 is.12454547674984816.
+
+Scythe.html gives the exact critical damage factor2^.125 (effective+5armor
+strike), versus other reviewed weapons'2^.5 (+20). Critical_Strikes.html's
+rank table gives Energy thresholds3/8/13/18, including4Energy at rank18.
+The pinned page/image hashes and source examples are in the parent-owned
+build/reports/critical-reference-evidence.json.
+
+Critical_hit and Balanced_Stance describe preventing extra critical damage,
+not deleting the event. World now treats the existing Balanced authority as
+damage suppression. Retaining the normal attribute Energy entitlement under
+Balanced is explicit project policy; no direct frozen receipt proves that
+particular defense/reward interaction. Emitting critical17 under Balanced is
+also project policy pending a captured defense case: the native17 proof is an
+ordinary Wild Blow critical, not proof of Balanced presentation fidelity. Stoneflesh_Aura's bug note explicitly
+retains critical-trigger effects but denies Critical Strikes Energy. Strike,
+Result and SkillHit therefore carry separate event and Energy-entitlement
+facts; damage suppression alone does not deny Energy. No Stoneflesh runtime
+binding is invented by this foundation. Explicit full event immunity remains
+an available distinct input; it is not inferred from a defense's wording.
+
+Existing tools/protocol/wild_blow_2022.py reverified fixed packet6468:50441,
+critical notice17 for Wild Blow321 and its original consumer0x763c10 flag.
+The shared ordinary publisher now accepts the same17 flag; this changes no
+health authority and invents no new packet format. Native notice receipts do
+not prove the server probability or damage formula.
+
+Owned metadata and timing
+-------------------------
+CriticalProfile{primary,effectiveCriticalStrikes35,level} is an optional final
+argument to World::ordinary_weapon. The same scoped equipment transaction
+publishes it atomically with weapon/level/observation time. Known profiles
+validate primary,rank andlevel; nonprimary positive rank is unsupported and
+must be published as unknown, not converted to non-Assassin rank0. The app
+supplies the effective profile from its existing authoritative refresh path.
+CriticalProfileSnapshot queries require the exact current actor Scope and a
+nonfuture observation time; profile changes advance a scoped revision.
+
+Owned.critical_penalty is optional. Only the current strict-owned martial
+parser(type2axe,5bow,15hammer,27sword) supplies known0 after its complete
+modifier allowlist validates. Caster weapons and manual legacy fixtures keep
+unknown unless an explicit trusted fixture supplies a reviewed value. An
+unknown profile,recipient level,or item penalty retains the previous legacy
+noncritical policy; it is not evidence of zero retail critical probability.
+Do not admit a new critical-dependent skill through this fallback.
+
+New natural sampling covers player-source ordinary weapon contacts and
+single-target attack skill contacts, with player or NPC recipients. Existing
+bow/Barrage/Volley arrows use those impact paths. Critical draws occur after
+accuracy and block accept contact, using a separately injectable draw hook;
+normal draws use the existing server random engine. This is not a claim to
+match ArenaNet seed,sequence,or distribution. Base damage retains the prior
+deterministic midpoint policy for noncritical hits.
+
+At projectile contact, chance uses the current scoped critical profile while
+weapon damage keeps the existing released weapon/level snapshot. A known
+midflight level20->21 update must not cancel the arrow. This contact phase
+policy is not established by native capture. Profile observations join the
+shared ordinary projectile observer frontier. The public equipment setter
+settles earlier due work before publishing an update; it does not retroactively
+change an arrow that already arrived before that update.
+
+The source resource clock settles before accepted critical damage. Critical
+attribute rewards use shared precise Energy gain, preserving debt,regeneration
+fractions,Overcast ceilings and caps. The post-reaction living-source guard
+prevents rewards after death. Existing outcome ledgers prevent arrow replay.
+Full mitigation/zero applied damage does not independently erase the event.
+
+Validation
+----------
+Release --parallel1: weapon_critical_test and weapon_critical_world_test PASS.
+The pure suite checks independent probability examples including oddlevels,
+Energy threshold table,invalid values,item penalty,half-open draws,critical
+maximumdamage,scythe exact multiplier,damage/event/Energy distinctions,
+Blind and retained forced321 event in the typed result.
+The World suite checks player/NPC recipients,bow/melee paths,high/low draws,
+no critical draws or rewards on miss/block,unknown penalty fallback,Balanced
+policy,profile revision/future-query/lifetime guards,midflight levelup with
+one hit/reward/no replay,and shared gain while Energy is negative debt.
+Existing wild_blow_world_test passed with Balanced event expectation updated.
+Existing native Wild Blow verifier passed unchanged.
+Parent rebuilt the neighboring Release targets and ran eight suites:
+weapon_critical, weapon_critical_world, wild_blow_world, balanced_world,
+weapon_fact_order, warrior_resource_attacks, arcing_forked_arrows and
+critical_damage_notice. All passed. The serial Release host build succeeded:
+SHA256 F0CDAD6526C73390879EC9EB1AEEE4B75AD453CE49430C8BAB61AB79A5DA393F.
+The app publishes unsupported profiles as unknown while still updating owned
+equipment and level, avoiding stale equipment after profile rejection.
+No live host deployment or rendered critical-defense test was performed.
+The parent-owned critical_energy_lifecycle_test now directly verifies critical
+Energy positive fractions,full/Overcast caps,lethal source retaliation and lethal
+recipient contacts in Release. Those use the same precise resource authority.
+
+Remaining boundaries
+--------------------
+NPC-source natural critical sampling,Cyclone's multi-recipient contact path,
+unsupported owned weapon parsers including scythes/daggers/spears,and unrelated
+projectile queues are not newly covered. Forced321 retains its typed result.
+Guaranteed moving-target rear-melee critical geometry lacks reviewed facing/
+arc authority and is not guessed. New skill chance modifiers are not inferred
+from unbound skill rows or presentation bits. Keen Arrow1720/PvP3147 and Critical Chop1402 now consume the reviewed producer
+through guarded shared admission/contact paths; see critical-dependent-attacks.txt.
+Other critical-dependent skills remain disabled pending complete semantics.

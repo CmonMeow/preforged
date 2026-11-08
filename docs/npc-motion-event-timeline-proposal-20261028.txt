@@ -1,0 +1,122 @@
+Detached design and acceptance regression. Not integrated or executed.
+
+Observed gaps in current code
+-----------------------------
+gw_world_npc_flare.inl move_npc_flare_locked computes a NEW route to the goal
+observed at now, then spends movement_integral(updated,now) on that route.
+The retained last_movement is an outcome and observation time, not a route or
+time-addressable pose. Thus a late poll can apply a newly observed target pose
+to an interval preceding its observation. Preserving packet path corners fixed
+wall-crossing chords, but does not supply historical motion authority.
+
+gw_world_simulation.h refresh_npc_movement_locked only advances quest_npc_motion_.
+npc_moving_at_locked explicitly returns unknown for Flare/elemental controllers.
+The common Health frontier can now settle quest routes at a death boundary,
+but cannot advance an AI's previously chosen movement because none is retained.
+Tick advances NPC conditions before calling AI drivers. A death between polls
+therefore records the last poll's AI endpoint, not its position at death.
+
+World's next_tick_=now+100 drops elapsed decision opportunities. Wander State
+uses the calling now to start legs, finish pauses and expire leg limits. Action
+selection, acquisition and route choices therefore depend on poll cadence.
+Simply looping missed100ms ticks is unsafe: player Health/Energy/pose/ownership
+may already have advanced past those boundaries, and the current snapshot is
+not proof of historical facts. Existing clock deferrals must remain strict.
+
+Minimal staged integration
+--------------------------
+1. Retain forward intent separately from AI decisions. Add a scope-keyed
+   NpcMotionIntent with source generation/control epoch, committed_at, settled_at,
+   decision serial, immutable ordered surface route, speed policy, strict stop,
+   home/leash context and explicit stopped/route-unavailable/unsupported reason.
+   Commit its route using only observations valid AT committed_at. No route
+   chosen at T may spend a budget that began before T. Idle, chase and return
+   use the same representation. No target lookups during intent integration.
+
+2. Extract the existing navigation/ward/speed/control-aware route integration
+   and per-leg packet publication from move_npc_flare_locked. Advance retained
+   intent only from settled_at to a requested event boundary, using existing
+   movement_integral/control intervals and Ward route travel, retaining every
+   corner and residual distance. Arrival/leash/unsupported outcomes stop the
+   intent at its actual event time. Stop thresholds remain independent of
+   strict attack/skill reach. Do not assign timestamps by linear interpolation
+   through a modifier/knockdown/cast interval: integrate or invert that same
+   time-dependent budget to find each boundary.
+
+3. Route refresh_npc_movement_locked and npc_moving_at_locked through this
+   retained intent for AI scopes, including pre-death capture/area admission.
+   Motion must be sampled before retirement erases its owner, even if Health
+   has just committed zero at that same death time. Match scope and intent
+   epoch; a later epoch cannot retroactively cancel an earlier valid interval.
+   New control operations first settle old intent to their event timestamp,
+   then replace/stop it. Missing historical control/ward facts defer explicitly.
+   A future intent is not proof of a prior position and cannot be extrapolated
+   backward. Exact death freezes the final pose and retires future decisions.
+
+4. Add a per-instance authored100ms decision schedule anchored to activation,
+   with next_decision advanced by100, independent of caller poll time. Merge
+   decisions with Health-death frontiers, action completions, projectile hits,
+   arrival/leash events, wander pause/expiry and external input events. Stable
+   actor-ID order is an explicit private tie policy, not retail threat evidence.
+   Settle old motion/Health before deciding at a boundary. A newly selected
+   intent or cast starts at that boundary, never at the previous poll time.
+
+5. Before accepting an external mutation (player move, resource change, damage,
+   interrupt/control, spawn/retire), settle this timeline through its timestamp
+   while the previous authoritative state is still available. Then apply the
+   mutation and admit same-time reactions in a documented order. Alternatively
+   retain timestamped input facts sufficient to replay each decision. If prior
+   input was not retained, return an explicit unresolved-input diagnostic;
+   never backfill with the current target pose or skip a mandatory event.
+   This shared ingress/frontier work is necessary for fixed decision replay;
+   a helper local to the NPC driver cannot manufacture those missing facts.
+
+6. Bound retained history by the oldest unresolved event frontier and active
+   intent, not an arbitrary timeout. Prune after consumers acknowledge that
+   frontier. Work budgeting may yield with the next event pending; it must not
+   discard events or publish later effects ahead of an unresolved boundary.
+
+Start with steps1-3 for explicit previously chosen routes (real death-position
+improvement without historical targeting guesses). Then integrate4-5 before
+claiming general coarse/fine wander/acquisition/combat equivalence. Do not
+advertise step1 alone as deterministic full AI. Root owns shared World frontier,
+ingress and scheduling; agent can own intent type/integration helpers and tests.
+
+New regression: tests/npc_ai_motion_death_frontier_world.cpp
+---------------------------------------------------------
+Both schedules observe the same stationary target and select chase at100ms.
+An immediate155 and an elemental214 controller travel100units/s; Bile applied
+at100ms kills their2Health at1100ms. Correct origin=(100,0); opposite recipient
+placements distinguish old endpoint from death-time position. Compare dense
+100ms polls with a single5100ms catch-up, death timestamp, recipient damage and
+one-shot publication. This acceptance test is expected to expose today's gap;
+it has NOT been compiled/run and is intentionally unregistered.
+
+Follow-on matrix after intent integration: idle pause expiration; multiple
+route corners; disconnected route; cast/aftercast and ordinary recovery; timed
+cripple/knockdown/Ward changes; leash/return; owner/cycle replacement; recipient
+moving into/out of Bile radius; player target changes at known input times.
+The last case must assert no displacement toward a new target before its input
+timestamp and explicit refusal when historical input is unavailable.
+No map-specific route, retail timing, stat or rendered-client claim is made.
+
+Subsequent verification
+2026-10-28 Bonds Seed consumer and NPC retained-motion progress
+Bonds1881 reflected cold damage now prepares Seed from actual protected/converted
+loss and publishes only positive committed loss under the matching current lease.
+36 direct cases pass (3damage amounts,1399,307 ranks,source survival/death), plus
+3 deferred cases proving sequential two-recipient healing and completion-queued
+cold modifiers. Existing332Bonds/Reversal and BondsWorld remain passing.
+Scoped retained NPC routes now integrate before newer target observations and
+at death boundaries. Immediate155/elemental214 coarse/fine death origins agree;
+actual published movement proves no retroactive turns or borrowed time. Existing
+ordinary,Brood,BloodFanatic/immediate wander,combat/retaliation,return/resume and
+lifecycle suites pass. Thirteen native suites total,34source,6backlog; gateway
+compile-only0warnings/0errors.691runtime/app/CMake/test hashes unchanged at end.
+No host relink/deployment,binding publication,checkpoint move or official action.
+Bonds whole-parent admission,unknown Seed facts/retained retry,recursive linked
+ends/capacity/retirement and full consumer closure remain unfinished.274/1399
+remain staged. NPC decisions still poll-dependent: fixed decision scheduling,
+historical input ingress and broader moving Well/Ward/control proof remain.
+No rendered animation/retail-AI/all-skills completion claim.
+Evidence: build/reports/bonds-ai-progress-20261028.json

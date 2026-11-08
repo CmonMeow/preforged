@@ -1,0 +1,65 @@
+Autonomous Ice Spear214: bounded zero-Overcast integration
+=======================================================
+
+Evidence: build/reports/ai/four-professions.json records 53 skill214 starts,
+all associated with River Skale Brood. Independently inspected packet line28922
+of data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl:
+tick82667218, modern160/kind60, source37,target7,skill214;
+hex a00000003c0000002500000007000000d6000000.
+World line3468 identifies actor37/model1436/level4/allegiance3. The audit joins
+epoch16/map161. Further starts occur at29128,29185,29253. Recorded input hashes:
+packets a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02;
+world 1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6.
+These prove observed NPC skill identity, not Water rank, resources or priority.
+
+Historical River_Skale_Brood.html oldid2604170, SHA256
+28aad5d8d18f8441b36da3724ea418eed69448336e399a2f591a3a47ace23c4c,
+lists Aura of Restoration and Ice Spear with Energy Storage0. It does NOT supply
+Water rank or current/max Energy/regen. No production Brood binding is added.
+Historical Fail.html oldid2625489 describes selected-target death as failure
+and lists Fireball's exception; Ice Spear has no such exception. Its completion
+uses the existing failed-target terminal, before Backfire, without refund,
+normal recharge or aftercast. Generation/clock/LOS checks remain mandatory.
+
+NEW gw_npc_offensive_plan.h holds an immutable canonical variant of existing
+ElementalPlan186/191/194 or WaterProjectilePlan214. It reuses the existing cold
+impact resolver instead of forging a fire-family plan. Ledger reservations,
+actual paid LiveActor tokens, capacity, release/impact preparation, atomic
+recipient publication, independent flight lifetime and native reactions remain
+shared. Cold armor availability participates in per-slot selection, allowing
+another supported plan when cold armor is unknown. It is rechecked at impact.
+214 uses the existing canonical water projectile calibration1200 and hit radius,
+not the host's fire-family flight calibration. Duration must fit the native
+serializer before authoritative action completion. Successful release publishes
+existing spell_projectile_launch_2022 with model379 and actual owned flight time.
+Fixed checkpoint player214 launch line169038/tick19259187 records model379;
+that model evidence is shared wire identity, not NPC flight-speed measurement.
+
+Overcast-dependent regeneration is integrated in LiveActor's owned effect
+registry. Known positive Overcast at successful completion grants the canonical
+rank-scaled five-second enchantment. Health settlement includes positive and
+negative pips, expiry boundaries, removal, replacement and modified maximum
+Health; dead actors remain dead. Fatal Backfire suppresses the benefit and shot.
+Unknown or future Overcast authority rejects admission or defers a paid cast
+until a valid observation is available. Population configuration must supply
+reviewed resources, ranks and explicit scoped Overcast observations; no Brood
+resource defaults are inferred from its captured skill use. Overcast generation
+and recovery remain separate missing NPC subsystems.
+Tests (source present, root owns builds/results): npc_offensive_plan covers
+canonical/rejected variants, cold damage/unknown armor/generation and scoped
+Overcast gating. npc_elemental_world adds tick-only actual payment, cold Health
+loss, native379 outbox, no replay, overlapping paid cast/flight, Mantra Frost
+reduction/Energy reward, unknown cold armor fallback and impact retry, unknown/
+future Overcast deferral, positive-Overcast completion and regeneration, Backfire death, actual
+interruption, failed target immediate readiness, future target clocks, released
+source death and retired population/Overcast observation isolation.
+npc_failed_target extends real LiveActor terminal/replay/control checks to214.
+Existing186/191/194 tests remain required. No rendered client acceptance or
+complete Ice Spear/NPC AI completion claim follows from these offline tests.
+
+2026-10-17 Ice Spear validation supersedes earlier pending notes:
+- npc-ice-spear-final-build.txt: serial Release build completed exit0, including server_host.exe.
+- npc-ice-spear-final-tests.txt: regeneration and World integration tests passed after condition-clear clock regression fix. Earlier offensive-plan and elemental AI suites passed in npc-ice-spear-unit-tests.txt.
+- ice-spear-final-coverage/audit/backlog reports regenerated against unchanged refresh-2 capture checkpoint; inline implementation hashes included.633captured/245source-bound/388awaitingbinding/696missingcapture.
+- Autonomous214 includes cold projectile mechanics and positive-Overcast regeneration. Host-reviewed NPC resources/ranks and scoped Overcast observations are required; production Brood configuration, NPC Overcast generation/recovery, and rendered animation acceptance remain outstanding.
+- NPC target list remains refresh-4 (653searchentries); no official capture process was interrupted.

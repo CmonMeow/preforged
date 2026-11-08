@@ -1,0 +1,44 @@
+Energy Blast [2193] — source-bound, 2026-10-24
+
+Fixed source: 20261024-signet-infection-bound, unchanged. One locally owned
+cast on map 280 is recorded in packets-1360-15821281.jsonl: start at line
+243489, then 20-second recharge, finish, target1820 and armor-ignoring damage
+at lines243509–243512. tools/protocol/energy_blast_2022.py verifies the
+snapshot hash, those receipts and pinned 2022 cast/particle consumers. Report:
+build/reports/energy-blast-native-2022.json. The packet window does not prove
+the caster's Energy amount or the precise damage magnitude.
+
+Pinned row: Elementalist Energy Storage spell, 10 Energy, 1.5-second cast,
+0.75-second aftercast, 20-second recharge, scalar endpoints1..2, cap130,
+target effect1820. The local archived Wiki describes damage per point of
+caster Energy, capped130. The canonical plan uses integer interpolation at
+rank0..20; exact mid-rank retail rounding remains unmeasured.
+
+Production Runtime requires reviewed target/World hooks before paying the
+ordinary Energy cost and admitting the cast. World settles the caster's
+resource clock at completion, reads post-payment Energy, checks scoped hostile
+player/NPC targets and range, applies armor-ignoring damage with the ordinary
+protection pipeline, and emits target1820 before damage publication. Zero
+Energy completes without damage. Tests cover all plan ranks, cap, zero Energy,
+forged inputs, stale scope, player/NPC targets and paid-cast resource timing.
+The native World test confirmed one natural Energy regenerated during the
+1.5-second cast, changing a post-payment10-Energy hit to22 damage.
+
+Serial Release server_host build passed. The registered CTest suite passed
+866/866. Fixed audit and published backlog: 679 locally captured obtainable
+skills, 376 source-bound, 303 awaiting binding, 650 missing local activation.
+No official client/logger was touched and no private client was restarted.
+
+Remaining verification: retail mid-rank scaling and exact Energy sample
+phase, NPC caster AI, rendered client animation/effect, and broader
+protection/interrupt/cancellation cases. Native consumer execution uses
+stubbed model/DAT services; it does not establish rendered pixels.
+
+SHA-256:
+gw_energy_blast.h 22C8344B2085E64D442F470B807E860C36DC0B0413309B3C89BD27541C4DD724
+gw_skill_casting.h 45F2503668000BDD11AE617848A1CC36067E876520070D4835789D8C61F9455D
+gw_world_simulation.h CA91EF1359CDCE209CC4E36C148E3F2EF6D30863A95ACADB94564D5118679286
+gw_auth.cpp C57C06DA3EE7A7AB10FC9190EBF798BDBF7403E4731089C74B64A4964F6BA2A0
+energy_blast_policy.cpp CF85A488D0AA844CC8E197E4EE0887BE24786E674AAAED2F601AACB27210C67D
+energy_blast_world.cpp BBF186F6CCE591053C22F4364B777633888F6A78FAA129309408BF2A795D8CCF
+server_host.exe 4250E88AA2DE9BA49E8A500D0C07F67D0A4907E3973F6200C7C4CBF6D172D3F6

@@ -1,0 +1,56 @@
+DETACHED READ-ONLY AUDIT — no production edits or normal248 enrollment.
+
+Local evidence root: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki
+Retribution.html Notes: holy return; minimum1; only attack damage; expressly
+excludes indirect Hundred Blades/Vow; return calculated after enchantments such
+as Protective Spirit. Conjure_Flame.html Notes says per-hit bonus, including
+multiple/scythe/dual attacks. Neither establishes whether Retribution uses one
+combined base+Conjure amount, independent returns, or excludes that component.
+Do not infer exact return/component policy from these statements.
+Reversal_of_Fortune.html Notes establishes healing before excess damage and
+conversion after reduction (Protective Spirit/Bond). Protective_Spirit.html
+Notes/concise scope applies cap to damage broadly, not merely spell taxonomy.
+
+Established consumers
+- tests/retribution_protection_world.cpp already covers 384 staged real melee/
+  ranged/Cyclone/dual contacts, Shielding Hands299, Reversal307 and Seed274.
+- tests/retribution_attack_world.cpp includes flat holy equipment bonus6,
+  return publication ordering, blocking/miss, lethal recipient and reciprocal
+  Retribution no-loop behavior. Additional damage components are absent.
+- src/runtime/gw_world_retribution_damage.inl:89-101 uses incoming actor,
+  combat::apply, preflight Seed, fresh scope/holy facts and normal reactive hit.
+  NPC branch109-115 uses normal preflight/commit Reversal/damage authority.
+- New tests/retribution_holy_consumers_draft.cpp proposes32 cases covering
+  Protective Spirit on base recipient BEFORE percentage; cap on return target;
+  flat holy bonus before cap; then Reversal healing and actual-loss Seed. It is
+  unbuilt/unregistered and may reveal fixture or implementation gaps.
+
+Actual component seam / why no speculative implementation
+- gw_attack_outcomes.h:72-85 seals one qualified hit and commits damage only
+  once. Reusing event for a second Conjure return would violate replay authority.
+- gw_world_reversal_player_hit.inl:135-158 commits authoritative base and then
+  consumes the Retribution contact before later Conjure.
+- gw_world_simulation.h:3858-3871 conjure_player_hit_locked uses a distinct
+  normal reactive damage event and explicitly states bonus is not a new attack.
+  Source3863 prepares bonus from owned registry;3866 commits reactive hit. It has
+  no QualifiedHit/component receipt and cannot safely feed attack journal as-is.
+- NPC base producers hand off at gw_world_simulation.h:3478,7476,7829,16078 and
+  gw_world_npc_friendly_ordinary.inl:129. Any component fix must cover these real
+  producer families rather than just changing a policy-only unit calculation.
+
+Ownership proposal, requiring coordination before production edits
+1. Evidence/receipt owner: detached capture case design comparing no Conjure,
+   Conjure alone, base reduction, bonus reduction, multihit and death cohorts.
+   Establish aggregate/separate/excluded policy before journal changes.
+2. Shared attack authority owner: gw_attack_outcomes.h (component provenance and
+   exactly-once terminal semantics) plus gw_retribution.h (owned receipt consumer).
+3. World producer owner: gw_world_simulation.h and
+   gw_world_reversal_player_hit.inl plus gw_world_npc_friendly_ordinary.inl;
+   actual component sequencing, survival, death-once and deferred publication.
+4. Return consumer owner: gw_world_retribution_damage.inl, checking reductions,
+   Reversal/Seed, holy authority, no reaction recursion and current scopes.
+5. Independent tests owner: new detached holy/component suites only. Existing
+   tests/weapon_conjure_reactive.cpp proves base-before-Conjure protection/Seed
+   mechanics across real contacts; it does not prove Retribution classification.
+Do not enroll normal248 until this evidence gate and all required consumers
+are resolved. Keep indirect damage excluded regardless of Conjure result.

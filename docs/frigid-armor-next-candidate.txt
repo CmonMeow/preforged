@@ -1,0 +1,128 @@
+FRIGID ARMOR [1261] — NEXT SOURCE-BOUND CANDIDATE, 2026-10-26
+
+Recommendation and current boundary
+Select Frigid Armor after Natural Stride/Signet of Strength. This is a new
+Water Magic self enchantment, distinct from their stance/contact consumers.
+The fixed inventory reports one locally started and completed cast, nineteen
+other/unassigned starts, and unsupported status. Current source has no named
+Frigid helper, explicit admission, or coverage family. The detached verifier
+checks absence of explicit admission; this is not a fresh full coverage audit
+of every helper family. The global coverage parser currently encounters the
+concurrently staged Natural Stride1727 family, so it was not regenerated.
+No source-binding count is advanced by this note or the offline probe.
+
+Frozen evidence
+Checkpoint: data/captures/skill-checkpoints/20261024-all-completed
+Cutoff: 2026-10-24T04:27:02.320932+00:00
+packets-1360-15821281.jsonl SHA256:
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6
+Manifest digest is independently checked before reading these exact receipts:
+  230029 tick20549109: opcode159 kind60 actor25 skill1261, map280 local start
+  230036 tick20550187: opcode229 actor25 skill1261 recharge20
+  230037 same tick: opcode159 kind58 actor25 finish
+  230038 same tick: opcode159 kind21 actor25 resource369
+  230039 same tick: opcode66 actor25 skill1261 effect69 duration10.0
+Observed start-to-finish1078ms is capture timing, not a replacement for the
+pinned one-second activation. The generic inventory body list was empty;
+direct stream inspection supplies the explicit369 attribution. This sample
+does not show physical damage mitigation or rejected Burning. Modern opcode66
+is not a pinned2022 status wire fixture.
+
+Pinned2022 client SHA256:
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+Generated catalog src/runtime/gw_skill_catalog_generated.h row1261 supplies
+Water Magic11, enchantment type6, self target0,5Energy,1s activation,.75s
+aftercast,20s recharge,10..25s duration,10..40 scale, caster369,target2077.
+Local archived wiki Frigid_Armor.html SHA256:
+b02d1a66c7e7b50f3f9b370427404fc16f34182aa23774f163f38c1166af9285
+Snapshot: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Frigid_Armor.html
+It identifies the scale as armor against physical damage and states immunity
+to Burning. Do not treat physical as synonymous with melee or non-spell.
+
+tools/protocol/frigid_armor_candidate_2022.py PASS using existing
+PYTHONPATH=build/protocol-python;tools/protocol;tools/skills. The report is
+build/reports/frigid-armor-candidate-native-2022.json. Offline pinned execution
+reaches spell60 first model lookup layer0/style51/1.0s/stored skill1261;
+caster369 reaches its first particle consumer (encoded file cfd100010000),
+and target2077 is the native no-body sentinel. Actor/model/UI/assets are
+stubbed. No graphics, sound, live network, deployment or rendered acceptance
+is established. Fixed checkpoint files and official clients/loggers untouched.
+
+Required implementation before any publication
+1. A typed canonical rank0..20 plan should bind all pinned metadata, duration
+   and physical-only armor interpolation. Install an owned self enchantment
+   through a copied registry transaction; validate actor generation, time,
+   renewal/strip/death and reject malformed plans before mutation. Preserve
+   shared enchantment duration modifiers and existing cap/stacking authority.
+2. Feed the armor bonus into actual physical damage classification, including
+   slashing/piercing/blunt ordinary and attack-skill/projectile contacts. The
+   current conditioned_armor_locked handles ordinary plus elemental/projectile
+   bonuses; add a typed physical check there and audit every physical damage
+   entry, including incoming_spell_actor_locked physical_armor and direct
+   authored NPC attack paths. Fire/cold/lightning/earth/holy/chaos and armor-
+   ignoring damage must not acquire this bonus from weapon/caster identity.
+3. Add an owned Burning-immunity predicate at condition application admission,
+   before state mutation, Fragility or condition publication. Current centralized
+   commit_conditions_locked has Disease and Unstoppable Crippled checks, but
+   transfer, copies, direct spell/field producers and NPC applications need a
+   call-site audit. Rejecting Burning must retain unrelated ordered additions.
+   Existing Burning on application is not proven cleansed by this sample/wiki;
+   preserve it unless separately evidenced. Handle expiry/strip at equal-time
+   boundaries through shared chronological settlement.
+4. Bind paid normal self casting, authoritative completion, native caster369
+   and owned effect status only once both required consumers work. Natural
+   expiration, stripping, renewal and actor retirement must retire consumers.
+
+Focused verification contract
+Plan ranks0/12/15/20, metadata rejection and transaction rollback; paid self
+cast cost/recharge/1s/.75s; physical vs elemental weapon and physical spell
+damage; cap/stacking and sparse/fine expiry; Burning application rejection
+without Fragility/publication; mixed condition order; transfer/copy/field
+producers; existing Burning retained; strip and exact expiry restore Burning
+admission/normal armor; owner-generation reuse cannot inherit protection.
+Keep NPC caster AI/rendered client acceptance as explicit further gaps unless
+actually tested. This note adds no detached C++ policy or registered target;
+no build was started and shared runtime/app/CMake sources were not edited.
+
+Detached policy follow-up (2026-10-26): src/runtime/gw_frigid_armor.h now
+validates the pinned row for rank0..20, physical-only armor10..40 and
+duration10..25s, and prepares an owned same-skill enchantment transaction.
+tests/frigid_armor_policy.cpp proves canonical scaling, malformed-plan and
+stale-scope rejection, uncommitted baseline preservation, renewal, expiry
+and owner generation. The registered Release CTest passes; the frozen
+receipt/first-consumer verifier still passes. This helper is not included
+in the server host, does not grant armor or Burning immunity, and is not
+source-bound. World/Runtime mechanics and rendered client acceptance remain
+as listed above. No official client or logger was touched.
+SHA256 gw_frigid_armor.h 725D9DA964715B17A970731905CC0D48C91AE3E08EDD769DD8EF585721B38CFE
+SHA256 frigid_armor_policy.cpp AD7AFC6380F2A12DA8F5C17DF7836E0E8BF2EADA6CAB744E7DAA0AB0EA0BD5B1
+SHA256 frigid_armor_policy_test.exe 76015C155DDD3DAA607C875AFFFF00B98DA77A3D4E761D03458B80F25468D71E
+
+Source-bound host follow-up (2026-10-26): Frigid Armor now enters normal
+paid 5-Energy/1-second Runtime casting and publishes caster body369. The
+production gateway supplies a scoped EnchantmentDuration quote, including
+the reviewed weapon 10..20% extension. World validates that exact quote
+before installing the owned enchantment. Player/NPC physical armor paths
+apply the rank bonus only to physical damage, while Burning admission is
+blocked before condition and Fragility side effects. Existing Burning is
+retained. Player/NPC tests cover physical versus elemental and nonphysical
+weapon damage, Ear Bite, direct conditions, transfer, removal and expiry.
+The cast test checks the 20% duration boundary: Burning remains blocked
+after base expiry and applies at extended expiry. The fixed receipt/2022
+first-consumer verifier passes. The source-bound count is now397/679;
+the immutable capture checkpoint and missing-capture count650 are unchanged.
+
+Validation: serial Release host and 11 focused/neighboring CTests pass;
+coverage parser tests pass12/12. These are native mechanics and offline
+first-consumer tests, not a rendered Guild Wars 2022 client session.
+NPC skill selection/casting, retail armor and immunity observations,
+conditional transfer outcomes, all effect-producing paths, and actual
+rendered animation/sound remain verification gaps. No official client or
+logger was interrupted.
+SHA256 server_host.exe D9755695D328E6B9513891466548020A3BD98CE48D6B259979420DC7365E2050
+SHA256 gw_frigid_armor.h 784BEE1EA0C9D323D4EC8E79FB69C02FB13C28FFE00F0B40CD72A31891ADE474
+SHA256 gw_world_simulation.h C1ED2A0D67935D15AE503AB77122AA934790BE122D0797DDC0CD683E7B84A1F9
+SHA256 gw_npc_combat_catalog.h 151E391516A47E36EF22D6807D2F79D988BC8AF545D6CAFAB73FBB2FD0DA9E6F
+SHA256 gw_skill_casting.h 82C65DF24CB444A3B6256C60FE173233E21E0284FD8BCA0E28469AD6B73D96BA
+SHA256 gw_auth.cpp 11D969AAB2D262FF85F0879EC99D4C5623EC9FB0B89F916AAF5550B17E410A97
+SHA256 frigid_armor_cast.cpp A5DA17192ABE29624F8E3DFE7B2883C207C3D7C67356BC9131A4A6A148507EDD

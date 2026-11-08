@@ -1,0 +1,42 @@
+Accepted skill-start notification
+================================
+
+casting::Hooks::begin_action now receives Slot(skill,copy) and the accepted
+event timestamp. Runtime invokes it after Energy/adrenaline payment and the
+existing admission checks,before activation publication. Failed Energy/policy
+requests do not invoke it. An ordinary weapon attack is not a skill start.
+
+The gateway calls World::accepted_skill_start before its instant-action early
+return for movement/emote cleanup. Instant skills therefore participate in
+stance-ending reactions. Movement cleanup uses the accepted timestamp instead
+of sampling a later wall-clock time,so it cannot overwrite newer movement as
+if the old skill start happened later.
+
+World validates the exact actor lifetime and bar copy when an active owned
+Berserker Stance exists. Its immutable accepted-use proposal removes the exact
+effect,and World commits it and publishes the removal under the mutex.
+Duplicate cleanup is harmless. No-active-stance notifications are a fast no-op.
+This is a trusted controller notification,not an independently authenticated
+payment receipt. Concurrent bar-transition admission still needs review before
+the callback can be treated as an independently authenticated payment receipt.
+
+tests/accepted_skill_start.cpp uses real Runtime/World hooks to verify an
+instant Flurry start after payment,exact Slot/time propagation,Energy/policy
+denial preservation,ordinary-attack preservation,copy/generation validation
+and duplicate cleanup. The existing skill_casting regression keeps the
+after-cost/before-publication assertion.
+
+Defensive Stance's explicit captured target-body618 success publication is now
+separate from success_body_effect's caster-only metadata contract. The generic
+caster sentinel test covers the entire pinned catalog;skill_success_body_effect
+contains the reviewed345 exception,and the World regression checks one618.
+
+Berserker Stance World integration now supplies ordinary IAS and exact fractional
+hit/damage gain. Prospective attack-skill timing and Backbreaker359's pre-payment
+lease exclude the stance before the paid ending callback. Seven native suites
+and61 tool tests pass. Concurrent bar admission,retail rounding/ordering,NPC
+casters and rendered acceptance remain open;see docs/berserker-stance.txt.
+
+Bonetti380 now uses this shared post-payment notification too. Its exact active owned effect is removed after a skill use is accepted;ordinary attacks and rejected requests preserve it. World/native Runtime regressions cover200-adrenaline spending,insufficient-charge rejection and instant Flurry ending. Concurrent bar-transition admission remains a shared gap.
+
+Staged Wary377 now shares this ending path. Fresh World/Runtime tests cover paid instant ending,Energy/policy denial and ordinary preservation. Wary casting/reward binding remains disabled pending complete mechanics evidence.

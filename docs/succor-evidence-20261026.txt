@@ -1,0 +1,25 @@
+Succor [308] detached evidence, 2026-10-26
+
+tools/protocol/succor_evidence_20261026.py passed seven exact fixed receipts
+through the existing audit_succor_checkpoint verifier. Fixed checkpoint:
+20261022-cumulative-skills/packets-1360-15821281.jsonl, SHA-256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+Lines 279956, 279972-279975, 279979-279980 establish the targeted start,
+finish, caster547/target548 bodies, maintained effect107 and rate updates.
+
+The offline original 2022 first consumers independently select style51,
+1-second cast and skill308; caster547 selects encoded asset2fc000010000,
+target548 selects32c000010000, both with particle flags1. Pinned client SHA:
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+The report includes tool, receipt-audit and principal harness hashes:
+build/reports/succor-evidence-20261026.json.
+
+Run from repository root in PowerShell:
+$env:PYTHONPATH='build/protocol-python;tools/protocol'
+python tools/protocol/succor_evidence_20261026.py
+
+This is detached evidence only. Stubbed actor/asset services do not establish
+rendered client acceptance. Rate properties do not independently establish
+pip counts or spell-triggered maintainer Energy debits. Maintenance ownership,
+successful-spell debit, removal/replacement and production binding remain
+pending. No runtime, CMake, coverage or shared backlog file was changed.

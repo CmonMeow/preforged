@@ -1,0 +1,30 @@
+Warrior Absorption runes
+
+Exact raw identities27e802ea/minor,27e902ea/major,27ea02ea/superior match
+pinned Toolbox PriceCheckerModule.cpp. Original2022 formatter879a10 branch27e
+extracts low16 identity02ea and bits16..17 tier+1; offline
+absorption_runes_2022.py proves all three cases using original bytes.
+Rune_of_Absorption.html lines93..103 specifies primary Warrior only, physical
+reduction1/2/3, highest-only nonstack, global regardless hit armor location, and
+no major/superior health penalty.
+
+Owned worn decode now accepts exact identities with profession checks. Upgrade
+application uses the existing native eligibility/preview/revision/CAS transaction;
+known old runes are removed when replaced. Worn bonuses aggregate maximum only;
+carried and bank items give no benefit. Gear refresh writes the authoritative
+scope-bound physical absorption field and resets tozero when removed.
+
+Ordinary physical melee and physical attack skills subtract after armor-resolved
+base plus applicable bonus, clamp atzero, preserve actualhit vs miss/refund
+semantics. Earth staff/projectiles, elemental spells, armor-ignoring damage,
+health sacrifice/life stealing and degeneration are not reduced. No armor bonus
+is invented. Exact retail damage RNG/rounding policies remain those documented
+for the existing private attack engine. Conditional or hit-location insignias
+remain separate future work; this is not all rune/insignia coverage.
+
+No production item definition is fabricated; actual source/target metadata,
+profession and ownership still control installation.
+Provenance labels (not authenticity guarantees)
+Rune_of_Absorption.html SHA256 2fdfb6cb3cc8ec1788857200266f291947aca30755cc67da61f707181b8b66a0
+PriceCheckerModule.cpp SHA256 b8fe50e4683eaa4a0e9f4d9ba6caf31806b353e0caa8080740acca7cddd480a2
+Pinned executable SHA is recorded by the offline native audit report.

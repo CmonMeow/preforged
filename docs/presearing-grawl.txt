@@ -1,0 +1,39 @@
+Grawl Invasion75 — 2026-10-10
+
+The W/E capture identifies quest75 accepted3195 and completed3460 in map160,
+instance24. Three Grawl Invaders are captured agents26/29/30, first observed at
+3275/3284/3298. Companion incoming241 packets show their deaths at34749/35408/
+35754, before the completed snapshot. Ordinary Grawl, Grawl Shaman and Grawl
+Longspear observations are excluded. Full observations/hashes/definitions/death
+packets: data/gw/quests/actors/grawl-invaders-provenance.json.
+
+Default content enables active/completed native quest75 stages and Grast's
+captured Green Hills placement. Offer requires rewarded primary Warrior Test85.
+Accept teaches Sever Artery382/Gash384/Healing Signet1 and grants the captured
+Starter Sword; all changes share the quest save transaction. All three exact
+encounter actors must die before completion. Turn-in gives250XP once. Active
+encounters restore only in160, using fresh scoped IDs; abandon/disconnect removes
+the owner's creatures. Reentry does not regrant the sword.
+
+Health80 comes from local Grawl_Invader.html. Armor0 and private hostile token2
+are explicit temporary development settings in grawl-development-policy.txt,
+not measured official combat data. Enemy attacks/AI are not implemented.
+
+Offline checks cover exact navigation placements, all-three objective completion,
+failed acceptance without spawns, stale attempt refusal, fresh reaccept IDs,
+disconnect cleanup, item/skill transaction rollback, reward and persistence.
+Native2022 acceptance, sword receipt/equip and three-kill completion were
+verified on2026-10-11 with Pre Quest War. The character approached Grast in160,
+accepted75, received Sever Artery/Gash and the Starter Sword, equipped it through
+the inventory and killed all three scoped Invaders with native SPACE attacks.
+The L window showed completion. Screenshots are in build/reports/grawl-native/.
+Reward turn-in was verified on2026-10-11 after restarting host/client: the native
+L window restored completion, Grast's reward click recorded reward=1/status=0,
+XP changed500->750 and the quest disappeared. Evidence: reward.png and
+reward-server.txt in the same report directory. Sever Artery/Gash live casts remain unverified; attempts occurred
+out of range, with insufficient adrenaline or after the target died. Enemy AI
+and doorway traversal were not tested; map entry used /tp.
+Elementalist Test83 is
+now mapped and its fresh-character reward has been verified. Secondary trial
+selection remains unfinished: offers still require the selected secondary, so
+an unchosen-secondary character cannot yet start the Warrior training flow.

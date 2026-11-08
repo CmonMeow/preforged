@@ -1,0 +1,41 @@
+NPC proposal audit -- read-only helper findings and parent follow-up
+
+Keystone: fixed to rerun raw Damage from current NPC at commit.
+Ignite Arrows: same migration implemented; fresh original and1399 integration regression passed.
+
+Required remaining migrations before1399 production binding:
+- Shockwave/Aftershock: rebuild complete apply_earth_aoe from current actor,
+  including each strike and conditions,after player death/Fragility callbacks.
+- Hex-removal AoE: rebuild from current actor,remove only intended primary hex,
+  then resolve correct per-recipient holy-adjusted damage.
+- gw_world_ash_blast.inl: rebuild damage+hex application with current effect IDs
+  after player damage,HexBreaker and application callbacks.
+- Burning Speed end: reapply only intended NPC condition on current actor after
+  player condition/Fragility callbacks; never restore earlier whole Health.
+- Party healing: refresh NPC healing proposals even without remove_burning,
+  after EtherRenewal/player reactions.
+
+Raw amount/counter must be re-resolved together. Copying current registry onto
+old Health or merging counters with max() cannot correct stale damage.
+Existing current-state examples: elemental impact; LightbringerGaze,Spiteful
+and WhirlingDefense commit NPC bases before downstream reactions.
+No official client or log session touched.1399 remains unbound.
+
+Migration follow-up:
+Burning Speed condition commits now recreate from current NPC,checking the
+original lifetime and survival. Shockwave/Aftershock recompute the entire NPC
+AoE result with saved recipient geometry after player reactions. Party healing
+rebuilds both ordinary and cleanse branches,retaining heal versus heal_ally
+permissions. Fresh shockwave,aftershock,burning_speed_world,party_healing and
+breath_great_dwarf regressions pass. These are proposal-lifetime repairs,not
+proof of1399 per-hit earth AoE support. Ash Blast and hex-removal AoE remain.
+Report: build/reports/npc-proposal-refresh-progress-20261028.json.
+
+Ash Blast/hex-removal migration in progress:
+Ash Blast rebuilds apply_ash_blast on current NPC with a fresh current effect
+ID; it no longer rewinds next_npc_hex_ to its pre-player-callback snapshot.
+The freshly rebuilt ash_blast_world regression passes. Hex-removal AoE keeps
+original removal application sequence; it retires that original only when
+still present,then recomputes current holy-adjusted damage. Its three native
+regression targets are rebuilding serially. Build handle88974/report
+npc-ash-removal-refresh-progress-20261028.json retains pending verification.

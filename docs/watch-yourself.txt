@@ -1,0 +1,336 @@
+WATCH YOURSELF348/2858 — STAGED,2026-10-21
+
+Pinned PvE348and PvP2858metadata:Warrior Tactics instant shout,80internal
+Adrenaline,0Energy,4s recharge,10s duration,earshot1012,caster resource596.
+Armor scales5..25(32at rank20). PvE has10charges;PvP scales1..3(4at rank20).
+The local wiki explicitly documents an anomaly on both pages:the effect ends
+on armor-respecting damage events,rather than incoming attack attempts. The
+stage therefore counts accepted positive armor-respecting damage,including
+spells. Missed/blocked/rejected attacks,armor-ignoring damage and zero applied
+damage do not consume a charge. Exact zero-damage retail behavior still needs
+isolated capture;this predicate follows "takes damage" in the anomaly note.
+
+A canonical scoped ownership record tracks source/target/effect/rank/duration,
+remaining charges and a monotonically increasing per-recipient damage receipt.
+Armor queries require the matching active owned registry entry. Replayed or
+backdated receipts,wrong lifetimes,nonfinite/negative damage,invalid remaining
+charges and mismatched duration reject. The final qualifying hit gets armor
+before its charge is consumed;World must end/remove the actual status afterward.
+Replacement/expiry/death must use normal owner lifecycle and registry authority.
+No shared armor or damage pipeline is connected yet;348/2858remain unsupported.
+
+Tests cover42rank/PvE-PvP contexts,all counters including the final hit,
+nonqualifying cases,duplicate receipts,expiry,new ownership reset,missing status,
+forged plan/counter/duration/world and invalid input guards. Native verifier
+hash-checks four exact frozen receipts at369691/369692/369694/369695:
+instant48,caster body596,status10s and slot release. It executes native instant
+and596particle consumers,and checks both pinned rows. Body/cast evidence does
+not establish the damage counter or actual armor strength. Both wiki pages are
+hash-recorded as semantic evidence. Report:build/reports/watch-yourself-native-2022.json.
+
+Remaining:party/earshot recipient freeze,owned player/NPC armor stacking,
+per-recipient post-damage integration across spells/weapons and zero-damage
+mitigations,normal Adrenaline casting/PvP alias/lifecycle,vocal/echo effects,
+retail damage-counter capture and rendered QA. Source counts unchanged at
+633captured/304source-bound/329awaiting/696missing on20261017-npc-refresh-2.
+Official sessions/loggers untouched;no live capture or process actions.
+
+2026-10-21 NPC ownership/armor stage
+LiveActor now owns the exact WatchYourself record alongside its registry.
+Trusted apply_watch_yourself validates lifetime,plan,source world,recipient life,
+clock and effect identity,then replaces either PvE/PvP alias as one family.
+All physical/elemental armor getters and incoming caster damage combine it with
+existing skill armor through shared stacking:ordinary totals cap25but stronger
+single-source32at rank20remains32. A query requires the actual owned status;
+expiry,strip and death remove its armor without altering base armor.
+
+consume_watch_yourself_damage is deliberately a separate trusted post-commit
+operation. World must call it with the actual committed unique damage receipt,
+after proposal rebasing. Damage previews must not consume counters. It copies
+and preflights the final-charge removal,returns the end decision for one native
+status-end publication,and rejects repeated receipts. preserve_current_hexes
+now preserves the current typed WatchYourself ownership/counter with its actual
+registry,so rebasing cannot reset committed charge state.
+
+Tests:42NPC rank/mode cases verify actual Earth damage attenuation on every
+charge including the last,all armor getters,ignored armor-ignoring damage,
+explicit receipt consumption/replay rejection and the first unbuffed hit.
+Additional cases cover alias refresh,expiry,strip,death,stale/world identity,
+rebased ownership and real stacked damage at15/25/32bonus. Pure/NPC suites and
+native verifier pass. World party/earshot publication and post-damage adapters,
+player recipient support and normal casting remain required. This is not an
+end-to-end NPC shout. No source-binding count increase;official logging untouched.
+Final serial Release build40407 exited0 including server_host;three focused C++ suites,five coverage tests and native verifier pass.
+
+2026-10-21 World single-recipient/player stage
+stage_watch_yourself_recipient now applies typed player status/timer ownership,
+with exact scopes,party membership,live resource settlement and earshot radius.
+Shouts do not reuse the spell line-of-sight predicate. NPC recipients use the
+existing trusted allied-recipient adapter;NPC party membership must still be
+proved by a future full-party selector. The adapter publishes recipient status
+only;it does not impersonate a paid/instant full shout or publish596on every ally.
+
+Player physical/elemental armor now includes the exact owned source under the
+shared stacking rules. Normal expiry/death/removal resets typed ownership and
+publishes the existing owned end. Generic status_mutation348/2858is rejected.
+World's explicit post-commit receipt adapter delegates to player/NPC authority
+and publishes the last-charge status end once. It remains a host-only API,
+not a packet a client may submit. Automatic call sites are deliberately absent
+until all damage paths are reviewed;therefore normal348/2858casting is unbound.
+
+Tests:42player contexts apply real Lightning damage with its reviewed armor
+penetration,then consume explicit committed receipts. Last-hit attenuation,
+replay rejection and one67end are checked. Player alias refresh/expiry/death,
+wrong scope/foe/raw injection,and NPC World alias refresh/one expiry publication
+pass. This proves adapters,not automatic damage consumption or full party shouts.
+
+Damage callback inventory for next integration:
+- record_hit_locked handles accepted player caster hits and knows Hit.kind,
+  but some callers invoke it before Health mutation. Review commit ordering.
+- Physical weapon paths frequently call record_adrenaline_damage_locked instead,
+  so merely editing record_hit_locked would miss ordinary/melee/ranged damage.
+- damage_npc_locked is the main committed spell route;NPC ordinary/caster weapons
+  also call LiveActor apply_weapon_damage/apply_caster_weapon_damage directly.
+- Proposal rebasing must precede counter consumption;preserve_current_hexes owns
+  current registry/typed counters. Consuming on a preview can reset/double-charge.
+- Life steal,degeneration,sacrifice and armor-ignoring reactive damage must not
+  consume. Rejected/blocked/zero-loss hits also require explicit tests.
+Fixed633/304/329/696unchanged;official clients/loggers untouched.
+Final serial Release build7722 exited0 including server_host;three focused C++ suites,five coverage tests and native verifier pass.
+
+2026-10-21 automatic player-hit commitment stage
+The shared accepted player caster-hit path now consumes qualifying WatchYourself
+charges using Hit.kind and real applied loss. The physical commitment branches
+for ordinary/skill hits,Cyclone recipients,direct melee and quest-NPC attacks
+also consume once. These are after authoritative hit resolution but before HP
+and damage-packet publication;they do not consume on prediction/admission.
+Zero-loss,armor-ignoring and rejected outcomes do not consume. Mantra/adrenaline
+rewards remain on their existing independent paths.
+
+Fixed-damage attack skills require separate classification. Player PowerShot,
+ConcussionShot and DistractingShot are tagged armor-ignoring when their fixed
+hit resolves,including elemental-weapon PowerShot. Ordinary physical/caster
+weapon damage still qualifies. NPC-target fixed-shot classification/automatic
+NPC charge callbacks remain a separate audit;do not infer completion there.
+
+Tests now use42real Lightning contexts without manual consumption. Replayed
+explicit receipts reject after the automatic callback and the final67end is
+still published once. Additional ten player scenarios cover ordinary physical/
+caster weapon hits,direct melee,Cyclone,physical/elemental PowerShot exclusions,
+blocked/missed/fully absorbed hits and degeneration. A real quest NPC melee hit
+also removes the player's single PvP charge. Projectile tests tick release then
+impact;one sparse update had not released/landed the projectile yet and was not
+valid evidence of a missing damage callback.
+
+IMPORTANT remaining gate:batched multi-hit spell helpers often resolve all hits
+with one copied armor snapshot before record_hit_locked loops. Inspection shows
+this must be reviewed/reworked so a final charge can change later hits' armor
+inside the same batch. The passing single-hit tests do not prove that behavior.
+Automatic NPC recipient callbacks,full-party selection,paid shout Runtime/PvP
+alias and rendered/publication-order QA also remain.348/2858stay unbound.
+Three focused C++ suites,five coverage checks and native verifier pass. Serial
+host build64809 exited0;final extended damage test build50793 exited0. Fixed
+633/304/329/696unchanged. Official clients/loggers untouched.
+
+2026-10-21 Shockwave/Aftershock multi-hit armor fix
+A red World regression reproduced the previously identified batch problem:
+Shockwave against one remaining rank0PvP charge dealt112rather than about120.132
+at80raw armor. The copied batch kept WatchYourself armor for later strikes even
+though the live counter ended after the first hit.
+
+Shockwave and Aftershock helpers now accept an optional EarthArmorSequence
+provider before each hit. It receives the preceding resolved hit and can return
+a recalculated unconditioned base rating. Helpers still apply current conditions
+at each strike,including Shockwave's CrackedArmor before its third hit. Callers
+without a provider retain their previous behavior and calculations.
+
+World creates this provider only for a current owned WatchYourself effect. It
+copies the registry and charge ownership,simulates positive armor-respecting
+hits locally,and recomputes shared armor stacking after the final charge. It
+does not subtract the shout value from an already capped total,which would lose
+other armor. Actual charges still change only in the accepted-hit commitment
+path. Preflight never emits status ends or mutates live charge state.
+
+Twelve World contexts cover Shockwave/knockdown Aftershock,three ranks and
+with/without10ConvertHexes armor. Later hits lose exactly the shout contribution
+while retaining other armor and applying current CrackedArmor. A hostile NPC
+with unreviewed armor rejects after player preflight;player Health and its sole
+charge remain unchanged,then a real Lightning hit consumes it. This verifies
+no live mutation from the copied provider. Shockwave,Aftershock and sequence
+suites pass;five coverage tests and native verifier pass. Normal348/2858binding
+remains off:other batch helpers,automatic NPC recipients,party selection and
+rendered QA remain. Fixed633/304/329/696unchanged;official logging untouched.
+Final serial Release build60801 exited0 including server_host;three focused C++ suites,five coverage tests and native verifier pass.
+
+2026-10-21 Mind Burn/Freeze/Shock batch armor fix
+A new red World case reproduced the same snapshot error for MindBurn185:
+with Energy advantage and one remaining rank0PvP charge,it dealt66rather than
+about69.1319. MindFreeze209/2803and MindShock226/2804also calculate two hits
+in one pure proposal when their Energy condition succeeds.
+
+ArmorSequence is now a generic optional combat preflight type;the existing Earth
+alias remains compatible. Each of those three helper families asks for a fresh
+unconditioned rating before each hit,then applies current conditions. World
+supplies a copied WatchYourself registry/counter provider for Fire,Cold or
+Lightning,retaining other skill armor and normal penetration. No live ownership
+is changed by proposal construction. Callers without an active charge/provider
+retain their prior calculation and output behavior.
+
+Sixty World contexts cover five PvE/PvP IDs,two Energy outcomes,two stacking
+contexts and three ranks. The first hit uses the remaining charge;only an actual
+second hit loses that bonus while retaining other armor. MindShock's25percent
+penetration remains effective. The six existing policy/World suites pass,as do
+the new60cases and prior Shockwave/Aftershock sequence regression. Native
+MindBurn,MindFreeze and MindShock verifiers pass their frozen cast/body/damage
+receipts. These verify preserved protocol consumers,not new rendered QA.
+
+The ordinary ElementalResult multi-hit shape has one armor-respecting hit plus
+optional armor-ignoring shadow damage;the latter must not consume another
+charge or require armor recalculation. Remaining NPC receipt/copy paths,
+full-party shout selection,normal348/2858casting and rendered QA remain open.
+Fixed633/304/329/696unchanged;official clients/loggers untouched.
+Final serial Release build14718 exited0 including server_host;eight focused C++ suites,five coverage checks and three Mind native verifiers pass.
+
+2026-10-21 NPC committed damage stage
+A separate trusted stage_npc_watch_yourself_recipient accepts current hostile
+NPC source/recipient lifetimes,live clocks,earshot and canonical plan. This is
+recipient staging only:an NPC controller must prove party membership and pay
+Adrenaline before a real NPC shout is admitted. It does not emit a fake cast.
+
+LiveActor's committed-hit recorder checks exact hit/actor lifetime,real positive
+loss and a supplied armor-respecting classification,then consumes one receipt.
+Death owns status cleanup instead of a second last-charge cleanup. World calls
+this from credited NPC spell damage,ordinary weapon hits,Cyclone after current
+state rebasing,and direct melee commitment. Deferred spell publications retain
+one status end;raw armor-ignoring and explicit elemental armor-bypass damage
+preserve charges. Fixed PowerShot exclusions use an independent respect/bypass
+flag rather than infer elemental reaction behavior from armor treatment.
+
+IMPORTANT correction to earlier classification notes:PowerShot's existing
+physical/elemental Hit.kind and elemental reaction paths are preserved. Player
+record_hit_locked now accepts an independent armor-respecting parameter for
+fixed weapon skills. Earlier forced-kind changes for PowerShot are superseded;
+Concussion/Distracting existing classifications remain unchanged. This avoids
+inventing Mantra/StormChaser behavior without captures that establish it.
+
+MindBurn,Freeze andShock NPC preflight clones now simulate charge consumption
+between hits,while actual commit goes through current credited damage. This is
+necessary for lethal/control predicates:an NPC at104Health with unknown knockdown
+trait dies from two correctly resolved MindShock hits;the cast must not reject
+based on a stale-armored nonlethal prediction that demands knockdown data.
+
+Tests cover42real NPC rank/mode Lightning lifecycles,one end,death cleanup,
+armor-ignoring/explicit bypass exclusions,six weapon paths including two fixed
+PowerShot variants,five Mind PvE/PvP IDs and the104Health lethal boundary. Exact
+stale/NPC-versus-player source guards also pass. The existing three Mind World
+suites,NPC recipient suite and player damage suite pass(six focused suites total).
+Five coverage checks and native verifier pass. No rendered/full NPC shout claim.
+
+Remaining copy-result audit:World Shockwave/Aftershock directly assigns NPC
+apply_earth_aoe proposals;ElementalResult and other copied NPC results need owned
+post-hit recording after current registry rebasing. Their internal multi-hit
+armor previews also need the copied counter provider. Do not enable normal
+348/2858yet. Full-party/NPC membership selection,Adrenaline/casting,remaining
+copy routes and rendered/publication-order QA remain. Fixed633/304/329/696
+unchanged;official clients/loggers untouched.
+
+2026-10-21 NPC Earth batch: apply_earth_aoe now supplies an isolated copied
+Watch Yourself armor sequence to Shockwave/Aftershock. World records accepted
+positive committed slices and publishes the final-charge end once. Added World
+regressions for both skills with one remaining charge, including Aftershock's
+knockdown bonus. NPC armor60 obeys Cracked Armor's floor60. Focused NPC commit
+suite passes. Fixed checkpoint remains633captured/304bound/329awaiting/696missing.
+Normal348/2858casting is still unbound; NPC ElementalResult/other copied-result
+paths,party membership/adrenaline and rendered verification remain incomplete.
+Official clients and loggers untouched. Host build validation follows below.
+
+Validation: serial Release build10996 exited0 for NPC commit test and server_host.
+Expanded NPC commit suite,five coverage unit checks and native Watch Yourself
+verifier pass. No rendered test or official-session change was performed.
+
+2026-10-21 NPC ElementalResult commit audit: both direct and area/projectile
+World commits now record positive armor-respecting slices; armor-ignoring
+shadow bonuses are excluded. Added real World regressions for191,89,884,183,
+186and170.89spends one of ten charges despite two damage slices;884's initial
+Burning-only application spends none. Existing NPC Earth/weapon/Mind tests and
+five coverage checks pass. Source binding count is unchanged;348/2858remain
+unbound. Remaining audit includes Ignite Arrows explosion and other copied
+result commits,party/NPC membership,Adrenaline and rendered verification.
+Host rebuild/checkpoint validation is in progress. Official logging preserved.
+
+2026-10-21 ElementalResult validation complete: serial Release host build16745
+exited0. Expanded NPC commit suite rebuilt12600and passed;four existing nearby
+regression executables also pass. Five coverage unit checks,native WatchYourself
+verifier and fixed checkpoint audit pass. Published backlog remains633captured,
+304source-bound,329awaiting binding,696missing captures. Direct/area/projectile
+NPC elemental commits now spend charges only for positive armor-respecting
+hits;shadow bonus and Burning-only regressions pass. Full348/2858casting is
+still unbound;Ignite Arrows/remaining copied paths,party selection,Adrenaline
+and rendered acceptance remain. No official client/logger changes during this
+validation. See docs/watch-yourself.txt for the detailed implementation stage.
+
+2026-10-21 Ignite Arrows NPC explosion regression: World missed-arrow test
+reproduced correct mitigated fire damage but a surviving WatchYourself charge
+(line83). Added the missing accepted explosion-hit commitment receipt. Two
+real bow-impact cases now pass:landed physical arrow spends the last charge
+before unprotected explosion;Blind miss preserves armor for the explosion,
+which spends the charge and emits one67end. Both verify exact precise damage.
+No preparation,projectile,animation or retail missed-arrow policy changed.
+Expanded NPC suite passes;five coverage checks,frozen/native WatchYourself
+verifier and fixed checkpoint audit pass. Backlog republished633/304/329/696.
+Full shout casting/party selection/Adrenaline,remaining damage-path audit and
+rendered acceptance remain incomplete;348/2858stay unbound. Host and existing
+Ignite Arrows rebuild are in progress. Official logging untouched.
+
+Ignite validation complete: serial Release build48700 exited0, rebuilding both
+NPC commit/Ignite tests and server_host. Both suites pass; red-before/fixed-after
+receipt regression verified. No rendered or full-shout completion claim.
+
+2026-10-21 Watch Yourself party transaction: added stage_watch_yourself_party,
+which freezes actual player party membership and earshot recipients,settles
+resources,prepares all owned Registry/timer transitions before committing any
+armor application,and replaces the PvE/PvP family without stacking.42rank/mode
+World contexts pass,plus stale owner,future recipient clock(all-or-none),exact
+1012earshot boundary,1013outside,dead party member and same-team non-party
+exclusion. Same-team/friendly relation is not a party-membership witness.
+Party State currently contains player IDs only;NPC party integration still
+requires its own membership authority. This method deliberately remains an
+effect-only stage,not a paid cast:Runtime Adrenaline/cooldown,instant48/body596
+publication ordering,vocal/echo handling and rendered tests remain.348/2858
+remain unbound. Five coverage unit checks,native verifier and fixed audit pass;
+published633/304/329/696unchanged. Host build is in progress. Official logging
+was not modified during this work.
+
+Party-stage validation: serial Release build98089 exited0 for the expanded
+World test and server_host;World suite passes. Fixed audit/backlog and native
+verifier pass. Normal paid casting remains pending,not claimed implemented.
+
+2026-10-21 NORMAL WATCH YOURSELF BINDING (supersedes earlier unbound notes):
+348and2858are now normal Runtime effects with gateway hook. Base348 selects
+2858mechanics in PvP;explicit2858rejects PvE. Runtime validates canonical rank,
+requires owner/hook/target/Adrenaline authorities,self-normalizes selection,
+spends pinned80Adrenaline through World,uses instant-action execution,applies
+ranked party armor and starts4s recharge. No Energy cost or spell58terminal.
+Party completion defers captured Outbox queues until Runtime emits body596,
+so wire order is48instant/body596/status65;no duplicate body. Deferred buffers
+also contain prior-family67ends on refresh. Party method allows knockdown as
+other shouts do. NPC membership/caster,vocal/echo interactions and rendered QA
+remain explicit gaps;no friendly NPC is guessed to be a party member.
+
+New watch_yourself_cast suite passes84rank/mode/request/failure contexts:
+348and2858,PvE/PvP,rank0/12/20,missing hook,insufficient Adrenaline,lost owner,
+failed effect,rank21and knockdown. Checks actual World pool spend,party armor,
+unchanged Energy,one body,48beforebodybeforestatus,no58,4s recharge and no repeat
+spend. Existing World42rank/party boundary suite also rebuilt and passes.
+Coverage five unit checks now explicitly detect missing production watch hook.
+Native verifier retains its capture-only limits;normal binding is host-tested,
+not claimed rendered/counter-proven by the frozen cast alone. Fixed audit and
+published backlog are633captured/305source-bound/328awaiting/696missing;own
+2858capture still missing. Shared casting tests/host rebuild are in progress.
+Official logging untouched.
+
+Normal WatchYourself validation complete: serial Release build51856 exited0,
+rebuilding Watch cast/World,ToLimit cast,general casting and shipping server_host.
+All four rebuilt suites pass. Five coverage checks,native verifier and fixed
+audit/backlog pass.305source-bound is source evidence,not rendered completion.
+No client was restarted or controlled;official logging remained untouched.

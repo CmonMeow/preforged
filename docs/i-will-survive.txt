@@ -1,0 +1,27 @@
+I Will Survive368
+================
+Pinned2022 Warrior/Strength17/Shout15,5Energy,zero activation/aftercast,30s
+recharge,duration5..11s rank0..15 (13s rank20),3pips per condition,body627.
+Frozen20261017-npc-refresh-2 packets-1360-15821281.jsonl378820..378824
+has recharge30,instant48,body21/627,and rank0/effect61/duration5 at23465171.
+Native verifier hash-checks original receipts and pinned executable;instant48
+updates UI without introducing a cast model action,while body627 has a separate
+real native particle consumer.2077 is a sentinel,no target particle fabricated.
+
+World owns a timed other-category effect and zero-pip integration boundary.
+Regeneration queries the current owned effect and current condition count for
+each health segment:3pips per condition before the shared +/-10 cap. No fixed
+activation-time count is stored. Expiry/addition/removal are settled by the
+existing condition/resource transactions. Lethal boundary prediction,actual
+integration and displayed pips use the same extra contribution.
+Renewal replaces one source and advances the old interval before replacement.
+Death and explicit effect removal retire the shared timer normally.
+Runtime uses the exact instant-action path,so another pending cast is retained;
+Shouts can execute during knockdown. Native metadata supplies the5Energy cost,
+zero aftercast and30second recharge.
+
+Current-condition behavior follows the archived concise description,not a
+causal deduction from a single rank0 application. Focused retail condition-change
+capture,NPC casters,vocal suppression/echo interactions and rendered QA remain.
+The original duration/recharge/body receipt does not prove their mechanics.
+Validation:five fresh native suites,69 tooling tests,native verifier and Release server_host build pass. Fixed backlog265source bindings/368pending. Official logging untouched.

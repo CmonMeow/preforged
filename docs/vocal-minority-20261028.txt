@@ -1,0 +1,27 @@
+Vocal Minority883 -- source-bound mechanics; rendered verification pending
+
+Native C++ player cast: 10 Energy, 1 second activation, .75 second aftercast,
+20 second recharge. Curses duration 5+rank seconds. Target and nearby hostile
+players/NPCs receive a zero-degeneration hex; allies/other planes are excluded.
+The shared action admission gate blocks new shouts/chants, not signets/spells.
+It does not interrupt an action already admitted.
+
+Fresh native test covers selected player/NPC casts, 252 radius boundaries,
+health preservation, expiry, Hex Breaker area behavior, deferred idempotent
+publication, cancel/interrupt/stale target and lost hooks. Completion terminal
+precedes caster body1617 and deferred status publication. Both Ether Renewal
+versions reward once, with duplicate completion event rejection. NPC action
+admission tests check unchanged control epochs on rejection and stale lifetime.
+
+Raw immutable evidence: packets-1360-15821281.jsonl lines106714/106720/106721
+in 20261024-all-completed. Original2022 dispatch verifier:
+tools/protocol/vocal_minority_20261028.py. The resource2077 target sentinel is
+not emitted. Captured server timing does not override native activation time.
+
+Release host and strict source audit passed; 17 coverage tests pass, including
+consumer-removal mutations for883. Host SHA256: b8918818ab8b746ca5b5601a1b1374378fa7ef87ec47948541f22012b79d198d
+
+Open: rendered acceptance; controlled
+retail area boundary (native raw240 vs SDK Nearby252); NPC caster AI/loadouts.
+Official clients and ongoing logs were not touched. Fixed capture checkpoint
+and user-maintained build queue remain unchanged.

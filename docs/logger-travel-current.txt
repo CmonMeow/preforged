@@ -1,0 +1,23 @@
+Current-client numeric travel compatibility
+
+Official executable SHA256 8e50edfb83515fabfec50bfd9d17968e8635a39b4c3e796e311bbc5cd15e5878.
+Original native routine VA54db70 sends ordinary map travel through UI message
+0x10000186 with four DWORDs: map ID, region, language, district number.
+Its region-type4 branch instead obtains a guild-hall identifier from840a30
+and sends that identifier through0x10000183. Pinned GWCA ef3d3670 Travel
+still sends an ordinary map structure through183. This produces a valid
+UI dispatch return but the wrong travel request and an official denial.
+
+The collector now resolves its current region/language using GWCA and sends
+ordinary186 with district0. Before dispatch it validates the exact native
+ordinary-layout instructions; startup already validates the client PE pin.
+accepted=true means local dispatch succeeded, not server permission granted.
+Numeric travel does not bypass map unlocks or official access rules. Guild
+halls need their actual guild-hall identifiers; numeric /tp is not a guild
+hall visitor implementation. Explorable maps may also reject ordinary travel.
+
+tools/protocol/travel_ui_current.py executes both original native branches
+offline, intercepting only area lookup, guild identifier lookup and UI send.
+Report: build/reports/travel-ui-current.json. No live process access.
+World collector rebuilt successfully; all10 capture CTest cases pass.
+Official live travel verification remains the parent agent's next check.

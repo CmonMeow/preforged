@@ -1,0 +1,79 @@
+Keen Arrow1720/PvP3147 and Critical Chop1402
+==========================================
+Normal player Runtime/World paths use the shared known critical producer.
+No NPC casting/loadout grant is added. The community critical model and its
+rear-melee/NPC-source/defense presentation limitations remain described in
+weapon-critical-authority.txt; these bindings do not establish retail RNG.
+
+Keen_Arrow.html revision2629531 gives5..20 ordinary bonus plus5..25 only on
+a critical event,5Energy/6s. Keen_Arrow_(PvP).html gives1..5/+5..30/12s.
+The native rows agree;3147special0x400000 is explicitly guarded. Runtime
+reviewed_cast_record maps PvP1720 to3147 and builds its mode-specific plan.
+Both remain bow attacks using the existing release/projectile authority.
+Critical_Chop.html revision2609813 gives5..20 and action interruption on a
+critical attack; native Axe18,type14,5Energy,1sactivation,15srecharge agrees.
+Critical Chop uses its native1s base attack windup,not ordinary500ms.
+Both caster/target body resources2077 are sentinels and never fabricated FX.
+
+Admission requires Hooks.critical_attack_ready(target,Owned,now) and its
+successful current source profile/known item penalty/recipient level proof.
+The app hook delegates to World::critical_attack_ready(exactsourceScope,...).
+Unknown profile/penalty/target level cannot silently run these new skills
+through the old noncritical fallback. Readiness ignores critical prevention
+or damage suppression: a known producer can legitimately yield an ordinary
+hit under a defense. Missing/lost capability fails closed,including removal
+at completion. World independently rechecks release and impact eligibility.
+Admission/release validates the actual equipped weapon snapshot; queued
+arrows retain their accepted released weapon proof at impact rather than
+requiring that the source still hold that weapon after a swap.
+
+Keen's additional bonus comes from immutable SkillHit.critical after normal
+accuracy/block and the one shared critical sample. Critical Chop uses the
+same result to request the existing actual action interrupt and protection
+preflight. It does not fabricate a second roll,interrupt a noncritical hit,
+or add a20s skill-disable. Existing Dazed/haste hit reactions remain shared.
+Player action/control epochs and NPC scoped action tokens remain the owners;
+NPC Critical Chop joins the existing owned interruption protection authority.
+Energy payment,recharge,Assassin attribute return,adrenaline and health
+publication stay in the shared authorities. Native event17 remains distinct
+from critical damage suppression and explicit attribute Energy denial.
+
+Evidence
+--------
+tools/protocol/critical_dependent_attacks_2022.py pins the current checkpoint
+manifest and packet1360 hash. It checks nine frozen start/recharge/slot
+receipts for1720 and1402,native metadata for allthree rows,nine body timings,
+original targeted activation serializers and localwiki hashes.
+1402start404441tick24076578;release404445/slot404449tick24076968.
+1720start534489tick27476500;release534501/slot534503tick27477468;
+start534882tick27513296;release534891/slot534893tick27514218.
+The1402observed390ms start/release interval does not replace native1s base
+activation. Native body durations are1s*modifier for Chop and supplied weapon
+interval*modifier for Keen; they do not establish retail release fraction.
+PvP3147 has no frozen start in this checkpoint; its mode behavior is based
+on the reviewed pinned row and localwiki. Captures do not prove critical
+qualification,bonus damage,interruption/protection or Energy entitlement.
+Native model/actor services are stubbed; rendered/audio acceptance is open.
+
+Validation target
+-----------------
+critical_dependent_attacks_test covers independently listed rankvalues,
+player/NPC recipient contact,critical/noncritical,Blind/block,Mantra protection,
+Runtime5Energy,500ms bow/1s Chop release,cancel/interrupt,missing/lost hook,
+unknown source profile,6/15s recharge and PvP1720 alias12s recharge.
+critical_energy_lifecycle_test is a parent-owned adjacent resource suite.
+Explicit Release --parallel1 builds43838/51842 completed. The grouped
+critical_dependent_attacks_test passes,including normal PvP1720->3147
+12s recharge and player/NPC interruption protection. The parent-owned
+critical_energy_lifecycle_test passes its debt/fraction/full-cap/Overcast-cap/
+lethal-recipient/lethal-source matrix. Native verifier passes nine frozen
+receipts,nine body timings and three original serializers.
+
+The initial focused run exposed a real NPC readiness mistake: pristine
+reviewed NPC spawns have known living Health before their first condition
+clock exists. Readiness now validates exact lifetime/owned living body and
+accepts that initial unset clock; a known future clock still rejects.
+
+Parent integration:29 targeted Release suites passed and the serial host build
+succeeded. build/reports/shared-families-validation.json pins exact test/host
+hashes and evidence reports. No live client or rendered acceptance was claimed.

@@ -1,0 +1,79 @@
+Reversal of Fortune current status -- 2026-10-30
+
+Reversal 307 remains unbound in the production casting dispatcher. This file
+describes staged World/Runtime mechanics; normal client paid casting is disabled.
+Pre-Searing remains 39/44 effect bindings and is not complete.
+
+Canonical host:
+736eb4d6d87a93ae6a6f5181a93af2cf70674ed3dd8e3f712b7f3b3551cb94b7
+Latest host evidence: build/reports/retribution-world-host-startup-20261030.json
+Paid-cast evidence: build/reports/presearing-reversal-cast-progress-20261030.json
+Initial encrypted login/roster/World handshake passes. Full initialization and
+rendered gameplay are not established by that check.
+
+Completed World integration work
+- Explicit paid player Runtime capability now has 160 passing cases: self,
+  allied player/NPC, primary/secondary Monk, target lifetime, cost, activation,
+  duration, aftercast/recharge, cancel/interrupt, DF, publication and expiry.
+  Four fresh native suites and 56 source/publication/backlog checks pass.
+  Both normal gateway callbacks remain empty and mutation-guarded; this does
+  not publish307 or raise pre-Searing's39/44 binding count.
+- Generation-aware recipient and external caster attribution; stale or reused
+  caster IDs do not receive attributed healing popups.
+- Player/self/ally World completion, adjusted duration, Divine Favor, application
+  reactions and Ether Renewal receipts. NPC Divine Favor healing death now
+  retires the corpse's effects immediately without crediting a damaging kill.
+- Shared conversion handling in reviewed ordinary, elemental, projectile,
+  reactive and controlled-spirit damage paths. Historical reports name exact
+  tested producers; this is not a claim that every producer has been audited.
+- Full conversion transfer for seven direct/area life-steal families; conditional
+  Shadow follow-up, Feast zero-first-hit and Strip residual-enchantment paths.
+- Soul Leech reserved-spell and Insidious qualified-hit transfer consumers.
+- Mark of Subversion consumes its hex and fails the selected allied spell even
+  with full conversion, zero input or healing death. Reversal is not restored
+  from a stale registry proposal after consumption.
+- Explicit friendly NPC-to-player paid service now uses the existing Energy,
+  spellbook, action control and scheduler. 92 World cases, seven fresh suites,
+  55 source checks and six original-client consumer traces pass. Admission,
+  timing, interruption, target reuse, Profane, application reactions, DF and
+  caster attribution are covered. No loadout or autonomous priority is inferred;
+  enrollment currently gives one reviewed spellbook capability to that NPC.
+
+Remaining implementation and evidence work
+- Finish the active damage/transfer producer audit, including numeric weapon
+  modifiers and monster effects. The candidate search is not exhaustive proof.
+  Nightmare 795 is captured but unsupported and has no World contact consumer;
+  it remains independent skill work rather than an active Reversal consumer.
+  Linked drains 109/126 are paired regeneration/degeneration, not life-steal;
+  new World negative controls confirm they do not consume Reversal.
+- Enroll captured NPC capabilities through content policy; broader hostile,
+  self/other-NPC support and autonomous selection are not provided by the new
+  friendly NPC-to-player service. NPC equipment modifiers remain unverified.
+- Implement and test rank-preserving enchantment reapplication over the old
+  duration; the archived Enchantment_spell page documents the general rule.
+- Review remaining consumers and wire the production gateway only after its
+  admission gates pass. Paid Runtime tests cover the staged callback path;
+  they do not prove normal client playability.
+- Review remaining reaction overlaps, including staged Healing Seed work.
+- Resolve or explicitly retain unverified retail policy for departed casters,
+  source capacity/combined overkill and fatal reactions after qualified hits.
+- Rendered casts, ally-target effects, sound and failure UI still need direct
+  client verification. Native consumer tests use synthetic asset services.
+  This turn's path-verified private-client screenshot returned uniform pixels;
+  CUA bridge1 exposed no native surface. Only owned private test sessions were
+  stopped. Official clients were not targeted.
+
+Rank-reapplication evidence audit:24 immutable packet files,141 Reversal status
+additions and zero overlapping lower/equal/higher-rank candidates. This cannot
+settle the general wiki rule or requested-versus-effective rank/duration.
+Report:build/reports/reversal-reapplication-evidence-20261030.json.
+
+The bounded retail receipt proves healing -> retirement -> source gain -> loss;
+it does not prove every combined skill ordering or the source/overkill policy.
+Mark removal before conversion preserves existing World ordering and remains
+unverified in a retail combined capture.
+
+Fixed checkpoint counts remain 679 captured / 408 source-bound / 271 awaiting
+binding / 650 missing capture. Original captures and official clients were not
+modified. Detailed history remains in reversal-next-npc-families.txt and the
+individual build/reports progress files.

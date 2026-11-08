@@ -1,0 +1,106 @@
+MEND BODY AND SOUL [1234] — PLAN AND COMPLETION-TIME SPIRIT QUERY
+
+The frozen 20261024 Urgoz/Domain of Anguish session has 519 cast starts for
+skill1234 across the Domain/Citadel combat instances. These are mixed-player,
+hero and monster observations; they do not identify a unique caster or prove
+successful effect completion. The pinned 2022 row says Ritualist Restoration
+Magic, 5 Energy, .75s activation, 3s recharge, 20..115 Health and caster
+resource1090. The archived wiki description says the ally loses one condition
+per spirit within earshot. The local player-cast checkpoint has no activation
+of this skill, so the frozen obtainable-skill backlog is unchanged.
+
+src/runtime/gw_mend_body_soul.h now validates the pinned row and gives a
+rank-scaled heal and bounded condition-removal quote. A missing spirit count
+is rejected rather than treated as zero. World can count live, typed spirits
+within the existing 1012-unit earshot convention around a scoped player or
+NPC recipient at completion time. An unidentified nearby creature makes the
+answer unknown. Signet's controlled spirit spawn now gives its actors the
+reviewed "spirit" creature type, which also makes them visible to Spirit
+Light's existing proximity query.
+
+This is not a cast binding. The World still needs an atomic target heal and
+condition-removal transaction, exact condition-selection policy, NPC recipient
+publication, skill gateway payment/cancellation, and rendered 2022 validation.
+The 1012-unit boundary is a private-server convention, not a measured retail
+Mend range. The 519 starts do not prove heal amount or cleanse order.
+
+Serialized Release host build and three focused CTests (Mend plan, Signet
+World and Spirit Light World) pass. Fixed skill audit remains 679 captured
+obtainable / 382 source-bound / 297 awaiting / 650 unseen. Official clients
+and loggers were untouched. SHA-256:
+  src/runtime/gw_mend_body_soul.h 32EF80D723457ABD904EC07AF02EFE41AADCADC6DE904E34724E76EE1A593BDD
+  src/runtime/gw_world_spirit_light.inl 8DDA39E1B92E73A85E51613CD547FF081684BFABB7C94BF331F54578D85DB9FA
+  src/runtime/gw_world_simulation.h 7E0215E7570BB2236BB9431488F1F3112DC0CDF6606FD605A9C77A5AFF01C535
+  tests/mend_body_soul.cpp DF6252795BE0DC7FCC465848A74446BE2D0F21F7B87C6993C79A9987DBA126B4
+  tests/controlled_spirits_world.cpp 22B4E10CE818E63AA0C6469B4A5FEA7CE04AF797292E3735F6F758672365D2EA
+  build/tests/mend_body_soul_test.exe B04C5AE9F1F653C97B18110A5E49E273E942287306DFF860D2C2B4E485EF835C
+  build/tools/controlled_spirits_world_test.exe 80192A5A10D7155A5433771F92D2C271BB114B544045E6B0BA8E2E515FA64008
+  build/tests/spirit_light_world_test.exe B91C2057E48EF11AB1EC6F39EA55E126E6DD2CA5B0D93134B9E761E109E583B3
+  bin/server_host.exe A7301034DBE38D632B80AC2CA138119F6DD84813C5D296E13B8B00514F459C1B
+
+2026-10-25 player-recipient World transaction supersedes the missing-player-
+transaction gap above. A trusted stage now validates a live allied scope and
+range, counts typed spirits near the recipient at completion, quotes heal and
+condition count, preflights newest-first removal, then applies heal and
+condition-removal reactions under one World lock. Cast-specific health and
+effect-removal packets are captured until the caller publishes them after its
+finish prefix. Tests cover zero/two/unknown nearby spirits, stale target,
+two conditions, unchanged no-spirit conditions, and deferred output. Normal
+skill casting remains gated because this private newest-first policy has not
+been verified against retail, NPC recipient cleansing/death behavior remains
+unfinished, and rendered 2022 acceptance has not been checked. The 519 DoA
+starts alone do not resolve those gaps. Serialized Release host and four
+focused CTests pass. Fixed backlog remains 679/382/297/650; official client
+and loggers untouched. SHA-256:
+  src/runtime/gw_world_spirit_light.inl 001F08E194149A4DB8993F2F2D1BD6CEF3422E30D68F5EAA91C6B6E65D061A82
+  tests/mend_body_soul_world.cpp 2B537682A2134ED1129A2B2F6062888F785F6F5D4E913275852924892E487269
+  build/tests/mend_body_soul_world_test.exe 1036AE27DF6854E43641A7A14C2F0B52D18D1051AEF45A442D083F3C8F030BBE
+  bin/server_host.exe 3EC976B8A603BEF8411643B0D2946ED1FD881B4A50F5909971A2BBA0E69505A9
+
+2026-10-25 typed allied-NPC stage: World now preflights an eligible allied
+NPC's scoped lifetime, healing trait, range/path, completion-time spirit
+count and condition state. It applies heal then proposed condition removals
+on a copy, commits that copy once, publishes owner-attributed healing and
+current NPC Health/status, and sends Fragility reactions through the existing
+NPC death-credit path. Packet publication can be deferred after the normal
+cast-finish prefix. Tests pass for a typed allied NPC heal, stale target,
+unknown nearby creature and hostile NPC rejection. The World test does not
+yet create an allied NPC with active conditions, so the NPC cleanse/Fragility
+branch has only detached LiveActor coverage from existing suites, not a direct
+end-to-end Mend regression. The official packet scan found caster-body1090
+and some nearby effect removals amid concurrent combat; it cannot prove which
+condition Mend selected. The archived wiki notes its distinctive visual is on
+the caster. Normal source binding remains gated on that selection evidence,
+gateway/cancellation integration and rendered-client verification. Four
+focused CTests, serialized Release host and unchanged fixed audit pass.
+Official client/loggers were untouched. SHA-256:
+  src/runtime/gw_world_spirit_light.inl 39F228C0ACAC3F6E97664677154EF020C9FD9B41B2864C5D0D23A9F3D0A8A0E7
+  tests/mend_body_soul_world.cpp 3EF3F2551F9B26289EBBBB81064FDFB44C9EA66842B53C64BBBBCB192238EE82
+  build/tests/mend_body_soul_world_test.exe ADEC7987712EA05A7BDA49D9C22233A5318929A416C457C8D74A040362D2B069
+  bin/server_host.exe D84B113156A1C3917B71966E0062ADF7AA52866D1081D13AA86B79EEEA941D8E
+
+2026-10-25 normal player cast binding supersedes the unbound status above.
+Runtime now admits learned1234 at the pinned 5-Energy/.75s/3s timing,
+validates a scoped living allied player (including self) or explicitly
+healable allied NPC at both start and finish, and dispatches its paid finish
+to the existing atomic World heal/condition stage. The finish/recharge and
+captured caster-body1090 precede deferred recipient Health/condition packets.
+Cancellation and recycled target scopes do not stage an effect. A dedicated
+native cast regression covers self, allied player, typed allied NPC, cancel,
+stale target and unidentified nearby creature; seven related CTests and the
+serialized Release host build pass. This makes the skill executable on the
+private server, with provisional newest-first condition selection and the
+existing 1012-unit earshot convention. Retail condition order, exact earshot,
+active-condition allied-NPC/Fragility end-to-end behavior and rendered 2022
+client appearance remain unverified. The fixed player-obtainable checkpoint
+still has no player1234 activation, so its 679/382/297/650 counts do not
+change. The completed Domain review now has 55 rather than 56 unsupported
+skills; its mixed-source 519 starts still cannot verify player behavior.
+Official client/loggers were untouched. SHA-256:
+  tools/protocol/skill_runtime_coverage.py A7DD306CF9B69EB0A8FDCDE150677ED37B7AFD7B74A89C2FDAFB4D66799694AA
+  src/runtime/gw_skill_casting.h 4010CD1454A7B144677D91E9F619689AD085BCA1FD196980320E30DDB966AEFF
+  src/runtime/gw_world_spirit_light.inl 65D10A6588A5713AB859279069911C78AFCC7FE1E21F35FCED15FFC93B2CA4F7
+  src/apps/gw_auth.cpp 68D9C16C4B5E71DA40AD8B56E7E72CCF5A92551B9EF5DE64BEB60EAFC2255DC4
+  tests/mend_body_soul_cast.cpp 6AB7664582487DD2050254F0266F357D6C6055ED90244C55B68744FB5157DB64
+  build/tests/mend_body_soul_cast_test.exe C35C765E9204DF94372744C3EA270E5432347909DE267CDC934C25E1A1CF4
+  bin/server_host.exe 946909CC5D535A5CF287CDDB62C66B272207C6B1BAEDD9E5818E7CE18AC76473

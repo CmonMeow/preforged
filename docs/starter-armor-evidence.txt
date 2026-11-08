@@ -1,0 +1,27 @@
+Starter armor rules and limits
+==============================
+Source: local wiki Basic_armor.html, oldid 2577636, edited 2014-10-29.
+Compressed file SHA256:
+2f4f1d6c0a44da8a29d96eac9ab39dd21eb69317f0b694fe8e2168c5bdc1efe9
+Online reference: https://wiki.guildwars.com/wiki/Basic_armor
+
+Minimum basic armor by native profession ID:
+1 Warrior 25; 2 Ranger 10; 3 Monk 5; 4 Necromancer 5; 5 Mesmer 5;
+6 Elementalist 5; 7 Assassin 10; 8 Ritualist 5; 9 Paragon 20; 10 Dervish 10.
+Warrior starter physical bonus: Prophecies +20, Factions/Nightfall +10.
+Ranger elemental bonus: +30. Existing inherent energy rules remain in use.
+Dervish reviewed chest: +25 health, only while equipped by a Dervish. This is
+combined with rune/insignia health and morale in authoritative capacity. Initial
+world health uses that full capacity; later equipment changes preserve missing
+health and cannot revive a dead actor. Raw captured armor without reviewed
+metadata is not assigned inferred health from appearance/profession.
+
+New level-one non-PvP character creation writes these reviewed armor stats
+atomically with inventory. The summary supplies visual composition and campaign
+destination, not official item IDs or stats. New item identities are local.
+Other creation profiles retain the explicit private maximum-armor policy.
+Existing saved inventories are not migrated or replaced by this change.
+
+The displayed name remains a plain Starter Basic Armor label, not the game's
+per-piece encoded name. Native item models, complete modifier presentation,
+starter weapons still need implementation.

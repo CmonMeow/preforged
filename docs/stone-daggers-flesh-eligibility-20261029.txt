@@ -1,0 +1,9 @@
+Stone Daggers172NPC Bleeding eligibility —2026-10-29
+
+A regression reproduced overcast Stone Daggers inflicting Bleeding and its Fragility reaction on a known non-fleshy NPC. Old executable/source/test hashes are in stone-flesh-repro-20261029.json.
+
+Overcast NPC casts now require the scoped lifetime's flesh fact before releasing the pair when the target can receive conditions. Missing facts refuse before group allocation or launch packets; known immunity still permits both projectiles. At impact,the shared partial flesh predicate filters only the secondary Bleeding,retaining direct Earth damage and the existing impact visual. Non-overcast and known condition-disabled recipients need no irrelevant flesh fact. LiveActor flesh/condition permission is immutable within an admitted lifetime; target generation checks remain authoritative. The synthetic NPC fixture in stone_daggers_world now explicitly declares its intended living-body trait; no population data is invented.
+
+Seven new scenarios cover true/false/unknown flesh across overcast/non-overcast and condition-disabled cases,first-hit direct versus Fragility damage,two launches,both damage deliveries,and no replay. Unknown rejected casts leave no future pair to launch. Existing player/NPC Stone Daggers scope/movement/death/late-publication/Runtime payment-cancel-interrupt-order tests pass. World timed spell and ordinary delivery tests pass. Final source/backlog/gateway verification and hashes are in stone-flesh-progress-20261029.json.
+
+The pre-existing completion-time aim/Overcast sampling and500ms pair separation remain provisional outside stationary capture evidence. This does not close retail moving-target/Overcast sampling,NPC-side delivery families,all remaining condition ingress/player-form immunity,or rendered acceptance. Shared flesh eligibility is partial,not all condition immunity. No binding/capture checkpoint/host deployment or official client/logger action.

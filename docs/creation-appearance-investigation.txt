@@ -1,0 +1,95 @@
+2022 appearance picker investigation, October9
+==============================================
+No production appearance fix is claimed by this investigation.
+
+tools/client/creation_catalog_observer now accepts an optional profession1..10
+instead of inspecting Warrior only. It reports native model types10..13, colour
+family counts, and availability-bit counts. Exact private-client path, disk hash,
+loaded image and native code signatures are checked before any read. It opens
+only PROCESS_VM_READ/QUERY_LIMITED_INFORMATION; no injection or memory writes.
+Catalog pointer/group count are rechecked after the snapshot.
+
+Live private PID6140, pinned2022 image: Ritualist8 catalog group1 contains model
+counts7/7/10/9 and colour counts7/7. The first seven availability entries in each
+colour family have one entry with bit0 set. Other raw group entries for this
+profession have zero counts. These observations do not establish the actual
+creation UI's selected packed catalog index or explain the blank panels alone.
+The observed client was outside the active peer creation wizard; do not claim
+this snapshot captured the peer's current creation context.
+
+Native crcontext4cd390 and picker4ce3b0 use7aed10 ->7b4a00 for model counts,
+588df0/588e90 for colour-family counts, and588e60/588f00 availability bits.
+7b4a00 supports profession-specific fallback when a group has no model count;
+the colour getters access their explicit group entry. Picker selectors0/2 call
+the model getter;1/7 call the two colour getters. Other selectors return zero.
+Native4cc8d0 extracts the packed appearance field used as the picker group;
+its live context and cache must be verified before changing a server packet.
+
+Separately,4ccec0 is an equipped-item lookup, not the model-count getter. Its
+slot map is4,2,3,6,5,0,1,9,9. Do not fabricate face/skin inventory items solely
+to fill its missing slots: that would confuse equipment and cosmetic catalogs.
+
+Evidence: build/reports/creation-ritualist-catalog-live.json,
+creation-appearance-{main,picker,lookup}-trace.txt and existing
+creation-appearance-{context,lookups,catalog}.txt. Offline image trace is
+SHA256-pinned by tools/protocol/image_2022.py. Observer rebuilt successfully;
+profession0/11 and isolated-peer path were rejected. Screenshot evidence of
+empty options remains in the earlier Factions creation status. No official
+client was targeted and no running host or private session was restarted.
+October 9: packed appearance verification
+----------------------------------------
+The original build37130 getter at873340 and original tableA0B468 executed
+without mocked functions in tools/protocol/appearance_fields_2022.py. All198
+field-value cases passed. Native C++ creation_request tests verify the same
+field mapping; build/reports/appearance-fields-2022.json retains native evidence.
+Saved Factions Live appearance0x4283000a decodes primary8, catalog group1.
+Saved Dervish Live appearance0x88a0bc03 decodes primary10, catalog group2.
+A wrong saved catalog group therefore does not explain the blank panels.
+The server creation_appearance_request diagnostic now records preview packed
+appearance, decoded profession, catalog group and sex. This is diagnostic
+instrumentation; it does not fix or establish the cause of missing picker options.
+Original native encoder8732e0 now also verified:396 cases cover all field values
+and overflow masking. Thirty profession updates across three packed appearances
+were decoded through all eight original fields; only profession changed. This
+supports preview_appearance's preservation rule, not its initial source choice.
+All cases passed; report appearance-fields-2022.json includes encoder results.
+Live wizard verification is pending: screenshot of the verified private peer
+window returned the Windows lock screen, so no wizard input was attempted.
+October9 live preview evidence
+-----------------------------
+Isolated peer2022 build37130 reproduced blank face/hair-colour/skin panels.
+Before: opcode94 category2/profession8 returned packed appearance0x00800000,
+profession8 but catalog group0. Saved Factions summary group1 was correct, but
+that did not establish correct preview acknowledgement. Native crcontext4cca50
+stores campaign-1. preview_appearance now sets that packed catalog group for
+campaigns1..3 while preserving sex and cosmetic fields; Core0 preserves group.
+Native getter/encoder verification adds90 campaign/profession packing cases.
+Release build and122 tests passed (22.66s).
+After: fresh private login and the same wizard path reports appearance1082130432,
+profession8/catalog1. Panels remain blank. This fixes the demonstrated preview
+mismatch but does NOT resolve the picker. Next diagnosis must inspect the active
+crcontext cached appearance/picker availability rather than reuse saved summaries.
+Before/after screenshot+server log pairs:
+build/reports/creation-picker-{before,after}-campaign-fix.{png,log}.
+Private peer only; no official process targeted. No character was submitted.
+October9 active-picker follow-up:
+The isolated peer's native Factions Ritualist catalogue contains seven face,
+nine male hair-style and seven each hair/skin-colour choices. The read-only
+observer now supports an exact-path-pinned peer build and an optional bounded
+--picker scan; scan results are candidates, not automatically trusted pointers.
+Activating Face, Hair Color and Skin Color panels populated their thumbnails.
+The UI can leave inactive panels blank; this is not proof of absent server data.
+No additional server response or client-memory write was needed for this test.
+
+Created temporary Picker Live through the normal wizard, entered map212 and
+returned to character selection. The selected blond hair colour3, skin colour4,
+face0, hair style0, male Ritualist, campaign catalogue1 and height3 persisted
+exactly as packed1082133638 in the70-byte summary. The selection preview retained
+these choices. Deleted only Picker Live through the normal confirmation dialog;
+the original three-character peer roster remains intact. This verifies this
+appearance path, not every campaign/sex/profession or tutorial gameplay.
+Evidence: build/reports/creation-picker-hair-colour-live.png,
+creation-picker-reselected-live.png, creation-picker-persisted-live.json and
+creation-ritualist-active-peer-picker.json. Observer build passed; invalid
+profession and wrong process/path rejected. Official clients untouched.
+

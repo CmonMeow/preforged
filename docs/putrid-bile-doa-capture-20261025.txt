@@ -1,0 +1,123 @@
+PUTRID BILE [2058] — FIXED DOMAIN OF ANGUISH CAPTURE REVIEW
+
+The completed 20261024-urgoz-doa-completed checkpoint is immutable. The
+hash-checked audit tools/skills/audit_putrid_bile_capture.py finds 294
+targeted cast-start packets in Domain of Anguish (474) and Ebony Citadel
+of Mallyx (445). A same-actor kind58 finish occurs within 2.5 seconds for
+269 starts. The other 25 are unresolved: they may be interrupted, canceled,
+replaced by another action, or missed by the bounded join. There is no
+packet-native cast identifier, so even the 269 are candidates, not proof of
+effect application.
+
+The pinned 2022 catalog row names target body resource1728. The audit found
+zero opcode159/kind21 packets with that resource on the selected target
+within 2.5 seconds of these starts. This is a negative search for one wire
+shape, not proof that the client has no visual. In dense DoA combat, nearby
+target damage packets often belong to other actors; do not attribute a
+nearby death or damage to Putrid Bile from timing alone.
+
+The archived local wiki page describes a Death Magic hex with degeneration
+and nearby armor-ignoring damage when the target dies. This rule is not yet
+verified against a before/after status-and-death packet sequence here. The
+private server has no Putrid Bile source binding. Before binding it, decode
+the hex application/removal and death-trigger packet chain, define ownership
+and expiration, test nearby hostile selection and multi-effect deaths, and
+verify 2022 rendered client behavior. Keep this as an implementation and
+verification gap, not a missing capture of cast starts.
+
+Reproduce: python tools/skills/audit_putrid_bile_capture.py
+Report: build/reports/putrid-bile-doa-20261025.json
+SHA-256 script 58076AD19AE6EFCF26D702AA301550BEE4BE4FEE89420E0000374DE037D459DF
+SHA-256 report D50E17FB660B806D691B85CD4E16C5A265C9C2C42F02CCF0719FC04E68258BA1
+No official client or logger was touched.
+
+Native foundation follow-up (2026-10-25): src/runtime/gw_putrid_bile.h now
+validates the pinned 2022 row and resolves the archived wiki's rank 0/15/20
+duration, degeneration and death-damage progressions. A copy-only death
+batch applies armor-ignoring damage to a World-supplied set of nearby hostile
+recipients and rejects the whole proposal if any recipient cannot be
+resolved. It does not yet own a live hex, tick degeneration, observe death,
+select recipients, or publish packets. It is not source-bound in casting.
+Serial Release server_host and putrid_bile_test builds passed; focused CTest
+putrid_bile passed. No rendered client test was performed.
+SHA-256 gw_putrid_bile.h FADE3EC71D59791BE7034BC1E37C70D17BDA8E2D6A2CBF6B3666E684DA63670E
+SHA-256 putrid_bile.cpp 36228ACEA39746804A466E10AAE83B7DFDD502C2C87FB5BA7E5DA0419CEB5957
+SHA-256 putrid_bile_test.exe E61616243A52792E2B4169230343F57435FE0A4B5FD68348C2BF350E08F6806B
+SHA-256 server_host.exe B59A66A9AF8D120C6CC3E809B04F406F9E3098F10F9CAE584832CD4CB7495ADC
+
+Death-selection follow-up (2026-10-25): the native proposal now carries
+generation-scoped caster and victim identities, effect ownership and expiry.
+It selects living hostile recipients on the same plane within the nearby
+radius, excludes the corpse and allies, then resolves the damage batch.
+PutridBileLinks permits one death trigger per application and removes a link
+only for its matching effect. Tests cover range, plane, allegiance, stale
+victim generation, expiry, missing recipient health, and duplicate death.
+This is still a copy-only policy. World does not yet attach it to live hexes,
+observe death, publish damage, or enable normal casting; no rendered client
+verification is claimed. Serial Release putrid_bile_test build and focused
+CTest pass. The earlier hashes above refer to the prior foundation revision.
+SHA-256 gw_putrid_bile.h FB8202F72518B2B9AD2907E44B067561C8AA88956BF1CA683A402E403592B55B
+SHA-256 putrid_bile.cpp ED7939F534F1FAF56E7F050778932E88A180456570DA94684C9DC90CFE64B7D0
+SHA-256 putrid_bile_test.exe AB72151FD520E19EA37E42AC38EFE8DA57D0106B3B976ECF04AD4A192234A4C1
+
+Trusted World application follow-up (2026-10-25): the existing degeneration
+hex path now accepts the canonical Putrid Bile plan for a hostile player or
+NPC and records generation-scoped ownership for the eventual death trigger.
+Neutral NPCs are rejected. Ordinary Runtime casting explicitly rejects 2058
+until death dispatch and publication exist, so the DoA skill-gap review still
+reports it unsupported (294 starts). This stage does not explode on death,
+publish death damage or establish the captured target visual. Serial Release
+host and putrid_bile_world_test builds passed; focused putrid_bile and
+putrid_bile_world CTests passed. No official client/logger or rendered client
+was touched.
+SHA-256 gw_degeneration_hexes.h 4F48F47F27E124D0E58EA89690297322066B71BDAA31D345CC20012402CA86FB
+SHA-256 gw_npc_combat_catalog.h 3C231DD70B4F4C25DDC906511308BAB56CD46961722BCA1ED85FC3AAACD82180
+SHA-256 gw_world_simulation.h 2A13AFB7CEC07403223D9462D42188572F2C1D328823F26FD109FAD40F2460CB
+SHA-256 gw_skill_casting.h EE84A54A6B1E0673F8F12B2D9B3078DCB68DEE4275C8F82F2AE4E369C5018380
+SHA-256 putrid_bile_world.cpp 7EE7E28039F3C442636EB93152E461C755B5BAFDC69F59DB5A624F52FD36F93A
+SHA-256 putrid_bile_world_test.exe 9E49B83F504FF8085A0F521FFCB2D1F15CDFA429F6B93B5961993EEC8DB57D4E
+SHA-256 server_host.exe 2B6EF49F2284DE384C34C3DFE7618883E338AFF79C10F7B366051B86F22B9199
+
+Live death follow-up (2026-10-25): the trusted World hex now reacts to the
+authoritative death of a player or NPC while the exact generation/effect is
+still present and unexpired. It selects nearby opposing players and hostile
+NPCs, publishes skill2058 armor-ignoring damage using the normal 2022
+attribution packet batch, and consumes the link once. Native World tests
+cover NPC and player deaths, packet skill attribution, nearby/distant
+selection, dispel, expiration and a two-hex chain death. They do not prove
+the official server's exact death packet ordering or rendered visual.
+The DoA capture still has 269 bounded finish candidates among 294 starts,
+but no confirmed Putrid Bile effect/death attribution and no observed
+resource1728 target packet in that stream. Runtime paid casting remains
+explicitly disabled. NPC-sourced casting and persistence after the caster
+leaves are also unverified. This supersedes the earlier statement that World
+does not dispatch the death effect.
+
+Serialized Release host, putrid_bile, putrid_bile_world, iron_palm_world,
+spiteful_spirit_world and npc_world_combat were rebuilt; all five focused
+CTests passed. After the final packet/chain test edit, the two Putrid Bile
+CTests were rebuilt and passed again. No official client or logger was
+touched. The current DoA gap review still lists 2058 unsupported.
+SHA-256 gw_putrid_bile.h 280D4AAE28BB7B0F254BFDC8192D24CFECB82D1ED939A028F92F7334DFE171CE
+SHA-256 gw_world_simulation.h 7F2EA31EBD5F4703256ACC82C6CA72720E8A1458245C5B844E8BD19F85BA2A2C
+SHA-256 putrid_bile.cpp 8D4E8A7E92BB072BBFC180E3B6C7390B1710FB02A8A7A854F4C9E87FD2216FCA
+SHA-256 putrid_bile_world.cpp 8B39968E817094970D5F312D3938D155292C19DF8B85A22A3FDC5E94ACE36C2C
+SHA-256 putrid_bile_test.exe 1953486162012D79B6E6821C93B5FFA3F2969A4636F0CB453254DA1D5D080743
+SHA-256 putrid_bile_world_test.exe C1CA9542C644465F4D471F36BBE23B13DBA542A2B4E8FDAB02B147CEE52F716A
+SHA-256 server_host.exe 2EF48C99BFBB26F4D9D318DF0553066AB39645DFFD05C5AFBDF4697C02A90E0C
+
+Normal cast follow-up (2026-10-25): the frozen completed Domain/Citadel
+session reaudits to six instances and 12,040 timing-attributed starts.
+Putrid Bile has 294 starts and 269 bounded finish candidates. The pinned
+2022 native client callback accepts cast style 51/1-second timing and the
+targeted resource 1728 first consumer. World sends that target body with
+caster identity after the successful spell terminal. Runtime now admits
+the paid skill and allows hostile NPC targets; a missing NPC target branch
+was caught and corrected by the cast test. Release server_host and focused
+cast tests build. Six Putrid Bile and adjacent combat CTests pass. The
+regenerated Domain/Citadel gap report drops from 53 to 52 unsupported IDs.
+This is source binding plus native packet validation, not rendered client
+acceptance. The exact official death-explosion visual/order, NPC-sourced
+casting and caster-leave persistence remain unverified. The older global
+capture backlog is from its own frozen checkpoint and must be republished
+from a compatible refreshed audit before its counts can change.

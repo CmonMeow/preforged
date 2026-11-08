@@ -1,0 +1,68 @@
+Message from a Friend80 -- source integration,2026-10-30
+
+Status: implemented in source; pending next coordinated native validation.
+This is the OPTIONAL FIRST quest, not a continuation or prerequisite of79.
+It does not automatically accept War Preparations or trigger Academy/Searing.
+
+Evidence
+data/gw/quests/message-from-friend-80-evidence.json records exact source hashes,
+bounded snapshot126 from October9 W/E, current-map146 marker from October10
+Ranger snapshot3891, and reward receipts9093..9112 from October9 packets.
+Completion marker/details, quest80 removals,100XP,10gold and Sir Tydus sender
+all occur at tick99496734. Pre-removal marker/details retain the ACTIVE text.
+No completed snapshot was observed; this does not establish whether retail
+persists an intermediate completed state.
+Six incoming-only episodes show greeting/option before a later reward burst;
+no corresponding outgoing NPCInteract/DialogChoice inputs were captured.
+tools/quests/stage_message_from_friend_80.py reads those immutable sources and
+writes only under build/reports. Production catalog contains the captured
+description/objective unchanged, plus reviewed Logger literal-name argument
+metadata for existing per-character binding. No stale fixed-buffer tails copied.
+
+Admission and turn-in
+Town Crier148 is the captured/wiki offer NPC; Sir Tydus148 is the reward NPC.
+Both already exist in the default NPC population, at captured planes0 and26.
+Require Prophecies/pre-Searing, current exact selected/current NPC lifetime,
+same map and authoritative reachability, and the expected acceptance cycle.
+For NEW acceptance, War Preparations35/217..222 must not be completed/rewarded.
+Do not infer completion from other absent quests, require a secondary profession,
+or revoke an existing accepted80 because War Preparations later completes.
+Abandon/reaccept keeps the durable attempt counter; stale turn-in cannot pay.
+
+Reward transaction and native publication
+An active80 may expose a reward choice at Sir Tydus. On that authorized turn-in,
+PRIVATE storage policy closes active->completed->rewarded within the SAME
+quest/XP/inventory transaction: exact100XP and10gold, no skill/item/unlock extras.
+This private choice of durability is not a recovered retail persistence fact.
+The narrow storage fence rejects generic insertion of completed/rewarded80,
+erased history and illegal acceptance changes. Quest and inventory revisions,
+gold carrying capacity and transaction cancellation all fail without partial
+progress/XP/gold. Replayed turn-in cannot pay or publish again.
+
+Native acceptance and reconnect restore use one72 QuestAdd then75 QuestDetails.
+The whole turn-in batch is validated and allocated BEFORE durable success:
+native76 marker,75 session/name-bound ACTIVE details,81 QuestRemove,319 gold.
+It publishes only after durable success. No72/79 duplicate QuestAdded or
+invented83 completion/checkmark update is emitted. Invalid or unbound catalog
+content fails without paying. Existing auth sends absolute XP/progression
+statistics (and potential level/resource updates) before this batch; captured
+marker/details/removal precede XP/gold. This combined ordering gap is explicit;
+retail combined publication ordering is NOT claimed. Session inventory identity
+projection is prepared before commit, compared to durable intended gold-only
+change, and rebased after success so later inventory saves preserve the reward.
+Failed attempts mutate neither projection nor session inventory revision.
+
+Only captured current-map148(Tydus plane26) and146(Ascalon doorway plane0)
+markers are bound. Other routes remain native +infinity/unresolved, not guessed.
+
+Tests
+quest_message_from_friend_test: all6 profession menu admission,7 War Preparations
+identities/stages, NPC lifetime/range/map, exact cycles, abandonment, per-character
+description binding, restored active/rewarded profiles and marker scopes.
+quest_accounts_test: exact reward shape, direct-stage injection, quest/inventory
+CAS, capacity, cancellation rollback, reopen and exactly-once100XP+10gold.
+network_lifecycle_test: real typed accept/reward, wrong NPC/stale inventory yields
+no packets, invalid/missing/unbound catalog cannot pay, exact76/75/81/319 order,
+no72/79/83 extra UI, correct session name, gold packet, session identity rebase,
+reward replay and active/rewarded reconnect. Tests pending next root batch.
+Rendered behavior and retail CtoS dialogue token parity remain unverified.

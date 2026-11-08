@@ -1,0 +1,31 @@
+2026-10-23 local capture gate correction
+
+The safe collector intentionally omits CameraModule initialization. Original
+GWCA DLL emulation proves Agents::IsObserving compares controlled actor42
+against a Camera-backed observing ID0 and returns true in a normal map when
+the camera module is absent. The collector therefore discarded the local
+actor before entry,transition,quest and local inventory sampling.
+
+Use Map::GetIsObserving instead,then validate controlled actorID,player model
+and finite position/facing. No additional GWCA module or game hook was enabled.
+Player/Quest getter APIs used here read TLS contexts directly and do not require
+their omitted module initializers. Quest info sender requests are separately
+unavailable; available quest-log fields can still be sampled.
+
+Proof:build/reports/capture-local-gate-gwca.json;original DLL hash
+ab28a3001d0b032105ee26b8306aa76da58e212fc43c673559f142bec2b46bbd.
+All14collector tests passed,including original DLL guard/export tests and
+new normal-map/observer-map/ID0/model/finite gate cases.
+Packaged corrected DLL SHA256:
+f440b70956de478bab878dd9635632132509c8f147a7a1816621906363b07e71.
+Package:bin/GuildWarsLogger and bin/GuildWarsLogger.zip.
+No official client was open at packaging;no process was restarted/attached.
+Live quest snapshot output still requires verification on the next session.
+
+Package provenance now uses current gwca-provenance.json rather than the stale
+provenance.json and verifies both staged/source DLL hashes before writing.
+The archive remains an explicit binary/document allowlist,excluding captures.
+
+Merchant snapshots are an independent unresolved issue:their sampler is outside
+the local validity gate,and the latest packet capture proves merchant windows
+were opened. Do not attribute their absence to this camera gate or to no visits.

@@ -1,0 +1,136 @@
+Wild Blow321: axe/sword/hammer source binding and native evidence
+==========================================================
+Pinned2022 row:Warrior,No Attribute51,Melee Attack14,requirement185,
+5Energy/8s recharge,0activation/0aftercast,no adrenaline threshold. Caster and
+target body2077 are no-effect sentinels. Local Wild_Blow.html description:
+lose all adrenaline on use;unblockable;landed attack is critical and ends the
+target stance. No Attribute means this must not scale with an arbitrary rank.
+
+Fixed checkpoint20261017-npc-refresh-2,packets-6468-5728843.jsonl:
+50428 tick7692531 modern160 kind50 source25,target30,skill321.
+50438 tick7693093 recharge229=8s;50439 success159 kind46,source25,word0;
+50443 release227 skill321. Start-to-success562ms is one observation,not a
+fixed release timer. Native dispatch159 kind50 produces actor action21,
+style41,state45 and retains the ordinary weapon interval:1.33s and1.75s
+verified with original client code. Success158 kind46 produces action17.
+No invented body particle is needed;actual assets/renderer are stubbed.
+Receipt hashes,client hash and local wiki hash are recorded in
+build/reports/wild-blow-native-2022.json by tools/protocol/wild_blow_2022.py.
+
+Pure policy gw_wild_blow.h validates the pinned row and provides shared weapon
+damage with forced critical,retained critical immunity and accuracy checks.
+Blindness can miss despite unblockable. Caster weapons reject. Contact proposal
+retains the exact stance instance and only proposes removal on a landed hit;
+miss/block/dodge/obstruction/retired/cancelled/replaced contacts preserve it.
+Unknown/future/nonstance entries reject,expired/absent stance is a valid no-op.
+Policy does not mutate any actor,adrenaline pool or effect registry.
+
+Pending integration:atomic post-payment all-adrenaline loss before action begins
+(including cancel/miss),current melee equipment/ordinary release timing,player
+and NPC stance ending through existing expiry/reward/resource settlement,
+unblockable admission,critical immunity and current armor at contact,secondary
+scythe contacts,Illusionary Weaponry replacement rules,World/Runtime regression
+cases and rendered acceptance. Do not add attack_skill321 or Runtime support
+until these are connected;attack_skill automatically affects dispatcher support.
+No new binding count is claimed.
+
+Accepted-use foundation integrated (supersedes adrenaline-loss pending above):
+Adrenaline::State::lose_all clears whole and half units from every pool without
+requiring a ready adrenaline skill. It preserves independent disable deadlines
+and combat history,unlike reset. Older timestamps reject without charge mutation.
+World accepted_skill_start validates current owner generation,exact copied slot,
+current bar revision/order and publication time. It prepares charge loss and
+Berserker/Bonetti/Wary ending before committing either proposal. Existing denied
+requests and ordinary attacks do not invoke this accepted-use callback.
+
+Four native suites pass:Wild Blow policy,Wild Blow accepted use,existing accepted
+skill starts and fractional adrenaline. Tests include copied pools,all three
+ending stances,wrong copy/generation,stale action and future bar. The State test
+also verifies fractional units,disable retention,re-gain and combat expiration.
+62 tool tests pass. Runtime321 remains unsupported until target-contact effects
+and casting integration are ready;no new binding count is claimed. Exact-once
+accepted callback delivery remains the caller contract,as for existing endings.
+
+Release server_host rebuild passes;fixed audit refreshed260bound/373pending.
+
+Exact target-stance removal foundation integrated:
+World end_stance is a trusted server operation requiring actor generation and
+exact effect ID. It settles due fields/resources before choosing the still-active
+stance,preflights Defensive Stance ending rewards,then uses existing removal
+cleanup. Duplicate,expired,replaced,future/stale requests cannot remove a new
+stance. It is not a client opcode and does not itself prove a landed attack.
+The eventual Wild Blow hit path must qualify accuracy/contact before calling
+this logic within the same locked attack transaction (do not recursively call
+the public locking wrapper from melee_attack).
+
+LiveActor remove_stance supports reviewed NPC Mantra16/17 and Storm Chaser455,
+checks effect/lifetime/time authority and removes movement/status state. World
+settles NPC navigation under the old stance first and broadcasts effect/status
+removal. No Resolve protection Energy is charged for merely ending the stance.
+Other NPC stance implementations require their own ending behavior before this
+allowlist can expand.
+
+stance_removal_world verifies Defensive reward once,duplicate/replaced/stale/
+expired requests,Dwarven haste removal,and direct NPC Mantra/Storm movement and
+Energy preservation. The helper is staged;attack321 and Runtime remain disabled.
+
+Superseding contact/Runtime integration:
+attack_skill321 now uses shared ordinary weapon damage with forced critical,
+existing critical immunity,Strength penetration and accuracy. Player blocking
+is bypassed. Current reviewed axe2/hammer15/sword27 equipment is admitted;
+dagger32/scythe35 are explicitly rejected until their attack/secondary-recipient
+semantics are implemented. This is a partial source binding,not full skill QA.
+
+Runtime requires the post-payment accepted-use callback. It pays5Energy,loses
+all adrenaline before animation,uses the shared weapon interval/haste/release
+path and8s completion recharge. Cancellation/interruption retain the paid loss.
+Missing callback/denied Energy rejects before loss. Native2077 remains a
+sentinel;kind50 starts the attack and no sentinel body is emitted.
+
+Landed nonreplacement attacks preflight current target stance ending under the
+same World lock. Damage samples armor/critical immunity with the old stance;
+ending occurs after Health damage and the existing landed-hit interrupt
+protection handling (plus Conjure/Mark reactions for players),while alive. This is an explicit current simulation ordering,not a
+claim that the official captures establish retail reaction order. Defensive
+reward preflights before damage and commits at ending;NPC reviewed stance ends
+use exact current effect identity. The private locked helper avoids recursively
+acquiring the public wrapper mutex. Blind misses preserve the target stance;
+Illusionary Weaponry replacement bypasses ordinary hit processing.
+
+New World/Runtime tests exercise block bypass,critical immunity,miss/expiry,
+exact player/NPC ending,unsupported scythe,all three admitted weapon types,
+post-payment loss,denial/missing callback,cancel/interrupt/recharge,and native
+activation/sentinel handling. IW player/NPC replacement cases are included.
+Remaining:dagger/scythe secondary contacts,NPC caster,retail stance/damage/reaction
+ordering,concurrent admission and rendered acceptance. Earlier staged/pending
+notes above are historical;these explicit gaps remain current.
+
+Combined Dwarven375 contact ordering:both player and NPC hit interruption first
+consult/consume the old Mantra protection;Wild Blow then ends the exact remaining
+stance if it still exists. A Mantra16 charge already consumed by that interruption
+is not removed a second time and does not cause commit failure. This makes both
+simulation paths consistent;retail ordering of these combined effects still needs
+causal captures. Dedicated player/NPC casting-with-Mantra16 cases cover this.
+
+Validation: six focused native suites,62 tool tests,native consumer verification
+and Release host pass. Fixed audit261bound/372pending. Additional explicit gap:
+critical numeric damage currently publishes ordinary kind16;captured50441 kind17
+critical HUD notification must be wired before claiming full presentation.
+
+Critical presentation gap fixed (supersedes kind16 pending note):
+Captured50441 at7693093 is modern163 kind17,target30,cause25,ratio bitsbb888889.
+The frozen verifier now validates that receipt and executes original794f60:
+kind17 emits763c10 with attribution321/critical flag1,clears attribution scratch,
+and leaves the cached Health unchanged. It must be followed by absolute Health.
+The producer now offers an explicit critical_weapon notification option;default
+ordinary16/armor-ignore55 behavior stays unchanged. Wild Blow supplies the flag
+only when the target's sampled critical immunity did not suppress the critical.
+No extra kind16 damage delta is added,so neither damage nor notification doubles.
+
+critical_damage_notice verifies exact captured bytes for2damage/480Health,
+attribution,raw overkill and clamped absolute Health,ordinary packet equivalence
+and rejection of critical flags on armor-ignoring skill damage. Wild World tests
+verify player/NPC17 publication,ordinary16 under immunity,and absence on misses.
+Native callback and frozen skill verifiers pass. Rendered acceptance remains
+open;zero-damage critical notification behavior is not established. No new skill
+binding is claimed by this presentation fix.

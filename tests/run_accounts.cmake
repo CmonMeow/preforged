@@ -1,0 +1,16 @@
+if(NOT DEFINED TEST_EXE OR NOT DEFINED TEST_DIR)
+  message(FATAL_ERROR "Account test executable and scratch directory required")
+endif()
+file(MAKE_DIRECTORY "${TEST_DIR}")
+# Only these test-owned files are reset; never use the runtime database.
+foreach(name state.db state.db-wal state.db-shm state.db-journal sessions.txt sessions.txt.characters)
+  file(REMOVE "${TEST_DIR}/${name}")
+endforeach()
+foreach(phase seed restart)
+  execute_process(COMMAND "${TEST_EXE}" "${TEST_DIR}/state.db" "${phase}" "${TEST_DIR}/sessions.txt"
+    RESULT_VARIABLE result OUTPUT_VARIABLE output ERROR_VARIABLE error TIMEOUT 60)
+  message("${output}")
+  if(NOT result STREQUAL "0")
+    message(FATAL_ERROR "Account ${phase} failed (${result}): ${error}")
+  endif()
+endforeach()

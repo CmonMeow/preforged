@@ -1,0 +1,27 @@
+Foibles Fair165 / Wizard's Folly161 doorway correction --2026-10-30
+
+Current runtime authority remains config/map-portals.txt. Both directions now
+use authored bounds x192..576,y7680..7776 on pinned113355 plane0cell586.
+This constant-width physical trapezoid joins cell585 toward Wizard's Folly and
+cell145 toward Foibles. Prior x250..550,y7778..7815 rectangle missed genuine
+outer walking lanes (native trace x200/220 from7750 to7900 remains clear).
+The new trigger covers the complete constant-width corridor. Its bounds are
+private development geometry; no recovered retail trigger is claimed.
+
+Forward captured633/7270 and reverse generated384.667267/7850.35986 arrivals,
+planes, facings, portal identities, outward vectors and cooldowns are retained.
+The generated reverse arrival remains outside the new trigger on plane0.
+Historical data/gw/portal-provenance.json retains the prior center-only bounds;
+this current revision and config take precedence for trigger geometry only.
+No capture, frozen checkpoint or official client/logger was changed.
+
+Evidence: build/reports/presearing-foibles-corridor-20261030.json contains pinned
+mesh hash,18 native traces across9lanes in both directions, and five immutable
+161->165 capture line hashes. Four near-doorway observations corroborate the
+passage; the fifth distant departure is excluded as possible map travel.
+The differing observed town positions do not establish a unique retail spawn.
+Registered native regression additionally checks exact collision-qualified
+lanes, gate identity, repeat/arrival suppression, opposite travel, wrong floor
+and transverse motion. Fresh-source test results are recorded in the report.
+Rendered walking acceptance remains pending; no all-geometry collision fix
+or general tree/root collision completion is claimed.

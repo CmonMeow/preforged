@@ -1,0 +1,176 @@
+SIGNET OF STRENGTH [944] — NATIVE CHARGE AND 2022 CAST FOUNDATION
+
+The immutable 20261024-all-completed obtainable-player checkpoint has one
+locally activated skill944 cast: packets-1360-15821281.jsonl line394076 at
+tick23792625, actor25 in map280. A same-actor finish occurs at line394084
+and caster body resource1028 at line394085, both at tick23793656. The
+1,031ms observed interval is consistent with the pinned one-second cast;
+it is one receipt, not a measured timer distribution. Other/unassigned
+actors have 207 starts and must not be counted as local-player casts.
+
+The pinned row identifies a Warrior Strength signet with zero Energy,
+one-second activation, .75-second aftercast, 45-second recharge, rank0..15
+charges1..16 and a fixed +5 attack-damage bonus. The archived local Wiki
+revision states that charges are spent per foe struck, rather than per
+swing: an area attack can spend several charges at once. The new native
+plan validates those fields and gives rank+1 charges through rank20. Its
+detached contact resolver accepts an ordered set of distinct, scoped foes,
+spends only on reported landed hits and allocates +5 to each such hit until
+exhausted. It rejects reused actor IDs, foreign lifetimes, self contacts,
+forged plans and impossible charge counts without mutating the input.
+
+The original hash-pinned 2022 client accepts the self cast as opcode158
+kind60, dispatches callback25, and selects style50 for one second. Its
+kind21/resource1028 caster body dispatch creates a particle. The exact
+wire, encoded particle and fixed packet receipts are in
+build/reports/signet-strength-native-2022.json. This is first-consumer
+execution with stubbed actor/asset services, not rendered verification.
+
+The skill remains unbound. World must apply and retire an owned charge
+effect, integrate every ordinary/skill/area weapon-hit producer, resolve
+block and miss at the actual contact, and publish charge removal and attack
+damage in the 2022 client order. The pure resolver does not determine
+whether a particular blocked or missed retail contact spends a charge;
+its landed-hit input is an explicit provisional admission rule pending
+retail comparison. Runtime payment, completion and cancellation remain.
+The fixed checkpoint and live logger files were not modified.
+
+Validation: pinned 2022 verifier passes; serialized Release build of
+signet_strength_test and server_host passes; focused CTest passes. Native
+mechanics and first consumers only; official client/loggers were untouched.
+SHA-256:
+  gw_signet_strength.h 37F4EE61B70C904E80E929A195E07E55C85C175D4A992F7A052F2FD3D96F537E
+  signet_strength.cpp 72B707374DE18981D40378090B8355F58B5CE20CE68C1E9E6A01F3E39CDFEA7C
+  signet_strength_2022.py 20D707F27A92430088999726DEA0CDA2A9E0EF9A2E4C6D48D5B694E13E69919F
+  signet-strength-native-2022.json 3C3E7C163B1C20C2D605A2FE74BE314BE556CF393477870DF00B083DE7F3955F
+  signet_strength_test.exe 224E897D4DDD190092ADCE7A1FADA96ECB002CA1C96D133449585FA38189D86C
+  server_host.exe 2E0C28A5BB32232EAC4EC69DA6C8204A9A9CBCFDC07BC1E965EB788808A47901
+
+World lifecycle follow-up (2026-10-26): a trusted, completed-cast entry
+now owns the rank-based charge count, applies an indefinite same-skill
+status, publishes caster body1028 and the pinned 2022 maintained-status
+packet, replaces an older copy, and clears ownership on actor leave. The
+World snapshot checks the current effect instance and actor generation.
+The rank-zero capture also has a status-add receipt at packet line394086
+and a removal at line394104, about 1.3 seconds later; proximity to a hit
+does not establish the retail charge-consumption rule. The hash-checked
+offline verifier now includes both receipts.
+
+The application is host-only and normal client casting remains gated.
+No weapon-hit producer yet applies the +5 bonus, spends a charge, or
+removes the status after the final charge. The World test therefore proves
+only application, renewal, publication and lifetime cleanup, not a
+playable Signet of Strength. Rendered 2022 acceptance is unverified.
+The fixed capture and official client/loggers were untouched. The pinned
+verifier and both focused Release CTests pass; the server host had been
+built serially after this World change.
+SHA-256 of the tested stage:
+  gw_world_simulation.h B2A89822AB1F490EA2F436A9222F1E64E0E75C870B96EB2C776F4377CE725CC1
+  signet_strength_world.cpp 0778681BC2C7B1C8A55A0B7A9DFC9CC8677F0FD7471906F4CE395350116749A2
+  signet_strength_2022.py CB2D74E2D7BB48FE1D64895FE7A0770BFEEC61ABAFBEFEB92AA85D785EC5C6F8
+  signet-strength-native-2022.json B66BE73B0E3D23D558A4030B633946B3E74C2418B534728F2A05F86A709553DF
+  signet_strength_world_test.exe 75DE45052A1FE2ABAEA1BBCA8CD0D7FD9BEB0E6AC5673B8EA498F769F5A7A3BF
+  server_host.exe 3BCAE19C58BD427C49B9710AF3A8B89AB4F36DC4F07B76700C149271AFA2C082
+
+Death cleanup follow-up (2026-10-26): the indefinite charge effect now
+retires through the common effect-removal path on authoritative player
+death. That path clears the scoped charge ledger and publishes the 2022
+effect-remove packet. A World regression kills the owner after renewal,
+checks the status and ledger are empty, and sees one removal for the current
+effect. This is native lifecycle validation, not retail death-behavior or
+rendered-client proof. Both focused Signet CTests pass and the Release host
+was rebuilt serially. Weapon-hit consumption, bonus damage and normal
+casting remain gated.
+SHA-256 of the tested death-cleanup stage:
+  gw_world_simulation.h 25B0A57541DD52687C185DF8D63BFA9800772417E2CC563850EEAE44B2AE3D86
+  signet_strength_world.cpp 862D376C2ADEDEEAD78AAD807D20863EF5D0A988A803E5B473FE063044260FF9
+  signet_strength_world_test.exe 23D2111420EDDA03845EBD41050950733343A30D0A52012A4643CA2FDFD571A7
+  server_host.exe 46B7C3294A711C8D857F7ED2C46C62A93BA1C02A3B4721765F5F374B4652D17E
+
+Contact-packet follow-up (2026-10-26): the hash-checked fixed cast verifier
+now pins damage packets at lines394106 and394119. Both have the same raw
+header words (163,16,31,25); their signed Health fractions are -0.0125
+and -1/480. The first shares tick23794953 with the skill944 effect removal
+at line394104; the second is 1,328ms later. The magnitude difference is
+5/480, consistent with the stated +5 bonus if target maximum Health was
+480 and other damage modifiers were unchanged. Neither premise is proven
+by these two packets alone. This is better hit-correlated evidence, not a
+license to place the bonus in the wrong damage phase. The verifier passes;
+it touches only the immutable checkpoint, not the official client/logger.
+SHA-256 verifier A9198EDC16359F5677636C0517EBDBCD434916F58844D4D1FBDD7630B8C51E45
+SHA-256 report 1BAD5260CD167E3CAD6197BEE8D8FD78AAFB2D215E889925CBFE98999B2A7145
+
+Ordinary-contact follow-up (2026-10-26): the shared ordinary player/NPC
+weapon-hit paths now prepare one scoped charge against the actual target
+after miss/block admission and include its +5 in the primary post-armor
+damage value. Once damage commits, World spends that charge. The final
+charge removes the owned effect before the damage packet, matching the
+observed removal-before-damage order in the rank-zero capture. Blinded
+misses and attributed blocks leave the charge intact. A controlled native
+test compares otherwise identical player and physical-armored NPC contacts
+with and without the buff and measures exactly five more Health lost; it
+also verifies status removal once on a rank-zero hit. These fixtures do
+not prove every damage modifier, caster-weapon family, skill-specific or
+area attack, or rendered-client behavior. The paid Runtime cast remains
+gated until those paths are audited. Fixed checkpoints and official
+client/loggers were untouched. Both focused CTests and a serial Release
+server_host build pass.
+The shared-header regression rebuild also passes world_weapon_attacks and
+npc_world_combat (four focused CTests total); those suites exercise adjacent
+attack behavior but do not replace a full retail/client test.
+SHA-256 of this tested stage:
+  gw_world_simulation.h C0624826C766741E1C57E65C2C23CE7D6FB7A33122D7E26742847A89BA34473C
+  signet_strength_world.cpp CE9F2691AEB43C0A885213227685F3D96AF9073898507F743ED4F8E4EC772DCE
+  signet_strength_world_test.exe 7F08251EF32157524A43B70B88F8D9B2D663FF846F1B4E33B0639F6E786A433F
+  server_host.exe 76196A4F8AD98328311DC299517413C88A60F14EBE40B9C89DAA882D5EB9D303
+
+Single-target sword-skill follow-up (2026-10-26): the separate melee-attack
+resolver now uses the same scoped Signet of Strength contact proposal after
+miss/block admission, adds +5 to committed post-armor damage against player
+or NPC targets, and spends the charge only after the hit succeeds. Native
+Sever Artery comparisons against an otherwise identical unbuffed hit show
+five additional Health lost in both recipient families and final-charge
+retirement. Area/multi-target skills such as Cyclone Axe, Illusionary
+Weaponry replacement, other exceptional attack paths and all modifier
+combinations remain unaudited. Normal paid casting and rendered-client
+acceptance remain gated. Four focused Release CTests, including the adjacent
+weapon and NPC suites, pass after serial rebuild; the Release host builds.
+SHA-256 of this tested stage:
+  gw_world_simulation.h E077BE66E2BB967D4D3D0EE4B60B74A2617916023358B22D96C7192FEF8187ED
+  signet_strength_world.cpp E93D946DCAA249417489ACF1633BA821B6DEC91D2B4AD220305966CCAE8E9882
+  signet_strength_world_test.exe 021EF4EEEFC6424022CD7306773CB534278528F0432FF7141F94FD1CF827897D
+  server_host.exe CE20FCF20000D39C6B2A740B5B90BF3BA54DAC05823444E2C1F65E1C4A99603F
+
+Cyclone Axe multi-foe follow-up (2026-10-26): the area resolver now
+previews both unboosted and +5 results for each eligible recipient before
+the action commits. During the ordered hit transaction it selects the
+preview matching the charges still owned, then spends a charge only after
+that recipient's damage commits. A native mixed player/NPC regression
+shows one rank-zero charge boosts only the first landed foe, two rank-one
+charges boost both, and a blocked first player leaves the rank-zero charge
+for the later NPC. The existing Cyclone, Conjure, Illusionary Weaponry,
+Dazed and Insidious reaction suites pass (seven focused CTests). This
+preflight design also permits a later foe to use an unspent charge if an
+earlier planned hit retires before commit, but that exact retirement branch
+has not yet been tested. Other multi-recipient attacks and unusual damage
+modifier combinations remain open; normal casting and rendered-client
+acceptance stay gated. The serial Release host build passes and no official
+client or logger was touched.
+SHA-256 of this tested stage:
+  gw_world_simulation.h 6F1E510F04FCA96F5964A6D2009F8C0B6A65CF864E018FF36647A77C1AAC1C16
+  signet_strength_world.cpp 21B6EED53649B34EBBD3CD354874578A96FD1ECC3A8BAA622ADB8616FE30D683
+  signet_strength_world_test.exe DB423A515B4D32289AFBCA92A3EAC7BDDFD07C3CCA435F0DA9549CC20D225282
+  server_host.exe C534E49424479344A0CEEC0D54EF8004ADB4AD74D3401E309C29E755498D2117
+
+Elemental Cyclone recipient correction (2026-10-26): the NPC commit branch
+now uses the same elemental weapon-damage recipient API as its preflight
+preview. Previously it committed the previewed amount through the physical
+weapon path, losing the damage type for downstream reactions/publication.
+This is an audited path correction, not evidence that Signet of Strength is
+ready for normal casting. Serial Release host build and the focused
+signet_strength_world, conjures_cyclone, and illusionary_weaponry_cyclone
+CTests pass. Exact rendered elemental-hit behavior is still unverified.
+SHA-256 of this tested stage:
+  gw_world_simulation.h E11D8948DBA65D406762F195832B5314870CDE3067207D61735CA43430EC7D0F
+  signet_strength_world_test.exe EF1E5BF9837054E4A1848C5383465A08BD500818ED7DA0C9841C88123C4C91E8
+  server_host.exe 775B363343D25A4AABC6C60CB6BA6A837FD9874EF302B4FF89A8415E637AAAAF

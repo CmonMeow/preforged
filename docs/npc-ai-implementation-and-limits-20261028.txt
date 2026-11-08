@@ -1,0 +1,169 @@
+NPC AI implementation and remaining limits — 2026-10-28
+======================================================
+
+Status and verification boundary
+--------------------------------
+The repository contains working opt-in hostile controllers and host enrollment
+for explicitly supported quest actors. This is private-development behavior,
+not an implementation of every retail NPC or a claim of measured retail AI.
+No host deployment/link, private or official client interaction, logger change,
+or rendered acceptance is established by this document.
+
+Earlier native suites verified generic/owned combat, scoped lifetime and action
+authority, navigation segments, visibility filtering, and typed155 effects.
+The retained-motion implementation is newer. Its first native run established
+immediate155 coarse/fine Bile death origins at(100,0) with the expected recipient
+damage. The elemental fixture initially lacked required Overcast authority and
+therefore correctly admitted no chase. It now explicitly observes Overcast0.
+The combined build84919 and expanded AI tests are still in progress when this
+document is written. Do not attribute older successful builds to these newer
+sources; use the root's subsequent executable/source-hash report for results.
+
+Existing usable controller behavior
+-----------------------------------
+An explicitly configured generic ordinary or elemental/immediate controller can
+wander while idle, acquire a supported nearby hostile target, remember engaged
+foes, react to committed damage, pursue through navigation, attack or cast using
+its reviewed profile, disengage at follow/leash boundaries, return home, and
+resume bounded idle wandering. Geometry and target/source identity are validated;
+no collision, line-of-sight or strict weapon/skill reach bypass is supplied.
+Unavailable routes and unsupported layers are distinct diagnostic outcomes.
+There is no invented retail route-failure timeout.
+
+Ordinary profiles use their configured weapon/delivery, damage and cadence.
+Movement can continue during weapon recovery without allowing a premature swing.
+Elemental controllers use supported reviewed skillbooks, existing Energy,
+Overcast where required, paid action tokens, interrupts, cooldown/aftercast,
+and owned projectile/effect completion. A configured ordinary fallback can
+provide attacks when a generic caster cannot select a skill. Nothing derives
+missing attack statistics or spell ranks from an NPC name, model or level.
+
+The typed immediate driver currently admits canonical Vile Touch155: a non-spell
+activated Skill under the pinned native type10 encoding. It shares resource,
+action, cooldown and effect admission authority. Terminal58 precedes its pinned
+caster-body279 and damage publication. Spell-only reactions remain spell-only.
+Other immediate damage consumers are not thereby supported: sacrifice, active
+Overcast and life-steal restrictions are intentional. In particular133 is not
+silently accepted by dropping its Health-sacrifice requirement.
+
+Current owned host enrollments
+------------------------------
+Quest75/map160 Grawl uses its existing owned authored melee retaliation profile
+and bounded idle wandering. Quest49/map161 Brood uses its reviewed/authored
+owned Aura/Ice Spear controller and bounded idle wandering. Quest43/map145 Blood
+Fanatics now have a host opt-in for owned typed155 with an explicit development
+resource policy. These helpers enroll existing quest actors; they do not spawn
+duplicates or turn relation-only placements into armed enemies.
+
+All three preserve quest owner/cycle/source identity. Quest43 additionally
+validates objective.remaining, exact actor lifetime and supported metadata;
+repeated arming preserves action, resources, cooldown and patrol state. A
+nonzero committed Health-loss revision before arming also enables retaliation.
+Proximity alone never starts combat for these owned retaliation encounters.
+They select their exact owner, preserve return priority, and clear retaliation
+on home arrival. Owner replacement, exhausted objectives and retired scopes
+cannot activate an old controller. Generic quest exclusion guards remain strict.
+
+Quest43 ordinary attacks remain unsupported. Captures show ordinary attack
+events but do not supply an ordinary damage/cadence profile. Generic ordinary
+configuration rejects quest-owned actors, and the owned immediate enrollment
+does not invent one. During155 recharge or insufficient Energy, the supported
+behavior is pursuit/waiting under existing resource authority, not fabricated
+weapon strikes. A future owned ordinary option needs both a reviewed profile
+and explicit dispatch/lifetime integration.
+
+Evidence versus development policy
+-----------------------------------
+Blood Fanatic appearance bindings and Health120 retain their capture provenance.
+The four captured templates are retained; a fifth wiki-listed creature is not
+fabricated. Captures establish use155 and ordinary attack observations, not its
+attribute rank, Energy pool, regeneration, ordinary damage or threat tuning.
+
+Quest43 Energy40/40, regeneration4pips and DeathMagic0 are explicitly authored
+private-development values in the separately named
+data/gw/quests/power-of-blood-immediate-development-policy.txt. Rank0 uses the
+canonical skill's damage20 and existing cost/activation/recharge/aftercast;
+this is not a measurement of the captured creature's rank. Existing armor and
+allegiance policy remains explicitly authored where its catalog says so.
+
+Patrol offsets, pauses, leg limits, speed, acquisition/follow/leash distances
+and owned damage-trigger selection are documented development policy. Local
+wiki/capture evidence supports individual capabilities and general behaviors,
+not precise retail paths or timing. Unknown resources or unsupported metadata
+are refused and counted, rather than filled from appearance or profession.
+See docs/npc-blood-fanatic-activation-audit-20261028.txt and each catalog's
+source rows for the narrower provenance of individual fields.
+
+What retained motion changes
+-----------------------------
+src/runtime/gw_world_npc_motion.inl retains a forward route intent per exact NPC
+scope: committed/settled times, ordered route corners, goal/stop, speed, plane
+and return context. The existing motion integration preserves distance through
+corners and publishes each traversed leg, with existing control/modifier/Ward
+budgets and strict reach/leash behavior. No target lookup is needed to advance
+an already chosen route.
+
+Previously a new goal observed at the current poll could consume the interval
+since the previous poll. Now the old intent advances first and a newly observed
+goal owns only future travel. The first decision therefore has zero travel;
+the next elapsed interval supplies movement. Tests explicitly distinguish
+these two steps instead of granting movement during an earlier idle pause.
+
+Shared motion refresh and Health settlement now integrate retained AI routes
+at the relevant event boundary before Health/control retirement discards their
+history. The Bile dispatch hook materializes an owned AI route before death and
+area-recipient selection, alongside existing quest-route handling. Lifecycle
+cleanup removes motion on exact source retirement/reset/controller takeover.
+This addresses historical positions along an actual previously chosen route;
+it does not reconstruct an unobserved route or a missing target history.
+
+Remaining timing and coverage limits
+------------------------------------
+The full fixed-decision scheduler is NOT implemented. World AI decisions still
+depend on host polling and next_tick_=now+100. Wander pause completion, new
+acquisition, retargeting, action selection and arrival follow-up are not yet
+proved generally equivalent under coarse and fine polling. Retained route
+integration improves chronology between decisions; it does not create missed
+decisions, paid attacks or historical target observations.
+
+A reusable fixed timeline still needs deterministic decision deadlines merged
+with Health, action, projectile, arrival/leash and external-input boundaries.
+External mutations must settle prior decisions while their inputs are still
+available, or preserve sufficient timestamped facts. Replaying old decisions
+against a player's current pose/Health/ownership would be incorrect. Unknown
+historical facts must remain explicit deferrals, not guessed positions.
+
+The new tests cover static-target death-origin agreement and a moving target
+whose newer pose must not redirect elapsed travel. Existing obstacle tests
+cover routed segments; expanded combined results are pending as noted above.
+This document does not establish every combination of retained motion with
+moving field exposure, interruption, owner replacement or nested damage events.
+Moving NPC Well exposure remains governed by its existing supported/unknown
+observation contract; retained motion alone does not add a new exposure model.
+
+NPCs without reviewed combat definitions, valid resource/skill authority, or
+an explicit controller enrollment remain unsupported. Broader pre-searing
+population activation, complete retail skillbooks/threat behavior, fixed AI
+decisions, host deployment and rendered-client verification remain separate
+unfinished work. Preserve these boundaries in user-facing progress reports.
+
+Subsequent verification
+2026-10-28 Bonds Seed consumer and NPC retained-motion progress
+Bonds1881 reflected cold damage now prepares Seed from actual protected/converted
+loss and publishes only positive committed loss under the matching current lease.
+36 direct cases pass (3damage amounts,1399,307 ranks,source survival/death), plus
+3 deferred cases proving sequential two-recipient healing and completion-queued
+cold modifiers. Existing332Bonds/Reversal and BondsWorld remain passing.
+Scoped retained NPC routes now integrate before newer target observations and
+at death boundaries. Immediate155/elemental214 coarse/fine death origins agree;
+actual published movement proves no retroactive turns or borrowed time. Existing
+ordinary,Brood,BloodFanatic/immediate wander,combat/retaliation,return/resume and
+lifecycle suites pass. Thirteen native suites total,34source,6backlog; gateway
+compile-only0warnings/0errors.691runtime/app/CMake/test hashes unchanged at end.
+No host relink/deployment,binding publication,checkpoint move or official action.
+Bonds whole-parent admission,unknown Seed facts/retained retry,recursive linked
+ends/capacity/retirement and full consumer closure remain unfinished.274/1399
+remain staged. NPC decisions still poll-dependent: fixed decision scheduling,
+historical input ingress and broader moving Well/Ward/control proof remain.
+No rendered animation/retail-AI/all-skills completion claim.
+Evidence: build/reports/bonds-ai-progress-20261028.json

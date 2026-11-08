@@ -1,0 +1,147 @@
+Disrupting Dagger [571] — staged 2022 evidence and impact policy, 2026-10-25
+
+Fixed checkpoint: data/captures/skill-checkpoints/20261024-signet-infection-bound.
+The hash-verified packet file packets-1360-15821281.jsonl contains two local
+casts on map 280. Starts 710385/710960 have opcode160 kind60, caster25,
+target30 and skill571. Each has a 10-second recharge and finish58 exactly
+250 ms after the start. Both are followed 47 ms later by kind20 target
+effect1142 and kind16 target damage-fraction packet. A packet gap does not
+prove a constant projectile travel time or the target's actual Health loss.
+
+tools/protocol/disrupting_dagger_2022.py replays the original pinned 2022
+client cast callback offline: first animation lookup stores skill571,
+style52 for 0.25s. Its target-effect consumer selects encoded DAT particle
+3b8102010000 for effect1142. Model/assets are stubbed; no rendered client
+pixels or sound have been verified. The target-effect association is supported
+by two repeated windows, but the recorder does not prove the projectile's
+flight, hit/miss, or interruption outcome.
+
+src/runtime/gw_disrupting_dagger.h stages the catalog-checked Deadly Arts
+rank0..20 plan: 10..35 earth damage and half the 1248-unit normal range.
+The predicate distinguishes an active skill (including attack skills and
+stances) from an ordinary attack. tests/disrupting_dagger.cpp validates all
+21 ranks and those boundaries. This is not a production binding. The missing
+World transaction must apply armor-processed earth damage at actual impact,
+interrupt only a still-activating skill, honor valid hostile target/range/
+line of sight, and preserve cast payment/recharge and target retirement.
+Projectile timing, movement/obstruction, block interaction, NPC targets and
+rendered acceptance require further review. Keep ID571 in
+CAPTURED-NEEDS-IMPLEMENTATION.txt until those consumers are complete.
+
+Verification: native replay passed; Release disrupting_dagger_test built and
+its focused CTest passed. Official client/loggers were untouched.
+SHA256 gw_disrupting_dagger.h:
+472CAEFF83D343C2F7D5087E20D6800808FDD9AF525E313D80FAB3BE208A206C
+SHA256 disrupting_dagger.cpp:
+1D5FCD752F338716CEE92153249CAC78AF0F8376E574F522523F09F17E530AC0
+SHA256 disrupting_dagger_2022.py:
+0852173A766815BC4C1F27E6177D839B6EF700E9C67B19928DE6A85E54563E27
+SHA256 disrupting_dagger_test.exe:
+93EFC22CFF749DE701BACD81CECA1E6F09E280E15F4B216BCEC299839A570A48
+
+2026-10-25 impact follow-up (supersedes earlier staged source/test hashes):
+The pure impact proposal now applies Earth damage through the reviewed combat armor and protection pipeline and retains a separate impact-time interrupt candidate. Tests cover idle damage, active spell/attack-skill eligibility, armor scaling, unknown armor, non-hostile target, stale actor generation and forged range. The packet helper now emits the twice-captured kind20 target effect1142 for skill571 even though the native row carries the 2077 target-body sentinel; its exact 2022 wire is tested. World still has no delayed flight/impact transaction and Runtime/gateway do not bind571. Release disrupting_dagger_test and server_host built; focused CTest passed. No rendered verification or official-client action.
+SHA256 gw_disrupting_dagger.h AE86FB3480B7D65DE1CFC5C9D700BBDBCB68887BDCA28AEA2BC4B27D0B7C1D99
+SHA256 gw_skill_particle_wire.h 0F417D04578780CEE12012797D5364F3975EAC73DF1FE72BD621807D8F3A6A8A
+SHA256 disrupting_dagger.cpp 3A9BC8E3183914317C223D5B52EB151070D384432C77CBABF75F020B88AA2297
+SHA256 disrupting_dagger_test.exe ECC2BC95671DB0BE3E39B37D97120F55D1856DDEC9974A9E636EF5A452F67028
+SHA256 server_host.exe 48066A45F6860B972947451873871F6F7213E535671A54897084490BBE75569B
+
+2026-10-25 World projectile stage (supersedes prior 'World has no delayed flight' note):
+The native World now retains a scoped player-to-player projectile in the shared timed-delivery frontier. launch_disrupting_dagger validates exact live scopes, opposing teams, 624-unit completion-time range, same plane, obstruction and current resources. Impact uses the shared provisional 1800-unit/s, 32-unit hit-radius policy, checks the target position/scope again, applies the tested Earth damage proposal, then interrupts only a skill still activating at that impact. It publishes the twice-captured kind20 effect1142 once for an accepted hit. Queue ownership is removed on player departure or scoped retirement. The flight speed and moving-target prediction are private-server policy, not a measured retail rule; the two 47ms capture gaps cannot establish them. NPC targets, launch visual164, paid Runtime/gateway binding, all protection-order edge cases and rendered client behavior remain missing, so ID571 stays unbound.
+Release server_host and disrupting_dagger_world_test built. Five focused CTests (disrupting_dagger, disrupting_dagger_world, stone_daggers_world, control_interrupt, captured_skills) passed.
+SHA256 gw_world_simulation.h 6B339BA213B54EAE8924716929A5ACE776E47A48C5D0BB8CE5AAB06B45346825
+SHA256 gw_world_projectile_chronology.inl 0C6E4B9C7CF67C28621A6F5DBBB74E47AF34A0B8238F1C20C379A3FD51FCCDF1
+SHA256 disrupting_dagger_world.cpp 2217C5CB169BCC0552C65F8DB27B3F19D8B007FA9226AE001127B4D8B9CB5BD1
+SHA256 disrupting_dagger_world_test.exe 11220A9813EF065A0DAAEC56BC46D6D23BD71F3D0DF79EAA302E313F20413A3D
+SHA256 server_host.exe 00DDB964D80C27CE0393FD120706A7E43B658E03587521DE0ADC74B58155E90F
+
+2026-10-25 NPC target follow-up (supersedes prior 'NPC targets missing' wording):
+The delayed World queue now admits a reviewed hostile NPC with known Earth armor using the same scoped target and obstruction preflight as Stone Daggers. At impact it rechecks NPC lifetime, plane and position, then commits Earth damage through damage_npc_locked, preserving existing combat credit, death cleanup and Bonds of Torment reactions. The captured effect1142 is published once on an accepted hit. A focused NPC World test proves delayed Health loss and one effect packet; the player cases still pass. NPC action interruption is deliberately not wired yet: the shared NPC control policy handles anti-interrupt stances and Energy, and blindly cancelling an action here would be wrong. Runtime/gateway payment and launch visual164 remain absent; ID571 remains unbound.
+Release server_host, disrupting_dagger_world_test, stone_daggers_world_test and control_interrupt_test built. Four focused CTests passed.
+SHA256 gw_world_simulation.h 56474DA832AB9DB5862CBEC9E095449CC074F9DD514DA2E686B7FAED42272144
+SHA256 disrupting_dagger_world.cpp DF38E1DC315B8E6C8B798F4821B135CCEE0947AB54F5251FC91707A0475DAC8A
+SHA256 disrupting_dagger_world_test.exe 21AAC26FFB5212F42EBEBAAB928BE90018B1F3196DEF7F3CC43909A9DAB9B484
+SHA256 server_host.exe 050BBF6D4CFFC178BFFEADD5BD314211F8F42E70A78EE746D959D8154403F000
+
+2026-10-25 NPC interruption follow-up (supersedes prior 'NPC action interruption' gap):
+The delayed dagger impact now uses the existing NPC interrupt/protection path
+after accepted Earth damage. A focused World fixture starts a paid NPC Bonds of
+Torment cast, lands the dagger during activation, and confirms that spell cannot
+finish. An idle or ordinary-attack target is not treated as an activating skill.
+The impact-only plan does not enter Runtime's normal supported-skill factory;
+skill 571 remains unbound until paid casting, gateway publication, launch
+visual164, and effect consumers are complete. The 1800-unit/s flight policy and
+32-unit hit radius are provisional, and no rendered client result is claimed.
+Release server_host, disrupting_dagger_test and control_interrupt_test built;
+four focused CTests and 12 skill-coverage unit tests passed. The official
+client and live logger files were untouched.
+SHA256 gw_interrupt_skills.h 5E33EA7EDA9C6F4A11094B6299DB223F3E64FDDFD1C6C595A5B1E15ECAD4B3ED
+SHA256 gw_world_simulation.h 44D2142DF983AA52D425E939D7D31CD3FC417734E01C91DEBF83ABD00F549540
+SHA256 disrupting_dagger.cpp E8576A3694183BCA6EA4ADD089DF60C217C1F4BAFB50426D3CD4C54695749158
+SHA256 disrupting_dagger_world.cpp ABCB7B523438DE64D5BBEF1E34901348CB8E9B4808E1BAE33267C4618FFCCA6B
+SHA256 disrupting_dagger_test.exe F390479659A238A341EC57C18B30CC24E5968BDABAE80591B9E63D8FC4D5E815
+SHA256 disrupting_dagger_world_test.exe 80622CB2939D9BB633BE5BF8A27F3DDD7F2FFB3F635213D7E299480D97D59AFB
+SHA256 server_host.exe 0AB4F4EFB1060C8150136F80CC5AB787EB81A23CE12A8B846FAEFCCF2F253BD0
+
+2026-10-25 projectile launch evidence and implementation (supersedes prior
+'launch visual164 missing' wording):
+The same two frozen cast windows contain opcode164 packets at lines 710390
+and 710967, at their respective cast-finish ticks. Both are 36 bytes with
+caster25, x=-5768, y=1978, plane0, model1141, synchronization1 and attack0.
+Their raw duration floats differ (about 0.028656 and 0.038765 seconds), so
+neither is used as a constant travel time. The hash-verified offline verifier
+now asserts both receipts. The native opcode164 serializer matches both full
+captured byte strings; World publishes one launch packet when a dagger is
+accepted, or returns it to a paid-cast caller for ordered completion output.
+Its duration uses the existing provisional World flight policy. This is
+packet-shape and native World verification, not rendered-client verification.
+Skill571 remains unbound: Runtime payment, recharge, and gateway casting still
+need to be completed together before enabling client use.
+Release disrupting_dagger_test, disrupting_dagger_world_test and server_host
+built; five focused CTests passed. Official clients/loggers were untouched.
+SHA256 disrupting_dagger_2022.py 4B503F9280913405D0F1D5CAA4E56C6812678507F2372D2DB02F71518F40311D
+SHA256 gw_skill_particle_wire.h 49A62052612353265672258AC3CE6B9B01C408BEB743D8F9ABCD1C96982D7DC5
+SHA256 gw_world_simulation.h 58B5CA7896D071A2B612B189110B479CEAE4B14B9313B3E57B8BC8370A1BEC22
+SHA256 disrupting_dagger.cpp 467AB331713FB3E4ACEA97DF6BEC56FC20530DF8311DA38DAF4B137B22292583
+SHA256 disrupting_dagger_world.cpp 6305BDFB31EE32B127FFA08069055A76990E1DA5CE4BC024EB9E8AEE5704397F
+SHA256 disrupting_dagger_test.exe 4E60CE5DB666065A7E5CC9C34B40232A5EDFF5781A62640F36D3BE5846AF6CF8
+SHA256 disrupting_dagger_world_test.exe 21F4D4207030A84A59366DB2FC846AB68AD312E834D0E21E0C966CC1937E411B
+SHA256 server_host.exe AAD007EF747032479EFDF1ACEC030D8BD3F810A7F411062250DFE373EB3003EB
+
+2026-10-25 paid Runtime binding and protocol-version correction (supersedes
+the preceding claim that the native serializer sends opcode164):
+The two opcode164/model1141 launch receipts belong to the modern official
+capture format. The pinned 2022 client uses its older opcode163 projectile
+descriptor, so the private server now sends opcode163/model1141 through the
+existing reviewed 2022 serializer. The fixed verifier continues to preserve
+the modern receipts; it does not claim byte identity across client versions.
+
+Skill571 is now admitted through Runtime only when the ranked plan, hostile
+half-range target, scoped target and production gateway hook are present.
+The ordinary lifecycle pays 5 Energy, waits 250ms, revalidates the target,
+then queues one projectile and publishes its launch in the cast completion.
+Impact applies Earth damage and interrupts only a skill still activating.
+The native World/Runtime test covers successful payment, launch-before-impact,
+cancel, interrupt, stale target, missing hook, 10s recharge and a later recast.
+Production gw_auth.cpp supplies the World completion hook. Five focused CTests
+and 12 coverage tests pass. The fixed checkpoint audit and backlog were
+regenerated from unchanged capture bytes; 571 is source-bound rather than in
+CAPTURED-NEEDS-IMPLEMENTATION.txt. The previous audit JSON was preserved in
+data/skill-capture-plan/history/captured-skills-before-disrupting-dagger-binding-20261025.json.
+
+Remaining: the 1800-unit/s, 32-unit hit-radius flight is private-server policy,
+not retail measurement. The official modern launch packet has a different
+opcode/layout, and rendered 2022 pixels/sound, complete wire order in the
+client, PvP/skill modifiers and broader NPC AI use are unverified. No official
+client or logger was interrupted.
+SHA256 gw_skill_casting.h 1F8DC53F308B54D81489A4A204C9ED3C9D03092B950E20C75F78AB544505701A
+SHA256 gw_skill_particle_wire.h 16EF46D45FB5CCE3204DECE7854B03E950A67F9FA46D58F587F1A50391EE4058
+SHA256 gw_world_simulation.h 8B0FE470EE1BD3ECF4C5327DC352E9F1176B661EFB490DFA5F9C9E0E5E36CEC8
+SHA256 gw_auth.cpp 90A8075ECE908A5887F1442407521C17BF2F57C67859D095AD10FCE7A1B3654C
+SHA256 disrupting_dagger.cpp E3ED22CF2E19E79848182396045F970317E6500ED87F24C7A9C7ACCE0AAE0D72
+SHA256 disrupting_dagger_world.cpp 64B24AF714F92053C080DB577EC4CE8FBA7A8C93188A5E930B0443B09EA6ACF6
+SHA256 skill_runtime_coverage.py A8906840C043F7BBEDDE6437672FCDB9791A2CC8CF7F392A7F2A57DD33AD6E25
+SHA256 disrupting_dagger_test.exe DAD5DB4D853B7986D802E466D2E583D09F175DD5385BABC444B39E436FC2AF2C
+SHA256 disrupting_dagger_world_test.exe 89871C8DCC9699D4EF5FC20410A95181F8203B66ADD430F54584DD354E1A7B30
+SHA256 server_host.exe FFB33DE111DBDCD5AF9114ACF18E93903463B1EB92607EC13D7E0D75CEC79AFA

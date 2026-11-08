@@ -1,0 +1,26 @@
+Compass packet dispatch correction (2022 build 37130)
+
+The retail outgoing opcode 41 is compass drawing, not compact attribute loading.
+Offline disassembly of the pinned 2022 executable traced UI 0x8320ef through
+0x798020 to serializer 0x876090: stroke ID, at most 16 coordinate pairs, packed
+16-bit coordinates. Evidence: build/reports/compass-dispatch-native-trace.txt.
+
+The attribute parser and early authentication/world dispatch now accept only
+attribute opcodes 12, 13 and 14. Opcode 41 reaches the existing compass handler.
+Ownership validation remains unchanged. A regression checks the historic
+misnamed compact_load_request fixture is rejected by attributes and accepted by
+compass decoding. Release build succeeded; all 126 tests passed (24.13 seconds).
+Live private client PID 15492 logged in and entered map 449. A minimap stroke
+produced two WORLD compass_drawing records (2 and 1 points, solo_party_sent),
+with no opcode-41 attribute-edit error in this session. Official client not used.
+
+Account agreement typed storage migration
+
+NetworkServer accountAgreement now calls NetworkManager and Accounts directly;
+it no longer serializes a transitional Operation request. The read retains the
+stored boolean, validates 0/1, checks cancellation before and after the SQL read,
+and publishes no value on timeout. Missing accounts remain NOT_FOUND. Offline
+maintenance dispatch uses the same reader. This does not change EULA wire flags
+or claim the historical EULA UI issue is solved by this architecture migration.
+Validation results are recorded after build/test completion.
+Validation completed: focused network_lifecycle passed (1.61 seconds); full Release build succeeded; all 126 tests passed (24.88 seconds). Rebuilt private client session PID 18236 logged in with the imported main roster and entered map 449 alive. No official client launched. Evidence: build/reports/typed-agreement-full-tests.txt and typed-agreement-live.json.

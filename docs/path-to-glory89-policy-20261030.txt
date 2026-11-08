@@ -1,0 +1,47 @@
+The Path to Glory89 -- source integrated,2026-10-30
+
+Pending next coordinated native verification; not rendered acceptance.
+Local wiki SHA b960ef4adbbce5d76999b9d38ae8dca4ce03170a291add2528e884a22ace2cf6.
+Captured snapshot3688 and packet receipts39040..39272 in the installed evidence
+join Armin148 acceptance, Tydus148 dialogue, active-text refresh/removal and100XP.
+Tydus greeting/menu precedes reward burst by671ms;256 incoming records and zero
+CtoS inputs in the inspected window. No retail dialog-choice token is inferred.
+Bounded pre-removal details match the captured active description/objective.
+
+Require a core primary's rewarded profession test, Prophecies/pre-Searing,
+current exact NPC lifetime, range/map and expected quest cycle. Rewarded rather
+than objective-completed primary test is explicit private admission policy,
+consistent with installed pre quests. Wiki requires no quest79 or secondary;
+neither is added as a prerequisite. Offer at Armin, reward at Sir Tydus.
+
+PRIVATE storage closes active->completed->rewarded inside one100XP transaction.
+Absent completed snapshots do not establish retail durability. Generic quest
+saves cannot insert completed/rewarded89, erase history or bypass primary test;
+storage reads the persisted primary and rechecks the rewarded prerequisite.
+Exact100XP, no inventory/gold/skills/unlock extras. Revision conflict, timeout,
+wrong/stale cycle and replay pay nothing. Active reconnect restores one72+75;
+rewarded reconnect restores no89. Abandon/reaccept preserves the attempt fence.
+
+Turn-in prepares/validates native76 marker,75 ACTIVE details and81 removal
+before any durable write. Missing/malformed/unbound catalog cannot pay; failed
+durable CAS publishes no prepared prefix. No83 checkmark or72/79 QuestAdded.
+Character Logger literal argument uses reviewed session-name binding. Only the
+captured current-map148 Tydus plane26 marker is bound; other maps unresolved.
+Existing auth absolute XP/progression publication precedes this batch; original
+refresh/removal precedes XP. This combined-ordering gap is not retail parity.
+
+No Academy, Searing, party mission, map change, secondary selection or NPC AI
+transition is started by acceptance or reward. Later captured Tydus dialogue
+buttons are excluded until their separate gameplay contracts are implemented.
+
+Files: src/runtime/gw_quest_path_to_glory.h,
+src/network/quest_path_to_glory.h; owned auth/rules/menu/accounts quest hooks;
+data/gw/quests/path-to-glory-89.fwqc and path-to-glory-89-evidence.json.
+tools/quests/stage_path_to_glory_89.py writes only under build/reports and never
+modifies original captures. Native source outputs are new reviewed data files.
+
+Tests pending root batch: quest_path_to_glory_test(all6 primaries, gates, cycle,
+NPC, character binding, marker and reconnect); quest_accounts_test(storage gate,
+exact shape, timeout/CAS, stale abandoned cycle and once-only100XP); network_
+lifecycle_test(typed packets, bad catalog, post-preparation durable CAS failure,
+binding/reconnect and unchanged map/profession/inventory with no79 dependency).

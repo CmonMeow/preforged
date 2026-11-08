@@ -1,0 +1,137 @@
+Flourish389: staged cooldown/Energy proposal and native evidence
+=============================================================
+Pinned2022 elite Skill10,Strength17,5Energy/1s activation/.75s aftercast/8s
+recharge. Energy per recharged attack skill scales2..7 at rank0..15 (rank20=9).
+Both body2077 values are no-effect sentinels. Original self-kind60 dispatch
+produces action25/style50/1s,success58 produces action22. No particle is invented.
+
+Fixed20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+422142 tick24398484 ->422152/422153 tick24399515;
+422341 tick24408437 ->422351/422352 tick24409453.
+Both show self389 start,8s recharge and success58. Observed1031/1016ms are
+batching samples,not extra fixed delays. These receipts do not establish which
+attack timers reset or how many Energy rewards occurred. Native actor/model
+services are stubbed;rendered acceptance remains open.
+
+Local Flourish description grants Energy per skill actually recharged. Archived
+talk reports instant reset of disabled attack skills and distinguishes ending
+an adrenaline skill's cooldown from filling its adrenaline. Attack_skill lists
+pet attacks as a subtype with explicit Paragon-trigger exceptions. Staged
+Flourish selection includes nativeAttack14/PetAttack20;retail Flourish pet and
+copied-slot eligibility still needs focused proof. Native row437 and current
+GWCA both establish PetAttack20. Type16 is Skill2 (e.g.Warrior's Cunning362),not
+a pet attack. An older Wary policy test/document mislabeled16 as PetAttack;the
+test now exercises actual20 rows,and Dwarven tests now include real pet437.
+Existing Wary/Dwarven runtime predicates were strict14 and did not admit either.
+
+Pure gw_flourish.h prepares a current completion-time snapshot proposal:
+- finite eight-slot current owned snapshot and exact copy IDs;
+- known base+disable timers,monotonic event/revision and actor generation;
+- reset both future base and disable timers of eligible attack slots;
+- count each cleared slot once,including separately identified copies;
+- ready/expired timers grant no Energy;non-attacks remain unchanged;
+- eligible ready slots still produce reset barriers to hide delayed old timers;
+- adrenaline is absent from this proposal and cannot be filled by it;
+- committing a forged/stale/replayed proposal rejects without timer mutation.
+No Energy,World disable authority or Runtime timer is committed by this helper.
+
+Pending integration:current physical/copied bar membership,session base-timer
+snapshot plus World disable revision,ordered14/20 reset delivery/barriers,
+shared capped/Overcast/debt Energy settlement in the same accepted transaction,
+failed completion/cancel/interrupt lifecycle and retail pet/disable/copy counting.
+The existing OrderedAttackCooldowns.reset_attacks admits14 only;do not silently
+reuse it for20 or weaken its caller contracts. NPC caster,retail reaction order
+and rendered acceptance remain open. No Runtime389 binding/count is claimed.
+
+Three native policy suites (Flourish,Wary,Dwarven) and the frozen/native verifier
+pass. Evidence:build/reports/flourish-native-2022.json with client/capture/wiki/
+source hashes and native taxonomy checks. Production remains native C++.
+
+Ordered reset delivery foundation integrated:
+OrderedAttackCooldowns now has explicit reset_attack_skills and
+checkpoint_attack_skills APIs for native14/20 slots. Existing reset_attacks and
+checkpoint retain strict14 validation. Both variants share the same causal
+receipt/barrier implementation;no caller's old predicate silently broadens.
+Skill2_16 and ordinary non-attack skills remain ineligible for either reset API.
+
+The revalidated Flourish proposal can deliver its entire eligible barrier set,
+including ready slots,with a trusted World stamp matching owner/completion time.
+Delivery mutates only the ordered local timer view;it does not grant Energy or
+clear independent World disables. World must mint/retain the exact event stamp
+and duplicate delivery must reuse it,not invent a new causal order. The Energy
+reward belongs to the original joint commit,never replay delivery.
+
+flourish_ordering covers120 permutations of pet/copied/ordinary timers and reset,
+old timer arrival after reset,new causal timer with older sampled time,duplicate/
+forged/stale scope receipts and pet-aware checkpoint compaction. Active pet
+sources survive checkpoint;old reset receipts become stale. Existing strict14
+checkpoint rejects a pet seed without mutation. Existing cooldown_ordering and
+Determined Shot policy suites pass unchanged predicates;Flourish policy passes.
+
+Remaining:actual Runtime/World caller integration must opt into pet-aware
+checkpoint permits/delivery and preserve the current eligible bar,disable source
+revisions and base-timer provenance. Joint capped/Overcast/debt Energy settlement,
+casting lifecycle,NPC caster,retail predicate/order and rendered proof remain.
+Runtime389 is still unsupported;no new binding count is claimed.
+
+World reset/Energy transaction foundation integrated:
+prepare_flourish_reset(owner,completion_time) captures the exact current bar,
+six disable-authority revisions and proposed next World reset stamp together.
+commit_flourish_reset revalidates the complete canonical proposal,full current
+nonempty bar/copies,Flourish membership,disable coverage and permit. It settles
+due resources before preparing a capped Energy gain;known base timers remain
+trusted Session inputs under its owning lock,never raw client claims.
+
+The World prepares Energy with the existing precise Overcast/debt projection
+and prepares the causal stamp before changing disables. All reset validation
+must succeed before committing disable maps,Energy,stamp and per-owner event
+receipt. Duplicate/stale events reject. Current bar/disable revision or general
+World order changes invalidate a permit. A retry uses a newly captured stamp.
+The per-owner replay ledger is retired on leave. A temporary zero-burden curve
+for ordinary Energy projection is never installed as a live Overcast effect.
+
+World cases cover capped ordinary gain,copy-specific attack disable35150->0,
+replay/stale bar/disable/lifetime/forged reward/copy failure,later Energy cursor
+failure + same-event retry,fractional Overcast ceiling49599units and ordinary/
+Overcast Energy debt repayment. Runtime still needs to stage all local maps and
+typed reset delivery against the permit stamp before invoking this World commit,
+then move staged maps only after success. Actual casting/cancel/interrupt,
+pet-aware checkpoint caller integration,retail predicate/order and rendered
+acceptance remain open. No Runtime389 binding count is claimed.
+
+Flourish World transaction validation: exact prepared stamp invalidation now
+covered by an intervening cast/interrupt with unchanged bar and disable revisions;
+stale commit rejects without Energy, fresh permit retries same event successfully.
+Fresh flourish_world build and four native suites (World,policy,ordering,Keystone)
+pass, alongside69 tooling tests. Release server_host build passes. World foundation
+jointly validates current bar/copies,six disable revisions,reset stamp,replay and
+precise capped/Overcast/debt Energy before reset/reward commit. Runtime389 remains
+unsupported until local ordered timers and casting lifecycle are connected;
+source-binding counts remain262/371. Official clients/loggers untouched.
+
+Runtime389 connected (supersedes the earlier pending-Runtime notes):
+- Native self-cast admission requires World prepare/commit, current bar, scoped
+  disable queries and sequenced skill-use completion. Cost5,activation1s,
+  aftercast.75s and own8s recharge use the shared native casting lifecycle.
+- Completion snapshots the current complete bar and authoritative disables.
+  Active eligible base timers require trusted origin receipts. All ordered
+  imports,reset admission,local maps and UI packets are staged before World.
+- World commit validates the exact permit and grants capped precise Energy
+  with disables/reset stamp together. Only successful commit moves Session
+  state and emits per-cleared-slot229. Ready eligible keys receive causal
+  barriers without Energy. Duplicate events cannot reapply reward/UI.
+- World records its synchronous Flourish reset separately from acknowledged
+  retained Determined Shot deliveries. Snapshots require the maximum committed
+  reset order; base-reset barriers also reject late pre-reset source claims.
+- Runtime imports and checkpoint compaction now preserve native14 and20 attack
+  timers, including copied/off-bar active sources. Legacy strict14 public
+  ordered-timeline methods retain their original predicate.
+- flourish_cast covers actual attack400 ->Flourish389 ->attack400, current
+  resource gain,own recharge,publication/checkpoint,replay and cancel/interrupt/
+  absent-hook/stale-bar failure. Separate World tests cover cap,debt,Overcast,
+  copied disables and exact-stamp retries;ordering tests cover pet timelines.
+
+Open: rendered private-client acceptance,NPC casters,retail Flourish-specific
+pet/copied eligibility and precise retail reaction/reset order. Captured native
+self60/success58 and2077 sentinels support animation dispatch,not visual QA.
+Validation:seven fresh native suites and69 tooling tests pass;Release server_host rebuild passes. Fixed checkpoint now263source-bound/370pending. No rendered acceptance claimed.

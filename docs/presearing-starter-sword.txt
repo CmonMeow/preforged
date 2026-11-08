@@ -1,0 +1,29 @@
+Starter Sword acceptance transaction — 2026-10-10
+
+Evidence: W/E capture world-13908-99220828.jsonl line3197, immediately after
+quest75 acceptance3195. Source SHA256 and raw fields are preserved in
+ data/gw/quests/starter-sword-provenance.json.
+Captured model2982/file9454/type27/name and raw A4880302/24B80200 are retained.
+The capture-only C0000000 sentinel is omitted from wire output. Server allocates
+owned item identity/placement and customizes the sword to the receiving character.
+
+Captured profession11 is an unknown client cache value, not a restriction.
+The server quest definition explicitly grants generic weapon permission0 for
+primary/secondary Warriors, consistent with Grawl Invasion's wiki requirements.
+Unknown armor metadata continues to reject equipment; there is no global override.
+The exact A4880302 observation is corroborated by Starter Sword's wiki2..3
+slashing damage. Arbitrary A488 values remain unsupported. Existing customization,
+weapon mastery and armor calculations apply; captured modifiers are not rewritten.
+
+Acceptance, taught skills and item commit atomically with revision checks.
+Encounter preparation precedes the save; creatures and item/quest publication
+follow successful commitment. Full bags, stale saves, permission expiry and
+malformed grants cannot partly accept the quest. Active kill encounters restore
+on the appropriate map with fresh actor lifetimes and no second item grant.
+
+Tests verify primary Warrior and Elementalist equipment,2..3 slashing damage,
+customization ownership, full inventory refusal, CAS/rollback, typed controller
+publication, persisted item, quest75 completion/reward250XP and duplicate reward
+rejection after reopening the database.
+
+Native2022 UI/tooltips and a full live quest playthrough remain unverified.

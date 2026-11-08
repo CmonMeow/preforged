@@ -1,0 +1,150 @@
+COMPLETED URGOZ / DOMAIN OF ANGUISH CAPTURE — 2026-10-24 SESSION
+
+The fixed, complete-line snapshot is in
+data/captures/field-sessions/20261024-urgoz-doa-completed. Its manifest records
+the 2026-10-25T04:59:05.851860Z cutoff and SHA-256 of each source. The packet
+and world logger originals were read, not modified or stopped. This checkpoint
+contains the earlier Urgoz prefix byte-for-byte; the audit compares against
+that prefix and counts only the 667,493 later packet rows and 19,881 later
+world rows. Reproduce with:
+
+  python tools/skills/audit_urgoz_doa_session.py
+
+The full machine-readable result is build/reports/urgoz-doa-completed-20261024.json.
+It reaches Gate of Anguish (450), Domain of Anguish (474), and Ebony Citadel of
+Mallyx (445). The long Domain instance (map 474, epoch 32) has 637 distinct
+observed NPC agent IDs, 86 sampled names, 321 loot notifications, and 11 quest
+snapshot revisions. The Citadel instance (map 445, epoch 35) has 142 observed
+NPC IDs, 56 sampled names, 61 loot notifications, and four quest revisions.
+These are visibility samples and notifications, not full spawn tables or drop
+rates. Quest snapshots include pre-existing account quests; revision is not
+proof that a quest was acquired at that moment.
+
+The later packet portion has 10,282 cast-start packets timing-aligned to the
+long Domain instance and 1,758 to the Citadel. Most are player or hero skills,
+so those counts are not monster cast counts. Five monster-only IDs have nearby
+matching actor names sampled both before and after each packet cast start
+(each gap at most 1.5 seconds):
+
+  1324 Torment Slash — Torment Claw, 77 starts, map 474 epoch 32
+  1880 Torment Slash (Smothering Tendrils) — Smothering Tendrils, 26 starts,
+       map 474 epoch 32
+  1881 Bonds of Torment — The Greater Darkness, 2 starts, map 474 epoch 32
+  1894 Touch of Aaaaarrrrrrggghhh — The Black Beast of Arrgh, 1 start,
+       map 474 epoch 32
+  1885 Banish Enchantment — Mallyx the Unyielding, 18 starts,
+       map 445 epoch 35
+
+A follow-up packet scan finds a kind-58 cast-finish packet from Mallyx within
+one second after 15 of those 18 Banish starts. One further finish is 2.25
+seconds later, and two starts have no matching finish within three seconds.
+Do not turn all 18 starts into completed effects; interruption or another
+action may explain the unmatched cases. The first near finish is packet line
+1160084, 766 ms after the line-1160055 start.
+All 15 near finishes have two to four opcode-159/kind-7 effect-removal packets
+for the cast target in the following 200 ms (the first has effect instances 13
+and 8 at lines 1160085-1160086). Neither unmatched start has such a removal
+in this aligned window. This is direct target-strip packet evidence; the
+individual removed enchantment identity and six-second disable selection
+still require more decoding before binding the complete monster skill.
+The same 15 near-finish windows each contain one to three opcode-229 skill
+recharge updates for local actor 8 (26 total). Their recharge field ranges
+from 16 to 49; 14 read 16. These updates are correlated with the finishes,
+but their value is not a direct six-second duration or a proven random-choice
+rule. The fixed report records every actor, skill ID, field and packet line.
+
+The report gives packet lines, both bracketing world lines and sample gaps.
+These joins are not full actor lifetime proof. Packet map attribution
+uses world-observed map transition times; it is not a packet-native map field.
+Cast starts alone do not establish completed effects, damage, AI decision rules,
+or acceptance by the 2022 private client. Keep these as capture evidence before
+binding any effect or NPC behavior in the server.
+
+The older Urgoz checkpoint and its five Forest's Binding casts remain separately
+audited in docs/urgoz-field-capture-20261024.txt. Do not add its rows to the
+delta above a second time.
+
+Touch of Aaaaarrrrrrggghhh follow-up (2026-10-25):
+tools/skills/audit_arrgh_touch.py hash-checks this same fixed capture and
+verifies packet707199 as Beast438 casting skill1894 at Jagged Horror423.
+Packet707356 is an actor438 kind58 event 1,032ms later. World snapshots at
+lines24773, 24776 and 24779 show both actors at unchanged coordinates around
+this window; the next sampled line24781 shows the target moving normally.
+These one-second samples cannot prove a brief swap did not occur, but there
+is no positive swap evidence. Do not implement the wiki's random swap or
+zero-attribute effect from this cast alone. The effect and 2022 client wire
+remain unverified. Report: build/reports/arrgh-touch-20261024.json.
+SHA-256 audit script EC43F774CDCF3D8DC4E1F6CBDDB2EC941301CC48ADD1E7A570248FB8BD362FF7
+SHA-256 report 4C4CC027091A12CC8F3399BFDC3A99EA6C96902B4392129FEEE9CAB82F70E09A
+
+Runtime coverage join (2026-10-25):
+The counts in this historical paragraph were computed before later skill
+bindings. The current reproducible review reports 53 unsupported IDs and
+3,933 starts; consult build/reports/doa-skill-gaps-20261025.json.
+Re-audit on 2026-10-26 against the unchanged packet checkpoint and current
+native bindings reports 148 observed skill IDs, 48 unsupported IDs and 3,151
+unsupported cast starts. The highest remaining mixed-source counts are
+Lightbringer's Gaze1814 (442), Iron Palm786 (318), Ebon Vanguard Assassin
+Support2235 (314), Wandering Eye2056 (257), and Painful Bond1237 (217).
+The current JSON report is authoritative as bindings continue to change.
+Later 2026-10-26 source refresh against the same hash-checked checkpoint:
+148 observed IDs, 47 without a source binding, representing 2,894 cast
+starts. The largest remaining mixed-source counts are Lightbringer's Gaze1814
+(442), Iron Palm786 (318), Ebon Vanguard Assassin Support2235 (314),
+Painful Bond1237 (217), and Mistrust979 (194). This update changes the
+implementation inventory only; it adds no newly captured packets and does
+not establish completed effects for those starts.
+tools/skills/review_doa_skill_gaps.py joins this frozen session report to the
+current native source-binding audit and writes
+build/reports/doa-skill-gaps-20261025.json. The two combat instances contain
+148 distinct skill IDs; 56 currently lack a source binding and account for
+4,957 cast starts. This is a mixed player/hero/monster count, never an NPC
+skillbar inference. The highest unsupported counts are Mend Body and Soul1234
+(519), Lightbringer's Gaze1814 (442), Ghostmirror Light1741 (389), Iron Palm786
+(318) and Ebon Vanguard Assassin Support2235 (314). The first four are
+priority candidates for mechanics review, not proof of successful completion.
+The report is reproducible against the frozen source manifest and records
+its runtime-coverage hash so changing code cannot silently reuse the count.
+SHA-256 tool A599FB09A271393D73E5D78D4B98B7CF2ADCC7B7CC4FFA1D515ECC0CF4A21248
+SHA-256 report AB92F41D2B5836461D090B484215F7AADFF2940910909FAD4299B5F17385C602
+
+2026-10-25 actor-name follow-up: tools/skills/audit_doa_actor_skills.py
+verifies both frozen manifests and their shared prefix, then requires the
+same actor/name in world observations before and after a packet cast start,
+each within 1.5 seconds. Its separate report attributes 8,834 starts to
+observed agent names across 148 skills. This narrows the evidence without
+claiming the agents are monsters: the collector's npc_observations can also
+contain heroes. Mend Body and Soul1234 has 519/519 named starts (391
+"Emberlins Death", 128 "Angchu Ritualist"); Ghostmirror Light1741 has
+389/389 (269/111 by those names, 9 "Anguish Titan"). All 442
+Lightbringer's Gaze1814 starts and 314 Ebon Vanguard Assassin Support2235
+starts remain unassigned by this conservative join. Iron Palm786 has 65/318
+named starts, all "Ebon Vanguard Assassin". These joins do not prove actor
+ownership, creature type, full skillbars, completed effects, or animation.
+The high-count unassigned skills need explicit player/hero identity evidence
+before source-specific assumptions. Official client/loggers were untouched.
+SHA-256 tool 6CFDA6B6CDBCF5DD5E622BDE2A3872BBEAFE77B7116ABD57136E42FA20B3A8EF
+SHA-256 report AD8B3573D2A603BF49B80924E570B82DA4710F0C5DB94B4A02ECC6F608D6D918
+
+2026-10-25 Mend Body and Soul1234 private binding is now covered by a native
+cast test and the Production World hooks. The reproducible unsupported count
+for the fixed Domain session decreases from 56 to 55; this does not turn its
+mixed-source starts into player-cast or rendered-client evidence. Updated
+gap-report SHA-256 9BB650BF32B2D219B36787CE962348133C463436CEC863F76A6FE6E6604B5DBD.
+
+2026-10-25 Ghostmirror Light1741 private binding and receipt audit: 354 of
+389 Domain/Citadel starts have same-actor finish/caster1574/target1575
+sequences within two seconds. The 35 unmatched starts are not classified as
+failures. Native player/NPC target and conditional caster-heal tests pass;
+rendered client behavior and player-cast attribution remain unverified.
+Fixed Domain unsupported count decreases from 55 to 54. See
+docs/ghostmirror-light.txt. Updated gap-report SHA-256
+08F72901F6BDED9AB63F7FE79A15F858D5B1D4CA2633F543D3ABF6AFD0A02B33.
+
+2026-10-26 Imbue Health1526 player-cast binding: 48 Domain cast starts now
+have a native Runtime/World player path with scoped allied recipients; 43
+time-join a same-tick finish/body1400/positive target-Health receipt. The
+observed Margonite NPC caster is still not implemented. Latest reproducible
+source-binding review reports 46 unsupported IDs and 2,846 cast starts, but
+those numbers are mixed-source starts and do not prove NPC behavior or
+rendered 2022 acceptance. See docs/imbue-health-doa-20261026.txt.

@@ -1,0 +1,154 @@
+DAGGER WORLD INTEGRATION PATCH PROPOSAL — READ-ONLY REVIEW
+2026-10-31; no included-file edits or build actions during build84732.
+Source may change concurrently: anchors are function names, line numbers are
+approximate observations. Detached policy is gw_dagger_attack_policy.h.
+
+1. Canonical AttackPlan and condition hooks
+In gw_weapon_attack_skills.h::attack_skill add782/780 branches using the
+detached canonical plan's rank validation. Build AttackPlan from canonical
+bonus/windup, required_type=8 and copy. Canonical valid(plan) must recognize
+the exact reconstructed plan; do not simply bypass validation.
+Add a generic explicit unblockable field to AttackPlan OR a narrowly reviewed
+skill780 clause at both actual block gates. Current fields such as
+weakness_unblockable and no_stance_unblockable are conditional and unsuitable.
+Map782 to Bleeding in attack_condition and condition_duration using the
+canonical duration. Shared condition modifiers, ownership/application reactions
+must remain authoritative; detached policy must never directly insert State.
+No normal casting supported() promotion until all following consumers pass.
+
+2. Admission gate
+World attack admission currently calls attack_skill(skill,0) in NPC target
+validation and checks known armor/current hostile living geometry128. Add
+canonical dagger eligibility there after determining exact target Scope from
+player.effect_scope or NPC.hex_scope. Check actual item_type32 and non-caster
+weapon, exact source Scope and Fox stage1 at now. Since target argument is a
+raw actor ID at this boundary, obtain current lifetime before consulting chain.
+Preserve existing equipment/movement/armor/critical unknown-state rejection.
+Normal Runtime still owns cost, recharge, casting cancellation and exact copy.
+Invalid chain's retail failed-use payment/feedback is unresolved: keep these
+skills unsupported until failure policy is either proven or explicitly scoped.
+
+3. Final contact gates: two symmetric insertion sites
+World paid attack implementation has NPC branch around7756..7870 and player
+branch around7888..7970. Insert preliminary dagger eligibility after current
+weapon item/revision and target generation/alive/geometry checks and BEFORE
+AttackResolution allocation. This protects event/payment invariants against
+an expired or switched chain. Recheck after callbacks below; this first gate
+is not a reservation.
+
+Existing terminal flow:
+  resolve_attack_skill accuracy -> AttackResolution allocation ->
+  vigorous release -> skill_failed/cancel OR missed/miss return ->
+  npc_block_contact_locked/player_block_contact_locked -> blocked outcome ->
+  critical sample and final resolver -> outcome.qualify_hit -> damage commit ->
+  shared reactions/condition -> outcome.resolve(hit).
+Both missed and blocked returns occur BEFORE qualification. Therefore the
+new successful-contact helper must never be called there. For the currently
+detached scope, preserve chain on all those paths and do not claim that is
+proven retail behavior. Do not synthesize QualifiedHit from a finish event.
+Fox's unblockable is passed only into actual block gates; Blind/miss still
+runs and can produce miss. Illusionary Weaponry returns replaced without
+qualification; it requires separate reviewed chain behavior and is excluded
+from initial support unless evidence resolves it.
+
+4. Critical callback boundary and revalidation
+AttackResolution::qualify_hit delegates qualify_attack_hit_locked. That first
+records ledger qualification, prepares Bulls Charge/Splinter/Judgment/Tainted/
+Wailing/Retribution contacts, then executes Insidious reaction and Endurance.
+It is NOT a pure receipt constructor. On return reacquire source and target
+from maps and verify source.effect_scope/target exact Scope, both alive,
+current equipment item/revision/type and unchanged eligible chain snapshot.
+Do not continue using a stale Player& or LiveActor& merely because the receipt
+exists. If callback retired/killed a participant, resolve cancelled or
+target_retired through the owner, preserve all callback publications, and do
+not publish stage or Bleeding. Failed proposal after qualification cannot be
+converted to block/miss by AttackOutcomes::finish; only cancelled/target_retired
+are legal alternatives to hit.
+
+Construct dagger_contact_proposal from the returned QualifiedHit and the
+reacquired current chain. The returned before/after snapshots are speculative.
+Before commit check dagger_chain_matches; never assign after over a reset
+caused by death or a newer chain. Event replay ownership remains AttackOutcomes.
+
+5. Commit and native publication order
+Fixed all-completed packets-1360-15821281.jsonl provides:
+750169 kind46 ->750170 modern92 stage1 ->750172 damage (Jagged);
+750191 kind46 ->750192 modern92 stage2 ->750193 damage (Fox).
+Original2022 chain packet is opcode91, not modern92. Iron Palm's successful
+completion uses damage/control/stage and therefore cannot define this order.
+
+Proposed patch structure:
+  a. Capture each distinct peer Outbox into contact-local DeferredQueue, using
+     Outbox::Capture as already implemented by Iron Palm. Start AFTER relevant
+     admission timeline settlement; never discard authoritative settlement or
+     qualify-hit reaction feedback when later validation refuses contact.
+  b. Retain pre-damage reaction packets in their actual queue order. Run damage
+     and its existing whole reaction cohort; do not reorder Seed/Retribution/
+     Conjure/Barbs/Mark of Pain to obtain an attractive stage sequence.
+  c. On successful accepted damage, reacquire exact source/target and require
+     alive before committing chain and owned expiry. Apply782 Bleeding through
+     existing shared condition path and then recheck survival again because
+     Fragility/application observers can kill. Decide stage presence from final
+     actual survival, not a pre-hit projection.
+  d. Insert chain packet at a recorded pre-primary-damage queue index, preserving
+     pre-hit reaction order; don't indiscriminately prepend before release or
+     kind46 animation. Capture primary damage insertion point explicitly rather
+     than scanning packet bytes or sorting all opcode91s. For no changed stage,
+     refresh expiry silently. Publish all queues once, even on refusal, so
+     preflight reactions do not disappear. The stage queue insertion requires
+     an actual normal Runtime native order test before binding.
+
+Important unresolved policy: stage-before-damage receipt cannot by itself prove
+whether a lethal successful attack should publish stage. Initial proposed
+survivor-only stage is consistent with existing Iron Palm policy but needs a
+dedicated retail lethal contrast. Do not label it proven. A future decision to
+commit at qualification instead must explicitly handle death-driven reset;
+it must not restore a dead caster's chain from a speculative copy.
+
+6. Chain state and cleanup inventory
+DaggerChain::lead overwrites target,stage1 and deadline now+15000. offhand
+requires current(target,now)==1 and assigns stage2/deadline. current is a
+half-open timestamp/scope query and does not mutate expired raw stage.
+World death cleanup calls player.dagger_chain.clear() and clears
+iron_palm_wire_expiries. A read-only search found no other explicit
+dagger_chain.clear call. New target switching via lead overwrites internal
+target but does not immediately clear an earlier target's UI stage.
+Tick iterates iron_palm_wire_expiries per caster, extends matching current
+target's deadline, sends clear only if target's current lifetime matches,
+then erases expired wire entry. It does not itself clear internal chain.
+Retiring target removes AttackOutcomes pending entries via discard_target;
+source retirement erases its ledger. This does not automatically solve chain
+UI ownership or a raw expired stage value.
+
+Proposed shared field rename: iron_palm_wire_expiries -> dagger_wire_expiries.
+Introduce one helper that commits stage from canonical proposal and registers
+exact target/deadline for every producer, including Dancing Daggers and Iron
+Palm. Do not let a timeout for an old target clear a new target's state; use
+exact per-target Scope and owned deadline. Keep same-lifetime wire suppression
+on retired targets. Target-switch immediate clear remains evidence-gated;
+the helper should preserve current old-target-timeout policy until reviewed.
+Death wire clear behavior also needs native/UI acceptance: existing death
+simply drops the map, so no later timeout packet is emitted for that caster.
+
+7. Replay and transaction boundaries
+AttackOutcomes::release validates exact scopes, same instance, distinct actor,
+nonzero monotonic event, clock and4096 capacity. qualify_hit is one-time per
+event and exact target. commit_damage requires that qualification timestamp,
+accepted same-generation Hit and no previous damage commit. finish erases the
+pending event; repeated terminal events fail. AttackResolution destructor
+resolves cancelled, and resolve zeros its event before invoking owner callbacks.
+Use those gates; detached proposal is copyable and provides NO replay gate.
+An API accepting a caller-constructed QualifiedHit would be unsafe as public
+World authority. Keep proposal use private to the actual attack owner.
+
+Tests required for the patch owner
+Paid exact-copy/source costs and1s/3s recharge; original2022 stage/attack bytes
+through native first consumers; success stage-before-primary-damage ordering;
+Fox unblockable with independent Blind miss; blocked/missed no helper invocation;
+offhand expiry and target switch between admission/contact; duplicate qualify,
+damage and finish; Insidious caster death during qualify; Seed/retaliation/
+Fragility target death; stale/reused target and source generations; silent
+same-stage refresh; clear timeout/target switching; player and reviewed NPC
+recipients. Initial caller is a player, not a claimed NPC dagger caster.
+
+No production edits, normal bindings, builds or tests were made in this review.

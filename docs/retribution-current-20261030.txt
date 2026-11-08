@@ -1,0 +1,162 @@
+Retribution248 -- staged implementation,2026-10-30
+
+NOT enabled in normal casting. Pre-Searing remains39/44 effect bindings.
+New code is a prerequisite, not a completed playable skill.
+
+Current follow-up:441 original/new rank pairs now preserve stronger indefinite
+values on weaker recasts while transferring exact upkeep/caster ownership.
+This follows local Enchantment_spell.html's general reapplication rule; no
+retail weaker-maintained-recast receipt is claimed.192 World return-damage
+cases cover Shielding Hands, Reversal and Healing Seed, including weaker recasts
+and multi-hit conversion.17 selected integration/regression suites and56 source
+checks pass. Latest deployed host/evidence are in
+build/reports/presearing-integration-progress-20261030.json. Required NPC/extra
+damage/paid-cast consumers and rendered acceptance remain unfinished;248 UNBOUND.
+
+Latest checkpoint: committed base-attack damage,2026-10-30
+The World now consumes a once-only sealed receipt from the qualified attack's
+owner after actual protection/conversion settlement. Direct attack skills and
+quest-controlled NPC attacks were missing this handoff and now supply it.
+Ordinary player/NPC attacks, ranged impacts, area attacks and dual attacks share
+this consumer. Holy return uses the existing protected reactive-damage path;
+return notifications precede the held base-hit notification. Explicit nested
+outbound frames preserve an enclosing area-attack batch.
+
+102 World cases pass:96 player cases across melee/ranged/area/dual skills,
+ranks0/12/20, conversion, blind/block, lethal attacker/recipient, reciprocal
+protection and Holy equipment;6 autonomous NPC cases cover normal/light-sensitive
+attackers. Nested outbound restoration and strict nesting rejection pass.
+11 receipt validation cases plus out-of-order projectile delivery pass. Eight
+selected native suites and56 source/publication/backlog checks pass.15 fixed
+receipts and original2022 maintained/454particle consumers revalidated separately;
+this does not prove the new World damage packets through a rendered consumer.
+
+Canonical1910fc4eb26ff3c00885f502817202311badfb2cddae837ab8e52ad77022013c
+passes isolated encrypted login/roster/initial World handshake, not full player
+initialization. No private or official client was controlled during this phase.
+Bridge1 inventory exposes no native apps/tabs; rendered acceptance remains open.
+Reports:build/reports/retribution-attack-{tests,fixed-native,host-startup,deploy,progress}-20261030.json.
+
+Remaining work before production binding
+- NPC recipients/casters; normal paid Runtime/gateway cost/cancel/aftercast,
+  admitted Ether Renewal, Profane and lethal Divine Favor acceptance.
+- Additional attack components versus indirect damage, combined reaction order,
+  protection/conversion of the returned damage and caster lifetime cohorts.
+- Retail maintained reapplication/modifier/overkill evidence and rendering.
+- Damage-kind10 actor field audit: fixed retaliation receipt associates it with
+  the affected attacker, while the shared emitter currently uses the cause.
+  Original consumer writes global scratch, but per-actor cache housekeeping is
+  stubbed in the offline harness. No global packet change inferred from that.
+The historical sections below describe earlier staging phases.
+
+Implemented and tested
+- Pinned2022 metadata:10Energy,2s cast,.75s aftercast,zero recharge,
+  one maintained-upkeep link,33% attack return capped5+Smiting rank.
+  Indefinite131072 metadata is not serialized as a finite duration.
+- Copy-only registry/upkeep application and exact owned end. Caster/target
+  generations and registry application sequence are retained. An identical
+  effect-ID reinsertion invalidates the old lease. Lower-rank overwriting is
+  refused pending rank-preserving authority, not silently implemented wrongly.
+- Terminal attack journal snapshots the lease at qualification and accepts
+  only matching settled attack damage. Duplicate/out-of-order releases,
+  lifetime identity, mismatched terminals and retirement are tested.
+- Zero damage, misses/blocks and unknown/non-hostile attackers do not return
+  damage. Reduction precedes the percent; positive amounts have minimum1.
+  Holy light-sensitivity is explicit, never inferred from model/species.
+- Shared maintained wire emits separate caster-upkeep/recipient-effect records
+  and matching ends. Actual C++ outputs for21 ranks match original serializers.
+- Player World application now registers the exact scoped lease and shares
+  maintained Energy/range scheduling. Cancellation, generic removal, source/
+  recipient death/departure and late observers use the matching native records.
+  Untyped active status_mutation248 is refused; no unowned status can enroll.
+- 126 World cases cover self/ally and Monk-primary/nonprimary DF fixtures,
+  exact3100Energy-zero under dense/sparse recipient-first polling,5000range
+  crossings, cross-caster replacement, Mending coexistence and lethal Soul Barbs
+  application cleanup. Dense fixtures drain their simulated connections while
+  retaining all packets for exact-once assertions, as a real sender would.
+
+Evidence
+1029 damage/qualification cases plus ownership, replacement/end, sequence,
+lower-rank, upkeep and contact tests. Six fresh native suites pass, including
+Mending World and maintained request/energy regressions.56 source/publication/
+backlog checks pass. The verifier rejects capture-directory output before writes.
+15 frozen receipts revalidated against immutable manifests/file hashes; original
+2022 cast and454self-particle consumers pass. Ally454and distinct maintained
+roles are constructed native tests with synthetic services, not retail captures
+or rendered pixels/sound.
+The World phase passes seven selected native suites.12 actual World application/
+end traces pass original2022 serializers, maintained add/end and454particle
+consumers. These are trusted staging calls, not paid Runtime or attack reflection.
+Misleading old test summaries claiming Mending integration was pending were
+corrected; policy-only tests now describe their own verification scope.
+
+Bounded retaliation receipt: attack11 onto actor99, returned3 onto actor23,
+attributed caster51. This supports integer truncation above minimum1, but cannot
+rule out receiver modifiers or prove the full rounding/combined-effect order.
+Damage-before-overkill-clipping is a private staged policy, not retail proof.
+
+Next required consumers, before production binding
+1. Extend the player-only World service to NPC recipients/casters. Test the
+   Profane branch and lethal Divine Favor/other compound healing cases; admitted
+   Ether Renewal and paid spell completion are not yet supplied by this stage.
+2. Actual settled direct-attack damage receipts for ordinary melee/ranged,
+   attack skills/multi-hit and NPC attacks. Classify additional components
+   (Conjures/etc) versus indirect Hundred Blades/Vow damage; do not feed every
+   Health change to the retaliation journal.
+3. Shared holy/equipment modifiers, Reversal/Seed/reaction cohorts, caster
+   lifetime and recipient death ordering. No raw reaction-damage bypass.
+4. NPC recipients/casters and rank-preserving reapplication; paid Runtime and
+   normal gateway cost/cancel/aftercast/DF/application/Profane/Renewal paths.
+5. Retail modifier/rounding evidence and rendered player acceptance.
+
+Canonical host736eb4d6d87a93ae6a6f5181a93af2cf70674ed3dd8e3f712b7f3b3551cb94b7
+passes isolated encrypted login/roster/initial World handshake, not full player
+initialization or rendered gameplay. Official clients/loggers untouched.
+Fixed679captured/408bound/271awaiting/650missing partitions unchanged.
+Reports:build/reports/retribution-progress-20261030.json,
+retribution-tests-20261030.json,retribution-native-20261030.json,
+retribution-source-checks-20261030.json,retribution-host-startup-20261030.json.
+Latest World evidence:build/reports/retribution-world-progress-20261030.json,
+retribution-world-tests-20261030.json,retribution-world-native-20261030.json,
+retribution-world-source-checks-20261030.json,retribution-world-host-startup-20261030.json.
+
+Paid Runtime/gateway integration audit (2026-10-30)
+Retribution248 has no Runtime hook/admission/completion yet. Existing maintained
+spell seams: Hooks mending/succor and target_valid around396..401; plan/admission
+1074..1080; retained target1230; generic before_spell_effect2166; maintained
+completion2624. Integrate248 through these shared semantics with a staged trusted
+hook first, not a normal supported binding. Canonical plan verifies10Energy,
+2secactivation,.75aftercast,0recharge,1upkeep. Need current targetgeneration/range,
+normal payment/cancel/interrupt, application/DivineFavor/Profane ordering, admitted
+EtherRenewal accounting and exactly-once completion. World stage_retribution is
+still a staging API, not a complete paid-spell receipt. NPC source lifecycle and
+additional-component classification remain separate required consumers. Runtime
+line numbers are audit locations, not stable interfaces; inspect before edits.
+
+2026-10-31 current continuation (supersedes older staged-path absence notes)
+Paid opt-in Retribution Runtime and player/NPC World completion now exist.
+Normal skill248 remains unsupported/unbound. Current six-test native batch:
+casting_published_prefix, retribution_cast, retribution_completion_world,
+retribution_cast_extra and completion_callback_contract_extra PASS.
+retribution_completion_extra FAILS its Profane NPC ownership case (line84);
+shared Well NPC team-domain handling is under repair. Do not claim the complete
+paid acceptance matrix passed. Build and detailed results:
+build/reports/skill-completion-expanded-build-20261031.log
+build/reports/skill-completion-expanded-ctest-20261031.log
+Recall now preserves deferred publication/early visuals. Signet of Shadows
+preserves explicit prefix ownership; its actual gateway adapter is bound and
+currently uses early visuals with prefix=false. Earlier claims that Shadows
+was unbound were incorrect. These are native contract regressions, not rendered
+client verification. No host deployment from this batch.
+Source coverage auditor now recognizes guarded opt-in248 without requiring a
+normal gateway binding;50 audit regressions pass. Isolated source coverage is
+build/reports/skill-progress-20261031/skill-runtime-coverage.json.
+Fixed capture checkpoint remains separate. New complete corpus audit verified
+all58 pinned packet hashes,61 total sources/3.779GB. Only known11base/3return
+Retribution receipt exists; available captures do not establish Conjure damage
+classification. See docs/retribution-conjure-evidence-audit-20261031.txt.
+Dagger-chain helpers/tests are detached preparation, not enabled skills.
+
+Later2026-10-31: six native Runtime/completion contract suites PASS (completion-contract-verified-20261031.log), including9family forwarding matrix. Shared Well NPC ownership assertions now pass. Expanded World fixture now fails line104: side-effecting preflight output precedes deferred capture. Fix diagnosed, pending current native build freeze release. See shared-completion-validation-20261031.json. No deployment/normal248 enrollment/rendered claim.
+
+2026-10-31 latest: corrected22case paidcompletion and12case NPCreturnSeed suites BOTH PASS; source/binary hashes in build/reports/retribution-paid-seed-validation-20261031.json. Profaneownership, deferredpreflight publication, and actual NPCreturn→conversion→positive-lossSeed are verified by nativefixtures; no normal248binding/hostdeployment/renderedacceptance. Priorline104/153/38 failures above describe historicalversions and now resolved. Shared Healthgain vs healing semantics remains next separatefix.

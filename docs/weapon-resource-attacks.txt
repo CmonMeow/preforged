@@ -1,0 +1,63 @@
+Weapon resource attacks: Auspicious Blow, Mokele Smash, Furious Axe
+
+Auspicious Blow (905) is a Hammer Mastery attack. A landed hit deals +5..20
+at ranks 0..15 and grants 3..8 Energy. Weakness on the defender makes the
+attack unblockable; it is not a prerequisite for the Energy reward. Native
+adrenaline cost is retained as 120 internal units, rather than replacing it
+with a rounded display value.
+
+Mokele Smash (1409) is a Hammer Mastery attack costing 5 Energy with a 12s
+recharge. A landed hit deals +5..20 and grants two adrenaline strikes.
+
+Furious Axe (904) is an Axe Mastery attack costing 5 Energy with a 6s recharge.
+A landed hit deals +5..35. A block grants three adrenaline strikes; a miss
+is not a block. Ordinary landed-hit adrenaline remains a separate shared rule.
+A lethal block retaliation must not restore adrenaline to the dead attacker.
+
+Normal Runtime and World integration uses guarded native plans, weapon family
+admission, native costs, scoped contact authority and shared Energy/adrenaline
+modifiers, forbidden-gain rules, fractions, debt and caps. Player and reviewed
+NPC recipients are included. This is not NPC caster AI implementation.
+
+Evidence
+Archived skill articles are independently hashed by
+ tools/protocol/weapon_resource_attacks_2022.py.
+The fixed 20261022-cumulative-skills capture contains these start/finish pairs
+in packets-1360-15821281.jsonl:
+904: lines 394259 / 394264; ticks 23809171 / 23809718.
+905: lines 394479 / 394484; ticks 23828640 / 23829343.
+1409: lines 404558 / 404564; ticks 24084734 / 24085546.
+The verifier checks the frozen file hash, native metadata, original targeted
+attack serialization and nine body-consumer timing cases. Native style41 and
+state45 use the supplied weapon interval and modifier. These tests do not
+calibrate live attack release timing. Both particle resources are the2077
+sentinel; no extra caster or target particle is fabricated.
+
+Validation
+The focused C++ suite and four rebuilt adjacent regression suites pass. They cover
+player/NPC hit, miss, block, Weakness bypass, lethal target and lethal block
+retaliation, shared gain modifiers, native Runtime costs/cancellation, wrong
+weapons and precise Energy debt/fraction/Overcast cases. NPC block tests use
+existing reviewed Shield of Deflection staging, not an invented NPC caster.
+
+Remaining verification
+Captured starts and nearby same-actor finishes do not prove a hit, block,
+Weakness or resource gain. Retail conditional reward context, full publication
+order, rendered/audio fidelity and autonomous NPC caster support remain open.
+Offline actor/model/clock services are stubbed. Source binding is not proof
+that every global combat interaction or rendered animation is complete.
+
+Focused validation update
+warrior_resource_attacks now passes. The Runtime test explicitly checks one
+native50 targeted start, success46 versus cancel49, pending-slot226 on either
+outcome and226-before228 on success. No2077 sentinel particles are emitted.
+Precise snapshots are taken only after creating an owned Overcast curve; the
+fixture preserves real equipment deficit and fractional regeneration semantics.
+Rebuilt Thrill of Victory, Counterattack NPC, blocked attack skills and warrior
+condition Runtime regressions pass. Final host build is pending.
+
+Final serial host build passed2026-10-23.
+Host SHA256: 6D99DF51047800B985C9A88973C90D9613A155BE6C2995DF3295671B6C3B03C8
+Five rebuilt melee suites and five backlog utility tests pass;native verifier passes six frozen receipts and nine body timings.
+Binary rebuilt only;no running-server deployment or rendered acceptance claimed.
+

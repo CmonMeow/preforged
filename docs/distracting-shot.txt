@@ -1,0 +1,50 @@
+DISTRACTING SHOT399 — NATIVE PLAYER BOW IMPLEMENTATION
+
+Pinned row:Expertise23,5Energy before Expertise reduction,10s recharge,
+fixed1..16 damage at ranks0..15 (1+rank),.5s native body animation,no2077 body
+effect. Historical and current wiki progression identify armor-ignoring damage.
+The weapon's ordinary damage,armor,Strength,mastery,Weakness and customization
+do not replace that fixed amount. Existing miss,block,protection and separate
+preparation/on-hit reaction paths remain. No fake weapon armor is required.
+
+Phases are distinct:release250ms halfway through the500ms base animation,
+then750ms aftercast. Reviewed attack-duration/IAS scales the release and native
+animation modifier together. Runtime no longer interprets raw1.5 native row
+aftercast as this skill's server phase. Projectile impact samples the target's
+current action,not the action present at release. Extra20s disables only a
+successfully interrupted skill/copy,using its actual owner-settled recharge.
+
+The hit may already interrupt through Dazed or reviewed easily-interrupted
+Precision Shot. That still interrupts but creates no extra399 disable request.
+Player interrupt protection prevents the request. Reviewed NPC spellbook skills
+prepare actual cancellation/recharge and the exact-slot disable;post-hit commit
+preserves damaged Health. An untracked active NPC skill rejects impact rather
+than inventing its cooldown. Idle targets still take fixed damage.
+
+EVIDENCE
+Fixed20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+426457 start,42646010s recharge,426467 negative physical source/target float,
+426481 exact slot release. These do not prove the conditional disable or damage
+magnitude. Source/target/tick correlation lacks an explicit damage skill ID.
+audit_bow_terminals.py verifies its exact release among28 hashed bow windows;
+no pre-release melee46 is invented. interrupt_attacks_2022.py verifies pinned
+metadata and native body consumers using synthetic model handles.
+
+Reference:https://wiki.guildwars.com/wiki/Distracting_Shot
+Historical:C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Distracting_Shot.html
+The current progression labels armor-ignoring damage;Notes establish quarter-
+second release,three-quarter-second aftercast,and earlier-interruption precedence.
+
+TEST COVERAGE / OPEN WORK
+Native tests cover ranks0/12/20,armor0/60/120,large/customized weapon damage,
+Weakness,unknown armor,hit/miss/block/interrupt protection,Dazed and Precision
+Shot eligibility,impact-time acquisition of a newly casting target,player
+Runtime extra-disable settlement,NPC tracked/idle/untracked targets and expiry.
+Source Runtime tests cover Expertise-adjusted payment,250ms release,IAS,
+750ms aftercast,before-release cancel/interrupt and absent melee46 terminal.
+
+Retail phase/IAS measurements,conditional disable capture,Choking Gas/Spinal
+Shivers reaction ordering,wider easily-interrupted actions,NPC protection and
+controller coverage,typed-element fixed-damage interactions,copied-session
+admission and rendered client acceptance remain open. Source binding is not
+proof of full retail fidelity. Official logging was not controlled for tests.

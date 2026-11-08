@@ -1,0 +1,169 @@
+Native2022 faction, currencies and title integration
+
+gw_progression.h provides two deliberately separate durable profiles:
+Factions is account-shared, four current/lifetime/cap counters in order Kurzick,
+Luxon, Balthazar, Imperial. Default earned balances are zero; base caps10000,
+10000,10000,20000 are game rules, not claimed official captures. Local mirrored
+Balthazar_faction.html states per-account storage and initial10000/max250000;
+Kurzick_faction.html and Luxon_faction.html initial10000/max70000; Imperial_faction
+cap is the sum of Kurzick/Luxon caps. earn clamps actual granted credit to cap;
+spend never reduces lifetime credit. No exchange/deposit/trader rewards invented.
+
+Character holds current/total skill and hero-skill currency counters and proven
+title rank definitions/tracks. Empty defaults mean unobserved private progress.
+All base fields in title tracks are preserved from native2022 metadata, not
+guessed from modern44-byte structs. This does not automatically import official
+titles, fabricate achievement ranks, or merge account-bound title progress across
+characters. The eventual title import/gameplay rules must implement account-bound
+track aggregation separately. No account capture currently supplies these fields.
+
+Persistence core hooks:
+top include gw_progression.h; helper include accounts_progression.inc; dispatch
+progression_execute(db,operation,fields,permitted) before generic operations.
+Tables fw_gw_factions(account PRIMARY KEY REFERENCES fw_accounts(id) ON DELETE
+CASCADE,revision INTEGER NOT NULL,profile BLOB NOT NULL), fw_gw_progression
+(character PRIMARY KEY REFERENCES fw_gw_characters(id) ON DELETE CASCADE,
+revision INTEGER NOT NULL,profile BLOB NOT NULL).
+gw-account-faction-get account =>0 when absent, else revision TAB hex.
+gw-account-faction-save account TAB expectedRevision TAB hex =>newRevision.
+gw-character-progression-get account TAB character =>same format.
+gw-character-progression-save account TAB character TAB expectedRevision TAB hex.
+Saves are trusted internal server operations, never direct unrestricted client
+commands. Validate ownership/CAS and final precommit cancellation rollback.
+
+restore(factions,character,experience,level,morale,playerNumber) replaces existing
+packet232 initialization; do not send old zero faction stats after this restore.
+It returns232,233..236caps,242rank definitions,245tracks,243active title. CMSG86
+DWORDtrackID and87hide have pinned framing. select_title returns immutable proposed
+profile only when the track's earned current tier and definition exist. Persist
+CAS before broadcasting active_title(playerNumber,tier), tier0 for hide. Player
+number is a WORD PlayerArray index, distinct from world agentID.
+
+Pinned protocol proof (build37130 SHAa6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac):
+232 descriptor60c15c callback8755b0->796990 copies15 stats into World+740 stride8;
+stats13/14 are skill points current/lifetime,7/8 hero currency,9level,10morale.
+233..236 descriptors60c168..60c18c write World+7b8/7bc/7c0/7c4 faction capacities.
+237 descriptor60c198 callback875650->796a60 ADDS signed modifier to attr index;
+238 is equipment flags, so modern GWCA opcode values must not be copied blindly.
+242 descriptor60c1d4 callback8756f0->796cc0 installs TitleTier12-byte record.
+243 descriptor60c1e0 callback875730->796e00 writes Player.active_title_tier+30
+in World.players+80c stride4c and dispatches UI10000064.
+244 descriptor60c1ec callback875750->796ee0 updates Title.current_points+4 only.
+245 descriptor60c1f8 callback875770->796f60 copies8DWORD fields and2strings into
+Title40-byte records. Initializer464120 includes ECX stores missed by simple
+A1/A3 initializer extraction; generator emulates original initializer first.
+tools/protocol/progression_2022.py runs original serializer offline and writes
+11 fixtures. Tests verify exact bytes after native framing high-bit normalization.
+
+Remaining gameplay: faction sources/rewards/exchanges, capacity achievements,
+skill-point spending/awards, title threshold catalogs and title account-sharing.
+Persistence/wire support alone must not be described as those complete systems.
+
+2026-10-07 tournament account response:
+Pinned descriptor60b8e0 wire48 callback873620->790af0 initializes
+World.accountInfo and publishesUI1000002a. Name then six DWORDs: wins,losses,
+rating,qualifier_points,rank,reward_points. Reward field offset18.
+Descriptor60b8f8 wire50 callback873670->790c50 updates six counters and
+publishesUI1000002c; requires initialization. Entry now sends48 with empty
+uncaptured display name, zero uncaptured standings and durable reward balance.
+Successful trim purchase sends50 with actual remaining balance. Original
+serializers matched both fixtures: tools/protocol/tournament_account_2022.py.
+progression/social_accounts/npc_dialogue/network_lifecycle4/4pass; deployed.
+Native H visual check pending: privatePID8624 no longer exposes a window.
+No official client was targeted. Full faction/title gameplay remains incomplete.
+
+2026-10-07 live native H verification:
+Verified exact privatePID8624 fullpath then closed its unusable session and
+launched privatePID7088. Login test@example.test/test restored original7 roster,
+selected Cmon Meow and entered owned hall186. H Account tab visibly displays
+Tournament Reward Points85000 (current balance after separate user activity;
+this test made no trim purchase or balance mutation). Screenshot:
+build/reports/tournament-points-h-live.png. Thus entry48 balance presentation
+is live proven; postpurchase50 update still only original serializer/unit proof.
+Account-name selection warning is present because unimplemented name remains
+empty, not fabricated. H faction tab displays only Balthazar0/10000; full
+faction/title UI and earning rules remain unfinished. Native control tool adds
+bounded plainH key for this verification. Private client left open in hall.
+
+2026-10-07 Imperial faction transaction:
+Local mirrored Imperial_faction.html (revision2582061) specifies Hei Tsu1:1
+Kurzick/Luxon,3:1 Balthazar rounded down; excess destination credit is lost.
+exchange_imperial implements those rules while preserving Imperial lifetime.
+Shared NetworkComponent.exchangeImperialFaction dispatches trusted internal
+Accounts/gw-account-faction-exchange with account TABexpectedRevision TAB
+numericDestination(0Kurzick/1Luxon/2Balthazar) TABImperialAmount. Validates
+account, revision, nonzero amount, sufficient source. Saves source/destination
+in one profile/transaction and checks cancellation before final commit.
+Tests prove ratios/rounding/cap loss, saved balances, stale duplicate rejection,
+insufficient funds and precommit rollback. progression/network_lifecycle2/2PASS;
+server rebuilt/deployed. This is server application support, not completed
+player-facing Hei Tsu dialogue: no captured Hei Tsu in current NPC catalog.
+All title definitions/reward rules and remaining faction sources still pending.
+
+2026-10-07 H-panel follow-up: User confirms Titles empty and only Balthazar faction visible. Current progression restore already emits all four cap packets233..236 plus15-stat packet232; therefore simply adding three packets is not a fix. Pinned callbacks verified offline:233 ->796930 writes World+7b8 and emits UI10000067;234 ->796a00 writes+7bc/UI68;235 ->796a30 writes+7c0/UI69;236 ->796960 writes+7c4/UI6a. Initial stats796990 copies15 counters atWorld+740 stride8, and only emits UI66 if previous value is nonzero and changed. Title-rank242 ->796cc0 populates12-byte rank records; title tracks are only emitted for persisted progression_profile.tracks, whose absent-profile default is empty. Thus titles currently have no catalog/earned records by default. Need trace H-panel visibility conditions and populate correct title catalog/progress; serializer correctness alone does not establish UI behavior. Offline trace tool tools/protocol/trace_progression_callbacks.py; output build/reports/progression-callback-trace.txt. No live fix claimed.
+
+2026-10-07 verified faction visibility root: Original37130 H-panel81adc0 queries current map through7cbe60/588550 and compares map campaign field+4 to2. Outside campaign2 it checks lifetime stats2(Kurzick),4(Luxon),6(Imperial) through81a1e0/797da0. With all three lifetime values zero, it hides rows0/1/3 through5d5000; Balthazar row2 remains. This is native behavior, not missing cap packets or a timing fix. tools/protocol/verify_faction_visibility.py executes original function with intercepted UI/map/stat providers: campaign1/3 empty hide, campaign2 empty show, campaign1 earned show. All4cases pass; evidence build/reports/faction-visibility-2022.json. Imported faction history and title catalog/progress still need implementation; do not fabricate earned official values or patch client visibility.
+
+2026-10-07 faction awards: Added NetworkComponent::awardFaction -> Accounts/gw-account-faction-award(account TABexpectedRevision TABkind0..3 TABamount). Server performs owner validation, revision comparison, capped earning, and save in one transaction with cancellation checks before write/commit. Tests verify each of4factions persists current/lifetime totals, stale replay rejected, cancellation rollback, zero award invalid. progression and network_lifecycle passed; host rebuilt/deployed. No client command, quest/PvP reward source, imported history, title catalog, or H-panel completion is claimed; these remain necessary integration work.
+
+2026-10-07 native title/faction reference capture: skills_logger now accepts
+optional --progression. The read-only external observer captures raw modern44
+track records, rank records with encoded names,15stats and4caps, all double-read
+with map/character/array descriptor validation. Dedicated visible one-shot
+launcher bin/skills/START PROGRESSION CAPTURE.cmd. Existing spawn collector
+unchanged. Built successfully; self-test exercised actual bounded local process
+reads of title/tier/stat fixtures and rejected over-bound text. No official
+client currently running, so live capture and proper2022 import remain pending.
+No fabricated titles or faction history were deployed, and H-panel remains
+incomplete until actual catalog/progression integration is verified.
+
+2026-10-07 LIVE PROGRESSION CAPTURE AND IMPORT
+Official client verified PID4552 full path Desktop/Guild Wars/Gw.exe; supported
+SHA2568e50edfb. The external --progression-only --once read completed normally
+without injection, hooks, UI input, client writes or restart. Original skills
+snapshot mode rejected equipped ID/copy bounds in this session; dedicated
+progression-only mode reads own identity and progression independently and
+never emits fabricated empty skills snapshots.
+
+Capture retained privately:
+data/gw-official-import/main/progression/cmon-meow-20261007.jsonl
+Observed character GUID CEC995EC-06BA-4F7B-852F-6334194B9E6C matched owned Cmon
+Meow roster by exact16bytes.48slots,88named rank records,44populated active
+tracks. Current/lifetime faction counters and caps preserved exactly. No
+rewards invented. Modern nine-DWORD title record has a zero extension at+10;
+converter drops only that field, rejects unknown nonzero extensions, preserves
+all remaining fields/text. Original code copy widths and first text offsets
+verified offline in both pinned executables by verify_title_layouts.py.
+
+Native rank validation previously rejected legitimate rank0 placeholders,
+percentage rank1000 and terminalUINT32_MAX/name0101 records. Corrected those
+bounds; terminal/zero ranks remain unavailable as earned display titles. The
+last track field is preserved opaque instead of incorrectly requiring a named
+rank at its numeric value. Current-rank references remain required; absent
+next rank permitted only with terminal next thresholdUINT32_MAX.
+
+Native build/tools/progression_import.exe supports --inspect CAPTURE GUID and
+DATABASE ACCOUNT GUID FACTION_REV CHARACTER_REV CAPTURE. Accounts operation
+checks ownership and both expected revisions, validates both serialized profiles,
+writes faction+character+sourceSHA256 in one cancellable transaction. Stale,
+unowned, malformed and cancelled imports do not partially overwrite profiles.
+fw_gw_progression_imports retains the source digest; file remains in private data.
+Cmon Meow's faction/character profiles committed at revisions1/1. All other
+characters, inventory, guild, tournament points and credentials were untouched.
+Captured factions are account-scoped; captured title profile currently belongs
+only to the observed Cmon Meow character. Shared account title ownership and
+ongoing title reward rules are NOT complete.
+
+Tests: progression_import and progression pass; native observer self-test passes;
+original-code title-layout verifier passes. Rebuilt server deployed PID3240.
+Private2022 client PID5132 launched for H verification; official PID4552 preserved.
+Desktop foreground belongs to Microsoft.LockApp.exe PID6464, so private input
+was rejected by the foreground guard and visual H validation remains pending.
+No green lock-screen screenshot is treated as client UI evidence. Control tool
+can capture without input while unfocused, but every input still requires the
+exact private client's foreground window. Restores only that private window.
+No claim that all titles/factions/gameplay are complete.
+
+2026-10-07 legacy import migration: progression_import --seed-account-titles DATABASE ACCOUNT_HEX CHARACTER_GUID CHARACTER_REVISION initializes absent shared titles from an owned character with retained official-import provenance. Runs transactionally, rejects stale character revisions or existing account titles, supports cancellation rollback. Does not rewrite character profile/revision or faction profile/revision. Applied main Cmon Meow revision 3: account titles revision 1 created; active title 0 and character revision 3 preserved. Existing server account-title merge applies on subsequent progression loads. Native progression test verifies legacy migration, ownership, CAS, rollback, no overwrite, sibling sharing, and no character/currency transfer.
+
+2026-10-07 live private 2022 UI verification: H Titles tab renders captured named ranks and point totals, including Savior of the Kurzicks (12), Slayer of All (10), Secret Agent (10), Legendary Delver (10), Not Too Shabby (10), Legendary Spearmarshal (10), Holy Lightbringer (8), Legendary Master of the North (6), Blessed by Fate (6). Skill Points 720 displayed. H Faction tab renders all four captured balances/caps: Balthazar 3455/85000, Kurzick 1911/70000, Luxon 0/65000, Imperial 7500/135000. Screenshots build/reports/titles-native-ui-verified.png and factions-native-ui-verified.png. This verifies current-character rendering; sibling sharing separately tested at persistence layer.

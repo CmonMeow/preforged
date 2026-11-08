@@ -1,0 +1,48 @@
+NPC failed-target terminal: bounded implementation evidence
+==========================================================
+
+Scope: Immolate191 and Flare194 completion-time target validation. Fireball186
+is excluded because Fail explicitly describes its dead-primary exception.
+
+Local historical wiki (read-only backup under Desktop/gw/Wiki):
+  Fail.html oldid2625489
+  SHA256 e9753d630481f17d7a400327c807894bd1892402890a2196e66dc75bedbdc51c
+  Failed activation loses the paid cost but immediately recharges; target death
+  during activation is a documented failure case, with named exceptions.
+  Recharge_time.html oldid2669450
+  SHA256 9ad3e89d71b4afa03c4f71c6b821bb5d37782e286a1afaf8163771ab74702f97
+  Distinguishes interruption recharge from failed skills being ready immediately.
+
+Existing server policy, not independent capture proof of retail failure timing:
+gw_skill_casting.h Runtime target_lost branch validates at due completion,
+returns before normal recharge and before before_spell_effect. It emits existing
+player cancellation plus native stop59. Missing/recycled/unpublished/plane/LOS
+target classification follows that server policy; unknown/future facts defer.
+
+Native terminal shape is already pinned by tools/protocol/terminal_events_2022.py:
+kind59, value0 maps pinned2022 opcode158 to native action23. Generic terminal
+proof does NOT identify a successful captured failed191/194 activation, nor prove
+an NPC hotbar failure UI message. Publish existing stop59 only; no invented UI.
+
+Production transaction required (not yet integrated): under World lock, validate
+exact LiveActor lifetime, live Health/current condition clock, tracked Spellbook
+token,191/194 and actual control.complete(token,now). Then finish(now,false,false)
+to clear pending without native recharge or aftercast. Keep paid Energy spent and
+all independent disable authority. No completion58, Backfire success reaction,
+caster body or projectile on failure. Check epoch interruption before failure;
+an interrupted spell must retain its established interruption recharge behavior.
+
+gw_npc_failed_target.h is the independent decision helper; tests/npc_failed_target.cpp
+covers due timing,future authority,unknown facts,dead/replaced/missing/plane/LOS
+and Fireball exclusion. This alone is not the completed LiveActor terminal.
+
+Integration regressions needed: real191 paid then target dies -> no5s recharge,
+real194 failure -> no750ms aftercast; no refund; external disable preserved;
+stale token cannot clear a newer action; interrupted cast retains recharge;
+failed cast cannot trigger Backfire; future-clock target/caster defers unchanged.
+
+Separate retired-generation Flare-controller regression: create old Flare cast
+and flight, legally leave players/renew population/rejoin, configure new Flare
+same actor ID,new scope; stale controller must not reject replacement as busy.
+Same-generation pending Flare must still reject replacement; old flight must not
+damage the new generation. Guard must compare lifetime before busy-state checks.

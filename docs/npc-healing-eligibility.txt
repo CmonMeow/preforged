@@ -1,0 +1,5 @@
+NPC healing eligibility
+
+gw-npc-combat revision11 appends two fields after revision10: healing_allowed and healing_evidence. Values1 and0 are reviewed healable/immune; both require an existing source token. Unknown is written as - - and remains unknown for all older revisions. Do not infer this trait from summoned, appearance, allegiance or relation.
+
+LiveActor retains the reviewed optional trait for its full lifetime. Healing Ring NPC proposals require stored true in addition to the selected creature label. This stops a caller from relabeling an immune or unreviewed NPC. General LiveActor::heal remains a low-level operation for other existing mechanics; this change does not retroactively change their behavior. World/casting integration and reviewed content population remain pending.

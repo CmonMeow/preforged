@@ -1,0 +1,302 @@
+Held bundles: staged native wire and transaction state,not gameplay integration
+
+Pinned client SHA256a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+Original registry descriptor RVA60d82c is[336,0x204,0x404];callback VA7c4d70.
+Callback resolves packet inventory via7c2c90and item via the live item table.
+Original setter7c9520writes inventory+0x5cand requests hand refresh0and1via7c9790.
+tools/protocol/bundle_2022.py executes original lookup/setter and serializer.
+Four cases prove assignment42,clear0,reassignment42,and unresolved99clearing the pointer.
+Existing inventory+0x60/+0x64weapon-set pointers survive every case.
+Hand/model service is stubbed:no rendered,combat,peer-equipment or asset proof.
+Wire is legacy336 WORD inventory/DWORD item,not the modern opcode.
+Definition must precede assignment;unknown IDs clear native state.
+Generated evidence:build/reports/bundle-native-2022.json and tests/fixtures/bundle-2022.txt.
+
+Native C++ items::held_bundle_2022matches all original serialized fixtures.
+The raw encoder does not authorize ownership,pickup or drops.
+gw_bundle.h adds scoped copy-only acquire/drop proposals. A trusted producer must
+supply a complete type6/single-quantity valid definition and explicit ground/destroy
+disposition. The state enforces one held item,monotonic bundle generation,event replay
+watermark,resource chronology,finite origin and exact actor lifetime.
+Preparing a drop preserves the source state;caller must commit it with ground/effect
+side effects and publication. This does not implement those effects by itself.
+Tests cover all modeled causes,ground/destroy policies,replacement generation,failed
+preparation,backdated events,duplicate drops,malformed definitions and native wire.
+
+Remaining before Recall/Death's Charge can claim bundle support:
+World-owned pickup from ground retaining item identity instead of bag credit/deletion;
+atomic held->ground/destroy transition at PRE-shadow-step origin;
+peer equipment and owner release publication;
+weapon/stat/attack suppression while holding and restoration on release;
+item-spell/drop effects,expiry/death/weapon-switch/zoning and authored exceptional policies;
+rendered validation and real captured drop sequences.
+No live request calls the staged state/encoder yet. No official process was touched.
+
+Local wiki Bundle revision2627020says only one bundle can be held and shadow stepping
+drops it BEFORE the step. It distinguishes persistent bundles from destroyed ones,
+including item-spell bundles;no destruction rule is inferred just from type6.
+
+2026-10-22 World bundle transaction stage:
+World now owns transient pickup separately from durable bag credit. Pickup consumes
+one exact floor lifetime, retains its item definition, cancels ordinary attack and
+NPC interaction, and assigns opcode336 to its owner only. Generic inventory credit
+rejects type6 with held_bundle_path_required; no unreviewed policy is inferred.
+Drop prepares a copy with ground-revision/allocation-cursor/actor-lifetime checks.
+Persistent drops allocate fresh wire and actor lifetimes and retain metadata;
+destroy disposition publishes deletion without respawning. Manual drop requires
+the exact held generation, rejecting delayed requests against a replacement.
+Recall and Death's Charge prepare/commit this transition at the origin before
+position changes. Recall owner publication includes clear/drop before trails and
+retained disable/removal/position feedback; peers receive shared floor packets.
+Ordinary attack entry and weapon-skill completion reject held bundles. This does
+not yet prove every attack admission, stat suppression or peer equipment update.
+World transaction tests cover pickup visibility/definition retention, contender,
+stale manual drop, nonmutating Recall preview, persistent/destroy return, fresh
+identities and origin placement. First three suites passed; expanded rebuild and
+regression pending in build/reports/bundle-world-build.txt.
+Still gated: normal client pickup policy, item-spell/drop effects, held bonuses,
+peer equipment, death/weapon-switch/zone-exit cleanup, full-ground retained retry,
+active Recall recast semantics and rendered/captured end ordering. No normal
+Recall925 binding is added. No official client or logger was touched.
+
+Validation: bundle-world-build.txt serial Release build succeeded for host and five affected targets. bundle-world-tests.txt records11/11 native suites passing; five skill_runtime_coverage tests pass. Host SHA256 FE7092B1BC7A11D7FF2C2CAF98C4046771D5CB643CD6FCE1EB23FD176B5E301D. Binary rebuilt only; no process restarted or deployed. Fixed checkpoint publication remains679captured/319source-bound/360awaiting-binding/650missing-capture. World bundle lifecycle remains staged with the gaps listed above.
+
+
+2026-10-22 owned bundle/Recall verification:
+Expanded bundle_world exercises real stage_recall -> maintenance cancellation ->
+Runtime feedback acknowledgement, rather than only direct relocation. Owner bundle
+clear and old-definition deletion remain behind the retained publication barrier;
+peer packets have deletion before origin trail and contain no owner336 clear.
+The acknowledged owner batch starts with clear/drop before trails; position and
+held/ground state commit once. Ordinary earlier resource packets may drain before
+the barrier and are not incorrectly treated as a violation.
+Full64-item ground pool rejects direct Death's Charge while keeping the original
+bundle held and player at origin. Removing one floor item permits retry; exactly
+one replacement floor item is created at pre-step origin. Stale anchor rejects
+without dropping. Reacquisition/stale-generation/manual release regression added.
+Attack admission for the reviewed Weakness-dependent melee permit now also rejects
+holding a bundle; completion already independently checks held state.
+Remaining blocker for normal Recall: owned end currently throws Recall end remains
+pending if bundle floor preparation fails after upkeep retirement. Direct-component
+retry proof does NOT prove owned automatic retry. No per-tick end-queue retry is
+implemented and later actor clocks complicate retry at the original event time.
+Do not bind925 until this lifecycle and item-spell/peer-equipment gaps are resolved.
+
+Owned-bundle validation complete: serial Release host build bundle-owned-build.txt passed; final expanded bundle_world rebuild passed. bundle-owned-tests.txt11/11 suites pass, including owned publication, full ground rejection/retry, stale anchor and reacquired-generation cases. Five Python coverage tests pass. Fixed checkpoint refreshed/published with319source-bound unchanged. Host SHA256 93BC58584FA27678F311664A499A2D9A9F20551E970B6289020AE6E162D67F27; not restarted. Test fixture chronology corrected by admitting all actors before creating floor items, preserving ground snapshot clock invariant. Owned failed-end retry remains unresolved and925 remains staged.
+
+
+2026-10-22 persistent bundle floor-capacity ownership:
+A persistent held bundle now retains one logical floor-capacity lease. Both World
+floor producers (durable inventory drop and NPC loot) check physical floor entries
+plus held persistent reservations before accepting another item. Pickup trades one
+floor entry for one held reservation; release trades the reservation back for a
+floor entry. Destroy-on-drop bundles reserve no slot. Multiple holders each reserve
+one. The stored original item/held generation remains the sole release authority.
+The previously reproduced full-pool owned Recall exception is prevented for this
+resource:63 ordinary floor entries plus one held persistent bundle is effective
+capacity64. Further inventory drop rejects BEFORE its durable debit callback.
+Maintenance cancellation can then drop at origin and return, consuming the reserved
+slot without waiting for unrelated loot to leave. This is not a delayed/backdated
+Recall retry, and no fabricated later movement timestamp is introduced.
+The earlier direct-component full64-floor rejection test is superseded: such a
+physical occupancy is now denied while a persistent bundle is held. Tests exercise
+owned cancellation at effective capacity plus multi-holder and destroy policies.
+Identity exhaustion, navigation failure and publication-resource failures remain
+separate staged end-transaction gaps. Held departure/death/weapon-switch lifecycle
+cleanup and effects are still unimplemented; a retained departed holder can reserve
+capacity until cleanup is implemented. Client bundle requests and Recall925 stay
+unbound. This change does not claim a general automatic retry solution.
+
+Capacity lease validation: serial Release bundle_world/death_charge_world/server_host build succeeded (bundle-capacity-build.txt).12/12 native suites pass (bundle-capacity-tests.txt), plus5callback coverage tests. Multi-holder persistent reservations and zero-reservation destroyed bundles pass. Fixed checkpoint audit/publication refreshed:679captured,319source-bound,360awaiting-binding,650missing-capture. Host SHA256 831A45BF88C6FF5A29B89A87D446C8AD905A6E2E9BD14E515A97CA6A93B1488D. No deployment, official input, client restart or logger action.925remains staged; general failed-end retry and held lifecycle cleanup remain open.
+
+
+2026-10-22 bundle death/departure lifecycle stage:
+Local Bundle.html revision2627020 explicitly lists involuntary drops after dying
+and entering another zone. World now snapshots the authoritative origin before
+death resets movement and before departure erases the actor. Death publication
+commits the bundle release after setting corpse health; departure commits before
+removing the old lifetime. Ground/destroy dispositions retain their explicit
+content policy. A released item gets fresh floor identity at the captured origin.
+Release work is retained by exact owner scope,held generation,cause and origin.
+If allocation fails, death/departure can finish and the original held metadata
+and capacity reservation survive for a later tick attempt. An absent/reused owner
+receives no old owner336clear; peer definition deletion/floor publication remain
+shared. Successful orphan completion removes old bundle state; successful normal
+departure clears that state immediately. Release generation prevents a replacement
+actor from inheriting old held authority. No item-spell effects are invented.
+New tests cover death/departure with both dispositions,once-only definition removal,
+no repeated release on subsequent tick/death,origin preservation and actor-ID reuse.
+Pending allocation-failure isolation/authority tests and weapon-switch/hold-bonus/
+peer-equipment/native visual proof remain; normal bundle and925requests stay gated.
+This lifecycle queue does NOT solve the separate owned Recall navigation/publication
+failure transaction. No official process or live capture was touched.
+
+Lifecycle validation: bundle-lifecycle-host-build.txt serial Release host and three affected World suites built successfully. bundle-lifecycle-tests.txt13/13 native suites pass; five callback audit tests pass. Fixed checkpoint reports refreshed:679captured/319source-bound/360awaiting-binding/650missing-capture unchanged. Host SHA256 30C86027CFE2B3C0EAA09E0222F743E445D3812D4E24AC6FAD40BAB3E133285A. Not restarted or deployed. Allocation-failure queue recovery and queued-release isolation after resurrection still require dedicated regression before client binding; exact drop-effect ordering/rendered proof remain absent. No official client/logger touched.
+
+
+2026-10-22 weapon switching and pending-release isolation:
+World switch_weapon_set now validates exact owner/optional held generation,clock
+and absence of a pending lifecycle release,prepares the origin drop,and invokes a
+trusted durable inventory CAS only after preparation succeeds. Failed CAS leaves
+held/floor state unchanged and emits no drop. Successful CAS commits the prepared
+release once under the same World lock. Callback must not reenter World.
+The 37130 opcode48 gateway now uses this transaction around its existing inventory
+projection/save/commit; unchanged active-set selection retains its previous no-op
+behavior. Source refresh of weapon stats is not misclassified as a switch.
+Ordinary manual/shadow drop commit rejects a lifecycle-pending holder,so it cannot
+steal a death/departure release and leave that event orphaned. The lifecycle
+consumer alone can release its captured generation/origin.
+Expanded bundle_world tests verify stale/missing held generation prevents durable
+callbacks,failed save produces no drop,successful switch clears first and applies
+ground/destroy policy,then ordinary no-bundle switching remains usable.
+An actual allocator-exhaustion test reserves the remaining monotonic floor wire
+IDs after pickup. Death no longer throws:original held metadata survives,persistent
+capacity remains reserved,and subsequent tick attempts do not fabricate a floor
+identity or delete the original definition. After resurrection,switch CAS is not
+called while release remains pending. Departure/actor-ID reuse yields no stale
+owner336clear. This is failure retention/isolation proof,NOT allocator recovery:
+this monotonic pool cannot recover exhausted IDs without a new World instance.
+Still gated:held weapon/stat suppression,authored item-spell effects,expiry/renewal,
+peer equipment and rendered/native drop sequencing. Owned Recall navigation or
+publication failure remains a distinct unresolved end-transaction concern.
+No official client or capture changed;normal bundle pickup and925 remain disabled.
+
+Weapon-switch validation complete: bundle-switch-host-build.txt serial Release production host and affected World targets succeeded; bundle-switch-tests.txt13/13 native suites passed,including expanded bundle_world. Five callback audit tests passed. Fixed checkpoint refreshed/published with679captured/319bound/360awaiting/650missing unchanged. Host SHA256 EF4F3C7C88FA3472572E5F517B76B794907FE10351C8DC58C64E3693A0FE44CD,rebuilt only,not deployed or restarted. Native acknowledgement/rendered switch ordering and full hold-stat/drop-effect behavior remain unverified; normal bundle pickups and925still gated.
+
+
+2026-10-22 calculation-only held equipment projection:
+New gw_bundle_equipment.h validates saved weapon references,then copies a temporary
+calculation view with all active/stored weapon references disabled and physical
+hand slots0/1 excluded. It retains armor,carrying items,bag layout,owned identity
+cursor and gold. This view MUST NOT be persisted or sent as inventory updates;
+the original profile retains possession and all four saved weapon sets unchanged.
+Session equipment refresh now derives ordinary weapon,shield equipment and worn
+Energy from this view while exact scoped World ownership says a bundle is held.
+Cast-time enchanting_duration independently queries current held state and uses
+the view,so a held staff suffix cannot extend a new enchantment. Existing armor,
+rune and attribute paths remain based on actual worn armor. Release restores the
+original sources on normal refresh without a durable item rewrite.
+New bundle_equipment test verifies22hand Energy ->0,shield identity2->0,enchanting
+20%->0,and actual1392duration12000->10000. Armor capacity/pips and modeled physical
+armor are unchanged;the original inventory encoding and saved-set packets compare
+identically before/after projection. Invalid saved references are rejected rather
+than masked as a valid empty set. Original held-free enchanting source restores20%.
+Production host builds and12selected native suites pass (bundle-equipment-tests.txt).
+This is NOT atomic resource settlement at pickup/drop:periodic refresh may lag the
+World transition,and current Energy/debt semantics,existing enchantment lifetime,
+shield/contact ordering and peer visual updates need transaction-level validation.
+Unimplemented weapon modifier families are not claimed implemented by hiding their
+source. Client bundle pickup and925 remain gated. No official logging touched.
+
+Equipment-view validation finalized: serial host rebuild passed (bundle-equipment-host-build.txt),12/12 selected native suites and5callback audit tests pass. Fixed checkpoint audit/publication refreshed,319source-bound remains unchanged. Host SHA256 512AC7765A73EA20F84229F698489B3E5B25C6E039EE9B37480B0B0F3BEB7AD4; no restart/deployment. Immediate pickup/drop resource/contact ordering and rendered acceptance remain gaps; normal bundles/925still disabled.
+
+
+2026-10-22 immediate Shield Stance contact facts while holding bundles:
+World effective_shield_locked retains the reviewed inventory shield/revision but
+masks its effective shield identity to0 while the exact player scope holds a bundle.
+Shield Stance flat-reduction and attributed block probability/source queries now
+use that same dynamic fact under the World lock. Dropping the bundle immediately
+restores the saved source,without waiting for the session refresh. Unknown original
+equipment remains unknown rather than inventing an inventory revision.
+Gateway periodic refresh now supplies actual saved shield equipment to World;
+it no longer overwrites that source with the temporary empty equipment view.
+An update while held replaces the saved revision while contact remains suppressed.
+Expanded bundle_world uses real melee skill340,60armor,Shield Stance rank12 and
+Strength8. While held,20damage applies with no block RNG draw;after dropping,
+the next hit draws the block roll and applies only5damage after15reduction.
+No intervening session equipment refresh is used. A newer shield revision supplied
+while held is also tested,so stale pre-pickup gear is not restored.
+This proves immediate Shield Stance behavior,not every shield modifier or base
+armor formula. Atomic hand-Energy settlement is still unresolved:capacity changes
+can trigger reactive effects,so a periodic refresh is not sufficient proof of
+correct pickup/drop chronology. Bundle925normal binding stays disabled.
+
+Immediate shield validation: bundle-shield-host-build.txt serial Release host,bundle_world and shield_stance_world targets passed. bundle-shield-tests.txt8/8 selected native suites passed;5callback coverage tests passed. Fixed checkpoint audit/publication updated with319source-bound unchanged. Host SHA256 5274D7FA74BF776ACB99ECF75872B4969E264449A95E1710883DC824713D5C76; rebuilt only,not restarted/deployed. This closes the periodic shield-source overwrite/contact-delay issue;immediate hand-Energy and general owned Recall failure transactions remain open. Official sessions/captures untouched.
+
+
+2026-10-22 staged bundle Energy transition preparation:
+New gw_bundle_energy.h composes the existing Overcast settlement/nominal resize
+policy into a copy-only before/after plan. Trusted sources split base,total equipped
+capacity and signed hand capacity;morale applies to base using existing policy.
+The original maximum must match the declared prior held state. Duplicate unchanged
+held flags,stale actor lifetime,invalid sources and a preceding unsettled zero
+crossing reject. Preparation does not mutate World,ownership,Energy or outboxes.
+The settled pre-transition state and resized post-transition state retain signed
+Energy debt,fractional regeneration and Overcast burden. A crossing test uses
+precise signed units,not the unsigned UI0. It is an input for eventual exactly-once
+Mind Wrack/energy-hex observation after committing ownership and resource state.
+Negative hand Energy is supported too:holding such a weapon's bundle raises the
+ceiling,while release restores the negative modifier and can cause a zero crossing.
+The current equipment decoder does not yet supply every signed weapon modifier.
+New native bundle_energy test passes562same-time pickup/drop round trips across
+morale40/100/110,positive/negative current Energy and both holding states. It also
+passes fractional regeneration with Overcast,exact signed deltas,preserved burden,
+negative-hand zero crossing,and rejection of earlier interval zero events.
+Six related native suites and five callback audit tests pass. No production host
+rebuild was needed:the new preparation component is NOT yet included by World.
+Immediate hand-Energy settlement remains unfinished until pickup/drop commits and
+reactive observation/publication use this plan atomically. Existing periodic
+capacity refresh is not claimed to close that gap. Native/rendered event ordering,
+owned Recall failed-end handling and item-spell/drop effects remain open.
+Official client/logging untouched;925remains staged,319source-bound unchanged.
+
+2026-10-22 World hand-Energy transition integration (reviewed positive modifiers):
+energy_capacity now retains the full base/equipment sources plus a separately
+reviewed unsigned hand-capacity component. Session refresh supplies actual owned
+gear,not the temporary held projection,to this source registration. Effective
+capacity subtracts hands only while held;morale transitions use that same retained
+split. Other legacy trusted producers keep default0hands;normal bundle pickup
+is still unbound and unknown equipment facts are not declared fully supported.
+Pickup settles timed resources first,prepares the copy-only Energy plan,commits
+floor->held ownership,then publishes assignment before committing owner resource
+feedback and observing existing Energy-zero reactions. The actual Mind Wrack
+policy is preserved:exact real zero can trigger,negative equipment debt/UI0does
+not. A lethal reaction can therefore drop the newly held object once,after its
+assignment,without leaving a held pointer on the corpse.
+Drop prepares a restoration plan along with floor identity/revision checks and
+commits resource state with held->ground/destroy ownership. Manual drop,weapon
+switch and both shadow components settle live resources before preparation;
+death uses its dead/no-regeneration snapshot. Owned Recall retains the resulting
+owner Energy packets after clear/drop but before return trails in its existing
+publication barrier. Sources restore without waiting for a periodic refresh.
+World tests pass current10/max42 ->current0/debt12/max20 on pickup,then current10/
+max42 on manual drop,direct Recall,weapon switch and death. Full-source refresh
+while held neither restores hands nor subtracts them twice;failed switch save
+preserves debt and held capacity. Owned Recall at full effective floor capacity
+now tests max100 ->78 ->100 and restored-capacity packet before return trails.
+Actual Mind Wrack test at1HP distinguishes negative debt(no proc)from exact0:
+exact0kills,releases once,restores capacity,and publishes assignment before clear.
+The test sets initial vitals BEFORE applying the hex;trusted set_vitals intentionally
+retires Energy-hex continuity and must not be used to fake a post-application state.
+Still open:World signed/negative hand-modifier decoding,pip modifiers,broader timed
+Overcast/upkeep/hex interaction cases,held bonuses/item-spell effects,peer visuals,
+native rendered resource order and general owned Recall failed-end recovery.
+Normal bundle requests and925remain gated. No official process/capture touched.
+
+World Energy validation complete: bundle-energy-world-host-build.txt serial Release production host plus bundle_world/death_charge_world/mind_wrack_world/recall_cast targets succeeded. bundle-energy-world-tests.txt11/11 selected suites pass,including immediate resource restoration and exact-zero lethal pickup ordering. Five callback audit tests pass. Fixed checkpoint refreshed/published with679captured/319source-bound/360awaiting-binding/650missing-capture unchanged. Host SHA256 70ECF091CBCE9AA7AC458D2C878767A8F5F221C20A170384EF9491543BD73598; not restarted or deployed. Reviewed positive hand-capacity World integration now exists;negative/pip modifiers,broader timed-resource reactions and final binding/visual gaps remain.
+
+
+2026-10-22 extended World Energy interaction verification:
+Added three integration regressions to bundle_world using actual public World
+producers,not injected mutable state. At one200ms frontier,pickup removes22hand
+Energy and exhausts staged Recall upkeep. The owned return drops once,restores
+22Energy/max42,moves to the ally,removes maintenance and disables the exact second
+slot until10200. Runtime consumes/acknowledges the retained feedback once;later
+tick neither returns again nor creates another floor object.
+Actual Overcast-producing skill231creates burden before pickup. During300ms held
+recovery,the full World drop restores22nominal/current Energy while preserving
+the burden,remainder and fractional-tail predicted by the shared constant-span
+settlement. This checks World wiring through pickup/drop and rules out an integer
+rounding or nominal resize erasing the existing Overcast curve.
+Actual honeycomb morale commit while holding raises morale100->105 and capacity
+20->21. Release then restores43rather than the stale pre-morale42. The consumed
+callback runs once,held state remains until release,and the stored full source
+continues to split hands from the morale-adjusted base.
+Updated fixture built successfully (bundle-energy-interactions-build.txt). Twelve
+selected native suites ran successfully (bundle-energy-interactions-tests.txt);
+bundle_world is the freshly rebuilt source test for these new cases. Production
+source/binary unchanged this pass,so no host rebuild or restart was performed.
+This supplies private interaction evidence,not new retail receipts or source
+bindings. Wither/Malaise source lifecycle and DivineSpirit/Glyph order remain
+unresolved per their dedicated evidence notes. Normal125/140/310/925 remain gated.
+Official capture checkpoints and loggers unchanged;319source-bound remains current.

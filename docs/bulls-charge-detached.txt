@@ -1,0 +1,101 @@
+Bull's Charge379: production mechanics and pinned2022 evidence (2026-10-24)
+
+Production Runtime/World consumers passed the coordinated serial Release host
+build and all10fresh focused CTests. The filename preserves the original
+separate policy-stage artifact. Source binding/count publication remains the
+parent audit;no checkpoint/backlog count is changed here.
+
+Selection and fixed evidence
+Wary377 was considered first. The fixed checkpoint still has only its original
+local application,no causally attributed block/adrenaline reward measurement.
+Its raw35 reward parameter remains unresolved,so it was not guessed or bound.
+
+Bull's Charge fixed20261024-all-completed evidence:
+packets-1360-15821281.jsonl lines413767..413771,tick24255203,map280,actor25:
+recharge229(12),instant48,body638,effect66(instance62,duration1),release227.
+The dedicated verifier hashes the complete snapshot against its manifest and
+checks all five exact receipts. The pinned2022 row instead has5Energy,20s
+recharge,Strength duration5..11,33percent movement,caster body638,target2077.
+Captured12s recharge/1s duration are retained verbatim as an unresolved version
+or modifier discrepancy. Neither is substituted into the pinned policy.
+Effective Strength and active recharge/duration modifiers are not independently
+established. No claim is made that the capture proves the pinned timing formula.
+
+Archived wiki Bull's_Charge.html revision2667427 describes moving33percent faster,
+knocking down a moving foe when striking it in melee,and ending on skill use.
+Its5..11duration/20s recharge agree with the pinned version. Application receipts
+do not independently prove movement,knockdown,ending,rank scaling or payment.
+
+Authoritative production consumers
+The canonical policy validates the pinned row/ranks0..20. Runtime admission
+requires authoritative status/effect/accepted-action hooks,pays5Energy,
+normalizes self target,publishes instant48/body638,and owns the pinned rank timer
+and20s recharge. Missing hooks reject before payment. Movement uses shared
+interval history,caps,snares and sparse-tick integration. An exact accepted skill
+ends the owned stance after movement settles through its event;policy/payment
+denial and ordinary attacks preserve it. Replacement,expiry,explicit removal
+and death share the existing lifecycle. Unrelated knockdown preserves the stance.
+
+The trusted qualified-hit phase reserves moving melee contacts by scoped source,
+recipient,event and timestamp. Player movement is measured over the next1ms;
+authored NPC routes use their existing motion authority. Unknown NPC-controller
+motion rejects rather than guesses. Control preflight precedes Health mutation.
+The immutable terminal hit consumes its reservation once and applies the shared
+standard2s knockdown only to a living exact recipient. Successful zero-damage
+contacts qualify;positive Health damage is not required. Failed/cancelled/ranged
+contacts,stationary targets,expired stance and lethal damage do not knock down.
+Existing Balanced/Dolyak and NPC immunity are honored. Another control at the
+same impact does not extend knockdown. Source departure/NPC retirement purge
+reservations. Ordinary contacts retain the stance for later eligible contacts.
+
+This is a player-caster binding with player/NPC recipients. Autonomous NPC stance
+casting is not added. Retail simultaneous-control/stance-ending ordering and
+any equipment duration interaction remain unmeasured. Rendered visual/sound
+acceptance remains unverified. No private host restart/deployment was performed.
+No official client/logger,fixed checkpoint or capture-plan output was edited.
+
+Validation
+The coordinated serial Release build completed for server_host and the three
+new suites. Fresh CTest passed10/10:bulls_charge_policy,bulls_charge_world,
+bulls_charge_cast,battle_rage_world,battle_rage_cast,accepted_skill_start,
+movement_effects,ward_foes_world,ward_foes_route,ward_foes_npc_world_route.
+Policy tests cover rank metadata,contact classification,scope/event validation,
+expiry and exact accepted-use proposals. World tests exercise actual ordinary
+contacts,miss/block/ranged/stationary/expiry exclusions,player/NPC immunity,
+authored NPC motion,source control/death,fatal contacts,movement boundaries and
+accepted-use ending. Cast tests cover payment/body638/rank timer/recharge,
+missing hooks,denial preservation and accepted ending. The NPC fixture was
+corrected to configure population before joining players and equip native340's
+required axe;production admission was preserved.
+
+tools/protocol/bulls_charge_2022.py passes five frozen receipts,direct pinned
+profession/attribute/Energy/elite/instant metadata,original instant dispatch,
+body638 and particle consumers. Report:build/reports/bulls-charge-native-2022.json.
+Actor/model/asset services are stubbed. These mechanics/native-consumer proofs
+are distinct from rendered acceptance and from proof of newer retail timing.
+
+Tested production SHA256:
+src/runtime/gw_bulls_charge.h 0A64A883F22107EC7F685C290A2EE4BC7BAA3730828ED438895AF7D2C00A8CFA
+src/runtime/gw_world_bulls_charge.inl B7C30881449E6BAE7926C76FDC1C90DF86EAB6E7EA2BEB054AB4A2FE1F9D7478
+src/runtime/gw_world_simulation.h 4BC253C80FF05BF52B82584D2112D87AE6A7D235B38F9995C0A6B8082ADF28D5
+src/runtime/gw_skill_casting.h D7FAFD82380183D81733985A0D75995061E1250C351B27E81D12FDFE6532FBFD
+src/runtime/gw_cast_timing.h BB059217518F9E48A67E1B645B2C530E269D240078888D4FE3F3BC76D06E95A8
+src/runtime/gw_movement_effects.h DEAAFCC89FDE193B2C885481DCDB1795ACEA7D5980696574276963B150A6E2F2
+tests/bulls_charge_policy.cpp 4A5F3115749BDAFA5EE2178905749DADA52364E4564A07BF19E24DA1D89D9B32
+tests/bulls_charge_world.cpp 2D5E07D46CCFD08A1471473D7D3E7EBBE5A3EEC2D8D0054A30A2B09AF8CACC84
+tests/bulls_charge_cast.cpp 2F7E11D9A8355EF7D5EC53E4FB9555516D227A3E49BE37E9D44434322413637C
+CMakeLists.txt 9BE3A009AA6A9C6792F3561F5802D88C54B3427C36F05B2A5047379DB9893C06
+tools/protocol/bulls_charge_2022.py D64C558C3858A1F0BE43439F34B3248965BB2370E69A9140659605E339BF6CDD
+build/reports/bulls-charge-native-2022.json 78F8440392093CE0A2D4DB2759080EFE5B717C50B70AF2B2D7A3D39EB12F9FD4
+bin/server_host.exe 33516D8E1CBDAF8BD48CFDC04C1A9FB998CB384AB4DF7FD880107FFEA2FDBA59
+build/Testing/Temporary/LastTest.log 66F352913A401C3FD345902E10DFB0B55A95E366B2DA3F21FBC2B7C6698B5F15
+build/tests/bulls_charge_policy_test.exe 544BC412985F38644A85A1DE980F1322246B8750ECA60711660A6B6D225D2AF0
+build/tests/bulls_charge_world_test.exe B8C61BCB887BFC3F303EB177494182074534E8623BBE33DF3832351778D35E1C
+build/tests/bulls_charge_cast_test.exe 88C522E0C6D81A77B281CB269C0FD92CA81616DDBC2EEEC535A5A7032C1648B7
+build/tests/battle_rage_world_test.exe 53EBDCFB91F39CFDF37E9691CB86E6D76966B77E9C9A03D1F3F5963934D795C1
+build/tests/battle_rage_cast_test.exe 5002EA24BF0B012114DFBAF58861D206B66020668621463E2A2720074A00A991
+build/tests/accepted_skill_start_test.exe D21877C61D016CD48DE1FA8987B84CF1B370309CDB1530E01B85E27FC574850B
+build/tests/movement_effects_test.exe AA3D30F4117235D298D6B215936F8457BC2AA811B120B724641B0BF1624FDD20
+build/tests/ward_foes_world_test.exe E1479202A075C426E51F2F0858366425CD8DE13A6D02FA7F7E18EC8349D95B22
+build/tests/ward_foes_route_test.exe 36D66218D5FB9E750832134B50AFD0A4E0FC00561CDE79D22A0606A7DE504D21
+build/tests/ward_foes_npc_world_route_test.exe 91F031060B5CD8315CDD6074104D2477F4611FE8F09573D5E1946862E8D44908

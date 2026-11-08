@@ -1,0 +1,287 @@
+BONDS OF TORMENT [1881] — DOMAIN OF ANGUISH CHECKPOINT
+
+The immutable 2026-10-24 packet snapshot contains two Greater Darkness
+cast starts by actor154 in map474 epoch32. A hash-checked bounded scan finds
+both 500ms cast finishes. The first finish (packet line1073162) is followed
+at the same tick by opcode66 identifying skill1881 on target39 and opcode241
+flags2048 on that target. The second finish (line1075169) has opcode241
+flags2048 on target683 but no skill1881 opcode66 within 200ms. The second
+receipt therefore does not independently prove the same visible effect
+payload. The first opcode66 carries a 30.0-second float; the meaning of its
+other fields and the actual removal time have not been established.
+The older local wiki mirror says the hex has no duration. The captured
+opcode66 float and original 2022 skill row both specify 30 seconds for this
+observed client era, so the World uses a timed effect. A separate fixed-line
+duration audit checks the exact first cast, finish and status receipt:
+python tools/skills/audit_bonds_duration.py. Its report is
+build/reports/bonds-duration-20261024.json. The packet establishes the
+published duration, not the exact natural-removal packet time.
+
+Reproduce: python tools/skills/audit_bonds_of_torment.py. Report:
+build/reports/bonds-of-torment-20261024.json. The report verifies the fixed
+checkpoint hash before scanning; original live logs are not touched.
+
+An offline original-2022-client callback check using fixture actor42 and
+target43 accepts opcode159/kind60/skill1881, produces callback25 and reaches
+first model-animation style51 for 1.0 second. Reproduce with
+python tools/protocol/bonds_of_torment_animation_2022.py with build/python-deps
+and tools/protocol on PYTHONPATH. The check does not prove that a spawned
+Greater Darkness model displays this animation in a live client.
+
+The World slice admits the hex to a player target, stores its 30-second
+effect in the authoritative Registry, and publishes its status packet.
+The original 2022 skill row has target-body resource2077 (the no-effect
+sentinel), so no generic targeted-body particle is emitted. The skill's
+first cast animation is instead driven by its activation callback.
+When player damage reaches the hostile NPC caster through
+World.damage_npc, it takes the committed post-protection Health loss, checks
+each still-live player hex, applies equal-base cold damage through the normal
+player protection/armor authority, and publishes attributed damage. Removal,
+expiry, reapplication and caster death retire the corresponding links.
+Tests cover two victims, packet order, same-skill replacement, exact expiry,
+lethal caster damage and stale scopes. A Hex Breaker recipient is rejected
+until NPC-source retaliation can be integrated correctly.
+
+An explicit typed NPC cast path now uses the reviewed spellbook for paid
+Energy, the native one-second activation, twenty-second recharge, aftercast,
+interruption, target binding, and timed completion. It publishes the original
+2022 activation and finish packets and the hex status. Tests cover an
+explicit completion, automatic timer completion, interrupted cast, lethal
+mid-cast retirement, payment and recharge. The fixed modern capture has
+500ms cast finishes; this differs from the pinned 2022 catalog's 1.0-second
+activation and needs client-era verification before claiming exact retail
+timing. A cast must be requested explicitly; autonomous monster AI does not
+yet select Bonds of Torment.
+
+Still missing: autonomous NPC target/skill choice and loadout binding,
+NPC recipients, NPC-source Hex Breaker handling, propagation from NPC
+damage paths outside World.damage_npc, rendered-client acceptance, and
+comparison of combined damage/reaction order against retail packets.
+
+Native groundwork now validates the pinned skill row and holds committed
+hex links by caster and target lifetime. It rejects malformed scope, duration
+and forged plans; returns one cold-damage intent per active hex when World
+supplies a unique committed caster-damage event and post-protection Health
+loss; and handles explicit removal, expiry and actor retirement. It does not
+apply target damage or publish packets. World must revalidate that each hex
+still exists and commit cold damage through its normal protection/reaction
+path. The World typed NPC cast and trusted stage now consume this ledger.
+
+A copy-only joint proposal now prepares the target Registry entry and ledger
+link together. Same-skill replacement removes the old effect from the
+proposed copy; an invalid or forged proposal leaves both originals intact.
+The damage-event cursor rejects duplicate and backward-time events, including
+an event seen while there were no live links. The World slice commits this
+proposal after checking source/target lifetime, hostility, range and plane.
+
+Validation: serialized Release server_host and World test builds succeeded;
+the focused World suite and neighboring NPC/World regressions pass (5/5
+selected CTests) after rebuilding against this header. This does not prove
+a rendered client or autonomous monster cast.
+
+SHA-256 packet snapshot DF78CFF883150E6CD8FC15DD4F8CD34B478183A12729A3E47AF3B07DC82D4CB6
+SHA-256 original 2022 client A6FB3C51A52EC5528156B690DC63B4BA51C4B95690D15877D5B49FC3C7DC57AC
+SHA-256 packet audit 8441129DB339BD8C8B29FC0EFB22C94BC2C94BD170D5B2D87C51FC6622AEF556
+SHA-256 packet report E11DBD0D2CAAB74C53A635EA4E14ABD603994C0EFF178BFAF680C2ED2429F932
+SHA-256 animation verifier 7A8C9C592429BDFFC23BB9B449C735C489F97EC2D794B1D2166A3EEE24D2DF86
+SHA-256 animation report 305CC5FE4B5725E5B847C37006D7C75F45AA6C88CBEDE476068F4B713FD5ACFB
+SHA-256 native ledger E367B3FD8F116DEA74C2A7B4AA5E97BD09C67089B53478B8755CB45E99BC38F6
+SHA-256 native test 3C13E3F4D1F3BA4A0E2F88D257FEF8AD7859376E9317C006B39958CA40C001F9
+SHA-256 tested test EXE 5F76995A8B0A0EEFD3DD5E8E7F2E89C9465862EC6BAD77DE0BF85F1E1AF4C07A
+SHA-256 World slice 9104B7A5A16285531D00C4DB56E8F38164F3856910AF99962848DF57D57B9DFE
+SHA-256 World header 167FB0B355F06F05544758DC2020E1EB9DF818F2BBFC7CF1165063857683BB19
+SHA-256 World test B338C73EC1BA628DDCE9478A39E57F457A1EFA062F9A87A7C5DE43E7212D5FC0
+SHA-256 tested World EXE 64D24990D948589D8494F7B6BDC0175AA0BB0194E29F4836D3B02E70DF4968F6
+SHA-256 built server EXE 92F9C985FBF3F6798FE82E476BE1AA5641F0878702AB478DE3E1C38B14ED6859
+
+2026-10-25 NPC damage-route follow-up: ordinary Illusionary Weaponry
+replacement hits now use the common authoritative NPC damage commit. Before
+this change that route applied and published damage directly, skipping Bonds
+propagation. A focused World test stages Bonds on another player, has the
+attacker hit the caster through the replacement attack, and verifies one
+34-point cold propagation and ordered NPC/player damage packets. The existing
+Illusionary Weaponry World suite also passes. This extends a real committed
+damage path; other direct NPC damage commits still need audit. It is not
+autonomous casting or rendered client verification.
+
+Serial Release server_host and two World-test builds passed; both selected
+CTest suites passed (2/2). Official client and loggers were untouched.
+SHA-256 World header B7DC80086749D3C611E40FBDB111D1FF3E7F86F4AD6963FCA221604D3865F4B3
+SHA-256 Bonds World test 3ADE724877CA69D0DCD0A37F6FE8E593B4988CECDEB141F76C0EF83BB30DB23C
+SHA-256 tested Bonds EXE 1D4E5424466A1DD0523E2ECE38C5219E6F97D6AF240917E5CAE1FB6D89A59FD7
+SHA-256 tested Illusionary EXE D4F636A4016A2B4C0172B4B2D910729A71F143D382FD7329AC279DA7F1B7DE28
+SHA-256 built server EXE 3396399F317F8148040541979495509D3992DE6EAB1BB184928343D119E824B6
+
+2026-10-25 ordinary weapon/Conjure follow-up: three committed weapon-damage
+publication paths and the separate Conjure bonus path now notify Bonds after
+each actual NPC Health loss. The notification follows that hit's native
+packet and precedes subsequent hit effects; the existing weapon and death
+handling remain in place. A focused test with an ordinary fire sword plus
+Conjure verifies that the victim's total cold damage equals the caster's
+total Health loss, with exactly two propagation packets for the two hits.
+This covers these committed routes only; other direct NPC damage commits
+still need review. It does not prove autonomous casting or client rendering.
+
+Serial Release server_host and three World-test builds passed; selected
+Bonds, Conjure and Illusionary CTests passed 3/3. Official client and loggers
+were untouched.
+SHA-256 World header D1ADF22F1539B4D0E69D41894B081F369003ED9D02D41DC8A5481C47E5C6A382
+SHA-256 Bonds World test 7D51F853232C9DAADC599952F82440AD6ADDFB018173796B3B8FA071CD231E71
+SHA-256 tested Bonds EXE 9CA41D83CE934938839992C0F1F42275D1F694B1C55770AE8EFE9397CE0EF13A
+SHA-256 tested Conjure EXE 5FDB39DEF3A740CFDFE56A4187CFE0887EB335D95F75226FBD0AFD4F15DE98E6
+SHA-256 tested Illusionary EXE 86211B329DA608C47D249327D47106AA0C0641D844EE1CE762FED2494FB9CAB6
+SHA-256 built server EXE A7E8569D9FF37B425F0F8AE8F6AACF2106A6AD169D7BCB724FD4C0ED984A8E32
+2026-10-25 Unnatural Signet damage-route follow-up: the World commit for
+Unnatural Signet's NPC primary/adjacent damage now calls Bonds propagation
+after each accepted positive Health loss and before any lethal caster
+retirement. A focused World regression binds one live NPC caster to a player,
+hits that caster with the signet, and checks the player loses the same 63
+Health exactly once with one damage publication. The existing Unnatural
+Signet suite remains green. This covers that direct damage route only; other
+direct NPC commits, autonomous AI and rendered client behavior remain open.
+Serial Release server_host and both affected tests built; CTest 2/2 passed.
+No official-client or logger process was touched. Tested SHA-256:
+  src/runtime/gw_world_simulation.h EEAC991A20D8A7DC5D828C73830093563CA6449C9515322A139880DF08FD8C95
+  tests/bonds_of_torment_world.cpp 02A0C8A7FC457878CD1116CAE102BAAC49C79700167294E14D2B4B5BA0796817
+  build/tests/bonds_of_torment_world_test.exe 445402BF048A0E3170581B79B9050445D471DF10052E9832B33E84D3B835DFDC
+  build/tests/unnatural_signet_test.exe 88DAD26DD869B8DBB57195B73C5FEB2806618404863BF359CD7335CB8DC2BC6B
+  bin/server_host.exe 5890EDB2BF8534E84BF84040CBE534B4EC48498B77B6AE3618B007814CCDA1E5
+2026-10-25 Shatter Enchantment follow-up: the direct NPC hit in the
+enchantment-removal World transaction now propagates a bonded NPC caster's
+accepted positive Health loss before lethal retirement. A World regression
+applies a reviewed Shield of Deflection enchantment to that NPC, removes it
+with Shatter Enchantment69 at rank12, and verifies one 83-Health propagation
+and one recipient damage packet. The focused Bonds, enchantment-removal and
+Necromancer removal CTests pass 3/3 after a serial Release host build.
+This does not resolve other direct NPC hits, autonomous Bonds casting or
+rendered 2022 client behavior. Official clients and loggers were untouched.
+Tested SHA-256:
+  src/runtime/gw_world_simulation.h 6535CE49E2854AF3783652C23BA3912914A59A02135717A59D9544FFD1A41502
+  tests/bonds_of_torment_world.cpp 3C0A5C39FA5FC6272861BB45FB0E6BE6E591C68EE32F2185DAFA31FFC72E539A
+  build/tests/bonds_of_torment_world_test.exe D9010C037BB61BBAA5A439B90A1D5D388E500FE77E1F5565B26C76112037E678
+  build/tests/enchantment_removal_test.exe 96C06A83EB6677C6B0B6882C807F7143F096C17DFB7D50088E4772E1A6D17D5B
+  bin/server_host.exe D5E32677DE510F45A43D31405D121F2A4B40B055C363313DF58265107D1CD3FC
+
+2026-10-25 interrupt damage follow-up: World.interrupt_skill now forwards each accepted positive NPC health loss to the Bonds ledger before lethal retirement. The focused world regression stages Bonds on a player, starts a paid NPC cast, lands a damaging player interrupt, and checks one equal health loss and one propagation packet. An idle target still takes no interrupt damage. Release bonds_of_torment_world and server_host builds and the focused CTest passed. This closes only this damage route; autonomous AI, other NPC damage commits, NPC recipients, and rendered 2022 client behavior remain open.
+
+Fixed duration audit SHA-256:
+  tools/skills/audit_bonds_duration.py 2F3B993D3344129E3713FFD7DEC6107206D3AC9B23B4F097CCCB3134E01D041D
+  build/reports/bonds-duration-20261024.json 507601A04507B92A18D52395DCFE948FE56D67A13762BBA594AFD95CD6E36077
+
+2026-10-25 Ignite Arrows damage-route follow-up: the adjacent fire blast
+preflights player and NPC recipients, then commits its NPC damage from a
+proposed actor copy. That commit previously bypassed Bonds propagation. It
+now forwards the actual positive NPC Health loss after its attributed damage
+packet and before any lethal caster retirement. A focused World regression
+starts an ordinary bow attack with Ignite Arrows on a bonded NPC, confirms
+20 weapon plus15 fire Health loss and equal35 cold loss on the bonded player,
+and checks two distinct recipient damage packets. This covers the Ignite
+Arrows blast route only; other direct NPC commits, autonomous Bonds casting
+and rendered-client acceptance remain open. Serial Release host and both
+affected test builds pass; Bonds and Ignite Arrows CTests pass2/2. Official
+client and live logger files were untouched. Tested SHA-256:
+  src/runtime/gw_world_simulation.h 6D18FE6850E224B9D7A1558C10E4ACF895FB55465C15B6B4ADEA93CA77B3DA9E
+  tests/bonds_of_torment_world.cpp C6BC86512A0E0CD72FB4B2C5797ACD75C3A7568B055A514821FB2FF2F1E8CDC4
+  build/tests/bonds_of_torment_world_test.exe B519DCF73E08C376DC5A8118EDA11FA3230B3A32F835D9B3CC76D8FEA5B9FF1E
+  build/tests/ignite_arrows_test.exe 401CD4F775BD578D7395F12A3D56C6E96F548BDAFBD1BC390FE406D8E37FB4DE
+  bin/server_host.exe 368DA00429D6F9DAE9CE0F4701E9D55F084F828728AED38EAAA5C02D63EAA6AA
+
+2026-10-25 completed DoA capture follow-up: the frozen Urgoz/DoA field session
+remains at data/captures/field-sessions/20261024-urgoz-doa-completed. No live
+logger or official client was touched. Keystone Signet, Cry of Frustration,
+and Shatter Delusions each had a proposed-copy NPC damage commit that bypassed
+Bonds propagation. Each now forwards positive committed NPC Health loss before
+lethal caster retirement. A Keystone World regression bonds a level-eight NPC
+to a player and verifies its 51-Health loss yields an armor-reduced 18 cold
+Health loss on that player. The existing Cry/Shatter and Bonds tests remain
+green, but they do not yet exercise a bonded target in those two routes.
+Serial Release host and three affected test targets built; CTest 3/3 passed.
+This is native mechanics evidence, not rendered 2022 client verification.
+Other direct NPC commits, autonomous AI, NPC recipients and Hex Breaker remain
+open. Tested SHA-256:
+  src/runtime/gw_world_simulation.h 794133A1D543E02AA17457765754C09F2C0D750F4642245323C4448C2C15229B
+  tests/keystone_world_use.cpp BEBA3F5987A8DE53D1DDCC21D773E65EE03EA363780F773C2748EA2B143EAF81
+  build/tests/keystone_world_use_test.exe B5C803560CE6D98C1384C0597A981031A66797FCEA112407319C09D509344860
+  build/tests/diversion_npc_test.exe A924FB361F89B5D12D40ADA577D510A5AF0C2451AAA54A72E810E15A7EF3DF40
+  build/tests/bonds_of_torment_world_test.exe 6FF243561B9E2D1E575187058DA4A4E52C1FFE958812A16405CF4AA6D523CCCB
+  bin/server_host.exe 3C274836CE2BE7600D580BCCA980CAFBB28206B19DDAA27F86BA7280C0BA0A09
+
+2026-10-25 coupled Cry/Shatter verification: both proposed-copy NPC paths now
+have a focused World fixture with a bonded player outside the primary impact
+area. Cry of Frustration damages its bonded NPC through an area hit; Shatter
+Delusions damages its hexed bonded NPC through its conditional area hit. Each
+63-Health NPC loss produces one armor-reduced 23-Health cold loss on the
+recipient from a level-eight NPC caster. CTest Cry, Shatter, Keystone and
+Bonds all pass (4/4). The server host hash above still matches the source
+change; this follow-up modified tests only. No rendered 2022-client test or
+autonomous monster AI is claimed. SHA-256:
+  tests/cry_frustration_world.cpp 481B4DF7EAF7708BE66660F18452D7E747946A0196997970D9769A954C5BDAAF
+  tests/shatter_delusions.cpp 64F66C6A2ECD837B1AECA9E9FA2DF3B9BF426137A6EA9A15958331DA8E7635FF
+  build/tests/cry_frustration_world_test.exe 8C1B284D63348FB7051D362C10E32F165F9AB0E6C59D237B419F5AF0A4086409
+  build/tests/shatter_delusions_test.exe 3D3F91BD7B7B405282D205ED331E362FEAD1AE2D37C04D20EC8CD8C75944E4CF
+
+2026-10-25 NPC reaction follow-up: Soul Barbs' application reaction and
+Backfire's trusted spell-use reaction now forward a positive, committed NPC
+Health loss to Bonds before lethal retirement. Existing NPC fixtures each
+link the reacting NPC to a player: Soul Barbs' first 27-Health hit causes
+10 cold Health loss after armor; Backfire's 35-Health hit causes 13. Their
+remaining reaction/lifetime assertions and the Bonds World test pass (3/3
+focused CTests). Serial Release host and test targets built. This validates
+native mechanics only; the field capture does not establish rendered 2022
+reaction visuals or autonomous NPC casting. Other direct NPC damage paths
+remain to audit. Official clients and logger originals were untouched.
+SHA-256:
+  src/runtime/gw_world_simulation.h 0C970E66E4C744B5D827538AAC06BB542A4A185DDED4377CA8A2F1BC2B9B8F3D
+  tests/soul_barbs.cpp 65D478C8BD919B0B19B05A0A5EE920BEA063BB9C04D4CC4870E0D58E2207F5FC
+  tests/backfire.cpp 0DF00208A7B1ECF43D1E4E4ED3AC01931CCCC659F1E316AA7647D5CD2BD45CDE
+  build/tests/soul_barbs_test.exe 72D7C04AC0B219042C40F6BC9F24ADCAD6C22D6BBCEEE09F650DE5FC359216BA
+  build/tests/backfire_test.exe B1E22E18805C045A34FB02A9D3F62B9F30283E32B368CA61B60A836310FA1A5A
+  build/tests/bonds_of_torment_world_test.exe 6535AAD29C5E59CE52B47D5157348185EC9FA5194DCE59F3BAA43B071B602716
+  bin/server_host.exe 6776A448A3B467B0B6926B30D8693C2FFD3369009673FF53E44CDE921B4A62AF
+
+2026-10-25 Spiteful Spirit area follow-up: its multi-recipient pulse preflights
+NPC hits on copies and commits them together. Bonds now propagates each
+positive committed NPC Health loss after the pulse's primary packets and
+before lethal cleanup. A coupled World fixture binds the hexed NPC owner to
+a player outside the Spiteful area: the owner takes 29 Health and the linked
+player takes 29 cold Health at equal-level/60 armor. Existing Spiteful area,
+replay, credit, death and rollback assertions remain green; focused Spiteful
+and Bonds CTests pass2/2 after a serial Release server-host build. The fixed
+DoA field capture is unchanged, and no official client/logger was touched.
+This is native mechanics evidence; rendered 2022 behavior, autonomous NPC
+casting and other direct damage routes remain open. SHA-256:
+  src/runtime/gw_world_simulation.h 0841959AA43598596906F5C77F8C97F82160B5E8ADD6E2982DDC8AFE64815613
+  tests/spiteful_damage_world.cpp 45586AB5BA726620252709B9B368B243293D87DC75AEDD720B28AF2A5FC8A3BE
+  build/tests/spiteful_damage_world_test.exe 8B06878BBC22FAF8BD9BB41FD873C338E1BAB20B140FA85337A73A5B02FB827A
+  build/tests/bonds_of_torment_world_test.exe 73440947151BAB402679B04D8CBC3F4884C1BC8D6561973B79876FD077C0CED5
+  bin/server_host.exe FB4D9D222CD6EF96B974275229A07DCE219F734C2BC1CFA9C60C96FFCB67C509
+
+2026-10-25 lethal Spiteful follow-up: the bonded NPC caster starts with ten
+Health, while the Spiteful pulse proposes 29 damage. The World regression now
+verifies that the linked player loses only ten cold Health, including when the
+original Spiteful caster has left, and that NPC death/quest credit retains its
+existing behavior. Spiteful and Bonds focused CTests pass2/2. Only the test
+changed; the prior server-host build still matches the unchanged World source.
+No official client or logger was touched. SHA-256:
+  tests/spiteful_damage_world.cpp 0EF351F30E319AEAB89B82396FC2DD8AFF80F2909D5F420151BF7DCCC87C2C86
+  build/tests/spiteful_damage_world_test.exe CC9F9DDC1FBAC1078F3F253E216A7070B8971D3F0C033E90990091D59ABB2A7C
+
+2026-10-26 opt-in Bonds caster AI: an explicitly configured hostile NPC with
+a reviewed 1881 spellbook can now choose the nearest visible, live, unhexed
+player within spell range, then use the same paid cast/action path as an
+explicit NPC cast. The World test places two players at different distances,
+checks that only the nearer player receives the activation and subsequent
+equal cold damage when the NPC loses Health, and rejects AI configuration
+without a spellbook or duplicate enrollment. This deterministic target choice
+is private-server encounter policy; the two modern cast receipts do not reveal
+ArenaNet target priority. No Domain map474 population/loadout was enrolled.
+The cast's 2022 1s activation versus modern 500ms receipt, NPC recipients,
+remaining direct NPC-damage paths, Hex Breaker, and rendered acceptance remain
+unverified. Fixed capture and source-binding counts are unchanged. Serial
+Release bonds_of_torment_world_test/server_host build and four focused/adjacent
+CTests passed. No official client or logger was touched. SHA-256:
+  src/runtime/gw_world_bonds_of_torment.inl 7899DB7A1F3E181DC181C5FB57C9084116E952343F77E9618520091C77C079BE
+  src/runtime/gw_world_simulation.h 673EA901A2240C88FDE751FE73D420FD4A97C28E0E2027B117C2D45C2866AF56
+  tests/bonds_of_torment_world.cpp 92AFE0DCB9BE224C88D0AB012D6C5AB2DE8EFC97B8123B6CF06BBBFFADBC2935
+  build/tests/bonds_of_torment_world_test.exe 68A02FFE3B066C12B8612090A2EE1DC7A4B7ED532819DEB5F575FECA94630615
+  bin/server_host.exe B3356B5EE6BE2C2922596E35594E466EB30D7EC173EF1BE02822A30DC9BCBED0

@@ -1,0 +1,190 @@
+Skill implementation progress, 2026-10-23
+
+Fixed capture checkpoint: data/captures/skill-checkpoints/20261022-cumulative-skills.
+Current official-client capture files are separate: bin/PacketLogger/packets-46120-264418546.jsonl and bin/GuildWarsLogger/world-46120-264427406.jsonl. Both loggers reported state 4 and both files grew on 2026-10-23. Do not merge these into the fixed checkpoint implicitly.
+
+Shields Up! [367]: World now snapshots in-range living player-party members, handles same-skill replacement and expiry, publishes status, and applies its +60 armor to ordinary bow/spear/wand/staff projectile weapon attacks received by players. The direct World stage and ordinary wand damage comparison pass. Still missing: normal cast/payment/recharge/animation route, NPC party recipients and NPC projectile damage consumers, all attack provenance variants, native 2022 packet/rendered verification. Do not claim a live skill binding. Evidence limitations and frozen activation receipt: docs/shields-up-detached.txt.
+
+Succor [308]: detached producer and completion callback model, hash-pinned seven-receipt capture audit and registered native C++ mechanics test pass. Still missing: production Health/Energy/upkeep consumers, atomic maintained-enchantment ownership and real spell-completion debit, normal cast/animation route, retail and rendered validation. Details: docs/succor-detached.txt and build/reports/succor-checkpoint.json.
+
+Gift of Health [1121]: World now applies player-target or allied-NPC-target healing and an exact-copy Healing Prayers disable in a locked completion stage. The NPC path validates live generation, allegiance, healing permission, range, movement and clock, then copies and preflights the NPC heal before committing it with the caster disable. The disable is included in skill availability, the eighth reset revision, reset transactions and actor-lifetime cleanup. Replay, stale/hostile/neutral/distant/unknown-healing rejection, reset and healing are covered by a World test. Seven fixed capture receipts and detached mechanics also pass. Still missing: normal cost/cast/recharge/animation route, atomic payment with the World stage, NPC caster handling, broader modifier/Divine Favor and bar-copy interactions, and native 2022 rendered verification. It remains unbound. Details: docs/gift-health-detached.txt and build/reports/gift-health-checkpoint.json.
+
+Gift of Health publication verification: the Release World test now verifies that player and NPC Health-change packets remain hidden until the trusted completion publication callback, then appear once with the expected actor IDs and amount. This checks server queue ordering only. It does not show that the 2022 client renders the heal, nor that Runtime emits the captured caster1259 body and normal recharge in the same order. No live binding was added.
+
+Signet of Strength [944]: detached native plan and landed-attack charge consumer pass, with nine fixed capture receipts audited. Missing: actual World attack bonus and status/removal routing, nonhit and multihit phase policy, NPC casting, native 2022 and rendered verification. It remains unbound. Details: docs/strength-signet-detached.txt and build/reports/strength-signet-checkpoint.json.
+
+Ash Blast [1085]: detached earth damage, conditional burning hex and scoped miss-chance consumer pass as a registered Release CMake test. Six fixed capture receipts pass hash-pinned audit. Observed 10-second recharge conflicts with the pinned native catalog's 15-second base; modifier/balance context is unresolved. This entry records the original detached stage; see the follow-ups below for later World player-target, NPC-recipient and live attack-accuracy progress. Normal cast binding, complete mixed-recipient transaction, native 2022 and rendered verification remain missing. Details: docs/ash-blast-detached.txt and build/reports/ash-blast-checkpoint.json.
+
+Ash Blast multi-target preflight: src/runtime/gw_ash_blast_batch.h builds a copied proposal for every already-selected hostile target, requires the selected center and authoritative distance/scope inputs, and rejects the entire batch if any later target has unknown armor, wrong allegiance, stale identity or invalid radius. Numeric effect IDs are target-local, matching World ownership; the test proves two targets can reuse one number. This paragraph records the original detached batch; see the later World stage and NPC-recipient follow-ups. Reactive damage/hex ordering and a complete mixed-player/NPC transaction still need integration before normal cast binding. Release ash_blast and ash_blast_batch tests pass, as does the six-receipt fixed audit.
+
+Ash Blast trusted World stage: src/runtime/gw_world_ash_blast.inl initially selected player recipients around a hostile player center, preflighted copied damage/hex proposals, and deferred outbound packets until publication. Later follow-ups below add nearby NPC recipients, NPC-centered selection and live accuracy consumption. Reactive damage/hex ordering and 2022 rendered behavior remain unresolved. Four focused Release tests (ash_blast, ash_blast_batch, ash_blast_world, gift_health_world) passed at the original stage. No live skill binding was added.
+
+Target refresh (separate from the fixed implementation checkpoint): today's live packet/world prefixes were frozen as data/captures/skill-checkpoints/20261023-live-targets-1 and merged with the last completed target session as 20261023-targets-review. The full frozen packet audit passed after the coverage generator was corrected to recognize Ward Against Foes [177] as intentionally gated/unsupported. The merged audit has 751 distinct locally activated skills (679 obtainable), 7638 local activations and 650 obtainable skills with no local activation in this cumulative snapshot; it is not the published implementation checkpoint. The historical-wiki monster checklist now has 519 search entries (previously 524), 201 observed nonplayer skill/effect entries (previously 197), and 260 encountered named NPC sources (previously 258; Erek and Skomay Bonehewer newly seen). Newly observed nonplayer effects/skills include Battle Cry [1277], Elemental Defense Zone [1278], Melee Defense Zone [1279] and Rock Slide [2084]. The separate PvP variant target file records 12 PvP-specific IDs seen in today's activation packets: nine newly seen and three recaptured; 135 of 154 classified variants still lack an activation sighting in the cumulative target snapshot. These sightings are not proof of complete mechanics or rendered behavior. Published MISSING-CAPTURES / CAPTURED-NEEDS-IMPLEMENTATION / VERIFICATION-GAPS remain the fixed checkpoint. At status check official PID 46120 was absent; this work did not close or restart it.
+
+Ash Blast World/target refresh tested SHA256:
+CMakeLists.txt 840E95DD6AE2C7AED19FAFFDBC406D36130257D406136694F72135B186C2DFAE
+src/runtime/gw_world_simulation.h 80861B0E1495467B0DA639D56C513B3E53009CD58BC1EB075AA9320D927CABE0
+src/runtime/gw_world_ash_blast.inl 51E92BB9469498142D3277005E4812F128403C2CD406C05B36536D45CB428057
+tests/ash_blast_world.cpp 77ECC6BF544C806A8ACBFA29273138EDAA2A27F93BEC6244C093816F75D72228
+build/tests/ash_blast_world_test.exe 4BF466E1C9EBA0FE315FE3DAB1268E97B9A55B21AE73763D842B0639DF101826
+The target refresh was regenerated from the full audit. PvP variant counts and local/other attribution are produced by tools/skills/pvp_variant_targets.py.
+Coverage audit and PvP target tested SHA256:
+tools/protocol/skill_runtime_coverage.py 68234B7A702BABE615DF8766C2C1C400EC8669419595537A9F44CB30DF9790B0
+tests/test_skill_runtime_coverage.py C577ADF085201F9E5C8026BEBD50CCDD236BB609CA18565FB054324BA0905B2F
+tools/skills/pvp_variant_targets.py 32D2263DAC488F3DECE6F69518FAF3B88F7C8E19DD2D3AB54E47F0F078134A9D
+build/reports/skill-runtime-coverage.json D28F16E850BD01C6F2CD08E7F7A4AC59A7E3E77F5B10E7C38D9B2B89E1996F7F
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 87B3861EFF04C0CC80F15D49038F708BE00DAA0A258DE03B3565C1FED8258311
+
+Ash Blast NPC/accuracy follow-up: gw_npc_combat_catalog.h has a copied hostile NPC recipient proposal using the same damage/conditional-Burning hex plan as the player stage. It rejects stale scope, unknown Earth armor, invalid range and dead/nonhostile recipients before assigning the copy. The shared World strike sampler now combines active Ash Blast miss chance with other miss modifiers for player and NPC attackers. Focused Release tests ash_blast_npc and ash_blast_world pass, including NPC hex expiry and a player ordinary-attack miss only while the conditional hex is active; shockwave also passes after the NPC header edit. Later World integration is recorded below. Hex Breaker/reaction ordering and the captured 10s versus pinned 15s recharge discrepancy remain open. Current runtime coverage was regenerated with 177 still unsupported and the frozen target-review packet audit passed again; the original fixed published checkpoint was not replaced.
+Ash Blast NPC/accuracy tested SHA256:
+CMakeLists.txt 2E8D1066746F4675F4EE6EF0E80AC2B2D1D06CE98D348BD604AB03AD4B6A2A9C
+src/runtime/gw_npc_combat_catalog.h 488568F92D759ABD54E948C61995E14A3895C18DF758D8BDF6DA9B5BE71F0723
+src/runtime/gw_world_simulation.h D5ACC782A939670E0543883A2D3D9FBA9160018B50777228F227129117414371
+tests/ash_blast_npc.cpp D22E75D51C0B65FC2764BEA45746D6E03531A8C941D9E60CD11AA0BFD1EF1473
+tests/ash_blast_world.cpp E1CD277102A2D22851F743D83726A2466C46B97284BA56FCF03E7BF4D93AB73F
+build/tests/ash_blast_npc_test.exe 96B7D44D294E7DDA3CA8515FD005A5957AE74C272B99C37CB5A9ED0C91C202C6
+build/tests/ash_blast_world_test.exe F9C81A672CEF1C0EC73F97CE3677F5F2D3DB31FD5F9F3462F703C017CFC054D6
+
+Ash Blast mixed recipient follow-up: the trusted World stage preflights hostile NPC copies alongside nearby players, rejects the whole impact for an unknown Earth armor on either type, then commits NPC damage, conditionally prepared hexes, death bookkeeping and effects/damage packets under deferred outbox capture. It now accepts either a hostile player or NPC as the selected center. The Release World test covers both centers, adjacent mixed recipients, player and NPC armor rejection without damage, player conditional hex, player accuracy miss and one-time publication. NPC Burning-conditioned hex is covered by the native NPC adapter test, not yet by a World setup test. This remains unbound: full reaction ordering, current/captured recharge reconciliation, and client visuals are unresolved. The current runtime coverage and frozen target-review audit were regenerated; the published fixed checkpoint was not changed.
+Ash Blast mixed stage tested SHA256:
+src/runtime/gw_world_ash_blast.inl 1A7DCFFA5508DFC2245319633F7EDBBB6542404FF802A50D1E00445038299A50
+tests/ash_blast_world.cpp B64326E369D649D103BC382553F83647093DA81BE1DDBFDA112FA9471493BAA4
+build/tests/ash_blast_world_test.exe 25CA13469F2CCE96B72F716E34B1810032FF048EBD0B05CABAB5F720F1AAB52D
+build/reports/skill-runtime-coverage.json 11003E5A78B65324431D412BBF43C99F8343C76BF1526BA9FC8B1A7F5BC07C31
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json CA5C3B5E26EB1DF1430C1E2E77F07CE5461161928DBFC871013125E519EA0E17
+
+Current explicit lists: data/skill-capture-plan/MISSING-CAPTURES.txt, CAPTURED-NEEDS-IMPLEMENTATION.txt and VERIFICATION-GAPS.txt are the published fixed-checkpoint backlog. The five skills above are a later progress layer; source-bound counts must not be advanced for their unbound stages. New official logs are not part of this frozen partition until separately audited.
+
+Ash Blast NPC conditional-hex publication follow-up: the copied NPC commit now emits the 2022 effect-add packet and any same-skill replacement removal packet alongside its damage/effects publication. A World test first applies Burning to an NPC with Mind Burn, then checks initial Ash Blast effect-add and a second Ash Blast replacement remove/add. Release ash_blast_world and ash_blast_npc pass. This verifies native packet generation, not rendered client animation or complete cast/reaction ordering; Ash Blast remains unbound. Runtime coverage and the separately frozen 20261023 target-review audit were regenerated after the source change, followed by NPC and PvP target reports. The published 20261022 fixed-checkpoint lists were not changed.
+Ash Blast NPC publication tested SHA256:
+src/runtime/gw_world_ash_blast.inl ECBCA547B1AE59D5BDBC334479726DED07649B2C7C7337CBC0E30C9FF7818199
+tests/ash_blast_world.cpp 773C173199B983134145246BCAEFF7D00E3C869F86F01AF1F3635D0753BEFB11
+build/tests/ash_blast_world_test.exe DCAA2612BF90FF183ED650346A7DC20122A9AF6AF8C6DA94DCE9FCEF62446029
+build/reports/skill-runtime-coverage.json 8C6D2A331DDFD25B2EDB4EF43D512ADC4FEA81E71E3EBD284D5B9682BDC7A2E9
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 68C147CB70742A9019E1CD023738792FAA30B3B8CD68E57030DA0AF512698E2E
+
+Ash Blast NPC Earth armor follow-up: the copied NPC proposal now computes condition-adjusted Earth armor with the same final_earth_armor path used by ordinary NPC damage. The focused test applies Cracked Armor to a reviewed 80-armor NPC, compares Ash Blast damage with ordinary Earth damage, and confirms more damage than an uncracked 80-armor recipient. Release ash_blast_npc and ash_blast_world pass. This does not establish all NPC hit reactions or rendered 2022 behavior; normal cast binding is still gated. The separate 20261023 target-review audit and dependent NPC/PvP target reports were refreshed without changing the fixed 20261022 checkpoint or published baseline backlogs.
+Ash Blast NPC armor tested SHA256:
+src/runtime/gw_npc_combat_catalog.h 57458937A9C36C47EEF9D64C70EFE454ABB18886157635BC5C77CE5FDD17E362
+tests/ash_blast_npc.cpp F4CFB74BB4D3A640D2C64773DD5B8A6BD8904B7A7F0D8E7B1F0DC50CB88A4083
+build/tests/ash_blast_npc_test.exe 1576AA38961795BB1A731965836D17B1FDE2CDB07AA8E70251E21A5492646716
+build/reports/skill-runtime-coverage.json FF7865D6EE323EFB1434F35A68D8C3A15B5504B676F510B86340EE790626C21D
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 604D8C25BD109ABA51DAF4EAA0296189E8CD3C28D3629675C6387EB2275060DE
+
+Ash Blast Hex Breaker targeting follow-up: local historical wiki pages describe Ash Blast as striking its target and adjacent foes, with Burning foes among those struck receiving the hex; Hex Breaker describes preventing the next hex when its owner is the target. The trusted World stage therefore preflights Hex Breaker only for the selected Ash Blast target. A focused test checks a selected Hex Breaker owner retains damage but avoids the hex, while an adjacent Hex Breaker owner still receives the Burning-conditioned splash hex; both victims take the initial damage. Release ash_blast_world, ash_blast_npc and hex_breaker_world pass. This interpretation still needs an official target/splash packet comparison and rendered 2022 validation before cast binding. The separate target-review audit and dependent target reports were refreshed; the published fixed baseline was unchanged.
+Ash Blast Hex Breaker tested SHA256:
+src/runtime/gw_world_ash_blast.inl B67E7A7D3C0EBFD4B66F661652101CB3830885B8D6FE624DF9005A2E8DFDDE4A
+tests/ash_blast_world.cpp A5EC782E3CE6FE5D83A5F48F1F1117B1D37DE3D02A9522E9A7EC2126755E92CE
+build/tests/ash_blast_world_test.exe 29187DDF0B6C6D25A44BAB4A203A76648788138A6B9650880656627DD0EBE56D
+build/reports/skill-runtime-coverage.json BBF78323CC096C83BC6FBBBBF309E98BC2C463698B556E6436E7D8AC466DF4E1
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 02D18160465358E38383194F8F31E6BE854C205FACBE3FF51648D3CD47FFF55B
+
+PvP-map capture evidence follow-up: the frozen audit now retains per-map local/other-actor activation counts, with a sample packet receipt for each skill/map pair. A new strict map-catalog report includes Arena, Heroes Ascent, Guild Battle, Alliance Battle, Hero Battle and Competitive Mission regions. The 20261023 target-review checkpoint contains 242 distinct skill IDs in these PvP map windows, 321 local starts and 2949 other-actor starts; 115 IDs are not runtime-bound. This includes ordinary skills, unlike the separate PvP-variant-ID report. Other actors can include NPCs; unknown-map events are excluded; these are casts, not proof of mechanics or animation. Examples awaiting binding include Healing Burst [1118], Death's Charge [952], Bestial Fury [1209] and Sundering Attack PvP [2864]. The fixed 20261022 checkpoint and its published backlogs were not changed. Nine focused Python audit/report tests pass; official client and logger were not accessed.
+PvP-map evidence SHA256:
+tools/skills/audit_packet_checkpoint.py 5CD552EBF3145A0CA4AB8EBA2CEE87D73C4573AF02DEF5C819303CDECDDB70F9
+tools/skills/pvp_map_skill_activations.py B65B56B5F9F649B8F6D26456320A17A40B9E69239B70D52C43E308F94187AE96
+tests/test_pvp_map_skill_activations.py 981DD229C6C4405EB624BC938D4DF9F12BFE2914022DA98A8029D80C73993221
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 5230E17FED5687AC3BE14D534493918A92819CB2EDDD6522B128C9A2B1D21076
+data/skill-capture-plan/PVP-MAP-SKILL-ACTIVATIONS.json 724CD36E3054B07D64071511B5FAB6D6F5866F2FB1E99A4EEE53CDF7C5E0B154
+
+Healing Burst [1118] follow-up from the frozen PvP-map audit (61 observed other-actor starts in those windows): the pinned 2022 row and local historical wiki establish 10..160 target healing, a separate Divine Favor party-heal amount, earshot from the selected target, a 20-second Smiting Prayers disable, 0.75s activation, 4s recharge and target body resource 1256. The new canonical plan/recipient policy distinguishes the target's heal from the caster-party splash, and a cooldown-bar disable authority tracks exact Smiting skill copies, event replay, reset, and lifetime. The trusted player-target World stage heals the selected ally and caster-party players within 1000 units of that ally without doubling the target, commits the disable, and defers packet publication. Tests healing_burst, healing_burst_world, disable_reset_world, party_healing, flourish_world, cooldown_bar_world and gift_health_world pass after serial Release rebuild. Healing Burst remains unbound from normal casting: allied NPC selected targets, NPC party recipients, cast payment/recharge, 2022 body ordering, and rendered client verification are still required. Source-bound and fixed-checkpoint backlog counts were not advanced. The separate 20261023 audit and dependent PvP/NPC reports were refreshed without touching official logging.
+Healing Burst staged World SHA256:
+CMakeLists.txt 07E2455C834C9D2DC58584CC3E9BA059426513A9DFE02BEA48976F806D51F414
+src/runtime/gw_healing_burst.h 5852C1EC4839FAF91BBD70E9734F62611F959EA409DA96FBD8D7F231CD28F861
+src/runtime/gw_world_healing_burst.inl 927A7AAB79CF795097B464C556EA13FF206E87A1C1912672DECD1BC882AB95CC
+src/runtime/gw_world_simulation.h 1792B0EA864F98C19B71EECB418E3885D06E2EDDA5F0C9019C02AC4B56F2C503
+src/runtime/gw_disable_reset.h ACADBC2CEB8CD4F84BAD145110B22FFFF63BC56DA009A52BA663B6D9ACAF195B
+tests/healing_burst.cpp 53ED2D5735AD422BB1F312778B4FAD7CC52C0AA70303658BF7A0708141F60AD3
+tests/healing_burst_world.cpp E43505BDFCCC4810DF8CE7F39A2781F82B87C0B2566BF24D661E68912B8644F8
+build/tests/healing_burst_test.exe 39686AAB31FB95F382B863F05242890A90E6EF2036F7079E8AF4E9B8A48CBD32
+build/tests/healing_burst_world_test.exe C43B1DC047C28B7AB71E4F5485F46EDE3D4D7A4511456B5B7C4E78EB5183B04E
+build/reports/skill-runtime-coverage.json 7160DB8CF1CC51915643B657DCA9B01F10B742985EB25C513E83F8E06E02FDE2
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 266BD46E4650749782B5574324ABC32F2B1E4D5CF9379692CB6481319AB42901
+
+Verification scope: Release CMake tests gift_health_world, gift_health, strength_signet, shields_up_world, projectile_attack_outcomes, disable_reset_world, flourish_world, cooldown_bar_world, recall_disable_world, unnatural_disables and copy_restoration_world pass after the shared revision change. This turn, gift_health_world, gift_health, ash_blast, disable_reset_world and unnatural_disables passed after serial Release rebuilds; Ash Blast audit passed six receipts. Succor and other detached tests passed previously. This is native mechanics/regression verification, not a rebuilt/deployed host or rendered client validation. The old private server_host.exe process was left running; the official Gw.exe and capture sessions were not restarted.
+
+Tested SHA256:
+CMakeLists.txt 94B77A463BEC6D62F1E91698712641BD79B663DAB2B61E28940DB9A7E828ABEE
+src/runtime/gw_disable_reset.h 180098E81B349197FD0F44CB531A42258C8564A4A867854C6DB8555B95937DEC
+src/runtime/gw_world_gift_health.inl B12E0BE66D6538EDE07D1D826D7AE196D09B80A5B6CCCD97A7D09A44F0CF233E
+src/runtime/gw_gift_health.h CDC3B14DB51E6FAEEB3EF537006872C187C15977757165215C6192CF056CA849
+src/runtime/gw_strength_signet.h F49A09C64E482C3560F4A162E04974F47643D4E243A1AEB1282B3990EF4570CC
+src/runtime/gw_world_shields_up.inl EB7FBAFEBE382EBCC38AD973F85AF52A934EF00A7491981D097F334E0CDB237E
+src/runtime/gw_shields_up.h D748241EF225E89CC14B4061EC49545C5D1C9B3C9BA230C600995BAC96156B9E
+src/runtime/gw_world_simulation.h 045D4F5194713B59BDBAC07E4507C1A1D3AB089D71D40325DC40AB9C3001AC6E
+tests/shields_up_world.cpp AE31BC20D8E96884D36535EFEBE36880DC6A9373CB6B49989AA4916467EEA0B3
+build/tests/shields_up_world_test.exe CB144FC5797DACFD65D205403340524E2A6361124F495044D8B68F57FDF64634
+build/tests/projectile_attack_outcomes_test.exe 7970A8ACAE0377B66FDF2DDB75B5F1CE9A2089A2DE2B6A5F553C2752348F77F1
+tests/gift_health_world.cpp 5C460696F1FCA4D1B909C059498903C4D5768A7036002004D85BE4209E555CE0
+build/tests/gift_health_world_test.exe 110F325F62AA5D4A5B8E3E83B30C97B6E39507807DC8DB441D2971692A6D1B7C
+tests/strength_signet.cpp 6DDCB873BF29E429A5B0B80672E34D52E490A8F64C9C1ACAA6B0E33774F98FBA
+build/tests/strength_signet_test.exe 783D720AC9FED1C0BF645F7E9F766441EF6EEE0349242F7543BCCC9CC628AAF1
+build/tests/succor_test.exe D27A007D5C140AD004ED8F9BE64D65C7BE7763E19002DCDE9A2FE288977B6267
+build/tests/gift_health_test.exe FD5B8DE881ED86953B0F8B03E0BB69B4C482B72595142A3C674FD593326698C4
+
+Current additions after the earlier hash snapshot:
+CMakeLists.txt 381EBC168CD7914642F2B181AB564296356512ECBEC389ECC9DA6C3A44E0E863
+src/runtime/gw_world_gift_health.inl 461D50285AC85957F63FE377586DDD28050943B0C01142DFA67F8F33F458558E
+tests/gift_health_world.cpp B04E61CA0AB52905881145CACF9F2306DF007652A16CA8DB429E6FA821933699
+build/tests/gift_health_world_test.exe 84D2F27AD9B2973605E4A6363EFC6535A6B78B26E13DC6CBCAA7A4F5946967E6
+src/runtime/gw_ash_blast.h E948A8441F7B36A3269ED6008596718FDAD9FEE7822568BF68F6BFA38925DCCC
+tests/ash_blast.cpp B04AED2C33F9BB5AC85845322CA6B3A4CE7AF92BC0DAB3A1FD2D5C23E5E2119C
+build/tests/ash_blast_test.exe 17C05E174503FCFABEDC39721CF7EAE8418A05D59F2DDA943CE573D5A8C17695
+
+Ash Blast batch additions (later tested snapshot):
+CMakeLists.txt DC9DF18B10B25B52FC9742ADA85CC7FB13060CDCC8B22EC4B78574B321D91B16
+src/runtime/gw_ash_blast_batch.h F37AB2466E319E89E0571EE5E7C983F8322D3A110A222CCAE492C51A8814E727
+tests/ash_blast_batch.cpp F49C0DA5B682E4D8E55E58C4D7B282B28D1005A73AB4ADC344CFAFB09B4E47F9
+build/tests/ash_blast_batch_test.exe 16083CAC00D8D6E0694569FDA27EF12B4516A91ECF25D66195BE98215A21D526
+Healing Burst [1118] continuation: the trusted World stage now accepts an allied NPC as the selected target, emits the NPC health fraction/change packet, applies Divine Favor splash to eligible caster-party players, and commits the exact Smiting-copy disable only after the staged publication succeeds. A separate test confirms that an allied player outside the caster's party receives the selected-target heal while the splash still follows the caster's party. The pinned 2022 target body resource 1256 is checked. Release healing_burst, healing_burst_world and disable_reset_world pass; the nine focused packet-audit/PvP-report tests pass. Healing Burst remains unbound to normal casting: the party model does not yet represent NPC party recipients, and normal cast payment/recharge, body ordering and rendered 2022 verification remain unresolved. This stage is mechanics/packet evidence, not a claim that the skill plays correctly in client. The frozen 20261023 target-review audit and dependent PvP/NPC reports were refreshed. Known PvP-map windows contain 242 distinct skill IDs, 321 local starts, 2949 other-actor starts, and 115 IDs awaiting runtime binding; other actors can include NPCs. The fixed 20261022 checkpoint and its published backlog lists remain unchanged; official logging was not touched.
+Healing Burst continuation SHA256:
+src/runtime/gw_world_healing_burst.inl F731D91264D6C4E0C2D604733109111612926F6F0F16283BD709F990FB0ECCFC
+src/runtime/gw_healing_burst.h 5852C1EC4839FAF91BBD70E9734F62611F959EA409DA96FBD8D7F231CD28F861
+tests/healing_burst.cpp BC65639EE3CB3D189084723CD3C74F61BDECA57724BDBDBC668618315E5C206A
+tests/healing_burst_world.cpp 71ECBDB64EA954AC1FB31B754DA6B668DA792A71352DE0D40401531DF0D964BF
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 6D594B6DDC97C492BCBD4444B81D20094F434E67CBAA4FB0D54A48C5F0326D1A
+data/skill-capture-plan/PVP-MAP-SKILL-ACTIVATIONS.json 72678377A9BE85F804A8C6B50AD6EFE641B36F9CBE9800203D1ADD97832DF0E6
+Bestial Fury [1209] started from the frozen PvP-map evidence: 41 other-actor starts on maps 223/300 and one local instant activation outside those PvP windows. The pinned 2022 row has 10s recharge (corrected against the extracted row), 5..11s stance duration, 25% attack-speed increase and caster body resource 766. A detached native effect plan and exact-copy cooldown-bar disable proposal now implement the 5s non-attack disable, while excluding attack and pet-attack skills. The focused Release bestial_fury test passes for 21 ranks, expiry, replay, forgery, duplicate copies, reset and retirement. This is not yet World-integrated or runtime-bound; paid cast/stance replacement, ordinary attack-speed scheduling, ordered body/disable publication and rendered 2022 verification remain. The separate status file is data/skill-capture-plan/BESTIAL-FURY-STATUS.txt. The frozen 20261023 target-review audit and dependent PvP/NPC target reports were refreshed; fixed 20261022 reports and published baseline lists were not changed. Official logging was not touched.
+Bestial Fury SHA256:
+src/runtime/gw_bestial_fury.h E636443AA47925B3AEBEF03628F9013E1E17E3D67EAC11ECB5412ECE64B8C7EB
+tests/bestial_fury.cpp A4377AA821349200A82A0D1B46219DA962296291D3B1E9F6254268489795D1E9
+build/tools/bestial_fury_test.exe FCBEF69699339570A40FEABD735ED410AF1A78188FDF2275D8DB222E98DDA415
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 49550AD49152817DA5FA82F1C50997F7E5D9E78977AF31DD4E4DF803744C41D0
+Bestial Fury [1209] World continuation: trusted status application now atomically proposes the 5s exact-copy non-attack disable with the 5..11s stance; a rejected duration or bar proposal leaves both unchanged. The 25% IAS uses an 80% duration multiplier for ordinary windup/repeat and attack-skill windup, with stronger existing IAS taking precedence; the retail stacking rule still needs independent evidence. Disable queries, reset revision vector, reset transaction and actor-leave cleanup include the new authority. A new World test covers status rejection, timing, exact copies, reset, stance replacement, disable survival and stale lifetime. Fresh serial Release builds and 7 focused CTest suites pass: bestial_fury, bestial_fury_world, disable_reset_world, berserker_stance_world, faintheartedness, flurry_world, healing_burst_world. Runtime normal casting, client body/disable ordering and rendered acceptance remain unverified; do not count as runtime-bound. Separate 20261023 capture audit and dependent PvP/NPC reports refreshed; fixed 20261022 baseline unchanged.
+At user request the world and packet recorders were attached to verified official C:/Users/CmonMeow/Desktop/Guild Wars/Gw.exe PID 54796 without restarting it. Both status commands returned 4 ready and files world-54796-275142046.jsonl and packets-54796-275153171.jsonl grew. Source build/test work did not close or modify that process.
+Bestial Fury World SHA256:
+src/runtime/gw_bestial_fury.h 89E32635C94A49F5D83472B115F5AB9B5579F32EC70B2641DB8640E18E868E82
+src/runtime/gw_faintheartedness.h E968B6D7D0C359E285AA03BB161B6861474D4A2CEF17C40ED5DC664A95EDCB88
+src/runtime/gw_world_simulation.h 150B5E73F0ED25FF013C8FFA3BD2AE1C6264D6575870C56A95DD85E92D0B5179
+src/runtime/gw_disable_reset.h D386220993F9DD61B593C8E2A5DCB6B93914B461D2FBA5AF5A51C01AE45CA1D5
+tests/bestial_fury_world.cpp 21E07D261FA86B9C4C58A1AF65BB538A1C82E570DBD965F94CBDD09D4CF31216
+build/tools/bestial_fury_world_test.exe 7C202EE76DE7819E7588E72F1C3A7A141A4FBD5DF6C540BB1F3FC7FDFAD74B0C
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json 0905A161A06D5B9EE21D36010CDA72A2D438652B5F182E9856C2694F74AAA6F7
+Bestial Fury [1209] native cast binding: the 2022-pinned Ranger stance is admitted only with an authoritative learned/campaign bar, World status/disable authority, current bar and exact-copy disabled-slot hook. Runtime pays 10 Energy, commits the World stance and 5s non-attack disable, publishes effect-add and caster body766, starts 10s recharge, and the next disable synchronization publishes 5s feedback for other non-attack copies. A legal Ranger-bar cast test verifies those packets, paid resources, the active 10s rank12 stance, attack-skill exclusion and re-use rejection. Existing World test verifies 25percent IAS and stance replacement. Production Release host rebuilt and relaunched at exact path bin/server_host.exe; PID47540 has expected local listeners6112/6113/6601. Ten focused native suites pass, plus18 coverage/audit Python tests. Fixed 20261022 checkpoint inputs remain immutable; its regenerated backlog now reads679captured/354source-bound/325awaiting/650missing-capture. New target-review audit also reports354 bound; PvP-map report has114 awaiting binding. Rendered 2022 effect, local body-effect capture, NPC caster and retail IAS stacking remain explicit verification gaps. Official PID54796 executable Desktop/Guild Wars/Gw.exe and its growing world/packet captures were preserved.
+Bestial Fury native binding SHA256:
+src/runtime/gw_skill_casting.h 48221130E3FF4CD67E9437F7EF463C36D06DED133264306951A90237A2FE388F
+src/runtime/gw_bestial_fury.h 89E32635C94A49F5D83472B115F5AB9B5579F32EC70B2641DB8640E18E868E82
+src/runtime/gw_world_simulation.h 150B5E73F0ED25FF013C8FFA3BD2AE1C6264D6575870C56A95DD85E92D0B5179
+tests/bestial_fury_cast.cpp E419669E39B17A8281160D354FF105B6910CC769BBF0AC496586171C65E0FBEC
+bin/server_host.exe 1E0C4A00A9E52E5192DC0D1240BE6D7E0C88B2922C4DD1AA1DA2CB771101DF46
+build/tools/bestial_fury_cast_test.exe 2496DBE9B504E368D2EF9989FF6B3682373C38F5C058F9D9D8C09035935D11F1
+data/captures/skill-checkpoints/20261022-cumulative-skills/skill-audit/captured-skills.json 7BEF431F41AAFE7036CB6E46C0B01A142B62E427F9F187CBA6F4DE5F41610900
+Sundering Attack [1191] and PvP variant [2864] now share the authoritative bow attack pipeline. The pinned 2022 row and local historical wiki agree on +5..25 PvE, +3..10 PvP and 10percent armor penetration; the existing weapon resolver applies penetration only to weapon damage. Learned 1191 selects the 2864 row and plan in PvP, with mode-specific 750/1000ms release, 10 Energy and 4s recharge. A new fresh Release test verifies all 21 ranks, forged plan and miss rejection, both mode-selected casts through Runtime and World contact, payment, release and recharge. Six rebuilt focused CTest suites and 18 Python coverage/audit tests passed; serial Release server build succeeded and the host was launched visibly as PID584 with local listeners6112/6113/6601. The fixed 20261022 checkpoint remains 679 locally captured/354 source-bound/325 awaiting/650 missing local captures. New 20261023 target-review PvP-map report has113 awaiting binding. Both modes lack local player cast capture; client rendering, retail rounding/contact timing and NPC caster behavior remain unverified. The official client PID54796 at Desktop/Guild Wars/Gw.exe was not restarted or stopped; its two capture controls returned ready.
+Sundering Attack native binding SHA256:
+src/runtime/gw_weapon_attack_skills.h 73FD54DAE4A2E2767572522802C88CF2022E62D2C052724BB907A08C9F99AA92
+src/runtime/gw_skill_casting.h 0CA9A28FF67501F932B9B07930E96437DA8FEB56B55689506376DA4C5F416C70
+tests/sundering_attack.cpp 2E3E08010364086F7E4DC8ECCED948D95C37517ADA75F9B7AE241F67F0461B67
+CMakeLists.txt 712DBD857713C67F99FCBE880EB5D5849CF67D3A6C2E8839087E6E88A1B956F9
+bin/server_host.exe 0E20AD6A7A1CA9D8564785E9F0A852DA641F9E1981BD36ADA179924DFD3CDB03
+build/tests/sundering_attack_test.exe 0326609FB7113D5AEF6DED40FE5E04841673B23DDEEB46DE061EF65BF04CCB12
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json C75E0917A3AEAC26777FA2E094ED0A8E219F1797829EAD9A21F21AE478913316
+Flame Burst [188] now uses the canonical fire area plan with the pinned 2022 15..120 rank curve, 252-unit nearby radius, 15 Energy, 750ms cast and 5s recharge. Player and authored-NPC casts share the World transaction; the NPC offensive-plan gate was extended to admit only its canonical reviewed form. Fresh Release flame_burst covers 21 ranks, forged-radius rejection, living hostile player/NPC recipients, outside-radius and allied exclusion, player/NPC payment and activation, and the 2022 NPC skill-start packet. Six rebuilt focused CTest suites and 18 Python audit/coverage tests pass; serial Release server host build succeeded. The fixed 20261022 backlog remains679captured/354bound/325awaiting/650missing-local-capture because Flame Burst has no local player activation. The separate 20261023 PvP-map report now has112 awaiting bindings; Flame Burst has14 other-actor starts on Heroes Ascent maps. Rendered 2022 cast, full packet sequence, near-radius retail boundary and exact damage rounding remain verification gaps. Official PID54796 at Desktop/Guild Wars/Gw.exe remained live and both capture controls stayed loaded; capture files continued growing.
+Flame Burst native binding SHA256:
+src/runtime/gw_elemental_damage.h 4E5D72E562001522023CB817B0006326EE4424D16A7FBB19BF24F95FA13A9D5E
+src/runtime/gw_npc_offensive_plan.h ABA53EB8AA01BA4E5DBC6905EA2FB9EBF45890FA6DDC9C56A34A4CE9ADF98A5F
+tests/flame_burst.cpp CE5DBDDE53AD92AB1E0754F52EAF2F2C9E8CCFB5E876AA141D669BBC7C167DAC
+tests/npc_elemental_ai.cpp 83F8B3F17EA12A9EFE1CABFF4E96FB9962653F16CC64957B8D3293DDA75F6432
+CMakeLists.txt 4CE4311C22C6CA031B1B7F2570D2E8E28F6A2BA47C3FD31BD5DE950B324DA777
+bin/server_host.exe E0F40A5451820967A449F57EB01C5FEFAA5343B8963B6CDEEC6F3010AB3C8AB9
+build/tests/flame_burst_test.exe D91343AFC18BC906AB081418169045C5A7FBD25ECD8DE0D25FE15656EDA84946
+data/captures/skill-checkpoints/20261023-targets-review/skill-audit/captured-skills.json AEA920255396822307A00C00E4DA3947543E6D2B99D42A7FD5A1B08E3D655C08

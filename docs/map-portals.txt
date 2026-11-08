@@ -1,0 +1,197 @@
+Guild Wars 2022 automatic map gates
+===================================
+
+Runtime: src/runtime/gw_map_portals.h
+Active catalog: config/map-portals.txt (FWGATE01)
+Evidence: data/gw/portal-provenance.json
+Tests: tests/map_portals.cpp
+Offline reverse candidates: tools/portals/
+
+October4: Regent Valley162 -> Fort Ranik166 reverse private gate enabled from
+the shared113437 corridor. Its source plane7 and collision-connected arrival
+plane8 are retained; never flatten the destination to plane0. Native configured
+gate validation/direction tests pass, including arrival outside the trigger.
+This is a generated private gate, not a recovered retail spawn. Client crossing
+remains pending. The catalog now has42 configured directions across30
+undirected map pairs.
+
+Implemented directions
+----------------------
+Ascalon City pre-Searing148 -> Lakeside County146 and reverse.
+Ashford Abbey164 -> The Catacombs145 and reverse.
+Fort Ranik pre-Searing166 -> Regent Valley162.
+Barradin Estate163 -> Green Hills County160 and reverse.
+Foible's Fair165 -> Wizard's Folly161 and generated reverse.
+
+Captured route expansion
+------------------------
+Another32 directed routes were added from transitions in the spawn/NPC logs.
+The importer requires a matching local Wiki Exit(s) entry, both map navigation
+meshes, walkable captured endpoints and a non-overlapping source trigger fully
+inside one navigation cell. It skips manual travel requests, unknown map
+adjacencies and unsupported geometry. The current importer is
+tools/portals/import_captured_routes.py; it writes review artifacts under
+build/reports/captured-portal-review before promotion.
+
+These added endpoints are still marked travel_method unknown. Wiki adjacency
+confirms the logical map connection, but cannot prove that the logged player
+walked through that specific trigger. The trigger rectangles are provisional
+developer bounds, and client traversal still needs live verification.
+
+Captured direction-specific arrival positions and planes come from the actual
+local transition capture. The Foibles reverse uses an explicitly generated
+collision-connected development arrival. Both endpoint planes match the pinned 2022 navigation
+assets. Wiki Exit(s) tables independently confirm each logical adjacency.
+The capture records loading/map changes but marks travel_method unknown:
+neither a recorded map change nor the shape of a DAT navigation cell proves
+the retail zone trigger. Active rectangle geometry is explicitly developer
+defined around those observed exit positions. Do not describe it as decoded
+ArenaNet trigger geometry or a complete retail spawn-point catalog.
+
+Validation proves the rectangle's entire area on its required plane. A small
+gate uses convex-cell containment; a complete doorway may span several cells.
+The latter uses exact trapezoid-union coverage within a genuine DAT neighbour
+component, partitioned at all vertex heights and edge-order intersections.
+Interval coverage at each partition proves every strip, rather than a grid or
+four corners. Horizontal gaps larger than the existing0.01navigation tolerance
+fail validation; an overlapping floor or unlinked cell cannot fill a gap.
+Arrivals must be walkable on the stated destination plane and asset. Portal
+transfers never fall back to a generic spawn or last logout point. Direct map
+entry (/tp) uses the configured map spawn, then the map-center fallback
+described in private-server-features.txt.
+The FWNAV navigation portal field represents cross-plane cell connections;
+it is not a map transition. No unknown FFNA chunk was treated as an exit.
+
+Host integration
+-----------------
+1. Read Catalog::read(config_path / "map-portals.txt") once at host startup.
+   validate_all(lambda map -> const navigation::Mesh*) before enabling it.
+   The existing pinned map-asset resolver supplies each logical map's mesh.
+   An error must be reported as an unavailable portal catalog, not swallowed.
+2. Keep one Detector per world session. On initialized map entry/reposition:
+   detector.reseed(catalog, Sample{map,plane,epoch,server_monotonic_ms,{x,y}}).
+   This suppresses spawning inside a trigger; no movement means no transfer.
+3. After each actual collision-accepted authoritative movement segment call
+   detector.observe(catalog, sample, true). Call for every accepted route leg
+   when the simulation resolves multiple legs in one update. Do not pass the
+   requested click destination or an unvalidated CMSG position as the sample.
+   Explicit position changes use reseed or authoritative_step=false.
+4. A Crossing contains source/instance epoch, destination/asset, and the
+   direction-specific Arrival{map,plane,point,facing}. Recheck campaign/map
+   availability and character/session identity through the existing travel
+   service. Freeze further movement while a crossing is pending; consume it
+   using the existing map transfer flow, not a new bridge or client patch.
+5. Store the arrival in the transfer grant and initialize the new player from
+   it. Do not substitute map_spawn(), captured account logout coordinates or
+   the selected character's old position. Transfer grants must retain plane
+   and facing as well as x/y. All current captured arrivals use plane0.
+6. Call detector.resolve(server_monotonic_ms) on either success or rejection.
+   It applies the gate's cooldown; a failed gate also requires leaving and
+   entering again. A new epoch reseed consumes any pending cooldown. Report
+   rejected travel with gate ID/source/destination/epoch and actual reason.
+
+The detector clips a swept segment against the rectangle, so movement does
+not tunnel through a thin trigger. A positive traversal interval and crossing
+the inward face in the outward direction are required. The transverse bounds
+are closed so a valid outer navigation-edge lane still transfers. Walking
+along the inward face, entering a transverse side without crossing that face,
+a single corner contact, or moving backwards does not travel. A sample landing
+exactly on the inward face cannot swallow the following crossing. The ending
+plane must be the source gate's plane. A validated
+DAT connector may change plane while entering, but changing floor while
+already inside its XY footprint does not invent a crossing. Map/epoch changes,
+clock reversal, invalid position, gaps>3seconds and jumps>900world units seed
+a new segment rather than fabricate movement across unseen space. Time uses
+the host's monotonic clock, never client time or a reset per-map clock.
+
+First private-client tests
+--------------------------
+Map148: approach from town toward southwest and cross x7090..7490,
+y5225..5279 plane0. Arrival146: (6602,4485) plane0 facing-2.2758.
+Map146: approach from county toward northeast through that same rectangle.
+Arrival148: (7645.832031,5785.655762) plane0 facing0.56895.
+Map164: walk west on plane47 into x-13960..-13820,y-7160..-7090.
+Arrival145: (14442,2135) plane0 facing-3.042645.
+Map145: walk northeast/southeast along the observed direction(+.86656,-.49907)
+on plane47 into x14464..14505,y2100..2170. Arrival164:
+(-13231.121094,-7005.174805) plane0 facing0.
+Map166: walk south on plane7 into x22555..22690,y7400..7495.
+Arrival162: (22614,6849) plane0 facing-1.434743.
+Map163: walk west on plane0 through x-7500..-7460,y1312..1553.
+Arrival160: (-7459,1458) plane0 facing-3.042645.
+Map160: approach east through x-7304..-7260,y1380..1490 plane0.
+Arrival163: (-7073.177734,1382.667480) plane0 facing0.
+Map165: walk south/southeast on plane0 into x250..550,y7778..7815.
+Arrival161: (633,7270) plane0 facing-1.1379.
+Map161: approach north/northwest through the same rectangle on plane0.
+Generated arrival165: (384.667267,7850.35986) plane0 facing1.84813666.
+Private live confirmation is still required to promote these developer
+placements as a tested product feature; offline validation is complete.
+
+Missing maps/reverse inference
+------------------------------
+Green Hills160 uses an explicitly inferred development binding to113190,
+the same pinned FFNA asset as Barradin163. All472 distinct own/NPC captured
+map160 points match their recorded planes in that asset; paired captures
+and local wiki Exit(s) establish the logical directions. The CSV160 binding
+is a zero placeholder, so this is not represented as a decoded retail binding.
+The forward gate now covers the full connected plane0 doorway corridor
+across cells2865/2866/2867/2868/2898/2902/2903/2904/2905. Its area is proven
+by exact union coverage; the reverse rectangle remains within cell4119.
+Both actual direction-specific arrival points are walkable.
+
+The initial narrow gate missed the y1440 boundary route. Expanding that one
+cell enabled one private round trip, but subsequent real exits at y1424.18 and
+1437.78 still passed below it. The current gate covers1312..1553 at a corridor
+cross-section x-7500..-7460 where the connected lanes have converged. Tests
+exercise ten actual navigable lanes including both outer edges, both missed
+routes, inward-face exact sample handling, and no along-face/corner transfer.
+The earlier single successful round trip does not validate this replacement;
+parent's private live retest is required before calling the full corridor done.
+
+Wizard's Folly161 uses the same
+inferred development binding to Foible's Fair165 asset113355. Its captured
+forward arrival and2420/2421 distinct own/NPC points match recorded planes;
+one point(-5967.105469,16205.658203,0) remains outside the recorded surface.
+The forward gate comes from transition line691. The reverse gate keeps the
+same fully validated convex rectangle and uses a collision-connected safe
+inset arrival; it is generated review-required data, not a retail spawn.
+The modern779 capture is not
+silently rewritten to a different 2022 map ID. No fake placement is used.
+
+tools/portals generates review-required reverse gates for an edge whose two
+logical maps share the identical pinned FFNA asset. It reverses the explicit
+developer trigger/direction and searches a safe inward arrival. The whole
+ray is traversed through LayeredMesh::trace including actual DAT connectors;
+an XY-overlapping disconnected floor cannot count as a safe arrival. The
+arrival is at least32units beyond the trigger bounds, preventing bounce.
+Its status is generated_shared_asset_review_required, not captured or retail.
+It never modifies the active catalog or source captures. For different assets
+there is no known coordinate transform; automatic reverse inference declines.
+Do not enable generated candidates before checking wiki adjacency, transfer
+plane support and a private live test. The tool can reduce repeated walking
+through both sides, but cannot recover an official spawn selector from a
+single position observation.
+
+Verification
+-------------
+Standalone native MSVC C++20 /W4 /WX (existing header warnings4456/4244 disabled)
+compiled tests/map_portals.cpp and tools/portals/main.cpp. Tests passed swept
+thin crossings, failed-transfer retry/cooldown, pending suppression, spawn
+inside a gate, backwards approach, incorrect floor, validated plane entry,
+tangent/side contact, exact inward-face samples, transverse-edge lanes,
+reposition, time/epoch discontinuities, strict parsing,
+ambiguous overlaps, asset pins, complete connected trigger coverage, interior
+holes with walkable corners, disconnected cells, wrong-floor fills, arrival
+navigation, all nine configured directions, per-player exact arrival planes
+and safe reverse inference. Native gw_auth.cpp object compilation also passed.
+Host integration now loads/validates the catalog once, observes authoritative
+positions, and shares map-UI/command/gate preflight. Exact arrival plane/facing
+is retained in both world grants and authorized auth fallback. Auth fallback
+recognizes a map CAS already committed by direct travel; it does not perform
+the same old-map transition again. Success retires the old world handler after
+synchronously sending the transfer. Failure revokes the issued reservation
+and authorization, resolves detector cooldown and keeps the source session.
+The Instance::join initial_plane parameter is per player and leaves global
+navigation configuration unchanged. No client process, login or server host
+was started or changed by this task; live testing is still parent's scope.

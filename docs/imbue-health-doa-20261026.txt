@@ -1,0 +1,200 @@
+Imbue Health [1526] — native foundation, not a normal cast binding
+2026-10-26
+
+Evidence: immutable 20261024-urgoz-doa-completed packet/world checkpoint;
+tools/skills/audit_imbue_health_capture.py verifies the manifest. It finds
+48 cast starts in the frozen session. Of those, 43 have a same-actor finish,
+body resource 1400, and positive target-Health packet on the finish tick.
+Five starts lack that full time-joined sequence; they are not classified as
+failed casts. The independent agent-name audit brackets all 48 starts with
+"Margonite Anur Ruk" observations, but the name join is sample-based and
+does not establish a creature type or persistent lifetime.
+
+Pinned offline 2022 client first consumers select spell style 52, 0.25 s,
+caster body resource 1400, and no target body sentinel. This is native
+consumer evidence, not rendered-client verification. The archived Guild Wars
+Wiki Imbue Health page describes 5...50% of caster current Health at ranks
+0...15 with a 300-Health cap and no self target. The generated native catalog
+agrees on cost 10 Energy, 0.25 s activation, 0.75 s aftercast and 10 s recharge.
+Reference: https://wiki.guildwars.com/wiki/Imbue_Health
+
+Native code now has a catalog-validated plan and completion-time amount,
+plus a trusted World effect for scoped player casters healing allied players
+or healable NPCs. The caster loses no Health. Tests cover rank scaling, cap,
+forged plans, stale/self/hostile target rejection, and player Health results.
+Two focused Release CTests and the serial Release server host build pass.
+No official client or logger was touched.
+
+Still missing: production Runtime cast admission/payment/cancellation and
+completion publication; the NPC-caster path observed in Domain; NPC target
+World regression; demonstrated Health-change amount at a known caster rank;
+and rendered Guild Wars 2022 acceptance. Keep skill 1526 classified as
+unsupported for player casting. The same-tick positive Health packet is an
+association, not a packet-native cast ID or proof of exact healing magnitude.
+
+SHA-256 of audited sources and tested binaries:
+  audit_imbue_health_capture.py 6CCE02A348A6C3F805CDAE0E85478C1D866B69B4559E5FBE762E57D30439ED09
+  imbue_health_2022.py 898EE54C9169327690089B790CDD5840773D6B283E5F14AD2292A32D965329AA
+  imbue-health-native-2022.json F0957042087B35803B68D67FE5E2FA17B47761B225D102B0DFDFD59A04A061A4
+  gw_imbue_health.h 99FFCB12E57F418455617A0BA6F45D4D61757E396F85364C39D77B0FD15574D0
+  gw_world_simulation.h F75465B97E0DCC1DF9C0E91EAA7560170BDBC4FF070D9644E7A3B01E9DF8DAC4
+  imbue_health.cpp CB2E47618A833598AE317CADCFFF6CBF9DAAB00BDEB220D5B71BF420E7F343C7
+  imbue_health_world.cpp 07C05F8CCD2F6E4BC92CAEEF6951DF3270633D6FA790CCDCAE355015D6D216C9
+  imbue_health_test.exe 343FD2043992D3423A5DC62190AA7B3B358E1881E7D53F166FF7146FF744D392
+  imbue_health_world_test.exe B4288575852A6B86629ACDE90EC654BE9BAE0AADA371532BABB46652EEE489CC
+  server_host.exe 8EEAFC6675BC994F44A23D2A0ED1B42D93501B1F5F1DC30E8C0A1E48B4101B0B
+
+Player-cast integration follow-up (2026-10-26): the normal Runtime now admits
+learned Imbue Health for a scoped other-ally target, pays its catalog Energy
+cost, waits the 0.25-second activation, checks that the same target remains
+valid at completion, and calls the World player-caster effect. The pinned
+2022 caster body1400 is published on successful completion; no target-body
+sentinel is emitted. Native tests verify the delayed heal, Energy cost,
+cancel, target loss, absent-hook rejection, and healing of an allied NPC.
+The production gw_auth gateway supplies the callback. Serial Release host
+and captured_skills_test builds pass; imbue_health, imbue_health_world,
+imbue_health_cast, and captured_skills CTests pass (4/4). No official client
+or logger was touched. The source-based coverage report now marks 1526
+implemented_binding; the fixed Domain review changes 47 -> 46 unsupported
+IDs and 2,894 -> 2,846 unsupported cast starts. This is a player-cast source
+binding and native verification, not proof of retail-equivalent magnitudes
+or rendered-client behavior.
+
+Still missing: NPC-caster action/AI and allegiance-safe healing for the
+Margonite caster actually captured in Domain, direct measured retail amount
+at known Mysticism rank, and rendered 2022-client acceptance. Source-binding
+coverage does not imply these are complete. The earlier unsupported statement
+above describes the detached stage and is superseded for player casting.
+
+SHA-256 of this tested stage:
+  gw_imbue_health.h 99FFCB12E57F418455617A0BA6F45D4D61757E396F85364C39D77B0FD15574D0
+  gw_world_simulation.h F75465B97E0DCC1DF9C0E91EAA7560170BDBC4FF070D9644E7A3B01E9DF8DAC4
+  gw_skill_casting.h CD2A1B8665800809AE84C8923FE11EAA9321AF2B2161403CAB78367FE2588FAA
+  gw_auth.cpp B87241D16C89D1CDEDB3BC57137525FFEA7D69675FEBF33139C5135843151F74
+  CMakeLists.txt 21E9BBAADE8FB5CDFC1173742FC34EE511D6E0EDB0D33126A9D29463B0F6F148
+  imbue_health_world.cpp 2DE966AC04F37A0D2E8B19A5A24B1EE57D40B1A5EF5C2D7FAA2F7204B83465BA
+  imbue_health_cast.cpp 5382733F6AF57338544C16397A6848FF9969498C341A9962AD43C9D49E949603
+  skill_runtime_coverage.py 9CD285CF296178CF08A23AB459DDA8A6E5233EA19D7794C90EA0524D4CC76D0E
+  skill-runtime-coverage.json 198A5623F7041C90B23D098E9BD8E3DAE2AA18220BFE970334FDA0899F94058E
+  doa-skill-gaps-20261025.json 84A04CA3F5216EB188914374736FC16768DE456D47F2DAAE44066EA0D59E6681
+  imbue_health_world_test.exe 53ECB8DF5AFD956853072D76274E1725B9B686E9660933D0797CAA43DA8AE5EE
+  imbue_health_cast_test.exe 11CF75FF68708A164CD3AC9C949515E1AA59AA5A83D1AE60FD6DCB264328BF1E
+  captured_skills_test.exe 8D03E6B6E96EE0A22478296CF77452C249F73B6A93BE1BB469B7DD50183CDAF9
+  server_host.exe C2C6278C10B79B703F3DC321ADEFB451495C5400FDA20528E49B804163B51FCA
+
+Hostile-NPC effect follow-up (2026-10-26): the frozen world observations at
+lines 19559 and 19561 show caster agent55 Margonite Anur Ruk and target
+agent51 Margonite Anur Dabi, each with observed allegiance3. The repeatable
+capture audit now hash-verifies both source files and those two observations.
+This is sampled identity/allegiance evidence, not a complete NPC AI trace.
+
+A trusted World completion effect now accepts separate live hostile NPC
+scopes only when both have an explicit equal nonzero packed allegiance,
+same plane, in-range line of sight, and an alive target that permits
+healing. The NPC recipient applies its ordinary healing modifiers; the
+caster loses no Health. A native synthetic fixture verifies healing at
+rank12 and cap300 at rank20, plus self, stale, cross-allegiance, unknown
+allegiance, forged-plan, and distant-target rejection. The adjacent
+friendly-NPC healing suite, four Imbue suites, and serial Release host build
+pass (5/5 focused CTests). This is an effect consumer: it does not start an
+NPC spell, pay NPC Energy, schedule completion, choose a target, or enroll
+Margonite content. No rendered 2022 validation is claimed. Official client
+and loggers were untouched.
+
+Still missing: NPC cast/action/interrupt/energy transaction and autonomous
+target selection, content enrollment for Margonite Anur Ruk, a measured
+retail healing amount at known Mysticism rank, and rendered acceptance.
+The earlier statement that allegiance-safe NPC healing was missing is
+superseded by this tested World effect; source-binding gap counts remain
+46 unsupported IDs/2,846 starts because the player binding already exists.
+
+SHA-256 of this tested stage:
+  gw_npc_combat_catalog.h 1FE3968E6B6E973524B5CF7F8980515570D15DC8EA3C9ECAC8C8376E5AFC26C8
+  gw_world_simulation.h D1B1D320A7A30D3F04119087460352C639338ABFF44BC2D7CC0D2C287987F435
+  imbue_health_npc_world.cpp EF9E782310B85C6CF23FBA01CE712345C7A6696FFC5C9F044B0CB572A7183F9C
+  audit_imbue_health_capture.py C9898F270C2981DCC08F9198A757CE07DD7637E6BAD7E1B77E4CE10482818D2B
+  imbue_health_2022.py 898EE54C9169327690089B790CDD5840773D6B283E5F14AD2292A32D965329AA
+  imbue-health-native-2022.json 800E44494C88492EE171A6098B5036738B5CFF42B9C643F670221678328DF38A
+  CMakeLists.txt DBCA38DC7E17D5D3D1C35038E73EFFEE1171845153B0CD8CCCBA93CDAC1D36CA
+  imbue_health_npc_world_test.exe 85A14CD66111E66D6EBD967B4E5F02728013E7314FAD33ED6D31434ACFE7F373
+  npc_friendly_heal_world_test.exe D9BDE0DA1EE9DF93C345B4FC08B753E1B373B7DB074838315FDF6BF5BF953E6A
+  server_host.exe C734847AE12D4470ABC5D5891C33CA652AEDD1A97F6FF5857F22A4A656FC3DD0
+
+Hostile-NPC paid-cast follow-up (2026-10-26): an explicitly configured
+hostile NPC spellbook can now admit Imbue Health [1526] for a separate live
+NPC with the same observed allegiance. The existing NPC controller pays
+10 Energy, owns the 0.25-second cast token, and applies normal recharge,
+aftercast and interruption. The World scheduler completes the cast at its
+deadline and rechecks scope, allegiance, range, line of sight and life
+before healing. A failed target spends the paid Energy without healing.
+Successful completion emits caster body resource1400 and no target body.
+Synthetic native fixtures verify Energy payment, automatic completion,
+recharge rejection, interruption, dead-target rejection, invalid-allegiance
+admission without payment and the body packet. The serial Release host build
+and nine focused/adjacent CTests pass. The fixed capture audit still passes
+48 starts /43 matched finish-body-heal joins. No official client/logger was
+touched and no rendered Guild Wars client acceptance is claimed.
+
+Still missing: autonomous NPC ally selection and the reviewed Margonite
+Anur Ruk encounter loadout, known-rank measured retail healing amount,
+and rendered 2022 acceptance. The earlier NPC action/energy gaps above are
+superseded by this tested scoped-cast stage. Player source-binding coverage
+remains at 46 unsupported Domain IDs /2,846 starts.
+
+SHA-256 of this tested stage:
+  gw_world_simulation.h C93C3EA9E22C67CEEFDC7FFA7F4C079502B987332C43E8FD29C018E5AA47BE07
+  gw_world_npc_imbue_health.inl 23B8678E20A7C9132236CC5B0DDC02E0922966BEA3CE02833F6B25B30C657407
+  gw_npc_skill_ai.h 65D23FA5C91852FBC71679EA202EC018B7EB7A1737E7FFA4EA9435C59E17C6D7
+  gw_npc_combat_catalog.h EEACA4496CDBF64C1EA490DD69A7B2A4CE0B24A590BC42CEBF638FC78E54D46D
+  imbue_health_npc_world.cpp 145B0A258FCFC9E9AC7B57477FFDC99CED63658D025710B4C19898787B146B61
+  imbue_health_npc_world_test.exe EB6AB0B9F8F7B4AEBD3342886C957788CDB436ADC6B954FD2E1EA2E90A7FFB2D
+  server_host.exe AE4237131251A915E31EADE09136F680C3818AFDA035367565965C76F421A849
+
+Opt-in NPC healer AI follow-up (2026-10-26): World now offers explicit
+configure_npc_imbue_ai for a hostile NPC that already has a reviewed 1526
+spellbook entry. At each server tick it chooses the in-range, line-of-sight,
+same-allegiance living NPC with the lowest Health fraction below a configured
+threshold, then uses the paid cast path above. Ties resolve by actor ID.
+This is a private-server policy, not a claim about ArenaNet's targeting AI.
+The policy holds the caster in place; no unreviewed pathfinding is implied.
+The native test uses lower-Health opposing and unknown-allegiance NPCs and
+verifies they are skipped in favor of an injured same-allegiance ally.
+The serial Release host build and six focused/adjacent CTests pass.
+
+No Domain of Anguish NPC is enrolled in the runtime population catalog:
+the completed field capture samples moving actors but does not establish
+their spawn lifecycle or a safe encounter placement. A content review must
+add those actors and configure the spellbook plus AI before Anur Ruk can
+cast autonomously in a playable Domain instance. Known-rank retail healing
+amount and rendered 2022 acceptance are still open. The earlier autonomous
+selection gap above is superseded for explicitly enrolled NPCs only.
+
+SHA-256 of this tested stage:
+  gw_world_simulation.h 2FDAA3D4C3C26FA61F52FDBD460728322B5DF6F32FBD9154EB8F286CB7DA5745
+  gw_world_npc_imbue_health.inl 01A92EC08C55E6FA23BB7C83C769E6D7F14B37C752CB4A60C9F9347420EEA1C1
+  imbue_health_npc_world.cpp 4349BAE8EBE6779853F63F8861F264E07A0D1C938DD2A67F6C2AA02B8112A8FF
+  imbue_health_npc_world_test.exe 2105771E343261BC1ECAC75B57214DFA45B12BD9E2133197FC8AAF36BB5E504E
+  server_host.exe 18D5CA99A755760DCF549A4DB7B3F63BF2DE33762A5782380B25180BE4938F1D
+
+Domain population audit (2026-10-26): the manifest-verified fixed world
+snapshot contains 26 decoded Margonite Anur Ruk actor tracks and 22 Anur
+Dabi tracks in map474 epoch32. All 26 Ruk tracks carry model5223 and
+allegiance3; all 22 Dabi tracks carry model5218 and allegiance3. Forty-six
+of the 48 agent/name groups have observed positions more than 500 world units
+from their first observation;
+the largest displacement is 20,815.933 units. The earlier Imbue example
+actor55 first appears at world line19514 and moves 330.456 units over its
+sampled observations; target actor51 has a 369.902-unit spread. Agent IDs
+may be reused inside an epoch. These are visibility samples, not spawn,
+patrol-origin or quest-activation evidence. They support
+the same-allegiance target rule but cannot safely populate map474 by using
+the first observed coordinates as spawn points. A separate encounter-origin
+capture or reviewed map placement is required for runtime enrollment.
+
+Reproduce: python tools/skills/audit_anur_ruk_population.py
+Report: build/reports/anur-ruk-population-20261026.json
+SHA-256 audit tool 0FC5DEA8B36357CE76AD072B701B18E2FB4C897C823CECE6BBA4FB7347388B52
+SHA-256 report 282BE6D0CEB5A01D9E1D28F8D574BC6A9D7527933EB01C657039124EABA738EA
+The independent fixed Imbue cast audit still passes48 starts and43
+finish/body/heal joins. Official capture files, client and loggers were
+untouched.

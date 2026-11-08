@@ -1,0 +1,48 @@
+Divine Spirit310 payment integration audit,2026-10-26
+
+Current production payment enters three Selfless-aware World authorities in
+gw_world_selfless_payment.inl: consume_selfless_energy,
+activate_selfless_overcast_energy and pay_selfless_elemental_glyph_use.
+Both initial pricing and reactive Mind Wrack repricing must use the same
+reviewed composition. Wiring only consume_energy_at or the staged standalone
+Divine Spirit payment method would miss these production paths.
+
+The inputs differ: the ordinary/overcast hooks can receive an already-reduced
+legacy Lesser Energy cost; the typed glyph path receives the pre-glyph cost.
+Its quote_elemental_glyph subtracts and saturates to zero. Divine Spirit's
+standalone helper reduces Monk spells by5 with a minimum1, and rejects a zero
+Monk input. Adding that helper uniformly to the three input sites silently
+chooses different glyph/floor ordering. Selfless can also reach zero.
+
+Archived descriptions establish the individual reductions, not their joint
+ordering. Reviewed local files under Desktop/gw/Wiki/wiki.guildwars.com/wiki:
+Divine_Spirit.html oldid2625857 SHA256
+5799D7E53CDA2089C554F630198397F124B755CE09B5E19AC3CF8141E43521CE
+Selfless_Spirit.html oldid2645390 SHA256
+430D7C32CB7FE1FFF6B3256EDA68493D2CA65EF9983D36B5535F244A99089B49
+Glyph_of_Lesser_Energy.html oldid2669661 SHA256
+F6AFF82FBAD3A272CBB43BFBB36E2FF24D4CB12950E9DB9CB9ADCF0F9B91E30C
+The current official-hosted Divine Spirit article still describes the same
+reduction/floor but supplies no combined-order rule:
+https://wiki.guildwars.com/wiki/Divine_Spirit
+
+The fixed Divine Spirit packet interval280011..280049 has no current-Energy
+property33 or Energy-curve observations during application/Draw Conditions/
+removal. Property62 is a cast-timing override, not an Energy debit. The four
+audited Selfless windows likewise do not measure paid Energy and contain no
+joint Divine Spirit interval. GWCA GetEnergyCost merely decodes catalog cost
+bytes11->15 and12->25; it does not calculate active-effect pricing.
+
+Next evidence needed: one isolated Monk spell at floor-sensitive costs under
+Divine Spirit plus Selfless, and under Divine Spirit plus each cost glyph,
+in both application orders. Preserve actual Energy/fraction before and after
+payment and spell identity; regeneration between observations must be modeled.
+A three-way combination is needed if pairwise order does not determine it.
+Do not interrupt the ongoing official capture session to obtain this.
+
+After resolving order, integrate one copied pricing transaction into all three
+payment paths and their reaction repricing. Tests must cover0/1/2/3/5/10/25,
+non-Monk spells/signets/attacks, target normalization, fractional/insufficient
+Energy, glyph leases/charges, overcast, exact-zero Mind Wrack/death, expiration
+or strip at payment, cancellation, generation reuse and normal paid310 casts.
+Keep the production310 callback empty until those consumers are connected.

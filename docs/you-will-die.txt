@@ -1,0 +1,46 @@
+You Will Die!1141 - implementation and evidence
+
+Normal Runtime/World use the guarded native ResourceGainPlan: Warrior Strength,
+5Energy,instant activation,no aftercast,15s recharge. A foe strictly below50%
+Health grants interpolated1..3 adrenaline strikes at rank0..15,extrapolated by
+the shared rank0..20 scaling policy. Equality at50% does not qualify.
+Targets use scoped player/reviewed hostile NPC authority,plane/range/lifetime
+checks and completion-time Health. Targeted shout rules permit casting during
+another action or knockdown,without replacing an already pending spell.
+The reward uses existing forbidden-gain,rate modifiers,fractional halves,caps
+and adrenaline publication. It is not a separately invented skill meter.
+Future recipient Health rejects before source resource settlement;source-linked
+events settle before a fresh recipient lookup. Withdrawn resource_gain hooks
+fail closed instead of throwing bad_function_call.
+
+Animation evidence
+Frozen20261022-cumulative-skills packets1360 lines404175..404177 and
+404636..404638 record recharge15,instant48and caster21/resource1033.
+tools/protocol/you_will_die_2022.py validates immutable capture hashes,native
+metadata,original generic158 UI/body consumers and original serializer bytes.
+Modern159capture maps to reviewed pinned2022generic158;this is not a raw replay
+of a modern memory struct as a2022wire packet. Target2077 is the sentinel.
+Archived wiki revision2609095 supplies the strict below-half semantics and
+ranked adrenaline reward;the packets alone do not establish those resources.
+
+Verification
+Test target you_will_die covers rank bounds,499/500/501Health for player/NPC,
+forged/stale scopes,FGJPvE/PvP,half-strike modifiers,forbidden gain,caps,
+knockdown,instant/recharge/body messages,missing/withdrawn hooks,pending spell
+preservation and future recipient clocks. All five rebuilt related suites pass:
+you_will_die,cast_timing,resource_gain,victory_is_mine,for_great_justice.
+The rank curve is checked against an explicit independent expected table;
+future-target rejection also proves the caster can still settle at an earlier
+time. Native frozen/UI/body/serializer verification passes. Host build pending.
+
+Limits
+Native actor/asset services are stubbed in offline probes. No rendered/audio
+acceptance,full retail reward ordering,NPC casterAI,vocal/echo interactions or
+complete global shout mechanics is claimed. Source-binding counts require the
+fixed capture audit and remain separate from fidelity or deployed acceptance.
+
+Final serial server_host build passed2026-10-23.
+Host SHA256: 68BED94D78496EFFCA54C17F72CFC5672F8C93DB48BF2F4ED0094F9FAB3160ED
+Five focused CTest suites and two frozen/native activation sequences pass.
+Binary rebuilt;no running-server deployment or rendered client acceptance claimed.
+

@@ -1,0 +1,25 @@
+Shared World condition entrypoint: partial NPC flesh admission (2026-10-29)
+
+World::apply_condition is a trusted server entrypoint, not a decoded client
+condition request. It previously delegated to LiveActor::apply_condition
+without consulting the separately recorded flesh trait. Individual Barbed
+Signet, Ear Bite and Stone Daggers paths already had this admission check.
+
+It now requires a living condition-enabled NPC before testing the shared
+partial eligibility predicate. Known non-fleshy recipients accept an immune
+no-op for Bleeding, Poison and Disease: no condition/status/Fragility event.
+Unknown flesh refuses these three conditions; the seven other conditions
+remain independent of flesh. This does not migrate player form immunity,
+attack secondary conditions, condition transfer/spread or raw LiveActor API.
+Existing duration/source/lifetime validation remains before the no-op.
+
+Test direct_condition_flesh.cpp covers ten conditions across three trait
+states, with Fragility present. Deep Wound additionally changes capacity
+by20%, capped at100Health; its expected capacity is900 for this1000HP fixture.
+Earlier draft test failures at Health assertion were fixture errors, not
+valid reproductions of the flesh bug. The pre-fix source directly demonstrates
+the missing check; do not cite direct-condition-repro-20261029.txt as a
+successful behavioral bug reproduction. Final pass and hashes must come from
+the final progress report. No rendered/deployed verification is implied.
+
+Final verification:30new cases plus2adjacent suites,36source/6backlog checks, fresh gateway/core and isolated host link/build-info pass. Evidence:build/reports/direct-condition-progress-20261029.json. Canonical host/checkpoint unchanged.

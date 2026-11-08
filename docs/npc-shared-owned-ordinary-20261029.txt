@@ -1,0 +1,38 @@
+Shared reviewed owned ordinary NPC enrollment, 2026-10-29
+
+Implementation uses one descriptor and World adapter for quest81 and85.
+The adapter never spawns actors. It reads the current owner generation, quest
+cycle, assigned/remaining exact scopes and objective kind under World's lock.
+It refuses any missing/changed source, future Health/controller clock, unknown
+Health/armor, conflicting controller/profile/patrol, and wave/loot/timed/special
+credit objectives. All roster members are preflighted before controller changes.
+Existing paid actions, current Health and patrol cursor are preserved on repeat.
+
+81 remains kill-any, four exact assigned actors. 85 remains kill-all, three
+assigned actors; after one death only the surviving members may be rearmed.
+83 is not enabled. Neither arbitrary NPC model matches nor unassociated loot
+placements authorize enrollment. Scope ownership is necessary in addition to
+appearance/combat metadata.
+
+Captured facts: level0, model82023/flags8, exact quest85 actors40..42 and Health
+maximum10 from kind42 packets; quest81 has equivalent exact Health evidence.
+See npc-quest85-83-enrollment-evidence-20261029.txt and quest81 evidence JSON.
+Authored development policy: armor0, fixed5 damage,750ms windup,2000ms period,
+128 melee reach; speed220, acquire1000,follow1500,leash2000; square patrol offsets
+radius80,pause1200ms,leg timeout6000ms. No retail AI timing/RNG claim.
+Damage-triggered owner-targeted retaliation preserves existing owned ordinary
+semantics. It does not assert that only the owner's damage may provoke an NPC.
+No unknown skills, resources or body traits are inferred.
+
+Source: gw_npc_owned_ordinary_descriptor.h; gw_world_npc_owned_ordinary_descriptor.inl.
+Thin compatibility calls live in gw_world_npc_mesmer_test.inl:
+arm_mesmer_test_melee/wander(owner,cycle,now), arm_warrior_test_melee/wander(...).
+Each wrapper performs the same shared admission and arms both melee and patrol.
+Host may call just melee once, or preserve its existing paired calls idempotently.
+
+Tests staged: npc_owned_ordinary_descriptor.cpp, npc_warrior_test_owned_world.cpp,
+npc_warrior_test_navigation_world.cpp; existing Mesmer lifecycle and map test are
+required regressions. The new map fixture uses production LayeredMesh routes,
+actual roster positions and 0.25-unit sampling of every emitted NPC position leg.
+It proves only native mechanics if it passes, never client rendering/deployment.
+At this save point these new integrated sources/tests have not been built/run.

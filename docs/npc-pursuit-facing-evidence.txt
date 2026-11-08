@@ -1,0 +1,55 @@
+NPC pursuit facing/late-observer defect (2026-10-22)
+
+Concrete current implementation gap
+move_npc_flare_locked in gw_world_npc_flare.inl changes body.x/body.y and emits
+position_packet44. It never changes body.facing. NPC publication in
+gw_world_simulation.h constructs native spawn32 using cos(n.facing)/sin(n.facing).
+Therefore after an east-facing NPC moves north, a late observer receives its
+current north-shifted position paired with the original east-facing vector.
+This is a server-state/wire inconsistency independent of assumptions about
+client interpolation. The existing quest mover sets facing=atan2(dy,dx).
+
+Pinned native evidence already reviewed in gw_agent_wire.h
+movement43 direction1 copies normalized route displacement into body-facing
+bc/c0 (5c14a0); direction0 preserves it. Native destination41 does not initialize
+that separate movement multiplier. Facing46 writes angle/angular speed through
+descriptor59b140 ->5bcb30 ->5c1b10. Spawn32 explicitly serializes the facing
+vector. Pursuit currently emits neither direction1+destination nor facing46.
+NPC spawn fallback base speed220 also does not describe an authored pursuit300;
+quest motion explicitly publishes base39/multiplier43/destination41. This
+identifies a publication gap, but does not alone prove a particular visual
+moonwalk, interpolation path or measured retail turning-rate constant.
+
+Frozen trajectory observations
+data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl
+SHA256 1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6
+Source lifetime16:27:1, Bandit Firestarter,model1420,level1,allegiance3,map161.
+World3375->3378 instance_ms39852->40853: displaced220.896 units; facing0 changed
+to-0.799302 radians, matching sampled displacement heading within0.000002rad.
+World3378->3380 instance_ms40853->41852: displaced287.712 units; facing remains
+-0.799302, again aligned with displacement. World3388->3391 instance_ms44852->
+45852: displaced288.000 units with new facing-2.397273, aligned within0.000001rad.
+World3391->3393 instance_ms45852->46852: displaced288.001 units with same facing.
+These sampled positions show direction responding to movement in an official
+NPC trajectory. They do not recover its exact route, turn duration or fixed
+speed; sparse snapshots only bound traveled path length.
+
+Prepared regression and next implementation plan
+tests/npc_pursuit_facing_world.cpp now covers the integrated fix. Both caster
+paths approach a stationary target1600 north at explicit authored speed300,
+two100ms intervals; late observer must see position(0,60) and facing(0,1),
+rather than unchanged east vector. It also checks a native facing46 turn on
+initial movement, no repeated turn command for an unchanged straight heading,
+and a south-facing turn when returning after the selected foe dies. No player movement
+speed, invalid projectile policy or uninitialized resource clock is involved.
+Parent can now register this test alongside the existing pursuit helper test.
+
+The route advance result now retains the last positive segment facing; using
+net tick displacement would be wrong after traversing a corner. World sets
+Npc.facing from that tangent, preserves facing when no travel occurs, and
+late-observer spawns consequently use current facing. Existing peers receive
+reviewed native facing46 only when the heading changes, using the existing
+wire helper's default turn-rate policy (not a recovered retail NPC rate).
+Publication of full native movement/stop lifecycle should be a separate
+reviewable step with corner/aftercast/return/death tests; do not guess how the
+client animates position-only corrections or claim complete retail motion AI.

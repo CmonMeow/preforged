@@ -1,0 +1,47 @@
+BOW COMPLETION LIFECYCLE — FIXED CAPTURE CORRECTION
+
+audit_bow_terminals.py verifies28 activation-to-exact-slot-release windows for
+17 bow skill IDs in fixed checkpoint20261017-npc-refresh-2. Every source file is
+SHA256 checked. Every activation verifies original bytes,actor,timestamp and
+skill. Windows end on exact227/owner/skill/copy0 release;another attack or5s
+without release creates an explicit gap. None of these28 windows contains a
+melee46 completion before release. Report: build/reports/bow-terminal-capture.json.
+
+Runtime formerly emitted a melee46 terminal before pending-slot release for
+both melee and bow skills. It now omits that event for bows,retaining native
+ranged finish,slot release,recharge and deferred projectile publication. Melee
+and spell terminals are unchanged. Called Shot/Barrage regressions assert no
+melee46 and retain ranged finish/projectile ordering. Adversarial tool tests
+reject altered hashes,a contradictory46 and absent release.
+
+This supersedes interpreting zero generic local_finished counts for bows as
+missing completion or failed casts. Distracting Shot399 has an exact slot
+release at426481 and same-actor target damage at426467 in the frozen log;
+those do not independently prove damage magnitude or conditional disable.
+
+NEXT399 REQUIREMENTS
+Historical/local and current wiki describe fixed armor-ignoring1..16 damage,
+an arrow release halfway through .5s activation,and .75s aftercast. The pinned
+row has .5 activation and1.5 aftercast: do not equate every metadata duration
+with the corresponding server phase. Native body activation and server arrow
+release are distinct. Existing shared500ms release/native-aftercast policy needs
+phase review before399 is bound. On-hit Dazed/easily-interrupted precedence
+must prevent attributing an extra disable to an interruption already caused by
+the hit. Choking Gas/Spinal Shivers ordering needs separate reaction authority.
+
+Primary reference:https://wiki.guildwars.com/wiki/Distracting_Shot
+Historical source:C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Distracting_Shot.html
+Current wiki explicitly labels progression armor-ignoring; its Notes establish
+quarter-second arrow release,three-quarter-second aftercast and interrupt
+precedence. Retail phase/IAS measurements and rendered acceptance remain open.
+
+The capture audit proves absence only before the verified release,not a universal
+absence after every bow action in every client version. No official client was
+controlled or interrupted for this work. No new skill binding is granted here.
+
+Validation: Called Shot,Barrage and Punishing Shot native regressions pass,61 skill tooling tests pass,and Release host rebuilt. No rendered client claim and no new source binding.
+
+Superseding399 implementation: fixed armor-ignoring damage,250ms release/750ms aftercast and impact-time disable are now wired with reviewed Dazed/Precision Shot precedence. See docs/distracting-shot.txt;retail phase measurements,other reaction sources and rendered acceptance remain open.
+
+2026-10-20 Broad captured-skills regression correction
+Fresh captured_skills rebuild exposed an obsolete assertion at891requiring generic46for391/392/397/404. Current Runtime deliberately emits no melee46for bows,as established by the fixed28windows. Reran the hash-verified audit(28/28) and four adversarial audit regressions. Corrected the broad test to reject both generic/terminal46and58while requiring exactlyone pending-slot release and existing recharge. No production change made. Rebuilt captured_skills now passes including the subsequent Aftershock/NPC section.

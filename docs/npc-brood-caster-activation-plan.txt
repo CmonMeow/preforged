@@ -1,0 +1,76 @@
+Playable caster target: Domination Magic49 River Skale Brood, 2026-10-23
+Read-only proposal; no NPC caster or runtime content enabled by this report.
+
+Why this encounter
+presearing-encounters.txt binds quest49/map161 to the existing single Brood
+template20091, captured original actor60, level4, Health capacity100. Existing
+policy explicitly leaves retaliation, Aura of Restoration and Ice Spear open.
+Quest49 grants Backfire/Shatter Delusions: giving this exact existing enemy
+real spell actions makes that quest's counter-casting interaction playable.
+It avoids spawning unrelated enemies or enabling every visible species.
+
+Capability evidence versus exact quest actor
+Local River_Skale_Brood.html lists Wizard's Folly only during Domination Magic,
+then explicitly lists0 Energy Storage, Aura of Restoration180 and Ice Spear214
+(lines89-94). It distinguishes Annihilator2's different Ice Spear/Rust list.
+The four-profession action audit has53 Ice Spear starts and3 Aura starts by
+same-map model1436/level4/allegiance3 Broods across3 source lifetimes.
+Example16:37:1 Aura untargeted packet28674/tick82659265 ->28683/82659578;
+Ice Spear28922/82667218 ->28948/82668171. Further Aura30803/82721125
+->30805/82721421 and16:37:3 Aura33814/83102859 ->33822/83103109.
+Sources/hash details are in build/reports/ai/four-action-sequences.json:
+world-30352-81344734.jsonl SHA256
+1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6;
+packets-30352-81363781.jsonl SHA256
+a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02.
+There are ZERO admitted starts for map161/original actor60 in that report.
+Thus this is explicit wiki plus species/map/profile capability evidence, not
+proof that the exact captured quest actor cast these skills in that session.
+
+Reusable missing family: owned self enchantment plus completion reaction
+Player Runtime1552 samples the old owned Aura before applying/renewing this
+cast. Runtime2030 applies aura_restoration(unmodified completed spell cost,
+Energy Storage rank, PvE/PvP). First Aura cannot trigger itself; renewing an
+active old Aura can. Rank0 heals200% of spell Energy cost and grants no Energy;
+rank>=8 also grants1Energy. Native canonical row180 is5Energy/.25s activation/
+.75s aftercast/20s recharge,60s duration. These are catalog/wiki facts, not
+start/finish callback spacing measurements.
+NPC Spellbook admits true spell metadata but current spell_target default
+requires a foe. OffensivePlan rejects180, and its target-only damage proposal
+cannot install owned self enchantments or heal the source on later spells.
+Do not mark a self scope hostile merely to bypass that target gate, or turn
+the null captured action target into an enemy target.
+
+Bound implementation proposal after review
+Add explicit self-target spell selection/admission using actual source scope,
+separate from offensive recipient facts; retain one shared paid spellbook,
+control token, interruption/recharge/aftercast and source Energy observer.
+Typed LiveActor Aura installation uses canonical rank/60s plan and owned
+enchantment registry with native add/end publication. LiveActor::heal is
+appropriate here (real healing, unlike life-steal) with real modifiers/wound
+settlement; missing healing trait authority must be explicitly bound from the
+NPC's demonstrated self-heal skill, not generalized to all species.
+At successful spell completion, capture the pre-existing Aura before renewal,
+settle/revalidate exact source scope/clocks, run existing Backfire/before-effect
+reactions, then apply supported healing and precise capped Energy reward only
+if the source survived. Do not overwrite lethal owned reactions with a clone.
+Aura renewal can trigger the existing active Aura; it does not consume or
+remove that enchantment. The first application has no old ownership and
+cannot self-trigger.
+
+Host activation remains exact owner/quest49/cycle/remaining-target guarded,
+using actual quest restoration/reset/retirement. Reuse current Ice Spear
+projectile and Overcast authority; do not bypass unknown Overcast by treating
+it as0. Quest49 currently lacks a reviewed resource/rank profile. Mesmer81's
+existing40/40+pips5 reference profile is precedent, not a measurement of this
+Brood. Water rank, initial Energy, regeneration, movement/ranges, Overcast
+baseline and self-buff selection threshold require explicit authored/reference
+policy. Wiki0 Energy Storage is available directly; no guessed universal
+retail priority or infinite resource pool is justified.
+
+Tests must reach the host encounter: self Aura emits untargeted native start,
+first versus renewal trigger, expiry/removal, interrupted/self-buff replay,
+Ice Spear causes real Backfire reaction and player damage, source death during
+before-effect reaction denies reward/launch, source clocks/zero owner events,
+and exact quest reset/reconnect retirement. Keep current windup/Energy costs
+and independent released projectile lifetimes.

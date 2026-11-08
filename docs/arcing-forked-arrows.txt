@@ -1,0 +1,60 @@
+Arcing Shot1467 and Forked Arrow1722
+===================================
+Normal player Runtime/World bindings, not NPC AI/loadout grants.
+
+Arcing Shot:local wiki Arcing_Shot.html revision2667317,Marksmanship25,
+5Energy/6s,unblockable arrow,+10..25damage(rank0..15),50%slower flight.
+Pinned native row agrees on damage,cost,recharge,weapon requirement2 and
+bonus50/50;both caster/target resources2077are sentinels.
+World uses existing bow2500speed*50%;scoped Read the Wind preparation applies
+its existing2xflight modifier for Arcing only. Read_the_Wind.html revision
+2629907 explicitly gives Arcing an exception to bow-attack original flight/arc;
+Arcing's own notes describe speed synergy. Preparation bonus damage remains
+separate. Ordinary/other attack skills keep their previous flight policy.
+Actual retail ballistic shape/arc height,RTW trajectory and timing calibration
+are not established by these tests. Existing flight packet duration is used;
+no speculative new trajectory field or2077FX is fabricated.
+
+Forked Arrow:local wiki Forked_Arrow.html revision2583059,two simultaneous
+arrows;only one while under an enchantment or hex. Native10Energy/5s,
+noattribute51,zero damage bonuses and2077body sentinels are guarded.
+At weapon release,World queries the caster's actual lifetime-scoped active
+Registry enchantment/hex categories. Stances,conditions,preparations and stale
+presentation bits are not qualifications. Each released arrow has its own
+normal accuracy/block/damage/retirement event and100%base weapon damage;
+preparation bonuses apply separately. Original primary target and source
+lifetime are retained through flight. A lethal first arrow prevents a second
+hit from damaging that corpse or awarding another hit's adrenaline.
+Local wiki states the conditional count but does not identify activation vs
+release vs impact sampling. Release snapshot is explicit project policy;
+tests demonstrate it,not proof of the retail qualification phase.
+
+Offline tools/protocol/arcing_forked_arrows_2022.py checks checkpoint
+20261022-cumulative-skills,manifest hashes,pinned2022metadata,six original
+attack-body timings and original targeted start serializers. Report:
+build/reports/arcing-forked-arrows-native-2022.json.
+Frozen packets-1360-15821281.jsonl:
+Arcing525853start27259328;525860recharge3/525861arrow/525862ack27260250.
+Forked534523start27478578;534533recharge5/534534arrow/534535ack27479468.
+Forked534861start27511281;534871recharge5/534872arrow/534873ack27512187.
+Captured Arcing3s differs from pinned/wiki6s. Modifier or modern context is
+unresolved;native base6s is retained. One arrow notification per captured
+Forked window does not establish arrow/hit count or condition context.
+Selected windows contain no paired melee46finish and do not prove complete
+publication order,NPC caster behavior,actual retail flight or rendered/audio
+acceptance. Native actor/model/clock services are offline stubs.
+
+Validation:Release arcing_forked_arrows_test built with --config Release
+--parallel1 and passed. Native verifier passed. Tests cover21Arcing ranks,
+slow/RTWflight,RTWdamage,unblockable versus playerGuardian/NPCDeflection,
+Blind preventing hits,actual scoped active enchant/hex/both/stance/preparation,
+separate hit events/adrenaline,miss/block/lethal handling,Runtime payment,
+6s/5srecharge boundaries,cancel/interrupt/missing hook and before/after-release
+condition changes. Parent rebuilt the related Release tests; all five passed:
+arcing_forked_arrows, screaming_shot, bow_self_disable, called_shot and
+npc_world_combat. The serial Release host build passed, SHA256:
+207F76E13296041B1A0105A7A7B2BBEED39873C4D308B252637E8F0A2D680548.
+The unchanged fixed checkpoint now reports 339 source-bound skills and 340
+awaiting bindings. No live host deployment or rendered test was performed.
+Crossfire1469,KeenArrow1720and staged325remain unbound;their
+separate missing alliance/critical/area authorities are not bypassed here.

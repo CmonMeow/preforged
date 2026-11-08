@@ -1,0 +1,40 @@
+Equipped attribute-rune contribution
+
+Source: pinned2022 original modifier getter7c6530/formatter879a10 and
+tools/protocol/item_properties_2022.py (11 native cases). Property0x279
+contains attribute bits8..17 and requirement lowBYTE. Property0x21e contains
+attribute bits8..17 and grade lowBYTE, selecting Minor/Major/Superior tokens.
+Local gw/Wiki Rune.html revision2664681 states attribute boosts +1/+2/+3;
+major health -35, superior -75. Same-attribute boosts do not stack, but every
+equipped rune's negative health does stack. Rune contribution is distinct
+from persisted allocated ranks and all base armor/item benefits.
+
+gw_armor_attribute_runes.h decodes only these reviewed property groups and
+uses actual equipment placement/type/profession. Wrong classes, invalid player
+attribute IDs, duplicate rune properties and invalid grades are refused.
+All unrelated modifiers remain opaque and unchanged. It computes the reviewed
+attribute contribution only; zero contribution from an unknown Vigor/insignia
+modifier is NOT a statement that the whole item's statistics are known.
+
+Binding requirements:
+  worn(profile,primary) returns optional equipment::rules::Bonuses.
+  Merge attributes into effective modifier ranks, never DB base allocations.
+  Apply health penalty to baseline max health preserving absolute deficit.
+  Refresh initial entry, successful equip/unequip, profession changes and item
+  upgrade changes. Send native attribute/vitals reconciliation after commit.
+  No upgrade recipe, source rune-item model ID or item consumption is inferred.
+
+Focused tests cover all grades, ten-bit field direction, class/grade denial,
+duplicate denial, equipment versus carrying, redundant penalties/highest boost
+and exact opaque profile conservation. Runtime binding is now compiled:
+native58 encodes separate base/effective ranks, allocation CAS retains base,
+casting and EnergyStorage use effective rank, equipment changes publish an
+updated snapshot only after native actor initialization. World health capacity
+updates preserve deficit, living floor1, dead0 and actual actor lifetime.
+armor_attribute_runes_test and gw_world_simulation_test pass; server_core builds.
+Live verification remains pending. This does not complete all rune/insignia/
+application gameplay or claim unseen captured armor modifiers are known.
+
+Equipped passive extension: exact named words from cached Toolbox commit54333c43 Modules/PriceCheckerModule.cpp lines59-61,101-102,204-205 identify Attunement25300423, Vitae25300425, Vigor27e802c2/27e902c2/27ea02c2, Radiant253003ca and Survivor253003cc. Original879a10/878cf0 native proof item_effect_references_2022.py confirms Vigor skill706 reference and grade1/2/3 interpolation ranks0/8/15 (30/41/50); identity is corroborated by named catalog, never inferred from scaling alone. Local Rune/Insignia wiki supplies stacking and slot amounts implemented by gw_equipment_rules. Runtime worn decoder feeds existing health_capacity and armor capacity argument; carried items contribute nothing. Duplicate mutually exclusive rune/insignia words deny bonus interpretation. Unknown modifiers stay intact and do not receive guessed effects. Application of upgrades is not implemented by this passive slice.
+
+Weakness integration: condition_bonuses subtracts one only from player attributes with nonzero BASE allocation, after worn bonuses. Equipment-only rank-zero boosts survive and title/engine attributes do not change. Scoped world.has_condition evaluates actual timing and lifetime; app casts/requirement policies and energyStorage capacity consume the same effective ranks. Existing post-native55-ready snapshot reconciliation publishes58 on apply/cleanse/expiry without DB rank mutation; point counters remain base. Source local Weakness.html. Unit regression checks actual58 base12/effective14 with superior3+Weakness, rankzero immunity, expiry/lifetime covered by world condition tests.

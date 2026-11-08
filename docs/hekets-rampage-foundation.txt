@@ -1,0 +1,130 @@
+HEKET'S RAMPAGE1728 — DETACHED POLICY AND FROZEN FIRST CONSUMERS
+
+This new skill is distinct from concurrent Natural Stride1727 work. Fixed
+checkpoint20261024-all-completed records one local actor25 instant activation
+in map280; fixed inventory currently reports1728 unsupported. The checkpoint,
+coverage files and production hooks were not modified.
+
+tools/protocol/hekets_rampage_2022.py hash-checks the full frozen source against
+its manifest. Exact packets539815..539818 at tick27589531 show ten-second
+recharge, instant kind48, caster body765, effect126 with five-second duration.
+The pinned2022 row confirms Nightfall Ranger/Wilderness Survival22 stance,
+5Energy, zero activation/aftercast,10s recharge,5..11s duration and33%IAS.
+The local archived wiki describes ending when an attack skill is used; its
+SHA is recorded alongside the packet/client/tool SHA in the generated report.
+
+Important timing: Triple Shot1953 starts539842 at27590656 while this stance
+is still active. Removal539849 at27591234 precedes Triple Shot recharge539850
+and first launch539851 in stream order, sharing their tick. This is1703ms
+after application and578ms after attack start, far before the five-second
+natural expiry. Do not remove the stance at skill-request/payment admission:
+this observed attack retained it during activation. The detached end producer
+therefore consumes a World-accepted attack-skill completion/release. General
+interruption/cancellation and multi-release behavior need further review.
+
+Offline original2022 execution verifies opcode158 kind48 reaches UI10000025
+for1728 and kind21/body765 reaches its first particle consumer for the caster.
+No target body is required (catalog sentinel2077). This uses stub actor/model,
+UI and asset services; it does not prove graphics/sound/rendered acceptance.
+Verifier PASS; report build/reports/hekets-rampage-native-2022.json.
+
+src/runtime/gw_hekets_rampage.h provides canonical rank0..20 plan validation,
+copy-only category-replacing application, exact scoped/caster-owned active
+stance lookup, and copied end proposal for the exact completed bar slot.
+The producer validates current bar owner/revision/order and copy membership,
+ends only type14 attack skills, preserves ordinary spell completion, and does
+not remove an expired or replaced effect. It mutates no World state.
+tests/hekets_rampage.cpp covers all ranks, expiry boundary, category replacement,
+forged policy, overflow, owner generations, exact slot copy, ordinary spell,
+one-use end and duplicate completion. Native test is unbuilt/unregistered;
+no build was run by this agent.
+
+Reviewed integration plan for root:
+1. Register the detached test and serialize the coordinated Release build.
+2. Add1728 to reviewed instant stance Runtime admission using Wilderness
+   Survival rank22 and the normal Expertise-adjusted5Energy path. Preflight
+   paid stance application and replacement through World; publish removed
+   stance IDs before status-add/instant/body765 in reviewed queue order.
+3. Expose active1728 through the existing authoritative attack timing consumer
+   with the existing33%IAS convention/cap. The capture does not independently
+   measure its multiplier; never add a new timing formula from this sample.
+4. At committed attack-skill release, prepare removal of that exact current
+   stance under the World lock and publish its removal before attack recharge/
+   launch. Preserve stance during the activation phase as observed. Integrate
+   ordinary attack skills, bow/multi-release and instantaneous melee consumers
+   deliberately; do not rely only on the generic spell-completion callback.
+5. Use existing natural expiry, stance replacement, death and scope teardown
+   paths; test exact-instance renewal/replacement and no stale-ID removal.
+6. Add Runtime/World tests for successful payment, no-energy refusal, attack
+   timing, release ordering, cancellation/interruption and NPC lifecycle before
+   any source-binding publication. Keep1728 unbound until required consumers
+   exist. No official-client interaction is needed for these native checks.
+
+Remaining uncertainty: measured retail IAS, every attack-skill release phase,
+cancelled/interrupted starts, broader speed/stance modifiers, NPC authority,
+full packet order and rendered2022 behavior. The single observed title/attribute
+word0 and five-second duration do not establish every rank's live timing.
+
+Later 2026-10-26 host integration: Runtime accepts1728 as an instant stance
+using normal Energy payment, native body765 and ranked duration/recharge.
+World validates its status and includes it in the existing33percent attack
+speed consumer. The shared committed skill-attack release boundary removes
+the active exact stance instance before attack publication; a rejected attack
+does not remove it. Native cast, World and policy tests plus neighboring
+skill-casting/Vigorous attack tests pass (six suites total). Original2022
+offline verifier also passes. Tested host SHA256:
+CE866E7DCBCEF6086B4DEE6AD530DFABEA6F898306D73EBF6A9889EDC69CFEAD
+This does not prove every attack release family, NPC cast behavior, exact
+retail IAS, Runtime cache reconciliation after an early end, or rendered
+client acceptance. Source-bound publication is still withheld.
+
+NPC host-action follow-up (2026-10-26): the reviewed LiveActor now pays
+5 Energy and owns a ten-second recharge for a host-scripted Heket cast.
+Its owned stance accelerates NPC attack timing; the generic completed NPC
+attack-skill token ends the exact stance and publishes one removal. Ordinary
+attacks and premature completion retain it. The shared release consumer now
+permits NPC removal of skill1728, fixing its previously unreachable branch.
+Player Triple Shot1953 with three arrows also has a native first-release
+regression. The frozen 2022 capture/first-consumer verifier passes; six
+focused/neighboring CTests pass and the serialized Release host builds.
+This is an explicit host action, not a reviewed AI skill choice or proof of
+all attack-release families. The fixed source-binding partition remains
+unchanged and rendered-client acceptance is still open.
+SHA256 server_host.exe 675EC9460C633C094F32181FF2DD6B8701C724FDAA55990E7FAC277E4D512E1D
+SHA256 gw_npc_combat_catalog.h F4FD0099E2B1AA63AFC0C86FBFE2D2A21A45C1B573802232E658CBF8C8DAEB6D
+SHA256 gw_world_simulation.h 7AC60DD0364932EC9E06866FAD25E753D0CB3ABB6A4F67451A2894669106B566
+SHA256 hekets_rampage_world.cpp B7A150EC9837BA49344F7ABB4F6DED863ED710599CAD549151E99DC8DFF36A14
+After the Succor coverage-gate correction, the final rebuilt host SHA256 is
+219F18EBB1932FB04B36E5E15B441E7C968D3F5D669225EA724D660BFEFA8C06.
+
+2026-10-26 release/cache completion and source-binding publication:
+The release audit covers ordinary melee, Illusionary Weaponry replacement,
+Cyclone, other bow/multi-arrow skills and Barrage/Volley. Native regressions
+retain Heket through premature, cancelled and interrupted Heavy Blow, refuse
+an unsupported secondary bow target atomically, and remove the stance once
+before a valid two-target projectile batch is published. The NPC host action
+remains explicit; no captured NPC loadout is invented.
+
+Runtime admission now requires the ranked Heket plan, status mutation and
+effect-snapshot hook before payment. Previously the generic stance gate did
+not require the snapshot needed to reconcile World early removal. The native
+Runtime-to-World cast test now proves missing-hook rejection before payment,
+release-time single removal, no duplicate removal at the old natural expiry,
+retained paid recharge, successful recast with a new effect ID and one natural
+expiry. All three Heket Release CTests pass. Thirteen coverage regressions,
+six backlog regressions and the frozen packet/original2022 verifier pass.
+
+This closes the required source consumers for1728; it is now source-bound in
+the fixed20261024-all-completed inventory. That classification is not full
+retail/rendered acceptance. Exact measured retail IAS, all interacting speed
+modifiers, NPC authored population/loadout selection and visual/sound/client
+acceptance remain open. The fixed capture snapshot is unchanged. Current
+baseline partition:679 captured,399 source-bound,280 awaiting,650 missing.
+SHA256 server_host.exe
+7F94DC65D5BB8D4BB54BEC89F6A1BE3EA555E610C048122745C465DC8D5F51AE
+SHA256 gw_skill_casting.h
+7D01351EB545535E7C1BFA7D1FD4AB1C8FC1DE98C7F435A4645B30C4C97E075D
+SHA256 hekets_rampage_cast.cpp
+1A99B88AC551C8548DF0D3301DFDE09281D1C52E0167F04582B1A814A62A5269
+SHA256 hekets_rampage_cast_test.exe
+C05ADCE7EB0534AFC9D59183FC4DB6A80EFBFB7585B68737F9E06464DDD204CF

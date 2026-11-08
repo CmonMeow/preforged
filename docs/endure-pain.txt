@@ -1,0 +1,86 @@
+
+2026-10-21 ENDURE PAIN347 foundation (normal casting remains unbound)
+Pinned native plan:Strength,5Energy,instant0/.0,30second recharge,+90..300
+maximum Health and7..18second duration at ranks0..15(rank20:+370/22s),body595.
+Added21rank/invalid-rank C++ tests. A first plan check incorrectly required an
+unused native Overcast byte to be zero;the row has5but no Overcast special bit.
+Removed that unsupported condition;no Overcast mechanic is granted.
+
+endure_pain_2022.py verifies the frozen manifest hash and eight exact receipts
+at364762..364867in packets-1360-15821281.jsonl:30s recharge,instant48,body595,
+7s status,+90maximum Health(490),release,status end and maximum400 restoration.
+Native2022instant UI10000025and particle595 consumer also pass. Rank0maximum
+Health receipts do not prove current Health/debt,Deep Wound,coexisting temporary
+Health effects or rendered correctness. Historical EndurePain/Health articles
+support preserving the existing negative latent-Health/debt rules;no additional
+live capture was taken.
+
+TemporaryHealth ledger now independently owns316and347sources,with monotonic
+IDs,refresh of only the same producer,earliest deadline,exact owned removal,
+shared total-capacity bounds,and generic one-source-at-a-time expiry. New copy
+proposals for347use the same DeepWound/debt transition as316. Tests cover both
+expiry orders,equal deadlines,refresh without removing the other source,Deep
+Wound,permanent capacity preservation,forged plan/backdated rejection,and exact
+return to the original Health/debt. Existing316transaction/casting suites pass.
+
+No World347producer/end/death/reset integration or Runtime binding is enabled.
+Those paths must be generalized before a347source can enter a live player.
+Mixed-source ledger tests establish the candidate host accounting,not a new
+retail stacking capture. Body/normal cast,payment,recharge,World lifecycle and
+rendered tests remain. Fixed backlog stays633captured/305bound/328awaiting/
+696missing. Five coverage unit checks,four C++ suites,native verifier and fixed
+audit/publish pass. Shared host rebuild is in progress. Official logging untouched.
+
+Endure foundation validation complete:serial Release build19568 exited0 for
+expanded temporary_health,rebuilt to_limit_cast and server_host. Four focused
+C++ suites,five coverage checks,native347verifier and fixed audit/publish pass.
+347remains unbound;World lifecycle and normal cast/rendering are still required.
+
+2026-10-21 Endure Pain World lifecycle:stage_endure_pain_health validates the
+canonical347plan,exact actor lifetime and current owned registry identity,
+then copy-prepares Health/Registry/timer changes before publishing. Same-skill
+refresh retains316. Shared owned-end handling now removes347Health as well as
+316;trusted set_vitals retires both sources before resetting the ledger. Generic
+status injection347is rejected. Death uses the shared exact owned end path.
+
+Added16dense/sparse/rank/DeepWound mixed-source World cases,including either
+expiry order and coincident deadlines,plus death,trusted reset,actor-ID reuse,
+347refresh preserving316,and low-Health/debt/insufficient-healing regression.
+Real347expiry emits one67end,returns permanent capacity,and retains latent
+negative Health at display1;insufficient healing kills rather than erasing debt.
+All four focused C++ suites,five coverage checks and native347verifier pass.
+Fixed checkpoint audit/publish remains633/305/328/696. Normal347admission,
+5Energy/30s instant casting/body595/publication and rendered acceptance still
+need integration;this is a World effect stage,not normal347binding. Host and
+ToLimit cast rebuild are in progress. Official logging untouched.
+
+2026-10-21 NORMAL ENDURE PAIN347 BINDING (supersedes staged/unbound notes):
+Native Runtime/gateway now admit347with exact scope,ranked Strength plan,
+self-normalized target,5Energy payment,instant execution and30s recharge.
+0/.0instant skill is usable during knockdown;does not generate spell58finish.
+World publication is deferred through Outbox capture until body595is emitted,
+including conditional-stance reactions caused by capacity change. Captured wire
+order48/body595/status65is tested,with one body and no duplicate status path.
+The native row's unused Overcast byte does not grant Overcast without its flag.
+
+New42PvE/PvP/rank/failure/knockdown cast contexts pass. They verify5Energy paid
+once,347Health added alongside316,correct max/current Health,missing-hook and
+rank21rejection before payment,insufficient Energy,lost lifetime/failed effect,
+30s recharge without a second payment,and publication ordering. Direct World
+mixed-source/death/reset/reuse/debt/end-event suite also rebuilt and passes.
+The earlier World-stage host build55339exited0. New normal-binding shared
+suite/host build is in progress.
+
+Five coverage checks now explicitly detect absent endure_pain gateway hook.
+Native eight-receipt verifier passes without claiming its max-Health packets
+prove latent/debt/stacking or rendered behavior. Fixed audit/publish advances
+to633captured/306source-bound/327awaiting/696missing. NPC caster,official
+combined-source capture and rendered acceptance remain gaps. Official logging
+untouched;no live client was restarted or controlled.
+
+Endure Pain normal-binding validation complete:serial Release build74984
+exited0,including endure_pain_cast,temporary_health_world,to_limit_cast,
+skill_casting and shipping server_host. Seven focused C++ suites pass;five
+coverage checks,native347verifier and fixed audit/publish pass.633/306/327/696
+remains current. Source binding does not claim rendered or all-skills completion.
+Official logging preserved;no live client action was performed.

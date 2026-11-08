@@ -1,0 +1,46 @@
+NPC Eruption167 admission correction (2026-10-17)
+
+Production change: gw_npc_skill_ai.h spell_target now rejects Eruption167
+unless the observed target wields a martial weapon. This named rule applies
+in Normal and Hard mode. It does not require a martial primary in Hard mode;
+that additional restriction belongs to the separately documented Blinding
+Flash220 rule. Unknown weapon rejects Eruption but does not stall another
+eligible spell in the reviewed spellbook's existing host-authored order.
+
+Historical source: local Wiki/wiki.guildwars.com/wiki/Foe_behavior.html,
+oldid2656731 (2020-04-30), SHA256
+27ffaed2f3f99aa152e6db56f7cc7b3bb75370ae111d80e45f917bb038e8009f.
+The Skill usage section explicitly names Eruption as requiring a martial
+weapon regardless of Normal/Hard mode. This is community-documented behavior,
+not a packet-derived universal blindness rule. No other skill is generalized.
+
+Pinned2022 row167 is EarthMagic9,spell type5,encoded Energy12 (25 Energy),
+activation2s,aftercast0.75s,recharge30s,PvP sentinel3433. The shared NPC admission
+already reads native cost/timing and owns actual Energy, so the new rule runs
+before payment and action creation in LiveActor::begin_spell as well as choose.
+
+Fixed capture checkpoint20261017-npc-refresh-2:
+packets-1360-15821281.jsonl SHA256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+skill-audit/captured-skills.json records local actor25 Eruption start136817,
+tick18316078, and finish136829,tick18318203,map280. It also lists14
+other-or-unassigned starts. Those counts do NOT establish their caster identity,
+target weapon,mode or NPC decision context. The local successful cast establishes
+identity/activation only; it does not prove this AI targeting rule. No official
+session or raw capture was modified.
+
+Regression coverage in tests/npc_combat_catalog.cpp: Normal/Hard/unknown mode,
+nonmartial primary with martial weapon,spellcasting/unknown weapons,eligible
+fallback selection,exact-slot denial,LiveActor denial without Energy loss or
+pending action,and successful martial-target admission paying actual25 Energy.
+Fixtures are authored synthetic actors/loadouts,not claimed captured NPC stats.
+
+Limitations: this is a working shared admission correction,not a newly authored
+NPC Eruption loadout or automatic production caster driver. Existing reviewed
+content must configure the spell and actual resources. Existing World
+begin_npc_spell feeds observed player weapon/profession/mode into this same
+policy; unknown observations remain unknown. Captures do not yet establish
+universal target scoring,skill priority,scatter timing or tuned pursuit ranges.
+Root validation: Release npc_combat_catalog_test and server_host builds pass;
+npc_combat_catalog and npc_combat_population pass. Reports are
+build/reports/sol-ai-social-build.txt and sol-ai-social-tests.txt.

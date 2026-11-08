@@ -1,0 +1,127 @@
+RAY OF JUDGMENT [830] — NATIVE PAID CAST BOUND, RENDERED QA OPEN
+
+2026-10-26 paid-cast binding: Runtime now admits learned skill830 through a
+reviewed foe target, charges its catalog 10 Energy, uses the pinned two-second
+cast, and calls the scoped World transaction at completion. A successful cast
+publishes finish58, caster body1017 and selected-target body1018 in the tested
+completion batch; later accepted hits publish pulse body1019. Native tests
+cover success, cancel, interrupt, hook rejection, payment and no early World
+commit. The Release host and rebuilt Ray/Breath Fire/damage-fields tests pass.
+The fixed capture is unchanged. Refreshed source coverage marks 830 bound,
+while the 679 locally activated obtainable skills include 383 source-bound,
+296 awaiting binding, and 650 baseline skills without local activation.
+830 remains in the missing-local-capture list; the mixed-source Domain/Citadel
+review now has 48 unsupported IDs and 3,151 starts. Rendered 2022 acceptance,
+NPC caster AI and broader retail mechanics remain unverified. Tested SHA-256:
+  Runtime 93867EA08E58D449FB84712887135B4D8CA5415AAFC2395DF7AF259E7E860266
+  World A9905765DC1C46C7767206E593027FBF9F6E52B1046011607C87E24B9D696643
+  host source F262CFDCD9BAF28B734D3A8579366E6B2C67F20B8CB104D475288E573A155BFF
+  test 8B77FB05C63DCEC5075F018E7D14C5BD84BD107942A4628A1C8F6FCD97A977C1
+  host B0AFD71062304847C1226B9F6B6149530CC359F561A9662DF4D2793F4AFDB8
+  ray test DB5219D6E98A9EA698D37E183E3BB181782EBACEDFC6D00917DE41886C187BDA
+  breath test A2043A4BCB4870ED897584A261168DD03B36BD860015535E331662CA880C145C
+  field test EFF80E05DC3BCC4D4628EC06870F1A3EE27227AEE5E487E747D4F442A57F3371
+  coverage 08ADAC9778AC58217636E1223523DD35797ED1FAA466373E725DD9484358395E
+  Domain gaps 16C67D0430B298CBC4492DFEF66412FC5796FA0A00F1576228AB31BD738AF4A9
+
+2026-10-26 pinned-client visual follow-up: the hash-pinned 2022 executable's
+original activation consumer resolves targeted skill830 as style49 with a
+two-second cast. Its original effect consumer accepts caster body1017,
+selected-target body1018 and per-victim pulse body1019; the two target effects
+serialize as kind20 opcode159, with resource1019 distinct from the catalog
+row's completion resource1018. The trusted World transaction now publishes
+1018 after successful location admission and 1019 after each accepted pulse
+hit. A Release fixture checks those packets alongside NPC damage/Burning;
+the existing field test and host rebuild pass. This is offline consumer and
+wire evidence, not a rendered-client check or permission to enable normal
+casting. Reproduce with PYTHONPATH=build/protocol-python;tools/protocol and
+python tools/protocol/ray_judgment_2022.py. The report is
+build/reports/ray-judgment-native-2022.json. Tested SHA-256:
+  probe ABE0656ECCAE54989BF0CB3F16B103F1CCCC922FB07B415183388EBB672E77E2
+  report D4E871F7597972CB9CE2C4C5F5C18A5AAABF72C938C8CE02BB499FA5AFC86CDA
+  particle 45C131DB54B4B552C0FF54ADB85D612501F835E40F14E7EE038FFEBEC79EEBBF
+  World EEC7916E29F520FE3CBCEF81AFFF6F123A5BB101CD20C88CBA080ED29BFE55C6
+  test 98F0D92C482347207E6FE15175EFA8570079C43F98CCA043DBCCC6FAE9FB8FB3
+  test exe 399BE2B60726D9408B20E88A1E73D3A47CB6C2CE5A0EA161725C378DFC68359B
+  field test exe F52498C8ABDDEB801C85CD04003DBBC4685A2C6D2543FE4F06CCF1905E16D503
+  server host 72BDCBAE600ED08F5E7CC222CB0CE7D058C06A64438E174FD48C8C60C4AD0131
+
+2026-10-26 World follow-up: a trusted World transaction now checks the living
+selected foe, hostile team, range and line of sight, then freezes that foe's
+location. Five queued pulses apply armor-ignoring holy damage and refresh
+Burning on living recipients within the adjacent radius. NPCs use reviewed
+light-sensitivity facts; players require reviewed holy equipment facts.
+Recipient death prevents further Burning. The Ray World fixture rejects a
+forged plan, observes first-pulse NPC damage and Burning renewal, and moves a
+selected opposing player away before the first pulse to confirm that later
+pulses do not follow that player. The shared damage-fields fixture and Release
+host rebuild pass. This is a trusted World API, not a paid Runtime cast or a
+verified 2022 pulse animation. No normal client activation is advertised.
+Tested SHA-256:
+  World E2CA1019AF6C9CAC67967697EDEF63827660BD405343E2A717316EF879AE7965
+  test BA71D303F9B84D1885DB3904F3BAEFCA201A1A0FF45DAB3BA98E5C86823FB879
+  CMake 25D87808E1EDE0ADAFA13FAE3DDD943E1215A67E6C39F044DA8042A11FCC5CAD
+  ray test exe 2A6A9E8226452ED95FAAAB73FEC85273C7E80D55AEE10158D9F03787833FBADB
+  fields test exe 7D3F812BBDF2C17FAED08AF2B92DB1FC8D1896C24DD02D86399466532E37CFF1
+  server host F006B39658DAD455AB9335FEF67DAB16AAD989CF0BD11ACD8B574FE7557831D3
+
+2026-10-26 follow-up: the shared native DamageFieldSchedule now accepts a
+canonical skill830 plan derived from RayOfJudgmentPlan. It fixes the cast
+location, adjacent radius, holy damage amount, five one-second deadlines and
+per-pulse Burning duration; it rejects a caller-forged plan. At this earlier
+stage this was scheduler work only. World::damage_field still explicitly
+rejects 830; the trusted ray_of_judgment World API described above is now the
+only commit path. At that earlier stage no Runtime cast route or verified
+visual packet existed; the pinned consumer proof above supersedes the latter. Release
+ray_of_judgment and rebuilt damage_fields CTests pass; the Release host builds.
+Tested SHA-256:
+  field header 7408253E241CD3E3672B9602D3D3966902904ED26D3EBE8166AAFE8E9CE0153F
+  ray test D76C1F44A97D2771982EF3360CFCC8B4D0B8210609B6A48614A6B78AEC7C4338
+  ray test exe 1B2D4F62A04027428960F50D6540A2EE721C72717F2127E2206170719ABF5547
+  field test exe 22BBA4BC8096DABB74EEF3EC564ED6D85AC4BA8397288E31A54A415D69763690
+  server host 82F15736448EA718FA3458F55F8FCC08A183AE5CC6ED0D2D0B7993307C98B85F
+
+Source: immutable data/captures/field-sessions/20261024-urgoz-doa-completed.
+The full frozen packet snapshot contains 288 start packets for skill830,
+284 bounded finishes, and 2,520 opcode160/kind20/resource1019 per-victim
+pulse bodies from 274 finished casts. Of those pulse bodies, 2,452 have a
+preceding same-tick opcode163/kind55 damage packet with the same source and
+victim. A sample cast at packet lines227883/228081 has five distinct pulse
+ticks 1,015, 1,937, 2,968, 3,984 and 4,968ms after finish. Across the
+snapshot, 125 casts have five distinct observed pulse ticks. Rounding the
+observed offsets to the nearest second gives 273, 257, 217, 174 and 138
+unique pulse ticks in seconds1..5 respectively. Counts decline because
+targets leave, die, become hidden or no body is delivered; they do not
+establish a variable lifetime. The 288 full-snapshot starts exceed the
+earlier Domain/Citadel-only 283-start review by five; the audit scopes
+are different, so this does not locate those five starts by map.
+
+The pinned 2022 catalog row gives Monk Smiting Prayers, 10 Energy, 2s cast,
+.75s aftercast, 20s recharge, a 5..45 damage scale, 1..3s Burning scale,
+five-second duration, caster body1017 and target body1018. The archived
+local wiki Ray_of_Judgment.html revision2667439 independently describes
+five one-second holy/Burning pulses at the selected foe's initial location.
+The native RayOfJudgmentPlan validates the row and schedules five pulse
+deadlines at finish+1000..5000ms; its Release test passes. Resource1019 was
+first observed in the modern capture; the pinned 2022 consumer proof above
+later established the older client's matching pulse particle.
+
+Still missing: broader recipient movement/death and Burning-immunity cases,
+retail modifier/cancellation comparisons, retail pulse publication order, and rendered
+client verification. The audit only joins
+actor/timing/resource receipts; it does not prove all pulse damage belongs
+to a given cast in overlapping combat. There is no local-player skill830
+activation checkpoint, so MISSING-CAPTURES.txt retains it. The paid binding
+described above is current source coverage; rendered acceptance is still open.
+
+Reproduce: python tools/skills/audit_ray_of_judgment.py
+Report: build/reports/ray-of-judgment-impacts-20261024.json
+Validation: serialized Release ray_of_judgment_test and server_host build;
+CTest ray_of_judgment passed. Official client/logger untouched. SHA-256:
+  snapshot df78cff883150e6cd8fc15dd4f8cd34b478183a12729a3e47af3b07dc82d4cb6
+  local wiki 1D641249FA1D2C8A215AA9E4FD7E4F47370C72876FB8D6F23F39928E85F7EB8C
+  audit E3EC42CCD3DCE17942B4B4979AF81C8E0679C2F16C9ECC1B4DDCCE16A03F8688
+  report EF1E1232202EDE582014E40E01CD5E9C4AC73B13159A239EEC5BF5DD7A3FC1A7
+  plan 347BD246415BF23E9A14946C5D31DFB108C81317514D1956AB35EB4C0826A889
+  test 62A8A2CA4F5A53E8C0C43BABAE4612E590C7CDBC5FCE53C048DCD7907D2C1A1D
+  test exe 015525C669FC81EB1FBAAB140A31ED54033B49F739703CE2C91758A9A620B1A6

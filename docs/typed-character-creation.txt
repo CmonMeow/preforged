@@ -1,0 +1,40 @@
+Typed native character creation (2026-10-09)
+
+NetworkServer::createCharacter now calls NetworkManager/Accounts directly;
+production creation no longer emits a string Operation request or decodes a
+string creation response. accounts_creation.inc owns one shared transaction for
+production and offline maintenance adapters. CreatedCharacter returns native
+identity/name/map fields. Selected version-6 profile, primary profession and
+starter armor are committed together; cancellation rolls them back together.
+
+Name validation is shared between native creation and offline request encoding:
+valid UTF-8, at most 19 UTF-16 units, permitted Unicode and existing ASCII name
+characters. The prior production-only ASCII restriction is removed. Campaign
+entitlement, global case-insensitive name conflict, eight-character capacity,
+roster ordering, profile layout, chosen profession and starter gear checks remain.
+Legacy offline no-profile creation stays supported; retail creation supplies its
+profile. This does not fill missing appearance selector data.
+
+Focused network_lifecycle and accounts_lifecycle tests passed before final shared
+name-validator extraction (5.27 seconds). New native regression creates a
+19-character Korean name, verifies four owned starter armor pieces and chosen
+profession before world entry, deletes it, and checks cascade cleanup. It also
+cancels immediately before commit after character/skills/inventory writes and
+checks no character is published. Invalid owner and profile cannot commit.
+Final build, full tests and retail wizard validation pending.
+Final validation: full Release build succeeded; all 126 tests passed in 26.91
+seconds after shared name-validator extraction. Retail private PID 17632 used the
+empty disposable creation account, chose Prophecies, completed the wizard,
+created Codex Native Test, entered map 148 at level 1, returned to selection,
+and deleted that exact temporary character via the native Delete dialog.
+Server logged character_delete_2022 result=deleted. Imported characters untouched.
+Evidence: build/reports/typed-creation-preview.json, typed-creation-world.png,
+typed-creation-live-server.log and typed-creation-full-tests.txt.
+
+Initial rapid wizard run appeared to mismatch sex while showing a Male card.
+Follow-up explicit selection (see creation-composite-resolution.txt) disproved
+an unconditional profession/sex rendering fault: Warrior/Male resolves 1/0,
+Warrior/Female resolves 1/1 with no native fallback. The earlier run did not
+reliably establish the final sex choice. Face/skin/hair-color choices remain
+incomplete. World entry logged equipment_unresolved index=0 composite=0; its
+meaning still needs diagnosis rather than assuming it is a renderer failure.

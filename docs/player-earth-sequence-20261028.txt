@@ -1,0 +1,70 @@
+Player Earth sequence -- 2026-10-28
+
+Skills: Aftershock174 and Shockwave937. Fixed implementation checkpoint:
+20261024-all-completed. No newer capture sessions were ingested or changed.
+
+World retains recipient scope and measured cast distance, rather than a Player
+pointer or a predicted final state. Each accepted contact resolves current
+armor, protection, Health and condition state through the shared damage path.
+Aftershock's knockdown bonus remains a separate damage event, with one shake
+publication for the accepted sequence. Shockwave commits Weakness, Cracked
+Armor and Blind immediately after their respective ring hits. Fragility then
+reacts before the next contact; death stops all remaining hits and conditions.
+Direct Earth contacts apply current condition armor; the pure preview instead
+lets the Shockwave resolver apply its evolving copied conditions exactly once.
+
+Local admission uses copied Registry, Deep Wound capacity/Health and1399 hit
+counter. It projects307 conversion and immediate Fragility without invoking
+imperative World handlers on a copied Player. Watch Yourself sees the previous
+post-conversion actual hit. Condition IDs are checked only for applications
+the local projection reaches, including whether an existing icon can be reused.
+The obsolete separate Earth damage-preview closure was removed.
+
+Native regression coverage:
+- First Weakness/Fragility death stops later937hits and conditions.
+- Cracked Armor changes the third ring's actual damage.
+- Six interleaved base/reaction contacts advance1399, even reduced-zero hits.
+-307absent/rank0/rank12 conversion and seventh-contact reduction continuity.
+- Healing Seed publishes between contacts; fully converted damage does not
+  trigger it, while subsequent real damage does.
+- Seed can keep a player alive beyond a locally predicted early death. Fresh
+  World commits continue; a later fatal hit heals the living nearby monk but
+  cannot resurrect its damaged recipient or apply a later Fragility contact.
+
+Seed batch admission update:
+Player-origin Seed feedback now uses shared discardable player/NPC Health
+state across recipients. A missing scoped Seed recipient fact is gathered on
+real World authority before any cast damage; copies are discarded and rebuilt
+after that preflight settles timelines. Healing uses each copied recipient's
+Deep Wound capacity and healing-hex multiplier. Cached effect, source and heal
+amount must match the current projected Seed. Nearby unknown-healing NPCs can
+therefore reject a later recipient before an earlier recipient loses Health or
+spends1399. Earlier Seed healing also changes later recipients' survival.
+Zero or fully converted hits do not request irrelevant healing facts.
+
+Not complete:
+NPC-origin Seed/Bonds feedback, linked end reactions and all callback-driven
+recipient retirement/condition-capacity changes are not fully projected. This
+is not yet a full atomic whole-World admission receipt. These overlap/capacity
+boundaries remain open.
+Paid casting integration and rendered shake/animation verification are pending.
+Skill1399 remains staged/unbound. No new skill bindings were published here.
+
+Evidence: build/reports/player-earth-sequence-progress-20261028.json
+Test: tests/earth_player_interleaving.cpp
+
+Additional admission regression: tests/earth_player_seed_admission.cpp
+Separate discovered missing consumer: Energy Burn42 uses shared protection
+without shared Seed feedback in gw_world_energy_drain_area.inl. Expected retail
+behavior is preserved in detached tests/energy_area_seed.cpp; that regression
+is not registered or claimed passing. Migrate the shared area Energy/Health
+transaction; do not implement a separate one-skill damage engine to hide it.
+
+Seed admission evidence:build/reports/player-earth-seed-admission-progress-20261028.json
+Six native suites and21source checks pass; host build-info exit0.
+
+Current update:shared admission extracted into gw_world_damage_admission.inl.
+Energy39/42/59Seed consumers now migrated;the formerly detached Energy regression
+is registered/built/passing. See docs/energy-area-shared-20261028.txt and
+build/reports/energy-area-seed-progress-20261028.json. Earlier pending statements
+above describe their entry time;274paid casting and rendered verification remain open.

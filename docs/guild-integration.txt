@@ -1,0 +1,157 @@
+Native private guild UI wire, pinned GW2022
+==========================================
+gw_guild_wire.h produces general288, localrole279, roster294, removal295,
+announcement/author302, and local membership clear280. Fixtures are produced
+using the ORIGINAL pinned executable's serializer with offline Unicorn,
+tools/protocol/guild_2022.py. No official guild membership is copied/inferred.
+
+General288 must precede role279: callback7bee50 resolves guild by localID and
+asserts it exists before displaying name/tag/cape. Local IDs are map-session
+presentation IDs, not persistent DB guildUUIDs. Keep a mapping from durable
+private guild identity/key to localID. Guild hall comment in GWCA specifies
+its owning guild occupies localID1. General carries blob16 key, name31UTF16
+maximum, tag4 maximum. Seven cape fields are BYTE except emblemWORD.
+
+Member294 has three strings(max19 UTF16 each) invited/current/inviter, context
+max63, then unknown/minutes_since_login/join_date/statusDWORD and rankBYTE.
+Callback7bf4f0 substitutes invited_name if current_name is empty, and calls
+7c0320 keyed by invited_name. Removal295 resolves the same invited_name key.
+Announcement302 has max255 UTF16 text/max19 author;7bf830 copies local guild
+context+78/+278 and publishes UI100000da. Empty announcement clears body.
+Clear280 callback7bef40 zeroes local guildID/key/rank, clears announcement,
+author and roster and publishes UI100000ca. Use this on leave/disband and
+before replacing the owner's whole membership roster; no fake role withID0.
+
+Rank mapping: private Leader0->native5, Officer1->native4, Member2->native3.
+Pinned getter7be310 readsGuildContext+2A0. RosterUI84ec65 denies administrative
+actions at<=3;84ece3 permits leadership actions only5;84ed05 selects extra
+demotion action for selected4. Self menu84e9f0 treats>=3 as members, only5
+checks roster count7be590<=1 for disband confirmation237 rather than281
+leadership transfer. This mapping follows executable permission behavior;
+fixture rank1 is synthetic and does not establish its role meaning.
+Status numeric meanings remain policy values pending proof.
+Update helpers299/300 require staged transaction completed by297(invitedname)
+(callback297 asserts stagedcontext exists), so current API uses full294.
+
+Root integration requirements: owned private guild persistence and authority,
+invitation/promote/kick/leave/disband policies, account-character name changes,
+session localguild mapping, send general before role, cross-instance guild
+chat routed only to guild members. Membership packet restoration is owner UI;
+public agent guild/cape association is separate and is not proven by these
+fixtures. Do not claim public name tag display merely because G roster works.
+Guild-specific privileged actions must use durable owned membership, never
+trust client roster name/role. Persist before UI publication.
+
+October4 session announcement verification: native37130 login/map26 publishes ggg once, direct transfer26->248 suppresses duplicate302 while Guild Status retains ggg and Cmon Meow author. Chat has one announcement before/after. Focused guild_wire/armor_attribute_runes/world_simulation tests3/3PASS. Screenshots build/reports/guild-announcement-before-transfer.png and guild-announcement-after-transfer.png. Changed announcement/newlogin cases tested in delivery helper; live change/relogin remains separate.
+
+Claimed private guild hall (2026-10-06):
+Owned guild hall map remains persistent fw_gw_guilds.hall (main guild:186).
+Removed the /guild hall shortcut. Native Guild panel child2 travel enablement
+848872/848A10 reads7BE520 (guild record+2C); requires feature level>=40,
+subject to the client's current instance restrictions. Native7C0F70 final
+packet288 flag1 sets record8C bit4, queried by7BE9A0. Flag2 sets visited hall
+context+2E8. Own guild uses localID1, features40, flag1; while inside its
+saved hall, flag3 also selects it as visited. Send actual guild name/tag/key,
+never the Unclaimed Private Hall synthetic visitor when the map matches the
+account guild's persisted hall. Unowned halls retain the separate visitor path.
+Restore general packets when their state changes, not only on guildUUID change.
+Auth25 routes only a matching owned guild key to its saved hall; character
+selection requests using other tokens retain the saved character destination.
+Offline original executable proof guild_hall_2022.py PASS4; native feature
+and claimed/visited getters agree. Guild wire regressions2/2PASS. Guild panel
+click and claimed label still need a live client confirmation after reconnect.
+Guild Hall button request observed2022 WORLD174 (19bytes: header2,guild key16,mode1).
+Earlier auth25 handling only covered auth-side selection; world174 was logged unsupported.
+Owned key is checked against authenticated gw-guild-state, mode1, persisted nonzero hall,
+then existing authoritative travel preflight/transfer routes to that hall. No chat shortcut.
+Cape emblemer still requires native vendor dialog opening plus transactional gold/cape save.
+
+2026-10-06 Guild Emblemer integration:
+Native37130 registry60BFA0 ->194(BYTE type,DWORD price), callback8750B0 ->
+795EB0 publishes UI100000B3. Vendor579C43 asserts type9. Window owner195
+registry60BFAC sets EAA7AC before194; editor now names the selected NPC.
+Accept579C9F ->7981D0 ->876400 sends command54 costDWORD plus cape7DWORD
+record. Outgoing54 compresses fiveBYTE colors/shape/detail, emblemWORD,
+trimBYTE. Server validates descriptor framing and design bounds; sender cost
+must match server fee2000. Guild Emblemer service is classified from captured
+NPC names, only usable within the same server-validated interaction range.
+New fw_gw_guild_capes table persists8byte design by private guild UUID.
+gw-guild-cape-buy checks owned character, guild leadership, exact inventory
+revision, funds and unchanged earned trim, then atomically saves design and
+subtracts2000 gold. Session inventory presentation retains all item IDs;
+gold is published as delta334 and guild general288 refreshes the design.
+Role/guild-state response framing remains unchanged. General288 precedes
+attribute30 affiliation for the local player's rendered cape/tag. Leave clears
+that affiliation. Remote live player guild projections remain separate work.
+Source fee/permissions: https://wiki.guildwars.com/wiki/Guild_Emblemer
+Native offline fixtures tools/protocol/guild_cape_2022.py PASS2.
+Live private2022 PID9436: /tp248, select10030 (Tsumugi), SPACE walks to NPC,
+editor opens, Random changes design, Accept commits. Main Cmon Meow carried
+balance80000->78000; inventory revision5->6; design388c5f0815310000.
+Travel248->55->248 and reopen preserves the preview. No extra debit on reopen.
+Evidence build/reports/cape-server.log, observer-private-client.png.
+Focused guild_wire,guild_hall_wire,social_accounts3/3PASS includes purchase,
+expiry rollback, stale revision, ownership, insufficient funds and trim tamper.
+Modern Tolkano paid trim selection was introduced2023 and needs deliberate
+2022-compatible dialog work; do not label it implemented by this cape editor.
+
+Final 2022 private-client verification (2026-10-07): client PID 3488 rendered the persisted purchased cape on Cmon Meow after reconnect. Guild panel showed framework test [fw] and matching cape artwork. Screenshot: build/reports/guild-cape-affiliation.png. Fresh guild_wire, guild_hall_wire and social_accounts tests passed (3/3). Guild Hall button travel was not established by this run; do not treat the presence of the button as travel validation.
+2026-10-07 Tolkano trim service:
+Native dialogue descriptors60BC64/70/7C serialize button125, body127,
+sender128. Body accumulates in GameContext before sender publishesUI100000A4;
+button125 publishesUI100000A1. Sender8764C0 emits outgoing57 DWORDchoice.
+Native serializer fixtures are tests/fixtures/npc-dialogue-2022.txt, regenerated
+by tools/protocol/npc_dialogue_2022.py against pinned37130. Long bodies split
+at121 codeunits without separating UTF16 pairs; labels fit native128 buffer.
+
+Tolkano [Tournament] classification uses captured names, no invented actor or
+location. Menu offers silver1(7500), red4/blue5/green6/purple7/orange8/pink11
+(2500), obsidian9(15000). ColorIDs corroborated by downloaded observer source:
+GuildWarsObserver-master/SourceFiles/GuildBannerComposer.cpp and
+GuildBannerAssetProvider.cpp. Original zip remains in Downloads. Wiki sources:
+https://wiki.guildwars.com/wiki/Tolkano
+https://wiki.guildwars.com/wiki/GuildWars.com_news/Archives/201301
+https://wiki.guildwars.com/wiki/Feedback:Developer_updates/20230823
+Gold2/bronze3 are not sold under the selected2022 rules. Earlier note that all
+paid trims were introduced2023 was incorrect; only gold purchase is that late.
+
+fw_gw_tournament_points stores owned account balance (default0). No public
+balance grant is exposed, and captured/official balances are not invented.
+Automated-tournament earnings/import of this currency remain outstanding.
+Trim purchase requires owned character, guild leader, purchased cape, exact
+cape design from opening, sufficient points, and a changed trim. Cape and
+points update in one transaction, with cancellation checks before commit.
+Native selection is bound to a nearby captured Tolkano, offered choice and
+confirmation, and a120second dialogue lifetime. Successful purchase refreshes
+guild general/cape affiliation. No client-side price or balance is trusted.
+Live private2022 verification: server6976/client10372. Tolkano actor10012
+native interaction opened the eight-trim menu at GTOB. Silver selection opened
+the confirmation, Yes reached the authoritative purchase and displayed
+Insufficient Tournament Reward Points for the actual zero balance. No point
+or cape mutation was requested outside this ordinary denied transaction.
+Screenshots build/reports/tolkano-trim-menu.png, tolkano-trim-confirmation.png,
+tolkano-trim-insufficient.png. Paid purchases/rollback/replay are verified in
+the isolated social_accounts database, not claimed as a paid live-client test.
+Focused npc_dialogue,npc_catalog,social_accounts,guild_wire,guild_hall_wire5/5PASS.
+
+Guild panel native button live click then authorized world174 transfer to186,
+world entry completed and visited_hall_restored ownership=claimed local_id1.
+Screenshot build/reports/claimed-guild-hall-live.png; retained combined log
+build/reports/tolkano-guild-hall-server.log. Host runs in a visible console,
+private client left in the claimed hall. No official client was targeted.
+
+2026-10-07 user-requested gold trim and development balance:
+Tolkano now includes gold color2 for15000 Tournament Reward Points. This is
+an explicit private-server policy beyond the original2022 purchase list.
+Native developer tool build/tools/tournament_points.exe DATABASE CHARACTER
+BALANCE sets account balance by the character's owned account. Cmon Meow's
+account was set to100000 in data/state.db. No official client was targeted.
+Gold transaction regression verifies20000->5000, saved trim2 and repeated
+confirmation rejection without a second debit. npc_dialogue, social_accounts,
+network_lifecycle, progression4/4passed. Host rebuilt and restarted.
+H-panel Tournament Reward Points presentation is NOT repaired by this change:
+GWCA AccountInfo.tournament_reward_points is separate from packet232 faction
+stats. Need trace native account/tournament record response before publishing.
+Full title definitions, earning rules and account-bound aggregation remain
+incomplete; four faction balances/caps have existing durable and native wire
+support, not complete gameplay earning/exchange implementations.

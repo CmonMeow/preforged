@@ -1,0 +1,42 @@
+Bitter Chill1068
+
+Pinned2022 Necromancer Death Magic5,5Energy,1second activation,.75second
+aftercast,10second ordinary recharge;one cold hit15..60 (rank12=51,rank20=75).
+The current target's absolute precise Health must be strictly greater than the
+caster's immediately before damage for instant recharge. Percentages,equality,
+and post-damage Health do not satisfy that condition.
+
+World's elemental impact transaction settles timed Health ends and relevant
+actors,preflights the selected hit,and retains the strict comparison before the
+hit/death callbacks. Its typed ElementalOutcome is published only on successful
+commit. The public World entry requires the outcome channel for1068;legacy
+boolean elemental callers cannot silently omit its conditional mechanics.
+NPC recipients use the same impact transaction and require reviewed cold armor,
+known living hostile Health,exact generation,range and plane. Missing facts do
+not synthesize defaults. Existing elemental skills retain their previous path.
+
+Runtime admission requires the new conditional_elemental callback;production
+Auth binds it directly to World. Success returns deferred target986 and the
+outcome in one result. Qualifying uses publish zero normal recharge through the
+existing completion provenance and instant-reset flag. This reaches the shared
+Diversion exception rather than merely clearing a client widget. Nonqualifying
+uses retain ordinary timing modifiers and Diversion extension. Other independent
+disables remain governed by their existing authorities,not this skill callback.
+
+Evidence: tools/protocol/bitter_chill_2022.py validates frozen cast,finish,target986
+and10->0 recharge receipts plus original pinned1second cast/target consumers.
+Native caster2077 is the no-effect sentinel;no caster particle is invented.
+The private server publishes the final settled timer rather than reproducing a
+transient retail10 then0 UI sequence. The capture does not independently reveal
+the exact Health comparison or all reactive ordering;these semantics come from
+the historical wiki and are covered by explicit server regression.
+
+Tests cover player/NPC ranks0/12/20,strict equal/higher/lower Health,different
+maximum Health ratios,fractional NPC Health,pre-hit versus post-hit behavior,
+lethal hits,missing armor/outcome hooks,forged generation,midcast heal/sacrifice,
+cancel/interrupt,both game modes,ordinary recharge modifiers and actual World
+completion/Diversion provenance (rank12 normal deadline58500;instant exception).
+
+Remaining:focused retail Health/protection/reaction ordering,independent-disable
+retail combinations,NPC casters and rendered acceptance. Native probes stub
+actor/asset services. Official clients and collectors are not modified.

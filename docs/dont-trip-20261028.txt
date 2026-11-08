@@ -1,0 +1,69 @@
+2026-10-28 Don't Trip2216 production binding and shared party-defense shouts
+
+Don't Trip is a paid instant PvE shout:5Energy,20s recharge,no cast or aftercast.
+Earned Deldrimor rank0/1 gives3seconds,rank2/3 gives4seconds,and rank4..10 gives
+5seconds. Current living party members within1000 units gain timed knockdown
+immunity. Registered NPC companions require scoped party membership. A dead
+party owner's living companion remains a member. Nearby nonparty allies do
+not receive the shout. Moving away or leaving the party does not remove an
+already accepted application. Death,generation replacement and natural expiry
+retire the owned status;renewal replaces only the same skill.
+
+Don't Trip and Shields Up now share a typed World transaction and NPC recipient
+primitive. Public Shields Up entrypoints remain compatible. Canonical plans
+and recipient entries remain skill-specific;Shields Up retains its projectile
+armor consumer,while Don't Trip feeds both player and NPC knockdown authority.
+Intrinsic unknown NPC knockdown policy remains unknown after the shout expires;
+active reviewed immunity prevents knockdown without inventing that metadata.
+NPC expiry publication tracks recipient lifetime plus skill,so coexisting
+shouts cannot erase each other's monitor. Linked resource/expiry events settle
+before copied registries are retained,avoiding stale-state restoration.
+
+The archived Shout page explicitly allows use while knocked down or while
+another skill is activating. The shared World producer no longer rejects a
+knocked-down caster. Applying a shout does not stand the caster up. Runtime
+registers2216 as an instant action and preserves an in-progress spell. Initial
+paid tests caught missing instant registration and selected-target normalization;
+these were corrected before publication. Untargeted party heals now likewise
+normalize to the caster,including Breath2221 when a foe is selected.
+
+129 new native cases PASS:66 rank/range/party combinations,33 NPC intrinsic-
+policy/action-preservation combinations,coexistence/renewal,dead-owner membership,
+2 knocked-down shared-shout cases,stale/forged scope/plan rejection,24 normal
+paid Runtime/missing-hook/Energy/PvP/scope cases,and an ongoing-spell preservation
+case. The278 Breath cases also pass with a foe selected for the untargeted cast.
+Python mutation guards retain shared NPC status allocation/expiry checks and
+verify both immunity consumers,instant registration and producer routing.
+
+Fixed source evidence:two local map280 instant activations in
+20261024-all-completed/packets-19472-19186421.jsonl. Lines551509/551510/551512/
+551513 and551737/551738/551740/551741 show48 activation,caster body1901,
+5second2216 status and slot publication. The original2022 instant handler
+produces no timed cast event;caster1901 resolves assetd39a04010000. No58 spell
+terminal or ordinary cast animation is invented. The archived wiki oldid2666149
+supplies the duration progression. Synthetic actor/model/asset services do not
+prove rendered acceptance. Self receipts do not prove party radius,rank or
+actual control prevention. Native metadata uses1000 range;the existing Shields
+Up1012 policy is retained pending controlled retail geometry/layer measurement.
+
+Fixed inventory:679 captured baseline skills,404 source-bound,275 awaiting
+binding and650 missing local activation captures. Binding is a source claim,
+not complete gameplay or visual acceptance. The fixed manifest and manual build
+queue remain unchanged. Official clients and loggers were not accessed.
+
+Individual temporary-NPC retirement now erases the exact retired party member
+and its party-defense status monitors,so despawns cannot retain stale bookkeeping.
+Both natural expiry and explicit retirement are protected by mutation checks.
+
+Final validation:7 current native suites and42 Python checks PASS. The final
+Release host build and --build-info exit0;the corrected membership regression
+was rebuilt separately and passes. An earlier expectation that death dissolved
+a living companion's membership was replaced with checks for renewal on owner
+death,no further renewal after owner departure,and exactly one renewed expiry.
+The interrupted earlier build log is retained;only the terminal resumed build
+and the final rebuilt test executables support the current validation claim.
+Host SHA256:00964ef10c9e23616b2ced07cfd9aad5e3be94688df1a1ee19855f90230f8dfb.
+Rendered2022 gameplay verification remains open.
+
+Report:build/reports/dont-trip-implementation-20261028.json
+Native evidence:build/reports/dont-trip-native-20261028.json

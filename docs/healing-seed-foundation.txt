@@ -1,0 +1,183 @@
+HEALING SEED [274] — NATIVE REACTION FOUNDATION, 2026-10-25
+
+Status: unbound. This code does not make the skill playable, establish an
+animation, or prove a rendered 2022 client effect.
+
+Evidence and reviewed rules:
+- Pinned 2022 catalog row274: Monk Healing Prayers enchantment, 10 Energy,
+  target-other-ally, 2.0-second cast, 0.75-second aftercast, 25-second recharge,
+  10-second duration, heal scale3..30, caster body2077/target body489.
+- Pinned build-wars skilldesc-en.json at commit
+  8495ca2c6125e1a03269c2932f099f7e7c09fb36 describes healing the damaged
+  target and adjacent allies whenever the enchanted ally takes damage. The
+  local GW Wiki mirror and rendered client have not yet been contrasted.
+- Fixed 20261024-cumulative-skills checkpoint records one local start and one
+  finish. packets-1360-15821281.jsonl line261605 is actor25 casting274 on
+  target28 (tick21079500). At line261632, tick21081500, opcode160/kind20
+  associates target28 and caster25 with target-body resource489; subsequent
+  opcode159/kind6 includes effect13. This matches the 2-second activation,
+  but the surrounding combat stream is not an isolated healing reaction.
+  Source SHA-256: 59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+- The separate, frozen Domain/Citadel capture has 94 timing-attributed
+  cast starts. Players, heroes and NPCs are mixed; the number is not an NPC
+  skillbar or successful-effect count.
+
+Implemented foundation:
+- gw_healing_seed.h validates all relevant pinned row fields and yields a
+  rank0..20, 10-second, 3..30-heal plan.
+- Cast-target admission rejects self, non-allies, dead/different-plane
+  targets, and beyond-spell-range or malformed distances. World must verify
+  current actor generations; this helper checks only that scopes are formed.
+- A read-only reaction derives one heal for the damaged enchantment owner and
+  each live same-plane adjacent ally from a committed positive damage loss.
+  The effect must be active at the impact tick. Recipient duplication and
+  malformed snapshots reject the entire proposal.
+
+Integration still required: authoritative application/replacement, duration
+modifiers, damage-event replay prevention, all damage sources (including
+multi-hit and degeneration policy), atomic player/NPC recipient preflight and
+healing, correct effect/health/particle packets, death/removal cleanup,
+caster/target visual ordering, and rendered client verification. The reaction
+is deliberately not bound to the gateway before those consumers exist.
+
+Native validation: Release healing_seed_test built and CTest healing_seed
+passed. No official client/logger action. Tested SHA-256:
+  gw_healing_seed.h 1F206F9F6EA38A97741F695D6780C67BE9E120C73786E09C03A91185CFF59BC2
+  healing_seed.cpp EBEA015543927F4CA6F15562AC5EFFDBB972B19345B6A459C8D4455997F185BA
+  CMakeLists.txt D797F24E0D0236976CFD653E88802EE8CFF6281F7E6879AF822DCEC4F1D3E2A4
+  healing_seed_test.exe C6C343649A619D5B986EA67E1139F139F588D2927C5F177965E7518B7BCE4699
+
+World application follow-up (2026-10-25): Instance::complete_healing_seed
+now uses the trusted enchantment transaction for a living other-player ally.
+It validates current scoped identity, team, range, plane and canonical plan;
+it rejects self, foes, stale targets and NPC targets. The latter remain an
+explicit implementation gap. Same-skill replacement and natural expiry use
+the existing authoritative effect ledger. At completion the host publishes
+finish58, captured target-body489 and effect status in that order; any Divine
+Favor heal uses the existing enchantment application path. The normal client
+cast and damage-triggered group heal remain unbound. A local cast packet is
+evidence for the target body, not rendered 2022 acceptance.
+
+Serialized Release server_host and healing_seed_world_test built; CTests
+healing_seed, healing_seed_world, protective_spirit and vigorous_spirit_world
+passed (4/4). No official client/logger action. Tested SHA-256:
+  gw_world_simulation.h 5770FF611990C845A95A09A077FD89D455D2CE516358EACB5A4B50E511A5B490
+  gw_world_protective_spirit.inl E02DD5E51C71DF4C3EBFF97E0800CF63D7743A2F185454C6BEF9C40FE9AB890B
+  healing_seed_world.cpp E7C111DC1B597EAB5AC6EA9B6448442E5524137EAE79445D45218DB38A1589DE
+  CMakeLists.txt 7E1AA71F9CCE3A1D57BFF87E3C8DBC115FF2E9CE81E9ECCEBB8F6962AC13B3DE
+  healing_seed_world_test.exe E5B6A9EFBA025ED69CFAC27B15FA6E6C8BA34A21CA9F3C9B0D121C043B1F21B1
+  server_host.exe C4E4B1897291C6FE7F775F357A4EC8E0D9FA1F0AE0849036A342ADDB3AF3A0FC
+
+Direct-hit follow-up (2026-10-25): a trusted, already-applied Healing Seed
+now reacts to accepted ordinary player and NPC weapon hits and the separate
+player weapon-skill hit path. The transaction preflights same-team living
+players and allied NPCs in the current plane and adjacent radius, refreshes
+NPC movement before distance checks, and publishes actual health/particle
+changes after the hit. A lethal hit does not resurrect the enchanted target,
+but adjacent survivors can heal. Native tests cover ordinary hit, weapon
+skill hit, expiry, allied NPC, foe exclusion and lethal hit. This is a
+scoped partial consumer, not a completed skill binding: NPC enchantment
+targets, spells, other direct-damage paths, normal paid casting, triggered
+heal packet comparison and rendered 2022 proof remain open. Source coverage
+must continue to report skill 274 unsupported.
+
+Serialized Release validation after the NPC ordinary-hit wiring: server_host,
+healing_seed_world_test, world_weapon_attacks_test and
+melee_attack_outcomes_test built; six focused CTests passed (healing_seed,
+healing_seed_world, world_weapon_attacks, melee_attack_outcomes,
+vigorous_spirit_world and protective_spirit). The NPC attack branch is
+compiled and covered by neighboring ordinary-hit regression, but lacks a
+dedicated seeded NPC-attacker fixture. No official client/logger action.
+Tested SHA-256:
+  gw_world_simulation.h 0BFDE0D5C8E7C84D459FF8BBC78F9CFD2A9210FA4493A4369E9E6C953AB0E0FE
+  gw_world_healing_seed.inl BB0BA8F0222210D31E8C6CBCDCF959FD7A9BA0850FED6153EB162BD1C771AF46
+  gw_world_npc_ordinary.inl 33FE0B021B0860D12040F63B1380923514D41AB072AEB60B1850287A5ACC20F7
+  healing_seed_world.cpp BCE2C3BDC365AD632DE9FA535F87F3C2D93F46FCB01C1E72F3E6CB792F6A6CEC
+  healing_seed_world_test.exe 45E98DB21D40861D061B2A0CA1FBF97B1D695F695FD09FD97714316AD698861D
+  server_host.exe F2BB0A12A75D29940A45F01687A97C9337EB5CE0B9176031036A5AF597137333
+
+Additional direct-hit producers (2026-10-25): the Illusionary Weaponry
+replacement and Conjure elemental bonus each now preflight and publish a
+separate Healing Seed reaction when their accepted damage hits an enchanted
+player. A native fixture covers Illusionary's replacement hit and a melee
+weapon plus Conjure producing two independent heals. This does not imply
+that unmodified spells, degeneration, sacrifices or life steal trigger Seed.
+Serialized Release server_host, healing_seed_world_test,
+conjures_player_hits_test and illusionary_weaponry_world_test built. Six
+focused CTests passed: healing_seed, healing_seed_world,
+conjures_player_hits, illusionary_weaponry_world, world_weapon_attacks and
+melee_attack_outcomes. No official client/logger action. Tested SHA-256:
+  gw_world_simulation.h C77BC0C6238D13F269BC0D199859B83C3904C309298F88F17FC110EA6EF0925A
+  healing_seed_world.cpp 238C1C4AD9A4FE41475636730772C84750464A7B58CAFE74A6E17A3623B3C450
+  server_host.exe 9084BFB0FA81151D5894F0660E05461F7A019261873D812F4F9965CDB8A5A808
+  healing_seed_world_test.exe D34EA266716798601EA2AC7F40287C55F77697470D778F3B2D8164703D5EE09B
+
+Timed spell impacts (2026-10-25): Stone Daggers and Dancing Daggers now
+preflight Healing Seed on each accepted player impact and publish the
+adjacent heal after that impact's damage packets. A native fixture covers
+two Stone impacts, three Dancing impacts and a missed Dancing projectile
+which produces no heal. Other spell producers still need the same explicit
+damage-path audit; this does not bind Healing Seed's normal cast.
+Serialized Release server_host, healing_seed_world_test,
+stone_daggers_world_test and dancing_daggers_world_test built. Eight focused
+CTests passed: healing_seed, healing_seed_world, stone_daggers_world,
+dancing_daggers_world, conjures_player_hits, illusionary_weaponry_world,
+world_weapon_attacks and melee_attack_outcomes. No official client/logger
+action. Tested SHA-256:
+  gw_world_simulation.h D5A95D5194C60D55D66735137B6CD9F6AA14ABC95945A3CA43C7553B2B8E4BB6
+  healing_seed_world.cpp 2DA03599555512AC1F41EF0B8926B512D2E53308DF479BB21A83F47A0995DE91
+  server_host.exe 5C0EB74F374C730701849D14DB520BE90D346DDD9DC4096C869E2EF5FFC5C635
+  healing_seed_world_test.exe 6F46D3AE472DA2B3DEA2503A76F048509A4FE8C883999C55D5D7465D9564AE6C
+
+Lightning direct-damage follow-up (2026-10-25): the shared player lightning
+impact commit now preflights and publishes a Healing Seed reaction after
+each accepted hit; its callers propagate a rejected preflight. Lightning
+Strike222 uses a separate direct commit and has the same reaction. A native
+fixture confirms Lightning Strike222 and a timed Lightning Bolt1369 each
+damage the enchanted target and heal adjacent allies. Lightning area and
+multi-hit cases still need dedicated Seed tests, as do other damage families
+and rendered-client behavior. Normal Healing Seed casting remains unbound.
+Serialized Release server_host and seven lightning/Seed test targets built.
+Ten focused CTests passed: healing_seed, healing_seed_world,
+lightning_strike_world, lightning_bolt_world, arc_lightning_world,
+invoke_lightning_world, lightning_orb, shock_arrow, stone_daggers_world and
+dancing_daggers_world. No official client/logger action. Tested SHA-256:
+  gw_world_simulation.h 39BCC6B3BD0C648D44B6C02A22D25B4E2DD4DAE71AD7A8C78172F34C132AB788
+  healing_seed_world.cpp C91D70BE1720628A33160B51E9AEBCE41A76E321D0069E1BC7C68666F33A8D71
+  server_host.exe 54DF45CD221A2E3A290EA49036CE58BD305144AED9F60F7755FA00F2D5B14705
+  healing_seed_world_test.exe 53C9FD42EE077B45D3883AF7B42DFC3BFDC08CEC59C05666A06E7928BF18ED55
+
+Recipient-scope correction (2026-10-26): World now reads the active Seed's
+canonical adjacent radius and settles only same-plane player candidates
+inside it. A far ally with a later health clock no longer rejects the
+enchanted target's direct hit; this is covered by a native regression. A
+separate Arc Lightning842 overcast fixture verifies the primary Seed owner
+heals on its hit before the chained secondary damages an adjacent ally.
+This is one area-chain ordering check, not proof for all area skills or
+client visuals. The NPC candidate scan still refreshes every NPC before
+distance filtering; spatial-index performance remains open.
+Serialized Release server_host and arc_lightning_world_test rebuilt after
+the fixture; five focused CTests passed: healing_seed, healing_seed_world,
+arc_lightning_world, lightning_strike_world and lightning_bolt_world. No
+official client/logger action. Tested SHA-256:
+  gw_world_healing_seed.inl FE025B71A8039DE325111C9041DF41E58FBF1297AD8E8F0FA59D10E5C40DE475
+  healing_seed_world.cpp 10942134C751EECC6144057E0BCB6FD732419420E4E67F3DF845A97B71E283F1
+  server_host.exe 6F0C887D7B55EC9F268863393048934EA9F1B8DD6440F36C5A6EE5223A08E6ED
+  healing_seed_world_test.exe 2BFD806EFE1EF05D8B62EBF4EB642B203F8D481068F1B36151323522B3B93CCA
+
+Damage-field pulse follow-up (2026-10-26): the shared authoritative player
+field-pulse path now preflights an active Healing Seed for each accepted
+direct-damage pulse and publishes its adjacent heal after that pulse's damage
+batch. The Ray of Judgment830 fixture places the Seed's caster outside the
+field but adjacent to its damaged owner; the first pulse reduces the owner's
+Health by five, restores three to the owner, and restores three to the nearby
+caster. It also checks the damage modifier precedes the heal packet. This
+covers the common field-pulse path, not degeneration, every spell family,
+NPC Seed owners, or rendered 2022 behavior. Healing Seed's normal cast remains
+unbound. Serial Release host and ray_of_judgment_test built; damage_fields,
+healing_seed_world, and ray_of_judgment CTests passed (3/3). Official logging
+was untouched. Tested SHA-256:
+  gw_world_simulation.h FA862A9F550345335DB99A530AE66A3A4A71F9BB2EF02C064DDA595463E3DF7A
+  ray_of_judgment.cpp FAFDDE219A3A609EA8BCD738FC351F7DF39F9082CC3E1377B7BBE2EAFFC0B3C0
+  server_host.exe C91EBB465EADE663A153B59616841AEE5E8733AB2B0824D8ED387A59A53C7387
+  ray_of_judgment_test.exe F1CE480993C432E922CD027A0B36013047141D813B534E97BB998314A099D8D3

@@ -1,0 +1,5 @@
+Trade persistence uses NetworkServer -> NetworkManager -> Accounts::exchangeTrade with typed owners, offers and versioned inventory results. No production trade payload or profile hex conversion is required.
+
+The manager serializes database access with a three-second deadline. One SQLite transaction checks both character owners and inventory revisions, plans the resource exchange, writes both profiles, and checks cancellation before commit. Stale ownership/revision, invalid resources or cancellation leave both inventories unchanged. The offline adapter parses legacy fields once and calls the same transaction helper.
+
+Tests cover item stack conservation and identity remapping, gold exchange, forged ownership, stale revisions, and cancellation after both writes before commit. Live two-client trade UI verification remains outstanding.

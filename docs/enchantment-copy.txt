@@ -1,0 +1,31 @@
+Inspired Enchantment21 / Revealed Enchantment1048
+
+Canonical native plan: Mesmer Inspiration rank, 10 Energy, 1 second activation,
+0.75 second aftercast, zero ordinary recharge; hostile spell range1248.
+Remove the newest owned enemy enchantment. Only successful removal grants
+3..15 Energy (rank12=13; rank20=19). Obtainable copied enchantments replace the
+source slot for20 seconds without becoming learned skills. Existing temporary
+slot authority validates exact grant identity, completion, expiry and restoration.
+Legacy InspiredHex names remain internal compatibility names for this common
+Hex/enchantment authority; old22/1049 allied Hex behavior is retained.
+
+Player removal executes reviewed enchantment end effects before returning.
+NPC removal supports the existing reviewed214 regeneration producer; unknown
+ending behavior rejects before mutation. Current lifetime, health, hostility,
+damageability, settled position, plane, navigation and range are required.
+A stale selected effect cannot publish a bar change or award Energy.
+PvP aliases with unresolved wire identity reject before mutation.
+
+Evidence: tools/protocol/enchantment_copy_2022.py verifies frozen1048 cast,
+terminal, caster37 and target38 receipts and the original pinned2022 native
+21/1048 activation/body consumers. No successful official copied-slot or Energy
+reward receipt is asserted. Enchantment-copy regression covers actual foreign
+180 casting, exact expiry/restoration, conditional rewards, Shielding Hands end
+healing, cancellation/interruption, target replacement, no-effect completion,
+friendly/self rejection, missing hook, stale offers and actual owned NPC214.
+
+Open: rendered acceptance, successful retail copy/reward sequence, PvP alias
+identity, additional NPC enchantment endings and NPC casters. Copied skills
+still depend on their own implemented mechanics; this does not implement every
+enchantment. Native consumer checks stub actor/asset services and do not prove
+rendered animation quality.

@@ -1,0 +1,49 @@
+Detached Runtime follow-up audit (source frozen during native build)
+
+Scope: staged opt-in Retribution248 Runtime callback, not normal enrollment.
+No additional source defect established by this read-only pass.
+
+Current mechanics:
+- cancel removes pending cast before admission; cost stays spent; no aftercast.
+- involuntary interrupt uses ordinary recharge (248 base is zero), cancels the
+  pending spell and emits229; it must never admit/complete the old effect.
+- update detects changed control epochs before effect completion. Failed
+  authoritative interrupt settlement retains pending state and returns; retry
+  cannot fall through into the paid completion callback.
+- completion validates exact captured recipient scope and live resources,
+  invokes before_spell_effect once with a fresh process-wide event, then runs
+  spell-failure and observer preflight gates before the paid callback.
+- successful248 applies750ms aftercast; rejected/failed effect paths return
+  without aftercast. No normal recharge is introduced by248.
+- no Runtime local timed248 registry is installed; World alone owns indefinite
+  maintained state, replacement and upkeep. Trusted stage_retribution remains
+  separate from player-only complete_retribution admitted-event enforcement.
+
+Concrete additional regression matrix (not included in current14 modes):
+1. Direct interrupt at1000 after start100; update2100: zero admission and
+   completion calls, paid10 retained, one cancellation226/failure59,229 once;
+   next cast1001 accepted because248 has zero recharge and no aftercast.
+2. control_epoch1 at start,2 before finish, control_event_time1000: same result;
+   assert new cast uses epoch2 and completion receives a distinct nonzero ID.
+3. Authoritative skill_disabled_slot temporarily null on changed epoch: update
+   cannot complete; restore authority and retry; exactly one interrupt terminal.
+4. Caster health zero or resources absent before finish: no admitted event,
+   no effect callback, no success58/body and no publication.
+5. Admission succeeds then prepare_skill_use or prepare_channeling rejects:
+   paid callback never runs. Channeling/skill-use guards abort only resources
+   they actually prepared. A later new cast gets a new admitted event.
+6. Completion rejects: no success body/publication and next cast2101 accepted;
+   target generation invalid and targeted spell failed/rejected variants too.
+7. Missing each required capability at initial admission: unsupported before
+   energy payment; target validator false gives target before payment.
+8. Observer sequencing: callback sets effect_snapshot_at2200; Channeling and
+   attunement snapshot queries use2200 while native aftercast ends2850 based
+   on Runtime completion2100. A timestamp below2100 must clamp to2100.
+9. Self-target paid completion: exact source scope captured, DF primary gating,
+   post-admission caster-death path never creates a stale248 registry entry.
+   Needs World-backed adapter to exercise real reaction and retirement paths.
+10. Interrupted/canceled cast plus still-active prior248 lease: old World lease
+    and upkeep persist; only a successfully committed replacement can own it.
+
+These cases should be added after the current coordinated build completes;
+no registered test/CMake/source mutation was made for this follow-up audit.

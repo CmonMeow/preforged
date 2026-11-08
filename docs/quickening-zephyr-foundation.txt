@@ -1,0 +1,249 @@
+QUICKENING ZEPHYR [475] — FIXED CAPTURE AND ORIGINAL 2022 FIRST CONSUMER
+
+2026-10-26 provisional native producer update: the production host now
+supplies Runtime's paid skill475 spawn hook. On completed cast it stages a
+World-owned spirit and publishes it after the finish/recharge prefix. The
+template uses the fixed capture's definition2937/model-file141876 candidate;
+ownership and rendered 2022 acceptance remain unproven. Per-rank Health is
+an explicitly provisional private-server value, with armor unknown, so the
+spirit's full damage/death gameplay is unfinished. No source-bound coverage
+was published. Serialized Release server_host and cast-test builds passed;
+quickening_zephyr_cast, quickening_zephyr_world, skill_casting, cast_timing,
+and npc_visibility CTests passed 5/5. The fixed QZ verifier passed one local
+cast and the original 2022 style46/5s first consumer. Official logging was
+untouched.
+SHA256 server_host.exe:
+ABE6DB835A80C76AB0AADEF77977C1C4DDB6A70CFBB5D34E360BFAC08479EAF6
+SHA256 gw_quickening_zephyr_spawn.h:
+0E20D6316F0CDE0CE02F87D7248606F490D752652941C6C8B26DABE8BBFE4170
+SHA256 gw_auth.cpp:
+E52FC25F94E9A84557D4CA2A7EF5D8E3662AFC59B90CBE6ECC901FAC54F534AD
+
+The immutable 20261024-all-completed player checkpoint contains one local
+activation. Packet file packets-1360-15821281.jsonl (SHA-256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6)
+has kind60 start at line499231/tick26809125 by actor25 and kind58 finish at
+line499263/tick26811078, 1,953ms later. At that finish tick, packet lines
+499267-499275 include a skill475 event and a new actor97/model2937 sequence.
+World file world-1360-15811984.jsonl (SHA-256
+de6f061799d3db9f7406f55e5e0da20fff0c5e46daaa634e1e4d952d0fd4882f)
+observes actor97/model2937 visible 593ms later at line34099. This is
+temporal evidence only; ownership, spirit identity, lifetime, range, and
+actual recharge/Energy-cost effects are not established by this join.
+
+Hash-pinned original 2022 Gw.exe (SHA-256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac)
+routes the untargeted skill475 start to first consumer style46, 5.0 seconds.
+The 1.953-second modern captured finish differs. Possible timing modifiers
+or version differences are not identified; do not shorten the 2022 cast to
+match this single receipt. No assets were rendered by the offline consumer.
+
+The archived local Wiki Quickening_Zephyr.html says that a live in-range
+nature spirit affects non-spirit creatures, adding 30% of base Energy cost
+at skill start and halving recharge at skill completion. It also says the
+extra cost rounds down at exact half increments. The local Gaze page says
+its disable follows that recharge reduction. The native timing/Gaze helpers
+now accept a caller-proven Zephyr presence at completion; no World authority
+currently supplies it. The pinned 2022 catalog gives skill475 a 5-second
+activation, 60-second recharge, and duration fields 15/45. Its rank curve
+still needs verification before a spirit lifespan is committed.
+
+Reproduce the fixed receipts and original first consumer without touching a
+running official client:
+
+  $env:PYTHONPATH='build/protocol-python;tools/protocol;tools/skills'
+  python tools/protocol/quickening_zephyr_2022.py
+
+Reports: build/reports/quickening-zephyr-capture-20261025.json and
+build/reports/quickening-zephyr-native-2022.json. Quickening Zephyr475 and
+Lightbringer's Gaze1814 remain unbound. Next requirements are authoritative
+spirit spawn/ownership/death, radius and non-spirit eligibility, cost-at-start,
+recharge-at-finish, modifier-aware Gaze slot disable, and rendered 2022 tests.
+SHA-256:
+  audit_quickening_zephyr_capture.py F5676FBAD27B780188F2033A6938A903363199D76A7B09148B7EA3F6A3958CFE
+  quickening_zephyr_2022.py 81BB7CF65F98DC35DD913477477567DF05AB4AC3FF1D520EB5F3C4D4D7E88051
+  quickening-zephyr-capture-20261025.json F644FEA4D81B1BD66394A6495F232F1772F5C895B9754C7C2B7E436060F7BEB9
+  quickening-zephyr-native-2022.json DD28A217E336AC0B9BDDC3296AC4980841D37515451663A5BC9F9285B2FB5AFF
+
+Detached Energy-cost policy (2026-10-25): the native timing module now
+computes the archived Wiki's 30%-of-base extra cost at cast start, with exact
+half increments rounded down. Examples verified in Release: base5 ->6,
+base10 ->13, base15 ->19, base25 ->32; no aura leaves base unchanged. This
+is arithmetic only. A World authority still must prove a live, in-range
+Zephyr spirit and non-spirit caster at cast start before passing true. The
+same authority must be queried again at completion for recharge. Four
+focused CTests and a serial Release host build pass; no official client was
+touched. SHA-256:
+  gw_cast_timing.h 487B23B7982A5CDD5A44AC6A3E74E3CC5FED3BB16472A9C16116DBB7F2846BE7
+  cast_timing.cpp CC73D5D4B52909BDFF1A555C9EC83DF6E1750D105B2A593360EB32698A3DF1FD
+  cast_timing_test.exe 377477B1726E79016EF5AFFB1375AA32F8369F94FAF46041F6B7B5ADC4048103
+  server_host.exe 67B7D3378224A4E1889A74528E29A918F846E0E86B7256548830DB270E16BB20
+
+Trusted World aura consumer (2026-10-25): the current GWCA Constants.h
+defines Range::Spirit as 2512 world units. A native World record can now be
+installed only for a scoped, living NPC whose reviewed creature type is
+"spirit" and whose owner is a live player. Its player query checks instance,
+actor generation, live Health, plane, 2512-unit distance, and expiry at the
+query instant. Population replacement and retired quest-NPC cleanup discard
+the record; a recycled actor cannot inherit it. Focused Release tests cover
+the radius boundary, wrong plane/type, expiry, duplicate registration and
+stale scopes. The record is a trusted consumer for a future completed cast;
+no production Zephyr cast creates this actor/record yet. No network request
+can register an aura, and this does not verify the sampled model2937 as the
+actual spirit. A serial Release host build and five neighboring CTests pass;
+the official client/loggers were untouched. SHA-256:
+  gw_world_simulation.h 6C60882C629447AF441F1D2806B66C1C0A1DFF936C7A232853476462CA06B3FB
+  gw_world_quickening_zephyr.inl 9783CEC55D97FC6CEF2E91856F6FDD80F51C0A3318760DCAFF30D78FE571EDF8
+  quickening_zephyr_world.cpp AA464572FADC17FFB2BFE54834964606D9F4DB0084505AC5930ACFED769D1209
+  quickening_zephyr_world_test.exe 7D9E6BA7B54F74F2D718966E11A11D0104C3B6747B3FC4222A7B9E4490A58AC3
+  server_host.exe C6D560872835772E8314E7A34A36042A0AE7CE37AA9736C5105B32BF38E56942
+2026-10-25 completion-time Runtime wiring: the production skill gateway now
+passes World's scoped living-spirit aura query to Runtime. Ordinary completed
+skills apply the existing half-recharge rule only when the caster is in aura
+range at completion. A focused timing test checks that a spirit becoming
+active after cast start changes the completion recharge, while a pre-finish
+tick does not query it. The serialized Release host build and cast_timing,
+skill_casting, quickening_zephyr_world, lightbringers_gaze and
+lightbringer_world_damage CTests passed 5/5. The broad monolithic
+skill_casting test needed an 8 MiB Windows stack reserve after the Hooks
+structure grew; its initial 1 MiB-stack run overflowed, then passed with
+the explicit reserve. No official client or logger was touched.
+
+This is a recharge consumer only. Skill475 still cannot create/register a
+spirit; its 30% base-Energy surcharge at cast start is not connected, and
+Lightbringer's Gaze1814 remains unbound because its independent disable,
+production NPC armor and remaining cast gates are unfinished. No rendered
+client result is claimed.
+
+SHA-256 tested sources and binaries:
+  gw_skill_casting.h 3465074F89CA7AD8619EFC44D102485041298A9AD2314F78241D1A06CBCEDF70
+  gw_auth.cpp BA6671B26F7C9360D57F7781C4DB35D8563ED3E566CC4685AFC9B3B38C736F6E
+  cast_timing.cpp 1624673E08A19A2D326B675A08B1EC4A0AB9DC3CDBFB12A20C38F87A6CC52DEA
+  CMakeLists.txt A97A890F53FC16DC59F1E73F9C00D3F691664BCA3F3E87DF37880A1DA3FCE284
+  cast_timing_test.exe AF02822FA2CE197D2320B354D1A63BCF4634A2948A27B0B916E299E86725F80E
+  skill_casting_test.exe 5001056D064EA049010063E85086469BA96DE47B518DE16ABD8FD21441FB442B
+  server_host.exe 11CE965AEA9F4E425311225E62BF588137F67E6C9DFBAF2CB211D81FB0215CDF
+
+2026-10-25 cast-start Energy follow-up: Runtime now asks the same World aura
+query when paying for each skill, adds floor(30% of the catalog base Energy)
+to its normal Expertise-adjusted amount, and then applies the existing glyph
+payment path. A focused native test holds the aura absent for one instant
+skill, present for the next, and checks the exact extra 3 Energy on a
+10-Energy skill. This is an explicit private-server stacking choice; capture
+has not established every Expertise/glyph interaction. The QZ spirit cast and
+spawn producer is still missing, so this does not make skill475 playable.
+
+Serialized Release server_host, cast_timing_test and skill_casting_test builds
+passed. CTest skill_casting, cast_timing, quickening_zephyr_world,
+lightbringers_gaze and lightbringer_world_damage passed 5/5. These are native
+mechanics checks, not rendered-client acceptance. Official logging untouched.
+SHA-256 tested sources and binaries:
+  gw_skill_casting.h 5DF88437C85DD9AFF1632ADA744CF7BEFC44DF1B91626690F0CEF3746A8D0AAF
+  gw_auth.cpp BA6671B26F7C9360D57F7781C4DB35D8563ED3E566CC4685AFC9B3B38C736F6E
+  cast_timing.cpp 55FCD196D0C6B0E727FC9150B91E3434D06C62E17B1C25F8102545186C721B88
+  CMakeLists.txt A97A890F53FC16DC59F1E73F9C00D3F691664BCA3F3E87DF37880A1DA3FCE284
+  cast_timing_test.exe C5239D82CF3F5B789AAAA0B80DFA94F6FBC536515922A087B4872AD641718F08
+  skill_casting_test.exe 8C6BBAB32DC24C94FA584DBF5B3F0B3051FF55A2077D85D7EF9B9853C4978001
+  server_host.exe 8D4315E1BCC5C5DD2B7C3C8749C123ABD11EBED680A5AC2D8324287DFF0BC01E
+
+2026-10-25 rank/lifetime authority: the pinned 2022 row and archived local
+skill page now drive a canonical rank0..20 nature-ritual plan. Rank0 creates
+a level1 spirit for15s; rank15 gives level10 for45s; rank20 extrapolates to
+level13 for55s. World no longer accepts an arbitrary Zephyr expiry from a
+caller: its trusted record requires this exact plan and a matching live
+spirit level, computes expiry itself, and rejects forged duration or recycled
+scope. The test also covers wrong creature type and plane, radius boundary,
+expiry, and duplicate registration.
+
+This is still a trusted aura record, not a production spawn. The 2022
+appearance/ownership of the same-tick model2937 candidate, spawn position,
+death and expiry publication, and paid five-second skill475 cast remain to be
+implemented and rendered. Serialized Release server_host and World test
+builds pass; quickening_zephyr_world, cast_timing, skill_casting,
+lightbringers_gaze, and lightbringer_world_damage CTests pass 5/5. The
+official client and loggers were untouched.
+SHA-256 tested sources and binaries:
+  gw_quickening_zephyr.h 6BD1DA464D08AD73A8136E67D51DE13C1C63D08D1738FFD2573F56C627F230BB
+  gw_world_quickening_zephyr.inl 2631E794044BB70260FA33F12B7B23206C3F3EE016B27CCB6FE3F7ADC8230A0E
+  gw_world_simulation.h B54FC6902540E711786F33865FF81381ADD63E61C24EC1A7064ECD037D22573E
+  quickening_zephyr_world.cpp A46DD115E41A0D9F9D4866E194EFD7308A0EB725114DE33EF859D960B12FC496
+  quickening_zephyr_world_test.exe 0ECA846F845283DA02B59466526032C647D2ED52E614E3EAF9EF9421EDE4E4F3
+  server_host.exe E5AAF3557FE5757F7B83ABE55C05A8450CAC3200C7698335C0250F987C904BDE
+
+2026-10-25 trusted spawn/expiry follow-up: World now has an isolated
+completed-cast producer that admits a reviewed spirit template, allocates a
+scoped NPC, returns its 2022 spawn packet batch for publication after cast
+finish, and registers the Zephyr aura in one transaction. Recasts with an
+identical definition avoid repeating definition packets; conflicting model
+data is rejected. The World tick retires each spawned actor and sends the
+normal removal packet at its canonical deadline. Aura queries reject a time
+before the spirit was registered. Static fixture spirits can still be used
+for consumer tests without being retired as summoned actors.
+
+This producer is deliberately not called by normal skill475 casting. The
+single captured actor97/model2937 is only a candidate, not a validated 2022
+model/ownership pair. The test's model file is fixture data. Paid cast,
+production template selection, packet publication, visibility-managed
+instances, and rendered client acceptance remain open. The native spawn test
+and five neighboring CTests passed 6/6; Release server_host built. Official
+client and loggers were untouched. SHA-256 tested sources and binaries:
+  gw_world_simulation.h A2FA6641B47AF14FEC68D30EB7E653F985E080E8C95A6587A1FB682193E2BF28
+  gw_world_quickening_zephyr.inl 1B993C6A7C2DC6DAD794742BE001D72119E571FC0B733491540C29E02A6CD3E6
+  quickening_zephyr_world.cpp EEA6105C14E24B8249AF946FCF8F98F94C468AB0876008D177FB410173735F23
+  quickening_zephyr_world_test.exe A56B3C60CF636C0D3922D5649C62DF9B1E7548ACF30C4D28021136F9CE25EEA0
+  server_host.exe 7735EA87478BA857DA0A66F8C0341D1AC37210D7CF951A75E1DDD6D012A947FC
+
+2026-10-25 candidate wire detail: the immutable capture audit now checks
+opcode86 definition2937/model-file141876 at packet line499268 and opcode32
+actor97/definition(0x20000000|2937) at line499275, both at the Zephyr
+finish tick. This strengthens the actor/model packet correlation; it does
+not prove that actor97 is the caster-owned spirit or that the 2022 client
+has/rendered model-file141876. The later actor97 removals in this long packet
+file are not attributed to this cast without a lifetime join. The QZ spawn
+fixture remains separate from this candidate, and skill475 stays unbound.
+Hash-checked audit passed against the fixed checkpoint; no client was run.
+SHA-256 audit_quickening_zephyr_capture.py FDA7232826B8C24DC0099EF058D045D095E165C94A7AEDBC1B73547ADE8539BE
+SHA-256 quickening-zephyr-capture-20261025.json 947735610CEE3622248415FA3FD473938326AE98C38817697BCB588F412AFA76
+
+2026-10-25 deferred visibility publication: the trusted World spawn no longer
+rejects visibility-managed instances (production uses radius5020). It keeps
+the new actor out of NPC entry snapshots, visibility sets, and aura queries
+until a host-only post-completion publication call. Publication is one-shot;
+the visibility refresh sends the spawn to nearby peers and not distant peers.
+Expiry before publication suppresses the unseen actor's removal packet.
+The regression exercises nearby/distant publication, duplicate calls, pending
+aura exclusion, and unpublished expiry. This is the World publication route,
+not a normal skill475 binding: the paid cast, reviewed model/template and
+rendered 2022 result remain open. The returned preflight packet batch is not
+sent by World before the host calls publication.
+
+Serialized Release server_host, Zephyr World, NPC visibility and controlled
+spirit targets built; five focused/neighbor CTests passed. No official client
+or logger was touched. SHA-256 tested sources and binaries:
+  gw_world_simulation.h 6CA7F4BBDEAD6376057A01190D484AD95484D2572392346E9566C3BBE72D0A51
+  gw_world_quickening_zephyr.inl 44986257B91AFDD46AD4E5CD577255559F0DACA348308D131AC4699811024067
+  quickening_zephyr_world.cpp 37D3347153B57F3918A76AA84FD87F18398E8C5E45911F67E5BDD17FCFAD9DDC
+  quickening_zephyr_world_test.exe 57FD5C09AFAA70E3E943763897290D1C015BD38CFCF8356728E0B228321079A9
+  server_host.exe 50784E489D44A9671D578CD6FE74504C5D8B318BA6EA1347153E3700528FEF9A
+
+2026-10-25 opt-in paid cast: Runtime now admits skill475 only when a trusted
+QuickeningZephyr spawn hook is supplied. The test hook uses a fixture spirit,
+the canonical Nature Magic rank, a 25-Energy payment, the pinned 2022 five-
+second activation and 750ms aftercast. It checks cancellation, insufficient
+Energy, stale caster scope, one 60s recharge, and finish-before-spawn packet
+ordering. The gateway supplies no hook; the source coverage audit still
+classifies475 as unsupported. This is not a deployed/playable binding, and
+the test fixture's model is not retail appearance evidence. Model-file141876
+remains a capture candidate. Reviewed production template selection, 2022
+asset/rendered acceptance, and fuller retail modifier contrast remain open.
+
+Serialized Release server_host and cast/World/timing/visibility neighboring
+targets built; seven CTests and twelve coverage-audit unit tests passed. The
+fixed player checkpoint was not changed. No official client/logger action.
+SHA-256 tested sources and binaries:
+  gw_skill_casting.h B11E5854CCE866D62CBFB502714D3CA79433F0DDBF0E1B3CF567FE196BCA52D8
+  quickening_zephyr_cast.cpp 70E79B2C112D103C303260D4CD2B6A3DB7DC9999510F6CF0E6188B6D32E7A044
+  CMakeLists.txt BF51E1804344DECC871F081F226204E82B648802B3C21B7E2D6E2247570E3BD0
+  skill_runtime_coverage.py 0B5B6421D731CBB863D9293E9D78CC9300BFA5DE910341B75A771A022E1B43F7
+  quickening_zephyr_cast_test.exe 603328087708DF45972B4C93642387777060B18FBFE9DE81B0479E4AA47A7000
+  server_host.exe FC4582B70A783ED8026F874773BA9CCBDFE4A41316A9BD37D1F9AAF9D83985DD

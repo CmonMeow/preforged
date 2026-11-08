@@ -1,0 +1,74 @@
+Finished official capture review (2026-10-24)
+
+The completed PID 46120 and 54796 packet/world files were copied as complete
+line snapshots to data/captures/skill-checkpoints/20261024-completed-sessions.
+The source files were not modified. The frozen snapshots were merged with the
+prior skill checkpoint and the earlier target-review checkpoint into
+20261024-all-completed (58 hash-verified files). The separate 20261024
+completed-sessions-review.json inventories 17 maps, 353 decoded NPC names,
+822 quest packet events and 32 quest IDs in those two sessions. These are
+observations, not proof of complete quests or NPC ownership.
+
+The complete skill audit reports 679 locally captured obtainable skills,
+360 source bindings, 319 awaiting binding and 650 without local activation.
+There are 8,956 local activations in the aggregate. The missing-capture,
+missing-implementation and verification lists under data/skill-capture-plan
+were regenerated from the fixed audit. No source binding was inferred from a
+cast packet alone.
+
+The historical-wiki monster checklist was regenerated from the same fixed
+checkpoint: 769 referenced entries, 413 with a verified NPC Skills-section
+link, 519 search entries after observed skills/encountered NPC names are
+omitted. PvP variant targets now show 19 of 154 variant IDs with activation
+evidence and 135 still without one. The separate PvP-map report contains 242
+skill IDs seen in known PvP map windows, 321 local and 2,949 other-actor
+starts; other actors are not assumed to be NPCs or the local player.
+
+Shields Up!367 now has a tested explicit NPC-party association, deferred World
+effect publication, exact expiry removal and player/NPC projectile armor.
+The production gateway supplies the cast hook, so the source audit counts367
+as bound. Retail recipient/animation acceptance remains a verification gap.
+Shield Bash363 has a detached policy/contact proposal and native verifier;
+its World contact consumers remain unfinished and363 remains unbound. A
+serialized Release build of server_host and both skill test targets passed;
+eight focused CTests passed. No official client was opened, attached or
+interrupted during this capture audit and build.
+
+Frenzied Defense1700 is now source-bound through the normal stance cast path,
+block attribution and incoming damage consumers. Its two new Release suites,
+four freshly rebuilt neighboring suites and Shields Up World passed 7/7
+focused CTests. Seven exact frozen activation receipts and the pinned 2022
+instant/body consumer also pass; rendered client behavior remains unverified.
+See docs/frenzied-defense.txt for evidence and tested hashes. The refreshed
+PvP-map report contains 242 skill IDs and 110 IDs awaiting runtime binding.
+
+Shield Bash363 is now source-bound through normal Runtime casting and
+authoritative terminal attack contact. It consumes on attributed skill blocks,
+knocks down on melee contacts and composes15seconds with the attacking use's
+actual base recharge; ranged blocks consume without melee retaliation. A
+serial Release host build and nine fresh focused/neighbor suites passed.
+Seven exact frozen receipts and the pinned2022 body621 native consumer pass.
+Retail multi-defender stacking and rendered client behavior remain open; see
+docs/shield-bash.txt. Battle Rage317 has a detached policy test and six-receipt
+native consumer proof, but remains outside the production binding count; see
+docs/battle-rage-detached.txt.
+
+Battle Rage317 is now source-bound through the normal Runtime/World cast and
+stance lifecycle. Its payment, movement, actual-hit adrenaline and accepted
+non-adrenal ending pass eight freshly built focused/neighbor suites and six
+frozen receipts against the pinned2022 native consumer. The fixed audit is now
+359 of679 locally observed obtainable skills bound, with320 awaiting binding.
+PvP For Great Justice interaction and rendered-client behavior remain open;
+see docs/battle-rage-detached.txt. The four Well skills91..94 have exact cast
+and end evidence plus native cast-event proof, but remain unbound pending
+corpse-use and field-effect evidence; see docs/well-skills-evidence.txt.
+
+Bull's Charge379 is now source-bound through paid instant casting, owned
+Strength stance, movement history, accepted-use ending and trusted
+moving-melee-contact knockdown for player/NPC targets. A serial Release host
+build and ten freshly rebuilt focused/neighbor tests pass, as does the
+five-receipt pinned2022 native instant/body638 verifier. The fixed checkpoint
+now has360 of679 locally activated obtainable skills bound,319 awaiting
+binding and650 without local activation. The recorded12s/1s timing differs
+from the pinned2022 base20s/5..11; its cause and rendered-client acceptance
+remain open. See docs/bulls-charge-detached.txt.

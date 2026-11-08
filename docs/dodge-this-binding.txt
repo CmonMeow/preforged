@@ -1,0 +1,45 @@
+DODGE THIS! [2354] — SOURCE BINDING, 2026-10-26
+
+The fixed 20261024-all-completed checkpoint has one local instant48 start in
+map280 (packets-19472-19186421.jsonl line401246) and no attributed finish.
+The pinned 2022 first-consumer audit accepts the instant UI lookup and the
+catalog's caster/target no-body sentinel2077. This is not a rendered test.
+
+Native Runtime admits the learned PvE-only skill through the normal slot,
+Norn-rank and 100-adrenaline gates, then applies a ranked 16..20-second owned
+effect. World consumes it at the first released weapon attack, so a miss still
+spends it. The reserved attack bypasses block and gains ranked +14..20 damage
+on contact. Ordinary player/NPC, attack-skill, projectile, Cyclone and Barrage
+consumers are wired. Cyclone/Barrage currently assign the bonus to the first
+recipient/arrow; this policy is provisional, based on the available
+single-attack descriptions and player reports, not an attributed retail
+multi-target capture. Reapply replaces the existing effect. Expiry, death and
+actor departure retire ownership.
+
+Validation: Release server_host build and eight focused/neighboring native
+CTests pass. Twelve runtime-coverage tests and the fixed offline first-consumer
+audit pass. The fixed checkpoint was not changed. The published backlog is
+679 locally activated baseline skills, 390 source-bound, 289 awaiting binding,
+and 650 lacking local activation. The official client/logger was not touched.
+
+Remaining: rendered 2022 acceptance; retail effect-removal and attack packet
+order; NPC skill-caster behavior; precise multi-recipient/scythe/dual-strike
+policy; numerical damage/modifier ordering under all defenses. These require
+direct capture or client tests before claiming retail fidelity.
+
+Mechanics reference: https://wiki.guildwars.com/wiki/%22Dodge_This!%22
+Player discussion (weaker evidence):
+https://wiki.guildwars.com/wiki/Talk%3A%22Dodge_This!%22
+
+SHA256 checkpoint capture 3AD1E5C22B193F7F980BDDABF6027E860C4381C38859377FAF42C81100937DFB
+SHA256 norn_shouts_2022.py 43C8D25A2FB8363D42CB09EB5DCFC60D148C0E99A56A05DB15C96D39D837C145
+SHA256 gw_world_simulation.h D89888D88ED20A36F43CA5585FC219B37D624797F26829B17A0FDF8AE842757D
+SHA256 gw_skill_casting.h 23515B16C7F08DFD0ADC3A6500E89EAF89B3BED3C3E812FD847B9D3296AF04A3
+SHA256 gw_cast_timing.h 54E99914667EAC534F3B12CF235C349862C3EB1933F3539BE2974E8AAD0C6140
+SHA256 gw_norn_attack_shouts.h AD368891B3E7956F474A6C72F291A150D325C2BF62AEDBE56350CBAB9DB6AF22
+SHA256 gw_auth.cpp 61C1F0D133692A50EF4479E00EBC1AB4D1A3CC65451D34596FC408374FA054AE
+SHA256 dodge_this_world.cpp F4059ECCE1D9E0ED70015ABEB185013E0BA61D97EFD1C068183F95A939788FBD
+SHA256 dodge_this_cast.cpp 72068DA66A86239B5D4A667E801D9445EB1263378CE030E539257B06F84044D1
+SHA256 dodge_this_world_test.exe 4202AE315DEA06B67DB5E77754135220757AC162CFB0E71C8977BAC0015E57A7
+SHA256 dodge_this_cast_test.exe D43A2993FC6F5E257525F85AED5FC1121074B92FE955CAF89A5E3251083E758C
+SHA256 server_host.exe 2EC7C75B8D31E4E05A99A6069044217AE17041847654F140F39C197B34243EDA

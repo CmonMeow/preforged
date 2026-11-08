@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/gwdevhub/GWToolboxpp",
+  "revision": "ef3d3670d0d6343471341373680aafd9de911447",
+  "source": "GWToolboxdll/Windows/ArmoryWindow_Constants.h",
+  "source_sha256": "b1018fb7c11d2e00852e02f6a191848bf87952b225322ecf0007e6e3e195fcc5",
+  "license": "MIT",
+  "use": "Ascalon body armor composite file IDs, item types, interaction and dye tints for six core professions",
+  "destination": "src/runtime/gw_creation_armor.h",
+  "appearance_reference": "https://wiki.guildwars.com/wiki/Ascalon_armor",
+  "limitations": "Preview only; weapon/headpiece catalog, gameplay item model IDs, names and modifiers are not supplied. Not persistent starter inventory."
+}

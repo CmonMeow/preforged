@@ -1,0 +1,114 @@
+Frenzied Defense1700: normal player stance and shared damage/block consumers
+=========================================================================
+
+Fixed evidence:20261024-all-completed,cutoff2026-10-24T04:27:02.320932+00:00.
+The implementation does not rescan or modify live captures or checkpoint plans.
+
+The pinned2022 row supplies Warrior/no attribute,stance3,5Energy,instant/no
+aftercast,10s recharge,8s duration,75scale and caster body1666. Local archived
+Frenzied_Defense.html revision2622742 describes75percent attack block and
+double incoming damage;its notes place damage reduction after doubling.
+The numeric/mechanic plan checks native metadata before admitting rank0..20.
+
+One frozen local activation is packets-1360-15821281.jsonl413800..413806,
+tick24258000:ready228,timing162/kind62,recharge10,instant48,body1666,
+effect62duration8,and activation227. tools/protocol/frenzied_defense_2022.py
+checks seven exact line/timestamp/hex receipts against the manifest source
+hash,then executes original2022 instant and1666particle consumers. Actor,
+model and asset services are stubbed. This application window does not measure
+block probability,double damage or Energy payment;modern162/kind62 is timing.
+The mechanics policy follows the archived reference and native row,with
+controlled private-server tests distinguishing it from retail verification.
+
+Production path:
+- Normal Runtime support enters the shared instant-stance pipeline. It requires
+  status_mutation and effect_snapshot,normalizes the target to self,pays5Energy,
+  installs8seconds of authoritative stance state,and retains10seconds recharge.
+  Generic success publication uses the captured body1666 and timed status.
+  Missing hooks reject before admission. No gw_auth special hook is needed:
+  its existing exact-lifetime generic status_mutation forwards to World.
+- World status mutation validates rank,exact8second duration,live owner and
+  current resource frontier. Common stance replacement,removal,death and actor
+  retirement own lifecycle cleanup. Unknown/malformed active records fail closed.
+- Both reviewed aggregate block and attributed block-source services recognize
+  one1700source at75percent. Unblockable contacts and Rigor Mortis retain their
+  existing bypass behavior;miss/dodge/obstruction do not become hits. Duplicate
+  records do not stack. Existing independent block sources retain shared rules.
+- Centralized incoming strike and incoming spell-actor services double damage
+  before Protective Spirit caps,Shielding Hands/flat reduction and absorption.
+  Player melee/ordinary/projectiles and hostile NPC attack/spell controllers
+  already consume these services. Life stealing retains its distinct channel;
+  degeneration and sacrifice do not pass through strike-damage multiplication.
+  Unlike Frenzy346,this stance adds no attack-speed modifier.
+
+Source files:gw_frenzied_defense.h,gw_cast_timing.h,gw_skill_casting.h,
+gw_blocking.h,gw_block_attribution.h,and gw_world_simulation.h. Tests live in
+tests/frenzied_defense_policy.cpp and tests/frenzied_defense_world.cpp.
+The dedicated native report is build/reports/frenzied-defense-native-2022.json.
+
+Verification limits:
+Native body verification does not establish rendered sound/animation on the
+private client. Authored hostile NPC controller fixtures exercise recipients;
+they do not claim an NPC1700skillbar or retail NPC stats/AI. Probability tests
+check boundaries with deterministic server draws,not a retail RNG distribution.
+No new official session was started and official client/logger processes were
+not touched. Baseline/source-bound publication belongs to the coordinated
+checkpoint audit;this document does not invent a new checkpoint count.
+
+Validation2026-10-23:coordinated serial Release builds of both new tests and
+server_host passed. The freshly built frenzied_defense_policy and
+frenzied_defense_world CTests pass. The policy suite covers all21accepted ranks,
+metadata/timing,boundaries,stacking,attribution,bypass and corrupt entries.
+The World suite covers melee block and double damage,flat reduction and cap
+ordering,spell/shadow life-steal separation,current projectile-impact state,
+authored hostile NPC ordinary/Flare controllers,normal Runtime payment/body/
+self/recharge/expiry,no haste,missing hooks,insufficient Energy,replacement,
+removal,death,stale lifetime and forged duration/rank rejection.
+The offline native verifier separately passed all seven frozen receipts and
+the original instant/body1666 consumers. These tests prove source mechanics
+and native consumer handling;rendered-client acceptance remains unverified.
+
+Tested SHA256:
+gw_frenzied_defense.h
+ a36b336dc243c3d39425195200a7e8aea013cd4f1c4b40ba15c4474e45f90fdb
+gw_cast_timing.h
+ 7fe9711ac69bcbb07e798562f3d212750c1f412374f552d7ca0f5bf5c5a3b3e4
+gw_skill_casting.h
+ 5517137581d825b86e5e988e2ab8885f482fb6016aaf3524c90477a82e71c7a6
+gw_blocking.h
+ 4adc07fe6b167fd9ce80f138fc7363a0e078b45d6cb940ea4646d46eae9fbf2b
+gw_block_attribution.h
+ 4620deed5ac13c41bda978ea3ca6ee9c6331307463f1bf0218613317bea55477
+gw_world_simulation.h
+ f2916979393401e529320ec39507d69c8d0508e6ec53265e4d0301a42e886b13
+tests/frenzied_defense_policy.cpp
+ 295cd0161159a0d00cfaaf181fa5b11f95f994edce458fa089bd268e2b049195
+tests/frenzied_defense_world.cpp
+ 8449246a7e2138aeb83f7ef7450070fed99f2bb760e7f9203ed949a56d322e9f
+build/tests/frenzied_defense_policy_test.exe
+ 6ae4a07a78572ef0b6af918e5f5bc908fbab8041e31d6442adfafd2a80f43f72
+build/tests/frenzied_defense_world_test.exe
+ 98c81976c25134a0ea00cf73d318e4ad9dbfab682e334ed6ccf6965622c9c5a2
+bin/server_host.exe
+ 41e8693392d5466b131eb057af81b40b6853e36de6ffd8e9ef8e8a7d5da92896
+
+No host restart/deployment was performed by this implementation agent.
+
+Fresh regression validation:the shared-header dependents block_attribution,
+world_weapon_attacks,npc_ordinary_world and npc_flare_world were rebuilt
+serially before the final focused run. Those four tests,the two new Frenzied
+Defense suites and Shields Up World passed7/7. Earlier11/11included older
+neighbor executables;the final7/7is the fresh-build regression claim.
+The coordinated fixed-checkpoint audit now reports357source-bound and
+322captured awaiting binding. This is a source implementation count,not a
+deployment or rendered-client acceptance count.
+
+Fresh neighboring executable SHA256:
+build/tests/block_attribution_test.exe
+ 7b3dea45cf3aee77e09f20a4e5f7eaebe898ff58b84aa37ce51fb8b69242e64f
+build/tests/world_weapon_attacks_test.exe
+ 9118b7598a63af9cddf5b9cebd6ceb59a0f4ecc7cf0bc36673edb033fe055fce
+build/tests/npc_ordinary_world_test.exe
+ e5f6b5d123815b52992d5525803da78f53560600809e95adcc544ab5b03ffa63
+build/tests/npc_flare_world_test.exe
+ 9d3d121dbe325c0ed5ca5aea2eb1bf97d032fd09ba6458df231fc9825dd9216e

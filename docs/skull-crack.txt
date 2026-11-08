@@ -1,0 +1,79 @@
+Skull Crack329: axe/sword/hammer source binding and native evidence
+================================================================
+Pinned2022 elite Melee Attack14,No Attribute51,requirement185;220adrenaline
+units (not rounded225),0.5s activation/0aftercast/0recharge. Caster2077 is a
+sentinel;target body576 exists. Native bonus endpoints15/15 indicate a constant
+15s Dazed parameter. Current local Skull_Crack.html says10s,but its archived
+Skill_history.html contains15s. Do not silently blend balance versions.
+
+Fixed checkpoint20261017-npc-refresh-2 provides stronger runtime evidence:
+packets-110488-195213578.jsonl1297182..1297193 at215203125,source119/target58;
+1319574..1319583 at215680343,source30/target58. Both show329 start/success,
+target body576 and same-target condition485 application with15seconds duration.
+Caster identities and full duration-modifier context remain unestablished by
+this packet-only check. These are nonlocal actor receipts,not verified NPC
+identity. Pinned metadata plus both observed durations support15s for this
+2022 implementation. The article10s disagreement stays recorded.
+
+Local packets-1360-15821281.jsonl359629..359637 show adrenaline spend210,
+attack50/success46,target body576 and release227. Body576 is emitted even in
+this sample without a demonstrated Dazed application;do not gate its particle
+solely on a successful Dazed proposal. Local31ms/same-tick nonlocal batching
+does not establish the server release rule. Original2022 action21/style41/state45
+selects0.5seconds despite supplied1.75s ordinary interval. Original target576
+particle consumer produces encoded asset3f7e00010000,flag1,for the target actor.
+Asset/model services are stubbed;rendered acceptance remains open.
+
+Pure gw_skull_crack.h validates pinned metadata and separates contact facts:
+all landed active actions attempt an interrupt;only spell actions can apply
+Dazed. Condition immunity suppresses Dazed without removing the direct interrupt.
+Interrupt protection is not a Dazed predicate:the local notes say the condition
+is applied even when the interruption is prevented. Miss/block/dodge/obstruction/
+cancel/replacement/retirement produce neither effect;unknown active skill
+identity and timestamp overflow reject. No rank-based duration is invented.
+
+Pending World/Runtime:220unit spend/no Energy,ordinary weapon damage,melee
+release/haste and control,qualified hit/protection,condition redirection/immunity,
+new vs existing Dazed and exactly one intended direct interrupt,player/NPC
+controllers,body576 once on landed hit,and all lifecycle tests. In particular,
+blindly calling generic new-Dazed interruption after the direct interruption
+could consume two Mantra charges. It must be a single reviewed transaction,
+without weakening other condition-producing skill paths. No attack_skill329 or
+Runtime binding has been added;no binding count claimed.
+
+Validation:skull_crack_policy_test and tools/protocol/skull_crack_2022.py pass.
+Evidence/hashes:build/reports/skull-crack-native-2022.json.
+
+Superseding World/Runtime integration:
+attack_skill329 now binds native220unit spending and500ms release using shared
+weapon damage/Strength/armor/haste handling. Current axe/sword/hammer equipment
+is admitted;dagger/scythe reject pending their own contact semantics. Runtime
+pays no Energy for this adrenaline skill;cancel/interrupt retain the paid charge.
+
+World snapshots the action at the qualified hit. Direct interruption is merged
+with existing Dazed/Dwarven hit interruptions so one landed attack makes one
+protected attempt. Player and reviewed NPC Mantra16/17 protection is honored.
+The spell-only Dazed application uses its independently preflighted condition
+proposal and commits without requesting another new-Dazed interruption. A foe
+may retain a protected cast while acquiring Dazed,as the local notes describe.
+NPC unknown Resolve Energy fails before weapon damage;known Energy drains once.
+Condition-immune NPCs can still suffer direct interruption. Shared conditions
+retain longer prior timers;no Concussion-specific nonrenewal rule is copied.
+
+Body576 is published once on all landed ordinary Skull hits,including nonspell
+and idle targets,matching the local capture;miss/block exits do not publish it.
+Dazed/Fragility NPC death is published through existing owned condition/death
+handling;conditions are not applied after a lethal weapon/Conjure hit. Existing
+hit protection can also cause lethal Mind Wrack;the melee NPC death check now
+consults the actual post-protection Health before condition work.
+
+New World/Runtime suite passes player spell/nonspell/attack/idle/expired,
+miss/block,Mantra16/17,single Energy drain,15s expiry,NPC condition immunity and
+unknown Energy,body576,and220unit zero-Energy/cancel/interrupt casting. Remaining:
+dagger/scythe,NPC caster,condition redirect breadth,retail reaction/order proof,
+ordinary critical RNG and rendered acceptance. Binding count does not claim
+these gaps complete. Earlier staged notes above are historical.
+
+Final validation:five native suites,62 tool tests,frozen/native verifier and
+Release host pass. Exact219/220 readiness and other-pool spend also pass.
+Fixed checkpoint now262source-bound/371pending. Official logging untouched.

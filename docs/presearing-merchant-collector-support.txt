@@ -1,0 +1,91 @@
+Pre-Searing merchant and collector interaction evidence, 2026-10-23
+
+Normal native merchant panels and buy/sell transactions share one authority.
+Sanura148 has captured definitions and buy/sell opening fields; its older item
+list was incomplete. Riley163, Vencel162 and Gram166 additionally have complete
+ordered lists in the immutable completed52044 capture. Vencel's placement is
+staged separately, so a table binding alone does not make him present in World.
+
+Spence164 and Laren165 are installed actors using explicitly wiki-backed shared
+stock. Their pre-Searing goods tables exactly match the seven captured goods
+and prices100,0,50,40,100,200,4. This is not a claim that an individual native
+panel was captured for either NPC. Later post-Searing tables are excluded.
+tests/fixtures/presearing-merchant-wiki.json pins all six local wiki source
+hashes; tools/protocol/merchant_wiki_stock.py verifies normalized goods rows.
+merchant_panel_test compares each table-bound panel to the original native
+serializer fixtures and checks all seven authoritative quoted prices.
+
+Native buy identities are fresh per opening; old buy-menu IDs cannot authorize
+a reopened stock entry. Admission consumes its binding and durable plans reject
+inventory/revision changes. Native sells have no request nonce: an identical
+partial sale under fresh authorization is indistinguishable from a deliberate
+repeat sale. Successful durable inventory/gold commit and native publication
+precede the type-specific203 completion. No live successful purchase is claimed.
+Sell support includes exact uncustomized carried stock definitions and seven
+canonical collector trophy signatures: Skale Fin, Baked Husk, Grawl Necklace,
+Unnatural Seed, Icy Lodestone, Worn Belt and Spider Leg. All seven have captured
+authoritative unit value3. The entire trusted signature must match, including
+flags, encoded name and modifiers; a model/type alone grants no sell authority.
+Trophies require carrying placement, quantity1..250, no installed container,
+nonempty customization, armor metadata or nonzero profession. That is bounded
+private support, not a claim that retail forbids every excluded item. The
+opening inventory snapshot and durable Plan both reject changed inventory.
+
+tools/protocol/merchant_sell_warning_2022.py executes the original sell click
+controller and value-dependent button enable path. Customized/equipped items
+and mask0x20010 lead to confirmation, not automatic prohibition; ground-drop
+restriction0x100 does not cause that warning. The native general list filter is
+not established. Unknown weapons and quest item classes are not universally
+enabled. Merchant.html explicitly lists trophies as sellable, and some quest
+items as exceptions, so no blanket quest-type or drop-flag rule is inferred.
+
+Collector24-offer catalog: original22 entries retain keys and original source;
+Hatcher23 and Varis24 add exact captured profession6 offers from completed52044.
+The extension importer preserves both source identities rather than relabeling
+older offers as latest-session data. Their AR7, torso Energy+5 and leggings
+recovery+1 pass through owned equipment metadata and the shared resource/armor
+authority. Other professions have no inferred captured armor definitions.
+
+Gwynn145 remains unsupported by native offers. He is already placed, and the
+local wiki specifies3 Skeletal Limbs for Cane, Frost Artifact, Holy Staff and
+War Hammer. It additionally specifies NECROMANCER-only Krytan Gloves, AR7 and
+Energy+5; the Elementalist row says no armor. Therefore a generic all-profession
+armor offer would be incorrect. No Gwynn native window/stock definitions were
+found in the16 frozen packet archives of20261018-session-complete or the
+completed52044 windows. Wiki names/stats do not supply native item definitions.
+No generic replacement items or guessed collector menu are installed.
+
+Karleen has complete captured profession6 offer data but no installed placement;
+no Karleen catalog or placement is added in this batch. Official clients,
+loggers and immutable capture files were not modified for these changes.
+
+Trusted issuance equipment metadata: the three fixed merchant offhand rows
+(Focus, Starter Shield, Flute) explicitly declare unrestricted profession0 and
+known-empty customization. Original collector weapon/offhand rewards with
+explicit catalog profession0 also acquire known-empty customization at issuance.
+Unknown existing owned items retain absent metadata and strict equipment denial;
+non-equipment recipes and stack merge identity are unchanged. Merchant admission
+snapshots the reviewed issuance policy as well as the exact definition.
+Purchase/equip/persist/unequip/resell regression uses real equipment authority.
+
+Sell eligibility is distinct from captured native value. Starter Shield and
+Flute are excluded from this bounded stock sell policy: their wiki pages say
+Can't be sold, despite the captured Flute native value2 (buy cost4). Focus is
+unrestricted and resellable; present profession0/empty customization are accepted
+by value, while positive profession or nonempty customization remain denied.
+Wiki snapshot requirement None: Focus_(pre-Searing).html, Starter_Shield.html,
+Flute.html lines57-59; Shield/Flute sale restriction lines67-70.
+SHA256 Focus ddb0ba088165ec1532f0fa7b6911f70706c25ef112e0924a93b52071f4d1e81b
+SHA256 Shield 2ffbbad2f984c01df7220c7a8a8413cf2a1869dab52b29e6aff4d6f0ac35871e
+SHA256 Flute c7658c25ae3d24c820e49055aeb70972dca6564c87755e7fb910a7d1ce371e4c
+
+Effective offhand benefits use both native active-set masking and owned physical
+placement. A Focus retained beneath a two-handed staff grants no Energy; its
+benefit returns with a one-handed weapon without deleting its stored reference.
+Only the exact captured no-requirement Starter Shield signature, with explicit
+unrestricted/uncustomized metadata, adds AR3 to every physical and elemental
+armor location (and the uniform armor provider). This intrinsic equipment armor
+is separate from conditional skill armor caps. Unknown/changed signatures and
+requirement-bearing shields acquire no inferred bonus. Regression purchases the
+real merchant rows and persists each equipment transition; synthetic mainhands
+exercise the proven native twohand bit rather than claiming captured weapons.

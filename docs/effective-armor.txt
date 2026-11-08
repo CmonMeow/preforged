@@ -1,0 +1,38 @@
+EFFECTIVE ARMOR RESOLUTION — 2026-10-21
+
+Reproduced:the new effective_armor regression failed at rating501 because both
+spell amount() and weapon resolve() reused500as a bound on the final combat
+rating. Reviewed raw armor may be500,and an owned skill can add armor to it;
+Convert Hexes500+10=510therefore caused a valid hit to be rejected. The guard
+was an implementation bound,not evidence of a retail cap on total armor.
+
+gw_armor_bounds.h now distinguishes effective ratings through
+valid_effective_armor. Spell and weapon resolvers accept the computed total up
+to1000000as a generous defensive arithmetic bound. This is NOT a retail maximum.
+The existing negative bound-100is unchanged. World reviewed raw armor admission,
+NPC definition constructors,and Armor of Earth's raw base validation retain500.
+Armor of Earth's derived result uses the effective bound rather than rejecting
+a valid500base plus its skill bonus. No raw data is clamped or fabricated.
+
+Damage formulas,penetration,skill-armor stacking,single-source exceptions,
+fractional Health,damage notification limits and rounding are unchanged. The
+extreme upper test verifies the existing floating-point model can yield zero
+through underflow without an invalid/NaN result;it is not a retail minimum-hit
+claim. Unknown armor and out-of-bound inputs still reject before mutation.
+
+Red-to-green test:effective_armor failed on501before the resolver change.
+It now checks500/501/600/1000/1780spell and weapon arithmetic and actual Actor
+damage,unknown armor,negative bounds,upper rejection and finite upper handling.
+Existing combat/weapon/ArmorEarth suites pass with invalid-input assertions
+updated to the appropriate effective/raw domains. Player Convert Hexes tests
+cover reviewed500+owned10while still rejecting raw501. NPC tests assert actual
+Earth damage through effective510and reject a raw501definition.
+
+Seven C++ suites pass:effective_armor,combat,weapon_attack,armor_earth_policy,
+convert_hexes_world,convert_hexes_npc andworld_simulation. Five coverage tooling
+checks pass. Fixed checkpoint633captured/302source-bound/331awaiting/696missing
+is unchanged. Convert Hexes normal casting/zero-count refresh/NPC hostile-hex
+admission/rendered fidelity remain separate open gates. Official sessions and
+loggers were not touched.
+
+Final serial Release build78770 exited0 including rebuilt player/NPC ConvertHexes,world_simulation and server_host. No live session was restarted.

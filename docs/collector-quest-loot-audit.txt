@@ -1,0 +1,56 @@
+Collector follow-up audit: quest populations and creature-to-loot attribution
+
+Pinned GWCA SHA b33375229bcb06e415b71246ba317966c0ec6c76f71f284bc49f1783685e1975.
+No attached collector replacement or official process action performed.
+
+Quest snapshot dependency evidence (original DLL disassembly):
+GetQuestLog10dca calls MemoryMgr GetWorldContextb008, validates Array at+52c
+(pointer alignment and size<=capacity), then returns it. GetActiveQuestId10e5f
+calls same retained getter and reads+528. Neither requires QuestModule init or
+mutable QuestModule globals. Keep QuestModule omitted. Do not invoke mutation or
+RequestQuestInfo APIs: those require independent module/function proof and can
+send requests. Snapshot on verified game thread, cap count and validate readable
+52-byte entries plus bounded encoded strings before copying. Decode asynchronously
+with existing UI decoder and lifetime checks. Record map epoch, quest ID/raw
+log_state, completion bit2, source/destination map and names/objectives; emit
+changes separately from full per-entry baseline. NPC differences between same-map
+instance epochs correlated with quest state are observations, not proof of causal
+spawn conditions. Party composition, district/instance and progression can differ.
+
+Loot evidence: header ItemUpdateOwner309 contains item_id, owner_agent_id and
+seconds_reserved; AgentItem+0xc4 owner and+0xc8 item_id. This is reservation owner,
+not the creature that generated the item. No explicit source-creature field is
+identified in the published current typed item packets or snapshot structs.
+Never label nearest corpse or reservation owner as loot source. Player-dropped
+items can also appear as ground agents.
+
+A real attribution extension needs independently verified modern native typed
+item-spawn/drop event carrying both source actor and item ID, if the protocol
+exposes one. Observe exact native event consumer with validated signature and
+bounded copied payload; retain source actor lifetime/model/name snapshot before
+removal. Existing obsolete StoC count487 hook must remain disabled. Raw unknown
+fields may be recorded with explicit unknown semantics after consumer audit but
+must not be called creature IDs without evidence. If no source field reaches the
+client, official observation can only establish controlled isolated kill trials
+with ambiguous/multiple-kill cases rejected; that still cannot prove universal
+server loot tables or quest gating. Current ground records remain useful item
+definition observations, explicitly unattributed.
+
+Implemented experimental quest extension (not yet live validated):
+quest_snapshot_changed contains full current quest log and active quest, revision,
+map epoch and local actor. Actor is an ephemeral observation identity, not a
+persistent account identifier. No character names/emails are recorded. Snapshot
+absence is never called abandonment. Up to1024 entries, each field8192 UTF-16
+units, total serialized quest entries8MiB; unreadable/over-bound text status is
+explicit. Optional nonfinite marker coordinates become JSON null. Encoded text
+is retained exactly and decoded results join existing name_decoded dictionary.
+NPC visibility changes link the accepted snapshot revision. Direct observed dead
+bit0x10 changes are separate from visibility changes and remain correlation-only;
+out-of-range disappearance cannot be called death or despawn. Queue saturation
+cannot advance tracker state, so later samples retry. Tests cover accepted/completed
+quest state, active/empty log, epoch baseline reset, actor model replacement,
+visibility loss, and dead-bit change without fake disappearance. All11capture
+CTest checks passed; experimental DLL compiled. No attached session modified.
+Artifact build/capture/experimental-quests/world_capture.dll SHA256:
+1f522b3d5d8e73c3263a7be38e0356886bc624794f225a27f06118fe38f44bf8.
+Chat pass-through correction must be integrated before any package promotion.

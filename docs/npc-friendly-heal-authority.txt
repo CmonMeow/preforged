@@ -1,0 +1,46 @@
+Friendly NPC healing capability: bounded initial authority
+
+Frozen packet source:
+data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/packets-43292-168891734.jsonl
+SHA256 e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c
+Quest46 objective epoch11/map146. Academy Monk36 casts Heal Other286 on
+Prince Rurik35 at line551776/tick177895109; native58 finish is
+551814/tick177895953. It also casts Orison281 on actor28 at
+551860/tick177896765 (finish551924/tick177897609) and Rurik35 at
+552152/tick177902562 (finish552197/tick177903625). These establish observed
+friendly source/recipient spell capability, not universal healing priorities.
+No source-attributed type55 heal was found for these three captured pairs;
+do not infer exact restored Health, attribute rank or maximum Energy from them.
+
+The new pure gw_npc_friendly_heal helper uses existing player direct_heal and
+direct_heal_amount semantics. It requires explicitly authored resource/rank
+profiles, positive living recipient Health below maximum, known ally relation,
+healing permission, fresh source/recipient clocks, plane/LOS/range and exact
+source/target scope. Heal Other cannot self-target. Completion uses fresh
+target Health and a caller-verified owned spell completion. It does not spend
+Energy again or assign Health directly. A future World caller must admit and
+pay through the same NPC Spellbook/control owner, settle owned reactions,
+consume a completion once, and commit through LiveActor::heal for modifiers.
+
+The World queue now admits explicit configure/begin calls with typed ally
+targets and a separate friendly-only source permission. It reuses the same
+LiveActor book/control/Energy owner, source/recipient revalidation and actual
+Health publication. Prepare selects wounded allies only; completion on an
+alive ally restored to full Health succeeds with zero healing, retaining the
+normal finish/recharge/aftercast and spell-completion reactions. Quotes bind
+the exact paid token and unchanged explicit rank/Divine/copy profile.
+There is no autonomous target selector or quest46 activation.
+Friendly enrollment accepts only the existing explicit protected/allied-to-
+players relationship metadata. Player publication readiness is a visibility
+requirement, not proof of arbitrary PvP/faction-team alliance. No faction
+relationship rules are fabricated. Synthetic fixtures declare this broad PvE
+alliance explicitly.
+Actual positive restored Health is rendered using shared health_change_2022,
+with reviewed target body particles when available; zero restored Health emits
+no false positive float. The three captured Monk casts above do not themselves
+prove that float rendering. It reuses the independently reviewed shared healing
+serializer, closing a server presentation gap without claiming new Monk packet
+proof. Tests cover overheal delta, full-target zero and combined Deep Wound /
+Mark of Death's received-healing floor through the real World player pipeline.
+Unknown Academy Monk/Rurik/Guard combat stats remain unknown. Target ordering
+and thresholds must be named authored policy unless separately captured.

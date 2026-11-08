@@ -1,0 +1,74 @@
+The Ranger's Companion76: source integration pending coordinated native checks.
+
+Nente, not Artemis, offers this quest. The reviewed four-profession archive
+shows Master Ranger Nente actor29/table1515 on Regent Valley162, first observed
+at(-16961,10431), plane0. Supplemental source actor/definition23001 and runtime
+actor/definition24001 are authored IDs; source appearance/name/models/facing
+are preserved. The separate
+supplement leaves the existing giver catalog/Aziure combat binding untouched.
+Its SHA256 is2c7a67f2eaeef9a1ea58d1a2a55046d5e56dcd579b2e2f31e68f623c1b66142b.
+Runtime remapping is required because the existing giver merger assigns23001
+to Ivor after Stalker23000 enrollment. The production/test shared helper keeps
+source23001 pinned and fails closed on any global runtime24001 or Nente-name
+collision. The actual shipped baseline+Stalker+giver merge regression covers
+this generated identity collision, which raw source-file scans do not expose.
+Auth loads it beside a configured quest catalog containing76, rejects a changed
+digest/identity/duplicate, and checks its observed point against map162 nav.
+Nav asset113437 source/runtime cell4068 contains Nente. Straight trace from
+Nente to the Stalker is blocked; this is not proof of disconnection and no
+direct walk-line or retail spawn-point claim is made.
+
+The actual progression is rewarded primary test -> Nente acceptance -> Charm
+a Stalker -> return to Nente ->250XP. Ranger primary/secondary and an unchosen
+secondary trial qualify. Acceptance requires no owned pet; existing pet cannot
+shortcut it. Quest, skills436/446/411, trial bar authorization and conditional
+Starter Bow share one storage transaction. The full secondary-trial acceptance
+is captured at packets58986..59005; the primary Ranger already knows446 from
+Artemis86 and only learns436/411 at14859..14862.
+
+The quest bow preserves captured file2147493028/model477/type5, exact three
+mods639107840/616038656/2760377603, name codes and observed profession2. No
+customization packet is available: customization remains UNKNOWN. Inventory
+duplicate suppression is an authored policy consistent with the two captures;
+retail class-versus-inventory issuance is unresolved. Strict equipment policy
+may reject the unknown-customization bow. Charm itself requires no bow.
+
+Only a persisted subsequent Stalker adoption completes active76. Storage reads
+the no-pet admission and later pet presence inside the quest transaction. The
+paid Charm completion callback reconciles after successful adoption; restored
+sessions and Nente interaction retry an adoption/quest commit gap. No shrine
+radius is guessed, no greeting creates a pet, and failed/cancelled adoption
+cannot complete the quest. Completed snapshot1864 explicitly checks shrine and
+charm objectives and points back to Nente; no intermediate shrine-only stage
+is present in the reviewed snapshots.
+
+Packet evidence: four-profession packets30352 lines16446/16447 at82072343 are
+modern77(marker)/76(details), mapping to native2022 76 then75. Completion
+preallocates that exact completed marker/details pair before the CAS and emits
+it only on success. It never emits another72/79 QuestAdded for completion.
+Adoption visuals precede the quest publication callback, consistent with
+PetAdd178 at16402/82070859 before completed quest notifications. Captured250XP
+is line17747/82126875. Native reward removal is preserved. Parent auth currently
+publishes absolute XP before its returned reward batch; exact combined retail
+turn-in order is not claimed. Incoming captures do not recover CtoS menu IDs.
+
+Reward250XP and Ranger trial eligibility commit exactly once. Permanent
+secondary remains unchosen until the existing profession-selection request;
+rewarded76 plus committed Ranger secondary satisfies quest79's training gate.
+Retained pet blocks reacceptance after abandonment, consistent with the wiki
+warning. Jarrel's pet release service is outside this slice; no shortcut added.
+
+Detached tests now ready for parent registration:
+quest_ranger_companion_test: policy/primary/trial gates, exact captured bow,
+unknown map markers, stage/cycle/reconnect codec and retained-pet rejection.
+quest_ranger_companion_accounts_test: actual production service and SQL CAS,
+exact skills/bow, failed-CAS zero-publication, cancellation rollback, post-pet
+crash/reopen reconciliation, captured76/75 pair,250XP once, trial eligibility,
+secondary selection/reopen, primary duplicate suppression, retained-pet denial.
+The latter directly invokes durable adoption. The separate shipped Stalker
+World test proves population/reservation/adoption, not an integrated paid
+Runtime cast. No new rendered client acceptance or native test pass claimed.
+
+Raw evidence and hashes: data/gw/quests/ranger-companion-76-evidence.json.
+Reproducible staging tool: tools/quests/stage_ranger_companion_76.py; only writes
+build/reports. Immutable capture checkpoints were read, never modified.

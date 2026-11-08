@@ -1,0 +1,67 @@
+Succor308 detached implementation checkpoint,2026-10-23
+
+Scope:src/runtime/gw_succor.h and tests/succor.cpp are detached from CMake,
+gw_world_simulation.h and normal casting. Skill308 remains unbound. No server
+build,deployment,process or official-client action occurred.
+
+Captured evidence:tools/skills/audit_succor_checkpoint.py verifies seven exact
+receipts against immutable cumulative checkpoint20261022-cumulative-skills,
+packets-1360-15821281.jsonl SHA256
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+Start279956,finish279972,caster547 at279973,target548 at279974,maintained
+effect107/skill308/rank0 at279975,target Health-rate44 at279979,caster
+Energy-rate43 at279980. Arrival gap1015ms does not independently measure cast
+duration. Rate43 is a regeneration update,not an Energy debit. No target
+Energy-rate receipt or attributable spell-triggered maintainer loss is claimed.
+Audit report:build/reports/succor-checkpoint.json. No native executable consumer
+or rendered private-client verification was performed for these receipts.
+
+Mechanics:local skilldesc-en.json308 says other ally,+1 Health/+1 Energy
+regeneration and maintainer loses1 Energy per target spell. Pinned2022 catalog
+validates5 Energy,1s activation,.75s aftercast,10s recharge,attribute51,
+indefinite duration and body547/548. Unlinked skill is rank0.
+
+Detached producer copies target registry and returns removed entries plus an
+exact-generation maintainer/target lease. Contributions require the active exact
+entry,rank0,indefinite duration and matching lease application time. Removal,
+replacement,not-yet-applied entries and actor lifetime reuse suppress benefits.
+Spell consumer handles only server-owned accepted completion sequences and
+classifies spells with the existing Aura classifier. It invokes a supplied
+atomic Energy-loss authority once per sequence,passes exact maintainer scope,
+does not call it for signets/stances,and leaves sequence uncommitted on callback
+failure so retry is possible. This is not spell-cost payment. Caller must never
+feed starts,failed attempts or interrupted casts as successful completions.
+
+Standalone MSVC C++20/O2 compile and execution pass. Test directly exercises
+existing fractional Energy regeneration with the contribution and callback
+losses with depleted Energy. Callback test uses an integer resource fixture;
+fractional Energy loss,Mind Wrack and upkeep exhaustion are NOT established.
+Health integration remains pending because existing permanent-source whitelist
+accepts only Mending290/Recall925. Evidence audit passes7 exact receipts.
+Test log:build/reports/succor-detached-test.txt. Hashes are recorded separately
+in build/reports/succor-detached-sha256.txt. Sources frozen after validation.
+
+Required integration before normal binding:
+1.Register standalone test in CMake during coordinated ownership window.
+2.Add308 to reviewed MaintainedEnchantments producer,retain exact generations,
+  enforce other/live/allied target policy,settle/pay normal5 Energy before
+  atomic registry+lease+Health/Energy+upkeep commit. Reject inappropriate effect
+  ID collisions and remove old ownership/resource contribution on replacement.
+3.Add permanent Health contribution and Energy regeneration contribution to the
+  existing actor resource authorities. Preserve historical slices across late
+  ticks,strip,death,transfer and replacement;apply global pip caps once.
+4.Wire one completion consumer per live lease to authoritative successful spell
+  completion sequence. Settle both actors first;perform loss via production
+  fractional Energy authority under the World lock,including zero-Energy/Mind
+  Wrack and upkeep exhaustion reactions. Callback failure must be nonmutating;
+  copy/discard the consumer with speculative transactions. Never interpret the
+  test integer callback as production payment authority.
+5.Add deterministic upkeep/drop/death/transfer/replacement tests;validate packet
+  ordering/body/upkeep removal and native2022 consumers before publishing308.
+6.Coordinate serial Release build with other owners,record host/source hashes,
+  then separately verify private-client rendering. Keep official sessions intact.
+
+Known evidence gaps:isolated target Energy regeneration,successful target spell
+and exact maintainer Energy loss,cast interruption policy,retail maintenance
+exhaustion/end ordering and rendered acceptance. No inferred live binding,
+capture-count increase or deployment success is claimed.

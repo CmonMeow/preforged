@@ -1,0 +1,26 @@
+Native2022 dependency manifests, October4 2026
+
+Production gw_manifest.h encodes reviewed dependency catalogs and emits
+407phase0,405chunks,407phase1,405chunks,406type0(map,version). Chunks are at
+most1024bytes. Phase0 contains physical file IDs; phase1 contains composite
+IDs expanded by the client. Catalog data must come from reviewed captures;
+navigation asset IDs alone cannot establish all dependencies.
+
+Default path data/gw/map-manifests.txt. Optional FW_GW_MANIFEST_CATALOG selects
+another path. An explicitly configured missing file or invalid catalog fails
+with a diagnostic, rather than silently claiming an empty real manifest.
+Format, decimal integers, one map per line:
+  map version phase0-count phase0-IDs... phase1-count phase1-IDs...
+Comment lines start#. Lists must contain positive, sorted unique IDs below
+the reserved high bit. Maps1..876 match the pinned native mission table.
+No production catalog is installed yet. The existing explicit development
+FW_GW_PROBE_EMPTY_MANIFEST fallback therefore remains required. Logs distinguish
+catalog_manifest_sent from diagnostic_empty_manifest_sent and include counts.
+
+Native evidence manifest_dependencies_2022.py executes original decoder,
+serializer and composite expansion; report manifest-dependencies-2022.json.
+C++ manifest_test verifies native bytes, all delta widths, large multi-chunk
+reassembly, phase separation, duplicate/truncated/reserved-ID catalog rejection.
+Full missing-asset DAT loading and real catalog capture remain unfinished.
+
+Live pinned37130 check: October4 combined host entered248 via407/405/407/405/406 empty diagnostic stream. Correct inventory, attributes, guild and102NPCpackets restored without crash. Screenshot build/reports/manifest-stream-world-entry.png. This proves changed wire initialization, not real nonempty catalog or missing-asset download.

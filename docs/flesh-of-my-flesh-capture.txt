@@ -1,0 +1,58 @@
+Flesh of My Flesh [791] — native source binding and fixed capture, 2026-10-24
+
+Status: source-bound against the fixed checkpoint. Rendered client acceptance
+and exact retail rounding remain unverified.
+
+Fixed checkpoint: data/captures/skill-checkpoints/20261024-signet-infection-bound
+The checkpoint audit reports 42 local starts, 34 local finishes and 8 stops.
+The observed map204 cast in packets-19472-19186421.jsonl is:
+  line 93141 tick 20807062: opcode160 kind60, caster23, target17, skill791
+  line 93631 tick 20811062: opcode159 kind58, caster23 (4,000ms later)
+  line 93632 tick 20811062: opcode160 kind20, target17, caster23, body834
+  line 93633 tick 20811062: opcode162 kind55, caster23, -0.5 float
+  line 93634 tick 20811062: opcode241, target17, zero field
+  line 93635 tick 20811062: opcode162 kind55, target17, +0.5 float
+The Health floats are packet values, not proof that the source started at full
+Health or that the target's exact Health is always half its maximum. Actor
+ownership and death state should be checked against the adjacent World record
+before using this window as a quantitative Health oracle.
+tools/protocol/flesh_my_flesh_2022.py hash-verifies the checkpoint source and
+these six receipts, executes the pinned native cast (4 seconds) and target834
+particle consumers, and
+writes build/reports/flesh-my-flesh-native-2022.json. It passes locally.
+
+Local archived Wiki Flesh_of_My_Flesh.html states a 5 Energy, 4 second spell:
+lose half current Health and resurrect a dead party member with the caster's
+current post-loss Health and 5..20% Energy. The pinned player row also has
+Restoration Magic attribute33, no recharge and .75s aftercast. The PvP split
+has ID2866 and must be reviewed separately before admitting it.
+
+src/runtime/gw_resurrection.h has a rank0..20 PvE plan. The paid Runtime uses
+the existing four-second spell lifecycle and a distinct World transaction:
+validate party/death/scope, preflight the Health loss and overcast Energy,
+halve the caster's current Health, then resurrect the target with the
+resulting absolute Health capped at the target maximum and 5..20% Energy.
+World holds outgoing packets until Runtime publishes finish and target834;
+the subsequent caster Health change, target revive event and target Health
+change follow the frozen receipt order. A generic resurrect_target call cannot
+invoke the half-Health plan without this transaction.
+
+Release host and flesh_my_flesh_world, skill_casting, sunspear_rebirth_world,
+ear_bite_world, combat, and progression CTests pass. The unregistered
+gw_world_simulation_test executable also passes. Native tests cover forged and
+stale targets, full/low/capped Health, Energy scaling, no early effect,
+deferred publication and packet order. The fixed verifier passes. They do not
+prove retail low-Health rounding under every status, interruption behavior,
+PvP split2866, native target DAT pixels or rendered-client acceptance.
+PvP requests for791 currently reject without payment until split2866 is
+reviewed; they do not silently run PvE mechanics.
+The official client and loggers were not touched.
+
+SHA-256: server_host.exe
+E5FBC7A58CC11C466FB592D7744DF8A4F32C6204EF58FA48DC7D8D4D62ABE16A;
+gw_resurrection.h FCF504408A6951AE79B6345BE61A731FB4242D04E79300AAF0D1FED30BE19A18;
+gw_skill_casting.h 45D64EBD54FA4CAE7B76EAA7846054FD2F1949D899FF26132525063C7885874B;
+gw_world_simulation.h D0A16A5BA160E1C65104726A388EB5319D348E8EF01208E57E4C486154E248EA;
+gw_auth.cpp 1ACA8F4061A0876D69D3024C4DE96E7E09CCA3C4B90BE48340600A9FFCB3DA81;
+flesh_my_flesh_world.cpp 553DC1ADB30480016D0283B4781FB350DEAD4E06EE41295E3530959A76F03733;
+flesh_my_flesh_2022.py 422AD9564F388312670277FC9ED4986FBC2A117D53E5A6496BE180CCE872125D.

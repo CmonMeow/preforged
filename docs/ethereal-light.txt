@@ -1,0 +1,36 @@
+ETHEREAL LIGHT959: NATIVE IMPLEMENTATION AND VERIFICATION
+2026-10-20
+
+Evidence
+- Fixed checkpoint20261017-npc-refresh-2,packet1360lines289952..289959 and290141..290153.
+- Two explicit targeted local activations and finishes;casterbody1258in both.
+- Feedback rawfraction0x3d555555 is consistent with25/480but does not prove every healing modifier or target maximum independently.
+- Pinned2022native row validates Monk/HealingPrayers/spell,5Energy,1sactivation,.75saftercast,5srecharge,25..100heal,flags32,caster1258,target2077sentinel.
+- Original native animation/particle consumers run in the existing offline emulator;casteridentity and1sactivation verified. Asset services are stubbed;this is not rendered QA.
+- Historical Ethereal_Light.html says25..100healing and easily interrupted. Wiki/native/capture hashes and exact receipts are retained inbuild/reports/ethereal-light-native-2022.json.
+- Modern casts report3srecharge,not native5s. Modifier versus balance cause unresolved. Runtime retains native2022base.
+
+Implementation
+- Reviewed direct_heal table validates the exact native959row before enabling the shared player healing path.
+- Existing amount resolver supplies HealingPrayers scaling and primaryMonk DivineFavor;existing World healing authority retains caps/modifiers,scope,range and survival rules.
+- Shared reviewed_hit_interrupt recognizes959as easily interrupted by landed hits without requiring Dazed. It uses existing control preflight/commit and interrupt-protection authorities for players and NPC actions. Miss/block/dodge/obstruction/cancelled outcomes do not trigger it.
+- No broad interpretation of nativeflag32for other skills was added.
+- Runtime uses the existing direct-heal5Energy/1s/.75s/5s lifecycle and caster1258packet. No duplicate spell-specific simulator or resource pool.
+
+Verification and limits
+- tests/ethereal_light.cpp checks all ranks0..20and DivineFavor0/12;invalid ranks;landed versus nonhit outcomes;ordinary attacks against player/NPC casts;Runtime cost,activation,recharge,cancel,interrupt,successbody;Resolve and Concentration protection.
+- Neighbor suites:precision_shot,dazed_interrupt_policy,dazed_application_world,skill_casting.
+- Production source binding is enabled through existing live heal callbacks. This is not a claim of all-game skills completion.
+- Retail hit-versus-explicit-interrupt ordering,modern recharge difference,rendered client acceptance,and NPC healer AI selection remain unverified/unfinished.
+- Official client/loggers were not accessed or changed.
+
+Reproduce offline evidence
+PYTHONPATH=build/protocol-python
+python tools/protocol/ethereal_light_2022.py
+
+Verification completion
+Serial server/neighbor build60149 and final ethereal_light rebuild57606 completed successfully.
+ethereal_light,precision_shot,dazed_interrupt_policy,dazed_application_world,skill_casting pass5/5.
+Four source-coverage regressions pass. Offline native/packet verifier passes with10hash-pinned receipts and original animation/particle consumers.
+Fixed implementation checkpoint audit/publish:633captured/287source-bound/346awaiting-binding/696missing-capture.
+Server executable includes the production959binding. Source binding is not full rendered/retail/NPC-AI acceptance.

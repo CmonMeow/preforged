@@ -1,0 +1,25 @@
+Native Release validation, 2026-10-26, Selfless Spirit cast route
+
+Serialized build: selfless_spirit_cast_test,
+selfless_spirit_authoritative_payment_test, server_host. Focused CTest:
+9/9 passed, including World, target policy, progression, Chilblains and
+Divine Spirit neighbors. Both fixed Selfless Spirit capture verifiers pass.
+No official client action or rendered verification.
+
+SHA256 bin/server_host.exe:
+2C57323FA17C5B561BD6F117C852C5464C2D6A5C4BE7DD22E9BE6BF60209E034
+SHA256 src/runtime/gw_skill_casting.h:
+F146397118131AFD0F9428323A39BCB882A3EAFE867791F3D7CD78962CF62064
+SHA256 src/runtime/gw_world_simulation.h:
+58D2A090D558F38D92624F6891CA3CD67D2A3D3B46F809A1CA46C856F6895B69
+SHA256 src/runtime/gw_world_selfless_payment.inl:
+FB4C0CC6BA4CA92275D2147F7D243B8BCAB4F5C5B58EEC6C717B96E5C06C2E1E
+SHA256 build/tests/selfless_spirit_cast_test.exe:
+40852AE139043EEA6E9FCD4FD4D197C30B9C93471CDACB6352D8A7100B47330C
+SHA256 build/tests/selfless_spirit_authoritative_payment_test.exe:
+B755DB4FB89DF99121B87B5ED7074F33C3DC179B71DFE04F85C3E28B77467C92
+
+Selfless Spirit cast and payment stages pass separate native tests. Production
+auth does not set the cast hook or route spell payments through the Selfless
+payment methods, so neither alias is published as source-bound. Mechanics
+and 2022 client rendering remain incomplete.

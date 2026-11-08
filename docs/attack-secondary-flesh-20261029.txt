@@ -1,0 +1,29 @@
+Attack secondary known flesh immunity (2026-10-29)
+
+The shared NPC weapon-hit consumer for skills391,404,1719 applied Bleeding or
+Poison through raw LiveActor condition storage, bypassing the flesh predicate.
+The baseline native test reproduced known non-fleshy recipient receiving the
+condition after a valid damaging hit (attack-flesh-repro-20261029.txt,line14).
+
+Known immune NPCs now keep the direct hit without secondary condition/status.
+Crippled from392/393 stays eligible independent of flesh. Synthetic attack
+fixtures now explicitly declare a body trait; this does not modify population
+traits or infer flesh from model IDs. New regression covers3skills x2body traits
+x2condition permissions x2survival states (24cases).
+
+Important unfinished admission gap: unknown flesh currently retains the old
+attack path behavior. Do not claim universal unknown-fact refusal here. Hit
+qualification is before damage and secondary admission and can run Insidious,
+Warrior's Endurance and prepared contact reactions. A correct unknown-fact gate
+must preflight the relevant complete hit/reactions before those commits, while
+not requiring irrelevant flesh facts for truly lethal or condition-disabled
+hits. Moving qualification blindly after copied damage would change source
+reaction/bonus ordering. Full preflight and callback retirement remain open.
+
+No visual packet type or animation resource changed. Existing Screaming Shot
+and Crippling Shot regressions cover native activation/projectile feedback,
+not rendered retail acceptance. Player forms,preparations,spread/transfer and
+other attack consumers remain separately unfinished. Fixed checkpoint and skill
+bindings must not change on this partial migration alone.
+
+Final24case +2adjacent native suites,42source/backlog checks and fresh gateway/core/isolated link pass. Exact source/executable hashes:build/reports/attack-flesh-progress-20261029.json. Unknown-trait admission remains explicitly unfinished.

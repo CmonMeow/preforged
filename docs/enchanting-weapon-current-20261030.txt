@@ -1,0 +1,28 @@
+Enchanting weapon attacks --2026-10-30
+
+Fixed a live ownership-admission bug: a reviewed22B8 Enchanting suffix was
+accepted for spell duration but rejected by ordinary weapon attack admission.
+The ordinary attack parser now shares the existing complete suffix validation.
+Only documented10..20 values pass; duplicates, bad upper arguments, wrong
+22B properties and high-bit aliases still reject. This adds no damage bonus.
+Existing exact captured starter/Arthur definition predicates are unchanged.
+
+64 new ownership cases cover staff/axe/hammer/sword values, duplicate and
+malformed words.12 World cases compare actual plain/10%/20% weapons and prove
+equal attack damage.160 staged Reversal cases now use physically equipped gear
+accepted by the same ordinary-attack ownership code. All three fresh suites
+and56 source/publication/backlog checks pass.
+
+This does not implement Vampiric/Zealous or arbitrary unknown item modifiers.
+No new skill binding is claimed; pre-Searing remains39/44. Reversal307 stays
+staged and disabled in the normal gateway pending its other consumers.
+New equipment fixtures are authored mechanics fixtures, not retail item proof.
+Existing native22B8 decoding/duration evidence is reused, not newly captured.
+No rendered client test or official-client interaction occurred in this turn.
+
+Canonical host97dda0ee4eff3c6db2cf7cb28ed94021caed528023718f47a929ca0b4bea9b7f
+passes isolated encrypted login, roster/transfer and initial World handshake.
+This does not prove full initialization or rendered playability.
+Reports:build/reports/enchanting-weapon-progress-20261030.json,
+enchanting-weapon-tests-20261030.json,enchanting-weapon-source-checks-20261030.json,
+enchanting-weapon-host-startup-20261030.json.

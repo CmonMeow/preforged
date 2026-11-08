@@ -1,0 +1,284 @@
+PRIVATE 2022 OBSERVER PLAYBACK
+
+Run START SERVER.cmd and bin/client/client_launcher.exe. Local login is
+ test@example.test / test. If an old interrupted session offers reconnection
+ after a server restart, choose No and enter normally.
+
+/observe lists recordings; /observe 6, 7, 8 or 9 enters an imported arena.
+The native B-menu catalogue is not implemented. Press P for observed-team
+panels. Their team buttons switch rosters; the duplicate button opens another
+panel. Clicking a player follows that player. Gameplay/account changes are
+blocked in replay. Log out to leave; completed recordings hold their final state.
+
+The native C++ server reads data/observer. Import with
+ tools/observer/import_matches.ps1; original downloads remain in
+ Downloads/GWObserver/MatchCache. Existing match IDs survive later imports.
+Older captures without body identities are excluded from the playable list;
+match 8 has only fifteen identified players. Recordings are separate from live
+world simulation and account persistence.
+
+PROTOCOL REPAIRS
+Captured PLAYER_JOIN player numbers populate the native identity and party
+records; agent IDs remain separate. Mission teams and rosters are sent once.
+Opcode34 initializes the game view, then opcode468 creates the observed-team
+HUD. Both eight-player panels, roster switching and camera selection were
+verified in the private client. Neutral Team1/Team2 labels are not captured
+guild names or decorations.
+
+Opcode31 establishes the instance clock before any actors are created.
+Playback's host epoch starts with that packet; time spent loading the UI is
+included when the client becomes ready. Native31 does not rebase actor history,
+so it is never used to reset clocks during playback. The live initial reset
+passed without a pending-queue assertion.
+
+Snapshot traces supply finite movement goals because the archives omit a
+complete movement packet stream. Only exact straight trajectories extend goals
+(up to400ms). Repeated stop messages no longer cancel stationary endpoints.
+Teleports happen at their recorded time rather than the preceding sample.
+Current/destination floor fields are both native WORDs. Connected floors are
+reconstructed from local DAT navigation and destination-plane hints, rather
+than forcing every actor onto plane0. Unresolved samples are counted; this is
+geometry reconstruction, not captured current-floor truth.
+
+Ordinary attacks receive opcode53 before activation. Positive captured attack
+intervals take precedence. Missing intervals use reviewed per-weapon base
+attack durations: https://wiki.guildwars.com/wiki/Attack_speed . Broad bow
+identities omit subtype timing and are explicitly skipped. These fallback
+intervals are reconstructed values. Body appearance, supported armor,
+profession, casting/interruption, effects and signed damage/healing use reviewed
+2022 packet helpers. Snapshot health checkpoints reconcile combat state.
+
+VALIDATION AND LIMITS
+Native observer wire, party and replay tests pass, alongside focused party and
+transfer regressions. Four full recordings are checked by an independent
+packet consumer:742857 checkpoints, position error below0.1 game units.
+That consumer proves serialization/timing, not rendered parity.
+
+The private client completed a full IsleofJade recording without the previous
+m_attackInterval crash:92973frames,66808events, zero invalid records.
+The displayed-pose checker tools/observer/verify_client.cpp separately reads
+actual rendered and predicted/authoritative actor positions against the host
+clock. Over the shared33.188-40.969s interval, initial clock synchronization
+reduced mean displayed error from13.5554 to7.2541 units and maximum from151.20
+to89.59. Residual movement history lag remains; playback is not an exact rendered
+reproduction. Near teleport discontinuities are separately marked because
+packet delivery and rendering are not atomic.
+
+An experiment with one-second approximate goals and cached speeds worsened
+live error and was reverted. Production keeps the tighter0.1-unit packet
+consumer bound. Earlier movement-anchor-only checks are not display validation.
+For closely matching XY samples in two live checks, height error averaged
+about0.04 units, with no current-floor mismatches; this does not validate every
+staircase or overlapping surface in every match.
+
+No complete NPC body definitions exist in these archives. NPCs/guild lords and
+combat involving missing actors remain unsupported. Weapon ownership/equipment,
+door states, knockdown duration and various other response fields also lack
+verified adapters. True energy, skill bars, armor and attributes must not be
+presented as captured values. Newer IDs unavailable in2022 are rejected.
+Recordings lack global cross-file sequence; equal-time order is deterministic.
+Original movement inputs are absent, so these recordings alone cannot prove
+our live pathfinding or combat simulation matches the official server.
+
+Session reports:data/logs/observer-<match>-<time>.txt. Reports group unsupported,
+missing-actor and invalid records by exact reason; unsupported archive records
+are not silently treated as implemented. Corrupt/distant timestamps are
+quarantined. Developer display reports belong in build/reports; compile the
+read-only pinned-client checker with tools/observer/build_verify_client.cmd.
+
+GWObserver source remains a read-only research reference. Its licence restricts
+reuse in another replay product. Our adapter is independent and uses no viewer
+API keys. Keep account captures and recordings private; do not redistribute
+them with the server.
+
+The final build, including initial clock synchronization and observer HUD activation, also reached the recorded-match-finished screen in the private2022 client without crashing. Server and private client remain open. Official clients were not targeted during this work.
+2026-10-05 presentation corrections
+Per-player guild identity comes from infos.json PLAYER.guild_id, including
+visiting players from other guilds. Import retains the original infos.json,
+guilds.tsv, affiliations.tsv and team-guilds.tsv. Native288 publishes guild
+metadata;158 attribute30 assigns its local index to each actor. No local
+account membership is assigned to the spectator. Guild GUIDs are unavailable;
+replay table keys are explicitly synthetic and confined to replay identities.
+Native158 attribute65 sets team name colors:1 blue,2 red. Mission team colors
+alone do not update the actor appearance cache. Mission428 flag2 and429 carry
+hosting guild/cape/rank/rating before the initial observer game view; the native
+opening banner reads these records. Unresolved hosting identities are not
+inferred from the most common guild among team members.
+Damage zeroes were caused by missing health capacity, not missing signed
+deltas. Snapshot column11 supplies maxHP; column50 says whether it is live or
+estimated. The replay publishes recorded nonzero capacities before damage.
+Estimated capacity may therefore produce approximate displayed integers.
+162 preserves normal/critical/signed health event kinds. Damage is red and
+healing blue/cyan. Energy changes use separate lilac +/- notifications;
+ENERGY_SAMPLE lacks an actual signed energy delta, so it cannot generate one.
+No experience events are invented for these PvP recordings.
+Live validation: private2022 match7 displayed capturedguildtags and red/blue
+names. Openingnativeguildpanel showed KittenPounce[meow], rank8/rating1544;
+the other hostremains Team2 because its hashedfoldertag cannot be resolved
+from the available metadata. Current uploader's MD5tag rule does not reproduce
+these older archivehashes, so no hostassignment was guessed. Combat screenshot
+verified red -24 damage and blue +10 healing. Evidence:
+build/reports/observer-guild-banner.png and observer-damage-healing.png.
+Focused observerwire/party/guild tests pass; fourmatchreplay corpus passed
+742857 checkpoints with zero invalid records. Server15440/privateclient9856
+remain open. Official clients were not targeted.
+Effect-state correction: snapshot31 is a visual-effect count, never the agent
+condition bitmap. Replay uses recorded booleans12..21 and dead8 to construct
+native condition/hex/enchantment/weapon-spell flags. Initial240 is always sent,
+including zero, before seeding change detection. Enchantment presence is read
+from snapshot20; casting an enchantment alone does not prove it landed.
+Live2022 validation match7: initial party rows no longer show spurious condition
+markers; Shaco I shows the native upward enchantment indicator and underlined
+name, matching snapshot20=1/condition12=0. Evidence:
+build/reports/observer-enchantment-state.png. All three observer tests pass,
+including four fullrecordings and initialzero-state publication regression.
+
+2026-10-07 host guild alias resolution:
+tools/observer/host_aliases.ps1 derives older six-digit Unicode folder aliases
+from independent cache records. Only a single common Unicode guild tag across
+at least3 distinct recordings and3 distinct opponents is eligible. Duplicate
+folders cannot inflate evidence; empty/conflicting/ambiguous intersections
+remain unresolved. This is an inference from archived metadata, not a newly
+captured native team/guild relationship, and is recorded as such in the TSV.
+For match6 token150785,73 recordings against24 opponents share exactly tag
+戦戦戦戦 (Mortalツkumbat). No guest-count majority or guildID=teamID assumption
+is used. Import now resolves both teams for6,8,9; match7's hexadecimal alias
+remains unresolved. tests/observer_host_aliases.ps1 covers evidence thresholds,
+duplicate records, ambiguity and contradictory records; all checks pass.
+observer_party/wire/replay tests3/3PASS after reimporting the local corpus.
+Live private9912/server10512 match6 opening native guild card displayed
+Mortalツkumbat, its recorded tag, rank245/rating1019 and red cape. Team1 still
+displays KittenPounce. Screenshot build/reports/observer-two-guild-banner.png.
+Both bridge objects also reached hash303419C9 flags4 in the prior full replay,
+recorded in build/reports/vine-match6-both-grown.jsonl. No official client was
+targeted. General observer gameplay/movement remains incomplete.
+
+2026-10-07 recorded guild defenders:
+Replay admits archived living NPC170/172/173/174/175/176 only where a captured
+catalog definition contains the explicit ReplayMapData.h visual asset:
+184673/184886/158794/158794/184714/184714 respectively. This adds bodyguards,
+footmen, knights and archers across recordings, without fabricating unsupported
+models. Their capacity fallback is480, lord1680, with recorded Deep Wound
+reduction; a nonzero snapshot capacity takes precedence. NPCs remain excluded
+from player party rosters. Their recorded frames and combat stream drive them;
+this does not implement live GvG AI or NPC spawning in ordinary instances.
+Native154 registry60BDC0/descriptorA266BC ->874AE0->7945C0 updates the
+AgentInfoArray at WorldContext+7CC by actorID, not NPC definitionID. Original
+serializer fixtures in tests/fixtures/npc-names-2022.txt prove wire layout.
+Keep captured encoded names in properties85: empty registration names caused
+a live textapi.cpp585 assertion before an override could be applied. Send154
+after actor32 to apply literal names without inheriting source catalog labels.
+Regression checks retain nonempty registration names and require every name
+override to address a spawned NPC actor. Native tests cover length/ID/NUL bounds.
+Live private4904/server8208 match6 reached ready with34 actors (formerly18).
+Screenshot build/reports/observer-guild-defenders.png shows Archer/Knight labels,
+models and both guild cards. Read-only pose check2176 observations/unavailable0;
+worst all-actor XY error62.4913521 remains a movement limitation. Evidence:
+build/reports/guild-defenders-client-poses.jsonl. Official clients untouched.
+The18 loaded NPCs each had64 observations (1152 total), worst XY error0 in
+this short stationary sample; moving players account for the measured error.
+
+2026-10-07 persistent straight movement plans:
+The native authoritative engine agrees with source snapshots at its own stored
+clock (sample mean0.000474 units, max0.288); the predicted/rendered child still
+lags. During moving samples, closest-trajectory displayed lag median85ms is
+an observation, not a fixed compensation constant. Do not add an arbitrary
+position offset or teleport every frame to conceal this difference.
+Playback now retains an existing finite movement goal while subsequent samples
+remain on that planned constant-velocity line within0.005 units, before its
+recorded endpoint and on the same plane. Only verified straight runs up to400ms
+are combined. Turns, speed changes, plane transitions and discontinuities
+replace/invalidate the plan. Captured health/effects/facing still update normally.
+The independent packet consumer still follows all four complete trajectories
+within0.1 units. New regression checks one straight goal, an unchanged trajectory
+at399ms, and a separately emitted recorded corner at400ms. Three observer tests
+pass. Rebuilt native single server5264/private2022 client10688 reached match6
+with34 actors; read-only samples2176, unavailable0.
+Compared shared source32300..34700ms against the previous defender build:
+player mean error9.57546->8.55446, p9540.87857->37.15181, max61.91939->49.72301.
+The short window has816/832 observations and proves only a local improvement,
+not complete observer fidelity or a general latency guarantee. Evidence:
+build/reports/movement-persistent-goals.jsonl and
+build/reports/movement-persistent-goals-comparison.json. Earlier baseline is
+build/reports/guild-defenders-client-poses.jsonl. Official clients untouched.
+
+2026-10-07 timed replay NPC arrival:
+Playback initialization no longer publishes an NPC whose first snapshot occurs
+later than match start. Its definition/model/spawn/name/status/capacity are
+published at that first observation, before combat events sharing the timestamp.
+Pre-arrival attack/damage events remain missing-actor diagnostics; they do not
+publish capacity or dereference an absent adapter state. No official spawn time
+is inferred between absent observations. First snapshot is the conservative
+available arrival boundary; AGENT_REMOVE/reused identities remain unsupported.
+A regression derived from match6 Guild Lord27 shifts its first observation to
+100ms: no NPC packets before100, pre-arrival attack/damage reported missing,
+one definition-before-spawn at100 followed by same-time damage, no duplicate
+spawn at200. Complete replay corpus and observer wire/party tests pass.
+Production native server rebuilt. This is replay population timing, not live
+Guild Lord AI, GvG matchmaking or autonomous NPC combat.
+
+2026-10-07 recorded NPC departure:
+AGENT_REMOVE with a valid modeled NPC identity now emits existing native
+opcode33 + DWORD actor exactly once while live, erases adapter/capacity/motion
+state, and retires that identity for this playback. Later snapshots are counted
+but emit no actor updates; later combat is a missing-actor diagnostic. Removal
+before first observation prevents that pending spawn. Malformed identities
+are invalid; unmodeled/player lifecycle remains unsupported. This supersedes
+the AGENT_REMOVE limitation immediately above for modeled NPCs only.
+No reused identity is respawned: separate archive lifetimes still need decoding.
+The shifted Lord27 regression checks no departure before150ms, one despawn at150,
+then no status/movement/attack publication through200. Complete corpus and
+observer_party/observer_wire/agent_wire tests4/4 pass. Native client visual
+removal has not been tested in this turn; opcode33 is the same production
+agent removal format already used by Instance::leave.
+
+2026-10-07 live check after arrival/departure changes:
+Exact private client bin/client/Gw.exe4280, native host9360. Fresh local session
+entered owned hall186, then /observe6 reached ready34actors/map168. Read-only
+observer_verify_client recorded3638 observations, unavailable0 over5seconds;
+Lord27/28 contributed214 observations, worst XY error0. All-actor worst error
+46.1214104 remains a moving-player presentation limitation. Evidence:
+build/reports/observer-lifecycle-live.jsonl/png and observer-lifecycle-server.log.
+No modeled NPC departure occurs in this short source window, so it validates
+normal native startup/status delivery after the lifecycle changes, not native
+despawn timing. The synthetic departure regression remains packet-level proof.
+Read-only map-object state retained in observer-lifecycle-bridges.jsonl after
+first recorded vine event. No official client was targeted or closed.
+
+2026-10-07 engine-clock movement analysis:
+New offline-only tools/observer/analyze_poses.py reads pose JSONL and archived
+PLAYER_JOIN/Agents records. It compares visual position at host source time,
+and authoritative/predicted engines at their own stored clocks separately.
+No game access, writes, injection, runtime dependency or coordinate offsets.
+Command: python tools/observer/analyze_poses.py build/reports/observer-lifecycle-live.jsonl data/observer/6
+Saved report: build/reports/observer-lifecycle-movement-analysis.json.
+All16 captured players/1712 observations: authoritative own-clock mean0.0015024,
+p95=0.0002300 game units, max0.812779.
+Visual host-source mean5.79842/p9521.57064/max46.12137; predicted own-clock
+mean7.63432/p9530.44403/max51.82087. Moving-only comparisons are also reported.
+This distinguishes accurate authoritative snapshot progression from imperfect
+predicted/displayed progression; it does not prove network latency or justify
+an arbitrary time/coordinate compensation. Own-clock agreement is weaker than
+host-time fidelity. Next movement work should inspect native prediction goal
+replacement/stopping at turns, not shift authoritative map coordinates.
+
+
+2026-10-07 remove artificial straight-goal duration cap:
+Verified constant-velocity collinear snapshot runs now retain one destination
+through their full recorded straight extent instead of splitting at400ms.
+Existing0.005-unit line checks, plane/death/speed/turn boundaries remain.
+No arbitrary extrapolation beyond captured snapshots, coordinate shift or client
+memory patch. This supersedes the400ms cap in the persistent-goals note above.
+New1second straight regression requires one goal before999ms, then a separate
+recorded turn at1000; independent packet consumer reaches both correct endpoints.
+Full four-match trajectory corpus plus observer_party/wire tests3/3PASS.
+Native rebuild/server5348/private2132 match6 reached34actors. Read-only10second
+capture7310observations/unavailable0. Same-source22930..27883ms comparison with
+prior speed-probe build: displayed mean14.38735->12.11290, p9557.31239->40.32004,
+max69.29449->62.72922. Samples1712/1696, distinct live sampling cadence. Own-clock
+authority remains close (mean0.001042->0.001978). This is short-window evidence,
+not complete prediction fidelity or a guarantee for turns/collisions.
+Evidence build/reports/observer-long-goals-live.jsonl, comparison.json,
+server.log (prefix observer-long-goals-). Official clients untouched. Original
+seven characters retained. No autonomous GvG NPC AI or other gameplay completion
+is implied by this observer movement change.

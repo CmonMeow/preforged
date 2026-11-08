@@ -1,0 +1,81 @@
+Enchantment duration evidence and integration gap,2026-10-21
+
+Current:weapon-only duration extension is connected to the gateway's reviewed
+regeneration/protective enchantments. Watchful's staged World path supports it
+for player and NPC recipients. Complete provider stacking and rendered client
+verification remain unfinished. Details and current validation follow below.
+
+Initial decoder evidence (integration status below supersedes this first pass):
+
+Native evidence:tools/protocol/enchantment_modifier_2022.py executes the pinned
+2022 formatter879a10 using8synthetic22B records. Its74e940encoder call receives
+template2466,parameter kind1,and the raw low-byte number. An upper argument
+byte does not change that displayed number;this does not establish those
+other bits as safe gameplay flags. Native services for localized text remain
+stubbed. Report:build/reports/enchantment-modifier-2022.json.
+
+Independent meaning:hash-pinned legacy GWCA UIMgr.cpp encodes a one-word text
+ID by adding100hex.2466thus becomesAA2. Hash-pinned ToolboxUtils.cpp matches
+AA2/101and labels it "Enchantments last N% longer". Both reference paths and
+hashes are stored in the report;the actual client assets are not rendered.
+
+Archived actual items:items-93194218.jsonl,hash
+def92a3d7588e267736793e169d775a841d3474d5a70c1cd6425fbbc41a0cb53,
+line2contains22b80014on model905/type8and model1932/type26. This is a modern
+client observation;only the exact raw word is compared to the2022formatter.
+No model compatibility,ownership import or active weapon is inferred.
+
+gw_weapon_passives.h now exposes enchanting_percent:absent22Breturns0,
+captured22B8/zero-upper-argument with10..20returns that percentage. Other
+22Bflags,invalid ranges and duplicate22Brecords return unknown. Names or
+suffix-name references never grant a bonus. This decodes an item property;
+it does not aggregate worn items or alter any live enchantment timer.
+Native enchanting_modifier suite covers all256low-byte values,unreviewed
+flags,duplicate rejection,naming words and the independent Energy decoder.
+
+Historical wiki evidence requiring more than a flat multiplier:
+- Of_Enchanting.html oldid2586608:10..20percent and at least1second added.
+  Weapon re-equipping changes modifier order relative to active effects.
+- Blessed_Aura.html:skill256,Monk enchantments only,round half to even.
+  Each duration modifier rounds separately,in application order.
+- Duration.html:general duration rounding is nearest whole second,half up.
+  Specific exceptions take precedence over that general statement.
+Blessed Aura256is still missing from the fixed local activation baseline;
+do not invent its upkeep/cast evidence or derive it from another skill ID.
+The native overcast byte99is also present on ordinary Watchful1392,so it is
+not evidence of a maintained-enchantment upkeep state by itself.
+
+Next required integration:authoritative active weapon selection and possession,
+equipment/effect application chronology,per-provider integer rounding with
+the1second minimum,typed duration receipts preserving the native base plan,
+and expiry/regeneration/end effects using the adjusted deadline. Modifier
+removal after a cast must not retroactively rewrite an existing timer without
+retail evidence. Stack/order/rounding and equipped-swap tests plus rendered
+duration acceptance remain required. No duration gameplay is enabled here.
+
+Validation:8native formatter cases,text-reference pins and2archived item
+records pass. enchanting_modifier native suite and coverage tooling4/4pass.
+Serial host build82198completed successfully. Fixed audit633/292/341/696;
+final backlog publication follows in implementation status. No official
+client,logger,network or credential actions occurred.
+
+2026-10-21 active equipment and typed duration integration
+Added opaque EnchantingEquipment snapshots from validated effective weapon sets and owned carrying/equipment items. The active mainhand determines the percent;physical slot shadows,inactive weapons and stored offhands do not supply the bonus. Missing/stale references,wrong types,stacks,bad modifier flags/duplicates and mismatched item identity reject. Session code remains responsible for supplying its own authoritative inventory;model/name/preview data never grant ownership.
+Added EnchantmentDuration receipts bound to native skill/base duration,caster lifetime,completion timestamp,item and inventory revision. Weapon-only calculation uses whole-second half-up rounding and the documented1second minimum. Fractional base durations with a nonzero bonus,overflow and active Blessed Aura256are rejected instead of inventing stacking. No-bonus durations preserve their exact base. Receipts cannot be reused at a later timestamp or for another skill/caster.
+Shared World regeneration/protective application preserves immutable native plans but installs adjusted expiry in both effect registry and regeneration source. Staged Watchful extends player and NPC recipient timers;its early-end reward checks the actual adjusted expiry. NPC recipient primitive receives a trusted duration only after World validates the receipt. Later equipment changes do not rewrite an installed deadline.
+Gateway completion callbacks now derive quotes from that session's current inventory revision,validated active weapon set and current owned effect snapshot. The existing protective/regeneration enchantment paths consume these quotes;non-enchantment Troll Unguent446retains its native duration. Actual Watchful1392callback remains empty for the separate remaining fidelity/rendered gates.
+New enchantment_duration suite covers active/inactive/physical-shadow/two-handed source selection,invalid references/types/quantity/flags/duplicates,time/scope/skill binding,minimum1second,rounding,fractional/overflow guards and unsupported Aura stacking. World cases verify Watchful12second player/NPC regeneration,12second wire timer,late removal inside the added interval,nonretroactive equipment changes,Healing Breeze15to18second regeneration and Blood Renewal7to8second expiry/end healing. These are authority/timing tests,not rendered acceptance or universal stacking proof.
+Serial build98161completed server_host. Current-source enchantment_duration,watchful_healing_world,health_regeneration pass3/3;coverage tooling4/4and8case native22B/text/2archived-item verifier pass. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing republished. Remaining:all other enchantment consumers,provider chronology and stacking (including Blessed Aura),NPC caster equipment/profession support,admission-time unknown-equipment handling and live/rendered checks. No official client/logger actions.
+
+2026-10-21 duration capability admission and completion
+Added optional regeneration_duration_ready integration hook. For reviewed native enchantments,Runtime checks it before Energy/adrenaline payment and records that this cast declared the capability. Completion requires the same callback still present and ready before before_spell_effect or applying the effect. Unknown initial equipment/unsupported Aura stack rejects without paying;unsupported equipment or a lost callback during the cast cancels without manufacturing success. Already-paid cost is not refunded after a mid-cast change.
+Gateway supplies this guard using the session-owned current equipment/effect quote. Admission only tests readiness and discards that timestamp-bound receipt. Actual completion still rebuilds the quote from current equipment/revision,so a valid weapon swap during casting changes the resulting duration rather than reusing the start snapshot. Non-enchantment Troll Unguent446doesnotcall this duration guard. Legacy adapters that never declared the hook retain their existing path;the live player gateway declares it.
+New21case Runtime-to-World suite spans Guardian258,Healing Breeze288and Troll Unguent446. It covers invalid initial22Bdata,unsupported active Blessed Aura,invalid data after admission,callback loss,valid20to10percent swap with a fresh17second Breeze timer,legacy adapter behavior and non-enchantment isolation. Rejected initial casts retain all Energy;failed completion emits no58success and invokes no before-spell callback. Successful effects carry the checked actual expiry/revision.
+Serial host build50660completed successfully. Current-source enchantment_duration_cast,skill_casting,watchful_healing_cast,chilblains_cast pass4/4;coverage tooling4/4and8case native22B/text/2item proof pass. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing republished. Earlier admission-time unknown-equipment gap is closed for these live regeneration/protective enchantment paths. Other enchantment consumers,provider stacking/chronology,NPC caster equipment and rendered/client verification remain open. Normal Watchful1392callback remains staged. No official-client/logger actions.
+
+2026-10-21 Energy enchantment duration integration
+Blood is Power119and Blood Ritual157now accept the same scoped,timestamp-bound equipment duration receipt. Player application installs one adjusted expiry in the effect registry,zero-Health-pip lifecycle timer and Energy ceiling/regeneration curve. Reviewed NPC recipients install that expiry in their registry and Energy curve as well. Native pips,cost,range and sacrifice plans remain immutable;the existing single paid-sacrifice receipt still prevents duplicate Health loss.
+Generalized regeneration_duration_ready to enchantment_duration_ready(skill,base,now) so Energy enchantments share prepayment and completion validation without pretending to be Health-regeneration plans. Gateway builds current equipment quotes for both119/157and passes the checked receipt into World. Existing legacy adapters remain optional;normal gateway declares the guard.
+Corrected Blessed Aura eligibility:the documented effect applies to Monk enchantments,not every spell cast by its owner. Unsupported Aura stacking still rejects Monk enchants;Necromancer119/157and Blood Renewal115can use the independently supported weapon bonus while Aura is active. A regression exercises115with an active Aura record.
+New16World cases cover119/157,player/NPC recipients,dense/coarse ticks and renewal after20to10percent weapon changes. They check exact NPC Energy units,continued bonus after native base expiry,restoration of baseline pips,correct adjusted registry expiry,and unchanged330/170Health sacrifice at1000maximum. Renewal settles the old interval and replaces its modifier without double regeneration. The existing casting suite expands21to35cases,including119/157fresh completion quotes,unknown/lost equipment capability and no duplicate sacrifice callback.
+Six current-source suites pass:energy_enchantment_duration,enchantment_duration_cast,enchantment_duration,blood_power_cast,blood_ritual_cast,blood_ritual_world. Native119fixed cast/224consumer and157five non-local/unassigned cast/281consumer verifiers pass;157is not relabeled a local capture. Coverage tooling4/4passes. Serial host94255completed successfully. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing republished. Full Monk provider stacking,other enchantment families,NPC caster equipment and rendered duration/animation checks remain open. Official clients/loggers untouched.

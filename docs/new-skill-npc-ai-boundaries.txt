@@ -1,0 +1,88 @@
+New skill bindings versus NPC caster AI authority (2026-10-22)
+
+Concrete implementation boundary
+Player-caster skill binding is not NPC caster AI. Current Spellbook admits only
+real spells with positive activation. Castigation2006 is a Signet and1141 is an
+instant Shout, so both are correctly rejected by that explicit initial API.
+Angorodon2189 is a spell and can pass basic book metadata admission, but the
+autonomous offensive Plan accepts only183/186/191/194/214. Its ElementalResult
+is a target-only damage/condition proposal; life stealing needs two Health
+authorities and a conditional caster Energy transaction. Adding2189 to a list
+without those authorities would spend Energy while lacking a supported effect.
+
+World::life_steal_locked and World::holy_damage currently require a player
+caster: player-versus-player branch or player-versus-reviewed-NPC recipient.
+The resource_gain1141 path likewise starts from players_.find(caster). Existing
+NPC methods used by those APIs are recipient authorities, not NPC caster AI.
+LiveActor has real scoped Energy/Health/conditions, but generic NPC adrenaline
+ownership, instant shout admission and signet AI book selection are absent.
+
+Frozen packet and scoped source evidence
+tools/ai/audit_new_skill_npc_boundary.py hash-checks matching packet files and
+records all starts with raw fields/line/time in
+build/reports/ai/new-skill-npc-source-audit.json. Totals across the frozen
+20261022-cumulative-skills checkpoint:2189 seven,2006 seventy-three,1141 two.
+No numeric actor ID alone is classified as an NPC.
+
+tools/ai/audit_new_skill_npc_identity.py verifies source files against the frozen
+manifest then reuses conservative epoch/lifetime/clock/snapshot joins. Output:
+build/reports/ai/new-skill-npc-identity-joins.json. Important positive results:
+
+2189: six starts by Angorodon,model6357,level26,allegiance3,map558.
+packet file packets-110488-195213578.jsonl SHA256
+9cdec19f550cae907c19bfc4b59df1af370ab649d8cddbf789ba57601bf6ef8f.
+world file world-110488-195199687.jsonl SHA256
+237e0e8bd74d61f57164db66f317dccaf4e36287ba19f8320bd842dbd0c398c9.
+Example packet765067,tick206263875: [160,60,197,46,2189], source lifetime
+84:197:2; world31452 joins Angorodon and target Tahlkora,delta240ms.
+Example packet765704,tick206268765: source84:196:2 ->Livia48,world31469,
+delta350ms. Source196 has three captured starts. Target packet lifetime is
+unknown in these examples even though nearby identity snapshots exist.
+
+2006: sixty-nine starts by Awakened Acolyte,model8679,level22,allegiance3,map868.
+packet file packets-38060-79906390.jsonl SHA256
+aad99933e7e42085b7a310a16580ee65324fcd0504de5600143784edc725c786.
+world file world-38060-79906984.jsonl SHA256
+fb68fcb64be6a5798d4f194d5cf212527d0da4673a43aafe4830572b41fa0b4a.
+Example packet26868,tick80305562: [160,60,118,35,2006], source4:118:1;
+world1497 joins Acolyte and Candy Corn Infantry35,delta-41ms.
+Example packet30947,tick80358921: source4:138:1 ->Tahlkora21,world1632,
+delta-387ms. These show actual NPC caster capability, not merely NPC victims.
+
+1141: only two starts in packets-1360-15821281.jsonl, actor25, lines404176
+and404637,ticks24054515/24088906. The existing captured-skills audit classifies
+both as local-player starts and zero other/unassigned. No NPC1141 activation
+was established. Local native metadata identifies instant5Energy/15s Shout.
+
+What this evidence does not establish
+No NPC current/max Energy, regeneration, rank, complete skillbar, conditional
+Energy reward, attacking predicate, below-half Health condition or target-choice
+priority follows from these starts. Other unjoined starts remain unclassified.
+Modern capture opcode IDs are observations, not pinned2022 wire opcodes.
+Existing native reports establish base metadata/body presentation and local
+player completion receipts; they do not supply missing NPC resource authority.
+
+Coherent next implementation order (no auto-enablement)
+1. Add a dedicated reviewed NPC2189 transfer completion plan/ledger, preserving
+   current spell admission, replacement, interruption, recharge and aftercast.
+   Under World lock settle owned effects first, revalidate source/recipient
+   lifetimes, sample caster conditions at completion, stage both Health changes
+   and actual capped/modifier-aware Energy gain on the NPC. Use life-steal
+   authority, not armor damage or healing modifiers. Commit before callbacks;
+   run existing zero-Energy/owned-end observers without stale-actor overwrite.
+2. Add a separate supported signet windup book/admission path for2006; keep
+   real zero Energy cost, native activation/aftercast/recharge and external
+   signet-disable authority. At completion sample actual victim attack state,
+   reviewed holy traits/equipment, and stage NPC caster Energy reward. Do not
+   treat Signet as Spell merely to bypass Spellbook's explicit type boundary.
+3.1141 additionally requires real NPC adrenaline/skillbar-copy authority and an
+   instant noninterrupting shout transaction that can coexist with another
+   action/knockdown. A spell windup or invented adrenaline pool is incorrect.
+   Prioritize after typed instant/resource authority and actual NPC evidence.
+
+Captured NPC targets include heroes and allied NPCs. Current autonomous caster
+candidate snapshots enumerate players only. Reproducing those encounters also
+needs relation-aware reviewed NPC ally recipients; named snapshots with unknown
+packet lifetime cannot be used as live target-generation authority. Population
+loadout/resource configuration remains opt-in and requires separately reviewed
+bindings. This audit adds no runtime skill, actor or population configuration.

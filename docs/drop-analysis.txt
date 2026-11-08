@@ -1,0 +1,42 @@
+Offline observed loot analysis
+
+Build native tool: cmake --build build/capture --config Release --target drop_analysis
+Run: build\capture\tools\drop_analysis.exe <one capture.jsonl> <report.txt>
+It never attaches to a process, modifies capture data or imports items.
+
+Only npc_visibility_changed observed live-to-dead transitions count, requiring
+same-epoch visible lifetime, known creature model and prior npc_observations
+allegiance3 (enemy). Initial dead, visibility loss, reused model identity,
+map change and friendly transitions cannot add enemy kills. Sampling can miss
+entire lives, so this is an observed denominator rather than all server kills.
+Actor name/model joins use exact encoded text; multiple models with identical
+names are ambiguous and never merged into an invented species.
+
+loot_notification source_reported_name is a system-reported encoded name, not an
+actor ID. It joins only unique observed source-name/model pairs. Reports give
+notification messages / verified observed enemy deaths, with explicit name-only
+attribution and missing-observation caveats. This rate can exceed1 because multiple
+items can drop per kill. Message timestamps are NOT unique item identifiers;
+messages sharing timestamps remain distinct. Quantity is not exposed by this
+schema, so the tool does not pretend notification count equals item units.
+Binomial confidence intervals are unavailable for current name-only messages,
+because per-kill binary success and complete trials are unproven. The pure
+Wilson helper rejects invalid trial inputs and is reserved for verified future
+per-kill data; it is not emitted for current observational rates.
+
+Input bounds:1GiB whole file,262144 bytes per parsed JSON line, parser nesting32
+and40000 nodes. Malformed/overbound lines are counted as potential gaps and clear
+actor lifecycle state, preventing a missing record from inventing a kill.
+collector_stop dropped_samples is retained as a gap indicator. Running captures
+may not contain a final drop counter. Party reservation modes, compass visibility,
+loot notification filtering and long polling pauses can bias counts. Tool accepts
+one capture at a time; concatenating repeated capture histories double counts.
+Weapon/rune stats remain exact raw item/modifier evidence analyzed separately by
+equipment_audit and reviewed item tooltip/stat helpers; no drop-message/name to
+owned item GUID or specific ground instance link is fabricated.
+
+Tests: native drop_analysis_test covers initial-dead exclusion, repeated dead,
+resurrection/new live death, visibility loss, map reset, friendly exclusion,
+source-name/model ambiguity and binomial boundary rejection. CLI fixture verified
+one enemy death/two notifications yields observational rate2, not probability,
+with queue-drop count3 and no binomial interval. No official process action.

@@ -1,0 +1,29 @@
+Polymock capture inventory
+
+Fixed source:20261018-morning-refresh,cutoff2026-10-18T15:10:01.711989+00:00.
+Existing official loggers were neither changed nor restarted. Later live packets
+remain separate. tools/skills/analyze_polymock_capture.py validates the frozen
+source hashes and builds build/reports/polymock-capture-reference.json/.txt.
+
+The fixed session contains all three arenas:Coliseum686,Glacier687,Crossing688.
+Named opponent observations include Hoff,Yulma,Plurgg,Blarp,Fonk,Dune Teardrinker,
+Grulhammer Silverfist and Necromancer Volumandus,alongside judge Wokk and pieces.
+The extractor retains86 model-change receipts,23 exact-tick skillbar update groups,
+1297 Polymock activation receipts and84 raw timer/result candidates.15 observed
+map/epoch contexts do not establish15 distinct matches;loading phases can create
+multiple contexts. Model IDs alone do not establish piece definitions or rarity.
+
+46 previously unseen Polymock skill IDs were found and removed from the hunting
+list;34 have local activation receipts and12 opponent-only activation sightings.
+Normal obtainable player capture coverage remains677,with652 missing.
+
+This is substantially broader than a skill-name collection:raw packet streams
+retain dialogue,bar replacements,model swaps,resource/combat updates and candidate
+match-boundary events. The extracted reference links decoded structural records
+to exact file/line/tick/epoch for reconstruction. Damage/resource subtypes,timer
+fields,winner/round transitions,selection dialogues,piece identity and AI policy
+still require explicit decoding/correlation;their presence is not proof of a
+complete rules implementation. No Polymock mode or46 full skill implementations
+are claimed by this capture review.
+
+Remaining capture targets are now grouped by Acquisition-section form links,not generic navigation or unrelated NPC backlinks. The fixed morning checkpoint leaves12 distinct skill IDs across7 forms:Dredge,Mirage Iboga,Mursaat Elementalist,Naga Shaman,Smoke Wraith,Stone Rain and Wind Rider. Mind Shock2300 is shared by Mursaat and Smoke Wraith;capturing either can satisfy that skill ID. See data/skill-capture-plan/POLYMOCK-REMAINING-FORMS.txt. The main hunting list includes this section and omits duplicate individual rows.71 skill-tool tests pass. Later live logs remain outside this cutoff.

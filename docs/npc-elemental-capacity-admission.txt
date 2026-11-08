@@ -1,0 +1,36 @@
+Elemental capacity readiness regression plan (2026-10-23)
+
+Concrete mismatch: gw_world_npc_elemental.inl's normal Availability checks
+canonical effect support, recipient armor, Ice Spear Overcast and disable
+authority, but not Ledger's ability to reserve. choose_spell therefore selects
+a spell while the effect flight ledger is full. reserve then fails and the
+controller ends its tick, bypassing its existing no-choice ordinary fallback.
+The dedicated Flare driver already filters full flight capacity in Availability.
+This is host admission consistency, not a retail universal priority assertion.
+
+Implemented admission correction:
+Ledger::admission_ready(now) is a const query of no reservation, no pending
+paid cast, capacity available, non-backward ledger clock and unexhausted nonce.
+Reuse it inside reserve so selection and actual admission cannot drift.
+Both elemental normal and ordinary-replacement Availability call it before
+choosing. Replacement still clones/reserves/accepts transactionally under lock;
+no new resource payment or mutation belongs in the readiness query.
+Do not gate processing of an existing paid pending cast on admission_ready:
+that cast already owns its reservation and its existing lifecycle must finish.
+
+New test: tests/npc_elemental_capacity_world.cpp.
+Reviewed Flare book,20Energy/zero regen, target1000units, valid flight speed100,
+effect capacity1, reviewed ordinary ranged profile. At1000 spell admission
+pays5. At1500 the identical ongoing paid token remains, no fallback appears.
+At2000 release fills the slot; at2750 aftercast has ended but flight is still
+live until12000. Existing ordinary fallback must begin without another spell
+payment. At2850 the identical windup must remain: full capacity cannot replace
+it. Ordinary release4750 and independent ordinary impact4850 prove movement
+of combat through the fallback path while the old spell flight remains owned.
+Only the elemental ledger/readiness callsites change runtime behavior. The
+ongoing paid-cast completion branch remains independent of this admission gate.
+
+Captured ordinary-stop-to-spell-start pairs establish the general replacement
+capability (docs/npc-attack-spell-replacement-evidence.txt), not this capacity
+limit or preference. Capacity1 and both projectile speeds are synthetic host
+test inputs, explicitly not recovered retail limits or projectile velocities.

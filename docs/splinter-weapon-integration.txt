@@ -1,0 +1,90 @@
+Splinter Weapon 792 / PvP 2868: shared finite-charge production path
+
+Normal typed Runtime admission, retained primary/rank/Spawning plan, World
+recipient ownership and actual attack-contact consumers are integrated. 795
+Nightmare Weapon remains unbound; its damage-reduction phase is unresolved.
+The final twenty rebuilt Release suites passed, including the three additional
+authority regressions and audit-gate cleanup. Eight reporting-tool tests and the
+offline native/frozen proof passed. No rendered-client acceptance or new coverage
+count is claimed here; the parent owns final fixed-checkpoint publication.
+
+Evidence
+- Pinned 2022 executable SHA256 a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+- packets-108988-190116609.jsonl SHA256 9cadca1740cdd4aae3ac27246b95f9dca0b262eff17a3fba4f429daa38664ddf:
+  lines 39979..39992 show rank-0 cast/effect/shared1155;
+  40009/40010/40013 show primary1152, effect79 removal and a real hit.
+- packets-110488-195213578.jsonl SHA256 9cdec19f550cae907c19bfc4b59df1af370ab649d8cddbf789ba57601bf6ef8f:
+  lines 796545..796562 show attacker242, normal primary50 damage and four
+  secondary damage records45/97/198/213. Local45 explicitly labels skill792;
+  nonlocal attribution is inferred from the contiguous1152 burst. Primary50
+  is excluded. Duplicate and extra1152 records also exist: exact FX cardinality
+  and internal Health commit order are not recovered from publication order.
+- charged_weapon_spells_2022.py passes28 frozen receipts, three native
+  cast/metadata/serializer cases including2868, three particle consumers and
+  original targeted1152 serializer0x60bdfc. PvP2868 preserves pinned5..30 damage
+  and8-second recharge. An independent frozen PvP activation is still missing.
+- Archived Splinter_Weapon documents20s, next1..5 attacks, up to four adjacent
+  foes, primary exclusion, armor-ignoring physical damage, multi-attacks/scythes,
+  and Mark of Pain/Barbs compatibility. Archived Talk_Hundred_Blades explicitly
+  calls Splinter an on-hit effect. The latter is community discussion, weaker
+  than a controlled frozen miss/block experiment.
+
+Production authority
+- World owns one AttackOutcomeDelivery per attacker lifetime. Actual completed
+  outcomes remain buffered until consumers commit or explicitly handle no effect.
+  Charge receipts retire only to the acknowledged consumer frontier; pending
+  lower event IDs and unhandled completions prevent premature retirement.
+- Caster provenance persists departure/death. Recipient death, expiry and exact
+  weapon-spell replacement end eligibility. Replacement retains event/effect
+  high-water barriers; generation retirement discards only that scoped owner.
+- Qualification retains the exact current effect and primary contact center,
+  preflights charge/source/recipient/secondary authority, and excludes miss/block.
+  Finish revalidates that effect and living attacker after native reactions.
+- Four secondary foes are selected by deterministic scoped-actor order, excluding
+  primary. Adjacent166 and same-plane selection reuse project targeting policy;
+  captures do not prove numeric distance, cross-plane retail behavior or tie breaks.
+- All secondary damage, final charge, Registry removal, zero-pip timer/mirror
+  removal and NPC removal token are prepared before live Health/charge mutation.
+  Primitive commits occur under one World mutex without observer callbacks.
+  Players use exact scope/Health/capacity/clock CAS; their proposal ordinal is
+  transaction-local, not an invented persistent World Health revision. NPCs also
+  retain the real Health-loss revision, including damage followed by restoration.
+- Damage uses shared incoming protections with armor bypass and physical reaction
+  identity. Secondary damage triggers Mark of Pain/Barbs, not weapon-hit procs or
+  recursive attack events. Damage attribution belongs to the weapon recipient.
+- Contact1152 publishes after commit on primary and selected secondary recipients.
+  Once-per-recipient publication is explicit project policy; native/capture proof
+  establishes presence, not the exact retail duplicate/extra-FX pattern. Sentinel
+  caster/target2077 is never emitted. Shared cast1155 remains separate.
+- Player and NPC ordinary projectile scheduling, fact admission and impact guards
+  share the effective observer frontier. Adjacent future observations defer the
+  flight; a static far foe's future Health does not stall it. Unknown historical
+  movement requires conservative observation of potentially relevant foes. A
+  moving NPC primary conservatively widens observation instead of inventing an
+  earlier position. These are chronology policies, not recovered retail timing.
+- A retry withholds acknowledgement only for Splinter; existing Wager/Determined/
+  reactive consumers run exactly once. Deferred retry visits only the retained
+  Splinter contact and cannot replay those other consumers. Retirement handles
+  buffered target outcomes before pruning. Outbox allocation/overflow retains the
+  existing post-commit publication policy; it does not roll back combat mechanics.
+
+Focused tests
+weapon_spell_charges: metadata/rounding, replacements, multi-Health atomicity,
+receipt capacity/recovery, reverse completion order and consumer-frontier replay.
+splinter_health_transaction: opaque NPC damage CAS, no mutation before commit,
+stale/restored Health, future clocks, lifetime/hostility/type rejection and lethal.
+splinter_weapon_world: player/NPC recipients, actual NPC attacker, hit/miss/block,
+cap four, primary exclusion, physical armor bypass, exact expiry, charge exhaustion,
+original caster departure/death, primary MoP killing candidates before finish,
+adjacent/far future clocks and no replay. Final additions cover future secondary
+motion, recycled attacker lifetime, and fully absorbed secondary damage.
+splinter_weapon_cast:32 normal Runtime cases for792/PvP2868, cost5, recharge5/8s,
+retained rank/SP, missing/lost hooks, cancel/disrupt, stale target and no2077.
+
+Open boundaries
+Retail combined reaction order, multi-target charge cardinality beyond the server's
+per-resolved-contact policy, candidate tie breaks, conservative moving-primary
+frontier, exact FX duplication, independent PvP capture and rendered appearance
+remain explicit verification gaps. No NPC AI caster of792 is invented: NPC weapon
+recipients consume through real ordinary-attack producers after a player applies
+this spell. Unimplemented spirit effects are not fabricated for compatibility.

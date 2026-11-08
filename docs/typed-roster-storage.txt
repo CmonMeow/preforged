@@ -1,0 +1,27 @@
+2026-10-09 direct typed character roster
+
+NetworkServer.characterRoster now calls NetworkManager/Accounts directly,
+without Operation::characterRoster string framing. The offline adapter alone
+encodes its existing envelope after invoking the same read_roster helper.
+NetworkClient stays unavailable until custom transport exists.
+
+The helper reads count/page/profile/equipment within one database transaction,
+preserves captured roster_order/id ordering and three-record pages, validates
+names/maps/profile bindings, and checks cancellation before publishing results.
+Corrupt or expired reads expose no partial roster. Existing persistent armor
+visual overlays are preserved.
+
+Regression checks cover owned and absent accounts, empty trailing page, invalid
+offset, post-read expiry with no partial records, adapter bypass, and existing
+eight-character ordered/Unicode/profile fixture cases. Three focused suites
+passed. Full suite evidence: build/reports/typed-roster-full-tests.txt.
+
+Rebuilt/deployed native host; private2022 PID4852 authenticated imported main,
+received eight roster entries, selected Cmon Meow, and remained alive. Client
+was subsequently in map55 with its preserved appearance/equipment. The UI
+screenshot is world state, not a roster screenshot. Evidence:
+build/reports/typed-roster-live.json, typed-roster-server.log, typed-roster-main.png.
+
+Skill status re-audited this turn: 3433 catalog entries,101 implemented bindings,
+3278 unsupported,53unused/unknown,1reserved. This roster change does not extend
+skill execution. Metadata and unlocked skills do not prove implemented behavior.

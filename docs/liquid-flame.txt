@@ -1,0 +1,58 @@
+Liquid Flame845 — conditional nearby fire damage,2026-10-22
+
+Source:local Liquid_Flame.html oldid2670063. Target foe takes7..91..112fire damage
+at Fire Magic0..12..15. If that foe was attacking or casting a spell,nearby foes
+also take that damage. Pinned2022row agrees:FireMagic10,10Energy,1s activation,
+.75s aftercast,15s recharge,scale7..112,caster2077sentinel,target996.
+
+Frozen checkpoint20261022-cumulative-skills,packets-1360-15821281.jsonl:
+182812start(actor25,target30)tick19522500;18281615s recharge,182817finish58,
+182818targeted996at19523515;182833pending release at19524343. The isolated window
+does not independently establish the primary target's action or secondary
+recipients. audit_echo_checkpoint --skills845 --include-targets verifies the
+frozen hash and activation receipt (1window/23events). liquid_flame_2022.py
+verifies6exact receipts,original1s targeted cast/target996consumers and original
+targeted serializer. It invents no caster effect. Native model/asset services
+are stubbed;rendered fidelity remains unverified.
+
+Runtime uses normal paid cast timing,cancel/interrupt/recharge and the existing
+deferred elemental completion callback. World reads the primary target's current
+action at impact before damage,with strict action-end boundaries. Ordinary
+attacks,attack skills and spell types qualify. Signets,glyphs and idle actors do
+not. Player casting identity and NPC scoped windup tokens provide those facts.
+An NPC's unknown active skill is rejected with unknown_primary_action diagnostic;
+it is not assumed to be a spell or idle. A bystander's action never enables AoE.
+
+The shared elemental transaction retains the canonical252nearby radius in its
+reviewed plan but locally uses radius0when the predicate is false. ID filtering
+then keeps ONLY the primary,even if other foes occupy exactly the same position.
+The predicate is sampled before the primary hit,so a lethal primary hit still
+damages nearby foes when it qualified. Target center,plane,hostility,armor and
+lifetimes use the existing World authority. The complete selected damage batch
+is admitted before mutation;unknown Fire armor on a selected secondary rejects
+it,whereas an ineligible secondary's unknown armor cannot reject a single hit.
+This spell neither applies Burning nor interrupts its victim.
+
+Completion visuals return targeted996for actual recipients,after finish58with no
+fake caster2077. Whole damage/recharge/particle ordering and conditional secondary
+rendered effects still require retail acceptance. NPC caster AI and broader
+global damage/protection/reactive interactions remain incomplete.
+
+Focused tests cover21damage ranks,player/NPC idle/attack/spell/signet/glyph/
+attack-skill/completed/exact-end actions,unknown NPC skill,coincident bystanders,
+radius edge/plane/ally exclusion,conditional armor admission,lethal primary,
+forged plans/stale scopes/self targets,and12paid cast/cancel/interrupt/missing
+hook/end-boundary/late-attack cases. Repeated completion pays/applies once and
+ordinary15s recharge remains. Source binding is not rendered/full-game completion.
+No official process,input,restart or logger action.
+
+Focused and regression validation: liquid-flame-build.txt and
+liquid-flame-regression-host-build.txt contain serial Release builds. The five
+fresh affected suites in liquid-flame-regression-tests.txt pass:LiquidFlame,
+TeinaiWind,elemental damage,conditional elemental damage and Icy Prism World.
+Five Python coverage checks pass. Six exact frozen receipts plus original native
+cast/target/serializer checks pass. Fixed checkpoint audit/publication now
+679captured/323source-bound/356awaiting-binding/650missing-capture. Host build
+completion/hash is recorded separately;no runtime process has been restarted.
+
+Final validation: liquid-flame-regression-host-build.txt completed successfully for the production host and five affected native targets. Five fresh CTest suites,5coverage checks and6frozen/native/serializer receipts pass. Host SHA256 A982B0AE79560F1788F9837B656AA4B13E7B2ECBA114BCAF0F45BB6F9B50B93F;rebuilt only,not restarted/deployed. Official clients and loggers untouched. Conditional retail/rendered/global interaction gaps remain as above.

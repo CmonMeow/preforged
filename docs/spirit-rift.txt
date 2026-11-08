@@ -1,0 +1,38 @@
+Spirit Rift910 - World and normal casting integrated,2026-10-22
+
+CURRENT:910 is now source-bound in the native player Runtime/gateway. Earlier unbound/staged notes below are historical. The developer host rebuilt serially; official sessions/loggers and distributed tester package were untouched.
+
+The World stores the ground center at spell completion independently of the selected victim. The cast requires a current hostile target within1248 on the same plane and the existing navigation LOS trace. Pending markers are bounded and belong to the original caster scope. Runtime emits finish58 then exact positional resource1103;World approves the queued marker and starts the3second deadline at actual publication. A callback without its approved visual cannot arm damage. The selected target may move or depart after completion:neither drags nor deletes the fixed ground field. Caster departure retires its fields;caster death currently follows the existing lingering-field policy and needs independent retail verification.
+
+At due time,World samples hostile living players/NPCs within166 on the field's plane. Unknown lightning armor is skipped rather than invented. Each hit uses shared protection/damage/death handling,then applies Cracked Armor only to a surviving susceptible recipient. Incoming player armor modifiers and Cracked Armor are applied once. NPC condition immunity still permits accepted damage without a condition. Condition publication/Fragility/Fevered handling uses the existing shared paths. These fields join the existing chronological boundary scheduler and Health forecast horizon. Equal-time provider order remains explicit private simulation policy.
+
+Validation:spirit_rift_test passes canonical21rank damage/condition/scheduler/wire checks. spirit_rift_world_test passes105rank/mode cases plus an existing-Cracked100armor regression and exact damage-before-condition packet order. It checks fixed center,166/167boundary,player/NPC damage,three-second delay,late publication,unpublished callback,stale target and selected-victim departure. spirit_rift_cast_test passes PvE/PvP rank0/12/20 normal Runtime-to-World cases:10Energy,2second activation,5second recharge,finish-before-ground,cancellation,missing hook,effect failure and retired target. Adjacent Spear of Light and Water Trident World suites rebuilt and pass;all five CTest suites pass. Five production wiring tests and four frozen-ordering tests pass. Native verifier reauthenticates183local starts,162ground1103sequences,original2022 cast/ground consumers and the independent3s damage-before-Cracked record.
+
+Remaining:rendered ground animation/ending visuals,autonomous NPC casters,broader reactive/reflection/immunity/lethal-ordering cases,caster-death/lifecycle fidelity and full terrain/height/range behavior. Mixed same-time providers use private ordering until captured evidence resolves them. Source binding and passing tests are not complete retail verification.
+
+Host SHA256:1f9694d8a73739742813fafe8bb77f70421071eff3adfc02b6755c9aa5ea6790.
+Fixed checkpoint:20261022-cumulative-skills;baseline679captured/312source-bound/367awaiting-binding/650missing-capture. Native report:20261022-night-session/spirit-rift-native-2022.json. Validation record:build/reports/spirit-rift-world-validation.json.
+
+HISTORICAL STAGING / EVIDENCE NOTES
+===================================
+Ordering evidence update,2026-10-22
+
+An independent historical encounter now supports the staged damage-before-new-Cracked policy. Verified cumulative snapshot packets-19472-19186421.jsonl:exact lines351063(start910,caster80,target14),351087(finish),351088(positional1103),351154(target14damage-skill910attribution),351155(lightning damage,target14,source80),351156(Cracked Armor2077,target14,21second timer). Ground tick25273703;damage/condition tick25276703:exactly3000ms. The damage and condition are in the same observed packet batch,but damage precedes condition in record order. A caster-start delay of1016ms in this encounter is NOT used as native base casting time;the pinned executable independently retains2seconds.
+
+The native verifier authenticates the source hash,identities,attribution,timestamps and order. Four receipt tests pass,including rejecting swapped order,wrong target and shifted timing. This changes the next gate from speculative ordinary ordering to World/casting integration. It does not establish lethal/immune/combined reactive ordering,area radius,armor or damage magnitude;those remain explicit gaps. No runtime source or host binary changed in this evidence pass.
+
+Spirit Rift910 - staged policy and native ground evidence, 2026-10-22
+
+NOT YET LIVE:910 remains unsupported in normal Runtime and is not source-bound. This stage adds a canonical impact plan, one-shot fixed-ground schedule and exact positional visual builder. Host binary from the completed Spear of Light turn is unchanged.
+
+The local historical Spirit_Rift article revision2646266 says the rift opens at the selected foe's initial position; after3seconds adjacent foes receive25..125lightning damage and1..20seconds Cracked Armor at ranks0..15. Native2022 metadata independently has Channeling Magic34/Ritualist8,type5,10Energy,2s activation,.75s aftercast,5s recharge,3second duration fields,bodies2077sentinel. No Air Magic25percent penetration is added. Damage is retained as a fractional scale,not prematurely rounded.
+
+The staged target helper uses existing active Cracked Armor for damage,then inflicts new Cracked Armor on a surviving susceptible target. It preserves immunity,requires reviewed lightning armor and rejects altered plans. IMPORTANT:damage-before-new-condition is currently an implementation candidate matching description order,not an isolated retail reaction-order proof. This ordering must be checked before live integration,including lethal hits,condition triggers,existing vulnerability and immunity.
+
+The schedule stores a fixed position/plane,caster lifetime,level and exact due time. It never stores the selected victim as the impact center;World must enumerate eligible recipients at due time. It is one-shot,bounded4096,cursor/overflow guarded and can retire a caster generation. It does not decide whether a field persists after death;World lifecycle policy needs evidence.
+
+spirit_rift_test checks21ranks,new-versus-existing Cracked Armor,armor-sensitive damage,immunity,lethal no-condition behavior,unknown armor,forged plan,3second/single-delivery fixed center,clock/retirement and exact20byte ground packet/caster guards. The armor and ordering tests validate this candidate policy,not retail proof.
+
+Offline spirit_rift_2022.py verifies183local starts and162successful same-owner finish/positional-effect sequences. All use resource1103,data5/data6zero. Three representative receipts execute original2022 ground callback874bd0 and serializer60be08,retaining world position,plane,caster and resource. Original cast consumer retains910with2second timing. Frozen source hashes and line receipts are in20261022-night-session/spirit-rift-native-2022.json. Asset/geometry services are stubbed;no rendered acceptance.
+
+Remaining:isolated delay/damage/Cracked-Armor ordering and target-membership evidence;shared World scheduler/lifecycle/armor/condition/reaction integration;normal paid casting/cancel/recharge/current scope;finish-before-ground publication;NPC caster behavior;rendered visual acceptance. Counts679baseline captures/311source-bound/368awaiting/650missing remain unchanged by this stage. Official processes/loggers untouched.

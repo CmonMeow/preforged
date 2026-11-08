@@ -1,0 +1,183 @@
+CURRENT BEHAVIOR CORRECTION — 2026-10-21
+The bundled official-wiki backup explicitly documents the retail bug:
+"Convert Hexes only grants +10 armor, whether it removes one or more
+Necromancer hexes." Production calculation now reproduces that flat+10when
+at least one Necromancer hex is removed. Zero qualifying hexes give no new
+armor. The full removal count is retained for ownership/diagnostics;it is not
+multiplied into armor. Earlier per-hex/20/40armor claims below are historical
+and superseded. Native scale10/descriptive wording alone was insufficient to
+establish actual armor behavior. The wiki note is semantic evidence,not a new
+packet/Health-loss measurement. Live wiki fetch returned403;the bundled page
+is hash-recorded by tools/protocol/convert_hexes_2022.py.
+Normal303casting is bound;zero-count refresh over existing armor and rendered
+QA remain open. See the newest dated validation at the end.
+CONVERT HEXES303 — staged mechanics/evidence,2026-10-21
+
+Pinned2022:Monk/Protection Prayers spell,15Energy(encoded11),1s activation,
+.75s aftercast,12s recharge,target-other-ally,range1248. The local historical
+Convert_Hexes.html specifies removing ALL hexes and granting10armor for EACH
+Necromancer hex removed,for8..20seconds(18at12Protection). Mesmer/Elementalist
+hexes are removed but do not increase the armor entitlement. Caster2077is a
+sentinel;target resource538is reviewed separately.
+
+gw_convert_hexes.h validates those native fields and prepares newest-first
+removal receipts plus Necromancer count/armor/duration from the exact target
+registry. Source and target must be distinct current lifetimes in one instance.
+Expired hexes do not count;unrelated enchantments remain untouched. The helper
+does not heal or mutate its inputs and rejects forged plans,invalid scopes,
+self target and expiry overflow. Stronger single-source armor remains its full
+value before the existing shared skill-armor stack rule;do not cap303itself25.
+
+The World integration must remove every owned effect through existing shared
+end paths,including timers,credits,healing/end reactions and linked sources.
+Do not replace the whole live Registry with a speculative cleanup copy.
+The proposal supplies receipts/entitlement;it does not yet install an armor
+status. Zero-Necromancer refresh/replacement of an existing303bonus requires
+evidence. Eligibility,Divine Favor,current armor/equipment/source lifetime,
+expiry/death/removal,normal paid casting and publication remain required.
+
+21rank contexts plus mixed-profession hexes,newest-first selection,expired and
+empty sets,retained enchantments,identity/overflow/forged-plan guards and a
+40armor single-source entitlement test pass. The initial mixed fixture used
+Fragility19as if it were Necromancer;the native catalog correctly classified it
+as Mesmer,and the fixture now uses Parasitic Bond99instead.
+
+tools/protocol/convert_hexes_2022.py verifies five receipts against the fixed
+20261017-npc-refresh-2packet hash:packets-1360-15821281.jsonl274856start303,
+274866recharge6,274867finish58,274868targeted20/resource538,274877slot release.
+It executes original targeted cast and538particle consumers on the pinned
+executable. Native activation1s and recharge12are retained. The captured6could
+reflect recharge modifiers;the capture does not isolate those and is not proof
+of a balance change. No successful multi-hex removal/armor timer/current armor
+or zero-count refresh is established by this cast window. Native asset services
+are stubbed;rendered_verified=false.
+
+Report:build/reports/convert-hexes-native-2022.json. Five coverage tests explicitly
+keep303unbound. Fixed633captured/302source-bound/331awaiting/696missing remains
+unchanged. Official client/loggers were not accessed.
+
+2026-10-21 World stage:complete_convert_hexes now accepts exact player caster
+and other-ally target scopes. It settles timelines/validates allegiance,range,
+life and Divine Favor policy,prepares the whole removal/armor set,then ends each
+actual hex through remove_health_effect_locked. Existing end callbacks remain
+authoritative;Parasitic Bond returns healing to its credited caster once.
+No whole speculative Registry replaces that live state after callbacks.
+
+ConvertHexesArmor retains the removed-Necromancer count separately from the
+Protection rank. The exact target lifetime/effect/caster/rank/begin/end must match
+the live303status before granting armor. The shared armor path combines this
+single-source bonus with existing skill armor;expiry/death/owned end retires it.
+Generic status mutation303is rejected to prevent unowned armor metadata. The
+normal combat damage path consumes the bonus;it is not just a status icon.
+
+One per-peer buffered completion starts with finish58and targeted538,then owned
+end/status/healing packets. No caster2077particle is invented. Zero Necromancer
+count without an old303bonus removes hexes and grants only valid Divine Favor.
+If an existing303bonus would be refreshed with zero Necromancer count,the
+staged adapter rejects before mutation:replacement semantics need evidence.
+Nonzero refresh uses a new owned timer/count;the old timer ends exactly once.
+
+Tests:21World ranks,all-owned-end publication,actual Parasitic return,expiry,
+nonzero refresh,zero-count rejection without partial hex removal,Divine Favor,
+death,target actor-ID reuse,invalid scopes,self/enemy denial,generic-injection
+rejection and real Lightning Charge damage reduction pass. Existing Parasitic
+Bond World regressions and the pure Convert Hexes suite also pass. Native
+verifier and five coverage checks pass. No live rendered acceptance is claimed.
+
+Remaining gates:normal paid Runtime/gateway,allied NPC recipients,the zero-count
+refresh question,large-armor-range limits in the shared combat layer,and retail
+callback/armor/publication fidelity. Captured recharge6is not silently imported
+as the pinned12rule. Binding counts remain302/331;official logging untouched.
+
+Targeted capture still needed:apply a Necromancer hex to a friendly target,remove it with303and observe the armor timer;while that bonus remains,cast303again with only Mesmer/Elementalist hexes(or none),then observe whether the old timer/bonus is retained,replaced or cleared. Record target armor/Health damage and status identities,not just cast/recharge packets. Also preserve equipment/recharge modifiers when interpreting the6s captured recharge.
+
+Serial Release build78319 completed successfully for convert_hexes_world,parasitic_bond_world,world_simulation and server_host. No running session was restarted;this is offline validation.
+
+2026-10-21 NPC recipient stage:LiveActor::apply_convert_hexes now prepares owned
+removal and timed303armor on a copy,including zero-count refresh rejection.
+World validates the caster/ally/lifetime/range/Divine Favor policy,commits the
+recipient copy BEFORE external Life Siphon/Parasitic credits,and publishes the
+reviewed finish/target effect and exact ends/status. It does not assign an old
+whole-actor proposal after end callbacks. Positive-status ownership tracks the
+NPC armor end using the existing exact-lifetime expiry/death publication map.
+
+NPC physical/earth/caster armor getters and incoming elemental damage now use
+the shared stacked bonus. preserve_current_hexes also preserves its auxiliary
+303count/source record;otherwise a damage preview rebased onto a refreshed
+registry could lose the current bonus. Dead actors report zero303armor.
+Divine Favor's popup amount is measured on the preflight healing change so an
+unrelated later end callback cannot be misattributed to the converting Monk.
+
+Tests:21NPC ranks with real registry hexes,all armor getters and actual Earth
+damage attenuation,expiry,nonzero refresh,zero-count rejection,stale lifetime,
+death and preserved-current ownership pass. Five World cases cover allied-NPC
+admission,target effect,Divine Favor,healing immunity/unknown healing trait and
+hostile-target denial. Existing Convert Hexes player/pure,Protective Spirit
+publication and Shield of Regeneration cast tests pass. Native verifier and
+five coverage checks pass;source binding remains302/331.
+
+IMPORTANT TEST LIMIT:the current player-hostile-hex NPC APIs require targets to
+be hostile_to_players. Therefore World allied-NPC tests currently start with no
+hexes;the nonempty-removal/armor tests operate directly on the NPC recipient
+primitive. No complete hostile-NPC -> allied-NPC hex ->303removal replay has
+been demonstrated. That combat admission/integration remains required,alongside
+normal Runtime/gateway,zero-count refresh evidence,large armor bounds and
+rendered QA. Normal303remains unsupported;official logging untouched.
+
+NPC stage final serial Release build36474 exited0 for player ConvertHexesWorld,ProtectiveSpirit publication,ShieldRegeneration cast,world_simulation and server_host. NPC suite rebuilt separately and passed. Offline validation only;no live session restart.
+
+2026-10-21 effective armor gate resolved:the shared spell/weapon resolvers now
+distinguish reviewed raw armor from its effective total. Valid500base+10Convert
+armor no longer rejects hits. Player/NPC510combat regressions pass;raw501is
+still rejected. Seven C++ suites and five coverage tests pass. See
+docs/effective-armor.txt for the reproduced failure,defensive bounds and limits.
+This does not resolve the separate normal-casting/refresh/admission/rendering
+gates above and does not advance source binding counts.
+
+2026-10-21 integration follow-up:the no-hex-only World limitation above is now
+resolved for a real Mesmer hex. A paid hostile-NPC ConjurePhantasm cast lands on
+an allied NPC through the shared deadline drain;Monk303removes it and stops its
+degeneration,with no Necromancer armor. This does not prove NPC Necromancer
+hex/end-return integration or normal303casting. See docs/npc-phantasm.txt.
+
+2026-10-21 normal Convert Hexes303 binding
+Runtime now admits the other-ally spell through normal policy/skillbar/rank
+checks and15Energy payment,retains exact source/target lifetimes,uses shared
+activation/interruption/reaction/cooldown authority,and calls World completion
+for players and allied NPCs. It rejects self before payment. Required hooks are
+checked both at admission and completion;lost hooks do not call empty functions.
+World already publishes58and targeted538,so Runtime suppresses duplicate finish
+and body publication while retaining slot/recharge events. Pinned recharge12s
+remains authoritative;captured6s does not identify the modifier responsible.
+The direct native2022 gateway now supplies the exact-scope World callback.
+
+Tests:231player rank/mode cases cover all21ranks,missing hooks,Energy failure,
+self rejection,invalid rank,early completion,duplicate completion,stale target,
+cancel,interrupt,lost completion hooks,payment and recharge.21additional NPC
+rank cases first land a paid hostile-NPC Phantasm,then cast303normally to remove
+it and heal38Divine Favor after10degeneration. One finish packet is asserted.
+ConvertHexesCast,ShieldDeflectionCast andToLimitCast pass;five coverage checks
+and five frozen native receipts/538consumer pass. Serial host build8908 exited0;
+expanded final cast test build39077 exited0. No live client/rendered claim.
+
+Fixed checkpoint remains20261017-npc-refresh-2:633captured,303source-bound,
+330awaiting binding,696missing captures. These counts describe source binding,
+not complete mechanics or rendering. The active303armor+zeroNecromancer-hex
+refresh case still rejects atomically pending retail evidence;this is explicitly
+incomplete gameplay,not an official failure rule. NPC Necromancer/end-return
+lanes,full modifier/reaction interaction QA and rendered effects remain open.
+Official clients/loggers were not touched.
+
+
+2026-10-21 retail armor correction:the bundled Convert_Hexes.html bug note
+explicitly says only+10armor for one or more Necromancer hexes. Shared proposal
+and active-owned-armor queries now reproduce that behavior rather than multiply
+10by count. Actual removed count is retained. Pure tests distinguish two/four
+Necromancer hexes;all21NPC ranks now remove two Necromancer hexes plus a Mesmer
+hex yet receive only10armor,and real Earth damage attenuation remains10armor.
+All four ConvertHexes suites,five coverage checks and native receipt/consumer
+verification pass. The verifier asserts/hash-records the wiki note but does not
+claim independent packet measurement of armor. Live wiki fetch returned403.
+Fixed633/303/330/696unchanged;zero-count active-armor refresh and rendered QA
+remain open. Official sessions/loggers untouched.
+Retail armor final serial Release build15200 exited0,including server_host.

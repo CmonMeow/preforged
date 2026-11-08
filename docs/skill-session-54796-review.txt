@@ -1,0 +1,24 @@
+Official skill capture session 54796 — reviewed 2026-10-24
+
+The completed packet and world logs were frozen in
+data/captures/skill-checkpoints/20261024-signet-infection-bound/.
+The packet snapshot has 553,117 complete lines (SHA-256
+ca2aa5f5cc8b80a1d3708f8b83859d8f3bdc39c5a0014b59a5755f5379144d33);
+the paired world snapshot has 30,840 complete lines (SHA-256
+5b449fd239630918dca0ea468a470b53f5a615d10dda3a44ceff8bcd166402a4).
+The originals remain in bin/PacketLogger and bin/GuildWarsLogger.
+
+The fixed audit attributes local activations in map 72 to eight skill IDs:
+169 Earth Attunement (83), 171 Stoning (272), 174 Aftershock (167),
+180 Aura of Restoration (95), 937 Shockwave (157), 952 Death's Charge (32),
+1374 Ebon Hawk (290), and 1661 Glowstone (222). Counts here are local
+activation records in this file, not unique casts after deduplication or
+proof that every effect rendered correctly. All eight already have source
+bindings. This session adds no locally cast missing skill ID.
+
+At this session review, the fixed-checkpoint baseline was 679 locally
+captured, 373 source-bound, 306 awaiting implementation, and 650 lacking
+local activation evidence. The later Freezing Gust 1382 implementation
+changed the source partition to 374/305; consult CURRENT-BACKLOG.json for
+the current partition. These counts do not imply full mechanics or
+rendered-client acceptance.

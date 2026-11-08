@@ -1,0 +1,55 @@
+DETACHED DESIGN — not executable, not normal skill248 enrollment.
+
+Proposed public World contract (parent Runtime adapter consumes this):
+  struct RetributionCompletion {
+    bool accepted=false;
+    bool completion_prefix_published=false;
+  };
+  bool retribution_target_valid(Scope source,Scope target,unsigned divine,Time now);
+  RetributionCompletion complete_retribution(Scope source,Scope target,
+      const RetributionPlan&,unsigned divine,Time now,uint64_t completion_event,
+      vector<Packet>* visuals=nullptr,function<void()>* publication=nullptr);
+
+Paid entry requires current PLAYER source and nonzero admitted spell event248.
+NPC caster upkeep remains available through existing trusted staged API; this
+paid player-cast adapter must not fabricate an NPC spell-activation receipt.
+The canonical plan and exact source/target generations are mandatory.
+
+Locked implementation sequence:
+1. Canonical plan + source/target/DF/range/known-resource preflight.
+2. Prepare recipient registry/ownership/replacement/end packets on copies.
+   Preflight Ether Renewal with allow_absent=true, commit=false. No resource
+   benefit or registry replacement before every required proposal validates.
+3. Open deferred publication capture; commit admitted Ether Renewal once.
+4. Reacquire source/target by full scope. If admitted Renewal killed/retired
+   source or recipient, accept paid completion but create no lease. Prefix
+   ownership must be explicit; no stale proposal may restore a registry.
+5. Re-evaluate Profane after reward reactions. Profane accepts completion,
+   creates no lease/upkeep/status or Divine Favor heal.
+6. Rebuild recipient proposal against current post-Renewal registry. Commit
+   ownership/effect first, then actual Divine Favor Health event. Handle lethal
+   healing debt through normal player/NPC death retirement and reacquire before
+   status/effects publication. Never copy pre-heal NPC state over reactions.
+7. Finish capture into idempotent publication closure. Healthy path returns
+   prefix=false and target454 visual for Runtime's native58-before-effect path.
+   Consumed/lethal path owns native58/454 explicitly and returns prefix=true;
+   caller must not publish duplicate58/caster body. Prefix truth must remain
+   accurate with immediate publication and deferred publication alike.
+
+Required factoring: stage_retribution currently owns mutex and strict captures.
+Extract private locked admission/prepare/commit helpers; do not recursively call
+the public stage method or nest strict Outbox::Capture. Existing trusted stage
+semantics and direct NPC-caster tests must remain intact.
+
+Required native cases before enrollment:
+- event0, unknown/unadmitted/wrong-skill/replayed event reject with no lease;
+- current player/NPC recipients, exact DF primary gating and resource authority;
+- Profane accepted/no lease/DF; real Renewal before enchantment count change;
+- Renewal reaction death, generation retirement, current self registry rebuild;
+- DF healing/debt death for player and reviewed NPC recipient, exact retirement;
+- deferred and immediate output, one58/454, no private NPC upkeep, idempotent
+  release, Runtime prefix regression, stronger/replacement shared-owner upkeep;
+- all maintained participant chronology/range suites remain green.
+
+Known separate gap: ordinary/patrol/AI motion projection remains explicitly
+rejected; supported quest-route range fixtures do not prove those consumers.

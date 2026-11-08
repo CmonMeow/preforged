@@ -1,0 +1,26 @@
+SKILL AREA METADATA REVIEW
+
+Offline native tool:tools/skills/area_metadata.cpp
+Build:cmake --build build --config Release --target area_metadata_audit --parallel 1
+Run:build/tools/area_metadata_audit.exe build/reports/area-metadata-plan-reviewed-20261027.json
+The executable stays in build/tools;it is not a shipped service or client tool.
+
+Scope:30 static elemental,party-heal and Ribbon-secondary plans.17 differ from
+pinned2022 row+0x6c metadata. Differences are review candidates,not bug proofs.
+Some fields describe a secondary mechanic rather than damage radius:Flare and
+Essence Strike are single-target effects despite nonzero metadata. Repeated
++10/+12 differences also need semantic/boundary review;no padding formula is
+proven. Equality with metadata likewise does not establish retail behavior.
+No bulk runtime rewrite or new skill binding follows from this inventory.
+
+Healing Ribbon review:the local Healing_Ribbon.html links Near.html,which
+resolves to Nearby (not In the area). GWCA defines Nearby252 versus Area322.
+The old322 private policy used the wrong range category;the plan now uses252.
+Pure and World tests cover an available secondary slot at252 versus253,for
+both player and NPC recipients. Nearest-first ordering remains a private policy;
+exact retail boundary and rendered secondary visuals are not measured. Native
+row+0x6c=240 is retained as separate metadata,not silently treated as the final
+center-distance radius. See the final evidence report for hashes and limits.
+
+Audit output alone never labels any other skill correct or broken. Runtime
+changes require skill-specific evidence and scoped mechanics/particle checks.

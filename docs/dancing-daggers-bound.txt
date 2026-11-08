@@ -1,0 +1,47 @@
+Dancing Daggers [858] normal native binding — 2026-10-26
+
+The fixed 20261024-all-completed skill checkpoint records two local starts
+and two kind58 finishes in map280, with no stop. It remains immutable. The
+existing World implementation already launches three independently timed
+Earth projectiles, enforces half spellcast range and current actor scopes,
+checks armor at impact, and grants the target-scoped lead-attack stage only
+on the first landed missile. This change connects that reviewed producer to
+the normal 5-Energy/1-second paid Runtime cast and production gateway. It
+rejects a missing target or callback before payment, revalidates scope and
+range on completion, then uses skill_event_live to publish and release the
+three missiles. No bridge or alternate client path is involved.
+
+The new native Release test covers player and NPC targets, 5-Energy payment,
+624-unit half-range, cancellation, interruption, stale target, finish58
+before projectile launch, model854 in the 2022 launch packet, three exact
+resource855 impact packets, three Earth damage hits and one lead-chain
+stage. Neighboring Stone Daggers and shared casting tests pass. The current
+coverage audit reports skill858 implemented_binding and totals460 implemented
+bindings/2919 unsupported IDs, up from459/2920 before this change. The
+frozen capture checkpoint was not rewritten. Current backlog lists were
+regenerated from that checkpoint:679 local,384 source-bound,295 awaiting,
+650 missing local activation.
+
+The hash-checked offline verifier reads the original two triple-projectile
+receipts and executes the pinned 2022 launch/impact/lead-stage consumers. It
+passes model854 launches, model855 impacts, opcode92 chain receipts and the
+older-client callbacks. Run it with PYTHONPATH=build/python-deps; this uses
+local Unicorn installed under build. It proves first consumer routing and
+serialized native packets, not rendered animation, sound, actual private
+client acceptance, or every retail travel/interception edge. Those remain
+verification gaps. Official clients and loggers were untouched.
+
+Validation: serial Release dancing_daggers_cast_test/server_host build; five
+focused/neighboring CTests passed 5/5; twelve coverage unit tests passed;
+current-source coverage regenerated; offline native verifier passed.
+SHA-256:
+  src/runtime/gw_skill_casting.h 81F211D24944D09656C609334F6A8547D8853B3B25FD650B821D0E0DC87AE1E2
+  src/apps/gw_auth.cpp 98EF040D80C49F8E8A2869AB2220C81C3D5E037CC16EEF53F7B26D8AAE49C616
+  tests/dancing_daggers_cast.cpp A22B84F28DD49D9F134012240C4EDB00677A89B47127F1C9AC4F1FBCDD135C18
+  CMakeLists.txt 9DDB01C7240E4F6583BB9BFBF7D3DB2AC3ADD7DC176B526DE7DFBA8FC84DC49E
+  tools/protocol/skill_runtime_coverage.py FC780820A1A295D4AD5F33527458FE3ACD489240CECC2E4E107F3F70EB27DEA6
+  tools/protocol/dancing_daggers_2022.py 79307787576467E62654EC8597EF5AC7AFC0E6E68CC326016616E3491670D444
+  build/tests/dancing_daggers_cast_test.exe 67900796C3F3FA4A74C7B0845C8EA1C876F2AF75BA7E910EDE465D044DA1F08B
+  build/reports/dancing-daggers-native-2022.json BD759026E76EBEFF5F5E10A8184742A5903496D41F4FE1BFFC52E20E5E24DF01
+  bin/server_host.exe 43E26D012D92601DDFCBBBDE5114691E7DB7F18D1C93EA3C74F7417E82388942
+  frozen captured-skills.json F30FB14A4789D793E943A9B18C3661934F894487B75B562FAC41712F447685F6

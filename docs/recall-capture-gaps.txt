@@ -1,0 +1,23 @@
+Targeted evidence still needed;do not interrupt an ongoing official capture.
+
+Active recast:maintain Recall on ally A,wait for its ordinary recharge,then cast on
+ally B WITHOUT dismissing the old upkeep. Repeat on the same ally. Retain original
+upkeep/effect IDs,cast start/finish,position/trails,disable/recharge packets and counts.
+This distinguishes refresh from an old-end step/disable before a new anchor.
+Current frozen applications use effects82,94,114;82and94were removed before the next
+cast began,so they do not answer this question. General End_effect wiki explicitly
+says reapplication behavior is skill-dependent;do not select a rule from another spell.
+
+Held bundle:separate reusable ground object from an item-spell bundle that is destroyed
+on drop. Capture pickup,manual drop,weapon switch,then a Recall return while holding.
+Retain definitions before legacy336assignment/release,ground agent lifetimes,peer
+equipment,drop effects and player/bundle positions before/after the step.
+The pinned336handler alone proves no drop location or destruction behavior.
+
+Additional existing evidence:second Recall end in packets-108988-190116609.jsonl
+lines46635..46646contains both1170trails,all eight3s disable packets and94removal.
+Third cast starts6734ms later. This is modern capture behavior;the pinned2022row and
+historical Recall article still specify10s. First end sends only fivechanged timers.
+Runtime now omits unchanged longer timers against these two groups and imports its
+presentation cache only after the retained publication succeeds. Rendered timing
+still needs validation;do not overwrite the pinned balance with modern3s values.

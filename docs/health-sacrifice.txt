@@ -1,0 +1,21 @@
+Health sacrifice engine, October4
+
+gw_health_sacrifice.h reads the pinned2022 SkillRecord health_sacrifice byte;
+the request cannot supply a percentage or health amount. World::health_sacrifice
+requires the owned actor lifetime and a monotonic resource clock. It advances
+authoritative health first, uses current maximum health, applies unavoidable
+health loss, publishes public/owner resources and invokes the existing death
+cleanup when lethal. Armor and damage/healing modifiers do not reduce this cost.
+
+Local Sacrifice.html says the cost follows successful activation, can kill its
+caster, and a sacrifice larger than current health loses current health plus1.
+The world retains fractional health as its existing health model does; exact
+retail rounding and reactive Dark Aura/Scourge effects remain to verify.
+Source SHA25693a2f3f96e14cd2d5aa162e2e60b7e2de08f074b72b4ad8015588a0cf9b71103.
+
+health_sacrifice_test covers native118 percentage, full/current/maximum health,
+over-current and exact lethal costs, absence of a sacrifice cost, invalid values,
+owner/peer publication, stale clocks and actor-generation reuse. It passes.
+The mechanism alone does not mark any sacrifice skill implemented. Successful
+casting completion must invoke it once after the real effect commits; new skill
+bindings and their complete branch tests are separate work.

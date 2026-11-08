@@ -1,0 +1,22 @@
+#include "gw_world_simulation.h"
+#include "gw_skill_casting.h"
+#include <iostream>
+#include <source_location>
+using namespace fw::gw;using namespace skills;using namespace skills::effects;
+void check(bool ok,std::source_location at=std::source_location::current()){if(!ok)throw std::runtime_error("Meteor line "+std::to_string(at.line()));}
+struct Fixture{
+ world::Instance w;Scope caster,target;std::shared_ptr<world::Outbox> box=std::make_shared<world::Outbox>();
+ Fixture(){std::vector<world::Instance::Npc> population;for(unsigned id:{100u,101u}){world::Instance::Npc n;n.id=n.definition.id=id;n.x=266;n.definition.visual_adjustment={0,0,0,100};combat::npcs::Definition d;d.binding.map=146;d.binding.actor=d.binding.definition=id;d.relation=combat::npcs::Relation::hostile_to_players;d.spawn_health=combat::Health{1000,1000};d.damageable=true;d.conditions_allowed=true;d.fire_armor=60;d.fire_armor_evidence="test";d.knockdown_allowed=id==100;d.knockdown_evidence="test";n.combat_definition=d;population.push_back(n);}w.configure_npcs(population);
+ for(unsigned id:{1u,2u,3u,4u}){w.join(id,"Player",id==1?0:id==2?100:id==3?266:267,0,id==1?box:std::make_shared<world::Outbox>(),0,{}, {},100,id==1?1:2);w.set_vitals(id,{1000,1000,100,100},100);check(w.elemental_armor(*w.effect_scope(id),60,{}));}caster=*w.effect_scope(1);target=*w.effect_scope(2);box->drain();}
+ Scope scope(unsigned id){return *w.effect_scope(id);}
+ bool cast(unsigned skill,unsigned rank=15,std::uint64_t at=1000){return w.fire_storm(caster,target,*fire_storm(rank,skill),20,at);}
+};
+int main()try{
+ for(unsigned skill:{187u,192u})for(unsigned rank=0;rank<=20;++rank){const auto p=damage_field(skill,rank);check(p&&p->damage==7+7*rank&&p->knockdown_ms==2000&&p->pulses==(skill==187?1:3)&&p->first_ms==(skill==187?500:3000)&&p->interval_ms==3000);}
+ for(unsigned skill:{187u,192u}){Fixture f;const auto p=*damage_field(skill,15);check(f.cast(skill));const auto first=1000+p.first_ms;const auto epoch=f.w.control_epoch(f.target);f.w.tick(first-100);check(f.w.resources(2)->health==1000);f.w.tick(first);check(f.w.resources(2)->health==888&&f.w.resources(3)->health==888&&f.w.resources(4)->health==1000);check(f.w.control_epoch(f.target)!=epoch);
+  check(!f.w.begin_npc_action(f.scope(100),combat::npcs::control::Action::spell,first+1,first+1000,Slot{281,0}));check(f.w.begin_npc_action(f.scope(101),combat::npcs::control::Action::spell,first+1,first+1000,Slot{281,0}).has_value());
+  f.w.tick(first+6000);check(f.w.resources(2)->health==1000-p.pulses*112);auto packets=f.box->drain();check(std::count(packets.begin(),packets.end(),particles::meteor_ground_2022(skill,100,0,0))==(skill==187?1:4));
+ }
+ for(unsigned skill:{187u,192u})for(unsigned mode=0;mode<5;++mode){Fixture f;casting::Hooks h;unsigned calls=0,payments=0;if(mode==4)f.w.set_vitals(2,{1,1000,100,100},100);h.resources=[&](unsigned id){return f.w.resources(id);};h.events=[](const auto&){};h.consume_overcast_energy=[&](unsigned id,unsigned cost,auto event,auto now){++payments;check(id==skill&&cost==(skill==187?5:25));return f.w.activate_overcast_energy(f.caster,id,cost,event,now);};h.target_scope=[&](unsigned id){return f.w.effect_scope(id);};h.projectile_target_valid=[&](unsigned id,float range){return id==2&&range==1248&&f.w.resources(2)->health>0;};if(mode!=3)h.complete_fire_storm=[&](auto target,const auto& plan,auto now)->std::optional<std::vector<world::Packet>>{++calls;std::vector<world::Packet> out;if(!f.w.fire_storm(f.caster,target,plan,20,now,&out))return {};return out;};Policy policy;policy.primary=6;policy.campaigns=255;policy.learned[skill]=1;Slots bar{};bar[0]={skill,0};attributes::Ranks ranks{};ranks[10]=15;casting::Runtime runtime(1);check(runtime.start(1000,{skill,0,2},bar,policy,ranks,true,h)==(mode==3?casting::Reason::unsupported:casting::Reason::accepted));if(mode==1)runtime.cancel(h);if(mode==2)runtime.interrupt(1500,h);if(mode==4){const auto death=f.w.health_sacrifice(f.target,115,1500);check(death&&death->killed);}const auto finish=skill==187?3000:6000;runtime.update(finish,h);check(calls==((mode==0||mode==4&&skill==187)?1:0)&&payments==(mode==3?0:1));if(mode==0||mode==4&&skill==187){f.w.tick(finish+damage_field(skill,15)->first_ms);check(f.w.resources(3)->health==888);}}
+ std::cout<<"PASS Meteor/Meteor Shower fixed delayed fire fields,three-second cadence,knockdowns,NPC immunity and scoped corpse completion\n";
+}catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

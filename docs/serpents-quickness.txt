@@ -1,0 +1,40 @@
+Serpent's Quickness456
+
+Pinned2022 plan: Ranger Wilderness Survival stance,5Energy,instant/no aftercast,
+45second recharge,15..30second duration (rank12=27,rank20=35),33percent reduction.
+Local pre-Reforged wiki specifies completion-time reduction, own/replacing stance
+exclusion and ordinary recharge for interrupted uses. The shared timing kernel
+combines ordinary reductions with intrinsic modifiers before one final rounding;
+PvE Fast Casting remains outside the ordinary cap. Existing timers are unchanged.
+
+World owns stance insertion and Health ending. The strict predicate uses precise
+Health and current maximum: exactly half survives. Central Health events cover
+damage,sacrifice,life stealing/loss and healing. Segmented regeneration settlement
+checks each boundary so subsequent recovery cannot resurrect an ended stance.
+Deep Wound capacity adjustment,explicit capacity/morale changes,trusted vitals
+replacement and Grenth's Balance direct Health transactions check the same end.
+Death clears the stance through existing cleanup. World validates generation,
+rank,exact duration,resource clocks and living caster before insertion. Standard
+stance-category replacement remains authoritative.
+
+An activation below half pays its cost, replaces the prior stance and immediately
+ends; Runtime consults authoritative owned effect identity before publishing its
+buff. This avoids adding a phantom buff after World already removed it. The
+instant action/body and normal45second recharge still occur. Retail ordering of
+this boundary requires a focused official capture; no such receipt is claimed.
+Runtime requires owned status/snapshot hooks. Production Auth already supplies
+those hooks; no new client bridge or logger behavior is involved.
+
+Tests: serpents_quickness policy and real World/Runtime regression cover fixed
+recharge values,spell/signet/attack types,cap/FastCasting,expiry/malformed sources,
+Health damage/sacrifice/life stealing/Poison/capacity,half threshold,nonresurrection,
+stale generation,forged duration,stance replacement,low Health,missing hook,
+PvE/PvP payment/body/cooldown and completion-time stance start/end,interrupt/cancel.
+
+Evidence: tools/protocol/serpents_quickness_2022.py hash-checks immutable receipts
+and executes original pinned body768 consumer. Captured rank0 activation has a
+15second effect and45second recharge. Those packets do not themselves prove
+conditional Health ending,recharge interactions or rendered animation quality.
+Native actor/asset services are stubbed. Remaining: focused retail threshold and
+simultaneous-event ordering captures,NPC casters,unimplemented duration modifiers
+such as Dwarven Stability,and rendered client acceptance.

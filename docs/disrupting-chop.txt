@@ -1,0 +1,49 @@
+DISRUPTING CHOP340 — PLAYER ATTACK CONTACT INTEGRATION
+
+Canonical pinned2022 axe attack: Axe Mastery18,150 adrenaline units (6 strikes),
+normal weapon activation,no recharge or added damage. Native scale20/20 is the
+additional disable,not weapon bonus. Shared ordinary axe damage,Strength
+penetration,hit/miss/block and attack timing paths are retained.
+
+Successful living-target contact interrupts an active action. A player skill
+interruption retains exact slot/copy,original activation interval and attack340
+beside the ordered control event. No request is retained for a miss,block,
+protected interruption,idle target or ordinary non-skill attack. Runtime passes
+the actually retained normal recharge to World; the separate disable is20s
+additional to that deadline. The live auth callback now forwards this settlement.
+Glyph of Renewal automatically takes the attack identity from the retained
+control event and commits its base reset plus independent20s disable together.
+
+Reviewed NPC spellbook actions prepare actual cancellation/recharge and an
+exact-slot disable before the hit. After a nonlethal hit the proposal is rebuilt
+from the damaged actor before commit,so interruption cannot restore old Health.
+Untracked/manual NPC spell actions reject before damage rather than guessing
+their cooldown. Ordinary NPC attack interruption has no invented skill disable.
+This is not universal support for every autonomous NPC controller/protection.
+
+EVIDENCE
+Fixed checkpoint20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+activation359809,completion359813,negative physical damage359816 and release359817.
+Owner25,target30,map280. audit_attack_checkpoint.py hashes the source and
+requires exact activation plus same-frame completion,damage and skill release.
+No recharge packet is invented for this adrenaline attack. Physical damage
+lacks a skill ID; correlation does not prove magnitude or a successful disable.
+Report: build/reports/disrupting-chop-capture.json.
+interrupt_attacks_2022.py separately verifies pinned row and native attack
+consumers,including interval/modifier behavior,finish/cancel and2077 sentinels.
+No body resource is fabricated. Native consumers use synthetic model handles.
+
+VALIDATION / LIMITATIONS
+disrupting_chop tests real player contact and target Runtime settlement,
+protection/miss/block suppression,reviewed NPC interruption without Health
+restoration,untracked rejection and actual source adrenaline spend/cancel.
+elemental_glyphs_cast includes real Chop contact/automatic Renewal forwarding
+and interruption protection,plus the transaction's delayed processing/retry
+cases. Existing Savage Slash and cooldown regressions cover adjacent behavior.
+
+Retail conditional-disable capture,interrupt eligibility/update latency,
+broader NPC controller/protection coverage,copied-session admission and rendered
+animation remain unverified. Source binding does not mean all these gaps closed.
+Distracting Shot399 now has its own fixed-damage/arrow contact implementation;
+see docs/distracting-shot.txt for its remaining gaps. Official logging has not
+been controlled for these changes.

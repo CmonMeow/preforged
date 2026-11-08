@@ -1,0 +1,66 @@
+Elemental Lord fixed capture review, 2026-10-26
+
+Read-only source: data/captures/skill-checkpoints/20261024-all-completed.
+Verifier: tools/skills/audit_elemental_lord_checkpoint.py.
+It checks full source SHA256, exact starts/finishes and four self-heal wires,
+then extracts actor25 receipts from -1 to+61 seconds around each finish.
+Output: build/reports/elemental-lord-fixed-capture-review.json.
+No runtime/CMake/build/client changes. Python verifier execution passed.
+
+Newly proven packet observations (stronger than detached policy's index review):
+1951 finish29916656: line475819 body295;475820 effect93,attribute_word15,
+duration float60. Lines475821..475824 update Air/Earth/Fire/Water8..11:
+0->1,12->17,0->1,0->1. Earth17 includes other existing bonuses; this is
+not evidence of a +5 Elemental Lord bonus.
+2094 finish20769921:243365 body295;243366 effect114,attribute_word15,
+duration float60.243370..243373 update all four elemental attributes0->1.
+The generic body-effect index being empty did not mean raw body295 was absent.
+
+2094 follow-on spell receipts:
+2190 Magnetic Surge starts243404 at+2266ms; self-heal243419 at+3188ms,
+same tick as finish243421. Property42 reports maxHP430 at243418; property55
+self25->25 float bits0x3d8ee23c corresponds approximately30/430.
+2191 Slippery Ground starts243442 at+4000ms; self-heal243447 and
+finish243449 at+5032ms, bits0x3d0ee23c, approximately15/430.
+2192 Glowing Ice starts243460 at+5750ms; self-heal243467 and
+finish243469 at+6735ms, same15/430 bits.
+2193 Energy Blast starts243489 at+7782ms; self-heal243508 and
+finish243510 at+9219ms, also15/430 bits.
+All four heal receipts PRECEDE their finish packet in stream order.
+These are valid observations of completion-tick healing; packet order does
+not independently prove the exact server callback phase or causality.
+
+Important unresolved discrepancy: native2022 catalog base costs are10,5,5,10
+for these four spells, while observed self-healing is30,15,15,15. Thus a
+uniform300% of native2022 base cost does NOT explain the Energy Blast receipt.
+Do not treat this as reviewed proof of paid-cost scaling either: title rank,
+active modifiers, historical/live balance differences and other reactions
+have not been fully isolated.2190 also follows2104 Elemental Lord-independent
+Intensity effect115 applied+1032ms and removed at243427. Earlier239 glyph
+effect69 is removed243436. Those are potential confounders, not explanations.
+
+Unproven: fractional-rank multiplier/rounding (all observed heal amounts are
+integers at60s duration); attributable Energy gain and Energy Storage rank;
+first application/refresh self-trigger; interrupted/cancelled casts; healing
+modifiers; stacking with other attribute boosts; alias replacement/lifecycle;
+body target2077; rendered2022 verification.1951 window supplies attacks and
+1954 shout but no comparable caster25 spell-heal sequence before incoming hex160.
+Keep both skills unbound until these consumers and arithmetic are resolved.
+
+Follow-on receipt validation improvement (2026-10-26): the verifier previously
+checked only the four healing byte strings; start/completion associations and
+maximum-Health arithmetic above were prose observations. It now validates
+each exact spell2190..2193 start, actor25 self-attributed Health modifier,
+finish58 and shared completion tick. It obtains the latest preceding actor25
+maximum-Health42 property, checks stream ordering, and reports raw float
+fractions with approximate Health modifiers instead of rounding to a final
+heal. All four current maximums remain430. Reported modifiers are approximately
+30.00000149,15.00000075,15.00000075,15.00000075; the float representation error
+does not explain the Energy Blast discrepancy. No final-healing or paid-cost
+formula was added to the detached runtime policy.
+
+Detached tests/test_elemental_lord_observations.py passes three tests covering
+valid Energy Blast observation, rejected wrong-direction/incomplete/incorrect-
+tick/late-maximum facts, and rejected non-self source attribution. Full frozen
+audit passes with unchanged source hashes. These are Python evidence checks;
+no native build, official-client interaction or shared runtime edit occurred.

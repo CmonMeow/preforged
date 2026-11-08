@@ -1,0 +1,5 @@
+Character name reads now use NetworkServer -> NetworkManager -> Accounts::characterName with typed owner/result. Ownership is checked in SQLite; stored UTF-8 names are validated. Three-second manager admission deadline and pre/post read cancellation prevent expired results. Offline name-read adapter shares the helper. Rename remains a separate operation pending migration.
+Validated by lifecycle endpoint ownership/name tests and direct name read, foreign-owner rejection, and post-read cancellation tests in rename_accounts.
+Host deployment pending; active host remains previous binary.
+
+Deployed 2026-10-09. Full126/126 tests pass; private2022 smoke PID5144 passed login, character Play/world entry, keyboard and ground-click movement, alive after5seconds. Ground motion163.58, sampled client/server pose disagreement0. Official client preserved.

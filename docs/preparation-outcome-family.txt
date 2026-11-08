@@ -1,0 +1,51 @@
+Marksman's Wager430 / Disrupting Accuracy1723 -- shared preparation outcome family
+
+Source bindings, not full rendered acceptance. Prepared attacks use the same
+scoped owned release snapshot as435/429/433. This release sampling phase is
+project policy; frozen receipts do not establish retail sampling/order.
+
+430: pinned elite preparation,Expertise23,5Energy,2s activation/noaftercast,
+24s recharge,18s duration,gain5..10Energy(rank0..15),loss10 on failed strike.
+Archived Marksman's_Wager.html rev2629683 explicitly describes each arrow
+hit/failure and multiple-arrow Energy returns. Ledger accepted resolved ranged
+outcomes own one resource commit per arrow. Hit gains; miss/block/dodge/
+obstruction lose; canceled/retired/replaced outcomes have no invented loss.
+This failure classification follows current shared attack authority; retail
+flight cancellation accounting is not established. Source resource and Mind
+Wrack authority settle before contact. Reactions run before the final reward;
+dead or recycled source gets no Energy. Shared gain/loss handles precise debt,
+fraction,Overcast ceilings and owner publication. Preparation replacement or
+expiry after release does not rewrite an already owned snapshot.
+
+1723: pinned preparation,Marksmanship25,5Energy,2s activation,.75s aftercast,
+12s recharge,36s duration. Archived Disrupting_Accuracy.html rev2672070 says
+critical arrows also interrupt their target,not only spells. Actual immutable
+critical event drives existing player/NPC action cancellation and protections.
+Unknown critical producer cannot admit/release/contact these prepared arrows;
+critical-damage suppression does not erase event. No forced critical chance,
+extra damage,extra attack or skill disable is invented. Preparation activation
+itself can succeed before equipping a reviewed bow; attack authority gates the
+actual prepared attack. Existing global arrow death/equipment retirement policy
+is unchanged. NPC recipients are supported; NPC caster AI is not newly added.
+
+Offline verifier tools/protocol/preparation_outcomes_2022.py pins the2022PE,
+checkpoint packet SHA and wiki hashes. Eleven frozen receipts prove selfcast,
+recharge18/36s effect lifetime and1723 caster1554; native consumers prove430
+style47/1723style48 and2s cast,1554file081104010000; original generic serializer
+verified.430 frozen activation984ms conflicts with pinned2s; context unresolved,
+old native2s retained.2077 sentinel never emitted. Captures do not establish
+resource/contact conditions or full ordering,retail RNG,rendered/audio QA.
+
+Focused Release validation PASS: preparation_outcomes_test and prior-family
+preparation_contact_test built serial--configRelease--parallel1 in28895 and both
+pass. Outcome suite covers player/NPC hit/miss/block,each-arrow resource gain,
+source/recipient death,critical/noncritical/protected interruption,unknown
+producer,replacement/exactexpiry snapshots,Runtime learned admission/payment,
+nativeaftercast boundary,recharge,cancel and missing/lost status/target callbacks.
+1723 aftercast boundary is.75s (3000completion ->3750next action). Independent
+root preparation_outcome_energy suite passed in prior46288: exact debt/fraction/
+Overcast ceiling/loss floor,zeroEnergyMindWrack nonlethal/lethal,PvP,lifetime.
+Runtime's six shared target_valid invocation sites are null-safe; missing
+preparation admission callback returns unsupported,actual callback rejection
+remains target rejection,lost completion callback fails without effect.
+No rendered/audio or full retail compatibility is claimed.

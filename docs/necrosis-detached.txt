@@ -1,0 +1,48 @@
+Necrosis [2103] — source-bound evidence and effect plan, 2026-10-24
+
+This skill is source-bound. The official-client packet and world snapshots
+are read from the fixed 20261024-signet-infection-bound checkpoint; live
+logger files and clients were not touched.
+
+tools/protocol/necrosis_2022.py passes two local map-280 cast sequences:
+packets-1360-15821281.jsonl lines 126393, 126399-126402 and
+packets-19472-19186421.jsonl lines 488530, 488539-488541. Both include
+start2103, two-second slot timer, finish and target effect838. The first
+window has an adjacent damage packet; the second captured window lacks one.
+This is consistent with the described hex-or-condition gate, but the packet
+window alone does not prove the exact target affliction or damage amount.
+The pinned 2022 client consumes a style51, one-second cast and target838
+particle lookup; DAT pixels are not rendered by the verifier. Machine-readable
+receipts and client-consumer evidence are in build/reports/necrosis-native-2022.json.
+
+src/runtime/gw_necrosis.h adds a canonical Sunspear-rank0..10 plan and a
+side-effect-free target resolver. It requires an authoritative condition-or-hex
+boolean, deals armor-ignoring damage only when true, and treats an unafflicted
+valid target as a successful no-damage completion. The 60+3*rank interpolation
+follows the local wiki's 60...90 Sunspear-rank description and pinned native
+endpoints; exact intermediate retail rounding remains unverified.
+tests/necrosis_policy.cpp compiles and passes in native Release, covering all
+11 ranks, both branches and rejected forged/unknown inputs.
+
+Detached tested hashes (SHA-256):
+gw_necrosis.h 2AF48479F51412DBF69AAD33853521114288DB545435BF66E52B70347F2AEF59
+necrosis_policy.cpp C8F07270148A892F40A70888542A09FF006F576681AF12853CE7CC95EBEC2021
+necrosis_policy_test.exe 6E1DA619390F9EF7FCC8453E63416770A9D63962CB2EDFC8427AABCFDEE77071
+necrosis_2022.py FF0CF444A90EDB3C145D16F9F0F6707E4EDAB8A891D946CCEF9CC0147B5C9824
+
+Production now snapshots the earned Sunspear rank at admission, checks the
+condition/hex gate at completion on scoped hostile player and NPC targets,
+and routes normal Energy/cast/recharge plus native838 publication. The native
+World test covers hex, condition, no-affliction, stale scope and paid cast
+branches. The serial Release host build and 864/864 registered CTests pass.
+The fixed audit now counts 375 source-bound of 679 locally captured obtainable
+skills, with 304 awaiting binding and 650 missing local activation captures.
+Release server_host.exe SHA-256:
+66DDBDFFCF532C503FC8261BF107C25C47CA38C35A8403940A2234894831FBA3
+tests/necrosis_world.cpp SHA-256:
+E74AC9BC3B0E0A140D3C5B5C485FC11AB498473217279C2BFDEA04C0A7709E62
+Release necrosis_world_test.exe SHA-256:
+07D37C12BF2D24443377ADD5E6375158497D0E5C08E541C3F26C75841AF4D272
+The existing Shadow damage family does not bypass Necrosis's affliction gate.
+Intermediate-rank retail rounding, additional status-expiry/cancellation
+cases, NPC caster AI and rendered private-client acceptance remain unverified.

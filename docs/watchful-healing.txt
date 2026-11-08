@@ -1,0 +1,125 @@
+Watchful Healing1392 staged World implementation,2026-10-21
+
+Native2022 row and historical Wiki agree:Monk/Divine Favor enchantment,
+5Energy,1s activation,.75saftercast,10s recharge,10s effect,+1..4Health
+regeneration and30..120Health gain when ended early. Caster body2077is
+sentinel;targeted body1647preserves the original caster.
+
+The early-end reward is Health gain,not healing. It bypasses healing-reduction
+hexes and does not grant another Divine Favor heal. Natural expiry or target
+death grants no reward. Current shared renewal policy replaces the old timer
+without ending it;retail renewal behavior still needs targeted evidence.
+
+Added strict WatchfulHealingPlan and early-end proposal;shared regeneration
+supports its timed pips. Trusted protective_enchantment application requires
+exact target scope and records original caster/recipient scopes,application
+and effect identity. Generic status injection or overwrite is rejected.
+Renewal retires the old ownership. Removal/expiry/death consumes ownership once.
+
+The World end handler grants capped Health before publishing effect removal,
+matching captured end-gain/removal order. Positive Health-change packet uses
+the original caster only while that exact scope remains present. If the caster
+has departed or its actor ID was reused,the beneficiary still gains Health;
+the source-attributed popup is omitted rather than credited to a replacement.
+Retail departure-popup behavior remains unverified.
+
+Chilblains admits this reviewed player end only in the evidence-selected
+damage-then-remove order. The alternate experiment rejects before spell commit.
+Its regression reproduces damage,Health gain,effect removal;unreviewed-end
+rejection now uses Shield of Absorption1399.
+
+Tests/watchful_healing_world.cpp covers21ranks;early versus boundary/late end;
+no double healing reward;stale scope/forged plan/injection/overwrite guards;
+ordinary removal;Defile Flesh healing-reduction bypass;natural regeneration
+and expiry;renewal without early reward;death without resurrection/popup;
+source departure/actor reuse;Chilblains ordering;maximum-Health clamping and
+backward-clock rejection followed by valid once-only removal. Initial fixture
+omitted party membership;corrected through real invite/accept,not relaxed rules.
+
+Native verifier:tools/protocol/watchful_healing_2022.py checks hash-pinned row,
+cast consumer and target1647consumer plus10exact frozen receipts in
+20261017-npc-refresh-2/packets-110488-195213578.jsonl. It includes cast,
+recharge,finish,target1647,rank15effect261,regeneration,initial cast heal,
+Chilblains damage,early end gain and removal. Kind55alone does not distinguish
+Health gain from healing;the historical wiki supplies that semantic evidence.
+Report:build/reports/watchful-healing-native-2022.json.
+
+Four focused current-source native suites pass:watchful_healing_world,
+health_regeneration,enchantment_removal,chilblains_world. Coverage tooling4/4
+passes. Fixed audit and final host rebuild pending at this entry.
+
+Still unfinished:normal Runtime/gateway binding and costs/cast lifecycle,
+completion-time animation publication,NPC source/recipient support,Divine Favor
+application acceptance,full modifier/duration behavior,source-departure popup,
+renewal/death retail comparisons and rendered QA. Native asset services are
+stubbed in offline verification. No production1392binding or completed-skill
+count increase is claimed. Official clients/loggers were untouched.
+
+Verification completion:serial host build55699terminated successfully. Four focused native suites pass4/4,coverage tooling4/4,and native1392row/cast/target1647with10frozen receipts pass. Fixed audit/backlog refreshed633captured/292source-bound/341awaiting/696missing. Latest host contains staged World end handling;normal1392Runtime admission remains disabled. No official client/loggers were accessed.
+
+2026-10-21 staged Runtime and completion publication
+Added typed watchful_healing completion hook with explicit opt-in admission;production callback remains empty and supported()doesnot advertise1392. Cast captures exact ally/self scope,checks target/before-effect capabilities before payment and again at completion,and uses shared5Energy/1s/.75s/10s lifecycle. New stage_watchful_healing validates native immutable plan and forwards scoped regeneration plus primary-Monk Divine Favor through World.
+World1392application can defer recipient-specific packets. Runtime publishes finish58then targeted1647before releasing effect65/regeneration/Divine Favor data;final slot/recharge does not duplicate the prefix. EffectCompletion now explicitly supports visuals-before-publication. Other effects retain default ordering. Watchful initial Divine Favor emits source-attributed actual-heal popup after status,using existing healing penalties/rounding;early end remains distinct Health gain.
+New51case Runtime-to-World suite:primary Monk ally/self and secondary-Monk rank0;cost/timing/recharge/aftercast;scope loss/range loss;missing/lost effect,before-effect,target-scope and validation callbacks;insufficientEnergy;World source-generation rejection;Soul Barbs application death without revival;Divine Favor reduction under Defile Flesh followed by unreduced early Health gain. Primary-Monk presentation and party invite/accept use actual World authority. Native frame tests assert finishbefore1647beforestatusbeforeDivineFavor and once-only application.
+Current-source watchful_healing_cast,watchful_healing_world andchilblains_cast pass3/3. Coverage tooling4/4 and10receipt/native1392verifier pass. Serial build59277completed server_host. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing.
+Still pending:normal production admission,NPC roles,global cross-thread publication coordination,full modifiers/duration/Divine Favor fractional-policy evidence,source-departure popup,retail renewal/death comparisons and rendered/sound acceptance. This closes staged player casting and same-cast target-before-status publication only. No new production binding or official-session interruption claimed.
+
+2026-10-21 Watchful NPC recipient primitive
+LiveActor now accepts an immutable native1392 plan on an exact NPC lifetime, settles old regeneration before replacement, and integrates its owned timed pips. Early reviewed removal grants capped Health directly through the Deep Wound ledger, bypassing healing reduction; expiry and death grant none. Renewal settles elapsed gain without an early-end reward. Status refresh now settles active Watchful regeneration before expiring its registry entry, including delayed refresh beyond expiry.
+Chilblains NPC proposals admit this reviewed end under captured damage-before-removal order; alternate removal-first rejects1392 atomically. Tests cover21ranks, forged plans, stale lifetime, duplicate effect, backward clock, once-only removal, natural expiry, delayed status refresh, renewal, modified maximum, death, copy-only damage/gain/removal and unknown-armor rejection. Initial death fixture used an allied NPC, which correctly rejected hostile damage; corrected fixture uses a hostile NPC instead of weakening allegiance authority.
+Serial host build17503 completed successfully. Three current-source suites pass:watchful_healing_npc,npc_ice_spear_regeneration,chilblains_npc. Coverage tooling4/4passes;fixed checkpoint audited and backlog published633captured/292source-bound/341awaiting/696missing.
+This is a trusted recipient primitive,not completed NPC casting:World caster authority/range/payment/Divine Favor,source-lifetime attribution and Health-gain popup publication still need integration. NPC removal through unrelated bulk-clear paths and rendered QA remain unverified. Production1392admission stays disabled;no completed-skill count increase is claimed. Official sessions/loggers untouched.
+
+2026-10-21 staged Watchful player-to-NPC World application
+The scoped World stage now admits reviewed allied/protected NPC recipients. It validates current caster/lifetime,team membership,life,knockdown,primary-Monk Divine Favor policy,NPC generation/health clock,updated movement,range,plane and navigation trace. Old Health clocks are settled before applying a copied native1392plan;unknown Divine Favor healing policy rejects,known immunity suppresses only the heal. Owned NPC effect65/status and initial-heal feedback use once-only deferred publication,leaving target1647 available for Runtime's finish-first prefix.
+World records the exact NPC effect lifetime for renewal removal and once-only expiry/death cleanup. Ten NPC World modes cover success,hostility,range,unknown/immunity healing policies,source/target generation,forged plan,publication,expiry and renewal. Existing51player cast cases and player World suite pass alongside the new suite. Native1392row/cast/target and10receipt verifier passes;coverage tooling4/4passes. Host rebuild pending in this entry.
+Remaining:autonomous NPC caster admission,source-lifetime attribution for NPC early-end gain popups,complete removal-path packet ordering,global cross-thread publication,full modifier/retail edge evidence and rendered/sound verification. Normal1392gateway callback remains empty;these staged checks do not claim a production binding or complete skill. Official logging untouched.
+Watchful NPC World validation completion:final serial build2345completed server_host successfully. Three current-source World/cast suites3/3pass after actor-ID/scope mismatch guard and indexed ownership cleanup. Fixed audit/backlog republished633/292/341/696. No official process actions or logger modifications. Staged NPC casting/end-publication gaps above remain open.
+
+2026-10-21 Watchful NPC end receipts and publication
+LiveActor preserves exact1392end receipts across copy-only proposals:effect identity,actual end time,post-gain Health and actual capped gain. Lifetime-checked draining consumes them once. A pure native-wire builder validates ownership,rank/expiry semantics,finite bounded Health and actual gain;it emits fraction,optional original-caster gain popup,then67removal. Missing/reused caster scope omits attribution while preserving authoritative Health and removal.
+World now drains these receipts after real NPC enchantment removal/copy,after committed Chilblains damage and during NPC settlement. It matches target generation,application timestamp and caster identity against owned credit before consuming it. Preview removals remain isolated and cannot publish or consume live ownership. Existing expiry cleanup remains a fallback for effects that disappear without an explicit early end.
+Current-source watchful_healing_npc,watchful_healing_npc_world,chilblains_npc,chilblains_world pass4/4;coverage tooling4/4passes. New assertions cover21ranks,original/missing/reused source,overstated gain rejection,capped10Health receipt,death/no-popup,once-only queue consumption and copied Chilblains receipt isolation. Fixed audit633/292/341/696;host build pending.
+Remaining verification:there is no full World end-to-end enemy-NPC self-enchantment/removal fixture yet because current staged application only accepts player-to-allied-NPC casts. NPC caster source authority and its spell lifecycle remain unfinished,so no NPC-source popup is claimed. Other bulk-clear/reactive end paths,global cross-thread publication,modifiers/retail edge comparisons and rendered/sound acceptance remain open. Production1392callback stays empty. No official client/logger actions.
+Watchful NPC end follow-up:serial host build4764completed successfully. Four focused current-source native suites4/4and coverage tooling4/4passed;fixed audit/backlog republished633/292/341/696. Full World enemy-NPC end scenario and the other verification gaps remain open.
+
+2026-10-21 reviewed NPC self-cast and full World end sequence
+Added begin_npc_watchful/complete_npc_watchful in gw_world_npc_watchful.inl. Native immutable rank plan is pinned at admission;an explicit configured spellbook entry/evidence and known Energy/pips are required. Shared spellbook pays5Energy,uses activation modifiers,tracks token,10srecharge and.75saftercast. The ally spell target rule now admits1392non-hostile targets;self-targeted offensive spells remain rejected. This typed World path supports hostile-NPC self casts only,not an inferred universal ally policy.
+Completion validates exact stored token/lifetime/control epoch,settles reactions,uses shared before-spell handling and publishes finish58,target1647,effect65/status. Generic complete_npc_action cannot consume this typed token without its effect. End attribution now resolves current player or NPC caster scopes. No primary-Monk/Divine Favor profile is inferred for NPC sources;NPC profession bonuses and autonomous/controller scheduling remain pending.
+New11mode World suite covers valid5Energy/1s cast,insufficientEnergy,missing reviewed book,forged plan,stale source,real Power Spike interruption,forged token,expiry/recharge reuse,death,generic-completion bypass rejection,and actual Drain Enchantment/Chilblains removal with NPC-attributed gain before67. It verifies copied cold damage before gain with fractional Health retained and no later duplicate removal. This supersedes the previous lack of a full World enemy-NPC end fixture.
+The integrated test exposed measured Health subtraction rounding one ULP above the permitted102gain after fractional Chilblains damage. End receipts now bound measured gain to the requested mechanic amount;authoritative fractional Health is retained. Initial test fixture mismatched appearance/combat level and later tested removal behind an advanced clock;fixtures were corrected without relaxing authority. The rounded165expectation was corrected to the actual fractional damage formula.
+Current-source watchful_healing_npc_cast,watchful_healing_npc,npc_offensive_plan,npc_elemental_cast pass4/4. Native1392row/cast/target and10fixed receipts pass;coverage tooling4/4passes. Host rebuild/final backlog publication pending in this entry. NPC-to-other-ally casts,profession/Divine Favor profiles,AI use policy/scheduling,other bulk-end paths,full modifiers/retail edges,global publication ordering and rendered/sound QA remain open. Production1392binding remains disabled. Official clients/loggers untouched.
+Watchful NPC self-cast validation completion:serial build25098completed server_host successfully. Four focused current-source native suites4/4,coverage tooling4/4and native10receipt verifier pass. Fixed audit/backlog633captured/292source-bound/341awaiting/696missing republished. Full World NPC self-cast/end feedback is now tested;remaining ally/profession/AI scheduling/modifier/global-order/rendered gaps remain explicit. No official process actions.
+
+2026-10-21 NPC Watchful deadline scheduling
+Admitted NPC Watchful casts now participate in the shared timed-effect frontier. The scheduler selects their exact completion deadline before advancing the world past it,then consumes completed/canceled/retired tokens. A per-actor in-progress guard prevents recursive completion during shared Health/energy/reaction settlement. Explicit late completion also uses the original token deadline. Generic action completion rejects a typed Watchful token before running the scheduler.
+Completion rechecks lifetime,control epoch and life after advancing conditions:death discovered during that advance consumes the pending cast in the same frontier instead of leaving a blocked record for another tick. Equal-time provider order remains an explicit private policy:existing resources,fields,expiry and projectile providers run before Watchful completion;retail simultaneous-event precedence is not claimed.
+New8mode schedule suite compares frequent100ms ticks with a single late tick,explicit late completion,interruption,direct death,degeneration death during settlement,intervening damage,two casters and recharge reuse. It verifies once-only effect creation/removal,original10s regeneration window and no shifted recharge. Expected Health retains fractional arithmetic tolerance. The interrupt fixture uses native23Power Spike (30damage at0),not Power Drain;the previous prose was corrected.
+Current-source watchful_healing_npc_schedule,watchful_healing_npc_cast,npc_elemental_cast,fevered_dreams_deadlines pass4/4;coverage tooling4/4passes. Fixed audit/backlog633/292/341/696republished. Host build pending at this entry. Scheduling starts only after explicit reviewed admission;autonomous AI choice,other ally recipients,NPC profession bonuses,full modifiers/retail edges/global publication and rendered/sound verification remain open. Normal1392gateway remains disabled. No official-client/logger actions.
+Watchful scheduling validation completion:serial host build19575completed successfully. The additional current-source world_timed_order suite rebuilt2927and passed,bringing focused native validation to5/5;coverage tooling4/4passes. Fixed backlog633/292/341/696is current. Autonomous AI skill choice and the remaining fidelity/rendered gaps above stay open;official logging untouched.
+
+2026-10-21 actual player-to-NPC Runtime admission
+Found an integration gap beyond the earlier World-only tests:the gateway's generic ally guard delegates to player-only valid_heal_target,and Runtime's final fallback also requires target Resources. Thus a real allied NPC could not complete Watchful even though World supported its recipient transaction.
+Added required scoped watchful_target_valid hook and World validator for reviewed live player/NPC allies. Admission captures target scope once,validates before payment,and completion revalidates that exact scope and capability. Watchful's completion predicate no longer fabricates/requires NPC player Resources. Other spells keep their existing generic target checks. The gateway's scoped validation callback is connected;the actual Watchful effect callback remains explicitly empty while fidelity/rendered gaps persist.
+World validation settles timed/Health events,checks exact caster/target lifetimes,party/teaming for players,reviewed NPC allegiance,updated movement,range,plane and current NPC navigation trace policy. New8mode Runtime-to-World test uses an actual NPC without Resources and a deliberately false legacy target validator. It covers paid successful cast and finish58/target1647/status order,hostile/far/stale rejection without payment,missing/lost scoped callback,completion rejection and cancellation. Existing51player cases now use the scoped callback and remain passing.
+Current-source skill_casting,chilblains_cast,watchful_healing_cast,watchful_healing_npc_player_cast pass4/4. Native row/cast/target and10frozen receipts pass;coverage tooling4/4passes. Serial host build66900completed successfully. Fixed checkpoint audit/backlog633captured/292source-bound/341awaiting/696missing republished. No official-client/logger actions.
+Remaining admission gap before production:NPC healing policy is still checked at World effect commit when Divine Favor is nonzero. The new target callback must receive the actual Divine Favor rank and reject unknown healing capability before payment,while permitting known immunity and rank0enchantment casts. NPC line-of-sight policy versus nonprojectile retail behavior also needs review. Other NPC ally-source/profession/AI-choice/modifier/renewal/departure/global-order/rendered gaps remain open. No new production binding claimed.
+
+2026-10-21 Divine Favor-aware NPC admission
+The scoped Watchful target callback now receives the actual cast's Divine Favor rank at admission and completion. World rejects ranks above20and nonzero Divine Favor from a non-primary-Monk caster. For an NPC recipient,unknown healing capability rejects a nonzero Divine Favor cast before5Energy is paid. A known false/immunity policy remains eligible for the enchantment and suppresses the initial heal;rank0doesnotrequire a healing policy because no heal is attempted. The effect transaction retains its independent capability check at commit.
+Expanded player-to-NPC Runtime suite from8to12modes:unknown healing/nonzeroDivineFavor rejects with100Energy retained;known immunity still publishes enchantment without heal popup and regenerates6Health over1s;secondary Monk and primary-Monk rank0both admit unknown healing capability,emit no heal popup and regenerate2Health over1s. Direct World guards reject21rank and non-Monk nonzeroDivineFavor. Existing stale/range/hostility/missing/lost/cancel/payment/publication cases remain covered. Initial secondary fixture incorrectly supplied a primary-only Divine Favor attribute rank;corrected it to a valid rank0attribute profile,not an assumption that Runtime sanitizes all trusted rank inputs.
+Current-source skill_casting,chilblains_cast,watchful_healing_cast,watchful_healing_npc_player_cast pass4/4 (51player and12NPC Watchful cases). Native1392row/cast/target and10frozen receipts pass;coverage tooling4/4passes. Fixed audit/backlog633/292/341/696republished. Host build pending in this entry. The earlier Divine Favor admission gap is closed;NPC nonprojectile line-of-sight policy,other-ally NPC sources/profession bonuses,AI choice,modifier/renewal/departure/rounding evidence,global publication and rendered/sound verification remain open. Actual1392gateway effect callback remains empty. Official logging untouched.
+Divine Favor admission validation completion:serial host build5695completed successfully. Four focused current-source native suites4/4,coverage tooling4/4and native10receipt verifier pass;fixed backlog633/292/341/696is current. Remaining fidelity/rendered gaps and staged production status are unchanged. No official process/logger actions.
+
+2026-10-21 production callback and normal player admission
+The single native host now connects watchful_healing to stage_watchful_healing with a fresh session-owned Enchanting receipt and deferred recipient publication. Runtime advertises1392 normally; it still requires scoped target, Divine Favor-aware target validation, before-spell and effect callbacks before charging Energy and revalidates them at completion. No test-only opt-in is needed. This supersedes earlier statements that the production callback is empty.
+
+The existing regeneration duration admission guard covers1392: malformed equipment or unsupported Monk duration-provider combinations reject before payment; loss/change at completion is checked before spell-effect reactions. The actual effect transaction takes a second matching quote and uses the adjusted expiry. Completion returns targeted1647 with visuals-before-publication so finish58 and target effect precede status/regeneration/initial Divine Favor. Early removal still uses Health gain rather than healing, and natural expiry/death use no early gain.
+
+The Runtime-to-World player suite now has66cases,adding20percent duration,10percent swap during cast,invalid admission,invalid completion and lost duration callback for ally,self and secondary-Monk contexts. Existing51cases retain cast/cancel/interrupt/recharge/aftercast,scope/range/capability,Divine Favor and lethal reaction tests. The12real NPC-recipient cases,World player/NPC end handling and admitted NPC self-cast scheduler remain separate regression coverage.
+
+Native row/cast/target1647 and ten hash-frozen receipts remain the animation/protocol evidence. Native services are stubbed and do not prove rendering. The source coverage audit now classifies1392 as a production binding and still rejects accidental promotion of Echo,Wither/Malaise andChilblains with empty hooks.
+
+Remaining fidelity gaps are not removed by enabling the production path:retail renewal/death comparisons,Divine Favor fractional rounding,all duration-provider combinations,NPC nonprojectile line-of-sight policy,other-ally NPC sources/profession bonuses,autonomous AI choice and global cross-thread publication order. Rendered/sound QA remains unverified. These are implementation/verification gaps,not a claim that1392is complete.
+
+Production binding validation completion:serial build43063completed server_host successfully. Nine focused suites pass,current-source66player cast and12NPC-recipient cases pass,and coverage tooling4/4passes. Native row/cast/target plus10fixed receipts pass. Fixed audit/backlog633captured/293source-bound/340awaiting/696missing republished. Rendered and broader fidelity gaps above remain explicit. Official sessions/loggers untouched.

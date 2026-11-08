@@ -1,0 +1,180 @@
+Disease: World player and reviewed-NPC propagation; unknown NPC traits stay gated
+
+Current status update: Virulence107 now has a guarded Runtime/production-gateway
+binding after shared contagion,provenance and deferred completion integration.
+Earlier unbound/staged notes below describe prior checkpoints and are superseded
+by docs/virulence.txt. Lineage,trait population and visual verification remain
+incomplete.
+
+
+Reference is the local historical Disease.html. It states4 degeneration pips,
+adjacent spread between the same creature type,and flesh-sensitive eligibility.
+Its qualified once-per-application note does not justify inventing a universal
+reinfection rule. Transfer must preserve the source infection's remaining duration,per the user's
+mechanics clarification;contact must not restart its original full duration.
+Cadence,source credit and immunity transitions still need verification.
+
+src/runtime/gw_disease_contact.h evaluates one supplied contact. It requires
+valid actor scopes and finite positions; verifies a currently active Disease
+entry; excludes self,different instances,dead actors,planes and distances beyond
+166;then checks known type,flesh and recipient immunity. It returns eligible,
+no_contact,unknown or invalid. Missing facts never become permissive defaults.
+Known non-flesh,immunity or different type can rule contact out without needing
+irrelevant unknown facts. Teams are deliberately absent:the rule is not limited
+to foes. The eligibility query itself does not mutate conditions or grant infection credit.
+
+Release disease_contact_test passed exact adjacency and expiry boundaries,
+same/different/unknown type,flesh/immunity unknowns and known exclusions,
+planes,dead/self/cross-instance actors,invalid scope/position/type and bad
+infection source. Tests use supplied facts;they are not retail spread captures.
+
+NPC catalog version13 and lifetime-bound creature_type facts provide reviewed
+server taxonomy labels with evidence. Existing production catalogs remain
+unchanged/unknown. The contact resolver and immutable population planner now
+feed player-recipient transfers through World's shared condition reactions.
+Next: explicit NPC recipient immunity,complete original credit and lineage
+behavior,and verify player/NPC mixtures and cleansing/immunity changes. Virulence
+remains unbound pending these shared mechanics and its casting lifecycle.
+
+Frozen evidence pass (20261017-npc-refresh-2):
+tools/skills/audit_disease_checkpoint.py found7 complete Disease483 effect
+receipts in the source files referenced by the fixed skill audit. The tool
+verifies packet/world hashes and keeps modern opcode roles distinct. Report:
+build/reports/disease-capture-evidence.json.73 skill-tooling tests passed,
+including upkeep-vs-effect,partial packets,source/header corruption,invalid
+duration,context roles and unchanged capture bytes.
+
+Map239/epoch60 has six14s receipts at ticks205118281(actor22),205122250
+(actors26/23),205123859(actors25/27/24). Putrid Flesh1353 was cast by25
+at205116296 against101. These timestamps/context do not identify which
+creature transmitted an infection. If these receipts belong to one lineage,
+the later14s timers would contradict a policy that always preserves the first
+absolute expiry. That lineage is not established,so this remains a conditional
+observation rather than a propagation rule.
+
+The seventh receipt is6s on actor25 in map280 at16996390. Necrotic Traversal97
+starts at16995578. It is categorized as corpse-movement context,not a Disease
+generator: temporal proximity alone does not establish infection cause.
+
+The report does not establish cadence,transfer duration,reinfection,immunity
+changes or credit. Controlled source/recipient observation is still needed.
+
+Local wiki review (2026-10-18):
+Disease.html revision2661310 explicitly documents adjacent same-creature-type
+spread,fleshy eligibility,-4 degeneration pips,and qualified once-per-application
+behavior. It does not explicitly specify remaining-duration transfer;that rule
+comes from the user's clarification,not from these captured effect receipts.
+Creature_type.html revision2646695 defines a mechanics classification distinct
+from affiliation and lore species. Each creature instance has one type;different
+versions of an identically named NPC may have different types. ArenaNet's
+in-house term is family. Use reviewed variant-specific type evidence,not name,
+team,model appearance or lore species alone. The campaign type list is marked
+incomplete. Creature.html revision2590376 separately warns that traits such as
+fleshiness and holy-damage vulnerability are not rigidly tied to classification.
+
+Reference files in C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/: 
+Disease.html,Creature_type.html,Creature.html,Species.html. These are read-only
+historical sources. Unknown NPC facts should be filled from these references
+and individual creature pages where supported;the type list alone does not
+justify assigning every NPC's traits. This review changes documentation only;
+complete Disease propagation remains pending;player-recipient World support is described below.
+
+Remaining-duration proposal implementation (2026-10-18):
+disease_transfer now copies the recipient state and applies only the source's
+remaining milliseconds,keeping absolute expiry through multi-hop transfers.
+Equal/longer recipient infections are unchanged,including their condition-cover
+order. Unknown/ineligible contacts cannot mutate state. The original cause is
+retained as proposal metadata;World lifetime-bound credit is not yet connected.
+Release disease_contact passed transfer-at-mid-duration,chained expiry,exact
+expiry,no-shortening,equal-timer cover preservation and unknown-trait rejection.
+This is a tested proposal layer,not a claim of live World propagation.
+
+Immutable population planner (2026-10-18):
+disease_contacts selects at most one proposed transfer per recipient from a
+validated lifetime-scoped snapshot. Longest absolute expiry wins;scope order
+breaks ties deterministically. Newly infected actors cannot become sources
+within the same snapshot. Duplicate actor slots (including competing generations)
+are rejected. Unknown eligibility contacts are counted and do not become
+permissive defaults. Release tests pass reversed population order,longest-source
+selection,two-snapshot chained expiry,duplicate rejection and unknown accounting.
+This prepares World integration;the planner does not publish packets,commit
+reactions,resolve immunity,or assert an official spread cadence.
+
+World integration in progress (2026-10-18):
+The normal 100ms World tick now snapshots active player and reviewed NPC Disease
+sources after health settlement,uses current authoritative positions/planes,
+and commits eligible player recipients through commit_conditions_locked. This
+publishes the condition effect and invokes shared Fragility/Fevered reactions.
+Human player baseline is fleshy;active forms conservatively invalidate type
+and flesh assumptions. Owned Tainted Flesh113/Avatar of Grenth1520 records
+prove recipient immunity. Missing player effect registries remain unknown.
+NPC recipient immunity is not inferred from conditions_allowed=true;those
+contacts stay gated. Known all-condition immunity excludes the NPC recipient.
+
+Release disease_world tests pass automatic tick contact,chained transfer on
+subsequent snapshots,expiry without contact renewal,and retention of longer
+existing infections. Full NPC recipients,immunity/transform lifecycle coverage,
+lifetime-bound original credit,once-per-application lineage semantics and
+retail timing verification remain pending. No new skill binding is claimed.
+Earlier entries saying all World propagation is pending are superseded for
+these tested player-recipient paths only.
+
+Additional World regression: a transferred infection triggers Fragility through
+the shared commit path,kills the low-health recipient,and that corpse does not
+transmit on the next tick. Sources are rechecked for exact scope and the same
+active infection (cause,application time,expiry) before each commit,so earlier
+reactions cannot silently substitute a different infection. Release disease_world,
+disease_contact and virulence_world passed after this change.
+
+Validation: serial Release build of disease_world_test,virulence_world_test,npc_world_combat_test and server_host passed. All four selected CTest suites passed. NPC combat test now uses MSVC /bigobj because the expanded World header exceeded COFF section limits. No official client or logger process was changed.
+
+Reviewed NPC recipients and original transfer credit (2026-10-18):
+Catalog14 supplies evidence-backed optional Disease immunity independently of
+flesh/type. World now preflights NPC condition application on copies,then commits
+through LiveActor,Fragility publication,status and application observers.
+Unknown immunity/type/flesh remains nonpermissive. Existing longer infections
+are checked again before each commit so earlier reactions cannot overwrite
+their timers or credit. Production catalogs have not been guessed/upgraded.
+
+New player Disease applications retain original caster scope alongside the
+exact infection entry. Contact transfers copy that scope across player and NPC
+hops;they do not look up a replacement caster by actor ID. Explicit cleansing
+clears the stored player credit;expired/mismatching infection entries cannot
+reuse it. NPC death awards still require the original caster scope to match
+a current player. Tests pass player->player->NPC credit,player->NPC->player->NPC
+credit,unchanged original expiry,and disconnect/rejoin actor-ID reuse denying
+credit to the replacement. Known immune,unknown immune,nonfleshy and different
+type NPCs are rejected.
+
+Remaining: migrate all Disease entry points and condition-transfer skills to
+explicit immunity/provenance rules;exercise mixed degeneration sources and
+legacy shared NPC cause-credit entries when other conditions are reapplied by
+a reused caster ID;complete qualified once-per-application lineage behavior,
+trait population,transform/immunity lifecycle tests and paired retail timing.
+Virulence107 remains unbound until these mechanics and its casting lifecycle
+are complete. Earlier pending-NPC notes are superseded for the reviewed paths
+above;they are not a claim that every production NPC has sufficient facts.
+
+Validation for reviewed NPC/credit extension: serial Release npc_flesh_traits_test,disease_world_test,virulence_world_test,npc_world_combat_test and server_host builds passed. CTest disease_world,disease_contact,npc_flesh_traits,virulence_world,npc_world_combat all passed. Fixed checkpoint fingerprints and published backlog refreshed:281 bound/352 awaiting binding. Official clients/loggers were not touched.
+
+Infection-specific NPC credit (2026-10-18):
+Disease provenance now belongs to the LiveActor infection entry and actor
+lifetime,instead of the shared NPC cause-ID map. The getter verifies the
+condition's cause,application time and expiry. Shorter reapplications retain
+the original entry/credit;extensions invalidate it until a caller explicitly
+records a matching caster scope. Cleansing clears it. Virulence's staged NPC
+transaction records provenance only when its Disease entry actually changes.
+
+ConditionUpdate carries the selected degeneration kind and Disease source
+scope from the integration segment where death occurs,even if the infection
+expires before the delayed tick finishes. World Disease deaths never fall back
+to shared cause-ID credit when provenance is absent. NPC-to-player transfers
+read the same infection-bound provenance. Earlier pending shared-credit
+collision notes are superseded for Disease-selected deaths specifically.
+Other condition/hex source-credit paths remain separate migration work.
+
+Release disease_provenance and disease_world pass targeted provenance and
+replacement-caster collision tests;the wider host/regression rebuild is being
+validated before publishing this checkpoint's final result.
+
+Final provenance validation: Release server_host and all affected test targets built successfully. All six CTest suites passed,including the added mixed Disease/Poison winner check and shorter/longer applications from another caster. Runtime coverage,checkpoint audit and backlog publication completed. Official clients and recorders were not modified. Virulence remains unbound and the full skills goal remains incomplete.

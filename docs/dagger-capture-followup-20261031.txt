@@ -1,0 +1,92 @@
+DAGGER FAILURE/LETHAL EVIDENCE FOLLOW-UP (READ-ONLY, 2026-10-31)
+
+New detached tool: tools/skills/audit_dagger_family_detached.py.
+Run: python tools/skills/audit_dagger_family_detached.py
+This verifies each consulted file against the fixed manifest and inventories
+all30 local starts for775/776/777/778/779/780/782/783. It writes no source or
+capture data. Its stdout was saved separately in
+build/reports/dagger-family-detached-20261031.json. Python audit completed;
+this is not native mechanics, consumer or rendered verification.
+
+Immutable sources / verified SHA256:
+packets-108988-190116609.jsonl
+9cadca1740cdd4aae3ac27246b95f9dca0b262eff17a3fba4f429daa38664ddf
+packets-1360-15821281.jsonl
+59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6
+Both belong to20261024-all-completed. Line numbers below are one-based.
+
+Failed Fox Fangs establishes a concrete cooldown transition
+In108988 source the last observed chain clear is21552. Local25->30 skill780
+starts21604 at190518156. At190518343:
+21607 [229,25,780,0,3] recharge3;
+21608 [159,46,25,0] attack finish;
+21609 [160,38,30,25,2] target/source failure-form packet;
+21610 [229,25,780,0,0] recharge0;
+21611 [227,25,780,0] pending release.
+No stage2 or source25->target30 damage packet is present in this completion
+frame. Equivalent local failures occur22296..22300 and22318..22322, also
+after the last observed clear21976. Two attempts22313 and22293 are only
+1110ms apart, corroborating that a lasting3s recharge was not enforced for
+these failed receipts. This supports failure-conditioned immediate recharge
+reset. Kind38 value2 still requires original2022 native semantic verification;
+do not label it block or ordinary miss merely from the number.
+
+Energy fee/refund is unproved. CORRECTION after reviewing original-client
+timing evidence: opcode162/kind62 at21603 is timing state, NOT an Energy debit.
+It maps to original161/kind61 and timing event24 (see
+tools/protocol/divine_spirit_2022.py and selfless_spirit_cost_windows_2022.py).
+No payment conclusion follows from its negative float. A later hash-verified
+actual-resource audit found no max-Energy41/current-fraction33/regen43 receipt
+within2seconds of any of the six local Fox starts. In the wider108988 family
+interval the only actual Energy lane is regen at21193/tick190490390, before
+these attempts; the World collector has no top-level Energy snapshot keys.
+Report: build/reports/dagger-failed-fees-20261031.json. Do not infer paid Energy
+or a refund from either timing state or the observed3->0 recharge reset.
+
+Dual failure control
+In1360 source775 starts710803, then710809 recharge2 /710810 finish46 /
+710811 kind38 value2 /710812 recharge0. A second terminal47 and second kind38
+appear710818/710819 before pending release710820.776 follows the same paired
+terminal/failure structure710851..710858 and710906..710913;777 at710872..
+710883. No successful stage3 packet was identified in these local activations.
+The local dual checkpoint coverage therefore supplies failed attempts rather
+than a valid offhand->dual damage/condition demonstration. Do not claim30
+successful attacks from30 audit finishes.
+
+Additional positive contrast
+108988: prior lead21286 -> Fox21309 -> recharge21312, finish21313,
+stage2 at21314. Falling Spider22387 -> finish22396 -> stage2 at22397 ->
+damage22398. Compare earlier Falling Spider failures such as21411..21413:
+recharge8/finish46/kind38 with no immediate zero reset. Conditional failure
+does not necessarily share Fox's reset policy. Need exact knockdown state and
+native kind38 consumer before generalizing the reason.
+
+Jagged recharge conflict, now explicit
+Captured782 recharge is2 at108988 line21337 and1360 lines750168/750611.
+Pinned2022 catalog row specifies recharge1. Detached policy asserts the
+pinned row; it does not encode a captured2s override. Treat this as an explicit
+version/context discrepancy in normal binding review. Fox has consistent
+captured3s success recharge and canonical3s base, with failure reset above.
+
+Lethal-chain gate remains unresolved
+All30 local activation examples target actor30 in map280; damage modifiers
+alone do not provide a before/after current Health pair proving lethal damage.
+The detached audit intentionally does not infer death from a large normalized
+delta, target absence, stage clear or a delayed ordinary attack. No reviewed
+same-lifetime death receipt tied to a local dagger completion was established.
+Thus this inspection cannot resolve stage-on-lethal-hit or death-driven chain
+reset wire order. Need a captured target Health/death/retirement contrast, or
+reviewed other-actor dagger contacts with exact ownership/lifetimes. Existing
+survivor-only World Iron Palm policy remains a private implementation policy,
+not proof that actual dagger attacks suppress stage on lethal contacts.
+
+Expanded detached test source
+tests/dagger_attack_policy_detached.cpp now covers each rank0..20, stages0..4,
+item types0..40 with caster/noncaster distinction, mutation of every canonical
+plan field, bad instance/actor/generation, exact expiry/refresh, copied-snapshot
+mismatch and integer overflow. AttackOutcomes cases prove test expectations
+for miss/block/dodge/obstruction/cancel/retire/replaced terminal gates: no
+post-terminal qualification/repeated finish, and a qualified hit cannot become
+block. The copy-only helper deliberately returns another proposal on replay;
+the test documents that World/AttackOutcomes must supply exactly-once commit.
+No native compile, execution, registration or production edit was performed.

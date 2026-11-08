@@ -1,0 +1,156 @@
+Arcane Mimicry65:staged native plan and donor selection
+====================================================
+Pinned2022row:15Energy,2s activation,.75s aftercast,60s recharge,20s copy,
+No Attribute,other-ally target4,caster117,target118. Local Arcane_Mimicry.html
+revision describes first elite from left,no effect for a form or no eligible
+elite,and an independent60s disable after a successful20s copy expires.
+
+New gw_arcane_mimicry.h validates the native row and selects the first elite
+from a trusted published target bar. It preserves donor index and full Slot
+identity,does not skip a leftmost form to copy a later elite,and rejects invalid
+bar identities. Type26forms reject;untyped elite rows stay explicitly unsupported.
+This selector is not a target validator,grant,copy-ID allocator or cast handler.
+World must prove the original live other-ally Scope/range/current bar revision.
+Player campaign/usage rules still apply after copying;NPC/PvE exceptions and
+Junundu Siege need explicit handling in the eventual complete integration.
+
+Fixed checkpoint20261022-cumulative-skills contains two local casts:
+packets-1360-15821281.jsonl3357start,3370recharge,3371finish,3372caster117;
+packets-6468-5728843.jsonl103323start,103335recharge,103336finish,103337caster117.
+Both target28and receive ordinary60s recharge at1954/2047ms completion.
+The corrected selected90s owner/target windows contain54events and no copy replacement.
+That is consistent with the documented no-eligible-elite result,but is NOT proof
+of its cause:target28's authoritative loadout is not established by these records.
+No successful donor/copy lifetime/restoration-disable behavior is claimed.
+
+Offline arcane_mimicry_2022.py validates10hash-pinned receipts and native metadata,
+executes original2s cast and117/118body consumers,and writes
+build/reports/arcane-mimicry-native-2022.json. Both trials contain target118directly
+after caster117,at lines3373and103338. The previous extractor omitted kind20and
+incorrectly classified those two records as unobserved;that conclusion is withdrawn.
+Actor/model/asset services are stubbed;no rendered acceptance is claimed.
+
+Shared audit_echo_checkpoint.py now optionally filters selected skill IDs and
+includes decoded cast targets. Every activation is checked against its actual
+frozen line/timestamp/hex,not merely accepted from derived audit metadata.
+Default74/75scope remains;including kind20now yields40verified Echo windows/12179selected events.
+New65report:build/reports/arcane-mimicry-checkpoint.json. Tests cover skill filtering,
+owner/target scope,activation mismatch,source hash and opcode/header rejection.
+
+Next:current other-ally bar snapshot/admission,temporary slot/expiry allocation,
+independent restoration cooldown,failed-copy ordinary recharge,and native packet
+publication through real Runtime/World/session ownership. Successful-copy capture
+must use an ally with a known non-form elite(e.g.Power Block5),record donor bar,
+owner replacement/new copy identity,one copied use,and restoration after20s plus
+its60s disable. Include no-elite and first-form controls. No official test started.
+Runtime65remains unsupported;coverage now explicitly rejects enabling it without
+production integration. Source-bound count remains319;official logging untouched.
+
+Validation:arcane-mimicry-build.txt native policy target built;arcane-mimicry-tests.txt6/6selected native suites pass. Eight Python capture/coverage tests pass;offline native verifier8receipts/original2s cast,untargeted117and targeted118consumers pass. Full defaultEcho rescan verifies40activation receipts. Fixed audit/backlog679captured/319source-bound/360awaiting/650missing unchanged. No host rebuild/deployment needed:new65policy is not in normal dispatch. No official process or logger action.
+
+
+2026-10-22 staged World/session copy transaction:
+World prepares a private-constructor MimicryDonorLease containing exact owner/target
+Scopes,source Slot,bar snapshots/revisions,completion frontier and both death
+sequences. It settles Health before admission and requires a live distinct ally,
+nonzero matching team,common spell range1248 and current published source65slot.
+This intentionally permits non-party allied players;it does not reuse party-only
+healing admission. NPC donor bars and precise retail range/visibility edges remain
+unimplemented. Validation accepts unchanged same-frontier bar republication but
+rejects changed/reverted bars,future clocks,actor reuse and same-frontier death/
+resurrection. The lease is a snapshot,not a learned grant or client capability.
+
+World commit_mimicry_copy atomically checks the lease and exact one-slot bar
+transition,then publishes World membership and returns a private receipt. Session
+preparation clones temporary slots and copy-ID allocation;only a successful World
+receipt commits the session and allocator. Failed stale-donor attempts leave both
+bars unchanged and do not consume recipient copy IDs. Caller is the serialized
+owning session thread;World never calls back into a session under its mutex.
+No-elite/form offers cannot create a copy. Their normal cast/recharge handling is
+still a future Runtime completion branch,not an error disguised as a grant.
+
+Mimicry temporary grants last20s,do not mutate Learned,remain valid after donor
+departure,and restore the root slot with an independent60s disable through the
+existing World restoration authority. Nested root metadata uses the shared copy
+stack;retail nested Mimicry/Echo semantics still need evidence. Mimicry grants
+retain campaign/mode checks,including through nested leaves,and revalidate them
+on completion. A forged cleared access-check flag is rejected. Existing ordinary
+Echo/hex grants keep their previous policy until separately reviewed.
+
+Tests cover21donor scope/bar/liveness/frontier cases,successful shared copies,
+failed-prepare allocator preservation,replay rejection,unrelated bar mutation,
+zero copy identity,no-elite/form controls,exact20199/20200expiry boundary,
+independent80200disable without extension on duplicate expiry,donor departure,
+no persistent learning,unowned campaign and PvE-only copied skill use in PvP.
+The shared Echo/hex admission/copy/restoration regression targets were freshly
+rebuilt and pass with this new grant metadata and restoration rule.
+
+Still required before normal65casting:real gateway binding,successful-copy retail
+UI/recharge ordering,broader spell-use observers,NPC donor metadata,nested copy
+controls,and rendered/native end-to-end acceptance. Frozen trials establish
+ordinary60s recharge plus caster117and target118,even though a successful elite
+copy is not proved. Staged Runtime routing is recorded below. No successful live
+copy capture or normal binding is claimed.
+Normal65still unsupported;source-bound319unchanged;official loggers untouched.
+
+Copy transaction validation complete:mimicry-copy-host-build.txt serial Release host and five affected native targets built;final expanded controls rebuilt in mimicry-copy-controls-build.txt. mimicry-copy-world-tests.txt5/5fresh native suites pass;8Python capture/coverage tests pass. Fixed checkpoint audit/publication refreshed:679captured/319source-bound/360awaiting/650missing unchanged. Host SHA256 3125034C8A46225373B78CB7D6865FF050D9115E5840A213270A2BFBC3D259EA;not restarted or deployed. Normal65Runtime routing and successful-copy retail evidence remain open.
+
+
+2026-10-22 opt-in Runtime casting and extractor correction:
+Runtime now has explicit staged mimicry/mimicry_target_valid capabilities. When
+trusted hooks are supplied,it admits65through the normal policy/target/payment/
+spell-use pipeline,captures the other-ally Scope,rechecks completion ownership and
+hooks,and pays15Energy once. Generic timing retains pinned2s/.75s and shared
+cancellation/interrupt/observer paths. Normal supported65and gateway callbacks
+remain disabled/empty;coverage verifies that omission cannot look source-bound.
+
+The typed completion distinguishes successful copying from a valid no-effect
+cast(no elite/form). Success keeps ordinary recharge0without pretending it is an
+instant-recharge reset;the shared20s expiry later installs its independent60s
+restoration disable. No-effect keeps ordinary60s recharge. Successful copy finish
+omits a fake ready/recharge event for the displaced65slot. Both paths emit the
+captured58->caster117->target118sequence before additional copy-slot visuals.
+Deferred publication and already-published-prefix flags retain the common contract
+and are tested against duplicate finish/body output. Real World finalize_skill_use
+receipts are required by the integration test,including successful slot replacement.
+
+Correction to earlier evidence:the shared copy-window extractor excluded generic
+kind20,targeted body effects. Raw inspection found(160,20,28,25,118)at frozen
+lines3373and103338,both immediately after caster117. The native verifier now checks
+10receipts,including both target118records. The previous '118unobserved' conclusion
+is withdrawn in this document and current verification notes. The filter now keeps
+kind20;its synthetic regression includes that exact target-body shape. Corrected
+65windows contain54selected events;default Echo40windows contain12179. These extra
+body records do NOT prove a successful elite copy or its20s/60s UI sequence.
+
+New arcane_mimicry_cast runs19actual Runtime/World cases:normal copy,no elite,first
+form,cancel,interrupt,target death,self/foe/range rejection,missing callbacks before
+and after payment,insufficientEnergy,donor bar change and target actor reuse,plus
+deferred/prefix-owned completion publication. Target validators deliberately make
+generic targeting false;no generic heal path is used. Tests verify exact one-time
+payment,2s completion,real ordinary source deadlines,58/117/118once and in order,
+slot update after finish,and no success-path ordinary60s timer.
+
+Remaining:normal gateway routing,NPC authoritative donor bars,current mode/campaign
+and copied-use broad scenarios,nested Echo/Mimicry behavior,retail interruption
+and successful-copy packet timing,rendered acceptance. Ordinary recharge versus
+finish publication ordering still differs from the modern frozen no-effect group;
+no full packet-stream equivalence is claimed. No official client/logger was touched.
+
+Runtime validation complete:mimicry-cast-build.txt19current-source Runtime/World scenarios pass. mimicry-cast-tests.txt5selected native suites pass;recall/energy-hex/copy-restoration targets rebuilt during this pass before the final65-only target-body addition. Eight Python capture/coverage tests pass;offline verifier10frozen receipts/original2s and117/118consumers pass. Final production host rebuilt successfully in mimicry-cast-final-host-build.txt,hash 204A308ED8EF882714E40115680CF7A35F54CE45FC71DA2E4FE6FA26BB491A6C. No deployment,restart or official logging action. Current audit/backlog679captured/319source-bound/360awaiting-binding/650missing unchanged;normal65callbacks intentionally empty.
+
+
+2026-10-22 donor copy identity review:
+The Mimicry selector now rejects any donor bar copy identity above65535,
+including a nonelite after the selected elite;65535 remains valid. This is the
+same WORD domain enforced by NPC reviewed spellbooks and recipient copy IDs.
+NPC donor integration remains incomplete: npcs::Definition contains no complete
+ordered skillbar, and ai::Spellbook is a restricted reviewed spell subset with
+host preference order. Neither an empty Spellbook nor its first elite proves a
+retail NPC donor result. Do not convert these observations into no_elite or a
+complete bar. Normal Mimicry callbacks remain disabled. Host binary has not yet
+been rebuilt for this selector validation change.
+Validation: serial Release rebuild of all three Mimicry targets passed
+(mimicry-copy-domain-build.txt); all3fresh CTest suites passed
+(mimicry-copy-domain-tests.txt), plus5coverage guard tests. Source-only validation
+change; no server deployment or official client/logger action.

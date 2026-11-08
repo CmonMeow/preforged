@@ -1,0 +1,54 @@
+NORN SHOUTS 2354,2355,2359 — FIXED CHECKPOINT FIRST-CONSUMER AUDIT, 2026-10-26
+
+The fixed 20261024-all-completed checkpoint contains one local instant start
+for each skill in map280, actor25, in packets-19472-19186421.jsonl:
+  2354 Dodge This: line401246
+  2355 I Am the Strongest: line509286
+  2359 You Are All Weaklings: line509299
+No attributed end-effect packets appear in the skill audit. The hash-pinned
+offline verifier tools/protocol/norn_shouts_2022.py confirms that all three
+starts reach the pinned 2022 instant UI consumer. Catalog body resources:
+  2354 caster/target: no-body sentinel2077/2077
+  2355 caster1909 particle first consumer; target sentinel2077
+  2359 caster1914 and target1915 particle first consumers
+This establishes only first lookup, not rendered acceptance or effect outcome.
+
+You Are All Weaklings2359 has a catalog-checked Norn rank plan
+in src/runtime/gw_you_are_all_weaklings.h. It uses Wiki rank0..5 Weakness
+duration8,9,10,10,11,12s and plateaus through rank10. Shared ranged1248
+and Adjacent166 are provisional private-server range values, not measured
+retail distances. Its trusted World path now preflights a mixed player/NPC
+batch around either type of selected foe, skips authored condition-immune NPCs,
+and defers caster1914 and per-recipient target1915 effects until publication.
+Normal paid Runtime casting and the production hook use that path, with 5
+Energy and 12s recharge. The fixed backlog now classifies2359 as source-bound.
+Reactive end-effect ordering, immunity details, retail distance and rendered
+acceptance remain unverified. Dodge This2354 and I Am the Strongest2355 are
+now source-bound; see docs/dodge-this-binding.txt and
+docs/i-am-the-strongest-binding.txt. Their separate binding records supersede
+the historical checkpoint counts and tests below.
+
+Official Wiki source:
+https://wiki.guildwars.com/wiki/%22You_Are_All_Weaklings%21%22
+Neither official client nor logger was touched.
+
+Release host, three focused native CTests, six neighboring Norn CTests,
+12 coverage tests and offline verifier pass. SHA-256:
+  gw_you_are_all_weaklings.h 835AE0D5BACA19D5E94F2AAA3E1FF0CFC18747EACA7659ABAB67FD6EED3E5CEE
+  you_are_all_weaklings.cpp 5B2FF41C11E4425B2E813AB8538119B1EC0FFEFA581A6CED4F46CD5F7668330C
+  norn_shouts_2022.py 43C8D25A2FB8363D42CB09EB5DCFC60D148C0E99A56A05DB15C96D39D837C145
+  checkpoint capture 3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb
+  pinned 2022 client a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+
+Production binding follow-up, 2026-10-26 SHA-256:
+  gw_world_you_are_all_weaklings.inl 585F5094C84BD8107EBE144429EE0541734E79CFF02B66BBDC20D314B01C2230
+  gw_world_simulation.h 45285EC7D92C9A809AA28B774C6FB9C4554DD9AB6FFAF4F6ED970C72360DDAE0
+  gw_skill_casting.h F75E1DFAE1B5D654354AA7B725A22BC57AEF968066E08D4A640B4EEC5B8063F2
+  gw_cast_timing.h E457CACBC739BFDA19E9E7C6BB0D38F922F5D7AF2C6244014AAD79D84642949E
+  gw_auth.cpp 82A96999AB3A4034095982D9519DE2B7A3B25C5822B07D9362B79E8D16425CEB
+  you_are_all_weaklings_world.cpp CCCCBE72A205DF1E954078AFB0E29E50AD2EB9787E7B87C68165163ABAE6011C
+  you_are_all_weaklings_cast.cpp E44F1A738E3EB3E12B4771DEC12950153BE716E68FF3EF0EA9C6D8A2FACE5219
+  you_are_all_weaklings_world_test.exe E504A77EBBE869CA9A121C22722022F3CB0948595C4E4112530835B570B58F30
+  you_are_all_weaklings_cast_test.exe D3819CA6BF3699F11AC7A382A45B5B3EF75338ED306794868C323BC60E55BB57
+  server_host.exe A85F2D5F489606171396D3B8F5251AB22C26FB1BCBC200C8C11C370B93D87173
+  fixed backlog 679 captured / 388 source-bound / 291 awaiting binding / 650 no local activation

@@ -1,0 +1,67 @@
+Elemental Lord [1951,2094] detached policy, 2026-10-26
+
+UNBOUND. The detached policy and focused test are registered in CMake; the
+faction title-track mapping now includes both aliases. There is no production
+World/casting binding, coverage publication, checkpoint or official client
+change.
+
+Fixed 20261024-all-completed captured-skills.json classifies both IDs as
+unsupported with one local start and finish each. Actor25/map280 receipts:
+1951 packets-19472-19186421.jsonl lines475811/475818, ticks29916484/29916656;
+2094 packets-1360-15821281.jsonl lines243360/243364, ticks20769718/20769921.
+The later exact-wire review in docs/elemental-lord-fixed-capture-review.txt
+verified the source hashes and raw receipts. Both aliases show body295 and
+60-second effects; 2094 shows four elemental attribute updates and follow-on
+self-heal packets. Its Energy Blast receipt conflicts with a uniform
+300%-of-catalog-base-cost rule in that window, so the detached quote cannot
+be promoted to production arithmetic without isolation of active modifiers.
+
+The native2022 catalog pins both faction aliases: Elementalist, attribute51,
+enchantment6, special524288, 5Energy, .25s activation, .75s aftercast,
+45s recharge, scale100..300, bonus1..1, duration40..60 and body295/2077.
+The existing local archived buildwars descriptions agree with their behavior.
+
+External supporting references consulted 2026-10-26:
+https://wiki.guildwars.com/wiki/Elemental_Lord
+https://wiki.guildwars.com/wiki/Elemental_Lord/Skill_history
+The published current allegiance table supplies durations40,43,47,49,53,56,60
+seconds and healing percentages100,127,167,193,233,260,300 at ranks0..6,
+plateauing through12. The history dates the maximum-title-rank reduction to
+May2012. Notes establish base spell Energy cost and floor(Storage/10) Energy
+gain, with stacking attribute boosts. These are descriptive supporting sources,
+not native arithmetic or retail trigger/rounding measurements.
+
+The plan validates native metadata and uses the explicit published title
+table. A pure attribute helper gives +1 only to Air/Earth/Fire/Water IDs8..11.
+The spell quote uses the existing complete native is_spell classifier and
+catalog base cost, never supplied paid cost. It returns Energy gain for
+Storage0..20 and the published-percent product as numerator/100. Crucially,
+it does NOT return a final integer heal: the display table may round an
+underlying fractional multiplier, and final healing precision remains unknown.
+The numerator must not be treated as a reviewed World healing implementation.
+Forged plans, invalid rank, glyphs/signets and unknown IDs reject.
+
+Optimized standalone MSVC C++20 compile and execution passed. Tests cover both
+aliases, all13title ranks, all52attribute IDs, Storage0..20 and10/20boundaries,
+5Energy base-cost quotes, excluded skill types and forged plans.
+Header SHA256 BC02424CCC136079B744363169460A8C29BFB4914C5C3FB203D10240C370ABAF
+Test SHA256 65EA0266F66577A92ADA69A48CD9180031B6837281538B7D4391BF893480015D
+Executable build/reports/elemental_lord_policy.exe SHA256
+EC4E36CC8B85B81CB6BD986F904D051F3DEDADCA6C476F21DAD90D390B8A191D
+
+Integration review: add both faction IDs to title-track mapping and Runtime
+admission, reject PvP, snapshot admitted title rank, and normalize self target.
+Install one owned enchantment across aliases using the shared duration receipt,
+registry, application observers, stripping/expiry/death and normal publication
+transaction. Attribute evaluation must consume the CURRENT live enchantment
+without permanently changing earned ranks; stacking/caps require existing
+attribute authority, and Energy Storage is not itself boosted.
+Identify the exact spell-use trigger phase: do not assume completion versus
+admission, or whether the applying spell observes its newly installed effect.
+Keep one event identity across interruption, cancel, copy and replay to prevent
+duplicate heal/Energy gain. Determine native healing multiplier precision and
+rounding before debit/gain/heal integration, then apply shared healing modifiers,
+gain caps, zero-Energy reactions, ordering with Aura/attunements and death under
+the World lock. Cover player/NPC behavior, packet order/body295 and rendered
+2022acceptance. Until these consumers are complete, production binding and
+source-bound inventory counts must remain unchanged.

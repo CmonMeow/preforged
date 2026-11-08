@@ -1,0 +1,44 @@
+Ward177 detached route integration candidate, 2026-10-23
+
+Coordinator validation update: the route candidate is registered in CMake and
+passes its Release CTest. A separate Ward177 World field test passes. The
+private host was rebuilt and restarted with the field groundwork. The initial
+"no builds or process actions" note below describes only the agent handoff.
+No production player/NPC movement adapter consumes this route helper yet.
+
+New files only: src/runtime/gw_ward_foes_route.h and tests/ward_foes_route.cpp.
+No World/Runtime/NPC route/CMake edits, builds or process actions. Coordinator
+must register and execute the C++ test before this candidate is validated.
+
+Interface: ward_foes_route_travel(recipient, wards, route, from_ms, through_ms,
+ speed_boundaries, speed_callback) returns optional WardFoeRouteTravel with
+ cumulative path distance, elapsed time, endpoint/plane and reached flag.
+It is pure: no health, actor, timer, movement cursor or navigation owner.
+Caller prefilters EACH ward's authoritative allegiance; recipient flags are
+already-established facts. Caller supplies navigation-validated connected legs
+with an explicit plane on each leg. Plane transitions are supplied, not inferred.
+
+Speed callback receives absolute milliseconds and external Ward factor .5 or1.
+It must return final units/second AFTER composing that factor with other effects
+before movement floors/caps, and owns pause/knockdown. The callback must be
+constant between supplied speed boundaries; all ward creation/expiry boundaries
+are added internally. Applying .5 to an already-clamped speed is unsupported.
+A World adapter needs actor movement composition before the clamp and historical
+KD/action-pause boundaries, rather than the current scalar movement_integral.
+
+Each leg is split at every circular entry/exit. Each spatial cell is integrated
+through speed discontinuities and ward creation/expiry. Union of overlapping
+same-skill fields supplies one .5 factor, an explicit provisional private policy.
+Time windows are half-open. Tangent contacts have zero travel measure. A numeric
+residue up to1e-9ms may snap to a simultaneous time/geometry boundary. Integer
+absolute times beyond2^53-1, invalid/unknown rates, disconnected legs, forged
+wards and excessive work fail closed; rate ceiling1e6units/s and bounded inputs
+are integration guardrails, not recovered retail movement limits.
+
+Focused tests include analytical single/overlapping/disjoint circles, corners,
+explicit plane changes, tangency, future creation, expiry before entry/inside
+travel, adjacent expiry/creation, sparse/dense equivalence, arbitrary supplied
+pause boundaries, callback cap/floor composition, spirit/relation/lifetime/plane
+exclusions, malformed inputs, zero elapsed time and fully paused movement.
+Native visual proof, World allegiance selection, actual NPC route adapters,
+maintained-range forecasting and C++ test execution remain coordinator work.

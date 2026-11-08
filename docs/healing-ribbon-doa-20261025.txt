@@ -1,0 +1,87 @@
+HEALING RIBBON [2062] — FIXED DOA CAPTURE AND NATIVE CAST
+
+The immutable 20261024-urgoz-doa-completed checkpoint has 70 timing-attributed
+skill2062 starts, all in map474. This is not proof of completed heals or of
+the recipient count. The captured 2022 client first-consumer check is in
+build/reports/healing-ribbon-native-2022.json: style51, 1-second activation,
+target-body resource1738, particle actor43. It does not render client assets
+or establish secondary-recipient visuals.
+
+gw_healing_ribbon.h checks the pinned catalog row: 10 Energy, 1-second cast,
+5-second recharge, other-ally target, primary 20..110 and secondary 10..100
+Healing Prayers scaling. It selects the primary and up to two distinct nearby
+living allies, with Divine Favor indicated only on the primary. The caster can
+be a secondary. Nearest-first ordering and 322-unit near range are explicit
+private-server policies, not established retail recipient-order evidence.
+
+The World now has a detached authoritative stage for allied player/NPC
+recipients. It validates a live, non-self primary, same-plane range and sight,
+rechecks scoped NPC identity and life, applies player healing modifiers,
+prepares NPC heals before committing, and defers all health packets. The
+mixed-recipient World test verifies enemy exclusion, primary and secondary
+healing, stale-target rejection, and no health packets before publication.
+
+The read-only tools/skills/audit_healing_ribbon_doa.py verifies the fixed
+packet/world hashes and correlates all 70 starts to short completion windows.
+63 have a same-actor kind58 finish; all 63 show exactly one resource1738
+kind20 target body on the selected ally within 50ms. None shows a second
+resource1738 body on a different ally. 59 windows have health changes on
+multiple recipients, but overlapping actions mean those packets do not prove
+an exact retail recipient count, heal formula, or attribution. The official
+current-client packets use opcode160 for the body; the private 2022 binding
+uses its established opcode159 targeted-body route with the same resource.
+The report is build/reports/healing-ribbon-doa-packets-20261025.json.
+
+The Runtime and gateway now expose the paid cast: 10 Energy, 1-second cast,
+5-second recharge, normal target validation at admission and completion,
+primary-only target1738 visual after kind58, then deferred authoritative
+player/NPC Health publication. A cancelled cast or stale/hostile target does
+not commit the heal. The reviewed fixed packet pattern supports emitting no
+duplicate body for secondary recipients. This is an implemented source
+binding, not rendered 2022 acceptance. Retail tie-break, exact near radius,
+secondary heal attribution, NPC caster AI, and rendered visual fidelity
+remain verification gaps. The World selection advances live player/NPC health
+and timed effects as part of its admission transaction, as other trusted
+World heal stages do.
+
+Verification: serialized Release server_host and all focused test builds
+pass; Healing Ribbon plan, World and paid-cast CTests pass, as do neighboring
+Ghostmirror Light and Mend Body and Soul cast regressions. The paid-cast test
+asserts finish58 before the one primary visual before Health publication.
+tools/protocol/healing_ribbon_2022.py passes against the pinned 2022 image.
+Current fixed DoA gap review has 49 unsupported observed IDs, down from 50.
+The separate all-player checkpoint still has 679 locally captured IDs and
+296 of those awaiting source binding; it contains no local Healing Ribbon
+activation. The missing-capture and verification lists remain distinct.
+No official client or logger process was touched.
+
+SHA-256 tested artifacts:
+  src/runtime/gw_healing_ribbon.h A19765710DEAA48D095B6B0BC862DE536BE06A9ABE9344CDBDFB3ACBB76EB6F8
+  tests/healing_ribbon.cpp 1B16143286E351A1DD6B6925FE52AE4678B0DDEF8125FE69D50CAC39D344BF75
+  tools/protocol/healing_ribbon_2022.py B0846B425A27054530F1899D02D75F0AF19280F2C50E3EAA64E59AE615DFB003
+  build/tests/healing_ribbon_test.exe 85D681985B6A82110796A965022146E3E7030B6AC886972232023E1262FAC8CB
+  build/reports/healing-ribbon-native-2022.json CEACEB2C4130F3796AEA83F066199865719D286C83FDA58A0BEAF78D59450841
+  src/runtime/gw_world_healing_ribbon.inl AFB261E8F1266EF1D285B902BDBFB555A022511FD3E8470998633D460DD94496
+  src/runtime/gw_world_simulation.h 0116965D5334C572465B024F718CCF635F85562E8A3F26E8799960FEB52B9DB3
+  tests/healing_ribbon_world.cpp 813F73891A2556744BB54ECE11212991D81614AF13785E5544BA0E5F5A63A353
+  build/tests/healing_ribbon_world_test.exe AC31C0491BC497F834531B0CF92A3447EDC232F4F1516B37555EDFC18593295E
+  bin/server_host.exe 697D4D31458D5550AA264DE21ED3256BE52B6CD0A20C859203C7C98EAA619BDA
+
+Latest binding/audit tested SHA-256 (supersedes the host hash above):
+  src/runtime/gw_skill_casting.h D5A0050DD398960908AD9EC9DCB7C25C78EC9BB1017CE461231B667808FF89E8
+  src/apps/gw_auth.cpp ADF178AF740F046AB9978B1A75FAB01EF8998AB4B7BDF9F25CCC456E2C70FDB5
+  tests/healing_ribbon_cast.cpp 08C88C7BEF716DA3CEE7A18172D784E7DA57C0005860705F40CC9C59E9A67AA9
+  build/tests/healing_ribbon_cast_test.exe B130F07C127B24B986011EAA220107DC539BDCEC8A37317E08E33A6C2BEB74C4
+  bin/server_host.exe A010015D9236A0F4A3E3B36575EA44F85409FCBC01CD58C07F9704C78A3D5F9B
+  tools/skills/audit_healing_ribbon_doa.py BD8D2C0AAAE9260670BF00DDFF868EF6BF9DA4DADB9771540B5EF51B285FBBDA
+  build/reports/healing-ribbon-doa-packets-20261025.json FA5DFADB89E4E427111444D58AD739659FA7968F2F49EC16DB5F1F846D76ED6D
+  build/reports/healing-ribbon-native-2022.json 40A1407D6FC28E521BFF6D694163269CA35BDC4F9A03D887E300B433E9D5F728
+  tools/protocol/skill_runtime_coverage.py 5CD0FECFF6C280870C790A7EAB6238C03D04DCA711638A261092A4BA048D5ACB
+  build/reports/doa-skill-gaps-20261025.json 998514752650EDF760D8C71425A2177A6433D1DA85615A9F2CA24A067924A27F
+
+2026-10-27 range-category review supersedes the322 policy above:
+Healing_Ribbon.html links Near.html,which resolves to Nearby;GWCA Nearby252
+is distinct from Area322. Plan changed to252 with pure and mixed player/NPC
+World252/253 boundary checks. This is a reviewed category policy,not a measured
+retail boundary. Nearest-first selection/rendered effects remain unverified.
+See docs/skill-area-metadata-audit.txt and the final audit/Ribbon report.

@@ -1,0 +1,42 @@
+PLAYER SPELLS AGAINST NPC RECIPIENTS — 2026-10-17
+
+The World elemental API now admits Immolate (191), Deathly Chill (89),
+Glowing Gaze (1379), Glowing Ice (2192), and Steam (846) against hostile,
+living NPC recipients with authored Health and the required elemental armor.
+Previously only Flare's projectile route admitted these NPC targets through
+this API. This extends existing bindings; it does not add five new bindings.
+
+The shared elemental resolver supplies damage, Burning, conditional Blind,
+Deathly Chill's above-half shadow slice, and conditional caster Energy.
+NPC fire vulnerability affects fire only. Condition immunity suppresses new
+conditions without suppressing valid damage. NPC Storm Chaser observes each
+qualifying elemental slice, excluding the additional shadow slice. Conditions
+retain player source credit and feed existing Fragility/Fevered observers.
+World admission checks caster/recipient lifetime, living resources, clocks,
+range, plane and navigation trace. Unknown armor is not guessed.
+
+Validation: Release server_host built successfully. Three rebuilt suites passed:
+npc_elemental_recipients, conditional_elementalist, npc_storm_chaser.
+The new suite covers all five World recipient routes and damage publication,
+fire vulnerability, immunity, Burning/Blind, conditional Energy, Water Magic
+versus unrelated hexes, Storm Chaser, stale/forged/future rejection, unknown
+armor, range and plane. All 41 skill tooling tests passed. Fixed checkpoint
+20261017-npc-refresh-2 source audit and backlog publication passed.
+
+Runtime follow-up: npc_elemental_cast now exercises paid requests for all
+five spells, completion timing, cancellation, interruption, stale target,
+missing handler, failed effect, and conditional Energy. It exposed and fixed
+two integration defects: the completion gate still accepted only Flare NPCs,
+and non-Whirlwind elemental completion visuals were discarded. The gate now
+also accepts the supported single-target plans. Deferred completion visuals
+are preserved after success and rejected effects discard their visuals.
+Four rebuilt suites passed (npc_elemental_cast, lightning_npc_cast,
+whirlwind, conditional_elementalist), along with all 41 tooling tests.
+
+Still unverified: protection/reaction combinations beyond the tested shared
+resolver and rendered animation acceptance on the private 2022 client. Target body
+publication uses existing pinned resources; a wire call is not visual proof.
+Other projectile and area-effect NPC recipient paths still need extension.
+Official clients and ongoing logging were not controlled or interrupted.
+
+Release host rebuilt successfully after both Runtime integration fixes.

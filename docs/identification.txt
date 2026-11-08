@@ -1,0 +1,77 @@
+Bounded identification planning contract
+Reviewed 2026-10-03; standalone implementation, not live identification gameplay.
+
+Files
+  src/runtime/gw_identification.h: pure debit/identify proposals and native351.
+  tests/identification.cpp: authoritative-result boundary, exact packet fixtures,
+      input immutability, rejection conservation, final-charge removal, equipped
+      target references and durable inventory roundtrip.
+  tests/fixtures/identification-2022.txt: original pinned serializer output.
+  tools/protocol/identification_2022.py: original callbacks/serializer with
+      synthetic records, PASS3; build/reports/identification-2022.json.
+  item-rejection-2022.txt and native17-case tool prove charge field/cancellation;
+      item-properties-2022.py proves requirement/attribute field direction.
+
+API
+  fw::gw::identification::Policy {allowed, reviewed_source, storage_access}; default
+      denies. reviewed_source is caller authority; no name/model inference.
+  debit_kit(currentProfile, sourceKitID, expectedKitKind, policy) -> Proposal.
+  identify(currentProfile, sourceKitID, targetID,
+      optional<inventory::Item> authoritative_reveal, policy) -> Proposal.
+      Both helpers accept optional inventory::Bounds (default durable) for a
+      validated combined character/bank profile; no permission follows from it.
+  Proposal contains reason/current-or-proposed profile/packet batch, exact
+      before/after uses and exhaustion. Accepted proposals do not mutate input.
+
+Required binding order
+  Resolve actual owned current profile using session/character generation and
+      inventory revision. Admit map/state/item use only from server authority.
+  Supply reviewed-source permission only for an authentic carried kit record.
+      Type29, quantity1, exactly one25E8 toolkind and one2458 uses modifier>0
+      are mandatory; unsupported or duplicate raw fields deny. Storage kits and
+      incomplete/stacked modern captures are not silently treated as one kit.
+      Installed bag0 container records deny cleanly without a bags.at(0) lookup.
+      Carried/equipped targets are admitted; storage targets require explicit
+      caller-granted storage_access and an owned combined inventory snapshot.
+      Combined character/bank results require the caller's atomic two-profile
+      revision/CAS; the helper does not implement that persistence transaction.
+  Identification requires a COMPLETE independently known authoritative reveal.
+      Null result denies WITHOUT costs. Preserve targetID/file/type/model/
+      quantity/dye/formula, bag/slot, profession and customization. Identified
+      interactionbit1 may change; other interaction bits must stay unchanged
+      for this bounded slice. Known name/rawmodifiers/merchantvalue are supplied
+      explicitly by the provider. The helper manufactures none of them.
+  Save the proposed inventory with the caller's expected revision/CAS before
+      sending ANY packet. If save fails or session/generation changed, discard
+      proposal and its packet batch. Rejection returns the unchanged profile and
+      no false-success packet. Owner feedback belongs to the caller.
+  Missing official hidden outcome records remain a blocking data requirement
+      for success binding. The existing unsupported-family cancellation paths
+      should remain in use until an authoritative outcome catalog is available.
+
+Exact publication behavior
+  For remaining uses, change only2458 lowBYTE by one; keep quantity1. Emit351
+      detail preserving model/name/allother rawmodifiers, then312 quantity1.
+      Original312 always emits7c7110 ->UI10000104, even for equal quantity.
+      This refreshes the authentic updated record without resetting metadata.
+  At last use emit332 detach and348(new0,oldKitID) removal. Never use312qty0
+      as destruction; the original callback leaves that definition alive.
+      next_item does not rewind/reuse the removed identity.
+  Identified target uses same-ID352, preserving represented current location;
+      follow explicit345 profession and313 customization as applicable. The
+      original352 resets these fields. No353 replacement or redundant317 is
+      emitted, and four weaponsets/active set are retained.
+  No success/reveal packet fabricated on denial. Identification106 has no
+      distinct native cancellation reply established by this audit.
+
+Limits
+  This is a single-kit CHARGE planner, not a merchant-value or hidden outcome
+      recipe. Kit resale value is preserved; a future authoritative provider
+      must supply reviewed post-use price semantics before merchant quotes can
+      claim accurate per-use kit resale prices. No guessed price multiplier.
+  Wiki2021 lists reviewed kits Stackable No. Modern Toolbox GetUses multiplied
+      by quantity is not proof of stacked-kit consume semantics. Quantity>1
+      remains denied pending version-specific authoritative evidence.
+  No account unlock, rune/stat grant, hidden affix roll, salvage yield/retention,
+      dye mixture or official-server identification sequence is implemented.
+      The native proof uses synthetic values, no official account/client/assets.

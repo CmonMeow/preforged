@@ -1,0 +1,71 @@
+DEADLY PARADOX [572] — NATIVE PAID CAST AND DISABLE FEEDBACK BOUND
+
+The immutable 20261024-signet-infection-bound checkpoint has one local
+instant cast at packets-1360-15821281.jsonl line710415 in map280. In the
+same tick, packet710414 gives skill572 its own 10-second recharge, packet
+710416 selects caster resource1360, packets710417-710419 disable equipped
+dagger attacks775/776/777 for 10 seconds, and packet710420 publishes a
+5.0-second rank-0 stance on actor25. Return769 then starts at line710428,
+finishes 188ms later at line710432, and gets a seven-second recharge at
+line710431. Its base activation/recharge are .25s/10s. The packet timing
+supports a .75 activation factor and .67 recharge factor for that cast,
+subject to client tick quantization. The local 2021 wiki mirror records the
+exception that dagger attack activation is not shortened, while recharge is.
+
+Reproduce: python tools/skills/audit_deadly_paradox.py. The script verifies
+the fixed packet SHA before checking each receipt. Machine report:
+build/reports/deadly-paradox-20261024.json.
+
+src/runtime/gw_deadly_paradox.h validates the canonical 2022 row and exposes
+duration, ten-second attack disable and live-stance predicates. The shared
+activation and recharge timing functions now apply .75 and .67 respectively
+when a canonically timed Deadly Paradox stance is already active. Its own
+recharge is excluded and dagger attack activation is excluded. The targeted
+cast_timing regression covers rank scaling, Return, self recharge, dagger
+attacks, expiry and a forged duration.
+
+World status mutation now stages the canonical stance and ten-second disables
+for exactly the equipped attack-skill slots in one transaction. The ledger
+uses the published skillbar revision and actor lifetime, survives stance
+replacement for its full disable duration, and participates in the shared
+disable reset. Native World tests cover acceptance, forged duration, slots,
+expiry, reset, replacement, and scope cleanup. This is mechanics verification.
+
+The production Runtime now admits a learned skill572 as a paid instant
+Assassin stance using the canonical rank plan and the existing World hook.
+It publishes native action48, caster body1360, rank/duration effect65, its
+own ten-second recharge and exact equipped attack-slot disable228 feedback.
+The body cue precedes attack disables, which precede the stance effect. The
+captured official self-recharge precedes action48; the private Runtime still
+publishes its self-recharge at cast settlement, so exact packet order and
+rendered behavior require a private-client comparison. The native cast
+test checks one15-Energy payment, one body/status, three attack-slot timers,
+no Return timer, recharge rejection and World expiry. The same World ledger
+is used by the production gateway; the fixed-checkpoint source audit now
+lists572 as implemented_binding.
+
+The client-rendered animation, audio and disable feedback have not been
+observed in a live private 2022 client. NPC casting and broader interaction
+cases remain unverified. A source binding does not establish those outcomes.
+
+Audit SHA-256: 63A0000877DE244D90AC446204AF92321C94461F0D791B652E4F4363884DE62B
+Report SHA-256: 653B34CC2F59F26EDE13700E14085E98B34EC0ECA9157111FDCF23AFFF01DAD6
+Plan SHA-256: 2EEAF0E2A258E4A8E955D2B393D93AA0124B6257068E02E241114B3DD28F1C9F
+World SHA-256: B615D9D36F1B8565DCC439D97BBEE78055EB7BBA395FF647A8A494465A48A254
+Disable reset SHA-256: 1F0A69BBE86C8135F1B8324ABF19C3430211E6811DD88425A5E4A8E3BDA2FADE
+Timing SHA-256: B1C16F67FAFDC1E323041CA6A43392F804DEDB2F0C625D18833DF2DB2157697E
+Runtime SHA-256: 8A210448CF6528C6B84DF7B2861416B73DB6EC5A15A918EE022602B879D715C9
+Activation modifier SHA-256: 39765AB0C5764FFCB8A6ED0428BF477589E00FA7AE855C0C22D29B87E22A428E
+Timing test source SHA-256: BC5AB3516698F2760FBCABB6733AF3D104C7D0BAF6EABED7A7490C1F99E42BF6
+World test source SHA-256: AD29AB1B627D0C20F34F4F45E8A17E274671553074B151BACCB445620A8D90DF
+Cast test source SHA-256: 50EC6071B4D45AFFDE63A9BE1100072CF4D2FD57025F27BBC4FA260DB5E0B67F
+Timing test executable SHA-256: 439CB957B7BEEB1FA54B77BE03D886CE2C621929E9DE743D0F81DA60B35B3FCF
+World test executable SHA-256: B9FBC285D09009151CA8C14B7B2713E181BBFD29C3A2802769C8395B006526BA
+Cast test executable SHA-256: 1064F54FF6BC313EFD71F37DCB5AD79891478C495C3402F3B5C911A814B5DE55
+Bestial Fury cast test executable SHA-256: AEDB564F5AF524124A37FB2D651EA4B9D28F64DEFAA6174CCB2257F9F5AD17E3
+Server executable SHA-256: 9FC93416F70B8620417D4FF2D50197518D27798F23784CE6B32AED1130C9AE9F
+
+Serialized Release server_host, cast_timing_test, deadly_paradox_world_test,
+deadly_paradox_cast_test and neighboring bestial_fury_cast_test builds passed.
+Focused cast, World, timing and neighboring cast suites passed 4/4. These
+are native checks, not a rendered Deadly Paradox cast.

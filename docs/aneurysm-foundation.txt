@@ -1,0 +1,151 @@
+Aneurysm [2055] — detached mechanics and original-client consumers
+2026-10-26
+
+Evidence: immutable 20261024-urgoz-doa-completed packet/world checkpoint,
+the pinned 2022 skill row, and the archived local Guild Wars Wiki Aneurysm
+page. tools/protocol/aneurysm_2022.py verifies the checkpoint hashes and
+the already-frozen session report. It finds 81 timing-attributed starts in
+Domain of Anguish map474 and six in Ebony Citadel map445. These 87 starts
+mix player, hero and NPC actors and do not prove effect completions or damage.
+
+The original 2022 native first cast consumer accepts skill2055 with style51
+and 1.0-second first animation. Caster resource1710 resolves encoded DAT
+file e39804010000; target resource1711 resolves e89804010000. This proves
+callback and first particle routing offline, not pixels, sound, or a rendered
+private-client test. Modern official packet opcodes are not reused as 2022
+wire. Report: build/reports/aneurysm-native-2022.json.
+
+The native row checks campaign4, Mesmer/Domination, 5 Energy, 1s activation,
+0.75s aftercast, 5s recharge, and rank endpoint metadata. The archived Wiki
+progression supplies rank-interpolated armor-ignoring damage per restored
+Energy and the adjacent Energy-loss cap. src/runtime/gw_aneurysm.h returns a
+copy-only proposal: primary missing Energy, primary direct damage, and the
+maximum Energy loss requested of each adjacent foe. No target or World state
+is mutated. A follow-up now separates generated Energy from actual Energy
+received under Overcast: damage and adjacent loss use the base-maximum
+generated amount even when the effective ceiling reduces or entirely blocks
+restoration. The native test checks both partial and zero restoration while
+preserving the full damage. The World must still supply a reviewed nominal
+maximum and effective ceiling. The 166-unit adjacent radius is the
+project's conventional candidate, not a measured Aneurysm radius.
+
+Remaining implementation: authoritative primary/adjacent actor selection;
+opposed Energy state and World overcast settlement; copied multi-recipient
+preflight; atomic Energy/Health commit and Mind Wrack/reaction ordering;
+paid Runtime cast with target revalidation, packet/particle publication;
+NPC ability enrollment; live 2022 rendered verification. No source binding
+has been added. The fixed missing-local-capture and implementation lists
+remain unchanged.
+
+Validation: serial Release aneurysm_test/server_host build, then aneurysm,
+energy_blast_policy and energy_blast_world CTests passed 3/3. The host binary
+is unchanged by this detached header. The official client and live loggers
+were untouched. SHA-256:
+  src/runtime/gw_aneurysm.h 1AC2CB399DC6D4B82724F702D29A8347521CB8135FD151A1223F4A8DA4A52FB8
+  tests/aneurysm.cpp B31BCC2F6A608735C2340C03D82C1E4D69F197B4E8EF68D6883FA5D730C1DDCE
+  CMakeLists.txt ED70C51291556248B7510A8CD1FFC0D193721B9CC35D134CAE7E32118B75DDE8
+  tools/protocol/aneurysm_2022.py B0F0B52E2AED33D0E4F6C64BB70C4AB82BE4BD7865DF1C5CA0D0E8397C373BE7
+  build/reports/aneurysm-native-2022.json 07B34AD8741EBFBD2A839258B1D1200531EF45D2FDCB7AD7097B5F0EBF806AA7
+  build/tests/aneurysm_test.exe 5B1F719CFCACE5F4D071D8F280403A8EE44CBC57643FB70F0204C819076EC123
+  bin/server_host.exe B3356B5EE6BE2C2922596E35594E466EB30D7EC173EF1BE02822A30DC9BCBED0
+  archived Aneurysm.html 0C4608B0CBCC463E9FE8C40823C6A30745BBB46704844C367120451F0C33850B
+
+Overcast correction validation (2026-10-26): serial Release aneurysm_test
+and server_host builds pass; aneurysm and both adjacent Energy Blast CTests
+pass 3/3. This is detached native calculation only, not a live World cast.
+The compiled host remains unchanged. Updated SHA-256:
+  src/runtime/gw_aneurysm.h 2D41BE5E1B97EC7904032F0953618DB0B88C32DB6585FE4FCCDFB68C3CA10E53
+  tests/aneurysm.cpp 0266898986071CCEF99BB7EC3BF795A224FB36AD0F680051350FEB39F447563A
+  build/tests/aneurysm_test.exe 0B962849A9A03A7D86D164B6FCF1E9DBCC0EAD1DD374B653C787BC71CC0EE563
+
+Area proposal follow-up (2026-10-26): the copy-only Aneurysm area preflight
+now accepts settled adjacent actor samples, omits allies and out-of-range
+actors, caps each eligible foe's loss by its actual Energy, and rejects a
+whole proposal for unknown in-range hostile Energy, duplicate/reused actor
+IDs, invalid scope or nonfinite distance. The World still must establish
+position, hostility, Energy authority, packet ordering and atomic commit.
+This preflight does not make Aneurysm playable and does not claim the
+166-unit candidate radius has been measured in retail. Serial Release
+aneurysm_test/server_host build and three focused/adjacent CTests pass;
+the host remains unchanged. Updated SHA-256:
+  src/runtime/gw_aneurysm.h DC3579E016253DE1BA173AA731ED111A6F54CB43B39B93B07DE7CB997EB418E9
+  tests/aneurysm.cpp E2187ED3728AB8E0061D929EA128C422C44C8BAA2773A197F1B680606EB08A91
+  build/tests/aneurysm_test.exe EC0195BC061AF5262C7FE7499530D3604F9F7E03FD3398170A65437094B68CF7
+  bin/server_host.exe B3356B5EE6BE2C2922596E35594E466EB30D7EC173EF1BE02822A30DC9BCBED0
+
+World admission follow-up (2026-10-26): a trusted, opt-in Aneurysm effect
+in gw_world_aneurysm.inl now resolves a live hostile player or NPC primary,
+checks caster/target life, generation, plane, range and line of sight,
+settles authoritative Energy, selects nearby hostile players/NPCs, and runs
+the copy-only area preflight. It preflights NPC changes and player Overcast
+changes, then applies the primary Energy gain and armor-ignoring damage and
+adjacent Energy loss through existing World authorities. Packets are captured
+for deferred publication. The World method is not enrolled as a normal
+client-cast skill, and no new observed radius or retail reaction order is
+claimed. In particular, reactive effects after admission are not rolled back
+as one atomic transaction. Paid cast, target revalidation at cast completion,
+NPC enrollment, measured radius, reaction ordering, packet/particle routing,
+and rendered 2022 acceptance remain. The fixed capture lists are unchanged.
+
+Validation: serial Release aneurysm_world_test/server_host build and four
+focused/adjacent CTests pass 4/4. No official client or logger was touched.
+SHA-256:
+  src/runtime/gw_world_simulation.h 6BD69F55DC0D6FFC3C20D1DC8FD2EAE0A0BFA10DECC925A85072616D12E499D3
+  src/runtime/gw_world_aneurysm.inl 5AB30353323A39A2F6FD1FD38075C3D3823B7614D436AFDFB2DED59E482D1695
+  tests/aneurysm_world.cpp E4223AEF2AD68509D2F9CBA72BCE6E25DE740344010C7C71B6220B6003AE9FD4
+  CMakeLists.txt 8150B4746235E3EA3151A52524BDCAA11A505EEA867761F432499A6261B11FF8
+  build/tests/aneurysm_world_test.exe A9D56410725E4FB116CFD380E01448C1343DC4575003FCB4188A405C70327B36
+  bin/server_host.exe 6A86B93937C0C3E6527691A24CF9078F2A0973D5AC611C28691604929005EE16
+
+Opt-in paid-cast follow-up (2026-10-26): Runtime now recognizes skill2055
+only when a trusted Aneurysm completion hook is supplied. It uses the normal
+5-Energy, 1-second spell scheduler, captures a scoped hostile target, and
+revalidates it at completion before calling the trusted World effect. The
+isolated cast test covers paid start, missing-hook rejection before payment,
+cancel, target death during cast, effect completion, recharge and 2022
+caster-body1710 before target-body1711 publication. The production gw_auth
+hook is deliberately empty. The coverage audit classifies 2055 as staged
+and unsupported, leaving the fixed captured/implementation checkpoint intact.
+Native body routing is verified as packet sequence, not rendered pixels.
+
+Serial Release aneurysm_cast_test/server_host build, six focused/neighboring
+CTests and the coverage audit pass. Official clients/loggers were untouched.
+Remaining gates: measured adjacent radius, reaction and failure ordering,
+NPC cast enrollment, production packet/particle review, and rendered 2022
+acceptance. This is a concrete opt-in integration, not a live skill binding.
+SHA-256:
+  src/runtime/gw_skill_casting.h 34DC96E10FDB8478997F73D0D9C09A8D400795000E498313ECB1E7B8E065CBA3
+  src/apps/gw_auth.cpp 76E3E439A307A27968B4A7DFD8988C9C65D1A1E47A49405A15FFDEA624A6AA1E
+  tools/protocol/skill_runtime_coverage.py 36DA72E0EDE51D78E63FBF286AEB66E4CC2538AC0C1257CFFD121147F971DA3D
+  tests/aneurysm_cast.cpp 7CC56C9E6B10B3F2DC3DCF073FB023328AE2C87114460015B25CEA6417EFE4E8
+  CMakeLists.txt F2C143F021BBE8BFA88D8A4A3678B2BCD0DC0C322BF33AC3A72BB6F36AA00FAD
+  build/tests/aneurysm_cast_test.exe A8194B7B521297027DE4CB021B0B37B8F646ADCBD01FB3D99878ACF79D19BCC0
+  bin/server_host.exe 72DEB3CEFAAACDA7DE6D02452DF85358243C19C7337ED1EDC1FF52CE62BD3DDD
+
+World Overcast regression (2026-10-26): the live player-target path now has
+a Release test in which a 30-base-Energy foe has10 Energy and a20 effective
+ceiling. Aneurysm restores10, deals damage from20 generated Energy, and
+removes20 Energy from a nearby foe. This verifies the detached anomaly is
+preserved through the actual World Energy authority. The 166-unit radius
+constant also matches the pinned gwca-current Range::Adjacent declaration;
+that SDK constant is stronger provenance than a project convention, but it
+still does not measure Aneurysm's retail2022 recipient selection. No source
+or production binding changed. Focused aneurysm_world CTest passes.
+SHA-256:
+  tests/aneurysm_world.cpp 6F242EF711876BB54AD0746A20BB8EE1B81534A1F2101CBB1798EB2913647F34
+  build/tests/aneurysm_world_test.exe 6076A4512FB05876FF02A7E757256D881692B8C53A594C394EBFE833025D22A5
+  third_party/gwca-current/include/GWCA/Constants/Constants.h 55562CE874B4865C26D280F0D2D3AEC086FEC12F2DC73F3DD7AB8FC21380F8AB
+
+Coverage audit correction (2026-10-26): staged2055 status now derives from the
+production gateway's intentionally empty Aneurysm callback, rather than a
+hardcoded ID exclusion. The machine-readable row states gateway_intentionally_empty
+and explains the actual reason for unsupported status. This prevents a later
+reviewed production callback from remaining falsely reported as unsupported.
+Coverage regeneration retains459 implemented bindings and2920 unsupported
+native IDs; twelve audit unit tests pass. Wary Stance377 was also examined as
+an alternative next binding, but its per-block adrenaline amount remains
+unproved; no guessed reward or unsupported production binding was added.
+SHA-256:
+  tools/protocol/skill_runtime_coverage.py ABB369F8B26466F8C0698E1BE617A07533FDA97658FBE0FA2CF74D2C4BD80464
+  tests/test_skill_runtime_coverage.py 213B98C3D5881EA800CB72E14EC08F17D67B93F5E2A3178D2299DCD40AEBFCFF
+  build/reports/skill-runtime-coverage.json FB1D815D7FDAB8D60EEC2802D07BCEBD7CF1956763EE19DAA20A74B3A300FAEC

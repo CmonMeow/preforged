@@ -1,0 +1,67 @@
+STAGED ONLY: no compilation, test execution, live catalog change or host action.
+
+Files staged:
+ src/runtime/gw_world_npc_owned_immediate.inl
+ tests/npc_blood_fanatic_owned_immediate_world.cpp
+ data/gw/quests/power-of-blood-immediate-development-policy.txt
+
+Root integration proposal (not applied):
+1. In Instance, include gw_world_npc_owned_immediate.inl immediately after
+   gw_world_npc_wander.inl. It declares its own scoped binding map and API.
+2. In drive_npc_flare_locked, immediately after the melee_quest branch and
+   BEFORE finish_npc_immediate_locked, insert:
+     if(drive_npc_owned_immediate_locked(ai,now))continue;
+   This intercept owns quest lifetime/retaliation/return decisions. Paid155
+   completion and pursuit call the existing typed consumer, no second ledger.
+3. In provoke_npc_locked, exclude exact owned-immediate scope before generic
+   Flare encounter memory insertion. Otherwise positive damage records generic
+   memory, which can suppress resumed idle wandering after home arrival:
+     const auto owned=npc_owned_immediate_.find(source.actor);
+     if(owned!=npc_owned_immediate_.end()&&owned->second.source==source)return false;
+   Health-loss revision is the owned trigger, as with Brood. No changed generic
+   configure_npc_immediate_ai/configure_npc_wander/ordinary quest guards.
+4. In retire_npc_patrol_locked mark an exact matching owned binding retired.
+   Retain that tombstone while its Flare controller remains: erasing just the
+   binding would permit generic proximity/Flare fallthrough on a retired owner.
+   At full population reset clear npc_owned_immediate_; at Flare controller
+   removal erase the corresponding exact binding too. Never reuse old scopes.
+   No per-frame additions: storage is bounded by enrolled Flare controllers.
+5. Register detached test npc_blood_fanatic_owned_immediate_world using the
+   existing World test pattern, then serialize build with adjacent immediate,
+   lifecycle, Seed, interruption, owned-return and Brood/Grawl regressions.
+
+Host hook: alongside existing quest75/map160 and quest49/map161 arming in
+src/apps/gw_auth.cpp, after successful existing encounter spawn/restore:
+ if(skill_actor_scope && grant->map==145 && npcs.kill_encounters.contains(43))
+   load current characterQuests(skill_owner()); require status OK and record;
+   find quest43, require Stage::active;
+   auto report=world.arm_blood_fanatic_immediate(*skill_actor_scope,cycle,now);
+ Log owner_valid,remaining,armed,unsupported (prefer on changed report, not
+ every host tick). Repeated calls do not reset patrol/action/Energy/cooldown.
+ No duplicate spawn or preloaded generic hostile roster.
+
+Catalog proposal: preserve existing capture/source rows and historical policy.
+Create a separate authored source referencing the NEW policy file/hash. Upgrade
+quest43 combat schema to carry Energy40/40 and regeneration4pips with that source
+for all four captured bindings only, retaining Health120 capture provenance and
+existing authored armor/allegiance. DeathMagic0 is explicit skillbook policy,
+not derived from level/model. Do not claim any ordinary weapon profile.
+Without explicit Energy metadata, enrollment reports unsupported safely.
+spawn_kill_encounter rewrites definition70 and template actor IDs to runtime IDs;
+original20100..20103/definition70 must be checked during host catalog binding.
+The runtime validates assigned exact source/map145/model116378/level2 and the
+Health/resource profile in addition to owner/quest43/cycle/objective.remaining.
+
+Reusable API accepts caller-authored FlarePolicy, typed Reviewed book and
+wander Policy, plus exact owner/quest/cycle. It never supplies stats or spawns.
+Repeated enrollment for an existing owned binding is acknowledgment, not a
+live reconfiguration API; callers must not use it to replace books or policy.
+Specific helper returns per-actor armed/unsupported counts, not atomic all-roster
+success; unsupported actors remain unchanged. Source death, owner replacement
+and exhausted objective cannot activate old bindings. Former-owner clocks do
+not block established return.
+
+Detached regression exercises unknown-Energy refusal, wrong owner/cycle/source,
+unchanged generic guards, idempotent idle pause and paid cast, native155 damage,
+owner-death return/resumed idle, owner replacement/fresh cycle and dead objective.
+No test result or rendered/private-host acceptance is claimed before root build.

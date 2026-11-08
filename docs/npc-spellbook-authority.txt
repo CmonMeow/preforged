@@ -1,0 +1,31 @@
+NPC spellbook admission authority (2026-10-22)
+
+Spellbook::begin previously checked only pending/skill/kind/start clock. Direct
+admission could reuse a cancelled token at the same timestamp, switch actor
+lifetimes, accept impossible control intervals, or bypass aftercast/recharge.
+It now binds the first accepted actor lifetime, consumes monotonically increasing
+control sequences, validates the existing control-token domain, and rechecks its
+own aftercast and base recharge before accepting an exact reviewed skill copy.
+Rejected admission changes no state. LiveActor remains the payment/control
+authority; this helper does not authenticate a fabricated token or prove payment.
+
+Local Aftercast_delay.html oldid2633746 describes successful activation blocking
+movement/auto-attacks/skills during aftercast. Local Recharge_time.html describes
+recharge beginning on completion or prevention. These are documented mechanics;
+the monotonic sequence/lifetime checks enforce server identity, not a recovered
+retail AI selection preference. No targeting priority, loadout, Energy pool or
+population statistics are inferred here.
+
+Frozen 20261022-cumulative-skills/skill-audit/captured-skills.json records Flare194
+with 282 local starts, 253 local finished and 29 local stopped events. Those
+observations distinguish activation and terminal actions, but do not establish
+token sequences, NPC recharge values, successful interrupts, or AI skill priority.
+The checkpoint manifest identifies immutable source snapshots. No live capture
+source or official game process was modified.
+
+tests/npc_spellbook_authority.cpp exercises malformed tokens without mutation,
+same-time replay after cancellation, actor/instance/generation replacement,
+successful aftercast, per-slot recharge with an alternate spell, and prevention
+without aftercast. Fixtures use pinned catalog costs/times and synthetic actors.
+Existing LiveActor callers already preflight these deadlines and need no new
+runtime wiring. Add this standalone test to the parent build configuration.

@@ -1,0 +1,59 @@
+"YOU MOVE LIKE A DWARF!" [2358] — DETACHED EFFECT PLAN, 2026-10-26
+
+The fixed 20261024-all-completed capture checkpoint has two attributed
+instant starts and no attributed completion, hit, knockdown, or Crippled
+response. Its capture reports remain unchanged. The native skill catalog
+identifies skill2358 as a Norn shout costing 10 Energy with zero activation
+and aftercast, 10s recharge, damage endpoints44..80, Crippled duration
+endpoints8..15, and body resources1912/1913. Guild Wars Wiki provides the
+rank0..5 progression and describes knockdown plus damage and Crippled:
+https://wiki.guildwars.com/wiki/%22You_Move_Like_a_Dwarf%21%22
+
+src/runtime/gw_you_move_like_a_dwarf.h contains a catalog-checked rank plan.
+Rank6..10 plateau at rank5, and the ordinary knockdown is 2s. Trusted World
+completion now validates scoped hostile targets, same-plane range/LOS,
+authoritative player/NPC Health and authored NPC knockdown policy. It commits
+knockdown, Crippled and armor-ignoring damage through existing authorities,
+and defers effect/damage publication until the caller publishes. Native tests
+exercise both player and NPC paths, authored knockdown immunity, knockdown
+packet presence, deferred publication, stale target and forged-plan rejection.
+Normal Runtime casting now pays 10 Energy, checks target scope, applies the
+trusted World completion, publishes caster1912 before target1913 body packets,
+and enforces the 10-second recharge. The production host supplies that hook;
+the fixed checkpoint backlog now classifies skill2358 as source-bound.
+The 1248 range is a shared private ranged
+target policy, not verified retail distance; reactive ordering and full
+failure atomicity still need stronger tests. The native paid-cast test covers
+player and NPC targets, absent-hook rejection, 10-Energy payment, recharge,
+and both body packets in order. No private-client rendered test has occurred.
+The observed end effects and rendered client remain unverified; no official
+client or logger was touched for this work. The hash-pinned offline verifier
+tools/protocol/you_move_like_a_dwarf_2022.py confirms both captured opcode159/
+kind48 starts reach the 2022 instant UI consumer. Native body consumers also
+resolve caster resource1912 and target resource1913 to particle requests
+(encoded files3a9b04010000 and3f9b04010000, flags1). This establishes the
+first lookup only, not rendered particles or effect outcomes.
+
+Serial Release host and three focused native tests built; CTest passed 3/3.
+The neighboring Finish Him tests passed 3/3 and 12 coverage tests passed.
+SHA-256 at validation:
+  gw_you_move_like_a_dwarf.h 30489AB5FDAC7B9F93E91D4013AEA979687F100E489F6748CC76EF0E9B76BC97
+  you_move_like_a_dwarf.cpp 9E25DA3B42697D39CC097E6F42700C54576C159EB2F0F5E3C2E0C147CC78502F
+  you_move_like_a_dwarf_test.exe D69034930C7FFD6A13C1ACC4096017D4BD7F2AF04C1CF3F50ADEF3E0F7C43812
+  you_move_like_a_dwarf_2022.py AC09E748953910724D62C30B286B32279A5F8CFAA77C14EDFE325B97846C5BAA
+  checkpoint capture 3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb
+  pinned 2022 client a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+  gw_world_you_move_like_a_dwarf.inl E5B9D52CAF8C0A7BCD55194E7C4414682D85EFE56D3DEEE402FC2962AB9EE600
+  gw_world_simulation.h 15D2CE18016701502664A722A0D991376D2DFBDD12282E5B8A8BAE61F495F2E2
+  you_move_like_a_dwarf_world.cpp 13C15FA33B9F63CD3D7E8766408AD22100EA7017E391B46EAD4DED31243685BA
+  you_move_like_a_dwarf_world_test.exe 424DD989BCE773B7641D0BED986F5680C886148F6B731DEFB7C019E42F7B403A
+  server_host.exe 32B13370874899D059268DC037C1084324726CFEA3F1958E47ABB82FBEDFE695
+
+Production binding follow-up, 2026-10-26 SHA-256:
+  gw_skill_casting.h AC3E0F01D9A8EE8BF13423A04E9979D7FF1233FA8FA1B2DADDE0B8A05B95936B
+  gw_cast_timing.h A012600B9587F30E68718F54C567D38567EF8D203D95E1C6893A30CFE8ACF54D
+  gw_auth.cpp 74AF552702084AB2D904EFB564BD25092029B886FC294C0327C920073642A393
+  you_move_like_a_dwarf_cast.cpp AECA3C40A76615C90E9A16133ED428A0B7297590A5C1916A470F1C05CCA79FC7
+  you_move_like_a_dwarf_cast_test.exe 6841252E501AA3EEE0EAE6B2645ECFA64186B2AFCD8C215C8E163945AB29F5A4
+  server_host.exe 47818E27C3DB94B82625AE677D3551F83E1A87F3E9A7FB750B40D22735E0C7AA
+  fixed backlog 679 captured / 387 source-bound / 292 awaiting binding / 650 no local activation

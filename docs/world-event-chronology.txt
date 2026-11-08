@@ -1,0 +1,191 @@
+Shared World event chronology: integration design
+2026-10-18; design only, not an implemented runtime guarantee
+
+Problem and present limits
+
+NPC Flare, NPC ordinary and NPC elemental deliveries retain an arrival deadline,
+but resolve overdue deliveries against the processing tick's time and state.
+Player ordinary projectiles also resolve at processing time. The independent
+NPC flight queues solve ownership, capacity and action-blocking problems; they
+do not establish arrival-time equivalence between fine and delayed ticks.
+
+At a late tick, intervening regeneration, degeneration, protection expiration,
+Blind, movement, equipment changes and end-heals can change a hit or its death
+credit. Two overdue deliveries are currently visited by controller/family or
+release order, not necessarily arrival order. A condition applied by an overdue
+hit starts late. An earlier lethal hit can lose attribution to a later event.
+
+Changing each resolver's now argument to shot.arrives is unsafe. Health, Energy,
+conditions, control and movement may already have advanced beyond that deadline.
+Movement history and expired effects may have been discarded. Never lower those
+clocks, reconstruct past facts from current ones, or clamp an event to the latest
+actor clock and call that chronological resolution.
+
+Authority and evidence
+
+The implementation must reuse current damage, protection, conditions, Energy,
+Health, action-control, attack-outcome and lifetime authorities. It must not
+create parallel resource pools or a second source of gameplay formulas.
+Native skill rows supply activation/aftercast facts; authored projectile speeds,
+hit tolerances, capacity and equal-time ordering remain private-server policies.
+data/gw/ai/action-interval-evidence.txt explicitly distinguishes release from
+arrival and recovery. Captures do not prove the proposed equal-time tie policy.
+
+Provider inventory and concrete touchpoints
+
+1. src/runtime/gw_world_simulation.h, Instance::tick:
+   currently settles fields and movement/NPC conditions to now before the AI
+   drivers, then drains projectile families and advances player resources.
+   A shared barrier must precede these full-horizon operations.
+
+2. advance_health_locked and advance_resource_event_locked in that file:
+   advance_health recursively invokes Lightning, Fevered, Parasitic and field
+   settlement before integrating Health. Existing nested full-horizon drains
+   must become boundary-limited dispatch. Include linked NPC degeneration and
+   linked caster benefits; actor-local ordering alone is insufficient.
+
+3. Existing discrete providers:
+   - gw_damage_fields.h: DamageFieldSchedule::next_deadline; advance currently
+     sets its cursor to the requested horizon and eagerly drains all pulses.
+     Add peek/dispatch-one semantics without advancing past another provider.
+   - gw_lightning_strike.h / gw_lightning_surge.h: existing next_deadline
+     authorities merged by settle_lightning_strikes_locked.
+   - gw_parasitic_bond.h: next_deadline; settle_parasitic_returns_locked already
+     limits a Health forecast by damage_fields_.next_deadline(). Extend this
+     cooperation instead of adding another independent full-horizon drain.
+   - settle_fevered_deadlines_locked and settle_arcane_returns_locked: include
+     their deadline/end-reaction work and cross-actor consequences.
+
+4. Released delivery providers:
+   - gw_world_npc_flare.inl: resolve_npc_flare_releases_locked, immutable shots.
+   - gw_world_npc_ordinary.inl: resolve_npc_ordinary_locked and event ledger.
+   - gw_world_npc_elemental.inl / gw_npc_elemental_ai.h: immutable release ledger.
+   - World resolver families: ordinary, generic projectiles, lightning, water,
+     stone, javelins, Deathly Swarm and elemental projectiles.
+   Each needs a nonmutating next-arrival/peek and exact-handle dispatch. Keep
+   effect ownership in its existing ledger; the arbiter stores typed handles,
+   source/target lifetime scopes and ordering metadata, never actor pointers.
+
+5. Continuous boundaries:
+   Health condition/regeneration expiry, health_crossing_end and passive-recovery
+   changes; modifier-owned Energy expiry and first_zero; NPC equivalents.
+   gw_overcast_settlement.h can return a settlement stopped at first zero, and
+   gw_owned_energy_hex.h supplies observer/batch mechanics. Helpers alone are
+   not runtime integration: Health must not cross that boundary first, and all
+   zero-Energy observers must share the actual transition before continuation.
+
+6. External mutation barriers:
+   resource settlement/payment/gain, damage/healing, status/condition application
+   and removal, equipment/armor changes, movement inputs, join/leave and revival
+   must drain earlier relevant events before replacing authoritative facts.
+   Cover actual Runtime-to-World calls, not only Instance::tick. Existing public
+   setters that call settle_damage_fields_locked are useful audit starting points.
+
+7. Geometry:
+   healing_position_locked rejects times before last_move/steering_tick and
+   returns a point, while callers often use the current surface plane. Preserve
+   or materialize both point AND surface at each event boundary before consuming
+   movement history. Include NPC routes and condition-modified movement budgets.
+
+Required invariants
+
+- One drain horizon; no integration or mutation may pass an unresolved earlier
+  causal boundary. Per-family monotonically increasing clocks must agree with it.
+- Pick the earliest time across providers. Equal times use documented phases
+  consistent with existing expiry/zero/death rules, then a stable World insertion
+  ordinal for otherwise independent events. Actor IDs and map iteration are not
+  priority. Audit ties explicitly; do not silently choose a new retail rule.
+- Integrate continuous state only to the chosen boundary, dispatch there, then
+  recompute the earliest boundary because callbacks may create/remove events.
+- Preflight required facts and publication capacity, then consume or mark the
+  event in progress before callbacks. Reentry must not replay it. Revalidate
+  lifetime scopes after cross-actor settlement and before committing a hit.
+- A nested request during dispatch at t cannot advance another actor to later T.
+  Use an active-dispatch time/phase guard and queue continuation, not a boolean
+  guard that silently skips required work and lets the caller proceed to T.
+- Source death does not invalidate already released NPC deliveries. Retirement
+  does; a replacement lifetime never inherits hits or animation stops.
+- Unknown/future observations are not misses. Preserve unresolved work and return
+  an explicit incomplete result without advancing dependent state past it. An
+  initial strict earliest-boundary barrier is safer than claiming arbitrary
+  actors are independent despite area effects, drains and reactive callbacks.
+  Diagnose unexpected blockers; reject unsupported admission where possible.
+- Bound work/capacity. Exhausting a drain budget returns incomplete and preserves
+  its frontier; it must not skip events or advance the frontier to the horizon.
+
+Ordered implementation and first coherent runtime slice
+
+1. Inventory timestamp-advancing public paths and provider queues. Specify event
+   phases, handle lifetime, incomplete-result propagation and reentry contracts.
+2. Add peek/dispatch-one adapters and a shared arbiter, backed by actual existing
+   queues. Include existing timed-effect/continuous providers as ordering fences.
+3. Extract continuous-only boundary advancement from recursive full-horizon
+   Health/Energy/movement settlement. Integrate the zero-Energy observer dispatch
+   here, preserving death cleanup and all affected actors' modifier removals.
+4. Wire tick and public mutation/resource paths through the same barrier before
+   enabling arrival-time dispatch. A wrapper used only by tick is incomplete.
+5. Recommended first vertical slice: released NPC Flare and ordinary deliveries
+   to players, interleaved with real player projectile, field, timer and resource
+   boundaries on those same actors. Keep the other projectile providers as real
+   adapters/fences, not invisible queues; an unported earlier event must prevent
+   claiming the horizon settled. Do not enable this globally while ordinary
+   input paths can bypass the barrier or competing queues remain invisible.
+6. Expand exact dispatch across the remaining projectile families using the same
+   contracts. Remove redundant eager drains only after their callers use the
+   shared barrier. Keep AI choices once per outer tick; do not run target/skill
+   selection once per internal event. Initially preserve actual release time
+   for late windup completion; scheduling completion at its historical deadline
+   requires a separate explicit completion provider and readiness contract.
+
+Acceptance tests through real World APIs
+
+Compare fine and delayed drains with the same timestamped input sequence:
+- Reversed numeric source IDs, arrivals at 2000/3000: earliest lethal hit owns
+  death; different family iteration orders cannot change the result.
+- Arrival at 2500, protection expiration at 3000, end-heal at 3500: damage,
+  survival, expiry reactions and attribution match fine stepping.
+- Movement input at 3000 after arrival at 2500: the hit drains before history
+  replacement. Cover a surface transition as well as a position change.
+- Field pulse, player projectile and NPC Flare share a victim; add an Energy-zero
+  transition before predicted Health death and verify all modifier observers.
+- A callback queues a same-time event and removes another: each accepted event
+  runs once; dead/retired actors do not receive later invalid state mutations.
+- Equal-time ordering, incomplete future/unknown observations, work-budget
+  exhaustion, replacement lifetimes and source death preserve the invariants.
+- Existing aftercast, failed-cast, release-capacity and ordinary attack observers
+  still run exactly once and retain their original authorities.
+
+A standalone queue test is useful but insufficient. Completion requires these
+World/resource/input paths and equivalence tests, not merely a scheduler helper.
+
+2026-10-18 runtime milestone: timed fields and delayed Lightning boundaries
+settle_damage_fields_locked now advances its existing schedule one due boundary at a time, settles delayed Lightning and Parasitic work only to that boundary, and retains the final admission horizon after due work. settle_lightning_strikes_locked drains earlier field boundaries before its next strike/surge deadline. Existing queues, protection/damage formulas and lifetime checks remain authoritative. Equal-time Lightning precedence follows current dispatch order; no retail tie-order proof is claimed.
+New tests/world_timed_order.cpp uses actual World APIs for player and NPC targets, fine vs sparse updates, and external resource-event settlement. It asserts full damage from10 Fire Storm pulses plus initial/delayed Lightning Strike; the test passes. Rebuilt lightning_strike_world also passes. Broader regression/server build55358 still running at this entry. This is a real partial runtime integration; released projectile adapters, global mutation/reentry barrier, other timed/continuous providers and125/140 casting/zero dispatch remain incomplete. It must not be called the completed shared dispatcher.
+
+2026-10-18 shared timed-effect drain (implementation in progress)
+The real World now has settle_timed_effects_locked, merging field, Lightning Strike/Surge, Parasitic Bond and Fevered expiry deadlines. Parasitic participant Health/death forecasts also fence the selected boundary. Existing provider queues/authorities dispatch at that boundary; nested settlement cannot pull actors beyond it, and advance_health_locked refuses a later nested request. Provider tie order is explicit policy; protection/expiry within Health settlement retains existing authorities. Work exhaustion returns incomplete without dropping queued frontier.
+Rebuilt player/NPC Parasitic Bond, Fevered deadlines, Lightning Surge and damage_fields tests pass. The original world_timed_order test passed; extended combined fixture initially rejected an invalid4900ms Illusion of Haste span and was corrected to5000ms before rerun. Server build87544 and corrected combined regression remain pending. Released projectiles, Energy-zero provider, other continuous/timestamp-free paths are still unported; this is not a globally complete chronology guarantee. Official sessions untouched and no agents restarted.
+
+2026-10-18 player spell-projectile milestone
+NEW src/runtime/gw_world_projectile_chronology.inl exposes real earth/lightning/water/elemental queue deadlines and checks required lifetime clocks before dispatch. The shared timed drain selects these deadlines together with fields, delayed Lightning, Fevered and Parasitic boundaries. Existing spell resolvers run at that selected time. Their outside-drain entry points delegate back to the shared drain, preventing recursive self-delivery. Earth/lightning/elemental deliveries are detached into due batches before callbacks, matching water's existing ownership-safe pattern; callback retirement cannot invalidate a live queue iterator.
+Movement/turn/steering/follow/multiplier inputs now drain earlier supported events before changing history. Future observations return incomplete without consuming the delivery. This does not reconstruct unknown/past state. Equal-time family dispatch order remains explicit private-server policy, not proof of retail event order.
+world_timed_order now proves: earliest lethal arrival wins despite reverse queue/source order (NPC death at2000, not10000); delayed Shard Storm has already expired after its real lifetime on player/NPC; later movement cannot retroactively dodge Flare; fine/sparse results agree with overlapping field pulses. New regression passes. Rebuilt elemental_damage,lightning_orb,shard_storm_world,water_trident_world pass. Full Release build49284 pending at this note. Unported ordinary/stone/javelin/swarm/NPC deliveries and timestamp-free trusted mutations still prevent claiming complete World chronology.125/140 zero-Energy/casting/NPC integration remains incomplete. No official process/logging actions, no subagents.
+
+2026-10-18 remaining player spell delivery deadlines
+Stone Daggers release/arrival, existing Lightning Javelin flight and Deathly Swarm chain deadlines now participate in the shared drain. Deathly Swarm remains a delayed chain, not a simulated physical projectile. Stone publication-pending records and the unpublished second-release sentinel are excluded until trusted publication establishes their deadlines; existing authenticated publication checks remain intact. Late updates now consume the scheduled second dagger release rather than postponing it to the observing tick.
+Javelin/Swarm work is detached from live queues across callbacks and only due work settles participants. Candidate NPC movement/Health is refreshed at the boundary; Javelin checks settled player Health and caster survival, and Swarm rechecks caster survival before advancing its chain. Native230 casting eligibility/calibration remains a separate documented gap; scheduling its existing World method does not establish a dispatcher binding.
+Rebuilt stone_daggers_world and world_timed_order pass, including publication gating, move/resource-before-history, exact chain death times1100/2100/3100 and Javelin arrival death time2000 rather than observation10000. Earlier deathly_swarm_world/conditional_elementalist passed; final current-source deathly regression/server build62019 pending at this note. Ordinary player attacks and NPC delivery adapters, zero-Energy provider/casting/NPC integration, other continuous/timestamp-free mutations remain unfinished. No official session or logger changed; no subagents.
+
+2026-10-19 released ordinary attack integration
+Published ordinary flights now share the timed drain with spell deliveries. Publication-pending arrows remain excluded until the existing authenticated flush records a launch time. Actor/attack-outcome clocks fence delivery; the existing hit,miss,dodge,retire,cancel,reset and protection authorities still decide outcomes. Bow/melee skill admission now settles earlier delivery boundaries before registering a newer outcome ledger event, fixing the confirmed second-attack leapfrog regression.
+The drain detects an unchanged blocked delivery frontier and returns incomplete promptly instead of spinning through its work budget. Actual second-dagger releases count as progress independently of queue size. Tests preserve full64-notice reset backpressure/retry and terminal cancellation. Stale-sample tests now assert real460/960 arrival events before later resource/admission events; cancellation tests remain before the arrival boundary. Dual-arrow outcome timestamps follow their140 arrival, not the observing200 tick. These are private flight-policy values, not new retail calibration claims.
+Current-source rebuilt world_timed_order,world_weapon_attacks,projectile_attack_outcomes pass; miss-state/server build24486 completion pending at this entry. NPC deliveries, ordinary windup scheduling policy, other continuous/timestamp-free mutations and125/140 zero/casting/NPC adapters remain unported or unverified. No rendered animation validation. No official client/logger actions; no subagents.
+
+2026-10-19 NPC released-delivery integration
+The shared timed drain now includes opt-in NPC Flare queues, elemental ledger arrivals, and ordinary ledger arrivals. Current-generation source/target clocks are checked before consuming a deadline; retired sources are handled by existing terminal paths. Source death preserves already released spells. AI decision ticks are not synthesized at each delivery boundary. Existing NPC outside-drain resolvers delegate to the shared frontier; the outer tick rechecks newly released NPC work before later settlement.
+Rebuilt npc_ordinary_world,npc_flare_world,npc_elemental_world pass. Updated resource-fence cases require earlier arrivals before later resource/input updates and assert stale ticks cannot replay damage. The new mixed Flare/Fire Storm World regression compares fine updates with a single late resource request, preserves an NPC shot after caster death, and verifies no replay. Current server/world_timed_order build43764 is pending; no live rendered test performed. Broader continuous causality, ordinary windup scheduling, timestamp-free mutation paths, and125/140 zero-Energy/casting integration remain incomplete. This is not a claim of complete global chronology or complete skill coverage. Official logging untouched; no agents started.
+Verification completion: build43764 succeeded for world_timed_order_test and bin/server_host.exe. Current rebuilt world_timed_order and the three NPC World suites all pass. Regenerated runtime coverage, audited the fixed20261017-npc-refresh-2 checkpoint, and published its unchanged633captured/286source-bound/347awaiting/696missing counts. No extra skill binding claimed for this scheduling change. Live animation verification and the broader gaps above remain open.
+
+2026-10-19 callback lifetime hardening
+NPC released-delivery dispatch now reacquires controller, and for ordinary attacks body/combat, after condition/death callbacks. It verifies the original scope again before continuing so a retired/replaced lifetime cannot be dereferenced through the earlier iterator. Existing rebuilt npc_flare_world,npc_elemental_world,npc_ordinary_world suites pass, including existing retirement/replacement fixtures. No new skill binding or retail behavior is claimed. Server rebuild25102 is still running at this entry; fixed baseline audit/publish remains633captured/286bound/347awaiting/696missing. Official clients and loggers untouched.
+Verification completion: server rebuild25102 succeeded. The three NPC suites passed against the changed header. No rendered verification performed; all previously listed continuous/Energy-zero/casting gaps remain active.

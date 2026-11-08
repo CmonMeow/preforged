@@ -1,0 +1,38 @@
+2026-10-27 Flame Djinn Haste1381 production binding and movement renewal fix
+Normal paid self-casting is now bound through the exact actor scope and spell
+completion event:10Energy,.75s activation,.75s aftercast,20s base recharge.
+All adjacent foes take rank-scaled15..120 fire damage;the caster gains25percent
+movement for8..14s with normal equipment duration,renewal,strip,expiry,death and
+recycle handling. A struck foe enables intrinsic half recharge through the
+shared modifier authority. Empty space still grants the enchantment at full
+recharge. Damage preflights both populations,uses current post-protection
+Reversal/Seed commits,and retains normal NPC death credit. The World owns one
+finish58/caster1638/status/damage publication;no2077 target sentinel is emitted.
+Untargeted application follows the archived Well of the Profane exception.
+New-source proposals are rebuilt after end/resource callbacks before commit.
+The same-speed renewal regression exposed shared movement history loss:an
+unchanged multiplier did not rebase an active leg,but discarded intervals it
+still needed. Retain history until click/held cursors consume it. Both1381 and
+same-rank Armor of Earth renewal now retain correct travel distance. No route-
+or NPC-specific patch and no extra forced movement packet were added.
+281 new cases PASS across all ranks,mixed player/NPC armor/conversion,damage-
+free and hit branches,movement lifetime,equipment quotes,normal Runtime costs,
+recharge composition,cancel/interrupt/recycle/Backfire and unknown-armor rejection.
+Five fresh native suites and41 Python checks PASS,including existing Armor Earth
+casting/movement,Ward history and reactive Seed. Final Release host build and
+--build-info pass(exit0). Fresh verifier hash-checks8 fixed local receipts and
+original2022 style50/.75s/caster1638 particle,asset081004010000. The capture has
+10/0/5second recharge updates and other reactions;do not infer all modifier
+composition from that one window. Native services are synthetic;rendered QA
+remains open. Native raw radius156 versus SDK adjacent166 remains an explicit
+retail-boundary gap;World uses the shared adjacent166 category.
+Fixed baseline now679 captured,402 source-bound,277 awaiting binding,650 missing
+local captures. Binding counts are source wiring,not full mechanics/rendering
+acceptance. Other skills remain unfinished;274 staged and307 UNBOUND remain.
+Manual build queue and fixed capture manifest unchanged;official clients and
+logging untouched.
+Wiki:C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Flame_Djinn's_Haste.html
+Wiki SHA256:08858cb733ab14bd92643fc142598e4bbbec3990ce5aa44fb3e37bb35f1be746
+Untargeted Well rule SHA256:bdb8e0249258cbf249f415c2b924546571b2557f6aec6af61c95a6c6b4806246
+Report:build/reports/flame-djinn-implementation-20261027.json
+Host SHA256:4b5107179e57b0101688d2c501ace8c3f02420760bde64fd4a2be9f53ff39f08

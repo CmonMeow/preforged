@@ -1,0 +1,97 @@
+DETACHED INTEGRATION CHECKLIST — 2026-10-31
+No normal248 enrollment, auth edit, or tested/rendered claim is made here.
+Line references are current source observations and must be rechecked after merges.
+
+Actual auth adapter required
+src/apps/gw_auth.cpp:2634-2645 supplies legacy Mending/Succor adapters; the next
+members in Hooks declaration order are retribution_completed/retribution_target_valid
+(src/runtime/gw_skill_casting.h:403-406). Neither is supplied by auth today.
+Do not copy their hard-coded completion_prefix_published=true implementation.
+Retribution has dynamic prefix ownership and a real deferred release closure.
+Candidate adapter, to install only after required consumers and acceptance pass:
+
+.retribution_completed = [&](Scope target,const RetributionPlan& plan,
+                             unsigned divine,uint64_t event,uint64_t now)->EffectCompletion{
+    if(!skill_actor_scope)return {};
+    std::vector<Packet> visuals;std::function<void()> publication;
+    const auto done=world.complete_retribution(*skill_actor_scope,target,plan,divine,
+                                               now,event,&visuals,&publication);
+    return {done.accepted,std::move(visuals),{},std::move(publication),true,
+            done.completion_prefix_published};
+},
+.retribution_target_valid = [&](Scope target,unsigned divine,uint64_t now){
+    return skill_actor_scope&&world.retribution_target_valid(*skill_actor_scope,target,divine,now);
+},
+
+Types above are abbreviated; use existing fully qualified names in the initializer.
+Capture current skill_actor_scope exactly as other adapters do; never fabricate an
+NPC spell event. before_spell_effect already forwards source+skill+event at
+src/apps/gw_auth.cpp:2683; target_scope is supplied at2177. No new receipt producer
+is needed. Both callbacks must be installed together; do not expose stage_retribution
+as the paid callback and do not call Ether Renewal a second time in auth.
+
+Why early visuals=true matters
+World healthy completion returns target454 separately plus deferred effects, and
+prefix=false. Runtime completion arm at gw_skill_casting.h:2633-2647 preserves
+visuals/publication/prefix and its common publication branch at3115-3127 emits
+native58/caster2077, then the early target454, then releases recipient effects.
+World consumed/lethal/Profane returns prefix=true, owns native58/target454 in its
+captured release, and returns no extra visual. Runtime must release that closure
+without duplicate58/caster body. Do not unconditionally set prefix=true or drop
+publication as legacy maintained adapters do.
+
+Current World boundaries to verify
+- gw_world_retribution.inl:197-239 paid entry validates canonical proposal and
+  exact admitted248 via complete_ether_renewal_locked, commits Renewal once,
+  reacquires source/target, rechecks Profane, rebuilds the actual proposal, and
+  reports final consumed state. Deferred prefix is inserted in captured batches.
+- gw_world_ether_renewal.inl:139-178 validates full scope/event/skill/time and
+  terminal replay cursor, including absent-Renewal paid completion. This is the
+  authoritative terminal receipt; do not invent a parallel event counter.
+- gw_world_retribution.inl:78-143 NPC proposal/healing/publication and144-185
+  player proposal/healing/publication must stay under the World lock; SubCapture
+  composes with the outer capture, whereas a nested strict Capture is invalid.
+- Existing trusted NPC-caster stage semantics remain separate from paid player
+  entry. They must still pass independently after wrapper refactoring.
+
+Required gates before installing adapter or normal binding
+1. Finish coordinated native compile after header nesting fix; run existing
+   Retribution, maintained scheduling/range/chronology and Runtime paid suites.
+   No current successful build has yet validated this savepoint.
+2. Promote/review tests/retribution_completion_extra_draft.cpp only after its
+   native results are known: wrong-skill receipt; player/NPC DF lethal; self
+   Renewal lethal; Profane player/NPC with and without Renewal; immediate and
+   deferred single58/454, no lease/DF under Profane, idempotent release; healthy
+   self replacement retains Renewal and its pre-add enchantment reward count.
+3. Fill negative matrix: paid NPC source rejected; non-Monk DF rank rejected;
+   unknown/missing resource authority rejected; source/target generation change;
+   distinct-owner stronger/weaker replacement and shared-owner upkeep release;
+   no NPC private maintained UI. Existing registered completion test covers
+   event0/unknown/replay, bad plan/rank/scopes and healthy player/NPC completion.
+4. Resolve ordinary/patrol/AI motion projection, or explicitly establish a
+   reviewed complete production target policy. gw_world_mending.inl:354-369
+   currently rejects flare/elemental/ordinary AI, AI motion and wander when no
+   quest route proves their future trajectory. Quest-route fixtures do not
+   establish these consumers. Never substitute stationary fallback.
+5. Complete attack-component classification and all shared reaction consumers.
+   gw_attack_outcomes.h:72-85 seals one actual hit/damage receipt; Retribution
+   consumes it in gw_world_retribution_damage.inl:72-115. Additional Conjure/
+   other direct attack components must be classified explicitly; indirect
+   Hundred Blades/Vow cannot be treated as every Health delta. Check sibling
+   damage-consumer work and new native evidence before marking this gate done.
+6. Preserve holy/equipment authority and conversion/death cohorts. Damage
+   consumer requires reviewed HolyTraits/holy bonus at19-20 and feeds normal
+   player reactive Seed/reaction path at89-101 and NPC Reversal/damage path at
+   109-115. NPC compound healing/Seed, neutral quest guardian policy and
+   maintainer death/range/zero-energy exact retirement need current evidence.
+7. Confirm retail rounding/combined effect/overkill/modifier evidence and perform
+   rendered player acceptance on an authorized private client. Synthetic native
+   fixtures and serializer tests are not rendered animation/sound evidence.
+8. Only then change normal support enrollment and production auth callbacks;
+   update binding/capture partitions and source/executable hashes together.
+
+Historical reports are evidence checkpoints, not current blocker truth:
+docs/retribution-current-20261030.txt:98-108 lists original consumers, while its
+124-133 statement that Runtime hooks are absent is now superseded by staged hooks.
+docs/retribution-npc-20261030.txt retains NPC/additional-component limitations.
+The draft paid design explicitly preserves ordinary/patrol/AI gap at54-55.

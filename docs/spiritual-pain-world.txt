@@ -1,0 +1,112 @@
+SPIRITUAL PAIN [1336] — STAGED WORLD DAMAGE, NOT SOURCE-BOUND
+
+Source is the immutable 20261024-all-completed capture and pinned 2022 skill
+catalogue, as detailed in spiritual-pain-detached.txt. World now validates a
+live hostile target, range, plane and line of sight. It applies the selected
+target's primary armor-ignoring hit; a known summoned NPC also takes a
+separate extra hit, and known hostile summoned NPCs within the selected
+target's area take the extra hit. An unknown summon trait on the selected
+NPC rejects the transaction; unknown nearby traits are skipped rather than
+treated as ordinary. Signet of Spirits now marks its controlled spirits as
+summoned when they are created. An opposing player team can damage them;
+their owner cannot use this hostile spell on them.
+
+The method preflights recipients and NPC hits before damage publication.
+Target-body resource 1530 and damage/death packets are held in an Outbox
+capture until the supplied completion callback publishes them. The focused
+World test covers a selected player, selected summoned NPC, nearby summon,
+ordinary and unknown NPCs, an out-of-area summon, deferred publication and
+rejection of an unknown selected NPC. A lethal primary hit omits the selected
+summon's second hit, and a recast against the dead target is rejected. An
+opposing-team Signet spirit takes both hits, a nearby one takes the extra hit,
+and its owner is rejected as a hostile caster. It does
+not prove that production
+summon definitions carry complete summoned traits or that every NPC protection
+and death reaction is equivalent to the official server.
+
+Normal paid Runtime admission, recharge, cast-finish ordering, and an
+original 2022 rendered-client check remain. No production source binding has
+been added. The modern recharge observation 4 conflicts with pinned 2022
+base 7; it remains unresolved. This stage is native World verification, not
+client animation acceptance.
+
+NPC summon-trait audit: the current 20 authored NPC combat text files under
+data/gw use schema v1 except one v11 development file. The v1 rows cannot
+record a summoned trait; the lone v11 row leaves it unknown. Thus static NPC
+targets generally cannot pass the staged skill's selected-target check.
+Controlled Signet spirits carry an explicit runtime fact, but that does not
+classify the broader NPC population. Add reviewed per-definition summon
+evidence before enabling this skill for ordinary NPC combat. The main
+data/gw/npc-combat.txt SHA-256 is
+0F7B32BAFAC8FC34F34E82C845629CF7B904D74787BB6DFB7E7F0D7CBDAD5993;
+the v11 development file SHA-256 is
+443B713C36DB7E0722DB09502881634E0226A892C76CDF27B80DE26ECEFCC1F1.
+
+2022 target-body verification: the hash-pinned original executable row for
+1336 has target-body resource 1530. The offline native callback accepts that
+resource for actor43 and resolves particle DAT file264721 (encoded
+100f04010000). The World packet test now requires the single targeted-body
+packet to lead the deferred damage batch. It caught and fixed a call that
+mistakenly passed resource1530 where the helper expects skill ID1336. This
+is original callback and wire evidence, not proof of rendered animation.
+
+Validation: serialized Release server_host build passed; selected CTest
+npc_combat_catalog, npc_world_combat, controlled_spirits_world,
+spiritual_pain and spiritual_pain_world passed 5/5. The revised focused
+World and controlled-spirit tests passed 3/3 after the owner-rejection check.
+These tests are native
+mechanics checks, not rendered-client checks. Official logging was untouched.
+
+SHA-256 NPC source 3292839E291D37145C66C4F3992A1F895A3DF76E8FD6D070A1CF76AED3DAAB2D
+SHA-256 World header 18604CE3D7B566792A92F0EB5EF34D48E290E951704CE08CFAC9629E44A0F93A
+SHA-256 World source A88F5B7E37100A314597F860D03DA10435CC0CA02E446113AC6DA578BB292409
+SHA-256 World test 76E60A1A059512F4640F3818A41E12FC1B6C47ECD81EFBA0F56C929BD6808B32
+SHA-256 tested World EXE 9EEF660432E105E1F8DC73A05DDC12C480F24B7B0B797F87F4A223AFE97D476A
+SHA-256 built server EXE 756DA4FBCF9BDB6AD0D2F23D22C1E4AD3ED29F9792146B5E86539A637024AB24
+SHA-256 native target-body report A331D57C7937A6034094F7016236AEBA555337B49E7F26AA6BFE5F24B38922C1
+
+2026-10-25 opt-in paid cast stage: Runtime now admits 1336 only when a
+trusted Spiritual Pain completion hook is supplied. It validates the
+rank-specific canonical plan and hostile target, pays 5 Energy at start,
+waits the pinned one-second activation, and dispatches the staged World
+damage on completion with native finish58 and seven-second recharge.
+The focused test checks a player target plus a known summoned neighbor,
+cancelled cast, stale replacement target, missing hook and recharge. World
+holds recipient publication until after the cast finish prefix. The
+production gateway deliberately omits the hook: static NPC summon identity
+is still mostly unknown and must not be guessed. Therefore 1336 remains
+on CAPTURED-NEEDS-IMPLEMENTATION and is not source-bound or playable via
+the normal client. The modern observed four-second recharge still needs
+modifier context; this stage follows the pinned 2022 seven-second base.
+
+Serial Release server_host and focused tests built. CTest spiritual_pain,
+spiritual_pain_world, ash_blast_cast and skill_casting passed 4/4. The
+coverage audit and its twelve unit tests pass while keeping 1336 unbound.
+No official client or logger was touched; no rendered acceptance is claimed.
+Tested SHA-256:
+  src/runtime/gw_skill_casting.h 3A917142C086CBDF1169630B06772BDAD7FADC73F352F69A13AAF1B5B691D9CD
+  tests/spiritual_pain_world.cpp 96FD7FFC1AB719E85C7AE9F637CD076A14C2329A8CF56267A83730D2CDB712B9
+  CMakeLists.txt 582393951B676D351E32826FF452D12F5B4E8B0D8DCD267E5130CD9A9FFCC208
+  tools/protocol/skill_runtime_coverage.py B673D5F7A49EB4BD2E44C5A179CC8FCCB0619DCAFE3C624138C8525CBF03611E
+  tests/test_skill_runtime_coverage.py 9CF818AE06F8B28C709E563D4C17D30AB7FE7916362D456A7C16AB31027E4C0D
+  build/tests/spiritual_pain_world_test.exe 62A89DB09E246B5CA9E1F66C68E642E95E8BA2E4C1F094D8C656072B666A88B0
+  bin/server_host.exe 69B131BC48F55038D4F0B384B62669350E2AD788F6C7BAD97B36C211787A7E0E
+
+2026-10-25 original-client animation follow-up: a hash-checked offline
+verifier reads five complete Spiritual Pain receipts from the immutable
+20261024-signet-infection-bound packet checkpoint. The official session
+shows modern targeted start160/60 (actor25 to30), finish159/58 after
+1094ms, target effect160/20 resource1530, one nearby damage packet and a
+four-second observed recharge. The pinned original 2022 catalogue row
+instead specifies a seven-second base recharge; no modifier is inferred.
+The native 2022 cast callback accepts target43/skill1336, selects first
+model-animation style51 for1.0s, and preserves skill1336. The native
+target-effect callback resolves resource1530 to encoded DAT file
+100f04010000 for actor43. Exact 2022 cast and effect serialization is in
+build/reports/spiritual-pain-native-2022.json. This proves callback and
+first lookup behavior, not actual pixels, sound or live-client acceptance.
+The skill remains opt-in and not source-bound because authored NPC summon
+classification is incomplete. No official client or logger was touched.
+SHA-256:
+  tools/protocol/spiritual_pain_2022.py 4CDDEB868F9963F3DBA295AD3B6A2121344CD61B902E4518CCE999F3A38CD18D
+  build/reports/spiritual-pain-native-2022.json 5F0EB59108273DE5EBD8C97EF88DAAC867EB31F62EEBF5FF1771357498AE4A53

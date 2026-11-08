@@ -1,0 +1,94 @@
+Blood Fanatic activated-skill audit, 2026-10-28
+
+Read-only implementation/evidence audit. No runtime activation, native test,
+build, client action, or new measured combat values are asserted here.
+
+Roster and evidence
+Quest43/map145 exports four existing Blood Fanatics: templates20100..20103,
+definition70, model_file116378, level2. Original observed actor IDs30/39/48/49
+belong to epoch56; numeric IDs alone must not identify earlier lifetimes.
+Health capacity120 is captured for these four. Initial full Health, armor0,
+hostile token2 and no autonomous retaliation are explicit development policy.
+The fifth wiki actor lacks captured position and must not be fabricated.
+
+Frozen packet152078 at tick87582375 starts skill155 from lifetime56:39:2 on
+56:212:1. Packet152127 at87584406 starts an ordinary attack on56:203:1.
+World lines15254/15259 place source and both targets on plane36, stationary,
+about76.5/61.7 units apart. This establishes skill/ordinary-action capability,
+not exact damage, Death Magic rank, windup/cadence constants, weapon damage,
+Energy maximum/current/regeneration, nearest-target preference or switch cause.
+The derived report verifies archived raw packets and lifetime joins; this audit
+read that report and its explanation, and did not rerun its extraction tool.
+
+Local Vile_Touch wiki oldid2630197 and pinned metadata identify155 as a
+non-spell touch Skill, Death Magic attribute5, Energy10, activation
+0.75s, aftercast0.75s and recharge2s. Damage20/56/65 at ranks0/12/15 is
+untyped armor-ignoring damage, not life stealing. Existing canonical
+shadow_damage(155,rank) supplies touch range144. The Power_of_Blood wiki
+oldid2649275 explicitly corrects quest dialogue's Dark Pact to Vile Touch.
+These general skill facts do not establish this roster's actual rank/resources.
+CORRECTION after native metadata regression: the pinned2022 generated catalog
+uses Skill type10; type38 belongs to modern buildwars reference skilldata.json.
+The original audit conflated these encodings. Vile Touch remains non-spell.
+The current immediate adapter admits155 only:133 requires health sacrifice,
+219 requires Overcast, and other ShadowPlans require life-steal followups.
+Those guards must remain; no immediate spell effect is verified by this work.
+
+Current blockers
+- Quest combat metadata has no observed Energy pool/regeneration or skill rank.
+- Ordinary attacks are observed, but their damage/timing profile is unreviewed.
+- NPC Spellbook accepts only is_spell rows; LiveActor::begin_spell uses
+  control::Action::spell, and Action currently has only attack/spell.
+- World shadow_damage currently requires its source in players_. Its NPC target
+  support does not mean it supports NPC casters.
+- Therefore do not enroll155 through existing elemental/spell-only APIs and do
+  not infer resource defaults from level, profession, actor name or spell cost.
+
+Proposed reusable API (design only; names subject to implementation review)
+ReviewedActivatedSkill { Slot slot; EffectPlan effect; Provenance evidence; }
+EffectPlan initially holds a canonical immediate ShadowPlan; delivery and
+spell/non-spell class derive from validated catalog/effect metadata. The
+explicit rank and its provenance are required, never inferred from level.
+LiveActor::begin_activated_skill(lifetime,slot,target,now,availability) shares
+the existing Energy, recharge, aftercast, control epoch, sequence, movement
+pause and external-disable authority. Add an explicit non-spell activated
+action kind; keep begin_spell's spell-only contract for existing consumers.
+A scoped pending-use ledger owns immutable slot/plan/source/target/token only,
+not another Energy or cooldown pool. Reuse existing aggro/pursuit/leash/idle
+motion with exact touch-range and LOS checks at admission and completion.
+An NPC-source immediate damage adapter preflights/commits existing reactive
+damage and Seed handling under the World lock; it does not fabricate flight.
+Resolve stale source epoch/target lifetime before replacement-target future
+clocks. Reacquire actors after reactions and never reuse stale references.
+General any-skill interruption must recognize the new action; spell-only
+interrupts, Hex Breaker, Aura and Ether Renewal must not treat155 as a spell.
+Cast completion publication retains native slot/scope and effect semantics.
+
+Required regressions before production enrollment: non-spell vs spell-only
+interrupt/reaction behavior; unknown resources/rank rejection; exact single
+payment/recharge; aftercast movement; touch range/LOS/detours; stale lifetime
+and cancelled epoch vs future clocks; Seed/protection/death callbacks; quest
+owner/cycle retirement. Production activation additionally requires an
+explicit reviewed or authored resource/rank policy, visibly labeled as such.
+
+SHA256 provenance (repo-relative unless absolute)
+99c85efd5b37286ec35538b955a6de592b55db8aa6320e2bc80544b766c8c79f  data/gw/quests/power-of-blood-development-combat.txt
+5123eae06686b27c496a304b8fa3226b57971c1881a425a9318350fe91bce8c8  data/gw/quests/power-of-blood-development-policy.txt
+6483f41eb3a0da1ce05d0f3550a59d9cbf1d3472b5bd9af81ba928701dbd8e08  data/gw/quests/actors/power-of-blood-fanatics.txt
+2a6d8eb6cd5ec4a7fa0b67f856856c2ecd1cbb6bac214e66badea0c2034b510b  data/gw/quests/power-of-blood-evidence.json
+9ccb2aab74d198e81094b122805cd1b9faae80727290c3e8184a1a9681163bff  docs/npc-attack-spell-replacement-evidence.txt
+56fa5f58bf45df4d053f9d7bea6b48b0a31afe2598f6749ed74cf29c04066dce  build/reports/ai/attack-spell-replacement-evidence.json
+a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02  data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl
+1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6  data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl
+168fb49f5a79ccf3989bfe8bc32528031fecb95e26afbfb1a2b1613a5c0059c6  C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Vile_Touch.html
+cc2875cc3e62bd0bcb5ab76512b7d1850f2e22143f3856cc836dd4485e8afb31  C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/The_Power_of_Blood.html
+3284512c52901304172b3a9e0d2eb36d1b439e5f0acd8f635395ec2636e5e3b1  src/runtime/gw_skill_catalog_generated.h
+22a45754a6d423fbe470fbcaf1f2b3fa3b0f7655c0bd28c413a5662739fb3762  src/runtime/gw_shadow_damage.h
+b8d0c903f8de87d5286e38adf3b3ce405078710c86febfca821f244799a9d7e0  src/runtime/gw_npc_skill_ai.h
+40e209e300551fa9da050e69e5ffe9c8b2a3dc79dc310ba6f09f7aa2ac7c8885  src/runtime/gw_npc_action_control.h
+fcbb56d88a7fe9db3b3bdb96a6316d46a9ac3d2fef2bb57484d5d15641b2fbfe  src/runtime/gw_npc_combat_catalog.h
+caf39e59a5510d6e5d9e57b0143546a4e3081aaf8b23dc45008c54f8b74b0259  src/runtime/gw_world_shadow_damage.inl
+
+Capture hashes above are recorded by the frozen evidence report. All other
+listed hashes were read from disk during this audit. Runtime hashes describe
+the inspected source snapshot, not a new claim of native verification.

@@ -1,0 +1,44 @@
+NPC playable population expansion, 2026-10-29
+
+The shared AI now enrolls five exact reviewed Bandit Raiders (59001..59005)
+and one Firestarter (59000) on map146 through the host's optional development
+sidecars. The ordinary and caster controllers remain the existing shared
+controllers. Base relation-only population remains untouched.
+
+Raider original59001 stays at(-7931.3501,1981.5538). Added exact creation poses:
+59002(-8206.0596,2034.3112),59003(-7504.9497,4267.3750),
+59004(-7440.0259,4375.8628),59005(-7712.9565,4512.0000),all plane0.
+Each appearance token1421 and maximum Health120 belongs to the same exact
+captured lifetime as its creation. Four lifetimes show completed ordinary
+actions. Lifetime53:194:1 only shows an ordinary start/stopped pair; completing
+its melee attacks is explicitly authored development behavior. Action finishes
+do not by themselves prove a hit or damage amount. Per-line evidence and hashes:
+data/gw/ai/raider-provenance.json and
+build/reports/npc-raider-expansion-progress-20261029.json.
+
+Host loading validates all five rows, full expected profile, actual navigation
+and duplicate identity/placement conflicts before atomically installing them.
+Each actor gets independent home/aggro/attack/patrol state from the shared
+population adapter. Proximity acquires within1000; remembered targets may be
+pursued within1500; movement stays within2000 of home before returning.
+Ordinary damage5,windup750ms,period2000ms,range128 and all armor0 are authored.
+Movement220,cardinal80 patrol,pause1200ms,leg6000ms are also authored settings.
+No Energy, spellbook, flesh or immunity is guessed for Raiders.
+
+Native evidence for moving pulls is separate from retail claims: the synthetic
+ordinary navigation scenario uses speed80 to keep a moving target beyond the
+1000 acquisition radius while inside the1500 follow radius. It then fights at
+the pulled location, reaches the2000 home leash, returns and resumes patrol.
+Production speed remains220. The real Firestarter catalog test additionally
+covers proximity engagement, Flare target identity, actual damage, target loss,
+return and resumed patrol. Movement segments are checked against mesh cells.
+
+No automatic respawn/home healing, linked-group threat, all-NPC completeness,
+canonical deployment or rendered-client verification is claimed. Owned quest
+rosters retain their existing owner/cycle/objective controls. Official clients
+and collectors were not targeted or modified. Native build/test completion is
+recorded in the progress reports rather than implied by this design note.
+
+2026-10-29 Native optional Glimmering completion observer and expanded Raider host paths build in production core. Isolated portal/encrypted auth/roster/Play/initial-world handshake pass; fixture process terminated by exact owned handle (not graceful shutdown), no rendered/player initialization claim. Five exact Raider placements pass actual-mesh patrol/combat/return/reconnect; Firestarter and moving pull/leash suites pass.6 ambient host actors now configured in source. Native binary not deployed; canonical remains6b0912ccf246a71470de440212dfee512c22003a4ea63d80849aadeb73f53ec0. Official clients/logging untouched. Reports: build/reports/npc-raider-expansion-progress-20261029.json and glimmering-mark-cast-end-progress-20261029.json.
+
+Publication follow-up: no server_host.exe was running; verified isolated hostA251A1EA4E4521BBC9BE0BCAB81FD5BE299DB3394F8A5FFEE8EBC0EA1ED588C5 copied to bin/server_host.exe with one rollback in build/deploy-rollback. Includes6 ambient AI actors (5Raiders+Firestarter), staged optional Glimmering observer and earlier fixes. Glimmering227 remains unsupported/unwired in normal casting. No client launched or official process action; rendered acceptance remains open. See build/reports/npc-raider-glimmering-publication-20261029.json.

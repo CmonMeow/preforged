@@ -1,0 +1,32 @@
+Typed attribute storage — 2026-10-09
+
+NetworkServer attribute reads and saves now call NetworkManager's typed methods.
+Manager retains serialized database admission and a three-second deadline.
+Accounts directly reads and writes the native 54-byte SQLite profile, retaining
+ownership, revision CAS, validation, source hash preservation, baseline-only
+initial entitlements, and immutable quest bonus/provenance during rank edits.
+Offline get/save adapters use the same typed storage functions. Full entitlement
+imports remain offline-only. Profession switching remains an atomic legacy
+operation pending migration, and gameplay handlers retain profession/point
+allocation checks. This change does not widen attribute edit permissions.
+
+Rebuilt quest_accounts, network_lifecycle, development_accounts and
+accounts_lifecycle all passed. New isolated checks verify foreign ownership,
+missing baseline, cancellation, initial entitlement rejection, stale revision,
+and rollback after both initial insert and existing-profile update. Diagnostic
+failures now report source lines in the persistence test.
+
+Deployment of this attribute change is pending. The running host still contains
+the previously verified typed skill migration; official client remains separate.
+
+Deployed and verified 2026-10-09: host SHA256
+33186a51b89ccd56907d85d264e5d1aaf8fa8fa47911bcb0c60462f0ea0bc383.
+All 126 CTest tests passed in 30.61 seconds after the full Release build.
+Private client PID8804 logged in, loaded map55 and completed keyboard/ground
+movement with zero native pose disagreement. Attributes restored at revision38
+with 200 total and 0 unused points. Actual K-menu Earth Magic decrement 12->11
+was accepted at revision39; increment 11->12 at revision40 restored the original
+allocation. Client screenshot confirms Earth Magic12, Energy Storage12,
+Shadow Arts3 and zero unused points. Both saves used the new typed path.
+Official client PID5604 remained open. The live edit evidence and smoke report
+are in build/reports/typed-attributes-live-edits.txt and typed-attributes-smoke.json.

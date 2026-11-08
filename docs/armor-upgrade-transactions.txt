@@ -1,0 +1,51 @@
+Native armor upgrade workflow, pinned2022 build37130
+
+Original client evidence: tools/protocol/item_transactions_2022.py and
+upgrade_preview_2022.py. Query126 carries inventoryWORD,targetDWORD. Native
+4d5124 stores original targetA2DDFC, modeA2DE00, sourceA2DE08. Event106
+(361) stores previewA2DE04 then calls7c6130 with rememberedmode/source,
+not an invented eligible-item list. Event107(360) opens dialog16 with
+originaltarget,mode,preview,source. Confirm128 and cancel127 are original
+button/close senders. Zero361choices preserve rememberedsource: original
+controller PASS4 modes; report build/reports/upgrade-preview-2022.json.
+
+Server: gw_armor_upgrades.h and gw_auth.cpp125..128. Query publishes a
+private presentation copy of owned armor; selection computes a preview from
+owned carried type8 upgrade. Preview reservation range60005..60036 is
+explicit private policy disjoint from current owned/floor/placeholder pools,
+checks character/bank identities, never enters Profile/projection/bag/DB.
+Preview definition is updated separately; realtarget/source remain intact.
+Confirmation requires selected source, same inventoryrevision, retainedtarget
+identity, 30s expiry, current scene and no active trade. Proposal recalculated
+fromcurrentprofile. Existing accountinventorysave transaction checks account
+ownership and revision CAS; only after success is one component consumed and
+realarmor definition published. Source stack decremented or detached/deleted.
+Equipped attributes, health and energy refresh through existing authoritative
+capacity path. Cancel/expiry releases and deletes preview. Duplicateconfirm
+has no valid pending state. Mapconnection teardown discards its client ItemContext.
+
+Reviewed component words: Toolbox PriceCheckerModule.cpp commit54333c43 and
+original879a10 formatter agree on attribute21e8(attribute,tier), Vigor
+27e802c2/27e902c2/27ea02c2, Attunement25300423, Vitae25300425,
+Radiant253003ca, Survivor253003cc. Only recognized semantic word is transferred;
+source identity/model/name/opaque fields are not copied onto armor. Rune and
+insignia occupy separate slots; target opaque properties/metadata/identity stay
+unchanged. Wiki Rune.html profession restriction and Insignia.html replacement
+mechanics support rules. Eligibility now executes the proven 2022 predicates: source type8, universal
+profession11 or matching target profession, one interaction category, and a
+25b applicability marker matching the armor type or its native armor wildcard.
+Target interaction flags forbid the corresponding upgrade categories. Eligible
+armor accepts its first insignia without requiring an existing prefix. Nine
+offline cases execute original 7c6690/8784a0/8783c0 in
+tools/protocol/armor_upgrade_eligibility_2022.py; synthetic records contain no
+asserted live item assets. Other runes/insignias and weapon upgrades remain unsupported.
+No source assets/items created for live demonstration. Synthetic test models
+are confined to tests; live verification requires an actual owned compatible
+upgrade and armor definition. Native dialog wire proven; actual live UI still
+pending. No claim of all item operations completed.
+
+Tests: item_transactions covers exact native fixtures, independent preview
+identity reservation, cancel/revision/expiry gates, owned item eligibility,
+profession mismatch, ambiguous sources, component family replacement,
+opaque property conservation, stack debit/removal, unmodifiedliveprofile.
+Existing inventory_accounts tests cover database CAS and ownership/rollback.

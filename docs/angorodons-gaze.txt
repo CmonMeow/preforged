@@ -1,0 +1,61 @@
+2026-10-22 Angorodon's Gaze2189 normal source binding
+
+The shared native cast path pays5Energy,casts1s,uses10s recharge/.75s aftercast,
+and invokes the typed life-steal completion for a scoped hostile player/NPC.
+SoulReaping rank determines10..50Health stolen and3..12conditional Energy.
+World samples the caster's actual conditions immediately before transfer,after
+both actors' applicable clocks settle. A hex alone does not qualify. An expired
+condition does not qualify;one acquired during activation does. The observation
+is retained across a lethal target transfer and subsequent death cleanup.
+
+Health transfer stays in existing armor-ignoring life-steal authority,including
+overkill/currentHealth,caster capacity and source/target lifetime checks. Its
+Health gain is not received healing. Energy uses the caster's existing precise
+settlement/gain path,preserving negative debt,fractional tails and nominal/
+Overcast capacity. A future NPC recipient Health clock rejects before any source
+resource settlement. No independent condition timer or Energy pool was added.
+
+Typed completion defers targeted1818until finish58. Missing completion capability
+rejects before payment;lost/cancelled/interrupted completion performs no transfer
+or refund. Native2077caster sentinel emits no fabricated body effect.
+
+Evidence
+Archived local Angorodon's_Gaze.html revision2594022 describes the conditional
+caster-condition Energy return and10..50steal. Guarded native row2189 fixes
+profession4,SoulReaping6,5Energy,1s/.75s,10s,10/50steal,3/12Energy,
+caster2077andtarget1818. Integer ranks use the existing shared interpolation.
+No new fractional damage/attribute scaling rule was introduced.
+
+tools/protocol/angorodons_gaze_2022.py passes against fixed checkpoint
+20261022-cumulative-skills. Report build/reports/angorodons-gaze-native-2022.json
+hashes the pinned2022PE,archived wiki and6exact manifest-verified receipts in
+packets-1360-15821281.jsonl:131405start18215468;131411recharge10s;
+131412finish18216375;131413target20actor30/caster25/resource1818;
+131415caster and131416target signed kind55life-transfer fractions.
+Original consumers prove native1scast,target1818actor placement and original
+60bdfctarget serializer. The recorded907ms activation has unknown context;
+native1sbase is retained. No exact Health magnitude/condition/Energy experiment
+is inferred from the raw fractions or neighboring unassigned packet kinds.
+
+Validation
+Parent reports the rebuilt angorodons_gaze suite and NPC replacement tests pass.
+The suite covers all21ranks for conditioned/unconditioned player/NPC transfers,
+exact condition expiry,late condition acquisition,fullEnergy,lethal target,
+MarkOfDeath hex-versus-condition and life-gain-versus-healing semantics,forged
+plans,stale/self targets and actual Runtime typed completion/cancel/interrupt/
+missing-or-lost-hook behavior. Exact targeted1818 follows finish58once.
+Resource scenarios pay5before an in-flight equipment-capacity reduction creates
+negative Energy;the conditional10reward repays the existing debt. Paired1pip
+controls establish an exact10Energy delta with retained fractional remainder.
+Fixtures assert20baseEnergy plus armor80and2innate pips minus2forflatEnergy.
+
+Limits
+Frozen receipts do not independently prove the caster's condition,conditional
+Energy return or global life-steal reductions. Broader reactive combinations,
+NPC casterAI,whole Health/Energy/recharge publication order and rendered/audio
+acceptance remain unverified. Original actor/asset services are stubbed. The
+parent owns final broad regression/host build and source-audit/list publication.
+No official client/logger/process action occurred for this implementation.
+
+2026-10-29 production adapter correction:the gateway previously filtered the completion callback to1076/902and therefore rejected2189despite successful tests with separate callbacks. Production and138new integration cases now share gw_life_steal_completion.h;all6single-target family members retain the selected completion path and defer their existing particles after finish.42source+6backlog checks and old mechanic suites pass. See build/reports/life-steal-adapter-progress-20261029.json. Admitted Renewal,full transfer/protection/reaction/lifetime integration and rendered acceptance remain incomplete.
+

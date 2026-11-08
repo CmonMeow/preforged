@@ -1,0 +1,82 @@
+Collector initialization: unused packet decoder hazard
+
+Latest16232 diagnostic stops after initialization_guards_installed and contains
+GWCA blank assertion line2 through EventMgr6bdf/native game event dispatch. Blank
+line2 is shared by at least8 pinned GWCA assertion sites and does not uniquely
+prove missing TLS. The exact failing site in that live report remains ambiguous.
+
+Independent original-byte evidence establishes a concrete avoidable hazard:
+StoCModule descriptor51cbc names init143b5, enable1421c, disable142a2. Init143b5
+creates decoder interception via14638 then immediately enables at143f7 BEFORE
+GW::Initialize returns. Callback14368 captures network table via142f8; that code
+asserts count==0x1e7(487), using identical emptystrings/line2 at14362. Offline
+logger_stoc_initialization.py proves487 accepted and486/488/491 rejected with
+original bytes. These counts are fixtures, not a claim to have captured the
+current client's actual table size.
+
+Snapshot logger uses Agent/Map/ItemMgr getters, game-thread callbacks and UI name
+decoding/travel/chat. It registers NO StoC callbacks, invokes NO StoC packet
+emulation and needs NO packet decode tables. Therefore initialization guard
+validates the pinned whole module descriptor/name and initializer code signature,
+then detours only that UNUSED initializer to skip it. The native game decoder is
+not intercepted, its packetcount is not patched, and no assertion is suppressed.
+Other GWCA module initializers remain unchanged, preserving ItemMgr/context/UI
+name decoding dependencies. Existing TLS bootstrap/dispatcher guards remain.
+Collector's module-disable walk skips the never initialized StoC descriptor.
+
+Post-initialization contract requires exactlyone skippedinitializer, physical
+pinned detour retained and StoC target/trampoline globals bothzero. Failure marks
+collector inert and emits explicit initialization_failed; it does not retry.
+Stage events initialization_guards_installed and gwca_initialize_returned expose
+that contract, followed by existing gameTLS verification stage.
+
+capture_tls_guard native-DLL test proves signature/descriptor validation, real
+physical detour, once-only skippedinit and zero native decoder hook globals,
+plus existing nullTLS queue guard. World capture DLL/test compile passed, native
+4case table audit passed and guard test passed. Live attach has not been performed
+by the implementing agent; root must verify capture startup with reviewed package.
+No official session was closed/restarted/attached by this change.
+
+Subsequent LIVE failure (15260) supersedes any startup success inference
+The package including unusedStoC guard still exited during GW::Initialize with
+an EMPTY diagnostic. It is NOT fixed or validated live. No further attach was
+performed by this agent.
+
+Experimental staged follow-up: select snapshot dependencies before initialization
+Pinned descriptors20/20 are checked before any descriptor mutation. Retain9:
+Agent, Chat, EventMgr, GameThread, Item, Map, MemoryMgr, Merchant, UI. The other11
+modules are not used by world_capture.cpp API inventory. Their init wrappers only
+log begin/end and skip; exit/enable/disable callbacks are nulled in the PRIVATE
+fresh GWCA instance, so uninitialized mutexes/callbacks cannot be invoked later.
+No native game descriptor, packetcount or assertion is altered. In particular,
+Camera/Render/Skillbar and unrelated gameplay module initialization is omitted.
+Retained modules invoke the unchanged original initializer, with synchronous
+module_begin/module_end diagnostics flushed to disk. Diagnostic-only vectored
+exception logging records code/address/module/currentstage and returns
+EXCEPTION_CONTINUE_SEARCH. It does not swallow faults or resume unsafe state.
+
+Tests validate all descriptor fields and actual mappedDLL configuration, omitted
+callback removal, retained enablecallbacks unchanged, real skipped Camera stage,
+repeat configuration rejection, and existing StoC/TLS contracts. Collector DLL
+and10capturetests pass offline. Artifact is ONLY build/capture/staged; shared
+package is not replaced by this agent. Actual startup/zoning/names/items/groundloot
+capture must be verified live before promotion. Current crash remains unresolved
+until that evidence; per-module stages are intended to locate a remaining fault.
+
+Full user report dated 2026-10-04 11:29:54 identifies the initializer-only
+workaround regression precisely. Report module base68390000 is the shared bin
+GWCA; stack return683a4233 subtracts to RVA14233. Original StoC enable1421c
+pushes private critical section53ea4 at14228, calls EnterCriticalSection at1422d,
+and returns at14233. Report edi683e3ea4 equals that critical section; its
+DebugInfo is null, matching c0000005 write14. Skipping init143b5 alone left
+StoC enable1421c callable from GW::Initialize's enable loop. The experimental
+configuration removes omitted init/exit/enable/disable as a unit and therefore
+prevents this particular call. This stack does not implicate Camera.
+
+Controlled experimental live validation by root: PID15312 reached collector
+ready, verified game TLS, bootstrap0, retained9/omitted11, no panic, and official
+client remained alive. Map/item/name records still require verification before
+promotion. Current experimental output is build/capture/experimental, not staged.
+DLL SHA256:18a710c780172889b48d2efd50046f429bfbf7ed6b833478fcb1bff0f4ec72fa.
+GWCA SHA256:b33375229bcb06e415b71246ba317966c0ec6c76f71f284bc49f1783685e1975.
+No official process action was performed by this implementing agent.

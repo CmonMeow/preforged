@@ -1,0 +1,33 @@
+NPC approach and deferred interaction
+=====================================
+
+Runtime: src/runtime/gw_world_simulation.h
+Network dispatch: src/apps/gw_auth.cpp CMSG55/79 and post-tick completion
+Tests: tests/npc_approach.cpp
+
+Clicking a reviewed, spawned NPC queues a server movement intent through the
+same LayeredMesh pathfinding and authoritative220units/second movement used
+by ground clicks. It does not reposition the player or trust a client-supplied
+position. A completed approach stops at the actual accepted position within
+160units on the NPC's exact plane, with an unobstructed navigation trace.
+These distances and timing are explicit development server policy.
+
+Instance::approach_npc returns unavailable/moving/ready. ready opens the
+existing dialogue immediately; moving records a bounded120second intent.
+After world.tick, take_npc_interaction returns the actor once on arrival and
+stops the approach. The dispatcher then repeats actual dialogue authorization.
+Explicit ground movement, keyboard steering including stop, player follow,
+/stuck, movement-stopping emotes, another NPC click and session replacement
+cancel or replace the pending interaction. A disconnected overlapping floor
+or a wall cannot authorize storage solely because its XY distance is small.
+
+Approach works for the reviewed NPC population. Actual NPC dialogue services
+remain independently implemented; current open_npc_dialogue handles Xunlai
+storage, and an NPC without that service does not invent a shop or quest UI.
+Storage opens only after the authoritative proximity check passes.
+
+Native tests cover a wall detour, normal movement packets without a teleport,
+no early dialogue, exact floor checks, one-shot completion, stopping on arrival,
+reaching the NPC via a superseding ground/keyboard/follow intent without opening
+the cancelled interaction, stale target replacement and timeout. Existing
+world simulation and NPC population tests also pass.

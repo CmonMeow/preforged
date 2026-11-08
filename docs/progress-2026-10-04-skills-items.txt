@@ -1,0 +1,164 @@
+Skills and items batch, 2026-10-04
+
+Source coverage reached 66 selected skill bindings after Dark Pact, Shadow
+Strike and Lifebane Strike. The combined CTest run passed 104/104 before the
+subsequent map-entry resource-clock patch. Native fixture evidence and focused
+tests are documented in tools/protocol/shadow-damage-findings.txt. This is not
+complete skill coverage and is not proof of native client rendering.
+
+The independent inventory capture addon builds in build/inventory-capture.
+Its focused lifetime test passes after synchronized finalization, pending-name
+records, snapshot/token revalidation and strict GUID/raw/name hex validation.
+No official client was attached during this validation. Loaded bank panes only
+are captured; absent panes are not evidence of empty storage. Its output does
+not automatically install item ownership into the private account database.
+
+At this checkpoint the running private host was PID12428, exact executable
+C:/Users/CmonMeow/Desktop/gw-server/bin/server_host.exe, still the earlier
+63-binding deployed batch. The 66-binding source and entry-clock changes need
+a combined build/deployment. Tests of an older executable must not be cited as
+verification of later source edits.
+
+Next active work: complete owned inventory transfer/stack transactions, separate
+inventory capture controller with pre-load executable verification, and map-entry
+health/energy clock regression. Live UI checks, complete item recipes, all skill
+mechanics, real map manifest assets and broader gameplay remain unfinished.
+
+Later combined deployment verified:
+Full Release rebuild succeeded and freshly built CTest suite passed104/104.
+Evidence: build/reports/ctest-combined-66.txt. Inventory mutations are now locked
+during active trade; swaps crossing storage ownership require both applicable
+deposit and withdrawal permissions. Nonzero map entry initializes health/energy
+clocks; stale ticks cannot rewind energy regeneration.
+The earlier private host12428 was stopped after exact executable-path check.
+New host1424 started in a visible Cmd console and reported READY on portal6601,
+auth6112/world6113 with395navmeshes,68NPCmaps and10portal routes. Its executable
+SHA256 is189d491a0abf709ea698ff44a3556458cb840375a278e81b2803e40534ab4036,
+matching independent Get-FileHash. The66-binding source is now deployed.
+Official clients were not touched. Private client5312 remained running; desktop
+capture still returned uniform pixels, so fresh native UI verification is not
+claimed. Separate inventory_control builds with explicit PID and client-image
+verification before DLL loading; no live attach was attempted.
+
+Later74-binding deployment:
+Combined Release build succeeded. Full suite initially exposed an unsupported
+same-plane restriction in party-area healing; it was removed while retaining
+the original cross-floor/wall assertion. Corrected world/core focused tests and
+subsequent full CTest suite passed105/105; report ctest-combined-74.txt.
+Added Touch of Agony, Wallow's Bite, Barbed Signet and five healing bindings.
+Party/area heals apply to modeled living player actors; static NPC health and
+spirit simulation remain absent. Sword/axe/hammer attacks have owned metadata,
+mastery and explicit physical armor handling; timing/RNG remain private policy.
+Configured salvage component workflow uses exact reviewed definitions and
+perfect kits; no production recipes or material/random-retention rules added.
+Invalid salvage configuration was verified to exit before any READY listener.
+Host5944 runs visibly with SHA256
+74bd62b4120e4ee582ee52537f89ab67fd8e48772075af963cbce74093559c19,
+matching independent file hash. READY portal6601/auth6112/world6113 confirmed.
+Inventory capture package is now bin/inventory with exact staged-file hashes
+and usage check verified; no official client attachment performed.
+Fresh native UI and complete skill/item coverage remain unproven.
+
+Later77-binding deployment:
+Fresh combined Release build and106/106 CTests passed; report
+build/reports/ctest-combined-77.txt. Dismiss Condition, Draw Conditions and Purge
+Signet have reviewed completion hooks and tests. Native status/healing fixture
+comparisons pass; global Deep Wound capacity/penalty remains unfinished.
+Identification opcode106 now feeds an exact source/reveal provider into real
+kit charge debit and inventory CAS. No production reveal pairs are installed.
+Invalid configured identification catalog was verified to fail before listeners.
+Host5552 started in the visible console and reported READY with executable hash
+a94d10bf53fc89a022b2f157740c3743e4711bee6a067ea440eb0b7a700d6e0c,
+matching independent Get-FileHash. Both absent item catalogs are logged explicitly.
+Ordinary consumable effects and opaque staff modifiers remain unsupported.
+
+Combined Deep Wound and immutable catalog deployment:
+Release build succeeded after stopping the verified private host that locked its
+executable. Full CTest passed107/107; report
+build/reports/ctest-deep-wound-catalogs.txt. Deep Wound now applies global
+capacity/healing/latent-deficit rules including equipment/reset regressions.
+Fractional max-health reduction floor remains documented private policy.
+Identification/salvage providers load once into immutable NetworkManager state;
+actual-manager tests preserve recipes after source corruption/removal.
+Visible host10196 deployed with SHA256
+315e6b5662a949ee8e7c110cba7a69069133f056aa126650afa33b9320d0f3b6.
+77 selected skill bindings remain; complete skills/items and fresh native UI
+validation remain unfinished. Official clients were not targeted.
+
+Source coverage audit correction:
+Removed stale21-ID hand list from skill_execution_inventory.py; now reads the
+actual fail-closed dispatcher auditor and distinguishes metadata-blocked entries.
+Added recognition of explicit negative-ID whitelist guards used by wound spells.
+New80-binding source audit includes44/1052/3184; these are pending agent combined
+validation and deployment, not proof of80 tested or deployed skills.
+Running host remains prior77-binding build. Actual semantic/visual completeness
+must still be verified independently of source presence.
+
+Pending batch integration review:
+Independently reran all8 original wound spell serializers PASS. New staff flight
+regression reproduced health480 at656ms: Instance tick600 schedules next700,
+so656 is gated before impact processing. Sent exact evidence to build owner to
+align regression with actual100ms world cadence, preserving physical flight.
+Honeycomb review moved capacity validation ahead of inventory CAS; final focused
+and combined tests pending. Running77-binding host remains unchanged.
+
+Combined80-binding deployment:
+Fresh full Release build and108/108 CTests PASS; report
+build/reports/ctest-combined-80.txt. Includes Phantom Pain and Accumulated Pain
+PvE/PvP, original native fixture comparisons, global wound hooks, staff flight
+with dodge/lifetime/weapon-revision guards, and reviewed Honeycomb/Rainbow owned
+consumption plus party morale CAS. Eight original wound serializers PASS.
+Visible host executable SHA256
+08b74bd0d9a4486acb2ab0ca0bb829eafdb0dc7d4aeb0105e0499c8a3fcabdd5.
+Only one verified private host restarted; official processes were not targeted.
+Consumable production definitions absent; outpost/hero/cross-zone semantics remain
+incomplete. Staff flight speed/tolerance private policy; native projectile visual
+asset163 unverified. No fresh native UI/full skills/items completion claim.
+
+Fresh80-build native-client evidence:
+Screenshot tool now falls back to PID-owned PrintWindow when screen capture is
+uniform; still rejects flat content, avoiding decorations-only false success.
+Original private2022 client5312 authenticated local account and entered248;
+actual appearance/inventory and named NPCs rendered. Native /tp162 entered
+Regent Valley; skill169 Earth Attunement began/applied and effect icon appeared.
+Bounded W0.5s yielded movement; read-only observer then saw visual/auth/predicted
+converge to22724,6849 with zero velocity after release. Requested return248.
+Artifacts combined-80-world-entry.png, combined-80-regent-valley.png,
+combined-80-attunement.png, combined-80-movement-stop.jsonl and live-server.txt.
+This proves world/travel/oneexistingbuff/movement on80build, not full newwound
+PvP/UI behavior or allskills/items. Official clients untouched.
+Return248 visually verified in combined-80-return-gtob.png; source audit84 includes next unpublished degeneration family and is not deployed coverage.
+
+Native creation regression found/fix pending deployment:
+Private5312 roleplaying creation requested preview world map0 (authenticated
+map_type11), sceneasset165843 sent, then gw_manifest rejected map0 as normal
+mission and disconnected withCode007. Added explicit creation_preview manifest
+context permitting onlymap0/version0/empty phases. Normal-world map0 and catalog
+map0 remain rejected; tests also reject nonzero preview/version/dependencies.
+Application selects context solely from authenticated creation grant. Needs core
+rebuild/deployment/native recheck. No character was created or existing deleted.
+
+Latest narrow creation fix deployed: server SHA256 7cb1953d5297097f8157788ab558fdf8519e054408cfb2ab48e395f9c80177c8. Full prior combined suite 109/109; subsequent campaign validation and manifest focused tests 2/2. Private client PID15660 passed preview ACK and accepted campaign=3/profession=1, progressed through profession, sex, appearance screens without Code007. Nightfall preview appearance is incomplete; creation submission/world entry not yet verified. Full skills/items remain the requested destination; 85 dispatcher bindings do not mean all skills implemented.
+
+
+Creation preview follow-up: implemented reviewed Factions and Nightfall64body appearance records (16 valid class/campaign combinations) in campaign_armor_preview; exact Toolbox file IDs/tints, no fabricated inventory models or stats. Added supported/invalid campaign-class tests and native equipment ordering checks. Core build87971 passed; focused creation_equipment1/1 passed. Not deployed yet because linked Life Siphon/Transfer changes are awaiting their regression suite. Current85host PID6288 remains visible; latest private client is PID from build/client-check/client.pid. Default/cached Nightfall preview causes missing equipment pending state and disabled Create; new batch targets that branch. Prophecies remains the only verified persistence/world creation path.
+
+
+Combined source now has88 actual dispatcher bindings: Protector's Strike326, linked Life Siphon109/Life Transfer126, plus prior85. Exact nested helper coverage audit regenerated successfully (3433rows;88bindings;3291unsupported;53unused;1reserved). Elixir of Valor21227 reviewed owned-item10% party morale extension built and item/account/world focused3/3 passed. Combined core/creation/life-drain/casting/world targets built; creation and initial linked lifecycle focused4/4 passed. Additional linked cross-caster/mutual/cutoff/expiry regressions pending agent validation before deployment. Current running host remains85batch. These are source/test results, not claims that all skills/items or every visual/NPC branch are finished.
+
+
+Combined88 deploy: ALL_BUILD62531exit0; full CTest110/110PASS (build/reports/ctest-combined-88.txt). Running visible host17380 SHA25691bb7cabdbdec932e03a503a2794e642310699de961b14e486061aace563634d. Private15628 received Nightfall and switched Prophecies previews without pending-query disconnect. Clicked Create for Creation Audit; account commit, redirect400map148 and immediate world entry succeeded. Actual starter armor and NPCs rendered; W movement/stopping converged across visual/authoritative/predicted views. Returned to selection, named deletion succeeded, roster returned7of8; original main characters retained. Evidence build/reports/creation-88-world-entry.png, creation-88-movement-stop.jsonl, creation-88-deleted.png. Return-to-roster test showed new character equipment appearance absent despite world gear; remains a presentation regression to investigate. One heuristic memory-scan candidate was stale/untrusted (profession mismatched selected UI); removed temporary scanner from source and binaries. Only anchored observation can prove submission gate state. Broader allskills/items still incomplete; new88effects unit/lifecycle proven, no live combat proof for the newly added skills or production Elixir catalog definition.
+
+
+Next source batch integration: root bound actual session attack_activity hook and condition_damage callback with scoped actor/current clock/grantlevel, following agent-owned hook order. Added bounded restored-roster summary byte/version/equipment-count diagnostic for new-character return appearance regression; no roster or equipment rules changed on guesses. Agents preparing combined casting/world/weapon/item/core validation; current deployed host remains88 batch. Official client auto-login availability acknowledged; no official client targeted or restarted.
+
+
+Combined91 deploy: ALL_BUILD2596exit0; CTest111/111PASS, build/reports/ctest-combined-91.txt. Visible host SHA2563d79cc270b04108129ac7e6ad1df37d468dd7498cdc3fd663f3211d1fa6239f2. Added Counterattack1693 actual attacking-state conditional refund, Vile Miasma828/Oppressive Gaze864 actual per-target condition-dependent damage/effects, Seal30211 user-only10% morale/native cooldown and spent signet reset through owned debit/CAS. Coverage source audit91bindings across3433catalogrows, no allskills claim. Focused eight and original condition twelve/native recharge two fixtures passed; neweffects have no live UIcombat verification yet. Exact production Seal definitions still absent. Restored-roster version/equipment diagnostics deployed; armor-loss root cause remains unproven. Rune agent researching full Warrior Absorption group and required per-hit armor resolution.
+
+2026-10-04: World logger extended with changed-container local_inventory_observed records for carried/equipped/loaded storage bags, exact item identity/backlink/slot checks, omitted count, names/models/dyes/raw modifiers. Capture DLL compiled; 10/10 collector tests passed; share ZIP rebuilt. Live attachment failed during GWCA initialization before sampling (world-16232-238333046); initialization fault still under investigation, no logger stability claim. Aftershock174/Shockwave937 success-only original body resources313/1182 now broadcast owner+peers; native proof2 passed, core/casting focused passed; full ALL_BUILD and111/111CTest passed. Absorption runes included. Server restarted visible with exact-path PID15564; readiness verified. Live spell pixels not yet verified. All-skills goal remains incomplete.
+Ground-item observation extension compiled and existingcollector10/10passed. Captures matchingagent/itemdefinition or explicitnull, position/plane and sessionIDs; retriesdelayeddefinitions, disappearanceunknownpickup,1secondpollingcanmissbriefloot. Not yet packaged/deployedlive pendingloggerinitfix. Latestcrashinitializationbeforeanysampling.
+Collector live validation: rebuilt package with unusedStoC initializer disabled passed10offline tests, but official PID15260 exited duringInitialize beforecallbackregistration. Diagnosticempty; JSONconfirmsnewguardloaded. Startupcrash NOTfixed; no furtherattachment authorizedbyrootuntilnewdefensiblefaultfinding. rootdidnotterminateofficialclient; exitedduringcollectorinitialization.
+Logger live verified experimentalPID15312 officialpath: startupready TLSverified, map138→136zoning,29inventorysnapshots includingcarried/equipped/material/bank, decodednames, noerrors. Exactsourcecrash reportpointsunusedStoCenableRVA14233/af33 uninitializedcriticalsectionwrite14 causedinitializer-onlyskip; minimalmodulefullcallbackomissionaddressesthisAV. PromotedsameSHA cce62fde2cdb0504f4cb5c7eda979fbd29d1c662653d2c5fd37d9dd229ea39a9 tosharedpackageafterliveproof, notbefore. Existingofficial15312keptaliveexperimentalDLLcontinueswritingexperimentalpath. Grounddropbehaviorcompiledbutnoactualdropseeninlivecaptureyet.
+Correction: currentexperimental/shared exactfileSHA is18a710c780172889b48d2efd50046f429bfbf7ed6b833478fcb1bff0f4ec72fa; previous cce62reportedagentcheckpointwasstale. Rootcomparedexperimentalandpackagefilehashesmatchbeforepromotion.
+Userrequestsallquestdataandexplicitcreaturelootattribution. Newquest/NPCrevisionextensionexperimental-quests compiled11testsPASS; no promotionyet. Userreportsnormalmessagesfailtoappearwithcurrentlogger; skillsagentinvestigatesincomingUIpassthroughandfilteredX-dropped-Ysystemnotificationpath. Releasegateexpandednormalchat+systemlootnotification passthrough, zoning,decodednames,inventory/questcaptures. No sourcecreatureinferredfromreservationowner/proximity. OfficialcurrentlynotrunningperCIM; nosessionclosedbyroot.
+LIVE chat fix confirmed byuser /age: rootRecoveryDLL exactofficial16120 nativeHookDisable(53b64→13EF40) return0, originalprologuerestored, no restart. Chatpatch750c restorationaloneinsufficient; originalGWCA5005omits53b64 thenremovesforwardingcallbackswallowsincoming display. Productioncleanupnowdisablesorphan beforemodulecallbacksremoved, actualnative59F6/5005 regressionPASS. Completequest/loot/chatcandidate12/12testsPASS, build/capture/candidate/world_capture.dll. Currentofficialsession16120preserved; recordingstopped. AwaitspecificrestartauthorizationfornewDLLlivevalidation; no sharedpromotionuntilverified.

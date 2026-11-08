@@ -1,0 +1,183 @@
+Code audit and gameplay completion ledger - 2026-10-14
+
+Scope: cleanup, correctness, performance, every skill including visuals,
+and combat AI calibrated against official captures. Work remains incomplete.
+
+Validated and deployed checkpoint
+Release ALL_BUILD succeeds; all 158 tests in the full suite pass. The new
+Overcast primitive then built and passed its additional registered test.
+Coverage-audit Python tests (3) and action-interval Python tests (7) pass.
+Server SHA256:
+828C0373C71D733E9C1D47E187CCD1A3D2EBEB3024F205C8D15C3D5C477F64AD
+Full output: build/reports/knockdown-full-build.txt and knockdown-full-tests.txt.
+
+Correctness and integration
+- Connected missing live protective_enchantment and holy_damage hooks with
+  actor-scope guards. Banish still requires reviewed target traits.
+- Converted the original 58 production casting callbacks to named C++20
+  initializers; later hooks also use names. The coverage audit validates all
+  declared hooks against production wiring and rejects missing, duplicate,
+  unknown and unexpectedly empty bindings. It hashes gateway source too.
+- Direct healing now commits against captured caster/target lifetimes and
+  current authoritative positions. Healing Breeze commits regeneration and
+  Divine Favor together. Tests cover replacement and moving-target races.
+- Backfire and Soul Barbs are live dispatcher/world bindings. Regression tests
+  cover player/NPC reactions, expiry, renewal, damage modifiers, death, source
+  departure, duplicate events and lifetime replacement. Native visual fidelity
+  and all skill interactions remain unverified.
+- Lethal Backfire no longer resets existing recharge or used signets.
+  Lethal successful self-sacrifice also preserves them and publishes the
+  successful skill's own recharge exactly once. Owned effects are retained
+  for ordinary death cleanup rather than silently discarded.
+- Opcode159 visibility filtering validates both caster and target references;
+  hidden NPCs cannot leak through the previously unchecked target reference.
+- Added previously unregistered AI provenance, attribute publication, item
+  effect references and Soul Barbs tests to CTest.
+- Corrected stale test expectations: renewing Blood Renewal refreshes without
+  an ending heal; weapon mismatch uses the specific weapon rejection reason.
+  Blood Renewal tests now distinguish renewal, expiry and actual removal.
+- Client input helper propagates failures from its Windows callback instead
+  of falsely returning success. INVALID key returns failure; L closes quest
+  log. Private-client PID and executable-path guards remain intact.
+
+Performance
+- Idle casting skips world effect snapshots and resource reads when neither
+  pending casts nor tracked effects need them. A 1,000-update regression checks
+  zero snapshot/resource calls; recharge processing remains independent.
+- Zero-cost skills validate resources without publishing unchanged vitals.
+  Missing/dead actors and insufficient resources still fail normally.
+- Native outgoing frame lookup uses a constexpr direct index (192 slots)
+  instead of scanning 189 descriptors. Gaps remain null; duplicate generated
+  opcodes fail compilation. Exhaustive 15-bit opcode tests, both flag forms,
+  378 frame fixtures, prefixes, coalesced frames and oversize checks pass.
+- Lookup-only benchmark: four alternating MSVC /O2 trials of 4,194,304
+  deterministic lookups, matching checksums. Approximately 41-45ns linear
+  versus 2.8-3ns indexed. This does not establish whole-server throughput,
+  network latency, client ping or gameplay improvement.
+  Reproduction: tools/protocol/benchmark_outgoing.cpp.
+  Output: build/reports/outgoing-lookup-benchmark.txt.
+
+Native checks
+The private 2022 client passed launcher/configuration checks, local login,
+character selection and world entry. Earlier checks travelled Ascalon148 ->
+Lakeside146 and accepted/applied Shockwave937 and Aftershock174 from keyboard
+input. No enemy damage or exact animation fidelity was established.
+The final deployed checkpoint also logged in and entered Lakeside146.
+Evidence: build/reports/audit-native-2026-10-14.
+Official clients were not targeted during deployment or testing.
+
+Coverage at this checkpoint
+3,433 pinned 2022 IDs: 132 dispatcher bindings, 3,247 unsupported,
+53 unused/unknown and one reserved. Pre-Searing: 39/44 bindings.
+Binding presence is not proof of full mechanics, all target types, visuals,
+PvP behavior or AI availability. Account unlocks are not implementation.
+Regenerate: tools/protocol/skill_runtime_coverage.py.
+Full report: build/reports/skill-runtime-coverage.json.
+
+Outstanding work
+- Population creation without an authoritative timestamp cannot establish
+  whether a newly spawned NPC existed during an overdue field pulse.
+- Overcast state is not implemented; energy debt is a different mechanism.
+- NPC degeneration now credits the actual death crossing, with a delayed-tick
+  Life Siphon regression. Broader timed-quest scheduler ordering still needs review.
+- Failed sacrifice commit can follow a successful effect. Review atomic cost
+  and effect commits beyond the lethal-success bookkeeping fix.
+- General NPC direct healing, holy vulnerability from equipment, summons,
+  spirits, morale generation and many other skill systems remain incomplete.
+- Review collision enforcement on every movement path, world tick locking,
+  actor search costs and packet publication across actor/map boundaries.
+- Guardian AI is an authored quest controller, not a reconstruction of general
+  official AI. Captures show actions and their timing, but do not establish
+  exact priorities, threat weights, energy pools or follow/drop thresholds.
+  Separate scripted Ascalon battle evidence from ordinary encounters.
+  Centralized originals: data/captures. Evidence reports: data/gw/ai.
+
+Remaining control/AI work:
+NPCs now have explicit lifetime-scoped action tokens, knockdown susceptibility
+and route pause/resume. The authored quest attack cadence is not yet a general
+NPC action pipeline, and cannot establish retail attack/recovery boundaries.
+Released projectiles remain distinct from interruptible pending actions.
+
+Validated field batch:
+Fire Storm, Symbol of Wrath and Kirin's Wrath share chronological pulse
+scheduling. Existing NPC lifetimes are advanced to each pulse time before
+occupancy/damage; interleaved health commits and route changes settle due
+pulses first. Fire Storm snapshots target position at actual cast completion.
+Tests cover overlapping fields, delayed ticks, target entry/exit, retargeting,
+competing degeneration, exact death time, caster death and ID replacement.
+Holy field support is NPC-only with reviewed light-sensitivity traits.
+Lava Font has a planner but no live binding until Overcast is implemented.
+Source fingerprint manifest: build/reports/audit-fields-source-sha256.json;
+all 735 recorded files remained unchanged through the full build/test.
+
+Control checkpoint (2026-10-14):
+Implemented player lifetime-scoped control epochs. Accepted Stoning knockdown
+and death invalidate pending cast-time/aftercast and attack activations across
+recovery/resurrection gaps. Ordinary attack intent and approach are cancelled.
+Instant no-aftercast stances are exempt from the knockdown activation gate.
+Added dedicated control_interrupt regression with actual Stoning impact,
+late cast update, paid cost preservation, authorized resurrection, new casts
+after recovery, missing-scope epoch and instant Dash exemption.
+NPC action/control state tracks explicit scoped tokens and retained movement
+pause intervals; committed lethal damage/weapon/life-steal/shadow/degeneration
+invalidates tokens permanently. New catalog revision10 stores independently
+evidenced knockdown susceptibility; older data remains unknown.
+Hammer all-adrenaline helper tested but not yet a live Hammer binding.
+Validation: server_core builds; eight relevant CTests pass, three coverage
+Python tests pass. Existing previous full-suite155 pass is a prior checkpoint;
+these new changes have focused validation, not a fresh full157 run.
+Deployed server SHA256:
+FC46177536E9CC3B9C28506D83AA1ED5A02CB3B54F0AA70ABABA8D87E14DC016
+Outputs: build/reports/control-build.txt and control-tests.txt.
+NPC world knockdown/skill integration and qualified AI phase analysis continue.
+Native control checkpoint smoke: local login, character selection and world
+entry into Lakeside146 succeed on deployed FC461775 build. Screenshot and
+server console saved in build/reports/control-native. This validates startup
+and entry; knockdown/death timing is verified by focused runtime tests, not
+by this uneventful native map entry. Full all-skills/AI goal remains active.
+
+Knockdown skill checkpoint:
+Hammer Bash331 uses the all-pool adrenaline spend, normal owned-hammer damage,
+and hit-only knockdown. Registered knockdown_skills in CTest; expanded tests
+exercise Runtime->world hooks, real-hit charging, draining all pools, blind
+misses, exact damage and knockdown, and unknown-trait rejection before spend.
+Bane296 snapshots NPC attacking state before stop/knockdown/damage publication,
+matching the qualified captured packet order. Holy and knockdown traits remain
+independent. Player holy equipment vulnerability is still unimplemented; native
+skill visuals and complete population trait data are not established by tests.
+Coverage source fingerprint now includes runtime headers, not only selected
+planners. Bane family metadata fixed; audit3 tests pass and132 bindings reported.
+Signed Overcast pool/explicit-phase clock added with standalone tests and wiki
+evidence. No production Overcast integration or Lava Font binding is claimed.
+See docs/overcast-resource.txt and data/gw/ai/action-interval-evidence.txt.
+Native startup/entry check on828C0373 checkpoint: local login, character
+selection and Lakeside146 entry succeeded. Evidence saved to
+build/reports/knockdown-native. Hammer/Bane combat animation acceptance remains
+unverified; native map entry alone does not prove those skill effects.
+
+Official skill capture checkpoint and implementation batch:
+Fixed6:29PM CDT snapshot:378 distinct local obtainable skills,82 with runtime
+bindings and296 awaiting. Added VileTouch155,WeakenArmor159,WordsOfComfort1396,
+MendingTouch1401; scoped NPC condition and earth-AoE transactions; captured
+Aftershock camera shake and split knockdown hit. First full160 pass; latest
+MendingTouch has six affected rebuilt test targets passing. Visual acceptance
+is deferred while the user logs. Server E70BA8563EDF1A8FAF361094A0C25662A9EA210FD7BA59F061E18373C69C7CCA.
+See docs/skill-capture-implementation-2026-10-14.txt. All-skills goal remains active.
+
+Resource skill batch: FoulFeast2057 atomic transfer receipt (Disease half
+recharge) and OfferingOfBlood146 gain/sacrifice added. Full Release and162
+CTests pass25.00s. Global138 bindings, captured84/378, remaining294. Capture
+IDs remain fixed at6:29PM CDT; live official PID1360 loggers preserved.
+Current status/data/skill-capture-plan/IMPLEMENTATION-STATUS.txt and detailed
+docs/skill-capture-implementation-2026-10-14.txt retain limits/next actions.
+Server SHA256 fd5f3d4a60fc670eb70671a23e287d786938940586414c61521858a954805a4f.
+
+Conditional resources: EtherSignet881 and SignetOfLostSouls1365 added via
+scoped completion transactions, including strict thresholds, real negative
+Energy/debt, NPCs without Energy/armor and DeepWound gain/death cleanup.
+Production casting Energy debit/refund callbacks carry actor generation.
+Full Release and164 CTests pass25.77s; enhanced target-health transition
+and resource cap cases pass separately against the same production source.
+Global140 bindings, captured86/378, remaining292. Fixed capture IDs unchanged.
+See docs/skill-capture-implementation-2026-10-14.txt for limits/next actions.
+Server015c2ad8ecccc14038ca8e559ce67d66d1b77f9c84b46d64a36828b1b9b3eae1.

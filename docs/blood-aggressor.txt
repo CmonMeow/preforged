@@ -1,0 +1,56 @@
+Blood of the Aggressor902 — conditional life stealing,2026-10-22
+
+Historical source:local Blood_of_the_Aggressor.html oldid2591437. Steals5..37..45
+Health at Blood Magic0..12..15. A foe that was attacking suffers Weakness for
+3..10..12seconds. Pinned2022row confirms5Energy,1s activation,.75s aftercast,
+5s recharge,scale5..45,bonus3..12,caster2077sentinel and target170.
+
+Frozen checkpoint20261022-cumulative-skills has one local activation,target30,
+packets-1360-15821281.jsonl:106746tick17752609start;106757tick17753500recharge5,
+106758finish58,106759targeted170;106773pending release. There is no Weakness
+application in that isolated completion window. audit_echo_checkpoint --skills902
+--include-targets verifies the frozen hash and activation receipt:1window/53events.
+blood_aggressor_2022.py verifies6exact receipts and executes original pinned
+targeted cast1s/targeted particle170consumers. It does not synthesize caster2077.
+Particle asset services are stubbed;rendered fidelity remains unverified.
+
+World shares life-steal Health transfer/publication and scoped validation. Weakness
+uses the target's authoritative attack state at completion,not its attack cadence,
+target selection or the caster's activation-time guess. Idle/spell/completed and
+exact-end attacks do not qualify. NPC windup tokens are explicitly timed. Player
+ordinary attack animation/attack-skill activity use the same predicates as the
+existing attack-conditional combat skills. Condition-immune NPCs still lose life.
+Both transfer and Weakness are preflighted before committing Health. Lethal life
+stealing applies no condition to the corpse. Surviving targets receive Weakness
+through shared Fragility/Fevered/condition credit mechanisms after the transfer;
+those reactions do not increase the caster's stolen Health. Existing longer
+Weakness is retained. Forged duration/plan and stale/self targets reject.
+
+The deferred visual hook is now named complete_life_steal and serves both902and
+1076. Plain life_steal cannot bypass either conditional completion path. Runtime
+performs ordinary payment,cast timing,cancel,interrupt,recharge and completion
+identity;target170retains victim and caster. Finish58precedes targeted170without
+a fake caster effect. Blood Drinker regression remains required after this rename.
+
+Remaining:retail successful Weakness capture,global condition-duration modifiers,
+NPC caster AI,full reactive combinations,whole resource/condition/recharge wire
+ordering,and rendered/sound acceptance. No official process,input or logger action.
+
+Validation so far: blood-aggressor-build.txt serial native targets pass;
+blood-aggressor-tests.txt4/4selected native suites pass,including BloodDrinker
+and existing purelife/wound feedback. Five callback coverage tests pass. Native
+verifier additionally checks original targeted170serialization. Host build
+blood-aggressor-host-build.txt passed,SHA256
+5C521B621C2D5BD84768F634AB663F7DDB2F00F7892AF2A9D6D5343915057DFA;
+not restarted or deployed. Source audit/list publication now679captured/321bound/
+358awaiting/650missing. Final expanded late-attack/control regression build is
+recorded separately in blood-aggressor-final-build.txt.
+Final expanded validation complete: blood-aggressor-final-build.txt rebuilt the
+late-attack test and shared Mimicry cast suite;blood-aggressor-final-tests.txt
+5/5current affected suites pass. Both player and NPC targets that begin attacking
+after casting starts are weakened at completion;attacks ending exactly at that
+time are not. All210rank/attack-state/target contexts plus reaction/admission/
+condition and12cast-control scenarios pass. No official process/logging action.
+
+2026-10-29 production adapter correction:the gateway previously filtered the completion callback to1076/902and therefore rejected2189despite successful tests with separate callbacks. Production and138new integration cases now share gw_life_steal_completion.h;all6single-target family members retain the selected completion path and defer their existing particles after finish.42source+6backlog checks and old mechanic suites pass. See build/reports/life-steal-adapter-progress-20261029.json. Admitted Renewal,full transfer/protection/reaction/lifetime integration and rendered acceptance remain incomplete.
+

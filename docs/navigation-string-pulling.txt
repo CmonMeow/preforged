@@ -1,0 +1,44 @@
+Navigation geometry search, 2026-10-04
+
+Production: src/runtime/gw_layered_navigation.h. Native C++, shared by NPC
+approach, clicking ground and other LayeredMesh::route callers. No map IDs,
+NPC IDs, coordinates or special routes occur in the production algorithm.
+
+The cell-center A* corridor and funnel provide an initial walkable upper bound.
+The final search considers corners across the whole map, plus explicit floor
+portal endpoints. It is not restricted to that corridor or nearby cell rings.
+An A* visibility search uses actual Euclidean segment lengths and a straight-line
+lower bound. Candidates outside the start/goal ellipse defined by the existing
+route length are excluded: none can participate in a shorter route. There is no
+node-count cutoff that silently retains the cell-center route. The former
+0.01-unit minimum improvement cutoff has also been removed.
+
+Visibility follows actual cell adjacency and explicit floor links. A straight
+edge must reach the exact requested surface; overlapping XY floors alone never
+connect. It records actual floor crossings along the segment, so wide stairs and
+bridges need not be crossed at their centers or endpoint corners. Reconstructing
+the result preserves explicit plane changes for the movement consumer. Collision
+and sliding remain server-authoritative and retain their existing implementation.
+
+This searches geometric alternatives rather than patching an observed NPC trip.
+As with any navigation search, results depend on the captured mesh and its verified
+links. Numerical tolerance and point-agent clearance are existing limitations;
+this does not establish missing navigation or links from visual appearance.
+No PathEngine implementation is linked.
+
+Validation:
+- 216 independently calculated shortest-distance checks around a rectangular
+  obstacle, including both directions and two subdivisions of identical geometry.
+  The independent oracle compares the paths around the obstacle's two sides.
+- 162 bridge checks spanning different lateral positions and both directions,
+  matching straight Euclidean distance while preserving floor transitions.
+- An unrelated overlapping floor remains unreachable.
+- Straight and L-shaped corridors match analytic shortest lengths.
+- Real map55 is a regression fixture only. Its chest-to-Brother route examines
+  3077 candidate vertices (exceeding the old 2048 cap), length7931.21 units.
+  The old midpoint/cell-center detour was11467.9. These measurements do not prove
+  that captured geometry represents every connection visible in the game.
+
+The previous live validation report describes the earlier bounded algorithm.
+The new global geometry search is verified by native tests; do not label the
+previous live recording as a recording of this newer implementation.

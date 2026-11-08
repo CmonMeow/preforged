@@ -1,0 +1,48 @@
+Typed NPC opposition: prepared exact integration after build34010
+
+New detached gw_npc_opposition.h derives living combatant sides from actual
+LiveActor hostile/healable-ally relation and damageability. Protected services,
+neutral actors, same side and stale lifetimes do not authorize combat. Owned
+encounters require matching source/target/current owner/quest/cycle, current
+owner and actual assigned target. Receipt revalidation preserves exact scopes;
+only an already released source may be dead. No Health/control storage exists.
+
+Catalog hunk
+Add a scoped opposing-NPC predicate comparing both actual LiveActor relation_
+values (hostile-to-players versus allied-to-players), both lifetimes/instance
+and recipient damageability/positive Health. Protected/neutral remain rejected.
+Add apply_opposed_npc_weapon_damage accepting the exact source actor/lifetime
+and caller-proven released state. Reuse incoming_damage_actor and
+weapon::apply_resolved, storm_energy_hit and assign_health; do not duplicate
+armor/control or relabel friendly actors as neutral. Ordinary release admission
+requires living source; only immutable released delivery permits dead source.
+Keep the existing player hostility and neutral-guardian entry points intact.
+The detached helper includes catalog for read-only inspection, so catalog
+must not include it recursively; World owns Receipt construction/revalidation.
+
+World ordinary hunks
+Generalize recipient adapter's hostility gate to actual opposing pair and
+use known recipient physical/elemental armor for either side. Profile binding
+records explicit NPC side at enrollment, keeping one existing ordinary Ledger.
+Source/target scope, owner/cycle and navigation route/LOS gates remain shared.
+Impact revalidates Receipt then invokes the new catalog resolved commit only
+after shared NPC miss/block/qualified-hit callbacks. Re-find live recipient
+after callbacks; released delivery policy remains explicit. Enemy sources may
+select only their actual owner/cycle's enrolled allies (not service NPCs).
+NPC ally death must retire owned resources but must not erase hostile kill
+objectives or invent a Player killer; quest-specific escort death/failure is
+an explicit owner/cycle state transition, not guessed by model/name.
+
+Quest46 coherent next host hunks
+Owned encounter spawn must allocate seven exact lifetimes but count only four
+Charr toward stable0x4602..0x4605 credits. Source profile enrollment receives
+explicit owner/cycle without putting allied actors into objective.remaining.
+Use qualified private Creature baselines from staged ally JSON; captured
+AcademyMonk primary3/Healing7/Divine6 are facts, remaining profile numbers are
+named authored policy. An owned leader route should follow captured road
+guidepoints via layered navigation, pause when owner falls behind, and resume
+only current owner/cycle. Monk/Guard follow the leader through real routes.
+Current quest84 follow_escort/player and quest-wave guardian motion must not be
+reused by falsifying quest IDs or neutral allegiance. Keep actual player/NPC
+spell recipient work explicit; caster42/109/135/194 NPC-target dispatch is a
+separate missing family. No production enrollment is added by this document.

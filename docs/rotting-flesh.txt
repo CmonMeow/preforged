@@ -1,0 +1,62 @@
+Rotting Flesh106: guarded World/Runtime and production-gateway binding
+
+Source: local historical Rotting_Flesh.html revision2607970. Single-target
+spell:target fleshy foe becomes Diseased for10..25s at Death Magic0..15.
+At rank12 duration22s;rank20 duration30s. Cost15Energy,3s activation,
+.75s aftercast,3s recharge. The wiki notes heroes may attempt this spell on
+non-fleshy targets;do not turn flesh eligibility into a pre-cast prohibition
+without evidence. A valid completed cast on a known ineligible target should
+be distinguished from an invalid target or unknown trait data.
+
+Pinned2022 native row106 agrees:type5,profession4,attribute5,special0,
+encoded Energy11 (decoded15),activation3,aftercast.75,recharge3,
+bonus10/25,caster2077 sentinel,target205. The unused Overcast byte10 does
+not create Overcast when its enable bit is clear.
+
+tools/protocol/rotting_flesh_2022.py verifies the checkpoint packet's SHA256
+and exact receipts from20261017-npc-refresh-2:
+packets-1360-15821281.jsonl line66634 at17145437:cast25->30,skill106;
+line66664 at17148453:recharge3;
+line66665:same-tick finish58;
+line66666:same-tick target20,actor30,source25,resource205.
+Elapsed3016ms agrees with3s baseline plus capture timing. The fixed inventory
+identifies this as a local activation in map280. Other actors' two sightings
+are not relabeled as local activations.
+
+The verifier executes original2022 cast and target-particle consumers using
+stubbed actor/asset services. Report:build/reports/rotting-flesh-native-2022.json.
+It proves packet/native consistency,not rendered animation or successful
+Disease application. These receipts do not reveal flesh/immunity state,
+duration,transmission cadence or original-source credit.
+
+src/runtime/gw_rotting_flesh.h provides a canonical skill plan guarded by
+the native row. Release rotting_flesh_policy tests ranks0..20 and rejects21.
+World and casting now use a scoped RottingFleshPlan callback. The World
+transaction checks hostile living targets,range,plane,LOS,lifetime and current
+resource clocks,then applies one Disease condition through shared reactions.
+Known nonflesh or immune NPCs complete without infection;unknown required
+traits reject mutation. Player forms with unresolved flesh traits are gated.
+Reviewed player immunity uses owned Tainted Flesh113/1520 effects. NPC Disease
+credit is tied to the specific infection and original caster lifetime.
+
+Casting uses15Energy,3s activation,.75s aftercast and3s recharge. Effect205
+is deferred until after finish58;2077 never creates a caster particle. The
+skill remains single-target:contagion occurs only through the shared Disease
+contact system. Fixed evidence identifies one local activation;successful
+rendered animation and retail Disease outcome remain separate verification.
+
+Implementation uses scoped single-target condition reactions,
+reviewed NPC flesh/immunity facts,player form/immunity gates,owned Disease
+provenance and deferred target205 after finish58. No caster particle is emitted
+for2077. Shared Disease propagation supplies subsequent adjacent same-type
+infection;the spell must not directly apply an invented area Disease effect.
+Tests cover eligible/ineligible/unknown targets,immunity,expiry,Fragility death,
+attribution,cancel/interrupt/stale lifetimes,costs and deferred event order.
+NPC casters,retail modifier combinations and rendered QA remain gaps.
+
+Validation:production server_host build passed;8 focused CTests passed,
+including Rotting Flesh policy/casting/World/contagion plus Virulence casting
+and Disease contact/World/provenance regressions.73 skill-tooling tests and
+the fixed native receipt verifier passed. NPC contagion tests preserve original
+death credit and reject credit under a reused caster ID,including an unrelated
+Weakness application by the replacement. No rendered acceptance is claimed.

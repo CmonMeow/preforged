@@ -1,0 +1,47 @@
+Enduring Toxin [800] — detached native timing policy, not a source binding
+
+The fixed 20261024-signet-infection-bound checkpoint has three local
+activations and three completed casts. The local historical wiki mirror says
+the foe suffers Health degeneration for five seconds and renews for another
+five seconds if moving when the hex would end. The captured 2021 skill row
+(data/captures/skills/skill-constants-8e50edfb83515fabfec50bfd9d17968e8635a39b4c3e796e311bbc5cd15e5878.json)
+records 5 Energy, 0.25-second activation, 10-second recharge, Deadly Arts
+attribute 30, scale 1..5, five-second duration and animation references.
+The fixed packet file packets-108988-190116609.jsonl (SHA-256
+9CADCA1740CDD4AAE3AC27246B95F9DCA0B262EFF17A3FBA4F429DAA38664DDF)
+has modern-client skill-start lines 33778, 33976 and 34275, followed by
+completed-cast lines 33782, 33980 and 34279. Each completion has a
+cast-start opcode 160 packet with skill 800, caster actor 25 and target actor
+30, plus an opcode 160 body packet referencing target animation 816 on actor
+30 at completion. The numeric actor fields are packet fields, not a rendered
+client observation.
+These are modern official packets; 2022 opcode and rendered animation still
+need direct verification. The three windows do not establish renewal packets
+or the target's movement state at a five-second boundary.
+For the first two, target actor 30's status clears at packet lines 33822-33825
+and 34059-34062, exactly five seconds after the cast finish. In the third,
+lines 34340-34343 clear status 4953 ms later. These status events do not
+prove a renewal; the targeted follow-up is recorded in
+data/skill-capture-plan/TARGETED-ENDURING-TOXIN-CAPTURE.txt.
+
+src/runtime/gw_enduring_toxin.h now validates those row fields and owns a
+single five-second timer. A movement-at-deadline result renews that timer;
+stationary expiry consumes it. Cancellation cannot renew later. An active
+timer rejects a second start rather than silently losing the first deadline.
+Unknown historical movement now defers settlement without removing or
+renewing the hex; the World must obtain the actual deadline state.
+This is only
+the decision/timing component. The World must supply movement at the actual
+deadline even if a server tick runs late, apply degeneration to player and NPC
+recipients, preserve the owned hex across renewals, and publish appropriate
+2022 effect/animation packets. Hex removal, replacement, death and zoning
+must cancel the timer. Official effect packets and rendered client behavior
+still need comparison. Until those consumers exist, skill 800 stays in
+CAPTURED-NEEDS-IMPLEMENTATION.txt and is not advertised as supported.
+
+Native check: degeneration_hexes CTest, Release, 2026-10-25, passed.
+Test executable SHA-256:
+E5F33994895E1A437E7E52765488B8067C51247FAB873B285F2E44389A2E7672
+Header SHA-256:
+55AEF72DEC7D5E5540E5B6C8C58F83D8D8AAF029EF8697648FEA2904C7B6D0E2
+This is a mechanics test, not rendered client acceptance.

@@ -1,0 +1,84 @@
+DENY HEXES [991] — CAPTURED, STAGED SELECTION ONLY (2026-10-26)
+
+The immutable 20261024-all-completed inventory has one local start and
+finish in map 280, packets-1360-15821281.jsonl lines 289985/289992.
+It has eleven other/unassigned starts. No local target-body packet is
+attributed in that inventory. The hash-pinned 2022 catalog gives a Factions
+Monk Divine Favor spell with 5 Energy, 1-second activation, 0.75-second
+aftercast, 12-second recharge and target body resource 1253. Its offline
+first consumer selects spell style 51 / 1.0 second, no caster body, and a
+target particle request for resource 1253. This is not rendered acceptance.
+
+The local pre-Reforged wiki says to remove one hex from an ally plus one
+additional hex for each recharging Divine Favor skill on the caster's bar.
+The detached gw_deny_hexes.h helper checks the pinned row, counts supplied
+authoritative per-slot cooldown deadlines at completion, then selects up to
+that many hexes newest-first from a copy of the target effect registry. It
+includes Deny Hexes itself only if the supplied cast-slot recharge has begun.
+This explicit input avoids guessing whether the cooldown begins before or
+after effect completion. The native test covers no recharge, one and three
+recharging Divine Favor slots, a non-Divine skill, expiry boundary, newest
+selection, forged plan, and cross-instance/stale scope rejection.
+
+The helper does not mutate World or publish packets. Normal Runtime casting
+remains unsupported: World must use the shared hex-end authority for every
+selected effect, apply Divine Favor healing where appropriate, and verify
+cooldown ordering and target-body publication. The official capture does not
+prove how many hexes were actually present, cooldown state, selected order,
+or a rendered 2022 animation. No official client or logger was touched.
+
+Serial Release deny_hexes_test build and CTest deny_hexes pass (1/1).
+SHA-256 at validation:
+  gw_deny_hexes.h DF07458DC00016C9FC000F33E6B54FEE1859FA2BE979002DF4DE1C4F59D14607
+  deny_hexes.cpp 492D818C656701D39125A3BF28E8406378E58FFE78E07FD5BFF568CC361BF350
+  deny_hexes_test.exe 7AB9FCB778E42F75A549B6062F6912E53BE8C1C2829E30F9A753D01FA3AE677A
+
+Trusted World completion follow-up, 2026-10-26:
+  Instance::complete_deny_hexes now validates a living same-instance ally in
+  range, selects from actual player/NPC owned effects, ends selected player
+  hexes through the existing health-effect authority, and commits an NPC
+  proposal before its reviewed life-drain/Parasitic Bond end callbacks. It
+  publishes the 2022 target resource 1253 after finish, with effect removals
+  and Divine Favor healing where authorized. The native World test exercises
+  three player hex ends, stale-scope rejection, no-hex NPC completion, NPC
+  Divine Favor healing/forbidden healing, and a hostile-NPC rejection. The
+  neighboring Convert Hexes player/NPC World tests pass. Serial Release host
+  and World test builds pass; four focused CTests pass.
+
+  This is still trusted native completion, not a playable skill. The caller
+  supplies cooldown deadlines; Runtime must prove they came from the caster's
+  exact current skillbar and recharge ledger at completion, then bind the
+  normal paid cast. NPC hex-end reactions, multiple simultaneous end callbacks,
+  exact retail cooldown ordering, and rendered client acceptance need further
+  checks. The official client and loggers were untouched.
+
+  gw_world_simulation.h 0D2EA57AB626EB85EC236D3D3425FFC6431C21BBB33C670ECCA44C438DB1CA87
+  gw_world_deny_hexes.inl 767D089E2353E358834F58B1D4976ADDCEEB813E09ECE159C78224B9C0619AAF
+  deny_hexes_world.cpp 170A31C6C1DBC89A882D74583C948E3C727BF3F5D9CB5A711BD6FBF9AF6D8A9D
+  deny_hexes_world_test.exe 6E551D49C6268B6E3E0D21D2726420F5A010EBD69E01C0CDE0C6EA1672E8D0EF
+  server_host.exe D1471B043138B87F715C20480D6305C5CD6EB40238E84F58820E0C1A9082C37B
+
+Committed-cooldown and animation audit, 2026-10-26:
+  deny_hexes_committed_recharges rejects a changed skillbar, a missing cast
+  copy, or a Deny Hexes slot that has not actually entered the supplied
+  recharge ledger. It maps active deadlines to all eight slots, excluding
+  finished timers and non-Divine skills from the count. The focused native
+  test covers these authority conditions. Runtime does not yet call it;
+  its existing completion pipeline applies effects before recording local
+  recharge, so the cast/commit order needs a reviewed change before binding.
+
+  tools/protocol/deny_hexes_2022.py hash-checks the immutable source file,
+  decodes the local start/finish, and runs the pinned 2022 first consumers.
+  It confirms spell style51/1.0s, no caster body, and a possible resource1253
+  target particle request. The local capture has no attributed target-body
+  receipt, so that resource is native metadata/consumer evidence only.
+  Neither check proves rendered private-client acceptance or exact retail
+  cooldown behavior. The serial Release host and World test build and three
+  focused CTests pass. Official logging was untouched.
+
+  gw_deny_hexes.h 78FF1E494812FC09DAB52218A4FE10E10C726B19ECC7B3FD1B3AD9D4D5D8F30F
+  deny_hexes.cpp 630EAD9268E3DA1D9CBA6FD1D77559275E08DDC5F7F084F68E96E754E0190CDA
+  deny_hexes_2022.py EFA6710A3BDA9A5701954BA1CB80EFCFDEE963B90AEB74753133CD49A32D8636
+  deny_hexes_test.exe 941333E3574CC3BBA55DA94B1474140DC5A7777066D8C386836AEE3F6C5A38AA
+  deny_hexes_world_test.exe 1D2214235FE95847D22763E133723EFD984E10B9F8CD36F8DE6C88A2452BBB24
+  server_host.exe 7DAF5F5BA6C23A74EE2FE581034A57F61F4AC555DC6E42E231A81BD9D9B9FAD4

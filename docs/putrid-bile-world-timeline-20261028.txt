@@ -1,0 +1,60 @@
+Putrid Bile World Health frontier integration,2026-10-28
+
+The real2058 forecast is now included in World. Before committing a timed
+boundary, the scheduler repeatedly refines Mending/Energy/Bile deadlines until
+the frontier is stable. Bile player Health crossings include the first Well
+exposure segment; NPC snapshots use the same extracted external Health/Energy
+helper as actual condition integration. No fake Parasitic Bond ownership.
+
+The selected Bile target Health frontier is dispatched before other resource
+providers can pass it. Scoped ownership snapshots survive callbacks. Ended or
+replaced links are pruned only after exact identity/resource-clock checks;
+future clocks refuse rather than lend later state to a historical event.
+Natural expiry advances target Health through expiry, then removes the exact
+link; death at expiry remains non-exploding. Already-owned valid quest routes
+are materialized before target death cleanup can erase motion/control history.
+
+A second actual bug was exposed by the World test: refresh_hexes clears the
+NPC corpse registry before record_npc_death examines the Bile hex. Condition
+integration now snapshots exact Bile evidence, consumes death ownership before
+corpse cleanup and checks the lifetime again after reactive callbacks. This
+also separates Bile's death trigger from a different condition caster's kill
+credit. take_death remains the one-shot fence; later credited death cleanup
+cannot explode the victim a second time.
+
+Executed World cases43:
+- NPC/player deaths, coarse/fine polling, swapped caster/recipient IDs and
+  caster-first/recipient-first resource events; known facts drain all events.
+- Moving player explosion selects the death-time neighborhood, not old pose.
+- Protection1399, Reversal307 and HealingSeed274 around a degeneration death.
+- Two-NPC Bile death chains with reversed low-Health actor order.
+- Natural expiry, post-expiry continuation and death exactly at expiry.
+- Poison caster departure before NPC death still permits the owned Bile burst.
+- Well93-assisted NPC death in coarse/fine polling, recipient outside the Well.
+
+Existing retained future-observation fixtures remain deliberate historical-
+refusal tests. Their future resource/corpse observation is now created BEFORE
+Bile enrollment: advancing an active victim to5000 and killing it at101 is
+correctly rejected by the new coordinator. No assertions about retained event,
+replacement lifetimes, source cancellation or resurrection were removed.
+The healer fixture is outside Bile252 but within Seed166 of its recipient.
+
+Eight rebuilt native suites pass, including86Bileconversion,21Seed/recursive,
+retained lifetimes, ParasiticNPCWorld, WellWorld and NPC prebegin retirement.
+34source and6backlog checks pass. Source/executable/gateway hashes and limits:
+build/reports/bile-world-timeline-progress-20261028.json.
+
+Still required before full timing/consumer closure:
+- AI-controlled NPC movement simulation between observations; its current pose
+  is not proof of a coarse-poll death origin. The quest-route pre-materialization
+  path was integrated but needs a direct moving-NPC death regression.
+- All mixed linked ends, Parasitic returns/debt, Bonds/capacity and retirement
+  combinations; tie ordering is private-server policy, not retail evidence.
+- Well stripping/enchantment changes at the frontier and moving-NPC Well
+  exposure. Shared NPC helper retains the prior stationary-NPC Well policy.
+- Dedicated projection/publication-order proof across all simultaneous provider
+  combinations, detailed diagnostics for timeline refusal, rendered client tests.
+
+No skill binding publication or274/1399completion claim. Host was compile-checked
+only, not relinked/deployed. Fixed capture checkpoint and official logging stay
+unchanged. The full captured-skills goal remains active.

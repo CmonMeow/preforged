@@ -1,0 +1,31 @@
+Quickening Zephyr same-type replacement consumer, 2026-10-26
+
+Archived local Wiki Spirit.html SHA256:
+4802debdad8e2dcd85529f3fc33074c4e9db70208ee280c1c804a750252363b8
+Its Spirit range section says allied spirits of the same type cannot coexist
+within passive spirit range: the second destroys/replaces the first.
+This is archived reference policy, not a claim that the fixed cast packet
+proves a replacement. The fixed checkpoint appearance evidence is recorded
+separately in quickening-zephyr-appearance-20261026.txt.
+
+World now retires already-published summoned Zephyrs on the same plane,
+within2512units of a newly published Zephyr, when their scoped player owners
+have the same nonzero host team token. The old actor/aura retires with its
+normal removal packet before the new spawn is published. An unpublished
+staged ritual cannot remove the old aura, and an expired pending ritual
+still cannot publish. Opposing teams and distant centers remain untouched.
+Static trusted fixture records are not treated as summoned owned actors.
+Zephyr has no separate death burst; this consumer uses the existing scoped
+retirement rather than fabricating capture-supported death animation data.
+
+Focused World assertions were updated for staging-versus-publication,
+replacement removal exactly once, surviving new expiry, allied different
+owners at2512units, opposing team exclusion and2513unit exclusion.
+Sources are saved/frozen; no native build or test execution was run for this
+follow-up. Parent coordinates serial native validation. No official client
+or capture logger was touched.
+
+Combat remains incomplete: the archived Spirit Health/armor section itself
+labels its formulas approximate/temporary. The current helper's explicit
+private-server Health baseline and unknown armor were preserved. This step
+does not establish retail combat stats or rendered2022 acceptance.

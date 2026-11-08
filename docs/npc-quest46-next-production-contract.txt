@@ -1,0 +1,26 @@
+Quest 46 next production integration contract (2026-10-23)
+Current saved milestone: typed hostile/allied ordinary contacts, atomic 4 hostile + 3 ally staging, scoped ally route API; production quest enrollment is NOT enabled.
+
+Durable reconnect boundary:
+- Read validated quest46 Progress for exact owner/cycle; require active and charr_gate::valid_progress.
+- Compute remaining credits by filtering charr_gate::enemy_credits against objective_credits. Do not use only credit count to select actor templates.
+- The pure charr_gate::remaining_enemies helper now returns ordered logical indices and credits for an active, valid persisted attempt; quest_charr_gate_test covers a non-leading durable credit. The host caller still needs to consume this result with vetted four-enemy and three-ally content before production activation.
+- Spawn exactly that ordered subset with logical_credits, and all three allies, in one spawn_kill_encounter transaction. Existing callback persists acceptance before any staged actor/publication swaps.
+- Reconstruct Attempt enemy array by matching group.enemies stable IDs; durable credits MUST have empty scope. Attempt::bind rejects any duplicate or restored target.
+- Public current World spawn accepts explicit remaining IDs but does not itself have durable Profile authority. A profile-aware wrapper/caller is REQUIRED before production use; never infer missing identities from restored count.
+
+Owned route/controller:
+- Capture route points are geometry guides only; do not replay retail timestamp or infer speed. Every leg uses route_npc_opposed_ally and map146 Mesh/Layered route; failed route leaves current position unchanged.
+- Store only owner Scope/cycle, exact seven actor Scopes, and next guide index. Health/Energy/control/Ledger stay in current LiveActor/ordinary stores.
+- Explicit private follow/pause/acquire/weapon policies must be named authored; source ranks Healing7/Divine6 are wiki facts. Qualified creature HP/E/armor profile remains policy, not packet proof.
+- Tick: exact owner/cycle + all required current lifetimes first; route or select admitted opposing target. Never route while active action/aftercast/knockdown. Friendly heal selector wins only by explicit supplied authored priority; it feeds existing begin queue.
+- Bind source and recipient to same group domain before ordinary contact; neutral/protected NPCs remain ineligible. No enemy caster -> ally permission is invented by ordinary opposition.
+- On objective reset/owner leave/map lifetime/population replace, retire domain membership, routes, bindings and pending/released ordinary ownership before actor reuse. Current included cleanup does this; regressions still required.
+
+Real-navigation regression to add next window:
+- Load data/gw/navigation/113021.fwnav; stage captured ally spawn 6017.003418,4306.635742 plane0 and captured Charr poses.
+- Reject invalid metadata/failed commit with no group/actors/publication; successful group has exactly3 allies and stable4 enemy keys.
+- Route first captured Rurik guide5962.102539,4353.217773 through actual mesh. Spawn snapshot remains at origin at route admission; time-advanced authoritative native44 position must stay on mesh and within authored travel budget. Reject absurd destination without teleport.
+- Reset/owner generation replacement cancels old route/actions and invalidates old domain. Restore one non-leading durable credit and assert omitted actor identity, not merely count.
+
+Known playability gaps at this milestone: no production46 acceptance/dialogue/encounter enrollment, no authored route group coordinator yet, no actual enemy spell delivery to allied NPCs. Do not label quest46 playable until integrated and tested through normal host.

@@ -1,0 +1,57 @@
+Portable tester package,2026-10-21
+
+Current output:C:/Users/CmonMeow/Desktop/GuildWars-Test
+Layout:client/,server/,config/,data/ with START.bat,START CLIENT.bat,
+START SERVER.bat and README.txt. Users provide client/Gw.dat.
+
+The native launcher supports both the development bin/client/ layout and the
+portable client/ layout. --start-server validates the executable/archive before
+starting a visible host console,then waits for that exact process ID and its
+ready line in the package's log. Missing archives and server failures keep a
+readable error. Separate client/server bat files support already-running hosts.
+There is no Python/PowerShell requirement for the distributed startup path.
+
+tools/package_test.ps1 assembles an explicit allowlist of binaries/configuration
+and runtime navigation/NPC/quest content. The x86 portal compatibility DLL needs
+app-local Microsoft msvcp140/vcruntime140;both are included from VS's x86 CRT
+redistributable. Host and launcher use the static C++ runtime. Windows10/11x64
+system DLLs provide the remaining audited imports. libsodium LICENSE included.
+
+Native tools/accounts/debug_snapshot.cpp uses SQLite's backup API against a
+read-only source,retains only test@example.test and its seven Cmon Meow debug
+characters,checks passwordtest,removes sessions/tickets/friends/invites,
+removes other guilds/announcements,redacts import-source labels,and VACUUMs the
+output. Only the exported account ID is granted GM authorization. Progress,
+inventory,skills,quests,guild appearance and account data otherwise remain.
+The source database is not changed.126pre-existing orphan entitlement records
+were detected during validation and removed from the exported copy only.
+
+Runtime account_profile configuration selects the packaged opaque entitlement
+profile without requiring an official-import directory. Raw captures,official
+credentials/response dumps,other accounts and the developer database are not
+distributed. Newly created tester progress is retained in data/state.db.
+
+Validation:serial native build succeeded;packaged executable hashes checked.
+Launcher --check rejects a missing Dat with the intended placement instruction,
+then passes using a temporary read-only check of a supplied archive reference
+(reference removed afterwards;no Dat shipped). A separate copied-folder host
+smoke test reached ready on isolated16112/16113/16601ports with397navigation
+maps,115NPC maps,quest catalogues and the packaged account profile loaded.
+Only that test PID was stopped after verifying its exact executable path.
+No official clients/loggers were touched. No full rendered client gameplay or
+remote deployment is claimed by the packaging smoke check.
+
+Tester report follow-up: supplied Dat came from a working official installation
+without -image; user also reports free-account PvP-creation warning. Local
+read-only comparison finds identical91byte debug AccountInfo profile hashes in
+source DB and exported DB and campaigns1,2,3,4in both. This does not inspect the
+remote tester's actual files or prove client presentation. Screenshot reaches
+map0creation preview and empty manifest without subsequent readiness. The
+archive hypothesis is unproven;remote server log/runtime identity and additional
+client-loading evidence needed. No account flags changed speculatively.
+Evidence:build/reports/tester-entitlement-comparison.json.
+
+User follow-up:remote tester got it working;Opus is testing profession quests.
+No loading fix was established by this investigation. Keep the diagnostic
+comparison as historical evidence,not a claim of an unresolved current blocker.
+Avoid overlapping profession-quest edits while Opus tests them.

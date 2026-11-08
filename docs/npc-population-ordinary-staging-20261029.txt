@@ -1,0 +1,66 @@
+Detached ordinary melee population adapter, 2026-10-29
+Status: source staged only; not included, compiled, executed or installed.
+
+Files:
+src/runtime/gw_world_npc_population_ordinary.inl
+tests/npc_population_ordinary_navigation_world.cpp
+
+Integration request: include the new inl immediately after
+gw_world_npc_population_ai.inl inside Instance; register the matching test.
+No shared World/header/app/CMake edits were made in this staging task.
+No new persistent registry or lifecycle cleanup is required.
+
+API configure_npc_population_ordinary(source, expected Binding, FlarePolicy,
+ordinary::Reviewed, wander::Policy, now) uses existing NpcPopulationEnrollment.
+It is a small locked adapter around the same ordinary controller/ledger, hostile
+aggro memory and retained navigation used by configure_npc_hostile_ordinary.
+It enables the controller and patrol together after complete validation.
+Repeated exact configuration acknowledges the existing paid action/home/patrol;
+all attack profile fields, static motion fields and patrol parameters compare.
+Changed damage, mastery, type, caster-weapon flag, delivery, windup, period,
+reach, projectile policy or evidence cannot silently reset or alter combat.
+Only melee delivery is admitted by this slice. Energy and a spellbook are
+neither required nor manufactured. Quest-owned actors remain excluded.
+
+Deterministic test design:
+Explicit synthetic non-quest placement uses existing Bull appearance/Health80
+and wiki armor120 evidence as a fixture, not a second production Rogue Bull.
+Weapon damage5/range128/windup750/period2000 and patrol/motion constants are
+authored development settings. No retail weapon statistics are claimed.
+Connected detour/disconnected wall: every emitted movement segment is sampled
+for walkability; idle, acquire, chase, hit or route refusal, live target pull or
+death, leash return and resumed idle. Same-ID target replacement cannot inherit
+an old pending attack. Source death cancels pending damage and patrol; replacing
+its lifetime rejects old enrollment and requires a new exact scope. Missing
+armor refuses without partial setup. Eleven independent profile changes plus
+delivery/motion/patrol changes must preserve an existing windup and reject.
+
+Next genuine ambient content candidate, not installed by this task:
+Bandit Raider level2, map146. Local Bandit_Raider.html oldid2604166 explicitly
+states its staff-looking weapon is a hammer dealing blunt damage.
+Wiki SHA256 0024219d3a783c1d025ff18c39d37f1883d07377e0f114db444ec1b52764a15c.
+Fixed four-professions packet capture
+data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl
+SHA256 a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02.
+build/reports/ai/four-action-sequences.json joins observed ordinary attacks:
+37:56:2 starts packet99981, ends100000 (750ms observed, not a timing constant).
+That lifetime creation99728 is(-6707.556641,-2086.593262),plane0.
+Separate exact Raider lifetimes have captured maximum Health120:
+53:164:1 packet141398;53:163:1 packet141476;53:194:1 packet142727;
+53:191:1 packet142764;53:193:1 packet142773.
+An installed row must use one matched lifetime's own appearance/creation and
+Health evidence, not silently combine actor IDs across epochs. Health for the
+37:56:2 example was not found in its lifespan. Final armor and weapon damage/
+cadence/mastery/range remain missing or must be separately authored. Appearance
+does not supply flesh, immunity, creature traits or Energy. No Raider content
+is enabled automatically by this adapter.
+
+Limits: no new respawn/Health-reset policy, group aggro or historical fixed
+decision scheduler. No rendered client or deployment validation. Existing
+unavailable-route diagnostics do not justify an invented retail timeout.
+
+2026-10-29 verification update: ordinary helper now included; native navigation/pursuit/hit/pull/return/lifetime test and core build pass. configure_npcs stale controller cleanup fixed under strict replacement test. Evidence:build/reports/aegis-ordinary-progress-20261029.json. Raider catalog live integration remains subsequent work; no deployment/rendered/retail parity claim.
+
+2026-10-29 Exact ordinary Raider population gateway integration
+The optional map146 catalog now loads captured Raider identity53:164:1 as private actor59001, alongside the existing Firestarter59000. Maximum Health120, model141267, flags12,level2 and native creation position are capture-backed. Loader validates exact binding/absent Energy/unknown body traits, all six separately authored armor facts, actual mesh walkability and duplicate population collision before atomic merge. Instance arming invokes the shared ordinary driver with bounded wander/aggro/pursuit/melee/leash/return policy. All combat timing/magnitude/armor and movement thresholds are explicitly authored development tuning; no model-wide or retail parity claim.
+Real catalog/map146 patrol test, generic ordinary navigation/fight/pull/return/lifetime regression, and existing Firestarter real-map patrol test pass. Core+isolated host build pass. Host startup accepts both sidecars exactly once; synthetic portal/encrypted login/roster/Play/InstanceInfo smoke passes, owned fixture host stopped. Source/executable/checkpoint evidence:build/reports/raider-population-progress-20261029.json. Provenance source and sidecar hashes verified. Canonical binary, fixed checkpoint, bindings and official clients untouched. No rendered client test, automatic respawn, threat-group completeness or all-NPC implementation claim. Healing Ring1262 Renewal completion and full skills remain open.

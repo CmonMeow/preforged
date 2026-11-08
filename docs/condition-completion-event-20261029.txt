@@ -1,0 +1,29 @@
+Condition spell completion event contract (2026-10-29)
+
+The existing typed condition_spell_completed hook now receives the same admitted
+spell_effect_event that before_spell_effect received, alongside target, plan
+and completion time. This reuses Runtime's existing event allocator; no parallel
+counter, inferred event or extra client packet was introduced. A non-spell
+signet or a legacy caller without admission hook receives0, which is NOT an
+admitted spell receipt. Existing legacy bool hook remains compatible.
+
+Eight native cases exercise matching identity, cancellation, interruption,
+rejected admission, absent admission hook, absent completion hook, hook loss,
+consumer refusal and no replay across update calls. Multiple success/refusal
+events also check allocator uniqueness. Barbed Signet's player/NPC test asserts0
+and retains targeted241/finish/publication order. Direct-heal Renewal regressions
+cover adjacent Runtime behavior without proving this new consumer exists.
+
+Gateway signature is updated but intentionally does not consume the event.
+World::complete_condition_spell still lacks completion-event resource admission.
+Do not call Ether Renewal181/2860 bound or condition-producer-complete from this
+change. Needed next: source reward projection in the same recipient/reaction
+batch, exact cursor validation/one-shot commit, source healing/death and Energy
+admission, correct pre-sacrifice boundary, and separate pre-finish source reward
+feedback from deferred recipient publication. Outbox event ordering matters:
+gateway events and World feedback share outboxes. Nested DamagePublication
+currently skips already-captured outboxes, so it cannot blindly split phases.
+No World handler should run on a copied Player to simulate this transaction.
+
+Existing unknown-fact and recursive Bonds/Bile/Seed/retirement limitations remain.
+No new skill binding, captured inventory partition or checkpoint mutation.

@@ -1,0 +1,62 @@
+Copied request native gates: pinned Guild Wars 2022
+================================================
+Client SHA256: a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+Tool: tools/protocol/copied_request_native_gates_2022.py
+Evidence: build/reports/copied-request-native-gates-2022.json
+Run with the existing developer Python and build/tools/python-deps on PYTHONPATH.
+No live client, network, account, process attachment or official logger action.
+
+72 cases execute original798560 command dispatch with actual native mode,
+recharge, map qualifier, special-map predicates and cached row-mask branch.
+Skills74,75,281,385,865,3396; copy0,1,65535,UINT_MAX; zero/matching/other masks.
+Each matching mask sends the exact expected skill/copy/target request. Zero and
+nonmatching masks send none. Two controls verify native mode0 and a future
+slot recharge deadline send nothing. No pending-reference warnings occurred.
+Native row byte8 selects bit0 for74/75/281/385, bit2 for865/3396 in this image.
+This proves the bit-selection branch, not what live account fields populate it.
+UINT_MAX does not bypass this branch in the direct-command path.
+
+Correction to earlier probe interpretation:
+7a3200 is the slot recharge lookup, not a profession/learning eligibility check.
+The old Sender stub forced58d730 true, taking a special-map shortcut around the
+normal cached row-mask check. Earlier request/pending reports remain valid for
+identity, but do not establish those gates. Tool comments/limits now say so;
+existing frozen checkpoint artifacts were not rewritten.
+
+Still intercepted: context points to synthetic memory, fixed clock, UI widget
+and animation lookup, actor movement reset79dd30, cookie service and transport.
+Skill-button pre-command UI, learning/profession checks elsewhere, rendered
+acceptance, official copy allocator and nested Echo timers remain unproved.
+There is no claim that all copied skills are playable based on this report.
+
+Next inspection targets:
+build/reports/copied-request-upstream-calls-2022.json records six relative-call
+candidates for798560:4ea43b,4ea496,4ea4df,4ea4fa,5086ec,508b8b.
+These are candidates from executable sections. Surrounding windows are not
+verified function boundaries; validate caller/control flow before emulation.
+
+Production Echo arming remains gated. Implementation counters are unchanged.
+2026-10-17 Original button-path extension
+-----------------------------------------
+Tool: tools/protocol/copied_button_native_2022.py
+Evidence: build/reports/copied-button-native-2022.json
+15 availability cases,16 Echo click/identity cases and2 native recharge controls pass.
+Original entrypoints:4ea240 availability,51a200 normal button callback,
+4ea3a0 target selection,798d90 bar read and798560 request dispatch.
+Echo74/75 copies0,1,65535,UINT_MAX preserve skill/copy through button callback,
+self-target selection and request serialization inputs; target0 is produced.
+Matching226 clears the exact pending reference. Zero direct-command row mask
+blocks requests even though the separate availability predicate permits Core
+rows. Non-Core availability still requires its matching mask bit in this state.
+The two entrypoints were exercised separately; no full update-to-click pipeline
+or visible widget is claimed. Widget flags, player-category/modifier queries,
+allocation/redraw/renderer and inherited synthetic services remain intercepted.
+These tests do not establish general learning/profession eligibility.
+
+Native216 identity replacement clears a previously set slot recharge deadline.
+A deadline installed after replacement blocks the button request. This supports
+server ordering: publish restored identity first, then its effective timer.
+The server restoration feedback now explicitly resends the effective current
+timer after216, even when no new deadline was installed or a longer old one
+already exists. Receipt import can suppress intermediate timer emission so Auth
+sends one final authoritative refresh. No recharge reset/extension is implied.

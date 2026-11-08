@@ -1,0 +1,1560 @@
+REVERSAL OF FORTUNE307 — FOUNDATION, NOT A LIVE SKILL BINDING
+
+
+
+LATEST SCOPED WORLD STEP (2026-10-27)
+
+-----------------------------------
+
+The player shared commit helper now consumes a positive incoming-damage quote,
+
+retires status/timer ownership,heals through health_event_locked(...,true),then
+
+builds a fresh pure-loss Hit from live post-heal Health. Healing debt can kill;
+
+that path runs death cleanup and does not apply another damage snapshot.
+
+Energy/protection hit observers run before remaining loss;live Health is read
+
+again afterward rather than restoring an earlier value. Damage feedback uses
+
+the ordinary validated serializer with post-healing before/after snapshots.
+
+
+
+Energy Surge/Burn player commits use this opt-in adapter. Preflight validates
+
+the retained application and received-healing modifier before Renewal or
+
+Energy/effect commits. Other damage producers still use their existing paths;
+
+this is NOT a complete Reversal binding. Future adapters must preflight all
+
+recipient-specific consequences too (conditions/control can change when a
+
+formerly lethal hit becomes survivable).
+
+
+
+162 World combinations test both incoming spells,ranks0/12/20,Health10/100/500,
+
+no/PvE/PvP Renewal and normal/Mark of Death/Deep Wound healing. Four lifecycle
+
+and zero-policy cases plus six repeated-hit scenarios test dispel,exact expiry,
+
+replacement,retention on no damage,and one-use across subsequent real World
+
+inputs. Existing death cleanup restores the condition-reduced capacity;tests
+
+check that separately from the preceding damage packet's maximum.
+
+
+
+Four actual World exports prove positive healing before remaining loss and
+
+full-Health clipping against the pinned2022 serializer. They are not307 paid
+
+casts or rendered effects. Capture provenance for545 remains the separate
+
+foundation evidence. Current World/source/executable results:
+
+build/reports/reversal-player-commit-20261027.json.
+
+
+
+THE FOUNDATION RECORD BELOW REMAINS HISTORICAL;its no-World statements describe
+
+the earlier checkpoint. The latest step above supersedes only the two named
+
+player incoming-damage adapters. All other consumer requirements still apply.
+
+
+
+
+
+Status
+
+------
+
+Runtime cast admission remains unsupported. Do not add307 to supported() or
+
+publish its binding until the consumers below are integrated and verified.
+
+The fixed checkpoint remains20261024-all-completed;no official logging or
+
+client session was touched.307 remains in CAPTURED-NEEDS-IMPLEMENTATION.
+
+
+
+Reviewed contract
+
+-----------------
+
+Pinned2022 row307:Core/Monk/Protection Prayers,enchantment,5 Energy,0.25s
+
+activation,0.75s aftercast,2s recharge,8s base duration,15..80 maximum healing
+
+at ranks0..15,caster sentinel2077,target545. Rank20 interpolates to102.
+
+Local archived Reversal_of_Fortune.html oldid2663148 states conversion occurs
+
+after damage reduction;healing precedes loss above the conversion limit and
+
+is healing rather than unmodified Health gain. Life stealing also qualifies.
+
+Order_of_damage_modifiers.html places Reversal after flat reduction.
+
+
+
+The shared arithmetic receives reduced incoming amount D before remaining
+
+Health clamps,then X=min(D,limit):prevent X,request X healing,apply D-X loss.
+
+The caller MUST use the real healing pipeline before remaining loss. It must
+
+not assign an invented net Health delta or treat Reversal as a2*limit cap.
+
+At rank12 without other reactions:10/500 Health hit for100 ends44;500/500 hit
+
+for100 ends467;100/500 hit for200 ends34. A healing modifier changes these
+
+outcomes independently of prevented damage. A Protective Spirit cap50 means
+
+Reversal sees50,not the original200. These are isolated ordering models,not
+
+World or retail interaction proofs.
+
+
+
+Ownership and one-use transaction
+
+---------------------------------
+
+Registry::entry_sequence exposes a scoped monotonic application token. Quotes
+
+retain target lifetime,effect ID,application token,cause,rank,input,time and
+
+split. Consumption revalidates the complete quote at the same event time and
+
+removes exactly that application. Same-ID replacement with identical fields
+
+still changes its token and rejects the old quote. Expiry,removal,forged
+
+amounts,target-generation mismatch,duplicate completion and clock mismatch
+
+reject. Only positive reviewed damage/life-steal inputs are admitted;zero
+
+input consumption is explicitly unresolved. Degeneration,sacrifice,plain
+
+Health loss and blocked/missed attacks must not be fabricated as these inputs.
+
+
+
+Required integration before binding
+
+-----------------------------------
+
+1. Player direct/weapon/reactive damage commits:heal through the authoritative
+
+   healing-event pipeline,then compute remaining damage on current Health.
+
+   Current combat::Hit and damage_packets_2022 enforce decreasing Health and
+
+   cannot serialize the combined healing/damage as one arbitrary hit.
+
+2. NPC damage commits and reactive/protection stages:consume exactly once,
+
+   respect reviewed healing permission,retain credit and death/lifetime rules.
+
+3. Life-steal producers:quote before existing remaining-Health clamps,apply
+
+   conversion,then determine actual stolen Health/source gain. Plain Health
+
+   loss and life-drain ticks need their own classification review.
+
+4. Healing modifiers,Scourge/other reactions,Deep Wound,full Health,lethal
+
+   reactions and simultaneous ordered damage need real World tests.
+
+5. Paid self/ally/NPC cast admission,Divine Favor,enchanting duration,
+
+   replacement/dispel/death cleanup,status65/67 publication and retained
+
+   caster-lifetime credit remain unfinished. Registry cause ID alone is not
+
+   full caster lifetime authority.
+
+6. Establish zero-damage trigger policy and rendered/ally-target effects.
+
+
+
+Evidence and checks
+
+--------------------
+
+210 rank/input amount cases plus replacement/expiry/replay/forgery,low/full
+
+Health and protection-order models pass. Registry and combat suites pass.
+
+Fixed packets-1360-15821281.jsonl:279857 activation,279866 finish,
+
+279867 generic21 self body545. A constructed native helper packet passes the
+
+hash-pinned2022 first particle consumer with stubbed actors/assets/allocation.
+
+It is NOT a paid Runtime cast or rendered animation acceptance.
+
+
+
+122 lexical review sites are recorded in reversal-consumer-inventory-20261027.
+
+json. This inventory includes definitions/preflight sites and is NOT an
+
+exhaustive compiler/dataflow coverage proof. Semantic review is still needed.
+
+Final source/executable/wiki/capture hashes and scoped checks:
+
+build/reports/reversal-fortune-foundation-20261027.json.
+
+
+
+
+
+2026-10-27 extension: shared player spell damage families
+
+------------------------------------------------------
+
+Supersedes the earlier two-adapter integration scope, not its historical tests.
+
+The player healing-first commit now serves all 22 elemental plans and the 11
+
+lightning plans routed through the shared planner. Copied projections retain
+
+post-healing survival for secondary hits, conditions and control; authoritative
+
+commits consume the owned application once. Lightning Bolt resolves each moving-
+
+target strike against current authority. Healing Seed triggers on remaining
+
+positive damage, including lethal damage before cleanup, not converted damage.
+
+New World coverage:252 elemental,66 lightning,2 shadow-component,1 moving
+
+Lightning Bolt and3 Healing Seed ordering scenarios. Unknown-armor Lightning
+
+Bolt errors retain their specific reason and do not consume a strike.
+
+Dedicated lightning205/222/226/2804,other player damage/weapons,NPC recipients,
+
+life-steal source gain,broader reactions and full paid307 casting remain open.
+
+307 remains UNBOUND. These tests are mechanics evidence,not rendered proof.
+
+Final verification:build/reports/reversal-spell-families-20261027.json.
+
+
+
+2026-10-27 Mind Shock226/2804 Reversal integration: copied damage projection
+
+preserves second-hit/control eligibility when conversion saves a raw-lethal
+
+first hit. The authoritative player commit consumes307 once and recomputes
+
+remaining damage on current Health.36 new combinations cover both versions,
+
+three Reversal ranks,three initial Health values and Energy advantage/equality.
+
+Existing player/NPC paid-cast,Overcast,immunity and packet-order tests pass.
+
+NPC Reversal recipients and dedicated205/222 remain open.307 remains UNBOUND;
+
+rendered acceptance is not claimed. The Mind Shock host rebuild passed;
+source/executable hashes:build/reports/reversal-mind-shock-20261027.json.
+
+
+2026-10-27 dedicated lightning Reversal extension (validation in progress)
+Lightning Strike222 immediate/delayed player hits and Lightning Surge205 expiry
+now route through the reviewed player damage commit. Surge conditions/control
+use projected survival after healing. Strike applies its post-hit hex to current
+effect authority instead of restoring a pre-damage registry and retired307.
+Post-reaction effect IDs and the owned timer queue are reacquired before commit.
+8 initial Strike,2 delayed Strike and6 Surge Reversal cases added. All16 new cases and3 fresh native suites pass;24 audit checks pass.
+Host rebuild pending. Scoped source/test hashes:
+build/reports/reversal-dedicated-lightning-20261027.json.
+NPC Reversal,other producers,paid307 admission and rendered acceptance remain
+open.307 stays UNBOUND. Official sessions were untouched.
+
+2026-10-27 NPC Reversal transactional primitive
+Native LiveActor can stage owned307 with explicit known healing permission and
+atomically consume it after quoting post-protection/pre-Health-clamp damage.
+The receipt separates pre/post-healing Health and optional remaining damage.
+Deep Wound healing death produces no fabricated damage hit.189 rank/amount
+cases plus protective cap,wound,permission,stale lifetime,unknown armor,zero,
+nonhostile and exact-expiry checks pass. This primitive is NOT yet wired into
+World publication or all NPC producers. No paid307 binding or rendered proof.
+Host/regression rebuild pending. Evidence:build/reports/reversal-npc-20261027.json.
+The preceding dedicated205/222 host build succeeded; its report has the hash.
+
+2026-10-27 NPC Reversal receipt wire validation
+The NPC primitive and two refreshed NPC regression suites pass;host rebuild and
+--build-info passed. A dedicated serializer turns actual low/full Health NPC
+receipts into retirement,positive healing,absolute Health and remaining damage
+in that order. Both feedback sets match the hash-pinned2022 serializer. A
+Deep Wound healing death emits retirement/absolute Health only,no fabricated
+negative damage.189 amount cases and prior negative/lifecycle cases still pass.
+World publication/caster lifetime authority/all NPC producer integrations remain
+unfinished.307 remains UNBOUND and no rendered acceptance is claimed.
+Scoped hashes:build/reports/reversal-npc-receipts-20261027.json.
+
+2026-10-27 NPC Reversal World receipt transaction
+Trusted World staging/completion now owns self-NPC caster credit,status add/
+retirement,heal-before-damage packet batches,remaining-damage Watch Yourself/
+Bonds hooks and death publication. No Actor assignment follows reactive hooks.
+12 Health/rank World combinations plus healing-debt death,one-use death event,
+unknown/false healing permission,stale attacker,zero,expiry,replacement and tick
+expiry tests pass.24 audit checks pass. Normal paid307 casting and existing
+NPC damage producers have NOT been migrated. This trusted entrypoint is a
+reviewed building block,not a completed skill binding. Rendered verification
+remains open. Host/NPC regression rebuild pending. Scoped evidence:
+build/reports/reversal-npc-world-20261027.json.
+
+2026-10-27 first existing NPC damage consumers migrated
+Energy Surge39/Energy Burn42 now preflight and commit NPC Reversal through the
+World receipt transaction. They retain Energy drain,independent area recipients,
+completion deduplication and one Ether Renewal reward per incoming spell.
+36 new Health/rank/Renewal cases and2 actual-producer healing-debt deaths pass;
+healing death emits no fabricated damage modifier.90 existing mixed-area cases
+also pass.3 native suites (2 fresh,unchanged NPC primitive) and24 audits pass.
+The preceding standalone NPC World host rebuild passed;this consumer host
+rebuild is pending.307 remains UNBOUND. Other NPC producers,broader reactions,
+life-steal/weapons,paid307 admission and rendered effects remain unfinished.
+Evidence:build/reports/reversal-npc-drain-20261027.json.
+
+2026-10-27 mixed NPC Reversal area verification
+12 additional Energy Surge World cases prove that secondary NPCs with unknown
+Energy still receive damage/conversion,while allies,other planes and253-unit
+outsiders retain Health/effects.252-unit recipients,low/full Health,player/NPC
+selected centers and both Renewal versions are covered in the same cohort.
+Only the selected target loses Energy;one Renewal reward and duplicate-event
+rejection remain intact.3 native suites pass;this step changes tests only.
+The production consumer host rebuild passed and --build-info was checked.
+307 remains UNBOUND;all other NPC damage producers and rendered acceptance
+remain unfinished. Evidence:build/reports/reversal-npc-area-20261027.json.
+
+2026-10-27 shared NPC elemental current-state repair
+Source review corrected the earlier rebase note:the shared elemental World path
+assigned whole preflight NPC snapshots rather than preserving current effects.
+It now retains scoped identity/results and recomputes each NPC from current
+authority at commit. Earlier player/NPC death cleanup and intervening Health
+changes cannot be overwritten by those earlier snapshots. Complete NPC copies
+are no longer retained for every candidate.Three representative AoE/single-
+target cleanup scenarios and the refreshed NPC elemental-recipient suite pass;
+24 audit checks pass. Host rebuild pending. This is prerequisite damage-path
+repair,NOT NPC elemental Reversal integration or rendered acceptance.307 stays
+UNBOUND. Evidence:build/reports/elemental-npc-current-20261027.json.
+
+2026-10-27 NPC post-protection hit transaction
+Native NPC conversion now has a trusted already-resolved Hit entrypoint;the
+existing Surge/Burn input route delegates to the same transaction. It validates
+recipient generation,current Health,hit arithmetic and input bounds,then heals
+before remaining loss without applying armor/reduction/multipliers again.
+Receipts retain the exact scoped307 quote/application sequence. Optional effect
+rebasing consumes only that application,refuses unconsumed proposals and rejects
+identical-field replacements/removal;unrelated current effects are retained.
+18 armor/reduction combinations,3 rebase modes,4 malformed inputs and prior189
+amount cases pass.4 fresh native suites and24 audit checks pass.2 fresh receipt
+exports match the pinned2022 serializer. Host rebuild pending. Retirement checks
+are NOT full Health/modifier revalidation. NPC elemental consumers still need
+migration;307 remains UNBOUND and rendered acceptance is not claimed.
+Evidence:build/reports/reversal-npc-posthit-20261027.json.
+
+2026-10-27 shared/single NPC elemental Reversal integration
+18 World elemental plans now use opt-in healing-first NPC projections and
+per-hit conversion receipts. Raw admission hits remain available for original
+Health predicates;publication uses real remaining damage and exact retirement.
+Secondary-hit/condition survival follows projected Health;death publication
+uses authoritative Health. NPC preflight proposals are recomputed on commit.
+NPC-targeted Agony of Blood previously discarded the caller's sacrifice output;
+that handoff is fixed.210 World combinations (ranks,low/full Health,Burning,
+conditional shadow damage,conditions and Fireball impact) and3 fresh native
+suites pass;24 audits pass. Existing Burning timers on corpses were not used
+as new-condition acceptance proof;corpse cleanup policy remains unverified.
+Host rebuild pending. Separate Flare194,Whirlwind163,Earthquake170/1086 and
+other NPC/player damage producers remain unfinished.307 remains UNBOUND;
+no rendered animation acceptance is claimed. Scoped evidence:
+build/reports/reversal-npc-elemental-20261027.json.
+
+2026-10-27 all22 World elemental-entrypoint NPC consumers
+Flare194 impact now uses the shared typed elemental transaction. Whirlwind163
+and Earthquake170/1086 use a shared NPC preflight/commit adapter that handles
+healing death without inventing a damaging Hit. Control eligibility uses
+post-conversion Health. Zero reduced damage retains307 under the still-
+unverified zero-trigger policy. Deferred quake feedback retains its consumer.
+252 World matrix cases across22 plans and9 unknown/immune/known knockdown
+permission cases pass. Unknown control rejects before Health/effect consumption;
+known immunity permits damage without knockdown.3 fresh native suites and24
+audits pass. Host rebuild pending. Scope is World::elemental NPC recipients,
+NOT all NPC caster/direct-damage producers or a completed307 cast binding.
+NPC lightning,other damage/weapons/life-steal,broader reactions and rendered
+acceptance remain open.307 remains UNBOUND. Scoped source/test hashes:
+build/reports/reversal-npc-elemental-complete-20261027.json.
+
+2026-10-27 eight NPC direct/area lightning Reversal consumers
+224/228/865/3396/2059/842/1664/232 now use the shared NPC conversion preflight/
+commit. Condition and interrupt eligibility follows authoritative surviving
+Health,including raw-lethal hits saved by conversion. Per-condition loops
+stop if Fragility kills the recipient.48 rank/Health cases,2 mixed Arc/Forked
+chains and2 healing-debt deaths pass. Arc prerequisites use actual Overcast.
+Secondary magnitudes,independent retirement,unselected unknown-armor exclusion
+and one death event are checked. Healing death emits no damage modifier or new
+Weakness/Cracked Armor.3 fresh native suites and24 audits pass;host pending.
+NPC projectiles229/1369/1082,dedicated205/222/226/2804,other producers,weapons/
+life-steal,broader reactions and paid307 admission remain unfinished. No new
+rendered/pinned-consumer visual proof is claimed.307 remains UNBOUND.
+Evidence:build/reports/reversal-npc-lightning-20261027.json.
+
+2026-10-27 NPC lightning projectile conversion
+Orb229,Bolt1369 and Shock Arrow1082 now use current NPC conversion preflight/
+commit. Bolt's impact-time strike count is retained separately from raw lethal
+proposals;the second strike proceeds when conversion saves the first,while
+actual death suppresses it. Each strike reads current armor/protection/Health.
+18 new stationary projectile cases,12 moving/stopped NPC Bolt cases and4 Shock
+conditional-Energy cases pass. Shock return is sampled at impact and occurs
+once for a successful converted hit,including the tested healing-debt death.
+These are intended mechanics tests,not paired retail conversion proof.
+3 fresh native suites and24 audits pass. Host rebuild pending. All11 common/
+projectile World lightning NPC paths are migrated;dedicated205/222/226/2804,
+other producers/weapons/life-steal and paid307 admission remain unfinished.
+307 remains UNBOUND;no rendered acceptance is claimed. Scoped evidence:
+build/reports/reversal-npc-lightning-projectiles-20261027.json.
+
+2026-10-27 dedicated NPC lightning and sequential armor validation
+NPC205 expiry,222 initial/timer,226/2804 now use scoped Reversal damage
+transactions. Surge retains EndingHexContext for expiry armor. Mind Shock
+preflight and commit use actual remaining damage for Watch Yourself charges.
+The matching player planner now feeds projected remaining hits into sequential
+armor; a reproduced four-case regression previously failed before this fix.
+63 NPC combinations,2 delayed Strike cases,2 unknown-control rejection cases,
+2 native ending-hex armor cases and4 player armor cases are covered. Six native
+suites pass; the three Mind Shock/dedicated suites were rebuilt after the final
+armor fix. Other three scoped suites were rebuilt earlier; their branches did
+not change.24 Python audits passed before the final player planner fix.
+Host rebuild running(session19920). Report/source/executable hashes:
+build/reports/reversal-npc-dedicated-lightning-20261027.json.
+All15 World lightning NPC-recipient paths are migrated, not every NPC caster
+or direct-damage API. Other damage,weapon/life-steal/reactive producers,paid307
+admission/lifetime/full caster credit and rendered verification remain open.
+307 stays UNBOUND. Official clients/loggers untouched.
+
+Dedicated lightning host build completed successfully(exit0); hash recorded in its scoped report. Subsequent Discord integration has separate validation.
+
+2026-10-27 Discord Reversal integration
+Discord817/2863 shared handler now uses player/NPC scoped conversion commits.
+Conditional no-effect casts retain307,including its enchantment predicate fact.
+36 new World cases test player/NPC recipients,RR0/12/20,HP10/500/1000,and
+condition presence/absence;no-effect cases then cast an eligible Discord.
+New matrix uses PvE817;PvP2863 shares the handler but has no repeated new matrix.
+Existing rank/predicate/publication cases remain passing.Seven scoped suites
+pass(one fresh Discord rebuild;other suites previously rebuilt with unchanged
+branches),24 Python audit checks pass.Host rebuild running(session61099).
+Report:build/reports/reversal-discord-20261027.json.
+Other producers,paid307 admission/lifetime and rendered proof remain open.
+307 remains UNBOUND;official sessions untouched.
+
+Discord host rebuild PASSED(exit0);final executable hash is recorded in build/reports/reversal-discord-20261027.json. No official-client or logger actions performed.
+
+2026-10-27 Signet of Shadows876/Signet of Sorrow1363 Reversal integration
+Both player/NPC recipients now use shared scoped conversion preflight/commit.
+Signet completion stays separate from spell-only reactions.Captured body
+publication and corpse/dead-pet recharge selection are preserved.
+36 new Shadows cases include Blind bonus;18 new Sorrow cases cover low/full
+Health andRR0/12/20 for player/NPC recipients.All54 verify deferred one-use
+publication and NPC death-event counts.Four fresh World/cast suites pass,
+two unchanged pure plan suites pass,24 Python audit checks pass.
+Shadows cast test now uses MSVC/bigobj after a verified C1128 object-section
+limit failure.Host rebuild running(session34831).Scoped report/source hashes:
+build/reports/reversal-signets-20261027.json.
+No new binding/capture claims;307 remains UNBOUND until all consumers and
+paid admission/lifetime/rendering are verified.Official sessions untouched.
+Next:Signet of Judgment must use post-conversion survival for control,not
+just replace its final damage commit.Other weapon/life-steal/reactive paths
+remain open.Keep retail observations separate from synthetic mechanics tests.
+
+Signet integration host rebuild PASSED(exit0);final source/test/host hashes recorded in build/reports/reversal-signets-20261027.json. No rendered acceptance claimed.
+
+2026-10-27 Signet of Judgment294/2887 Reversal integration
+Pure proposals accept scoped damage projections and decide primary knockdown
+on post-conversion survival instead of raw hit.killed.World player/NPC hits
+use shared conversion commits and real current Health;every selected recipient
+is preflighted before publication.NPC projection copies are needed only when
+307 is active.Primary-only control,holy sensitivity/equipment bonus and existing
+completion ordering are preserved.36 mixed player/NPC PvE/PvP cases,4 unknown
+control cases and4 healing-death cases pass,together with existing rank/crowd/
+range/immunity/cast/lifetime/cross-recipient-heal regressions.Two fresh native
+suites and24 Python audits pass.Host build running(session12246).
+Report/source/test hashes:build/reports/reversal-signet-judgment-20261027.json.
+Other damage/weapon/life-steal/reactive producers,paid307 admission/lifetime
+and rendered/paired retail verification remain open.307 remains UNBOUND;
+official sessions and fixed capture checkpoint remain untouched.
+
+Judgment review follow-up:copy each input DamageProjection before invoking it so repeated copy-only proposals do not consume caller-held private registry state. Added a two-evaluation repeatability guard. Initial host build passed before this refinement;final native/host rebuild pending.
+
+Final Judgment host rebuild PASSED after projection-copy refinement.Source/test/host and immutable capture-manifest hashes recorded in build/reports/reversal-signet-judgment-20261027.json.Official sessions untouched;no rendered verification claimed.
+
+2026-10-27 Icy Prism903/Signet of Corruption1950/2093 Reversal integration
+Shared conversion preflight/commit now handles player/NPC recipients.Prism
+preserves Water-hex splash selection and independently owned application
+retirement.Corruption retains afflicted-foe Energy gain even for converted
+hits;NPC protection preflight now uses the same LiveActor authority as commit
+instead of a bare Actor snapshot.Dead/replaced later contacts are skipped.
+36 new Prism and36 Corruption mixed-target World cases pass alongside four
+fresh World/cast suites and two unchanged pure Prism suites.25 Python audits
+pass,including a new four-consumer fail-closed Corruption source-audit test.
+Source audit follows shared damage serializers instead of requiring obsolete
+inline serialization.Prism retirement checks identify exact actor/effect pairs
+so a Water-hex retirement on death is not counted as an extra Reversal.
+Host build running(session10359).Source/test/executable evidence:
+build/reports/reversal-prism-corruption-20261027.json.
+Fixed partition679captured/401bound/278awaiting/650missing is unchanged.307
+remains UNBOUND.Other producers,paid admission/lifetime/full caster credit
+and rendered/paired retail acceptance remain open.Official sessions untouched.
+
+Prism/Corruption host rebuild PASSED(exit0);final host/source/test and immutable capture-manifest hashes recorded in build/reports/reversal-prism-corruption-20261027.json.Rendered verification remains open.
+
+2026-10-27 seven World shadow damage phases
+133/219/155/158/1078/102/1067 now use scoped conversion commits for player/NPC
+recipients.Mixed102/1067 sample above-half eligibility before the first hit,
+then recompute their follow-up from actual current source/target Health after
+conversion/reactions.New native apply_shadow_followup uses current protection
+and wound settlement;World does not restore combined raw damage/transfer
+snapshots.Pure shadow_target accepts a private-copy damage projection.
+168 new matrix cases,14 healing deaths,8 raw-lethal-but-saved follow-up cases
+and2 explicit player zero-first-hit rejection cases pass.Four fresh native
+suites include existing packet fixtures,NPC ordinary damage/deaths and
+Obsidian Flame paid-cast/Overcast guards.25 tracking audit checks pass.
+Host build running(session86108).Evidence/source/test hashes:
+build/reports/reversal-shadow-20261027.json.
+IMPORTANT GAP:if a fully absorbed first hit leaves307 active for positive
+life steal,the typed life-steal conversion is unfinished.This mixed path is
+rejected before damage/publication,not treated as implemented.Native raw
+shadow/caster entrypoints and other damage/weapon/reactive paths still need
+review.Paid307 admission/full credit/lifetime and rendered/paired retail
+acceptance remain open.307 remains UNBOUND.Official sessions untouched;fixed
+partition679captured/401bound/278awaiting/650missing/manual queue unchanged.
+
+Shadow damage phase host rebuild PASSED(exit0).Source/test/host and immutable manifest hashes recorded in build/reports/reversal-shadow-20261027.json.Typed life-steal conversion and rendered acceptance remain unfinished;official sessions untouched.
+
+2026-10-27 typed life-steal recipient and frozen evidence
+New LiveActor::apply_reversal_life_steal atomically consumes an owned typed
+life_steal quote,uses real recipient healing/wound settlement,then remaining
+Health loss without an ordinary Damage/Hit receipt.It deliberately computes
+NO caster gain.The caller still owns post-reduction/overkill input policy,
+source cap,World caster credit/death/publication and remaining transfer.
+189 recipient cases plus observed28/17 split,wound-death,one-use,invalid-input,
+clock/expiry/lifetime/permission guards pass.Two fresh native suites include
+existing shadow regressions;31 Python checks pass.Host build running(session12474).
+Fixed audit found137 explicit307applications/137removals,781 known life-steal
+skill records and5 candidate overlaps.Only bounded recipient evidence is
+verified:packet38060 lines291200/291201/291205/291206/291207 at87544953,
+local actor22,epoch16,map845,known max455.Observed gain~28 precedes retirement,
+then caster gain fraction and recipient loss~17.This is compatible with a
+rank3/45-input split,but caster maximum/current Health/cap and overkill are
+unknown.Do not claim the caster-gain formula or reuse ordinary damage packet
+ordering without life-steal-specific review.No pinned2022 wire/rendered proof.
+Evidence reports:build/reports/reversal-life-steal-recipient-20261027.json,
+reversal-life-steal-overlap-20261027.json,reversal-vampiric-burst-20261027.json.
+World life-steal conversion/mixed zero-first-hit branch remain gated;307 is
+UNBOUND.Other consumers/full credit/lifetime and rendered acceptance remain
+open.Fixed679/401/278/650 partition/manual queue and official sessions untouched.
+
+Life-steal recipient host rebuild PASSED(exit0);final host/source/test and immutable capture-manifest hashes are recorded in build/reports/reversal-life-steal-recipient-20261027.json.World caster policy/publication and rendered acceptance remain open.
+
+2026-10-27 World NPC recipient-only life-steal conversion
+Trusted npc_reversal_life_steal_recipient checks source/target scopes,range,
+plane/navigation,clock,hostility and owned self-Reversal credit before commit.
+Receipt stages preserve gain-before-retirement-before-loss and allow future
+caster feedback insertion.Remaining loss is recipient Health feedback,not
+ordinary Damage/Hit;Watch Yourself stays active.No caster payout is invented.
+One-use retirement,status updates and exactly-once death now belong to World.
+27 new World combinations plus healing-death/non-damage/stale/invalid guards
+pass.Two fractional input cases reproduced a serializer float-bound defect;
+validation now compares the exact resulting Health state and rejects coherent
+but incorrect partial-loss receipts.Two fresh native suites,31 Python audits
+pass.Host rebuild running(session21226).Scoped hashes/evidence:
+build/reports/reversal-life-steal-world-20261027.json;pre-fix failure retained
+in build/reports/reversal-life-steal-fractional-before-20261027.txt.
+Still NOT a complete skill transfer:source payout/cap,overkill input and raw
+overkill notification,player recipient,full caster credit/admission and native
+rendered acceptance remain open.Recipient-only loss feedback uses settled
+actual loss;the ordinary transfer overkill packet rule is not inferred.
+Mixed shadow absorbed-first-hit guard remains;307 normal casting is UNBOUND.
+Other producers/full lifetime and paired retail verification remain unfinished.
+Fixed679/401/278/650 partition/manual queue and official logging untouched.
+
+Recipient-only World host rebuild PASSED(exit0).Final host/source/test and immutable manifest hashes recorded in build/reports/reversal-life-steal-world-20261027.json.Full source transfer,player recipient/admission and rendered proof remain open;official logging untouched.
+
+2026-10-27 player recipient-only life-steal settlement
+Trusted player_reversal_life_steal_recipient checks source/recipient generation,
+resources,clock,allegiance,plane/range/navigation and scoped Reversal authority.
+It consumes the exact registry quote before healing to prevent double-use,
+uses real healing penalties/wound handling,publishes own gain before owned
+retirement,and re-reads Health after end cleanup for the remaining loss.
+Receipt records before/after-healing and before/after-loss separately.No caster
+payout,ordinary damage/Hit,Watch Yourself consumption or paid skill admission
+is invented.567 new rank/HP/amount/penalty/wound World cases,2 fractional and
+3 clock/expiry/allegiance cases plus stale/invalid/one-use/non-damage guards
+pass.One fresh native suite and31 Python audits pass.Host build running(session48826).
+An initial ordering-test oracle compared healing to pre-condition Health;
+it was corrected to the actual pre-healing Health after Deep Wound capacity.
+No production correction was inferred from that test-only baseline error.
+Report/source/test hashes:build/reports/reversal-life-steal-player-20261027.json.
+Remaining:full caster payout/cap,overkill input/raw notification,full transfer
+admission/caster credit,mixed zero-first-hit conversion,other producers and
+paid307 lifetime/rendered/paired retail acceptance.307 remains UNBOUND.
+Fixed679/401/278/650 partition,manual queue and official logging untouched.
+
+Player recipient host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-life-steal-player-20261027.json.Full transfer/caster payout/admission and rendered verification remain open;official logging untouched.
+
+2026-10-27 delayed Spear1130/Spirit Rift910 Reversal consumers
+Spear preflight keeps one scoped projection across separate hits and uses
+actual converted survival,so a saved raw-lethal primary still receives the
+attacking bonus.Impact commits re-read current recipient/protection state.
+Rift pure proposals accept private damage projections;new Cracked Armor is
+allowed only after actual converted survival.Both NPC/player routes use the
+shared commits,including healing-death handling.Condition and projectile
+publication gates,impact-time attacking,fixed-ground membership and one-shot
+delivery remain covered.36 new Spear/18 Rift cases,2 mixed fields and4 healing
+deaths pass;three fresh native suites include existing delayed/publication/
+lifetime/range/armor regressions.31 Python checks pass.Host build running(session6619).
+Evidence:build/reports/reversal-delayed-damage-20261027.json.
+No new normal307 binding or rendered claim.Other damage/weapon/reactive/NPC
+caster paths,full life-steal transfer/source payout/overkill,paid307 lifetime/
+full caster credit and paired retail/native rendered acceptance remain open.
+Fixed679/401/278/650 partition/manual queue and official sessions untouched.
+
+Delayed Spear/Rift host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-delayed-damage-20261027.json.Remaining consumers,full transfer/admission and rendered verification stay open;official logging untouched.
+
+
+2026-10-27 Lightbringer Gaze1814 Reversal consumers
+Gaze preflights mixed NPC/player conversion,keeps its existing batch NPC Health
+commit before reactions,and uses converted survival for primary interruption.
+No whole-NPC proposal is restored after downstream reactions.Player commits
+reuse one armor draw but re-read current Health/protection.Base NPC feedback
+precedes later reactions to avoid stale absolute Health after reactive healing.
+Consumed Reversal publishes surviving NPC effect flags.The new Energy/Mind
+Wrack test reproduced two death notifications for one victim;Gaze now reports
+its own staged-hit deaths before downstream reactions,which own their deaths.
+32 new cases and3 fresh native suites pass,including unknown protection Energy
+survival admission,healing death,Watch Yourself retention,deferred exactly-once
+publication,and primary-only control.31 Python audits pass.Host build running
+(session57770).Evidence/source/executable hashes:
+build/reports/reversal-lightbringer-20261027.json.
+No paid307 binding or retail/rendered ordering claim.Other damage/weapon/
+reactive/NPC-caster consumers,full life-steal transfer/source payout/overkill,
+paid307 full caster credit/lifetime and paired retail/rendered proof remain.
+Fixed679/401/278/650 partition,manual queue and official logging unchanged.
+
+Lightbringer Gaze host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-lightbringer-20261027.json.Remaining consumers,full transfer/admission and rendered verification stay open;official logging untouched.
+
+
+2026-10-27 shared reactive Reversal commits and Mind Wrack sequence admission
+reactive_hex_damage_locked now uses current scoped player/NPC conversion
+commits,retaining original attribution.Mind Wrack targeted-use proposals carry
+one private conversion state across separate per-loss/zero-burst components;
+a raw-lethal first hit no longer hides a surviving converted second component.
+155 new cases pass:108 targeted-use player/NPC PvE/PvP/rank/HP/Energy cases,
+18 independent player Energy-zero cases,6 flat-protection sequences,18 mixed
+Mark of Pain splash cases,4 healing deaths,and1 unknown-healing staging guard.
+Four freshly built native suites pass,including Mind Wrack target,Mark of Pain
+world,and prior Gaze regression.31 Python audits pass.Host build running
+(session45576).Report:build/reports/reversal-reactive-hex-20261027.json.
+The old Mark of Pain nonphysical-trigger fixture failed before damage because
+its earth-damage sword lacked earth armor authority;the fixture now provides
+that reviewed test armor.No production admission gate was relaxed.
+Shared helper callers also include Barbs,Price of Failure,Gladiator Defense
+and blocked-attack effects;this is not a new per-skill matrix for every caller.
+Separate Backfire/Soul Barbs/Spiteful Spirit,other damage/weapon/NPC-caster,
+full life-steal source payout/cap/overkill/normal admission,paid307 lifetime/
+full caster credit and paired retail/rendered acceptance remain unfinished.
+Normal307 remains UNBOUND.Fixed679/401/278/650 partition,manual capture queue
+and official logging unchanged.No new animation/rendered proof claimed.
+
+Shared reactive/Mind Wrack host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-reactive-hex-20261027.json.Remaining consumers,full transfer/admission and rendered verification stay open;official logging untouched.
+
+
+2026-10-27 Backfire28 Reversal consumers and persistent attribution
+Backfire now resolves conversion through common player/NPC transactions and
+permits the activating spell only when the actual recipient survives.This
+includes lethal Deep Wound settlement during conversion healing.Grenth's
+one-use continuation proof belongs to that exact reactive activation/death.
+Shared player publication cause and NPC source authority can explicitly be
+absent for a departed/replaced original caster.Health and damage/death/Bonds
+semantics remain;no damage label or negative modifier credits a reused ID.
+A dead original caster still in its exact scope remains attributable.Absence
+must come from the producer's original-scope validation,not from dead/alive
+inference.No dummy Player or invented source actor is used.
+288 new player/NPC/no-Reversal/RR-rank/Backfire-rank/HP/caster-state combinations
+and6 healing-death/Grenth-proof cases pass.Four fresh native suites include
+existing Backfire Runtime,shared reactive and NPC Reversal regressions.31
+Python checks pass.The Corruption binding audit follows the new shared paths
+and still rejects removed attributed or Health-only serializers.Host build
+running(session6636).Evidence:build/reports/reversal-backfire-20261027.json.
+Separate Soul Barbs/Spiteful Spirit/Wandering Eye,other damage/weapon/NPC-caster
+consumers,full life-steal transfer/source payout/overkill,paid307 full caster
+credit/lifetime and paired retail/rendered proof remain unfinished.Normal307
+stays UNBOUND.No new animation/rendered acceptance claimed.Fixed679/401/278/650
+partition,manual capture queue and official logging unchanged.
+
+Backfire persistent-attribution host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-backfire-20261027.json.Other consumers,full transfer/admission and rendered verification remain open;official logging untouched.
+
+
+2026-10-27 Soul Barbs100 Reversal application/renewal/death consumers
+Soul Barbs application observers now use current scoped player/NPC conversion
+commits and optional original-caster attribution.NPC Reversal staging dispatches
+its application journal immediately after publishing/assigning the new owned
+lease,so that reaction consumes the new rank now rather than on a later spell.
+Soul Barbs renewal still reacts at the OLD observer rank/cause;only subsequent
+applications use new ownership.New creation/status/body are not published after
+that application reaction kills its recipient.NPC IDs are reserved before
+callbacks,and lethal renewal still resets the caster's combat-recovery window.
+352 new cases pass:288 player/NPC/rank/HP/source-lifetime combinations,2 immediate
+Reversal renewals,8 old-observer Soul Barbs renewals,36 amplified reactions,16
+healing deaths with application/renewal,and2 lethal-renewal recovery checks.
+Four fresh native suites include existing Soul Barbs paid Runtime/journal,
+Backfire persistent-attribution,and NPC Reversal regressions.31 Python checks
+pass.Host build running(session64466).Report/source/test evidence:
+build/reports/reversal-soul-barbs-20261027.json.
+Final scoped lexical inventory has103 sites;it is not exhaustive call-graph or
+integration coverage.Spiteful Spirit/Wandering Eye/other damage/weapon/NPC-caster,
+full life-steal transfer/source payout/overkill,paid307 full caster credit/
+lifetime and paired retail/rendered acceptance remain unfinished.Normal307
+stays UNBOUND.No new official animation/rendered claim.Fixed679/401/278/650
+partition,manual queue and official logging unchanged.
+
+Soul Barbs application/renewal host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-soul-barbs-20261027.json.Other consumers,full transfer/admission and rendered verification remain open;official logging untouched.
+
+
+2026-10-27 Spiteful Spirit121 Reversal area and Gaze lethal Bonds ordering
+Spiteful preflights every recipient before consuming the action.NPC conversion
+proposals commit before World reactions and are never restored afterwards;
+player hits use current authority.Area publication is held through the pulse.
+Only the dedicated121 damage-label packet is changed to its reviewed recipient
+actor;conversion healing/retirement and original damage cause remain distinct.
+Base deaths finalize after last-hit Bonds;reaction deaths are not reported as
+base deaths.Deferred player death includes lethal conversion healing.Existing
+opted-in lightning consumers already finalize actual HP death and pass fresh
+regressions.Caster absence/replacement retains Health without false credit.
+609 new Spiteful cases cover576 rank/HP/caster/phase/group combinations,32
+primary/side healing deaths,and1 unknown-relationship rejection.Source review
+found Gaze's earlier early-cleanup policy suppressed lethal Bonds;3 new
+regressions now cover it.That policy is superseded:Gaze reports base-receipt deaths after Bonds,
+while a surviving base target killed by a reaction keeps that reaction's own
+single death notification.35 total Gaze cases pass with the new3 additions.
+Seven fresh native suites and36 Python checks pass.Host build running
+(session16192).Report:build/reports/reversal-spiteful-20261027.json.
+Scope is separate player/NPC groups;unknown alliance still rejects.NPC-source
+Bonds1881 hit conversion and composite Gaze interrupt-cost/Bonds ordering are
+not completed by these tests.No new retail capture or rendered acceptance.
+Wandering Eye/other direct/reactive/weapon/NPC-caster paths,full life-steal
+source payout/cap/overkill/normal transfer,paid307 full caster credit/lifetime
+and broad reaction/rendered proof remain unfinished.Normal307 stays UNBOUND.
+Fixed679/401/278/650 partition,manual queue and official logging unchanged.
+
+Spiteful area/Gaze lethal Bonds host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-spiteful-20261027.json.Other consumers,full transfer/admission,composite ordering and rendered verification remain open;official logging untouched.
+
+
+2026-10-27 NPC-source Bonds1881 player-recipient Reversal conversion
+Bonds retaliation now sends its actual post-armor/protection Hit through the
+common player transaction.Death finalizes after final Health,including lethal
+conversion healing;no false remaining-damage modifier is emitted in that case.
+Independent propagation intents continue after another recipient dies,and the
+last lethal caster hit still propagates before link retirement.332 new cases
+pass:324 rank/HP/source-loss/caster-survival/armor/reduction combinations,1
+zero-input policy guard,6 healing-death/independent-link cases,and1 deferred
+remaining-damage case.Four fresh native suites include existing Bonds,Spiteful
+and Gaze regressions;36 Python checks pass.Fixed DoA packet1073163 still proves
+an observed30-second1881 effect,despite older wiki indefinite-duration text.
+Recheck has its own report;historical source/report and duration policy remain.
+Host build running(session81737).Report:build/reports/reversal-bonds-20261027.json.
+This covers PLAYER recipients,not NPC/companions.Shared deferred publication
+still emits conversion heal/removal separately from deferred remaining-hit
+vectors;full rendered sequencing stays open.Composite Gaze interrupt-cost/
+Bonds ordering remains unverified.Wandering Eye/other direct/reactive/weapon/
+NPC-caster consumers,full life-steal transfer/source payout/overkill,paid307
+full caster credit/lifetime and broader retail/rendered acceptance remain.
+Normal307 stays UNBOUND.Fixed679/401/278/650 partition,manual queue and official
+logging unchanged.No new official capture or animation acceptance claimed.
+
+Bonds player-recipient host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-bonds-20261027.json.Other recipients/consumers,full transfer/admission,deferred/composite ordering and rendered verification remain open;official logging untouched.
+
+
+2026-10-27 Wandering Eye2056 both-owner mixed-recipient Reversal consumers
+Both player/NPC attack-start paths use shared conversion-aware admission and
+fresh scoped player/NPC damage commits.Observer credit is copied before hex
+retirement/control/death callbacks.Original caster departure/replacement keeps
+Health semantics without false attribution.Full NPC snapshot restores and
+stale player absolute-Health assignments are removed.Primary one-shot/control
+semantics stay:unprotected NPC actions are explicitly cancelled rather than
+using raw-lethal damage as a control proxy.NPC population settlement omits new
+corpses before admission.913 new cases pass:864 mixed-recipient/owner/rank/HP/
+caster/protection combinations,48 primary/side healing deaths,and1 Resolve
+Energy->Mind Wrack death->Putrid Bile explosion before Eye damage.That last
+case retains both25 Bile and94 Eye damage on all side recipients instead of
+restoring old snapshots.Three fresh native suites include existing World and
+paid-cast regressions;36 Python checks pass.Host build running(session34632).
+Report:build/reports/reversal-wandering-eye-20261027.json.
+No new retail capture/rendered proof.Player protection remains before damage,
+NPC protection spending after damage as existing paths;broader retail composite
+ordering and unknown NPC protection-Energy admission remain unproven.Putrid
+Bile's own Reversal producers are separate work.Other attack hex/direct/
+reactive/weapon/NPC-caster paths,Bonds NPC/companions,shared deferred heal/removal
+sequencing,full life-steal transfer/source payout/overkill,paid307 full caster
+credit/lifetime and broad retail/rendered acceptance remain.Normal307 stays
+UNBOUND.Fixed679/401/278/650 partition,manual queue and official logging unchanged.
+
+Wandering Eye both-owner host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-wandering-eye-20261027.json.Other consumers,full transfer/admission,composite/deferred ordering and rendered verification remain open;official logging untouched.
+
+2026-10-27 Clumsiness43 / Ineptitude47 conversion consumers
+632 new native cases:576 rank/Health/source-scope cases,24 player protection
+anomaly cases,8 stacked one-shot cases,12 Spirit Shackles/Mind Wrack guards,
+and12 healing-death cases.Three fresh native suites and36 Python checks pass.
+Release host rebuild PASSED(exit0).
+Player damage uses shared current-state commits; NPC reactions retain explicit
+conversion receipts and skill identity when conversion healing kills before a
+damaging Hit exists.World publication validates leases, preserves scoped caster
+credit and propagates Bonds from actual remaining damage only.Spirit Shackles
+Energy loss itself retains307; independently triggered Mind Wrack can consume it.
+Limits:NPC Clumsiness protection cost/charge parity and stacked departed-source
+packet phase sequencing remain unverified.No rendered or new retail evidence.
+307 stays UNBOUND.Other producers,full life-steal transfer,deferred publication,
+paid admission/caster lifetime and paired retail/rendered acceptance remain open.
+Fixed implementation checkpoint and manual capture queue unchanged.
+Report:build/reports/reversal-attack-hexes-20261027.json
+Host SHA256:510ce4c1febf8f6e28c524f5a711b944faad2fb90a8ae541cc44ddc4407c0ecf
+
+2026-10-27 Putrid Bile2058 death-explosion conversion consumers
+Player/NPC explosion recipients now preflight conversion and commit through
+shared current-state damage handling.Chained explosions retain prior damage;
+no prepared full-actor Health copy is restored.86 new cases pass:72 rank/Health/
+conversion combinations,8 nested explosion cases,6 healing-death cases.Three
+fresh native suites (new,existing Bile World,Wandering Eye) and36 Python checks
+pass.Fixed capture recheck retains294 starts/269 same-actor finishes and zero
+body1728 candidates;it does not establish the death explosion visual.
+Original caster presence/scope/team requirement is unchanged.Absent-caster
+policy,full retail reaction order and rendered acceptance remain unverified.
+Paid2058 and307 remain disabled.Other damage producers,Bonds NPC/companions,
+shared deferred publication,full life-steal transfer and paid307 full caster
+credit/lifetime remain open.Fixed capture checkpoint/manual queue unchanged.
+Official logging untouched.Report:build/reports/reversal-putrid-bile-20261027.json
+Production host rebuild pending;final result will follow this historical entry.
+
+Putrid Bile conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-putrid-bile-20261027.json.Host SHA256:e0cf51851966cf33dc5171f408dae2239e1cddf13d3062af70f5e5b67293b5b0.Other producers,paid admission and visual/retail acceptance remain open.
+
+2026-10-27 Power Spike23 / Signet of Disruption860 damage conversion
+Both player and NPC recipients preflight conversion.Player damage uses shared
+current-state commits after interrupt control.NPC private proposals retain exact
+conversion receipts,project actual survival before action cancellation/target
+Energy effects,and retire scoped lease before publication.Bonds receives actual
+remaining damage;conversion healing deaths produce no fabricated damaging Hit.
+448 new cases pass:432 target/skill/rank/Health/conversion/protection cases,12
+healing-death cases,4 ineligible cast guards.Three fresh native suites and36
+Python checks pass.Fixed captured source hashes verified:23 one local finish,
+860 two local finishes.No body-effect,conversion causality or rendered proof
+claimed.Existing protection spending/deferred Mind Wrack observation retained;
+broader retail composite ordering and unknown authority remain open.307 stays
+UNBOUND.Other producers,Cry of Frustration,Bonds NPC/companions,shared deferred
+publication,full life-steal transfer,paid307 caster lifetime/admission and paired
+retail/rendered acceptance remain.Fixed checkpoint/manual queue unchanged;
+official logging untouched.Report:build/reports/reversal-interrupts-20261027.json
+Production host rebuild pending;final result follows this historical entry.
+
+Power Spike/Signet of Disruption conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-interrupts-20261027.json.Host SHA256:5d4382e3310a7ca029c405db05e9ae71494373279002cc9a1856c65414390819.Other producers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Cry of Frustration57 area conversion/current-state commits
+Preflight all admitted recipients,then commit current scoped player/NPC damage.
+Remove prepared whole-NPC restores and stale player absolute-Health commits.
+NPC interrupt protection now prevents cancellation and pays its shared stance
+charge/Energy cost;exact saved action token prevents cancelling a newer action.
+Damage remains independent of protection.241 new cases pass:216 owner/rank/
+Health/conversion/protection combinations,24 healing-death cases,1 intervening
+Bile case.That regression retains NPC100's25 conversion-heal before Cry's63
+damage (462final),rather than restoring a stale563proposal.Three fresh native
+suites and36 Python checks pass.Fixed57 capture source hashes rechecked:one
+local finish;no new interaction/body/rendered proof.NPC protection payment is
+after NPC damage;player protection before damage with deferred Energy events.
+Broader retail composite ordering,unknown authority/rollback remain unproven.
+307 remains UNBOUND.Other producers,Bonds NPC/companions,shared deferred
+publication,full life-steal transfer,paid307 caster lifetime/admission and paired
+retail/rendered acceptance remain open.Fixed checkpoint/manual queue unchanged;
+official logging untouched.Report:build/reports/reversal-cry-20261027.json
+Production host build pending;final result follows this historical entry.
+
+Cry of Frustration conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-cry-20261027.json.Host SHA256:6081e3b5b516bcb8415ce6c0073e9f10d06e6a134c5d05a9b3ae918b039f2cd9.Other consumers,paid307,broader ordering and retail/rendered acceptance remain open.
+
+2026-10-27 Mind Burn185 sequential conversion/survival/Burning
+Pure resolver accepts copied damage projection;actual prior remaining damage
+feeds armor sequencing.Projected Health gates second hit and Burning rather
+than raw first-hit lethality.World players recompute each hit against current
+armor/conditions and commit through shared conversion.NPC preflight/commit both
+use conversion-aware damage;actual death stops later hit/Burning.Player Burning
+uses fresh condition state,never a prepared snapshot that can erase reactions.
+229 new cases pass:216 owner/Energy/rank/Health/conversion combinations,12
+healing-death cases,1 Watch Yourself actual-remaining armor sequence.Three fresh
+native suites include existing policy and paid-cast World regressions;36 Python
+checks pass.Fixed185 capture hashes rechecked:one local finish,not proof of
+conversion,double-hit causality or rendered acceptance.PvP3433 is outside
+pinned2022 catalog and remains unsupported.Shared deferred conversion heal/end
+publication and composite reaction ordering remain unverified.307 stays UNBOUND.
+Other producers,Bonds NPC/companions,full life-steal transfer,paid307 full caster
+lifetime/admission and paired retail/rendered acceptance remain open.Fixed
+checkpoint/manual queue unchanged;official logging untouched.
+Report:build/reports/reversal-mind-burn-20261027.json
+Production host build pending;final result follows this historical entry.
+
+Mind Burn conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-mind-burn-20261027.json.Host SHA256:64212ac248945bcea6e798e74daafa6ebf6cebe081c626d304445b399363a91e.Other producers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Mind Freeze209/2803 sequential conversion/surviving slow
+Pure resolver uses copied damage projection and actual previous remaining hit
+for armor sequence.Projected survival gates second hit and slow preflight.
+World player hits recalculate current conditioned armor and commit conversion;
+NPC preflight/commit both use conversion-aware damage.Actual survival gates
+slow.Player slow reacquires current effect ID after callbacks;NPC counter is
+checked again at commit.452 new cases pass:432 target/version/Energy/rank/Health/
+conversion combinations,12 healing-death cases,2 Watch Yourself sequence cases,
+6 Hex Breaker damage-independence cases.Three fresh native suites and36 Python
+checks pass.Offline original2022 verifier also passes frozen one/two-hit packet
+sequences,both mode cast consumers and target373 with stubbed assets.No rendered
+proof.Fixed209 has2local finishes;2803 has no separate audit/capture credit.
+The recheck uses generated build output,leaving historical checkpoint reports
+unchanged.Shared deferred conversion heal/removal publication,composite hex
+prevention/reaction ordering and paid307 full caster lifetime/admission remain
+open.Other damage producers,Bonds NPC/companions,full life-steal transfer and
+paired retail/rendered acceptance remain.307 stays UNBOUND.Fixed checkpoint/
+manual queue unchanged;official logging untouched.
+Report:build/reports/reversal-mind-freeze-20261027.json
+Production host build pending;final result follows this historical entry.
+
+Mind Freeze conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-mind-freeze-20261027.json.Host SHA256:4dcb1f0ee55c3b6fc47c2394f59d090ee07bfaa1b30c38d1fca610688e92cdaf.Other consumers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Freezing Gust1382/Necrosis2103/Energy Blast2193 conversion
+All damaging branches preflight/commit shared player/NPC conversion;zero damage
+branches retain307.Freezing Gust retains Water-hex damage-vs-snare gate,Necrosis
+condition-or-hex gate,Energy Blast caster Energy/cap gate.No raw absolute player
+Health restore or ordinary NPC damage bypass remains in these three handlers.
+300 new cases pass:216 skill/target/rank/Health/conversion cases,18 no-damage
+gate cases,18 healing deaths,24 zero/low/capped Energy cases,6 condition-only
+Necrosis cases,18 actual remaining-loss Bonds cases.Four fresh native suites
+and36 Python checks pass.Three original2022 offline verifiers pass frozen cast/
+particle consumers with stubbed assets;historical reports preserved.Current
+fixed capture local finishes:1382one,2103two,2193one.No controlled gate/scaling/
+conversion causality or rendered proof.Energy Blast mid-rank scaling remains
+existing policy.Shared deferred heal/removal publication ordering remains open.
+307 stays UNBOUND.Other damage producers,Bonds NPC/companions,full life-steal
+transfer,paid307 full caster lifetime/admission and paired retail/rendered
+acceptance remain.Fixed checkpoint/manual queue unchanged;official logging
+untouched.Report:build/reports/reversal-gated-damage-20261027.json
+Production host build pending;final result follows this historical entry.
+
+Gated damage conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-gated-damage-20261027.json.Host SHA256:ab474f40602ae381de4923b4d8667a78c89df64f11c6a4bad3396650bb3d5927.Other consumers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Ear Bite2213 piercing conversion/surviving Bleeding
+Pure target accepts damage projection and uses actual projected survival for
+Bleeding admission.Player damage uses shared current-state commit and applies
+Bleeding to fresh conditions.NPC preflight/commit both use shared scoped
+conversion,actual remaining-loss Bonds and actual death.Existing full-Outbox
+capture holds conversion,damage,condition and death packets until one callback.
+186 new cases pass:144 target/rank/Health/conversion/publication cases,9 NPC
+condition-immunity cases,12 healing deaths,12 piercing-armor cases,9 actual
+Bonds cases.Three fresh native suites include existing paid adrenaline-cast
+World/policy regressions;36 Python checks pass.Original2022 offline cast/body
+verifier passes with stubbed assets;historical reports preserved.Fixed2213 has
+one local finish,not exact rank/armor/duration/conversion or rendered proof.
+Ear Bite deferred capture proof is not a global deferred-vector ordering fix.
+307 remains UNBOUND.Other producers,Bonds NPC/companions,shared deferred
+heal/removal,full life-steal transfer,paid307 full caster lifetime/admission and
+paired retail/rendered acceptance remain.Fixed checkpoint/manual queue unchanged;
+official logging untouched.Report:build/reports/reversal-ear-bite-20261027.json
+Production host build pending;final result follows this historical entry.
+
+Ear Bite conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-ear-bite-20261027.json.Host SHA256:c164baa074670205600da6578bd5dc3614f212528d417f918fc0884c74091567.Other consumers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Vile Miasma828/Oppressive Gaze864 player conditional conversion
+Preflight projected survival,commit current shared player damage,then create
+conditional effects from CURRENT registries/conditions/effect IDs.No prepared
+registry restore can resurrect consumed307.Pre-hit condition predicates remain
+completion-time snapshots across area recipients;actual survival gates followup.
+166 new cases pass:144 skill/rank/Health/conversion/conditioned combinations,
+9 primary/side healing deaths,9 Hex Breaker cases,3 Vile renewal cases,1 Bile
+area interaction.Four fresh native suites include broad World,Hex Breaker and
+packet fixtures;36 Python checks pass.12 original2022 serializer packets match
+saved fixture,without overwriting it.No new cast/model/particle/rendered proof.
+Fixed audit:828has60other/unassigned starts,864has23;neither has a locally owned
+completed/instant activation.Sample receipts/source hashes verified;no local
+causal conversion proof inferred.NPC RECIPIENTS STILL UNSUPPORTED in this family.
+Broader conditional hex-duration modifiers/composite callback order remain open.
+307 stays UNBOUND.Other producers,Bonds NPC/companions,shared deferred heal/end,
+full life-steal transfer,paid307 full caster lifetime/admission and paired retail/
+rendered acceptance remain.Fixed checkpoint/manual queue unchanged;official
+logging untouched.Report:build/reports/reversal-condition-damage-20261027.json
+Production host build pending;final result follows this historical entry.
+
+Player conditional damage conversion host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-condition-damage-20261027.json.Host SHA256:6547738de23a68656862279d435885419e5268873f44e6aabf2881331c0402a1.NPC recipients,other consumers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Vile Miasma828/Oppressive Gaze864 NPC/mixed recipients
+Supersedes prior NPC-RECIPIENT-UNSUPPORTED statements for this family.World
+accepts player/NPC anchors,collects hostile scoped NPCs and preflights all
+conversion before damage publication.Current NPC damage/death/Bonds precede
+conditional effects.Native Vile followup validates canonical plan/lifetime and
+owns hex renewal;NPC Health integration now includes its timed degeneration.
+Oppressive Poison/Weakness use current NPC state,pre-hit condition predicate and
+condition allowance.No old actor copy is restored after World callbacks.
+310 new cases pass:288 skill/anchor/rank/Health/conversion/conditioned cases,6
+immunity cases,9 healing deaths,3 actual Bonds cases,1 timed renewal/expiry case,
+2 unknown-armor cases,1 forged/stale guard.Four fresh suites include earlier166
+player cases,broad World and NPC catalog;36 Python checks pass.Fixed source
+hashes rechecked;828/864 still have no locally owned completion/instant capture.
+Previous12-packet native serializer proof is retained;no new cast/model/particle
+or rendered acceptance.NPC CASTERS/AI use,broader duration modifiers/composite
+callbacks and unknown-authority rollback remain open.307 remains UNBOUND.Other
+producers,Bonds NPC/companions,shared deferred heal/end,full life-steal transfer,
+paid307 caster lifetime/admission and paired retail/rendered acceptance remain.
+Fixed checkpoint/manual queue unchanged;official logging untouched.
+Report:build/reports/reversal-condition-npcs-20261027.json
+Production host build pending;final result follows this historical entry.
+
+NPC conditional damage host rebuild PASSED(exit0).Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-condition-npcs-20261027.json.Host SHA256:605e3705fcdfbc5673b1789bae403e76e0a18233b0731a6e9c87feb8408ad80a.NPC caster/AI use,other consumers,paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 Shared holy damage conversion: 252, 296, 312, 1689, 2006
+Player/NPC paths preflight sequential converted damage and commit current state.
+No copied NPC proposal is restored after control callbacks. Bane NPC knockdown
+now uses actual projected survival, including raw-lethal hits saved by Reversal.
+Holy Strike continues its second hit after actual survival. Castigation retains
+pre-hit attacking Energy qualification; Mystic Wrath retains enchantment snapshot.
+1050 new cases pass: 900 target/traits/skill/rank/Health/conversion cases, 54
+Holy Strike double-hit cases, 24 Bane control cases, 24 Castigation Energy cases,
+30 healing deaths, 6 Mystic zero-input cases, 3 flat-vulnerability cases, 9 actual
+Bonds cases. Five fresh native suites and 36 Python checks pass. Frozen local
+finishes: Banish6, Bane29, Holy Strike1, Mystic1, Castigation1. Two original2022
+consumer verifiers pass with stubbed assets; one matched normal Holy Strike556
+sequence verified. No controlled conversion/trait/reward or rendered proof.
+This scope is five shared skills, not the dedicated Judgment/Symbol handlers.
+Broader retail Bane/composite ordering and zero-input policy remain unverified.
+307 stays UNBOUND. Other producers, Bonds NPC/companions, shared deferred heal/
+removal, full life-steal transfer, paid307 caster lifetime/admission and paired
+retail/rendered acceptance remain. Fixed checkpoint/manual queue unchanged;
+official logging untouched. Report:build/reports/reversal-holy-family-20261027.json
+Production host build pending; final result follows this historical entry.
+
+Shared holy-family conversion host rebuild PASSED(exit0). Final source/test/host and fixed manifest hashes recorded in build/reports/reversal-holy-family-20261027.json. Host SHA256:c9f43724223be5f4d1b7f00796aabb452e43917f1016e9a87b578fac8596628a. Other consumers, paid307 and retail/rendered acceptance remain open.
+
+2026-10-27 ten damage-field Reversal consumer integration
+Skills187/192/167/215/197/195/1094/247/1113/830 now use current conversion-aware
+pulse damage for players/NPCs. Preserve Blind-before-damage, actual surviving
+Burning/control, exact Maelstrom action, actual remaining Seed/Bonds damage.
+Empty attack-hex journals no longer suppress unrelated degeneration death.
+851 new cases, eight fresh native suites and36 Python checks pass. Six offline
+original2022 consumer verifiers pass; no rendered visual acceptance. Fire Storm/
+Lava Font ground appearance unverified; Ray uses stubbed assets. Kirin1113 has
+no fixed local capture row; Ray has no owned activation in the fixed checkpoint.
+Fragility/Eruption composite conversion, NPC damaged-Seed triggers, broader
+pending-journal ownership and retail composite ordering remain unverified.
+307 stays UNBOUND. Other producers, shared deferred conversion heal/removal,
+full life-steal transfer, paid307 caster lifetime/admission and paired retail/
+rendered acceptance remain. Fixed implementation checkpoint/manual queue
+unchanged; official logging untouched. Host rebuild PASSED(exit0).
+Report:build/reports/reversal-damage-fields-20261027.json
+Host SHA256:44c227cbf0dacd48f4cb39723eec8fefa3e994352d3d994eb258843c72d793ac
+
+2026-10-27 Fragility19/2998 condition-transition conversion
+Player/NPC gain and loss damage now use typed current-state conversion commits.
+NPC journals include healing-death receipts; exact leases, actual remaining
+Bonds damage and death credit are published. NPC blindness now drains its
+Fragility journal immediately. NPC ordinary Energy settles within Health
+segments; expiry cursor advances before healing callbacks to avoid rejection
+of older deadlines and replay of the same condition loss.
+624 cases:576 gain/refresh/expiry/source-lifetime,6 healing deaths,24 Eruption
+Blind-before-damage composites,12 NPC Bonds,6 conversion-before-expiry.
+Ten fresh native suites and36 Python audits pass. Host rebuild PASSED(exit0).
+One original2022 verifier checks both1s/style51/body35 consumers plus one owned
+PvE19 selected target/cause/body receipt. No owned PvP2998 activation or rendered
+acceptance. Broader retail/multi-target proposal/retaliation ordering and
+pending-journal death ownership remain unverified.307 stays UNBOUND.
+Other producers, shared deferred conversion heal/removal, NPC damaged-Seed
+trigger review, full life-steal transfer, paid307 lifetime/admission, retail
+zero-input policy and paired retail/rendered acceptance remain open.
+Fixed checkpoint/manual queue unchanged; official logging untouched.
+Report:build/reports/reversal-fragility-20261027.json
+Host SHA256:c0fe50c97831f69eea72cde34717b54efac05e45826e2c497b817d886dd99684
+
+2026-10-27 IW33/3181 replacement and Deathly Swarm105 conversion
+Player/NPC replacement and chained damage use the shared current conversion
+commit. IW Seed depends on actual remaining damage and preserves last-hit
+publication before base death cleanup. Ordinary attack admission no longer
+requires physical armor for active legitimate melee IW replacement; expired
+IW still rejects unknown-armor ordinary attacks. Other admission is unchanged.
+304 new cases:216 skill/rank/HP/conversion,32 ordinary/area modes,18 healing
+deaths,12 NPC Bonds,8 mixed chains,6 source cancellation,8 Seed,4 expired-IW
+armor rejection. Five fresh native suites and36 Python checks pass.
+Host rebuild PASSED(exit0). One original2022 verifier checks IW1s/style51 and
+Swarm2s/style49 consumers, two selected owned PvE terminal sequences and one
+exact Swarm target/cause/body201 receipt. No owned3181 row or rendered proof.
+Swarm source-alive cancellation and stable actor-order ties remain existing
+private policies without controlled retail proof. Broader composite/retaliation
+ordering is unverified.307 stays UNBOUND. Other damage producers, shared
+deferred conversion heal/removal, NPC damaged-Seed triggers, full life-steal
+transfer, paid307 lifetime/admission, retail zero-input policy and paired
+retail/rendered acceptance remain open. Fixed checkpoint/manual queue unchanged;
+official logging untouched.
+Report:build/reports/reversal-replacement-swarm-20261027.json
+Host SHA256:3319901fa91a119f9d3ced449a76f9dcaff2c677559ebc688fbe102548109a32
+
+2026-10-27 blocked secondary attack327/341/356/386/1134 conversion parity
+NPC blocked damage now uses shared conversion preflight/current commit. Follow-up
+conditions use projected surviving Health instead of raw hit lethality; actual
+conditions still commit only to the current surviving actor. Existing knockdown
+before secondary damage is preserved. Player shared reactive conversion branch
+is covered by the same matrix; it was already migrated before this phase.
+481 new cases:360 skill/rank/HP/conversion,30 healing deaths,6 condition immunity,
+20 NPC Bonds,9 knockdown immunity,16 Fragility composites,40 missed contacts.
+Four fresh native suites and36 Python checks pass. Host rebuild PASSED(exit0).
+One original2022 verifier rechecks five body/endpoint consumers and four owned
+frozen attack lifecycles in a generated clone of20261016-build-queue. No rendered
+output, retail timing, actual block or reaction ordering is proved. Fixed current
+local finishes:327=0,341=4,356=1,386=2,1134=2.327 capture remains missing.
+Player/NPC Healing Seed response to blocked secondary damage remains an explicit
+implementation gap. Broader retail composite ordering remains unverified.
+307 stays UNBOUND. Other damage producers, shared deferred conversion heal/
+removal, full life-steal transfer, paid307 lifetime/admission, retail zero-input
+policy and paired retail/rendered acceptance remain open. Fixed implementation
+checkpoint/manual queue unchanged; official logging untouched.
+Report:build/reports/reversal-blocked-attacks-20261027.json
+Host SHA256:d724f216b0996ff401b6c886ddc2dc7fca750691e480dab19e93d9d16d365064
+
+2026-10-27 Hex Breaker10 player retaliation conversion
+Retaliation conversion is preflighted before consuming the protected owner's
+stance,including speculative commit=false calls. Shared current damage commit
+replaces raw proposed Health restoration after callbacks. Preserve prevention,
+old hex on prevented renewal,initial effects,stance retirement before damage,
+and existing zero-input policy. Player caster/player owner scope only;NPC Hex
+Breaker behavior is not established. Retaliation Healing Seed remains a gap.
+642 new cases:468 thirteen-hex/rank/HP/conversion,39 renewals,39 expiry,39 healing
+deaths,48 protection/zero-input,9 per-observer stance-retirement order. Seven
+fresh native suites and36 Python checks pass. Host rebuild PASSED(exit0).
+One original2022 verifier rechecks instant48 UI and body21 first consumer plus
+one hash-verified owned instant activation in a generated clone of immutable
+20261015-skill-implementation. Fixed current20261024-all-completed has one owned
+instant activation. No normal cast model animation is invented. Rendered output
+and retail retaliation/conversion/composite ordering remain unverified.
+307 stays UNBOUND. Other damage producers, Hex Breaker/blocked-secondary Seed
+responses, shared deferred conversion heal/removal, full life-steal transfer,
+paid307 lifetime/admission, retail zero-input policy and paired retail/rendered
+acceptance remain open. Fixed checkpoint/manual queue unchanged;official
+logging untouched. Report:build/reports/reversal-hex-breaker-20261027.json
+Host SHA256:3587d6f8af81bdf451f4a4c1dfb3807e6536e5fad1c9248fe354e9c0580b2519
+
+2026-10-27 reactive Healing Seed274 and cross-actor expiry scheduling
+Player blocked secondary damage327/341/356/386/1134,Hex Breaker10,Fragility19,
+Backfire28,Soul Barbs100 and attack hex43/47 now publish Seed after actual
+positive remaining damage. Converted/reduced zero,conversion healing death
+and degeneration do not trigger Seed. Converted survivors can receive their
+own Seed heal;dead recipients are filtered after damage. Last-hit healing
+precedes base death cleanup. Hex Breaker preflights Seed before stance spending
+and revalidates exact stance/current registry after recipient settlement.
+Preflight skips redundant damaged-player advancement. Timed scheduling drains
+seeded Fragility loss and44/2054/37/3373 condition-generating endings at their
+actual deadlines. Health cursor advances before expiry callbacks. This fixes
+late ticks with reversed player IDs and coupled seeded-player reentry.
+564 new cases:396 eleven-family/rank/HP/conversion,12 expiry,33 healing deaths,
+44 range,3 unknown-NPC preflight,12 degeneration,12 reduced-zero,24 ID-order/
+late ticks,12 coupled expiry,16 condition-generating endings. Twelve fresh
+native suites (including Mending/Parasitic timelines) and36 Python checks pass.
+Host rebuild PASSED(exit0). One original2022 verifier checks2s/style49/body489
+first consumers and one owned fixed cast/terminal/body receipt. No rendered or
+controlled reactive retail acceptance. Unknown friendly-NPC heal metadata keeps
+its existing rejection policy;fully converted damage needs no heal preflight.
+NPC damaged-Seed triggers,other direct/deferred producers (including Spiteful),
+older direct-producer survivor admission,Seed source-lifetime attribution and
+retail geometry/tie ordering remain open.307 stays UNBOUND;remaining damage
+producers,deferred conversion heal/removal,full life-steal transfer,paid307
+lifetime/admission and paired retail/rendered proof remain. Fixed checkpoint
+and manual queue preserved;official logging untouched.
+Report:build/reports/reactive-healing-seed-20261027.json
+Host SHA256:49720028cee05da444381ad7ccb368fe376dee05cee004edc33279f4652b8bc5
+
+2026-10-27 common direct Healing Seed survivor publication
+Seed preflight now collects potential live recipients without excluding the
+damaged player from pre-conversion Health. Publication rechecks actual current
+Health and exact scope,skipping corpses and recycled lifetimes. This includes
+conversion-rescued players in their own Seed heal and preserves last-hit heals
+to surviving allies. Player healing that settles lethal Deep Wound debt now
+receives normal World death cleanup at the heal deadline. Reactive code uses
+this common publisher instead of copying/filtering a second recipient vector.
+594 cases:576 ten-field/IW33/3181 xHP/conversion/Seed-rank cases,18 party-recipient
+healing-death cleanup cases. Nine fresh native suites and36 Python checks pass.
+Host rebuild PASSED(exit0). Existing original274 2s/style49/body489 evidence is
+reused;no new rendered or controlled retail proof is claimed. Kirin1113 and
+IW3181 retain their owned-capture gaps. Other direct producer combinations,
+NPC damaged-Seed triggers,NPC healing-death cleanup,nested reaction ordering,
+Seed source-lifetime attribution and retail geometry remain unverified.
+307 stays UNBOUND. Remaining damage/deferred Seed producers (including Spiteful),
+shared deferred conversion heal/removal,full life-steal transfer,paid307
+lifetime/admission and paired retail/rendered acceptance remain open. Fixed
+checkpoint/manual queue preserved;official logging untouched.
+Report:build/reports/direct-seed-survivors-20261027.json
+Host SHA256:7f989f15ab2af4357bcce30f6f8ac98b533f278957ae04487b2b998ff86608ae
+
+2026-10-27 Healing Seed274 allied NPC damage reactions
+Trusted player application now accepts reviewed allied NPC recipients with
+canonical rank/duration, existing ally/range/plane admission and native target
+body489 publication. Opposed NPC ordinary weapon impacts preflight the Seed
+reaction, commit current damage, then heal live current adjacent allies only
+on actual positive loss. Lethal targets remain dead while surviving neighbors
+receive the last-hit heal. Healing-immune NPCs can carry Seed for their allies.
+NPC Seed caster generations are retained; a recycled caster ID cannot inherit
+healing credit. Retired-caster effects produce no healing, without cancelling
+weapon damage (private policy; broader retail lifetime behavior remains open).
+Unseeded ordinary contacts avoid the extra actor-copy/healing preflight.
+27 new World cases cover ranks0/12/20, lethal/surviving hits, immune/healable
+recipients, active/expired effects, replacement, admission, range/allegiance,
+no duplicate tick and recycled caster scope. Six freshly rebuilt native suites
+and36 Python audits PASS. Release host rebuild and --build-info PASS(exit0).
+Original274 activation/body consumer evidence is reused; no new rendered or
+controlled retail acceptance is claimed. Other NPC damage producers/casters,
+NPC healing-death cleanup, team-specific NPC allegiance, player Seed source
+lifetimes and nested reactive ordering remain open. Paid274 admission remains
+staged. 307 remains UNBOUND; its remaining consumers/paid admission/deferred
+healing/full life-steal transfer and retail/rendered gates are unfinished.
+Fixed implementation checkpoint/manual queue preserved; official clients and
+loggers untouched.
+Report:build/reports/npc-healing-seed-20261027.json
+Host SHA256:4ccb292ba2efe4d3b771c97647e594da4c073ff7eb2f682bc311d9c212271e2a
+
+2026-10-27 Spiteful Spirit121 / Healing Seed274 area integration
+Spiteful's separate deferred area commit now preflights Seed recipients before
+spending its action. Actual remaining damage is retained per player; only a
+positive committed loss with the same current Seed effect triggers healing.
+All base area impacts commit before Seed publication, preserving the existing
+pulse boundary. Corpses are never revived; conversion-rescued survivors can
+heal. Complete conversion and conversion-healing death trigger no Seed heal.
+Missing NPC heal eligibility rejects before partial area damage or action
+consumption; a retry can use the same logical action after eligibility changes.
+444 new World cases:384 rank/conversion/Health/original-Spiteful-source/phase,
+12 dual seeded recipients,6 failed-preflight/retry,18 conversion-healing death,
+24 Seed recipient healing-death cleanup exactly once. Before-fix failure is
+retained. Five fresh native suites and36 Python audits PASS. Release host
+rebuild and --build-info PASS(exit0). Original Spiteful2s/target227 consumer
+and two owned receipt groups freshly rechecked offline; original Seed274
+2s/style49/body489 report reused. Native asset/model services are synthetic;
+no rendered or controlled retail reaction-order acceptance is claimed.
+Other Seed damage producers/NPC casters,NPC healing-death cleanup,player Seed
+caster-generation attribution,team-specific NPC allegiance and nested retail
+timing remain open. Paid274 admission stays staged. 307 stays UNBOUND with
+remaining damage consumers/paid lifetime/deferred conversion output/full
+life-steal transfer and controlled retail/rendered acceptance unfinished.
+Fixed implementation checkpoint/manual queue preserved;official logging untouched.
+Report:build/reports/spiteful-healing-seed-20261027.json
+Host SHA256:f84f2e0ccd77dd60f067fb75b8d46e5b1fc67f828836b092d92d9737a72a00a0
+
+2026-10-27 Discord/Shadows/Sorrow Healing Seed consumers
+Player damage from Discord817/2863,Signet of Shadows876 and Signet of Sorrow1363
+now preflights Seed before impact output and commits through the shared actual
+remaining-damage reaction. Signets retain their existing non-spell semantics;
+Discord valid no-effect casts do not damage,consume conversion or trigger Seed.
+Blindness bonus and native damage values are unchanged. Deferred publication
+holds damage/heal/death packets together and its callback remains once-only.
+2448 new World cases:2304 skill/predicate/conversion/Health/rank/publication,
+48 missing-heal-metadata admission/retry,72 conversion-healing death,24 Seed
+recipient healing-death cleanup. Six fresh native suites and36 Python audits
+PASS. Release host rebuild and --build-info PASS(exit0). Fresh offline Discord
+and Shadows native consumer/receipt checks PASS;Sorrow captured ordinary cast
+sequence passes. New Sorrow verifier proves original1s/style51 and caster1619.
+Its target kind42/480 path reaches an unmapped emulator read:target native
+consumer remains explicitly unverified,not evidence of a live client failure.
+Native actor/model services are synthetic;no rendered acceptance is claimed.
+Historical Discord verifier has no owned2863 capture. Shadows15s observed vs
+native30 recharge discrepancy and isolated retail blind bonus remain open.
+Sorrow owned instant corpse/dead-pet shortcut and target consumer remain open.
+Other Seed damage producers/NPC casters,NPC healing-death cleanup,player Seed
+caster generation,nested retail ordering and reactive/rendered visuals remain
+open. Paid274 stays staged;307 stays UNBOUND with remaining consumers/paid
+lifetime/deferred conversion/full life-steal transfer unfinished. Fixed
+checkpoint/manual queue preserved;official clients/loggers untouched.
+Report:build/reports/single-target-seed-20261027.json
+Host SHA256:fbdff76562aeb3a08b71c9808842bc75c5533b414b98f3c099b22c4ff2127b6d
+
+2026-10-27 Sorrow1363 authoritative Health capacity and native proof correction
+Pinned native generic kind42 is maximum Health (slot1 capacity setter/event14),
+not a particle. Sorrow previously replayed captured value480 in its completion
+visuals for every target. It now publishes actual target maximum Health in the
+deferred vitals stream before damage and returns no invented target animation.
+The ambiguous signet_sorrow_body helper was removed. Runtime caster1619 and
+terminal/caster/capacity/damage ordering remain tested.
+144 new World wire cases cover player/NPC maxima100/480/1000/2000,current
+Health,conversion,Seed and deferred publication. Five freshly rebuilt native
+suites and41 Python checks PASS. Release host and --build-info PASS(exit0).
+The earlier Sorrow probe also used targeted opcode159 with only three fields;
+generic events require158. Its caster asset and target-particle inference are
+invalid and superseded by the new native proof. Shared Native.dispatch now
+rejects wrong field counts before touching packet memory. Six other generic21
+tools were corrected and their intended-resource consumer paths rechecked.
+Seven native capacity controls prove real value writes and event14;correct
+Sorrow generic21/1619 proves particle event9 with encoded file9b0f04010000.
+Shared animation fixture remains byte-identical (9 dispatch/4 model lookups).
+These are synthetic offline native actor/model services,not rendered QA.
+The old kind42 target-particle gap is resolved as a category error: no target
+particle is expected (native target2077 sentinel). Owned Sorrow instant
+corpse/dead-pet capture remains missing. The six historical full capture
+verifiers were not rerun here;their old particle fields must not be reused as
+current evidence. Changed native consumer paths have fresh scoped proof.
+Other Seed consumers/NPC casters/healing-death cleanup,player caster lifetime,
+retail/rendered reaction verification remain open. Paid274 stays staged and307
+stays UNBOUND;remaining damage consumers/paid admission/deferred conversion/
+full life-steal transfer remain unfinished. Fixed implementation checkpoint
+and manual queue preserved;official clients/loggers untouched.
+Report:build/reports/sorrow-health-capacity-20261027.json
+Host SHA256:b2ff5f332cf14e6cc1157940f5241326ed503da2a7d6ab08019a8e5ae94b1e06
+
+2026-10-27 complete corrected generic21 evidence rechecks
+All six full scoped frozen-capture/native tools freshly PASS:Blood Ritual157,
+Ear Bite2213,Signet of Spirits1239,Summon Spirits2100,Tainted Flesh113 and Ward
+Against Elements175. Each asserts event9 with the actual intended generic21
+resource before entering the original particle consumer. All six former
+caster/self asset values863501010000 were default-resource artifacts;fresh
+reports resolve the six intended assets. Summon Spirits targeted consumers
+remain unchanged. Historical reports are retained and their old generic21
+particle fields are superseded. Full receipt,metadata,cast,ground/spawn/move
+checks run as defined by each tool;all original limitations remain in force.
+New recheck runner isolates derived outputs,hardlinks only immutable payloads,
+copies metadata/reference header,and verifies historical reports and linked
+inputs remain unchanged. Six full verifiers and5 shape tests PASS. Current
+entry point:data/skill-capture-plan/NATIVE-EVIDENCE-CURRENT.json (maintained
+entries,not exhaustive skill support). Native runtime was not edited or rebuilt;
+scoped Sorrow sources and executable hashes match the last validated build.
+Its144 wire cases/five native suites/41 Python checks are reused baseline
+validation,not newly run this phase. Official clients/live logs untouched.
+Blood Ritual's five other/unassigned casts are not local-player capture;157
+remains in MISSING-CAPTURES. Ward900 ownership/lifetime,retail timing conflicts,
+combined gameplay/AI reactions and rendered acceptance remain open as detailed
+in the indexed reports. Other skill work remains incomplete;274 remains
+staged and307 UNBOUND with remaining damage/lifetime/deferred/full life-steal
+integration and controlled retail/rendered verification unfinished. Fixed
+implementation checkpoint/manual queue preserved.
+Report:build/reports/generic-effect-proof-refresh-20261027.json
+Host SHA256:b2ff5f332cf14e6cc1157940f5241326ed503da2a7d6ab08019a8e5ae94b1e06
+
+2026-10-27 timed Lightning Strike222/Lightning Surge205 Seed reactions
+Player Strike follow-up and Surge natural expiry damage now use the shared
+actual-damage Seed reaction. Original deadline scheduling,Strike damage-before
+395 particle order,Surge projected survival/knockdown/Cracked Armor and current
+scoped authority are preserved. Reactions occur at the owned deadline,not the
+later observing tick. Missing Seed/damage preflight emits an explicit diagnostic
+without consuming Reversal or publishing partial damage. The existing one-shot
+queue drops that rejected deadline;retry/content admission remains unfinished
+and is not represented as final retail behavior or paid274 readiness.
+552 new World cases cover384 skill/actor-order/conversion/Health/Seed-rank/
+sparse-vs-frequent,48 exact Seed expiry,48 strip/source-departure,24 missing
+metadata/full-conversion,36 conversion-healing death and12 party healing-death
+cases. Four fresh native suites and41 Python checks PASS. Release host rebuild
+and --build-info PASS(exit0). Fresh original Surge/Strike native lifecycle and
+particle consumer verifiers pass;19 frozen Strike follow-up associations retain
+damage-before395. Association evidence is not local-capture or controlled
+Overcast proof. Native asset/model services remain synthetic;no rendered or
+controlled retail combined-reaction acceptance is claimed. Current evidence
+index includes205/222 with their separate association limitations.
+Other Seed consumers,NPC casters/healing-death cleanup,player Seed caster
+lifetime,metadata admission and retail/rendered verification remain open.
+Paid274 stays staged;307 remains UNBOUND with remaining consumers/paid
+lifetime/deferred conversion/full life-steal transfer unfinished. Fixed
+implementation checkpoint/manual queue preserved;official logging untouched.
+Report:build/reports/timed-lightning-seed-20261027.json
+Host SHA256:40f1b37d02b953491c70461a7e62c41a5d187e9c017d8b432ecc8e364e1165a3
+
+2026-10-27 Icy Prism/Judgment/Corruption area Seed consumers
+Player damage from903,294/2887 and1950/2093 now validates Seed healing for the
+whole selected area before impact output,then commits each current hit through
+the shared actual-loss reaction. Existing conditional Icy selection,Judgment
+primary-only knockdown,Corruption afflicted-foe Energy reward and provider order
+remain intact. Earlier callbacks never restore stale prepared player Health.
+1260 new World cases:960 skill/mode/actor-order/conversion/Health/Seed-rank,
+120 dual Seed recipients,60 missing-heal-metadata/whole-area admission/retry,
+90 conversion-healing deaths and30 party healing-death cleanup. Five fresh
+native suites and41 Python checks PASS. Source audit follows the reactive
+wrapper and requires preflight,inner damage delegation and actual-loss gating;
+negative mutation subcases fail when any required consumer is removed.
+Release host rebuild and --build-info PASS(exit0). Fresh original Icy/Judgment
+native consumer verifiers and Corruption's two frozen capture sequences pass.
+Native actor/model/asset services are synthetic;no rendered or controlled
+retail area order is claimed. Current evidence index carries903/294/2887 and
+2093 capture-only evidence with explicit missing-variant qualifications.
+Judgment2887 owned PvP,Corruption1950 owned and conditional Icy retail area
+capture remain open. Icy903 paid casting stays separately gated;no new binding
+is inferred. Other Seed damage/NPC caster/healing-death/source-lifetime work
+remains. Paid274 stays staged and307 UNBOUND;remaining damage consumers/paid
+lifetime/deferred conversion/full life-steal transfer and retail/rendered
+acceptance are unfinished. Fixed checkpoint/manual queue preserved;official
+clients and live logging untouched.
+Report:build/reports/area-seed-20261027.json
+Host SHA256:603bc9d21727deedd47447ca7773b1166f8353383a4ebc92e0a2fbe037765e9e
+
+2026-10-27 Whirlwind/Wandering Eye Seed and nearby-radius correction
+Whirlwind163 and Wandering Eye2056 player damage now preflight Seed recipients
+before committing selected-area damage. Whirlwind retains Overcast expansion
+and attacking-only knockdown. Wandering preflights before consuming its one-use
+hex/interrupt protection,then commits current damage after control callbacks.
+Failed healing admission leaves the hex,protection,conversion and Health intact.
+Original Wandering caster death/departure/reused-ID attribution remains tested;
+this does not close the separate Seed-caster lifetime gap.
+Wandering's old312 radius contradicted the archived skill's nearby category.
+Both supplied GWCA SDK versions define Nearby252;the canonical plan now uses
+252. No route-specific or NPC-specific exception was added. New boundary cases
+cover251.99/252/252.01/280 for player and NPC recipients. This is documentary
+rule alignment and private World testing,not a measured live-server boundary.
+796 new World cases:672 core,24 dual Seed,12 admission/retry,18 conversion-
+healing death,6 party healing-death and64 radius cases. Six fresh native suites
+and41 Python checks PASS. Release host rebuild and --build-info PASS(exit0).
+Fresh original Whirlwind/Wandering native consumers pass. Wandering's fixed DoA
+raw inputs are freshly hash-verified:257starts/215ordered visuals,without local
+ownership inference. Native actor/model/asset services remain synthetic;no
+rendered or controlled retail combined-reaction proof is claimed.
+Wandering3195 stays gated. Other Seed damage/NPC caster/healing-death and
+Seed-caster lifetime integration remain open. Paid274 stays staged;307 UNBOUND
+with remaining consumers/paid lifetime/deferred conversion/full life-steal
+transfer unfinished. Fixed implementation checkpoint/manual queue preserved;
+official clients and live logging untouched.
+Report:build/reports/wind-eye-seed-20261027.json
+Host SHA256:a9bfe1f2e6f740c5452108a7e0998f888e61039c448f72d16f89c9b84e574242
+
+2026-10-27 weapon/Conjure reactive settlement and Cyclone protection correction
+Ordinary player melee/projectiles, attack-skill contacts and Cyclone player hits
+now use an explicit weapon transaction. Zero skill attribution, critical notices,
+physical/elemental reactions and NPC publication gates are retained. Reversal
+consumes the first positive base strike before the separate Conjure182/207/221
+bonus; Seed responds only to actual post-conversion loss and current recipients.
+Follow-up damage/conditions use actual survival, including conversion rescue or
+healing-caused death. Hostile-NPC ordinary hits against players share this path.
+Cyclone NPC preview previously passed already protected damage back through
+recipient vulnerability/cap/reduction. The existing mixed-NPC regression caught
+double fire vulnerability. Store pre-protection weapon damage, select current
+source bonuses, and apply current NPC protection once. No route/NPC exception.
+873 new World cases PASS:720 player routes,108 hostile-NPC strikes,45 conversion-
+healing death. Five final-source native suites and41 Python checks PASS. Existing
+mixed-NPC Cyclone and critical damage/notice regressions pass. Interrupted interim
+build/failure are retained;final Release host rebuild and --build-info pass(exit0).
+Fresh fixed-capture/original2022 Conjure cast and six particle consumers pass;
+ordinary zero-attribution native callback and three serializers pass. Derived
+outputs isolated;historical evidence untouched. These are offline native/synthetic
+World checks,not rendered or controlled-retail combined-order verification.
+NPC-recipient weapon/Conjure conversion/Seed,other producers,Seed caster lifetime,
+NPC healing-death cleanup,paid lifetime/deferred/full life-steal work remain open.
+Paid274 stays staged;307 UNBOUND. Fixed implementation checkpoint/manual queue
+preserved. Official clients and live logging untouched.
+Report:build/reports/weapon-conjure-reactions-20261027.json
+Host SHA256:457c4c1eace0fdfaaf14457640b7c2a975e04be6919665b02a78f6b28d5613ad
+
+2026-10-27 NPC weapon and Conjure Reversal integration
+Player ordinary melee/projectiles, attack-skill contacts and Cyclone now plan
+NPC damage on a private proposal,quote conversion from the reduced amount,and
+commit current NPC state before hit reactions. Ordinary skill0 is admitted only
+through the explicit weapon API;generic spell admission still rejects it.
+Reversal consumes the positive base strike before Conjure182/207/221. Real
+healing precedes remaining loss,without replaying armor/vulnerability/caps or
+flat reduction. Follow-up damage/control uses actual survival and loss;healing-
+caused death remains a distinct receipt and receives one World death credit.
+Critical/zero-attribution wire feedback and Watch Yourself/Bonds reactions are
+retained. Whole-area Cyclone preflights NPC conversion variants before release.
+Move committed proposals rather than copying their actor state again.
+960 new cases PASS:582 real World contacts and378 typed conversion/wire controls.
+Five fresh native suites and41 Python checks PASS. Final Release host rebuild
+and --build-info pass(exit0). Fresh offline verifier checks four actual World
+packet sets plus two LiveActor critical controls through original2022 callbacks
+and serializers. Fixed self-cast/native545 particle verification also passes.
+The packet proof preserves retirement/healing/damage order,ordinary skill0,
+separate Conjure attribution and required absolute Health after critical17.
+These checks use staged Reversal and synthetic native services,not a paid307
+cast or rendered/controlled-retail verification. Conjure keeps elemental kind16
+notification while its arithmetic ignores armor;retail per-hit presentation is
+still open. NPC-owned attacks against NPCs,Seed integration/lifetime/NPC healing-
+death cleanup,other producers,paid lifetime/deferred/full life-steal work remain.
+Paid274 stays staged;307 UNBOUND. Fixed implementation checkpoint/manual queue
+preserved. Official clients/live logging untouched.
+Report:build/reports/npc-weapon-reversal-20261027.json
+Host SHA256:27f8809cf0c46efaba3663733c637b693aafbb863978ace172b1a79840044956
+
+2026-10-30 NPC-to-NPC ordinary weapon consumer migrated.786 new native cases cover both sides, melee/ranged, ranks0/12/20, Health1/10/500/1000, fire modifiers, one-use retirement, actual-loss Seed and healing-caused death. Three fresh ordinary/credit regressions and48 source checks pass. Isolated host readiness/encrypted login/roster/initial World handshake pass; deployed hash3523247b6e61c8cadde2c3ca2277e693370e3ed8c230414e5e12a23649c58cb4. Current authority is replanned after active Seed callbacks; no-Seed skips duplicate copying. No paid307 binding or rendered claim. Other producers, caster lifetime/paid completion, broader Seed and full life-steal remain open. Report:build/reports/opposed-reversal-progress-20261030.json.
+
+2026-10-30 Demonic Flesh delayed NPC collateral conversion
+Committed NPC collateral now settles conditions, reacquires caster/recipient
+identity and uses the shared Reversal-or-damage transaction. A recipient is
+retired only on accepted current damage/conversion; deferred clocks preserve
+its one-use reservation. Same-generation caster death retains delivery,
+while departure retires attribution. Current307 replacement, absorption,
+conversion healing/remaining loss and healing-caused death are covered.
+58 new native World cases plus fresh Demonic Flesh World/policy suites PASS.
+48 source checks and7 publication/backlog checks PASS. Isolated encrypted
+login/roster/initial World handshake PASS. Published host SHA256:
+321b6bf482abaddb85c288a84627d1e253d15b71a75385607f22f587f5e0de9d.
+No new native serializer/animation, rendered or controlled-retail ordering
+proof is claimed. Staged self-owned NPC307 only; paid307 remains UNBOUND.
+Current source inventory confirms raw controlled-spirit/Javelin230/
+Disrupting571/Stone172-Dancing/Trident/public damage_npc branches, plus
+unbound Aneurysm/Spiritual Pain. Their control/condition survival proposals
+must be migrated, not merely their final damage call. Full caster lifetime,
+paid completion, broader Seed and full life-steal work remain open.
+Reports:build/reports/demonic-reversal-progress-20261030.json and
+build/reports/reversal-raw-consumer-inventory-20261030.json.
+Checkpoint679captured/408source-bound/271awaiting/650missing remains fixed.
+Official clients/loggers untouched.
+
+2026-10-30 Lightning Javelin230 NPC conversion and attack-only interruption
+NPC impact now uses shared Reversal-or-damage commits. Surviving current
+attacks are interrupted even when raw-lethal damage was rescued by307.
+Spells/idle actors are not interrupted or charged. Player and NPC Mantra
+prevention use shared authority; NPC action/lifetime is reacquired after
+protection/damage callbacks. Actual ordinary-controller cancellation prevents
+its queued swing from delivering. NPC notification49 dispatches native action19,
+not normal stop3/action2. An interim stop3 trace was retained separately.
+462 new native World cases,3 fresh combat/lightning/weapon regressions,
+48 source checks and7 publication/backlog checks PASS.3 exported actual World
+packet traces pass original2022 serializers, damage attribution consumption/
+reset and interrupt dispatch. Separate original230 cast consumer gives1s/style51.
+Synthetic actor/cache/model/asset services: NOT rendered or retail combined
+reaction/animation timing proof. World fixture begins at the completed-cast API,
+not a new paid Runtime307 binding. Existing radius/arc/speed/leading and
+caster-death projectile policy remain retail-unverified. Unknown NPC interrupt
+protection metadata may refuse a recipient; no new deferred retry was added.
+NPC-caster production is not verified by these recipient tests.
+Isolated encrypted login/roster/initial World handshake PASS; not full rendered
+player initialization. Deployed SHA256:
+c218d7fddc74a29148254b94b31bcc465a88768f43f4b5a8cd195e7bb367072e.
+Reports:build/reports/javelin-reversal-progress-20261030.json and
+build/reports/javelin-reversal-native-wire-20261030.json.
+Current5 raw header consumer branches and2 unbound raw families are inventoried
+in build/reports/reversal-raw-consumers-after-javelin-20261030.json.
+Paid307 remains UNBOUND; external caster lifetime, other producers, paid
+completion, broader Seed/full life-steal and rendered acceptance remain open.
+Checkpoint679captured/408source-bound/271awaiting/650missing unchanged.
+Official clients/loggers untouched.
+
+2026-10-30 projectile followups: Disrupting Dagger, Stone/Dancing Daggers and Water Trident now evaluate NPC survival after shared conversion; player Stone/Trident previews use current scoped conversion projection. No duplicate raw HealthLoss; no condition/chain/interrupt/knockdown on healing-caused death. Shared NPC motion query distinguishes current standing AI from owned pursuit, rejecting stale/future cursors.961 player/NPC cases and26 selected suites pass;55 source/publication/backlog checks pass. Native original-client evidence revalidated for4 families; fixed checkpoints unchanged. Canonical host9be205d9...46bb75b passes isolated encrypted login/roster/initial world handshake, not full initialization/rendered play.307 remains unbound; counts679/408/271/650 unchanged. Dancing2022 chain publication, retail timings and rendered acceptance remain open. Report build/reports/projectile-followups-progress-20261030.json.
+
+2026-10-30 controlled spirit impact conversion: settles recipient events and reacquires scoped recipient/owner before shared Reversal-or-damage commit. Existing owner credit is retained; released shots survive summon expiry/owner death, owner departure retires them.180 new rank/ordinal/HP/conversion/healing-death/lifetime cases PASS; fresh controlled spirit policy and961-case projectile suites PASS;55 source/publication/backlog checks PASS. Fixed all-completed checkpoint and original2022 attack-body/launch/arrival consumers revalidated without modifying checkpoint files. Synthetic native services; no rendered or retail combined-order/attribution proof. Canonical host ed9758580d8920dd5ceac543cd776d6d34a172f97d1e429c2f3bb6603153ba57 passes encrypted login/roster/initial World handshake, not full player initialization. Header raw call audit now finds only raw helper forwarding and public trusted damage_npc; no production caller of the public API found. Unbound Aneurysm/Spiritual Pain and external caster lifetime/paid307/full life-steal/broader Seed work remain open.307 remains UNBOUND; fixed counts679/408/271/650. Official clients/loggers untouched. Report build/reports/spirit-reversal-progress-20261030.json.
+
+2026-10-30 NPC recipient Reversal caster identity: trusted staging accepts exact external player/NPC caster scopes; separate generation-aware credit retains identity through death/departure, replacement retires prior credit, tick prunes consumed/expired/removed recipients. Recipient publication ownership remains separate. Damage, weapon, elemental, reactive and life-steal serializers use current caster generation; absent/reused casters receive no attributed healing popup while absolute Health persists.254 new World cases across4 routes and7 caster states PASS;6 fresh native suites PASS;28 actual World traces pass original2022 Health serializers. Fixed self-cast545 particle reverified; external-target form/rendered remains UNVERIFIED.55 source/publication/backlog checks PASS with updated generation-aware consumer mutation guard. Isolated encrypted login/roster/initial World handshake PASS, not full initialization. Canonical host2cf99f4175dbc33b697c4ffc50e09db5156a05bcd8cf4933d480c676baf43dbe.307 remains UNBOUND: player-recipient lifetime, paid ally-target completion/duration/Divine Favor, full life-steal/broader Seed and retail departure/replacement policy remain open. Counts679/408/271/650 unchanged. Official clients/loggers untouched. Report build/reports/reversal-caster-progress-20261030.json.
+
+2026-10-30 Reversal player/ally World completion: player recipients now retain full external caster-generation identity; projections/commits validate ownership, owned ends remove credit, feedback reacquires original caster after healing/end callbacks and suppresses reused/departed identities. World307 completion reuses simple-enchantment admission, sealed duration, Divine Favor, application reactions and publication; NPC typed application accepts adjusted duration.766 new cases PASS, including24 Ether Renewal completion/duplicate-receipt cases.5 fresh native suites PASS;16 player and28 NPC actual World packet traces pass original2022 Health serializers. Constructed ally-target545 reaches original particle consumer; fixed self-cast receipt reverified. Ally-target retail form/rendered pixels/sound remain UNVERIFIED.55 source/publication/backlog checks PASS. Initial encrypted login/roster/World handshake PASS, not full initialization. Canonical host e0374676437996cdc142cadc58f4ffdea52ee42c20dbce4710415b62864a1f2a.307 remains UNBOUND: Runtime/gateway paid admission/cost/cancel/aftercast/publication, full life-steal/broader Seed, NPC-caster to player producer, retail departure/rank replacement and NPC Divine Favor healing-death acceptance remain open. Source binding counts679/408/271/650 unchanged. Official clients/loggers and fixed captures untouched. Report build/reports/reversal-player-completion-progress-20261030.json.
+
+2026-10-30 full Reversal life-steal family:153/156/1077/902/1076/2189 and area110 now use real healing -> retirement -> source gain -> recipient loss. Source cap and wound capacity settle through current World Health; life-steal gain bypasses healing penalties; zero payout is not a Health event; actual survival gates Weakness and conditional Energy remains successful-use reward. Timed normal NPC transfers now use reduction authority and wound settlement.2336 new cases and10 fresh suites PASS;55 source/publication/backlog checks PASS.8 actual World traces pass original2022 serializers;9 fixed packet receipts reprove bounded28heal/17loss ordering. Source cap and combined overkill remain UNKNOWN in that retail capture; conversion-before-overkill is explicit private inference. Fresh fixed/native Blood Drinker/Aggressor/Angorodon animation proofs PASS, with synthetic assets, not rendered. Fixed checkpoint files unchanged during verification. Isolated encrypted login/roster/initial World handshake PASS, not full initialization. Deployed095b61d0801d2c8e2546895077f6431aa42ba6938bac538350685a6053d695ed.307 UNBOUND: conditionalShadow/Feast-zero-damage/Strip residual307 transfers, weapon/periodic/monster producer audit, paid admission/cost/cancel/aftercast, NPC caster/player and Divine Favor death, broader Seed/lifecycle and retail departure/rank replacement/rendered acceptance remain open. NPC299 producer not proved by this change. Counts679/408/271/650 unchanged;official clients/loggers untouched. Report build/reports/reversal-full-life-steal-progress-20261030.json.
+
+2026-10-30 compound transfer prerequisite: Shadow102/1067, Feast151 zero-first-hit and Strip143 residual Reversal now share healing -> retirement -> actual source gain -> recipient loss; preserve original above-half/hex/removal qualification. Strip NPC ordinary transfers now settle reduction/wound state. 2892 new cases,9 fresh regressions,55 source/publication/backlog checks and32 original2022 serializer traces PASS. Updated prior explicit-rejection regression to require supported conversion. Source-cap/combined-overkill policy remains private inference; bounded retail ordering only. Isolated login/roster/initial World handshake PASS, not full initialization/rendered play. Deployed d52fc2889c7f78795e42da79914292517420465713bb407c96ae4ff2f10dbf4a.307 stays UNBOUND; other producer/lifecycle/paid casting consumers remain. Counts679/408/271/650 unchanged. Pre-Searing remains39/44 bindings, incomplete. Official clients/loggers untouched. Report build/reports/presearing-compound-progress-20261030.json.
+
+2026-10-30 Reversal NPC Divine Favor healing death: immediate null-credit death callbacks, exact-lifetime reacquisition and corpse effect/publication/caster-credit retirement added to World307 completion.216 new cases (9 lethal wound-debt cases),766 completion and2892 compound regression cases PASS;55 source/publication/backlog checks PASS. Healing-immune NPC admission remains explicitly refused; protected NPCs reject combat conditions. This does not prove immune conversion or other simple-enchantment death paths. Isolated encrypted login/roster/initial World handshake PASS, not full initialization/rendered play. Deployed0f43bbd8aed0ab98a3c5340333f99514c3cac070328710f8e9a5a2cde6045330.307 remains UNBOUND; NPC caster/player producer, replacement/lifetime/producer audit and paid Runtime gates remain. Fixed counts679/408/271/650 unchanged, official clients untouched. Report build/reports/reversal-divine-death-progress-20261030.json.
+
+2026-10-30 Soul Leech transfer consumer: current reserved spell reaction routes positive Reversal inputs through shared healing -> retirement -> source gain -> recipient loss; preserves owner/event qualification, zero reduced input, actual survival and duplicate suppression, and reacquires NPC scope after condition advancement.443 new cases,5 fresh native suites and55 source/publication/backlog checks PASS. Original2022 cast/body237 and4 frozen receipts revalidated to new report, not triggered-transfer/combined-order/rendered proof. Source-cap/overkill policy remains private inference. Isolated login/roster/initial World handshake PASS, not full initialization. Deployed52447b4e82f7b5a53907ef732afb517f6b2822669370c27ab7111b80c26b29bc. Soul128 binding already exists and is unchanged despite stale gated comments;307 remains UNBOUND.21 candidate call sites inventoried, not exhaustive proof; Insidious/Mark/Nightmare/periodic/weapon/monster review remains. Fixed counts679/408/271/650 unchanged;official clients untouched. Report build/reports/reversal-soul-leech-progress-20261030.json.
+
+2026-10-30 Insidious Parasite transfer consumer: qualified player and NPC hit reactions now route positive Reversal inputs through shared conversion before attack damage. Current hex ownership, NPC scope/placement and actual Health authority are rechecked. Misses and zero reduced inputs do not consume Reversal; successful zero-damage hits still qualify. 1,743 new cases across ordinary, single, Cyclone and NPC attacks, seven fresh suites and 55 source/publication/backlog checks pass. Existing committed-contact completion after reaction kills attacker is explicitly PRIVATE and retail-unverified; local wiki proves before-damage transfer only. Native cast/body 230 reverified from frozen activation/body receipts, not triggered transfer or rendered proof. Verifier now defaults to build/reports and refuses checkpoint output; no frozen data modified. Isolated encrypted login/roster/initial World handshake passes, not full initialization. Deployed 77ab6c5c523b2ce1e057c1a8ccbc5d55086f27b853c37f5222a657dec2c0e5c6. Skill 123 remains bound; 307 remains unbound. Fixed partitions 679/408/271/650 unchanged. Official clients untouched. Remaining Mark/Nightmare/periodic/weapon/monster consumers, paid307 and lifecycle work remain. Report: build/reports/reversal-insidious-progress-20261030.json.
+
+2026-10-30 Mark of Subversion conversion: owned allied-spell reaction preflights current Health/reduction and Reversal before consuming Mark. Selected spell still fails after full conversion, zero input or healing death; registry snapshots cannot restore the consumed Reversal. Scoped NPC state is reacquired after condition settlement. 881 new cases, five fresh suites, 55 source/publication/backlog checks and eight actual World traces through original 2022 Health serializers pass. Frozen cast/body 235 and four receipts reverified outside checkpoint. Existing Mark-removal-before-transfer ordering remains private; retail combined ordering, rendered Runtime failure UI and source-cap/overkill proof remain open. Isolated encrypted login/roster/initial World handshake passes, not full initialization. Deployed 99ef6906acce344dcaf2ff4d507001c1b3bd194db996d62904f4962b4f77cb4b. Mark 127 stays bound and Reversal 307 stays unbound. Fixed partitions 679/408/271/650 unchanged. Official clients untouched. Remaining Nightmare/periodic/weapon/monster review and paid307/lifecycle work remain. Report: build/reports/reversal-mark-progress-20261030.json.
+
+2026-10-30 paid friendly NPC-to-player Reversal service: explicit reviewed rank/capability enrollment shares the existing NPC Energy, spellbook and action controller. Typed scheduled completion prevents generic bypass/duplicates, validates current target geometry/readiness/lifetime, and handles Profane, application reactions, Monk Divine Favor and lethal healing. 92 new World cases, seven fresh suites, 55 source/publication/backlog checks and six original2022 cast/impact consumer traces pass. One reviewed spellbook capability per source; no production loadouts, autonomous priorities, hostile/self/other-NPC casts or equipment modifiers are inferred. Native actor/model services are synthetic; retail NPC form, rendered pixels/sound and player Runtime307 remain unverified/unbound. Nightmare795 is captured but unsupported with detached contact policy only; linked drains109/126 are degeneration, and negative controls preserve Reversal. Numeric weapon/monster producer review remains. Isolated encrypted login/roster/initial World handshake passes, not full initialization. Deployed 4d3875991803f78c40ee1f13977c6a1cd81cbee9135f86078c5f94806554acae. Fixed partitions679/408/271/650 unchanged. Official clients/captures untouched. Report: build/reports/npc-reversal-progress-20261030.json; classification: build/reports/reversal-input-classification-20261030.json.
+
+2026-10-30 staged paid player Reversal: 160 Runtime/World cases and four fresh native suites pass; 56 source/publication/backlog checks pass. Five Energy, quarter-second activation, aftercast/recharge, exact target lifetime, duration readiness, self/allied player/affirmative-healing NPC admission, cancellation/interruption, DF, exact publication, conversion and expiry covered. Production307 remains UNBOUND with both callbacks explicitly empty and mutation-guarded. Pre remains39/44; pets/minions/Retribution, producer/reapplication/overlap and rendered acceptance remain open. Canonical47c2447f17e88f7930796b0e788840e15f18bad667dfd8ba6c75117cb15b3a7e passes isolated encrypted login/roster/initial World handshake, not full initialization. Visual attempt returned uniform pixels; owned private test sessions stopped, official clients untouched. Fixed partitions679/408/271/650 unchanged. Report build/reports/presearing-reversal-cast-progress-20261030.json.

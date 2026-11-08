@@ -1,0 +1,107 @@
+Signet of Sorrow [1363] — 2022 client, fixed capture review
+
+Capture: data/captures/skill-checkpoints/20261024-all-completed/
+  packets-1360-15821281.jsonl
+SHA256: 59E2AE82E4C8187A88B5F3F8CAC919A085A14ACA314834ADA70117039F3287D6
+Local saved wiki: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Signet_of_Sorrow.html
+SHA256: C63559D727F080B34F5DD8B0A52542D7BD2FF0F55064134DB29D396750498893
+
+Captured ordinary cast (file lines 120970, 120980-120984; 1-based):
+  tick 17978000: opcode 160, skill 1363, caster 25, target 30.
+  tick 17979015: opcode 229, 30-second recharge, then terminal 58;
+  caster body event 21/resource 1619, target body event 42/resource 480,
+  damage opcode 163/55 from caster 25 to target 30.
+  This one trace does not establish the numerical damage before mitigation.
+
+Native catalog row 1363 supplies 1-second activation, .75-second aftercast,
+30-second ordinary recharge and rank endpoints 15..75. The local wiki says
+the damage is armor-ignoring and a corpse near the foe or its dead pet causes
+instant recharge. "Near" redirects to "Nearby" in the saved wiki, not
+"Adjacent"; the plan therefore uses the existing 252-unit nearby radius.
+The pure plan in gw_signet_sorrow.h validates those inputs
+and rejects missing foe/range facts; its focused test covers rank 0..20 and
+both shortcut conditions. World::signet_sorrow_facts now resolves a current
+selected hostile target and the nearest available dead NPC on the same
+plane. It now requires reviewed fleshy=true plus an unconsumed reservation:
+the saved Corpse wiki page says Signet needs a fresh exploitable corpse, and
+construct/ghost/elemental corpses can be ineligible. Unknown and non-fleshy
+NPCs cannot trigger the shortcut. The World test kills an NPC in the simulated
+map and checks corpse distances 251, 252, and 252.1 units for each of fleshy,
+non-fleshy and unknown definitions, including dead-target rejection. The
+World completion path now preflights and commits armor-ignoring damage to
+hostile players or NPCs; the NPC test checks 100 to 37 Health at rank 12,
+damage output and the recharge outcome. A hostile-player World test checks
+ordinary and lethal Health loss, ally rejection and deferred publication to
+both players. The opt-in Runtime test checks
+admission, completion, rejection without a hook, 30-second ordinary recharge,
+instant recharge at the next aftercast boundary, and native packet order:
+terminal58, caster21/resource1619, target42/resource480, then damage10.
+The source packets use modern opcode159 for the two body events; the pinned
+2022 native GenericValue wire uses opcode158 for those same event payloads.
+
+Current status: SOURCE-BOUND in the production cast hook, with complete
+native World damage and recharge paths. Still needed: a production
+companion-spawn producer for the tested World pet-owner relationship, actual
+client-rendered animation and recharge tests, and a retail capture of the
+instant recharge branch. A source binding does not prove those outcomes.
+
+Release verification (native mechanics and packet tests only; no rendered
+client claim): signet_sorrow, signet_sorrow_world and signet_sorrow_cast all
+pass; server_host builds. Tested SHA256:
+  gw_signet_sorrow.h 7D4D02F93DBF29CF2EE2E1263F611F018EEA886D1558271C17C75F336108D101
+  gw_world_signet_sorrow.inl 53D977F570C62ED8D4C87F94C9CEDF27C664B69C565316184DEEEE29D9C1AAFB
+  gw_skill_casting.h 997F8AFB7E52BC64B1D8F7547CC7E39E30D6DC933019A5DE6B033C1862E85138
+  signet_sorrow_world.cpp 4669FDF1FACD7356934F7674AAA5388CCD2541E9463C0C1E04FD9C4A17BE9F6A
+  signet_sorrow_cast.cpp DE741635E5244BD0C7E855251E0E63834876E50E9583871624D5C94F0FF60BDB
+  server_host.exe 527E1A0281C4AF93582EB41C02FF2F2A3E72757416B67022C1931108B6AF83A5
+
+Later corpse-eligibility regression: Signet Sorrow, World and cast tests pass
+with reviewed fleshy, non-fleshy and unknown corpse facts; serial host build
+passes. These are native tests, not rendered client verification.
+  gw_world_signet_sorrow.inl 4D90614E20F41D94D56E6AEE2C2F7CB50727862FD65C879C42BA1EE1BCAB3252
+  signet_sorrow_world.cpp 879229F6D865576109BA431CC9D6345616C38161DA5E1860DAA154E71EA88065
+  signet_sorrow_cast.cpp CD8423E431631483CEA31260B0BD092C582915C81027BBC35E0E59C858EF6D93
+  server_host.exe 1AFE727A14964AAC71F6C53AD107B45C257D6B87B424D75B88FE76AC1B23D1B6
+
+Later player-corpse branch: World now recognizes a dead player from its current
+life's death marker, zero Health, corpse position, same plane and unreserved
+effect scope. The World test kills a hostile player, selects a second live foe
+251 units from the corpse, and verifies instant recharge; the original NPC
+corpse tests still pass. Pet ownership remains absent; this does not justify
+binding skill 1363 in production. Serial Release host build and three focused
+native tests pass. No client-rendered test was run. Tested SHA256:
+  gw_world_signet_sorrow.inl 78AB89165F6A0716222FF06CDA5321B18095C55752786FE03349CA40946F22B0
+  signet_sorrow_world.cpp 773F49E62E3C664058508C2905A9E781F1F798F5265011BDE2A838538C70F5E9
+  server_host.exe D0AED9516F79CAEA268CFDDE3BC550E1D469FCBEA0BB648DE2BC51EC89BC0478
+
+Later dead-pet branch: trusted World::bind_pet_owner records current owner and
+NPC pet effect scopes; stale generations and conflicting owners are rejected.
+The query checks the bound NPC's current life and zero Health. Its shortcut
+does not depend on the pet's position or corpse exploitability. The World test
+kills a registered pet far from its living owner and checks instant recharge
+only for that owner. NPC retirement, population replacement and player departure
+remove obsolete bindings. There is no production companion-spawn caller yet,
+so this branch is native mechanics only and skill 1363 remains unbound.
+Serial Release host build and four focused tests (including Well corpse
+regression) pass; no official client or logger was touched. Tested SHA256:
+  gw_world_simulation.h 252AE61495EB229B6D8AAE7A286E9B2387DEBB6C0BD12F074316C4C422FB8049
+  gw_world_signet_sorrow.inl 60C5F235B6C8D77CC11C2BABEF5A25C5BCCD4BE2F5AD81AA400C8ED7D7EE213B
+  signet_sorrow_world.cpp 2A702C072C2201F6D7737314905E19D50D6F7C0F0B7E1AB5D5E45AFC54E767AC
+  server_host.exe 2C9145CEA05511389FBDD67ED379E36BAE5FDEC4A350BA34C84D0B4C5ECF9241
+
+Production binding checkpoint: gw_auth.cpp now calls World completion with the
+current caster/target scopes, level, and cast time. The Runtime gate remains
+dependent on the callback; successful World completion publishes terminal,
+caster1619, target480, damage and the selected ordinary/instant recharge.
+Coverage verifies the nonempty World callback. A fresh immutable checkpoint
+hard-links the same 58 frozen capture files from 20261024-all-completed; its
+source audit partitions 679 locally captured obtainable skills as 367 bound,
+312 awaiting binding, with 650 still uncaptured. Serial Release host build and
+Signet plan/World/cast plus Well corpse tests pass. This is source/native
+verification, not a rendered Guild Wars client test. No official logger or
+client was touched. Tested SHA256:
+  gw_auth.cpp 3BF84E6EC441901CB93744EC0656B168EB2C5AEEFC48B4D5F6833F07746CBBAE
+  gw_skill_casting.h 67DB12646E64A5F3633E68343E71D39E98EFDB4F913697236B6D311619B64428
+  skill_runtime_coverage.py CDB6EDD84C81618A5D1CBC4590F6F7BCE78B9D85157271F49377807B38548211
+  server_host.exe 2176124E76B683DBB00CD47E2CD845AB00297428F364DEC61C6D451F6B4784E6
+  checkpoint manifest DC5A00A8B32677AB3796B3AB70F32D99843FC89880B119B9632D58CC06E42F76

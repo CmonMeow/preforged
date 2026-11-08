@@ -1,0 +1,36 @@
+Triple Shot [1953 Kurzick, 2096 Luxon] — native binding, 2026-10-26
+
+Evidence
+- The immutable 20261024-all-completed capture contains two starts for 1953
+  and three for 2096. Each is followed by a same-actor/skill opcode 229
+  release, exactly three same-tick opcode 164 projectiles, and opcode 227 end.
+  The generic skill audit's local_finished=0 omits this bow release form.
+  Run tools/protocol/triple_shot_2022.py to reproduce the exact file/line
+  evidence in data/skill-capture-plan/TRIPLE-SHOT-RETAIL-EVIDENCE.json.
+- The pinned 2022 skill catalog gives both variants 10 Energy, 10-second
+  recharge, bow attack type, PvE-only flag, and displayed 40..25 reduction.
+- Guild Wars Wiki, Triple Shot (oldid 2710816), reports three simultaneous
+  arrows, a base-damage bug of 50..35 percent reduction, and bonus damage not
+  reduced. Guild Wars Wiki, Allegiance rank, gives rank 0..6 scaling and the
+  plateau at 6..12.
+
+Implementation
+- The owning Kurzick or Luxon title track supplies rank; the selected display
+  title and the opposing faction's rank do not.
+- The existing bow World path queues three independent projectiles/impacts.
+  The 50..65 percent base-damage multiplier applies before bonus damage.
+- Runtime uses normal bow weapon/range/energy/recharge checks and PvE policy.
+
+Verification
+- Native skill casting, World weapon attack, and progression tests pass.
+- The 12 skill-runtime coverage tests pass, and the Release host builds.
+- Fixed-capture verifier passes for all five starts (2 Kurzick, 3 Luxon):
+  release delays are 578, 922, 1000, 969, and 828 ms, respectively; each
+  release is followed by three projectile spawns before its end packet.
+- Rendered 2022-client animation and retail hit outcomes remain unverified;
+  the fixed capture proves projectile creation, not collision or visual output.
+
+Tested SHA256
+- bin/server_host.exe: 00AAE22703B980A5964E5DBA8F463D3FF7197BE329ADD2B06BF3706ADCA6AB75
+- src/runtime/gw_weapon_attack_skills.h: F4D953901E03484498FD1D9B0A6D8D9C0D95DCAA88E8F92F180344F346ECD20B
+- src/runtime/gw_skill_casting.h: BFB8656A05603545D21D9EDC7CD49E6F7B6D40C0E795F9F540F9625926E4FD07

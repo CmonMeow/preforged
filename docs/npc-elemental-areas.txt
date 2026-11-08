@@ -1,0 +1,43 @@
+ELEMENTAL AREA RECIPIENTS — 2026-10-17
+
+The common elemental impact path now includes hostile, living NPC recipients
+on the impact plane and within the area. It preflights their authored Health,
+required armor, clocks, damage/condition policy and elemental result before
+committing the spell's damage. Existing player recipients remain included.
+NPC condition credit, Fragility/application observers, death handling and
+native target-body effects use the existing World paths. Immediate completion
+returns NPC impact visuals to Runtime; projectile impacts publish at impact.
+
+Inferno (183) now includes NPCs around the caster. Searing Flames (884) can
+select an NPC and include nearby NPC/player foes. Its first application burns;
+already-burning recipients take damage. Burning-only admission does not guess
+or require armor, while a damaging pass requires known fire armor. Protected
+allies, distant recipients and other planes are excluded.
+
+Star Burst (1095) can select a touched NPC and includes nearby foes, applying
+fire damage and Burning and returning two Energy per foe hit.
+
+New npc_elemental_area tests verify these spells with mixed populations, radius,
+plane and protected-ally filters, no partial spell damage when another selected
+NPC has unknown armor, Burning-only followed by damage, Star Burst's Energy
+per recipient, and deferred body
+resources only when the native row provides one. The actual Runtime cast
+matrix now includes Searing Flames alongside the five single-target spells.
+Rendered client acceptance and broader protection/reaction combinations remain
+unverified. Fireball selected-NPC launch is now covered separately in
+docs/npc-fireball-recipient.txt. Corpse-target NPC admission still needs its
+own integration work; this is not a claim that all area skills work.
+
+IDENTITY CORRECTION
+The earlier review mistakenly called1095 Double Dragon. It is Star Burst:
+the fixed capture catalogue names it Star Burst, its native row has touch
+targeting,7..112 damage,1..4 Burning and5Energy/.75s/7s cost/activation/recharge,
+and local Star_Burst.html describes touch-area damage, Burning and2Energy per
+foe. The exclusion introduced from that mistaken name has been removed.
+No Double Dragon mechanics defect was established by that comparison.
+Reference: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Star_Burst.html
+
+Official sessions/loggers were untouched. Implementation evidence remains pinned
+to 20261017-npc-refresh-2; NPC hunting uses its separate npc-refresh-7 snapshot.
+
+Validation: Release server_host built successfully after these changes. Four rebuilt native suites passed: npc_elemental_area, npc_elemental_cast, npc_elemental_recipients and conditional_elementalist. All41 skill tooling tests passed; fixed checkpoint source audit and backlog publication passed.

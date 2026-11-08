@@ -1,0 +1,117 @@
+Overcast resource primitive -- isolated, not live skill support
+
+Evidence read locally, no official client/process actions:
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Overcast.html
+SHA256 8AD2216C537955A0C8AB4ECDA8D8A5C82309A25554FA5DD04BF9C1A5A296ECFF
+Lines 90-92: fixed costs 3/5/10 accumulate; maximum can fall below zero;
+one point of maximum restored per 3 seconds. No gameplay accumulation cap is
+specified. Do not clamp Overcast to nominal capacity or clamp maximum to zero.
+Lines 109-116: current energy is unaffected unless above post-Overcast maximum;
+Shock from base/current 30 leaves 20 (ordinary 5-energy skill leaves 25).
+This supports ordinary-energy deduction followed by ceiling clamp for the cost
+pair. It does not establish every ordering against other triggered effects.
+Pool payment checks are resource arithmetic, not complete skill eligibility;
+zero payment is a no-op. Eligibility of zero-cost skills at negative energy is
+not asserted by this primitive and must be handled from separate skill evidence.
+Local Signet.html describes signets as having no energy or adrenaline cost and
+usable when low on either resource (SHA256
+D00FCC769AAF2759A594EC17758B64E0576DCD48E55D213AB0C206F45FC8AB21).
+It does not explicitly say "negative", so no separate negative-energy ban is
+introduced. can_pay(0), pay(0), and start(0,0) allow the no-op payment even with
+negative current, leaving non-resource skill prerequisites to the dispatcher.
+Regression checks negative-current zero-cost start succeeds without mutation,
+while positive-cost start fails without mutation.
+Death preserves Overcast; decay continues while dead at the same rate; zoning
+removes it. It is not a condition and generic condition removal cannot remove it.
+Line 119: cost applies at activation start, even if canceled or interrupted.
+
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Energy.html
+SHA256 BC13F6DDD1C100F0B38DFCBDFC40411D090F93AA5067DF9A4FEC813FF19930D3
+Line 182: ordinary changes in maximum change current, permitting negative
+current; UI displays zero; ordinary regeneration continues below zero. Apply
+the more specific Overcast exception above to Overcast changes.
+
+Implementation: src/runtime/gw_overcast.h, fw::gw::overcast::Pool owns signed
+current, nominal capacity and accumulated Overcast. maximum() is nominal minus
+Overcast. apply() clamps current downward only; recover() raises maximum only;
+resize_nominal() preserves the signed current deficit under equipment/storage/
+morale changes. start() atomically deducts energy then applies Overcast. No
+refund on interruption. Arithmetic-bound rejection is not a claimed game cap.
+recover(events) consumes explicit recovery events; recovery_interval_ms=3000.
+RecoveryClock requires a caller-selected initial phase (elapsed milliseconds
+within the 3000ms period). advance returns exact boundary counts and retains
+the remainder; set_phase exposes explicit caller-controlled reset. It has no
+implicit reset on applications, death, empty pool, or zoning. The owner must
+establish and choose those policies; this clock does not assert retail behavior.
+Death needs no mutation. zone() clears Overcast only, leaving ordinary map-entry
+current-energy initialization to the caller. No packets or runtime hooks added.
+
+Unresolved by these sources: recovery timer's initial phase, whether later
+applications reset that phase, ordering of a recovery event simultaneous with
+ordinary regeneration/cost/other triggers, and map-entry current-energy refill.
+Do not infer these or advertise the primitive as completed live support.
+Tests exercise the authoritative value transformations, not a chosen scheduler.
+Clock tests additionally cover cadence independence, remainder, caller-selected
+phase/reset, and UINT64_MAX elapsed arithmetic without overflow.
+
+Integration review (read-only, parent owns files):
+- gw_skill_casting.h rejects special-bit-0 Overcast rows. Replace gate only once
+  start-cost hook and wire projection are implemented. Validate all prerequisites
+  before committing costs; costs persist through cancellation/interruption.
+- gw_world_simulation.h Player.energy_debt is negative CURRENT, not Overcast.
+  Existing energy::resize changes current by capacity delta and is therefore
+  wrong for applying/decaying Overcast. energy_capacity and morale paths need
+  nominal-capacity updates separately from Overcast, as do death/resurrection.
+- Current vitals::Resources.max_energy is uint32 and packets_2022 rejects zero;
+  negative post-Overcast maximum must never be narrowed into that field. Keep
+  signed authoritative state and establish native Overcast wire property before
+  changing client projection. Existing owner_vitals packets alone cannot prove
+  correct grey-bar display. All restores/refunds/regeneration must honor ceiling.
+- Decay must run for corpses, independently of ordinary energy regeneration's
+  health check. Interleave recovery and regeneration at event boundaries once
+  phase/order is evidenced; batching both independently can change outcomes.
+- Lava Font conditional radius requires actual Overcast state, not energy_debt.
+  Do not infer activation-vs-resolution snapshot timing for conditional effects.
+
+Standalone tests added at tests/overcast.cpp. Not built or registered in CMake
+while parent's shared full-build is active. No production integration performed.
+
+2026-10-15 pinned wire investigation:
+- Generic float property62 is energy_spent (GWCA StoC.h and current header).
+  Float dispatcher79513e ->764440 ->77a570 uses stat0, calls776f20 and
+  emits event0x10. Captures have normalized negative ordinary skill costs.
+  This must not be used as an Overcast update.
+- Generic integer54 ->764320 ->77a410 emits event0xd with stat0/value.
+  Frozen captures show positive Energy-return amounts after ordinary skills.
+  No exhaustion identity established by this trace.
+- Candidate samples preserved in current checkpoint overcast-property-candidates
+  and overcast-integer54-candidates JSON. No official process was touched.
+- The native Overcast display property remains unresolved. Signed resource
+  Pool/RecoveryClock remain isolated until owner-state and wire support agree.
+
+Pinned dispatch maps now reproducible with tools/protocol/generic_property_switches_2022.py. Report archived under checkpoint/skill-audit/generic-property-switches-2022.json. Records separate integer second-stage,float actor and float cache branches; a return in one stage does not establish a property-wide no-op. Integer41 initializes both cached Energy pool capacities; this alone does not identify Overcast. Grey-bar identity remains unresolved. No world resource integration or skill binding added.
+
+2026-10-16 native exclusion and elemental dependency audit:
+- tools/protocol/overcast_property40_2022.py executes original integer cache, sync and actor dispatch for property40 at values0,1,10,30 and0xffffffff. No observed actor/cache/sync mutation or UI/event allocation occurs. Positive controls41/42 reach their expected capacity setter boundaries. This excludes generic integer40 as an Overcast update in that loaded-actor path; it does not identify a replacement property or cover another opcode/version.
+- Frozen-source SHA verification and original cast consumer probes pass for172 Stone Daggers,195 Lava Font,214 Ice Spear and222 Lightning Strike. All have Overcast-dependent mechanics in the pinned-era wiki. Native214 is type6/enchantment;222 is type4/hex. Do not add base damage and call either complete.
+- Reports: checkpoint/overcast-property40-native-2022.json and elemental-overcast-dependencies-native-2022.json. No official process was accessed and no new skill binding was added.
+
+2026-10-16 dedicated Energy-ceiling path found (supersedes wire-identity-unresolved notes above):
+Original descriptor60bdd8 is opcode156, callback874b20 ->794750 ->79a110 plus7642c0 ->77a3a0. It updates the second Energy curve and stat0 event12. Original curve setters/interpolation execute offline and accept negative ceilings with continuous recovery.16 frozen modern157 samples normalize to about0.33 Energy/second at capacity50, with successive decreases near5/10. See overcast-curve-native-2022.json. This establishes a strong ceiling/Overcast wire candidate and continuous client presentation, not full server recovery granularity or rendering.
+C++ vitals::energy_ceiling_curve_2022 emits validated logical packet156. Original serializer adds transport0x8000 to opcode; tests compare its exact payload with the framework logical header. Two focused native suites pass0.03s. Signed World resource integration remains pending. RecoveryClock is an isolated integer-event primitive, not the proved native display clock.
+
+World integration checkpoint (2026-10-16): costs, rewards, regeneration and equipment/morale nominal resize now share owned Overcast state. Four focused tests pass, including negative current, fractional recovery, death and actor replacement. Producer Runtime gate remains closed: resurrection, Recall, direct losses, fractional reward notifications and rendered acceptance remain open. Native continuous ceiling presentation does not establish the authoritative retail recovery schedule. See overcast-resource-integration-review.json for evidence and remaining work.
+
+Resurrection integration (2026-10-16): prepare_resurrection settles recovery on the dead actor before applying the existing resurrection policy entitlement, clamps precisely to the recovering ceiling, and retains burden. World preflights this proposal before resurrection side effects. This proves state consistency, not retail percentage-base/rounding under Overcast. Runtime producer gate remains closed pending the remaining paths and evidence.
+
+Recall integration (2026-10-16): owned Recall rewards use prepare_gain with the full Overcast curve and fractional state at the end-event timestamp. Ordinary actors retain the existing path. Integer floating gain feedback floors the total precise reward; this display rounding is a policy pending retail evidence. Sparse/dense expiry, early removal, negative ceiling and invalid reward checks are included. Runtime Overcast producer admission remains closed.
+
+Drain integration (2026-10-16): Resolve interrupt-protection cost, Spirit Shackles, Power Leak and all-status cleansing now use the shared owned drain-to-zero proposal when an Overcast curve exists. Tests cover the first three with positive fractional and negative balances and Mind Wrack true-zero reactions. Ordinary actors retain the existing integer path. Fractional drain behavior remains a candidate policy pending retail evidence. Energy denial area proposals and Mind Wrack own-loss mutation still need integration.
+
+Area denial / own-loss integration (2026-10-16): Energy denial candidates prepare owned Overcast loss proposals before committing any target Energy mutation. Mind Wrack own loss likewise preflights precise state before accepting its event. The reviewed integer planner still supplies the loss used for damage/healing/gain; fractional current is preserved. This deliberately does not claim fractional drain/consequence support. Generic partial drain and integer-consequence planner semantics remain inconsistent candidates requiring retail evidence before producer admission.
+
+Reward publication (2026-10-16): World reward results retain precise accepted units; total() rounds the combined reward once, preventing undercount when crossing fractional debt. restore_energy sends owner vitals for any positive precise gain; conditional resource gains compare full precise snapshots. Component repayment/restoration fields remain integer approximations. Retail feedback rounding remains unverified.
+
+Cleansing/initialization (2026-10-16): Purge Signet Overcast World tests cover allied condition removal, positive fractional drain and negative caster balance, including true-zero Mind Wrack. Full trusted set_vitals replacement now retires curve/debt/fraction and sends a static nominal ceiling to clear the old client cache. Production uses this replacement on map entry; ordinary equipment/morale changes still preserve burden through resize.
+
+Signed current consumer proof (2026-10-16): tools/protocol/energy_current_2022.py executes original packet161/property33 callback, cache float dispatch and actor setter for fractions -0.2,0,0.5,1. At nominal50, cache current becomes -10,0,25,50; actor normalized current remains signed; independent ceiling unchanged. This supersedes the native-negative-current uncertainty above. World owner vitals now transmits signed current without clamping. Rendering, retail server recovery cadence and fractional drain consequences remain unproven.

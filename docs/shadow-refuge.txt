@@ -1,0 +1,53 @@
+Shadow Refuge [814] — native source binding, 2026-10-25
+
+The fixed 20261024-signet-infection-bound checkpoint records two local starts
+and two finishes in map 280. In packets-108988-190116609.jsonl, starts at
+lines 34032 and 34316 precede finishes at 34042 and 34327 by 1000 ms.
+Each finish has a modern opcode 66 self enchantment packet (lines 34044 and
+34329), with skill 814 and a six-second duration. The 2021 captured skill row
+and the local historical wiki mirror agree on 5 Energy, a one-second cast,
+six-second duration, eight-second recharge, ranked 5..10 Health regeneration
+and a 40..100 end heal only while attacking.
+The pinned original 2022 client (SHA-256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac)
+was also executed offline through its cast dispatcher and first animation
+consumer: skill 814 resolves to animation style 50 for 1.0 second. Its pinned
+row contains duration 6/6 seconds, recharge 8 seconds, end-heal scale 40..100,
+regeneration scale 5..10, caster body 812 and target body sentinel 2077.
+The exact receipt and limitations are in
+build/reports/shadow-refuge-native-2022.json; reproduce with
+tools/protocol/shadow_refuge_2022.py.
+
+Production Runtime now accepts paid self casting and requires the World
+regeneration hook before charging Energy. The existing World-owned effect
+registry and timed Health regeneration apply the six-second enchantment.
+Ordinary attack activity at actual effect removal gates the ranked end heal;
+idle expiry gives no heal. Recasting replaces the effect without firing its
+old end heal. Native activation packet publication is tested. Effect
+application uses the shared 2022 enchantment publication path.
+
+Four focused Release CTests passed: skill_casting, health_regeneration,
+shadow_refuge_cast and shadow_refuge_world. Coverage classification and the
+fixed checkpoint audit passed, with 679 locally captured obtainable skills,
+381 source-bound and 298 awaiting source binding. The historical packet
+checkpoint was not changed. The previous audit is archived in
+data/skill-capture-plan/history/captured-skills-before-shadow-refuge-binding-20261025.json.
+
+Tested binaries (SHA-256):
+bin/server_host.exe 7FDF9DEED287C8A6AD03947DC3CD06B97DA2394A187474529D66504D67F44374
+build/tests/shadow_refuge_cast_test.exe EAEB8EE8562E49756FA9E8A895DE69DCD6025D9578DD7AB240191C3ED66ABECA
+build/tests/shadow_refuge_world_test.exe 093D91BD2938C8A654EEE41ABE81788E5F00CF5D61CB9FC36A411481503AE606
+
+Limits: Native tests establish mechanics and emitted activation bytes; the
+offline original-client lookup establishes the selected cast style and
+duration, not rendered 2022-client acceptance. Modern packet opcodes are not assumed to be
+2022 opcodes. Accepted non-instant skill starts now advance World Health to
+their actual timestamp before cancelling the ordinary attack. Focused tests
+cover a delayed start after Refuge expiry (end heal retained) and a start
+before expiry (end heal suppressed). New ordinary attack requests also advance
+the actor before replacing the previous attack state; focused tests cover an
+active attack crossing expiry and an idle actor beginning to attack afterward.
+Five focused Release CTests passed, including npc_ordinary_world. Other attack transitions lacking a timed
+advance still need historical activity or chronological integration to prove
+retail-equivalent delayed-tick behavior. NPC recipients/casters and full
+reactive enchantment interactions remain to be verified.

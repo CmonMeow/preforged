@@ -1,0 +1,58 @@
+Virulence107: Runtime-bound for guarded player and reviewed NPC targets
+
+Evidence:
+Fixed checkpoint20261017-npc-refresh-2 has packets-1360-15821281.jsonl:
+cast71726,completion71736,target206 at71737. These receipts do not prove
+successful condition application or the prerequisite state. Captured8s
+recharge is context-dependent;the pinned2022 baseline is15s.
+Native row/wiki:5Energy,1s activation,.75s aftercast,Death Magic,3..15s
+condition duration at bonus offsets100/104. Caster2077 means no particle.
+tools/protocol/virulence_2022.py verifies the fixed file hash/receipts and
+runs original cast and target206 consumers with stubbed actor/asset services.
+Report:build/reports/virulence-native-2022.json. No rendered acceptance claimed.
+
+Mechanics:
+gw_virulence.h proposes Disease,Weakness,Poison in historical wiki covering
+order. Only an active condition at completion triggers additions;exact expiry
+does not count. World commits each step through shared reactions and stops on
+Fragility death. Longer existing condition timers are retained. Disease uses
+shared contact propagation and infection-specific lifetime provenance.
+
+Players use their human baseline;owned Tainted Flesh113 blocks Disease but
+not Weakness/Poison. Active forms currently reject triggered applications
+until their flesh/type policy is reviewed. NPC flesh and Disease immunity are
+explicit evidence-backed facts;unknown flesh rejects a conditioned target;
+known fleshy with unknown immunity rejects before any step. Nonfleshy targets
+can receive Weakness without needing an irrelevant Disease-immunity fact.
+Known Disease immunity skips Disease while retaining other eligible conditions.
+A clean target is a valid no-op and still publishes the completion target effect.
+
+Casting integration:
+Runtime107 support requires a scoped target,foe validation and authoritative
+Virulence hook before cost payment. The production native gateway wires World.
+Shared lifecycle handles5Energy payment,cancel/interrupt,aftercast and15s
+recharge. Completion revalidates target lifetime and prerequisite. Target206 is
+deferred into the finish batch,after native58;no2077 caster particle is invented.
+
+Validation:
+Release virulence_cast passes PvE/PvP x player/NPC fixtures,cost/insufficient
+Energy,missing hook,cancel,interrupt,stale scope,clean targets,late prerequisite,
+player prerequisite expiry,aftercast/recharge boundaries and finish/206 ordering.
+The NPC expiry fixture uses its real longer Weakness timer and stays conditioned;
+it is not evidence of NPC prerequisite expiry during the1s cast.
+virulence_world passes exact-expiry prerequisite,stale scope,ordered reactions,
+Fragility death,nonflesh and unknown eligibility,owned player Tainted Flesh,
+known NPC immunity and nonflesh/unknown-immunity combinations.
+73 skill-tooling tests and the native verifier pass. Host/regression build status
+is appended after the current serial build completes.
+
+Remaining verification/implementation:
+Qualified once-per-application Disease lineage and paired retail spread cadence;
+all condition/transfer entry-point eligibility/provenance migration;production
+NPC trait population;form/immunity transitions;condition-duration equipment
+modifiers;NPC casters;Glyph of Immolation prerequisite ordering;paired retail
+successful condition receipts;remote NPC Disease presentation and rendered QA.
+Runtime binding does not assert those gaps are complete. Earlier staged/unbound
+notes elsewhere are superseded for this guarded Runtime path only.
+
+Final validation: serial Release virulence_world_test,virulence_cast_test,disease_world_test,npc_world_combat_test and server_host builds passed. All seven selected CTest suites passed. Native verifier,73 skill-tooling tests,fixed checkpoint audit and backlog publication passed. No official client/logger was modified. Current fixed baseline:282 captured source bindings,351 awaiting binding,696 missing local baseline captures. The full skills goal remains incomplete.

@@ -1,0 +1,404 @@
+Native2022 skill execution progress -- 2026-10-03
+
+Scope: every defined pinned2022 skill ID1..3432, including player, PvP split,
+monster/NPC, boss, event, environmental and copy variants. Runtime eligibility
+and ownership are separate: the1329 obtainable-player whitelist is NOT an engine
+support boundary. Modern-only skill IDs require another versioned catalog.
+
+Proven infrastructure
+- Exact client catalog resources, activation/aftercast/recharge, profession,
+  attribute, campaign, target/weapon metadata; endpoint numeric fields alone do
+  not identify an executable mechanic.
+- Owned character learned/copy/bar/profession persistence and reconciliation.
+- Cast pending/cancellation/finish and integer recharge packets; unsupported
+  effects cancel explicitly and never report a successful simulated effect.
+- Actual resource consumption and regeneration, self/party target validation.
+
+Implemented semantic handlers: 6
+281 Orison,282 Word of Healing,286 Heal Other,313 Healing Touch: actual healing,
+conditional bonus/DivineFavor and target restrictions.
+169 Earth Attunement: timed effect icon, expiry, Earth-use energy refund. First
+own-cast refund order is an explicit inference awaiting gameplay validation.
+1043 Dash:3second authoritative1.5 movement multiplier;39 changes base speed,
+43 remains its native0.01..1 fraction. Death/expiry resets speed.
+
+Reviewed pure plans, NOT yet wired/claimed working: 2
+174 Aftershock: nearby252 Earth damage26..100, knocked-down bonus10..68.
+937 Shockwave: area322/nearby252/adjacent166 successive Earth strikes15..60,
+weakness/cracked armor/blind1..10seconds. All conditions must be implemented;
+damage-only is incomplete. Empty authoritative hostile target sets are valid.
+Source: pre-Reforged local wiki descriptions and GWCA Constants::Range.
+
+Current-bar pending handlers
+952 Death's Charge: requires valid hostile shadow-step destination and heal rule.
+171 Stoning: projectile hit/miss/path, Earth damage, weakness-dependent knockdown.
+1374 Ebon Hawk: projectile damage and weakness.
+1661 Glowstone: projectile damage, weakness-dependent EnergyStorage refund.
+
+Crosscutting work remains
+Explicit hostile actors with known health/armor; conditions/effect removal and
+stacking; projectiles and line-of-sight; knockdown/interrupt; physical attacks,
+weapon timing/accuracy/block/critical; adrenaline; sacrifice/overcast; hexes,
+stances/enchantments and stacking; maintained energy; life steal; resurrection;
+summons/pets/minions; party/AI triggers; recharge manipulation; all professions
+and special event/NPC mechanics. No NPC stats are inferred from captured level.
+
+Coverage is authoritative only for the explicit handlers above. Unlock UI does
+not imply execution support. No global 'all implemented' claim is made.
+
+New crosscutting reviewed helpers (not yet world-wired)
+gw_conditions.h tracks ten native condition IDs with exact expiration and
+longest-remaining reapplication. It serializes only documented condition bits,
+leaving unrelated status untouched; cracked armor reduction respects minimum60
+without increasing already lower armor. Duration source: local Condition notes.
+gw_skill_effect_plan.h retains fractional raw damage before armor: Aftershock
+rank12 tooltip85 corresponds85.2 actual base, bonus56.4. Condition duration
+values retain reviewed integer progression. Ordered Shockwave strikes must
+recompute armor after cracked armor applies rather than combining all damage
+under one initial rating. Unknown enemy stats remain absent.
+
+Offline inventory tool tools/protocol/skill_execution_inventory.py produces
+build/reports/skill-execution-2022.tsv for every3432catalog slot with exact type,
+profession, attribute, campaign, PvP link, separate ownership class, and explicit
+execution status. Catalog slots include internal/passive/unused entries; presence
+alone does not prove a player-obtainable skill or executable actor action.
+
+2026-10-03 actual no-target cast failure root cause
+The server always advertised InstanceInfo.is_explorable=0, including Regent
+Valley162. Native408 descriptorRVA60dc3c callback7cd1d0 stores decodedpacket+c
+into MapContext+230;7cbe50 reads it. UseSkill798560 first requires getter==1
+and silently returns otherwise, so no CMSG cast reaches the server. The fix
+uses the same catalogtype1/4 eligibility for advertisement and server casting.
+cast_gate_2022.py executes the original408 callback and getter for both0/1;
+cast-gate-2022.txt contains original serializer fixtures. Native sender876730
+writes0x44 (68decimal), not86decimal; outgoing descriptorRVA626ebc contains
+DWORDskill,DWORDcopy,DWORDtarget,BYTEcall. Existing outgoing fixtures confirm
+4480... framing. Opcode92decimal remains realswap sender877010; it must NOT be
+reinterpreted as a cast. New diagnostics distinguish began/applied/failed/expiry.
+Live casting validation is still required after host deploy and explorable entry.
+
+Next executable slice reviewed (awaiting current build/live validation)
+Healing Whisper958: target OTHER ally only, half spell range624, pinned cost5,
+activation1s,recharge1s; Healing Prayers heal40..100 plus caster Divine Favor.
+Local Healing_Whisper.html explicitly establishes other-ally and half range.
+Do not confuse targets with all NPCs: actual ally health/team authorization is
+required. Healing Light867 additionally requires authoritative enchantment state
+for its conditional energy refund; Patient Spirit2061 requires target effect
+ownership/removal and delayed heal only on natural expiration. Heal Area280
+heals all adjacent CREATURES including foes, so generic party-only AoE would be
+wrong and cannot be used as a template without reviewed creature health state.
+
+Engine architecture requirement
+Client cast eligibility (owned learned slots/copies/professions/campaigns) must
+remain separate from trusted NPC/environment execution. The reusable immutable
+plans already have no player-ownership restriction. Do not bypass player gates
+merely to execute monster skills; a trusted authoritative actor definition must
+supply skill/rank/resource/target state and generation to the engine. Internal
+passives, disguise and condition IDs are not ordinary castable client requests.
+
+Explorable load branch regression
+Correct flag1 exposed a separate loading deadlock:397callback7cce30 requests
+mission mask144 only for outpost flag0. Explorable flag1 intentionally skips it.
+The server previously queued407phase0/1+406type0 only after144, soexplorables
+waited forever. For actualexplorables the same empty manifest must be queued
+after397 playerstream instead. Type0 table9e4048=[3,3,1,1] enablesready callback
+7d0610; that callback recordsmissioncache forflag1 then unconditionallycalls
+7d0760 sending134spawnrequest. No144 prerequisite exists. Offline
+explorable_manifest_2022.py runsnative397branch and readycallback inbothmodes,
+assertingactual134sender. Externalcache/backend sideeffects are hooked; the
+branch decisions and native sender runoriginalinstructions. This proof does
+not replace a real dependency manifest, currently servedemptyforprototype.
+
+Latest verified increment
+Root live validation: genuineexplorablemap162 cast169/1043 bothreceived68,
+appliedeffects, Dashspeed330units/sec and expiration3s. FreshPlay/travel passed
+followingexplorablemanifest and destinationtype fixes.
+HealingWhisper958 is now a seventh implemented semantic handler. Focusednative
+Runtime tests pass self-rejection, half-range624, exactcost5, activation1s,
+actualrank12heal88+DivineFavor32 and recharge1s. Livepartyhealing notyettested.
+Directhealdefinitions now live in gw_heal_effects.h, independent of ownership.
+
+Trusted NPC/environment execution separation is implemented and native-tested:
+ActorContext{actor,generation,primary,effective} plusmandatorygenerationprovider.
+start_trusted bypasses learned/bar/campaigneligibility only forserverownedactors;
+ordinary start retainsallclientownership gates. Explicitresources and reviewed
+effects are still mandatory. Start/update/cancel rejectwrong/recycledgeneration;
+oldpending/effects/rechargeclearwithoutchanging a replacement actor'sspeed orHP.
+Instance hooks must capturelifetimehandle andcheckit underworldlock duringeach
+actualresource/effectmutation. Unit tests donotimplyliveNPCintegration.
+
+AUTHORITATIVE EFFECT REGISTRY (isolated helper, pending world integration)
+  src/runtime/gw_effect_registry.h binds instance/actor/generation and tracks
+  category, caster, skill, effective rank, effect ID, applied time and expiry.
+  It distinguishes explicit removal from natural expiration, refuses future
+  bonuses, and makes replacement/capacity rejection atomic. Conditions remain
+  in gw_conditions.h. Presentation owns only enchantment/hex/weapon flags.
+  This does not expand executed-skill coverage until reviewed handlers and
+  world mutation/query hooks use it under the instance lock. tests/effect_registry.cpp
+  covers lifetime isolation, exact expiry, replacement and capacity denial.
+  Next conditional heal reviewed: Healing Light (GWCA ID867, local wiki
+  Healing_Light.html): heal40..100; if target enchanted, caster gains1..3 energy.
+  Must query authoritative target status at completion, not infer enchantment
+  from client decoration or assume every ally is enchanted.
+  Verification update: effect_registry_test and skill_casting_test rebuilt and
+  passed. Runtime appended status_mutation and has_enchantment hooks.169/1043
+  register status before publishing65, remove exact ID on expiry/death, and
+  refuse speed/UI application if authoritative registration fails. World hook
+  integration is delegated to root; existing live self-buff proof preceded
+  registry integration, so no new live registry claim is made.
+
+Healing Light867 implemented, native unit verified (no live claim).
+  GWCA ID + pinned catalog: HealingPrayers13,5energy,1s activation,.75s
+  aftercast,4s recharge, heal endpoints40/100, conditional energy1/3.
+  Local Healing_Light.html: energy gain if target has an enchantment.
+  Runtime requires genuine world has_enchantment and restore_energy hooks;
+  absence denies before consuming energy. Target/range/death validation remains
+  authoritative. At completion query target status, heal with normal Divine
+  Favor, then return energy only after successful heal if enchanted.
+  Tests rank12 heal88+32 and return3; enchantment expiring during activation
+  gives no energy; lost target gives neither heal nor refund; missing hook
+  rejects before cost. Initially test combined two elite skills, correctly
+  rejected by existing policy; corrected to a legal standalone Light bar.
+  Focused skill_casting_test rebuilt/PASS. Eight implemented runtime handlers,
+  two reviewed AoE plans still require world combat integration.
+
+Timed health regeneration family helper (not yet cast-enabled)
+  gw_health_regeneration.h reviews Healing Breeze288 (+4..9,15s,ally/self)
+  and Troll Unguent446 (+3..10,13s,self). Local Health_regeneration.html
+  establishes2HP/sec/pip and net±10 cap after positive/negative sources sum.
+  Lifetime-bound State integrates all exact begin/end boundaries, preserving
+  fractional health across variable tick sizes, and cannot revive dead actors.
+  World must advance to mutation time before same-skill renewal/removal;
+  apply requires begins==cursor. Other pips are explicit authoritative inputs,
+  not guessed out-of-combat regeneration. Helper/test pending target build.
+
+Healing Breeze288/Troll Unguent446 cast lifecycle enabled with mandatory world
+  regeneration hook, native unit verified; live verification pending.
+  Hook owns target-wide source state and65/67 presentation. Casting does not
+  duplicate those packets. Breeze actual1s cast/15s source, Troll3s cast/13s
+  source; Troll forces caster rather than selected ally. Pinned attributes
+  supply ranks13/24 respectively. Missing hook denies before cost.
+  begin_action now runs after cost/pending commit but before227 to cancel
+  emotes/stop old movement before starting the skill animation. Fresh movement
+  cancellation remains valid; cancel after an already-committed instant Dash
+  leaves active buff/speed unchanged and emits no59. Focused casting and
+  health_regeneration tests passed. Ten reviewed runtime handlers are enabled
+  by their actual hooks; no all-skills or new live proof claim.
+  Cross-cutting remaining: initial DivineFavor healing for non-healing Monk
+  spells such as Breeze is not yet generalized; direct-heal handlers include
+  it. Timed source functionality does not imply complete triggered mechanics.
+  Breeze DivineFavor follow-up now implemented: after genuine regeneration
+  source succeeds, primaryMonk triggers round3.2*DivineFavor rank healing on
+  the same validated ally. SecondaryMonk and Troll do not trigger it. Missing
+  heal hook when DivineFavor applies denies before cost. Focused tests passed:
+  rank10 adds32; failed source/no-primaryMonk adds none. Independent world
+  heal callback rechecks target lifetime/range; a concurrent invalidation may
+  deny supplemental heal after source commit, without source rollback. This
+  race caveat remains; world single-lock compound operation is a later polish.
+
+Party heal family prepared: HealParty287 andPvP3232, LightofDeliverance1397.
+  GWCA confirms LOD1397, NOT835 (835 is a Necromancer hex).
+  HealParty heal endpoints30/75. LOD heal uses BONUS5/70; scale101/101
+  retained metadata must not be mistaken for healing. PvPLOD2871 remains
+  unsupported because SmitingPrayers20s disable is not implemented.
+  Party radius5000: GWCAConstantsCompass plus local Range.html party range.
+  HealParty.html specifies DivineFavor caster only; plan does not add it to
+  every party member. Lifetime-scoped world party_heal hook is mandatory.
+  Runtime forces caster anchor independent selection, uses exact native costs,
+  activations/recharges, and emits cancellation on absent/failing callback.
+  Focused casting test passed. New party_healing target registration pending.
+  Party_healing_test registered, configured, built and PASS. Casting test PASS.
+  Thirteen reviewed runtime handlers now require their actual world hooks;
+  party live verification pending. Two caster-centered EarthAoE plans still
+  reviewed/unwired. Remaining catalog entries explicitly unsupported.
+
+Hex removal301 RemoveHex /2003 CureHex reviewed casting handlers prepared.
+  New mandatory remove_effects hook owns atomic target Registry mutation/heal.
+  Both target ally/self at1248,5energy,1s activation. RemoveHex removes1;
+  CureHex heals30..120 ONLY if actually removed. PrimaryMonk DivineFavor
+  heals target on successful cast even emptyhex set, not caster-only party rule.
+  Registry newest() uses insertion serial, not ID/timestamp tie guesses;
+  Cover_hex.html explicitly establishes most recently applied effect removal.
+  Expired/future/foreign-lifetime entries cannot be selected. Same-ms cover
+  ordering tests passed; casting plans/cost/delay/mandatoryhook tests passed.
+  World wiring/native world tests delegated; live not verified. Fifteen
+  runtime handlers require actual hooks; SmiteHex damage/enemy enchant removal
+  remain unsupported. No cosmetic67-only removal or invented hex application.
+
+Condition cleanse275..278 reviewed runtime family, focused native tests PASS.
+  Local skill pages+GWCA IDs+pinned scales:275MendCondition oneOTHERally heal
+ 5..70 iffremoved;276RestoreCondition ALL OTHERally heal10..70 PERremoved;
+ 277MendAilment oneally/self heal5..70 PERremaining;278PurgeConditions ALL
+  ally/self no baseheal. Attribute15Protection ranks, notHealing13.
+  PrimaryMonk DFtarget once even validemptyset. Mandatory atomic world
+  remove_conditions callback owns actualconditiontimers/status/removal packets,
+  count and healing; unsupported/nohook denies beforecost. Registry.lookup
+  supports scoped exact-ID status queries. Tests other-only/noearlyeffects,
+  Protection12Restore58, remaining count, emptysetDF and impossible count deny.
+  Nineteen runtime handlers require proven world hooks. World condition
+  degeneration/renewal/state integration delegated; no livecleanse proof yet.
+
+Resumed skill work: reviewed direct/status-sensitive healing increment.
+  Jamei'sGaze1120 is exact Factions HealOther duplicate: otherally1248range,
+  35..180 base,10energy,.75s activation,3s recharge, normal primaryMonkDF.
+  Added dispatcher entry and genuine target/cost/timing/151+32heal tests.
+  Dwayna'sKiss283 adds15..60base and10..35 per actual enchantment OR hex,
+  otherally only. Mandatory status_heal hook executes lifetime/party/range,
+  current server-time position, actualactive Registry counts and preciseHP
+  mutation under one world lock. Expired/future/foreign effects do not count;
+  no status decoration or fabricated count. CasterDF checkedprimaryMonk.
+  Native world tests prove2statuses/1expired/empty, self/stranger/recycledscope,
+  alteredmagnitude/secondaryMonkDF denials. Casting proves missinghooknocost,
+  5energy/1sdelay/recharge, otherally, base+DF for emptyset.
+  Focused skill_casting_test andgw_world_simulation_test BUILD/PASS.
+  Rootappbinding now supplied; these two new skills NOT liveverified yet.
+  Ledger3432 engineentries:21 implemented with genuine required hooks,
+  2 reviewedAoE plansunwired,3409 remaining notimplemented (3411 unavailable
+  includingunwiredplans). Source scope includesNPC/monster/enventries; player
+  ownership whitelist remains separate. This is not an all-skills completion.
+  Missing cross-cutting mechanics: hostility/damage/armor/attacks/adrenaline,
+  sacrifice/overcast/interrupt/triggers/AI/summons/weaponspells and manyeffects.
+
+2026-10-04 current Earth build increment: Shockwave 937 live confirmed by user. Aftershock 174 now dispatches reviewed nearby252 earth damage through scoped world mutation; focused pure/world tests pass. Conditional Aftershock bonus helper is exact and world integration is being supplied by authoritative knockdown state. Projectile family171/1374/1661 has reviewed native-cost/activation, hostile-target validation and rank snapshots in casting; focused casting tests pass. World owned-lifetime flight/impact implementation is pending integration by damage agent. Flight policy must be explicitly private until retail timing is proven. Native163 visual layout proven, resource identifiers remain unknown; no fabricated projectile assets. Native161kind63 knockdown action19/duration proof PASS3. This is not completion of all3432 engine skills.
+
+2026-10-04 projectile integration checkpoint: 171/1374/1661 now bound to scoped world projectile_target_valid + launch_projectile, actual private flight/impact/weakness/KD/refund implementation. Knockdown gates new casts and cancels pending Runtime activation at app tick; Aftershock reads authoritative knockdown expiry. server_core and skill_casting/world/aftershock/shockwave focused builds/tests PASS. Source ready for parent host link/deployment; live projectile gameplay NOT yet verified. Flight remains documented private policy; projectile visual resource IDs remain unknown, no163 inventedasset message.
+
+2026-10-04 Earth AoE animation correction: native cast-start159kind60 already selects style50 and exact1740.75s/9371s activation, including nativecasteroverhead317. Runtime omitted success casterbody resources: original160byte skill+78 values174->313 (file15880),937->1182(file174462). success_body_effect now publishes original158kind21 resource after genuine scoped AoE completion, broadcast byexisting world.skill_event to owner and peers; failed effect/unknown armor/cancellation does not publish it. Originaloffline callback+particle-consumer proof tools/protocol/earth_aoe_animation_2022.py PASS2; fixtures tests/fixtures/earth-aoe-animation-2022.txt. Focused runtime tests assert exact originalwire, activation timing, one effect, no repeat/cancel/failure effect. This validates native resource/consumer semantics, not rendered pixels or live visual approval. Other supported skills' body/target FX still need systematic resource publication; no blanket all-animation completion claim.
+
+Adrenaline foundation (2026-10-04; integration pending)
+---------------------------------------------------
+Original build37130 callbacks8752b0/8752e0 execute208/209 against
+synthetic two-actor duplicate-copy skillbars in tools/protocol/adrenaline_2022.py.
+208 sets exact skill/copy units;209 clears chosen pool and subtracts25
+from both native counters of every other occupied row. Native serializer
+fixtures are tests/fixtures/adrenaline-2022.txt; report is generated under
+build/reports/adrenaline-2022.json. No renderer/process/network used.
+
+Native catalog costs are fractional-strike units: Cleave335=80,
+Executioner's Strike336=200, Mighty Blow351=160, Galrath Slash383=200,
+Silverwing Slash1144=200. Do not round these to the displayed strike count.
+Local archived Wiki Adrenaline.html lines65-77 specifies25 units/successful
+weapon hit, floor(100*damage/maxHP) incoming damage before flat reduction,
+chosen reset/others-25 at activation even if interrupted, and death/25sec
+noncombat reset. DOT/health sacrifice/life stealing are not damage triggers.
+
+New gw_adrenaline.h is a transient bounded8-slot resource foundation with
+copy isolation, reordering preservation, disabled/no-rebuild behavior,
+clock regression protection, and actual native cost caps. It is not yet
+bound to world combat/casting; these five skills remain unsupported until
+that integration and actual resource/weapon/lifetime tests pass.
+Native228 clears the successfully used slot's adrenaline: after an attack
+hit, reconcile208 after228 so the newly earned hit25 is retained in UI.
+Mastery-based bonus rank is distinct from Strength armor penetration;
+new plans must capture both rather than apply Axe/Hammer/Sword as Strength.
+
+Adrenaline family integrated source (supersedes pending checkpoint above)
+----------------------------------------------------------------------
+Cleave335, Executioner's Strike336, Mighty Blow351, Galrath Slash383 and
+Silverwing Slash1144 now execute the actual owned melee weapon strike plus
+reviewed armor-ignoring bonus. Axe/Hammer/Sword requirements are enforced;
+mastery scales the bonus while captured effective Strength separately applies
+armor penetration to weapon base. Costs/recharge/activation are pinned native
+values; windup remains explicitly private500ms, not claimed retail timing.
+
+World transient pools are scoped to actor lifetime and synchronized from the
+actual bar only after native217 initialization, and after edit/secondary/GM
+restore.208 owner snapshots never expose account learning to peers.209 spends
+at activation; cancellation/Blind/target loss does not refund. Successful
+weapon hits add25; incoming actual damage uses armor-resolved Hit.damage before
+Absorption and max-health overkill clipping. Separate spell damage commit paths
+are bound; health sacrifice, life stealing and timed degeneration do not grant.
+Death/25seconds noncombat clears pools; actor recycling starts empty. Native228
+completion is followed by208 reconciliation so attack-hit gain remains visible.
+
+Original77c440 executes native activation0 for the five rows and stores the
+skill but does not select a model swing. Runtime therefore publishes proven
+159kind4 action3 AFTER159kind60 skill setup, with158kind1 melee finish and
+158kind3 on active cancellation only. This shared path also covers322/326/1693.
+Original native callback/serializer/zero-duration routing proof PASS; no live
+DAT/model rendering or visual approval performed by this agent.
+
+Build server_core PASS; adrenaline,adrenaline_casting,world_adrenaline,
+skill_casting and world_weapon_attacks focused5/5 PASS. Tests exercise allfive
+costs/bonuses/weapons, actual damage/gain before flat reduction, copy separation,
+spend-on-cancel, no sacrifice gain, death/expiry/recycled scope, correct
+Strength separation and start/finish/stop ordering. New handlers remain
+pending parent host deployment/live gameplay validation. Block/stance effects,
+adrenaline-multiplier skills and other adrenaline attacks are not inferred.
+
+October9: Glimmer of Light1686 is now a reviewed direct heal. The pinned2022
+catalog supplies HealingPrayers attribute13,5energy,250ms activation,750ms
+aftercast,1second recharge and healing10..115 at ranks0..15. Wiki semantics:
+https://wiki.guildwars.com/wiki/Glimmer_of_Light (other ally or self; spell healing).
+Rank12 resolves94 plus32 DivineFavor at Divine10. Invalid target denies before
+cost; no early heal; self targeting, exact recharge and failed commit paths are
+covered. Existing character learning/campaign/profession eligibility still gates
+the skill; adding a handler does not fabricate learned/account unlock records.
+
+The direct-heal casting branch now emits the pinned native target-body particle
+only after the authoritative heal hook succeeds, using the existing kind21
+resource helper. Glimmer targets resource1653 on the recipient; existing caster
+resource1652 follows the common successful-completion path. This also supplies
+the recorded target particles for the other direct heals. No target success
+particle is sent before completion or after a failed heal. Native particle
+dispatch is not a claim of live DAT visual approval. Focused skill_casting
+test rebuilt and passed. Coverage audit now reports99 implemented bindings of
+3433 internal IDs (including NPC/reserved/non-obtainable records), not all skills.
+Full rebuild completed;126/126 tests passed29.80s (glimmer-build.txt and
+glimmer-tests.txt under build/reports). Published single host PID5408, executable
+SHAbc0eec2e80d2859c640c6d4a2bd15b1b4a4dd3998e0456722541b4138b8c716a.
+New private2022PID15596 passed login/world/keyboard/ground movement on that host,
+ground displacement159.58638483340732 with settled pose disagreement0.0 and
+survived5seconds after input. This validates deployment smoke, not Glimmer's
+live visual appearance or all routes/skills. OfficialPID5604 was preserved.
+
+October9 Aftershock range correction: this spell has the 240-gwinch exception
+to the ordinary nearby252 radius, documented at
+https://wiki.guildwars.com/wiki/Area_of_effect . The reviewed plan now uses240;
+Shockwave retains its distinct252 middle ring. Tests exercise an exact240 hit,
+240.01 exclusion and a246 target formerly inside the erroneous radius. The
+world integration test likewise places an armored foe at240 and another at246.
+No new skill binding was added; this corrects existing authoritative targeting.
+All three affected test targets rebuilt. This source change has not yet replaced
+the running host, and does not verify live Aftershock visuals or screen shake.
+October9 quest/Aftershock deployment: full native build succeeded;126/126 tests passed28.52s.
+Visible host PID3416; private2022PID7276 passed login/world/turn/keyboard/ground movement.
+Host SHA256 3a8b8644771e655c81a03aa075e8a0a8efb784f5c11a4f5fc4bdc64befca4554
+Ground displacement159.6270081818606; settled pose disagreement0.0; map186; alive after5seconds.
+OfficialPID5604 preserved and responding. This smoke does not prove live quest completion or Aftershock visual effects.
+October9 area-range audit also corrected Rodgorts Invocation189 from252 to240.
+The world test uses target x100, edge foe x340 and excluded foe x346: exact240 takes99 damage and Burning3s;246 gets neither.
+The elemental plan rejects a forged252 radius. Both rebuilt elemental_damage/world_simulation tests pass.
+Reference https://wiki.guildwars.com/wiki/Area_of_effect . Remaining named radius exceptions are not implemented bindings.
+This source correction is pending the next host deployment; death-midcast area-center behavior remains a separate unverified mechanic.
+October9 Rodgort death-during-cast correction: begin still requires a live foe.
+Completion permits a dead target only for189 and only with unchanged instance/actor/generation. World resolves the corpse position and validates opposing team, plane, caster life and range before applying240-radius hits to live recipients.
+Tests prove25energy, two-second activation, completion after death, rejection of recycled actor identity, and normal Immolate death rejection.
+World corpse-center test runs at one timestamp to isolate area damage from existing Burning integration; the first200ms version also included Burning damage and its exact-health assertion failed.
+Three affected rebuilt tests pass. Source pending deployment; no live client corpse-center visual check yet.
+Rule reference https://wiki.guildwars.com/wiki/Rodgort%27s_Invocation/Skill_history (July13,2005 behavior change).
+October9 deployed typed operation/quest persistence plus Rodgort240 radius/corpse completion.
+Full build passed;126/126 tests passed28.71s. Evidence build/reports/typed-storage-build.txt and typed-storage-tests.txt.
+HostPID7824 SHA256 f03576ec0d5c1b7ab39d1a9d344df0c2cb87131ceb0f195ddbc56ecd49adabe2
+Private2022PID6988 passed login/world/turn/keyboard/ground-click smoke, movement159.60778629596845 units, settled pose disagreement0.0, alive5seconds.
+OfficialPID5604 preserved and responsive. This verifies deployment smoke only; live corpse-center visuals and quest objectives/rewards remain unverified/incomplete.
+October9 Lightning Hammer865 implemented: pinned2022 native row25energy(encoded12),2s activation,.75s aftercast,4s recharge,Factions Air Magic, victim resource991.
+Reviewed wiki mechanics10..100 lightning damage through rank15,25% penetration, CrackedArmor5..20s after initial damage;rank12 deals82 and lasts17s.
+Original target lifetime and ordinary casting/cancellation/resource/recharge policy apply. World test verifies actual health398 from480 against80armor and victim991 once per peer after commit.
+Focused lightning/skill_casting/world_simulation rebuilt and3/3 passed0.14s. Initial world fixture mistakenly passed3000 as morale; corrected to100.
+Coverage audit now100 implemented bindings among3433 internal records;3279 remain unsupported. This is not100 fully verified retail skills.
+ShellShock needs Overcast branching and HammerPvP3396 remains unsupported. No live Hammer visual approval or deployment yet.
+Rule sources https://wiki.guildwars.com/wiki/Lightning_Hammer and https://wiki.guildwars.com/wiki/Feedback:Developer_updates/20120913 .
+October9 PvP variant audit: pinned table contains154 reciprocal base/variant pairs; no nonreciprocal links. Audit reports runtime effect bindings separately from automatic mode selection.
+Added native3396 LightningHammerPvP effect plan: same10..100 damage/25percent penetration as865, but no CrackedArmor. Focused rebuilt lightning test passes both distinct effects.
+Numerically identical metadata can hide semantic differences (Hammer); regression audit fixtures verify this, missing/duplicate/nonreciprocal identities and unimplemented variant classification.
+Source coverage101 bindings. Implemented LightOfDeliverance1397 still lacks2871PvP; its pinned recharge differs6 vs10. Native2022 data takes priority over modern wiki timing when they differ.
+No runtime uses pvp_skill to substitute bar/effect identity yet. Automatic match-mode skill selection and native client bar/request behavior require verification before claiming correct PvP gameplay.
+Evidence tools/protocol/skill_variant_audit.py, tests/skill_variant_audit.py and build/reports/skill-variant-audit.json. Hammer changes pending deployment.
+October9 native cast identity proof: tools/protocol/skill_request_identity_2022.py reuses the existing native sender emulator and original serializer. Four cases cover Lightning Hammer865/PvP3396, slots0/2 and copies0/1. Original798560 lookup/pending/send path preserves supplied skill/copy IDs in opcode68 and its15-byte wire packet. This rules out assuming that the cast sender substitutes the PvP counterpart. Incoming skillbar population and map-mode initialization remain unproven; no automatic server remapping or deployment claimed. Report build/reports/skill-request-identity-2022.json.
+Follow-up incoming bar proof: original217 callback8753b0 ->796630 ->7a43a0 stores the supplied865/3396 IDs and copy numbers unchanged. Four native cases cover reset0/1 and both7cbe50 mode-gate values; original animation preload runs with only resource lookup stubbed, and bar UI notification is intercepted. No base-to-variant conversion occurs in this callback. Separate map-initialization behavior and live UI remain unverified. Server must explicitly select its effective PvP bar/effects rather than assume these packet paths do so.
+October9 match variant selection implemented in source: match_profile creates an ephemeral owned session view using only reciprocal flagged2022 pairs. Map type6 restoration, cast policy/bar, rejected-edit reconciliation, profession reconciliation and adrenaline configuration use that view. Saved character profile and its PvE bar remain unchanged. Variant learning aliases inherit maximum owned copy counts without addition or catalogue-wide unlocks. All154 reciprocal pairs are covered for ID/copy preservation and idempotence. Runtime Hammer match test rejects base-ID bypass before energy consumption, accepts3396 from an owned865, waits2seconds, applies82damage with no CrackedArmor, and publishes3396 recharge. server_core compiles; focused character_skills/skill_casting/lightning tests3/3 pass0.04seconds. Not linked/deployed or visually tested yet; automatic selection outside map type6 and restriction of PvE-only skills remain incomplete. Selecting an unsupported variant still correctly rejects its effect; this does not implement all154 variants.
+Deployment follow-up: full Release build succeeded (build/reports/match-variants-build.txt);126/126 CTest regressions passed29.05seconds (match-variants-tests.txt). Verified and closed only privateclient6988 and privatehost7824. New visible host7852 SHA256 e95ff2d5a1e8549d6eef061e128e05d0916aba1c1fd0c64b65f5e69c3a00fec5 reports READY portal6601/auth6112/world6113. Privateclient15356 passed login/world-entry/turn/keyboard/ground-click smoke in map186;159.61499771025913units observed ground movement, pose disagreement0.0, alive5seconds after input. Officialclient5604 stayed responsive and was preserved. Evidence build/client-check/smoke.json. This validates deployment and PvE baseline only; live PvP variant-bar/effect visuals remain to be tested.
+October9 live PvP split validated: new read-only skillbar_observer verifies exact private path/hash and stable epoch/array/actor/slot IDs; official5604 is rejected before memory-layout reads. UI-equipping LightningHammer in arena staging displays the PvP label but sends base865 in CMSG90. Privateclient15356 and isolated peer12764 entered world312953627 map2 type6. Native client bar changed865->3396; selecting peer2 and casting sent opcode68/id3396, server logged began/applied, and native3396 slot recharge became nonzero. Returning through /tp55 restored865. Original eight-slot build952,937,171,174,1374,1661,1043,169 restored through normal UI; peer12764 closed normally after full-path verification; official5604 stayed responsive. Evidence build/reports/pvp-variant-{before-match,match-bar,recharge,return-bar,restored-build}.json and pvp-variant-live.log. This proves one split transition/cast/recharge/return, not all154 variant effects or visual fidelity. Other variants still unsupported where their mechanics are absent.
+October9 PvE-only cast restriction added in source: explicit Policy.pvp_match is supplied from authoritative map type6. All248 pinned native records flagged0x80000 are denied with diagnostic "PvE-only skill unavailable in PvP" after owned-bar validation but before resource lookup, consumption or effect dispatch. Exact226 acknowledgement clears that denied request; no body cancellation interrupts a different active skill. Saved/effective bars retain these skills, matching documented locked-icon behavior rather than erasing choices. Regression tests cover every flagged row, no resource access at denial, no residual pending effect, unchanged learning/bar, and denial during an active3396 cast that still completes normally. Initial fixture wrongly forbade normal idle-update resource lookup; corrected to allow idle observation while proving start does not read resources. server_core compiles and focused skillbar/character_skills/skill_casting3/3 pass0.05seconds; reports pve-lock-core-build.txt and pve-lock-tests.txt. Current running host7852 has the previous split-selection build; this restriction is not deployed/live-tested yet. Rules https://wiki.guildwars.com/wiki/List_of_PvE-only_skills and https://wiki.guildwars.com/wiki/Skill_icon . Trusted NPC entrypoint and other map classifications are separate unfinished policy work.
+PvE-lock deployment follow-up: full Release build and126/126tests pass29.13seconds (pve-lock-build.txt,pve-lock-full-tests.txt). Closed only verified privateclient15356 and host7852. New visiblehost10080 SHA2564d93ca87d8652530a76804eb356b81b91665f7c83b8bcc494f6ec8c6c613826d is READY; privateclient5332 passes login/world-entry/turn/keyboard/ground-click smoke map55,163.57728809152067units movement,visual/authority/prediction disagreement0.0,alive5seconds. Restored eight-slot build remains952,937,171,174,1374,1661,1043,169. Official5604 remains responsive. Evidence pve-lock-smoke.json. The server restriction is now deployed; its direct denial is verified by native runtime tests, not a forced live request bypassing the client's own locked-icon behavior.

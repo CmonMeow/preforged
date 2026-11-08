@@ -1,0 +1,225 @@
+SKILL CAPTURE IMPLEMENTATION CHECKPOINT
+
+Capture cutoff: October14,2026 at6:29PM CDT (23:29:51 UTC).
+Immutable originals:
+  data/captures/skill-checkpoints/20261014T232950Z
+The manifest fixes complete-line byte prefixes and SHA256 for both October14
+packet/world sessions (PIDs6468 and1360). Original live files remain untouched.
+Continuing PID1360 captures after that boundary are excluded from this list.
+
+Readable list:
+  data/skill-capture-plan/CAPTURED-SKILLS-2026-10-14-1829.txt
+Subtraction set:
+  data/skill-capture-plan/captured-obtainable-ids-2026-10-14-1829.json
+Remaining baseline IDs:
+  data/skill-capture-plan/not-yet-captured-ids-2026-10-14-1829.json
+Detailed packet lines, actor/epoch ownership, source hashes and limits are in
+the immutable checkpoint's skill-audit/captured-skills.json.
+
+378 distinct local obtainable skills;460 starts,445 matched finishes and15
+instant starts. Other/unassigned actors are separate. Loading a template is
+not counted. These are activation records, not proof of all effect conditions.
+82 of the378 have code dispatcher bindings;296 await bindings. Global code
+audit now reports136 bindings, not complete implementation of every skill.
+
+Implemented new bindings:
+155 Vile Touch: untyped armor-ignoring touch damage20..65 at ranks0..15,
+    no invented life stealing. Uses scoped player/NPC shadow-damage transaction.
+159 Weaken Armor: adjacent foes receive Cracked Armor5..20 seconds. The NPC
+    path stages all condition mutations before committing; relation, layer,
+    range, clock and lifetime validation remain authoritative.
+1396 Words of Comfort: base healing15..60, one bonus15..45 when the target has
+    any current condition. Counts conditions atomically at completion, not per
+    condition. Divine Favor is independent. Self-targeting is legal.
+1401 Mending Touch: touch-range144, newest two conditions removed,15..60 healing
+    per actual removal plus Divine Favor once. Healing/expiry and cast timing
+    have focused runtime/world tests.
+
+Shared fixes:
+- Existing non-spreading condition spells now reach scoped hostile NPCs instead
+  of failing simply because they have no player vitals record. Epidemic's NPC
+  condition-spread transaction is still unsupported.
+- Aftershock and Shockwave now preflight and commit reviewed hostile NPC
+  damage/conditions. Unknown armor rejects an area commit before any hit.
+- Official Aftershock camera shake is16.0/.25, actor-relative, modern70 ->2022
+  opcode69 with direction flag. Caster shake occurs on successful empty AoE too;
+  each affected actor has one shake. Hidden NPC anchors are filtered per client.
+- The captured extra knockdown damage event is represented separately from
+  Aftershock's first hit, including independent flat damage protection and no
+  extra hit after lethal initial damage. Numerical skill values remain pinned
+  pre-Reforged values rather than importing modern balance values.
+- Successful status heals and condition removals publish pinned target-body
+  particles when the native skill row actually defines one.
+
+Evidence:
+  data/captures/skill-checkpoints/20261014T232950Z/implementation-batch-evidence.json
+  data/captures/aftershock-camera-2026-10-14/manifest.json
+  build/reports/screen-shake-2022.json
+Official packets establish observed event shapes/order. Local primary wiki
+articles establish mechanics; pinned2022 constants establish numeric rows.
+Captures alone do not establish every conditional branch or hidden NPC trait.
+
+Verification:
+Full Release build and160 CTests passed after the first three bindings/NPC/AoE
+fixes (25.88s). After Mending Touch, rebuilt the server and six affected CTest
+targets: captured_skills,skill_casting,ally_cleansing,condition_spells,
+scoped_healing,world_simulation; all pass. Coverage audit3 tests and immutable
+checkpoint audit4 tests pass. Hash-pinned serializer and original native camera
+callback proof passes with captured values (PYTHONPATH=build/protocol-python).
+  build/reports/captured-skills-full-build.txt
+  build/reports/captured-skills-full-tests.txt
+  build/reports/captured-skills-second-build.txt
+  build/reports/captured-skills-server-build.txt
+  build/reports/captured-skills-impact-build.txt
+  build/reports/captured-skills-impact-tests.txt
+Current bin/server_host.exe SHA256:
+E70BA8563EDF1A8FAF361094A0C25662A9EA210FD7BA59F061E18373C69C7CCA
+
+Visual tests explicitly deferred at the user's request while official logging
+continues. Official PID1360 at Desktop/Guild Wars/Gw.exe was preserved throughout;
+no client input/restart/collector mutation was used for this implementation work.
+The source/binary changes have offline validation, not native rendered acceptance.
+
+Goal remains active:296 captured skills still need runtime bindings and existing
+bindings have documented cross-cutting limits. Friendly-NPC healing, general
+interrupt/disable rules, maintained enchantment upkeep, Overcast integration,
+summons/corpses/spirits and other mechanics need further authoritative work.
+Do not enable unsupported skills by sending success animations without effects.
+Do not merge newer live records into this named checkpoint: freeze a NEW named
+checkpoint and union its local captured ID set, preserving earlier evidence.
+
+Second resource-skill batch (same immutable capture cutoff):
+2057 Foul Feast now returns an authoritative transfer receipt, including whether
+Disease was removed. Health gain0..45 and energy gain0..2 scale with Soul Reaping;
+the four-second recharge becomes two only when the transaction actually removed
+Disease. Empty targets, overlapping longer caster timers, capped energy, target
+lifetime, cancellation and exact Disease expiry have tests. Necromancer spells
+do not gain Monk Divine Favor. Legacy boolean-only hooks cannot enable this skill.
+The same transaction still supports Draw Conditions and Purge Signet.
+
+146 Offering of Blood restores8..20 Energy from the pinned bonus endpoints,
+costs1 Energy, sacrifices20% maximum Health, and recharges15 seconds. All ranks
+0..20, full Energy, cancellation, effect failure and lethal sacrifice retaining
+recharge have tests. Native caster body resource261 is published on success.
+Existing generic sacrifice and Aura reaction ordering is retained; an official
+Aura+Offering combination and concurrent generation changes across the split
+resource/cost hooks are not verified. These are binding/engine acceptance limits,
+not proof of complete interaction fidelity.
+
+Current code coverage:138 global runtime bindings;84 of378 captured skills
+bound,294 awaiting. Fixed captured ID set remains exactly378. The readable
+capture checklist now contains packet evidence only; code progress lives in
+data/skill-capture-plan/IMPLEMENTATION-STATUS.txt and its JSON companion.
+Evidence: immutable checkpoint/resource-skills-evidence.json includes normal
+four-second Foul Feast recharge packet126328 and primary article hashes.
+Full Release build and162 CTests pass in25.00s on this batch. Reports:
+  build/reports/resource-skills-full-build.txt
+  build/reports/resource-skills-full-tests.txt
+Visual acceptance remains deferred. The goal remains active and incomplete.
+
+Next engineering gaps to pursue without interrupting official logging:
+- Scope energy-restoration callbacks so recycled numeric actor IDs cannot gain
+  resources through an old session's callback. Review compound gain/sacrifice
+  commit ordering against the existing Aura reactions before changing it.
+- Add explicit foe-conditional health/energy gain transactions (e.g. captured
+  Signet of Lost Souls), without inventing NPC energy data for a health predicate.
+- Friendly-NPC healing and explicit team-allied targets require shared support;
+  the current player-party healing boundary is not full Guild Wars ally policy.
+
+Conditional resource batch:
+881 Ether Signet and1365 Signet of Lost Souls now share a scoped completion
+transaction. Ether checks absolute Energy below5..10 and grants10..20;
+Lost Souls checks the foe strictly below50% Health, granting10..100 Health and
+1..10 Energy. Regeneration is settled before the Energy predicate; NPC targets
+need reviewed Health and hostility, not invented Energy/armor values. Failed
+predicates are successful casts with no resource gain and normal recharge;
+diagnostics distinguish applied_no_resource_gain from effect_failed.
+
+Tests cover all ranks0..20, exactly50% and just-below displayed50%, threshold
+crossing during cast, negative Energy/debt repayment, NPCs without Energy or
+armor, stale targets/casters, replacement actors, missing hooks, resource caps
+and native cast/recharge/body events. Health gain is not healing: a Deep Wound
+does not reduce it, but pending lethal wound debt is settled and invokes normal
+death cleanup. Outcomes report net health_delta, which can be negative then.
+The end-to-end NPC test begins above50%, applies real world damage during the
+cast and verifies the gain from the new below50% state at completion.
+
+Production casting Energy debit/refund callbacks now pass the owning actor's
+full instance/generation scope. Foreign/stale/replaced/dead actors, including
+zero-cost attempts, are rejected by the locked resource entrypoints. Connection
+scope is assigned once during guarded player-stream admission; a retry cannot
+replace it in place. Existing trusted two-argument resource callers remain.
+This closes the numeric-ID callback gap identified above. The separate Aura/
+Offering gain/sacrifice commit-order investigation remains open.
+
+Current coverage:140 global dispatcher bindings,86 of378 captured bound,
+292 awaiting. Captured IDs remain identical to the fixed cutoff. Full Release
+build and164 CTests pass25.77s; the subsequently strengthened target-health
+transition test passes on the same production sources. Offline coverage3 and
+checkpoint4 tests pass. Reports:
+  build/reports/conditional-resources-full-build.txt
+  build/reports/conditional-resources-full-tests.txt
+  build/reports/conditional-resources-target-transition-build.txt
+Evidence receipt: immutable checkpoint/conditional-resources-evidence.json.
+Modern observed body resources975/1621 match pinned2022 rows; native rendered
+acceptance, Scribe's Insight before Ether's Energy check, and resource-gain
+floating-number presentation remain unverified. Scribe's Insight is itself not
+bound yet. No official client input/restart/logger mutation was performed.
+
+Next cross-cutting gap discovered from current source: Runtime.begin still
+uses raw skill.activation for the completion deadline, without Fast Casting.
+Review the primary Fast Casting mechanics and native recharge/cast UI receiver
+before enabling timing modifiers; do not invent a wire duration convention or
+assume the native client applies no additional modifier. Existing captured
+Ritualist/secondary-profession timing has no Fast Casting rank to establish it.
+
+October14 offline timing work (full Release rebuild in progress):
+- Added native bindings13 Mantra of Recovery and15 Mantra of Inscriptions.
+- Added primary-Mesmer Fast Casting activation and PvE Mesmer-spell recharge factors; signet activation uses linear3% per rank. Cast duration override161/kind61 is ordered immediately before activation159/kind60.
+- Instant stances apply synchronously, preserve an existing pending cast, and do not emit body-finish58. Existing Dash/Frenzy focused regressions pass.
+- Recovery/Inscriptions ordinary recharge modifiers combine before one nearest-second rounding. Fast Casting PvE recharge applies outside the ordinary50% cap.
+- Foul Feast behavior notes override the short description: Health restoration is healing; transferring Disease fixes recharge at2 seconds independent of modifiers.
+- Focused cast_timing,skill_casting,foul_feast tests pass. Full build report: build/reports/cast-timing-full-build.txt. Full suite pending; previous deployed executable/status remains the last validated checkpoint.
+- Limits: no live visual tests while official capture continues; arbitrary-rank Fast Casting signet timing has not been independently calibrated from retail captures. Lyssa blessing and other global timing modifiers remain incomplete. Bindings do not imply complete skill coverage.
+
+Timing checkpoint validation complete:
+Full Release build exited0;165/165 native CTests pass35.71s. Strengthened cast_timing overlap/ordered float override test passes; strengthened Foul Feast Deep Wound and Disease-with-Recovery tests pass after the full suite. No production source changed after that full build. Coverage3 and snapshot4 Python tests pass. Snapshot hash verification succeeds; raw captures unchanged.
+Native offline timing proof tools/protocol/cast_timing_2022.py passes7 integer recharge deadlines and4 fractional overrides. It transfers the queued cast-time payload to the consumer explicitly; it does not execute a full AVtick or renderer and does not independently prove the Fast Casting formula.
+Current source audit142 global bindings,88 of378 captured,290 awaiting; user-facing status refreshed. Server SHA256 df29bc400028a59d8b9464240c953db21e81ed91342369db0a9318ccad86dab9.
+Official client/loggers untouched. Full all-skills goal remains incomplete. Next work includes captured skill families and global mechanics; runtime bindings alone must never be presented as full gameplay or visual completion.
+
+Elemental Mantras implementation (full rebuild running):
+IDs6/7/8/9 are captured in the fixed checkpoint. Added reviewed stance plans:30..90s duration and26..50% matching elemental reduction at Inspiration0..15 (normal extrapolation throughrank20),2 Energy per matching damage event. Instant stance admission requires an authoritative status-mutation hook; replacement uses the existing stance category.
+Shared combat Actor now carries a typed elemental multiplier applied after armor/amplification and before flat reduction. World spell/projectile/AoE/field hit commits route through a common Energy/adrenaline receipt. Ordinary reviewed fire/earth caster weapons use the same reduction and gain policy; physical attacks remain separate and cannot accidentally count as default-earth combat hits.
+Energy gains advance existing regeneration, repay negative Energy debt, cap at real maximum and use owner-vitals publication. A matching event absorbed tozero by later protection still triggers Energy; primary first-hand source: https://wiki.guildwars.com/wiki/User_talk:Isaiah_Cartwright/Izzy_Talk_Archive_1 . Modifier-order source https://wiki.guildwars.com/wiki/Order_of_damage_modifiers warns of errors; our implementation scope is the reviewed current multiplier/flat pipeline, not all unimplemented protection effects.
+Tests/elemental_mantras.cpp passes:all4 types/ranks0..20, typed reduction and stacking order, duration boundaries, unrelated damage/life steal, mixed cold+shadow,3 separate Shockwave hits, capped gains, Energy debt, zero-damage absorption, expiry, stance replacement, physical non-trigger, elemental wand impact, cost/registration/admission.
+Native proof tools/protocol/cast_timing_2022.py now also passes original instant/UI and first particle creation paths for6/7/8/9/13/15, alongside7 recharge deadlines and4 fractional cast overrides. No process/network/renderer test. Evidence and wiki hashes: data/captures/skill-checkpoints/20261014T232950Z/elemental-mantras-evidence.json . Raw fixed captures unchanged; live loggers untouched.
+Limits remain explicit: NPC self-casting status registry hooks are unavailable; unimplemented damage-conversion/global skill interactions and cold/lightning weapon inputs remain outside this binding's proven scope. Visual acceptance remains deferred. Full rebuild and broader suite pending; last validated deployed status remains previous timing checkpoint until these pass.
+
+Elemental Mantras validated checkpoint:
+Full Release rebuild exited0. All166 native CTests pass39.48s (build/reports/elemental-mantras-full-tests.txt). The rebuilt server is bin/server_host.exe SHA2562350bc3ddf791504ef4eb5f0e4ef26d51ade208a5d58c3f77f3c31e65b8a7149.
+Source coverage regenerated after final production edits:146 global dispatcher bindings,92 of378 fixed-snapshot captured skills bound,286 awaiting. Capture manifest verification and4 checkpoint tests pass; strengthened3 coverage tests pass and exclude neighboring unimplemented Mantras. User-facing implementation status updated.
+Frozen effect-add packets corroborate rank0 duration30s for all4 Mantras. Their same-actor/same-tick body resources12/14/16/18 match the independently pinned2022 resource table and offline native particle consumers. Native proof now covers6 instant stances as well as prior casting/recharge paths.
+No official client/loggers were touched. No rendered validation performed. All-skills goal remains active/incomplete; the listed unimplemented interactions and NPC self-casting boundary remain. Next work must extend actual mechanics, not infer completion from unlock counts, constants or source bindings.
+
+Signet of Midnight source implementation: touch range144, fixed15-second blindness on caster and foe, no damage, transactional candidate validation. Zero-Energy casting, two-second captured activation, recharge and target-generation tests pass. Native source-aware target effect159/kind20/resource104 follows frozen modern160 packet at line27627; no invented caster particle. Local older wiki balance file hash and packet receipts are in latest checkpoint/midnight-evidence.json. Full Release build handle58449 is live, log build/reports/midnight-full-build.txt. No official client actions. Final particle regression/full suite pending. NPC blindness remains missing. Source audit147 total bindings,112/575 captured;463 captured awaiting;754 missing captures.
+
+Midnight validation complete: full Release exit0,166/166 tests pass29.58s. Native midnight_animation_2022.py verifies original targeted generic serializer, effect dispatch with reversed actors, resource104 and first particle call. Server SHA25616735a72c40a2a9eaca14ecc9dd1c09334dbae12391dca350ef9a55d1a62c54c. No live client actions. User closed official client and prefers broad implementation before manual testing; retain automated regressions. NPC blindness and global condition modifiers remain incomplete.
+
+Blindness NPC extension: source now routes220/424/58 through scoped hostile NPC validation, real condition state, adjacent NPC population, visual publication and explicit immunity. Midnight drawback remains when foe is immune; invalid/stale/out-of-range targets do not apply it. Casting completion now admits NPCs without invented player Resources. Tests/captured_skills.cpp covers real Runtime-to-world path for all3, duration boundaries, no damage, target particle, adjacent/far NPCs and immunity. Focused captured_skills build/test pass. No full rebuild yet; bin/server_host.exe remains prior validated Midnight player-only checkpoint. Remaining: NPC casters, mixed player/NPC AoE populations, global condition modifiers and rendered acceptance.
+
+Interrupt-family prerequisite implemented: player world state now records authoritative casting skill and begin/end times; Runtime publishes noninstant start, clear-on-cancel and clear-on-completion, preserving instant stance overlap. Production gw_auth hooks connect scoped world operations. World interrupt_cast rejects stale actor scope, wrong expected skill and expired/inactive windows, increments existing control epoch; Runtime then cancels pending effect. Death/knockdown clear cast identity. End-to-end captured_skills test proves interrupted Orison does not heal, completed Orison does, and cancellation clears activity. Focused build/test pass. Individual interrupt skills are NOT registered yet; NPC action integration and atomic conditional damage/Energy/disable commits remain next. No full rebuild/manual client testing performed for this source batch.
+
+Interrupt family source handlers23/25/61: reviewed old wiki formulas, spell/chant/any-action distinction, conditional armor-ignoring damage or Energy, no secondary reward on idle or wrong action. World-lock commit validates lifetime/hostility/range/layer/navigation, increments control epoch, cancels ordinary attacks, and uses health mitigation and Energy debt/cap pipelines. Focused captured_skills tests cover ranks0/12/20, idle targets, spells/chants/signets, stale lifetime, forged plans, real250ms dispatcher completion. Full Release build handle39001 running. Source coverage150 global bindings,115/575 captured,460 pending. NPC action integration, immunities/global modifiers and particle/native visual acceptance remain open; no claim of complete interrupt behavior.
+
+During interrupt full build39001: added reproducible tools/skills/publish_skill_backlog.py. It refuses stale coverage hashes and derives mutually separated captured/source-bound/pending/missing lists; preserves manual verification notes. Two backlog regressions,three coverage regressions andfour checkpoint regressions pass. Published CURRENT-BACKLOG.json:575 captured,115 source-bound,460 pending,754 missing. Added native interrupt_animation_2022.py: all3 original dispatch/consumer cases select correct actor,skill,quarter-second duration and style52; no rendered proof. Source audit found NPC action API has no production callers, so subsequent NPC interrupt work must wire real AI lifecycle, not rely on manually constructed tokens alone. Full build39001 remains live; latest log progressing through skill_casting target.
+
+Interrupt batch validated: build39001 exit0 and tests77638 exit0;166/166 CTests pass29.81s (build/reports/interrupt-full-tests.txt). Server SHA256 2e99556df5dee3497b0f4f36d66b6c8ba3cbfcc05d6ecda49c3a1be73b9ebe0a. Previous batch gaps remain explicit; no manual rendering/official client actions.
+
+Extended interrupt family with24 Power Leak,931 Power Return,860 Signet of Disruption. Reviewed older local wiki:target loses3..17Energy; target gains10..5Energy; Signet damage10..51 on spell interrupt or any skill when hexed (ordinary attacks excluded). Scoped world transaction advances target Energy, floors loss, repays debt/caps gain; no rewards on idle. Focused captured_skills test passes incl six dispatcher routes. Native cast proof now6 cases. Source coverage153 bindings,117/575 captured;458 pending. PowerLeak is missing local capture and remains on that list. No full rebuild of latest extension yet; previous interrupt build166tests remains validated executable.
+
+Blindness unified recipient transaction replaces separate player/NPC branches. Target identity and alive selected victim required before any condition commit. Both NPC and player hostile sets use same center,layer,radius; Midnight drawback included only after complete validation. Preserves immune NPC result, source-aware target visual and NPC health/condition clocks. New tests select both NPC and player in mixed population and verify same hostile recipients,ally exclusion and far exclusion. Existing2 focused tests captured_skills/world_simulation pass. No new binding counts; closes mixed-population implementation gap. Full rebuild pending.
+
+Interruption recharge and scoped timestamp batch validated: full build41760 exit0; full CTest79780 exit0,166/166 pass. Server SHA256 8807b3d815876b8a390b414891d76f870820af92f43e93380bfdd23435ea5bef. No live-client/renderer validation claimed.
+
+Capture audit now preserves 2200 unassigned kind20/21 effect events, both generic and targeted forms. Fixed raw snapshot unchanged. Unholy Feast caster209 and victim210 present at71815/71820. Four audit regressions pass; no automatic skill attribution.

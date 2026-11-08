@@ -1,0 +1,33 @@
+For Great Justice343 / PvP2883
+=============================
+Pinned2022:Shout15,NoAttribute51,5Energy,zero activation/aftercast,45s recharge,
+caster593,target2077 sentinel. PvE duration20s/+100percent adrenaline;PvP8s/
+one extra strike per attack hit. Frozen20261017-npc-refresh-2 lines364560..64
+in packets-1360-15821281.jsonl prove instant48/body593/rank0 effect20/recharge45.
+Native verifier hashes original receipts and executes the original instant/body
+consumers for both rows. There is no local PvP activation receipt in this fixed
+checkpoint. Neither metadata nor body dispatch proves rendered acceptance.
+
+The owned World effect has a zero-pip timer for expiry/replacement/death cleanup.
+PvE and PvP replace each other rather than stacking as separate status entries.
+Runtime uses the instant overlay path and current authoritative mode. A pending
+action is preserved and knockdown does not prevent the shout.
+
+Shared adrenaline policy:
+- PvE multiplies all currently implemented gain paths by2,not just normal hits.
+- Berserker's+50percent shares the ordinary+100percent multiplier cap,so
+  Berserker+PvE FGJ is2x,not2.5x or3x.
+- PvP adds a strike only for committed attack hits;receiving damage and fixed
+  skill/end rewards get no PvP extra strike. Both hit strikes pass through the
+  current generic multiplier,retaining half-native units.
+- Qualified hit,damage received,Thrill of Victory's conditional skill reward,
+  and Defensive Stance's ending reward use the same rate. Existing forbidden/
+  miss/disable/cap handling is retained. No NPC adrenaline is invented.
+- Modifier queries use the owned registry directly,avoiding a newly allocated
+  active-effect vector for every attack. Timed Defensive rewards use their
+  actual end timestamp and observed bar,not a later tick's bar.
+
+Open:focused retail multiplier/fractional/PvP-combination capture,local PvP
+activation capture,NPC casters,Enduring Harmony,vocal/echo interactions and
+rendered QA. Focused Anger's cap bypass is not implemented or inferred here.
+Validation:four fresh native suites,69 tooling tests,native verifier and Release host pass. Fixed backlog267source bindings/366pending. Official logging untouched.

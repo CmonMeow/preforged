@@ -1,0 +1,38 @@
+Gaze of Contempt766
+===================
+Balance authority: pinned data/client-source/Gw_2022.exe native row766:
+Necromancer,NoAttribute,Spell,10Energy,2s activation,.75s aftercast,15s recharge,
+no caster body,target body829. Local archived Gaze_of_Contempt.html describes
+all enchantments removed only if the target has MORE than50% Health.
+
+World checks exact hostile lifetime,plane,range1248/navigation and settled live
+Health before evaluating the strict threshold. Exactly half does nothing;
+end healing cannot first push a target over the threshold. The existing owned
+player enchantment removal path handles each newest entry and end reactions.
+NPC removal admits reviewed owned214 regeneration only; the entire set is
+preflighted before commit. Unknown NPC end semantics remain rejected. There is
+no life-steal,Health gain,Energy gain or sacrifice. Runtime checks the target
+again at completion; missing hooks fail admission,cancel/interrupt/stale target
+cannot strip. Health is evaluated at completion,not copied from cast admission.
+
+Frozen capture:20261017-npc-refresh-2 packets-1360-15821281.jsonl lines96727,
+96740..96742,source25,target30,map280. Native script verifies capture SHA against
+manifest,exact cast/completion/body bytes,and executes original2022 cast/body
+consumers offline. See build/reports/gaze-contempt-native-2022.json,including
+input/tool/wiki hashes. Captured recharge10 differs from pinned15; modifier or
+balance context is not proven,so native15 is retained. Capture does not prove
+target Health/enchantment state or failed-predicate visual behavior.
+
+Tests: gaze_contempt player threshold499/500/501/1000,all removals,no rewards,
+forged plan/stale/friendly rejection,Shielding Hands threshold-before-end heal,
+completion-time threshold crossing,cancel/interrupt/retired target/missing hook.
+Shared signet_disenchantment fixture adds real owned NPC214 removal above half,
+retains214 below half,and checks exact829 target emission after removal.
+
+Open: unsupported NPC enchantment endings,NPC casters,retail multi-end-reaction
+ordering,failed-threshold visual behavior,recharge discrepancy,and rendered
+private-client acceptance. Source binding does not claim complete interactions.
+
+The failed-threshold NPC path still records successful enemy-targeted spell use for passive recovery. Runtime regression confirms the pinned15s recharge remains active at13000ms after a100ms start/2100ms completion,including no-op threshold casts. Native verifier and69 tooling tests pass. Four native suites passed before that recovery bookkeeping correction; final rebuilt validation follows in status.
+
+Final validation supersedes intermediate note: all four freshly rebuilt native suites pass after recovery correction; Release server_host build passes. Native consumer verifier and69 tooling tests pass. Fixed baseline270source-bound/363pending,696missing captures; current hunting list remains separate. Official clients/loggers untouched.

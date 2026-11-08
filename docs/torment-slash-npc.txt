@@ -1,0 +1,103 @@
+TORMENT SLASH [1324] — DETACHED NPC STRIKE, NOT WORLD-BOUND
+
+The immutable 20261024-urgoz-doa-completed checkpoint has 77 cast starts
+from Torment Claws with named actor samples bracketing the starts in Domain
+of Anguish map474 epoch32. These are cast starts, not 77 proven completed
+hits. The pinned 2022 row specifies skill1324, 5 Energy, 3.25-second
+activation, .75-second aftercast, 8-second recharge and fixed scale150.
+The local archived Torment Slash wiki page says foes directly in front take
+150 slashing damage twice. Its SHA-256 is
+674C0634C2D0FD34DA859CA1D1E040006EB26670EC2922EB617019F05FBDA67C.
+
+A separate hash-checked impact audit matches 70 of the 77 starts to bounded
+cast-finish packets, excluding one superseded start. Twenty-nine finish
+windows contain modern attributed damage from that actor within one second;
+26 of them contain 45 exact same-tick pairs of opcode163/kind16 damage
+events on the same victim. Some finishes have paired damage on multiple
+victims, e.g. packet start896564, finish896979 and pairs897013-897014 on
+actor148 plus897043-897044 on actor43. This strengthens the two-hit and
+multi-target evidence. Attribution is still bounded by time and source
+actor, not a packet-native Torment Slash skill ID on each damage event.
+It does not establish the width, reach or exact facing rule of the hit area.
+Reproduce with python tools/skills/audit_torment_slash_impacts.py; see
+build/reports/torment-slash-impacts-20261024.json.
+
+The native combat core now has a distinct slashing kind that requires
+reviewed physical armor and emits the usual attributed armored-damage wire.
+A detached Torment Slash plan validates the pinned row. Its target resolver
+accepts only a trusted hostile/in-front target, applies two independent
+150-point slashing hits, and omits the second when the first is lethal.
+It rejects unknown physical armor instead of borrowing elemental armor.
+The test covers two-hit ordering, publication, off-axis exclusion, lethal
+stop, unknown armor, unsupported level and forged plan.
+
+An offline check of the pinned original 2022 client dispatches cast opcode159
+for both skill1324 and variant1880. Both produce callback25, retain the
+requested skill ID at the first model-animation lookup, and select style49
+with a 3.25-second first animation duration. The exact serialized packet
+and executable hash are in build/reports/torment-slash-animation-2022.json;
+reproduce with python tools/protocol/torment_slash_animation_2022.py with
+build/python-deps and tools/protocol on PYTHONPATH. This checks the original
+descriptor and callback offline, not model assets or displayed animation.
+
+Still needed: authoritative caster facing and forward area geometry,
+per-recipient World transaction, NPC cast decision/payment/interrupts,
+actor/model asset and rendered-client acceptance.
+The Smothering Tendrils variant1880 is separate; its 200-point damage
+received a slashing-kind evidence review in the variant update below.
+Neither skill is enabled for NPC casting. The official client and live
+logging were untouched.
+
+Validation: serialized Release server_host build and selected CTest
+npc_combat_catalog, npc_world_combat, combat and torment_slash_npc passed4/4.
+
+SHA-256 combat source 130F7AFC6259194D81CFA9F8F1DF3D355CAEF3F2A265CD62938D390A795FC361
+SHA-256 strike source CA72BDBD4364D05FBCE31C3DAE793CB6213D905DDD899AA0AC67FBF331095DC6
+SHA-256 combat test C39C33B9CD38973A0D7A7A29528901CA9677734BF3396CA97D0ACCC8F965079F
+SHA-256 strike test 26A014723848E13F301D3BDBB808AE7F1584EF53865F8DEEFD868D64EE031198
+SHA-256 tested strike EXE 1CCDE1F0FF2E7E32D3CA103CDBC9F169858D492E25FCF56696E5D9A4F4423202
+SHA-256 built server EXE 74CC4B9FD6575031AECC9D19C8815A8E85BB9646EF699ADC1963A32EF1C6DFF5
+SHA-256 impact audit 2B50CC7CBF42E437176F44E4E9A1E86ED0251DE51B18ED1230502DE72086E928
+SHA-256 impact report 8D9676930241E8E04EB7B076DD2FA543AEFECD1F42207FDFDCF95E9B970C912E
+SHA-256 original 2022 client A6FB3C51A52EC5528156B690DC63B4BA51C4B95690D15877D5B49FC3C7DC57AC
+SHA-256 animation verifier 3D63A2DAFBD7BCB4DAB81D4FE639AAD8113111370C8CB0D7456B43E3B3E7B802
+SHA-256 animation report 34DE986D62BB194AB71F1D1CFF99BCF23D2D8FCDEE50FB7983BF9EC8BC7F26EB
+
+Variant update (2026-10-25): The same immutable DoA packet checkpoint has
+26 Smothering Tendrils skill1880 starts, 21 bounded finishes, and seven
+same-tick pairs of opcode163/kind16 attributed damage from seven cast
+windows. The pinned 2022 skill row specifies two fixed 200-point hits,
+3.25-second activation, .75-second aftercast, 2-second recharge and
+5 Energy. The detached native resolver now accepts an exact reviewed
+1880 plan, uses slashing armor for two independent 200-point hits, stops
+after a lethal first hit, and rejects a forged plan. Its hit-region geometry,
+NPC action/payment, and rendered acceptance remain unverified; no NPC cast
+binding was enabled. Reproduce with
+python tools/skills/audit_torment_slash_impacts.py --skill 1880.
+
+Serial Release builds of torment_slash_npc_test and server_host passed;
+selected torment_slash_npc, combat and npc_world_combat CTests passed 3/3.
+The official client and loggers were untouched.
+
+SHA-256 updated strike source A4C51941E8FA6A5F9869BCC9EDB24E491ADF5C6AD475D74746AA849DC322F123
+SHA-256 updated strike test 7E96D98E3C921ED6A663B8AABE0D0958E0CEF064139DE7250B939A9582C7FD52
+SHA-256 impact audit 995ED8198D8C1E80770F738BF6B35866E8E390EEA70CB2523515A3542420C4EF
+SHA-256 variant impact report B8632BE7BA30B84B3D3BD0007007517E47E6BE06B598B95C4F311DA2B42C8ED9
+SHA-256 tested strike EXE 662106BBA089C8CA0EE080BAE06E21FA30838D2C64C3944CE8E929052466D25E
+SHA-256 built server EXE 92F9C985FBF3F6798FE82E476BE1AA5641F0878702AB478DE3E1C38B14ED6859
+
+Geometry evidence follow-up (2026-10-25): a new hash-checked audit joins
+the fixed paired-hit receipts to the nearest named NPC position/facing
+samples in Domain map474 epoch32. Ten of nineteen report examples have both
+actor samples, including two co-located samples; eight have nonzero sampled
+distance. Several Torment Claw hits on spirit targets have sampled
+distance339–421 world units, but their NPC samples are453ms from the packet
+hit. Other examples are71–78 units with203–250ms sample age. These are
+measured nearby samples, not hit-time positions or an exact cone/reach.
+No geometry was inferred or enabled from them. Reproduce with
+python tools/skills/audit_torment_slash_positions.py. A higher-frequency
+position/facing capture or a trusted server-side rule is still needed before
+binding the area World transaction.
+
+SHA-256 position audit 7462348931261B78384947E77205CB1D2C7C85B4C5EE1054A428100457DE13EC
+SHA-256 position report AE64C5A6A9066E9203FA069075365AB9B976E7AD62D3E66C3EC3C54840F2A8F2

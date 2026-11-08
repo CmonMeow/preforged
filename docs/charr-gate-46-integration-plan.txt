@@ -1,0 +1,101 @@
+Quest46: captured evidence and dormant stage/reward authority
+
+Reproduce: python tools/quests/stage_charr_gate_46.py
+Installed staged output: data/gw/quests/charr-gate-46-staged. The importer
+hard-pins world194855cf..., packetse210b492... and wikic5afeca7...; full hashes
+are embedded in tool/report. Inputs remain read-only. Default output goes to
+build/reports/charr-gate-46-staged. No server config activates this content.
+
+Actual completion evidence; no invented gate-arrival requirement
+World23323 records accepted46/map148,23464 active objective/map146 and23692
+completed. Four explicit241 dead-bit events are551879/552168/552275/552420.
+Last enemy50 died tick177910375; completed snapshot23692 is177911187,812ms
+later within the polling interval. Four scoped enemy deaths suffice after
+legitimate encounter binding. There is no separate spatial-arrival credit.
+
+At completion Rurik world23696 is(-4442.288574,11412.608398),884.700 units from
+the active quest marker(-5270,11725). His nearest recorded route sample is
+world23647(-4641.564453,11606.744141),639.465 units from that marker. Positions
+are sampled; they establish neither exact AI waypoints nor an arrival radius.
+Wiki requires following Rurik/helping defeat four Charr, permits allies to kill
+the group, and says he pauses if the player wanders away. It does not require
+Rurik at an exact marker when the final enemy dies, credit posts or reward is
+claimed. Route/pause policy must remain separate from completion.
+
+The dormant controller now permits ONLY four logical enemy credits4602..4605.
+It rejects legacy invented fifth-credit4601 records rather than guessing a
+migration. Attempt::bind is trusted encounter-start authorization, distinct
+from reward UI: owner/cycle/map146, selected escort matching current escort
+lifetime, and unique same-instance four enemy lifetimes. Missing enemy scopes
+are allowed ONLY for corresponding already durable death credits, preventing
+reconnect from recreating killed actors. Wrong owner/cycle/lifetime, duplicates,
+unrelated deaths and bare completed flags cannot reward. No client/UI event is
+an authoritative death or an encounter binding.
+
+Actor and friendly-AI evidence
+Native32 records supply exact initial position/plane/facing for Rurik35,
+AcademyMonk36,AscalonGuard37 and Charr50..53 in map146/epoch11. Definitions and
+later world positions are retained separately. Actor numbers are captured local
+identities, not reusable private IDs. One AshWalker,one FireCaller,twoMindSparks
+are this observed group; wiki allows a random group of four, not a universal
+fixed composition. Native maximum-health observations establish180 for50/51/53
+only. No missing health/armor/rate is inferred for52 or allies.
+Native160 kind4 proves Rurik35 andGuard37 attacking Charr. Kind60 provesMonk36
+using HealOther286 onRurik and Orison281 onRurik/player28. This supports a shared
+friendly NPC attack/heal recipient authority. Existing Gwen EscortObjective
+follows the owner to a recipient; it is not an unchanged implementation for
+Rurik leading a route and pausing for the player.
+
+Reward and storage proof
+Decoded354 packet552527 defines item310 LongSword(model2978,file9454,value10)
+with six preserved modifier words.318 packet552528 places the SAME item in
+ownedbag4/slot4;82 packet552529 removes46;238 packet552534 grants200XP.
+World23704 contains that exact newly owned item absent23468. Reward is therefore
+independently proved, not inferred from quest disappearance alone. Original2022
+352 serializer produces the68byte fixture quest-charr-gate-reward-2022.txt.
+Opaque Shelter/conditional damage words acquire no fabricated semantics.
+Older capture establishes no equipment profession/customization metadata, so
+issued sword retains unknown metadata and is not silently admitted to equipment.
+
+Wiki eligibility requires TyrianProphecies+pre-Searing+level2 or higher. The
+helpers deny level1/unknown. Offer authority is captured map148Rurik; reward
+helper currently supports captured map146Rurik. Wiki also allows return to town;
+adding map148 reward later needs explicit action/location policy, not a reused
+cross-map actor ID or a guessed lifetime.
+
+Reusable dormant production boundary
+gw_quest_charr_gate.h supplies accepted/progress authority. Once future world
+code legitimately binds its reviewed escort/enemy roster, exactly four trusted
+scoped death callbacks advance active->completed, including kills by approved
+allies. There is no additional arrival call or gate. Fullbags and failed reward
+storage leave completed state retryable. Reaccept uses a new cycle; completed
+and rewarded stages persist through existing quest encoding.
+gw_quest_charr_gate_reward.h proposes one exact sword+XP200+rewarded state.
+The commit adapter requires both expected revisions, preserves bank ownership,
+and publishes after a single atomic save callback. Allocation finishes BEFORE
+durable CAS; live profiles/packets then move through statically nonthrowing
+operations. Session::commit moves Prepared.staged only; Prepared.wire remains
+valid. Zero/out-of-storage-range revisions deny before save.
+Accounts reward_quest_experience independently requires exact200XP,one exact
+captured sword with unknown equipment metadata, and four valid trusted credits.
+It denies XP-only,extra skills/gold,bare completion,legacy fifth credits,changed
+reward identity/metadata. SQL fences both revisions and XP overflow in the same
+transaction. quest_accounts exercises actual denial/unchanged state,cancellation
+rollback/reopen,exact success,replay/reopen and XPoverflow. quest_charr_gate tests
+scoped binding/death/restoration,original serializer,fullbag and helperCAS.
+
+Remaining activation work
+Allocate reviewed private IDs for seven actor prototypes without splicing this
+epoch into unrelated same-instance populations. Implement leading escort and
+shared friendly NPC attack/heal lifetimes/cooldowns/resources with explicitly
+reviewed or authored private stats where capture is absent. Bind encounters only
+through trusted world policy; route observations are not inferred navigation.
+Wire scoped death progress and menu/atomic reward through existing authority.
+No current app route,encounter,NPC menu or server config activates quest46.
+
+Stage catalog caveat
+The initial and objective-zone active markers differ. Output preserves those
+states separately. Completed file includes its required preceding active row
+and is a validFWQC2 catalog. Do not concatenate two active rows or invent
+count:1 as a captured kill count. Runtime should select exact marker/details
+using authoritative instance/encounter state when that integration exists.

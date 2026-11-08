@@ -1,0 +1,50 @@
+OVERLOAD898 / IMAGES OF REMORSE899: STAGED IMPLEMENTATION
+2026-10-20
+
+Completed
+- Canonical native-row-validated plans for ranks0..20 in gw_action_damage_hexes.h.
+- Both:5Energy/5srecharge/1..3Health-degeneration progressions.
+- Overload:Domination,quarter-second base cast,5shex,15..75conditional damage to primary/adjacent166foes.
+- Images:Illusion,2sbase cast,5..10shex,10..52conditional damage to primary only.
+- Pure authoritative-action proposal distinguishes ordinary attacks,attack skills,spells,signets,idle and invalid/unknown action identity.
+- Overload basic attacks do not qualify as skill use;explicit attack skills do. Images accepts ordinary/skill attacks but not other skill types.
+- Conditional damage never schedules itself for a later action,and target-only degeneration is separate from damage radius.
+- New action_damage_hexes suite passes all ranks,predicates,high-rank endpoints,forged plans and invalid/copy-slot action records.
+- Offline native/packet verifier passes8fixed receipts,original2022cast/particle consumers and exact native rows. Report:build/reports/action-damage-hexes-native-2022.json.
+
+Evidence limitations
+- Local capture checkpoint20261017-npc-refresh-2;one explicit local activation each. Images also has30other/unassigned activations;those are not credited as local tests or causal conditional-damage proof.
+- Captured targetbody960/965follows finish. Native caster2077is sentinel;do not invent a caster effect.
+- Images captured activation969ms differs from pinned2sbase;unresolved modifier/balance context. Overload observed312ms versus250msbase.
+- Original model/effect services are stubbed during consumer verification;no rendered acceptance.
+
+Remaining acceptance after World/Runtime integration
+- Retail initial-damage versus application-reaction ordering,including lethal/reentrant and instantaneous-action boundaries.
+- Broader renewal/removal/expiry and callback testing across the complete live gameplay state.
+- NPC caster AI selection/payment/cast integration;current native gateway is for player casters with player/NPC recipients.
+- Private rendered client verification of animation/body/sound presentation.
+- Stronger conditional retail receipts;current immutable activations do not establish every conditional damage case.
+
+Current status after later stages:normal player Runtime/gateway bindings are enabled;see latest verification below. Retail ordering,NPC caster AI and rendered acceptance remain pending.
+Server executable unchanged by this standalone policy stage. Official logging untouched.
+
+2026-10-20 Registry proposal and NPC recipient adapter
+Added prepare_action_damage_hex_application:copy-only registry proposal with exact target scope,valid caster instance/lifetime,nonself target,effect identity,same-skill replacement,overflow guards and reviewed HexDuration. It returns the conditional damage intent separately from target-only hex application. No production dispatcher admission was added.
+Added LiveActor.apply_action_damage_hex as a staged recipient adapter:clone first,settle Health to event time,sample its actual active control token,prepare application,then publish the validated NPC copy. Unknown active skill identity rejects without advancing original Health or registry. Its initial damage remains an explicit intent for the future joint World transaction;the adapter does not independently execute it. NPC degeneration integration now recognizes898/899via their canonical plans.
+New action_hex_npc tests pass20skill/action/dense-sparse combinations:idle,basic attack,spell,signet,attack skill;normal authority applies the returned damage intent;target-only degeneration,expiry,removal/reapply,once-only corpse state,exact2667death/cause,andatomic forged/unknown-action rejection. Existing NPC control represents explicit attack skills with Action::spell plus a slot;the test setup was corrected to respect that API rather than weakening control validation.
+Expanded pure registry tests pass same-skill replacement,nonmutation,stale target/cross-instance/self/effect/overflow rejection,andMantraofPersistence duration adjustment for Images only. Source audit remains633captured/287source-bound/346awaiting/696missing. Server/neighbor build97629running;World joint multi-recipient conditional damage and Runtime/gateway/rendered work remain unfinished. Official logging untouched.
+
+Verification completion: serial build97629 terminated successfully;server_host and three neighboring suites rebuilt. action_hex_npc,action_damage_hexes,npc_energy_hex,energy_hex_world,npc_elemental_world pass5/5. Fixed audit/publish remains633/287/346/696. NPC recipient and registry staging verified;World/Runtime production support and rendered acceptance are not claimed.
+
+2026-10-20 Trusted joint World application/initial damage
+Added gw_world_action_hexes.inl with stage_action_damage_hex. It settles the shared event frontier and source/primary resources,samples current player action fields or NPC control token,validates hostile lifetime/plane/range/navigation,uses canonical predicate and reviewed duration,preflights incoming damage through existing player/NPC protection authorities,and stages target-only registry/Health degeneration. HexBreaker is probed before application and can consume/prevent the whole hex with retaliation. Initial conditional contacts are retained as scopes,not recipient pointers,and re-resolved after application reactions. Damage uses existing reactive_hex_damage_locked rather than a new damage pool;targetbody is deferred and protected against actor-ID reuse.
+New action_hex_world suite passes20skill/target/action combinations,including exclusive action end boundary,basic versus explicit skill attacks,ordinary spell use,primary-only degeneration,adjacent166inclusive/exclusive recipient boundary,friendly exclusion and no duplicate/deferred body. Additional cases passShieldingHands reduction,SoulBarbs application reaction for player/NPC targets,HexBreakerretaliation/prevention,stale/forged/unknown-action refusal,and lethalNPCinitial damage with continued area contacts and once-only death credit.
+This is trusted World integration,not a production Runtime binding. Retail initial-damage/application reaction ordering remains unproved by activation-only captures;NPC secondary moving-recipient sampling and broader callback/renewal/expiry acceptance still need audit. Runtime/gateway,rendered acceptance and actual conditional retail receipts remain unfinished. Native source-bound counts unchanged633/287/346/696. Server/neighbor build59543running;official logging untouched.
+Verification completion: serial build59543 terminated successfully,server_host and three neighboring suites rebuilt. action_hex_world,action_hex_npc,action_damage_hexes,hex_breaker_world,selected_hex_application,npc_elemental_world pass6/6. Fixed audit/publish remains633captured/287source-bound/346awaiting/696missing. Both action hexes remain trusted integration only;normal casting/rendered acceptance pending.
+
+2026-10-20 Moving-recipient fix and production Runtime binding
+New World regression reproduced stale moving-NPC area selection at line92:without an intervening tick,Overload used spawn/stored coordinates instead of completion-time coordinates. World now snapshots NPC lifetime scopes,refreshes each still-current movement at the event time before collecting area contacts,and re-resolves caster survival afterward. Entering/leaving quest-route NPCs now produce the same damage with direct spell completion or an explicit tick at2100. Primary-only Images does not need unrelated NPC movement work.
+Added normal Runtime/action_damage_hex completion callback and production gateway wiring for898/899. Admission validates required callback,target capability,canonical rank and scope before payment;completion uses the shared hostile target validation and deferred hex finish/body path,including NPC recipients. Native base activation remains250ms/2s,cost5,aftercast750ms,recharge5s. The existing unsupported-stage gate for125/140is unchanged.
+New action_hex_cast suite passes32Runtime->World cases:each898/899,player/NPC target,eight success/idle/cancel/interrupt/stale-scope/pre-start-missing-hook/out-of-range-at-finish/missing-finish-hook modes. It checks payment,timing,conditional damage,exactly one targeted body960/965afterfinish58,recharge/aftercast,no duplicate broadcast and rejected casts without application. Coverage regressions require real gateway wiring and recognize both bindings;all4Python tests pass. Frozen evidence verifier still passes8receipts and native consumers;its output now explicitly separates retail/rendered acceptance from source implementation.
+Fixed checkpoint audit/publish now633captured/289source-bound/344awaiting-binding/696missing-capture. Current serial server/neighbor build76488running. Retail initial/application reaction ordering,NPC caster AI and rendered private-client acceptance remain pending;broader callback/renewal/expiry review is still tracked. Official client/loggers untouched.
+Verification completion: server/neighbor build76488 and final action suites build30493 terminated successfully. action_hex_cast,action_hex_world,action_hex_npc,action_damage_hexes,energy_hex_cast,ethereal_light,hex_breaker_world,world_timed_order pass8/8;four coverage regressions and the frozen native/packet verifier pass. Fixed audit/publish633captured/289source-bound/344awaiting/696missing. Server executable includes normal player bindings898/899;retail/rendered/NPC-caster-AI gaps remain open.

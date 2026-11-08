@@ -1,0 +1,20 @@
+NPC per-slice damage audit,2026-10-28
+Fixed checkpoint:20261024-all-completed; no new capture ingestion.
+
+Production blockers discovered by read-only review:
+- LiveActor::apply_elemental:1399 quote/counter and latent wound settlement missing in direct and307raw-input paths. World callers5082,5088,5139,5170,11165,11169 at audit snapshot.
+- LiveActor::apply_earth_aoe:1399 counter exists, latent wound settlement missing. World callers8421/8447 at audit snapshot.
+
+Legacy aggregate helpers apply_ash_blast/apply_shadow_damage have no current World callers found; do not count as production proof.
+gw_attack_damage_rebase.h requires raw arithmetic; future settled-Hit callers need explicit evidence clearing/rebuilding.
+PreparedHealthDamage native-tested for captured before/after capacity, actual settlement and replay protection.
+Shared player commit native-tested for sealed proof instead of manual packet replacement.
+All bindings remain subject to full end-admission and rendered checks.
+
+Current shared settlement host built and --build-info exited0; 47b1244f27a710071f91be2617b74d9398d4fd5c26323230e6f1a158b36df313.
+
+Update:apply_elemental per-slice1399/307/debt migrated and5native suites pass. apply_earth_aoe debt nowsettles eachslice, but NPC307stillunsupported; World Fragilitypublication/per-conditiondeath/retirement boundaries remain open. See build/reports/npc-elemental-area-settlement-progress-20261028.json.
+
+NPC earth area174/937: shared protected slices/307receipts, actual Watch/Bonds and finalFragility publication implemented; Fragility307adopts1399counter. Four native suites and21source checks pass. Conditions still batch-installed beforeFragility and World Bonds remains post-aggregate: explicit ordering work pending. Host rebuilding. Report:build/reports/npc-earth-reversal-progress-20261028.json.
+
+NPC174/937now commits each damage/condition/reaction from current scoped authority instead of restoring aggregate actors. Copied admission applies immediate condition reactions. Lethal firstWeakness stops laterhits/conditions; Bonds feedback order and singledeath validated. Four native suites+21source checks pass. Player branch stillbatches conditions and is explicitly listed pending;1399unbound. Hostbuilding. Report:build/reports/npc-earth-condition-order-progress-20261028.json.

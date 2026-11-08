@@ -1,0 +1,120 @@
+Battle Rage317 — detached stance policy (2026-10-24)
+
+CURRENT:production Runtime/World integration passed coordinated serial Release
+validation and all eight focused tests. Earlier detached/unbound statements below
+describe the original policy stage;rendered acceptance remains unverified.
+
+The fixed 20261024-all-completed checkpoint has one locally attributed
+activation: packets-6468-5728843.jsonl lines50381..50386, map280, actor25,
+tick7688796, skill317. The exact window contains ready228,adrenal-use210,
+instant48,body563,effect66 with five-second duration,and end227. It has
+eight other/unassigned starts on map495. The generic skill audit counted the
+instant but did not associate the adjacent body/status receipts with this
+skill. The dedicated verifier now checks all six receipts against the
+hash-verified snapshot. This does not demonstrate movement, adrenaline gain,
+ending behavior or rendered visuals.
+
+The pinned pre-Reforged 2022 catalog row gives Warrior/Strength, elite stance,
+80 adrenaline units (three25-unit strikes plus5;UI rounds up to four), no Energy/cast/aftercast/recharge,
+duration metadata5..20, scale33 and caster-body resource563. The archived
+Battle_Rage.html says movement is33percent faster, adrenaline gain is doubled,
+and the stance ends when a non-adrenal skill is used. The archived HTML's
+midpoint17s is rank12;the pinned5..20interpolation also gives17s at rank12
+and20s at rank15. Comparing17and20alone therefore establishes no numeric
+contradiction. Exact retail rank-duration/rounding remains unmeasured by the
+single five-second capture,whose effective Strength is not independently
+established. The policy uses pinned-row interpolation without claiming retail
+duration proof. The earlier detached midpoint-discrepancy inference is corrected.
+
+src/runtime/gw_battle_rage.h validates the native row, models rank/duration,
+movement and adrenaline multipliers, detects malformed active stance records,
+and proposes ending only after an accepted non-adrenal skill use of an exact
+published bar copy. tests/battle_rage_policy.cpp covers these properties.
+This policy does not change the production cast gate or source binding count.
+Before binding317, the server needs one transaction to pay adrenaline,
+publish resource563, own the stance lifetime, compose speed with movement
+effects, double actual hit adrenaline without stacking improperly with other
+bonuses, and end the stance on accepted non-adrenal skill use. Rendered client
+acceptance remains unverified.
+
+tools/protocol/battle_rage_2022.py checks the pinned row and executes the
+original2022 instant48/body563/particle consumers with actor/model/asset
+services stubbed. It passed against20261024-all-completed; report:
+build/reports/battle-rage-native-2022.json. The detached policy Release test
+also passed. No official client was opened or changed for these checks.
+
+Tested SHA256:
+src/runtime/gw_battle_rage.h BCB995019529A298F856760EBE471174384B91A05D8D6E931C2623BFF016EB4F
+tests/battle_rage_policy.cpp 24298EA17BCCAD2656C6AC84C3D9BF49FAEBBE42081553F5FA3959031D2A3C67
+tools/protocol/battle_rage_2022.py A745BEF09138D1B16EE94EB29916B8A3E20311FBFB0F673F65450B0241F45234
+build/tests/battle_rage_policy_test.exe A3F4E2A56E54D57A05679257EA8E023B731FE5021C3CA655EBDE889967E6C9A9
+build/reports/battle-rage-native-2022.json F3A182D86CE7041C35ACF138D57AE9F49616C2B4F914F7DE1FC3759C731C62B0
+bin/server_host.exe 03E884FC6EB8EBCDA23159C6ED1DCE7062AE6F2AF76B26FF6A7F1DEB2FAD8A09
+
+Production integration stage2026-10-24:
+Normal Runtime317casting requires authoritative status/effect/accepted-action
+hooks,pays80native units through the existing scoped adrenaline authority,
+normalizes self target,and publishes instant48/body563plus the owned stance
+timer. Energy cost and ordinary recharge are zero. Missing hooks or an unready
+pool reject before applying the stance. Stance replacement,expiry and death
+share the existing World lifecycle. The source row is checked at ranks0..20.
+
+MovementEffects records a33percent interval in the same player-owned history
+used by click/held movement,existing speed caps,snares and sparse ticks. World
+status mutation registers this movement source. Ending on an accepted skill
+closes its exact interval after settling movement through the accepted event,
+so an intervening tick does not apply a whole interval at the new speed.
+
+Actual attack-hit adrenaline uses the current source registry at contact and
+receives a capped2x ordinary rate. PvE For Great Justice cannot multiply it
+again;Berserker and Battle Rage replace each other as stances. Battle Rage
+does not amplify incoming-damage adrenaline or generic flat rewards. Existing
+PvP Justice's separately modeled additional-hit grant remains distinct;the
+existing contract therefore produces100native units with Battle Rage,versus
+50without that fixed extra. That joint retail interaction remains unmeasured
+by the six application receipts. No new claim about retail RNG or additional
+attack-skill reward multiplication is made by this hit-only implementation.
+
+The accepted-action authority uses the exact current published skill/copy.
+Native adrenaline-cost skills preserve Battle Rage;accepted non-adrenal skills
+end it. Invalid copies,rejected payment and ordinary weapon attacks do not end
+it. A subsequently interrupted accepted non-adrenal action has already ended
+the stance. Control alone does not remove it;death does. Runtime requires the
+accepted-action callback whenever a Battle Rage snapshot is active.
+
+New tests:tests/battle_rage_world.cpp and tests/battle_rage_cast.cpp. Coordinated
+serial Release validation passed,including fresh neighboring test rebuilds.
+The World suite also releases an ordinary bow projectile while the stance is
+active and lands it after expiry;only25units may be awarded at impact. The
+cast fixture authorizes every equipped bar skill,including its separate340
+charge-observation slot;that full-bar policy is checked before317admission.
+No fixed checkpoint/plan files or official clients/loggers were changed by this
+implementation agent. Source binding/count publication remains a separate audit.
+
+Production validation completed 2026-10-24:
+The coordinated serial Release build succeeded for server_host and all three
+Battle Rage executables. Fresh focused CTest passed 8/8: movement_effects,
+for_great_justice,berserker_stance_world,accepted_skill_start,escape_world,
+battle_rage_policy,battle_rage_world,battle_rage_cast. The native verifier also
+passes all six frozen receipts and the stubbed instant/body consumers. These
+are mechanics/native-consumer proofs,not rendered client acceptance. No host
+restart or deployment was performed by this implementation agent. Retail
+rank-duration rounding,PvP Justice joint behavior,and rendered visual/sound
+acceptance remain unverified as described above.
+
+Tested production SHA256 (historical detached hashes above remain historical):
+src/runtime/gw_battle_rage.h 0CAA85791DECC54A6BA5CAD9CCB5A09090EF087CAB693708C43158A1F5B26FDE
+src/runtime/gw_world_simulation.h 56296AD3917D0B09F548843237AADEBDB7B929BBE7DF21AD68411A957969248A
+src/runtime/gw_skill_casting.h 3C151064542D47C61232E6BE2E5408FAFD3B724F980E5AD77ACE9626BA03149E
+src/runtime/gw_for_great_justice.h E553C8A2063D877C6595E5F97414F882AF199CF3F2C76896AE32A6787DF5C502
+src/runtime/gw_movement_effects.h 26F1F4A01ECD7312B765AB5CCF5C38D824291FF8F760D4B30B2128D132C38208
+src/runtime/gw_cast_timing.h 4EF2D72938BD0A0103144ADE97E6C11461F4E735675AC3A2FEC2E40FCD567C4C
+tests/battle_rage_policy.cpp 24298EA17BCCAD2656C6AC84C3D9BF49FAEBBE42081553F5FA3959031D2A3C67
+tests/battle_rage_world.cpp C42F1710D8B1EEB8D2A876A6E01B65BECC8E34CAA15CAC62BFEF29D9E8DEC56A
+tests/battle_rage_cast.cpp CBFAE6FC5FE92A9F7BFC7536A8356A573918F8101757E257DEA6B4DCE295EC13
+tools/protocol/battle_rage_2022.py A745BEF09138D1B16EE94EB29916B8A3E20311FBFB0F673F65450B0241F45234
+build/reports/battle-rage-native-2022.json F3A182D86CE7041C35ACF138D57AE9F49616C2B4F914F7DE1FC3759C731C62B0
+bin/server_host.exe 96420488CA1ECDEEC3C01D95A550427FAA0392D0C906542D25A4D5BCD353237C
+build/tests/battle_rage_policy_test.exe 066513332FF1169A171D355A98DFD9EF6FBF216D67D8690DCE68741AC6B8E8FB
+build/tests/battle_rage_world_test.exe 5C79CA1CB734AAF3D31E8FA4B4040D8FFBD82F920E5ACE070F6C331F87F9B727
+build/tests/battle_rage_cast_test.exe 27CBA7873D8C204C2EB79D7101F1A6E7C303F77674C4C7AC42850285505C8BAA

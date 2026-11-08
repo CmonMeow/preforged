@@ -1,0 +1,36 @@
+Tiger Stance [995] — source-bound, 2026-10-24
+
+Official evidence: fixed checkpoint 20261024-all-completed, packet file
+packets-1360-15821281.jsonl, lines 398708, 398710–398712 and 398714,
+tick 23899000. These show recharge 20s, instant action [995], body resource
+1271 and a four-second effect for the captured rank. The checkpoint manifest
+SHA-256 for that file is checked by tools/protocol/tiger_stance_2022.py. Its
+report is build/reports/tiger-stance-native-2022.json. The pinned 2022 client
+row separately provides 5 Energy, 20s recharge, 4..10s duration and 33%
+attack-speed bonus; its native instant UI and body particle consumers execute
+in the offline probe. The modern capture's opcode 66 status is not a direct
+2022 wire fixture. It does not prove early-ending behavior by observation.
+
+Server binding: Runtime admits a paid instant self stance and publishes its
+native body/effect. World validates the exact ranked lifetime, applies the
+33% attack-duration reduction to ordinary and attack-skill timing including
+the weapon scheduler, and removes the stance after resolved miss, block,
+dodge or obstruction. Hit, cancellation, replacement and target retirement
+are different terminal outcomes and do not trigger the failed-hit ending.
+Stance replacement and natural expiry use the existing owned registry.
+
+Validation: serial Release server_host build passed. Rebuilt tests for Tiger
+Stance, Flurry, Berserker Stance, Shield Stance, Wary Stance and attack
+admission all passed. Tiger's focused suite covers ranked duration, direct
+and Runtime casting, Energy/recharge/body resource, ordinary and attack-skill
+speed, ordinary and skill miss/block endings, hit retention, explicit removal
+and expiry. The pinned native probe passed five exact receipts and the 2022
+instant/body consumers. Tested server_host.exe SHA-256:
+dfb10e676056993ca70a32154eb5014a7bcebbadecbdee82799b82b3fc6a36b3
+Focused Release test executable SHA-256:
+3bf7eff3dfa01e4cab7e1046e552df90d1cd7f409114d208e702ab78e1e8f5b7
+
+Remaining verification: no rendered private-client animation/IAS/status
+acceptance test, no official failed-hit/stance-end packet window, and no NPC
+caster AI or NPC-owned Tiger Stance timing. These limits are not covered by
+the source-bound count.

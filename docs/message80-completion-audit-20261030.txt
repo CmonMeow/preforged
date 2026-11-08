@@ -1,0 +1,48 @@
+Message80 dialogue/completion audit --2026-10-30, read-only source/captures
+
+Evidence report: build/reports/message80-dialogue-flow-audit-20261030.json.
+Six incoming episodes in October9,11 and12 show a greeting body/sender and
+incoming dialog option23, then a separate marker/details/removal/XP/gold burst.
+Observed separations:750,1000,1062,1281,13516,906milliseconds.
+Every audited episode window and the selected October9 interaction file has
+zero outgoing CtoS records. The actual NPCInteract/DialogChoice inputs cannot
+be recovered here. Incoming option23 must not be called a recovered native
+CtoS choice token. Interaction file headers say unverified name/map0; October9
+world119 independently joins sender42 to Sir Tydus/epoch1/map148/plane26.
+
+October9 precise sequence
+9055..9057 tick99495984: body128, sender129(actor42), option126(id23).
+9093..9094 tick99496734: marker77 and details76 for quest80.
+9095/9106 same tick: quest80 removals82.
+9100 same tick: XP100 (modern238,0,100).
+9103 same tick: gold10 (modern320,inventory96,10).
+9111..9114 same tick: next dialogue body/sender/options.
+
+Bounded pre-removal details are IDENTICAL to the active snapshot126:
+38-unit description with Logger literal argument and10-unit objective still
+{s}Go to the town square in Ascalon City. Talk to Sir Tydus.
+The marker repeats active Tydus coordinates/plane26. No checked-objective
+transition or modern84 objective-only packet is observed in these bursts.
+Therefore marker/details are established as refreshes, not proof of a durable
+completed stage, completion event, or greeting-triggered objective transition.
+An absent completed snapshot also does not prove that retail has no such state.
+
+Interpretation and source consequences
+The separated greeting/option and reward bursts support, but cannot prove
+without CtoS inputs, a greeting -> reward-choice interaction sequence.
+Current private source exposes80 reward only after authorized NPC interaction
+(native55/79 or queued approach arrival) opens Tydus dialogue. Native57 then
+must consume an offered choice and recheck current NPC scope/name/range,
+deadline and quest cycle. A bare early reward choice cannot enter the80 route.
+There is no reason from these captures to auto-complete durably on greeting.
+
+The private atomic active->rewarded storage policy can preserve this visible
+flow and crash/reconnect safety. It must be labeled PRIVATE policy, not claimed
+as recovered retail persistence. For tighter incoming packet fidelity, after
+successful reward commit send native76 marker,75 details,81 removal then319 gold,
+using bounded session/name-bound catalog units, allocated before durable write.
+Do not invent native83 completion/checkmark text or a duplicate72/79 QuestAdded.
+This bounded correction is now integrated pending the next parent native build.
+Existing auth absolute XP/progression publication precedes this batch; original
+receipts put marker/details/removal before XP/gold. Combined ordering remains a
+documented private gap, not an exact retail publication claim.

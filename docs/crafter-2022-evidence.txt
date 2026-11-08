@@ -1,0 +1,77 @@
+Native crafter type3, offline proof and dormant authority
+
+Run tools/protocol/crafter_transactions_2022.py with build/protocol-python and
+tools/protocol on Python path. Report: build/reports/crafter-transactions-2022.json.
+Original executable SHA256a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+Source packet SHA256e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c.
+
+Owner and list proof
+World14641 identifies ArthurAyala[Weapons] actor48/map148/epoch1/model1471.
+Native155 line12546 has the same encoded name; native32 line12549 has the same
+model. No intervening native retire/zone precedes owner196 line460880. Initial
+zone packet is absent, so map148 is attributed to exact world identity evidence,
+not an invented native zone record. Source353 lines460881..460893 contain13
+complete preview definitions, then132 line460894 is INCOMPLETE, then202(type3,
+float1)line460895 opens the crafter. Those13 definitions are window-associated
+candidates; full retail membership/order is still unproven.
+Original131 accumulator8746a0 and201 consumer8751c0->7961a0 publish ONLY the
+accumulated item IDs. Native proof with no131 yields an empty type3 list; omitted
+and reordered synthetic IDs remain omitted/reordered. Definitions alone cannot
+recover the missing list. NO Arthur panel or population changes are installed.
+
+Exact recipes, not merchant-price guesses
+Original general constructor7c69b0 stores wire materials-1 atitem+48 and
+wire unknown2 atitem+4a. Native getters7c3b60/7c3bb0 return recipe index and
+material quantity scale. Recipe getter5890f0 returns20byte immutable rows at
+976a00+index*20. Row+4 is gold, +c material count, +10 pointer to16byte material
+entries: entry+0 is material slot and+4 units. All13 exact capture definitions
+are looked up through ORIGINAL constructor/getters/lookup/controller.
+Axe wire recipe489->index488 costs100gold+4Iron(slot1)+1Wood(slot6), despite
+captured merchant/base value17. The13 native(gold,material quantities) multiset
+matches13 normalized local ArthurAyala wiki rows; wiki SHA256
+1b4c6ec592883020e9cd0b4e70bfe49a41e5a222b3deaa6aa2ef301a0eaa11cf.
+Names are not inferred merely from a shared recipe/cost. Full definitions and
+opaque modifiers remain in the report. Missing gameplay stats are not inferred.
+
+Original button/transaction/completion
+Button consumer574c20 control0/notification6 calls5745f0 directly. That controller
+uses selected preview and quantity, recipe gold*quantity, and material base
+units*item scale*quantity. Material cache iterator5829c0 selects whole owned
+stack IDENTITIES until each requirement is covered. It passes NULL give-quantity
+pointer and a receive-quantity pointer to7988c0->8768c0, so opcode75 is used
+and generic sender fills give quantity1 for EACH SELECTED STACK.
+Native quantity1 fixture: iron43 quantity5,wood44 quantity3 =>giveIDs43/44,
+give quantities1/1,gold100,receive42 quantity1. Quantity2 needs8Iron+2Wood:
+select43(quantity5),45(quantity10),44(quantity3) =>give quantities1/1/1,
+gold200,receive42 quantity2. Literal one-unit debits would be WRONG.
+Original203 callback875200 and crafter consumer5731f0 clear pending bit1 only
+for type3; wrong type leaves flags unchanged, duplicate completion does not
+notify again. Gold334 is separate. No successful retail craft is captured.
+
+New dormant shared authority
+gw_crafter_transaction.h admits only trusted recipe data and fresh private menu
+IDs under actor/map/world/generation/range/revision/opening deadline. Its Plan
+cannot be default/client constructed; admission consumes binding. Request75/
+type3 must carry exact recipe quote,receive quantity and unique selected stack
+IDs with marker1. Existing canonical material model+0x2508 slot authority is
+reused. Private supported policy accepts carrying bags only, ordinary250 stacks,
+and no known customization/profession restriction or armor metadata; it does
+not claim native material storage access behavior.
+The server derives net recipe debit amounts from trusted recipe and selected
+owned stacks, never client marker1. Extra/unneeded,duplicate,foreign or
+insufficient stacks deny. Private deterministic debit order is request order;
+retail residual-stack identity/order is NOT proved without a successful capture.
+Shared copy-first collector issuer creates exact trusted reward definitions.
+Batch capacity failure on the final reward discards all debit/gold/reward state.
+Commit uses existing durable identity projection, bank preservation and one
+inventory/gold revisionCAS; replay/changed inventory denies. Item/gold packets
+and203(type3) may publish ONLY after durable commit. This helper returns item
+packets; future app caller must publish gold and completion using proven paths.
+No app dispatch, actual crafter panel, CMake registration or new material/item
+production definitions are activated. Test material definitions are explicitly
+synthetic canonical authority fixtures; the crafted Axe definition is captured.
+
+Current integration update: the original dormant proof above is now used by
+PRIVATE_ARTHUR_WIKI_CATALOG_V1, documented in arthur-crafting-integration.txt.
+That explicit wiki-backed catalog does not recover the missing132 list.
+The new app/panel/armor changes require their own coordinated build validation.

@@ -1,0 +1,206 @@
+Shield Bash363: native policy and detached contact transaction
+============================================================
+
+CURRENT2026-10-24:the production Runtime/World contact and recharge integration
+at the end passes its serial Release build and nine focused/regression CTests.
+Earlier unbound statements below describe the original detached stage. Fixed
+capture evidence is unchanged;rendered acceptance remains unverified.
+
+Implementation evidence is fixed at20261023-cumulative-skills, cutoff
+2026-10-24T03:30:45.097467+00:00. Newer capture sessions are separate.
+This skill remains unbound. No checkpoint count or production gateway is changed.
+
+The pinned2022 client row supplies type16,Warrior,Strength17,5Energy,
+instant/no aftercast,20s recharge,5..11s duration,scale15,and caster621.
+gw_shield_bash.h checks those constants before returning a rank0..20 plan.
+The local Shield_Bash.html revision2667545 describes a shield-dependent next
+attack-skill block;melee contacts additionally knock down and add15s recharge.
+Its notes describe the same melee reaction for unblockable melee skills.
+These semantics are policy input,not independent packet verification.
+
+The frozen local activation is packets-1360-15821281.jsonl lines374335..374341
+at tick23350921:ready228,cast timing162/kind62,recharge20,instant48/body621,
+effect110 duration5,and activation227. Native162/kind62 is timing state,not
+an Energy payment measurement. tools/protocol/shield_bash_2022.py checks each
+exact line/timestamp/hex against a hash-verified manifest source and invokes
+the original2022 instant/body621 consumers with stub actor/model/asset services.
+The evidence establishes no incoming contact,shield swap,consumption,knockdown,
+or additional disable. It does not establish the effective Strength rank.
+
+The protection query requires an exact owner Scope,active self-caused untyped
+status,current authoritative equipment revision,and native14 attack skill.
+Ordinary contacts and native20 PetAttack commands do not qualify. Missing
+equipment facts fail closed;an authoritative no-shield snapshot grants no
+protection and leaves the duration record intact. Reuse the existing inventory
+shield_equipment adapter to honor ownership and two-handed suppression.
+
+The detached proposal requires the exact active effect ID as the attributed
+block source;another effect's block does not consume Shield Bash. It carries
+the full attacking Slot including copy ID,the attacker lifetime and release
+event,then removes the status only in a copied Registry. Reapplying against
+that committed copy fails. Melee proposals retain knockdown and15s additional
+disable intent;ranged proposals retain neither. Native weapon-requirement
+masks must agree with the supplied delivery;unknown/untyped cases reject.
+The documented bypass branch separately requires a validated pre-damage melee
+hit and cannot turn miss/dodge/obstruction into a reaction.
+
+This is not an attack ledger or an authorization token. The caller must prove
+the server-owned release/skill/outcome under World authority,preflight control
+and cooldown mutations,and commit all results atomically. Discarding a failed
+proposal must leave the original Registry intact. The current normal Runtime,
+World contact consumers and source binding do not call this helper.
+
+Remaining work before enabling363:
+- Acquire a trusted World attack-skill contact identity and exact shield state
+  at the chosen accuracy/block phase;verify source ordering with other blocks.
+- Establish first-contact consumption for blocked,missed and unblockable cases,
+  including Rigor Mortis versus inherent unblockable behavior.
+- Integrate atomic status removal,knockdown immunity/duration handling and the
+  additional15s recharge with existing base and independent cooldown layers.
+  A new15s floor is not automatically the same as an additional15s recharge.
+- Implement player/NPC contact and current lifetime/death/removal consumers,
+  paid normal instant casting,publication ordering and rendered acceptance.
+- Capture known melee/ranged skills and copied attacking slots,shield swaps,
+  immunity controls and base-recharge changes;one self-cast cannot prove them.
+
+Validation2026-10-23:coordinated serial Release build of shield_bash_test and
+server_host passed. The seven focused CTests passed,including shield_bash.
+The Shield Bash test covers all21accepted ranks,ordinary/pet/attack skill
+classification,current shield/unknown equipment,exact lifetime/expiry,copy-ID
+preservation,source attribution,replay after committed removal,invalid actor
+identity,outcome denial,melee/ranged requirement consistency and bypass guards.
+The offline native verifier separately passed its seven hash-pinned receipts
+and original instant/body621 consumers. These are mechanics/native-consumer
+tests;no executable deployment or rendered-client acceptance is claimed.
+
+Tested SHA256:
+src/runtime/gw_shield_bash.h
+ afbb1d44f5ea52197395a3d2edee023daeb1956fb81904d8962ff0bd846375b9
+tests/shield_bash.cpp
+ 45a05580bc85b0f7326b804d7a69ee67461ef5daf0b2e867e368fa430b90cbe5
+build/tests/shield_bash_test.exe
+ 0932d6c93a0d6c00711c3c6b8af7eedce376fbddd05293b9b438687186d31115
+Native verifier report:build/reports/shield-bash-native-2022.json.
+363remains unbound;checkpoint baseline/source-bound counts are unchanged by
+this detached stage. Official clients and loggers were not touched.
+
+2026-10-24 authoritative contact/completion integration:
+Normal363casting now uses explicit native instant-action classification,the
+shared paid self-buff path,Strength duration,body621and20s recharge. World
+validates live exact-scope ownership,equipment frontier and canonical duration.
+Death removes this untyped self buff through the authoritative cleanup path.
+It is independent of stance replacement;using another stance does not erase it.
+
+Reviewed block probability and source attribution now include Shield Bash only
+for native14attack-skill contacts with current owned shield equipment. Ordinary
+and native20pet-command contacts remain excluded. Ranged attack skills consume
+the status at their terminal block with no melee knockdown/recharge change.
+An inherent-unblockable melee hit reserves the documented retaliation branch;
+ordinary Rigor Mortis bypass alone currently leaves the status unconsumed.
+The distinction remains a retail evidence gap,not an inference from a self-cast.
+
+gw_world_shield_bash.inl reserves the exact effect,target/source lifetimes and
+attacking Slot/copy under the World mutex. It consumes only the corresponding
+AttackOutcomes terminal receipt. Cancelled/failed contacts discard reservations.
+Melee reservations also require the exact pending completed skill use,matching
+slot/copy/frontier/control epoch. Missing or mismatched pending uses fail closed
+before granting the block. Its terminal receipt removes the status,knocks down
+the attacker through the existing immunity/control authority,and marks that
+one use with15seconds of extra base recharge. Its own knockdown updates only
+that captured use's expected control epoch;unrelated controls still invalidate
+the pending completion. No catalog cooldown or guessed remaining recharge is
+substituted for the actual completion inputs.
+
+CooldownCompletion retains original base_ms and a separate extra_ms. World
+finalization combines the actual modified base with15seconds before existing
+base deadlines and before any captured Diversion addition. Runtime imports the
+extra into its ordered base timer and native recharge publication. This is not
+an independent15second disable floor. The existing base-reset/source provenance
+machinery consequently sees the complete base timer. Instant-recharge attacks
+with this modifier reject explicitly;none of the currently supported melee
+attack completions supplies that combination.
+
+Cyclone Axe330uses the same terminal reservations across its staged recipient
+batch. Explicit bounded private policy:each qualifying defender consumes its
+Shield Bash,but one attacking use receives one15second modifier and at most
+one effective knockdown. Multiple Bash defenders do not multiply that modifier.
+Retail multi-defender recharge stacking remains unmeasured. Deterministic
+recipient order follows the existing batch controller;no retail ordering is
+claimed. The test covers two defenders and one copied attacking use.
+
+A reserved terminal block also consumes its defender's Bash when an earlier
+batch recipient's Shield of Judgment retaliation kills the attacker. Source
+death preserves these exact pending terminal reservations until delivery;
+dead sources receive no new knockdown and follow shared pending-use cleanup.
+The regression uses authored Holy-equipment/caster-level facts and an explicitly
+low source Health value;it does not infer those facts from the frozen capture.
+
+New tests:shield_bash_world and shield_bash_cast. Coordinated serial Release
+validation completed:shield_bash,shield_bash_world,shield_bash_cast,
+block_attribution,world_weapon_attacks,attack_outcome_batch,cooldown_bar_world,
+shield_judgment_world,and the separate Battle Rage policy suite pass9/9.
+The affected neighbors were freshly rebuilt against these shared headers.
+server_host Release also builds. The source uses the existing production
+gw_auth generic status hooks;no special gateway callback is needed.
+
+Additional assertions prove no independent-disable floor is installed and the
+Runtime18second base timer publishes a World-verified local cooldown snapshot
+after acknowledging its own knockdown. Departing either lifetime purges queued
+reservations;death of a source preserves already-reserved terminal delivery.
+Whole-batch reservation capacity is checked before commit. Actor-generation,
+missing/mismatched pending use,copy identity,current shield presence,expiry,immunity and
+native packet/recharge paths are covered by the focused suites.
+
+The offline native verifier separately passes the original seven fixed receipts
+and instant/body621 consumers. No rendered-client acceptance or host deployment
+is claimed. Retail gaps remain:source ordering with independent block effects,
+Rigor Mortis versus inherent unblockable consumption,multi-defender recharge
+stacking,and residual same-timestamp/fatal-retaliation ordering. These explicit
+private policies must not be relabeled as measured retail behavior. No fixed
+capture/plan files or official client/logger processes were changed by this
+integration agent. Checkpoint counts/source-binding publication are handled by
+the coordinated coverage audit separately from these mechanics test results.
+
+2026-10-24 tested source/executable SHA256:
+src/runtime/gw_shield_bash.h
+ 5f3ef9d5371bce293b8d91cc62cc88949e7e64af6ab48d1697c9877ddb941601
+src/runtime/gw_world_shield_bash.inl
+ a5f4818437fd5fea6cbcafaedab2add60a542cedcc75a3484af92ba78ebd54c1
+src/runtime/gw_blocking.h
+ 801be023a824300e2db6047408a723640b0a5eded5d12e5bb0d9e8119ebe1558
+src/runtime/gw_block_attribution.h
+ a36ede34bb777257ced667f6f2ccc5feb36635cf48678e5fef61a802bd0bb64f
+src/runtime/gw_cast_timing.h
+ de18caefc69840744d4ba21ad2efbafcb83da2961b0a8a7bdf5213e4f2171aa2
+src/runtime/gw_skill_casting.h
+ 9fe06e904350612a3be6e084728c205d0a9869aa3c5464a31e7e9d08960818d4
+src/runtime/gw_world_simulation.h
+ dcf0b5a8a02d974fef1b67ae04f4130b33768a39a0ccc5a43f8956e218660847
+src/runtime/gw_cooldown_bar_authority.h
+ cb9f53b53b3546c3e73a0ee930bd47771b187cb8234c5f0e17cfe4df1f9d430d
+tests/shield_bash.cpp
+ 45a05580bc85b0f7326b804d7a69ee67461ef5daf0b2e867e368fa430b90cbe5
+tests/shield_bash_world.cpp
+ e087c2c04bae6e66c196cc987804d81fd6332e3a221a4ba7fee61273788769fd
+tests/shield_bash_cast.cpp
+ 4e253131c74c76b281c98c005c31eba6236a25f5944758847db0305297c4d463
+bin/server_host.exe
+ 03e884fc6eb8ebcda23159c6ed1dce7062ae6f2af76b26ff6a7f1deb2fad8a09
+build/tests/shield_bash_test.exe
+ 5f9e4049c4047092e8fe9f6fc35874a400a4dd09e1cb775059bdeb308b1857af
+build/tests/shield_bash_world_test.exe
+ d9c042e05934c28d75e7c47eba24496d24ec4f2239e5ed4337a28f91c08e8a10
+build/tests/shield_bash_cast_test.exe
+ 5ecb46fa17814afe40e5b385b21f6c5340ab79ece8541e08f3ee8227c8ba26ef
+build/tests/block_attribution_test.exe
+ a93c6f32252889577ee9e37b10d3fb72698cd7ae3059afccd8c4be15f86c07d2
+build/tests/world_weapon_attacks_test.exe
+ bc5d479f155ad0b079a03e7a929c2a8d268403a9a9c68d8f78e16fb16b50e875
+build/tests/attack_outcome_batch_test.exe
+ ed40d5022f4315e9aa56a86da04551677e7b5e4d62dfc8c709231c20c8a9db06
+build/tests/cooldown_bar_world_test.exe
+ 1c564a6735feae021216272b92ef4cc9cbb8b581e07e7b050169d3660581258f
+build/tests/shield_judgment_world_test.exe
+ 647d7702e4750b8c66f873bc3eea8684e288f4e7a33f0126a775ddd166c718b9
+build/tests/battle_rage_policy_test.exe
+ a3f4e2a56e54d57a05679257ea8e023b731fe5021c3ca655ebde889967e6c9a9

@@ -1,0 +1,81 @@
+Read-only production design: maintained NPC controller trajectories
+
+Ownership proposal after the current native build completes:
+- One World owner edits gw_world_npc_motion.inl and gw_world_mending.inl together.
+- That owner adds a const controller lookup, projection helper and publication
+  suppression in the existing integration routine. No runtime casting changes.
+- Parent alone registers tests/CMake and serializes builds. Other World owners
+  must freeze overlapping included sources before this implementation begins.
+
+Reuse exact authority, not a second integrator:
+  integrate_npc_ai_motion_locked(FlareController&, Npc&, NpcAiMotionIntent&,
+                               uint64_t now, bool publish=true) const
+The current function's World reads (npc_combat_.at, eligible_foes_wards_locked)
+are const-compatible. Its writes are confined to the three passed objects and
+last Outbox loop. Guard ONLY that Outbox loop with publish. Existing production
+callers retain default true and identical arithmetic/packet ordering.
+Projection copies FlareController (including value-owned optional encounter),
+Npc, and NpcAiMotionIntent and passes publish=false. Never call move_npc_flare,
+AI drivers, target acquisition, route replanning or live materializers while
+forecasting. No target is consulted by the retained-route integration routine.
+
+Lookup and chronology:
+- Require exact current NPC scope; placed body, intent source and controller
+  policy source must agree, and health_clock<=from, intent.updated<=from.
+- Flare uses npc_flare_ai_[id]; elemental uses .motion; ordinary pursuit uses
+  the same Flare controller plus ordinary ledger. Do not copy the attack ledger
+  to invent movement. Pet support requires const lookup mirroring current
+  pet_motion_controller_locked and should have separate consumer tests.
+- A valid controller with no intent is standing. This matches the existing
+  npc movement snapshot comment in gw_world_simulation.h around17710. Reject
+  future/stale controller scopes/clocks instead of fabricating a snapshot.
+- Idle patrol legs already store explicit intent.expires. The shared integrator
+  clamps the sample time, so append stationary remainder through the horizon.
+- Decisions at a future driver frontier own future travel only. Forecast old
+  retained intent BEFORE any driver replaces it or consumes historical movement
+  state. Verify this ordering under coarse polls; do not bypass existing
+  rejection merely because a controller's current position is available.
+
+Projection algorithm (efficient exact integer-time knots):
+1. Keep original body/controller/intent immutable. Every sample(at) clones the
+   same originals and invokes the shared helper once, publish=false. Return
+   copied body position, copied intent.stopped and outcome.travelled.
+   Do NOT integrate successive samples into one evolving copy: extra float
+   roundings would differ from actual materialization at a chosen deadline.
+2. Stopped/empty original intent is stationary. An observation deferral or
+   invalid request rejects the trajectory; zero-budget is valid standing.
+3. Seed from/through; historical movement boundaries; eligible Ward created/
+   expires; explicit patrol expiry. Sample the original endpoint at each time.
+4. Build only geometric route cuts: cumulative retained corner distances and
+   Ward segment enter/leave distances (existing quest adapter already does this).
+   Binary search each reachable cut against sample(at).outcome.travelled, adding
+   floor/ceil adjacent integer times. Shared helper owns speed/leash/stop math.
+5. Binary search earliest copied intent.stopped for reached/stop-quantization/
+   leash/expiry terminal, adding adjacent samples. This catches stopping before
+   the final route waypoint without copying quantization or leash formulas.
+6. Return sorted unique sampled points including exact endpoints. For the
+   strict float-resource range oracle, compare every integer-time projected
+   point against direct shared-helper sampling in tests. If endpoint linear
+   interpolation misses float thresholds, retain integer samples in affected
+   spans instead of inventing a second movement formula.
+
+Required World regressions:
+A. Flare chase and ordinary melee chase: projection changes no live positions,
+   route/controller clocks, engagement, encounter state or Outbox contents;
+   actual materialization at projected boundary matches projected position.
+B. Corner path goes outside5000 then returns inside: endpoint-only chord must
+   not preserve maintained lease. Check exact first outside millisecond.
+C. Ward enter/leave and expiry plus snare/knockdown/recovery boundary: same
+   direct shared-helper per-ms oracle and correct maintain/upkeep removal time.
+D. Leash boundary and stop inset: terminate and hold, no prospective return leg
+   until a real driver authors one; projected encounter copy clear cannot leak.
+E. Authored idle patrol expiry: clamp and stand; future patrol decision begins
+   only from its real observation. Coarse/fine polling agree on lease ends.
+F. Standing ordinary/Flare/elemental controller with no motion intent admits
+   current snapshot and maintained lease; future/stale source scopes reject.
+G. generation retirement and missing ward/history observation reject cleanly;
+   failed projection cannot publish or advance any live resource boundary.
+H. Moving NPC as caster and recipient, crossing each other, plus existing quest,
+   player keyboard/click path and participant chronology suites remain green.
+
+No existing production source or registered test modified during build27301.

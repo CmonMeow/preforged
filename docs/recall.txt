@@ -1,0 +1,319 @@
+Recall925 Assassin: initial policy/native evidence, not production-bound
+Pinned2022row:15Energy,1s activation,.75s aftercast,10s recharge,No Attribute,maintained self enchantment anchored to another ally;target928,caster2077sentinel. RecallShadowPlan avoids conflating Mantra of Recall82.
+Archived Recall.html revision2609602 explicitly states enchantment is maintained on caster, target death does not end maintenance, caster death does not step corpse, dismissal with dead target causes neither step nor10s disable, and moving out of compass range triggers end-step. Cannot self-target. Upkeep is1pip. Application range uses existing1248spell convention;end navigation requires separate compass/fallback integration.
+Policy tests validate canonical metadata,other-ally/range/liveness admission,exact caster/anchor lifetime,dead/retired destination no-step/no-disable,dead caster,no backward time,10s disable arithmetic/overflow and forged-plan rejection. This stateless end proposal does not mutate World or guarantee exactly-once consumption.
+Fixed cumulative checkpoint20261022-cumulative-skills packets-108988-190116609.jsonl:45818targeted actor25->28 start925;45830recharge10;45831finish;45832body928 on ally28 owned by25;45833/45834maintained recipient/owner25 effect82. Thus visual attachment and maintained-enchantment ownership are distinct. tools/protocol/recall_2022.py validates source/client hashes,all6receipts and native targeted1s cast/928particle consumers. Model/assets stubbed;no rendered proof. End-step/disable sequence not covered by this receipt group.
+Remaining: integrate maintained Energy/upkeep on caster,store exact ally anchor,atomic retirement/end handling on strip/dismiss/range/death,collision-aware cross-plane/end fallback,bundle drop,movement prediction reset,all-slot disable receipts,Runtime/gateway payment/recharge and rendered tests. Target death must preserve active maintenance until an actual end;new actor with reused ID must never become destination. No source-bound count increment for this initial stage.
+
+Upkeep ledger stage: MaintainedEnchantments now has a dedicated add_recall producer,validating self-owned indefinite925entry plus distinct live-admitted ally anchor. The ledger recipient is caster,not selected ally; anchor storage/end action remains separate. Recall contributes one pip through existing exact Energy settlement and counts for Blessed Signet. New recall_upkeep test proves owner-only accounting,duplicate/self-anchor rejection,exact3s zero crossing from1Energy at-1pip,release at4000from1000,positive3pip balance and Blessed Signet count. Fresh Mending,maintained Energy and Blessed Signet suites pass. World casting remains unbound because generic World release handlers currently assume Mending and must gain Recall's atomic end transaction before925is exposed.
+
+Application/retirement proposal stage: gw_recall_maintenance.h now prepares registry,maintained ledger and anchor together and retires registry/ledger in one copied proposal. Reapplication while925is already active rejects until its existing end is processed;no old end behavior is silently skipped. Retirement requires exact original maintainer,effect,anchor application time and current caster generation. Dead or reused target lifetime produces no step/disable;forged anchor,backdated end and second retirement reject. Fresh recall_maintenance plus prior policy/upkeep tests pass. These proposals do not commit World movement/disable or expose normal casting;exactly-once World publication remains pending.
+
+World relocation component stage: recall_step validates the trusted anchor,caster and exact live allied player/NPC lifetime, samples moving actors from authoritative state, uses layered shadow destination/fallback and returns opcode44 receipt. It shares apply_shadow_position_locked with DeathsCharge,clearing queued clicks,held velocity,turn/follow/interactions and prediction credit. No network request dispatches this component. New World tests cover moving ally,post-step stability,stale target,dead target/caster and reviewed allied NPC;existing DeathsCharge movement/floor/gate tests remain. End-upkeep ownership,all-slot disable/publication,bundle lifecycle and out-of-compass Recall auto-end fallback still need one atomic World transaction. Generic shadow_destination currently rejects beyond-compass endpoints;this must be resolved before Recall925can be exposed.
+
+End evidence update: verifier now pins16application/end receipts,including1170origin(actor25)and destination(actor0),five229disable packets,64/68removal for effect82,and matching44position at191050437. It executes original1170ground and44position consumers. The five disable values are3seconds for799/876/926/927/948,conflicting with pinned2022/historicalRecall10seconds;version/modifier/cooldown interaction cause not identified. Do not silently replace native10with3or claim all8bar deadlines proved. Native1170wire builder is now shared by shadow steps,with DeathsCharge compatibility wrapper unchanged. World end transaction,exact return reason and full-bar disabling remain pending.
+
+All-slot disable/end proposal stage: RecallDisables tracks native10s independent disable for every exact current-bar Slot,including Mesmer/signets and distinct copies. It validates owner/bar publication/event ordering,prevents event replay,retains later deadlines,handles explicit reset/retirement,and uses checked expiry arithmetic. prepare_recall_end_transaction now stages retirement and disable authority together;wrong bar/owner/clock cannot leave upkeep removed without the required disable. Dead/retired destination keeps prior disables and adds none. Four Recall suites pass. World disable aggregation/reset revisions,owned end callback,automatic compass exit and actual ordered publication remain pending;925casting remains disabled. Modern3s capture discrepancy is unchanged.
+
+World disable authority stage: Recall deadlines now participate in both base-skill and exact-copy World queries,seventh DisableRevisions component,optimistic all-source reset preflight/commit and actor departure cleanup. Trusted recall_end_disable component validates actor clocks/liveness/current published bar and retains event replay watermark;no decoded request calls it. World test passes Mesmer/signet/copied-slot deadlines,base/copy separation,stale reset rejection,partial reset preserving other slots,replay after reset,exact expiry and actor reuse. Owned maintenance-end callback and atomic movement/disable publication remain pending;normal925casting stays disabled.
+World disable integration validation: freshly rebuilt Flourish World and general disable_reset_world both pass. Updated obsolete reset test's four-source cardinality to current seven,retaining Rust and new Recall zero-revision assertions. No host or official sessions restarted.
+
+Atomic-end prerequisites: Recall movement now has private prepare_recall_step_locked and a preview wrapper;preparation validates/settles actor state but does not alter position or clear input. World regression proves preview/commit receipts match and preview preserves position for live/stale/dead cases. recall_wire/end_wire builders validate the original anchor and self-owned indefinite925entry,emit caster/caster62/64and63/67removal. Native verifier executes original62/64serializers against frozen actor25/effect82and the C++ packet matches exactly. Fresh Recall and shadow-step World suites pass. Callback commit and full live producer/casting remain unbound.
+
+Removal reentry investigation: generic remove_health_effect_locked can trigger linked callbacks before registry/regen retirement finishes;directly advancing Recall's target inside that callback risks recursive removal or partially committed movement. Added RecallEndQueue to retain exact anchor/effect/time/event before reactive work,acknowledging only successful front commit. Tests pass duplicate/reentrant enqueue rejection,pending retention on failed preparation,wrong acknowledgment,no late frontiers even after draining,source retirement and destination retirement distinction,and new generation reuse. Queue is not yet spliced into World removal;it must be installed together with owned producer and dispatcher,not treated as playable support.
+Staged World producer/removal/dispatcher: stage_recall registers self-owned925entry,zero-pip maintained timer,original ally anchor and shared upkeep ledger. Generic removal retains a Recall end event before retiring upkeep;after effect removal,the guarded dispatcher prepares destination/disable state before committing movement once. Manual drop uses this path. World tests cover creation/dismissal,duplicate drop rejection,return/10s disable,dead ally suppression and caster death. Departure clears queued ownership;new application clears retirement suppression. Composite type renamed RecallShadowEndProposal to avoid collision with Mantra of Recall.
+Normal casting remains DISABLED. Pending:automatic compass exit/beyond-compass fallback,zero-Energy and linked-death reentry cases,UI feedback preserving longer ordinary recharges,bundle lifecycle,production prefix/payment/recharge and rendered acceptance. Staged end currently publishes removal before return visuals,unlike captured trail-before-removal ordering. Failed destination preparation retains pending work and rejects the staged end;no live925request can exercise it yet.
+
+World zero-Energy verification: death_charge_world now exercises four Recall cases across exact3100and delayed6100settlement,with live and dead anchor targets. From1Energy at base0pips minus Recall upkeep,the effect survives3099and ends at3100. Live anchor returns caster exactly once and disables the current slots until13100even when observed at6100;dead anchor removes upkeep without teleport or disables. Repeated settlement preserves the deadline. Freshly rebuilt World test and all nine Recall/Mending/maintained-request suites pass. This closes the previously untested zero-Energy World boundary;linked-death during preparation and the other production gates above remain pending. Normal925casting remains disabled.
+
+Reactive anchor-death fix: new World regression starts Recall on a1HP ally,then applies poison without settling that ally before manual dismissal. The old dispatcher threw Recall end remains pending when return preparation discovered the death. Dispatcher now revalidates exact caster/target lifetimes and liveness after failed preparation,acknowledges a no-return end for death/retirement,and retains genuine destination failures. Regression proves dead ally,unchanged caster position,no disables,empty effect registry,and successful later resource settlement. Fresh death_charge_world,Mending World and maintained-request builds plus all nine related suites pass. Normal casting still disabled;automatic range,fallback,ordered publication,recharge UI,bundles and Runtime integration remain pending.
+
+Automatic player-anchor compass removal: shared maintained boundary forecast now uses Recall's stored ally as range target while retaining caster as effect/upkeep recipient. Preflight uses Recall retirement rather than Mending. Exact anchor scopes join shared health-event participants. Return geometry uses bounded topology including the actual endpoint,allowing the first outside millisecond required by archived Recall notes instead of ordinary cast-range rejection. New wide-nav World regressions cover caster moving and ally moving,each with exact and delayed settlement:effect retained before crossing,one return at crossing and10s deadline based on crossing,not poll time. All11 Recall/Mending/DeathCharge/shadow suites pass after rebuilt World targets. Generic shadow_destination targeting remains unchanged. Normal925casting stays disabled. Pending:NPC-anchor path forecasting,turning/teleport/disconnected-path range cases,ordered trail/disable/removal publication,recharge UI preserving longer cooldowns,bundle lifecycle,production cast/payment and rendered acceptance. Broader topology and modern3s versus pinned10s disable fidelity remain unverified.
+
+NPC anchor trajectory integration: maintained_range_path now supports exact NPC lifetimes,static placement and validated quest routes. Read-only route projection uses the same LiveActor movement integral as actual NPC advancement;new movement-boundary adapters expose speed-effect,knockdown and spell aftercast frontiers. Both integer samples around route corners prevent chord interpolation. Unknown discrete combat-controller motion rejects instead of inventing stationary data. Recall range forecasts now admit living allied NPC anchors and use NPC health clocks;dead/retired NPC anchors retain upkeep. Wide-nav Recall World tests prove static allied NPC crossing,exact/delayed settlement,return/deadline and stale-lifetime rejection. Captured Gwen escort regression compares routed forecast endpoint against actual materialized World motion within.01unit;NPC control regression checks pause/speed boundaries. All13 related suites pass after fresh affected builds. Aggregate npc_world_combat harness required explicit8MiB stack reserve after Windows0xC00000FD(default1MiB);matches existing simulation harness and does not change production stack policy. Normal casting stays disabled. Pending:moving allied NPC Recall end-to-end plus movement controller/retarget cases,turning/teleport/disconnected-range edges,ordered trail/disable/removal feedback,preserving longer recharges,bundles,production cast/payment and rendered validation.319source-bound count unchanged.
+
+End publication ordering: end monitor now retires ownership/registry but defers63/67wire to Recall dispatcher. Successful return commits once then broadcasts both1170trails,publishes owner-only63and broadcast67,then44position. Dead caster/dead anchor/reactive death publish removal without trails;stale source lifetime suppresses wire to a replacement actor. Generic other-enchantment67publication remains unchanged. New World packet assertions verify exactly one63/67pair,owner-only upkeep,both-peer trail-before-removal and position-after-removal,and no trails for death cases. Fresh affected World/Mending/request builds and all nine related suites pass. This fixes the previously documented removal-before-trails mismatch,but does NOT finish the captured fullsequence:228skill-disable feedback still needs Runtime reconciliation between trails and removal. World local_cooldown_snapshot is deliberately invalidated by outstanding source/control/completion work;do not publish a blind10s timer that overwrites longer ordinary recharges. Existing Runtime restored_slot_feedback already computes max(global/exact-copy disables,local ordinary deadline);a retained ordered Recall publication/Runtime handshake is still needed. Normal casting remains disabled;no host or official sessions restarted.
+
+Retained owner feedback integration: World now mints RecallFeedbackNotice with original actor lifetime,event,time and exact disabled bar,retaining its owner trail/removal/position publication. Runtime.prepare_recall_feedback reads actual session ordinary timers plus World base/exact-copy disables through existing restored_slot_feedback,intersects original copies with current bar,and prepares wire without events or timer mutation. World accepts only its pending front notice/current published bar,valid event clock,matching ordered slot packets and no shorter than current exact disable;then publishes owner1170trails,228/229feedback,63,67,44once. Peers receive trails/67/44without owner UI. Host publish_cooldown_sources polls/commits these notices outside World lock before ordinary snapshot publication. No World callback reenters Runtime. Leave discards stale notices and releases reservations. Normal925casting still disabled;this is production session delivery plumbing,not finished skill support.
+Outbox ordering barrier: reserve_publication materializes current capture prefix then reserves a queue position;drain stops there while later packets stay behind. resolve_publication replaces it with one bounded,visibility-filtered batch. Original64KiB byte limit remains;at most128reservations,monotonic IDs,wrong/replayed resolution rejection. Tests cover other-thread packets,capture prefix/suffix,multiple barriers resolved in reverse order,discard,limit and overflow. World regression proves owner feedback lies between trails and removal,later packets stay behind44,forged/shortened replies retain work,replay rejects,and actor departure/reuse releases old barriers.
+Recharge validation: actual Aegis cast installs ordinary deadline33000;Recall feedback at3750retains30seconds rather than10and does not mutate Runtime cooldown snapshot. Existing combined Diversion/restoration deadline remains longer than Recall,and replaced copied identity receives no stale packet. Missing authority preparation emits nothing;late expired feedback clears via229. Fresh builds of affected tests and server_host pass;12related suites plus5coverage-audit tests pass. HostSHA256C2F54E04AD503A6FEE662ABBD54C0CC93C3A8CAB77B0AEBCC7E57774D41A33E8. No host restart or official process/logging action.
+Remaining Recall gates:production cast/target/payment/finish928and recharge integration,bundle lifecycle,moving allied NPC end-to-end/controller-retarget cases,turn/teleport/disconnected-boundary edge cases,historical bar transitions across deferred settlement,rendered UI timing and redundant longer-recharge feedback fidelity,and modern3s versus pinned10s disable discrepancy.319source-bound count remains unchanged.
+
+Opt-in casting integration: Hooks now expose recall/recall_target_valid. Runtime admits925only with these trusted callbacks and canonical plan;static supported() and public gateway keep925disabled. Both callbacks are explicitly empty in gateway. Admission captures exact other-ally scope;completion revalidates lifetime,liveness,allegiance and range. World readiness also requires navigation,live/non-knocked caster,valid resource clocks,published World bar and no active925recast. Runtime pays native15Energy once,uses1s cast/.75s aftercast/10s ordinary recharge,and calls World complete_recall. World owns self maintenance while928targets the ally;prefix58/928is queued before upkeep/status and before any immediate zero-Energy return reservation. Enchantment applications run through shared reactions and completion settles the current resource frontier. stage_recall remains a trusted helper;normal hooks are unbound.
+Dedicated recall_cast suite covers14scenarios:ordinary player success,cancel,interrupt,anchor death,generation reuse,anchor moving out of range,absent callback,insufficient Energy,self target,hostile target,callback loss before finish,Monk/Assassin,exact-cost zero-Energy immediate end,and allied NPC target with no player Resources record. Generic target_valid deliberately rejects all targets,so tests prove scoped Recall validation is used. Tests verify no early effect,payment once,one finish/body,correct self-owned maintenance,recharge and zero-Energy return/feedback order. World refuses admission without a published bar. CMake gives this combined Runtime/World fixture /bigobj on MSVC;older relocation tests remain separate.
+Divine Favor resolved from local Divine_Favor.html revision2637822,SHA25687E348A22340A9DB028386692DFC60D25A1C34DE61A75BEFF0CB41E7BEE014E4,line56:the passive applies to Monk spells. Pinned Recall is Assassin profession7,so it grants no Divine Favor heal. Removed provisional gate;Monk/Assassin rank12case now succeeds and neither injured caster nor selected ally gains passive Health. Divine Favor is no longer a pending Recall gate.
+Fresh native receipt verifier passes original cast/928/1170/44 consumers and retained packet hashes;still no rendered acceptance.13related native suites and5coverage tests pass. Exact callback audit now requires explicit staged recall fields and rejects accidental static925support;normal source-bound count remains319. Host rebuilt SHA256538CCF904F84B1667BFA6D5A90E16AA8631C10BB9B5E4B86D6859B0EF5C4668F;not restarted,official logging untouched. Remaining:bundle lifecycle,recast semantics,moving allied NPC/controller/retarget and navigation/historical-bar edge cases,shared ordinary recharge-before-finish ordering versus capture,UI/rendered fidelity,and modern3s/pinned10s discrepancy.
+
+Recast/bundle investigation: all three local925applications were inspected. Effects82and94have upkeep removal before the following starts(45898before46027and46645before46787). These are sequential applications,not active recasts;End_effect.html explicitly warns that reapplication may renew/end/remove depending on the skill. No recast behavior was guessed. Targeted gaps recorded in docs/recall-capture-gaps.txt.
+Additional frozen end proof: verifier now pins34receipts and executes four original1170consumers. Second end46635..46646includes eight3s bar disables(799,876,925,926,927,929,948,949),then effect94removal. Third cast starts6734ms later. This supersedes earlier one-end/no-full-bar statements:full modern eight-slot3s evidence exists. Active recast/dead-target/bundle/blocked-return capture still absent. First end's fivechanged timers versus second's eight identify a current Runtime fidelity gap:unchanged longer recharges are resent. Authoritative pinned10s remains unchanged.
+Bundle wire foundation: original2022incoming336descriptor60d82c/callback7c4d70/setter7c9520now verified offline. Native assignment/clear/unknown-ID clear and two hand refresh requests preserve stored weapon-set pointers. C++encoder and scoped copy-only bundle acquire/drop state pass native fixtures and lifecycle checks. These are NOT World pickup/drop/item-spell integration;Recall remains unbound. See docs/bundles.txt.8bundle/Recall suites and5coverage tests pass;official processes/logging untouched.
+
+Changed-timer feedback correction: Runtime.prepare_recall_feedback now records each exact current copy's ordinary,cached and authoritative deadlines and emits228only when the effective deadline is extended beyond both prior presentation and now. No resend of longer/unchanged timers,and no Recall-origin229for already expired timers. World validates all observation keys/current membership,authority floor and exact derived packet sequence;missing/mismatched observations and shortened or exaggerated wire reject without consuming the retained notice. No presentation input grants World cooldown authority.
+Retained synchronization ownership: new bound recall_feedback_pending query defers ordinary cache/UI import for affected pending copies. Expiration cleanup also suppresses a ready229while that copy's retained update is pending,preventing an old clear arriving after the new disable. Runtime.consume_recall_feedback prepares its new cache before the World publish callback,imports only after successful acknowledgement,and binds cache to actor lifetime. Failed commit leaves it unchanged;post-commit synchronization emits no duplicate. A different source's downward reset remains for its normal authoritative reconciliation. Host uses this consumer;World never calls Runtime under its lock. Pending-query work is skipped on unchanged deadlines in the ordinary hot path.
+Capture-backed timing fixture: verifier now pins36receipts,including previous925/929/949recharges. At first end they had5156/21922/13516ms remaining,all longer than modern3s. tests/fixtures/recall-ui-capture.txt is generated only after original frozen receipts/hash checks. New recall_feedback regression uses those actual deadlines:modern3s yields the captured fivechanged timers;native2022ten-second policy yields sixbecause925must now extend,while929/949remain untouched. Empty prior bar produces eight under either policy. This explicitly avoids hard-coding fiveor eightor the modern balance. Real ordinary Aegis and combined Diversion/restoration regressions now require no resend of their unchanged longer timers.
+Validation:15related CTest suites and5callback-audit tests pass. New regression covers normal-update deferral,failed-commit retry,post-commit cache,actor replacement,and old-timer expiry clear suppression;World cases cover malformed observations,wire and replay plus queue barriers. Fresh affected builds and host pass;hostSHA256C8107EBC685AAAD0BD222551E01FD34BA3B20B7293D470146023AF630BCDF2A3. No restart or official logging action. This closes the identified unchanged-longer-timer resend gap in source. Remaining:bundles/recast,broader mixed copy/restoration/control ordering,historical bars/navigation/controller edges,ordinary recharge-before-finish versus capture,and rendered acceptance.925still staged;source-bound count319unchanged.
+
+2026-10-22 World bundle transaction stage:
+World now owns transient pickup separately from durable bag credit. Pickup consumes
+one exact floor lifetime, retains its item definition, cancels ordinary attack and
+NPC interaction, and assigns opcode336 to its owner only. Generic inventory credit
+rejects type6 with held_bundle_path_required; no unreviewed policy is inferred.
+Drop prepares a copy with ground-revision/allocation-cursor/actor-lifetime checks.
+Persistent drops allocate fresh wire and actor lifetimes and retain metadata;
+destroy disposition publishes deletion without respawning. Manual drop requires
+the exact held generation, rejecting delayed requests against a replacement.
+Recall and Death's Charge prepare/commit this transition at the origin before
+position changes. Recall owner publication includes clear/drop before trails and
+retained disable/removal/position feedback; peers receive shared floor packets.
+Ordinary attack entry and weapon-skill completion reject held bundles. This does
+not yet prove every attack admission, stat suppression or peer equipment update.
+World transaction tests cover pickup visibility/definition retention, contender,
+stale manual drop, nonmutating Recall preview, persistent/destroy return, fresh
+identities and origin placement. First three suites passed; expanded rebuild and
+regression pending in build/reports/bundle-world-build.txt.
+Still gated: normal client pickup policy, item-spell/drop effects, held bonuses,
+peer equipment, death/weapon-switch/zone-exit cleanup, full-ground retained retry,
+active Recall recast semantics and rendered/captured end ordering. No normal
+Recall925 binding is added. No official client or logger was touched.
+
+Validation: bundle-world-build.txt serial Release build succeeded for host and five affected targets. bundle-world-tests.txt records11/11 native suites passing; five skill_runtime_coverage tests pass. Host SHA256 FE7092B1BC7A11D7FF2C2CAF98C4046771D5CB643CD6FCE1EB23FD176B5E301D. Binary rebuilt only; no process restarted or deployed. Fixed checkpoint publication remains679captured/319source-bound/360awaiting-binding/650missing-capture. World bundle lifecycle remains staged with the gaps listed above.
+
+
+2026-10-22 owned bundle/Recall verification:
+Expanded bundle_world exercises real stage_recall -> maintenance cancellation ->
+Runtime feedback acknowledgement, rather than only direct relocation. Owner bundle
+clear and old-definition deletion remain behind the retained publication barrier;
+peer packets have deletion before origin trail and contain no owner336 clear.
+The acknowledged owner batch starts with clear/drop before trails; position and
+held/ground state commit once. Ordinary earlier resource packets may drain before
+the barrier and are not incorrectly treated as a violation.
+Full64-item ground pool rejects direct Death's Charge while keeping the original
+bundle held and player at origin. Removing one floor item permits retry; exactly
+one replacement floor item is created at pre-step origin. Stale anchor rejects
+without dropping. Reacquisition/stale-generation/manual release regression added.
+Attack admission for the reviewed Weakness-dependent melee permit now also rejects
+holding a bundle; completion already independently checks held state.
+Remaining blocker for normal Recall: owned end currently throws Recall end remains
+pending if bundle floor preparation fails after upkeep retirement. Direct-component
+retry proof does NOT prove owned automatic retry. No per-tick end-queue retry is
+implemented and later actor clocks complicate retry at the original event time.
+Do not bind925 until this lifecycle and item-spell/peer-equipment gaps are resolved.
+
+Owned-bundle validation complete: serial Release host build bundle-owned-build.txt passed; final expanded bundle_world rebuild passed. bundle-owned-tests.txt11/11 suites pass, including owned publication, full ground rejection/retry, stale anchor and reacquired-generation cases. Five Python coverage tests pass. Fixed checkpoint refreshed/published with319source-bound unchanged. Host SHA256 93BC58584FA27678F311664A499A2D9A9F20551E970B6289020AE6E162D67F27; not restarted. Test fixture chronology corrected by admitting all actors before creating floor items, preserving ground snapshot clock invariant. Owned failed-end retry remains unresolved and925 remains staged.
+
+
+2026-10-22 persistent bundle floor-capacity ownership:
+A persistent held bundle now retains one logical floor-capacity lease. Both World
+floor producers (durable inventory drop and NPC loot) check physical floor entries
+plus held persistent reservations before accepting another item. Pickup trades one
+floor entry for one held reservation; release trades the reservation back for a
+floor entry. Destroy-on-drop bundles reserve no slot. Multiple holders each reserve
+one. The stored original item/held generation remains the sole release authority.
+The previously reproduced full-pool owned Recall exception is prevented for this
+resource:63 ordinary floor entries plus one held persistent bundle is effective
+capacity64. Further inventory drop rejects BEFORE its durable debit callback.
+Maintenance cancellation can then drop at origin and return, consuming the reserved
+slot without waiting for unrelated loot to leave. This is not a delayed/backdated
+Recall retry, and no fabricated later movement timestamp is introduced.
+The earlier direct-component full64-floor rejection test is superseded: such a
+physical occupancy is now denied while a persistent bundle is held. Tests exercise
+owned cancellation at effective capacity plus multi-holder and destroy policies.
+Identity exhaustion, navigation failure and publication-resource failures remain
+separate staged end-transaction gaps. Held departure/death/weapon-switch lifecycle
+cleanup and effects are still unimplemented; a retained departed holder can reserve
+capacity until cleanup is implemented. Client bundle requests and Recall925 stay
+unbound. This change does not claim a general automatic retry solution.
+
+Capacity lease validation: serial Release bundle_world/death_charge_world/server_host build succeeded (bundle-capacity-build.txt).12/12 native suites pass (bundle-capacity-tests.txt), plus5callback coverage tests. Multi-holder persistent reservations and zero-reservation destroyed bundles pass. Fixed checkpoint audit/publication refreshed:679captured,319source-bound,360awaiting-binding,650missing-capture. Host SHA256 831A45BF88C6FF5A29B89A87D446C8AD905A6E2E9BD14E515A97CA6A93B1488D. No deployment, official input, client restart or logger action.925remains staged; general failed-end retry and held lifecycle cleanup remain open.
+
+
+2026-10-22 bundle death/departure lifecycle stage:
+Local Bundle.html revision2627020 explicitly lists involuntary drops after dying
+and entering another zone. World now snapshots the authoritative origin before
+death resets movement and before departure erases the actor. Death publication
+commits the bundle release after setting corpse health; departure commits before
+removing the old lifetime. Ground/destroy dispositions retain their explicit
+content policy. A released item gets fresh floor identity at the captured origin.
+Release work is retained by exact owner scope,held generation,cause and origin.
+If allocation fails, death/departure can finish and the original held metadata
+and capacity reservation survive for a later tick attempt. An absent/reused owner
+receives no old owner336clear; peer definition deletion/floor publication remain
+shared. Successful orphan completion removes old bundle state; successful normal
+departure clears that state immediately. Release generation prevents a replacement
+actor from inheriting old held authority. No item-spell effects are invented.
+New tests cover death/departure with both dispositions,once-only definition removal,
+no repeated release on subsequent tick/death,origin preservation and actor-ID reuse.
+Pending allocation-failure isolation/authority tests and weapon-switch/hold-bonus/
+peer-equipment/native visual proof remain; normal bundle and925requests stay gated.
+This lifecycle queue does NOT solve the separate owned Recall navigation/publication
+failure transaction. No official process or live capture was touched.
+
+Lifecycle validation: bundle-lifecycle-host-build.txt serial Release host and three affected World suites built successfully. bundle-lifecycle-tests.txt13/13 native suites pass; five callback audit tests pass. Fixed checkpoint reports refreshed:679captured/319source-bound/360awaiting-binding/650missing-capture unchanged. Host SHA256 30C86027CFE2B3C0EAA09E0222F743E445D3812D4E24AC6FAD40BAB3E133285A. Not restarted or deployed. Allocation-failure queue recovery and queued-release isolation after resurrection still require dedicated regression before client binding; exact drop-effect ordering/rendered proof remain absent. No official client/logger touched.
+
+
+2026-10-22 weapon switching and pending-release isolation:
+World switch_weapon_set now validates exact owner/optional held generation,clock
+and absence of a pending lifecycle release,prepares the origin drop,and invokes a
+trusted durable inventory CAS only after preparation succeeds. Failed CAS leaves
+held/floor state unchanged and emits no drop. Successful CAS commits the prepared
+release once under the same World lock. Callback must not reenter World.
+The 37130 opcode48 gateway now uses this transaction around its existing inventory
+projection/save/commit; unchanged active-set selection retains its previous no-op
+behavior. Source refresh of weapon stats is not misclassified as a switch.
+Ordinary manual/shadow drop commit rejects a lifecycle-pending holder,so it cannot
+steal a death/departure release and leave that event orphaned. The lifecycle
+consumer alone can release its captured generation/origin.
+Expanded bundle_world tests verify stale/missing held generation prevents durable
+callbacks,failed save produces no drop,successful switch clears first and applies
+ground/destroy policy,then ordinary no-bundle switching remains usable.
+An actual allocator-exhaustion test reserves the remaining monotonic floor wire
+IDs after pickup. Death no longer throws:original held metadata survives,persistent
+capacity remains reserved,and subsequent tick attempts do not fabricate a floor
+identity or delete the original definition. After resurrection,switch CAS is not
+called while release remains pending. Departure/actor-ID reuse yields no stale
+owner336clear. This is failure retention/isolation proof,NOT allocator recovery:
+this monotonic pool cannot recover exhausted IDs without a new World instance.
+Still gated:held weapon/stat suppression,authored item-spell effects,expiry/renewal,
+peer equipment and rendered/native drop sequencing. Owned Recall navigation or
+publication failure remains a distinct unresolved end-transaction concern.
+No official client or capture changed;normal bundle pickup and925 remain disabled.
+
+Weapon-switch validation complete: bundle-switch-host-build.txt serial Release production host and affected World targets succeeded; bundle-switch-tests.txt13/13 native suites passed,including expanded bundle_world. Five callback audit tests passed. Fixed checkpoint refreshed/published with679captured/319bound/360awaiting/650missing unchanged. Host SHA256 EF4F3C7C88FA3472572E5F517B76B794907FE10351C8DC58C64E3693A0FE44CD,rebuilt only,not deployed or restarted. Native acknowledgement/rendered switch ordering and full hold-stat/drop-effect behavior remain unverified; normal bundle pickups and925still gated.
+
+
+2026-10-22 calculation-only held equipment projection:
+New gw_bundle_equipment.h validates saved weapon references,then copies a temporary
+calculation view with all active/stored weapon references disabled and physical
+hand slots0/1 excluded. It retains armor,carrying items,bag layout,owned identity
+cursor and gold. This view MUST NOT be persisted or sent as inventory updates;
+the original profile retains possession and all four saved weapon sets unchanged.
+Session equipment refresh now derives ordinary weapon,shield equipment and worn
+Energy from this view while exact scoped World ownership says a bundle is held.
+Cast-time enchanting_duration independently queries current held state and uses
+the view,so a held staff suffix cannot extend a new enchantment. Existing armor,
+rune and attribute paths remain based on actual worn armor. Release restores the
+original sources on normal refresh without a durable item rewrite.
+New bundle_equipment test verifies22hand Energy ->0,shield identity2->0,enchanting
+20%->0,and actual1392duration12000->10000. Armor capacity/pips and modeled physical
+armor are unchanged;the original inventory encoding and saved-set packets compare
+identically before/after projection. Invalid saved references are rejected rather
+than masked as a valid empty set. Original held-free enchanting source restores20%.
+Production host builds and12selected native suites pass (bundle-equipment-tests.txt).
+This is NOT atomic resource settlement at pickup/drop:periodic refresh may lag the
+World transition,and current Energy/debt semantics,existing enchantment lifetime,
+shield/contact ordering and peer visual updates need transaction-level validation.
+Unimplemented weapon modifier families are not claimed implemented by hiding their
+source. Client bundle pickup and925 remain gated. No official logging touched.
+
+Equipment-view validation finalized: serial host rebuild passed (bundle-equipment-host-build.txt),12/12 selected native suites and5callback audit tests pass. Fixed checkpoint audit/publication refreshed,319source-bound remains unchanged. Host SHA256 512AC7765A73EA20F84229F698489B3E5B25C6E039EE9B37480B0B0F3BEB7AD4; no restart/deployment. Immediate pickup/drop resource/contact ordering and rendered acceptance remain gaps; normal bundles/925still disabled.
+
+
+2026-10-22 immediate Shield Stance contact facts while holding bundles:
+World effective_shield_locked retains the reviewed inventory shield/revision but
+masks its effective shield identity to0 while the exact player scope holds a bundle.
+Shield Stance flat-reduction and attributed block probability/source queries now
+use that same dynamic fact under the World lock. Dropping the bundle immediately
+restores the saved source,without waiting for the session refresh. Unknown original
+equipment remains unknown rather than inventing an inventory revision.
+Gateway periodic refresh now supplies actual saved shield equipment to World;
+it no longer overwrites that source with the temporary empty equipment view.
+An update while held replaces the saved revision while contact remains suppressed.
+Expanded bundle_world uses real melee skill340,60armor,Shield Stance rank12 and
+Strength8. While held,20damage applies with no block RNG draw;after dropping,
+the next hit draws the block roll and applies only5damage after15reduction.
+No intervening session equipment refresh is used. A newer shield revision supplied
+while held is also tested,so stale pre-pickup gear is not restored.
+This proves immediate Shield Stance behavior,not every shield modifier or base
+armor formula. Atomic hand-Energy settlement is still unresolved:capacity changes
+can trigger reactive effects,so a periodic refresh is not sufficient proof of
+correct pickup/drop chronology. Bundle925normal binding stays disabled.
+
+Immediate shield validation: bundle-shield-host-build.txt serial Release host,bundle_world and shield_stance_world targets passed. bundle-shield-tests.txt8/8 selected native suites passed;5callback coverage tests passed. Fixed checkpoint audit/publication updated with319source-bound unchanged. Host SHA256 5274D7FA74BF776ACB99ECF75872B4969E264449A95E1710883DC824713D5C76; rebuilt only,not restarted/deployed. This closes the periodic shield-source overwrite/contact-delay issue;immediate hand-Energy and general owned Recall failure transactions remain open. Official sessions/captures untouched.
+
+
+2026-10-22 staged bundle Energy transition preparation:
+New gw_bundle_energy.h composes the existing Overcast settlement/nominal resize
+policy into a copy-only before/after plan. Trusted sources split base,total equipped
+capacity and signed hand capacity;morale applies to base using existing policy.
+The original maximum must match the declared prior held state. Duplicate unchanged
+held flags,stale actor lifetime,invalid sources and a preceding unsettled zero
+crossing reject. Preparation does not mutate World,ownership,Energy or outboxes.
+The settled pre-transition state and resized post-transition state retain signed
+Energy debt,fractional regeneration and Overcast burden. A crossing test uses
+precise signed units,not the unsigned UI0. It is an input for eventual exactly-once
+Mind Wrack/energy-hex observation after committing ownership and resource state.
+Negative hand Energy is supported too:holding such a weapon's bundle raises the
+ceiling,while release restores the negative modifier and can cause a zero crossing.
+The current equipment decoder does not yet supply every signed weapon modifier.
+New native bundle_energy test passes562same-time pickup/drop round trips across
+morale40/100/110,positive/negative current Energy and both holding states. It also
+passes fractional regeneration with Overcast,exact signed deltas,preserved burden,
+negative-hand zero crossing,and rejection of earlier interval zero events.
+Six related native suites and five callback audit tests pass. No production host
+rebuild was needed:the new preparation component is NOT yet included by World.
+Immediate hand-Energy settlement remains unfinished until pickup/drop commits and
+reactive observation/publication use this plan atomically. Existing periodic
+capacity refresh is not claimed to close that gap. Native/rendered event ordering,
+owned Recall failed-end handling and item-spell/drop effects remain open.
+Official client/logging untouched;925remains staged,319source-bound unchanged.
+
+2026-10-22 World hand-Energy transition integration (reviewed positive modifiers):
+energy_capacity now retains the full base/equipment sources plus a separately
+reviewed unsigned hand-capacity component. Session refresh supplies actual owned
+gear,not the temporary held projection,to this source registration. Effective
+capacity subtracts hands only while held;morale transitions use that same retained
+split. Other legacy trusted producers keep default0hands;normal bundle pickup
+is still unbound and unknown equipment facts are not declared fully supported.
+Pickup settles timed resources first,prepares the copy-only Energy plan,commits
+floor->held ownership,then publishes assignment before committing owner resource
+feedback and observing existing Energy-zero reactions. The actual Mind Wrack
+policy is preserved:exact real zero can trigger,negative equipment debt/UI0does
+not. A lethal reaction can therefore drop the newly held object once,after its
+assignment,without leaving a held pointer on the corpse.
+Drop prepares a restoration plan along with floor identity/revision checks and
+commits resource state with held->ground/destroy ownership. Manual drop,weapon
+switch and both shadow components settle live resources before preparation;
+death uses its dead/no-regeneration snapshot. Owned Recall retains the resulting
+owner Energy packets after clear/drop but before return trails in its existing
+publication barrier. Sources restore without waiting for a periodic refresh.
+World tests pass current10/max42 ->current0/debt12/max20 on pickup,then current10/
+max42 on manual drop,direct Recall,weapon switch and death. Full-source refresh
+while held neither restores hands nor subtracts them twice;failed switch save
+preserves debt and held capacity. Owned Recall at full effective floor capacity
+now tests max100 ->78 ->100 and restored-capacity packet before return trails.
+Actual Mind Wrack test at1HP distinguishes negative debt(no proc)from exact0:
+exact0kills,releases once,restores capacity,and publishes assignment before clear.
+The test sets initial vitals BEFORE applying the hex;trusted set_vitals intentionally
+retires Energy-hex continuity and must not be used to fake a post-application state.
+Still open:World signed/negative hand-modifier decoding,pip modifiers,broader timed
+Overcast/upkeep/hex interaction cases,held bonuses/item-spell effects,peer visuals,
+native rendered resource order and general owned Recall failed-end recovery.
+Normal bundle requests and925remain gated. No official process/capture touched.
+
+World Energy validation complete: bundle-energy-world-host-build.txt serial Release production host plus bundle_world/death_charge_world/mind_wrack_world/recall_cast targets succeeded. bundle-energy-world-tests.txt11/11 selected suites pass,including immediate resource restoration and exact-zero lethal pickup ordering. Five callback audit tests pass. Fixed checkpoint refreshed/published with679captured/319source-bound/360awaiting-binding/650missing-capture unchanged. Host SHA256 70ECF091CBCE9AA7AC458D2C878767A8F5F221C20A170384EF9491543BD73598; not restarted or deployed. Reviewed positive hand-capacity World integration now exists;negative/pip modifiers,broader timed-resource reactions and final binding/visual gaps remain.
+
+
+2026-10-22 extended World Energy interaction verification:
+Added three integration regressions to bundle_world using actual public World
+producers,not injected mutable state. At one200ms frontier,pickup removes22hand
+Energy and exhausts staged Recall upkeep. The owned return drops once,restores
+22Energy/max42,moves to the ally,removes maintenance and disables the exact second
+slot until10200. Runtime consumes/acknowledges the retained feedback once;later
+tick neither returns again nor creates another floor object.
+Actual Overcast-producing skill231creates burden before pickup. During300ms held
+recovery,the full World drop restores22nominal/current Energy while preserving
+the burden,remainder and fractional-tail predicted by the shared constant-span
+settlement. This checks World wiring through pickup/drop and rules out an integer
+rounding or nominal resize erasing the existing Overcast curve.
+Actual honeycomb morale commit while holding raises morale100->105 and capacity
+20->21. Release then restores43rather than the stale pre-morale42. The consumed
+callback runs once,held state remains until release,and the stored full source
+continues to split hands from the morale-adjusted base.
+Updated fixture built successfully (bundle-energy-interactions-build.txt). Twelve
+selected native suites ran successfully (bundle-energy-interactions-tests.txt);
+bundle_world is the freshly rebuilt source test for these new cases. Production
+source/binary unchanged this pass,so no host rebuild or restart was performed.
+This supplies private interaction evidence,not new retail receipts or source
+bindings. Wither/Malaise source lifecycle and DivineSpirit/Glyph order remain
+unresolved per their dedicated evidence notes. Normal125/140/310/925 remain gated.
+Official capture checkpoints and loggers unchanged;319source-bound remains current.

@@ -1,0 +1,50 @@
+Quest71 Rogue Bull: staged implementation plan, not verified behavior
+
+Reuse the existing quest71 actor; never spawn a second Bull or arm unrelated
+ambient actors. Exact owner generation, quest cycle, remaining objective source
+generation and assignment are mandatory. Repeated enrollment is idempotent and
+must preserve windup, recovery, home and patrol progress. Generic quest guards
+remain strict. Owner departure/reset retires the controller.
+
+Evidence:
+data/gw/quests/actors/mesmer-burden-bull.txt binds map146/template20081,
+definition50/model116295/level5. The existing combat catalog records captured
+Health80 from pre-searing-four-professions-2026-10-11 packets.
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Rogue_Bull.html
+oldid2659437, SHA256
+5e2acbd5c0578ecd45d1b69461178768133204e99ab5d090863e132bb308b319
+explicitly lists Health80 and all seven level5 armor ratings120. Armor is wiki
+reference evidence, not a packet measurement. The current catalog armor0 is a
+documented placeholder to replace through parent-owned catalog integration.
+
+New explicit development policy proposed:
+owner proximity acquisition1000, follow1500, home leash2000; speed220;
+ordinary physical melee base5, range128, windup750ms, period2000ms;
+idle offsets (80,0),(0,80),(-80,0),(0,-80), pause1200ms, leg timeout6000ms.
+These numbers reuse the existing Grawl/Experiment authored baseline. They are
+not inferred from Bull level/profession and are not measured retail tuning.
+Only exact quest owner is eligible; no inferred party threat or herd grouping.
+No Energy pool or Bull's Charge capability is manufactured. The skill's
+resource/rank and an NPC activated-stance driver remain missing.
+Existing authored body/condition permissions remain explicitly authored.
+
+Implementation shape:
+Reusable configure_npc_owned_ordinary accepts owner, quest, cycle, explicit
+FlarePolicy, Reviewed ordinary profile and acquisition policy. Default existing
+Grawl acquisition remains damage-only; Bull opts into owner proximity. Shared
+driver retains action authority, navigation, paid attacks, leash return and
+idle resumption. A reusable owned-wander API enrolls an already bound controller.
+Small arm_rogue_bull_melee / arm_rogue_bull_wander wrappers validate exact content.
+Parent integrates active quest71/map146 host polling and catalog provenance.
+
+Detached test: tests/npc_rogue_bull_owned_ordinary_world.cpp
+Real catalog identity translated as a whole to origin for native test bounds;
+idle, idempotence, proximity acquisition without damage, paid hit, live-owner
+pull beyond leash, return/resume, cycle removal/replacement, owner death and
+disconnect. Existing navigation tests cover shared routed movement; this test
+does not claim rendered acceptance or new retail route evidence.
+No fixed historical AI decision scheduler is introduced by this enrollment.
+
+Integration update: parent added quest71/map146 active host polling, wiki-backed120 armor provenance, explicit authored policy, and registered target. Bull lifecycle, Grawl, shared wander, Brood navigation and direct-condition-flesh suites pass. Source/backlog checks36+6pass. Fresh gateway build is pending in this note; use final progress report for status. Read-only review found a remaining generic owned-driver objective-completion reentry gap: settlement may complete any-death objective via a sibling while source survives; post-settlement objective membership needs revalidation. This is not evidence of a dangling-reference crash. Not deployed/rendered.
+
+Post-settlement follow-up verified: sibling completion/control +Bull/Grawl tests pass, fresh gateway/core/isolated link and42checks pass. Specific any-death objective gap is fixed. Final evidence:build/reports/owned-settlement-progress-20261029.json. Rendered/deployment remains unverified.

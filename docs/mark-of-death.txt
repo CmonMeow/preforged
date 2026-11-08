@@ -1,0 +1,57 @@
+2026-10-22 Mark of Death785 implementation
+
+Mechanics source: local wiki/wiki.guildwars.com/wiki/Mark_of_Death.html
+(revision2324510 in the archived page), Hex Spell:4..10seconds,33%less healing.
+Pinned gw_skill_catalog_generated.h row785 independently fixes Deadly Arts30,
+10Energy,.25s activation,.75s aftercast,20s recharge,scale33/33,duration4/10,
+caster2077sentinel and target837. Guarded mark_of_death(rank0..20) rejects
+catalog disagreement. This is a zero-degeneration timed hex; it contributes no
+Health loss and no end-condition/damage. Existing Registry same-skill replacement,
+duration modifiers,Hex Breaker,Soul Barbs,cleanse,expiry and lifetime handling own
+application/removal. No parallel timer or resource pool was added.
+
+healing_hex_multiplier now includes785 once per active name. Independent hex
+reductions multiply;the existing actual player/NPC healing transaction applies
+the joint40%reduction cap and Deep Wound. Health gain,life stealing and regeneration
+remain governed by their existing distinct transaction semantics. The multiplier
+does not independently round intermediate amounts.
+
+Frozen checkpoint20261022-cumulative-skills has two local completed activations:
+packets-108988-190116609.jsonl lines21523/21527,ticks190510656/190510875;
+packets-1360-15821281.jsonl lines750754/750761,ticks34513765/34514015.
+The latter has exact250ms start-to-finish. Native row supplies target837;
+fixed activation receipts have no independently attributed body effect evidence.
+No whole-stream/rendered acceptance or modern packet-derived healing ratio claimed.
+
+tests/mark_of_death.cpp covers all21ranks,forged plan rejection,duplicate-name
+nonstacking,time boundaries,independent reductions,joint40%cap with/without Deep
+Wound,and unaffected Health gain. Player World healing checks early removal and
+exact expiry;NPC LiveActor healing checks real target timer removal. Ten actual
+Runtime->World player/NPC cases cover success,cancel,interrupt,stale scope and
+missing hook,10Energy/.25s timing,one targeted837after finish58,no repeated commit.
+
+Parent-owned integration required before test execution:
+1.gw_skill_casting.h Completion NPC target hex allowlist:add hex->skill==785.
+The supported predicate already derives support from degeneration_hex(id).
+2.gw_world_simulation.h degeneration_hex NPC entry allowlist:add plan.skill==785.
+Both NPC/player targeted-body caster predicates:add plan.skill==785,so the
+reviewed native targeted body retains the actual source rather than caster0.
+3.Register mark_of_death in the existing native-test CMake foreach list.
+The NPC LiveActor apply_single_degeneration_hex whitelist is already extended.
+
+Validation status: source prepared;no builds/process actions run by this agent
+because the parent serializes builds. Native source binding/audit publication is
+parent-owned. Broader retail fractional rounding,joint modifier cross-product,
+NPC caster AI,whole packet order and rendered/audio acceptance remain unverified.
+
+Native/frozen evidence completion:tools/protocol/mark_of_death_2022.py passes
+against the fixed cumulative checkpoint. Eight exact manifest-hashed receipts
+include target837at21528and750762,each after finish58at the same tick. Original
+native250mscast,target particle837actor placement and60bdfcserializer pass.
+Report:build/reports/mark-of-death-native-2022.json. The fixed audit's empty body
+attribution was a classifier limitation,not absence of the targeted837receipt.
+Original2022wire has2-byte packet159header;modern frozen packet160has4-byte
+header. The verifier compares payload identity while preserving that distinction.
+Parent reports six rebuilt suites passing,including mark_of_death;host/current
+NPC/energy regression validation remains parent-owned. No runtime header was
+edited during the parent's serialized-build freeze.

@@ -1,0 +1,31 @@
+Typed character progression — 2026-10-09
+
+Character progression reads and saves now pass native typed requests through
+NetworkServer/NetworkManager to Accounts, eliminating production tab/hex
+serialization. SQLite ownership and expected-revision checks and deadline
+rollback remain intact. Reads merge authoritative account-wide titles and allow
+revision zero when only account titles exist. Saves affect the character row;
+they do not overwrite the authoritative account-title row. Offline get/save
+adapters use the same typed implementation.
+
+Four rebuilt tests passed: network_lifecycle, quest_accounts, progression,
+accounts_lifecycle. Progression tests cover sharing titles without sharing
+character currencies/titles, account-title override after a character save,
+title survival after deletion, imports, ownership and CAS. The new direct
+Accounts fixture checks missing records, foreign ownership, initial-save
+rollback at the final precommit check, successful save and stale revision.
+
+Not yet deployed: current host still runs the prior verified typed profession
+build. Remaining faction mutations and other application operations still need
+migration. This is progress toward the broader goal, not project completion.
+
+Deployment verified 2026-10-09: SHA256
+82103603e4b0f383989c9a281fdd532930adac6e8045d23df6bc18231caeef66.
+All 126 rebuilt CTest checks passed in31.01 seconds. Private client PID16332
+completed login, map55 world entry, keyboard and ground-click movement (163.566
+units; zero native pose disagreement) and survived five-second hold. Hero panel
+shows720 skillpoints and imported title tracks. Savior of the Kurzicks selected
+with accepted opcode86 then cleared with accepted opcode87, restoring original
+no-displayed-title state. This exercises both typed progression read and save.
+Screenshots and smoke report retained under build/reports/typed-progression-*.
+Official client PID5604 remains open. The overall goal remains incomplete.

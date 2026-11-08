@@ -1,0 +1,77 @@
+Barrage395 and Volley2144 - implementation and evidence,2026-10-17
+
+Current native source behavior
+Barrage uses5Energy,1s base recharge and5..20 bonus-damage endpoints at ranks0..15.
+Volley uses5Energy,2s base recharge and1..10 endpoints. Both use native zero
+fixed activation/aftercast rows and the existing normal-bow attack policy.
+Private release windup/flight speed are not independently measured retail timing.
+
+Barrage selects the primary foe plus at most five adjacent foes;Volley selects
+at most three additional foes. Each recipient owns a separate flight and genuine
+server outcome-ledger event. Hits use the existing bow armor,miss,block,damage,
+conditions,adrenaline and supported reaction paths. This does not implement
+all possible skills which can react to attacks. Unbound multi-attack exceptions
+remain unverified. Target departure/death,weapon replacement and generation
+recycling use the existing flight lifetime rules.
+
+Selection requires live hostile same-plane actors and the shared line-of-sight
+checks. Adjacent means166 units. Primary must be in bow range;secondaries may
+be within bow range plus166. More than the allowed count uses nearest to primary,
+then actor ID for ties. This deterministic tie-break and secondary LOS/range
+policy still need retail comparison;they are not claimed recovered algorithms.
+Unknown armor on a selected recipient rejects the complete batch before any
+preparation removal or arrow release. Allies and non-adjacent actors are excluded.
+
+All recipient/armor/flight/ledger proposals validate before commit. Preparations
+are removed before arrows are installed,so neither Read the Wind bonus nor Ignite
+Arrows is copied onto the volley. Volley also removes glyphs per the historical
+2010 report;Barrage leaves glyphs intact. Runtime mirrors the authoritative
+removal and clears Volley's local glyph charge counter. Arrow release and
+cooldown-source completion use one World mutex transaction,sharing the
+completed_bow_attack path introduced for Determined Shot. Runtime imports that
+source after the callback and does not finalize it twice.
+
+Evidence
+The pinned2022 native catalog supplies the validated costs,recharges,bonus
+endpoints and maximum extra recipients. Barrage.html SHA256
+566dc4b0a3a386d61ee6cdded21d84eb45c341c28fe72f8b769ff2ccc7f10227
+Volley.html SHA256
+977e71751a8db1b62909d43cdd28ac34059309f85b0701ae0a4986404c97f2e5
+Both are local official-wiki mirror pages. Talk_Volley records glyph removal
+on2010-06-07(SHA256f221948f860b3532e73c7e17352058fb7ea5a6cde97fda88beb559609750883f),including an explicit comparison that Barrage did not remove glyphs.
+
+Fixed checkpoint20261017-npc-refresh-2 contains local Barrage starts467209/467637
+and Volley545254 in packets-1360-15821281.jsonl. Offline original2022 execution
+verifies action21,style41,state45 with supplied2.475s bow interval and independent
+success17 dispatch. It stubs clock/actors/effect services and is not rendered QA.
+
+Barrage also has a six-arrow captured volley in packets-110488-195213578.jsonl:
+start85652,launches85775..85780 in one frame. Each model143 launch reaches native
+event11/state6 and retains distinct destinations. Native routine77fc70 reaches
+model143 asset creation and schedules trigger14 with the first payload word as
+an opaque synchronization key. Original arrival166 routes event12 by exact key
+equality; captured arrivals match all six launch keys. The new offline proof
+executes original code with geometry/asset services stubbed; it is not rendering.
+
+The server publishes one model143 launch per owned flight after terminal46.
+Nonzero uint32 keys are private allocations unique among active flights, not a
+claim to reproduce the retail reusable pool. Deferred shots wait for exact staged
+launch publication; canceled/mismatched/duplicate records are filtered. Live
+publication samples the clock after recipient enqueues under World ownership,
+then grants the entire encoded travel interval before damage may resolve.
+Arrival packet second-word/group-count meaning remains unbound. No guessed
+arrival groups are published. Rendered acceptance and measured retail timing
+remain outstanding.
+No local completion endpoint was captured for either reviewed local skill test.
+
+Validation artifacts
+Tests/barrage.cpp covers ranks0..20,mixed player/NPC target caps,independent
+hit/miss/block,allied/distant exclusions,preparation removal,glyph differences,
+unknown-armor nonmutation,delayed exactly-once damage,Runtime payment,cancel,
+missing callback and completion provenance. Native proof tools are
+ tools/protocol/barrage_2022.py
+ tools/protocol/volley_2022.py
+ tools/protocol/bow_projectile_sync_2022.py
+Reports are in the fixed checkpoint and build/reports/bow-volley-*.
+Source bindings do not mean full mechanics/animation acceptance. Official clients
+and loggers were not accessed or modified for this implementation.

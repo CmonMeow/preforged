@@ -1,0 +1,69 @@
+Ordinary weapon attacks progress, October4
+
+Request36 verified independently from attackskill37 through original2022
+sender/serializer; parser and authenticated diagnostic branch are compiled.
+Weapon hit/timing state is not yet connected, so requests remain unsupported.
+
+gw_weapon_attack.h implements the local wiki's reviewed community damage
+model: mastery5/rank until floor((level+4)/2),2/rank above; caster weapons
+strike3*level; armor exponent/40; critical uses max and+20strike; customization
+multiplier1.2; Weakness multiplies weapon base .34, excluding bonus damage;
+Blind attack miss threshold .9. Caller supplies authoritative rolls, critical
+eligibility and selected-body-location armor. It rejects invalid/nonfinite
+inputs. No critical-probability, random damage distribution, missing item
+stats or conditional modifier is inferred. This is a tested resolver, not
+complete live attack support.
+
+weapon_attack_test passes reviewed level20 rank12/14 and caster examples,
+critical/customization composition, Blind boundary, Weakness and rank0 cases.
+Requirement fallback, bodyarmor, approach/range/lineofsight, attack timing,
+projectiles, authoritative repeat/cancel/lifetime, native presentation and
+integration with actual equipped item provenance remain to finish.
+
+October4 ordinary hit publication: tools/protocol/weapon_hit_2022.py executes
+original794f60 with kind16 and zero skill attribution. The client emits its
+ordinary damage notification with skill0 and clears attribution scratch.
+Three original serializer fixtures prove explicit zero-attribution158 followed
+by signed-damage162 and absolute-health161. gw_weapon_hit.h applies already
+resolved damage and publishes that batch without a fabricated skill. Its test
+checks native bytes, overkill/death, zero damage, hostility and invalid input.
+This does not prove attack animation, critical/block/dodge presentation or full
+live attack integration. Intent lifetime/equipment scheduling is separate.
+
+Readonly local wiki sources:
+Damage_calculation.html SHA2566700572a4bb1273b218a3a33f89193cb8008eae3dd6451686f0f575bb190b164
+Blind.html SHA25690d719ff4be1ab576cb8cd22dcc5f91e0bc57cc8a5d0eabb3f3ad32905d27f7e
+Weakness.html SHA25623ff15c6de428c01a80f76d7f60d037000d7e1525556536688bc44fbb5634b69
+The damage page expressly labels armor-respecting formula community-derived;
+these tests do not establish ArenaNet server arithmetic or RNG equivalence.
+
+Authoritative intent foundation gw_weapon_intent.h: owned_weapon validates actual native equipped main hand, complete profession/customization metadata, exact raw damage/type and effective requirement. No observed map equipment is assigned ownership. Caller supplies reviewed weapon mastery and timing/range rather than guessed generic weapon defaults. Intent binds both actor lifetimes, item ID and inventory revision; releases at most one strike per tick, revalidates living/hostility/LOS/range/equipment each release, and cancels on changed lifetimes/revision/state or explicit movement/input. No catch-up burst after server stalls. This is an isolated scheduler and eligibility foundation, not live damage/native presentation; parent integration must perform atomic snapshot/strike application under world lock and use genuine ranged impact policy.
+
+Integrated scoped ordinary staff attack October4: apprequest36 configures actual owned equipped metadata and schedules worldIntent. Initial reviewed profile supports only earth stafftype26 with exact damage/type/requirement modifiers; any opaque conditional modifier denies vanilla interpretation. Targets must be live enemy team players, sameplane, range1200 and navigationtrace. Instance tick emits one actual zero-skill ordinary162 hit through gw_weapon_hit, absolutehealth161 and existing deathcleanup. Equipment revision/mastery change, movement/steering, accepted skill, death, targetdeparture/lifetime invalidation cancel. Private policy:500ms windup,1750ms repeat, deterministic midpoint damage, no criticals, Blind midpoint producesmiss whileactive. This is explicitly private timing/RNG and instantrelease policy, not retail rangedflight/animation equivalence. Native attack animation and broader weapons/modifiers remain unimplemented. world_weapon_attacks tests actual480->464->447 HP, timing, revision/move/recycledtarget cancellation; focused3testsPASS andserver_corecompiled. No host/live client test performed byagent.
+
+Native presentation integrated: root original2022 weapon_animation_2022.py proves159kind4(attacker,target) queues actoraction3,158kind2 rangedfinish action1,158kind3 stopaction2. World emits owner+peer start once atinitialwindup andnextrepeatwindup window; rangedfinish exactlyuponrelease includingmiss; stop onlywhenactiveanimation canceled. No per-tickstartspam or duplicatecancelstop. world_weapon_attacks asserts actual159/158 kind events at100/600/1850/2350 andmovementcancel, whiletestingactualHP. Targetrenderer visual/live verification pending; prior statement native animation unimplemented is superseded by this sourceintegration. Private timing/instantimpact limitations remain. FocusedtestPASS/server_corecompiled.
+
+Weapon modifier extension: original879920 native PASS3 proves253 prefix/suffix/inscription reference extraction and namingflags only;240 display markers and253 naming references are neutral to ordinary attack damage, so no blanket rejection for those words. Actual owned equipped62c8 baseenergy is decoded and adds to world capacity; it is separate from armor/passive-rune contributions and not assigned from mapobservations. Native original879a10 energyproof retained. Opaque26980003, cast/recharge23a/280 and enchantmentduration22b still remain unexecuted/unavailable as wholeitem attackpolicy until reviewed; capturedEarthStaff therefore remains rejected due its unsupported combat/effect words. Unknowns are not stripped or replaced. weapon_intent tests upgradednaming+energy eligibility and actual wornenergy10, unknown269 denial. No ownership imported.
+
+Sword(type27), axe(2), hammer(15) now derive mastery from Swordsmanship20/AxeMastery18/HammerMastery19, verified GWCA enum. Cached ToolboxUtils DamageType enum establishes blunt0/slashing2; owned modifier24B8 must agree. No inferred model/name stats. Unknown conditional words remain rejected. Actual physical armor is separately bound from five equal explicit ReviewedArmor pieces(base+physical); elemental armor is never substituted. Private melee timing windup500ms, range128, repeat1330ms sword/axe or1750ms hammer; deterministic midpoint and no criticals retain existing prototype policy. Native159kind4 start/158kind1 melee release/158kind3 stop reuse proven original callbacks. No attack movement/path-to-target yet: outside range is rejected. Live melee renderer/input remains untested.
+
+Ordinary EarthStaff flight now shares configured projectile Policy(speed1800units/sec, hitradius32 by default; explicit uncalibrated private policy). At release the server predicts fixed intercept from target position/velocity and queues one impact. Changing direction afterward can dodge; no homing. Impact requires original caster/target instance and generation, living caster, same owned item and revision, living hostile target, same target plane, current position within tolerance and reviewed armor. Disconnect/death removes queued lifetime records; item revision replacement rejects pending hits. Input cancellation stops later windups but does not retract an already launched projectile. Melee remains immediate at release.
+
+Native159 attack-start and158 ranged-release presentation retained. Actual163 projectile visual resource metadata is still unproven and is not fabricated; gameplay flight/damage does not claim a rendered projectile. Tests cover delayed impact, changed-direction dodge, source disconnect, target actor reuse and item revision change.
+
+Energy-cost attackskill foundation: PowerAttack322 uses actual owned eligible melee weapon and effective Strength rank,5energy/native3second recharge. Runtime captures item/revision and target lifetime before cost, waits explicit private500ms attack windup(native activation is0), then revalidates melee range128/LOS/living hostility, original weapon revision and target scope before actual hit. Movement/cast cancellation uses existing runtime pending cancellation. Strength armor penetration1percent/rank affects weapon base only; added10+2*Strength attack damage is armor ignoring and not reduced by Weakness. Blind misses do not add bonus. Existing deterministic midpoint/no-critical prototype policy remains explicit. Native skill attribution is supplied with damage publication; no unsupported adrenaline added.
+
+PureStrike328 remains disabled until actual stance/block mechanics are implemented; it is not declared supported from a partial tooltip or generic success. Counterattack's completed supported-weapon implementation is described below.
+
+Protector's Strike326: local Wiki Protector's_Strike.html (April2019 snapshot) and pinned2022 catalog establish5energy,0.5s activation,3s recharge; bonus10+2Strength only when foe is moving at impact. Shared owned-melee path preserves Strength penetration, Weakness base-only, Blind miss, armor, actual item/target lifetime and interruption. Movement eligibility compares navigation-resolved impact position with next1ms position; stopped routes and blocked input do not qualify. Native casting tests cover cost,500ms completion,recharge,cancellation and target departure for322/326; world test compares stationary,moving,and stopped target actual health. Live326 remains pending. Stance/block-dependent attacks remain unsupported.
+
+Counterattack1693: local Wiki Counterattack.html (October2020 snapshot), pinned native catalog energy5/recharge6/bonus5..35/energy2..6. Shared melee strike uses bonus5+2Strength and refund round(2+4Strength/15) only for a successful hit on an attacking foe. Authoritative attacking state is an active ordinary attack windup animation or a captured supported attack-skill activation interval; cancellation/completion/death clear it and deadline prevents stale lifetime. Repeated-attack cooldown alone does not qualify. Native runtime hook tracks all currently supported melee skills; spells do not mark attacking. Scythes and their multi-target refunds remain unavailable because owned scythe attacks are not yet supported, rather than silently applying one hit to that weapon. Private500ms attack windup policy remains explicit. Unit tests cover no-attack, skillwindup,cancel,expiry,ordinarywindup,ordinarycancel,Blindmiss,targetgeneration and runtimecancel; live1693 remains pending.
+
+Adrenaline melee family335/336/351/383/1144 integrated in the same owned strike
+pipeline with exact native unit costs80/200/160/200/200, no fabricated energy
+cost/recharge. Separate effective Strength and Axe/Hammer/Sword rank are
+captured. World gains/spends/expiry/death are transient scoped state, not DB
+character progress. Native attackskill activation0 needs swing action3 after
+skill action19; Runtime now emits this reviewed order and finish/stop across
+all supported melee skills. Timing/RNG remains private500ms/midpoint. Original
+body-action routing is verified; live rendered animations pending parent test.

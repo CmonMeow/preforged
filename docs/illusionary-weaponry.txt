@@ -1,0 +1,100 @@
+Illusionary Weaponry33/3181 core,2026-10-17
+
+Current: player casting and World combat are integrated; see final validation below.
+Earlier UNBOUND entries are implementation history, superseded by the final entry.
+Historical local Illusionary_Weaponry.html SHA256:
+2aa36daf6d55d33a218184627cc27bd8b7e543f446cf58def6278aed4d079ad1
+Pinned2022 rows33/3181 independently provide8..40damage,30s duration;
+PvE bonus5armor per equipped Illusion Magic skill,PvP bonus0.
+Fixed refresh-2 activation evidence:packets-6468-5728843.jsonl:86587,
+map280,actor25,tick8361562,kind60/skill33;one local finished cast.
+
+Added canonical plans and scoped active-enchantment lookup,plus a distinct
+AttackOutcome::replaced. The ledger accepts it only before hit qualification;
+failed_hit() remains false and on-hit equality remains false. Existing enum
+numeric values remain unchanged. Determined Shot accepts the outcome without
+misclassifying it as failed contact. Three focused suites pass:
+illusionary_weaponry_policy,attack_outcomes,determined_shot_policy.
+
+Remaining:owned casting/expiry/removal,melee dispatcher substitution for all
+recipient/sequence/double-strike paths,enchantment damage protection rules,
+PvE armor at the final post-penetration stage with owned current skillbar,
+attack-trigger reactions without hit/miss reactions,NPC execution,native client
+visual proof. This pure core does not provide those missing behaviors.
+Full server build pending in illusionary-weaponry-core-server-build.txt.
+
+IW core validation update: server_host Release build completed exit0 (illusionary-weaponry-core-server-build.txt). Three focused tests pass,including explicit Determined Shot replacement-result regression. Fixed-checkpoint coverage/audit/publish passed;246source-bound/387awaitingbinding unchanged. IW remains UNBOUND pending full World/cast/armor integration.
+
+2026-10-17 ordinary combat integration (still UNBOUND):
+Player-owned ordinary melee attacks now substitute IW enchantment damage at the
+pre-accuracy boundary for both player and NPC recipients. Replacement happens
+before armor/Blind/block calculations and never qualifies a weapon hit; weapon
+base,Conjure,Barbs,Mark of Pain and attack-hit adrenaline are not applied here.
+World test exercises living player/NPC recipients,Blind and block RNG bypass,
+no Conjure bonus,exact34damage at rank12,and return to ordinary misses on expiry.
+illusionary-world-tests.txt passes. Full special-attack/casting/armor integration
+is still required before support is enabled. Released/failed sequences and
+multi-recipient attacks remain explicit unfinished branches.
+Existing CooldownBarAuthority snapshot can provide the owned current skillbar
+for the future PvE armor calculation,without inventing a learned-skill count.
+
+2026-10-17 IW ordinary integration validation:serial Release server_host build completed exit0 (illusionary-ordinary-integration-build.txt). All3 World/regression suites passed (illusionary-ordinary-regressions.txt). Fixed-checkpoint coverage/audit/publisher passed;246bound/387awaitingbinding unchanged. IW remains UNBOUND for full cast/armor/special-attack integration and rendered acceptance.
+
+2026-10-17 IW armor integration (still UNBOUND):
+Owned current CooldownBarAuthority supplies equipped Illusion Magic count.
+PvE33 grants5armor per equipped slot;PvP3181 grants0. Future/unknown bar authority
+rejects armor-respecting damage rather than inventing a count. Combat Actor now
+carries separately owned post-penetration armor; the exponential factor applies
+before vulnerability/protection/flat reduction and excludes armor-ignoring hits.
+Player physical/elemental ordinary damage uses the same final-stage factor;
+known fixed-damage ordinary attack plans bypass it. Native level/base armor and
+existing capped armor effects remain in their existing calculation stages.
+illusionary-armor-tests.txt:3/3pass,new full-penetration/current-bar/PvP/physical/
+lightning/fire/untyped cases plus existing Armor Earth and IW ordinary suites.
+Casting,special-attack substitution,NPC-owned IW armor and rendered acceptance
+remain incomplete. Full server rebuild in progress at this entry.
+
+2026-10-17 IW armor final validation:serial server_host Release build completed exit0 (illusionary-armor-server-build.txt). All3 focused World suites and the rebuilt pinned combat-fixture suite pass. Fixed capture coverage/audit/publisher passed;246source-bound/387awaitingbinding unchanged. IW remains UNBOUND pending casting/special attacks/NPC execution and visual verification.
+
+2026-10-17 IW targeted melee skill integration (still UNBOUND):
+Existing single-recipient melee-skill dispatcher now resolves owned IW before
+accuracy,block,weapon bonuses and on-hit condition/interrupt/knockdown logic.
+Original actor/weapon-generation,hostility,range,LOS,Health-clock and control
+admission remain required. Unknown movement/knockdown facts and armor no longer
+block this enchantment-only branch when those weapon effects are irrelevant.
+World cases cover sword/hammer/conditional-movement/interrupt attack plans for
+player and NPC recipients,with Bleeding+Blind and active target blocking.
+All resolve one34damage replacement at rank12,without Deep Wound/knockdown or
+accuracy/block draws. Initial fixture failure used unknown weapon type0 for a
+generic melee skill;fixture now supplies an actual owned sword.
+illusionary-targeted-tests.txt:2/2pass,including existing warrior-condition suite.
+Remaining special route:Cyclone Axe multi-recipient transaction;existing staging
+can preserve per-recipient replacement outcomes without any hit qualification.
+Casting/removal/enchantment modifiers,NPC execution,full weapon-family support
+and rendered acceptance remain unfinished. Server rebuild in progress.
+
+2026-10-17 IW targeted validation:server_host Release build completed exit0 (illusionary-targeted-server-build.txt). Both focused World/regression suites passed;fixed-checkpoint coverage/audit/publication passed.246source-bound/387awaitingbinding unchanged;IW remains UNBOUND pending full casting/multi-recipient/NPC/visual integration.
+
+2026-10-17 IW player casting and Cyclone integration supersedes UNBOUND entries:
+Native Runtime33 now casts the self enchantment for5Energy with1s activation,
+30s canonical duration and native25s recharge. PvP owns3181 internally and has
+no armor bonus. Full current-bar authority is required for PvE armor ownership.
+Generic buff publication uses original33;native rows have no body effect2077,
+so no fabricated caster-body resource is emitted. Cancellation,interruption,
+recycled source lifetime and fatal Backfire tests prevent application.
+Cyclone reserves the complete mixed recipient outcome set before replacement
+damage,preflights player/NPC damage,retains generation checks and skips all hit
+qualification. Tests include unknown armor,Blind/block bypass,outside-range and
+same-team exclusion,empty success and atomic future-clock rejection.
+All4 IW integration suites pass (illusionary-cast-tests.txt),both Cyclone suites
+passed before casting integration,and34tooling tests pass.
+
+Remaining verification/implementation:rendered client animation/UI acceptance;
+retail per-recipient enchantment sampling/reactive ordering;enchantment duration
+modifiers;NPC-owned IW and armor;broader dagger/scythe/double-strike/sequence
+attack families (not implemented elsewhere in this runtime). Player sword/axe/
+hammer ordinary,targeted skill,and Cyclone routes are integrated,not a claim
+that the entire retail IW skill or all attack families are complete.
+Full server build is running in illusionary-cast-server-build.txt at this entry.
+
+2026-10-17 IW final validation:server_host Release build completed exit0 (illusionary-cast-server-build.txt). Four IW integration suites and34tooling tests pass. Fixed refresh-2 coverage/audit/publisher passed:633captured,247source-bound,386awaitingbinding,696missingcapture.33is now source-bound for the integrated player paths;remaining skill branches and rendered acceptance are explicit in docs/illusionary-weaponry.txt.

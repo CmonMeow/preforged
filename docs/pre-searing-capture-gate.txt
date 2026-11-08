@@ -1,0 +1,17 @@
+Pre-Searing capture acceptance gate
+Do not ask for another full profession run until the collector passes:
+- ordinary incoming chat and /age remain visible;
+- quest baseline and updates captured with IDs, state, descriptions/objectives;
+- learned skill set baseline/delta and profession baseline/delta captured;
+- inventory/gold/XP baseline and reward changes captured;
+- dialog body/buttons/sender recorded, outgoing choice recorded or explicitly absent;
+- NPC populations joined to quest changes without asserting causation;
+- zoning and leave-pre mission transition survive;
+- files identify build/hash, character/run and monotonic timestamps;
+- package must match validated build, not the October4 shipped DLL.
+Archive each primary/secondary run independently. Track coverage by quest ID and
+profession role, including rewards and subsequent offers. Missing outgoing input,
+variable packet bodies or decoded labels must remain explicit gaps.
+Existing E/W playthrough retained: 13 quest IDs,131 quest events; no need to discard
+or demand repetition before evaluating packet and wiki evidence. First recover
+what exists, then identify only specific missing observations.

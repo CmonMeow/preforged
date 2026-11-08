@@ -1,0 +1,254 @@
+Current regular pre-Searing quest inventory --2026-10-30
+
+SOURCE INVENTORY, NOT PLAYABILITY ACCEPTANCE. All56 rendered end-to-end statuses remain UNVERIFIED.
+Archived wiki category lists65 pages:56 regular entries (IDs35..90),9 Vanguard level10+ dailies explicitly DEFERRED.
+Current default config loads20 unique FWQC quests; all20 have executable production rules. Historical five-installed counts are stale.
+Status counts: missing=34, implemented=20, partially_staged=2
+
+Definitions: implemented=production rule/menu plus objective and reward route present; partially_staged=dedicated native helpers/evidence exist but production installation incomplete; missing=no production quest rule/controller. Every rendered acceptance remains unverified.
+Default config: {"quest_catalog": "data/gw/quests/presearing.fwqc", "quest_encounters": "data/gw/quests/presearing-encounters.txt", "quest_givers": "data/gw/quests/actors/presearing-givers.txt", "quest_waves": "data/gw/quests/experiment-waves.txt", "quest_giver_combat": "data/gw/quests/aziure-development-combat.txt", "quest_corpses": "data/gw/quests/presearing-corpses.txt", "quest_escorts": "data/gw/quests/monk-test-escorts.txt"}
+Wiki category SHA256 b4ee0b5d469bf26bb709ce8bb826a1705157c5b80bc5a7fb6277e833596cf37b
+Full per-quest wiki paths/hashes, requirements/objectives/rewards, evidence indexes and alternate IDs are in build/reports/presearing-quest-inventory-20261030.json.
+
+NEXT CHAIN CANDIDATES
+0. A Second Profession79 is now source-integrated with a real controller/default catalog/menu and publication; fresh coordinated validation remains separate. Existing committed secondary and rewarded training are required. It no longer belongs on the missing-quest list.
+1. Trainer handoffs63/64/66/67/68: replicate reviewed65 conversation architecture only after each captured prerequisites/NPC maps/reward is joined; small independent native progression work.
+2. Monk74: richest staged chain candidate (objective class, captured Paulus routes, acceptance296/281 and250XP). Needs real route/hazard/healing/world/reconnect consumers before enablement; not just a rule whitelist.
+3. Necromancer72: missing actual trial chain; join captured Munne dialogue/grants/reward, implement bone-horror fire-trap crossing and minion lifecycle before secondary unlock. IDs72 and76 are Necromancer and Ranger respectively.
+4. Ranger76 is now source-integrated: Nente162, atomic acceptance/grants/exact bow, persisted subsequent Stalker adoption and captured76/75 completion,250XP plus Ranger eligibility. New native validation pending; it is no longer a missing chain candidate.
+5. Charr46 side quest: strongest staged side-quest candidate, four scoped credits + exact reward helper; needs Rurik route/combat/friendly kill authority, population/default and auth installation.
+Mesmer71 unlock repaired in source during this session; coordinated native validation pending/report separately.
+
+PER-QUEST EXECUTABLE INVENTORY
+
+35 War Preparations -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go out the gate to Lakeside County and talk to <Trainer>.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+36 The Hunter's Horn -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Purify the hunter's horn in the healing spring in Regent Valley. Go to the fishing village south of the tower in Wizard's Folly and deliver the purified horn to Aidan .; atomic wiki reward policy (captured item/skill definitions still require joining): 500 Experience Longbow of Fortitude (Half Moon skin) Piercing Dmg : 7-10 Health +10 1 Damage +15% (while Health is above 50%) Two-handed Flatbow Can be salvaged; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+37 The Supremacy of Air -- implemented; rendered UNVERIFIED
+Mechanics: Offer Ralena165; defeat scoped Tower Golem161; reward Aziure161; grant230/220 and250XP.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/actors/tower-golem-provenance.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+38 Rites of Remembrance -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Light candles on all four braziers in the catacombs to appease the angry spirits. [0...4]/4 candles placed. Return to Necromancer Munne for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Grim Cesta Energy +3 Armor +5 (vs. physical damage ) Armor +5 (while attacking); objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+39 Little Thom's Big Cloak -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Acquire a bear pelt . Many bears can be found in Wizard's Folly . Take the bear pelt to Alison the Tanner in Ashford. Go to Barradin Estate in Green Hills County and deliver the cloak to Little Thom .; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Battle Axe of Fortitude ( Serpent Axe skin) Slashing Dmg : 5-10 Health +15 1 Damage +10% (while in a Stance ) Cane of Shelter ( Domination Magic skin) Chaos Dmg : 3-5 Armor +5 (vs. physical damage ) 1 Can be salvaged; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+40 The Vineyard Problem -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go to the duke's vineyard and kill all large aloe seeds. Kill 4...0 more large aloe seeds. Return to Little Thom for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+41 Bandit Raid -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Recover the Ashford strongbox from the bandits. Return the strongbox to Devona in Ashford.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Flame Artifact Energy +3 Armor +5 (vs. Fire damage ) Energy +5 (while Enchanted ) Tall Shield ( Stone Summit Shield skin) Armor: 4 Armor +10 (vs. Charr ) Health +15; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+42 A Test of Marksmanship -- implemented; rendered UNVERIFIED
+Mechanics: Ivor162 admission and atomic starter bow407/432; five stable worm credits within90s; failure/retry/deadline persistence;250XP.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/marksmanship-evidence.json
+
+43 The Power of Blood -- implemented; rendered UNVERIFIED
+Mechanics: Kasha160 admission115/156; three scoped Blood Fanatics145 and counted objective updates;250XP.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/power-of-blood-evidence.json
+
+44 The Rogue's Replacement -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Search for a source of devourer eggs in Lakeside County. Collect one devourer egg. Return to Old Mac for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Jeweled Staff Energy +3 Chaos Dmg : 3-5 Damage +10% (vs. Hexed foes) Health +5 (while Hexed) Two-handed; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+45 Charr in the Catacombs -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Find out if the Charr Ranger is using the catacombs . Speak to Brother Mhenlo in Ashford Abbey . Ask Necromancer Munne if she has any information on the Charr. Seek out Oberan the Reviled deep within the catacombs. Ask him about the Charr Ranger. Return to Rurik in Ascalon City and show him the Sharp Charr Tooth .; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience 100 Gold; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+46 Charr at the Gate -- partially_staged; rendered UNVERIFIED
+Mechanics: Level2 Rurik148 acceptance; current-lifetime escort146 and four exact Charr credits incl friendly-NPC kills; route/combat, objective publication/reconnect; sword+200XP atomic; production menu/world installation missing.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/charr-gate-46-staged/evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+47 The Accursed Path -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go south and destroy the crypt fiends. Return to Oberan the Reviled for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 500 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+48 The Poison Devourer -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Cross the river and destroy the plague devourer to get a poisonous stinger. Deliver the poisonous stinger to Brother Mhenlo in Ashford Abbey .; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Healing Ankh Energy +3 Health +10 Armor +5 (vs. physical damage ); objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+49 Domination Magic (quest) -- implemented; rendered UNVERIFIED
+Mechanics: Vassar165 admission28/27; scoped Nightmare Brood161 death;250XP.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/domination-magic-evidence.json
+
+50 The True King -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Travel east from the Barradin Estate to Lakeside County . Head south to Ashford . Take the southeast bridge to Regent Valley . Once in Regent Valley, follow the road to Fort Ranik .; atomic wiki reward policy (captured item/skill definitions still require joining): 750 Experience Divine Symbol (Loop skin) Energy +3 Halves casting time of spells (Chance: 5%) Armor +5 (while Hexed ) War Hammer of Fortitude (Ball skin) Blunt Dmg : 8-10 Damage +15% (while Health is above 50%) Health +15 1 Can be salvaged; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+51 The Egg Hunter -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Escort Fadden Hathorn into the Devourer cave [ sic ] and keep him safe while he gathers eggs. Escort Fadden Hathorn back to Duke Gaban. Return to Duke Gaban for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 150 Experience 2 Devourer Eggs; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+52 The Worm Problem -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Acquire a devourer egg from Fadden Hathorn in the devourer cave . Take the devourer egg to Pitney in Ashford . Follow Pitney and kill the Worm Queen . Return to Pitney for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Fire Wand Fire Dmg : 3-5 Halves skill recharge of spells (Chance: 5%) Energy +3 (while Health is above 50%); objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+53 The Prize Moa Bird -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Head to the catacombs and find Pitney's prize bird. Return to Pitney for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Smiting Staff of Shelter Energy +5 Holy Dmg : 3-5 Armor +5 (vs. physical damage ) Two-handed Long Sword Slashing Dmg : 6-9 Armor +5 (while casting) Halves casting time of spells (Chance: 5%); objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+54 Further Adventures -- implemented; rendered UNVERIFIED
+Mechanics: Rewarded primary test; Haversdan146 acceptance; Devona146 ordered conversation;250XP.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/further-adventures-evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+55 The Wayward Wizard -- implemented; rendered UNVERIFIED
+Mechanics: Level2 Sandre148; ordered Ralena165 then Orion161 dialogue; Air Staff and250XP atomically; exact cycle/replay.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data/gw/quests/wayward-wizard-evidence.json
+
+56 Adventure with an Ally -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Return to Ascalon City . Form a party with another player.; atomic wiki reward policy (captured item/skill definitions still require joining): 100 Experience Resurrection Signet; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+57 The Orchard -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Find the Basket of Apples . Take it to Mary Malone .; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Battle Axe of Enchanting (Hatchet skin) Slashing Dmg : 5-10 Damage +10% (vs. Hexed foes) Enchantments last 10% longer 1 Storm Artifact Energy +3 Armor +5 (vs. elemental damage ) Halves skill recharge of spells (Chance: 5%) Can be salvaged; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+58 A Gift for Althea -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Find the perfect gift for Lady Althea. It must be something beautiful. Give the Beautiful Feather to Captain Osric. Give the Beautiful Pearl to Captain Osric. Give the Beautiful Pendant to Captain Osric. Return to Captain Osric for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Inscribed Chakram Energy +3 Armor +5 (while Hexed ) Energy +7 (while Hexed); objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+59 Gwen's Flute (quest) -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Find Gwen's Flute; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+60 Warrior's Challenge -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go to Green Hills County and defeat Agnar the Foot . (Use Hammer Bash to interrupt his Rage skill.) Return to Duke Barradin for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+61 Tithe for Ashford Abbey -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Head due north from Ashford until you find the road to Green Hills County . Go to Green Hills County and talk to Grazden the Protector . Deliver Barradin's Tithe to Devona .; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience 1 Skill Point; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+62 Unsettling Rumors -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Speak with Meerak the Scribe in Ashford Abbey . Deliver the message to Armin Saberlin . Use your map to travel to Ascalon City quickly.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Tall Shield ( Wooden Buckler skin) Armor : 4 Armor +5 (while Health is above 50%) Health +15; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+63 A New Mesmer Trainer -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Follow the road northwest from town. Talk to Lady Althea at the Actor's Stage.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+64 A New Necromancer Trainer -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Follow the road southwest from town. Proceed past Ashford Abbey to the Catacombs. Talk to Necromancer Munne.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+65 A New Elementalist Trainer -- implemented; rendered UNVERIFIED
+Mechanics: Elementalist primary, Further Adventures prerequisite; Haversdan146 to Aziure161 conversation;250XP.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/new-elementalist-trainer-evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+66 A New Monk Trainer -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Follow the road southwest toward Ashford . Continue on to Ashford Abbey . Talk to Brother Mhenlo .; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+67 A New Warrior Trainer -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Follow the road northwest from town . Follow the signs to Green Hills County. Talk to Warmaster Grast.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+68 A New Ranger Trainer -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Follow the road southwest from town. Turn south on the bridge near the village and enter Regent Valley. Talk to Master Ranger Nente.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+69 Across the Wall -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Find your way north of the wall. Search the road to Piken Square for Ben Wolfson . Lead Ben Wolfson back to the gate. Return to Gate Guard Torin for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience Longbow of Enchanting (Recurve Bow skin) Piercing Dmg : 7-10 Damage +10% (vs Hexed Foes) Enchantments last 5% longer 1 Two-handed Flatbow Deadly Cesta (Truncheon skin) Dark Dmg : 3-5 Armor +4 (while Hexed) Damage +10% (while Hexed) Can be salvaged; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+70 Poor Tenant -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Follow the road southwest from town to Ashford . Find Miller Upton and ask him to help Namar. Use the honeycomb to lure the three bee swarms across the bridge. Return to Miller Upton for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 500 Experience Divine Symbol Energy +3 Health -20 Energy +12 (while Health is below 33%) Armor +10 (while Health is below 33%); objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+71 A Mesmer's Burden -- implemented; rendered UNVERIFIED
+Mechanics: Rewarded primary test; Althea146 grants31/40/76; scoped Rogue Bull;250XP, trial Mesmer eligibility then explicit secondary selection.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/mesmer-burden-evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+72 The Necromancer's Novice -- missing; rendered UNVERIFIED
+Mechanics: Munne catacombs profession trial; bone horrors must trigger fire traps and allow crossing the burning section; typed minion/trap objective, trial skill authorization/reward, secondary Necromancer eligibility and reconnect; no installed rule/controller.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl
+
+73 The Elementalist Experiment -- implemented; rendered UNVERIFIED
+Mechanics: Rewarded primary test; Aziure161 grants197/180/200; three scoped waves with living guardian;250XP and secondary Elementalist eligibility.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/actors/experiment-provenance.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+74 A Monk's Mission -- partially_staged; rendered UNVERIFIED
+Mechanics: Mhenlo164 acceptance296/281; Paulus145 living outbound/artifact/return route, proximity pause, disease-water hazard and healing; Mhenlo250XP and secondary Monk eligibility; production World/menu/default installation missing.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/monk-mission-evidence.json; data/gw/quests/monk-mission-integration.json; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+75 Grawl Invasion -- implemented; rendered UNVERIFIED
+Mechanics: Rewarded primary test; Grast160 grants382/384/1 and acceptance sword; three scoped Grawl;250XP and secondary Warrior eligibility.
+Capture: data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/actors/grawl-invaders-provenance.json
+
+76 The Ranger's Companion -- implemented; rendered UNVERIFIED
+Mechanics: Nente162 with rewarded primary test; atomic436/446/411, exact conditional captured bow and pet-free acceptance; persisted subsequent Stalker adoption, completion native76/75 after pet visuals and reconnect;250XP once plus Ranger trial eligibility then explicit secondary selection. Source integrated pending coordinated native validation; unknown bow customization and Jarrel release remain explicit limits.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/ranger-companion-76-evidence.json
+
+77 Protection Prayers (quest) -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Meet Farrah Cappo in Lakeside County . Keep Farrah alive while she hunts down the infamous Alain . Return to Grazden the Protector for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+78 Opposition to the King -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go north from Ashford to find the road to Green Hills County. Once in Green Hills County, question at least three locals about opposition to the king. [0..3]/3 locals questioned. Return to Devona for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 500 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+79 A Second Profession -- implemented; rendered UNVERIFIED
+Mechanics: Armin148 admission after rewarded primary test; all six trainer directions; require committed nonzero secondary and rewarded corresponding training; persist completion and publish83+76 after profession commit, acceptance or reconnect; exact250XP once-only reward, storage transition fences and current-map captured markers. Source integrated; coordinated native validation recorded separately.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/second-profession-79-evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+80 Message from a Friend -- implemented; rendered UNVERIFIED
+Mechanics: Optional first quest: scoped Town Crier148 admission while War Preparations35/217..222 not completed/rewarded; active turn-in at Sir Tydus148 closes quest atomically with100XP+10gold. Session identity rebase, revision/replay fences, character-name binding and map148/146 markers. No automatic War Preparations or Academy transition; source integrated pending coordinated native validation.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/captures/pre-searing-ranger-partial-2026-10-10/world-7108-102222171.jsonl; data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/message-from-friend-80-evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+81 Mesmer Test -- implemented; rendered UNVERIFIED
+Mechanics: Mesmer primary Sebedoh146; scoped skale-any kill;500XP and26/40; retire starter trainer only after reward.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/candidates/four-profession-stage-provenance.json; data/gw/quests/mesmer-test-evidence.json
+
+82 Necromancer Test -- implemented; rendered UNVERIFIED
+Mechanics: Necromancer primary Verata146; dialogue-controlled approach, corpse reservation and summon publication before completion;500XP and153/105.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/candidates/four-profession-stage-provenance.json; data/gw/quests/necromancer-test-evidence.json
+
+83 Elementalist Test -- implemented; rendered UNVERIFIED
+Mechanics: Elementalist primary Howland146; scoped River Skale drops Shimmering Scale; carried exact scale consumed atomically with500XP/194/180; recollection after item loss.
+Capture: data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/world-43292-168890171.jsonl; data/gw/quests/elementalist-test-evidence.json; data/gw/quests/side-quests-2026-10-12-evidence.json
+
+84 Monk Test -- implemented; rendered UNVERIFIED
+Mechanics: Monk primary Ciglo146; discover living Gwen, blockers, follower proximity/arrival;500XP and288/252; restore completed escort readiness.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/gw/quests/candidates/four-profession-stage-provenance.json; data/gw/quests/monk-test-evidence.json
+
+85 Warrior Test -- implemented; rendered UNVERIFIED
+Mechanics: Warrior primary Van146; exact scoped three Tad deaths;500XP and346/1; primary-conditioned population handoff.
+Capture: data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/actors/warrior-test-tads-provenance.json
+
+86 Ranger Test -- implemented; rendered UNVERIFIED
+Mechanics: Ranger primary Artemis146; scoped skale queen death;500XP and394/446; primary-conditioned population handoff.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data/captures/pre-searing-ranger-partial-2026-10-10/world-7108-102222171.jsonl; data/gw/quests/ranger-test-evidence.json
+
+87 The Blessings of Balthazar -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Travel to the fields north of Ashford and dispatch the skeletons there. Return to Brother Mhenlo for your reward.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+88 Unnatural Growths -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go to the falls to the west. Destroy the aloe husks until you find an aloe root . Take the aloe root back to Aidan.; atomic wiki reward policy (captured item/skill definitions still require joining): 250 Experience; objective update publication, abandon/reaccept and reconnect fences.
+Capture: combined-capture coverage confirmed by user; per-quest join not indexed by this audit
+
+89 The Path to Glory -- implemented; rendered UNVERIFIED
+Mechanics: Armin148 admission after rewarded primary test, no79/secondary prerequisite; scoped active turn-in at Sir Tydus148, PRIVATE atomic100XP-only reward, prepared name-bound76/75/81 refresh/removal, storage/CAS/reconnect/replay fences. No Academy/Searing transition. Source integrated pending coordinated native validation.
+Capture: data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl; data/gw/quests/path-to-glory-89-evidence.json; data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+90 Trouble in the Woods -- missing; rendered UNVERIFIED
+Mechanics: Implement NPC admission/prerequisites; required wiki objective: Go to Lakeside County and follow the road to Ashford . Talk to Devona about the Grawl threat. Go with Devona and destroy the Grawl threatening Ashford.; atomic wiki reward policy (captured item/skill definitions still require joining): 500 Experience War Hammer of Fortitude Blunt Dmg : 8-10 Damage +10% (while in a Stance) Health +10 Two-handed; objective update publication, abandon/reaccept and reconnect fences.
+Capture: data\captures\skill-checkpoints\20261023-session-52044-complete\quest-packets.json
+
+Deferred daily quests: Vanguard Annihilation: Bandits; Vanguard Annihilation: Charr; Vanguard Annihilation: Undead; Vanguard Bounty: Blazefiend Griefblade; Vanguard Bounty: Countess Nadya; Vanguard Bounty: Utini Wupwup; Vanguard Rescue: Farmer Hamnet; Vanguard Rescue: Footman Tate; Vanguard Rescue: Save the Ascalonian Noble
+
+20 executable production rules and20 default catalog entries; historical five-installed reports are stale.
+Implemented means menu/controller/encounter/reward paths present in current source; authored combat/placement policies and quest-specific failures remain possible.
+Catalog text, incoming packets, staged objectives and baseline test executables do not individually establish executable playability.
+No captures/checkpoints changed, no clients touched, no native build run for this inventory.
+New quest76 source integration awaits coordinated native verification; earlier checkpoint outcomes are recorded separately.

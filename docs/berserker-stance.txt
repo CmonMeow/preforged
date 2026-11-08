@@ -1,0 +1,65 @@
+Berserker Stance370 — pinned policy and version-separated evidence
+===============================================================
+
+Player Runtime/World binding is integrated. This is source-level implementation;
+rendered acceptance, NPC caster support and retail balance comparison remain open.
+
+Pinned2022 row and historical wiki:Berserker_Stance.html agree on5 Energy,
+20s recharge,Strength duration5..11 at ranks0..15,33% faster attacks,50% more
+adrenaline,and ending when a skill is used. gw_berserker_stance.h validates
+that native row and retains the gain as an exact3/2 ratio rather than silently
+rounding each25-unit hit to37 or38. The shared adrenaline state now preserves
+half-units per skill/copy (docs/adrenaline-fractions.txt);retail storage/UI
+rounding still requires retail verification. World ordinary hit/damage gain
+uses the exact ratio; Soothing Images suppresses those gains.
+
+The staged accepted-use proposal removes the exact owned stance on a copy and
+checks lifetime,bar ownership/time and exact skill/copy membership. Ordinary
+weapon attacks and rejected skill requests must never call this operation.
+Production begin_action now carries the exact Slot and accepted timestamp after
+cost/adrenaline payment. The gateway invokes World accepted_skill_start before
+its instant-action movement early return,so instant skills can end the stance.
+World validates the lifetime and exact bar copy,removes the owned effect and
+publishes its removal. No ordinary-attack callback is substituted for skill use.
+Prospective attack-skill timing explicitly excludes this stance before payment;
+ordinary attacks include it. Backbreaker359's pre-payment attack lease also
+excludes it. Concurrent bar-transition admission still needs review before
+treating the callback as an independently authenticated paid receipt.
+
+Fixed checkpoint20261017-npc-refresh-2:
+packets-1360-15821281.jsonl lines378844..378848 and379006..379010 show
+recharge10,instant48,body21/resource629,effect66 duration8,pending release227.
+This differs from pinned2022 recharge20 and duration5..11. The effect attribute
+word is0;that alone does not establish effective Strength. Modifier context
+is not exhaustively established,so these differences alone do not prove a
+changed base balance. A prefix66/68 effect reconstruction found367/368 at the
+first start and no surviving tracked owner effects at the second;environment,
+non-effect modifiers and capture/lifetime completeness still need review.
+The verifier keeps
+the captured and pinned parameters separate,without modifying the native table.
+
+Two53 samples show interval1.75 with modifier approximately.67. One following
+207 sample contains50 adrenaline units,but there is no exclusive baseline or
+causal attribution establishing the multiplier/rounding from that sample.
+Do not treat it as proof of either50% or100% increased adrenaline.
+
+tools/protocol/berserker_stance_2022.py checks manifest/source SHA256,exact
+windows,native metadata,original instant dispatch and native body629 consumer.
+Report:build/reports/berserker-stance-native-2022.json. Asset/model services are
+stubbed;rendered animation remains unverified.
+
+tests/berserker_stance_policy.cpp covers rank/duration/rational gain policy,
+immutable accepted-use proposals,exact copy membership,stale/future scope/bar,
+expiry and duplicate suppression.
+
+ tests/berserker_stance_world.cpp exercises ordinary attack IAS,37.5-unit hit
+and damage gains,Soothing Images,miss/removal/death/expiry,prospective skill
+and Backbreaker timing,Runtime5Energy/20s recharge,body629 exactly once and
+accepted instant-skill replacement. Shared adrenaline_fraction tests verify
+fractional damage gains,invalid-rate rejection and unchanged normal gains.
+Seven freshly rebuilt native suites and61 skill-tool tests pass. The native
+verifier passes both fixed capture windows and the original629 consumer.
+
+Remaining: NPC caster ownership,retail fractional rounding/modifier ordering,
+concurrent bar-transition admission,live/rendered acceptance and exhaustive
+weapon-family/lifecycle comparison. Pinned and captured balance stay separate.

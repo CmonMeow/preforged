@@ -1,0 +1,47 @@
+Conditional weapon attacks: Standing Slash, Jaizhenju Strike, Soldier's Strike
+
+Standing Slash996 uses Swordsmanship, native140adrenaline units and no Energy.
+A hit deals +5..20 at ranks0..15, plus another5..20 when the attacker is in a
+stance at contact. The two bonuses are part of the attack, not a second spell.
+
+Jaizhenju Strike1135 uses Swordsmanship,5Energy and8s recharge. It deals+1..30
+and is unblockable only when the attacker has no active stance at contact.
+It does not bypass a miss. Soldier's Strike1695 uses Tactics,5Energy and4s
+recharge, deals+10..40, and is unblockable under an active chant or shout.
+Soldier's Strike is a melee attack, not a sword-only attack.
+
+Stance state is read from scoped owned effects at contact. Soldier's Strike
+checks only actual Registry.active entries with canonical chant/shout metadata;
+recent instant shout use is not an enduring effect. Future, expired, removed or
+foreign-scope effects do not qualify. This does not implement chant casting.
+
+Evidence
+The archived wiki articles and pinned2022 rows are hashed by
+ tools/protocol/conditional_weapon_attacks_2022.py.
+Fixed20261022-cumulative-skills packets1360 records:
+Jaizhenju start398796/end398801; ticks23904656/23905218.
+Standing start398816/end398820; ticks23906062/23906640.
+Soldier start408527/end408532; ticks24167281/24167734;recharge4at408531.
+Seven frozen receipts, original native metadata, nine attack-body timing cases
+and original targeted serializers pass. Native style41/state45 uses supplied
+weapon timing. No extra particle is emitted for either2077sentinel resource.
+These receipts do not establish stance/support predicates or actual damage.
+
+Validation
+The new warrior_stance_attacks suite passes; neighboring rebuilds are pending.
+The suite covers independent rank values, scoped contact-time state, player/NPC
+blocks/misses, expiry/removal, actual duration-shout use versus instant shout,
+Runtime costs/cancellation and pending stance changes. A synthetic owned chant
+registry fixture tests the predicate only; it is not a cast or NPC AI claim.
+
+Open verification
+Retail conditional damage/block context and full outcome ordering, attack release
+calibration, rendered/audio fidelity and autonomous NPC caster behavior remain
+unverified. Native probes stub unrelated actor/model/clock services. Source
+binding is distinct from a deployed or fully playable skill implementation.
+
+Final serial host build passed2026-10-23.
+Host SHA256: 22E496278A0F29E5D5549D4B743BBFB0376C02A37B9F6E422DDBDF1EBB268F75
+All five rebuilt melee suites pass;native proof covers seven frozen receipts and nine body timing cases.
+Backlog/pending entry points verified334bound345awaiting;binary rebuilt only,no rendered/deployed acceptance claimed.
+

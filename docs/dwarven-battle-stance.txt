@@ -1,0 +1,71 @@
+Dwarven Battle Stance375: player binding and native evidence
+==========================================================
+
+Current source binding added after the staged work below. Pinned2022 and historical wiki:elite Strength stance,
+5Energy/20s recharge,duration5..11. While wielding a hammer:33% faster attacks,
++40armor and attack skills interrupt foes when they hit. Ordinary attacks do
+not acquire an interrupt merely because the stance is active. Weapon changes
+must update all three conditional benefits;capturing weapon once at cast time
+would preserve the wrong behavior after a swap.
+
+Policy:gw_dwarven_battle_stance.h validates the native row and rank. Hammer
+facts distinguish known hammer,known non-hammer/unarmed,and unknown authority.
+An active stance with unknown equipment rejects the bonus proposal rather than
+silently assuming a weapon. No active stance needs no hammer fact. Source attack
+classification uses the native Attack type14;ordinary0 and spell/PetAttack do
+not qualify. Policy tests cover ranks0..20,invalid21,hammer/non-hammer/unknown,
+expiry/future time,attack-skill eligibility and the existing skill-armor cap:
+a single40bonus is retained but does not add uncapped to another skill source.
+
+Fixed checkpoint20261017-npc-refresh-2,packets-1360-15821281.jsonl:
+408243..408247 at24146890 (pending release at24146906),and408554..408558
+at24169328. Both show recharge20,instant48,body634,application66 duration5/
+attribute word0/effect98 and release227. The first release is16ms later;the
+second same-tick. tools/protocol/dwarven_battle_stance_2022.py validates hashes,
+exact order/timestamps,pinned metadata,original instant dispatch and634 consumer.
+Native assets/model services are stubbed;rendered acceptance remains open.
+
+Required integration:current timestamped weapon authority/settlement before
+armor changes;hammer-conditioned IAS for ordinary/attack windup/period with
+shared speed stacking;40armor with all physical/elemental/penetration paths;
+qualified attack-skill hit interruption using existing protection/player/NPC
+controllers,without arbitrary20s disable;5Energy/20s Runtime/lifecycle/body634.
+Miss/block/unblockable,weapon swaps,protected/idle/casting foes and retirement
+need World tests. Runtime support remains absent until complete integration.
+
+Weapon authority prerequisite:ordinary_weapon now accepts production timestamps,settles old equipment effects before updates and rejects stale time/revision even across unequip. New weapon_fact_order and Shield/Bonetti regressions pass. The actual Dwarven consumers remain pending;see docs/weapon-fact-ordering.txt.
+
+Staged World bonuses integrated:current known hammer gates shared attack timing
+(including attack skills and Backbreaker pre-payment lease) and40skill armor.
+Weapon swaps/unequip change the benefits without recasting;expiry clears them.
+Skill armor combines with existing Earth/Dolyak cap handling. Physical/fire
+World cases and armor-ignoring fixed bow damage are tested. Unknown/stale weapon
+facts reject effect-dependent damage/timing rather than supplying guessed armor.
+Historical timing reads before the last weapon update reject.
+
+Four freshly rebuilt native suites cover Dwarven World/policy,Berserker and
+Dolyak regressions;62 skill-tool tests pass. New World cases include hammer/axe/
+unarmed,swaps,expiry,40armor stacking,fire/fixed damage and Backbreaker haste.
+Runtime375 remains unsupported until attack-skill hit interruption,cost/recharge/
+body/lifecycle and protection/NPC controller integration are complete. Other
+armor types/penetration,concurrent equipment changes and rendered QA remain open.
+
+2026-10-18 superseding integration:
+Runtime375 now supports pinned5Energy/20s,instant duration/lifecycle and native
+caster body634. Current hammer IAS and armor remain conditional after swaps.
+Landed native Attack-type skills interrupt active player or named NPC actions;
+ordinary hammer hits do not. Miss/block/expired stance do not interrupt. This
+uses normal interruption rather than Disrupting Chop extra20s disable. Player
+Mantra protection uses existing authority;NPC Mantra of Concentration consumes
+its charge,Mantra of Resolve requires known settled Energy and drains its rank
+cost. Unknown NPC spell identity or Resolve Energy rejects before hit damage.
+
+Focused World cases pass for spell/nonspell/attack,Mantra16 protection,miss,
+block,expiry,ordinary exclusion,NPC Mantra17 known/unknown Energy,and Runtime
+payment/body/recast denial. Native634 consumer proof is unchanged;these tests
+are not rendered animation acceptance. NPC stance casters,retail interruption
+ordering,concurrent equipment admission and full armor penetration remain open.
+
+Final validation:exact20s Runtime recharge boundary and NPC Resolve Energy10->0
+also pass. Three native suites,62 tool tests,native consumer verifier and
+Release host build pass. Fixed checkpoint now260source-bound/373pending.

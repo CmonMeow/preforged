@@ -1,0 +1,64 @@
+Goal audit: 2026-10-09
+=====================
+Objective remains incomplete. This is an evidence ledger, not a reduced scope.
+
+Independent native project and layout
+Source/tests/tools/build/data/bin directories exist separately in Desktop/gw-server.
+Top-level CMakeLists.txt builds server_host.exe. Published runtime is in bin;
+test binaries are in build/tests. Recent full Release build passed. This does
+not prove every packaged tool is necessary or every output path is clean.
+
+Single server and direct 2022 connection
+NetworkServer starts auth/world/portal listeners inside the host process.
+Recent live private-client runs logged in, selected Cmon Meow, entered map55,
+opened inventory/Xunlai and returned to selection/re-entered. Recorded in
+architecture-status.txt and screenshots under build/reports. No bridge process
+was used in these runs. Listener/process evidence must be revalidated for later
+tests rather than treating old PIDs as still alive.
+
+NetworkManager/Component/Server/Client migration
+Classes exist in src/network/network.h. Typed requests/results now cover login,
+sessions/tickets, character creation/deletion/roster/map transitions, character
+state/rename/unlock, skill/attribute state and inventory/storage/trade operations.
+The shared boundary now consists of 46 typed virtual application methods.
+NetworkServer owns serialization/result decoding and its protected storage
+adapter. NetworkManager's storage execution is private. NetworkClient implements
+the same typed methods as explicit FW_UNAVAILABLE stubs for the future custom
+client, as requested; it has no raw string transport into the local database.
+Storage still uses internal operation strings. Native tests pass after this
+boundary change. Later live runs verified login, guild/progression panels,
+character creation/deletion and world re-entry; two-player trade remains pending.
+
+Creation/deletion/world entry
+Native tests cover creation framing, response, equipment and spawn admission;
+network_lifecycle covers durable create/delete, ownership and map transitions.
+Nightfall Dervish creation/world re-entry and deletion of two failed test
+fixtures were verified through the private 2022 client. Profession preview now
+sets native local-character identity and selected appearance. Starting skill,
+weapon and tutorial branches remain
+documented in earlier status records. Live UI creation/deletion coverage is not
+complete across campaign/profession combinations.
+
+Gameplay
+Inventory/storage gold interaction and map55 re-entry were verified live after
+typed migrations. Two-player trade after this migration is not yet verified in
+the UI. Quest reference extraction is not runtime quest implementation. The
+skill/item catalogues are not proof that all mechanics or animations work.
+Aftershock's official16.0/.25 tuning was captured October14, and its2022
+serializer/native UI callback is verified offline. Runtime publication has
+regression coverage; native rendered visual acceptance remains pending. Collector NPC/quest joining and outgoing choices remain incomplete.
+
+Regression verification
+All 122 main native CTests passed after the typed virtual boundary change (23.58 seconds), using binaries
+from the successful Release build. See build/Testing/Temporary/LastTest.log.
+Tests are evidence for their covered branches only; they do not prove full
+gameplay fidelity, custom-client transport or all live client branches.
+
+Next concrete work
+The shared application boundary migration is finished; internal storage string
+dispatch is protected behind NetworkServer. Continue campaign/profession creation
+coverage, starter weapons/skills, quests, gameplay mechanics and package audit.
+The quest/NPC interaction join now has a native offline tool and shared capture
+timestamps in staged collector builds; official live validation remains pending.
+
+October9 additional evidence: full122 PASS24.21s after creation-profession validation. Live2022 Factions Ritualist create/select/world/re-entry passed, supplementing Nightfall Dervish coverage. This does not complete starter skills/weapons/tutorials, creation customization options or official Factions arrival selection. Details and screenshots are recorded in architecture-status.txt.

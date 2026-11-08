@@ -1,0 +1,31 @@
+2026-10-27 Ear Bite2213 direct Healing Seed integration
+
+The player-recipient Ear Bite transaction now preflights the shared post-
+protection Reversal/Healing Seed authority before publishing or committing
+its hit, then commits through the reactive helper. Armor is applied once.
+Only actual positive damage triggers Seed; full conversion and healing-induced
+Deep Wound death do not. Lethal damage can heal other living adjacent allies
+without resurrecting the victim or adding Bleeding to a dead recipient.
+Unknown potential allied-NPC healing metadata rejects before damage, Reversal
+consumption and Bleeding. The existing deferred publication captures damage,
+healing and conditions together and remains idempotent after release.
+
+677 new native cases PASS:648 rank/armor/conversion/Health/Seed/deferred cases,
+8 unknown-recipient rejection cases,12 distant-recipient cases,6 healing-death
+cases and3 Bleeding-degeneration cases. Four freshly compiled native suites
+PASS:ear_bite_seed,ear_bite_world,reversal_ear_bite,reactive_healing_seed.
+41 Python checks PASS. Fresh isolated frozen-capture/native consumers PASS for
+Ear Bite(style51/.75s,caster1905,asset059b04010000) and Healing Seed
+(style49/2s,target489). These prove synthetic native consumer interpretation,
+not rendered acceptance or retail reaction ordering.
+
+No new binding is claimed:679 fixed captured baseline skills,402 source-bound,
+277 awaiting binding and650 missing local captures. Reversal307 and Seed274
+remain gated until their other required consumers are complete. NPC damaged-
+recipient Seed integration,physical touch-specific Barbs/Mark of Pain reactions,
+retail radius/timing boundaries and rendered verification remain open.
+Official clients and logging were untouched;manual queue and fixed checkpoint
+manifest remain unchanged. The Release host build result and all exact source,
+test and executable hashes are recorded in the phase report.
+
+Report:build/reports/ear-bite-seed-implementation-20261027.json

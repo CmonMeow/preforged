@@ -1,0 +1,20 @@
+Equipment observations, October 4 2026
+
+Native read-only tool: build/tools/equipment_audit.exe CAPTURE.jsonl REPORT.txt.
+The tool groups exact observed metadata and opaque modifier arrays, preserves
+decoded and encoded names, and reports map and line provenance. It does not
+grant ownership or write account state.
+
+world-8432-209740140.jsonl: 170 equipment events, 6 exact definitions.
+unclaimed guild halls.jsonl: 50 equipment events, 13 exact definitions.
+Neither has incomplete modifier arrays. Reports are in build/reports.
+
+The latter includes weapons with profession byte 11. Item type, profession and
+slot are byte fields in GWCA Item.h; an observation outside the private client's
+profession vocabulary is retained and marked unreviewed, not discarded. This
+does not assign a new profession or convert that metadata into a 2022 item.
+
+Original 2022 formatter tests independently establish a3c8 base armor, 62c8
+energy and 62e8 regeneration. Owned equipment can consume those reviewed fields;
+captured appearance alone cannot establish possessions, customization ownership
+or final armor with every conditional modifier.

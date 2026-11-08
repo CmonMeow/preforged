@@ -1,0 +1,52 @@
+BANISH ENCHANTMENT [1885] — NATIVE PREFLIGHT, NOT SOURCE-BOUND
+
+Source is the fixed 20261024-urgoz-doa-completed official session. Map445
+epoch35 has 18 Mallyx cast starts with bracketed actor identity. Fifteen have
+a kind-58 finish within one second and two to four target-actor kind-7
+effect-removal packets at that finish. The other three starts cannot be
+treated as completed effects. Exact lines and snapshot hashes are in
+build/reports/urgoz-doa-completed-20261024.json.
+
+src/runtime/gw_banish_enchantment_npc.h validates the pinned 2022 catalogue
+row, hostile and current target scope, time overflow, and enumerates every
+active enchantment newest first from a copy of the target registry. It leaves
+hexes and the authoritative registry untouched. The offer records one
+six-second skill-disable obligation per removed enchantment on each foe.
+This is a preflight only: it removes nothing and publishes no packet. The
+target strip seen in the capture supports this shape, while disable-slot
+selection and disable wire behavior remain unknown.
+
+World still needs a transactional effect consumer that settles enchantment
+end reactions, chooses and applies every disable across the actual foes,
+publishes removals/status/disable packets, and cancels all effects if any
+required step cannot be committed. NPC payment, range/LOS, target choice,
+activation/interrupt handling and client rendering also remain. Until those
+exist, no production NPC cast or player source binding should use this offer.
+
+Validation: serialized Release build of banish_enchantment_npc_test passes;
+CTest -R ^banish_enchantment_npc$ passes 1/1. The test covers two ordered
+enchantments, an unrelated hex, read-only behavior, empty-enchantment result,
+hostility, stale/wrong scope, self-target and time overflow. This is native
+mechanics validation, not a rendered Guild Wars 2022 client test.
+
+SHA-256 header A76A1BF41940C30D39C480B8A965039858F261AEA146957F793BCBFD0EDA54A1
+SHA-256 test 7DF2C07BD49CF9D59A18E279CF0F0A576B0BE0E33EC15565487B45B20E933CF9
+SHA-256 tested EXE E6525F82BF7091C569CC43D62F3993FA1E4C69BCD56FC4F5906BC9484CE81DED
+
+Official client and live logger files were untouched.
+
+Disable-receipt audit, 2026-10-25:
+tools/skills/audit_banish_disable_receipts.py verifies the fixed packet SHA
+and re-reads the exact packet lines for all 15 near-finish Mallyx casts. It
+finds 33 target effect-removal packets and 26 local-player skill-recharge
+updates in the following 200ms windows. Two windows each contain two target
+removals but three local recharge updates, all at the finish tick: starts
+1160627 (finish1160724) and 1165917 (finish1166070). This is a counterexample
+to assuming the packet counts are one-to-one. It does not prove that every
+recharge was caused by Banish, nor how a skill was selected or disabled.
+Do not publish a random-disable implementation from these correlations alone.
+The native preflight remains unbound; World transaction, NPC casting and
+rendered-client checks remain open. This analysis used only the frozen files.
+Report: build/reports/banish-disable-receipts-20261025.json.
+SHA-256 audit script 3391214A1AD08ACBCECD2989E27824D6DD285C7FF17B1E359CBBD6ACF61EF2E2
+SHA-256 report B744CDCBDEE4E68EDB91FB90FF01A587AE427A371B83D1F75691DC01A50B65D2

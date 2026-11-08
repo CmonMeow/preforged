@@ -1,0 +1,44 @@
+Quest49 Brood idle wander proposal, 2026-10-28
+
+Detached design; no production activation or new retail behavior claim.
+Use only actors already armed by arm_brood_caster: exact owner Scope, quest49,
+cycle, live NPC Scope, current objective membership and assignment. Do not
+create actors, infer stats, or accept a merely matching species/level.
+
+Proposed API: size_t arm_brood_wander(Scope owner,unsigned cycle,uint64_t now).
+Return enrolled exact actors; repeated enrollment is idempotent and preserves
+the existing leg/pause. Reject stale owner generations, wrong cycle, retired
+controllers and removed objective members. Use the existing authored cross
+offsets (80,0),(0,80),(-80,0),(0,-80), pause1200ms, leg6000ms; explicitly extend
+hostile-patrol-development-policy.txt to quest49 before host activation.
+These are private-server playability settings, not recovered retail paths.
+
+Required owned files after root approval:
+  gw_world_npc_wander.inl: bounded opt-in enrollment for owned elemental Brood.
+  gw_world_npc_aura.inl: idle hook ONLY after ownership/cycle/living/source-clock
+    and owner observation validation and after health-loss trigger detection.
+    Immediately before returning binding.triggered, call idle_npc_wander_locked
+    only when !binding.triggered. Change body parameter to Npc& for that hook.
+    Never hook the generic false-gate branch: it also means invalid ownership,
+    future observations, or dead/retired source. Such actors must not move.
+  hostile-patrol-development-policy.txt: explicit scope/evidence extension.
+Root-owned gw_auth.cpp: call arm_brood_wander only after successful existing
+arm_brood_caster; retain visible coverage reporting. Root registers test.
+
+Existing active-action/knockdown guard in idle_npc_wander_locked prevents idle
+movement during casting. Existing engaged/returning suspend takes priority.
+Damage triggers before idle; pending/released spell handling remains unchanged.
+Return completion resets triggered; next idle leg resumes after its pause.
+Existing retire_npc_patrol_locked source-scoped cleanup must remain effective
+when quest ownership is retired; check both owner departure and objective reset.
+
+Evidence: domination-magic-development-combat.txt has captured Health100 and
+authored armor0/Energy40,pips5; domination-magic-ai-development-policy.txt
+documents reviewed/authored Aura180/IceSpear214. No values change here.
+
+Detached tests/npc_brood_wander_world.cpp intentionally references the proposed
+API, so it must not be registered until implementation lands. It uses canonical
+appearance/combat bindings translated to the origin for no-nav movement bounds.
+It checks opt-in/owner/cycle, proximity without trigger, preserved spellbook and
+resources, post-damage combat, return before idle, and resumed bounded patrol.
+Native mechanics verification is distinct from rendered-client verification.

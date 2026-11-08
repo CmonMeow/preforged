@@ -1,0 +1,31 @@
+Typed account policy reads (2026-10-09)
+
+NetworkServer accountProfile, gameAccountAlias and accountCampaigns call typed
+NetworkManager methods and native Accounts storage methods directly. Together
+with accountAgreement, production policy reads no longer use request(Operation,
+string) or a delimiter-encoded storage result. Existing offline maintenance
+adapters and setters remain available for import tools. Custom NetworkClient
+transport remains explicitly unavailable; this migration does not implement it.
+
+Account profile and campaign reads use a SQLite transaction for a consistent
+owner/read snapshot. An owned account without an imported profile returns OK
+with an absent optional, not a synthesized profile. Imported profile bytes are
+decoded and validated before publication. Alias reads validate stored account
+names. Campaign values are restricted to 1..4 and duplicates rejected. Missing
+accounts return NOT_FOUND. Admission is bounded at three seconds; cancellation
+is checked before reading and before returning data. Failure returns no partial
+profile, alias or campaign list. No imported account data or live entitlement
+values are changed by these migrations.
+
+network_lifecycle regression bypasses the virtual transitional request recorder
+for all three operations. It tests missing ownership, absent imported profile,
+full 200-byte opaque attribute payload, territory/agreement/version/trailer,
+all four stored campaign IDs and login alias, and cancellation after each read.
+Focused test passed (1.54 seconds). Full build and live validation pending.
+Validation completed: full Release build succeeded; all 126 tests passed in
+25.63 seconds. Private client PID 7712 logged in with main imported account,
+restored attributes (revision 43) and skills (revision 18), and entered map 449.
+Evidence: build/reports/typed-account-policy-live.json and
+build/reports/typed-account-policy-full-tests.txt. Official client not used.
+Remaining migrations include authentication, character creation, rename/unlock,
+friends, guild and cape operations. This does not establish full goal completion.

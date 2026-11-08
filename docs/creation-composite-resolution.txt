@@ -1,0 +1,31 @@
+Creation composite resolution audit (2026-10-09)
+
+Added native read-only fields to equipment_summary_observer: requested packed
+appearance, resolved profession, resolved catalog group and resolved sex.
+--composite-only reads the global native CompositePlayer while in creation,
+where ordinary map-context validation deliberately rejects map0. It validates
+exact private executable path/hash and CompositePlayer vtable. No writes, hooks,
+remote thread or official client operations. A non-project shell PID was rejected
+with only_exact_project_private_client_allowed.
+
+Offline hash-pinned native constructor trace (7b0db0) confirms input +10c and
+resolved fields +3e8/+3f0/+3f4. It calls7b2c70 then cycles group/sex/profession if
+lookup fails. Seven instruction anchors passed via composite_resolution_2022.py.
+Evidence: build/reports/composite-resolution-native-trace.txt.
+
+Live private creation PID19312, disposable account:
+Explicit Prophecies/Warrior/Male -> appearance17891338, profession1/group0/sex0.
+Explicit Female -> appearance152305671, profession1/group0/sex1.
+Screenshots and native JSON are under build/reports/creation-explicit-*-preview.png
+and composite-preview-explicit-*.json. Both models match explicit selection;
+neither fell back to a different profession or sex. The prior rapid Next-only
+run was insufficient evidence of a renderer mismatch; documentation corrected.
+
+Customization remains incomplete: hair thumbnails eventually populate; face,
+hair-color and skin-color lists remain empty. Catalog snapshot has native model
+counts16/9/10/9 for Warrior group0, so absent catalog alone is disproven. Native
+color family counts8/8 expose only one enabled flag each via existing observer;
+that does not yet prove why the UI lists are absent. Picker scanner found no
+validated widget candidates, so its context candidates cannot establish state.
+Next work should trace picker construction/filtering and list readiness, not
+change appearance encoding without evidence. Runtime server unchanged by audit.

@@ -1,0 +1,38 @@
+Typed secondary-profession storage — 2026-10-09
+
+NetworkServer::saveSecondaryProfession now calls NetworkManager directly with
+SaveSecondaryProfession. The manager serializes database admission and passes
+its deadline to Accounts. The single SQLite transaction validates the current
+skill/attribute revisions, unchanged learning/profession unlocks/entitlements,
+permitted slot/rank clearing and level-point constraints, then updates skills,
+attributes and roster summary together. Captured source hashes are retained.
+The offline adapter decodes once and uses that same typed implementation.
+
+Removed unreachable legacy attribute get/edit branches following the typed
+adapter: remaining SQL there is solely the offline captured-profile import.
+
+All four rebuilt persistence/lifecycle tests passed. The new direct Accounts
+case cancels after writes and before commit and verifies both revisions and the
+old allocation remain unchanged. A following successful transaction commits
+both revisions and the cleared allocation. Existing lifecycle tests verify
+foreign ownership, competing revisions, profession change and durable state.
+
+This source change is not yet deployed to the running host. Full build,
+deployment and actual private-client profession selection remain pending.
+The official client is unaffected. Broader architecture/gameplay remains open.
+
+Deployed 2026-10-09, SHA256
+438643d5cefdc7b78337b7e69035847f3c7d50177a1eb13315a63d4f53fb5187.
+All 126 rebuilt CTest tests passed (39.47 seconds).
+Live K-menu Elementalist/Assassin -> Elementalist/Warrior accepted, incompatible
+Assassin skills cleared and 6 points refunded. Native saved template restored
+Assassin, Earth12/EnergyStorage12/ShadowArts3, zero unused points and original
+8 skills: 952,937,171,174,1374,1661,1043,169. Read-only skillbar snapshot and
+screenshot saved in build/reports/typed-profession-restored-bar.json and
+ typed-profession-restored.png. Temporary native template moved into reports.
+
+Initial two smoke ground clicks failed while K covered the scene. The smoke
+helper had emitted Ctrl/Shift with zero scan codes; it now uses MapVirtualKey
+for those modifiers. Retest PID15596 passed login, world entry, keyboard and
+ground click, 163.588 units with zero native pose disagreement, alive5 seconds.
+Initial failed reports retained alongside success. Official PID5604 preserved.

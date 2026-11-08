@@ -1,0 +1,52 @@
+Succor308 NPC recipient resource foundation,2026-10-26
+
+Implemented in gw_npc_combat_catalog.h,not yet admitted by World casting:
+LiveActor::apply_succor uses the exact NPC lifetime and reviewed allied Health/
+Energy authorities. It settles a copied actor to application time,prepares
+the owned indefinite308 registry entry and +1Energy CeilingCurve modifier,
+then commits the copied actor. Replacement returns removed entries for World
+to retire their old maintainer generations/upkeep and spell consumers.
+
+NPC Health chronology now reads the owned indefinite308 entry for+1Health
+regeneration. Shared regeneration caps are applied after combining sources.
+Reviewed explicit enchantment removal settles through the end time,removes
+the matching Energy contribution and queues an EnchantmentEnd308 receipt.
+This primitive does not validate a live caster,range,normal5Energy payment,
+upkeep ownership or spell-triggered maintainer loss; World must own those.
+
+New registered Release CTest succor_npc passes: exact fractional Energy and
+Health gains,baseline restoration after removal,different-maintainer same-
+skill replacement,missing pool/pip authority,neutral/self/stale recipients,
+effect-ID reuse,indefinite duration,Health/Energy caps and no hidden capped
+Energy credit. The cap-spend fixture explicitly configures an authorized
+friendly spellbook before spending; it does not relax NPC resource authority.
+Rebuilt neighboring npc_energy_hex and watchful_healing_npc also pass(3/3).
+Serialized Release server_host builds. Frozen seven-receipt/pinned2022 Succor
+first-consumer verifier passes. No official client was operated or restarted.
+
+Still required before production308 binding:
+1.Generalize maintained recipient entry,clock,end-preflight and removal
+  adapters in gw_world_mending.inl,keeping caster forecasts player-owned.
+2.Connect atomic NPC application to World Succor lease/consumer/upkeep
+  ownership,collision-free effect allocation and deferred publication.
+3.Consume exact NPC308 end receipts for strip/replacement/cancel/death/
+  departure/teardown;publish exactly one upkeep/end pair.
+4.Generalize successful-spell recipient settlement and debit to NPCs.
+  Use an NPC-only terminal wrapper for the eight successful spell-family
+  paths;do not feed speculative complete_action copies or player pre-effect
+  reactions into it. Retain sequence dedup before reactive Energy/death work.
+5.Validate owned NPC movement for maintained range expiry,coarse/fine event
+  chronology and scope reuse. Existing quest-route range projection is
+  reusable;unsupported movement must not partially apply the enchantment.
+6.Run integrated World/cast/upkeep tests and separate rendered2022 QA.
+
+Fixed source-binding partition remains679 captured/399bound/280awaiting/
+650missing local activation. The immutable capture snapshot is unchanged.
+SHA256 server_host.exe
+B701088E2C68E3A255BCFB06F83BD88CCB16708CEA7369762ABC957F536BDE80
+SHA256 gw_npc_combat_catalog.h
+C20EA46BFFEC83B3B3953F2DC09AB094225F2BB7B953CDB83C7CA07012B76D9E
+SHA256 succor_npc.cpp
+EB277E4E35914662B34B3262163B041419E2B0E457EC370F380AFC2B4D153301
+SHA256 succor_npc_test.exe
+32CA6DE1BA1ED7A364BDEA3667F3869C7EDA5B25428D7E23B14C1C15C2C8C1CA

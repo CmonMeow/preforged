@@ -1,0 +1,90 @@
+MARTYR298 — STAGED TRANSACTION,2026-10-21
+
+Pinned metadata:elite Monk/no-attribute spell,5Energy,1s activation,.75s aftercast,
+10s recharge. Local Wiki/Martyr.html says transfer all allies' conditions and
+remaining durations to caster within party range. The transaction uses5000range.
+
+prepare_martyr validates canonical plan,exact world/actor/generation identities,
+finite nonnegative distances,unique actors and bounded population. It selects
+living allies within range,excludes self and copies all states. It transfers all
+ten condition types newest-first using the existing reviewed remaining-duration
+copier;longer recipient timers remain longer. Distinct recipients are processed
+in actor order as explicit host policy;retail tie order is unknown. A failed
+recipient proposal leaves every original unchanged. No NPC loadouts or behavior
+are inferred. World must establish current membership/Health/position and settle
+all timelines before commit;the helper is not a client authority.
+
+Tests cover all10conditions,two simultaneous donors,existing longer timer,
+original-state preservation,range boundary,hostile/dead exclusion,expired sets,
+actor-order invariance,duplicate/world/invalid-distance and forged-plan rejection.
+martyr and existing condition_transfer tests pass;five coverage tests pass.
+
+Native evidence:martyr_2022.py hashes the fixed capture,checks four exact receipts
+at350958/350971/350972/350973in packets-1360-15821281.jsonl,and executes pinned
+untargeted cast/body consumers. Captured250ms activation/5s recharge differ from
+pinned1s/10s. No modifier cause is isolated,so the base is not changed. Body524
+is emitted via native158kind21on caster;2077is a sentinel. This cast alone does
+not prove actual transfer recipients,condition order or rendered acceptance.
+Report:build/reports/martyr-native-2022.json.
+
+Remaining:World atomic commit through condition transitions/Fragility/Fevered/
+DeepWound,allied NPC eligibility/ownership and death rules,DivineFavor,normal
+paid Runtime/gateway,interrupt/cooldown/lifecycle,retail simultaneous donor
+ordering and rendered QA.298remains unsupported,not a completed game skill.
+No source count increase:fixed633captured/303source-bound/330awaiting/696missing.
+Official clients/loggers untouched;no new live capture scan.
+
+2026-10-21 World completion stage
+complete_martyr validates the exact live caster,canonical plan,Monk-only Divine
+Favor and chronological resources. It settles eligible same-team players and
+allied/protected NPCs within5000range,preflights the copied transfer and condition
+ID budget,and freezes exact donor condition receipts. The shared condition
+removal/application paths publish icons,Fragility/Fevered observations,DeepWound,
+movement and Health changes. Copied final registries are never assigned over
+reaction state. NPC removals publish their pending Fragility/death events and
+current Health/effects. Existing disease immunity remains on shared application.
+
+Host policy explicitly processes recipients in actor order and their newest
+conditions first. Once the caster dies it stops taking further conditions;
+untouched donor conditions remain. Retail simultaneous-donor/lethal ordering
+has not been isolated by capture. No claim of that ordering's retail fidelity.
+Divine Favor heals only the surviving caster and uses normal wound/healing
+modifiers. The helper publishes native caster body524;Runtime will own cast
+terminal and recharge when normal298is connected.
+
+World tests cover all10conditions,foe/range exclusion,remaining expiry,DeepWound
+capacity transfer/restoration and reduced healing,three DivineFavor ranks,
+forged/stale/invalid inputs,lethal caster Fragility and an actual allied-NPC
+Disease donation acquired through normal shared Disease spread. This is no
+longer an NPC empty-state-only test. Normal298casting remains unsupported;
+NPC non-Disease conditions,additional reactive combinations and rendered QA
+need further verification. Official clients/loggers untouched.
+Final serial Release build2801 exited0 including server_host;four focused C++ suites,five coverage tests and native verifier pass.
+
+2026-10-21 normal casting binding
+298now enters normal Runtime policy/elite skillbar/profession checks,requires
+all completion/reaction/payment/scope hooks before admission,and normalizes any
+selected target to caster. Payment5Energy occurs once. Exact source lifetime
+and retained self target reject actor reuse;normal control epoch,activation,
+interruption,Backfire,aftercast and10s pinned recharge remain shared. Completion
+rechecks required hooks,so callback loss cannot call an empty function. Direct
+native2022gateway provides the exact-source World completion callback.
+
+World captures each distinct peer's queued changes and prefixes finish58then
+caster body524before releasing condition/Health/reaction publications. Runtime
+suppresses duplicate finish/body while retaining slot release and cooldown.
+The16cast modes exercise missing hooks,failed payment,self normalization despite
+foe selection,cancel,interrupt,actor replacement/stale scope,lost callbacks,
+primary/secondary Monk DivineFavor,lethal Backfire,delayed update and recharge.
+One ordered finish/body and one10s cooldown packet are asserted on success.
+Delayed completion uses the existing Runtime update/aftercast scheduling;this
+is not proof of exact-deadline completion under a stalled host loop.
+
+Native verifier additionally executes Runtime's159self-targeted start and
+compares stored skill,duration and pose style to the frozen158untargeted form.
+This proves consumer compatibility,not rendered model/sound acceptance.
+Normal binding advances the fixed checkpoint to633captured/304source-bound/
+329awaiting/696missing. Simultaneous/lethal recipient order remains explicit
+host policy pending retail capture;NPC non-Disease donations,additional modifier
+and reaction combinations and rendered QA remain open. Official logging untouched.
+Final serial Release build73571 exited0 including server_host;four focused C++ suites,five coverage tests and native verifier pass.

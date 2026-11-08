@@ -1,0 +1,60 @@
+Dancing Daggers [858] — World delivery staged, 2026-10-25
+
+The immutable 20261024-signet-infection-bound checkpoint contains two local
+cast starts (packets-108988-190116609.jsonl lines 34145 and 34443) and two
+finishes (34159 and 34452) in map 280. The first is exactly 1000 ms after its
+start. The captured 2021 skill row specifies Deadly Arts 30, 5 Energy, 1 s
+activation, 0.75 s aftercast, 5 s recharge and 5..35 Earth damage. Its
+projectile references are 855 and 854. The historical wiki mirror describes
+three projectiles, half range and a lead-attack chain transition.
+
+A reproducible pinned-2022 audit is tools/protocol/dancing_daggers_2022.py;
+its result is build/reports/dancing-daggers-native-2022.json. Both captured
+casts show three modern model-854 launches and three resource-855 target
+impacts. Modern opcode 92 sets stage 1 immediately after the first impact
+(lines 34166 and 34459). Independent off-hand receipts set stage 2 (lines
+21314 and 51380), and a reset receipt sets stage 0 (line 21552). The much
+more common opcode 160/kind 4 event after the third impact is not the chain
+update. Translating the launch descriptor
+to the 2022 opcode makes the original client queue action 11/state 6 with
+model 854. Its cast consumer selects style 51 for one second; its particle
+consumer accepts resource 855. These offline consumers use stubbed actor and
+queue services, so rendered acceptance remains unverified.
+
+src/runtime/gw_dancing_daggers.h now validates this row and proposes one
+armor-aware Earth impact at a time. tests/dancing_daggers_policy.cpp covers
+rank scaling, three-projectile/half-range parameters, armor damage,
+model-854 launch/resource-855 impact wire and rejection of a forged plan.
+World now accepts a validated Dancing Daggers plan directly, schedules three
+separate missiles, enforces half range and scoped hostile targets, checks
+misses at each impact, and publishes reviewed model-854 launch and
+resource-855 impact packets. It uses a provisional 325 ms gap between
+releases (the two observed casts have frame-dependent gaps near that value).
+Its deferred first launch requires a trusted timestamped skill-event receipt;
+a forged model cannot pass through the generic event publisher during that
+pending cast. A World test covers player and NPC triple hits, moving-target
+miss, unknown armor, range, stale caster scope, late publication and duplicate
+or forged receipts. The Stone Daggers World target was rebuilt after the
+shared resolver change. Four focused Release CTests pass; server_host builds.
+
+The World now records a target-scoped lead stage on the first successful,
+nonlethal dagger impact. Its provisional 15-second expiry is consistent with
+the fixed stage-reset receipts; it does not extend on the second or third
+projectile. Native tests cover first-hit timing, a miss, and expiry. This
+internal state is not yet published to the client or consumed by off-hand and
+dual attacks.
+
+This is not yet a production skill binding. Runtime still needs a required
+World completion hook and paid cast. Modern opcode 92 has not been translated
+and verified for the 2022 client. The captured hits do not establish
+miss/block rules. No rendered acceptance or exact retail moving-target
+flight/release timing has been proved.
+
+Detached header SHA-256:
+B2910438AFA63B6B36E4D4E9412A85F3302FF05ACC0166D6796CE54B0738D783
+Policy test executable SHA-256:
+2E3C4A72D6A118ED94B055919D76CE27268AD6DAAE55431EF5CE0F33C90F1B46
+World test executable SHA-256:
+TO_REFRESH
+Server executable SHA-256:
+TO_REFRESH

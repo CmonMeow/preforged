@@ -1,0 +1,50 @@
+NPC CONJURE PHANTASM31 — 2026-10-21
+
+Added an explicit host-controlled hostile-NPC -> allied-NPC spell path. A
+reviewed spellbook and rank are required; this does not invent NPC loadouts or
+automatic target/skill selection. Native metadata retains10Energy,1s activation,
+.75s aftercast,5s recharge,5degeneration pips and rank-scaled duration.
+
+Admission checks current source/target lifetimes,opposing allegiance,known live
+Health,damageable target,range,plane and navigation line of sight. Energy is
+paid once at admission;an immutable action token owns completion. The shared
+World deadline drain completes at the original deadline even on sparse ticks.
+Source death/interruption/replacement prevents application. Completion rechecks
+target identity,life,plane and line of sight,then commits the owned hex after
+shared spell reactions. Start60,finish58,targeted resource9,status65 and owned
+end67 use existing native packet builders. Caster sentinel2077is not emitted.
+
+status_snapshot now supports exact-lifetime NPC registry reads as well as
+players. The existing player-hostile-hex API still rejects allied NPCs;the new
+recipient primitive is a separate trusted NPC-source lane.
+
+Tests exercise insufficient Energy,missing spellbook,out-of-range admission,
+early/duplicate/forged completion,interrupt,death,all21ranks,sparse expiry,
+exact degeneration,scope guards,publication,cooldown and real ConvertHexes303
+removal from an allied NPC. This closes the prior World integration gap for a
+Mesmer hex;it deliberately gives no Necromancer-only armor. Direct NPC failed
+target tests now include31:paid Energy remains spent,and failure does not add
+successful recharge/aftercast. That failure timing is existing private-server
+policy,not newly established retail31evidence.
+
+Evidence:tools/protocol/degeneration_hexes_2022.py verifies9native fixtures;
+hex_completion_2022.py verifies12frozen receipt/particle-order cases against
+20261017-npc-refresh-2. These are consumer/order evidence,not rendered QA.
+
+Remaining:autonomous AI spell acquisition/selection,NPC Necromancer hex lanes
+and end-return benefits,production cast-modifier interaction and rendered
+verification. ConvertHexes303normal paid Runtime/gateway remains unsupported;
+zero-Necromancer-count refresh needs retail evidence. No source-bound count
+increase:31was already player-bound. Official sessions/loggers untouched.
+
+2026-10-21 Phantasm lifecycle follow-up:recasting replaces the owned hex without
+stacking degeneration;rank12 -> rank0 refresh yields exactly8seconds total
+loss and the replacement expiry. Retiring the entire NPC population rejects
+old pending tokens without lingering effects. A successful non-instant cast
+now cancels the source's existing quest route and emits native position/stop,
+matching other reviewed NPC casts. A real wave-NPC chase -> cast fixture verifies
+one stop and no subsequent route destination,plus successful hex completion.
+Three focused C++ suites and five coverage checks pass;serial host build65866
+exited0,and final expanded NPC suite build76026 exited0. Fixed checkpoint audit
+and publication remain633captured/302source-bound/331awaiting/696missing.
+No rendered or autonomous AI claim;official sessions/loggers untouched.

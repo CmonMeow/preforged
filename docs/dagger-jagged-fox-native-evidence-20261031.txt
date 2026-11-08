@@ -1,0 +1,37 @@
+FIXED JAGGED/FOX SUCCESS + ORIGINAL2022 FIRST CONSUMERS — 2026-10-31
+
+Proof: build/reports/dagger-jagged-fox-fixed-native-20261031.json.
+Extension candidate: build/patches/dagger-world-jagged-fox-retail.candidate.py,
+base/patch siblings; tools-only, not yet applied to the shared verifier.
+
+Verified immutable20261024 manifest SHA
+1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376,
+full packet-file SHA/length, and eight complete StoC exact physical lines in
+packets-1360-15821281.jsonl:
+750161 Jagged782 targeted activation50 source25,target30;
+750169 finish46,750170 stage1,750172 actual negative critical17 damage30<-25;
+750187 Fox780 targeted activation50 source25,target30;
+750191 finish46,750192 stage2,750193 actual negative normal16 damage30<-25.
+Activation/finish/stage/damage ticks and exact bytes are pinned in the proof.
+These are real successful lead/offhand receipts, not generated World success.
+No successful dual capture is established by this extension.
+
+Explicit opcode/schema mapping (NOT blind global subtraction):
+Modern91 schema[91,0x404] is a one-value packet, NOT a chain stage.
+Modern92 schema[92,0x10,0x10,0x404] maps to original2022 chain91 with that shape,
+descriptorRVA0x60bacc/callbackVA0x873df0. Original callback executes source25
+local gate,target30 lookup and stage1 then2 storage on the same component.
+Modern160 activation maps to native159, modern159 finish to native158, and
+modern163 scoped negative modifier maps to native162 with pinned descriptor
+0x60be20/schema[162,0x404,0x10,0x10,0x404]. Every normalized wire round-trips
+through the original serializer. Activation/finish original first actions21/17
+and exact source/target/skill roles are executed and checked.
+
+Report flags: retail_lead_offhand_verified=true; retail_dual_success_verified=false;
+complete dagger family=false; paid Runtime=false; rendered pixels=false.
+Eight receipts and original first consumers passed offline; no C++build needed.
+Source actor/sync/component services remain synthetic. Captured timestamps and
+normalized damage are NOT promoted to original2022 balance, rank, armor, weapon
+rolls, current release timing or rendered dagger animation proof. Existing dual
+negative38 windows remain separate, not successful dual damage evidence.
+No captured file, manifest, checkpoint or client was changed.

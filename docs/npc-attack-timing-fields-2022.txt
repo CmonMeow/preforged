@@ -1,0 +1,30 @@
+NPC timing53 field proof, pinned37130, 2026-10-23
+
+python tools/protocol/npc_attack_timing_fields_2022.py
+PASS3 original decoder/actor stores and body-duration cases. Report:
+build/reports/npc-attack-timing-fields-2022.json. Original executable SHA256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+No live process, network, renderer, runtime source change or C++ build.
+
+Original53 handler8736e0 reads native packet+8,+C as floats and forwards them
+through790cf0 and764720 (actor lookup784ac0) to77e750. Original stores77e7a8
+and77e7ae write actor+EC and+F0 respectively. The independent local GWCA
+Agent.h187-188 calls these weapon_attack_speed (base attack seconds) and
+attack_speed_modifier (duration multiplier, .67 for33% increased attack speed).
+Original attack-skill body77c0e0 with known fixture404 constructs duration
+first_float*second_float:2.475*1,2.025*1 and2.475*.67 all verified. Fixture404
+is not a Grawl skill or weapon attribution. Model/actor/clock services are
+stubbed; this establishes consumer arithmetic, not rendered acceptance.
+
+Exact Grawl75 archive fields (grawl-melee-evidence.json) therefore carry base
+attack animation intervals approximately2.475/2.475/2.025seconds and modifier1.
+The three scoped sources are model1437,level1,allegiance3,map160,epoch24;
+actions are ordinary melee starts with no attack skill. Source snapshots have
+no weapon type/subtype, so these timings cannot identify sword/axe/hammer/bow
+or imply a mastery rank. Why actor30's base differs is not established.
+
+These are useful native animation timing observations. They do not prove
+server release delay, full attack scheduling period, movement recovery,
+windup750ms or any universal species constant. Capture start spacing includes
+action cancellation/target/control/observation variation. Keep current authored
+Grawl runtime tuning until an explicit timing-policy change is reviewed.

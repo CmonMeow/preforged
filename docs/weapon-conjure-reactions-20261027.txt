@@ -1,0 +1,26 @@
+2026-10-27 weapon/Conjure reactive settlement and Cyclone protection correction
+Ordinary player melee/projectiles, attack-skill contacts and Cyclone player hits
+now use an explicit weapon transaction. Zero skill attribution, critical notices,
+physical/elemental reactions and NPC publication gates are retained. Reversal
+consumes the first positive base strike before the separate Conjure182/207/221
+bonus; Seed responds only to actual post-conversion loss and current recipients.
+Follow-up damage/conditions use actual survival, including conversion rescue or
+healing-caused death. Hostile-NPC ordinary hits against players share this path.
+Cyclone NPC preview previously passed already protected damage back through
+recipient vulnerability/cap/reduction. The existing mixed-NPC regression caught
+double fire vulnerability. Store pre-protection weapon damage, select current
+source bonuses, and apply current NPC protection once. No route/NPC exception.
+873 new World cases PASS:720 player routes,108 hostile-NPC strikes,45 conversion-
+healing death. Five final-source native suites and41 Python checks PASS. Existing
+mixed-NPC Cyclone and critical damage/notice regressions pass. Interrupted interim
+build/failure are retained;final Release host rebuild and --build-info pass(exit0).
+Fresh fixed-capture/original2022 Conjure cast and six particle consumers pass;
+ordinary zero-attribution native callback and three serializers pass. Derived
+outputs isolated;historical evidence untouched. These are offline native/synthetic
+World checks,not rendered or controlled-retail combined-order verification.
+NPC-recipient weapon/Conjure conversion/Seed,other producers,Seed caster lifetime,
+NPC healing-death cleanup,paid lifetime/deferred/full life-steal work remain open.
+Paid274 stays staged;307 UNBOUND. Fixed implementation checkpoint/manual queue
+preserved. Official clients and live logging untouched.
+Report:build/reports/weapon-conjure-reactions-20261027.json
+Host SHA256:457c4c1eace0fdfaaf14457640b7c2a975e04be6919665b02a78f6b28d5613ad

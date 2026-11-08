@@ -1,0 +1,35 @@
+Read-only callback field audit after Recall/Shadows fix
+
+Concrete adapter verification (gw_auth.cpp designated initializers):
+- Signet Shadows IS bound at2675. It returns early_visuals=true and prefix=false.
+  The new prefix-owned regression covers an additional valid callback shape;
+  this concrete World adapter never owned the native prefix before the fix.
+- Mending, Succor, Blessed Signet and Signet Judgment return prefix=true,
+  no closure, no returned visuals. Their current Runtime consumers honor this.
+- Holy damage, Spear of Light, Spirit Rift and Discord return deferred closure,
+  early_visuals=true, prefix=false. Their current Runtime consumers honor this.
+- Owned simple enchantments may return effect_snapshot_at and prefix=true;
+  Runtime propagates both. Burning Speed completion also propagates snapshot.
+No new currently exercised concrete-adapter defect established in these paths.
+
+Remaining generic-contract gaps (valid callback shapes not used above):
+- Mending/Succor, Blessed Signet, Signet Judgment, Shield Deflection drop
+  publication/early_visuals (unlike fixed Recall).
+- Discord/Spirit Rift/Spear/Holy drop prefix_owned (unlike fixed Shadows).
+Numerous legacy arms similarly select subsets; fields must not be assumed to
+be universally supported merely because the common return type permits them.
+
+Small exact future patch proposal, keeping dispatch depth unchanged:
+1. In maintained ally arm move completion_publication and early_completion_visuals
+   assignments out of if(retribution); keep trusted snapshot assignment conditional
+   unless all these callbacks adopt settlement timestamps.
+2. Add these two assignments to successful Blessed Signet, Signet Judgment,
+   Shield Deflection result consumers:
+     completion_publication=std::move(result.publication);
+     early_completion_visuals=result.visuals_before_publication;
+3. Add this assignment to successful Discord/Rift/Spear/Holy consumers:
+     completion_prefix_sent=result.completion_prefix_published;
+These address latent contract holes but should be tested with deliberately
+returned callback shapes before changing registered source. No such extension
+was applied during the live build. Do not change callback-reaction sequencing,
+sacrifice ownership or owned-self body special cases as part of field forwarding.

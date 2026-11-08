@@ -1,0 +1,61 @@
+DETACHED DAGGER CONTACT TIMING PROPOSAL - 2026-10-31
+
+Evidence: build/reports/observer-dagger-timing-cache-v2-20261031.json,
+observer-dagger-timing-focus-20261031.json,
+dagger-timing-model-validation-20261031.json,
+dagger-timing-consumers-20261031.json and ias-attack-speed-fixed-20261031.json.
+Executable: tools/observer/validate_dagger_timing_model_draft.py.
+
+Separate five quantities: catalog activation metadata, native animation body
+duration, attack activation receipt, actual negative damage contact receipt,
+and stored replay timestamp. None is automatically the server simulation tick.
+The original2022 action21 body uses metadata0.5 for Jagged/Fox, or actorEC1.33
+for zeroactivation duals, multiplied by actorF0. Timing action24 negative
+-1/6/-1/3 globals are NOT consumed by that body path. Actual fixed Frenzy
+setter F0=0x3F2B851F (.67) is distinct from float2/3, but still does not prove
+server contact scheduling or integer rounding167vs168.
+
+2026 replay descriptive hypothesis (UNAPPROVED for production): duals have
+first contact around500ms*factor and second around1000ms*factor, using one
+paid action and two separately validated physical contacts. Stable sampled
+factor cohorts support separation: .67 dual first medians349..351ms, second
+684..697ms; .75 first392..405, second775..775.5. Normal1 first565..571,
+second1049..1081. Unmodeled delay is visible, not hidden by tolerance.
+The offline validator reports all residuals and excludes incomplete/changed
+factor cohorts;86eligiblewindows,12groups. Not every activation succeeds.
+
+FoxPvP3251 replay receipts are shorter: .67 median83ms and1 median151.5ms.
+An exploratory125ms*factor base tracks this better than250ms, but neither
+original2022 metadata nor oldwiki proves that formula. Do NOT change current
+250ms staged policy from this fit. Oldwiki Jagged explicitly describes actual
+250ms; fixed successful Jagged/Fox later retail observed140..203ms start/end
+requires contemporaneous IAS/timing context. PvE/PvP and version distinctions
+remain material. A shared universal250ms model is not established.
+
+Implementation shape after timing ownership review: one immutable paid action
+scope/weapon/plan/copy lease; explicit timed contact ordinals; each due contact
+rechecks source/target lifetime, equipment, control and actual resource/end
+frontiers. Keep first committed contact after later cancellation; never refund
+or doublecharge. Retain admitted dual chain snapshot but preserve per-contact
+condition/critical/protection/Seed reactions. A second failed prerequisite phase
+is distinct from a successful dual second hit. Timestamp-bearing packet queues
+must preserve chronological publication. This proposal does not implement or
+bind anything.
+
+Before normal enrollment: authoritative original tick or validated recorder
+clock semantics; actual successful dual animation/second-phase packet mapping;
+first/second contact offsets under stable IAS/DAS; version-specific FoxPvP rule;
+copy/control interruption between successful contacts; native regression tests
+for scheduled partial commits; rendered2022 acceptance. Replaying original
+consumers proves first model selection, not pixels or authoritative release.
+
+Next reusable mechanism: captured Repeating Strike976 needs a target-scoped
+repeat-offhand transition (offhand->offhand) with hit/failure-dependent recharge.
+It reuses current staged ledger, actual outcomes and paid ownership, adding a
+reviewable transition exception rather than another damage-only isolated skill.
+Fixed audit has3local starts/3finishes in packets-108988-190116609.jsonl:
+starts51422/51441/51461, ends51425/51445/51473, actor25->30 map280.
+These establish lifecycle, not successful repeat stage/recharge semantics; next
+step inspect neighboring actual stage92/damage/recharge receipts and oldwiki
+before implementing canonical plan or normal enrollment. Do not decrement271
+fixed awaiting count merely because a new helper is proposed.

@@ -1,0 +1,41 @@
+I AM THE STRONGEST! [2355] — SOURCE BINDING, 2026-10-26
+
+The native catalog row and fixed capture agree on a zero-activation Norn shout
+with5 Energy,20s recharge, caster body1909 and no target body. The pinned2022
+checkpoint has one instant48 activation (map280 line509286), but no attributed
+end-effect record. The offline first-consumer verifier accepts its instant UI
+and caster1909 particle lookup; this is not a rendered-client test.
+
+The server now charges for and completes the ordinary skill request, owns a
+finite 7h30m maintained effect, and spends one ranked charge only after each
+successful weapon contact. Missed/blocked contacts keep charges. Separate
+player/NPC ordinary, player/NPC attack-skill and Cyclone multi-recipient paths
+apply the ranked14..20 bonus. Cyclone preflights base, Signet of Strength,
+Strongest and combined damage so a multi-target attack can run out of charges
+partway through its recipient list. Reapplying while active ends the effect.
+The maintained effect retires on depletion, expiry, death and actor departure.
+World publishes the caster1909 body once before maintained status.
+
+Validation: Release server_host build passed; CTest7/7 for Norn plan,2355
+World/cast, neighboring Signet of Strength and2359 tests. Coverage audit12/12
+passed. Fixed norn_shouts_2022.py first-consumer verifier passed using the
+repository's build/protocol-python dependency directory. No official client
+or logger was touched. The fixed capture checkpoint was not modified.
+
+Remaining verification: no rendered2022 client test; no official attributed
+end-effect, full packet ordering, damage numeric or reapplication capture.
+NPC caster use and interaction with every weapon/bonus modifier is unproven.
+This is a source binding, not a claim of complete retail fidelity.
+
+Guild Wars Wiki mechanics reference:
+https://wiki.guildwars.com/wiki/%22I_Am_the_Strongest!%22
+
+SHA256 gw_world_simulation.h C79592F0C6D820854852E42F2C20A5DEBEE5667B4508409DF4123BAA3310D408
+SHA256 gw_skill_casting.h 2A64394A6D864BCBEAEC5656A6DEA0A19A0CFDFBE7C269813E7C246D788C369F
+SHA256 gw_cast_timing.h C958FB2D3785CFA85D827862891C5246CD7A68569E0CA7A588A92C4DB440BA3E
+SHA256 gw_norn_attack_shouts.h AD368891B3E7956F474A6C72F291A150D325C2BF62AEDBE56350CBAB9DB6AF22
+SHA256 gw_auth.cpp 20AAF8093AF6B9D4888F28AAE4B7F5CF4A5F71F993C5BB4DF802C9E243620C3F
+SHA256 norn_attack_shouts_test.exe FAC04F8B1F62294E3799639034095AEE15A86777DBEC4090A4BBE0E22DD2EDE3
+SHA256 i_am_the_strongest_world_test.exe FD579A484494023A99EFAA90BD999C409BF5D2A1D34469AF5A294BA1FFD1C00C
+SHA256 i_am_the_strongest_cast_test.exe 5A1C68F27DA983A8FEBB58F4C6120780578C208DE3A3B7193DD70CB264755AA3
+SHA256 server_host.exe 037B7C809D961A7310B9F6A336BA256272E97EE8DB8F647F93E8C6F170AF02FC

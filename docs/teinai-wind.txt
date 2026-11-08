@@ -1,0 +1,97 @@
+Teinai's Wind1081 — Burning bonus/area interruption,2026-10-22
+
+Historical local Teinai's_Wind.html describes target+adjacent foes,10..34..40cold
+damage and an additional40..72..80against Burning foes,which are interrupted.
+Its anomaly note explicitly says this additional damage is NOT a separate damage
+packet. Pinned2022row confirms AirMagic8,5Energy,1s activation,.75s aftercast,
+8s recharge,scale10..40/bonus40..80,caster287and target2077sentinel.
+
+Fixed checkpoint20261022-cumulative-skills has one local activation:
+packets-1360-15821281.jsonl188992tick19623687start(actor25,target30),1890068s
+recharge,189007finish58,189008caster287,189009targeted288at19624703,189017pending
+release at19625406. audit_echo_checkpoint --skills1081 --include-targets verifies
+the frozen hash and activation receipt (1window/63events). The target288override
+is packet evidence,not inferred from the native target-row sentinel.
+teinai_wind_2022.py verifies7exact receipts,original1s targeted cast and caster287/
+target288consumers,plus original targeted serializer. Asset services are stubbed;
+rendered fidelity is unproven. This isolated completion does not independently
+establish a successful Burning bonus or interruption/protection interaction.
+
+Implementation uses the shared elemental area damage transaction with166adjacent
+radius and current target location. Base+Burning bonus form ONE cold hit,so armor,
+caps,damage modifiers and flat reduction apply once. Existing fractional rank
+scaling is preserved;the engine's unrounded Health value is not an integer UI
+damage display. Burning is read at impact time separately for every recipient.
+No Burning is inflicted by this skill. Non-Burning foes still take base damage.
+
+Only surviving Burning recipients with an active attack/skill receive an
+interruption attempt. Player control epochs/ordinary attacks and NPC scoped
+windup tokens remain authoritative. Interrupt protection is preflighted before
+damage commits and consumed only for a real surviving action. NPC protection
+preflight may settle Energy;damage proposals are regenerated from that state
+so the later assignment cannot overwrite it. Damage still lands when Mantra of
+Concentration prevents interruption. Protected idle recipients do not spend an
+interruption charge. NPC attack stop and skill59notifications retain their
+distinct packet forms. No special disable/cooldown is invented by this skill.
+
+World recipient/armor/control admission happens before damage mutation. Unknown
+armor on a selected player or NPC rejects the cast's entire damage batch. Wrong
+plane,allied and outside-radius actors are excluded. Selected-target navigation
+line checks now also cover nonprojectile/nonself elemental player casts,matching
+the existing selected NPC checks. Secondary area recipients do not get an
+invented independent line-of-sight requirement.
+
+Runtime uses normal paid timing,cancel/interrupt/recharge and the existing
+deferred elemental completion hook. Finish58,caster287then per-victim targeted288
+are published without the sentinel. Whole damage/control/recharge ordering,
+successful retail conditional/protection trials,NPC caster AI,broader global
+modifier/reactive cases and rendered animation/sound remain unverified.
+No official process,input,restart or logging action.
+
+Focused validation:teinai-wind-final-controls-build.txt and the dedicated CTest
+suite pass. Coverage includes42rank/Burning single-hit contexts with flat
+reduction and exact Burning expiry;player/NPC primary centers,area boundary/
+plane/ally selection,attack+spell interruption,Concentration consumption and idle
+charge retention,Resolve's5Energy debit at rank12,unknown NPC Energy admission,
+unknown player/NPC Cold armor,forged plans,and8paid cast/cancel/interrupt/missing
+hook controls. Body completion verifies58then287then every288target once.
+The original serializer and7frozen/native receipts pass in
+build/reports/teinai-wind-native-2022.json. Five coverage audit tests pass.
+Fixed checkpoint audit/publication now679captured/322source-bound/357awaiting/
+650missing-capture. Broader regression/host build is recorded separately;no
+running process was restarted and no official capture/logger was touched.
+
+Final validation:teinai-wind-regression-host-build.txt serial Release build of host and six related native targets completed successfully. teinai-wind-regression-tests.txt7/7fresh suites pass,including Whirlwind,Icy Prism,Signet of Agony and NPC elemental AI. Five callback coverage tests pass;7frozen/native/serializer receipts pass. Host SHA256 FE3515E78AA5024CCF5DD759BD85FB647007763998D55BC6C0B09A578994876B. Binary rebuilt only,not restarted/deployed. Official processes and loggers untouched.
+
+2026-10-22 reactive interruption verification:
+New permanent World tests cover Wind1081 -> Resolve17Energy cost -> PvP
+MindWrack2734zero burst for player and NPC recipients. Exact5Energy with zero
+regeneration pays5and triggers exactly one83armor-ignoring burst after106Cold
+(at Air12):1000->811. A170Health recipient dies;another cast against the corpse
+fails without damaging bystanders or restoring Health,and same-time tick keeps
+it dead. Survivors retain Resolve after the exactly-paid attempt. At zero,the
+next unpaid prevention ends Resolve but does not replay MindWrack (811->705);
+the following hit interrupts normally (705->599). Player death/interruption
+control epochs and NPC retained action-token completion are checked.
+
+Fractional counterexamples explicitly establish resource baselines,not just a
+UI integer. One positive regeneration pip leaves a fraction after the5Energy
+cost;the UI shows0but Health is894and MindWrack remains. NPC precise-unit getter
+confirmspositivebalance. NPC clocks begin at first resource observation,so its
+baseline is established at100by canonical EtherFeast40drain3from8to5without
+Health damage,before the1000test. Player uses innate2pips plus-1armor pip;the
+exact-zero control uses-2armor pips. No production rules were changed to make
+these cases pass. This proves this private World chain,not full retail ordering,
+rendered behavior or all reactive interactions/PvE MindWrack use-trigger behavior.
+
+Validation:teinai-wind-zero-reaction-build.txt serial Release target rebuild and
+teinai-wind-zero-reaction-tests.txt dedicated suite pass;five coverage checks
+pass. Test source SHA25692E72764A8F8BE56AF3E645B225359BDAE22296BCC3DDC2FA00589939401080E.
+Production host remainsA982B0AE79560F1788F9837B656AA4B13E7B2ECBA114BCAF0F45BB6F9B50B93F;
+not rebuilt/restarted in this test-only pass. Official processes/loggers untouched.
+
+Separate gap discovered during baseline setup:World.energy_drain only has an NPC
+primary route for EtherFeast40. EnergyDrain79and EnergyTap80reject even reviewed
+NPC resources. Their source coverage labels now explicitly retain that missing
+NPC route;they are still player bindings,not complete NPC support. Fixed audit/
+lists refreshed:679captured/323source-bound/356awaiting-binding/650missing-capture.

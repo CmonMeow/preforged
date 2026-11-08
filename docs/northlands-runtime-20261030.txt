@@ -1,0 +1,44 @@
+Northlands runtime activation, 2026-10-30
+
+Capture authority (immutable; not edited)
+data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/
+world-43292-168890171.jsonl line 22704 records 146->147:
+source (-5479.314941,13797.552734), plane36;
+arrival (-11574,-16170), plane0, facing1.434743.
+Line24425 records 147->146 from (-11711.019531,-16914.177734), plane22;
+arrival (-5434,11799), plane0, facing-0.717372.
+The matching packets-43292-168891734.jsonl records lever model1279,
+door model1280, scene object50593, and 30000ms between open-animation
+start177519218 and close-animation start177549218. Animation completion
+settle1000ms and interaction radius160 remain authored development policy.
+No two-player or quest prerequisite is imposed.
+
+Geometry authority and authored trigger bounds
+South113021: the reciprocal physical crossing36:20<->37:10 is removed
+while closed. All graph consumers use the same filtered graph. The portal
+strip x[-5745,-5320], y[13790,13820] lies wholly inside source36:17.
+North116025: strip x[-11890,-11460], y[-16925,-16895] lies wholly in22:17.
+These strips are authored corridors, not recovered retail trigger widths.
+The captured arrivals and facings above are retained exactly at capture precision.
+North return remains open. South timer controls the physical passage only;
+an actor that legally passed the door may reach its portal after closure.
+
+Integration
+Fresh ordinary Worlds146/147 configure the controller after navigation/NPCs.
+Actor IDs62000/62001 are server-reserved relocations of captured templates.
+Native CtoS79 (DWORD target, BYTE call) selects the nonliving lever and is
+handled before NPC dialogue. The World validates live scoped ownership,
+control state, graph reach and trusted position; distant pulls approach first.
+Each input dispatch synchronizes due gate boundaries before other handlers.
+Late joins receive current door/lever scene state without restarting a timer.
+Closure settles elapsed motion on the old graph, swaps graphs, and validates
+cached player/NPC/pet paths. Historical actor frontiers are not rewound.
+
+Verification status
+Parent reported57 World gate checks and pet/pursuit suites PASS before auth
+activation. Existing compiled map_portals_test passed the activated catalog's
+full rectangle coverage/connectivity/arrival validation. New source adds six
+Northlands lane tests from captured anchors, exact arrivals/facings, wrong
+floor/direction and suppression checks; parent must rebuild and run these.
+Native navigation_inspect confirmed both proposed corridor lanes retain
+their exact source floor. No official or rendered client verification claimed.

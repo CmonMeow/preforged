@@ -1,0 +1,34 @@
+FIREBALL SELECTED-NPC RECIPIENT — 2026-10-17
+
+Player Fireball186 now launches against a generation-bound hostile living NPC
+with known fire armor, same plane, range and navigation visibility. Its paid
+Runtime request follows cast completion before impact; cancellation and
+interruption do not launch a projectile. Completion admission now recognizes186
+as an NPC-capable projectile in addition to existing Flare194.
+
+Arrival retains caster/target generation, plane and aim-radius checks. A valid
+Fireball impact uses the common elemental area resolver, which selects both
+player and NPC foes around the impact. Damage is preflighted before the spell
+commits, including each selected NPC's known armor. Repeated ticks do not replay
+an already-consumed projectile. Existing Flare handling is retained.
+
+npc_fireball_recipient exercises actual paid casts, verifies no immediate
+damage at release, subsequent mixed-population splash, distant-NPC exclusion,
+unknown neighbor armor causing no partial impact damage, cancel/interrupt and
+duplicate-tick protection. It does not prove rendered projectile flight or
+all dodge/movement/late-tick behavior. No new flight speed was inferred from
+the capture; existing projectile policy remains explicitly unverified here.
+
+IDENTITY CORRECTION TO PRIOR NOTES
+Skill1095 is Star Burst, not Double Dragon. Fixed captured-skills.json names
+it Star Burst; native row and local Star_Burst.html support touch-area fire
+damage, Burning and2Energy per foe. The earlier Double_Dragon.html comparison
+was invalid. New NPC restrictions based on that mistaken identity are removed.
+Star Burst now passes mixed-area and paid Runtime cast tests. Its source
+evidence includes13 other/unassigned activation sightings and no local starts
+in the fixed npc-refresh-2 checkpoint; do not call that a completed local cast
+capture or rendered verification. No Double Dragon defect was established.
+
+No official client or logger was controlled, restarted or interrupted.
+
+Validation: Release server_host rebuilt successfully. Four rebuilt native suites passed: npc_fireball_recipient,npc_elemental_area,npc_elemental_cast,conditional_elementalist. All41 skill tooling tests passed; fixed npc-refresh-2 source audit and backlog publication passed.

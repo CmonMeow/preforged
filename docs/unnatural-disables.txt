@@ -1,0 +1,36 @@
+Unnatural PvP copied-slot disable authority
+=========================================
+UnnaturalDisables owns one actor instance/generation,monotonic application time,
+revision,replay watermark and at most128 exact slot rules. The current full
+CooldownBarSnapshot must have the same owner,valid publication/revision,time
+and unique known copies. Mesmer profession5 and all Signet type7 rows are
+excluded. Every other equipped copy receives a ten-second deadline. Empty
+equipped slots must have copy0. No future profession-wide rule is installed.
+
+Reapplication extends only current selected keys. Removed/reinserted keys keep
+old deadlines;new copies get no historical deadline. Expired rules are pruned
+on mutation;queries return0 at expiry. Reset prunes exact keys and expiry but
+keeps replay watermark,so reset does not authorize replay. Retirement invalidates
+the owner. A new generation starts without old rules.
+
+World skill/copy and legacy base-copy queries compose this source with the
+existing five authorities. Shared DisableRevisions now contains six sources;
+Determined Shot,Keystone and Flourish prepare/reset all six before committing.
+Any intervening Unnatural application invalidates an old optimistic reset
+permit. Flourish can clear an eligible attack copy while retaining the separate
+copy,other disabled skills,and capped/debt/Overcast Energy reward semantics.
+
+PvP damage integration validates all selected damage recipients plus the full
+disable proposal before first damage. The original skill-use completion event
+is required for replay protection. Runtime's934 PvP metadata lookup resolves
+to3188,including20s recharge. Raw3188 also uses the same PvP-only plan.
+Missing event hooks reject admission. The shared Runtime disable refresh emits
+current per-copy timers from World. No client-controlled/local-only source exists.
+
+Tests cover predicate/current copies,NoProfession non-signet,duplicates/invalid
+empty/future bar/stale owner/overflow/replay,renewal/expiry/exact reset,World
+revision invalidation,Flourish reset and Energy,lifetime cleanup,raw/base alias
+PvP casting,damage+disables,20s recharge/10s UI,cancel/interruption/replacement/
+missing hooks,and replay failing before damage. Local official PvP activation/
+disable receipts and rendered acceptance remain verification gaps.
+Validation:six fresh native suites,69 tooling tests,native verifier and Release server_host pass. Official logging untouched.

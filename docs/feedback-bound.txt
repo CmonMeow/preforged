@@ -1,0 +1,53 @@
+FEEDBACK [1061] — NATIVE SOURCE BINDING, 2026-10-26
+
+The frozen 20261024-all-completed checkpoint contains one local-player cast
+start and finish in map 280. packets-1360-15821281.jsonl lines 27911 and
+27918 carry that cast; line 27919 carries the target effect resource 980
+(modern opcode 160, kind 20, actor 30, caster 25). The local pre-Reforged
+Feedback wiki describes removing one enchantment, then draining 4..10 Energy
+only if one was removed. The pinned 2022 catalog row is Factions Mesmer /
+Inspiration Magic, 10 Energy, 2-second activation, 0.75-second aftercast,
+30-second recharge, target body 980. The archived log does not prove exact
+Energy loss, rank, 2022 packet translation, or rendered animation.
+
+The production Runtime now admits the normal paid cast through its shared
+enchantment-removal hook. World removes one current enchantment and drains
+rank-scaled Energy from a player or an NPC with known Energy authority. An
+unenchanted target receives no drain. NPCs whose Energy is not authored are
+rejected before enchantment removal. The NPC reviewed-enchantment path also
+accepts Vigorous Spirit 254 for stripping, which its own stage/expiry system
+already supported. Other unreviewed NPC enchantments remain separate work.
+
+The feedback C++ test covers rank 0/12/15/20, forged-plan rejection,
+player/NPC enchanted and unenchanted outcomes, resource 980 target-body
+publication, and a normal paid cast. The cast test accounts for one Energy
+regenerated during the two-second activation. Serial Release builds of
+feedback_test, related enchantment tests and server_host passed. Focused
+CTest passed 5/5, and skill-runtime coverage unit tests passed 12/12.
+The fixed-checkpoint backlog now records 679 captured, 385 source-bound,
+294 awaiting binding and 650 missing local captures. Feedback is source-bound;
+rendered 2022 acceptance and broader NPC status/end-reaction cases remain
+verification gaps. No official client or logger was touched.
+
+SHA-256 at validation:
+  gw_enchantment_removal.h 2A21B42A76A731B885E5942CA1EB9314961F88174E4945320FAA5CCB09448D64
+  gw_world_simulation.h 7AD66352C8B4867FAD982455F5B98B49878341447D94129802485373B271417F
+  gw_npc_combat_catalog.h 4056D24EA0F8C1FD07ACE5256EE879A65EC81563DE7E3F976E23F65CB1E92D0C
+  gw_skill_casting.h 4714FC8C6CC44315D16BA4A14E015A906392409DCC5D3EFB9F03D0BD6A401EF2
+  feedback.cpp 1850A0819E8D3F7D4001D107FBA3D07016D682455716E00EA99C69B14AAD0299
+  skill_runtime_coverage.py 76A58EC7A28991F813BC9B04D20A05440BB09264FE632B5F774694BE89A3A542
+  server_host.exe 37F8C151670A8AECD7617ED234DD7C461B0072DE5307722AD0557D2A1AD3FC99
+  feedback_test.exe 3D05DAFF9E9F3A39611E2E2F5A727F3C068E8B2A13B8C3CB9FC9510F19F472BE
+
+Offline first-consumer check, 2026-10-26:
+  python tools/protocol/feedback_2022.py
+The verifier checks the snapshot SHA-256 against the frozen manifest before
+decoding the exact three captured packets. The hash-pinned 2022 image's first
+cast consumer stores Feedback [1061] with spell style 49 and 2.0 seconds;
+its caster body is the no-body sentinel 2077. The target body first consumer
+accepts resource 980 and reaches a particle request (encoded file
+c38102010000, flags 1). This strengthens packet/animation routing evidence,
+but does not establish that the private client's scene renders the effect,
+that the modern capture uses the same complete protocol as 2022, or that the
+Energy-loss mechanic matches retail in every rank/status case.
+  feedback_2022.py SHA-256 C6E2F226F13F286B1DF5219E7D8F270B4240AC96C970C297C9A03E99E1F2EC47

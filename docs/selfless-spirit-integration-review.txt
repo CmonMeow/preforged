@@ -1,0 +1,98 @@
+Selfless Spirit production integration review, 2026-10-26
+
+Read-only analysis after detached policy test. No binding is claimed.
+Line references reflect this working tree at review time.
+
+Existing payment path
+gw_skill_casting.h:1087-1113 snapshots a typed glyph, detects legacy Lesser
+Energy, computes Expertise, adds Quickening Zephyr's surcharge from CATALOG
+base (not the discounted cost), then subtracts the legacy reduction. Typed
+glyph payment instead receives base_cost at 1110; overcast payment and ordinary
+payment receive cost at 1113-1114. A Selfless change only to cost would silently
+miss typed glyph spells. Applying a separate payment after pay_elemental_glyph
+would double charge and lose its lease/overcast/fractional/reaction authority.
+gw_elemental_glyphs.h:77-85 explicitly requires an already-reviewed input cost.
+
+gw_divine_spirit.h:19-33 is a separate scoped modifier with a minimum of one.
+gw_world_protective_spirit.inl:142-160 has locked cost/debit stages, but the
+production divine_spirit callback is empty at gw_auth.cpp:2813. Thus Divine
+Spirit is not an existing production solution for general cost composition.
+docs/divine-spirit.txt:41-47 explicitly records unresolved glyph/floor ordering.
+Do not silently choose an insertion order to bind Selfless Spirit.
+
+Target identity and spell type
+Use effects::is_spell from gw_aura_restoration.h:12-14; it covers native types
+5,6,4,9,11,24,25, excluding glyphs, attacks and signets. Do not approximate
+spell classification by profession or only type 5.
+Request.target is UI selection, not necessarily the executed recipient of
+self-centered/untargeted skills. Runtime target validation is per-family at
+gw_skill_casting.h:1051-1062; use_target is populated only for selected reactive
+hooks, so it is not a general cost-discount target authority.
+gw_world_simulation.h:5270-5282 encodes player ally policy: opposing known teams
+deny; matching nonzero teams or authoritative party relationship can allow.
+gw_world_simulation.h:13640 valid_ally_enchantment_target_locked also supports
+reviewed NPC allies, but is a living enchantment-target admission routine,
+not a complete spell-recipient classifier. A dead allied resurrection target
+must not become a foe just because a living-heal predicate rejects it.
+Required new input: resolved semantic recipient scope and relationship at
+payment, independent of range, living-heal restrictions and incidental UI
+selection; validate source/target generations within the payment lock.
+
+Effect lifecycle
+Registry::newest_skill in gw_effect_registry.h accepts an alternate skill ID,
+so newest_skill(owner,1952,now,2095) selects one current alias. Registry::active
+and newest_skill enforce applied <= now < expires. Registry::matches checks
+full instance/actor/generation owner identity. Validate self cause, enchantment
+category, canonical rank/duration and finite expiry before applying reduction.
+Replace::same_skill replaces only equal IDs, so it does not implement faction
+alias replacement. Replace::category would erase unrelated enchantments and
+is unsuitable. Stage registry copies, remove only both Selfless aliases, apply
+new entry, publish removal/addition receipts and commit together. Reuse normal
+health_effects/enchantment duration/strip/death/transfer paths; do not create a
+Runtime-only bool which survives stripping. complete_simple_enchantment in
+gw_world_protective_spirit.inl is a useful transaction/publication pattern,
+but its compile-time skill switch and same-skill cleanup need explicit review.
+
+Rank and duration
+gw_progression.h:63-72 maps faction skill IDs to account tracks 5 and 6, but
+currently omits 1952/2095. Add them explicitly alongside their faction peers.
+Runtime gw_skill_casting.h:870-872 must also recognize both as allegiance
+skills, require rank <=12, reject PvP and store the admitted faction rank.
+Do not use attribute 51's zero fallback as title rank. gw_save_yourselves.h
+uses a title table capped at rank 6 rather than /15 native interpolation.
+Its table cannot establish Selfless duration. The native row's 15..20 endpoint
+metadata plus one captured 20-second effect cannot determine lower-rank
+durations, rounding or title cap; obtain an authoritative historical formula
+or native title scaling consumer before implementing that mapping.
+
+Recommended authority boundary
+Create one spell admission/payment request carrying reviewed skill/copy,
+source scope, resolved recipient scope, time, catalog cost and typed glyph
+state/lease context. Under one World lock settle resources/effects, classify
+the recipient and active Selfless alias, compose only established modifiers,
+then debit through the existing ordinary/overcast/typed glyph authority.
+Keep modifier computation pure and keep all mutable facts current at debit.
+Do not cache a Selfless discounted quote across unlocking. The standalone
+quote is one additive modifier stage, not an authoritative payment service.
+
+Necessary focused tests
+1. Rank track mapping, rank 0/6/12, opposing faction exclusion, PvP rejection.
+2. Both IDs, both aliases present without double discount; reapplication,
+   exact expiry, stripping, death and generation/instance changes.
+3. Other-player and reviewed NPC allies, self, foe, unknown, untargeted and
+   self-centered spells with unrelated UI target; allied resurrection target.
+4. Zero and 1/2/3/5/10/25 costs; free signets, glyphs and attack exclusions.
+5. Atomic payment after strip/expiry and insufficient Energy; no charge on
+   rejected scope; exact fractional balance and Mind Wrack reaction behavior.
+6. Legacy Lesser Energy and typed Energy/Renewal glyph interactions, Zephyr
+   surcharge and overcast payment using established order evidence. Include
+   order-sensitive Divine Spirit minimum-one cases rather than assuming they
+   commute with a saturating additive reduction.
+7. Completion/interruption/cancel, recharge, body553 single publication,
+   enchantment removal and normal shared spell reactions.
+
+Existing reference suites: divine_spirit, divine_spirit_world,
+divine_spirit_payment; elemental_glyphs_policy/world/payment/cast;
+quickening_zephyr_cast/world; overcast_activation/world; progression.
+Only the earlier detached selfless_spirit_policy executable was built/run.
+This review does not alter any production files, tests, checkpoint or clients.

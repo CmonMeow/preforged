@@ -1,0 +1,41 @@
+Envenom Enchantments936
+=======================
+Archived Envenom_Enchantments.html:remove one enchantment;Poison3..10seconds
+for EACH REMAINING enchantment. Duration is additive,not one fixed application
+per removed enchantment. Pinned2022 row:Necromancer Curses Spell,5Energy,1s
+activation,.75s aftercast,20s recharge,caster1622,target sentinel2077. Rank12
+Poison quantum9s;rank20 extrapolates12s. Zero remaining enchantments means no
+new Poison. Reapplication follows existing condition rules and never shortens
+an already longer Poison.
+
+World settles clocks/Health,validates exact hostile scope/plane/range1248/
+navigation,ends newest enchantment,and counts active remaining owned enchantments
+at completion. End reactions precede counting and condition application;only
+living targets receive Poison. Shared commit_conditions handles Fragility and
+Fevered boundary propagation. Maximum-duration clock/allocation preflight uses
+the existing128-entry defensive registry capacity,not a claimed retail cap.
+NPC selection/removal and condition preflight happen on a proposal,but commits
+use current owned actor. Unowned effect counts and unknown ending semantics are
+rejected;NPC condition immunity skips Poison while retaining valid removal.
+Caster1622 is published once for completed valid effects,including no-op target.
+
+Tests:envenom_enchantments ranks0/12/20,0..4 initial enchantments,exclusive
+Poison expiry,newest one only,no Bleeding/source reward,forged plan rejection,
+existing longer Poison,Fragility17,Fevered propagation with correct duration,
+completion-time extra enchantment,cancel/interrupt/target replacement/missing
+hook,5Energy payment and native20s cooldown. Shared actual NPC214 fixture
+verifies sole-enchantment removal causes no Poison and emits caster1622.
+
+Frozen evidence:20261017-npc-refresh-2 packets-1360-15821281.jsonl lines106775,
+106782..106784 show targeted cast,completion,recharge15,caster1622. Offline
+original2022 cast/body consumers and immutable receipt bytes verified;input,
+tool,wiki and client SHA in build/reports/envenom-enchantments-native-2022.json.
+Captured15s differs from pinned20s;modifier/balance context is unproven,so20s
+is retained. Receipt does not establish remaining enchantment count or Poison
+duration. Actor/model/asset services stubbed;rendered acceptance remains open.
+
+Other gaps:unknown NPC positive endings,NPC positive-Poison integration fixture
+with multiple owned enchantments,NPC casters,retail end-reaction/count ordering,
+all exotic condition interactions. Source binding is not complete visual QA.
+
+Validation:eight freshly rebuilt native suites pass(envenom_enchantments,rip_enchantment,signet_disenchantment,lyssa_balance,gaze_contempt,enchantment_removal,necromancer_enchantment_removal,fevered_dreams_world_spread).69 tooling tests,native consumer verifier and Release server_host pass. Fixed baseline273source-bound/360pending,696missing baseline captures. Latest hunting list remains separate. Official capture continues;new packet tick52075031 and world NPC observations read without modifying/stopping either logger.

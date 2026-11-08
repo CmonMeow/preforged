@@ -1,0 +1,36 @@
+Completed official skill-session review (fixed checkpoint)
+
+The 2026-10-23 packet and world logs for session 54796 are preserved in
+data/captures/skill-checkpoints/20261024-all-completed. The snapshot and the
+original logger files have identical SHA-256 hashes:
+  packets-54796-275153171.jsonl
+    CA2AA5F5CC8B80A1D3708F8B83859D8F3BDC39C5A0014B59A5755F5379144D33
+  world-54796-275142046.jsonl
+    5B449FD239630918DCA0EA468A470B53F5A615D10DDA3A44CEFF8BCD166402A4
+
+Compared with the 20261023-cumulative-skills audit, this session adds 896
+locally attributed skill starts across nine skills, with no newly observed
+obtainable skill IDs. Starts / finished deltas:
+  Ebon Hawk 1374: 202 / 188
+  Stoning 171: 197 / 176
+  Glowstone 1661: 138 / 129
+  Aftershock 174: 95 / 90
+  Shockwave 937: 92 / 87
+  Earth Attunement 169: 64 / 61
+  Aura of Restoration 180: 47 / 47
+  Death's Charge 952: 33 / 33
+  Aura of Restoration (PvP) 3375: 28 / 28
+
+All nine currently have source bindings. A start/finish count is evidence of
+use, not proof of complete mechanics, animation, client rendering, or an
+accepted hit. The current source audit covers 679 locally activated obtainable
+skills: 366 bound in source, 313 awaiting binding, and 650 without local
+activation evidence. See data/skill-capture-plan for the current partition.
+The official client and logger were not touched during this review.
+
+Camera-shake corpus check: tools/skills/audit_aftershock_session.py verifies
+the fixed packet hash and all 520 modern opcode-70 shake packets. Every packet
+encodes strength 16.0 and duration 0.25 seconds, matching the native 2022
+opcode-69 packet fixture in tests/skill_casting.cpp. The check passed, as did
+the existing Aftershock, casting, and Signet of Sorrow focused native tests.
+Recipient roles and rendered camera movement remain unverified.

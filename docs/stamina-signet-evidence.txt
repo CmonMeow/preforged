@@ -1,0 +1,45 @@
+Signet of Stamina 1411 — source-bound cast, Health and hit lifecycle
+
+The immutable 20261024-all-completed checkpoint contains two local completed
+casts at packet lines 408308..315 and 408604..611. Both show cast start,
+20-second recharge, finish, caster body1544, an indefinite modern opcode65
+status with effect70, and a maximum-Health publication of450. That number is
+observed; the packet window alone does not establish the character's base
+Health or prove that the signet caused the entire difference.
+
+The pinned2022 client row gives Strength rank scaling 50..300 maximum Health,
+0.25-second activation, 0.75-second aftercast, 20-second recharge and body1544.
+The local wiki says the signet ends after a successful attack hit. The offline
+verifier tools/protocol/stamina_signet_2022.py hash-checks the fixed packet
+file, wiki and pinned client, matches twelve exact receipts, and executes the
+native cast and body consumers with stubbed assets. Report:
+build/reports/stamina-signet-native-2022.json. This is not rendered-client
+acceptance.
+
+src/runtime/gw_stamina_signet.h provides a checked ranked plan and a scoped
+server-qualified-hit ending policy. The bonus joins the existing temporary
+Health authority, so equipment/morale changes, Deep Wound, Endure Pain and
+death use the same maximum-Health ledger. Runtime admits the ordinary 0.25s
+cast and 20s recharge. The production hook stages the owned effect, then
+publishes body1544, pinned2022 indefinite opcode64 status and updated Health
+after cast completion. An actual successful hit ends the exact owned effect;
+misses preserve it. Refresh, full vitals reset, late-joining player status
+and permanent-capacity resize are covered by World tests.
+
+The serial Release server host builds and eight freshly rebuilt focused and
+neighbor suites pass, including Endure Pain and Defy Pain regressions. The
+offline verifier passes twelve fixed capture receipts and native cast/body
+consumers. Tested host SHA256:
+8a0a921b2c27f67a25e092adc316e1f1e2b46bf4888f5c5b462096d176af1733.
+World test SHA256:
+114156b5cdd8c6aca9db7ea4053550eb2da36ff070c7f7043a49cf0fa490f594.
+Cast test SHA256:
+0f9a49a7788a91b0f8de044874cb847bbf7a5f4fb596d250aa027f487c1061bd.
+Source header SHA256:
+21d202c84652cfe19b1db749c9b04868f12941fd24673396af09630ef188a990.
+
+This is a source binding, not rendered-client verification. NPC casters,
+retail multi-recipient attack ordering, indefinite-status opcode64 client
+acceptance and full strip/replacement behavior remain to be checked. The
+reported450 maximum in the capture is not independently attributable to
+the signet without the original base Health context.

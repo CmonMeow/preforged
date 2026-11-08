@@ -1,0 +1,54 @@
+Frozen official NPC action replacement evidence (2026-10-22)
+
+Reproduce: python tools/ai/audit_attack_spell_replacement.py
+Output: build/reports/ai/attack-spell-replacement-evidence.json
+The tool hashes both archived sources against the existing reviewed sequence
+report, reads exact raw lines, and verifies direction/completeness/action fields.
+It touches no live logger files, captures or game processes.
+
+Frozen packet source:
+data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl
+SHA256 a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02
+Frozen world source:
+data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl
+SHA256 1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6
+
+Observed concrete capability
+12 hostile NPC sequences contain ordinary-start, ordinary-stop, spell-start,
+with stop and spell-start at exactly the same recorded tick. Counts: seven
+Bandit Firestarter/Flare194; four River Skale Brood/Ice Spear214; one Ice
+Elemental/Frozen Burst212. Modern analysis opcodes160/159 are NOT 2022 wire IDs.
+
+Strong same-source example: Bandit Firestarter lifetime53:161:1, map146,
+model1420, level1, allegiance3; identity joined from world line14097.
+packet141435 tick87181343 fields[160,4,161,31,0]: ordinary start.
+packet141447 tick87182109 fields[159,3,161,0]: ordinary stopped.
+packet141448 tick87182109 fields[160,60,161,31,194]: Flare started.
+Observed ordinary start-to-stop766ms. Exact source lifetime is known; target31
+generation is not known in this interval. The JSON retains raw hex and all12
+cases, including Firestarter stopped durations93/203/281/312ms immediately
+before subsequent Flare starts. These are action observations, not a windup
+constant or proof of why an ordinary action stopped.
+
+Next concrete implementation boundary
+drive_npc_ordinary_locked currently returns true for every pending ordinary
+windup before either caster driver can examine reviewed spells. It can express
+stopping for invalid geometry/control, but cannot deliberately replace a pending
+ordinary action with a now-admissible reviewed spell on that same tick.
+An explicit reviewed replacement capability could fill that gap: preflight an
+exact known spell, current resources/disable/range/target, cancel the owned
+ordinary token and ledger only after admission can succeed, then begin/payment
+under the same lock. This is a proposed host policy inferred from demonstrated
+action transitions. Packets do not prove universal spell-first priority,
+resource values, readiness triggers, cancellation cause or priority weights.
+
+Separate target-switch constraint
+Blood Fanatic source lifetime56:39:2: packet152078 tick87582375 starts skill155
+on target lifetime56:212:1; packet152127 tick87584406 starts ordinary attack on
+target lifetime56:203:1,2031ms later. Both target lifetimes remain published.
+World lines15254/15259 (epoch56,instance_ms221732/223732) show source and both
+targets stationary on plane36; source-to-old-target about76.5 units and
+source-to-new-target about61.7 units. This constrains future switch policy
+research but does not prove the old target alive, lower Health/armor, a nearest
+rule, or that switching was voluntary. Do not turn these two distances into a
+retail score or replace current sticky-target policy on this evidence alone.

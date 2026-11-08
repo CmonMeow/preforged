@@ -1,0 +1,44 @@
+Discharge Enchantment1347
+==========================
+Archived Discharge_Enchantment.html:remove one enchantment;recharges20..50%
+faster if target foe is hexed. The recharge predicate does not require a
+successful enchantment removal. Pinned2022 row:Mesmer Inspiration Spell,
+10Energy,1s/.75s,15s base recharge,caster1604,target sentinel2077.
+
+World returns an EnchantmentRemovalOutcome with target_hexed captured after
+Health/effect settlement and before removal/end reactions. Existing bool API
+remains supported for old skills. Runtime1347 requires the outcome callback,
+so a legacy bool hook cannot silently discard the conditional recharge fact.
+Production gw_auth binds it directly to the same World transaction. Exact
+hostile scope/plane/range1248/navigation and target clocks are enforced. NPC
+owned hexes are queried;an unowned hex presentation bit is unknown and rejects.
+Other unknown NPC positive endings remain unsupported. NPC214 fixture removes
+real owned regeneration and verifies returned owned Fragility-hex fact.
+
+Recharge:intrinsic factor1-percent/100 joins ordinary modifiers before one final
+nearest-second rounding,matching existing native228 integer-second scheduling.
+The ordinary50% cap retains the documented single-effect exception;PvE Mesmer
+Fast Casting remains a separate factor outside that cap. At rank12:15*.56=8.4,
+round8 seconds. Rank20 intrinsic60% alone retains6seconds. These are declared
+stacking policies supported by archived Recharge.html;focused retail combined-
+modifier captures remain open. Existing skills default to intrinsic1 unchanged.
+
+Immutable capture20261017-npc-refresh-2,packets-1360-15821281.jsonl38653,
+38661..38665:targeted cast25->30,15s base,completion,caster1604,reset0,then12s
+at tick16624968. This is consistent with rank-zero20% reduction,but the exact
+rank/modifier state and hex timing are not independently proven. Final12s is
+published by Runtime through existing cooldown authority rather than replaying
+the intermediate15/0 sequence. Rendered UI acceptance of that equivalent final
+state is open. Original2022 consumers executed offline with actor/asset stubs;
+report build/reports/discharge-enchantment-native-2022.json pins all input hashes.
+
+Tests:player hex/no-hex and enchantment/no-enchantment matrix,forged plan,
+no rewards,caster1604;Runtime completion-time hex addition/exclusive expiry,
+control/retired target/missing outcome hook,Energy payment,recharge packet and
+exact deadline;modifier rank/FastCasting/PvP/Mantra matrix. Shared NPC214 test
+and existing cast_timing/removal suites cover integration regressions.
+
+Open:other NPC positive endings,NPC casters,retail combined modifier/reaction
+ordering and rendered acceptance. Source binding is not complete mechanics QA.
+
+Final validation:nine freshly rebuilt native suites pass(discharge_enchantment,cast_timing,signet_disenchantment,envenom_enchantments,rip_enchantment,lyssa_balance,gaze_contempt,enchantment_removal,necromancer_enchantment_removal). Recharge test uses16 fixed expected timing cases,not a duplicate formula.69 tooling tests,native consumer verifier and Release server_host pass. Fixed baseline274source-bound/359pending,696missing baseline captures. Latest hunting list and official logging untouched.

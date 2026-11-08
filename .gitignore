@@ -1,0 +1,27 @@
+# Build products and local runtime state
+/build/
+/bin/
+/data/
+
+# Each player must provide their own Guild Wars data archive
+Gw.dat
+gw.dat
+
+# Local IDE and operating-system files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+
+# Crash dumps and private capture data
+*.dmp
+*.etl
+*.jsonl
+*.pcap
+*.pcapng
+*.sqlite-shm
+*.sqlite-wal
+/tools

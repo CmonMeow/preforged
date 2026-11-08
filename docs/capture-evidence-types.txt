@@ -1,0 +1,26 @@
+Capture evidence types
+======================
+
+Audit source:tools/skills/audit_packet_checkpoint.py.
+All records come from hash-verified immutable checkpoint files.
+
+Activation:decoded GenericValue159/160 types48,50,60. These alone enter local
+activation counts,with ownership only inside paired world identity windows.
+Damage attribution:GenericValue159,type10 identifies a skill and recipient,
+not the caster. It is retained separately.
+Effect application:modern decoded66,24bytes;skill at word2,actor at word1,
+attribute word3,effect ID4,duration bits5. This is not a cast.
+Upkeep application:modern decoded65,24bytes;caster word1,receiver word2,
+skill word3,effect type4,effect ID5. Zero receiver is preserved;no target is
+invented. This is not a cast. These layouts follow the local GWCA AddEffect
+and AddExternalBond struct roles;opcode numbering is capture-version-specific.
+
+Nonplayer hunting omits IDs observed through any of these evidence types.
+Their activation/damage/effect counts remain distinct in nonplayer-capture-plan.
+An effect-only sighting does not satisfy baseline local-activation coverage,
+identify every NPC caster,or prove complete mechanics/animation behavior.
+
+Siege Devourer2504:two upkeep applications in packets-110488-195213578.jsonl,
+lines1336120 and1376599. First is in a known map649 window;second has no paired
+active map identity. Both list caster32/receiver0,with effect IDs150 and116.
+See build/reports/siege-devourer-2504-evidence.json. Neither is a cast start.

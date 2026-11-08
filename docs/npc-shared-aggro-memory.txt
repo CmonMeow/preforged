@@ -1,0 +1,45 @@
+Remembered foes during a hostile encounter (2026-10-22)
+
+Observed implementation gap
+The Flare/elemental drivers remember only one selected foe. When that foe dies
+or leaves follow range, npc_caster_candidate_locked searches only acquire range.
+Example with authored acquire1000/follow2000: A enters at400 and B at800, B
+moves to1500, then A moves to2500. Existing selection forgets B and starts
+returning despite B remaining inside follow range after taking aggro.
+
+Local Aggro.html oldid2655578, Shared aggro, states that one ally running away
+does not end the encounter, and everyone who took aggro retains it until the
+team breaks aggro, unless dead. Its Breaking aggro section documents leash,
+large separation and death. Foe_behavior.html oldid2656731 identifies nearest
+and weakest targets without quantifying their relative weights. These sources
+support encounter memory; they do not establish a universal priority formula.
+Current local source SHA256 values: Aggro.html
+ecd48c32198979d9ddb68f125e68c4f83f4ccb353abc9bbbbccc18f05e2610bc;
+Foe_behavior.html
+27ffaed2f3f99aa152e6db56f7cc7b3bb75370ae111d80e45f917bb038e8009f.
+
+Prepared standalone helper
+gw_npc_aggro_memory.h retains exact target lifetimes first observed inside
+acquire range, while allowing those remembered foes to be selected within
+follow range. Newly encountered foes outside acquire do not join implicitly.
+A complete authoritative player snapshot retires missing/recycled generations;
+dead, unpublished, other-plane and known out-of-follow observations retire a
+foe. Unknown distance keeps established memory without becoming a selectable
+position. Invalid/duplicate observations fail before state changes. Selection
+uses the existing authored nearest-first ordering and deterministic scope tie.
+
+The helper is wired through FlareController into both live caster drivers and
+their shared candidate snapshot. Integration preserves the current selected
+foe while eligible, observes entrants before switching, clears memory on leash
+return/death, and defers return if remembered distance is unknown. Full player
+snapshots retain exact lifetimes; future clocks preserve existing memory but
+cannot acquire or select unsupported positions. Ordinary fallback uses the
+same owner controller's selected foe. tests/npc_shared_aggro_world.cpp covers
+both caster paths and ordinary fallback with synthetic zero-Energy fixtures.
+tests/npc_aggro_return_world.cpp additionally checks future-resource-clock
+deferral, eventual reselection, departure during deferral, and clearing the
+old encounter across a completed leash return. Its movement fixtures wait for
+actual player route arrival rather than treating World::move as teleportation.
+Group/chain aggro, player attacks beyond acquire, faction/party rules and
+weakest-target weighting require separate supported authority. No packet claim
+or fabricated retail radius follows from this helper.

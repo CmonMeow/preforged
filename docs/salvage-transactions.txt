@@ -1,0 +1,74 @@
+Salvage transaction proposal
+
+src/runtime/gw_salvage.h supplies a native C++ atomic proposal; it does not
+pretend an arbitrary official item has a known recipe. A reviewed outcome
+provider supplies complete output definitions and an exact inventory snapshot.
+Material extraction removes the original single source. Component extraction
+can retain a source whose identity, placement and base fields are unchanged;
+only its modifiers may change. Perfect kits require retention and cannot
+extract materials. Basic kits cannot extract components or rare materials.
+
+Kit debit uses the existing identification::debit_kit: 2458 low byte is remaining
+uses, independent of quantity. Nonexhausted kits publish detail351 plus quantity
+312 refresh. Exhausted kits detach332 then delete348. New outputs receive actual
+owned identities and carried placements; sources are detached/deleted only in
+the proposal. No mutation occurs until the caller commits the complete proposal
+through its existing inventory revision/CAS and identity projection.
+
+An empty carried slot is required before source/kit removal; this bounded
+implementation reserves separate slots for each output and does not yet merge
+outputs into existing stacks. Pending tracks kit, source, revision and expiry;
+travel/disconnect/cancel must clear it. The caller must bind owner and character
+lifetime as it does for upgrades. No packets should be emitted before commit.
+
+Native2022 7c4010 reads 25e applicability argument1 as kit tier; invsalvage
+852c30 explicitly removes the materials choice for tier6. Existing reviewed
+Toolbox decoder and native item refresh fixtures establish charge representation.
+Exact native117..121 and354..358 UI sequencing is documented in
+ tools/protocol/item-transactions-2022.txt.
+
+Live salvage remains unavailable until an authoritative source catalog supplies
+actual kit definitions, actual output definitions/yields and component removal /
+retention outcomes. The server does not infer them from a model or item name,
+and synthetic test assets are never installed into the live inventory.
+
+Reviewed component provider and live handler
+
+FW_GW_SALVAGE_CATALOG selects an optional reviewed catalog file. Each noncomment
+line contains a lowercase 64-character evidence SHA256, TAB, and hex-encoded FWI
+profile. The profile contains exactly three synthetic template identities:
+1 source definition, 2 retained definition, 3 real extracted component definition.
+These IDs are catalog references, never installed as live owned identities.
+Retained base fields must equal source; exactly one existing modifier is removed.
+Extraction definition must be type8 quantity1. Duplicate source recipes reject.
+Invalid catalog loads leave the previous complete catalog intact. An evidence
+hash records provenance; review must confirm the actual evidence supports the
+asset mapping before adding a production record.
+
+117 opens native354 choices only for an exact owned source match and actual
+perfect kit, with a reserved unplaced preview definition. 121 selection0
+recomputes the outcome under unchanged inventory revision, commits the complete
+character record through CAS, then publishes actual kit/target/output packets
+and native357. Native119 acknowledges completion; native356 closes the session.
+118, expiry, invalid selection and conflicts cancel and delete previews. Travel
+and disconnect discard the function-local session. Upgrade and salvage previews
+cannot coexist. Basic/expert retention probabilities and material recipes remain
+unreviewed and unavailable; no chance is guessed. No production recipe is added
+until its actual captured definitions have been reviewed.
+
+Catalog limits: regular files only, 16MiB maximum file size, 65536 characters per
+line and 4096 recipes. Oversize input rejects before decode. The provenance hash
+is a label for review evidence, not automatic verification of an evidence file.
+Matching intentionally preserves customization and profession metadata: a
+recipe captured for one customized owner will not apply to a different owner.
+The host also validates an explicitly configured catalog before opening listeners.
+The same validation runs during world session setup;
+without configuration the provider has zero recipes and requests explain the
+missing reviewed data rather than promising success.
+
+Providers are now immutable NetworkManager-owned snapshots. Configuration files
+are loaded exactly once during manager construction before listeners start;
+sessions borrow const providers. File or environment changes while running do
+not affect existing or future sessions. Restart the host to adopt reviewed
+catalog changes. Configured invalid data prevents manager construction; absent
+configuration logs a zero recipe count explicitly.

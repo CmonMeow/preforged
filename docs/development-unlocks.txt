@@ -1,0 +1,43 @@
+Explicit private development character grant
+
+In-game administrator mode: /.gm toggles the mode for an account authorized
+in config/private-admins.txt. The mode is held by the server, so death, map
+transfers and replacement world connections retain it. Another /.gm disables
+it; restarting the server resets it. Authorization remains required on each
+world connection. /die applies self-death to the current owned live actor;
+it cannot choose another player's ID. It cancels active casting and uses the
+same authoritative corpse cleanup as lethal skill damage.
+
+Only /.gm has a leading dot. Other implemented development commands are
+/allskills, /s <map ID>, /who, /disconnect, /die and /kill [target]. /kill accepts
+a same-map player ID or an exact character name (case insensitive); without an
+argument it kills the caller. Missing, ambiguous, departed and dead targets
+are rejected. NPC death is not implemented by this player-only command.
+Unauthorized accounts receive the ordinary Unknown command response.
+
+character_unlock DATABASE ACCOUNT_HEX CHARACTER_HEX invokes the native Accounts
+operation gw-character-development-unlock. Stop the private host before running
+this administrator tool; it does not contact any official server or client.
+The caller chooses a verified account-owned level20 character. Ordinary login,
+other characters and official account captures never implicitly trigger grants.
+
+Learning merges the audited 1329 obtainable base player skill IDs from the local
+May2021 wiki baseline, filtering each pinned2022 record against the account's
+campaign entitlements. This includes94 character-only PvE skills. The separate
+154 automatically mapped PvP variants, Codex-only Charm Animal3068, NPC icon
+aliases and arbitrary internal catalogue entries are not directly learned.
+tools/protocol/generate_player_skill_whitelist.py reproduces the native array
+from build/reports/skill-coverage.json; the header records the article manifest
+SHA256. Neither generated header nor tool output contains account identity.
+
+Current primary/secondary professions, eight bar slots, learned copy counts and
+base attribute ranks survive. Available secondary choices expand only to owned
+campaign professions. The attribute quest bonus becomes30, so level20 total is
+200. PointsSource development3 and the database source marker explicitly identify
+this as development progress, not an observed official quest reward. This does
+not modify experience, level or the separate skill-point currency.
+
+Both profiles commit in one immediate SQLite transaction with a final deadline
+check. Repeating an already complete grant changes neither profile revision.
+Account ownership, summary/profile mismatch, non-level20 targets and invalid
+existing allocations reject the grant before committing.

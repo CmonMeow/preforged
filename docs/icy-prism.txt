@@ -1,0 +1,46 @@
+ICY PRISM903: IMPLEMENTATION AND EVIDENCE
+2026-10-20
+
+Implemented
+- gw_icy_prism.h validates pinned2022Elementalist/WaterMagicSpell row:10Energy,5Overcast,1sactivation,750msaftercast,5srecharge,15..75cold primary and secondary damage,caster2077sentinel,target1251.
+- Rank0..20scaling is15+4rank for each damage component. Secondary damage belongs to other nearby foes only;primary is selected exactly once.
+- Scoped registry determines whether the primary has an active WaterMagichex. A generic hex/status bit or a Mesmer slow is not sufficient.
+- Completion-time candidate selection plan applies nearby252inclusive boundary,hostility/living/damageable/plane filters,known cold-armor profiles,unique actor identities and exact primary lifetime/position/registry checks. Unknown in-range selected armor rejects the whole proposal;irrelevant/outside actors need no armor profile.
+- Forged damage/type,stale or duplicate scope,missing primary,registry mismatch and invalid ranks reject.
+
+Evidence
+- Fixed checkpoint20261017-npc-refresh-2,packet1360lines188935,188941..188944:targeted local activation,5srecharge,finish,target1251,primary damage feedback.
+- Original native cast/particle consumers verify1sactivation and target identity;asset services are stubbed.
+- Local Icy_Prism.html hashed alongside exact native fields and frozen manifest receipts inbuild/reports/icy-prism-native-2022.json.
+- Existing capture does not prove conditional splash/recipient set or actual Overcast payment. Feedback-0.03125is consistent with15/480but is not independent target maximum/armor proof.
+
+Validation
+- icy_prism_policy passes all ranks and15status/time selection cases plus scope/armor/forgery guards.
+- Positive WaterMagiccase usesMindFreeze209. ImaginedBurden76is retained as a negative case;the test's initial incorrect classification was corrected after checking native row76(Mesmer/Illusion),not by relaxing the predicate.
+- Offline native/packet verifier passes5immutable receipts and exact fields/original consumers.
+
+Current integration
+- Normal Runtime/gateway binding now connects player casts to scoped player/NPC targets through stage_icy_prism. The shared activation transaction pays10Energy and adds5Overcast atomically;missing hooks reject before payment.
+- World selection and armor/protection preflight are implemented. Native timing is1sactivation,750msaftercast,5srecharge;only captured primarybody1251is published.
+- Remaining verification:conditional retail splash evidence,secondary visuals,rendered client QA,NPC caster AI and broader moving-recipient/lethal callback interactions.
+- The stages below preserve the implementation history;their unsupported/pending statements describe those earlier stages.
+
+2026-10-20 All-recipient cold damage preflight
+Added prepare_icy_prism_damage. It validates the canonical selection plan,exact selected/input set,unique actor identity and generation,primary presence,known cold armor,level and recipient Health. It resolves copied Actors through the existing combat::apply cold-damage authority after condition armor adjustments;returns one hit per selected actor and never mutates input Health. Missing/stale/invalid recipients reject the complete batch,not a partial result. Primary damage is selected once;expanded recipients use their separate secondary damage field.
+New icy_prism_damage tests pass known60/100armor,flat15protection,double incoming damage,cold protection50percent,CrackedArmor,unknown armor/stale generation/dead actor/nonfinite protection/duplicate input/forged-selection rejection,and unchanged original Health. A real LiveActor cold hit also passes through existing NPC Health authority for63damage. Rebuilt icy_prism_policy and icy_prism_damage pass2/2.
+World integration remains unfinished. NPC actor effects start at0in the authoritative LiveActor constructor (gw_npc_combat_catalog.h),rather than importing captured visual hex flags;the next World stage should expose/read the exact current owned registry under the instance lock,not invent a WaterMagic state from appearance. Actual NPC mitigation must still use its existing incoming-damage authority at commit. No normal903binding,Overcast payment or rendered acceptance claimed. Server executable unchanged by this standalone proposal stage;official logging untouched.
+
+2026-10-20 Trusted World integration
+Added stage_icy_prism in gw_world_icy_prism.inl. It settles the shared event frontier,source/primary resources and NPC movements,reads the exact player or NPC owned hex registry at completion,checks source/target scopes/range/plane/navigation,and selects conditional nearby recipients. Selected resources are settled before copy-only batch damage preflight. NPC copy preflight additionally invokes existing LiveActor damage authority for resource/protection reactions. Commit re-resolves scoped actors and current protection after earlier callbacks;no old NPC copy is assigned over live state. Only the captured primary target1251effect is published/deferred;secondary visuals remain an evidence gap.
+Added a scoped read-only NPC hex_registry_snapshot;it exposes the owned authoritative registry,not captured appearance flags,and rejects sampling behind an already-future Health clock. NPC clocks must reach the event frontier before the World stage admits their damage. Explicit primary/source survival and Water-hex predicate checks run again after selected settlements.
+New icy_prism_world suite passes12player/NPC/status/profile combinations:ordinary primary-only hit,activeIcePrison210splash,non-WaterSoulBarbs,exactIcePrison expiry,unknown selected secondarycold profile refusing all hits,and unknown unselected profiles accepted. Nearby252inclusive/exclusive and friendly filters,no doubleprimary,no repeatedtick damage,ShieldingHands,stale/forged rejection and exactlyone deferred primary body pass. Corrected earlier documentation labeling of209:it is MindFreeze(a valid WaterMagicpositive policy case);World prerequisite tests useIcePrison210.
+Initial compile exposed plane-index narrowing;internal selection plane types now match the World'ssize_tplane indices without truncation. Focused World suite rebuild/pass;server/neighbor build41776running. Runtime/gateway10Energy+5Overcast integration,rendered/conditional retail verification,NPC caster AI and broader callback/moving-recipient/lethal acceptance remain open. Production903stillunsupported;fixed counts unchanged. Official logging untouched.
+Verification completion: serial build41776 terminated successfully;server_host and neighboring suites rebuilt. icy_prism_world,icy_prism_damage,icy_prism_policy,ice_prison,npc_elemental_world,action_hex_world pass6/6. Frozen native/packet verifier passes5receipts. Fixed audit/publish remains633captured/289source-bound/344awaiting/696missing. Trusted World damage is connected;production903Runtime/Overcast binding and rendered acceptance remain pending.
+
+2026-10-20 Normal casting integration verified
+Icy Prism903 is bound through the production Runtime/gateway to scoped World damage. The shared activation transaction pays10Energy and adds5Overcast;cancel/interrupt do not refund. New icy_prism_cast covers26cases across player/NPC targets:bare/active/expired WaterMagic hex,missing hooks,insufficient Energy,cancellation,interruption,changed generation/range,hook removed after payment,MindWrack payment death and Backfire completion death. Checks include activation/aftercast/recharge timing,one payment,conditional secondary damage and exactlyone primary1251body after finish.
+Serial build91693 exited0:server_host,icy_prism_cast,action_hex_cast,energy_hex_cast,overcast_world rebuilt. All7focused suites pass;4coverage regressions pass. Native verifier passes5frozen receipts. Runtime source fingerprints include allruntime headers/inl,includinggw_icy_prism.h. Fixed checkpoint20261017-npc-refresh-2 audit/publish:633captured/290source-bound/343awaiting/696missing. This is source-binding progress,not complete skill/rendered certification. Secondaryvisuals,conditional retail splash evidence,NPCcasterAI and broader moving/lethal callback cases remain open. Official clients/loggers untouched.
+
+2026-10-20 Icy Prism moving and lethal recipient acceptance
+Expanded icy_prism_world with six additional cases. Player and NPC primaries killed by the hit still allow the selected nearby recipients to take damage;the primary target effect is published once,and NPC death credit is emitted once without repeated tick damage. Moving quest NPCs entering/leaving the252-unit splash radius resolve identically with and without an explicit tick before completion. The initial movement expectation incorrectly used the166-unit adjacent radius from another spell;at2s the NPC was still inside252. Corrected the fixture to3s,when it actually crosses the Icy Prism boundary;production code was unchanged.
+Serial build28757 exited0;allfour Icy Prism suites pass,including26normal casting cases. This verifies the current World paths,not retail secondary effect visuals or arbitrary callback combinations. Remaining:conditional retail splash evidence,secondary visuals,rendered client QA,NPC caster AI and broader callback/recipient lifetime combinations. Source-binding counts remain633/290/343/696 on the fixed implementation checkpoint. Official clients and loggers untouched.

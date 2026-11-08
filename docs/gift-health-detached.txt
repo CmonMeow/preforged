@@ -1,0 +1,69 @@
+Gift of Health1121 detached native checkpoint,2026-10-23
+
+Files:src/runtime/gw_gift_health.h,tests/gift_health.cpp,
+tools/skills/audit_gift_health_checkpoint.py. No shared runtime/CMake edits.
+No official/private process actions;official46120 and loggers untouched.
+1121 remains unbound. No capture checkpoint or historical report modified.
+
+Evidence:fixed20261022-cumulative-skills,packets-1360-15821281.jsonl,
+SHA25659e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6.
+Start294458:21665484,caster25,target28,skill1121. At21666218:
+294468 skill1121 recharge5s;294469 finish;294470 caster1259;
+294471 Health-fraction event55,target28,caster25;
+294472/294473 skills1119/1120 each receive10s cooldown. Both are Healing
+Prayers skills. Seven exact packet receipts/hash verified by detached audit.
+The734ms arrival gap is not an independently measured activation duration.
+Health fraction event is not converted to invented raw Health points.
+
+Pinned2022 catalog1121 validates5 Energy,.75s activation,.75s aftercast,
+5s recharge,Healing Prayers13,healing15..150,disable10..5seconds,caster1259,
+target sentinel2077. Local buildwars skilldesc-en.json1121 explicitly says
+target OTHER ally and disable all OTHER Healing Prayers SKILLS. Canonical
+rank0..20 plans return raw spell healing;Divine Favor remains a separate
+existing transaction and target healing modifiers are not bypassed here.
+
+Implemented detached independent disable authority keyed to exact current bar
+copies. It selects attribute13,including Signet of Rejuvenation887,excludes
+all Gift1121 copies,retains longer old disables,expires at the exact boundary,
+and rejects duplicate/replayed events,stale owner generations,regressed times,
+overflow,forged plans and malformed/duplicate bar entries. Explicit resets
+clear only selected copies and preserve completion replay watermark. No live
+bar consumer invokes it yet. Bar removal/reinsertion retains existing exact-copy
+rules;retail behavior for this edge is not established by the captured window.
+
+Validation:standalone MSVC C++20/EHsc/O2 build+run PASS;21rank plans and disable
+consumer scenarios passed. Test log:build/reports/gift-health-detached-test.txt.
+Evidence audit PASS7:build/reports/gift-health-checkpoint.json.
+Tested executable:build/reports/gift-health-detached.exe.
+Exact source/executable/report hashes:build/reports/gift-health-detached-sha256.txt.
+Source/tests frozen after final standalone verification. This is native C++
+mechanics testing,not native2022 retail executable or rendered verification.
+
+Integration required before normal1121 binding:
+1.Coordinate CMake registration/new World disable source ownership. Add this
+  source to joint disable revisions,authoritative max deadline/reset/retirement
+  consumers;query actual caster lifetime rather than Runtime cached timers.
+2.Add normal skill target policy:live allied other target within spell range,
+  learned/profession rules,5 Energy payment,.75s activation/aftercast,5s own
+  recharge;interrupted/failed casts must not be fed as accepted completions.
+3.Under World lock preflight raw heal through existing healing modifiers,
+  Divine Favor,precise Health authority and one completion-bar disable proposal;
+  commit Health and disable state atomically or discard both. Include full
+  health,dead/stale/out-of-range/nonally/self and modifier cases in World tests.
+4.Publish finish/caster1259 and real Health/recharge outcomes. Original target
+  resource2077 is a sentinel,not a target-body effect. Validate actual native
+  packet consumers and disable publication order against frozen evidence.
+5.Coordinate a serial Release host/test build and record production hashes.
+  No normal binding until required consumers complete. Rendered private-client
+  verification is a separate stage;official capture sessions remain untouched.
+
+Missing evidence/consumers:retail nonzero rank duration/heal magnitudes,raw
+healing versus Divine Favor,interrupt disable behavior,copied-slot/reset/bar
+replacement edges,World resource/disable atomic commit,Runtime routing,NPC
+caster handling,native2022 callbacks and rendered acceptance. No live mechanic,
+deployment or completed binding claim is made.
+2026-10-23 update: the detached-only conclusion above is historical. Gift of
+Health1121 is now bound to normal casting and World player/friendly-NPC heals;
+see data/skill-capture-plan/GIFT-HEALTH-STATUS.txt for current tests and the
+remaining rendered-client and modern/2022 timer-opcode verification gaps.
+

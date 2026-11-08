@@ -1,0 +1,29 @@
+Typed account faction profiles — 2026-10-09
+
+Account faction reads/saves now pass typed Identity/SaveFactions requests from
+NetworkServer through serialized deadline admission in NetworkManager to SQLite
+Accounts. Profile validation, account ownership, optimistic revision and final
+precommit cancellation checks are preserved. Offline adapters share the typed
+implementation. Removed the obsolete combined faction/character progression
+SQL branch; character progression had already moved to its own typed path.
+
+Four rebuilt tests passed: quest_accounts, network_lifecycle, progression,
+accounts_lifecycle. New isolated direct tests cover missing profile, nonexistent
+account, first-save rollback, successful commit and stale revision. Existing
+progression tests still cover faction caps, official profile imports and
+Imperial exchange. Award/exchange operations retain legacy dispatch for now.
+
+Not deployed yet. Current running host remains the verified typed progression
+build. Full build, deployment and native client Hero faction tab verification
+remain required. The overall architecture and gameplay goal is incomplete.
+
+Deployed 2026-10-09, host SHA256
+ca76a86b8b355b37277a04e68d7e1f29b288484b0f5822603646c358a8811eb6.
+All 126 rebuilt CTest checks passed (30.27seconds). Native client PID14684
+passed login, map55 entry, keyboard and ground-click movement, zero native pose
+disagreement and five-second survival. Hero faction display matches the previous
+build: Balthazar3455/85000, Kurzick1911/70000, Luxon0/65000,
+Imperial7500/135000. Skillpoints720 unchanged. Read path verified live; save path
+validated by isolated transaction tests, not by spending live faction.
+Screenshot typed-factions-hero.png and smoke report saved under build/reports.
+Official client PID5604 preserved. Award/exchange typed migration remains open.

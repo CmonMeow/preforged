@@ -1,0 +1,618 @@
+Well skill cast evidence (2026-10-24)
+
+The immutable20261024-all-completed capture has local cast/end pairs for
+Well of Power91, Well of Blood92, Well of Suffering93 and Well of the Profane94.
+tools/protocol/well_casts_2022.py checks their exact packet lines, ticks,
+bytes and source hash. It verifies each pinned2022 metadata row and executes
+the original2022 kind60 cast-animation entry with actor lookup stubbed.
+The four native cast events reach event code25; the verifier passes and its
+report is build/reports/well-casts-native-2022.json.
+
+Skill    cast line/tick       end line/tick        2022 cost/cast/recharge
+91       59602/16940468      59628/16941500       5 Energy/1s/15s
+92       59648/16942312      59660/16943250      10 Energy/1s/2s
+93       60491/16979593      60503/16980609      10 Energy/1s/10s
+94       61181/17019468      61197/17022406      25 Energy/3s/10s
+
+All four native rows have caster/target body sentinel2077. Other packets
+near completion include entity/position/field candidates, but these windows
+do not identify the consumed corpse, field owner or effect lifetime. The
+native cast event is not a ground-asset/rendered-client test. No Well mechanics
+were bound by this verifier. The next implementation step is a corpse-use
+transaction plus field entity/periodic effect authority and a separate native
+ground-spawn consumer probe. Skill91..94 remain in the missing-implementation
+list until those consumers pass.
+
+Tested SHA256:
+tools/protocol/well_casts_2022.py 0816BBBA552F743841890B2E3DBF5080039D909134783D2B0EF26929FCDE00C1
+build/reports/well-casts-native-2022.json 8FDECDA5DC5D8D7B8EFF0A94312F80E6FFFDD3A884EE8CE322DAF8BE28E9F8BB
+
+2026-10-24 corpse-use preparation: src/runtime/gw_well_corpse_cast.h now
+validates pinned cast cost/timing for all four Wells and prepares a scoped,
+generation/revision-checked corpse claim. Its copy-only consume operation
+rejects a recycled actor, moved corpse, stale revision or second use. World
+must still supply authoritative corpse eligibility and spell-range admission,
+then commit corpse consumption together with payment, recharge, field creation,
+periodic effects and packets. This is a staged native mechanic, not a normal
+cast binding or rendered-client proof. Registered Release test well_corpse_cast
+passes (all four skills at ranks0..20 plus stale/invalid cases).
+
+Tested SHA256:
+src/runtime/gw_well_corpse_cast.h 71E39177AE2040469C9D260AB821394C68DB52392F334AB228176E60EB101C80
+tests/well_corpse_cast.cpp 002ABE0AC131DF632BA163C6A0F6FF8D4473EE4E3B4C77EE38552AE19D272FCC
+build/tests/well_corpse_cast_test.exe 70205A21B4AE9E79A49158C92B2852E9E303D334347431B566E3008CF4B9C2C7
+
+2026-10-24 ground presentation evidence: frozen completion packets for91/92/93
+carry three same-position opcode161 effects each. The first two have actor0:
+skill91 resource173, skill92 resource175, skill93 resource176, plus common
+resource174. The third has caster25/resource900. The exact nine packet lines
+are59633..59635,59662..59664 and60508..60510 in
+packets-1360-15821281.jsonl. tools/protocol/well_ground_2022.py validates
+the manifest hash and executes all nine original2022 positional consumers,
+then checks the 2022 serialized bytes. src/runtime/gw_skill_particle_wire.h
+now provides well_ground_2022 for91..93 only; its Release byte test matches
+all nine captured-derived serializations. Fresh damage_fields regression and
+both Well tests pass (3/3). This is ground-packet and stubbed-consumer proof,
+not rendered pixels, corpse ownership, a persistent field entity or periodic
+effect mechanics. Skill94's frozen completion has no matching positional trio;
+its effect must be identified separately. Normal Well binding remains gated.
+
+Ground proof report: build/reports/well-ground-native-2022.json
+SHA256 tool CB13C253335B87DA1F66D823D5A2744E1A4A0F53663FB3FE057FAEFADA751F5B
+SHA256 report 2BC5BA259C4949B1C62B5175F929658C998475B2CC167CAFC69E2ABF116B0DA7
+SHA256 gw_skill_particle_wire.h 1AAAC46E39C54B10AA9C825000596ADBB1C6912A4BFDFFD204E279B4DA34DDC6
+SHA256 well_ground_wire.cpp 5564D4566296441F4F8097B3FCB55F2DDBB91736499DE120AC89EEDA7958CD9B
+SHA256 well_ground_wire_test.exe 8ACBC699AD3A1054ABF92E8494400CE3672DFC1F69970B43A6EF5B015001A18A
+
+2026-10-24 shared corpse exclusivity: CorpseReservations now admits a Well
+ticket for skills91..94 keyed by caster, corpse lifetime and a nonzero cast
+attempt. Quest tickets retain their original quest/cycle identity. A reserved
+or consumed corpse cannot be claimed across the quest/Well boundary; a
+recycled actor generation remains a different corpse. The ledger exposes an
+availability query and Well reserve/ownership/consume operations for a future
+atomic World completion. It does not infer corpse death, allegiance, range or
+field effects. Both the new Well reservation test and the rebuilt quest-NPC
+world regression pass; serial Release server_host builds successfully. This
+is shared production infrastructure, not an enabled Well cast.
+
+SHA256 gw_corpse_reservations.h 663B96F5FE34C85EB43A25BCE391422A7454F084F4ED3BA10636B6C13492B535
+SHA256 well_corpse_reservations.cpp 04F34695609835D5E77888D9E891DF5AC64A64F6AC04FD3F8A4B70C5FD127CB0
+SHA256 well_corpse_reservations_test.exe 1D53B37A50CAFF8D52203CD5D4B4B51D35FF4FB45DC6CCDAA81CBC6FF64FDFCE
+SHA256 npc_world_combat_test.exe 02A11782F0935C6FFE3097BCFE4C22114FB9544CD9B93C5DE4A11A27752A5A1F
+SHA256 server_host.exe 1B6EA9932258F90865418690009D55A9391F307F95FB04A18C1CEC0193D31B79
+
+2026-10-24 World corpse selection: a completed Well plan can now select the
+nearest available dead, damageable NPC on the caster's plane within a trusted
+range supplied by its caller. World checks the caster lifetime/aliveness,
+selects an NPC lifetime (never a client position), reserves through the shared
+quest/Well ledger, and calls a field-publication callback under the instance
+lock. A false or throwing publication releases the reservation; a successful
+one consumes it once. The range has not been measured against retail; no
+Well cast calls this path yet, so Energy/recharge, field entity, periodic
+effects and rendered-client acceptance remain incomplete. The callback must
+not re-enter World and must publish the paid cast and field atomically.
+The dedicated World test covers live/dead selection, stale caster, insufficient
+range, failed publication, nearest selection, and exhausted corpses. All
+three Well corpse tests now use throwing checks active in Release and pass;
+the Release server_host rebuild succeeds. Earlier test hashes below are
+historical receipts, superseded by the current test hashes here.
+
+SHA256 gw_world_simulation.h 0784A5207ACF201CEB172D547B07E033F749B9A5637FE4D2AD729AF7E8E9AD69
+SHA256 gw_world_wells.inl BC24E9C5C915D505B7B739437494EA56A2ED8BA4BDB5308E69249576B2CB98DD
+SHA256 well_corpse_world.cpp 760F44F80AFAF3B29DC3ED42F0DF769632F196CB71C2BED4E08E14D1B5148573
+SHA256 well_corpse_world_test.exe 5135B552ECE8A35DDDEF1D0A594D14A6C6547F52D148BBB8A6C340DD0B30D21F
+SHA256 server_host.exe 2E3CCBDE9B376E71F548D16C0BE04AA21688D192BD83C50E90C896E346D123D3
+Current Release test receipts (3/3 pass):
+SHA256 well_corpse_cast.cpp AD3088F2B5816BD3DBEEDA02B66DB135E6C324B5662989FB82BA398AEB912BEE
+SHA256 well_corpse_reservations.cpp F53A871DA15727F04F652C6A5CA55BFFFBBDF62F38BD5BC5749E19F4AEBAB67A
+SHA256 well_corpse_world.cpp 23E14033B28E3F1903EE1667B4491322DF827539076D939322EF9AE7979E48EA
+SHA256 well_corpse_cast_test.exe 363D501920933EBA33DCA17092EDA11D66DEFB4A71287ECA46E8715BCA548D82
+SHA256 well_corpse_reservations_test.exe 8C6562A1271EDAF403D39F5E501F7BAEFA21B41E0FF38491E7A62C829DF1932D
+SHA256 well_corpse_world_test.exe 1AC506E32AAE6F4947B96125C70508DD37646099358496E3E034C3F8C03DED3C
+
+2026-10-24 field policy: gw_well_field.h now models all four historical
+Well effects from the local wiki: Power +Health/+2 Energy regeneration,
+Blood +Health regeneration, Suffering -Health degeneration, and Profane
+enchantment stripping/blocking. It provides immutable duration/rank plans,
+stationary corpse-centered fields, team/plane/radius admission and expiry.
+The local wiki's rank0/15/20 display anchors drive interpolation; intermediate
+rounding and the 322-unit area radius are provisional server conventions,
+not packet-derived measurements. Profane's <=4 Death Magic 50% failure is
+represented as a policy value; no random outcome is executed yet. A Release
+test with live throwing checks covers all four rank anchors, team separation,
+plane/range boundary and expiry. Runtime does not yet consume these fields,
+so this is mechanics policy, not an enabled cast or visual test.
+
+SHA256 gw_well_field.h 3844BC1D8059FFF2C12679967F15B40B55692EAEF37072463C7B8D0C0599D426
+SHA256 well_field.cpp 178EA11B8989540DB365AAD3475C8D4300E531E5797533A4E11BB8A42E29C488
+SHA256 well_field_test.exe 0B6D4BB95D9F3B41041127ADF2F1B2AF964E1CE7F2A1A33C3411FEEC911CAF47
+
+2026-10-24 World field entity: a successful authoritative corpse claim now
+stores the corpse-centered field. World queries its current ally/foe effects
+by trusted position, plane, team and time, and retires expired fields before
+the 4096-live-field cap. Failed publications store no field or corpse use.
+The World test verifies ally coverage, foe exclusion and expiry; two focused
+Release tests pass and the Release server_host rebuild succeeds. These query
+results are not yet integrated into player/NPC Health/Energy timelines or
+enchantment stripping/admission. Runtime still does not trigger a paid Well
+cast or emit the verified 2022 ground packets. No client render was tested.
+
+SHA256 gw_world_simulation.h B050DA059B2338DE79599656276442E7877B6DEEBE7DC383C7E5E3B075C1D7AB
+SHA256 gw_world_wells.inl E1DD6F25FF213FA2E2983E8BA84CBEE75B4BC05592C2EA05CEEAE38209392D15
+SHA256 well_corpse_world.cpp 3D178CEEC7202CED1C7194E427C80B3A958D56DD580B274560CCDB83169C09D3
+SHA256 well_corpse_world_test.exe C3284574209D579C8349AE3971B4B7CCC2B6B31191879250844E1BC141051171
+SHA256 server_host.exe 19E93B5ACEB5F23818A8B9F9F6F7DD5AB71FB6AE89CD1A27413000F0B9520088
+
+2026-10-24 route boundary: well_route_interval analytically intersects a
+trusted straight movement leg with a stationary Well circle and clips the
+result to the field lifetime. It returns entry/exit fractions for a future
+World Health/Energy timeline consumer; it does not grant pips by itself.
+The Release test covers crossing, standing still, wrong team/plane, outside,
+tangency and expiration. Intermediate route geometry remains World-owned;
+keyboard wall-slide and multi-leg click routes still need consumer wiring.
+The header-inclusive Release server_host rebuild succeeds. Older hashes above
+are retained as historical receipts; current files are:
+
+SHA256 gw_well_field.h 9B623ADDE92013328B1A2D1189ACCD46B04FAA1B16D18253392DB35C144C1F22
+SHA256 well_field.cpp 98C2EA184BE99EC35A223331C8A0684D0BD0664504D10EE329D4E53C39D9CA6C
+SHA256 well_field_test.exe EFFE55E042CAE983B581428D248BEC6B5F6C523206F72108FB5AD766E108F992
+SHA256 server_host.exe E9AC744EF440DC0A28E21956BFECEC00D0982250A2C344A5146D1511F5C00FB4
+
+2026-10-24 overlapping-field sweep: well_route_segments merges all live
+field entry/exit events along a trusted straight leg, returning constant
+Health/Energy/Profane effect intervals before the global +/-10 pip cap. The
+Release test covers overlapping Blood wells, Power Energy pips, Profane
+enchantment flags, no-contact intervals and field time clipping. This is
+mechanics input only; World has not connected it to actual player/NPC resource
+settlement or enchantment admission. Click-route turns and keyboard slide
+must be decomposed into authoritative legs before consumption. The header-
+inclusive Release server_host rebuild and focused test pass.
+
+SHA256 gw_well_field.h 50DE8D85F3E423E029D643E6B08A8C1485707806D5F49E7BA7C26BE02FA37460
+SHA256 well_field.cpp E4372F044F1D88D2923EC6C524E8865211C82646842559AF56290C3675AAD279
+SHA256 well_field_test.exe 3E8410DEF7F4F34E92C775A68B44CB85FC7FB2D078276D0D5B6080D4EBC1338B
+SHA256 server_host.exe 2ABBAC4746728DE54AFFC63469AD42EBF6C08B32543551FE168CEF94A7C3FBC2
+
+2026-10-24 authoritative route adapter: World now constructs a Well-exposure
+timeline from the stored player click route, current surface, team and
+generation. It splits at route-leg boundaries and uses the tested overlapping
+field sweep. It refuses stale lifetimes, pre-click history, steering routes,
+cross-plane routes and Ward-modified click history that it cannot reconstruct
+as straight legs. Retiring expired fields advances a history watermark;
+queries before that watermark fail rather than silently omit old effects.
+The World Release test exercises standing in a field, a click that exits two
+overlapping fields, stale scope and pre-click rejection. Two focused tests
+pass and the Release host rebuild succeeds. This is still an observation API,
+not a Health/Energy or Profane enchantment consumer. Movement replacement
+must settle actor resources before overwriting old path history.
+
+SHA256 gw_world_wells.inl C9826780FD36B49CDC04FA0DF1BDE7CFC236A7167AF72B486DC71FF3D92F10F2
+SHA256 well_corpse_world.cpp 039C0D6D1724482A2DB594A77FC6E8B2DE941FDDD90E9E8569C1C705204E8B02
+SHA256 well_corpse_world_test.exe 35D499781D85FEA83A32769A0833D9AB0A721F2A21AD481AD7D924AD08033C0B
+SHA256 server_host.exe 2CC846A4A084E27DEBEFD4156A1150C0A0C3BCBB130C0D92A7D291349407DCBD
+
+2026-10-24 player Health consumer: World now integrates Well Health pips into
+its authoritative player Health timeline before the +/-10 cap and publishes
+the corresponding pip display. It splits Health settlement at rounded Well
+entry/exit boundaries; a replacement click first settles the previous route
+so old exposure is not lost. Expired fields remain in history until every
+current player's Health and Energy clocks pass their end. A focused World
+test compares the same moving player with/without two Wells and verifies
+the Well side gains more Health; it also checks that a later cast cannot
+prematurely retire field history while resource clocks lag. Four rebuilt
+Release suites pass: well_corpse_world, well_field, health_regeneration and
+npc_world_combat. Release server_host builds successfully.
+
+Remaining: Energy pips, NPC Health, precise steering/Ward movement, the
+parasitic death-boundary predictor, Profane enchantment removal/admission,
+Runtime paid cast/visual publication, low-rank failure roll and rendered 2022
+client acceptance. A field cannot yet be cast through the production client;
+no Well source binding is published.
+
+SHA256 gw_world_simulation.h 27F313A1B1E81B17BF512F143F1D2AAD368823543A13181F7DE00133B27898C7
+SHA256 gw_world_wells.inl B262BF28FDC5BF63BD091115882F45430E74AA8C5774D1759C48AF7FFE41E48B
+SHA256 well_corpse_world.cpp DB29547855574F4CDE0193E5787CC65071002B0AD19BCD191E8BA49E4441DD21
+SHA256 well_corpse_world_test.exe 24D16217A16D2AB51B82B7FCD642D138601E26406C58B6A6A88C14BC99617EAA
+SHA256 npc_world_combat_test.exe 81AE4F61D92D7F0EC9C036C8F1BD18D0ED4615590200D89EAE939E65238C08D1
+SHA256 server_host.exe 10D13D855888E25307A2779E98C7438AB0D70375CBCE261CA183B2452F83E3E3
+
+2026-10-24 player Energy consumer: World now integrates Well of Power's
++2 Energy pips over the same authoritative route exposure used by Health.
+It splits normal regeneration and overcast settlement at Well entry/exit
+boundaries, applies the existing 10-pip cap, and settles the old route before
+a replacement click can erase it. The focused Release test compares moving
+players with/without Power and checks both ordinary Energy and an overcast
+curve. Six rebuilt Release suites pass: well_corpse_world, well_field,
+overcast_world, energy_regeneration, npc_world_combat, health_regeneration.
+Release server_host builds successfully. The completed official capture
+remains frozen at 20261024-all-completed; this work does not add a source
+binding or claim rendered-client acceptance.
+
+Remaining: Well Energy pip UI, NPC Health/Energy consumers, steering/Ward
+route fidelity, parasitic death prediction, Profane enchantment handling,
+Runtime paid cast/visual publication, and rendered 2022 acceptance.
+
+SHA256 gw_world_simulation.h BD387FCC42A9452BCDD70DF64822F9E746E97735C271B6B5EAD89BFF69C106B7
+SHA256 well_corpse_world.cpp 236B311FF5C82354FBF831DD02D79BA25080D7553577FA3D4BE351B403D2608E
+SHA256 well_corpse_world_test.exe CD5056EBEF4F3BFF3A586974EE070BB315CEC6A358E922090FDCAC6B1A1A1695
+SHA256 server_host.exe C5E340379D47F26B13706107ADB9403CA3A94E78C335E044F16897C923264230
+
+2026-10-24 Energy pip packet follow-up: the World owner-vitals path now
+includes current Well exposure in the 2022 Energy-regeneration packet, and
+tick publishes a rate change even when rounded Energy itself is unchanged.
+The focused World test finds a four-pip packet while inside Well of Power
+and a two-pip packet after field expiry. Six rebuilt Release suites pass:
+well_corpse_world, well_field, overcast_world, energy_regeneration,
+blood_power_world and npc_world_combat. Release server_host builds. This
+establishes native packet production only; no live 2022 rendered UI test or
+production Well cast binding has been performed.
+
+Remaining: NPC Well resource consumers, steering/Ward route fidelity,
+parasitic death prediction, Profane enchantment handling, paid Runtime cast
+and visual publication, and rendered 2022 acceptance. Fixed official capture
+20261024-all-completed is unchanged.
+
+SHA256 gw_world_simulation.h 8256F9C8FD9D3ABB1C93AA6632BF7534F06D0E45490B57A50370E26728377640
+SHA256 well_corpse_world.cpp 2880BF40715238737D668789B07A4088034459C860E864690EB8185A35ACD80B
+SHA256 well_corpse_world_test.exe C3B4A32D4ED7E45CBF1E236D7E65417ED1E80A045DA5115C11FD6961F58A8789
+SHA256 server_host.exe 58458698458EC6ACDCDE2C2BDC4630526BFCB87B9EC58C2636AA262F848DE9A1
+
+2026-10-24 signed-pip and NPC integration review: 2022 Energy pip packets
+now preserve the valid -10..10 signed range when World computes Well exposure.
+The Release World test checks a -2-pip packet at a trusted capacity change;
+the positive Well entry/expiry packet assertions still pass. This does NOT
+mean negative base-pip Energy settlement works: Regeneration::advance and
+overcast::settle currently reject negative base pips. A negative regeneration
+proposal with Well active failed at that existing invariant and was not
+accepted as a gameplay test. It needs a signed precise-Energy integrator and
+zero-crossing handling before negative-pip skills are called complete.
+
+NPC Well Health must enter LiveActor::advance_conditions, which owns timed
+degeneration, the +/-10 cap, death time and death credit. World currently
+settles NPC conditions before advancing quest NPC motion on each tick; it
+cannot infer moving NPC Well entry/exit from the final position. Add a
+movement-segment timeline and external field boundaries to that owner before
+enabling NPC Well effects. A separate periodic damage tick would bypass those
+mechanics and is not an acceptable substitute. No NPC Well consumer is
+claimed by this change. Fixed capture remains 20261024-all-completed.
+
+SHA256 gw_world_simulation.h C6EC219ED8DF17DE13DCA1B4C491BC9C3A087EE27483693A8D86BF0E21762767
+SHA256 well_corpse_world.cpp D23E5D6C404869CF54E94E83359FB44A292284F63DCB745251082907A2091476
+SHA256 well_corpse_world_test.exe 3EB814C08E8E72A0C42745ED451EC7126CBBE47F77514F27F1A2F5EEB6543F2E
+SHA256 server_host.exe E256F61EEDAFC90FBC90658F84ACA0DDD8F94F1B787B06A04317B634C799E1CC
+
+2026-10-24 signed Energy settlement follow-up: the shared precise Energy
+regenerator now accepts -10..10 base pips. Negative pips spend fractional
+Energy even at full capacity, stop at zero, and do not deepen an existing
+capacity-change debt. The overcast curve/settler accepts negative base pips
+and preserves its first-zero boundary. The focused Well World test uses a
+-2-pip baseline: Well of Power offsets it to zero while the control loses
+Energy. This closes the signed settlement limitation identified above,
+without claiming all Energy-zero skill reactions or rendered client behavior.
+
+Serial Release server_host builds. Six freshly built Release tests pass:
+energy_regeneration, overcast_settlement, well_corpse_world, overcast_world,
+blood_power_world and well_field. Fixed official capture checkpoint remains
+20261024-all-completed. NPC Wells, exact moving-NPC field boundaries, Profane,
+Runtime Well casts and rendered 2022 acceptance remain open.
+
+SHA256 gw_energy_regeneration.h D473DB8425B5909F5537ED6BA8428FF2ED1FEA82B6E56054EDE8629D5048E1A7
+SHA256 gw_overcast_curve.h 14AF3D48F5BBF11346EB3A9A2FDE3E74935BF7606F5355B4D7728BB52DDB7A81
+SHA256 gw_overcast_settlement.h ACFFF95B16E74607FD02C686BBD3B01D57CBACEC0E55E0F8732223990D87025D
+SHA256 energy_regeneration.cpp CFA37A1C0A721BC14F1783498FBD0902DFA41F4F8CCBE731D24AEAA2991CE6B5
+SHA256 overcast_settlement.cpp 3B46538315D5CF62FDD1D6818A367EC8B6DD905964FB8A45B0A9B6BB54FC89B2
+SHA256 well_corpse_world.cpp 2C8E8F95003BB2CC4C4AFD9B86A29AED9F042857F3F33259A5E3EE35CBB8DC55
+SHA256 well_corpse_world_test.exe 50AB7DDB33458DF68DAF833DF0CBF2291CBDC4A1E904E56A084D25AD764E0AA0
+SHA256 server_host.exe 866F404F247438D3841BED3CA574C278A9A8DCF767C584901DD67F056FDB8AE8
+
+2026-10-24 stationary NPC Health consumer: LiveActor now accepts a validated,
+boundary-split external pip timeline in the same authority that integrates
+conditions, enchantment degeneration, the +/-10 cap and exact death time.
+World attaches Well of Blood/Power ally regeneration and Well of Suffering
+foe degeneration to reviewed, stationary, damageable NPCs in the matching
+plane/radius. It starts their Health clock when the field is created and
+retains expired field history until the NPC has settled it. The focused
+World test observes an allied NPC heal, a hostile NPC lose Health and later
+die; a separate native test verifies exact external boundary/death time,
+stale lifetime rejection and malformed-pip preflight. Four rebuilt Release
+suites pass: well_corpse_world, npc_external_health, npc_world_combat and
+well_field. Release server_host builds.
+
+This does not cover moving quest/AI NPC exposure: those actors are deliberately
+excluded until their authoritative route legs can be integrated before Health
+settlement. NPC Energy pips, mixed-source death attribution, Profane
+enchantment rules, paid Runtime Well casts and rendered 2022 client behavior
+remain open. No Well skill is source-bound by this change. The fixed official
+checkpoint 20261024-all-completed is unchanged.
+
+SHA256 gw_npc_combat_catalog.h D8B949765223DB43835FFEF2C9EAE2462546CA2B1EB0BF640FA99F6E59BA5019
+SHA256 gw_world_wells.inl F6F4BBCC39565FF76880B5B651A5E36A28050FED80B17B4B489252287784DB64
+SHA256 gw_world_simulation.h AFA8547E6D2C75B690E8ACE46552259DF1317E802CFA0FB73E237609B698E5C7
+SHA256 npc_external_health.cpp 63B2A1CFF8D7448B30981E7F09DF06A12DED2ACF9C98703006EFE98402E4B2AB
+SHA256 well_corpse_world.cpp E717BF3537FA5AC7ADB98756FA7D92E56904ED30309188D1C772F3B7E132C0BC
+SHA256 CMakeLists.txt 7C613D5F60EF6413AE4C17F64406D359B66C3BDCCB0CFA8F30527EF5A6C3169A
+SHA256 npc_external_health_test.exe 2BBE3DDEF2354C98FC4D49BC2FEF89DF51DAB1D9E3149FA75D09C56223B24D46
+SHA256 well_corpse_world_test.exe D461CF6BC0E1F97FBF253479BD2DEE571D4C80A6461A67EF2E02F42B38BD0E64
+SHA256 server_host.exe 9FBCC0962625A36D7F6A3CF8378F323380454C481DE94319A94D903689BE3464
+
+2026-10-24 stationary NPC Energy consumer: the external Well timeline now
+supplies Energy pips at field start/end boundaries to LiveActor's own Energy
+clock. World initializes that clock before adding a new field and integrates
+Well of Power's +2 pips only for reviewed stationary allied NPCs with an
+Energy definition. The Release World test compares identical NPCs for three
+seconds: inside Power receives4 Energy, outside receives2. The detached NPC
+test checks +2 external pips with the ordinary Energy owner. Five rebuilt
+Release suites pass (well_corpse_world, npc_external_health, npc_world_combat,
+overcast_world, well_field); Release server_host builds.
+
+NPC overcast interaction is routed through the same LiveActor clock but is
+not independently verified with a Well capture. Moving NPC exposure, NPC
+Energy packets/visuals, mixed-source death attribution, Profane, paid Runtime
+Well casts and rendered 2022 acceptance remain open. Wells91..94 remain
+unbound. Fixed capture checkpoint 20261024-all-completed is unchanged.
+
+SHA256 gw_npc_combat_catalog.h E41079D7F5E683B9EE67867697E20C2D1D105A16DDB76F2EE9FBF083A4FD8128
+SHA256 gw_world_simulation.h A10F382897998EA7FF36267B995C8F64E6E868AED30B702DBA6E8E9B7F70DA7F
+SHA256 gw_world_wells.inl 31F382AC09FD275FF1EC81E6DC90E52582D0AD4B647FCEBBAF047F93FB4991EE
+SHA256 npc_external_health.cpp 59914CE5670183E8AA2B4B9D00152122D95E8E33E8D06B1A2A8924CD919954E2
+SHA256 well_corpse_world.cpp C5B613D77F749E3BE9B074D70D003C2139CC8242F0EA7E6AF1AC2D9B12D15ADB
+SHA256 npc_external_health_test.exe 7B25C59608646FB17C815FE5DFEE7A2A8AF4029ECDCC5B108BEBE0DE10A6DBF8
+SHA256 well_corpse_world_test.exe 40479951658813D7E5B44893393D52BB50DCF2DF55FB7F9F7193A492B2CBD1AC
+SHA256 server_host.exe 7F145B378DEB1C97BCE575E0CE25B5DE6D3B5D6B7F195CE12748A08B588BEBC6
+
+2026-10-24 Profane field-entry-at-creation slice: after a successful corpse
+claim and cast publication, World tests enemy players already inside the
+new field using its authoritative position, plane, team and time. Active
+enchantments are ended through the existing owned-effect removal path, which
+also removes timers and publishes status. The Release World test checks that
+a failed publication strips nothing, the inside enemy loses Protective
+Spirit, an outside enemy keeps it, and the caster ally keeps it. This covers
+the initial field appearance only. Moving into an existing field, new
+enchantment admission while inside, NPC enchantments, low-rank failure,
+production paid casting/visuals and rendered 2022 acceptance remain open.
+Wells91..94 remain unbound. The 20261024-all-completed capture is unchanged.
+Serial Release build of well_corpse_world_test, well_field_test,
+npc_external_health_test and server_host succeeded; all three focused ctests
+passed. This is a mechanics test, not a client rendering test.
+
+SHA256 gw_world_wells.inl 48B22B2038AB9301D9AEE2DDC81B92F67C295D682AD0EEDDAA2859CD11AE5976
+SHA256 well_corpse_world.cpp 286B5CFC672C9A61B893277E2E0B9A25B4BD664460874BD0056FA583099099C4
+SHA256 well_corpse_world_test.exe C8CF32E0F007CBABA3AB53E58645E6E2BFC98BA24F42ACFADF3055BC4327DAD7
+SHA256 server_host.exe BDC12F5A4B0DC8FBBA73851E6DE8B3ED9700BAE377FE781E3F3E05B556ADFFCF
+
+2026-10-24 Profane movement and player-admission continuation: the World
+Health clock now consumes Well route intervals when a moving enemy crosses
+the field boundary. It ends active enchantments at that authoritative
+crossing, before route arrival. The Release test observes Protective Spirit
+before the crossing at t=150 and absent at t=700, while the actor is still
+moving. Already-inside and post-expiry behavior are also asserted. Reviewed
+player regeneration enchantments and generic World status enchantments are
+suppressed inside Profane after normal validation; the cast remains paid and
+completes. Runtime checks the World effect snapshot before caching or
+publishing a self-enchantment, preventing a phantom Aura of Restoration
+effect. The focused test checks successful Aura cast completion with no
+World enchantment or local effect-add packet while inside Profane.
+
+This does not cover every typed enchantment producer, NPC enchantments,
+low-rank Profane failure chance, movement paths lacking an authoritative
+Well route, paid Runtime Well casts, field visuals, or rendered 2022 client
+acceptance. Wells91..94 remain unbound; the fixed official checkpoint is
+unchanged. Serial Release host plus affected tests built. Eight focused
+ctests passed: skill_casting, well_corpse_world, npc_external_health,
+well_field, enchantment_removal, chilblains_world, protective_spirit and
+protective_spirit_cast. These are native mechanics tests only.
+
+SHA256 gw_world_wells.inl 888A7F5A0E082CC6089A031303C8C230F729ABF928F35825D16BEB4D88F59781
+SHA256 gw_world_simulation.h 25FB8153A077FFFB04822454002E54FE44B1E15419E4E589107214CDA01C8B30
+SHA256 gw_skill_casting.h F6E81FD8FE90A26AD2292AED6A4F7DA9D5BDD80859EE83CA957B3B6DE556C912
+SHA256 well_corpse_world.cpp 147D9A62D1091107EDDCF3C9862EDB3C6249A83F738C50E92675DBF706CCCC2C
+SHA256 well_corpse_world_test.exe 406E561C3B7DBB820E12F5BE5917149B4F42EED1F5BE6F50CCB2CF6A008C02EF
+SHA256 skill_casting_test.exe F167113E25B20C75DC2158B64A85F14F8A69C57CDD88A1BC2387E73A9A46458B
+SHA256 server_host.exe 1F49ABABADD81CC7BA6FD925EA3D687484A768B2872B46B7AAECEF514F49C8F8
+
+Additional Release regression pass on the same source: illusion_haste,
+attunements, aura_duration and enchantment_copy rebuilt and passed. This
+extends the focused pass to twelve tests; no source or checkpoint changed.
+
+2026-10-24 Profane reviewed NPC enchantment continuation: after successful
+field publication, World now ends reviewed active enchantments on stationary,
+damageable hostile NPCs already in the field through LiveActor's owned end
+path. The World test uses an NPC-owned Aura of Restoration: failed publication
+leaves it intact, successful publication removes it and emits opcode67, and
+an outside NPC retains the Aura. A fresh hostile NPC self-cast begun inside
+the active field completes and pays five Energy but gains no Aura. The NPC
+cast completion still runs the ordinary prior-Aura/skill-completion observers.
+
+Only LiveActor's reviewed removable enchantment IDs are admitted. Moving NPC
+entry, other typed NPC enchantment producers, unreviewed effects, low-rank
+Profane failure, paid player Runtime Well casting/field visuals, and rendered
+2022 client acceptance remain open. Wells91..94 stay unbound. The fixed
+20261024-all-completed checkpoint remains unchanged. Serial Release host
+build and seven focused ctests passed: npc_world_combat, npc_aura_self,
+npc_aura_world, well_corpse_world, npc_external_health, well_field and
+watchful_healing_npc_cast. This is mechanics/packet-test evidence, not
+rendered-client verification.
+
+SHA256 gw_npc_combat_catalog.h 4544D580B6FFB515B3F38AC738BC1B79370DA99492FE84423E77D1308A28DED0
+SHA256 gw_world_wells.inl D1F58796C26C0E53520328F95D8FA4E271F21881EFAD6EBDF72B64A49FCEE3BE
+SHA256 gw_world_npc_aura.inl 5A3D40756ED62F1DECC5D2AEBFA67BE248C009A48F469C0E1CE56DAD884E977B
+SHA256 well_corpse_world.cpp 778F68DAD1906B3078636A11631EA35F5A8FF1D39B982AE8FF8B83880579416B
+SHA256 well_corpse_world_test.exe 96C1B8B5092EA563838124DE22CC3FDF8ECCBBB13345F87F08305D2B357BEB23
+SHA256 server_host.exe C7E7F636DDC278EDE27CF573D532DC03430F019BE55F2E969347271773E52F67
+
+2026-10-24 completed-session packet classification: at Well of the
+Profane94's frozen completion tick17022406, lines61198 and61199 are
+opcode93/94. The pinned modern GWCA opcode table classifies these as
+GAME_SMSG_CHAT_MESSAGE_CORE and GAME_SMSG_CHAT_MESSAGE_SERVER, respectively
+(third_party/gwca-current/include/GWCA/Packets/Opcodes.h). They are a chat
+message pair, not a field-creation or positional visual receipt. Neither of
+the other three Well completion windows contains this pair within three
+seconds, which makes the adjacency tempting but not proof of a Well effect.
+Do not implement a Profane ground packet from these bytes. The visual/field
+entity remains unidentified; skills91..94 remain unbound.
+The native Well-ground verifier now checks the immutable source hash, the
+six-packet completion window and the pinned modern opcode names before
+reporting its three verified ground trios. It passes; this is packet/native
+consumer evidence, not a rendered-client result.
+SHA256 tools/protocol/well_ground_2022.py 82F62BEA32BF6AC2DAA8D752EF25E16BAE2AD0C9D4ED51A033F1EA91BF6B0C83
+SHA256 build/reports/well-ground-native-2022.json 34FDF6C8CB65BA93DDAC3D9F30D90F55ACABBE5AD36873D752291FD51BFFF24C
+
+2026-10-24 typed protection enchantment admission: Profane's World field
+check now gates the shared Protective Spirit/Shield Deflection/Shield
+Regeneration/Shield of Judgment/Vigorous Spirit/Divine Spirit application
+path. A paid player cast still completes and emits its ordinary finish/body,
+but no enchantment entry, Divine Favor heal or phantom status-add is created.
+The trusted NPC Shield Deflection/Vigorous Spirit application path likewise
+accepts an attempted cast inside Profane without adding an effect. Existing
+enchants remain stripped by the earlier field-creation/entry consumer.
+The updated Well World test covers an enemy player inside the field, expiry
+followed by ordinary application, and a hostile NPC inside. The serial Release
+host build and seven focused CTests pass: npc_aura_world, well_corpse_world,
+protective_spirit, shield_deflection, shield_regeneration, shield_judgment and
+vigorous_spirit. The successful-but-unapplied packet policy is a private
+server choice pending controlled retail observation; rendered pixels were not
+tested. Other typed enchantment producers and moving-NPC entry remain open.
+Wells91..94 remain unbound.
+SHA256 src/runtime/gw_world_protective_spirit.inl 6108853EF754D3BC79C0C02B4D21A73A9ADAD36BAD11670E1C94633BE29512A5
+SHA256 tests/well_corpse_world.cpp 6C277ABD70B9896D84BB5C69ECD40E3F522BD11F0C61A4867C3EBAC4EEDB3057
+SHA256 build/tests/well_corpse_world_test.exe 33B3BE323B7BF60C47766A6A7F38D02503DDFDA6C44EF3713B0A0FB2D9AFDC70
+SHA256 bin/server_host.exe 76699617847A85897FB794F862922E06956FE3BCF6E4F3FD33BDD424C81B3FCD
+
+2026-10-24 grouped self-enchantment admission: Demonic Flesh130, Conjure
+Flame/Frost/Lightning182/207/221, Armor of Earth165 and Mantra of Recall82
+now query hostile Profane before creating a World enchantment. A paid cast
+still returns success and retains its reviewed body packet, but creates no
+registry/timer entry, movement modifier, Energy ending reward or status-add.
+The Well World test exercises all four families in one active enemy field and
+requires an empty status plus no emitted effect-add. Their ordinary outside-
+field policy/cast/world tests remain green. Serial Release host build and
+19 focused CTests pass. This is source mechanics/packet-test evidence;
+retail paid-but-unapplied ordering and rendered visuals remain unverified.
+Other direct typed enchantment producers and the Well cast remain open.
+SHA256 src/runtime/gw_world_demonic_flesh.inl 5F1ABCFB55AC82F6E52725625B3050B6AE4F7A748BAC7154E9DBB1966D477EB5
+SHA256 src/runtime/gw_world_simulation.h 1ACA8EA7AA7C8082E588B39AB8EFAA8A84ABE71B33B695CD5B077203DE0414D8
+SHA256 tests/well_corpse_world.cpp 9E76CA5888B807B3F862926BFDEA23B431C8E4B213697B83EC48C76F6B7209E3
+SHA256 build/tests/well_corpse_world_test.exe B3D7E386752958479967E52837424914D3FB02F03F4D59C5ACEE6F0DA2E839DC
+SHA256 bin/server_host.exe F74C34A54D7C8A6204FCF0A556F6F6E441A424FDED00342DC3630B28818344F8
+
+2026-10-24 corpse-claim commit ordering: World now consumes the exclusive
+corpse reservation before adding the Well field or stripping enchantments.
+This removes the path where a failed final reservation consume could return
+failure after those World effects were already applied. The failed-publication
+and successful one-use claim cases in well_corpse_world pass, as do six nearby
+Well/enchantment suites; the serial Release server_host build passes. The
+reservation-consume failure branch itself has no fault-injection test, so its
+validation is source-order review rather than a simulated production failure.
+Runtime still does not initiate or pay for Wells91..94, and Well94's client
+ground visual remains unidentified; none of these four skills is bound.
+SHA256 src/runtime/gw_world_wells.inl 9C0FCA57EE2AF26599CCEE87D5D8356E5B199E37C25967D743AC30FDF1DC5617
+SHA256 build/tests/well_corpse_world_test.exe B7A7B15363668171A0B6187C5ADF497D9D613AA36AE7FC4677227DE2C1DEB4C3
+SHA256 bin/server_host.exe A3A77212CDB1AF1D6921D97C09D0E31737A44FBFFBF75D4BAF645D418C4FC30F
+
+2026-10-24 opt-in Runtime cast integration: Runtime now accepts Well91..94
+only when an explicit well_corpse capability is supplied. It pays Energy,
+tracks the ordinary cast, verifies the same caster lifetime at completion,
+and calls the World corpse claim with a unique attempt before publishing any
+returned visuals, success terminal and recharge. The production gateway
+deliberately supplies an empty capability. A focused World-backed test for
+Well of Blood92 covers the paid one-second cast, authoritative dead-NPC
+claim, field at corpse position, pinned ground resource175, cancellation,
+no-corpse failure, recharge and refusal without the capability. Seven focused
+Release suites and the serial server_host build pass. The fixed checkpoint
+audit remains679 captured obtainable /366 source-bound /313 awaiting binding;
+all four Wells still classify unsupported. The test demonstrates a staged
+path, not normal client availability or rendered acceptance. Well94's field
+visual, player/NPC movement exposure, Profane low-rank policy, official spell
+range and retail failure-cost behavior remain open.
+SHA256 src/runtime/gw_skill_casting.h 70C8F0B74E9909FDB83F0DA6BE9A08EE9F052E01D399C76974FA0A7F806A869D
+SHA256 src/apps/gw_auth.cpp BDB3B9741203155A64BCB57453B3E40D913A6C348658E874DCDD49DF71380FFC
+SHA256 tests/well_cast_runtime.cpp 256662B3905DBD5D2CCF583BA536632879CEA789F1105A1EBACEBD679F7F44C4
+SHA256 tools/protocol/skill_runtime_coverage.py 8A98D598E879CF32D21F9627DA80D375EB99B3B3DA4FE53B5FE32A877853FCBA
+SHA256 CMakeLists.txt 3894E95EF927D4BA579F71424B470BA0E600160A95E7F9AE21E0ACB524013511
+SHA256 build/tests/well_cast_runtime_test.exe 77B74A40D42483404C2BE26949B386DB072FA9E4C518FC427C0E805FE401B268
+SHA256 bin/server_host.exe 6E98E3D29AF4DF51DF2CF3E67D0D403099E262E8D5B1BA35DE5A5C595089AFD1
+
+2026-10-24 authoritative completion handoff: World now owns the complete
+corpse-claim-to-ground-packet handoff for Wells91..93. It builds each verified
+three-packet 2022 ground visual while holding the exclusive corpse reservation
+and returns the packets only after corpse consumption and field installation.
+The Runtime/World test now checks paid casts, cancellation, no-corpse failure,
+field allegiance/pips, all three ground packets and recharge for Power91,
+Blood92 and Suffering93. A separate check shows Well94's unidentified visual
+is refused without consuming a live corpse, which the raw World claim can
+still use afterward. Six focused Release suites and the serial host build
+pass. The production well_corpse callback remains empty, so this is not a
+client binding or rendered acceptance. The fixed capture audit is unchanged:
+679 local obtainable IDs,366 bound,313 awaiting and650 uncaptured.
+SHA256 src/runtime/gw_world_wells.inl 5F52B0990440869EC6B2FE57D7E2E2C19D2BDE46B9555A0268EA729B6B03C21F
+SHA256 tests/well_cast_runtime.cpp 2BEA313DB092034DA30618384D99FEBBD649BA5EB170D930C407114AD022DE81
+SHA256 build/tests/well_cast_runtime_test.exe 0EBEB07E66D9DB8C6E95F17765F9BA1E8C06DBE53E3DE688C61FDF071CC2AC0A
+SHA256 bin/server_host.exe 647440D706879513B2D5D520E91733170527FAFF62E8B174BFF2418A343A1AE8
+
+2026-10-24 Well of the Profane ground visual found in a later cast: the
+earlier completion at frozen lines61197..61201 has no positional trio and its
+opcode93/94 pair is chat. The same immutable packet file contains a second
+local Well94 cast at line61250/tick17031671, a finish at line61264/tick
+17034671 and three positional effects at lines61269..61271 at that same
+completion tick: ground-owned177, ground-owned174 and caster25-owned900.
+The hash-verified native verifier executes all twelve Well ground packets
+through the pinned2022 positional consumer and checks their serialized bytes.
+This proves a valid Well94 ground presentation path, not why the first cast
+lacked one, a persistent field entity or rendered pixels. The serializer and
+World completion method now accept all four Wells; the World-backed paid
+Runtime test covers their different costs, activation times, fields, ground
+packets, failed/no-corpse casts, cancellation and recharge. Seven focused
+Release suites and the serial server_host build pass. Production still has an
+empty well_corpse hook; all four skills remain unsupported in the current
+coverage audit (679 captured/366 bound/313 awaiting). Moving-actor exposure,
+Profane low-rank failure policy and retail range/failure-cost behavior remain
+unverified. Earlier "Well94 unidentified" notes in this chronological log
+are superseded by this finding.
+SHA256 tools/protocol/well_ground_2022.py 4FB1B8110855308C60CFAB018B78636E26FB13EE73DA1F3679A135580E795FFD
+SHA256 build/reports/well-ground-native-2022.json 0E5DBC87660FCEE7D8AAFDBC3EDB0D9128DDE6BCEB6C5C24F7B25EABA24A88A0
+SHA256 src/runtime/gw_skill_particle_wire.h 5504C89A258C229279F58E1603869356AD519F38B2170FE05DDBD79CE9EBFFAB
+SHA256 src/runtime/gw_world_wells.inl 070D9EC7B0B0AC48978F0368E2FE382B8F6E927D51AE8214512BA02674F0F892
+SHA256 tests/well_ground_wire.cpp 2D16F96A4C309186A3F1C7EE20740F7A573A880F8053C3ED073087C774972BC0
+SHA256 tests/well_cast_runtime.cpp 0701A5C177995F06DB2F4D7A242F84FAC18C0E8B95974B7A5EF368C6F35AECE1
+SHA256 build/tests/well_ground_wire_test.exe 21C621E5A6D6BF78BEF08C6D5DE59C4F6FFCD7B1FBCD35859A7FC884ADBAC507
+SHA256 build/tests/well_cast_runtime_test.exe 0FD8189CD4320B94C2443479987047E5A4719F4142CDD215AF79C1AFDBB5DED2
+SHA256 bin/server_host.exe 5ABA2A294BEB956F3F646D1B785E0083D07EFF2A606D3444CC336DC3D18457A7
+
+2026-10-24 low-rank Profane completion: the local wiki's Well of the
+Profane page states a 50percent failure chance at Death Magic4 or less.
+Its saved HTML source hash is recorded below. The first frozen local Well94
+cast finishes and recharges but lacks the ground trio; a later cast emits it.
+This sequence is consistent with a failed roll, but does not independently
+prove the roll, RNG source or failure message. World now requires an explicit
+valid roll for a low-rank cast after it has selected a usable corpse. A roll
+below.5 completes the paid cast without creating a field or consuming the
+corpse; at.5 or higher the normal claim/field/ground path runs. No corpse is
+a separate rejected outcome. The opt-in Runtime adapter maps the failed-roll
+outcome to a normal terminal58/recharge with no ground packets. Tests verify
+both outcomes, corpse availability, resource payment, packet phase and a
+missing-corpse rejection. Seven focused Release suites and the serial host
+build pass. This order and corpse-retention choice is a private policy pending
+a controlled retail comparison; the captured opcode93/94 chat payload was not
+decoded. Production still leaves the well_corpse hook empty, and all four
+Wells remain unsupported in the current fixed-checkpoint source audit.
+SHA256 C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Well_of_the_Profane.html BDB8E0249258CBF249F415C2B924546571B2557F6AEC6AF61C95A6C6B4806246
+SHA256 src/runtime/gw_world_wells.inl 2A695874EC869330BC0C59D08754F0E5FCBDFFE5B6B3482353F2D66A62D20094
+SHA256 tests/well_cast_runtime.cpp E58A9ABE452DC15295EC0EE5F8AE4A7C2D3B664DA24590362931E42BD1653DD4
+SHA256 build/tests/well_cast_runtime_test.exe DF351B0334BA194DEE58B5735B9F8AE7B0FD4071463DA42E6094359FE625862E
+SHA256 bin/server_host.exe 0BECAD591401A38BB90B807431839E1A67509CD92FC815F1765D0093A6D80BD5
+
+2026-10-24 corpse eligibility correction: the saved Corpse wiki states
+corpse-using skills need fresh exploitable corpses. World Well selection now
+requires a reviewed fleshy=true NPC fact as well as death and an available
+corpse reservation; unknown or non-fleshy dead NPCs are not accepted. This
+same rule applies to staged Signet of Sorrow proximity. The rule is stricter
+than the prior dead-and-damageable shortcut. Pet pre-exploited corpses and
+eligible player corpses remain unrepresented. Source: saved
+C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Corpse.html
+SHA256 87A8D16CAC14E788E6AF80D9C017A8CFB5C2EC164ABE7755074F7722C9E80535
+Release focused tests well_corpse_world, well_cast_runtime and aegis_world
+pass after this correction; serial server_host build passes. Tested SHA256:
+  gw_world_wells.inl 74145D6A64238039B00D418B3E4687032AF57D88B18E877555457FD8A573B5EC
+  well_cast_runtime.cpp 41E82D6C398DA38C09426BB95EEA5C8F172BA9865A712629FC6B73C5A9D3B776
+  well_corpse_world.cpp E1D23885E9FF36D1FC4C561988C49679C0D6034E90BFEBC2F7366D646B1A48CB
+  server_host.exe 1AFE727A14964AAC71F6C53AD107B45C257D6B87B424D75B88FE76AC1B23D1B6

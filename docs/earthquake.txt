@@ -1,0 +1,59 @@
+Earthquake170 / Dragon's Stomp1086: player-cast area-damage/control binding
+
+Both now have player-cast bindings. Fixed implementation checkpoint20261017-npc-refresh-2
+contains one local Dragon's Stomp activation, and opponent-only Earthquake
+activations. A duplicate native row is not substituted for local capture.
+
+The two pinned2022 rows agree on25Energy,10Overcast,3s cast,.75s aftercast,
+15s recharge,Earth Magic,26..100 damage,caster303 and area impact304.
+Historical wiki Dragon's Stomp identifies Earthquake as its duplicate, target-
+centered nearby area and knockdown. The shared plan uses252-unit nearby range
+and2s base knockdown, before any owned control-duration modifiers.
+
+tools/protocol/earthquake_2022.py verifies the immutable packet-file hash and
+exact cast/recharge/finish/caster303,three target304 and three2s control
+receipts. It executes both original2022 cast consumers and the particle
+consumers offline. Report:build/reports/earthquake-native-2022.json.
+Actor/asset services are stubbed; rendering and radius are not proved by this.
+
+src/runtime/gw_earthquake.h proposes damage and control together without live
+mutation. A surviving target requires explicit known knockdown eligibility;
+known immunity still permits damage. A lethal target needs no control fact
+and receives no knockdown. Conditions adjust Earth armor before damage.
+Release earthquake_policy_test passed ranks0/12/20,both skill IDs,armor,
+Cracked Armor,immunity/unknown control,lethal suppression,forged plan rejection
+and proposal isolation.
+
+World earthquake transaction is implemented and its Release test passed for
+both IDs: target-centered252-unit boundary, ally/outside-area exclusion,
+mixed player/NPC recipients, unknown NPC control rejecting before any damage,
+known immunity permitting damage, lethal suppression and stale target scope.
+The transaction settles current Health/movement, previews NPC control on a
+copy and checks player control capacity before credited damage/control commits.
+Whirlwind regression also passed after the shared World header change.
+
+Runtime now uses the existing elemental hook but routes these plans into the
+World earthquake transaction before taking the generic elemental lock. The
+damage-only elemental resolver explicitly rejects both IDs, and the NPC caster
+plan whitelist rejects them, preventing a partial damage-without-knockdown path.
+When completion visuals are requested, damage notifications, target304 and
+control packets are returned to Runtime after its finish/caster303 events.
+
+Release earthquake_cast tests pass for both IDs and PvE/PvP policy modes,
+player/NPC targets,atomic25Energy+10Overcast,insufficient Energy rollback,
+missing hooks,cancel,interrupt,stale target scope,reused player actor,2s control,
+aftercast/recharge rejection and finish/caster/damage order. Four CTest suites
+(cast,World,policy,Whirlwind),71 tooling tests and the Release host build passed.
+
+Follow-up Release tests passed for both IDs: a selected foe moves288 units
+before completion, shifting the affected population to its current position;
+the NPC at the original center remains undamaged while foes newly in range
+are hit. A dead selected target rejects without damaging other occupants.
+Runtime also admits a new cast exactly at15s recharge expiry, after rejecting
+the request one millisecond earlier, across both modes and recipient types.
+
+Remaining verification: additional retired-lifetime
+cases,rendered cast/impact visuals,retail control
+duration modifiers and reactive ordering. NPC casters remain unsupported.
+Earthquake170 still lacks a local activation capture in this fixed baseline;
+its duplicate metadata and opponent casts do not erase that missing-capture entry.

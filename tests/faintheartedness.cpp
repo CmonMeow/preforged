@@ -1,0 +1,65 @@
+#include "gw_skill_casting.h"
+#include <iostream>
+int main()try{
+    using namespace fw::gw;using namespace skills;using namespace skills::effects;
+    auto check=[](bool ok,const char* why){if(!ok)throw std::runtime_error(why);};
+    const auto zero=faintheartedness(0),rank12=faintheartedness(12),rank15=faintheartedness(15);
+    check(zero&&zero->pips==0&&zero->duration==3000&&zero->slower_percent==50,"rank zero still slows");
+    check(rank12&&rank12->pips==2&&rank12->duration==13000&&rank15->pips==3&&rank15->duration==16000,"rank scaling");
+    check(!faintheartedness(21),"invalid rank");
+    Scope target{1,43,9};Registry registry(target);regeneration::State regen(target,0);
+    auto applied=apply_faintheartedness(target,registry,regen,1,42,*rank12,0);
+    check(applied&&applied->effects.removed.empty()&&registry.active(target,0).empty()&&regen.pips(0)==0,"atomic planned application");
+    registry=applied->registry;regen=applied->regeneration;
+    check(regen.pips(0)==-2&&faintheartedness_active(registry.active(target,0),0),"both mechanics committed");
+    auto timing=reviewed_attack_timing({500,2000,144},registry.active(target,0),0);
+    check(timing&&timing->windup_ms==750&&timing->period_ms==3000&&timing->range==144,"slow attack timing");
+    double health=100;check(regen.advance(target,1000,health,100)&&health==96,"real degeneration");
+    applied=apply_faintheartedness(target,registry,regen,2,44,*zero,1000);
+    check(applied&&applied->effects.removed.size()==1&&applied->effects.removed[0].instance==1,"renewal replaces exact old effect");
+    registry=applied->registry;regen=applied->regeneration;
+    check(regen.pips(1000)==0&&faintheartedness_active(registry.active(target,1000),1000),"rank zero replacement retains slow");
+    check(!registry.remove(target,1)&&registry.has(target,Category::hex,1000),"stale removal erased renewal");
+    check(!faintheartedness_active(registry.active(target,4000),4000),"half-open expiry");
+    check(regen.advance(target,4000,health,100)&&health==96,"zero pips damage");
+    check(*reviewed_attack_duration(500,true,true)==503&&*reviewed_attack_duration(2000,true,true)==2010,"multiplicative Frenzy overlap");
+    check(*reviewed_attack_duration(500,true,false)==335&&!reviewed_attack_duration(60001,false,false),"timing bounds");
+    auto corrupt=*rank12;corrupt.slower_percent=25;
+    check(!apply_faintheartedness(target,registry,regen,3,42,corrupt,4000),"forged plan");
+    check(!apply_faintheartedness({1,43,10},registry,regen,3,42,*rank12,4000),"stale scope");
+
+    using namespace casting;Policy policy;policy.primary=4;policy.campaigns=0x1e;policy.learned={{135,1}};
+    Slots bar{};bar[0]={135,0};attributes::Ranks ranks{};ranks[7]=12;
+    vitals::Resources self{100,100,40,40};Hooks h;unsigned calls=0;
+    h.events=[](const auto&){};
+    h.resources=[&](unsigned id)->std::optional<vitals::Resources>{return id==42?std::optional(self):std::nullopt;};
+    h.consume_energy=[&](unsigned cost){if(cost>self.energy)return false;self.energy-=cost;return true;};
+    h.target_valid=[](auto,float,bool){return false;};
+    h.projectile_target_valid=[](unsigned id,float range){return id==43&&range==1248;};
+    h.target_scope=[&](unsigned id)->std::optional<Scope>{return id==43?std::optional(target):std::nullopt;};
+    Runtime cast(42);
+    check(cast.start(0,{135,0,43},bar,policy,ranks,true,h)==casting::Reason::unsupported&&self.energy==40,"partial mechanic admitted");
+    h.faintheartedness=[&](Scope scope,const FaintheartednessPlan& p,Time now){check(scope==target&&p==*rank12&&now==1000,"captured rank and scope");++calls;return true;};
+    check(cast.start(0,{135,0,43},bar,policy,ranks,true,h)==casting::Reason::accepted&&self.energy==30,"cast resource");
+    cast.update(999,h);check(!calls,"early effect");cast.update(1000,h);check(calls==1,"missing effect");
+    check(cast.start(1750,{135,0,43},bar,policy,ranks,true,h)==casting::Reason::recharge,"recharge missing");
+    Runtime cancelled(42);check(cancelled.start(0,{135,0,43},bar,policy,ranks,true,h)==casting::Reason::accepted,"cancel setup");
+    cancelled.cancel(h);cancelled.update(1000,h);check(calls==1,"cancelled effect");
+    policy.primary=1;policy.learned={{322,1}};bar[0]={322,0};ranks[17]=12;
+    h.weapon_snapshot=[](){return std::optional<combat::weapon::Owned>{{1,4,{15,22,2},12,false,false,27}};};
+    h.weapon_attack_timing=[](auto){return std::optional<combat::weapon::Timing>{{750,1995,1200}};};
+    h.melee_target=[](unsigned id,Time){return id==43;};h.attack_activity=[](auto){};
+    unsigned strikes=0;h.melee_attack=[&](auto,const auto&,const auto&,Time){++strikes;return true;};
+    h.attack_duration=[](Time base,Time){return reviewed_attack_duration(base,false,true);};
+    std::vector<Packet> attack_packets;h.events=[&](const auto& packets){attack_packets.insert(attack_packets.end(),packets.begin(),packets.end());};
+    Runtime slow_attack(42);
+    check(slow_attack.start(0,{322,0,43},bar,policy,ranks,true,h)==casting::Reason::accepted,"slowed attack starts");
+    check(std::find(attack_packets.begin(),attack_packets.end(),combat::weapon::timing_2022(42,1.33f,1.5f))!=attack_packets.end(),"native timing lost duration modifier or applied slowdown twice");
+    slow_attack.update(500,h);check(!strikes,"attack skill ignored slow");slow_attack.update(750,h);check(strikes==1,"slowed attack release");
+    h.attack_duration=[](Time,Time)->std::optional<Time>{return {};};
+    const auto before=self.energy;Runtime unavailable(42);
+    check(unavailable.start(0,{322,0,43},bar,policy,ranks,true,h)==casting::Reason::unsupported&&self.energy==before,"invalid cadence consumed resources");
+    h.attack_duration=[](Time,Time)->std::optional<Time>{return 0;};Runtime zero_cadence(42);
+    check(zero_cadence.start(0,{322,0,43},bar,policy,ranks,true,h)==casting::Reason::unsupported&&self.energy==before,"zero cadence admitted or consumed resources");
+    std::cout<<"Faintheartedness rank, degeneration, slowing, renewal and casting verified\n";return 0;
+}catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

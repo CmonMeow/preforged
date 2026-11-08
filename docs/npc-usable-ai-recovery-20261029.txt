@@ -1,0 +1,38 @@
+NPC usable AI navigation recovery, 2026-10-29
+
+The deployed baseline already opts five reviewed Raiders and one Firestarter
+into shared navigation, proximity acquisition, remembered pull retention,
+melee/Flare combat, home leash, return and resumed patrol on map146. This change
+improves two concrete recovery gaps in those shared controllers without adding
+creatures, combat profiles, spellbooks or invented retail data.
+
+An idle waypoint rejected by authoritative navigation now retires immediately
+on route_unavailable, unsupported_layer or invalid_request. The next waypoint
+still waits the configured pause; no loop tries every waypoint in one tick.
+Progress, zero movement budget and unavailable observations retain their
+original leg deadline. These are authored development choices. The shared
+patrol policy file records this distinction. Normal home-leash and combat
+priority rules are unchanged.
+
+When a previously retained movement route is replaced by an unreachable
+destination (or an already-reached goal), the server publishes final position
+and stop once before leaving the NPC stationary. Subsequent failed retries
+have no retained route and publish no extra stop. This also handles a replaced
+home route; the helper cannot rely on combat-only stop logic which deliberately
+does not erase homeward movement. Successful route changes continue directly.
+
+Native regression additions:
+- Ordinary and caster disconnected-mesh fixtures reject first waypoint at2200,
+  wait through3300, commit next reachable waypoint at3400, then move at3500.
+  Segment sampling checks mesh containment; no target acquisition or damage.
+- Ordinary chase begins toward a reachable moving player. A fresh player
+  lifetime across an unconnected wall replaces it. Failed routing must publish
+  exactly one stop, remain stationary on retry, and never hit through the wall.
+- Existing suites retain moving pull beyond acquire, fighting while pulled,
+  home-leash bound, return, resumed patrol, death and reconnect checks.
+
+Build/test status and exact hashes belong in the separate progress report.
+These tests prove native mechanics and packet queues only, not rendered client
+behavior. There is no linked-group threat, cross-layer navigation, actor-body
+collision avoidance, automatic respawn or home healing in this change. Unknown
+combat profiles remain unarmed. Official clients and collectors are untouched.

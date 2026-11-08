@@ -1,0 +1,62 @@
+NPC AI outbound reference visibility audit (2026-10-22)
+
+Central authority already exists
+Outbox::enqueue calls visible_reference before queueing OR thread-local capture.
+resolve_publication applies the same filter to batches behind a publication
+barrier. npc_visibility stores known NPC IDs and hides all except the peer's
+published set. Per-AI broadcast loops therefore need no duplicated visibility
+conditions. Ordered references queued while visible may legitimately precede
+their later despawn; do not re-filter arbitrary drained/captured history.
+
+Covered current AI forms
+position44 and new facing46: actor@2, already covered.
+ordinary start159 and spell start159: actor@6 plus second actor@10, covered.
+ordinary finish/stop158 and body158: actor@6, covered.
+generic body159: both actor fields covered, including target/caster reversal.
+effects65/66/67/240 and literal NPC names154: actor@2, covered.
+Health fraction161: actor@6, covered. NPC definition85 identifies the appearance
+table row rather than a live actor; it must not be treated as an actor ID.
+
+Concrete omissions in visible_reference
+Native ordinary timing53 carries actor@2 (gw_weapon_hit.h timing_2022), but is
+absent from the switch. Its comment records pinned native attack assertions
+requiring timing; this is an actor-reference message, not a harmless scalar.
+Native projectile163 carries caster@2 (gw_skill_particle_wire.h); it uses the
+direction flag0x8000, which the filter already masks, but163 is absent. The NPC
+Ice Spear release path emits this reviewed projectile directly to ready peers.
+Native attributed damage162 carries victim@6 AND numeric cause@10. The existing
+filter intentionally checks only victim; native analysis below supports
+retaining that behavior. A hidden NPC damaging a visible player loses its
+separate source158 attribution, while damage162 and victim161 remain intact.
+Do not blanket-filter162 causes or rewrite the source to0: that would discard
+legitimate visible-victim damage/floating-number behavior without necessity.
+
+All offsets above come from current reviewed native serializers and their
+pinned-client comments, not modern capture opcode guesses or name heuristics.
+This audit identifies omitted53/163 actor-reference forms; it does not assert
+each necessarily crashes every client. No official client or logger was used.
+
+Native162 unseen-cause support (corrected after original-handler review)
+tools/protocol/npc_visibility_refs_2022.py executes hash-pinned original code
+and writes build/reports/npc-visibility-native-2022.json. Source client SHA256
+a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac.
+874c50 ->794f60 ->763c10 ->779b80 forwards cause43/99/0 equally into effect2;
+the only actor lookup is victim42. 775dc0 checks cause0 at775df1 and handles a
+null cause lookup at775e02 by branching775f4f. Its victimflag4 branch bypasses
+cause lookup and retains a floating-number request for unknown99 or0. Offline
+fixtures execute those branches and assert their behavior; actor lookup,
+effect allocation and final UI delivery are stubbed. No rendered UI claim.
+The numeric unseen cause is legitimate supported state, not by itself an
+unsafe actor dereference or proof of an identity/name leak.
+
+Prepared test: tests/npc_ai_visibility_references.cpp exercises existing-peer
+allowance, hidden enqueue, publication-barrier resolution, thread-local capture,
+hidden-source damage notification plus visible victim Health preserved, and
+newly visible actors. It is expected to fail until the centralized omissions
+are fixed. The narrow central change is now integrated and this test can be
+registered by the parent build.
+
+Integrated narrow fix: Outbox::visible_reference only, add53
+and163 to actor@2 forms. Keep its existing0x7fff direction-bit mask and keep
+162 checking victim@6 only, supported by the native unknown-cause path.
+No AI enqueue-loop changes, blanket packet suppression or drain-time filtering.

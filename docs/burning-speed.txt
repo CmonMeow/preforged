@@ -1,0 +1,172 @@
+Burning Speed (823): source-bound native player cast; rendered-client verification pending.
+
+The fixed skill checkpoint records one activation and one completion. The
+2022 client row pins 10 Energy, 250 ms activation, 750 ms aftercast, zero
+recharge, seven-second duration, Fire Magic scaling 30..45 movement bonus
+and 3..9 seconds of ending Burning. The archived wiki description confirms
+the caster burns during the enchantment and adjacent foes burn when it ends.
+The rank-20 values are arithmetic extrapolations of the row's rank-0/rank-15
+scales, not a witnessed rank-20 cast.
+
+Fixed local activation receipt: the immutable
+20261024-signet-infection-bound/packets-1360-15821281.jsonl snapshot has
+actor 25 casting 823 at line 182484, tick 19495875 (kind 60). The finish
+at line 182487, tick 19496078 (kind 58), is followed on that same tick by
+kind-21 body resource 339 at line 182488 and opcode-66 effect records for
+823 and Burning condition 480 at lines 182489-182490. Both effect records
+carry 7.0-second duration bits. This supports same-cast self-Burning and the
+native body choice; the capture does not establish early-strip semantics or
+prove that our 2022 client renders the same animation.
+Snapshot SHA256 59E2AE82E4C8187A88B5F3F8CAC919A085A14ACA314834ADA70117039F3287D6
+
+Source: src/runtime/gw_burning_speed.h
+SHA256 C0E768356799528D3D81BBC6DCA83AC28FB2812786A99BBB7AF05ED58A52CBBC
+Movement consumer: src/runtime/gw_movement_effects.h
+SHA256 6BAC3774787E5F93BB768B640F1B24C0B5CFEE8E5926A4D1CEC74FFF61DA9023
+Test: tests/burning_speed_policy.cpp
+SHA256 8085A42EDAF55CF6D98D14612E3642DDD179F93109A9558FD79B76B99B9AE041
+Test executable: build/tools/burning_speed_policy_test.exe
+SHA256 74826207D802C4A1DE1511E0D35B8E2BE7F568F317DF5B4FF071E3EED57144C8
+Server executable: bin/server_host.exe
+SHA256 BAD703C113676DD4B8D5FFA471223A3377946497C5E6A5BB6C4BFD77E5A874AF
+Archived wiki: Burning_Speed.html
+SHA256 C4633C08030B9B03300E84F42EC5CF6A60FB3EF7B656A52BC0C1754D13A234CC
+
+Release CTests burning_speed_policy and movement_effects pass; server_host
+compiles. The movement consumer applies the pinned speed only to a live
+enchantment entry and ends it on removal/expiry. This is a component check,
+not a cast path or rendered client test. World/Runtime still need enchantment
+lifecycle, self-Burning ticks, ending-area eligibility and Burning publication,
+removal/death behavior, and rendered client verification. Do not count 823 as
+implemented or publish its binding until those consumers are complete.
+
+The detached end-event preflight now selects only eligible same-instance foes
+within 166 units of the caster's settled position. It copies and validates
+each target condition state before returning an atomic proposal; malformed or
+duplicate actor lifetimes reject it. It does not remove the enchantment,
+commit Burning, or publish packets. Tests cover boundary distance, duration,
+unchanged input state, duplicate/foreign targets, and early ending. Whether
+self-Burning should be removed on early enchantment removal remains unverified.
+The end proposal also rejects an entry whose expiry is absent or differs from
+its exact seven-second native timer. This guards malformed effect records, not
+the complete World lifecycle.
+
+Lifecycle route audit: World remove_health_effect_locked covers effects stored
+in player.health_effects, including its expiry loop in advance_health_locked.
+Generic status_mutation applies an enchantment to Registry without inserting it
+into health_effects; its inactive path removes directly. Other replacement and
+strip handlers also erase Registry entries or health_effects directly. A single
+hook in remove_health_effect_locked would miss those cases. Before binding 823,
+route every ordinary expiry, early strip, same-skill renewal, death and generic
+removal through a reviewed terminal transaction that invokes the end proposal
+exactly once, after settling the caster's position and target lifetimes.
+
+Staged World application now exists in status_mutation. It validates exact
+timer and owned actor scope, preflights Registry and self-Burning, installs
+the effect in health_effects, then applies the condition and movement. A
+direct World test rejects bad expiry/duplicate applications and verifies
+self-Burning reduces Health while movement advances at the rank-15 rate.
+The end-area proposal is still not committed or published. Self-Burning after
+early removal is also unverified. The Runtime supported-skill gate remains
+closed for 823, so this is not a client-castable skill.
+World source: src/runtime/gw_world_simulation.h
+SHA256 75F054793AEF961A526D1D25C00A1EEFE705A727309AB661DF25F4A66B684FAE
+World test: tests/burning_speed_world.cpp
+SHA256 51ED627D7FBAA1A02293AE42F11062459F91C98972CEBEC3C79C85EB1A69AA57
+Test executable: build/tools/burning_speed_world_test.exe
+SHA256 50DD1701264DDDD1BB702C3FD1A155E804B2957AEA2F29CFE55C78D19F6FD1B7
+Release CTests burning_speed_policy and burning_speed_world pass 2/2.
+
+The owned World end path now gathers adjacent hostile players and NPCs on the
+same layer, preflights all condition states and NPC applications, then commits
+Burning before removing the enchantment. Direct tests cover early removal,
+hostile-player and hostile-NPC recipients, friendly exclusion, and natural
+expiry without a duplicate end event. The ordinary player enchantment-removal
+spell and same-skill renewal have targeted World tests that pass. A death test
+also confirms end Burning. The archived End_effect.html lists death as a
+premature ending and Burning Speed as a skill with an end effect; that is
+community evidence, not a causal retail packet capture. Its SHA256 is
+65B4BA5892421526514A1373ED7DF3E518B5CBF9AABFE77A14959BDD9A864AFE.
+No rendered client
+animation has been verified, and 823 remains absent from the source binding
+count.
+
+Runtime integration gate: the generic cast path can request modified
+enchantment durations. This World application and end preflight currently
+require the exact seven-second base timer. The duration calculation must be
+shared and validated before binding, or a valid duration-modified cast might
+spend Energy and then fail its World effect. Runtime must also publish target
+body 339 on completion and keep its effect cache synchronized on removal.
+
+2026-10-25 duration-receipt update supersedes the exact-seven-second gate
+above. World accepts a modified timer only with an immutable
+EnchantmentDuration receipt scoped to skill 823, this actor lifetime, base
+7000 ms and the application timestamp. The reviewed duration is retained by
+effect instance for the end event; an arbitrary caller-supplied expiry cannot
+extend either the movement or end Burning. The production status callback
+uses the same equipped-weapon and active-effect quote as the Runtime's
+local_enchantment_duration hook. Focused Release tests cover the base timer,
+20% enchanting equipment (7000 -> 8000 ms), mismatched receipt/expiry,
+natural expiry and end Burning; both burning_speed_policy and
+burning_speed_world pass (2/2), and server_host builds serially. This is
+native mechanics evidence only. Skill 823 remains unbound until the cast
+path emits body 339, synchronizes effect removal and passes rendered-client
+verification.
+
+Current tested SHA-256:
+  src/runtime/gw_burning_speed.h CFF0B890F56550E35B6458154853B588F0AE7197BBE9C426746EC1536CCFC499
+  src/runtime/gw_world_simulation.h 11C457727FD288CCD211079AA71D8889995E4683338DB756EE8210EC7CE99A39
+  src/apps/gw_auth.cpp D855F4A4A28F45A7A493C935254CD1AC65A5F748F6174B5088CDEEA2A198D4B7
+  tests/burning_speed_policy.cpp 802EB35D469E6C135B9EBF686F280311E334285D6A5FA45C73D7AC5D94693DBA
+  tests/burning_speed_world.cpp 1101CC8A7DD11B62B59D4C0EAD90CD72D0E1450E1DA68B8CA11633EA861403C4
+  build/tools/burning_speed_policy_test.exe C6596A35C3B4F6DAB721D783C71288FC7E03A2DBE7785CF803084AF7650F54E6
+  build/tools/burning_speed_world_test.exe 7CA17033D96F7280E8F49C665A5732C80763F63B9D71065199D3E4E6EC5B3BA7
+  bin/server_host.exe 9C5B2870C40D69D7CF23E9667CEFAAC3F9A008326787B8503355BEF92E58B30D
+
+2026-10-25 player-cast binding supersedes earlier unbound notes in this file.
+Runtime now admits skill 823 only with the owned World callback, authoritative
+status snapshot and enchantment-duration hook. The callback preflights and
+commits the scoped seven-second enchantment (or reviewed equipment-adjusted
+duration) and defers World packets until Runtime sends the cast finish and
+body339. The outgoing 2022 test observes finish < body339 < owned effect65
+< Burning480 effect65. World owns end Burning and publishes exactly one old
+effect removal on strip or same-skill renewal; Runtime retires its cache from
+the authoritative snapshot. An equipped 20% enchanting weapon yields 8000ms;
+an arbitrary expiry without its receipt is rejected. Missing hooks reject
+the cast before the Energy payment. Direct tests cover early removal,
+expiry, death, hostile player/NPC ending recipients, friendly exclusion,
+renewal and no duplicate removal packet.
+
+The 20261024-signet-infection-bound checkpoint still supplies one local cast
+and one completion; its immutable packet hash above is unchanged. The refreshed
+source audit reports 379 locally captured obtainable bindings, 300 awaiting
+binding and 650 without a local activation capture. A binding is not proof of
+retail-equivalent mechanics or an accepted rendered animation. The effect's
+client-side display, first animation and early-strip self-Burning semantics
+still need 2022 client or isolated official evidence; NPC caster AI is not
+implemented by this player binding.
+
+Validation: serialized Release server_host, burning_speed_policy,
+burning_speed_world, burning_speed_cast, skill_casting, illusion_haste,
+enchantment_duration and enchantment_duration_cast; 7/7 selected CTests pass.
+Current SHA-256:
+  src/runtime/gw_skill_casting.h 9EF3E714DC901D9E8929AC7673F8BC253FD36DE123289CDA9959D2755BE9033F
+  src/runtime/gw_world_simulation.h 26B1E09961D0096A7E4EBC2D1610C51C634BCE0B0C0954F771BDA8921F780928
+  src/apps/gw_auth.cpp 1E272E72F759E686EEE0281044CFC5D8F5E267E36A3D6C086ED790160299922E
+  tests/burning_speed_cast.cpp C0BBF5DB70848FFE8BFB4579B7C476B3196DA8A1E945C12A9A3628695A08CEF6
+  build/tools/burning_speed_cast_test.exe DAFD071B09A5EF5EA942A6B688D4DB9CB914EBADAD4B93D69A123C7B1E9C62B1
+  bin/server_host.exe 665F863F9F91539DB12C7200AC96B3F566BAD9098D3DAF7478D002E47B52FBA9
+  data/skill-capture-plan/CURRENT-BACKLOG.json 70505AE4745AB9F7CFE48173592229A375C34A051B4A59B06D55F13ABA832ADE
+
+Final correction for this build: self-Burning now lasts the reviewed
+equipment-adjusted enchantment duration, so a 20% weapon bonus keeps both
+effects active for 8000ms. The World regression checks Burning immediately
+before the modified expiry and its absence at expiry. Serial Release host
+build and the same seven selected CTests pass after this change. These
+hashes supersede the World/test/binary/backlog hashes immediately above:
+  src/runtime/gw_world_simulation.h 8498E6567E949E40CC31DB4BA0D7B832B27B8D728BD5E386A3D56D402C9118BC
+  tests/burning_speed_world.cpp BB124F76E855F90F6B9AF7E80B8DBA813CA1F215F4C078FC807CF7D7E9825275
+  build/tools/burning_speed_world_test.exe 83A1FDCBCB363020150908AE09A7EA1C49964BF929A3704EF76D67F1F2C6057C
+  build/tools/burning_speed_cast_test.exe 00E0E82B2F359CD4D8D2B5E866157BC8BA07647D1341ABF13A16139D81F02038
+  bin/server_host.exe 13C01CA82E0CAA49F3D27E9B7B5DBD6C1C45BEA55AE7A4F810F36CE43617E405
+  data/skill-capture-plan/CURRENT-BACKLOG.json 475E1B361309CF3982B46FDD080F53CE3D43DE6502872124B9159E469A68E38B

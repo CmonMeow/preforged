@@ -1,0 +1,191 @@
+Shields Up! (367): detached mechanics, 2026-10-23
+
+Status: no runtime binding, CMake registration, deployment or client acceptance.
+Files: src/runtime/gw_shields_up.h; tests/shields_up.cpp.
+
+Evidence:
+- Fixed 20261022-cumulative-skills/skill-audit/captured-skills.tsv row 274:
+  one local start, one instant event, no finish. Source packet log
+  packets-1360-15821281.jsonl line 378791, tick 23463703, actor25/map280,
+  opcode0x009f kind48, hex9f00000030000000190000006f010000.
+- Checkpoint captured-skills.json has no endpoint/body evidence for367.
+- Pinned data/reference/buildwars/skilldesc-en.json skill367 describes party
+  members in earshot receiving +60 armor against incoming projectile attacks
+  for5..11 seconds. Provenance commit8495ca2c6125e1a03269c2932f099f7e7c09fb36.
+- Catalog367: Warrior/Tactics, shout15, energy10, instant/no aftercast,
+  recharge30 seconds, armor scale60/60, duration5/11, caster body626,
+  target body2077. Plan validates these fields rather than client values.
+- No independent local wiki page reviewed; recipient wire delivery and visual
+  duration remain unverified. Capture proves activation only.
+
+Mechanics:
+- Rank0..20 duration uses the existing interpolator; canonical plans only.
+- prepare_shields_up admits living same-instance self/party recipients within
+  inclusive1012 earshot from an authoritative completion snapshot. It validates
+  scope generations, finite nonnegative distance, effect ID and clock overflow.
+- Scope-owned Registry entries carry the shout for their full duration. This
+  is a snapshot shout, not a continuously checked aura.
+- shields_up_armor returns60 only for an active canonical projectile-attack
+  component. Melee attacks, projectile spells and other damage receive zero.
+  Duplicate effects do not multiply the bonus; expired/removed/stale-generation
+  effects have no contribution. Malformed duration entries fail closed.
+
+Integration still required before binding:
+- Include the header, add prepared/completion dispatch and register test target.
+- Preflight every eligible party recipient and reserve effect IDs/capacity,
+  then atomically commit cost10/recharge30000 and same-skill replacement entries.
+- Preserve existing shout admission/instant-use restrictions and authoritative
+  party identity; nearby friendly actors alone are insufficient.
+- Feed this contribution into the existing capped skill-armor calculation for
+  every player/NPC projectile-attack damage path before armor scaling. Determine
+  the damage component from authoritative attack provenance; a visible projectile
+  alone is insufficient. Do not add armor to armor-ignoring damage components.
+- Wire effect ownership/expiry/refresh and body626 publication must be reviewed
+  separately. Clear recipient registry ownership on instance/generation teardown.
+- Do not publish367 binding until these consumers and packet paths are complete.
+
+Test scope: pure C++ mechanics; no official-client process action or rendered
+client verification. Isolated MSVC C++20 compile and executable passed2026-10-23.
+The test covers21 ranks, inclusive earshot, party/self admission, attack/spell
+classification, nonstacking, exact expiry, generation and malformed-plan guards.
+SHA256:
+src/runtime/gw_shields_up.h
+8b26a0ba3b3553fc42598735c65a8ffcc1d1f0009277b73eb6daa85358762aa7
+tests/shields_up.cpp
+4e1a2b25c2ed823042839db4ff28f7adacedf005fbcf7198e4bcd374279cbfad
+build/tests/shields_up_test.exe
+4ae76ac52795577d42cc4d70f00e7649b77be77040c84aaa0a47a68090207c85
+
+2026-10-23 follow-up: opt-in normal casting path (supersedes the status line
+above about CMake registration). Runtime now accepts367 only when a trusted
+Shields Up! completion hook is supplied; the production gateway deliberately
+omits that hook. The shared scheduler treats the reviewed shout as instant,
+captures the caster lifetime, pays10 Energy, stages the World player-party
+snapshot, sends instant48 then caster body626 then recipient statuses, and
+records30s recharge. Missing hook, invalid rank, failed payment, stale owner
+and failed World completion are covered in the new test. The Stage is still
+not a production binding: NPC party membership/projectile armor paths and
+rendered2022 client acceptance remain open.
+
+Release server_host rebuilt; CTest shields_up, shields_up_world,
+shields_up_cast, watch_yourself_cast, skill_casting pass (5/5). The coverage
+tool verifies the explicit production gate, and re-auditing the fixed
+20261023-cumulative-skills checkpoint retains679 captured/355 bound/324
+awaiting/650 missing local activation. Both official loggers stayed ready.
+
+Follow-up SHA256:
+src/runtime/gw_skill_casting.h 5C33D88442DC764847FFFD18F63BD2E180E517810F110BBF82309D36B3D2DA28
+src/runtime/gw_cast_timing.h 5842203E779E562A0C38801260D9A3E33464DAD03206A8CADA99706C84F28777
+src/apps/gw_auth.cpp 8FF231EA39BE2D6EDC98B224F7EAD5C6E98AC364881545471E5C6E5DC1650F39
+tools/protocol/skill_runtime_coverage.py 45ACD9F029CF48855C4194567F505540C6A26B888F658C459C87EE5132812B2D
+tests/shields_up_cast.cpp 9E08DDD579C72D74C12C356DBD1CA686E71C6697A7CF0C9E4BB8D1B25C4F3448
+build/tests/shields_up_cast_test.exe 0D4915B1B37BAB8D2A207034379E6B4DB55292722FDCF29332B6C66FEDFD1976
+bin/server_host.exe 0CBA04C01D4BB9D5EA3D4E234221D1CCB76740534B9997A079C5E7E6EB11DF0D
+
+2026-10-23 NPC armor follow-up: a trusted LiveActor recipient method now
+accepts the shout only for a live allied NPC when the caller supplies true
+party membership, valid scope and earshot distance. It applies and replaces
+the scoped timed effect on a copy. The World NPC weapon armor path now passes
+authoritative bow/spear/wand/staff attack provenance to NPC armor calculation,
+which combines the +60 with other skill armor before condition adjustment.
+Ordinary, melee and spell armor do not receive the bonus. Direct NPC adapter,
+World combat and neighboring Watch Yourself Release tests pass (6/6).
+
+This is still staged. The World model has no NPC-to-player-party ownership,
+so the production caster cannot establish party_member=true for an NPC.
+Live NPC projectile damage itself uses the new armor path only if a trusted
+effect is already present. Do not wire the production shout on proximity alone.
+Rendered retail2022 visuals/packet ordering for an NPC recipient remain open.
+The current fixed coverage audit remains679/355/324/650. Official PID54796
+and both logger controllers stayed ready.
+
+NPC follow-up SHA256:
+src/runtime/gw_npc_combat_catalog.h C32577FC8B010D8A68B504E58629064A035CB1D3CC8EE1C4691202752B86CBA7
+src/runtime/gw_world_simulation.h 1A70905A51B1D829C838E79DAB598F4D7A6D56898948B6EAD4CB25C2BECC19FE
+tests/shields_up_npc.cpp FFAE9F05B664640CB1B179CC9B877FEE0A189C46AA73BCC5AC821A7618C3E30A
+build/tests/shields_up_npc_test.exe 782BB20444425F4FCA676CD4EB4E5A967510EED244F651CCE51556B7718DD6E4
+bin/server_host.exe FA566580D183671364126CC6955FE6A2B4C4DE065D65A9D9E1C62D89D1D78C03
+data/captures/skill-checkpoints/20261023-cumulative-skills/skill-audit/captured-skills.json ECB8DA603AB08D15204BDDE67BF98CDC39154482BA7C0F13B9952F87FF2CF938
+
+2026-10-24 World NPC-party follow-up: explicit host-owned NPC-to-player scope
+association is now available. A Shields Up! completion snapshots only NPCs
+owned by a live member of the caster's party, in the same instance and plane
+and within earshot. Unowned nearby friendly NPCs and NPCs owned by another
+party receive nothing; stale owner scopes are rejected and departure removes
+the association. The NPC effect is committed and published in the same deferred
+World completion as player party effects. The exact NPC effect ID is tracked
+for one expiry/death removal notice. Focused Release build and seven
+neighboring CTests pass, including exact expiry/removal. This supersedes the
+earlier missing-association note.
+The production gateway still omits the Shields Up! hook, and retail2022 NPC
+recipient presentation/expiry remains unverified; skill367 stays unbound.
+Source/build SHA256:
+src/runtime/gw_world_simulation.h 71A70392296A0C6563A048173E7E5017610F7A18523EB348723C13DBB054DE7D
+src/runtime/gw_world_shields_up.inl 0C148957113BB338FB3F9B5123A18ECDAC5D88015B98A1B93B4FF85FC9FFB8D0
+tests/shields_up_world.cpp 8BF2E39FC02ACCD3E8EC6A63718C55C01A9E15E346F1D1DBED18371DF7AF85D9
+build/tests/shields_up_world_test.exe FF9EBAC7861B26501D7AEF92B1C0E8243E6D717334F75B5CB54F1255BB3F1468
+bin/server_host.exe BBD896EBEF7B12802CCF08D9215EBFF098A1CCC7D9728A21255A3E4264A1AB9A
+
+2026-10-24 production follow-up (supersedes the staged/unbound statements
+above): gateway gw_auth.cpp now supplies the scoped Shields Up! completion
+hook, and Runtime supported() admits367 through its normal paid instant cast.
+World applies a party snapshot to live players and explicitly owned NPC party
+members; it publishes recipient effect adds and exact NPC expiry removal.
+Player/NPC projectile-attack armor consumers are connected. The source audit
+recognizes367 as an implemented binding, with a fail-closed consumer check.
+This does not prove retail2022 recipient body2077/order, NPC rendered expiry,
+NPC party enrollment by hero services, or real-client animation. These remain
+verification gaps. Fixed all-completed checkpoint:679 local captured,356
+source-bound,323 awaiting binding,650 without local activation. Serialized
+Release host build and eight focused CTests passed; no official client action.
+Final SHA256:
+src/apps/gw_auth.cpp A14CB5222FC078064E5472073F382BD447BB12DFB891D6E3AF450D55DA892463
+src/runtime/gw_skill_casting.h 9DA6858CA65BA05A505ABFC60B48ADA987D4ACB3FD416A72E6F1A05CE9072443
+tools/protocol/skill_runtime_coverage.py 1A9C76042FF252E13D8FBAAC216DB6E57AE49460126F60B25E11DC9B025C64D3
+build/tests/shields_up_cast_test.exe E396EF24F877CD83CAB2C7AEE7BBC589365B60ECC01885D6DF59B31148CE60E1
+bin/server_host.exe BB63710F224830D59D3A8F7BF791D1DE13A5B8FFFE94CDB98598C2CCAF6BECC8
+
+2026-10-24 frozen animation-consumer proof: tools/protocol/shields_up_2022.py
+verifies seven exact self-activation receipts at packet lines378788..378795
+from the hash-verified all-completed checkpoint and pins the original2022
+metadata row. It executes the original2022 instant48 and caster body626
+consumers; body626 reaches a particle descriptor for actor42. The modern
+effect110/66 application is evidence of a timed self effect, not a 2022 wire
+packet. This does not demonstrate party recipient body2077 or rendered output.
+Report: build/reports/shields-up-native-2022.json. SHA256:
+tools/protocol/shields_up_2022.py 9249E87D05ED490F9DA19DB4FD4A5164650533025562607A318BBF3C3690B3C7
+build/reports/shields-up-native-2022.json F0E9F280FEAB3F433173A50451922FDE8DBF6660C8451BB2B8081AFEB824E3C1
+
+2026-10-24 live-owner regression: the NPC party owner must still have
+positive health when the shout completes. Death before completion prevents
+NPC recipient publication, and leaving the party scope still removes the
+association. The updated Shields Up World Release suite passed in the fresh
+seven-suite Frenzied Defense neighboring regression. This tests source
+mechanics, not rendered 2022 NPC recipient behavior. Tested SHA256:
+src/runtime/gw_world_shields_up.inl 1CD3BC3A7E4117BE1E1414BFB2B7F10A3E2D297FD4B22CEA06C796EE428E65E9
+tests/shields_up_world.cpp B647040CE9A85EBD8C25DF4B5BB9186CD147CDC23248E2A81360D92BA6617D2D
+build/tests/shields_up_world_test.exe 648443CDCF2375F88DC0389394123E69089268C43EA6F41CA8E54BF50A3AB3F7
+bin/server_host.exe 41E8693392D5466B131EB057AF81B40B6853E36DE6FFD8E9EF8E8A7D5DA92896
+
+2026-10-25 opposed NPC projectile correction: the opposed-NPC ordinary
+recipient now receives the attacker profile's authoritative ranged/melee
+delivery when it computes armor at windup and impact. Ranged weapon attacks
+include the recipient's Shields Up! +60 skill armor; melee attacks do not.
+The prior NPC-to-NPC lookup omitted this provenance and silently lost the
+shout's armor in that route. A World regression stages Shields Up! on an
+explicitly owned allied NPC, compares the same hostile ranged attack with
+and without the shout, and checks the melee control stays equal. This is
+native source-mechanics evidence, not rendered retail2022 acceptance or
+proof that every hostile NPC is equipped with a reviewed ranged profile.
+
+Serial Release server_host and three affected test targets built; selected
+shields_up_world, npc_opposed_ordinary_world and npc_ordinary_recipient
+CTest suites passed 3/3. Official client and loggers were untouched.
+SHA-256 recipient header A6B6D2892CC3E04FFECD23D833437D0384EFFBD8C1769C374C4F733F471504EB
+SHA-256 opposed World route 84DF6D1511548E3A9F2A1BD6311C3AD344BB8719B7A043C614A6B1C39E5402D9
+SHA-256 ordinary World route 523A9078D6FDC73D7F37CBE60B803B148389F32EBE2B7DAF297FC15342F66A5C
+SHA-256 World test 4F818BD7482E746473F829DC90BC089715C70884A1F9C1C2AB4B7227762F7459
+SHA-256 tested World EXE B4E91876FCE3E57748FF951159B66B84B110745482D7F8B79CC25B9E29FC122D
+SHA-256 tested opposed EXE 56F245801ABA5E6C073909EF7AF3BCD5673A4DE88B2991A7D1138C47824B61E2
+SHA-256 tested recipient EXE 2C558D81C0F1B801C5F038260D5D01974DE40B937137BA17F93A8DABFB5015FD
+SHA-256 built server EXE 3F170CEAB29ADF73587DDC71B6C12848C703B251E89EBC1EE2E9AC777B40BAE5

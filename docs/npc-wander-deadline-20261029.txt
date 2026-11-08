@@ -1,0 +1,29 @@
+Retained idle movement deadline — implementation checkpoint pending tests
+
+An idle wander leg already had an explicitly authored leg_timeout_ms, but that
+deadline belonged only to wander::State. The retained motion intent could keep
+advancing the old route when destination() returned no goal during the next
+pause. A late poll could also spend travel after the authored leg deadline.
+
+The active wander state now exposes its exact leg deadline. Only an idle route
+receives that optional deadline; motion integration clamps its interval to the
+deadline and stops the intent there. A paused/expired idle state removes its
+old retained idle intent. No new acquisition, follow, leash, navigation-failure
+or combat timeout is introduced. Route/path collision, distance through corners
+and source movement modifiers remain governed by the existing integrator.
+
+Focused World regression: npc_wander_deadline_world.cpp. Ordinary and elemental
+controllers start an80unit route at300ms with authored speed100 and a500ms leg
+bound. Dense polls and a single900ms poll must stop at50units, remain still in
+the following pause, and resume on the next idle leg. No combat can occur while
+the only player is outside acquisition. Values are synthetic test policy, not
+retail measurements. The test is unexecuted at creation; use the parent build
+and source-hash report for final verification.
+
+This fixes route expiry, not the outstanding fixed-decision scheduler. A late
+poll still observes a leg timeout and starts its following pause at that poll;
+therefore subsequent new-decision timing is not generally coarse/fine equal.
+No historical target poses, unknown stats or NPC-specific route are fabricated.
+No client/rendered/deployment validation is claimed.
+
+Verification update: four deadline permutations and four adjacent native suites pass. Fresh gateway/core compilation and isolated host link/build-info pass. Final hashes and limitations: build/reports/npc-wander-deadline-progress-20261029.json. Canonical runtime not deployed; no rendered test.

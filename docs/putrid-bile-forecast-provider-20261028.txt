@@ -1,0 +1,61 @@
+Putrid Bile forecast provider and NPC degeneration correction,2026-10-28
+
+The copy-only provider gw_putrid_bile_timeline.h accepts real2058 ownership
+records and exact player hex or copied NPC state. It does not construct fake
+Parasitic Bond links. A missing/replaced lookup, mismatched admitted effect,
+future resource clock, unknown/dead Health or unavailable advance is refused.
+Admitted applied/expires values are compared directly; no assumption that an
+adjusted hex lasts exactly the plan duration. All forecasts stop at the earliest
+validated expiry. Death at expiry is not an explosion (existing take_death
+requires death < expiry). Inputs and live actors remain unchanged.
+
+The first provider fixture failed because accepted2058 NPC hexes did not lose
+Health. LiveActor's hardcoded degeneration list omitted2058. Integration now
+uses canonical degeneration_hex plans for active hex entries, also replacing
+the separate99 pass, avoiding double counting. Thirty mechanics cases cover
+nine supported degeneration IDs at ranks0/12/20, coarse/fine sampling, actual
+Bile death time/cause, expiry and no post-expiry loss. Existing World/conversion,
+Seed/chains/lifetime suites were rebuilt and rerun after the correction.
+
+PutridBileLinks::pending returns an independent immutable-by-ownership snapshot;
+callback removal cannot invalidate a saved traversal. The forecast validates
+both NPC and player hex provenance. Player Health crossing remains World-owned.
+ExternalHealth exposure must match real integration, including its boundaries,
+Health and Energy pips. Caller must restrict horizon to other timed effects
+and Energy-zero events before forecasting. Missing history must refuse, not
+assume no field exposure or an already advanced corpse's historical position.
+
+WORLD ORCHESTRATION IS STILL PENDING. This provider is not included or invoked
+by the World scheduler yet. It therefore does not close delayed explosion
+chronology, mixed linked reactions, retained-event admission or274/1399 closure.
+Required next work:
+- Factor the NPC external exposure used by actual condition settlement so the
+  forecast receives exactly the same Well Health/Energy model.
+- Select a common frontier for player Health crossings, all timed providers,
+  Energy-zero events and NPC Bile forecasts before any participant advances.
+- Clean ended/replaced scoped Bile links without using future state as old-time
+  eligibility; avoid repeatedly selecting an already consumed expiry frontier.
+- Materialize routed NPC/player death poses before death cleanup; respect
+  control, speed changes, collision and route corners. Current quest motion
+  refresh settles conditions before moving, so a forecast alone cannot prove
+  correct NPC death origins.
+- Execute coarse/fine polling in both actor orders, recipient/caster-first
+  resource events, moving deaths and protected/healed explosions. Fully known
+  facts must drain without a retained frontier. Include linked returns/debt,
+  Bonds/capacity callbacks and scoped NPC retirement combinations.
+
+The NPC immediate prebegin callback regression is now integrated and executed:
+actual caster Health settlement kills a LifeSiphon-linked NPC, retires its book,
+and cannot start/pay155. The live control takes due degeneration and casts.
+Its narrow friend accessor deliberately invokes real begin before public tick;
+this proves the callback boundary, not normal tick's earlier NPC prepass.
+
+All results/hashes: build/reports/bile-timeline-provider-progress-20261028.json.
+No binding publication,host relink/deployment,checkpoint move or official action.
+No rendered-client acceptance or complete skill/AI implementation claim.
+
+Follow-up2026-10-28: World now invokes this provider and dispatches target
+Health at its frontier. See docs/putrid-bile-world-timeline-20261028.txt and
+build/reports/bile-world-timeline-progress-20261028.json for executed scope and
+remaining trajectory/linked-consumer/rendered gaps. Earlier pending text above
+is preserved as the provider-only stage, not the latest integration status.
