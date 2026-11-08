@@ -1,0 +1,57 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "captured_instant": {
+    "skill": 453,
+    "name": "Lightning Reflexes",
+    "receipt": {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 484852,
+      "tick_ms": 26536062,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003000000019000000c5010000",
+      "kind": 48
+    },
+    "opcode2022": 158,
+    "normalized_fields": [
+      48,
+      42,
+      453
+    ],
+    "native_ui": [
+      {
+        "event": 268435493,
+        "actor": 42,
+        "skill": 453
+      }
+    ]
+  },
+  "native_rows": [
+    {
+      "skill": 453,
+      "duration0": 5,
+      "duration15": 11,
+      "caster_body": 765,
+      "reviewed_recharge_seconds": 30
+    },
+    {
+      "skill": 3141,
+      "duration0": 5,
+      "duration15": 11,
+      "caster_body": 765,
+      "reviewed_recharge_seconds": 45
+    }
+  ],
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "69cd00010000",
+    "flags": 1
+  },
+  "limitations": [
+    "Body765 is from the original2022 record and offline consumer; no captured body765 receipt is claimed.",
+    "PvP3141 has no local activation proof in this report; alias gameplay uses reviewed native/wiki recharge difference.",
+    "No rendered assets or retail block/attack-speed calibration is proven by dispatch."
+  ]
+}

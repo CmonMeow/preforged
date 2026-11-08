@@ -1,0 +1,242 @@
+{
+  "checkpoint": "20261017-log-check-0059",
+  "cutoff": "2026-10-17T06:01:36.761196+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "cases": [
+    {
+      "skill": 213,
+      "start": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19256468,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e000000d5000000"
+      },
+      "finish": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19257437,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      },
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19257437,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a4000000190000000040b4c50040f74400000000cc475f3d7a0100000100000000000000"
+      },
+      "impact": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19257484,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000100000001e00000019000000efee6ebc"
+      },
+      "wire2022": "a380190000000040b4c50040f7440000cc475f3d7a0100000100000000",
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 213,
+        "override_after": 2139095040
+      },
+      "event_code": 11,
+      "state_requests": [
+        6
+      ],
+      "queued_payload": [
+        1,
+        1029654476,
+        378,
+        3316924416,
+        1157054464,
+        0
+      ],
+      "caster_effect": null
+    },
+    {
+      "skill": 214,
+      "start": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19258203,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e000000d6000000"
+      },
+      "finish": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19259187,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      },
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19259187,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a4000000190000000040b4c50040f74400000000d975a73d7b0100000100000000000000"
+      },
+      "impact": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19259328,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000100000001e00000019000000efee6ebc"
+      },
+      "wire2022": "a380190000000040b4c50040f7440000d975a73d7b0100000100000000",
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 214,
+        "override_after": 2139095040
+      },
+      "event_code": 11,
+      "state_requests": [
+        6
+      ],
+      "queued_payload": [
+        1,
+        1034384857,
+        379,
+        3316924416,
+        1157054464,
+        0
+      ],
+      "caster_effect": {
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19259187,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f00000015000000190000007c010000"
+        },
+        "native": {
+          "actor": 42,
+          "encoded_file": "8e1f01010000",
+          "flags": 1
+        }
+      }
+    },
+    {
+      "skill": 237,
+      "start": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 20702812,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e000000ed000000"
+      },
+      "finish": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 20703796,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      },
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 20703796,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a4000000190000000040b4c50040f7440000000055e0f83ca10100000100000000000000"
+      },
+      "impact": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 20703843,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000100000001e00000019000000efee6ebc"
+      },
+      "wire2022": "a380190000000040b4c50040f744000055e0f83ca10100000100000000",
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 237,
+        "override_after": 2139095040
+      },
+      "event_code": 11,
+      "state_requests": [
+        6
+      ],
+      "queued_payload": [
+        1,
+        1022943317,
+        417,
+        3316924416,
+        1157054464,
+        0
+      ],
+      "caster_effect": {
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 20703796,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000001500000019000000a2010000"
+        },
+        "native": {
+          "actor": 42,
+          "encoded_file": "872001010000",
+          "flags": 1
+        }
+      }
+    }
+  ],
+  "tool_sha256": "23fd9557d8a0a77bcf8680b647be01f0d3baf66a016cd71b49fbfba802366b68",
+  "limits": [
+    "Actor metadata, model assets and queue services are stubbed; no rendered acceptance.",
+    "Same-actor/target nearby impact receipts support association, not an isolated damage experiment.",
+    "These local casts do not establish speed, secondary-target selection, miss behavior or damage mechanics.",
+    "Native consumer evidence does not establish production runtime binding."
+  ]
+}

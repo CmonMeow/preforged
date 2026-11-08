@@ -1,0 +1,128 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "tool_sha256": "c2279c45c3fb380c2a1ab098208d8f06ea5e25cff6aa0f995fe85685ab3db4a6",
+  "skills": [
+    {
+      "skill": 49,
+      "name": "Mind_Wrack",
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 49,
+        "override_after": 2139095040
+      },
+      "fields": {
+        "0x44": 5,
+        "0x48": 40,
+        "0x4c": 7,
+        "0x5c": 15,
+        "0x60": 100,
+        "0x64": 5,
+        "0x68": 25,
+        "0x78": 2077,
+        "0x7c": 83
+      },
+      "target_body_consumer": {
+        "actor": 43,
+        "encoded_file": "c6c800010000",
+        "flags": 1
+      },
+      "evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "source_sha256": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+          "activation": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 97473,
+            "tick_ms": 8498468,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e00000031000000",
+            "kind": 60
+          },
+          "target_body": {
+            "line": 97484,
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 6468,
+            "tick_ms": 8499609,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e0000001900000053000000"
+          }
+        }
+      ],
+      "wiki_revision": 2648288,
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mind_Wrack.html",
+      "wiki_sha256": "451875ec385cbd50913f290c8242875d382265422a85f155ee3e23cc5ff40c1a"
+    },
+    {
+      "skill": 55,
+      "name": "Fevered_Dreams",
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 49,
+        "seconds": 2.0,
+        "stored_skill": 55,
+        "override_after": 2139095040
+      },
+      "fields": {
+        "0x44": 10,
+        "0x48": 25,
+        "0x4c": 10,
+        "0x5c": 0,
+        "0x60": 0,
+        "0x64": 1,
+        "0x68": 3,
+        "0x78": 2077,
+        "0x7c": 90
+      },
+      "target_body_consumer": {
+        "actor": 43,
+        "encoded_file": "97d700010000",
+        "flags": 1
+      },
+      "evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+          "activation": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 21771,
+            "tick_ms": 16300156,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e00000037000000",
+            "kind": 60
+          },
+          "target_body": {
+            "line": 21787,
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 16301093,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e000000190000005a000000"
+          }
+        }
+      ],
+      "wiki_revision": 2669331,
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Fevered_Dreams.html",
+      "wiki_sha256": "bc1fb7d37eb34496590208640ba6f431097e335d46af7b9947c7e087f1f921a7"
+    }
+  ],
+  "limitations": [
+    "Exact selected actor/cause/resource emissions and original first particle consumers only; no rendered acceptance.",
+    "Modern capture timing/balance does not establish 2022 simulation timing.",
+    "Mind Wrack Energy-zero transitions, Energy debt, qualifying non-hex Mesmer use and caster death are not proven by these mannequin activations.",
+    "Fevered Dreams new-condition spread, Dazed renewals/application anomaly and reactive ordering are not proven by these mannequin activations.",
+    "This native probe does not establish runtime support; consult the current runtime audit."
+  ]
+}

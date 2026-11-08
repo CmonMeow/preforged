@@ -1,0 +1,241 @@
+{
+  "skills": [
+    {
+      "id": 23,
+      "name": "Power Spike",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 79309,
+          "tick_ms": 8263359,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000017000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 79316,
+          "tick_ms": 8263562,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 25,
+      "name": "Power Drain",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 79380,
+          "tick_ms": 8267359,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000019000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 79384,
+          "tick_ms": 8267671,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 61,
+      "name": "Leech Signet",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 2,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 2,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 103164,
+          "tick_ms": 8587046,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001f0000003d000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 3124,
+          "tick_ms": 15869609,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000003d000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 103168,
+          "tick_ms": 8587250,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 3127,
+          "tick_ms": 15869859,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 860,
+      "name": "Signet of Disruption",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 2,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 2,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 15759,
+          "tick_ms": 16167453,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000005c030000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 16095,
+          "tick_ms": 16193031,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000005c030000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 15763,
+          "tick_ms": 16167765,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 16099,
+          "tick_ms": 16193281,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 931,
+      "name": "Power Return",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 21889,
+          "tick_ms": 16307343,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000a3030000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 21903,
+          "tick_ms": 16307734,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "sources": [
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Spike.html",
+      "sha256": "ef1588666d5062a34084acad3b13e1684319e2753a38e9492425387d36091a65"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Drain.html",
+      "sha256": "430e05d7d25b0026d657e143498de6c58ed36233980d1c9f4d718dcd42e58827"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Leech_Signet.html",
+      "sha256": "8a54899a4c417590b5ec687aba15087868e64c55997d47b639e379c30b8927c8"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Leak.html",
+      "sha256": "564e0304d905b7d47ce63d5d36303cf470080b923236f7b178a97552949d4d8b"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Return.html",
+      "sha256": "f3c57ac68a7857175b2ecbb5870fd935753471d753df5b397114663aea0de914"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Signet_of_Disruption.html",
+      "sha256": "2c1b7a260cc2a11211349eff2d8ddab759334cf1325378433b056583d7546757"
+    }
+  ],
+  "limits": [
+    "Six player-target handlers in source; NPC action integration and interrupt immunities/global modifiers remain pending.",
+    "Original2022 cast consumer passes all6; rendered and successful-interrupt particle feedback remain unverified.",
+    "Latest24/860/931 source extension passes focused test; full executable rebuild pending."
+  ]
+}

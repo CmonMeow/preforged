@@ -1,0 +1,140 @@
+{
+  "quest": 85,
+  "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+  "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "map": 146,
+  "instance_epoch": 3,
+  "acceptance_line": 529,
+  "completed_line": 615,
+  "definition_line": 559,
+  "definition": {
+    "model_file": 82023,
+    "skin_file": 0,
+    "appearance": 0,
+    "flags": 8,
+    "primary": 6,
+    "secondary": 0,
+    "default_level": 0,
+    "visual_adjustment_bytes": [
+      0,
+      0,
+      0,
+      100
+    ],
+    "model_files": [],
+    "name_encoded_utf16": [
+      3894,
+      35404,
+      42145,
+      21249
+    ],
+    "name": "River Skale Tad",
+    "name_status": "decoded"
+  },
+  "actors": [
+    {
+      "candidate_actor": 20002,
+      "captured_agent": 40,
+      "snapshot_line": 560,
+      "observation": {
+        "agent": 40,
+        "model": 1434,
+        "x": 4920.0,
+        "y": -2857.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "candidate_actor": 20003,
+      "captured_agent": 41,
+      "snapshot_line": 560,
+      "observation": {
+        "agent": 41,
+        "model": 1434,
+        "x": 4702.0,
+        "y": -2843.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "candidate_actor": 20004,
+      "captured_agent": 42,
+      "snapshot_line": 565,
+      "observation": {
+        "agent": 42,
+        "model": 1434,
+        "x": 4878.0,
+        "y": -3173.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      }
+    }
+  ],
+  "health": 35,
+  "health_source": "River_Skale_Tad.html",
+  "health_source_sha256": "8369ae7263f3e1e481411bb179277dc130bdb1279c6adea3fe080c5f0a57c650",
+  "armor": null,
+  "installed": false,
+  "objective_membership": "All three captured actors receive dead-effect bit 0x10 in the active Warrior Test span; completed quest snapshot follows. Use exact encounter actors, not arbitrary skale models.",
+  "packet_source": "data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl",
+  "packet_source_sha256": "3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a",
+  "death_packets": [
+    {
+      "line": 11610,
+      "tick_ms": 99563765,
+      "captured_agent": 41,
+      "effects": 16,
+      "opcode": 241,
+      "hex": "f10000002900000010000000"
+    },
+    {
+      "line": 11671,
+      "tick_ms": 99566906,
+      "captured_agent": 40,
+      "effects": 16,
+      "opcode": 241,
+      "hex": "f10000002800000010000000"
+    },
+    {
+      "line": 11713,
+      "tick_ms": 99569484,
+      "captured_agent": 42,
+      "effects": 16,
+      "opcode": 241,
+      "hex": "f10000002a00000010000000"
+    }
+  ],
+  "completion_packets": []
+}

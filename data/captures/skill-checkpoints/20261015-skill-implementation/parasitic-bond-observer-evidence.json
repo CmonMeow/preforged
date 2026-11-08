@@ -1,0 +1,1963 @@
+{
+  "skill": 99,
+  "scope": "Supplementary archived observer matches;not merged into fixed local capture inventory",
+  "tool_sha256": "54b79aeebf2d830dc169471d9bd192c08450bcb5c799b4dca0f2bcc83cabba20",
+  "matches": [
+    {
+      "match": "2026-08-08_Insel_des_Kriegers_13.47_[meow]vs[push]",
+      "recording_version": 2,
+      "source": "data\\captures\\observer-downloads\\2026-08-08_Insel_des_Kriegers_13.47_[meow]vs[push]\\StoC\\skill_events.txt.gz",
+      "source_sha256": "64172becb538917edb4f98c268e7d174f95a70aff3a73847b11b36188c44bedb",
+      "combat_source": "data\\captures\\observer-downloads\\2026-08-08_Insel_des_Kriegers_13.47_[meow]vs[push]\\StoC\\combat_events.txt.gz",
+      "combat_sha256": "49c1479c3a7f65172250771dcb4087eef9308eb3bfe82a34e3a1af7916b1e7f9",
+      "info_sha256": "5860c42154758816294658af5ec32ec8d0b1c1c7366a14b8a18cea4cd2be5120",
+      "casters": [
+        57
+      ],
+      "casts": [
+        {
+          "line": 91,
+          "at": 77372,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 93,
+            "at": 79812,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 2440
+          }
+        },
+        {
+          "line": 105,
+          "at": 83976,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 107,
+            "at": 84881,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 905
+          }
+        },
+        {
+          "line": 126,
+          "at": 93302,
+          "actor": 57,
+          "target": 79,
+          "next_terminal": {
+            "line": 128,
+            "at": 93820,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "79"
+            ],
+            "elapsed_ms": 518
+          }
+        },
+        {
+          "line": 231,
+          "at": 112157,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 236,
+            "at": 112625,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 468
+          }
+        },
+        {
+          "line": 258,
+          "at": 117578,
+          "actor": 57,
+          "target": 56,
+          "next_terminal": {
+            "line": 259,
+            "at": 118095,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "56"
+            ],
+            "elapsed_ms": 517
+          }
+        },
+        {
+          "line": 286,
+          "at": 123819,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 289,
+            "at": 124820,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 1001
+          }
+        },
+        {
+          "line": 323,
+          "at": 130983,
+          "actor": 57,
+          "target": 79,
+          "next_terminal": {
+            "line": 330,
+            "at": 131899,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "79"
+            ],
+            "elapsed_ms": 916
+          }
+        },
+        {
+          "line": 376,
+          "at": 142137,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 378,
+            "at": 142705,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 568
+          }
+        },
+        {
+          "line": 411,
+          "at": 148274,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 415,
+            "at": 149295,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 1021
+          }
+        },
+        {
+          "line": 434,
+          "at": 155406,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 436,
+            "at": 155911,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 505
+          }
+        },
+        {
+          "line": 467,
+          "at": 161530,
+          "actor": 57,
+          "target": 56,
+          "next_terminal": {
+            "line": 476,
+            "at": 162548,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "56"
+            ],
+            "elapsed_ms": 1018
+          }
+        },
+        {
+          "line": 500,
+          "at": 165755,
+          "actor": 57,
+          "target": 79,
+          "next_terminal": {
+            "line": 511,
+            "at": 166745,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "79"
+            ],
+            "elapsed_ms": 990
+          }
+        },
+        {
+          "line": 544,
+          "at": 172037,
+          "actor": 57,
+          "target": 84,
+          "next_terminal": {
+            "line": 556,
+            "at": 173050,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "84"
+            ],
+            "elapsed_ms": 1013
+          }
+        },
+        {
+          "line": 589,
+          "at": 178388,
+          "actor": 57,
+          "target": 80,
+          "next_terminal": {
+            "line": 596,
+            "at": 179386,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "80"
+            ],
+            "elapsed_ms": 998
+          }
+        },
+        {
+          "line": 640,
+          "at": 186995,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 645,
+            "at": 187495,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 500
+          }
+        },
+        {
+          "line": 958,
+          "at": 247121,
+          "actor": 57,
+          "target": 84,
+          "next_terminal": {
+            "line": 960,
+            "at": 248151,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "84"
+            ],
+            "elapsed_ms": 1030
+          }
+        },
+        {
+          "line": 1007,
+          "at": 257404,
+          "actor": 57,
+          "target": 56,
+          "next_terminal": {
+            "line": 1011,
+            "at": 258099,
+            "stage": "SKILL_STOPPED",
+            "fields": [
+              "SKILL_STOPPED",
+              "57",
+              "0",
+              "56"
+            ],
+            "elapsed_ms": 695
+          }
+        },
+        {
+          "line": 1160,
+          "at": 291191,
+          "actor": 57,
+          "target": 84,
+          "next_terminal": {
+            "line": 1164,
+            "at": 291674,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "84"
+            ],
+            "elapsed_ms": 483
+          }
+        },
+        {
+          "line": 1180,
+          "at": 297860,
+          "actor": 57,
+          "target": 48,
+          "next_terminal": {
+            "line": 1181,
+            "at": 298343,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "48"
+            ],
+            "elapsed_ms": 483
+          }
+        },
+        {
+          "line": 1195,
+          "at": 303441,
+          "actor": 57,
+          "target": 47,
+          "next_terminal": {
+            "line": 1198,
+            "at": 304442,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "47"
+            ],
+            "elapsed_ms": 1001
+          }
+        },
+        {
+          "line": 1225,
+          "at": 317153,
+          "actor": 57,
+          "target": 61,
+          "next_terminal": {
+            "line": 1228,
+            "at": 317654,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "61"
+            ],
+            "elapsed_ms": 501
+          }
+        },
+        {
+          "line": 1245,
+          "at": 322080,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 1248,
+            "at": 323077,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 997
+          }
+        },
+        {
+          "line": 1301,
+          "at": 349489,
+          "actor": 57,
+          "target": 61,
+          "next_terminal": {
+            "line": 1305,
+            "at": 350540,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "61"
+            ],
+            "elapsed_ms": 1051
+          }
+        },
+        {
+          "line": 1326,
+          "at": 354440,
+          "actor": 57,
+          "target": 80,
+          "next_terminal": {
+            "line": 1329,
+            "at": 354901,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "80"
+            ],
+            "elapsed_ms": 461
+          }
+        },
+        {
+          "line": 1354,
+          "at": 360714,
+          "actor": 57,
+          "target": 56,
+          "next_terminal": {
+            "line": 1359,
+            "at": 361682,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "56"
+            ],
+            "elapsed_ms": 968
+          }
+        },
+        {
+          "line": 1393,
+          "at": 370301,
+          "actor": 57,
+          "target": 79,
+          "next_terminal": {
+            "line": 1395,
+            "at": 370785,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "79"
+            ],
+            "elapsed_ms": 484
+          }
+        },
+        {
+          "line": 1437,
+          "at": 379395,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 1441,
+            "at": 379929,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 534
+          }
+        },
+        {
+          "line": 1462,
+          "at": 386885,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 1471,
+            "at": 387496,
+            "stage": "SKILL_STOPPED",
+            "fields": [
+              "SKILL_STOPPED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 611
+          }
+        },
+        {
+          "line": 1485,
+          "at": 390583,
+          "actor": 57,
+          "target": 79,
+          "next_terminal": {
+            "line": 1490,
+            "at": 391600,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "79"
+            ],
+            "elapsed_ms": 1017
+          }
+        },
+        {
+          "line": 1517,
+          "at": 396783,
+          "actor": 57,
+          "target": 56,
+          "next_terminal": {
+            "line": 1528,
+            "at": 397772,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "56"
+            ],
+            "elapsed_ms": 989
+          }
+        },
+        {
+          "line": 1567,
+          "at": 403416,
+          "actor": 57,
+          "target": 84,
+          "next_terminal": {
+            "line": 1570,
+            "at": 403960,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "84"
+            ],
+            "elapsed_ms": 544
+          }
+        },
+        {
+          "line": 1607,
+          "at": 407857,
+          "actor": 57,
+          "target": 80,
+          "next_terminal": {
+            "line": 1610,
+            "at": 408538,
+            "stage": "SKILL_STOPPED",
+            "fields": [
+              "SKILL_STOPPED",
+              "57",
+              "0",
+              "80"
+            ],
+            "elapsed_ms": 681
+          }
+        },
+        {
+          "line": 1937,
+          "at": 483452,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 1942,
+            "at": 483962,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 510
+          }
+        },
+        {
+          "line": 1969,
+          "at": 486455,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 1976,
+            "at": 487442,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 987
+          }
+        },
+        {
+          "line": 2052,
+          "at": 497476,
+          "actor": 57,
+          "target": 80,
+          "next_terminal": {
+            "line": 2058,
+            "at": 498460,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "80"
+            ],
+            "elapsed_ms": 984
+          }
+        },
+        {
+          "line": 2209,
+          "at": 549939,
+          "actor": 57,
+          "target": 61,
+          "next_terminal": {
+            "line": 2214,
+            "at": 550472,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "61"
+            ],
+            "elapsed_ms": 533
+          }
+        },
+        {
+          "line": 2266,
+          "at": 557551,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 2274,
+            "at": 558583,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 1032
+          }
+        },
+        {
+          "line": 2686,
+          "at": 708362,
+          "actor": 57,
+          "target": 46,
+          "next_terminal": {
+            "line": 2687,
+            "at": 708873,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "46"
+            ],
+            "elapsed_ms": 511
+          }
+        },
+        {
+          "line": 2701,
+          "at": 715789,
+          "actor": 57,
+          "target": 84,
+          "next_terminal": {
+            "line": 2705,
+            "at": 716789,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "84"
+            ],
+            "elapsed_ms": 1000
+          }
+        },
+        {
+          "line": 2738,
+          "at": 725703,
+          "actor": 57,
+          "target": 101,
+          "next_terminal": {
+            "line": 2741,
+            "at": 726653,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "101"
+            ],
+            "elapsed_ms": 950
+          }
+        },
+        {
+          "line": 2755,
+          "at": 730609,
+          "actor": 57,
+          "target": 80,
+          "next_terminal": {
+            "line": 2758,
+            "at": 731614,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "80"
+            ],
+            "elapsed_ms": 1005
+          }
+        },
+        {
+          "line": 2781,
+          "at": 734878,
+          "actor": 57,
+          "target": 56,
+          "next_terminal": {
+            "line": 2787,
+            "at": 735887,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "56"
+            ],
+            "elapsed_ms": 1009
+          }
+        },
+        {
+          "line": 2930,
+          "at": 778689,
+          "actor": 57,
+          "target": 82,
+          "next_terminal": {
+            "line": 2932,
+            "at": 779663,
+            "stage": "SKILL_STOPPED",
+            "fields": [
+              "SKILL_STOPPED",
+              "57",
+              "0",
+              "82"
+            ],
+            "elapsed_ms": 974
+          }
+        },
+        {
+          "line": 2960,
+          "at": 788687,
+          "actor": 57,
+          "target": 63,
+          "next_terminal": {
+            "line": 2962,
+            "at": 789189,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "63"
+            ],
+            "elapsed_ms": 502
+          }
+        },
+        {
+          "line": 3061,
+          "at": 825123,
+          "actor": 57,
+          "target": 61,
+          "next_terminal": {
+            "line": 3065,
+            "at": 826127,
+            "stage": "SKILL_STOPPED",
+            "fields": [
+              "SKILL_STOPPED",
+              "57",
+              "0",
+              "61"
+            ],
+            "elapsed_ms": 1004
+          }
+        },
+        {
+          "line": 3095,
+          "at": 831449,
+          "actor": 57,
+          "target": 84,
+          "next_terminal": {
+            "line": 3103,
+            "at": 832484,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "84"
+            ],
+            "elapsed_ms": 1035
+          }
+        },
+        {
+          "line": 3124,
+          "at": 836705,
+          "actor": 57,
+          "target": 80,
+          "next_terminal": {
+            "line": 3126,
+            "at": 837690,
+            "stage": "SKILL_STOPPED",
+            "fields": [
+              "SKILL_STOPPED",
+              "57",
+              "0",
+              "80"
+            ],
+            "elapsed_ms": 985
+          }
+        },
+        {
+          "line": 3146,
+          "at": 842333,
+          "actor": 57,
+          "target": 61,
+          "next_terminal": {
+            "line": 3150,
+            "at": 843345,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "61"
+            ],
+            "elapsed_ms": 1012
+          }
+        },
+        {
+          "line": 3231,
+          "at": 871283,
+          "actor": 57,
+          "target": 42,
+          "next_terminal": {
+            "line": 3235,
+            "at": 871817,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "42"
+            ],
+            "elapsed_ms": 534
+          }
+        },
+        {
+          "line": 3240,
+          "at": 874346,
+          "actor": 57,
+          "target": 43,
+          "next_terminal": {
+            "line": 3243,
+            "at": 874846,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "43"
+            ],
+            "elapsed_ms": 500
+          }
+        },
+        {
+          "line": 3264,
+          "at": 878780,
+          "actor": 57,
+          "target": 30,
+          "next_terminal": {
+            "line": 3267,
+            "at": 879781,
+            "stage": "SKILL_FINISHED",
+            "fields": [
+              "SKILL_FINISHED",
+              "57",
+              "0",
+              "30"
+            ],
+            "elapsed_ms": 1001
+          }
+        }
+      ],
+      "repeat_start_candidates": [
+        {
+          "previous_line": 286,
+          "line": 376,
+          "interval_ms": 18318,
+          "target": 63
+        },
+        {
+          "previous_line": 376,
+          "line": 434,
+          "interval_ms": 13269,
+          "target": 63
+        },
+        {
+          "previous_line": 1937,
+          "line": 1969,
+          "interval_ms": 3003,
+          "target": 101
+        },
+        {
+          "previous_line": 3061,
+          "line": 3146,
+          "interval_ms": 17210,
+          "target": 61
+        }
+      ],
+      "self_health_events": [
+        {
+          "line": 21,
+          "at": 85448,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 50,
+          "at": 97997,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 62,
+          "at": 99621,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 109,
+          "at": 108385,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 118,
+          "at": 110189,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 128,
+          "at": 112007,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 132,
+          "at": 112625,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.121134",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 137,
+          "at": 113127,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.121134",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 227,
+          "at": 125687,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.260309",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 311,
+          "at": 137986,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.243373",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 323,
+          "at": 140569,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 328,
+          "at": 141586,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 335,
+          "at": 142588,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 346,
+          "at": 143615,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 359,
+          "at": 144722,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.061856",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 367,
+          "at": 146338,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.061856",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 385,
+          "at": 148734,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 397,
+          "at": 151946,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 400,
+          "at": 152648,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 583,
+          "at": 175952,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 621,
+          "at": 181688,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 634,
+          "at": 182554,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 655,
+          "at": 185817,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 664,
+          "at": 186702,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 665,
+          "at": 186869,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 681,
+          "at": 187966,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 688,
+          "at": 189067,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.091262",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 713,
+          "at": 192590,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 734,
+          "at": 195418,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 817,
+          "at": 204302,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 822,
+          "at": 204802,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 833,
+          "at": 205938,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 848,
+          "at": 206980,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 858,
+          "at": 207987,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.096907",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1314,
+          "at": 268075,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1436,
+          "at": 292872,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1450,
+          "at": 300634,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.259794",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1469,
+          "at": 311033,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.244660",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1521,
+          "at": 323361,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.195876",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1601,
+          "at": 334278,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.184466",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1635,
+          "at": 352033,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1719,
+          "at": 366223,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1746,
+          "at": 373012,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1761,
+          "at": 375149,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1782,
+          "at": 378271,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.084428",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1815,
+          "at": 383791,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.084428",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1822,
+          "at": 384766,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.084428",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1854,
+          "at": 388723,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.084428",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1859,
+          "at": 389711,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.084428",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1865,
+          "at": 390649,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.084428",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1871,
+          "at": 391283,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.225141",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 1914,
+          "at": 398189,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.225141",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2093,
+          "at": 411583,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.225141",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2202,
+          "at": 424069,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2277,
+          "at": 430190,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2290,
+          "at": 431145,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.083481",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2306,
+          "at": 432789,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2317,
+          "at": 434878,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2327,
+          "at": 436387,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2346,
+          "at": 436870,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2369,
+          "at": 438144,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.053286",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2381,
+          "at": 439212,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.053286",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2392,
+          "at": 440152,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.053286",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2400,
+          "at": 440903,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.053286",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2408,
+          "at": 441953,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.053286",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2519,
+          "at": 484775,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2645,
+          "at": 494578,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2664,
+          "at": 495852,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2791,
+          "at": 507359,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2847,
+          "at": 518268,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2882,
+          "at": 555458,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2885,
+          "at": 555626,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2890,
+          "at": 556416,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2894,
+          "at": 557050,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2909,
+          "at": 558295,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2915,
+          "at": 559396,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2920,
+          "at": 560514,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.088180",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 2925,
+          "at": 560714,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3007,
+          "at": 573275,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.071594",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3316,
+          "at": 719160,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3369,
+          "at": 728886,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3510,
+          "at": 746648,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3513,
+          "at": 746664,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3524,
+          "at": 751608,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.236398",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3626,
+          "at": 790580,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3751,
+          "at": 849427,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3758,
+          "at": 851597,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 3994,
+          "at": 882477,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 4005,
+          "at": 883426,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        },
+        {
+          "line": 4013,
+          "at": 884811,
+          "fields": [
+            "HEAL",
+            "57",
+            "57",
+            "0.223801",
+            "ARMORIGNORING"
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Observer events are decoded summaries,not original wire packets.",
+    "Finish events and Health events lack skill IDs;association is provisional.",
+    "Actor maximum Health,ranks and simultaneous healing modifiers are not established.",
+    "No cross-caster or renewal-healing policy inferred from timing alone."
+  ]
+}

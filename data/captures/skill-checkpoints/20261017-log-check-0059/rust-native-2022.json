@@ -1,0 +1,138 @@
+{
+  "checkpoint": "20261017-log-check-0059",
+  "cutoff": "2026-10-17T06:01:36.761196+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "cases": [
+    {
+      "start": {
+        "line": 163181,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19160000,
+          "opcode": 160,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a00000003c000000190000001e000000cc000000"
+        }
+      },
+      "finish": {
+        "line": 163196,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19161015,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003a0000001900000000000000"
+        }
+      },
+      "particle": {
+        "line": 163197,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19161015,
+          "opcode": 160,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a0000000140000001e000000190000006f010000"
+        }
+      },
+      "damage": {
+        "line": 163199,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19161015,
+          "opcode": 163,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a3000000100000001e00000019000000bcbbbbbc"
+        }
+      }
+    },
+    {
+      "start": {
+        "line": 163336,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19170625,
+          "opcode": 160,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a00000003c000000190000001e000000cc000000"
+        }
+      },
+      "finish": {
+        "line": 163343,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19171671,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003a0000001900000000000000"
+        }
+      },
+      "particle": {
+        "line": 163344,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19171671,
+          "opcode": 160,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a0000000140000001e000000190000006f010000"
+        }
+      },
+      "damage": {
+        "line": 163345,
+        "receipt": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19171671,
+          "opcode": 163,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a3000000100000001e00000019000000efee6ebc"
+        }
+      }
+    }
+  ],
+  "native_cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 204,
+    "override_after": 2139095040
+  },
+  "native_particle": {
+    "actor": 43,
+    "encoded_file": "b49e00010000",
+    "flags": 1
+  },
+  "target_wire2022": "9f80140000001e000000190000006f010000",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Rust.html",
+  "wiki_sha256": "81de7383172998761b5506e6d6244b7c9170628e24feebadb5367037b23897c6",
+  "tool_sha256": "4be5a823a62d2cc28a71cd699243cf9fe9fcc7ad2b06341fe363dfc66f1d2b76",
+  "limits": [
+    "These stationary-target casts do not demonstrate signet activation slowdown,Overcast interruption or disable authority.",
+    "Different recorded damage floats are retained;no controlled numeric damage/armor trial is inferred.",
+    "Original model/asset services are stubbed;no rendered acceptance or runtime binding."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "skill": 136,
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Shadow_of_Fear.html",
+  "wiki_sha256": "8c7d07409d3db7e7accb5d599a114eaedc5502e86bdbe322a8736f1e26aabdee",
+  "source": "packets-1360-15821281.jsonl",
+  "records": [
+    {
+      "line": 81422,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17363781,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e00000088000000"
+      }
+    },
+    {
+      "line": 81437,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17365937,
+        "opcode": 229,
+        "bytes": 20,
+        "complete": true,
+        "hex": "e500000019000000880000000000000005000000"
+      }
+    },
+    {
+      "line": 81438,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17365937,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      }
+    },
+    {
+      "line": 81439,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17365937,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000001500000019000000f6000000"
+      }
+    },
+    {
+      "line": 81440,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17365937,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e00000019000000f7000000"
+      }
+    }
+  ],
+  "limits": [
+    "Capture has one victim; AoE timing and stacking use old wiki mechanics, not this single cast."
+  ]
+}

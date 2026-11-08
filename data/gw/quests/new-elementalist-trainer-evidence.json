@@ -1,0 +1,223 @@
+{
+  "quest": 65,
+  "world_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\world-43292-168890171.jsonl",
+  "world_sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757",
+  "active_world_line": 22141,
+  "active_observed_map": 146,
+  "captured_active_quest": {
+    "quest_id": 65,
+    "log_state": 1,
+    "completed": false,
+    "current_mission": false,
+    "primary": false,
+    "area_primary": false,
+    "map_from": 146,
+    "map_to": 161,
+    "marker": {
+      "x": -14107.0,
+      "y": -20101.0,
+      "plane": 0,
+      "x_bits": 3327945728,
+      "y_bits": 3332180480,
+      "finite": true
+    },
+    "unknown_0024": 0,
+    "category": {
+      "encoded_utf16": [
+        15716
+      ],
+      "decoded": "Ascalon",
+      "status": "decoded"
+    },
+    "name": {
+      "encoded_utf16": [
+        5760,
+        33110,
+        40494,
+        32593
+      ],
+      "decoded": "A New Elementalist Trainer",
+      "status": "decoded"
+    },
+    "npc": {
+      "encoded_utf16": [
+        13289,
+        60403,
+        53622,
+        2742
+      ],
+      "decoded": "Haversdan",
+      "status": "decoded"
+    },
+    "description": {
+      "encoded_utf16": [
+        5761,
+        44431,
+        34935,
+        29107,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        506
+      ],
+      "decoded": "To become a more powerful Elementalist, I think you should start with <c=@Quest>Elementalist Aziure</c>. She is performing experiments at the <c=@Quest>tower</c> in Wizard's Folly. Follow the road southwest from town and continue past Ashford to find Wizard's Folly.\n\nReward:<brx>250 Experience<brx>",
+      "status": "decoded"
+    },
+    "objectives": {
+      "encoded_utf16": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5764,
+        35928,
+        38393,
+        31096,
+        1
+      ],
+      "decoded": "{s}Follow the road southwest from town and continue past Ashford to find Wizard's Folly. Continue to the tower. Talk to Elementalist Aziure.",
+      "status": "decoded"
+    }
+  },
+  "packet_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\packets-43292-168891734.jsonl",
+  "packet_sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c",
+  "packets_by_line": {
+    "537190": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 177317593,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000027000000"
+    },
+    "576111": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178879812,
+      "opcode": 77,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4d0000004100000000f0f2c500c09b4400000000a1000000"
+    },
+    "576112": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178879812,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c0000004100000081168fad7788b37102000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa01000072360200ea2a3f8c19b511660101fa010000000000009fe8020000000000dbe270420e1ab8c2000040c60000c0c20000000000000000000040c60000c0c2000000000200940a01000000940a01000200ef2a90f66ed0534c0a010e276acb8cf6831901000b01890a0a014e0a01000b01e008010001010601020109010100010000000004c862000218268f009826040688a4040688a40202020202fee500fe1204feda04fe070304fe850c00000000000000000000000001009afe250178fe7f0705e9fe5806025bfe0806fe9c01feb00102220002fef62ab7c12dcf21130a018416588cf995787901000000f62ab7c12dcf21130a01f02aa7c4009cbb3e0a011c3402ac61d04e0401000100000000fe0c128787fe4003d80501022bfe50010bfe8e14772dfe060e05fe7503060411a6fec00079fedd0802030202fe0600fec11d03000000030208fe470cfe7906fe253ffe4900fe0e02007d023602020240040404fe031e000000fea002020202fe731907fe080efe8705febc21fed100fea0e6feec2505fe1b23fe792200feda15fead050ffed26cfed34024fee70c000000fe540c0210110b2202fe0a700d0101650b0f3113058d130329c5fe0d000d3945fe4307c909010d330b09fe130b001501120115018d00"
+    },
+    "576113": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178879812,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000041000000"
+    },
+    "576118": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178879812,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee00000000000000fa000000"
+    },
+    "576122": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178879812,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000041000000"
+    },
+    "576127": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178879812,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000012000000"
+    }
+  },
+  "reward_join": "quest65 removal and XP250 at178879812, joined to Aziure sender18",
+  "turn_in_marker": {
+    "x": -7774,
+    "y": 1246,
+    "plane": 0,
+    "map_to": 161
+  },
+  "turn_in_description_utf16": [
+    5761,
+    44431,
+    34935,
+    29107,
+    2,
+    258,
+    2,
+    258,
+    2,
+    10984,
+    59348,
+    58828,
+    13938,
+    2,
+    10986,
+    35903,
+    46361,
+    26129,
+    257,
+    506
+  ],
+  "turn_in_objectives_utf16": [
+    10998,
+    49591,
+    53037,
+    4897,
+    266,
+    5764,
+    35928,
+    38393,
+    31096,
+    1
+  ],
+  "wiki_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\A_New_Elementalist_Trainer.html",
+  "wiki_sha256": "bb0ef5a0fe553387e2b9bb6340a766e466c1ba6b5627c3ad28145695c4bf51b0",
+  "eligibility": "Elementalist primary, Prophecies, pre-Searing, Further Adventures rewarded",
+  "limits": [
+    "The completed catalog variant reuses captured turn-in details/marker; packet76 alone is not proof of a completed world snapshot.",
+    "Active marker was observed in Lakeside County; turn-in marker was observed in Wizard's Folly. Static catalogs do not reproduce per-map route markers.",
+    "Dialogue completion/reward is an explicit private-server action using existing 2022 serializers, not an inferred outgoing native dialogue ID.",
+    "Primary-profession gating is independent of starter-trainer visibility and retirement."
+  ],
+  "export": {
+    "path": "data\\gw\\quests\\new-elementalist-trainer.fwqc",
+    "sha256": "e391c75c2c4a8e4389a81ada56fdcc6cf69ff63d34ccf0d4608f6020bd699ce6"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "skill": 349,
+  "wiki_sha256": "28cf647cb0a928114f3f1945e3cb77b15c0c12b0eebfd1e290a4a7c860a86bed",
+  "capture": {
+    "id": 349,
+    "name": "Sprint",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 2,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 0,
+    "local_stopped": 0,
+    "local_instant": 2,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 369731,
+        "tick_ms": 23261718,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000005d010000",
+        "kind": 48
+      },
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 369940,
+        "tick_ms": 23276843,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000005d010000",
+        "kind": 48
+      }
+    ],
+    "endpoint_evidence": [],
+    "body_effect_evidence": []
+  },
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "native_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 349
+    }
+  ],
+  "limits": [
+    "Rendered effect and movement appearance remain unverified."
+  ]
+}

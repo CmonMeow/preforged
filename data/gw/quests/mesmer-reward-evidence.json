@@ -1,0 +1,51 @@
+{
+  "source": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+  "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+  "records": [
+    {
+      "line": 53799,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84152265,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000051000000"
+    },
+    {
+      "line": 53808,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84152265,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000001f000000000000001a00000000000000"
+    },
+    {
+      "line": 53812,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84152265,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000001f000000010000002800000000000000"
+    },
+    {
+      "line": 53815,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84152265,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000051000000"
+    }
+  ],
+  "interpretation": "Captured modern slot217 assigns actor31 slot0 Empathy26 and slot1 Ether Feast40 at the same timestamp as quest81 removal82. Native2022 slot216 and quest-removal81 are independently pinned; no opcode subtraction inferred."
+}

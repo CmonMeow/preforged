@@ -1,0 +1,135 @@
+{
+  "source": "src\\runtime\\gw_world_simulation.h",
+  "sha256": "72f9d1e326b2b7de87934851e193f8899a95cc4ef0c9941d63c0bdc1848b6823",
+  "interpretation": "Source review inventory, not a proof of every future damage path. All direct player conditions.armor reads in World are centralized; downstream elemental resolvers apply conditions after the shared bonus. NPC target armor does not gain unsupported self-casting.",
+  "paths": [
+    {
+      "line": 767,
+      "source": "actor=incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},{},p.effects,true},now);"
+    },
+    {
+      "line": 1028,
+      "source": "auto actor=incoming_spell_actor_locked(caster,{caster.id,caster.effect_scope.generation,combat::Health{caster.precise_health,caster.resources->max_health},{},caster.effects,true},now);"
+    },
+    {
+      "line": 1060,
+      "source": "auto actor=incoming_spell_actor_locked(player,{player.id,player.effect_scope.generation,combat::Health{player.precise_health,player.resources->max_health},{},player.effects,true},event.at);"
+    },
+    {
+      "line": 1176,
+      "source": "auto actor=incoming_spell_actor_locked(player,{player.id,player.effect_scope.generation,combat::Health{player.precise_health,player.resources->max_health},{},player.effects,true},now);"
+    },
+    {
+      "line": 1257,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{victim.id,target.generation,combat::Health{victim.precise_health,victim.resources->max_health},{},victim.effects,true},now);"
+    },
+    {
+      "line": 1423,
+      "source": "static int conditioned_armor_locked(const Player& victim,int base,std::uint64_t now){"
+    },
+    {
+      "line": 1424,
+      "source": "return victim.conditions.armor(base+int(armor_effect_bonus_locked(victim,now)),now);"
+    },
+    {
+      "line": 1426,
+      "source": "combat::Actor incoming_spell_actor_locked(const Player& victim,combat::Actor actor,std::uint64_t now,bool condition_armor=false)const{"
+    },
+    {
+      "line": 1429,
+      "source": "**rating+=int(bonus);if(condition_armor)**rating=victim.conditions.armor(**rating,now);"
+    },
+    {
+      "line": 1457,
+      "source": "input.base_roll=.5;input.miss_roll=.5;input.location_armor=armor?conditioned_armor_locked(victim,*armor,now):0; // Unused for fixed damage."
+    },
+    {
+      "line": 1496,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{id,victim.effect_scope.generation,combat::Health{victim.precise_health,victim.resources->max_health},std::nullopt,victim.effects,true,{},victim.reviewed_fire_armor},now,true);"
+    },
+    {
+      "line": 1818,
+      "source": "incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},std::nullopt,p.effects,true,p.reviewed_lightning_armor},now),"
+    },
+    {
+      "line": 1860,
+      "source": "candidate.result=skills::effects::elemental_target(plan,incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},std::nullopt,p.effects,true,std::nullopt,p.reviewed_fire_armor,p.reviewed_cold_armor},now),p.conditions,level,caster.id,now,skills::effects::water_hex(*p.effect_registry,p.effect_scope,now));"
+    },
+    {
+      "line": 1924,
+      "source": "const auto hit=skills::effects::deathly_swarm_target(plan,incoming_spell_actor_locked(p,"
+    },
+    {
+      "line": 1960,
+      "source": "auto actor=incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},{},p.effects,true,"
+    },
+    {
+      "line": 2001,
+      "source": "actor=incoming_spell_actor_locked(target,actor,now,true);"
+    },
+    {
+      "line": 2831,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{victim.id,victim.effect_scope.generation,combat::Health{victim.precise_health,victim.resources->max_health},{},victim.effects,true},now);"
+    },
+    {
+      "line": 2891,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{victim.id,victim.effect_scope.generation,combat::Health{victim.precise_health,victim.resources->max_health},std::nullopt,victim.effects,true},now);"
+    },
+    {
+      "line": 2960,
+      "source": "strike.location_armor=conditioned_armor_locked(p,*p.reviewed_physical_armor,now);"
+    },
+    {
+      "line": 3118,
+      "source": "combat::weapon::Strike strike;strike.level=a.ordinary_level;strike.mastery=weapon.mastery;strike.minimum=weapon.damage.minimum;strike.maximum=weapon.damage.maximum;strike.customized=weapon.customized;strike.weakness=a.conditions.has(combat::conditions::Kind::weakness,now);strike.blind=a.conditions.has(combat::conditions::Kind::blind,now);strike.base_roll=.5;strike.miss_roll=.5;strike.location_armor=conditioned_armor_locked(b,*b.reviewed_physical_armor,now);"
+    },
+    {
+      "line": 3227,
+      "source": "const skills::effects::ShockwaveTarget input{incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},p.reviewed_earth_armor,p.effects,true},now),p.conditions};"
+    },
+    {
+      "line": 3824,
+      "source": "auto& p=player->second;actor=incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},{},p.effects,true},now);"
+    },
+    {
+      "line": 4065,
+      "source": "if(primary->damage){auto actor=incoming_spell_actor_locked(p,{p.id,p.effect_scope.generation,combat::Health{p.precise_health,p.resources->max_health},{},p.effects,true},now);auto hit=combat::apply(actor,{combat::Kind::armor_ignoring,double(primary->damage),level,plan.skill},true);if(hit.reason!=combat::Reason::accepted)return false;candidate.hit=hit;}"
+    },
+    {
+      "line": 4188,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{victim.id,target.generation,"
+    },
+    {
+      "line": 4317,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{id,victim.effect_scope.generation,combat::Health{victim.precise_health,victim.resources->max_health},std::nullopt,victim.effects,true},now);"
+    },
+    {
+      "line": 4343,
+      "source": "auto actor=incoming_spell_actor_locked(victim,{victim.id,victim.effect_scope.generation,combat::Health{victim.precise_health,victim.resources->max_health},std::nullopt,victim.effects,true},now);"
+    },
+    {
+      "line": 4654,
+      "source": "actor=incoming_spell_actor_locked(p,actor,now,true);"
+    },
+    {
+      "line": 4724,
+      "source": "actor=incoming_spell_actor_locked(p,actor,now);"
+    },
+    {
+      "line": 4816,
+      "source": "auto actor=incoming_spell_actor_locked(p,{p.id,target.generation,combat::Health{p.precise_health,p.resources->max_health},{},p.effects,true},now);"
+    },
+    {
+      "line": 4871,
+      "source": "const auto result=skills::effects::shadow_target(plan,{a->second.precise_health,a->second.resources->max_health},incoming_spell_actor_locked(b->second,{b->second.id,b->second.effect_scope.generation,combat::Health{b->second.precise_health,b->second.resources->max_health},{},b->second.effects,true},now),level);if(!result)return false;"
+    },
+    {
+      "line": 5095,
+      "source": "actor=incoming_spell_actor_locked(*p,actor,now);"
+    },
+    {
+      "line": 6265,
+      "source": "strike.location_armor=conditioned_armor_locked(victim,armor,now);"
+    }
+  ]
+}

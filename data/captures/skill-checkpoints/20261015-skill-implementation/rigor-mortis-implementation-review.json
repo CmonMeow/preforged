@@ -1,0 +1,87 @@
+{
+  "skill": 137,
+  "status": "Source-bound Rigor Mortis137:owned player/NPC hex application and actual casting",
+  "native_evidence": "rigor-mortis-native-2022.json",
+  "mechanics": "Rigor Mortis suppresses only blocking. Independent active block probabilities multiply their bypass chances. No conversion of miss,dodge,obstruction,cancel or retirement to hit.",
+  "validation": {
+    "native_first_consumers": "Passed offline pinned2022 emulator and exact frozen target248 packet",
+    "registered_release_test": "rigor_mortis_blocking passed0.03s;build/reports/rigor-policy-tests.txt",
+    "tooling": "15 skill tooling tests passed0.172s",
+    "expanded_registered_gate": "214/214 native suites passed22.73s,build/reports/rigor-registered-full-tests.txt;new policy target compiled independently after prior all-production213gate. No production binding added."
+  },
+  "remaining": [
+    "Select actual active block sources and integrate defender policy for ordinary/melee/projectile/trusted NPC attacks.",
+    "Bind canonical owned hex application,player/NPC lifecycle,cost,cancel/interrupt and recharge.",
+    "Exercise interaction with unblockable attacks and actual block sources in World.",
+    "Rendered casting,target effect,sound and multiplayer feedback unverified."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_blocking.h": "25b480d4655d967eb1fd6a5da5246ac955e9dad61c9a44ba352104be267d4f9f",
+    "tests/rigor_mortis_blocking.cpp": "c38fe6d34d1de6bde4dab1e51bd0b6fd208e172f38885760742e71e92a6836ea",
+    "tools/protocol/rigor_mortis_2022.py": "ee56a7eb05d55cd54f3553a06b24d4bea5fbf5332ed391193d025782d8393693",
+    "CMakeLists.txt": "dd7b707a407fb241ad708bdbf1dd2db57b5318f2a83ca66c25d2c12e93db1668"
+  },
+  "coverage": "157/575source-bound;418awaitbinding;754baselinewithoutlocalcapture.",
+  "superseding_block_foundation": "Guardian player-defense World stage now exists;see guardian-block-implementation-review.json. Rigor137owned hex/casting still unbound;historical source hashes above precede this helper extension.",
+  "registry_stage": {
+    "status": "Standalone scoped transaction implemented;not source-bound",
+    "source": "src/runtime/gw_rigor_mortis.h",
+    "test": "tests/rigor_mortis_registry.cpp",
+    "report": "build/reports/rigor-registry-standalone.txt",
+    "result": "Passed",
+    "scope": "Actual Registry transaction plus Guardian block decision. Renewal removes previous same-name hex,removal/expiryrestoreblockchance,miss remains miss,staleScope/forgedPlan/selfCause/timeoverflowrejectwithoutapplication.",
+    "sha256": {
+      "src/runtime/gw_rigor_mortis.h": "435fb44257c58f4b416ed2f32cf27d0e17e430b7de35131386cc91354cbcff8a",
+      "tests/rigor_mortis_registry.cpp": "cf7cd1133eb43f58b85e4eb01f7a128216ccc7e1631eed8b88a84cbd247cd4a9",
+      "tools/protocol/rigor_mortis_2022.py": "3e3ad321fda47a9a6f3c153973d60be62c53bd998fdbd0fdcaf45f835ed40651"
+    },
+    "pending": "World player/NPC application and generic casting remain unbound. Register probe after current220build63177finishes."
+  },
+  "world_contact_stage": {
+    "result": "Standalone native probe passed",
+    "source": "tests/rigor_world_contact.cpp",
+    "source_sha256": "0713efb04421185b56ba0a59c60338d41131401c1827218f2f957c42f548f75c",
+    "report": "build/reports/rigor-world-contact-standalone.txt",
+    "scope": "Actual World melee attack path against Guardian under trusted host status mutation. Four scenarios:Rigor bypass,Blind miss,no block until removal,expiry restores block. Insidious pre-hit qualification only on hit.",
+    "limits": "Superseded host-injection stage:rigor_world_contact.cpp now applies137through real owned World degeneration_hex path and verifies exact target248publication.",
+    "registration": "Pending after live220build63177finishes;no compiled production inputs changed."
+  },
+  "cross_skill_body_form_audit": {
+    "report": "skill-audit/body-form-candidates.json",
+    "tool": "tools/protocol/captured_body_forms.py",
+    "result": "580inventory entries reviewed;430have at least one candidate in10second windows. Whole frozenfiles contain220generic20,844targeted20,1136generic21records.",
+    "validation": "19 skill tooling tests pass0.414s including exact Guardian simple21,Rigor targeted20,wrong-packet-shape rejection and native resource roles.",
+    "scope": "Includes575local captured player skills plus other inventory entries. Resource/time matching is NOT causal attribution or rendered acceptance;no runtime binding count change."
+  },
+  "current_implementation": [
+    "Canonical1second/10Energy/20second recharge and8..20second Curses duration.",
+    "Shared scoped application transaction used by actual World player and NPC paths.",
+    "Captured targeted body248 publication with source and target identities.",
+    "Live player defender block decision sees Rigor;Blind misses remain misses;no block draw when bypassed.",
+    "Renewal/removal/expiry and caster/target lifetime validation through common casting and effect registries."
+  ],
+  "current_remaining": [
+    "NPC-defender blocking effects/Guardian support incomplete;Rigor NPC hex storage/casting does not prove NPCblockinteraction.",
+    "NPC AI self-casting and other block/unblockable skill classifications incomplete.",
+    "Retail miss/block evaluation order and on-block feedback remain verification gaps.",
+    "Rendered cast/target effect,sound and multiplayer visual acceptance remain unverified."
+  ],
+  "casting_validation": {
+    "result": "Six rebuilt registered Release suites passed0.05s",
+    "report": "build/reports/rigor-npc-cast-cadence-tests.txt",
+    "scope": "Eight player casting scenarios plus actual NPCtarget casting/owned effect/expiry,target248 and shared blocking/reactive regressions.",
+    "fixture_correction": "NPC expiry assertion originally ticked19099then19100;World skips ticks less than100msapart. Corrected beforeexpiry tick to19000then19100;effect expires on expected scheduled tick. Original failing reports retained."
+  },
+  "tooling_validation": "19skill tooling tests pass0.114s;fixed raw checkpoint unchanged;bodyform audit regenerated against current inventory.",
+  "binding_source_sha256": {
+    "src/runtime/gw_degeneration_hexes.h": "a3c6bcdcc91051ad96aba235e5ae7148aaa3c0c0d290efcae82b280a7d7a2fb7",
+    "src/runtime/gw_rigor_mortis.h": "435fb44257c58f4b416ed2f32cf27d0e17e430b7de35131386cc91354cbcff8a",
+    "src/runtime/gw_npc_combat_catalog.h": "897edfe25c9e6e29ad16ef7b3c0211ed0b0d1a3534844f9433ffc6d3cd1bf18d",
+    "src/runtime/gw_world_simulation.h": "acaf7ad87e9d820baa79097a5e1c9b117edf7c750a07bc7cc8034eb83735ae61",
+    "src/runtime/gw_skill_casting.h": "b96b57481f3e176c77588be57e2df02b5902d81d4cfd8725d423587ecce98357",
+    "tests/rigor_world_contact.cpp": "b78149f76faa805be7fc5a205d8788515f226dfe4baf57daeec6464b46230e98",
+    "tests/rigor_cast.cpp": "a2fde6d8f0f655985fae66e278f27fbcae9a0a2dd2bb2949df7b087b1e6d5494",
+    "tests/rigor_npc_cast.cpp": "2ce424d7324f65a7bc2b8d0928478ca1a70628cd4b5c08479b95c3f1119f9842"
+  },
+  "full_binding_validation": "All production Release targets built and225/225native suites passed23.00s(rigor-binding-full-build.txt,rigor-binding-full-tests.txt). This gate predates PowerBlock World/admission changes."
+}

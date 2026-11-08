@@ -1,0 +1,26 @@
+{
+  "skills": [
+    299,
+    2061
+  ],
+  "evidence": "protective-self-body-2022.json",
+  "regression": "tests/protective_self_particles.cpp",
+  "regression_sha256": "a4fbbaf28104a7959a3eddfa09fecad2540dbe10c6ca91465ade823325e6380e",
+  "before_fix": "build/reports/protective-self-particles-before-fix.txt",
+  "result": "Confirmed failures:299emits no body;2061emits targeted20instead of captured simple21. Guardian258control passes.",
+  "scope": "Exact captured self-casts and original native simple-body consumer;does not establish allied packet form or rendered acceptance.",
+  "next": "Continue Rigor real World/casting integration;broader production validation after batch. No build remains live.",
+  "remaining": [
+    "Allied cast particle form and rendering",
+    "All skills original goal remains incomplete"
+  ],
+  "fix": "World299self now publishes simple kind21body531;2061self now publishes simple kind21body1739. Existing allied2061behavior retained pending evidence;no ally299form invented.",
+  "source_sha256": {
+    "src/runtime/gw_world_simulation.h": "d1f55a576856d994b6ec4f51430249c993de0be6af9ac94e18ddf71a92d70840",
+    "tests/protective_self_particles.cpp": "a4fbbaf28104a7959a3eddfa09fecad2540dbe10c6ca91465ade823325e6380e",
+    "tools/protocol/protective_self_body_2022.py": "bd5b43b307283623b19d4f641cfd4999d4e1826964c5b957e32902eb419e25d6",
+    "CMakeLists.txt": "67ae574d5960ae732d8c7224c9fb8f07e99cdc489dca97f3026fcd3f71716baa"
+  },
+  "tooling": "19tests pass0.282s;fixed checkpoint/raw files unchanged;bodycandidateaudit refreshed against current derived inventory.",
+  "validation": "Five rebuilt registered Release suites passed0.07s(protective-self-tests.txt),including299/2061selfbodyexactpacketchecks,existing PatientSpiritmechanics,Guardianparticle and newlyregisteredRigorregistry/contact probes. Full223productiongate not run after this change."
+}

@@ -1,0 +1,70 @@
+{
+  "cutoff": "2026-10-14T23:29:51.460985+00:00",
+  "skills": [
+    {
+      "skill": 881,
+      "name": "Ether Signet",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ether_Signet.html",
+      "wiki_sha256": "b4d37169c74e147e087f2ff0d43c5cec1c96c7bca562d3ecfdd0942a22348c02",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 15896,
+          "tick_ms": 16179421,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c0000001900000071030000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 15908,
+          "tick_ms": 16180359,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "pinned_caster_body_resource": 975,
+      "modern_body_packet_line": 15909
+    },
+    {
+      "skill": 1365,
+      "name": "Signet of Lost Souls",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Signet_of_Lost_Souls.html",
+      "wiki_sha256": "7712b01b355756d43a51287cce1dbe25ad4d897252c6b58f83d07dcba2f9031a",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 120996,
+          "tick_ms": 17979875,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000055050000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 121005,
+          "tick_ms": 17980140,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "pinned_caster_body_resource": 1621,
+      "modern_body_packet_line": 121006
+    }
+  ],
+  "limits": [
+    "Packets prove activation,finish and matching body resources; not every resource condition was successful in that cast.",
+    "Strict predicates and scaling follow primary wiki and pinned2022 constants.",
+    "Ether Signet Scribes Insight interaction and native rendered acceptance remain unverified."
+  ]
+}

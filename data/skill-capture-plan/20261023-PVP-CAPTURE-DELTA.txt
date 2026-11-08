@@ -1,0 +1,31 @@
+2026-10-23 PvP capture delta — frozen while the official client remained live
+
+Current audited checkpoint: data/captures/skill-checkpoints/20261023-cumulative-skills
+Merged 54 verified frozen packet/world files from the prior cumulative checkpoint,
+completed PID 52044 session, and a complete-line snapshot of live PID 54796 logs.
+The live originals were not paused, replaced or truncated.
+
+Compared with 20261022-cumulative-skills, the checkpoint adds 765 attributed
+local activations: Earth Attunement169 +47, Stoning171 +145, Aftershock174 +110,
+Aura of Restoration180 +56, Shockwave937 +105, Death's Charge952 +21,
+Ebon Hawk1374 +157, and Glowstone1661 +124. These eight IDs were already
+captured; repeated casts strengthen activation/timing evidence but do not by
+themselves verify damage, conditions, animations or private-client behavior.
+
+Twelve newly sighted IDs have only other/unassigned actor evidence here:
+32 Illusion of Weakness, 81 Arcane Thievery, 201 Glyph of Concentration,
+884 Searing Flames, 1078 Wallow's Bite, 1346 Signet of Illusions,
+1362 Corrupt Enchantment, 1543 Pious Haste, 1557 Anthem of Flame,
+1604 Disrupting Throw, 1770 Natural Temper, and 1893 (unnamed in the
+current catalog). Their actor ownership is not proved by this tier; do not
+count them as player-obtainable activations or infer mechanics from sightings.
+
+Re-audit and backlog publication pass: 679 baseline skills locally activated,
+355 source-bound, 324 awaiting binding, 650 lacking local activation. Counts
+match the prior checkpoint; capture depth and other-actor coverage grew.
+Both logger controllers reported ready=4 on official PID 54796 after audit.
+
+SHA256:
+  cumulative manifest 3baed9f8c025d2314b3bd835373b6dd45beccc9c525b90f0bd5a8e42703ee199
+  frozen packets-54796-275153171.jsonl 73a5a815b480e121acbaed08673dac2c93bcd92030aedfafb005e2d469da543e
+  frozen world-54796-275142046.jsonl 9d61458b9af52948edb2fef13c3410536d1ffd1af45199651e936ba11fe27708

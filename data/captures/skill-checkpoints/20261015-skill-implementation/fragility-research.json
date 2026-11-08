@@ -1,0 +1,190 @@
+{
+  "skill": 19,
+  "pvp_alias": 2998,
+  "state": "source runtime/world binding implemented; full build and170 regression tests pass; rendered/retail-ordering checks pending",
+  "source": [
+    "src/runtime/gw_fragility.h",
+    "tests/fragility.cpp"
+  ],
+  "test_status": "captured_skills, npc_combat_catalog and fragility suites passed;12 Python audit tests passed",
+  "native_proof": {
+    "tool": "tools/protocol/hex_control_2022.py",
+    "result": "passed for19 and2998,1s/style51,resource35"
+  },
+  "wiki_sha256": {
+    "Fragility.html": "f463b8545f4507f895d1b5306d64bd2e80f35ae00128ea4978f41c54e821434a",
+    "Fragility_(PvP).html": "6778413257a8e3b983bf79a0ccd6747e45aa6e583b5048fdd30391fc01927512"
+  },
+  "capture": {
+    "id": 19,
+    "name": "Fragility",
+    "obtainable_baseline": true,
+    "runtime_status": "unsupported",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 1,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 71630,
+        "tick_ms": 8094390,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e00000013000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 71639,
+        "tick_ms": 8095421,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": []
+  },
+  "required_mechanics": [
+    "PvE adjacent166-unit area; PvP single target",
+    "New condition acquisition triggers; refresh of active condition does not",
+    "Each genuine condition loss triggers, including removal/transfer/expiry",
+    "Natural expiry event timestamp is the condition deadline, not delayed tick time",
+    "Do not retrigger when expired records are cleared",
+    "Each simultaneous condition change must be handled independently",
+    "Damage uses authoritative mitigation, attribution, death and actor-lifetime checks"
+  ],
+  "remaining": [
+    "rendered acceptance",
+    "retail comparison for Deep Wound debt, condition transfer/cleanse ordering, multiple hex casters and source death"
+  ],
+  "standalone_test_coverage": [
+    "PvE area versus PvP single-target plans",
+    "rank0/12/20 damage and duration",
+    "new condition gain",
+    "active-condition refresh suppression",
+    "genuine removal",
+    "three differently timed expiry losses in chronological order",
+    "expiry cleanup does not duplicate loss",
+    "reapplication after expiry triggers a fresh gain"
+  ],
+  "tested_reaction_mechanics": [
+    "17 armor-ignoring damage at rank12 for either gain or loss",
+    "lethal damage",
+    "forged numeric plan rejected",
+    "stale actor generation rejected",
+    "hex inactive at transition timestamp does not react",
+    "ten simultaneous condition gains produce ten independent reactions",
+    "refreshing all ten active conditions produces no reactions",
+    "cleansing all ten generates ten losses",
+    "delayed expiry uses original deadline for hex lifetime lookup"
+  ],
+  "source_hashes": {
+    "src\\runtime\\gw_fragility.h": "712219f0a98dce1f0ffd95e77843feaf825cd8d2ce260544986548b209067151",
+    "tests\\fragility.cpp": "4229f455d200b2621397c8197b9fbcaa84d97bacebac7a8e71865ba8a6476685",
+    "src\\runtime\\gw_npc_combat_catalog.h": "a79dbf81268c7fa632dccc7f558ddc7f5c5a61dc245d2c48593626eace329700",
+    "tests\\npc_combat_catalog.cpp": "7b6538c8dc54b2a8f8dfd9d65c065cbc1d620795d850dd2e168b0bbeae001e97",
+    "tests/npc_combat_catalog.cpp": "2a38efa41f0b99b1791d9e1e165f91e8b5cde17d646ae1b434b1ebac3c98998a",
+    "src\\runtime\\gw_world_simulation.h": "e3377659bad9355fa2456c88785fdd20751ac1d8c3411f8559aed1c9e1a9c008",
+    "tests\\captured_skills.cpp": "1f5d0d91081cc6177e51077f230f50490acf22b1d45f99ad0102fb3b25047674",
+    "src\\runtime\\gw_skill_casting.h": "2119c000b0003ae5824833b439388cdd8d832305922090e40ac957547ee10214",
+    "src\\runtime\\gw_degeneration_hexes.h": "3bc395ec385e3aa12d940eb874f7f1281846a5a6490c5aeae3031bed38418910",
+    "src\\apps\\gw_auth.cpp": "3ebc13d9725379527b13cbd401f2e2d0b84533fd229330def1d16ce52353f355",
+    "tests/fragility_cleansing.cpp": "c112ddfa7b067a04154473d21b8708bdc7b9baa3bb01e772b0dafeee0f4cf0f4",
+    "src/runtime/gw_world_simulation.h": "33e8ef8772cacd87fde070ee23cb4524bb25cd608210227e6a22565556ccc6b0"
+  },
+  "condition_path_audit": {
+    "player": [
+      "commit_conditions_locked common additions",
+      "remove_condition_locked and clear_conditions_locked removals",
+      "advance_health_locked natural expiry boundaries",
+      "resolve_elemental_projectiles_locked direct Weakness assignment",
+      "earth_aoe direct Shockwave conditions assignment",
+      "apply_condition direct public condition API"
+    ],
+    "npc": [
+      "LiveActor.apply_condition",
+      "LiveActor.advance_conditions expiry/death",
+      "LiveActor.remove_condition",
+      "LiveActor.receive_conditions transfer",
+      "LiveActor.clear_conditions",
+      "LiveActor.apply_earth_aoe direct Shockwave result assignment"
+    ]
+  },
+  "npc_implementation": {
+    "source": "src/runtime/gw_npc_combat_catalog.h",
+    "tests": "tests/npc_combat_catalog.cpp",
+    "passed": [
+      "application:240 to223HP",
+      "active-condition refresh:no damage",
+      "removal:223 to206HP",
+      "new application and expiry:206 to172HP",
+      "expiry recorded at1500ms although processed at2000ms",
+      "condition clearing triggers one loss",
+      "events drained once and stale lifetimes cannot drain",
+      "lethal17damage on10HP sets death flag",
+      "transferring two new conditions causes two17damage triggers, credited to hex caster",
+      "Shockwave three-condition assignment causes three17damage triggers"
+    ],
+    "remaining": [
+      "full all-target rebuild and rendered acceptance",
+      "retail comparison of condition loss/death ordering and timing"
+    ]
+  },
+  "regression_tests": {
+    "captured_skills": "rebuilt and passed",
+    "npc_combat_catalog": "rebuilt and passed",
+    "fragility": "passed"
+  },
+  "world_npc_tests": [
+    "scoped single-target PvP NPC application",
+    "condition transfer triggers17HP loss",
+    "original caster receives one skill/damage packet pair",
+    "queued events do not replay on next tick",
+    "caster actor ID reused before publication: replacement receives health reconciliation but no old damage attribution"
+  ],
+  "world_npc_api_limits": "Temporary NPC-only API removed; both variants use shared transactional mixed-recipient application.",
+  "integrated_runtime_tests": [
+    "actual19 casts inPvE andPvP, correct5/8second recharge",
+    "player orNPC primary target",
+    "PvE mixed adjacent recipients, PvP excludes even co-located unrelated actors",
+    "player gain17damage and refresh0damage",
+    "player andNPC expiry loss17damage without repeat",
+    "Shockwave three-condition player assignment causes51extra damage",
+    "Crystal Wave clearing three player conditions causes51extra damage",
+    "lethal player trigger and subsequent corpse tick"
+  ],
+  "cleansing_regression": {
+    "test": "tests/fragility_cleansing.cpp",
+    "binary": "build/tests/fragility_cleansing.exe",
+    "result": "fails: condition-removal death cleanup count=2",
+    "reproduction": "30HP victim loses17HP on gaining Blind, then lethal17 on Mending Touch removal. The following heal is ignored at zeroHP, but caller invokes kill cleanup a second time.",
+    "evidence": "control_epoch delta2 instead of1",
+    "fix_status": "fixed: kill_locked ignores completed dead actors; CMake fragility_cleansing and captured_skills rebuilt and pass",
+    "retail_limit": "This establishes an internal duplicate-cleanup bug, not retail ordering between condition loss and healing.",
+    "verified_after_fix": [
+      "lethal removal produces one control/death event",
+      "ordinary healing cannot revive corpse",
+      "nonlethal removal still applies expected healing",
+      "subsequent corpse tick remains0HP"
+    ]
+  },
+  "previous_full_build": {
+    "result": "passed before lifecycle fix",
+    "report": "build/reports/fragility-full-build.txt"
+  },
+  "full_build": {
+    "state": "passed including lifecycle fix",
+    "report": "build/reports/fragility-lifecycle-full-build.txt"
+  },
+  "full_suite": {
+    "passed": 170,
+    "failed": 0,
+    "seconds": 28.72,
+    "report": "build/reports/fragility-lifecycle-full-tests.txt"
+  }
+}

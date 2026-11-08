@@ -1,0 +1,35 @@
+{
+  "historical_gaps": "VERIFICATION-GAPS.txt",
+  "scope": "Current integration tranche; other skill gaps remain in VERIFICATION-GAPS.txt. Test evidence applies to recorded source and binary hashes, not arbitrary later builds.",
+  "skills": [
+    {
+      "rendered_verified": false,
+      "name": "Hexer's Vigor",
+      "host_published": false,
+      "id": 2138,
+      "native_evidence": "build/reports/hexers-integrated-validation-20261101.json",
+      "source_integrated": true,
+      "handler_replay": "build/reports/hexers-vigor-prefix-world-native-replay-20261101.json"
+    },
+    {
+      "rendered_verified": false,
+      "name": "Spirit Burn",
+      "host_published": false,
+      "id": 919,
+      "native_evidence": "build/reports/spirit919-integrated-validation-20261101.json",
+      "source_integrated": true,
+      "handler_replay": "build/test-results/spirit919-production-wire-20261101.native-replay.json"
+    },
+    {
+      "native_status": "Pure mechanics passed; World attack and exact-expiry tests fail",
+      "name": "Pensive Guardian",
+      "host_published": false,
+      "id": 1683,
+      "native_evidence": "build/reports/pensive-v4-tests-20261101.log",
+      "source_integrated": false,
+      "rendered_verified": false
+    }
+  ],
+  "updated": "2026-11-01T18:32:37.2057101-06:00",
+  "implementation_ledger": "CURRENT-IMPLEMENTATION.json"
+}

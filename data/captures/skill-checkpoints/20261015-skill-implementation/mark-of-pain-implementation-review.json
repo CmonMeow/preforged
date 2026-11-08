@@ -1,0 +1,32 @@
+{
+  "skill": 150,
+  "status": "Source-bound150:owned player/NPC hex and separate adjacent shadow damage;rendered/scatter acceptance incomplete",
+  "evidence": "mark-of-pain-native-2022.json",
+  "mechanics": {
+    "duration_ms": 30000,
+    "damage_rank_0_to_20": "10+2*rank",
+    "radius": 166,
+    "trigger": "positive finite physical damage(raw0/1/2),not weapon type",
+    "excluded_recipient": "primary hexed victim"
+  },
+  "validation": "Six registered Release suites pass0.05s:mark_of_pain_policy,mark_of_pain_world,mark_of_pain_npc,mark_of_pain_cast,barbs,cyclone_axe. Tests cover1second/10Energy/20second casting,cancel/interrupt/target replacement,targeted body272 packet,positive physical-only triggers,166boundary,team/layer exclusion,expiry/removal/renewal,caster death/replacement,Frenzy,lethal primary hits,mixed Cyclone reactions without staged Health overwrite,and NPC splash kill credit to original caster.",
+  "remaining": [
+    "Rendered private-client animation,sound,hex marker and reactive burst acceptance remain unverified. Native first-consumer evidence is not rendering proof.",
+    "NPC area-damage scatter reaction remains unimplemented;archived wiki explicitly identifies Mark of Pain as causing scatter.",
+    "NPC source casting is not integrated. Current player-source reactions select hostile NPC recipients;general NPC allegiance systems require further work.",
+    "Future physical spell/trap/minion damage pathways must notify the physical reaction pipeline;current notification covers ordinary,bow,single-melee,Cyclone and trusted NPC weapon paths."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_world_simulation.h": "b5653b99179101a30db95d17e6a47045e00d05d5dada8ce8fd53f9a140fc4817",
+    "src/runtime/gw_mark_of_pain.h": "5cd93bb5796fdefacbeb3626075bfb0f78d29e5a4cdb475d73153e81442ffc09",
+    "src/runtime/gw_degeneration_hexes.h": "e58cbe85509b8d68fbce2c18b8e7dcf9de74e39ad5dd18e92641eb189a3aa791",
+    "src/runtime/gw_npc_combat_catalog.h": "e8b16042967e81d68abccded73e60d9bd9bc24d4a053be3d75cbf678b895e7e6",
+    "tests/mark_of_pain_policy.cpp": "0de68f2dafad2159b79abf0505345e5d2466eb00a449ee072659b0c4c9b73371",
+    "tests/mark_of_pain_world.cpp": "13cad706c07f5c82d816a3c5a1f857e234888409a174ac76d9742f1a6ebd1f9f",
+    "tests/mark_of_pain_npc.cpp": "b9a9df6c19a805daf06b00b320749a3aef1bf88be994464e3cca91a4acac61a4",
+    "tests/mark_of_pain_cast.cpp": "db6efea6b51b22bd2b0a228492dd73aa10dffa18325837ff1c5759788328d0ba",
+    "tools/protocol/mark_of_pain_2022.py": "a71b94ec626ed94710e936e4be989885649c762c98c0be37ecdee4d8b096e322"
+  },
+  "fixture_corrections": "Initial world test supplied appearance instead of initial_plane and attempted unsupported20absorption;corrected to an explicit two-plane nav fixture and supported3absorption against3physical damage. Failures retained in earlier focused reports. Casting test namespace typo fixed before successful gate.",
+  "full_validation": "All-target Release build and201/201 CTest passed25.83s(mark-pain-full-build.txt,mark-pain-full-tests.txt). This covers Mark150source batch before the subsequent optional pre-damage ledger phase."
+}

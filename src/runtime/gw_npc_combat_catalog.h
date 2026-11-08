@@ -3160,7 +3160,7 @@ inline Catalog load_catalog(std::istream& input,std::string_view expected_popula
             }
             if(f.empty())throw std::invalid_argument("empty NPC combat row");
             if(!header){
-                if(f.size()!=3||f[0]!="gw-npc-combat"||(f[1]!="1"&&f[1]!="2"&&f[1]!="3"&&f[1]!="4"&&f[1]!="5"&&f[1]!="6"&&f[1]!="7"&&f[1]!="8"&&f[1]!="9"&&f[1]!="10"&&f[1]!="11"&&f[1]!="12"&&f[1]!="13"&&f[1]!="14"&&f[1]!="15"&&f[1]!="16")||
+                if(f.size()!=3||f[0]!="gw-npc-combat"||(f[1]!="1"&&f[1]!="2"&&f[1]!="3"&&f[1]!="4"&&f[1]!="5"&&f[1]!="6"&&f[1]!="7"&&f[1]!="8"&&f[1]!="9"&&f[1]!="10"&&f[1]!="11"&&f[1]!="12"&&f[1]!="13"&&f[1]!="14"&&f[1]!="15"&&f[1]!="16"&&f[1]!="17")||
                    f[2]!=expected_population_sha256)throw std::invalid_argument("NPC combat header/revision mismatch");
                 out.population_sha256_=f[2];version=detail::number(f[1]);header=true;continue;
             }

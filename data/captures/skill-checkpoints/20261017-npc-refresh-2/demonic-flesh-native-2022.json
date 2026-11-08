@@ -1,0 +1,105 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "wiki_revision": 2654974,
+  "wiki_sha256": "0fd478f552bc0a66f2b319831df5124c3c7d9c7501fb63e4c8523c6eb4771409",
+  "receipts": {
+    "81197": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 17347953,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003c0000001900000082000000"
+    },
+    "81209": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 17349062,
+      "opcode": 229,
+      "bytes": 20,
+      "complete": true,
+      "hex": "e50000001900000082000000000000001e000000"
+    },
+    "81210": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 17349062,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "81211": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 17349062,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000001500000019000000ef000000"
+    },
+    "81212": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 17349062,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000001500000019000000f0000000"
+    },
+    "81213": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 17349062,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "42000000190000008200000000000000770000000000f041"
+    }
+  },
+  "activation": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 1.0,
+    "stored_skill": 130,
+    "override_after": 2139095040
+  },
+  "layers": [
+    {
+      "line": 81211,
+      "resource": 239,
+      "native": {
+        "actor": 42,
+        "encoded_file": "2c7200010000",
+        "flags": 1
+      }
+    },
+    {
+      "line": 81212,
+      "resource": 240,
+      "native": {
+        "actor": 42,
+        "encoded_file": "2d7200010000",
+        "flags": 1
+      }
+    }
+  ],
+  "timer2022": "418019000000820000000000770000000000f041",
+  "limitations": [
+    "Actor/model/clock services stubbed;no rendered acceptance.",
+    "Both resources239/240 are caster layers at activation;row target240 is not proof of a secondary-victim effect.",
+    "This cast alone does not prove reactive skill-use timing,recipient order,damage or failed-dagger outcomes.",
+    "World/Runtime reservation binding is separate from this native-consumer proof;its correctness requires World and casting regressions."
+  ]
+}

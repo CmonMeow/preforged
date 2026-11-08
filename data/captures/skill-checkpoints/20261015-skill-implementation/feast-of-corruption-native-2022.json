@@ -1,0 +1,91 @@
+{
+  "skill": 151,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 151,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 0,
+    "0x48": 0,
+    "0x4c": 20,
+    "0x5c": 16,
+    "0x60": 80,
+    "0x64": 8,
+    "0x68": 40,
+    "0x78": 2077,
+    "0x7c": 273
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "991c01010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 130978,
+    "tick_ms": 18155656,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000097000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 131005,
+    "tick_ms": 18157593,
+    "hex": "a0000000140000001e0000001900000011010000"
+  },
+  "associated_packets": {
+    "maximum_health": [
+      {
+        "line": 131006,
+        "tick_ms": 18157593,
+        "hex": "9f0000002a0000001e000000e0010000",
+        "value": 480
+      }
+    ],
+    "health_changes": [
+      {
+        "line": 131007,
+        "tick_ms": 18157593,
+        "hex": "a3000000370000001e00000019000000898808bd",
+        "normalized": -0.03333333507180214
+      }
+    ],
+    "recharges": [
+      {
+        "line": 131003,
+        "tick_ms": 18157593,
+        "hex": "e50000001900000097000000000000000f000000",
+        "slot": 0,
+        "seconds": 15
+      }
+    ]
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Feast_of_Corruption.html": "e76da211b45c31a402380b8d87bc290fd5ee881046e2f528d0b593c5383ca2a7",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Life_stealing.html": "5d765190b76fc49aa7c4bde82cc996b83c329f6640a8157c6a4e2026af6bd312",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Adjacent.html": "3e0f036349fad41508861fc1a18f97fff9db8d923578d01de4ca867420429695"
+  },
+  "tool_sha256": "9d70f3d7f982608df3a27d2191bbc3eed3d58d422c57ed496b57ef6023f0750d",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Offline first consumers,not rendered acceptance.",
+    "Native row proves2second/style49 cast,20second base recharge,16..80shadow damage,8..40life steal and targeted body273.",
+    "Archived wiki specifies target-centered adjacent foes,life steal only from hexed struck foes,and no spell failure if the selected target dies during casting.",
+    "Hex qualification,shadow/life-steal ordering,killing blows,corpse anchor and mixed recipient transactions require world integration/verification.",
+    "Observed damage/recharge packets can be modified and do not replace canonical native fields.",
+    "Associated Health events have no skill ID;temporal proximity is not proof of causal attribution or shadow/life-steal order.",
+    "This audit does not implement skill151casting or gameplay."
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "schema": 1,
+  "contexts": [
+    {
+      "capture": "world-6784-190402640.jsonl",
+      "map": 55,
+      "context_kind": "town_population",
+      "instance_epochs": [
+        4
+      ],
+      "variant": "reviewed_lions_arch_oct3",
+      "name": "Lion's Arch",
+      "evidence": "50 named actors observed while walking one instance; exact base snapshot and visibility supplements pinned.",
+      "scope": "Only epoch4 of world-6784-190402640.jsonl.",
+      "population_selection": {
+        "instance_epoch": 4,
+        "snapshot_instance_ms": 34799,
+        "snapshot_line": 195,
+        "snapshot_sha256": "c6284fb8ce524995057114a7b7d7963f39f955c7bc3ad64a81d05a8510b2abf4",
+        "expected_npc_count": 35,
+        "evidence": "Named model definitions from the same captured instance; visibility supplements preserve actor identity.",
+        "supplemental_observations": [
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 26,
+            "model": 2080,
+            "name_encoded_utf16": [
+              33027,
+              2650,
+              55423,
+              51059,
+              32719
+            ],
+            "name": "Xunlai Gift-Giver Teodorus",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 32,
+            "model": 2002,
+            "name_encoded_utf16": [
+              12526,
+              40581,
+              59878,
+              12247
+            ],
+            "name": "Jiaju Tai",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 34,
+            "model": 2043,
+            "name_encoded_utf16": [
+              12557,
+              36653,
+              51722,
+              22032
+            ],
+            "name": "Bodrus the Outfitter [Merchant]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 36,
+            "model": 2070,
+            "name_encoded_utf16": [
+              11611,
+              53508,
+              58929,
+              8153
+            ],
+            "name": "Haddon [Dye Trader]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 37,
+            "model": 2035,
+            "name_encoded_utf16": [
+              11614,
+              58991,
+              49896,
+              3286
+            ],
+            "name": "Angel [Rune Trader]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 38,
+            "model": 2033,
+            "name_encoded_utf16": [
+              11613,
+              57407,
+              59781,
+              27260
+            ],
+            "name": "Argus [Rare Material Trader]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 39,
+            "model": 2071,
+            "name_encoded_utf16": [
+              11612,
+              51792,
+              55185,
+              17346
+            ],
+            "name": "Shad [Material Trader]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 41,
+            "model": 2011,
+            "name_encoded_utf16": [
+              11143,
+              33439,
+              41421,
+              21363
+            ],
+            "name": "Lionguard",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 45,
+            "model": 2014,
+            "name_encoded_utf16": [
+              11773,
+              53445,
+              61976,
+              2035
+            ],
+            "name": "Alton Thorne  [Collector]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 46,
+            "model": 2087,
+            "name_encoded_utf16": [
+              33025,
+              25335,
+              44173,
+              60731,
+              30313
+            ],
+            "name": "Ludor [Festival Hats]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 47,
+            "model": 2081,
+            "name_encoded_utf16": [
+              33026,
+              23782
+            ],
+            "name": "Khrysten [Costume Maker]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 77,
+            "snapshot_instance_ms": 2802,
+            "snapshot_sha256": "5bce07c215ddd5a14d0a439bec5ecee3da4cdba8b7dd919bc5011a30ab9eef2e",
+            "captured_agent": 48,
+            "model": 222,
+            "name_encoded_utf16": [
+              33026,
+              28850,
+              39814,
+              40942,
+              17493
+            ],
+            "name": "Valkenhien [Mercenary Registrar]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 129,
+            "snapshot_instance_ms": 12800,
+            "snapshot_sha256": "a6fe2076d356aa35e0908149beea164b26610acaf82c503c6bdfe84c8a73eefc",
+            "captured_agent": 49,
+            "model": 221,
+            "name_encoded_utf16": [
+              33025,
+              7968,
+              44411,
+              58867,
+              4250
+            ],
+            "name": "Xunlai Agent [Storage]",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 129,
+            "snapshot_instance_ms": 12800,
+            "snapshot_sha256": "a6fe2076d356aa35e0908149beea164b26610acaf82c503c6bdfe84c8a73eefc",
+            "captured_agent": 50,
+            "model": 5052,
+            "name_encoded_utf16": [
+              33025,
+              18096,
+              61204,
+              49551,
+              9431
+            ],
+            "name": "Xunlai Chest",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          },
+          {
+            "snapshot_line": 130,
+            "snapshot_instance_ms": 13800,
+            "snapshot_sha256": "f1b911b5fb22f1e089cd2c6a43c4ac38deb5b5ef7ea5468db832cc50a0338895",
+            "captured_agent": 51,
+            "model": 5052,
+            "name_encoded_utf16": [
+              33025,
+              18096,
+              61204,
+              49551,
+              9431
+            ],
+            "name": "Xunlai Chest",
+            "evidence": "Exact named actor in same Lion's Arch instance, visible outside the selected base snapshot; no cross-instance merge."
+          }
+        ]
+      }
+    },
+    {
+      "capture": "unclaimed guild halls.jsonl",
+      "map": 360,
+      "instance_epochs": [
+        32,
+        37
+      ],
+      "variant": "claimed_upgraded_main_hall",
+      "name": "Isle of Meditation",
+      "evidence": "User identifies the upgraded main hall as Isle of Meditation; these contexts contain storage, merchant, dye, material, rare material, rune and scroll traders.",
+      "scope": "Only these captured instances; other captures remain unclassified.",
+      "population_selection": {
+        "instance_epoch": 37,
+        "snapshot_instance_ms": 10047935,
+        "expected_npc_count": 38,
+        "excluded_context": {
+          "instance_epoch": 32,
+          "maximum_npc_count": 39,
+          "extra_actor": {
+            "model": 286,
+            "gwca_class": "GW::Constants::ModelID::Minipet::EyeOfJanthir",
+            "captured_definition_flags": 98816,
+            "classification": "Player miniature, not a persistent upgraded hall service."
+          }
+        },
+        "evidence": "Use the first complete 38-NPC snapshot of context 37 (capture line 2714), containing the upgraded hall services and henchmen. Context 32 has a larger 39-NPC snapshot because it includes a player's Miniature Eye of Janthir; its extra actor must not become hall content. No population is merged across contexts."
+      }
+    }
+  ]
+}

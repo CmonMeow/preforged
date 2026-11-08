@@ -1,0 +1,87 @@
+Companion empirical geometry, 2026-10-12
+
+Tool: tools/ai/measure_companion_geometry.py
+Input: reports from tools/ai/audit_capture_behavior.py (hashed archived captures).
+Outputs: build/reports/ai/four-companion-geometry.json,
+  side-companion-geometry.json, ranger-companion-geometry.json, plus
+  four-companion-geometry-100ms.json and side-companion-geometry-100ms.json.
+Reproduce:
+  python tools/ai/measure_companion_geometry.py build/reports/ai/four-professions.json --output build/reports/ai/four-companion-geometry.json
+  python tools/ai/measure_companion_geometry.py build/reports/ai/side-quests.json --output build/reports/ai/side-companion-geometry.json
+  Add --max-skew-ms 100 and a different output name for stricter sensitivity run.
+
+Findings: these captures support empirical combat geometry, but NO numeric
+follow, acquisition, or combat-drop threshold. All module thresholds must remain
+explicit unconfigured values pending better qualified evidence. This analysis
+does not install runtime values.
+
+The main pass excludes scripted map148 and admits source/target positions only
+from the SAME world snapshot within500ms of the action packet. Source spawn
+generation is required, source/target snapshots across known lifetime ends are
+rejected. Clock offset uncertainty is separately retained per observation.
+500ms and100ms are analysis admission filters, not proposed AI timing constants.
+
+Observed distance in Guild Wars coordinate units (min / median / max)
+  Four-professions, ordinary attack starts:
+    Pet - Melandru's Stalker: n35, 63.668 / 75.552 / 142.112.
+    Minions:                  n141,44.486 / 78.057 / 208.226.
+    Summoned Fire Imp:        n73, 69.857 /642.328 /870.237.
+  Four-professions, Imp skill activations:
+    n224,65.336 /760.437 /1369.271.
+  Side-quests, ordinary attack starts:
+    Ben Wolfson:              n12,78.191 /852.222 /1173.975.
+    Summoned Fire Imp:        n62,66.579 /479.305 /801.498.
+  Side-quests, Imp skill activations:
+    n290,66.196 /743.425 /1284.443.
+  Ranger-partial archive: zero admitted companion observations; it does not add
+    evidence for follow/drop thresholds under these identity/clock constraints.
+
+Confidence and sample independence
+  Moderate confidence that these are action-associated simultaneous NPC geometry;
+    low confidence for exact action-time distance due to sparse snapshots and
+    clock spread. ZERO confidence that extrema estimate acquisition/drop bounds.
+  Pet35 is only two observed lifetimes: epoch8/agent181/generation1 and
+    epoch16/agent8/generation1. Repeated attacks are correlated, not35 independent
+    acquisition experiments. No statistical confidence interval is claimed.
+  At100ms skew: pet n4,63.668 /63.668 /109.167; minion n31,64.334 /79.188 /152.542.
+    Ben Wolfson drops to n1 at1072.181. This sample loss prevents reliable
+    inference of boundary behavior. Imp casting remains n46/n45 in the two files.
+  Plane equality, route obstruction, actor speeds, pet mode, owner commands and
+    first-acquisition timing are not controlled by these samples. None is a
+    valid standalone test of melee reach or maximum spell range.
+
+Concrete evidence references
+  Pet minimum example: four-profession packet34389 tick83128609,
+    epoch16 lifetime16:8:1, world4439, snapshot+313ms, distance63.668 to
+    River Skale Brood. Clock anchor spread45ms in this epoch.
+  Pet maximum example: packet16717 tick82083468, epoch8 lifetime8:181:1,
+    world1896, snapshot-278ms, distance142.112 to Lash Devourer;
+    epoch clock anchor spread134ms.
+  Pet target-bearing destination: packet16695 tick82082234, world1893
+    snapshot-44ms; target59 Lash Devourer, destination distance151.901,
+    simultaneous source/target separation145.762. The destination itself must
+    not be substituted for the target's current position.
+  Ben Wolfson examples: side packet542593/world23038 through
+    packet557273/world24344. All12 records and exact offsets are in side report.
+
+Why no follow/acquisition/drop number was recovered
+  Zero admitted companion opcode42 target-bearing destinations reference the
+    observed local_actor. Admitted pet targets are foes; the early pet181 route
+    to player15 precedes its identified Pet name and must not be relabeled as an
+    owned-pet follow event (it may be the charm interaction).
+  No suitable stationary-local-player position join exists around these admitted
+    actions. The tool recognizes opcode44 positions only until a new direction/
+    destination invalidates them; it never treats a movement goal as current
+    owner position or extrapolates through navigation.
+  The local_actor ID is not an ownership relation by itself. Ben Wolfson is only
+    a named friendly-follower candidate; his measured combat does not certify
+    ownership or why he moves. NPC snapshots omit continuous local-player pose.
+  Attack starts occur after selection and approach and therefore cannot identify
+    the initial acquisition radius. Cessation can mean death, obstruction,
+    command, cast, or lost visibility and does not alone identify combat drop.
+
+Validation
+  Both500ms and100ms passes completed; source files hashed and untouched.
+  Reports retain every admitted packet/world line, lifetime, sample skew, clock
+    spread, target identity and distance rather than only aggregate extrema.
+  No runtime files, shared CMake files, processes or official clients were changed.

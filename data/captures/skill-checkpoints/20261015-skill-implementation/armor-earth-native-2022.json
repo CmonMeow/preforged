@@ -1,0 +1,77 @@
+{
+  "skill": 165,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 0.75,
+    "stored_skill": 165,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 30,
+    "0x48": 30,
+    "0x4c": 15,
+    "0x5c": 24,
+    "0x60": 60,
+    "0x64": 50,
+    "0x68": 14,
+    "0x78": 297,
+    "0x7c": 2077
+  },
+  "self_body_consumer": {
+    "actor": 42,
+    "encoded_file": "ba3500010000",
+    "flags": 1
+  },
+  "evidence": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+      "activation": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 136772,
+        "tick_ms": 18312031,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c00000019000000a5000000",
+        "kind": 60
+      },
+      "self_body": {
+        "line": 136779,
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 18312750,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f000000150000001900000029010000"
+      },
+      "applied": {
+        "line": 136780,
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 18312750,
+        "opcode": 66,
+        "bytes": 24,
+        "complete": true,
+        "hex": "4200000019000000a500000001000000750000000000f041"
+      },
+      "rank": 1,
+      "effect": 117
+    }
+  ],
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Armor_of_Earth.html",
+  "wiki_revision": 2670493,
+  "wiki_sha256": "3bc35bdb1564c93877490376ce461eef4b8a912e591c2fd2cdf7f91bcbc0daed",
+  "tool_sha256": "494b62db2e597c9e1cba962d391ff4ca75217b4767ce4214a107c0102ffd8e6a",
+  "limits": [
+    "Exact capture proves self simple21 body297 and30second application, not damage reduction or movement response.",
+    "Original animation consumer is0.75seconds/style50; rendered acceptance remains unverified.",
+    "Equipment duration modifiers, other armor-buff stacking quirks and NPC self-casting require further integration/verification."
+  ]
+}

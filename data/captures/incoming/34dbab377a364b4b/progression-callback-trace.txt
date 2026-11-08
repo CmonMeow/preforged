@@ -1,0 +1,251 @@
+FUNCTION 00796930
+00796930: push ebp
+00796931: mov ebp, esp
+00796933: call 0x47d050
+00796938: push 0
+0079693a: push 0
+0079693c: push 0x10000067
+00796941: mov ecx, dword ptr [eax + 0x2c]
+00796944: mov eax, dword ptr [ebp + 8]
+00796947: mov dword ptr [ecx + 0x7b8], eax
+0079694d: call 0x5eea60
+00796952: add esp, 0xc
+00796955: pop ebp
+00796956: ret 
+00796957: int3 
+00796958: int3 
+00796959: int3 
+0079695a: int3 
+0079695b: int3 
+0079695c: int3 
+0079695d: int3 
+0079695e: int3 
+0079695f: int3 
+00796960: push ebp
+00796961: mov ebp, esp
+00796963: call 0x47d050
+00796968: push 0
+0079696a: push 0
+0079696c: push 0x1000006a
+00796971: mov ecx, dword ptr [eax + 0x2c]
+00796974: mov eax, dword ptr [ebp + 8]
+00796977: mov dword ptr [ecx + 0x7c4], eax
+0079697d: call 0x5eea60
+00796982: add esp, 0xc
+00796985: pop ebp
+00796986: ret 
+00796987: int3 
+00796988: int3 
+00796989: int3 
+0079698a: int3 
+0079698b: int3 
+0079698c: int3 
+0079698d: int3 
+0079698e: int3 
+0079698f: int3 
+00796990: push ebp
+00796991: mov ebp, esp
+00796993: push ebx
+00796994: push esi
+00796995: push edi
+00796996: call 0x47d050
+0079699b: mov ebx, dword ptr [ebp + 8]
+0079699e: xor esi, esi
+007969a0: mov edi, dword ptr [eax + 0x2c]
+007969a3: add edi, 0x744
+007969a9: lea esp, [esp]
+007969b0: mov eax, dword ptr [edi]
+007969b2: test eax, eax
+007969b4: je 0x7969c2
+007969b6: cmp eax, dword ptr [ebx + esi*4]
+007969b9: je 0x7969c2
+007969bb: mov ecx, 1
+007969c0: jmp 0x7969c4
+007969c2: xor ecx, ecx
+007969c4: mov eax, dword ptr [ebx + esi*4]
+007969c7: mov dword ptr [edi - 4], eax
+007969ca: mov eax, dword ptr [ebx + esi*4]
+007969cd: mov dword ptr [edi], eax
+007969cf: test ecx, ecx
+007969d1: je 0x7969e3
+007969d3: push 0
+007969d5: push esi
+007969d6: push 0x10000066
+007969db: call 0x5eea60
+007969e0: add esp, 0xc
+007969e3: inc esi
+007969e4: add edi, 8
+007969e7: cmp esi, 0xf
+007969ea: jb 0x7969b0
+007969ec: pop edi
+007969ed: pop esi
+007969ee: pop ebx
+007969ef: pop ebp
+007969f0: ret 
+007969f1: int3 
+007969f2: int3 
+007969f3: int3 
+007969f4: int3 
+007969f5: int3 
+007969f6: int3 
+007969f7: int3 
+007969f8: int3 
+007969f9: int3 
+007969fa: int3 
+007969fb: int3 
+007969fc: int3 
+007969fd: int3 
+007969fe: int3 
+007969ff: int3 
+00796a00: push ebp
+00796a01: mov ebp, esp
+00796a03: call 0x47d050
+00796a08: push 0
+00796a0a: push 0
+00796a0c: push 0x10000068
+00796a11: mov ecx, dword ptr [eax + 0x2c]
+00796a14: mov eax, dword ptr [ebp + 8]
+00796a17: mov dword ptr [ecx + 0x7bc], eax
+00796a1d: call 0x5eea60
+00796a22: add esp, 0xc
+00796a25: pop ebp
+00796a26: ret 
+00796a27: int3 
+00796a28: int3 
+00796a29: int3 
+00796a2a: int3 
+00796a2b: int3 
+00796a2c: int3 
+00796a2d: int3 
+00796a2e: int3 
+00796a2f: int3 
+00796a30: push ebp
+00796a31: mov ebp, esp
+00796a33: call 0x47d050
+00796a38: push 0
+00796a3a: push 0
+00796a3c: push 0x10000069
+00796a41: mov ecx, dword ptr [eax + 0x2c]
+00796a44: mov eax, dword ptr [ebp + 8]
+00796a47: mov dword ptr [ecx + 0x7c0], eax
+00796a4d: call 0x5eea60
+00796a52: add esp, 0xc
+00796a55: pop ebp
+00796a56: ret 
+00796a57: int3 
+00796a58: int3 
+00796a59: int3 
+00796a5a: int3 
+00796a5b: int3 
+00796a5c: int3 
+00796a5d: int3 
+00796a5e: int3 
+00796a5f: int3 
+FUNCTION 00796cc0
+00796cc0: push ebp
+00796cc1: mov ebp, esp
+00796cc3: push ebx
+00796cc4: push esi
+00796cc5: push edi
+00796cc6: call 0x47d050
+00796ccb: mov esi, dword ptr [ebp + 8]
+00796cce: inc esi
+00796ccf: mov edi, dword ptr [eax + 0x2c]
+00796cd2: mov ebx, dword ptr [edi + 0x834]
+00796cd8: lea edx, [edi + 0x82c]
+00796cde: cmp esi, ebx
+00796ce0: jbe 0x796d66
+00796ce6: mov ecx, dword ptr [edi + 0x830]
+00796cec: cmp esi, ecx
+00796cee: jbe 0x796d08
+00796cf0: lea eax, [edi + 0x838]
+00796cf6: push eax
+00796cf7: push ecx
+00796cf8: push esi
+00796cf9: mov ecx, edx
+00796cfb: call 0x4717f0
+00796d00: mov ecx, eax
+00796d02: lea edx, [edi + 0x82c]
+00796d08: push ebx
+00796d09: push ecx
+00796d0a: mov ecx, edx
+00796d0c: call 0x78e830
+00796d11: mov ecx, dword ptr [edi + 0x834]
+00796d17: mov eax, esi
+00796d19: sub eax, ecx
+00796d1b: lea ecx, [ecx + ecx*2]
+00796d1e: lea edx, [eax + eax*2]
+00796d21: mov eax, dword ptr [edi + 0x82c]
+00796d27: shl edx, 2
+00796d2a: lea ecx, [eax + ecx*4]
+00796d2d: call 0x46bcf0
+00796d32: mov eax, dword ptr [edi + 0x834]
+00796d38: mov edx, esi
+00796d3a: sub edx, eax
+00796d3c: lea ecx, [eax + eax*2]
+00796d3f: mov eax, dword ptr [edi + 0x82c]
+00796d45: je 0x796d5e
+00796d47: lea eax, [eax + ecx*4]
+00796d4a: add eax, 8
+00796d4d: lea ecx, [ecx]
+00796d50: mov dword ptr [eax], 0
+00796d56: lea eax, [eax + 0xc]
+00796d59: sub edx, 1
+00796d5c: jne 0x796d50
+00796d5e: mov dword ptr [edi + 0x834], esi
+00796d64: mov ebx, esi
+00796d66: mov esi, dword ptr [ebp + 8]
+00796d69: cmp esi, ebx
+00796d6b: jb 0x796d81
+00796d6d: push 0x23e
+00796d72: mov edx, 0x89048c
+00796d77: mov ecx, 0x8904a8
+00796d7c: call 0x482660
+00796d81: mov eax, dword ptr [edi + 0x82c]
+00796d87: lea ecx, [esi + esi*2]
+00796d8a: mov ebx, dword ptr [ebp + 0x10]
+00796d8d: push ebx
+00796d8e: lea esi, [eax + ecx*4]
+00796d91: mov ecx, dword ptr [ebp + 0xc]
+00796d94: mov eax, dword ptr [ecx]
+00796d96: mov dword ptr [esi], eax
+00796d98: mov eax, dword ptr [ecx + 4]
+00796d9b: mov dword ptr [esi + 4], eax
+00796d9e: call 0x46a740
+00796da3: add esp, 4
+00796da6: lea edi, [eax*2 + 2]
+00796dad: test edi, edi
+00796daf: je 0x796dd9
+00796db1: mov ecx, dword ptr [esi + 8]
+00796db4: mov edx, edi
+00796db6: push 0x124
+00796dbb: push 0x89048c
+00796dc0: push 0
+00796dc2: call 0x47cfa0
+00796dc7: push edi
+00796dc8: mov edx, ebx
+00796dca: mov dword ptr [esi + 8], eax
+00796dcd: mov ecx, eax
+00796dcf: call 0x46bc90
+00796dd4: pop edi
+00796dd5: pop esi
+00796dd6: pop ebx
+00796dd7: pop ebp
+00796dd8: ret 
+00796dd9: mov eax, dword ptr [esi + 8]
+00796ddc: test eax, eax
+00796dde: je 0x796df0
+00796de0: mov ecx, eax
+00796de2: call 0x47cee0
+00796de7: mov dword ptr [esi + 8], 0
+00796dee: xor eax, eax
+00796df0: push edi
+00796df1: mov edx, ebx
+00796df3: mov ecx, eax
+00796df5: call 0x46bc90
+00796dfa: pop edi
+00796dfb: pop esi
+00796dfc: pop ebx
+00796dfd: pop ebp
+00796dfe: ret 
+00796dff: int3 

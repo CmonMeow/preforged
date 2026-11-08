@@ -1,0 +1,8103 @@
+{
+  "schema": 1,
+  "prepared_maps": 395,
+  "failed_assets": {
+    "257816": "gw_navmesh_bake: asset hash not found in DAT MFTX"
+  },
+  "maps": [
+    {
+      "map": 1,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 2,
+      "asset": 12269,
+      "status": "prepared",
+      "x": 48.0,
+      "y": -576.0,
+      "plane": 0,
+      "cell": 19,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 3,
+      "asset": 213190,
+      "status": "prepared",
+      "x": 8424.0,
+      "y": 8784.0,
+      "plane": 0,
+      "cell": 21,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 4,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 5,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 6,
+      "asset": 127532,
+      "status": "prepared",
+      "x": -1243.957146,
+      "y": 6792.0,
+      "plane": 0,
+      "cell": 1025,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 7,
+      "asset": 127484,
+      "status": "prepared",
+      "x": 686.460724,
+      "y": -3516.0,
+      "plane": 0,
+      "cell": 975,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 8,
+      "asset": 127496,
+      "status": "prepared",
+      "x": 4982.0,
+      "y": 8457.0,
+      "plane": 0,
+      "cell": 840,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 47,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 9,
+      "asset": 127532,
+      "status": "prepared",
+      "x": 5387.0,
+      "y": 9282.0,
+      "plane": 0,
+      "cell": 1140,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 49,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 10,
+      "asset": 13531,
+      "status": "prepared",
+      "x": 23964.191406,
+      "y": -7692.8125,
+      "plane": 0,
+      "cell": 1971,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 231,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 11,
+      "asset": 40796,
+      "status": "prepared",
+      "x": 23497.0,
+      "y": -10578.0,
+      "plane": 0,
+      "cell": 379,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 233,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 12,
+      "asset": 13105,
+      "status": "prepared",
+      "x": -17207.0,
+      "y": 4523.0,
+      "plane": 0,
+      "cell": 1457,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 227,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 13,
+      "asset": 14936,
+      "status": "prepared",
+      "x": -22413.0,
+      "y": -16583.0,
+      "plane": 0,
+      "cell": 2663,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 2925,
+        "instance_epoch": 118,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 14,
+      "asset": 35379,
+      "status": "prepared",
+      "x": -388.118195,
+      "y": 22631.824219,
+      "plane": 0,
+      "cell": 1865,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 6,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 15,
+      "asset": 33663,
+      "status": "prepared",
+      "x": 21499.0,
+      "y": 10179.0,
+      "plane": 0,
+      "cell": 4796,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 92,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 16,
+      "asset": 33665,
+      "status": "prepared",
+      "x": 10026.0,
+      "y": -7043.0,
+      "plane": 0,
+      "cell": 820,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 31,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 17,
+      "asset": 34039,
+      "status": "prepared",
+      "x": 3888.0,
+      "y": 7872.0,
+      "plane": 0,
+      "cell": 504,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 18,
+      "asset": 34045,
+      "status": "prepared",
+      "x": -120.0,
+      "y": -4464.0,
+      "plane": 0,
+      "cell": 749,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 19,
+      "asset": 37216,
+      "status": "prepared",
+      "x": -21069.0,
+      "y": 4966.0,
+      "plane": 0,
+      "cell": 1990,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 219,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 20,
+      "asset": 33642,
+      "status": "prepared",
+      "x": 1681.0,
+      "y": 3456.0,
+      "plane": 0,
+      "cell": 836,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 196,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 21,
+      "asset": 13265,
+      "status": "prepared",
+      "x": 8957.0,
+      "y": 29222.0,
+      "plane": 0,
+      "cell": 3037,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 178,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 22,
+      "asset": 12040,
+      "status": "prepared",
+      "x": -20156.791016,
+      "y": -6851.120117,
+      "plane": 0,
+      "cell": 1383,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 194,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 23,
+      "asset": 11565,
+      "status": "prepared",
+      "x": -12898.918945,
+      "y": -18724.03125,
+      "plane": 0,
+      "cell": 2108,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 190,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 24,
+      "asset": 47660,
+      "status": "prepared",
+      "x": -3964.0,
+      "y": -29444.0,
+      "plane": 0,
+      "cell": 2951,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 188,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 25,
+      "asset": 13019,
+      "status": "prepared",
+      "x": 22994.748047,
+      "y": -2155.727295,
+      "plane": 0,
+      "cell": 2264,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 174,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 26,
+      "asset": 46589,
+      "status": "prepared",
+      "x": 8612.0,
+      "y": -16186.0,
+      "plane": 0,
+      "cell": 3752,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 1135,
+        "instance_epoch": 44,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 27,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 28,
+      "asset": 13824,
+      "status": "prepared",
+      "x": 11713.0,
+      "y": -8301.0,
+      "plane": 0,
+      "cell": 3943,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 143,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 29,
+      "asset": 13906,
+      "status": "prepared",
+      "x": 6760.0,
+      "y": -28621.0,
+      "plane": 0,
+      "cell": 2414,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 161,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 30,
+      "asset": 13907,
+      "status": "prepared",
+      "x": -4052.0,
+      "y": -14093.0,
+      "plane": 0,
+      "cell": 3315,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 145,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 31,
+      "asset": 157168,
+      "status": "prepared",
+      "x": 5382.0,
+      "y": -12137.0,
+      "plane": 0,
+      "cell": 2194,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3911,
+        "instance_epoch": 160,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 32,
+      "asset": 13913,
+      "status": "prepared",
+      "x": -587.0,
+      "y": 18207.0,
+      "plane": 0,
+      "cell": 3159,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 170,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 33,
+      "asset": 14937,
+      "status": "prepared",
+      "x": -4747.0,
+      "y": -65.0,
+      "plane": 0,
+      "cell": 3347,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3475,
+        "instance_epoch": 146,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 34,
+      "asset": 63058,
+      "status": "prepared",
+      "x": -2446.0,
+      "y": 7914.0,
+      "plane": 0,
+      "cell": 1855,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 35,
+      "asset": 55563,
+      "status": "prepared",
+      "x": 2870.0,
+      "y": -10185.0,
+      "plane": 0,
+      "cell": 633,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 246,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 36,
+      "asset": 14936,
+      "status": "prepared",
+      "x": 638.749023,
+      "y": 15178.727539,
+      "plane": 0,
+      "cell": 5270,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 168,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 37,
+      "asset": 152265,
+      "status": "prepared",
+      "x": 5627.656433,
+      "y": 3408.0,
+      "plane": 0,
+      "cell": 206,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 38,
+      "asset": 52837,
+      "status": "prepared",
+      "x": -14753.0,
+      "y": 587.0,
+      "plane": 0,
+      "cell": 2962,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 263,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 39,
+      "asset": 14937,
+      "status": "prepared",
+      "x": -7025.0,
+      "y": -2653.0,
+      "plane": 0,
+      "cell": 1829,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 165,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 40,
+      "asset": 51061,
+      "status": "prepared",
+      "x": 21074.21875,
+      "y": 8090.23584,
+      "plane": 0,
+      "cell": 4096,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 166,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 41,
+      "asset": 40803,
+      "status": "prepared",
+      "x": -17963.833496,
+      "y": -388.0,
+      "plane": 0,
+      "cell": 3047,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 42,
+      "asset": 40809,
+      "status": "prepared",
+      "x": -2940.0,
+      "y": -336.0,
+      "plane": 0,
+      "cell": 233,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 43,
+      "asset": 40812,
+      "status": "prepared",
+      "x": 15072.0,
+      "y": -1296.0,
+      "plane": 0,
+      "cell": 1168,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 44,
+      "asset": 40798,
+      "status": "prepared",
+      "x": -2784.0,
+      "y": -1440.0,
+      "plane": 0,
+      "cell": 478,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 45,
+      "asset": 40802,
+      "status": "prepared",
+      "x": 2112.0,
+      "y": 5520.0,
+      "plane": 0,
+      "cell": 87,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 46,
+      "asset": 40808,
+      "status": "prepared",
+      "x": 10819.199951,
+      "y": -15744.0,
+      "plane": 0,
+      "cell": 670,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 47,
+      "asset": 40801,
+      "status": "prepared",
+      "x": 3964.800018,
+      "y": 2064.0,
+      "plane": 0,
+      "cell": 30,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 48,
+      "asset": 40811,
+      "status": "prepared",
+      "x": 12200.0,
+      "y": 13516.0,
+      "plane": 0,
+      "cell": 363,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3750,
+        "instance_epoch": 155,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 49,
+      "asset": 40759,
+      "status": "prepared",
+      "x": 4993.0,
+      "y": -6275.0,
+      "plane": 0,
+      "cell": 148,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 225,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 50,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 51,
+      "asset": 157168,
+      "status": "prepared",
+      "x": 8455.749023,
+      "y": -13216.272461,
+      "plane": 0,
+      "cell": 280,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3830,
+        "instance_epoch": 158,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 52,
+      "asset": 127565,
+      "status": "prepared",
+      "x": -63.599304,
+      "y": -931.0,
+      "plane": 0,
+      "cell": 664,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 53,
+      "asset": 41192,
+      "status": "prepared",
+      "x": 1080.0,
+      "y": -2736.0,
+      "plane": 0,
+      "cell": 228,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 54,
+      "asset": 41193,
+      "status": "prepared",
+      "x": -1467.0,
+      "y": -6363.0,
+      "plane": 0,
+      "cell": 34,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 494,
+        "instance_epoch": 9,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 55,
+      "asset": 13565,
+      "status": "prepared",
+      "x": 4684.268555,
+      "y": 4034.570557,
+      "plane": 0,
+      "cell": 1063,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 56,
+      "asset": 34216,
+      "status": "prepared",
+      "x": 13754.25,
+      "y": 9643.5,
+      "plane": 0,
+      "cell": 1649,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 57,
+      "asset": 34216,
+      "status": "prepared",
+      "x": 18528.822266,
+      "y": -16669.332031,
+      "plane": 0,
+      "cell": 2425,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 206,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 58,
+      "asset": 321286,
+      "status": "prepared",
+      "x": -11530.0,
+      "y": -19396.0,
+      "plane": 0,
+      "cell": 2271,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 705,
+        "instance_epoch": 17,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 59,
+      "asset": 34216,
+      "status": "prepared",
+      "x": 15241.0,
+      "y": -14387.0,
+      "plane": 0,
+      "cell": 1042,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 4113,
+        "instance_epoch": 166,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 60,
+      "asset": 34320,
+      "status": "prepared",
+      "x": 11778.406738,
+      "y": -4452.813721,
+      "plane": 0,
+      "cell": 864,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 61,
+      "asset": 34321,
+      "status": "prepared",
+      "x": 5173.74939,
+      "y": -12526.0,
+      "plane": 0,
+      "cell": 1206,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 62,
+      "asset": 34222,
+      "status": "prepared",
+      "x": -21247.0,
+      "y": -10668.0,
+      "plane": 0,
+      "cell": 2445,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 867,
+        "instance_epoch": 29,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 63,
+      "asset": 34281,
+      "status": "prepared",
+      "x": 7514.0,
+      "y": -13764.0,
+      "plane": 0,
+      "cell": 2036,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 948,
+        "instance_epoch": 35,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 64,
+      "asset": 34225,
+      "status": "prepared",
+      "x": -10384.0,
+      "y": 8064.0,
+      "plane": 0,
+      "cell": 377,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 65,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 66,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 67,
+      "asset": 127565,
+      "status": "prepared",
+      "x": -63.599304,
+      "y": -931.0,
+      "plane": 0,
+      "cell": 664,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 68,
+      "asset": 127589,
+      "status": "prepared",
+      "x": -1244.0,
+      "y": 5296.0,
+      "plane": 0,
+      "cell": 346,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 51,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 69,
+      "asset": 127592,
+      "status": "prepared",
+      "x": -144.0,
+      "y": -528.0,
+      "plane": 0,
+      "cell": 118,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 70,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 71,
+      "asset": 127643,
+      "status": "prepared",
+      "x": -3940.0,
+      "y": -3633.0,
+      "plane": 0,
+      "cell": 228,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 59,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 72,
+      "asset": 63059,
+      "status": "prepared",
+      "x": 1009.25,
+      "y": -14697.0,
+      "plane": 0,
+      "cell": 3747,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 73,
+      "asset": 10682,
+      "status": "prepared",
+      "x": -22098.0,
+      "y": 9098.0,
+      "plane": 0,
+      "cell": 4387,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 221,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 74,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 75,
+      "asset": 14004,
+      "status": "prepared",
+      "x": 0.0,
+      "y": -3281.0,
+      "plane": 0,
+      "cell": 1923,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 76,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 77,
+      "asset": 155155,
+      "status": "prepared",
+      "x": 5987.0,
+      "y": 3106.0,
+      "plane": 0,
+      "cell": 1109,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 4309,
+        "instance_epoch": 172,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 78,
+      "asset": 13989,
+      "status": "prepared",
+      "x": -48.0,
+      "y": -559.47348,
+      "plane": 0,
+      "cell": 77,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 79,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 80,
+      "asset": 15282,
+      "status": "prepared",
+      "x": 158.75,
+      "y": 1723.5,
+      "plane": 0,
+      "cell": 832,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 81,
+      "asset": 22052,
+      "status": "prepared",
+      "x": 4747.19043,
+      "y": 7050.813965,
+      "plane": 0,
+      "cell": 1161,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 141,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 82,
+      "asset": 166048,
+      "status": "prepared",
+      "x": 2769.0,
+      "y": 1349.0,
+      "plane": 0,
+      "cell": 189,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 257,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 83,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 84,
+      "asset": 16428,
+      "status": "prepared",
+      "x": -3106.250977,
+      "y": -3395.727295,
+      "plane": 0,
+      "cell": 66,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 71,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 85,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 86,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 87,
+      "asset": 46591,
+      "status": "prepared",
+      "x": 2112.0,
+      "y": 384.0,
+      "plane": 0,
+      "cell": 47,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 88,
+      "asset": 46592,
+      "status": "prepared",
+      "x": -8053.714355,
+      "y": -3648.0,
+      "plane": 0,
+      "cell": 353,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 89,
+      "asset": 46593,
+      "status": "prepared",
+      "x": 18052.0,
+      "y": -17685.0,
+      "plane": 0,
+      "cell": 1986,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 1340,
+        "instance_epoch": 52,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 90,
+      "asset": 46594,
+      "status": "prepared",
+      "x": -8258.0,
+      "y": 32467.0,
+      "plane": 0,
+      "cell": 396,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 282,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 91,
+      "asset": 12244,
+      "status": "prepared",
+      "x": 3590.400002,
+      "y": -29376.0,
+      "plane": 0,
+      "cell": 2580,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 92,
+      "asset": 46597,
+      "status": "prepared",
+      "x": 9210.0,
+      "y": -15552.0,
+      "plane": 0,
+      "cell": 385,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 93,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 94,
+      "asset": 46598,
+      "status": "prepared",
+      "x": 21451.0,
+      "y": 13180.0,
+      "plane": 0,
+      "cell": 1866,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 1647,
+        "instance_epoch": 68,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 95,
+      "asset": 46599,
+      "status": "prepared",
+      "x": -18182.0,
+      "y": 7023.0,
+      "plane": 0,
+      "cell": 1042,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 1257,
+        "instance_epoch": 47,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 96,
+      "asset": 46600,
+      "status": "prepared",
+      "x": -22684.799805,
+      "y": 2400.0,
+      "plane": 0,
+      "cell": 660,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 97,
+      "asset": 46601,
+      "status": "prepared",
+      "x": 1824.0,
+      "y": 576.0,
+      "plane": 0,
+      "cell": 219,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 98,
+      "asset": 46602,
+      "status": "prepared",
+      "x": 19471.0,
+      "y": 11622.0,
+      "plane": 0,
+      "cell": 1216,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 1775,
+        "instance_epoch": 76,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 99,
+      "asset": 46603,
+      "status": "prepared",
+      "x": -10257.0,
+      "y": -8627.0,
+      "plane": 0,
+      "cell": 1092,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 1937,
+        "instance_epoch": 86,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 100,
+      "asset": 46604,
+      "status": "prepared",
+      "x": -4777.475616,
+      "y": 7344.0,
+      "plane": 0,
+      "cell": 2294,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 101,
+      "asset": 51060,
+      "status": "prepared",
+      "x": 22701.0,
+      "y": 6955.0,
+      "plane": 0,
+      "cell": 521,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 2645,
+        "instance_epoch": 99,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 102,
+      "asset": 51061,
+      "status": "prepared",
+      "x": 20347.0,
+      "y": 7173.0,
+      "plane": 0,
+      "cell": 4051,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3574,
+        "instance_epoch": 151,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 103,
+      "asset": 51062,
+      "status": "prepared",
+      "x": -3082.297306,
+      "y": -5764.540527,
+      "plane": 0,
+      "cell": 368,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 104,
+      "asset": 51063,
+      "status": "prepared",
+      "x": 8745.599976,
+      "y": 11232.0,
+      "plane": 0,
+      "cell": 1217,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 105,
+      "asset": 51064,
+      "status": "prepared",
+      "x": 7944.0,
+      "y": -3024.0,
+      "plane": 0,
+      "cell": 188,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 106,
+      "asset": 51064,
+      "status": "prepared",
+      "x": 7944.0,
+      "y": -3024.0,
+      "plane": 0,
+      "cell": 188,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 107,
+      "asset": 51066,
+      "status": "prepared",
+      "x": -13468.0,
+      "y": 4276.0,
+      "plane": 0,
+      "cell": 1683,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 156,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 108,
+      "asset": 52166,
+      "status": "prepared",
+      "x": -12888.0,
+      "y": 8304.0,
+      "plane": 0,
+      "cell": 1808,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 109,
+      "asset": 52918,
+      "status": "prepared",
+      "x": 5359.081543,
+      "y": -338.031219,
+      "plane": 0,
+      "cell": 560,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 251,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 110,
+      "asset": 52821,
+      "status": "prepared",
+      "x": 8232.0,
+      "y": 10848.0,
+      "plane": 0,
+      "cell": 344,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 111,
+      "asset": 52822,
+      "status": "prepared",
+      "x": -3552.0,
+      "y": 9428.366211,
+      "plane": 0,
+      "cell": 3537,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 112,
+      "asset": 52830,
+      "status": "prepared",
+      "x": -480.0,
+      "y": -12096.0,
+      "plane": 0,
+      "cell": 255,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 113,
+      "asset": 52835,
+      "status": "prepared",
+      "x": 19314.0,
+      "y": -374.0,
+      "plane": 0,
+      "cell": 1151,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3376,
+        "instance_epoch": 141,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 114,
+      "asset": 52836,
+      "status": "prepared",
+      "x": 1728.0,
+      "y": 11712.0,
+      "plane": 0,
+      "cell": 399,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 115,
+      "asset": 52837,
+      "status": "prepared",
+      "x": -15096.0,
+      "y": 3695.0,
+      "plane": 0,
+      "cell": 3090,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3319,
+        "instance_epoch": 138,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 116,
+      "asset": 52838,
+      "status": "prepared",
+      "x": 11951.0,
+      "y": 9217.0,
+      "plane": 0,
+      "cell": 1930,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 248,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 117,
+      "asset": 52839,
+      "status": "prepared",
+      "x": 9850.698242,
+      "y": 10316.212891,
+      "plane": 0,
+      "cell": 69,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 264,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 118,
+      "asset": 52840,
+      "status": "prepared",
+      "x": 15084.0,
+      "y": 6816.0,
+      "plane": 0,
+      "cell": 294,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 259,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 119,
+      "asset": 52837,
+      "status": "prepared",
+      "x": -16059.0,
+      "y": -247.0,
+      "plane": 0,
+      "cell": 2975,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 4845,
+        "instance_epoch": 186,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 120,
+      "asset": 52842,
+      "status": "prepared",
+      "x": -17890.0,
+      "y": 17395.0,
+      "plane": 0,
+      "cell": 319,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 255,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 121,
+      "asset": 55563,
+      "status": "prepared",
+      "x": 3912.0,
+      "y": -8006.0,
+      "plane": 0,
+      "cell": 1496,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 3065,
+        "instance_epoch": 126,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 122,
+      "asset": 55552,
+      "status": "prepared",
+      "x": 5735.0,
+      "y": -9177.0,
+      "plane": 0,
+      "cell": 2037,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 244,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 123,
+      "asset": 55559,
+      "status": "prepared",
+      "x": 22630.699219,
+      "y": 12967.787109,
+      "plane": 0,
+      "cell": 2332,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 242,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 124,
+      "asset": 55560,
+      "status": "prepared",
+      "x": 5923.0,
+      "y": 10044.0,
+      "plane": 0,
+      "cell": 3303,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 241,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 125,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 126,
+      "asset": 55617,
+      "status": "prepared",
+      "x": -218.583344,
+      "y": 1952.5,
+      "plane": 0,
+      "cell": 201,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 127,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 128,
+      "asset": 155165,
+      "status": "prepared",
+      "x": 15648.0,
+      "y": -1440.0,
+      "plane": 0,
+      "cell": 528,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 129,
+      "asset": 154590,
+      "status": "prepared",
+      "x": -10384.0,
+      "y": 2594.0,
+      "plane": 0,
+      "cell": 1151,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 4972,
+        "instance_epoch": 196,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 130,
+      "asset": 155165,
+      "status": "prepared",
+      "x": 21400.880859,
+      "y": 10011.825195,
+      "plane": 0,
+      "cell": 3089,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-8432-209740140.jsonl",
+        "line": 5006,
+        "instance_epoch": 197,
+        "event": "local_entry_candidate",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 131,
+      "asset": 51063,
+      "status": "prepared",
+      "x": -6724.495117,
+      "y": 23724.591797,
+      "plane": 0,
+      "cell": 1727,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 159,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 132,
+      "asset": 46593,
+      "status": "prepared",
+      "x": -10799.0,
+      "y": 12755.0,
+      "plane": 0,
+      "cell": 7,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 176,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 133,
+      "asset": 46594,
+      "status": "prepared",
+      "x": -9678.0,
+      "y": 34120.0,
+      "plane": 0,
+      "cell": 2498,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 180,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 134,
+      "asset": 46603,
+      "status": "prepared",
+      "x": 9218.881836,
+      "y": 7185.825195,
+      "plane": 0,
+      "cell": 3213,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 171,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 135,
+      "asset": 51066,
+      "status": "prepared",
+      "x": -18892.251953,
+      "y": 4390.272949,
+      "plane": 0,
+      "cell": 1689,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 154,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 136,
+      "asset": 34222,
+      "status": "prepared",
+      "x": 20264.0,
+      "y": -12502.0,
+      "plane": 0,
+      "cell": 980,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 208,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 137,
+      "asset": 34281,
+      "status": "prepared",
+      "x": 2006.0,
+      "y": 9747.0,
+      "plane": 0,
+      "cell": 1121,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 217,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 138,
+      "asset": 34045,
+      "status": "prepared",
+      "x": -5192.178223,
+      "y": 17322.667969,
+      "plane": 0,
+      "cell": 2071,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 211,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 139,
+      "asset": 40798,
+      "status": "prepared",
+      "x": -12979.118164,
+      "y": 489.825165,
+      "plane": 0,
+      "cell": 261,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 228,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 140,
+      "asset": 40803,
+      "status": "prepared",
+      "x": 5334.0,
+      "y": -10633.0,
+      "plane": 0,
+      "cell": 3321,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 235,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 141,
+      "asset": 40811,
+      "status": "prepared",
+      "x": 5208.0,
+      "y": -11743.0,
+      "plane": 0,
+      "cell": 1553,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 223,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 142,
+      "asset": 40812,
+      "status": "prepared",
+      "x": 1021.0,
+      "y": -5356.0,
+      "plane": 0,
+      "cell": 2134,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 230,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 143,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 144,
+      "asset": 155167,
+      "status": "prepared",
+      "x": -1443.856628,
+      "y": 10550.261719,
+      "plane": 0,
+      "cell": 582,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 145,
+      "asset": 116016,
+      "status": "prepared",
+      "x": 14442.0,
+      "y": 2135.0,
+      "plane": 0,
+      "cell": 4169,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 28,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 146,
+      "asset": 113021,
+      "status": "prepared",
+      "x": 6602.0,
+      "y": 4485.0,
+      "plane": 0,
+      "cell": 3716,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 7,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 147,
+      "asset": 116025,
+      "status": "prepared",
+      "x": -13464.0,
+      "y": 754.0,
+      "plane": 0,
+      "cell": 5541,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 4,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 148,
+      "asset": 113021,
+      "status": "prepared",
+      "x": 9620.086914,
+      "y": 4749.040527,
+      "plane": 0,
+      "cell": 1949,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 149,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 150,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 151,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 152,
+      "asset": 52835,
+      "status": "prepared",
+      "x": -16489.0,
+      "y": -16340.0,
+      "plane": 0,
+      "cell": 2282,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 250,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 153,
+      "asset": 52836,
+      "status": "prepared",
+      "x": -17823.0,
+      "y": 11438.0,
+      "plane": 0,
+      "cell": 997,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 253,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 154,
+      "asset": 52166,
+      "status": "prepared",
+      "x": -15388.0,
+      "y": 16822.0,
+      "plane": 0,
+      "cell": 1592,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 261,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 155,
+      "asset": 12244,
+      "status": "prepared",
+      "x": 7402.081543,
+      "y": -41605.03125,
+      "plane": 0,
+      "cell": 3633,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 202,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 156,
+      "asset": 46597,
+      "status": "prepared",
+      "x": -12094.0,
+      "y": 16647.0,
+      "plane": 0,
+      "cell": 3518,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 182,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 157,
+      "asset": 46598,
+      "status": "prepared",
+      "x": 5170.504883,
+      "y": -13711.408203,
+      "plane": 0,
+      "cell": 1524,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 191,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 158,
+      "asset": 46599,
+      "status": "prepared",
+      "x": -8484.0,
+      "y": -6122.0,
+      "plane": 0,
+      "cell": 1018,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 198,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 159,
+      "asset": 46602,
+      "status": "prepared",
+      "x": -16154.0,
+      "y": 13136.0,
+      "plane": 0,
+      "cell": 1536,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 186,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 160,
+      "asset": 113190,
+      "status": "prepared_development_shared_asset",
+      "x": -7459.0,
+      "y": 1458.0,
+      "plane": 0,
+      "cell": 2902,
+      "source": "paired transition capture and472 exact-plane geometry matches; data/gw/portal-provenance.json",
+      "binding_verified_retail": false
+    },
+    {
+      "map": 161,
+      "asset": 113355,
+      "status": "prepared_development_shared_asset",
+      "x": 633.0,
+      "y": 7270.0,
+      "plane": 0,
+      "cell": 347,
+      "source": "captured forward arrival and2420/2421 exact-plane geometry matches; data/gw/portal-provenance.json",
+      "binding_verified_retail": false,
+      "live_validation": "pending"
+    },
+    {
+      "map": 162,
+      "asset": 113437,
+      "status": "prepared",
+      "x": 22614.0,
+      "y": 6849.0,
+      "plane": 0,
+      "cell": 4487,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 12,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 163,
+      "asset": 113190,
+      "status": "prepared",
+      "x": -6359.118652,
+      "y": 1113.825073,
+      "plane": 0,
+      "cell": 4110,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 164,
+      "asset": 113021,
+      "status": "prepared",
+      "x": -11969.112305,
+      "y": -5724.670898,
+      "plane": 0,
+      "cell": 4568,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 165,
+      "asset": 113355,
+      "status": "prepared",
+      "x": -832.495178,
+      "y": 9943.591797,
+      "plane": 0,
+      "cell": 45,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 166,
+      "asset": 113437,
+      "status": "prepared",
+      "x": 22137.880859,
+      "y": 11483.825195,
+      "plane": 0,
+      "cell": 3632,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 167,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 168,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 170,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 171,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 172,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 173,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 174,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 175,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 176,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 177,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 178,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 179,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 180,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 181,
+      "asset": 46603,
+      "status": "prepared",
+      "x": 6409.0,
+      "y": 9099.0,
+      "plane": 0,
+      "cell": 289,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 173,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 182,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 183,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 184,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 185,
+      "asset": 16428,
+      "status": "prepared",
+      "x": 1759.934448,
+      "y": -4291.5,
+      "plane": 0,
+      "cell": 141,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 186,
+      "asset": 16428,
+      "status": "prepared",
+      "x": 1759.934448,
+      "y": -4291.5,
+      "plane": 0,
+      "cell": 141,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 187,
+      "asset": 16428,
+      "status": "prepared",
+      "x": 1759.934448,
+      "y": -4291.5,
+      "plane": 0,
+      "cell": 141,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 188,
+      "asset": 165083,
+      "status": "prepared",
+      "x": 1857.253784,
+      "y": 3114.432373,
+      "plane": 0,
+      "cell": 309,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 63,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 189,
+      "asset": 165176,
+      "status": "prepared",
+      "x": 1144.22998,
+      "y": -1332.5,
+      "plane": 0,
+      "cell": 76,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 190,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 191,
+      "asset": 152201,
+      "status": "prepared",
+      "x": 12864.0,
+      "y": -2112.0,
+      "plane": 0,
+      "cell": 340,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 192,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 193,
+      "asset": 155157,
+      "status": "prepared",
+      "x": -4178.038513,
+      "y": -214.5,
+      "plane": 0,
+      "cell": 1313,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 194,
+      "asset": 157175,
+      "status": "prepared",
+      "x": -6024.135498,
+      "y": -155.54789,
+      "plane": 0,
+      "cell": 876,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 195,
+      "asset": 154527,
+      "status": "prepared",
+      "x": -9133.844727,
+      "y": 10752.0,
+      "plane": 0,
+      "cell": 1831,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 196,
+      "asset": 156966,
+      "status": "prepared",
+      "x": 15192.0,
+      "y": -5280.0,
+      "plane": 0,
+      "cell": 186,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 197,
+      "asset": 157169,
+      "status": "prepared",
+      "x": 1902.794281,
+      "y": -4195.5,
+      "plane": 0,
+      "cell": 1636,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 198,
+      "asset": 155075,
+      "status": "prepared",
+      "x": -6625.97876,
+      "y": 2647.5,
+      "plane": 0,
+      "cell": 2225,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 199,
+      "asset": 154893,
+      "status": "prepared",
+      "x": -16473.600098,
+      "y": 6960.0,
+      "plane": 0,
+      "cell": 534,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 200,
+      "asset": 155089,
+      "status": "prepared",
+      "x": 14297.592529,
+      "y": -1303.0,
+      "plane": 0,
+      "cell": 1602,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 201,
+      "asset": 154590,
+      "status": "prepared",
+      "x": 9472.0,
+      "y": -1344.0,
+      "plane": 0,
+      "cell": 328,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 202,
+      "asset": 155121,
+      "status": "prepared",
+      "x": -1922.326385,
+      "y": 2206.5,
+      "plane": 0,
+      "cell": 2856,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 203,
+      "asset": 155150,
+      "status": "prepared",
+      "x": 1452.25,
+      "y": 10169.0,
+      "plane": 0,
+      "cell": 1340,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 204,
+      "asset": 155168,
+      "status": "prepared",
+      "x": -5709.373352,
+      "y": 3544.182739,
+      "plane": 0,
+      "cell": 786,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 205,
+      "asset": 154638,
+      "status": "prepared",
+      "x": 4921.288696,
+      "y": 1653.0,
+      "plane": 0,
+      "cell": 2348,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 206,
+      "asset": 152201,
+      "status": "prepared",
+      "x": -2061.0,
+      "y": -5751.0,
+      "plane": 0,
+      "cell": 824,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 184,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 207,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 208,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 209,
+      "asset": 157242,
+      "status": "prepared",
+      "x": -4983.458252,
+      "y": -2886.5,
+      "plane": 0,
+      "cell": 2998,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 210,
+      "asset": 154676,
+      "status": "prepared",
+      "x": 3873.060303,
+      "y": 10032.0,
+      "plane": 0,
+      "cell": 1664,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 211,
+      "asset": 155151,
+      "status": "prepared",
+      "x": -4104.0,
+      "y": 4944.0,
+      "plane": 0,
+      "cell": 452,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 212,
+      "asset": 156969,
+      "status": "prepared",
+      "x": -20304.0,
+      "y": 14160.0,
+      "plane": 0,
+      "cell": 240,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 213,
+      "asset": 156882,
+      "status": "prepared",
+      "x": 14664.57373,
+      "y": 6000.0,
+      "plane": 0,
+      "cell": 1524,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 214,
+      "asset": 156827,
+      "status": "prepared",
+      "x": 14292.07373,
+      "y": 4128.5,
+      "plane": 0,
+      "cell": 3171,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 215,
+      "asset": 157176,
+      "status": "prepared",
+      "x": -5324.312378,
+      "y": 17180.5,
+      "plane": 0,
+      "cell": 16,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 216,
+      "asset": 157177,
+      "status": "prepared",
+      "x": 18765.765625,
+      "y": 628.5,
+      "plane": 0,
+      "cell": 1765,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 217,
+      "asset": 157178,
+      "status": "prepared",
+      "x": 3259.867035,
+      "y": -12132.373047,
+      "plane": 0,
+      "cell": 2717,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 218,
+      "asset": 155158,
+      "status": "prepared",
+      "x": -8274.54895,
+      "y": 14651.0,
+      "plane": 0,
+      "cell": 3379,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 219,
+      "asset": 155159,
+      "status": "prepared",
+      "x": 7368.0,
+      "y": -7200.0,
+      "plane": 0,
+      "cell": 186,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 220,
+      "asset": 157179,
+      "status": "prepared",
+      "x": 13110.681152,
+      "y": 6929.0,
+      "plane": 0,
+      "cell": 1781,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 221,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 222,
+      "asset": 155165,
+      "status": "prepared",
+      "x": 15648.0,
+      "y": -1440.0,
+      "plane": 0,
+      "cell": 528,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 223,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 224,
+      "asset": 155167,
+      "status": "prepared",
+      "x": -1443.856628,
+      "y": 10550.261719,
+      "plane": 0,
+      "cell": 582,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 225,
+      "asset": 157212,
+      "status": "prepared",
+      "x": -16544.09082,
+      "y": 6620.422363,
+      "plane": 0,
+      "cell": 5137,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 226,
+      "asset": 157213,
+      "status": "prepared",
+      "x": 7880.0,
+      "y": 3264.0,
+      "plane": 0,
+      "cell": 65,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 227,
+      "asset": 155168,
+      "status": "prepared",
+      "x": -5709.373352,
+      "y": 3544.182739,
+      "plane": 0,
+      "cell": 786,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 228,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 229,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 230,
+      "asset": 155172,
+      "status": "prepared",
+      "x": 4138.913025,
+      "y": 2016.0,
+      "plane": 0,
+      "cell": 827,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 231,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 232,
+      "asset": 157176,
+      "status": "prepared",
+      "x": -5324.312378,
+      "y": 17180.5,
+      "plane": 0,
+      "cell": 16,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 233,
+      "asset": 157212,
+      "status": "prepared",
+      "x": -16544.09082,
+      "y": 6620.422363,
+      "plane": 0,
+      "cell": 5137,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 234,
+      "asset": 155176,
+      "status": "prepared",
+      "x": -1230.680878,
+      "y": 2251.743164,
+      "plane": 0,
+      "cell": 791,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 235,
+      "asset": 157021,
+      "status": "prepared",
+      "x": 10404.0,
+      "y": 4080.0,
+      "plane": 0,
+      "cell": 525,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 236,
+      "asset": 157048,
+      "status": "prepared",
+      "x": 3408.0,
+      "y": 13824.0,
+      "plane": 0,
+      "cell": 56,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 237,
+      "asset": 157079,
+      "status": "prepared",
+      "x": 119.0,
+      "y": 8878.0,
+      "plane": 0,
+      "cell": 2244,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 238,
+      "asset": 157087,
+      "status": "prepared",
+      "x": 5164.799988,
+      "y": -6720.0,
+      "plane": 0,
+      "cell": 508,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 239,
+      "asset": 157167,
+      "status": "prepared",
+      "x": 2291.44635,
+      "y": 11443.0,
+      "plane": 0,
+      "cell": 3448,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 240,
+      "asset": 321291,
+      "status": "prepared",
+      "x": 6513.053833,
+      "y": -5800.0,
+      "plane": 0,
+      "cell": 5667,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 241,
+      "asset": 157172,
+      "status": "prepared",
+      "x": 8756.905518,
+      "y": 432.0,
+      "plane": 0,
+      "cell": 1785,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 242,
+      "asset": 257816,
+      "status": "asset_unavailable"
+    },
+    {
+      "map": 243,
+      "asset": 157214,
+      "status": "prepared",
+      "x": 887.595001,
+      "y": 1872.0,
+      "plane": 0,
+      "cell": 165,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 244,
+      "asset": 155158,
+      "status": "prepared",
+      "x": -8274.54895,
+      "y": 14651.0,
+      "plane": 0,
+      "cell": 3379,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 245,
+      "asset": 156827,
+      "status": "prepared",
+      "x": 14292.07373,
+      "y": 4128.5,
+      "plane": 0,
+      "cell": 3171,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 246,
+      "asset": 156882,
+      "status": "prepared",
+      "x": 14664.57373,
+      "y": 6000.0,
+      "plane": 0,
+      "cell": 1524,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 247,
+      "asset": 155159,
+      "status": "prepared",
+      "x": 7368.0,
+      "y": -7200.0,
+      "plane": 0,
+      "cell": 186,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 248,
+      "asset": 165811,
+      "status": "prepared",
+      "x": -6014.794434,
+      "y": -4703.799805,
+      "plane": 0,
+      "cell": 1857,
+      "source": {
+        "kind": "existing_reviewed_configuration"
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 249,
+      "asset": 157087,
+      "status": "prepared",
+      "x": 5164.799988,
+      "y": -6720.0,
+      "plane": 0,
+      "cell": 508,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 250,
+      "asset": 156969,
+      "status": "prepared",
+      "x": -20304.0,
+      "y": 14160.0,
+      "plane": 0,
+      "cell": 240,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 251,
+      "asset": 157048,
+      "status": "prepared",
+      "x": 3408.0,
+      "y": 13824.0,
+      "plane": 0,
+      "cell": 56,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 252,
+      "asset": 156969,
+      "status": "prepared",
+      "x": -20304.0,
+      "y": 14160.0,
+      "plane": 0,
+      "cell": 240,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 253,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 254,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 255,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 256,
+      "asset": 35379,
+      "status": "prepared",
+      "x": -3874.0,
+      "y": -11204.0,
+      "plane": 0,
+      "cell": 2458,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 257,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 258,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 259,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 260,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 261,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 262,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 263,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 264,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 265,
+      "asset": 157177,
+      "status": "prepared",
+      "x": 18765.765625,
+      "y": 628.5,
+      "plane": 0,
+      "cell": 1765,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 266,
+      "asset": 167860,
+      "status": "prepared",
+      "x": 12587.89917,
+      "y": 4157.601807,
+      "plane": 0,
+      "cell": 3855,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 267,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 268,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 269,
+      "asset": 157178,
+      "status": "prepared",
+      "x": 3259.867035,
+      "y": -12132.373047,
+      "plane": 0,
+      "cell": 2717,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 270,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 271,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 272,
+      "asset": 155155,
+      "status": "prepared",
+      "x": 13248.0,
+      "y": -7920.0,
+      "plane": 0,
+      "cell": 230,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 273,
+      "asset": 155157,
+      "status": "prepared",
+      "x": -4178.038513,
+      "y": -214.5,
+      "plane": 0,
+      "cell": 1313,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 274,
+      "asset": 167864,
+      "status": "prepared",
+      "x": 10537.187012,
+      "y": 5414.497314,
+      "plane": 0,
+      "cell": 1295,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 275,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 276,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 277,
+      "asset": 155168,
+      "status": "prepared",
+      "x": -5709.373352,
+      "y": 3544.182739,
+      "plane": 0,
+      "cell": 786,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 278,
+      "asset": 155089,
+      "status": "prepared",
+      "x": 14297.592529,
+      "y": -1303.0,
+      "plane": 0,
+      "cell": 1602,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 279,
+      "asset": 155167,
+      "status": "prepared",
+      "x": -1443.856628,
+      "y": 10550.261719,
+      "plane": 0,
+      "cell": 582,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 280,
+      "asset": 165811,
+      "status": "prepared",
+      "x": -6036.0,
+      "y": -2519.0,
+      "plane": 0,
+      "cell": 1834,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 4,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 281,
+      "asset": 165826,
+      "status": "prepared",
+      "x": -7247.0,
+      "y": 4638.0,
+      "plane": 0,
+      "cell": 195,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 11,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 282,
+      "asset": 165842,
+      "status": "prepared",
+      "x": 4546.246826,
+      "y": 1583.68988,
+      "plane": 0,
+      "cell": 31,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 283,
+      "asset": 155151,
+      "status": "prepared",
+      "x": -4104.0,
+      "y": 4944.0,
+      "plane": 0,
+      "cell": 452,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 284,
+      "asset": 157178,
+      "status": "prepared",
+      "x": 3259.867035,
+      "y": -12132.373047,
+      "plane": 0,
+      "cell": 2717,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 285,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 286,
+      "asset": 154527,
+      "status": "prepared",
+      "x": -9133.844727,
+      "y": 10752.0,
+      "plane": 0,
+      "cell": 1831,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 287,
+      "asset": 157242,
+      "status": "prepared",
+      "x": -4983.458252,
+      "y": -2886.5,
+      "plane": 0,
+      "cell": 2998,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 288,
+      "asset": 154893,
+      "status": "prepared",
+      "x": -16473.600098,
+      "y": 6960.0,
+      "plane": 0,
+      "cell": 534,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 289,
+      "asset": 155121,
+      "status": "prepared",
+      "x": -1922.326385,
+      "y": 2206.5,
+      "plane": 0,
+      "cell": 2856,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 290,
+      "asset": 157175,
+      "status": "prepared",
+      "x": -6024.135498,
+      "y": -155.54789,
+      "plane": 0,
+      "cell": 876,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 291,
+      "asset": 157176,
+      "status": "prepared",
+      "x": -5324.312378,
+      "y": 17180.5,
+      "plane": 0,
+      "cell": 16,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 292,
+      "asset": 157176,
+      "status": "prepared",
+      "x": -5324.312378,
+      "y": 17180.5,
+      "plane": 0,
+      "cell": 16,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 293,
+      "asset": 155164,
+      "status": "prepared",
+      "x": 15864.75,
+      "y": 8772.0,
+      "plane": 0,
+      "cell": 816,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 294,
+      "asset": 155164,
+      "status": "prepared",
+      "x": 15864.75,
+      "y": 8772.0,
+      "plane": 0,
+      "cell": 816,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 295,
+      "asset": 155166,
+      "status": "prepared",
+      "x": -251.663757,
+      "y": 6945.5,
+      "plane": 0,
+      "cell": 734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 296,
+      "asset": 155166,
+      "status": "prepared",
+      "x": -251.663757,
+      "y": 6945.5,
+      "plane": 0,
+      "cell": 734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 297,
+      "asset": 155168,
+      "status": "prepared",
+      "x": -5709.373352,
+      "y": 3544.182739,
+      "plane": 0,
+      "cell": 786,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 298,
+      "asset": 155168,
+      "status": "prepared",
+      "x": -5709.373352,
+      "y": 3544.182739,
+      "plane": 0,
+      "cell": 786,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 299,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 300,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 301,
+      "asset": 157212,
+      "status": "prepared",
+      "x": -16544.09082,
+      "y": 6620.422363,
+      "plane": 0,
+      "cell": 5137,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 302,
+      "asset": 157167,
+      "status": "prepared",
+      "x": 2291.44635,
+      "y": 11443.0,
+      "plane": 0,
+      "cell": 3448,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 303,
+      "asset": 157167,
+      "status": "prepared",
+      "x": 2291.44635,
+      "y": 11443.0,
+      "plane": 0,
+      "cell": 3448,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 304,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 305,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 306,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 307,
+      "asset": 188821,
+      "status": "prepared",
+      "x": -14448.0,
+      "y": 11760.0,
+      "plane": 0,
+      "cell": 61,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 308,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 309,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 310,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 311,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 312,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 313,
+      "asset": 156969,
+      "status": "prepared",
+      "x": -20304.0,
+      "y": 14160.0,
+      "plane": 0,
+      "cell": 240,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 314,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 318,
+      "asset": 127428,
+      "status": "prepared",
+      "x": 2976.0,
+      "y": -1344.0,
+      "plane": 0,
+      "cell": 46,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 319,
+      "asset": 52918,
+      "status": "prepared",
+      "x": 3282.0,
+      "y": 10095.0,
+      "plane": 0,
+      "cell": 746,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 17,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 320,
+      "asset": 59894,
+      "status": "prepared",
+      "x": -1002.450001,
+      "y": 274.5,
+      "plane": 0,
+      "cell": 994,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 321,
+      "asset": 154123,
+      "status": "prepared",
+      "x": -3331.0,
+      "y": -5193.0,
+      "plane": 0,
+      "cell": 121,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 29,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 322,
+      "asset": 46603,
+      "status": "prepared",
+      "x": 9344.0,
+      "y": 12417.0,
+      "plane": 0,
+      "cell": 2759,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 13,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 323,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 324,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 325,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 326,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 327,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 328,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 329,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 330,
+      "asset": 165788,
+      "status": "prepared",
+      "x": 2017.0,
+      "y": -3241.0,
+      "plane": 0,
+      "cell": 129,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-10392-98228765.jsonl",
+        "epoch": 62,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 331,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 332,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 333,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 334,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 335,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 336,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 337,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 338,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 339,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 340,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 341,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 342,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 343,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 344,
+      "asset": 14004,
+      "status": "prepared",
+      "x": 0.0,
+      "y": -3281.0,
+      "plane": 0,
+      "cell": 1923,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 345,
+      "asset": 13989,
+      "status": "prepared",
+      "x": -48.0,
+      "y": -559.47348,
+      "plane": 0,
+      "cell": 77,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 346,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 347,
+      "asset": 16428,
+      "status": "prepared",
+      "x": 1759.934448,
+      "y": -4291.5,
+      "plane": 0,
+      "cell": 141,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 348,
+      "asset": 155151,
+      "status": "prepared",
+      "x": -4104.0,
+      "y": 4944.0,
+      "plane": 0,
+      "cell": 452,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 349,
+      "asset": 154676,
+      "status": "prepared",
+      "x": 3873.060303,
+      "y": 10032.0,
+      "plane": 0,
+      "cell": 1664,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 350,
+      "asset": 154893,
+      "status": "prepared",
+      "x": -16473.600098,
+      "y": 6960.0,
+      "plane": 0,
+      "cell": 534,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 351,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 352,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 353,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 354,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 355,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 356,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 357,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 358,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 359,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 360,
+      "asset": 165764,
+      "status": "prepared",
+      "x": -624.495117,
+      "y": 7492.591309,
+      "plane": 0,
+      "cell": 1142,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 32,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 361,
+      "asset": 157215,
+      "status": "prepared",
+      "x": -1536.0,
+      "y": 8591.0,
+      "plane": 0,
+      "cell": 257,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 39,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 362,
+      "asset": 157221,
+      "status": "prepared",
+      "x": 8470.0,
+      "y": 4024.0,
+      "plane": 0,
+      "cell": 240,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 73,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 363,
+      "asset": 165686,
+      "status": "prepared",
+      "x": 1638.0,
+      "y": 13037.0,
+      "plane": 0,
+      "cell": 523,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 71,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 364,
+      "asset": 165764,
+      "status": "prepared",
+      "x": -966.0,
+      "y": 8473.0,
+      "plane": 0,
+      "cell": 615,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 69,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 365,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 366,
+      "asset": 157214,
+      "status": "prepared",
+      "x": 887.595001,
+      "y": 1872.0,
+      "plane": 0,
+      "cell": 165,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 367,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 368,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 369,
+      "asset": 218083,
+      "status": "prepared",
+      "x": -15170.305664,
+      "y": -90.705276,
+      "plane": 0,
+      "cell": 1762,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 370,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 371,
+      "asset": 212775,
+      "status": "prepared",
+      "x": -9900.078125,
+      "y": 8124.5,
+      "plane": 0,
+      "cell": 2053,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 372,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 373,
+      "asset": 212844,
+      "status": "prepared",
+      "x": 8526.0,
+      "y": -5232.0,
+      "plane": 0,
+      "cell": 133,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 375,
+      "asset": 212976,
+      "status": "prepared",
+      "x": -14448.0,
+      "y": -1824.0,
+      "plane": 0,
+      "cell": 532,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 376,
+      "asset": 212976,
+      "status": "prepared",
+      "x": -14448.0,
+      "y": -1824.0,
+      "plane": 0,
+      "cell": 532,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 377,
+      "asset": 215315,
+      "status": "prepared",
+      "x": 9865.69574,
+      "y": 876.0,
+      "plane": 0,
+      "cell": 1653,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 378,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 379,
+      "asset": 215191,
+      "status": "prepared",
+      "x": -9493.741577,
+      "y": 7702.0,
+      "plane": 0,
+      "cell": 2049,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 380,
+      "asset": 218847,
+      "status": "prepared",
+      "x": 10443.729309,
+      "y": 10992.0,
+      "plane": 0,
+      "cell": 4616,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 381,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 382,
+      "asset": 215155,
+      "status": "prepared",
+      "x": 13320.982178,
+      "y": 9293.5,
+      "plane": 0,
+      "cell": 2808,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 384,
+      "asset": 214069,
+      "status": "prepared",
+      "x": 9754.265869,
+      "y": -10859.0,
+      "plane": 0,
+      "cell": 341,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 385,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 386,
+      "asset": 218925,
+      "status": "prepared",
+      "x": 7672.541672,
+      "y": 569.5,
+      "plane": 0,
+      "cell": 1866,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 387,
+      "asset": 216120,
+      "status": "prepared",
+      "x": 1346.908569,
+      "y": -4991.184814,
+      "plane": 0,
+      "cell": 85,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 388,
+      "asset": 155164,
+      "status": "prepared",
+      "x": 15864.75,
+      "y": 8772.0,
+      "plane": 0,
+      "cell": 816,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 389,
+      "asset": 155164,
+      "status": "prepared",
+      "x": 15864.75,
+      "y": 8772.0,
+      "plane": 0,
+      "cell": 816,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 390,
+      "asset": 155166,
+      "status": "prepared",
+      "x": -251.663757,
+      "y": 6945.5,
+      "plane": 0,
+      "cell": 734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 391,
+      "asset": 155166,
+      "status": "prepared",
+      "x": -251.663757,
+      "y": 6945.5,
+      "plane": 0,
+      "cell": 734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 392,
+      "asset": 211038,
+      "status": "prepared",
+      "x": 9244.920044,
+      "y": 14386.5,
+      "plane": 0,
+      "cell": 1790,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 393,
+      "asset": 211038,
+      "status": "prepared",
+      "x": 9244.920044,
+      "y": 14386.5,
+      "plane": 0,
+      "cell": 1790,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 394,
+      "asset": 215636,
+      "status": "prepared",
+      "x": 895.326782,
+      "y": -13340.5,
+      "plane": 0,
+      "cell": 3008,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 395,
+      "asset": 216883,
+      "status": "prepared",
+      "x": -7075.107666,
+      "y": 10393.67334,
+      "plane": 0,
+      "cell": 2398,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 396,
+      "asset": 211075,
+      "status": "prepared",
+      "x": 1031.298168,
+      "y": 2048.5,
+      "plane": 0,
+      "cell": 203,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 397,
+      "asset": 217149,
+      "status": "prepared",
+      "x": 10040.606934,
+      "y": -8803.0,
+      "plane": 0,
+      "cell": 355,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 398,
+      "asset": 211957,
+      "status": "prepared",
+      "x": -7587.072266,
+      "y": -6998.0,
+      "plane": 0,
+      "cell": 36,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 399,
+      "asset": 217403,
+      "status": "prepared",
+      "x": -8955.667847,
+      "y": 10081.976074,
+      "plane": 0,
+      "cell": 3466,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 400,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 401,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 402,
+      "asset": 212420,
+      "status": "prepared",
+      "x": -10492.02124,
+      "y": -5514.5,
+      "plane": 0,
+      "cell": 949,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 403,
+      "asset": 212420,
+      "status": "prepared",
+      "x": -10492.02124,
+      "y": -5514.5,
+      "plane": 0,
+      "cell": 949,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 404,
+      "asset": 215818,
+      "status": "prepared",
+      "x": 8369.985962,
+      "y": 9619.0,
+      "plane": 0,
+      "cell": 489,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 405,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 406,
+      "asset": 217955,
+      "status": "prepared",
+      "x": -4865.142822,
+      "y": -12432.0,
+      "plane": 0,
+      "cell": 119,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 407,
+      "asset": 212438,
+      "status": "prepared",
+      "x": 7351.75,
+      "y": 8736.0,
+      "plane": 0,
+      "cell": 22,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 408,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 409,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 410,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 411,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 412,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 413,
+      "asset": 212497,
+      "status": "prepared",
+      "x": 13271.811523,
+      "y": 8972.0,
+      "plane": 0,
+      "cell": 1103,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 414,
+      "asset": 216071,
+      "status": "prepared",
+      "x": 2772.0,
+      "y": 8784.0,
+      "plane": 0,
+      "cell": 47,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 415,
+      "asset": 195066,
+      "status": "prepared",
+      "x": -509.469166,
+      "y": -128.583191,
+      "plane": 0,
+      "cell": 55,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 416,
+      "asset": 156969,
+      "status": "prepared",
+      "x": -20304.0,
+      "y": 14160.0,
+      "plane": 0,
+      "cell": 240,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 417,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 418,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 419,
+      "asset": 211935,
+      "status": "prepared",
+      "x": -18937.293701,
+      "y": -8961.0,
+      "plane": 0,
+      "cell": 2504,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 420,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 421,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 422,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 423,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 424,
+      "asset": 212586,
+      "status": "prepared",
+      "x": -3528.0,
+      "y": -7488.0,
+      "plane": 0,
+      "cell": 7,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 425,
+      "asset": 214069,
+      "status": "prepared",
+      "x": 9754.265869,
+      "y": -10859.0,
+      "plane": 0,
+      "cell": 341,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 426,
+      "asset": 213215,
+      "status": "prepared",
+      "x": -3377.233337,
+      "y": -7761.974365,
+      "plane": 0,
+      "cell": 822,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 427,
+      "asset": 215315,
+      "status": "prepared",
+      "x": 9865.69574,
+      "y": 876.0,
+      "plane": 0,
+      "cell": 1653,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 428,
+      "asset": 217403,
+      "status": "prepared",
+      "x": -8955.667847,
+      "y": 10081.976074,
+      "plane": 0,
+      "cell": 3466,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 429,
+      "asset": 214476,
+      "status": "prepared",
+      "x": -15888.0,
+      "y": 6096.0,
+      "plane": 0,
+      "cell": 8,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 430,
+      "asset": 321293,
+      "status": "prepared",
+      "x": -377.252686,
+      "y": 768.0,
+      "plane": 0,
+      "cell": 991,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 431,
+      "asset": 210513,
+      "status": "prepared",
+      "x": -377.252686,
+      "y": 768.0,
+      "plane": 0,
+      "cell": 999,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 432,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 433,
+      "asset": 212428,
+      "status": "prepared",
+      "x": 3261.75,
+      "y": 2835.5,
+      "plane": 0,
+      "cell": 304,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 434,
+      "asset": 212497,
+      "status": "prepared",
+      "x": 13271.811523,
+      "y": 8972.0,
+      "plane": 0,
+      "cell": 1103,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 435,
+      "asset": 211935,
+      "status": "prepared",
+      "x": -18937.293701,
+      "y": -8961.0,
+      "plane": 0,
+      "cell": 2504,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 436,
+      "asset": 216120,
+      "status": "prepared",
+      "x": 1346.908569,
+      "y": -4991.184814,
+      "plane": 0,
+      "cell": 85,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 437,
+      "asset": 210198,
+      "status": "prepared",
+      "x": 2751.6875,
+      "y": -8930.5,
+      "plane": 0,
+      "cell": 1169,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 438,
+      "asset": 210198,
+      "status": "prepared",
+      "x": 2751.6875,
+      "y": -8930.5,
+      "plane": 0,
+      "cell": 1169,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 439,
+      "asset": 210292,
+      "status": "prepared",
+      "x": 9409.300415,
+      "y": 11285.0,
+      "plane": 0,
+      "cell": 2880,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 440,
+      "asset": 210292,
+      "status": "prepared",
+      "x": 9409.300415,
+      "y": 11285.0,
+      "plane": 0,
+      "cell": 2880,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 441,
+      "asset": 216292,
+      "status": "prepared",
+      "x": -2647.186127,
+      "y": -6248.5,
+      "plane": 0,
+      "cell": 2784,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 442,
+      "asset": 210307,
+      "status": "prepared",
+      "x": -3712.0,
+      "y": -8160.0,
+      "plane": 0,
+      "cell": 38,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 443,
+      "asset": 216305,
+      "status": "prepared",
+      "x": 25833.374512,
+      "y": -8718.0,
+      "plane": 0,
+      "cell": 1342,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 444,
+      "asset": 215929,
+      "status": "prepared",
+      "x": 19992.0,
+      "y": -5616.0,
+      "plane": 0,
+      "cell": 339,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 445,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 446,
+      "asset": 210324,
+      "status": "prepared",
+      "x": 7151.266602,
+      "y": -13272.0,
+      "plane": 0,
+      "cell": 1704,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 447,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 448,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 449,
+      "asset": 214476,
+      "status": "prepared",
+      "x": -15888.0,
+      "y": 6096.0,
+      "plane": 0,
+      "cell": 8,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 450,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 451,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 452,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 453,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 454,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 455,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 456,
+      "asset": 249289,
+      "status": "prepared",
+      "x": -14133.0,
+      "y": 16101.0,
+      "plane": 0,
+      "cell": 243,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 457,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 458,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 459,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 460,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 461,
+      "asset": 16428,
+      "status": "prepared",
+      "x": 1759.934448,
+      "y": -4291.5,
+      "plane": 0,
+      "cell": 141,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 462,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 463,
+      "asset": 16428,
+      "status": "prepared",
+      "x": 1759.934448,
+      "y": -4291.5,
+      "plane": 0,
+      "cell": 141,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 464,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 465,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 466,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 467,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 468,
+      "asset": 219186,
+      "status": "prepared",
+      "x": -8366.482422,
+      "y": 351.5,
+      "plane": 0,
+      "cell": 1472,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 469,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 470,
+      "asset": 216012,
+      "status": "prepared",
+      "x": -11463.16333,
+      "y": -4831.5,
+      "plane": 0,
+      "cell": 918,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 471,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 472,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 473,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 474,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 475,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 476,
+      "asset": 212000,
+      "status": "prepared",
+      "x": 1577.803711,
+      "y": -1615.5,
+      "plane": 0,
+      "cell": 397,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 477,
+      "asset": 212775,
+      "status": "prepared",
+      "x": -9900.078125,
+      "y": 8124.5,
+      "plane": 0,
+      "cell": 2053,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 478,
+      "asset": 214076,
+      "status": "prepared",
+      "x": -501.987061,
+      "y": -542.957214,
+      "plane": 0,
+      "cell": 184,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 479,
+      "asset": 210612,
+      "status": "prepared",
+      "x": -15379.615479,
+      "y": 10276.0,
+      "plane": 0,
+      "cell": 2693,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 480,
+      "asset": 210324,
+      "status": "prepared",
+      "x": 7151.266602,
+      "y": -13272.0,
+      "plane": 0,
+      "cell": 1704,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 481,
+      "asset": 216337,
+      "status": "prepared",
+      "x": 11721.190918,
+      "y": -14400.0,
+      "plane": 0,
+      "cell": 1316,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 482,
+      "asset": 290923,
+      "status": "prepared",
+      "x": 1868.978333,
+      "y": -126.0,
+      "plane": 0,
+      "cell": 1965,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 483,
+      "asset": 216351,
+      "status": "prepared",
+      "x": -11068.799988,
+      "y": 6912.0,
+      "plane": 0,
+      "cell": 61,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 484,
+      "asset": 216372,
+      "status": "prepared",
+      "x": 4872.902588,
+      "y": 446.5,
+      "plane": 0,
+      "cell": 3359,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 485,
+      "asset": 287262,
+      "status": "prepared",
+      "x": 13891.904053,
+      "y": -15072.0,
+      "plane": 0,
+      "cell": 1039,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 486,
+      "asset": 210727,
+      "status": "prepared",
+      "x": 18784.0,
+      "y": -1440.0,
+      "plane": 0,
+      "cell": 6,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 487,
+      "asset": 210727,
+      "status": "prepared",
+      "x": 18784.0,
+      "y": -1440.0,
+      "plane": 0,
+      "cell": 6,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 488,
+      "asset": 216388,
+      "status": "prepared",
+      "x": -2690.865723,
+      "y": -13328.052734,
+      "plane": 0,
+      "cell": 1870,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 489,
+      "asset": 210732,
+      "status": "prepared",
+      "x": 7104.0,
+      "y": -8016.0,
+      "plane": 0,
+      "cell": 20,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 490,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 491,
+      "asset": 210623,
+      "status": "prepared",
+      "x": -8679.75,
+      "y": -1153.858948,
+      "plane": 0,
+      "cell": 160,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 492,
+      "asset": 210629,
+      "status": "prepared",
+      "x": 452.206268,
+      "y": -2052.5,
+      "plane": 0,
+      "cell": 196,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 493,
+      "asset": 214476,
+      "status": "prepared",
+      "x": -15888.0,
+      "y": 6096.0,
+      "plane": 0,
+      "cell": 8,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 494,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 495,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 496,
+      "asset": 214168,
+      "status": "prepared",
+      "x": 4154.166748,
+      "y": -6113.5,
+      "plane": 0,
+      "cell": 1835,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 497,
+      "asset": 216140,
+      "status": "prepared",
+      "x": -8041.184814,
+      "y": 1627.260864,
+      "plane": 0,
+      "cell": 638,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 499,
+      "asset": 288299,
+      "status": "prepared",
+      "x": 3257.119476,
+      "y": -7358.557617,
+      "plane": 0,
+      "cell": 2225,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 500,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 501,
+      "asset": 290897,
+      "status": "prepared",
+      "x": -14478.876221,
+      "y": -6644.0,
+      "plane": 0,
+      "cell": 971,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 502,
+      "asset": 210626,
+      "status": "prepared",
+      "x": 7788.0,
+      "y": 2784.0,
+      "plane": 0,
+      "cell": 62,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 503,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 504,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 505,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 506,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 507,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 508,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 509,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 510,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 511,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 512,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 513,
+      "asset": 288769,
+      "status": "prepared",
+      "x": 3032.489258,
+      "y": -18334.532227,
+      "plane": 0,
+      "cell": 2094,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 514,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 515,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 516,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 517,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 518,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 519,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 520,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 521,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 522,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 523,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 524,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 525,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 526,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 527,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 528,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 529,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 530,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 531,
+      "asset": 208982,
+      "status": "prepared",
+      "x": -210.0,
+      "y": -5380.0,
+      "plane": 0,
+      "cell": 583,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 75,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 532,
+      "asset": 209436,
+      "status": "prepared",
+      "x": 8041.0,
+      "y": 2982.0,
+      "plane": 0,
+      "cell": 407,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 79,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 533,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 534,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 535,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 536,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 537,
+      "asset": 209230,
+      "status": "prepared",
+      "x": -4131.760132,
+      "y": 3850.595703,
+      "plane": 0,
+      "cell": 386,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 538,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 539,
+      "asset": 209230,
+      "status": "prepared",
+      "x": -4314.0,
+      "y": 4134.0,
+      "plane": 0,
+      "cell": 812,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 77,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 540,
+      "asset": 210082,
+      "status": "prepared",
+      "x": 3187.0,
+      "y": 3145.0,
+      "plane": 0,
+      "cell": 236,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "unclaimed guild halls.jsonl",
+        "epoch": 41,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 541,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 542,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 543,
+      "asset": 214476,
+      "status": "prepared",
+      "x": -15888.0,
+      "y": 6096.0,
+      "plane": 0,
+      "cell": 8,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 544,
+      "asset": 249289,
+      "status": "prepared",
+      "x": -14133.0,
+      "y": 16101.0,
+      "plane": 0,
+      "cell": 243,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 545,
+      "asset": 210316,
+      "status": "prepared",
+      "x": 384.0,
+      "y": -3648.0,
+      "plane": 0,
+      "cell": 16,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 546,
+      "asset": 290943,
+      "status": "prepared",
+      "x": -3447.981079,
+      "y": -14754.0,
+      "plane": 0,
+      "cell": 3266,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 547,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 548,
+      "asset": 289087,
+      "status": "prepared",
+      "x": -19296.0,
+      "y": 8256.0,
+      "plane": 0,
+      "cell": 285,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 549,
+      "asset": 246766,
+      "status": "prepared",
+      "x": -1256.733433,
+      "y": 1278.5,
+      "plane": 0,
+      "cell": 352,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 550,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 551,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 552,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 553,
+      "asset": 289616,
+      "status": "prepared",
+      "x": 4824.049561,
+      "y": 6150.0,
+      "plane": 0,
+      "cell": 2727,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 554,
+      "asset": 212792,
+      "status": "prepared",
+      "x": 3084.0,
+      "y": 8496.0,
+      "plane": 0,
+      "cell": 35,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 555,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 556,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 557,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 558,
+      "asset": 287493,
+      "status": "prepared",
+      "x": 2848.25,
+      "y": -1376.5,
+      "plane": 0,
+      "cell": 741,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 559,
+      "asset": 214315,
+      "status": "prepared",
+      "x": 6275.81012,
+      "y": 8758.5,
+      "plane": 0,
+      "cell": 1887,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 560,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 561,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 562,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 563,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 564,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 565,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 566,
+      "asset": 287674,
+      "status": "prepared",
+      "x": 16225.498535,
+      "y": 1088.555206,
+      "plane": 0,
+      "cell": 1143,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 567,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 568,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 569,
+      "asset": 287783,
+      "status": "prepared",
+      "x": -5983.307541,
+      "y": 12401.0,
+      "plane": 0,
+      "cell": 2436,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 570,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 571,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 572,
+      "asset": 288071,
+      "status": "prepared",
+      "x": -17078.5,
+      "y": -4536.0,
+      "plane": 0,
+      "cell": 3914,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 573,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 574,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 575,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 576,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 577,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 578,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 579,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 580,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 581,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 582,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 583,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 584,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 585,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 586,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 587,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 588,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 589,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 590,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 591,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 592,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 593,
+      "asset": 290186,
+      "status": "prepared",
+      "x": 425.568573,
+      "y": -203.0,
+      "plane": 0,
+      "cell": 12,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 594,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 595,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 596,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 597,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 598,
+      "asset": 290232,
+      "status": "prepared",
+      "x": -432.0,
+      "y": -5065.706787,
+      "plane": 0,
+      "cell": 569,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 599,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 600,
+      "asset": 14004,
+      "status": "prepared",
+      "x": 0.0,
+      "y": -3281.0,
+      "plane": 0,
+      "cell": 1923,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 601,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 602,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 603,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 604,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 605,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 606,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 607,
+      "asset": 292090,
+      "status": "prepared",
+      "x": 6763.942139,
+      "y": -4828.83667,
+      "plane": 0,
+      "cell": 1968,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 608,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 609,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 610,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 611,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 612,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 613,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 614,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 615,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 616,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 617,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 618,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 619,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 620,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 621,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 622,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 623,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 624,
+      "asset": 287262,
+      "status": "prepared",
+      "x": 13891.904053,
+      "y": -15072.0,
+      "plane": 0,
+      "cell": 1039,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 625,
+      "asset": 292300,
+      "status": "prepared",
+      "x": 1303.515747,
+      "y": 1809.5,
+      "plane": 0,
+      "cell": 1779,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 626,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 627,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 628,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 629,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 630,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 631,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 632,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 633,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 634,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 635,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 636,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 637,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 638,
+      "asset": 287493,
+      "status": "prepared",
+      "x": 2848.25,
+      "y": -1376.5,
+      "plane": 0,
+      "cell": 741,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 639,
+      "asset": 287674,
+      "status": "prepared",
+      "x": -23114.177734,
+      "y": 12171.667969,
+      "plane": 0,
+      "cell": 1001,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 277,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 640,
+      "asset": 287783,
+      "status": "prepared",
+      "x": 14545.504883,
+      "y": 14968.591797,
+      "plane": 0,
+      "cell": 1667,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 239,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 641,
+      "asset": 288071,
+      "status": "prepared",
+      "x": 22153.0,
+      "y": -10790.0,
+      "plane": 0,
+      "cell": 3788,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 238,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 642,
+      "asset": 288299,
+      "status": "prepared",
+      "x": 3257.119476,
+      "y": -7358.557617,
+      "plane": 0,
+      "cell": 2225,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 643,
+      "asset": 288769,
+      "status": "prepared",
+      "x": 15293.192383,
+      "y": 21776.1875,
+      "plane": 0,
+      "cell": 3618,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 268,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 644,
+      "asset": 289087,
+      "status": "prepared",
+      "x": 17140.822266,
+      "y": -6208.331543,
+      "plane": 0,
+      "cell": 3438,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 270,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 645,
+      "asset": 289616,
+      "status": "prepared",
+      "x": 14.821644,
+      "y": -490.668427,
+      "plane": 0,
+      "cell": 757,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 275,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 646,
+      "asset": 288299,
+      "status": "prepared",
+      "x": 3257.119476,
+      "y": -7358.557617,
+      "plane": 0,
+      "cell": 2225,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 647,
+      "asset": 289960,
+      "status": "prepared",
+      "x": -5383.164307,
+      "y": 4920.5,
+      "plane": 0,
+      "cell": 2680,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 648,
+      "asset": 289960,
+      "status": "prepared",
+      "x": -16300.117188,
+      "y": 17882.669922,
+      "plane": 0,
+      "cell": 4300,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 265,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 649,
+      "asset": 290181,
+      "status": "prepared",
+      "x": 18228.480713,
+      "y": -8033.063965,
+      "plane": 0,
+      "cell": 1949,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 650,
+      "asset": 290181,
+      "status": "prepared",
+      "x": -24980.115234,
+      "y": 14449.330078,
+      "plane": 0,
+      "cell": 5409,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 266,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 651,
+      "asset": 291140,
+      "status": "prepared",
+      "x": -10962.235352,
+      "y": -10936.0,
+      "plane": 0,
+      "cell": 1494,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 652,
+      "asset": 290182,
+      "status": "prepared",
+      "x": 1184.013336,
+      "y": 1265.5,
+      "plane": 0,
+      "cell": 27,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 653,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 654,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 655,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 656,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 657,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 658,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 659,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 660,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 661,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 662,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 663,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 664,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 665,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 666,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 667,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 668,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 669,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 670,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 671,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 672,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 673,
+      "asset": 325399,
+      "status": "prepared",
+      "x": -18040.5,
+      "y": -9566.5,
+      "plane": 0,
+      "cell": 772,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 674,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 675,
+      "asset": 288299,
+      "status": "prepared",
+      "x": 7523.0,
+      "y": -24959.0,
+      "plane": 0,
+      "cell": 1384,
+      "source": {
+        "kind": "observed_loading_arrival",
+        "capture": "world-7412-29734296.jsonl",
+        "epoch": 273,
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 676,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 677,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 678,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 679,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 680,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 681,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 682,
+      "asset": 325404,
+      "status": "prepared",
+      "x": -10133.5,
+      "y": -3466.5,
+      "plane": 0,
+      "cell": 988,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 683,
+      "asset": 325404,
+      "status": "prepared",
+      "x": -10133.5,
+      "y": -3466.5,
+      "plane": 0,
+      "cell": 988,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 684,
+      "asset": 325404,
+      "status": "prepared",
+      "x": -10133.5,
+      "y": -3466.5,
+      "plane": 0,
+      "cell": 988,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 685,
+      "asset": 325404,
+      "status": "prepared",
+      "x": -10133.5,
+      "y": -3466.5,
+      "plane": 0,
+      "cell": 988,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 686,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 687,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 688,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 689,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 690,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 691,
+      "asset": 292198,
+      "status": "prepared",
+      "x": -7434.641846,
+      "y": -1582.5,
+      "plane": 0,
+      "cell": 2734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 692,
+      "asset": 292198,
+      "status": "prepared",
+      "x": -7434.641846,
+      "y": -1582.5,
+      "plane": 0,
+      "cell": 2734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 693,
+      "asset": 292198,
+      "status": "prepared",
+      "x": -7434.641846,
+      "y": -1582.5,
+      "plane": 0,
+      "cell": 2734,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 694,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 695,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 696,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 697,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 698,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 699,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 700,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 701,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 702,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 703,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 704,
+      "asset": 292319,
+      "status": "prepared",
+      "x": -3754.644836,
+      "y": 1790.5,
+      "plane": 0,
+      "cell": 36,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 705,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 706,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 707,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 708,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 709,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 710,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 711,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 712,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 713,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 714,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 715,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 716,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 717,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 718,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 719,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 720,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 721,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 722,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 723,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 724,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 725,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 726,
+      "asset": 289087,
+      "status": "prepared",
+      "x": -19296.0,
+      "y": 8256.0,
+      "plane": 0,
+      "cell": 285,
+      "source": {
+        "kind": "development_ground_placement",
+        "verified_official_spawn": false
+      },
+      "live_validation": "pending"
+    },
+    {
+      "map": 727,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 728,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 729,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 730,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 731,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 732,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 733,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 734,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 735,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 736,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 737,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 738,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 739,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 740,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 741,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 742,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 743,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 744,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 745,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 746,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 747,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 748,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 749,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 750,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 751,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 752,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 753,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 754,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 755,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 770,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 771,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 772,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 773,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 774,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 775,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 776,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 777,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 778,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 781,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 782,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 783,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 784,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 785,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 786,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 787,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 788,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 789,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 790,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 791,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 792,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 793,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 794,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 795,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 796,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 797,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 798,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 799,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 800,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 801,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 802,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 803,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 804,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 805,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 806,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 807,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 808,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 809,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 810,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 811,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 812,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 813,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 814,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 815,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 816,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 817,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 818,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 819,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 820,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 821,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 822,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 823,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 824,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 825,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 826,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 827,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 828,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 829,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 830,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 831,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 832,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 833,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 834,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 835,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 836,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 837,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 838,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 839,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 840,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 841,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 842,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 843,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 844,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 845,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 846,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 847,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 848,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 849,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 850,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 851,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 852,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 853,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 854,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 855,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 856,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 857,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 858,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 859,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 860,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 861,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 862,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 863,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 864,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 865,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 866,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 867,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 868,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 869,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 870,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 871,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 872,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 873,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 874,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 875,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    },
+    {
+      "map": 876,
+      "asset": 0,
+      "status": "missing_asset_binding"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "status": "content_ready_pending_parent_runtime_enrollment",
+  "map": 162,
+  "authored_actor": 23000,
+  "authored_definition": 23000,
+  "world_source": "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl",
+  "world_sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+  "definition_line": 1769,
+  "definition_record": {
+    "schema": 1,
+    "event": "npc_definition_observed",
+    "map": 162,
+    "instance_epoch": 8,
+    "instance_ms": 62915,
+    "npc_table_id": 1345,
+    "definition": {
+      "model_file": 128406,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 13,
+      "primary": 2,
+      "secondary": 0,
+      "default_level": 5,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        129924
+      ],
+      "name_encoded_utf16": [
+        3853,
+        42826,
+        48121,
+        9370
+      ],
+      "name": "Melandru's Stalker",
+      "name_status": "decoded"
+    }
+  },
+  "first_observation_line": 1791,
+  "first_observed_actor": {
+    "agent": 181,
+    "model": 1345,
+    "x": -15185.521484,
+    "y": -2665.847168,
+    "plane": 0,
+    "facing": 0.0,
+    "level": 5,
+    "allegiance": 2,
+    "name_encoded_utf16": [
+      3853,
+      42826,
+      48121,
+      9370
+    ],
+    "name": "Melandru's Stalker",
+    "name_status": "decoded"
+  },
+  "placement_is_retail_spawnpoint": false,
+  "packet_source": "data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl",
+  "packet_sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+  "health_receipt_line": 16408,
+  "health_receipt": {
+    "event": "packet",
+    "direction": "StoC",
+    "process_id": 30352,
+    "tick_ms": 82070859,
+    "opcode": 159,
+    "bytes": 16,
+    "complete": true,
+    "hex": "9f0000002a000000b5000000b4000000"
+  },
+  "wiki_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Animal_companion.html",
+  "wiki_sha256": "a729024fab0064a1408e6bfdd359e606aded4325531307bf3b0d4057d9891e85",
+  "wiki_stats_line": 441,
+  "maximum_health": 180,
+  "all_six_base_armors": 35,
+  "current_health_initialization": "PRIVATE full180/180",
+  "relation": "neutral",
+  "packed_allegiance": 2,
+  "damageable": true,
+  "conditions_allowed": true,
+  "healing_allowed": true,
+  "eligibility_flags_evidence": "explicit reviewed private policy; no every-condition retail claim",
+  "duplicate_appearance_rows": [],
+  "actor_or_definition_collisions": [],
+  "navigation_mesh": "data/gw/navigation/113437.fwnav",
+  "navigation_sha256": "fa61646673d0a76a413551fc634e025e3944d7d40c11005b02cb5f1f67cccbc1",
+  "navigation_inspector_sha256": "da3334416e28e85a11dd31be33d781fdafce5c75e3c02c56572f35a3972a365b",
+  "navigation_point": {
+    "plane": 0,
+    "cell": 2784,
+    "source_and_runtime_valid": true,
+    "pruned_edges": 0
+  },
+  "navigation_route": {
+    "start": {
+      "x": -14893,
+      "y": 16791,
+      "plane": 0,
+      "cell": 1634
+    },
+    "end_cell": 2784,
+    "points": 18,
+    "all17_segments_legal": true,
+    "arrival_source": "data/gw/portal-candidates/lakeside-regent.json"
+  },
+  "exports": [
+    {
+      "path": "data/gw/pets/presearing-stalker-npcs.txt",
+      "sha256": "b61455a1c495ed53ef1bfbaba92bf1addf3d151a297e9edf27b85441068fde76"
+    },
+    {
+      "path": "data/gw/pets/presearing-stalker-combat.txt",
+      "sha256": "68872946eb12f9735857ee8f4a7b885818920d1c5ccfd073525992f2003704c8"
+    },
+    {
+      "path": "data/gw/pets/presearing-stalker-policy.txt",
+      "sha256": "267014ac893cc60c47ee930898682aa7d1990b0c491b5fce72ba62d840ae43da"
+    }
+  ],
+  "unknown_ai_tuning": [
+    "wild attack damage",
+    "windup",
+    "reach",
+    "movement speed",
+    "pursuit/leash",
+    "patrol points",
+    "retail spawn/respawn geometry"
+  ],
+  "limits": [
+    "Exact native content loader validation pending parent batch; offline token/schema checks only here.",
+    "First-observed position is a private initial placement, never a recovered spawnpoint.",
+    "Only one observed181 is installed; observed62 is not duplicated.",
+    "Parent owns loader and enrollment changes; no auth/runtime/CMake files edited.",
+    "No rendered normal-client find/charm acceptance claimed."
+  ],
+  "navigation_reports": [
+    {
+      "path": "build/reports/stalker-nav-point-20261030.txt",
+      "sha256": "f04c05d109040e353357f7c1d9dfc958bbd7ddaf07c0a9b9ea36342d3f046b44",
+      "output": "source start=0:2784 result=0:2784\npruned_edges=0\nruntime start=0:2784 result=0:2784\nstart_cell yt=-2660 yb=-2699 xtl=-15234 xtr=-15154.5 xbl=-15233 xbr=-15153.2\ndestination_surface=0:2784 yt=-2660 yb=-2699 xtl=-15234 xtr=-15154.5 xbl=-15233 xbr=-15153.2 source_portal=-1 destination_portal=-1 shared_edge=0\n"
+    },
+    {
+      "path": "build/reports/stalker-nav-route-20261030.txt",
+      "sha256": "1f6b9aa5166562d900fe5f50f2b1824887a6eb2f7715aa600f9b5816355a5ff7",
+      "output": "points=18\npoint=0 x=-14893 y=16791 plane=0 cell=1634\npoint=1 x=-15426 y=14687 plane=0 cell=1680 legal=1\npoint=2 x=-15479 y=14551 plane=0 cell=1653 legal=1\npoint=3 x=-16608 y=12864 plane=0 cell=1701 legal=1\npoint=4 x=-16698.0371 y=12683.9268 plane=0 cell=1671 legal=1\npoint=5 x=-16896 y=12288 plane=0 cell=1672 legal=1\npoint=6 x=-17495 y=10403 plane=0 cell=4074 legal=1\npoint=7 x=-18432 y=8928 plane=0 cell=4345 legal=1\npoint=8 x=-19872 y=7296 plane=0 cell=1323 legal=1\npoint=9 x=-19872 y=5472 plane=0 cell=834 legal=1\npoint=10 x=-19446 y=4534 plane=0 cell=2087 legal=1\npoint=11 x=-19276 y=4293 plane=0 cell=2097 legal=1\npoint=12 x=-19068 y=4013 plane=0 cell=2102 legal=1\npoint=13 x=-18240 y=2976 plane=0 cell=1130 legal=1\npoint=14 x=-16896 y=1440 plane=0 cell=3388 legal=1\npoint=15 x=-15695 y=-1496 plane=0 cell=3331 legal=1\npoint=16 x=-15472 y=-2182 plane=0 cell=2797 legal=1\npoint=17 x=-15185.5215 y=-2665.84717 plane=0 cell=2784 legal=1\n"
+    }
+  ]
+}

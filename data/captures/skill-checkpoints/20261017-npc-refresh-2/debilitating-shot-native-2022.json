@@ -1,0 +1,41 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "467325": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 26188343,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001f00000096010000"
+    },
+    "467814": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 26220921,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000002100000096010000"
+    }
+  },
+  "native_body": {
+    "state": 45,
+    "seconds": 2.4749999046325684,
+    "skill": 406
+  },
+  "style": 41,
+  "native_success_action": 17,
+  "limitations": [
+    "Clock/actor/model/effect services are stubbed; no rendered acceptance.",
+    "The zero-activation native row uses the supplied2.475second weapon interval for its attack body; this does not prove server projectile release timing.",
+    "Native1..10scale fields encode Energy loss. Mechanics are verified separately by debilitating_shot.cpp,not inferred from the animation.",
+    "No local completion endpoint is captured;success17is separately executed on the original dispatcher. Energy-loss/damage/reaction ordering needs retail verification."
+  ]
+}

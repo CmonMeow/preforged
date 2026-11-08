@@ -1,0 +1,40 @@
+{
+  "skill": 101,
+  "status": "Barbs source-bound and full188suite validated before subsequent shared projectile/miss changes;rendered acceptance pending",
+  "native_evidence": "barbs-native-2022.json",
+  "implemented": [
+    "Native canonical2s cast,30s hex,5s recharge,10Energy and rank0..20 damage.",
+    "Player and hostile NPC hex registry application,renewal and scoped caster/effect ownership.",
+    "Separate armor-ignoring101damage after positive physical weapon damage;raw damage kinds0/1/2 only.",
+    "Ordinary and attack-skill melee/bow/Cyclone paths,and trusted physical NPC attack APIs notify the same reaction.",
+    "No reaction from elemental weapons,zero absorbed hits,expired/removed hexes,stale caster/target lifetimes or the reactive armor-ignoring damage itself.",
+    "Source caster death retains generic hex reaction;replacement lifetime cannot inherit damage attribution.",
+    "Normal damage protection/Health/death/quest-credit pipelines used for the separate hit."
+  ],
+  "focused_validation": "barbs,world_weapon_attacks,parasitic_bond_npc_world3/3 passed0.04s;12 skill-tooling tests pass.",
+  "full_validation": "Barbs all-target Release build succeeded;188/188 CTest passed21.68s (barbs-full-tests.txt). Validated hashes retained. Subsequent shared projectile/miss changes have focused validation only;new190test full build running.",
+  "limitations": [
+    "Rendered2022 animations/sounds not verified.",
+    "NPC casting and future physical spells/traps require appropriate caller integration.",
+    "Broader on-damage enchantment interactions such as Xinraes/Vengeful Weapon remain unimplemented;wiki reports double triggering.",
+    "Retail zero-damage and equal-timestamp reaction ordering not directly isolated by current captures.",
+    "Gear/global duration and damage modifiers are limited by existing shared implementations."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_barbs.h": "ab09c971930ca377f0356dd28f6499e3736d55f1343b3e5e1d0535e858678e72",
+    "src/runtime/gw_degeneration_hexes.h": "e612b58ebbe4bf5a69670a19fa92b32a1d9b29530c5ef8c116461f09bd01b43a",
+    "src/runtime/gw_npc_combat_catalog.h": "225579b8b49f00fecb76496f0a8f30e9d435a9a40ea23b75f050a7fb9c4815b4",
+    "src/runtime/gw_world_simulation.h": "0708ea2636cb13b118445dbebfe5f18165a8e44815246001f2aed1abea12b92b",
+    "tests/barbs.cpp": "5f7afa97ff5917fb9a2a779ec62ed3e724e51209d236edf26dd2a283ca3833cf",
+    "CMakeLists.txt": "f339c53c45502700f804f17c8a19e8ff9195e38be38bb4b05391d9d89ef6a753"
+  },
+  "animation_validation": "Refreshed fixed575-skill offline animation audit completed successfully (barbs-animation-audit.txt):411normal casts,69instant,93attack,2zero-duration UI;224caster and248target body first consumers. Current inventory fingerprint retained;rendered acceptance still pending.",
+  "validated_source_sha256": {
+    "src/runtime/gw_barbs.h": "ab09c971930ca377f0356dd28f6499e3736d55f1343b3e5e1d0535e858678e72",
+    "src/runtime/gw_degeneration_hexes.h": "e612b58ebbe4bf5a69670a19fa92b32a1d9b29530c5ef8c116461f09bd01b43a",
+    "src/runtime/gw_npc_combat_catalog.h": "225579b8b49f00fecb76496f0a8f30e9d435a9a40ea23b75f050a7fb9c4815b4",
+    "src/runtime/gw_world_simulation.h": "0708ea2636cb13b118445dbebfe5f18165a8e44815246001f2aed1abea12b92b",
+    "tests/barbs.cpp": "5f7afa97ff5917fb9a2a779ec62ed3e724e51209d236edf26dd2a283ca3833cf",
+    "CMakeLists.txt": "f339c53c45502700f804f17c8a19e8ff9195e38be38bb4b05391d9d89ef6a753"
+  }
+}

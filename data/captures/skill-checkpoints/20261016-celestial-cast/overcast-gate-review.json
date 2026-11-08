@@ -1,0 +1,172 @@
+{
+  "checkpoint": "20261016-celestial-cast",
+  "cutoff": "2026-10-17T02:48:58.907161+00:00",
+  "audit_sha256": "ba84db141e682b6d7f2ed93c0ad16fd09ff2dc3716477dfe292d83852106df1b",
+  "coverage_sha256": "ddb95f8e23c96df040e1368d0d31422f2c470329911f553c889bda1e10047e7a",
+  "skills": [
+    {
+      "id": 162,
+      "name": "Gale",
+      "overcast": 10,
+      "local_finished": 2,
+      "dispatcher_binding": true,
+      "metadata_gate_blocks": false,
+      "runtime_status": "implemented_binding"
+    },
+    {
+      "id": 170,
+      "name": "Earthquake",
+      "overcast": 10,
+      "local_finished": 0,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 178,
+      "name": "Ether Prodigy",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 179,
+      "name": "Incendiary Bonds",
+      "overcast": 5,
+      "local_finished": 0,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 185,
+      "name": "Mind Burn",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 187,
+      "name": "Meteor",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 192,
+      "name": "Meteor Shower",
+      "overcast": 10,
+      "local_finished": 2,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 209,
+      "name": "Mind Freeze",
+      "overcast": 5,
+      "local_finished": 2,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 215,
+      "name": "Maelstrom",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 219,
+      "name": "Obsidian Flame",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": true,
+      "metadata_gate_blocks": false,
+      "runtime_status": "implemented_binding"
+    },
+    {
+      "id": 223,
+      "name": "Chain Lightning",
+      "overcast": 5,
+      "local_finished": 0,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 226,
+      "name": "Mind Shock",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 866,
+      "name": "Vapor Blade",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 903,
+      "name": "Icy Prism",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 1086,
+      "name": "Dragon's Stomp",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 1094,
+      "name": "Breath of Fire",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": true,
+      "metadata_gate_blocks": false,
+      "runtime_status": "implemented_binding"
+    },
+    {
+      "id": 2809,
+      "name": "Obsidian Flame (PvP)",
+      "overcast": 5,
+      "local_finished": 0,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    }
+  ],
+  "unknown_native_skills": [
+    {
+      "id": 3447,
+      "name": "Wastrel's Worry (PvP)",
+      "reason": "No pinned 2022 native row; Overcast dependency unknown"
+    }
+  ],
+  "limits": [
+    "Overcast dependency inventory only;does not prove mechanics or rendered effects.",
+    "An available atomic payment hook does not establish an effect dispatcher for every listed skill."
+  ]
+}

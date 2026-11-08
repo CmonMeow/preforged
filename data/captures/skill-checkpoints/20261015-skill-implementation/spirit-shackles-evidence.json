@@ -1,0 +1,100 @@
+{
+  "skill": 66,
+  "state": "source runtime/world binding implemented; full build and172 tests pass; rendered acceptance pending",
+  "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Spirit_Shackles.html",
+  "wiki_sha256": "98044202954b0a23f528a020f710d8971adf4c699fd261eac29b21d329fb4e94",
+  "capture": {
+    "id": 66,
+    "name": "Spirit Shackles",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 2,
+    "other_or_unassigned_starts": 2,
+    "local_finished": 2,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 103364,
+        "tick_ms": 8609062,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001f00000042000000",
+        "kind": 60
+      },
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 3245,
+        "tick_ms": 15877640,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e00000042000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 103390,
+        "tick_ms": 8612031,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 3273,
+        "tick_ms": 15880718,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": []
+  },
+  "native_proof": {
+    "tool": "tools/protocol/hex_control_2022.py",
+    "result": "passed:3seconds/style49 and targeted resource119"
+  },
+  "tested": [
+    "actual Runtime cast,10Energy cost",
+    "rank12 duration17seconds, single-target range",
+    "persistent registry identity across repeated attack triggers",
+    "player attacks drain40 to35 to30",
+    "remaining2Energy drains to0, attacks at0 allowed",
+    "rejected target does not drain, exact expiry stops loss",
+    "NPC known14Energy drains9/4/0/0",
+    "NPC unknown Energy rejects application without fabricated stats",
+    "no health damage and no attack cancellation"
+  ],
+  "focused_suites": [
+    "captured_skills passed",
+    "npc_combat_catalog passed",
+    "attack_trigger_hexes passed",
+    "12 Python audit tests passed"
+  ],
+  "limits": [
+    "rendered animation/effect verification pending",
+    "NPC targets without reviewed energy remain unsupported",
+    "broader NPC combat AI and further energy-trigger interactions remain incomplete"
+  ],
+  "source_hashes": {
+    "src\\runtime\\gw_attack_trigger_hexes.h": "78cb3fb5b613ee2815e52dbacf4d641b3ec09111af39354c79463839706e2ff7",
+    "src\\runtime\\gw_world_simulation.h": "9d51792909abb09badbab9fc27830b0d581c89882a78afffde0781f5aa65db0f",
+    "src\\runtime\\gw_npc_combat_catalog.h": "a4bbae0b9f521f44b2df5c8bb59f2c217ec84fe793822e127f2c6cd6215f4830",
+    "src\\runtime\\gw_skill_casting.h": "a737accab8c2938e38963232c40fc4cbce1cd9f605bc704d1a3d1a3541e9f117"
+  },
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/shackles-full-build.txt"
+  },
+  "full_suite": {
+    "passed": 172,
+    "failed": 0,
+    "seconds": 26.91,
+    "report": "build/reports/shackles-full-tests.txt"
+  }
+}

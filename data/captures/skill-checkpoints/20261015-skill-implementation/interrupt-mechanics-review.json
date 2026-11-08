@@ -1,0 +1,111 @@
+{
+  "source": "local older wiki; observations are not packet verification",
+  "findings": [
+    "Power Spike damage and Leech Signet Energy can occur even when interruption is prevented. Do not gate every secondary effect on interrupt success.",
+    "Power Lock and Psychic Distraction disable even when interruption is prevented. Disable and interrupt are distinct mechanics.",
+    "Cry of Frustration requires selected target using a skill but its area interrupt also affects ordinary attacks.",
+    "Power Block excludes unrelated no-attribute and title skills from attribute-wide disabling."
+  ],
+  "skills": [
+    {
+      "skill": "Power Block",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Block.html",
+      "sha256": "3d400a491009e85728921a4003c9110a31d07be88e22909046eb85f7d0543e78",
+      "description": "Concise description Elite Spell. If target foe is casting a spell or chant, that skill and all skills of the same attribute are disabled ( 1...10...12 seconds) and that skill is interrupted. ",
+      "notes": "If Power Block interrupts a PvE-only skill or one without a linked attribute, only that skill will be disabled; the target will still be able to use other title-track or no attribute skills. Wastrel's Worry and Wastrel's Demise are good sources of unconditional damage during the period that Power Block disables skills, especially against single-attribute builds (e.g. nukers ). Power Block will extend the recharge time of skills with a shorter disable/recharge time (skills with a longer downtime will not be affected). Disables skills even if interruption is prevented."
+    },
+    {
+      "skill": "Cry of Frustration",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Cry_of_Frustration.html",
+      "sha256": "a52d3f07bf68af52aad1c8648492d8d251b67dc440fcf4e260b1cd3b90856de3",
+      "description": "Concise description Spell. If target foe is using a skill, that foe and all foes in the area are interrupted and take 15...63...75 damage. ",
+      "notes": "The interrupt effect that is applied as an area of effect affects all actions (including basic attacks ) and occurs even if the interrupt on the initial target was prevented . Useful for interrupting a clumped group of spikers . In hard mode , multiple copies of this skill in the hands of foes can decimate an unsuspecting party in seconds. Especially parties of heroes and/or henchmen are at risk, due to their default formation being very close to one another. Damage is done even if interruption is prevented."
+    },
+    {
+      "skill": "Power Lock",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Lock.html",
+      "sha256": "060f1764856ea02cf1f3b827ff48f518bfed3e95be7972397131b066d0aba990",
+      "description": "Concise description Spell. Interrupts a spell or chant. Interruption effect: interrupted spell or chant is disabled for + 5...11...13 seconds. ",
+      "notes": "Disables skills even if interruption is prevented."
+    },
+    {
+      "skill": "Psychic Distraction",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Psychic_Distraction.html",
+      "sha256": "7f79e8735d8b096a77afd5e05993c9b5436bd9138b24e8a30f4fdc5d7228bf8d",
+      "description": "Concise description Elite Spell. Interrupts a skill. Interruption effect: disables interrupted skill (+ 5...11...12 seconds). Your other skills are disabled (8 seconds). ",
+      "notes": "Psychic Distraction has the fastest recharge time of all interrupt skills in the game. This skill bypasses anti-interruption skills such as Mantra of Resolve , as the skill will still be disabled and so will not complete casting."
+    },
+    {
+      "skill": "Power Spike",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Spike.html",
+      "sha256": "ef1588666d5062a34084acad3b13e1684319e2753a38e9492425387d36091a65",
+      "description": "Concise description Spell. Interrupts a spell or chant. Interruption effect: deals 30...102...120 damage. ",
+      "notes": "Damage is done even if interruption is prevented."
+    },
+    {
+      "skill": "Leech Signet",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Leech_Signet.html",
+      "sha256": "8a54899a4c417590b5ec687aba15087868e64c55997d47b639e379c30b8927c8",
+      "description": "Concise description Signet. Interrupts an action. Interruption effect: you gain 3...13...15 Energy if the action was a spell. ",
+      "notes": "Grants energy even if the interruption is prevented."
+    },
+    {
+      "skill": "Power Drain",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Drain.html",
+      "sha256": "430e05d7d25b0026d657e143498de6c58ed36233980d1c9f4d718dcd42e58827",
+      "description": "Concise description Spell. Interrupts a spell or chant. Interruption effect: you gain 1...25...31 Energy. ",
+      "notes": "Grants energy even if the interruption is prevented."
+    },
+    {
+      "skill": "Power Leak",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Leak.html",
+      "sha256": "564e0304d905b7d47ce63d5d36303cf470080b923236f7b178a97552949d4d8b",
+      "description": "Concise description Spell. Interrupts a spell or chant. Interruption effect: causes 3...14...17 Energy loss. ",
+      "notes": "Energy loss will still occur on a target even if the interruption effect is prevented."
+    },
+    {
+      "skill": "Power Return",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Return.html",
+      "sha256": "f3c57ac68a7857175b2ecbb5870fd935753471d753df5b397114663aea0de914",
+      "description": "Concise description Spell. Interrupts a spell or chant. Interruption effect: target foe gains 10...6...5 Energy. ",
+      "notes": "Gives energy to a target even if the interruption effect is prevented."
+    },
+    {
+      "skill": "Signet of Disruption",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Signet_of_Disruption.html",
+      "sha256": "2c1b7a260cc2a11211349eff2d8ddab759334cf1325378433b056583d7546757",
+      "description": "Concise description Signet. Interrupts a spell. Can interrupt any skill if target foe is hexed. Interruption effect: deals 10...43...51 damage. ",
+      "notes": "Has good synergy when interrupting a foe hexed by Frustration . Damage is done even if interruption is prevented."
+    },
+    {
+      "skill": "Mantra of Resolve",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Resolve.html",
+      "sha256": "df1a3fbab14d0d12d3cc547d18c988d3dceb42f6238f388a38ebb7d117797597",
+      "description": "Concise description Stance. ( 30...78...90 seconds.) Prevents interrupts against you. Prevention cost: lose 10...5...4 Energy or Mantra of Resolve ends. ",
+      "notes": "When Mantra of Resolve successfully prevents an interrupt, it removes the set amount of energy; however, if the character does not have enough energy for removal, Mantra of Resolve will still prevent one interruption, then it will finally end. This also applies to Distortion . Does not work against interrupts that recharge the affected spell, e.g. it does not prevent Power Block ."
+    },
+    {
+      "skill": "Mantra of Concentration",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Concentration.html",
+      "sha256": "e60ca91d69a51d8e11ca596443cdcdcf6e000d24d0a6cbcc0b8dd9f58c2abd12",
+      "description": "Concise description Stance. ( 1...31...38 seconds.) The next time you would be interrupted, you are not interrupted. ",
+      "notes": null
+    }
+  ],
+  "post_baseline_antibot_rule": {
+    "date": "2023-10-10",
+    "source": "https://wiki.guildwars.com/wiki/Feedback:Game_updates/20231010",
+    "scope": [
+      "Complicate",
+      "Leech Signet",
+      "Power Lock",
+      "Power Spike",
+      "Psychic Instability",
+      "Psychic Instability (PvP)",
+      "Signet of Distraction"
+    ],
+    "behavior": "Interrupt success odds increase with prior target-selection duration, up to approximately a quarter second depending on latency.",
+    "baseline_decision": "This update postdates the pinned2022 baseline; no universal minimum reaction-time rule is inferred or enabled.",
+    "limits": "Exact probability curve and latency adjustment are not documented by these notes."
+  }
+}

@@ -1,0 +1,1753 @@
+{
+  "events": {
+    "collector_start": 1,
+    "initialization_begin": 1,
+    "initialization_guards_installed": 1,
+    "initialization_modules_configured": 1,
+    "gwca_initialize_returned": 1,
+    "initialization_complete": 1,
+    "callback_registered": 1,
+    "game_thread_hook_enabled": 1,
+    "travel_command_enabled": 1,
+    "gadget_observations": 6048,
+    "npc_observations": 6044,
+    "local_entry_candidate": 39,
+    "quest_snapshot_changed": 138,
+    "npc_visibility_changed": 1770,
+    "local_equipment_observed": 54,
+    "local_inventory_observed": 392,
+    "npc_definition_observed": 521,
+    "name_decoded": 349,
+    "other_player_first_seen": 138,
+    "quest_info_requested": 15,
+    "local_map_transition_observed": 38,
+    "loot_notification": 56,
+    "ground_item_observed": 147,
+    "ground_item_no_longer_observed": 109
+  },
+  "maps": [
+    145,
+    146,
+    148,
+    160,
+    161,
+    162,
+    164,
+    165
+  ],
+  "quests": {
+    "80": {
+      "name": "Message from a Friend",
+      "states": [
+        {
+          "line": 135,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 140,
+          "state": [
+            1,
+            false,
+            "{s}Go to the town square in Ascalon City. Talk to Sir Tydus."
+          ]
+        },
+        {
+          "line": 9666,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 9669,
+          "state": [
+            1,
+            false,
+            "{s}Go to the town square in Ascalon City. Talk to Sir Tydus."
+          ]
+        }
+      ]
+    },
+    "222": {
+      "name": "War Preparations",
+      "states": [
+        {
+          "line": 203,
+          "state": [
+            32,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 207,
+          "state": [
+            33,
+            false,
+            "{s}Go out the gate to Lakeside County and talk to Artemis the Ranger."
+          ]
+        }
+      ]
+    },
+    "86": {
+      "name": "Ranger Test",
+      "states": [
+        {
+          "line": 311,
+          "state": [
+            33,
+            false,
+            "{s}Find the river skale queen and slay her."
+          ]
+        },
+        {
+          "line": 424,
+          "state": [
+            35,
+            true,
+            "{sc}Find the river skale queen and slay her.{s}Return to Artemis the Ranger for your reward."
+          ]
+        }
+      ]
+    },
+    "71": {
+      "name": "A Mesmer's Burden",
+      "states": [
+        {
+          "line": 591,
+          "state": [
+            1,
+            false,
+            "{s}Kill the rogue bull that is threatening Althea's theatre."
+          ]
+        },
+        {
+          "line": 897,
+          "state": [
+            3,
+            true,
+            "{sc}Kill the rogue bull that is threatening Althea's theatre.{s}Return to Lady Althea for your reward."
+          ]
+        },
+        {
+          "line": 6604,
+          "state": [
+            1,
+            false,
+            "{s}Kill the rogue bull that is threatening Althea's theatre."
+          ]
+        },
+        {
+          "line": 6739,
+          "state": [
+            3,
+            true,
+            "{sc}Kill the rogue bull that is threatening Althea's theatre.{s}Return to Lady Althea for your reward."
+          ]
+        }
+      ]
+    },
+    "76": {
+      "name": "The Ranger's Companion",
+      "states": [
+        {
+          "line": 1671,
+          "state": [
+            1,
+            false,
+            "{s}Find the shrine of Melandru's statue along the path in the woods."
+          ]
+        },
+        {
+          "line": 1864,
+          "state": [
+            3,
+            true,
+            "{sc}Find the shrine of Melandru's statue along the path in the woods.{sc}Use your Charm Animal skill on one of Melandru's Stalkers when it appears.{s}Return to Master Ranger Nente for your reward."
+          ]
+        },
+        {
+          "line": 7275,
+          "state": [
+            1,
+            false,
+            "{s}Find the shrine of Melandru's statue along the path in the woods."
+          ]
+        }
+      ]
+    },
+    "42": {
+      "name": "A Test of Marksmanship",
+      "states": [
+        {
+          "line": 2333,
+          "state": [
+            1,
+            false,
+            "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 5 more Plague Worms."
+          ]
+        },
+        {
+          "line": 2385,
+          "state": [
+            1,
+            false,
+            "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 4 more Plague Worms."
+          ]
+        },
+        {
+          "line": 2415,
+          "state": [
+            1,
+            false,
+            "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 3 more Plague Worms."
+          ]
+        },
+        {
+          "line": 2423,
+          "state": [
+            1,
+            false,
+            "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 2 more Plague Worms."
+          ]
+        },
+        {
+          "line": 2433,
+          "state": [
+            1,
+            false,
+            "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 1 more Plague Worm."
+          ]
+        },
+        {
+          "line": 2455,
+          "state": [
+            3,
+            true,
+            "{sc}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{sc}Kill 0 more Plague Worms.{s}Return to Ivor Trueshot for your reward."
+          ]
+        }
+      ]
+    },
+    "49": {
+      "name": "Domination Magic",
+      "states": [
+        {
+          "line": 3185,
+          "state": [
+            1,
+            false,
+            "{s}Head east from Foible's Fair to the woods. Destroy the skale brood."
+          ]
+        },
+        {
+          "line": 4505,
+          "state": [
+            3,
+            true,
+            "{sc}Head east from Foible's Fair to the woods. Destroy the skale brood.{s}Return to Vassar for your reward."
+          ]
+        }
+      ]
+    },
+    "217": {
+      "name": "War Preparations",
+      "states": [
+        {
+          "line": 6169,
+          "state": [
+            32,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 6173,
+          "state": [
+            33,
+            false,
+            "{s}Go out the gate to Lakeside County and talk to Sebedoh the Mesmer."
+          ]
+        }
+      ]
+    },
+    "81": {
+      "name": "Mesmer Test",
+      "states": [
+        {
+          "line": 6301,
+          "state": [
+            33,
+            false,
+            "{s}Follow the road southwest until you find skale. Clear the road of skale."
+          ]
+        },
+        {
+          "line": 6339,
+          "state": [
+            35,
+            true,
+            "{sc}Follow the road southwest until you find skale. Clear the road of skale.{s}Return to Sebedoh the Mesmer for your reward."
+          ]
+        }
+      ]
+    },
+    "220": {
+      "name": "War Preparations",
+      "states": [
+        {
+          "line": 7513,
+          "state": [
+            33,
+            false,
+            "{s}Go out the gate to Lakeside County and talk to Ciglo the Monk."
+          ]
+        }
+      ]
+    },
+    "84": {
+      "name": "Monk Test",
+      "states": [
+        {
+          "line": 7599,
+          "state": [
+            33,
+            false,
+            "{s}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen."
+          ]
+        },
+        {
+          "line": 7693,
+          "state": [
+            33,
+            false,
+            "{sc}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.{s}Lead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way."
+          ]
+        },
+        {
+          "line": 7710,
+          "state": [
+            35,
+            true,
+            "{sc}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.{s}Lead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way."
+          ]
+        }
+      ]
+    },
+    "74": {
+      "name": "A Monk's Mission",
+      "states": [
+        {
+          "line": 8108,
+          "state": [
+            1,
+            false,
+            "{s}Meet Paulus inside the Catacombs."
+          ]
+        },
+        {
+          "line": 8194,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 8218,
+          "state": [
+            1,
+            false,
+            "{sc}Meet Paulus inside the Catacombs.{s}Go with Paulus and use your healing prayers to make sure he survives."
+          ]
+        },
+        {
+          "line": 8908,
+          "state": [
+            3,
+            true,
+            null
+          ]
+        },
+        {
+          "line": 8912,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Paulus inside the Catacombs.{sc}Go with Paulus and use your healing prayers to make sure he survives.{s}Return to Brother Mhenlo for your reward."
+          ]
+        },
+        {
+          "line": 10881,
+          "state": [
+            1,
+            false,
+            "{s}Meet Paulus inside the Catacombs."
+          ]
+        },
+        {
+          "line": 10903,
+          "state": [
+            1,
+            false,
+            "{sc}Meet Paulus inside the Catacombs.{s}Go with Paulus and use your healing prayers to make sure he survives."
+          ]
+        },
+        {
+          "line": 12042,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Paulus inside the Catacombs.{sc}Go with Paulus and use your healing prayers to make sure he survives.{s}Return to Brother Mhenlo for your reward."
+          ]
+        },
+        {
+          "line": 12062,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Paulus inside the Catacombs.{s}Return to Brother Mhenlo for your reward."
+          ]
+        }
+      ]
+    },
+    "87": {
+      "name": "The Blessings of Balthazar",
+      "states": [
+        {
+          "line": 8168,
+          "state": [
+            1,
+            false,
+            "{s}Travel to the fields north of Ashford and dispatch the skeletons there."
+          ]
+        },
+        {
+          "line": 12119,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 12122,
+          "state": [
+            1,
+            false,
+            "{s}Travel to the fields north of Ashford and dispatch the skeletons there."
+          ]
+        },
+        {
+          "line": 12425,
+          "state": [
+            3,
+            true,
+            "{sc}Travel to the fields north of Ashford and dispatch the skeletons there.{s}Return to Brother Mhenlo for your reward."
+          ]
+        }
+      ]
+    },
+    "38": {
+      "name": "Rites of Remembrance",
+      "states": [
+        {
+          "line": 8250,
+          "state": [
+            1,
+            false,
+            "{s}Light candles on all four braziers in the catacombs to appease the angry spirits.{s}0/4 candles placed."
+          ]
+        },
+        {
+          "line": 8405,
+          "state": [
+            1,
+            false,
+            "{s}Light candles on all four braziers in the catacombs to appease the angry spirits.{s}1/4 candles placed."
+          ]
+        },
+        {
+          "line": 8479,
+          "state": [
+            1,
+            false,
+            "{s}Light candles on all four braziers in the catacombs to appease the angry spirits.{s}2/4 candles placed."
+          ]
+        },
+        {
+          "line": 8513,
+          "state": [
+            1,
+            false,
+            "{s}Light candles on all four braziers in the catacombs to appease the angry spirits.{s}3/4 candles placed."
+          ]
+        },
+        {
+          "line": 8528,
+          "state": [
+            3,
+            true,
+            null
+          ]
+        },
+        {
+          "line": 8533,
+          "state": [
+            3,
+            true,
+            "{sc}Light candles on all four braziers in the catacombs to appease the angry spirits.{sc}4/4 candles placed.{s}Return to Necromancer Munne for your reward."
+          ]
+        }
+      ]
+    },
+    "72": {
+      "name": "The Necromancer's Novice",
+      "states": [
+        {
+          "line": 8262,
+          "state": [
+            1,
+            false,
+            "{s}Get past the fire traps in the burning section of the catacombs. (Use bone horrors to trigger the traps.)"
+          ]
+        },
+        {
+          "line": 9358,
+          "state": [
+            3,
+            true,
+            "{sc}Get past the fire traps in the burning section of the catacombs. (Use bone horrors to trigger the traps.){s}Return to Necromancer Munne for your reward."
+          ]
+        },
+        {
+          "line": 10943,
+          "state": [
+            1,
+            false,
+            "{s}Get past the fire traps in the burning section of the catacombs. (Use bone horrors to trigger the traps.)"
+          ]
+        },
+        {
+          "line": 11401,
+          "state": [
+            3,
+            true,
+            "{sc}Get past the fire traps in the burning section of the catacombs. (Use bone horrors to trigger the traps.){s}Return to Necromancer Munne for your reward."
+          ]
+        }
+      ]
+    },
+    "218": {
+      "name": "War Preparations",
+      "states": [
+        {
+          "line": 9745,
+          "state": [
+            33,
+            false,
+            "{s}Go out the gate to Lakeside County and talk to Verata the Necromancer."
+          ]
+        }
+      ]
+    },
+    "82": {
+      "name": "Necromancer Test",
+      "states": [
+        {
+          "line": 9840,
+          "state": [
+            32,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 9844,
+          "state": [
+            33,
+            false,
+            "{s}Go south to the river. Slay a skale so that Verata can make use of its corpse."
+          ]
+        },
+        {
+          "line": 10603,
+          "state": [
+            35,
+            true,
+            "{sc}Go south to the river. Slay a skale so that Verata can make use of its corpse.{s}Return to Verata the Necromancer for your reward."
+          ]
+        }
+      ]
+    },
+    "77": {
+      "name": "Protection Prayers",
+      "states": [
+        {
+          "line": 12914,
+          "state": [
+            1,
+            false,
+            "{s}Meet Farrah Cappo in Lakeside County."
+          ]
+        },
+        {
+          "line": 13103,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 13128,
+          "state": [
+            1,
+            false,
+            "{s}Meet Farrah Cappo in Lakeside County."
+          ]
+        },
+        {
+          "line": 13514,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 13531,
+          "state": [
+            1,
+            false,
+            "{s}Meet Farrah Cappo in Lakeside County."
+          ]
+        },
+        {
+          "line": 13562,
+          "state": [
+            1,
+            false,
+            "{sc}Meet Farrah Cappo in Lakeside County.{s}Keep Farrah alive while she hunts down the infamous Alain."
+          ]
+        },
+        {
+          "line": 14567,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Farrah Cappo in Lakeside County.{sc}Keep Farrah alive while she hunts down the infamous Alain.{s}Return to Grazden the Protector for your reward."
+          ]
+        },
+        {
+          "line": 14649,
+          "state": [
+            2,
+            true,
+            null
+          ]
+        },
+        {
+          "line": 14667,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Farrah Cappo in Lakeside County.{sc}Keep Farrah alive while she hunts down the infamous Alain.{s}Return to Grazden the Protector for your reward."
+          ]
+        },
+        {
+          "line": 15329,
+          "state": [
+            2,
+            true,
+            null
+          ]
+        },
+        {
+          "line": 15346,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Farrah Cappo in Lakeside County.{sc}Keep Farrah alive while she hunts down the infamous Alain.{s}Return to Grazden the Protector for your reward."
+          ]
+        },
+        {
+          "line": 15370,
+          "state": [
+            2,
+            true,
+            null
+          ]
+        },
+        {
+          "line": 15393,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Farrah Cappo in Lakeside County.{sc}Keep Farrah alive while she hunts down the infamous Alain.{s}Return to Grazden the Protector for your reward."
+          ]
+        },
+        {
+          "line": 15775,
+          "state": [
+            2,
+            true,
+            null
+          ]
+        },
+        {
+          "line": 15793,
+          "state": [
+            3,
+            true,
+            "{sc}Meet Farrah Cappo in Lakeside County.{sc}Keep Farrah alive while she hunts down the infamous Alain.{s}Return to Grazden the Protector for your reward."
+          ]
+        }
+      ]
+    },
+    "43": {
+      "name": "The Power of Blood",
+      "states": [
+        {
+          "line": 12993,
+          "state": [
+            1,
+            false,
+            "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics."
+          ]
+        },
+        {
+          "line": 13562,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 13587,
+          "state": [
+            1,
+            false,
+            "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics."
+          ]
+        },
+        {
+          "line": 14600,
+          "state": [
+            0,
+            false,
+            null
+          ]
+        },
+        {
+          "line": 14618,
+          "state": [
+            1,
+            false,
+            "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics."
+          ]
+        },
+        {
+          "line": 15199,
+          "state": [
+            1,
+            false,
+            "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 2 more Blood Fanatics."
+          ]
+        },
+        {
+          "line": 15260,
+          "state": [
+            1,
+            false,
+            "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 1 more Blood Fanatic."
+          ]
+        },
+        {
+          "line": 15307,
+          "state": [
+            3,
+            true,
+            "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward."
+          ]
+        }
+      ]
+    }
+  },
+  "item_names": [
+    "Axe Grip",
+    "Axe Haft",
+    "Birthday Cupcake",
+    "Dilettante's Attire",
+    "Dilettante's Footwear",
+    "Dilettante's Gloves",
+    "Dilettante's Hose",
+    "Grim Cesta",
+    "Herring",
+    "Igneous Summoning Stone",
+    "Initiate's Boots",
+    "Initiate's Gloves",
+    "Initiate's Leggings",
+    "Initiate's Tunic",
+    "Lockpick",
+    "Long Sword",
+    "Luminescent Scepter",
+    "Martial Weapon Inscription",
+    "Mesmer Mask",
+    "Moa Egg",
+    "Monk Scalp Design",
+    "Necromancer Scar Pattern",
+    "Nevermore Flatbow",
+    "Perfect Salvage Kit",
+    "Ranger Mask",
+    "Rawhide Boots",
+    "Rawhide Gloves",
+    "Rawhide Leggings",
+    "Rawhide Vest",
+    "Rhino's Charge",
+    "Roughspun Handwraps",
+    "Roughspun Pants",
+    "Roughspun Vestments",
+    "Serrated Shield",
+    "Soul Shrieker",
+    "Starter Bow",
+    "Starter Cane",
+    "Starter Holy Rod",
+    "Starter Truncheon",
+    "Steel Ingot",
+    "Tall Shield",
+    "Tiger's Roar",
+    "Tormented Channeling Staff",
+    "Tormented Earth Focus",
+    "Vial of Dye",
+    "Votive Candle",
+    "Wolf's Favor",
+    "Woven Sandals",
+    "Zho's Journal"
+  ],
+  "npc_names": [
+    "Academy Monk",
+    "Alain",
+    "Alison the Tanner",
+    "Aloe Seed",
+    "Annette Landru",
+    "Armin Saberlin",
+    "Artemis the Ranger",
+    "Arthur Ayala [Weapons]",
+    "Ascalon Guard",
+    "Ascalonian Farmer",
+    "Ascalonian Townsfolk",
+    "Bandit Blood Sworn",
+    "Bandit Firestarter",
+    "Bandit Raider",
+    "Baron Egan",
+    "Birthday Charr Doll",
+    "Black Bear",
+    "Blood Fanatic",
+    "Bone Horror",
+    "Brother Mhenlo",
+    "Brownlow [Collector]",
+    "Captain Osric",
+    "Carrion Devourer",
+    "Carrion Devourer Dead",
+    "Chantalle the Troubadour",
+    "Ciglo the Monk",
+    "Collectors Edition Kuunavang Doll",
+    "Devona",
+    "Diseased Devourer",
+    "Elias [Weapons]",
+    "Farmer Dirk",
+    "Farrah Cappo",
+    "Fire Imp",
+    "Gargoyle",
+    "Gift-Giver Pinn",
+    "Gilderoy Le Fleur [Stylist]",
+    "Grawl",
+    "Grawl Longspear",
+    "Grawl Shaman",
+    "Grazden the Protector",
+    "Guild Registrar",
+    "Gwen",
+    "Gwynn [Collector]",
+    "Halbrik [Skills]",
+    "Hamish [Merchant]",
+    "Haunting Spectre",
+    "Haversdan",
+    "Humphreys [Collector]",
+    "Ice Elemental",
+    "Ivor Trueshot",
+    "Jacobs [Collector]",
+    "Jarrel the Tamer",
+    "Kasha Blackblood",
+    "Kaylee  [Collector]",
+    "Keeth [Festival Hats]",
+    "Kimmes the Historian",
+    "Lady Althea",
+    "Laren [Merchant]",
+    "Lash Devourer",
+    "Lieutenant Langmar",
+    "Lina the Healer",
+    "Marshall Richards",
+    "Master Ranger Nente",
+    "Meerak the Scribe",
+    "Melandru's Stalker",
+    "Miller Upton",
+    "Miniature Asura",
+    "Miniature Eye of Janthir",
+    "Miniature Fire Imp",
+    "Miniature Flame Djinn",
+    "Miniature Harpy",
+    "Miniature Lich",
+    "Miniature M.O.X.",
+    "Miniature Ooze",
+    "Moss Spider",
+    "Namar",
+    "Necromancer Munne",
+    "Paulus the Abbot",
+    "Pet - Melandru's Stalker",
+    "Pitney",
+    "Plague Worm",
+    "Prince Rurik",
+    "Prize-Winning Hog",
+    "Rabbit",
+    "Raging Cadaver",
+    "Ralena Stormbringer",
+    "Restless Corpse",
+    "Restless Spirit",
+    "River Skale",
+    "River Skale Brood",
+    "River Skale Queen",
+    "River Skale Tad",
+    "Rogue Bull",
+    "Rownan [Collector]",
+    "Sandre Elek",
+    "Sanura [Merchant]",
+    "Savich [Collector]",
+    "Sebedoh the Mesmer",
+    "Serenity [Costume Maker]",
+    "Shatter Gargoyle",
+    "Sir Tydus",
+    "Skale Broodcaller",
+    "Skeleton Raider",
+    "Spence [Merchant]",
+    "Stone Elemental",
+    "Strider",
+    "The Purveyor [Bonus Merchant]",
+    "Tomb Nightmare",
+    "Town Crier",
+    "Trina Yunn",
+    "Unsuccessful Novice",
+    "Varis [Collector]",
+    "Vassar",
+    "Verata the Necromancer",
+    "Walden [Collector]",
+    "Warmaster Grast",
+    "Warthog",
+    "White Rabbit",
+    "Wilton Payce",
+    "Wolf"
+  ],
+  "sample_special": [
+    {
+      "line": 707,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 81684921,
+        "timestamp_filetime": 134362227535648694,
+        "map_id": 146,
+        "map_epoch": 3,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3881,
+          39821,
+          49912,
+          32497,
+          1,
+          267,
+          264,
+          266,
+          10494,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3881,
+            39821,
+            49912,
+            32497
+          ],
+          "name": "Bandit Firestarter",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10494,
+            1
+          ],
+          "name": "Worn Belt",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 751,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 81702921,
+        "timestamp_filetime": 134362227713648694,
+        "map_id": 146,
+        "map_epoch": 3,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3888,
+          56158,
+          37839,
+          16916,
+          1,
+          267,
+          264,
+          266,
+          10499,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3888,
+            56158,
+            37839,
+            16916
+          ],
+          "name": "Aloe Seed",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10499,
+            1
+          ],
+          "name": "Unnatural Seed",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 818,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 81729921,
+        "timestamp_filetime": 134362227979118694,
+        "map_id": 146,
+        "map_epoch": 3,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3901,
+          34556,
+          36746,
+          25603,
+          1,
+          267,
+          264,
+          266,
+          10412,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3901,
+            34556,
+            36746,
+            25603
+          ],
+          "name": "Grawl",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10412,
+            1
+          ],
+          "name": "Wooden Buckler",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 1163,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 81859015,
+        "timestamp_filetime": 134362229273238694,
+        "map_id": 146,
+        "map_epoch": 3,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3891,
+          36316,
+          36833,
+          24600,
+          1,
+          267,
+          264,
+          266,
+          10340,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3891,
+            36316,
+            36833,
+            24600
+          ],
+          "name": "River Skale",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10340,
+            1
+          ],
+          "name": "Frost Artifact",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2384,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 82268312,
+        "timestamp_filetime": 134362233361208694,
+        "map_id": 162,
+        "map_epoch": 8,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3909,
+          33905,
+          36383,
+          29574,
+          1,
+          267,
+          264,
+          266,
+          10317,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10317,
+            1
+          ],
+          "name": "Longbow",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2422,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 82279312,
+        "timestamp_filetime": 134362233478528694,
+        "map_id": 162,
+        "map_epoch": 8,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3909,
+          33905,
+          36383,
+          29574,
+          1,
+          267,
+          264,
+          266,
+          10508,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10508,
+            1
+          ],
+          "name": "Baked Husk",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 3504,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 82680890,
+        "timestamp_filetime": 134362237492168694,
+        "map_id": 161,
+        "map_epoch": 16,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3891,
+          36316,
+          36833,
+          24600,
+          1,
+          267,
+          264,
+          266,
+          10437,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3891,
+            36316,
+            36833,
+            24600
+          ],
+          "name": "River Skale",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10437,
+            1
+          ],
+          "name": "Water Staff",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 4512,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 83162187,
+        "timestamp_filetime": 134362242304938694,
+        "map_id": 161,
+        "map_epoch": 16,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3896,
+          48706,
+          59929,
+          13964,
+          1,
+          267,
+          264,
+          266,
+          10502,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3896,
+            48706,
+            59929,
+            13964
+          ],
+          "name": "River Skale Brood",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10502,
+            1
+          ],
+          "name": "Skale Fin",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6389,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84099218,
+        "timestamp_filetime": 134362251675498694,
+        "map_id": 146,
+        "map_epoch": 20,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3894,
+          35404,
+          42145,
+          21249,
+          1,
+          267,
+          264,
+          266,
+          10338,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3894,
+            35404,
+            42145,
+            21249
+          ],
+          "name": "River Skale Tad",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10338,
+            1
+          ],
+          "name": "Earth Scroll",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6405,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84104218,
+        "timestamp_filetime": 134362251725658694,
+        "map_id": 146,
+        "map_epoch": 20,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3894,
+          35404,
+          42145,
+          21249,
+          1,
+          267,
+          264,
+          266,
+          10401,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3894,
+            35404,
+            42145,
+            21249
+          ],
+          "name": "River Skale Tad",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10401,
+            1
+          ],
+          "name": "Air Wand",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6672,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84215218,
+        "timestamp_filetime": 134362252838278694,
+        "map_id": 146,
+        "map_epoch": 20,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3881,
+          39821,
+          49912,
+          32497,
+          1,
+          267,
+          264,
+          266,
+          10401,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3881,
+            39821,
+            49912,
+            32497
+          ],
+          "name": "Bandit Firestarter",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10401,
+            1
+          ],
+          "name": "Air Wand",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6692,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84223218,
+        "timestamp_filetime": 134362252914598694,
+        "map_id": 146,
+        "map_epoch": 20,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3888,
+          56158,
+          37839,
+          16916,
+          1,
+          267,
+          264,
+          266,
+          10499,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3888,
+            56158,
+            37839,
+            16916
+          ],
+          "name": "Aloe Seed",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10499,
+            1
+          ],
+          "name": "Unnatural Seed",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6811,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84273234,
+        "timestamp_filetime": 134362253415248694,
+        "map_id": 146,
+        "map_epoch": 20,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3901,
+          34556,
+          36746,
+          25603,
+          1,
+          267,
+          264,
+          266,
+          10506,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3901,
+            34556,
+            36746,
+            25603
+          ],
+          "name": "Grawl",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10506,
+            1
+          ],
+          "name": "Grawl Necklace",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 7024,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84353296,
+        "timestamp_filetime": 134362254216878694,
+        "map_id": 146,
+        "map_epoch": 20,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3891,
+          36316,
+          36833,
+          24600,
+          1,
+          267,
+          264,
+          266,
+          10502,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3891,
+            36316,
+            36833,
+            24600
+          ],
+          "name": "River Skale",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10502,
+            1
+          ],
+          "name": "Skale Fin",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 7679,
+      "record": {
+        "schema": 1,
+        "event": "loot_notification",
+        "tick_ms": 84639750,
+        "timestamp_filetime": 134362257076068694,
+        "map_id": 146,
+        "map_epoch": 25,
+        "template_id": 2032,
+        "encoded_template": [
+          2032,
+          64182,
+          50406,
+          6992,
+          266,
+          3894,
+          35404,
+          42145,
+          21249,
+          1,
+          267,
+          264,
+          266,
+          10402,
+          1,
+          1
+        ],
+        "encoded_template_recipient_removed": true,
+        "source_agent_id": null,
+        "confidence": "report_name_only",
+        "source_reported_name": {
+          "name_encoded_utf16": [
+            3894,
+            35404,
+            42145,
+            21249
+          ],
+          "name": "River Skale Tad",
+          "name_status": "decoded"
+        },
+        "item_reported_name": {
+          "name_encoded_utf16": [
+            264,
+            266,
+            10402,
+            1
+          ],
+          "name": "Earth Wand",
+          "name_status": "decoded"
+        }
+      }
+    }
+  ]
+}

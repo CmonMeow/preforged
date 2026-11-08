@@ -1,0 +1,116 @@
+{
+  "skill": 67,
+  "name": "Shatter Hex",
+  "runtime_status": "source Runtime/world binding; full Release build and176 CTest targets passed",
+  "wiki": {
+    "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Shatter_Hex.html",
+    "sha256": "04a800939746b8c0d9d560d36b5bf25eb61bb4ab09f3fbecf2930a3461f8db29",
+    "description": "Remove one hex from target ally; successful removal deals30..102..120 armor-ignoring damage to foes nearby252."
+  },
+  "capture": {
+    "activation_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 103405,
+        "tick_ms": 8612750,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c0000001900000043000000",
+        "kind": 60
+      },
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 3284,
+        "tick_ms": 15881343,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c0000001900000043000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 103409,
+        "tick_ms": 8613781,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 3290,
+        "tick_ms": 15882375,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": [],
+    "limit": "Two activations/completions do not prove successful removal or damage. No body attribution in the fixed audit."
+  },
+  "native": {
+    "report": "skill-audit/animation-consumers-2022.json",
+    "skill": 67,
+    "activation_seconds": 1,
+    "style": 51,
+    "energy_cost": 10,
+    "recharge_seconds": 10,
+    "target_resource": 122,
+    "caster_resource": 2077,
+    "limit": "Original offline first consumers; rendered acceptance remains open."
+  },
+  "mechanics": [
+    "One shared validated removal/damage path preserves Shatter Delusions27 foe/Mesmer-only/adjacent behavior and Shatter Hex67 ally/any-hex/nearby behavior.",
+    "Target scope captured at admission and revalidated at completion; caster owns all callbacks.",
+    "Newest active hex removed once; expired/unhexed targets complete without explosion.",
+    "Player and hostile NPC damage recipients use inclusive252 radius from the ally, excluding same-team players/protected NPCs and other planes.",
+    "Player removal runs real end-condition handling (Phantom Pain) and dependent timers.",
+    "Protected NPC allies are valid unhexed targets even though invulnerable; current protected NPC model does not admit incoming combat hexes."
+  ],
+  "tests": {
+    "source": "tests/shatter_hex.cpp",
+    "focused": "shatter_hex, shatter_delusions, captured_skills and skill_casting pass;12 Python audit tests pass",
+    "checks": [
+      "rank0/12/20 damage",
+      "newest Necromancer hex removed ahead of older Mesmer hex",
+      "one removal only",
+      "inclusive252 and outside253 player/NPC boundaries",
+      "allies and protected NPCs unharmed",
+      "unhexed/expired targets cause0 damage",
+      "self target and Phantom Pain Deep Wound end effect",
+      "actual1s10Energy cast and normal10s recharge packet",
+      "cancel, interruption and replacement-session target rejection",
+      "target122 caster-aware particle emitted once"
+    ]
+  },
+  "remaining": [
+    "Rendered animation/particle and retail removal-damage ordering comparison remain unverified.",
+    "Current NPC allegiance model protects friendly NPCs from combat effects; combat-capable allied NPC hex acquisition/removal needs broader AI/allegiance support.",
+    "Unimplemented global immunity/protection interactions remain outside current tested skill scope."
+  ],
+  "source_hashes": {
+    "src/runtime/gw_shatter_delusions.h": "54840978793e54384cf5a9271f861ab86600c099165ae7a738508da05a2e75d8",
+    "src/runtime/gw_npc_combat_catalog.h": "d793c28d9dd8073a42ad3549008d6c7b4a7440274800fe300e3ad1a918652b1f",
+    "src/runtime/gw_world_simulation.h": "320ebbc58ead9393f97b3977c797e5d77b05eda040e18162fbd86a835d4de229",
+    "src/runtime/gw_skill_casting.h": "54548074eddcd7c1a19c20cdddab95a9cc20756c63391018c7ee9626ce9d950b",
+    "src/apps/gw_auth.cpp": "37680cf404de54f428f9f502ca5d695c1d8ec71ba6c05b6be6c734da0256ebfb",
+    "tests/shatter_hex.cpp": "4b0945dd41aba3f71cbba2e0362ac9225e9e2fcc38a428ad1bc42e5d8a72804e",
+    "tools/protocol/skill_runtime_coverage.py": "3ddf75b101764e2cb928559884f145c8d21858b0996f588425927db74b90f8db",
+    "CMakeLists.txt": "1fc9ba8604bc457846248a7d8fb6ac9ce6e43a2b6fce0ad635cc5d8d0e8ce34a",
+    "tests/test_skill_runtime_coverage.py": "15765facbbcd294a48605a4405c4e11f7e51e627108e9ffa4451fc44f2c91529"
+  },
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/shatter-hex-full-build.txt",
+    "host": "bin/server_host.exe",
+    "host_sha256": "5e8b052687274e192075f39587ce62e547896e6699cbb170efc492e325fe4059"
+  },
+  "full_regression": {
+    "result": "176/176 passed",
+    "seconds": 20.32,
+    "report": "build/reports/shatter-hex-full-tests.txt"
+  }
+}

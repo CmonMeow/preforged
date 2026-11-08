@@ -1,0 +1,38 @@
+{
+  "skill": 404,
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Poison_Arrow.html",
+  "wiki_sha256": "fcd0dee2cc0cd69a630e452eb1101c922715437f4b94dd17be8a8f83116cd30b",
+  "capture": {
+    "id": 404,
+    "name": "Poison Arrow",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 0,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 476492,
+        "tick_ms": 26387890,
+        "actor": 25,
+        "map": 280,
+        "hex": "a000000032000000190000001f00000094010000",
+        "kind": 50
+      }
+    ],
+    "endpoint_evidence": [],
+    "body_effect_evidence": []
+  },
+  "mechanics": [
+    "Normal bow hit; no added damage.",
+    "Poison5..20 seconds at Wilderness ranks0..15.",
+    "Miss or lethal hit does not apply Poison."
+  ],
+  "limits": [
+    "Bow flight/condition tests pass; Runtime cast timing and captured animation still need dedicated verification.",
+    "General blocking/dodging and retail RNG remain incomplete in shared weapon engine."
+  ]
+}

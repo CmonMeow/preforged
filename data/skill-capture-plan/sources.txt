@@ -1,0 +1,8 @@
+Pinned table: src/runtime/gw_skill_catalog_generated.h (3433 entries, including empty ID0)
+Audited player baseline: build/reports/skill-coverage.json; src/runtime/gw_player_skills_generated.h
+Names/descriptions: data/reference/buildwars/skilldesc-en.json
+Modern constants: data/captures/skills/skill-constants-8e50edfb83515fabfec50bfd9d17968e8635a39b4c3e796e311bbc5cd15e5878.json (3495 entries)
+Template format: https://wiki.guildwars.com/index.php?title=Skill_template_format&oldid=2498132
+Snapshot supplied: C:/Users/CmonMeow/Desktop/gw-server/data/captures/skills/skills-20261003-073129-11136-121116187.jsonl
+Primary: 8; captured unlocked profession mask: 1790
+Limits: 2021 obtainability classification is not exhaustive for modern/Reforged content. Outside-baseline rows include NPC/environment/passive/variant entries and unclassified modern entries; do not try to acquire all engine IDs. Only explicit learned IDs are batched. Unlocks are not proof a PvE character learned a skill. Raw weapon/target values are preserved, not interpreted. Description keyword hints are incomplete, may describe effects rather than prerequisites, and need article review. No attributes allocated; elite<=1 and PvE-only<=3 per bar; special exclusivity, primary-only restrictions and scenario prerequisites still require client validation. Secondary unlock mask is reported but not assumed sufficient proof of switch availability. Packet coverage begins at not_attempted. Loading a bar or reading learned IDs is not a cast/effect capture.

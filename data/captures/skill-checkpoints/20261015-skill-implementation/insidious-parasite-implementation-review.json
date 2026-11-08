@@ -1,0 +1,58 @@
+{
+  "skill": 123,
+  "status": "Source-bound123:player/NPC hex,per-hit pre-damage life steal,ordinary/projectile/melee/NPC/Cyclone paths and actual casting;rendered/capped/fatal ordering unverified",
+  "native_evidence": "insidious-parasite-native-2022.json",
+  "mechanics": {
+    "life_steal": "15+2*rank",
+    "duration_seconds": "round(5+10*rank/15)",
+    "per_hit": true,
+    "timing": "before physical attack damage is received",
+    "caster_death": "end hex on all affected targets"
+  },
+  "validation": "Standalone Release policy probe passes rank0..20,duration,hit/miss/block/dodge/cancel/retire qualification,scope/time/expiry/malformed effects and consumed multi-recipient hit count. No Health effects or world casting claimed.",
+  "remaining": [
+    "Retail overheal-clipping/per-recipient order and fatal-afflicted-attacker released-hit behavior remain unverified. Current deterministic selection order reacts before each recipient damage;this is explicit private simulation policy,not a proved retail-order claim.",
+    "Rendered animation,sound,hex marker and Health-transfer feedback remain unverified. Native/captured first-consumer proof does not establish rendering.",
+    "NPC-source skill casting/AI and global interactions outside current attack/Health pipelines remain incomplete."
+  ],
+  "sources_sha256": {
+    "src/runtime/gw_insidious_parasite.h": "a239408027650cb843fe553728d99d2ba5df040e915b2375696399972de846fd",
+    "tests/insidious_parasite_policy.cpp": "223ea3adc9d6b70d65f7df28ff5f28304cb41d1510246e78560a12bfdc4fa74e",
+    "tools/protocol/insidious_parasite_2022.py": "3e69e1cbf443fb7a0267e5b494fa9fb0996e01714e143119ff921bba1a05639b",
+    "src/runtime/gw_insidious_parasite_transfer.h": "7df1b505bf557db113c95f6cf74bc06f6d064d474acbb07a830e5309962bec51",
+    "tests/insidious_parasite_transfer.cpp": "ebbfa1db5e410c71775900e6d479a55053371faabe8292371451ba755ade8cae",
+    "src/runtime/gw_attack_outcomes.h": "09b71508d7b687f18f474b0c6e5c6ef6e0c508ce32ff43cf8bd0093ca2e8e3d3",
+    "tests/attack_pre_damage.cpp": "dfb2449b66ea174b3dd83e1a7798b910a0022e78a901b5cdf273bf3ecdb1c8da",
+    "src/runtime/gw_world_simulation.h": "049b19dbd0dcecd0fe3c2fb6fcbfcf0e570129c2c2f185365a07d49eb8f4eac6",
+    "tests/insidious_parasite_world.cpp": "84021a11c655fc735f371d3bc908a5bc2ed8f29883a20e4ce6e3b803e873c347",
+    "tests/melee_attack_outcomes.cpp": "6319b4bee3cb65ca3b5c04f7e84f9237ffb13ae30264a1a8ae04c4dcf5c28384",
+    "tests/projectile_attack_outcomes.cpp": "428f6becd948a6971946610d2176d00fc1a9c1f2d3143e4e67cedf5214b1d3b1",
+    "src/runtime/gw_npc_combat_catalog.h": "e1880bb8492a5bf29b9a90de9d265102f7e486ee83e6185c628302d17874748a",
+    "tests/insidious_parasite_npc.cpp": "23acb991ca6837fdaa14adfd06aef3974d608dcf96ed93df4cb0cf63d768ac91",
+    "tests/insidious_parasite_cyclone.cpp": "8a9855a668592379f579b2a0cc5ad5f917735e06df25e7a21ea75dba66902d35",
+    "tools/protocol/insidious_parasite_observer_candidates.py": "aebaf8985957ae6178bde5131f786fb4210db894787671372c8c58baa0473cbc",
+    "src/runtime/gw_attack_damage_rebase.h": "8382385daa3ea56a2df2f45e4add5b9f05d6e59ac599e8a91749ed9a17a3e835",
+    "tests/attack_damage_rebase.cpp": "26976ba7d5813398dc75a7cf8eac44c8b61999e2fc83d81eb3222be89c8e3579",
+    "src/runtime/gw_degeneration_hexes.h": "4e61e8f7c542f8d5d0b1aed4f576f45db3c5516405be777f7a34bf07916d50a5",
+    "tests/insidious_parasite_cast.cpp": "cb23fc3eb5e6652359eed3fd8b0458315fa74baa608d41da11546f1bedf42916"
+  },
+  "transfer_validation": "Standalone Release insidious_parasite_transfer_probe passes pre-damage Health calculation:100HP caster gains39 before120incoming damage and survives19HP. Also checks overheal cap,remaining-Health+1overkill,shared reduction,dead/foreign/mismatched actors and failed outcomes. This is transaction-local arithmetic,not production world/ordering or lifecycle acceptance.",
+  "pre_damage_phase": "Ordinary melee/projectile and single-target melee hit paths qualify exactly once before Health calculation;terminal trace retains before_damage timestamp. Miss/dodge/retire/cancel paths do not qualify. Insidious transfer consumes that typed notification and recomputes incoming hit Health after the gain.",
+  "phase_validation": "Five registered Release suites pass0.07s:attack_pre_damage,insidious_parasite_policy,insidious_parasite_transfer,attack_outcomes,attack_outcome_batch. Dependent World regression rebuild pending.",
+  "production_phase_validation": "Five rebuilt suites pass0.08s:attack_pre_damage,mark_of_pain_world,melee_attack_outcomes,projectile_attack_outcomes,price_of_failure_world(pre-damage-production-tests.txt). Trace checks verify hit-only phase timestamps,dual-arrow identities,and ordinary/single-skill hit versus miss.",
+  "world_stage_validation": "Registered insidious_parasite_world Release test passes:staged application,100HP+39life steal before120ordinary damage leaves19HP,and before130skill damage leaves9HP;miss exclusion,exactly-once polling,expiry/removal,renewal to another caster and caster death/leave cleanup. Generic123casting factory explicitly remains unsupported.",
+  "npc_stage_validation": "Registered insidious_parasite_npc,insidious_parasite_world,npc_attack_outcomes3/3 pass0.06s(insidious-npc-fixed-tests.txt). NPC curse application publishes captured target230. Trusted NPC-to-player/guardian hits qualify before damage,steal39HP and heal caster first;Blind misses do not transfer. Caster death clears NPC hex presentation and a subsequent accepted guardian strike causes no life steal. NPC strike level and armor expectations derive fixture metadata;no source binding123added.",
+  "fixture_corrections": "Initial NPC test assumed guardian armor60 despite authored armor0,then used player-only apply_condition for an NPC. Corrected to reviewed guardian armor and actual NPC blindness path. Earlier failures retained in insidious-npc-tests.txt and insidious-npc-current-tests.txt;passing superseding result insidious-npc-fixed-tests.txt.",
+  "observer_supplement": "insidious-parasite-observer-candidates.json:9archived decoded matches,13skill123starts,12following finish candidates and1stop;no Cyclone starts. Preserves660combat-window rows and259attack-window rows with source hashes. Separate streams do not establish same-timestamp cross-stream order or causal Health attribution;not merged into fixed575inventory.",
+  "cyclone_regression": "New unregistered tests/insidious_parasite_cyclone.cpp reproduces missing per-hit reaction against current World(before probe fails expected Health check). Cases prepared for mixed misses,zero damage after Shielding Hands,late-invalid-recipient atomic admission and once-only traces. Low caster Health avoids choosing an unverified overheal clipping order. Runtime fix and CMake registration wait for current full build to finish.",
+  "damage_rebase_policy": "New independent rebase_attack_damage helper recomputes a validated planned weapon hit against current post-reaction Health,effects and scope,preserving reviewed damage/skill/kind rather than restoring old after-Health. Standalone Release test passes139->19instead of old lethal result,50->30instead of restoring80,zero damage,dead-target rejection,foreign/stale scopes and malformed/death/kind rejection. World Cyclone integration and CMake registration pending live full206build29389.",
+  "validated_pre_cyclone_source_sha256": {
+    "src/runtime/gw_attack_outcomes.h": "09b71508d7b687f18f474b0c6e5c6ef6e0c508ce32ff43cf8bd0093ca2e8e3d3",
+    "src/runtime/gw_world_simulation.h": "6e35b5a3d1479342bd7623118e554bd430a4c89bd6f82976949ada8333daf12f",
+    "src/runtime/gw_npc_combat_catalog.h": "0baabd2ee3ecfa622886a24fc0c43a7579092fe6538892f86f106c79c8a5e798"
+  },
+  "full_validation_206": "Pre-Cyclone/pre-binding all-target Release build and206/206 CTest passed29.44s(insidious-npc-full-build.txt,insidious-npc-full-tests.txt).",
+  "cyclone_validation": "Five registered suites pass0.08s(insidious-cyclone-current-tests.txt):rebase helper,Cyclone per-hit transfers,mixed Blind misses,zero damage after Shielding Hands,late-invalid-recipient atomic rejection,once-only traces,and existing Mark of Pain mixed NPC splash regression. Before probe recordedafflicted500/caster70;updated source gives expectedafflicted383/caster187for3hits. Fresh NPC damage applies to current actor state rather than restoring a pre-reaction copy.",
+  "binding_validation": "Five registered suites pass0.08s(insidious-binding-tests.txt):actual Runtime1second cast,15Energy,12second recharge,cancel/interrupt/target replacement plus player/NPC/Cyclone/rebase tests. Generic degeneration_hex123 now returns canonical zero-pip duration plan. Subsequent edits only correct comments/test output text;full rebuild running16095.",
+  "full_validation_209": "All-target Release build and209/209 CTest passed30.74s(insidious-binding-full-build.txt,insidious-binding-full-tests.txt). Covers123source binding,Cyclone Health rebasing and actual casting;not rendered or retail capped/fatal ordering acceptance."
+}

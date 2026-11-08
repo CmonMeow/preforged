@@ -1,0 +1,121 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cases": [
+    {
+      "copy": 0,
+      "sent": [
+        [
+          68,
+          28,
+          0,
+          43,
+          0
+        ]
+      ],
+      "pending": [
+        [
+          1835008,
+          1
+        ]
+      ]
+    },
+    {
+      "copy": 1,
+      "sent": [
+        [
+          68,
+          28,
+          1,
+          43,
+          0
+        ]
+      ],
+      "pending": [
+        [
+          1835009,
+          1
+        ]
+      ]
+    },
+    {
+      "copy": 255,
+      "sent": [
+        [
+          68,
+          28,
+          255,
+          43,
+          0
+        ]
+      ],
+      "pending": [
+        [
+          1835263,
+          1
+        ]
+      ]
+    },
+    {
+      "copy": 65535,
+      "sent": [
+        [
+          68,
+          28,
+          65535,
+          43,
+          0
+        ]
+      ],
+      "pending": [
+        [
+          1900543,
+          1
+        ]
+      ]
+    },
+    {
+      "copy": 65536,
+      "sent": [
+        [
+          68,
+          28,
+          65536,
+          43,
+          0
+        ]
+      ],
+      "pending": [
+        [
+          1900544,
+          1
+        ]
+      ]
+    },
+    {
+      "copy": 4294967295,
+      "sent": [
+        [
+          68,
+          28,
+          4294967295,
+          43,
+          0
+        ]
+      ],
+      "pending": [
+        [
+          1835007,
+          1
+        ]
+      ]
+    }
+  ],
+  "cross_skill_collision": [
+    [
+      1900544,
+      2
+    ]
+  ],
+  "conclusion": "Copy values above65535 can alias another skill pending-reference key. Server copies must stay within16-bit lanes.",
+  "limits": "Synthetic bars; original replacement/request/pending/ack code executes, UI/eligibility/network stubbed. Does not establish ArenaNet allocation or rendering."
+}

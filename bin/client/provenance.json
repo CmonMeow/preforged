@@ -1,0 +1,17 @@
+{
+  "source": "C:\\Users\\CmonMeow\\Desktop\\framework\\gw\\Gw_2022.exe",
+  "source_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "output_sha256": "08362f8abb546245ef64d1c808acc52c73171c5bfcb9bee2f7a4f396d0d663c5",
+  "protocol_build": 37130,
+  "archive_identifier": 381296,
+  "archive_source": "bin/gw-client/Gw.dat",
+  "modifications": [
+    "Archive executable comparison forced equal at RVA 0x3b8819",
+    "Local agreement revision comparison forced equal at RVA 0x3dee73",
+    "World connection preserves server endpoint port at RVA 0x8d69b",
+    "Only portal LoadLibrary filename redirected at RVA 0x8e2de",
+    "Embedded DH public value replaced with framework 2022 server key",
+    "Read-only .fw2022 section stores bridge filename; PE headers adjusted"
+  ],
+  "limitations": "Local login/world compatibility under verification. Archive asset compatibility not proven."
+}

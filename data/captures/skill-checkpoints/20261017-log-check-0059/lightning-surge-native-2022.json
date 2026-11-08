@@ -1,0 +1,123 @@
+{
+  "checkpoint": "20261017-log-check-0059",
+  "cutoff": "2026-10-17T06:01:36.761196+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "start": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 173451,
+    "tick_ms": 19324812,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e000000cd000000",
+    "kind": 60
+  },
+  "finish": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 173472,
+    "tick_ms": 19325875,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003a0000001900000000000000",
+    "kind": 58
+  },
+  "application": [
+    {
+      "line": 173473,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19325875,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e0000001900000070010000"
+    }
+  ],
+  "delayed_damage": [
+    {
+      "line": 173521,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19328859,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e000000190000009a9919bd"
+    }
+  ],
+  "knockdown": [
+    {
+      "line": 173522,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19328859,
+      "opcode": 162,
+      "bytes": 16,
+      "complete": true,
+      "hex": "a20000003f0000001e00000000000040"
+    }
+  ],
+  "target_states": [
+    {
+      "line": 173476,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19325875,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000000080000"
+    },
+    {
+      "line": 173496,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19327421,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000002080000"
+    },
+    {
+      "line": 173525,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19328859,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000002000000"
+    }
+  ],
+  "observed_delay_ms": 2984,
+  "native_cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 205,
+    "override_after": 2139095040
+  },
+  "native_particle": {
+    "actor": 43,
+    "encoded_file": "c6f600010000",
+    "flags": 1
+  },
+  "particle_wire2022": "9f80140000001e0000001900000070010000",
+  "knockdown_wire2022": "a1803f0000001e00000000000040",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lightning_Surge.html",
+  "wiki_sha256": "a5fd49f43726a36c890de0a3dba5d4c192501e9af022e118c08e9a543049c643",
+  "tool_sha256": "337fa53ddf6eb721d2619a0de4470193562d3fd27ddd405387d19fab5f4a3064",
+  "limits": [
+    "Delayed association is inferred from same caster/target and the near3s damage/control frame; hex ownership is not independently decoded.",
+    "Other skills were cast in this interval; this is not an isolated experiment or independent proof of damage magnitude/Cracked Armor timing.",
+    "Early-removal cancellation comes from the historical wiki, not this successful expiry capture.",
+    "Original consumers use stubbed asset/model services; no rendering or runtime binding is established."
+  ]
+}

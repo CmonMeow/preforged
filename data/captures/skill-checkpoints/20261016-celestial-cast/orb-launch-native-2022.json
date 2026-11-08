@@ -1,0 +1,202 @@
+{
+  "checkpoint": "20261016-celestial-cast",
+  "cutoff": "2026-10-17T02:48:58.907161+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "native_cases": [
+    {
+      "start_line": 173647,
+      "launch_line": 173661,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19339718,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a4000000190000000040b4c50040f744000000005c93263d930100000100000000000000"
+      },
+      "original_wire": "a380190000000040b4c50040f74400005c93263d930100000100000000",
+      "event_code": 11,
+      "state_requests": [
+        6
+      ],
+      "payload": [
+        1,
+        1025938268,
+        403,
+        3316924416,
+        1157054464,
+        0
+      ]
+    },
+    {
+      "start_line": 606359,
+      "launch_line": 606455,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 29641968,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a4000000370000002f2c02468a994ec500000000d97b083e930100000100000000000000"
+      },
+      "original_wire": "a380370000002f2c02468a994ec50000d97b083e930100000100000000",
+      "event_code": 11,
+      "state_requests": [
+        6
+      ],
+      "payload": [
+        1,
+        1040743385,
+        403,
+        1174547503,
+        3310262666,
+        0
+      ]
+    }
+  ],
+  "source_files": {
+    "packets-1360-15821281.jsonl": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+    "world-1360-15811984.jsonl": "de6f061799d3db9f7406f55e5e0da20fff0c5e46daaa634e1e4d952d0fd4882f"
+  },
+  "packet93_classification": {
+    "header": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\third_party\\gwca-current\\include\\GWCA\\Packets\\Opcodes.h",
+    "sha256": "6a3ba3a2cf276e2296bb181c6820c248e54918ff13d602584d6513111c7d8fc8",
+    "declaration": "#define GAME_SMSG_CHAT_MESSAGE_CORE                 (0x005D) // 93"
+  },
+  "stationary_bracket": [
+    {
+      "line": 41150,
+      "anchor": {
+        "line": 41148,
+        "row": {
+          "schema": 1,
+          "event": "npc_visibility_changed",
+          "process_id": 1360,
+          "tick_ms": 29641093,
+          "map": 13,
+          "instance_epoch": 346,
+          "instance_ms": 60147,
+          "quest_snapshot_revision": 476,
+          "correlation_only": true,
+          "spawn_or_death_not_proven": true,
+          "changes": [
+            {
+              "agent": 43,
+              "model": 2490,
+              "visible": false,
+              "observed_dead": false,
+              "status_changed_without_visibility_change": false
+            },
+            {
+              "agent": 44,
+              "model": 2493,
+              "visible": false,
+              "observed_dead": false,
+              "status_changed_without_visibility_change": false
+            }
+          ]
+        }
+      },
+      "npc": {
+        "agent": 55,
+        "model": 2498,
+        "x": 8118.397461,
+        "y": -3416.676514,
+        "plane": 0,
+        "facing": -0.920627,
+        "level": 7,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4866,
+          49972,
+          50022,
+          22555
+        ],
+        "name": "Flash Gargoyle",
+        "name_status": "decoded"
+      },
+      "tick": 29641093
+    },
+    {
+      "line": 41154,
+      "anchor": {
+        "line": 41151,
+        "row": {
+          "schema": 1,
+          "event": "npc_visibility_changed",
+          "process_id": 1360,
+          "tick_ms": 29642093,
+          "map": 13,
+          "instance_epoch": 346,
+          "instance_ms": 61148,
+          "quest_snapshot_revision": 476,
+          "correlation_only": true,
+          "spawn_or_death_not_proven": true,
+          "changes": [
+            {
+              "agent": 123,
+              "model": 2483,
+              "visible": true,
+              "observed_dead": false,
+              "status_changed_without_visibility_change": false
+            },
+            {
+              "agent": 129,
+              "model": 2498,
+              "visible": true,
+              "observed_dead": false,
+              "status_changed_without_visibility_change": false
+            },
+            {
+              "agent": 40,
+              "model": 2490,
+              "visible": false,
+              "observed_dead": false,
+              "status_changed_without_visibility_change": false
+            },
+            {
+              "agent": 42,
+              "model": 2490,
+              "visible": false,
+              "observed_dead": false,
+              "status_changed_without_visibility_change": false
+            }
+          ]
+        }
+      },
+      "npc": {
+        "agent": 55,
+        "model": 2498,
+        "x": 8118.397461,
+        "y": -3416.676514,
+        "plane": 0,
+        "facing": -0.920627,
+        "level": 7,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4866,
+          49972,
+          50022,
+          22555
+        ],
+        "name": "Flash Gargoyle",
+        "name_status": "decoded"
+      },
+      "tick": 29642093
+    }
+  ],
+  "distance": 239.91289255090513,
+  "seconds": 0.13328494131565094,
+  "implied_speed": 1799.9999863655523,
+  "inference": "The float is flight duration:stationary Orb229 geometry matches distance/1800 within logging precision.",
+  "tool_sha256": "cb7fcaa3d563cd994413bebeadbb810115884b1042f16972b255b01f5532ebbc",
+  "limits": [
+    "Actor metadata/lookup,queue storage/recycling services stubbed;original dispatch and action11/state6 selection execute.",
+    "No model assets rendered;modern93 is ChatMessageCore in the matching GWCA header,not projectile creation.",
+    "One stationary NPC geometry bracket does not calibrate every projectile,caster or modifier."
+  ]
+}

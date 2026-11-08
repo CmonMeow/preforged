@@ -1,0 +1,224 @@
+NPC action, acquisition and movement evidence extension, 2026-10-13
+
+Scope and conclusion
+  Offline archived captures and local historical wiki only. No client, process,
+  injection, network, world simulation, gw_auth.cpp or shared CMake changes.
+  The new evidence recovers untargeted NPC skills, distinguishes reused target
+  generations, measures action timing, and finds sampled return candidates.
+  It still does NOT recover threat weights, an exact skill priority algorithm,
+  numeric acquisition/follow/drop thresholds, NPC energy pools, or patrol routes.
+
+Reproduction (from C:/Users/CmonMeow/Desktop/gw-server)
+  python tools/ai/audit_action_sequences.py build/reports/ai/four-professions.json --output build/reports/ai/four-action-sequences.json
+  python tools/ai/audit_action_sequences.py build/reports/ai/side-quests.json --output build/reports/ai/side-action-sequences.json
+  python tools/ai/audit_movement_context.py build/reports/ai/four-action-sequences.json --output build/reports/ai/four-movement-context.json
+  python tools/ai/audit_movement_context.py build/reports/ai/side-action-sequences.json --output build/reports/ai/side-movement-context.json
+  python tools/ai/index_wiki_ai_evidence.py C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki --output build/reports/ai/wiki-ai-source-index.json
+  python tests/test_ai_capture_analysis.py
+  Native test: MSVC C++20, /W4 /WX tests/ai_action_provenance.cpp;
+    generated build/ai-provenance-build.cmd performs environment setup/build/run.
+  Original audit inputs/reproduction remain in capture-behavior-evidence.txt.
+  Additional sensitivity archive:
+    python tools/ai/audit_action_sequences.py build/reports/ai/ranger-partial.json --output build/reports/ai/ranger-action-sequences.json
+    This admits5 ordinary actions/zero companion actions and586 separate map148
+    scripted actions; it adds no companion acquisition/follow/drop evidence.
+
+Provenance and admission
+  Every input source SHA256 is checked against the original capture audit before
+  raw replay. Epoch windows are disjoint; gaps remain unassigned. Decreasing
+  packet clocks or lifetime disagreements fail closed. Every action requires an
+  observed packet spawn generation and an NPC identity joined by the prior audit.
+  A future identity snapshot at or after source despawn/replacement is excluded.
+  Packet tick_ms has ties: raw lifetime boundaries additionally use stream line
+    order. Four attack20978 precedes despawn20980 despite both tick82283250.
+    Timestamp-only half-open packet joins would incorrectly discard this valid
+    raw target generation. Snapshot boundaries remain conservatively time-based.
+  NPC identity changes divide action sequences even within one packet lifetime.
+  Untargeted activation has target=null, never inferred self or current foe.
+  All complete raw starts, including unjoined actors, update pending matching.
+  Start/end kinds must match and use the same source lifetime. A mismatched end,
+  superseding start, despawn or incomplete action packet prevents false pairing.
+  Analysis IDs 159/160 are MODERN capture opcodes, not pinned-2022 serialization.
+
+Admitted action totals and scripted separation
+  Four-professions: 2456 raw lifetimes; 1735 ordinary NPC actions; 279 observed
+    action-target changes (all targeted action forms, all gaps).
+  Side-quests: 2920 raw lifetimes; 1196 ordinary actions; 178 ordinary action-
+    target changes. Map148 separately has 54390 admitted scripted actions and
+    15537 target changes. Its action/transition examples are explicitly sampled.
+  These totals differ from the previous ordinary-attack-only change counter:
+    the new pass includes spell/attack-skill destinations, requires source
+    lifetimes, has no 10-second cutoff, and compares exact target generations.
+  Outside-map148 is an analysis stratum, not proof every encounter is unscripted.
+
+Skill selection: concrete new packet evidence
+  The previous audit treats opcode159/type60 as action_status. It contains a
+  skill ID and can be an UNTARGETED activation. That omission concealed NPC
+  Glyph of Restoration1376 and other self/non-targeted skills from usage totals.
+  Four packet6009/tick81548734, lifetime3:42:1, map146:
+    raw 9f0000003c0000002a00000060050000;
+    Fire Imp42 untargeted1376. World365(+171ms) identifies model513/level1/
+    normalized allegiance4. Finish packet6020/tick81549750, type58, is1016ms later.
+  Side packet471578/tick174946109, lifetime3:49:2, map146:
+    Fire Imp49 untargeted1376; world15796(-110ms). Finish packet471583/
+    tick174946937 is828ms later. Its preceding Fireball186 is471540->471543;
+    following Flare194 to actor39 is471592->471614.
+  Four Imp usage across14 source lifetimes:
+    Fireball100, Flare148, Glyph91, ordinary weapon attack75.
+  Side Imp usage across9 source lifetimes:
+    Fireball101, Flare195, Glyph103, ordinary weapon attack64.
+  Untargeted forms also recover Ben Wolfson446(Troll Unguent) once, at side
+    source profile friendly_follower_candidate; local Ben_Wolfson.html:86 lists
+    Troll Unguent, :88 describes following until the gate. It remains a quest
+    follower profile, not a hero or generic party-member ownership relation.
+  A fixed Glyph->Fireball rotation is inconsistent with admitted sequences:
+    four Glyph successor counts: Fireball40, Flare35, weapon14;
+    side: Fireball38, Flare46, weapon17, Glyph1.
+    These include arbitrary observation gaps and are descriptive, not priorities.
+  Four lifetime3:42:1 gives a concrete mixed sequence:
+    packets7252 Fireball,7335 Glyph,7361 Flare,7404 Flare,7447 Fireball,7491 Flare.
+  A successful finish proves action completion; it does not prove damage or hit.
+
+Action timing (successful matching; packet callback spacing)
+  Four start->finish minimum/median/maximum ms:
+    Glyph n89:828/1016/1235; Fireball n100:1281/1531/1656;
+    Flare n134:718/1015/1235.
+  Side: Glyph n103:687/1000/1203; Fireball n101:1328/1500/1688;
+    Flare n189:797/1000/1187.
+  Local skill pages give Glyph1s and recharge8s, Fireball1.5s and recharge7s,
+    Flare1s with no recharge entry. The observations are compatible with those
+    descriptions after callback timing variation, but do not define exact cast
+    durations, recharge origins, scheduler tick, aftercast or cooldown bypass.
+  For example four Fireball minimum start spacing8422ms (102596->102841);
+    minimum successful prior-finish spacing6969ms (120357->120570).
+    Side minimum prior-finish spacing6953ms (574172->574426).
+    These deviations prevent installing7000ms as a measured exact bound.
+  Spacing summaries include long idle/visibility gaps; no mean rotation or
+    energy regeneration estimate is justified. Resource conclusion is unchanged:
+    pet max-energy30 observed once; no current/spent NPC-energy proof.
+
+Acquisition and target-choice evidence
+  Ordinary target changes with BOTH target generation keys known:
+    four196/279; side119/178. Remaining changes have differing IDs but at least
+    one unknown generation; same-ID/unknown-generation continuity is unproven.
+  Reuse example four packets20978->21042 changes from8:270:4 to8:270:5.
+    Raw target ID270 is unchanged, but this is a different actor lifetime.
+  Four companion changes (all gaps): pet4 across2 lifetimes, minion42 across33,
+    Imp113 across14. Side Imp114 across9; follower candidate4 across2.
+  Four minion216 packets78269->78377 changes40->42 within2484ms. Its first
+    attack STOPPED at78336, rather than finishing. Target40 had no observed
+    despawn by the new start. That does NOT prove it remained alive: NPC world
+    snapshots lack alive/health state, and corpses can remain packet-visible.
+    This observation cannot refute commitment-until-death or prove threat ranking.
+  No observed target change is identified as first acquisition. Calling,
+    selection, actual owner weapon attack, foe attack, skill use and damage
+    credit must remain distinct triggers. The current player ID alone does not
+    prove ownership, and owner-attributed damage does not identify actual caster.
+
+Wander, patrol and pursuit return candidates
+  The new tool joins every NPC snapshot to an exact packet lifetime half-open
+    interval and retains per-event identity segments. It uses x/y/plane samples,
+    never destination goals. Exact repeated endpoint plus sampled excursion>=100
+    and elapsed>=5000ms are admission filters, NOT retail AI constants.
+  Four finds8 ordinary lifetime segments with sampled returns; side11 ordinary
+    and19 separate map148 segments. Identity gaps and loading samples are rejected.
+  Four Bandit Firestarter lifetime16:27:1, map161, has9 sampled returns.
+    Example world3429->3496 returns exactly to(11104,5224,plane0), over27016ms;
+    farthest world3470 is2340.759 units away. No admitted action starts occur
+    in that interval. This is a strong repeat-movement CANDIDATE, not an exported
+    patrol route: engagement may precede the interval or be invisible, and
+    intervening path/corrections/player range are unobserved.
+  Side River Skale lifetime6:289:4, map146, has3 sampled returns; world19228->19274
+    returns to(-1295,-11271,plane0), over18016ms, excursion2358.088. Four's separate
+    River Skale lifetime6:59:1 returns to that same endpoint atworld1461->1518,
+    over18016ms, excursion2328.485. Agreement across captures strengthens a
+    content-location candidate, without proving universal wander radius or leash.
+  Some sampled returns contain combat: side River Skale Brood lifetime6:110:4,
+    world20891->21052, has21 admitted action starts during its69045ms excursion.
+    A repeated endpoint alone does not distinguish patrol from pursuit/return.
+
+Historical local wiki requirements (separate evidence class)
+  Exact lines, source SHA256 and page oldid are saved by index_wiki_ai_evidence.py.
+  Root: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/.
+  Aggro.html:54-69 distinguishes proximity, attack, damage, casting and linked
+    groups; :57 says starter very-low-level foes can lack proximity acquisition.
+    :74 says leash depends on pre-combat patrol/idle context; :78 explicitly says
+    threat factors are not known. Implement reviewed triggers/group context;
+    do not invent a weighted nearest/lowest-health threat algorithm.
+  Patrol.html:38 distinguishes a set route from limited wandering/standing;
+    :39 permits hostile patrols fighting other affiliations without player input.
+    :42 gives approximate remote-player pausing behavior, not a numeric constant.
+  Hero.html:276,282,287 gives DIFFERENT Fight/Guard/Avoid target eligibility and
+    priorities; :316 permits explicit manual use of suppressed skills; :322-323
+    defines flags. The generic friendly_follower helper does NOT implement these
+    hero controls. Henchman.html:296 says most hero AI discussion also applies,
+    but quest NPCs must have their own content policy.
+  Hero_behavior.html:44 warns of outdated AI information after the2019 update;
+    several sections are incomplete/verification requested. Skill-specific
+    observations about interrupts, cleansing/healing and glyph use are research
+    leads, not universal NPC skill-selection specifications.
+  Minion.html:70-71 distinguishes master weapon attacks from offensive spells
+    and called targets; commitment takes priority over the master's retreat.
+    :85 says minions have energy despite not using it. A proximity/master-attack
+    trigger must be certified externally; do not send owner spell or call events
+    as the helper's owner_attack acquisition. Minions do not need player pet UI.
+  Animal_companion.html:297 describes target-switch delay; :304-306 defines
+    Attack lock, Guard owner target/adjacent attacker, Heel immediate return.
+    :307 documents a Heel->Attack restoration anomaly. Existing policy helper
+    implements nominal return-mode semantics; it is not proof of the anomaly
+    behavior or of a measured guard retarget delay. Deliver certified acquisition
+    at reviewed timing, not automatically on each player target selection.
+  Summoning_stone.html:39 supports owner-follow and combat commitment with rare
+    exceptions. Summon profile must not use party-follower recall by default.
+    Exceptions, owner death, orphan lifetime and summons from other skill/content
+    families remain unspecified. Fire_Imp_(summon).html:80-82 confirms loadout;
+    :89 says no energy management, which does not imply infinite energy.
+
+Concrete runtime integration requirements
+  1. Use instance+generation+agent keys for caster, target, owner, commands,
+     action state, threat candidates and home/patrol state. Resolve current alive/
+     hostile/range/LoS/plane gates from authoritative world state, never snapshots.
+  2. Keep acquisition events distinct: actual owner weapon attack, skill use,
+     called target, pet command, incoming adjacent attack, proximity, group aggro,
+     scripted encounter. Selected target alone does not certify an attack trigger.
+  3. Add untargeted skills to NPC loadouts/schedulers. A null action target must
+     remain null; select actor-specific self-heal/glyph conditions only after
+     review. Costs/recharge come from reviewed skill data, not action frequencies.
+     Current NPC pools/regeneration remain reviewed content inputs; none defaults
+     to infinite energy because public energy updates are missing.
+  4. Preserve a pending action's identity and original credit owner. Retargeting
+     cancels an unreleased action when appropriate; an already released value
+     keeps its old caster/target/credit. Do not migrate it to the new selection or
+     infer immediate damage from completion. Projectile and effect validation
+     remains the existing authoritative scheduler's responsibility.
+  5. Give idle route/wander, pursuit, return-to-content-anchor, party follow,
+     pet controls, committed minion/summon and scripted encounter separate policy
+     contexts. Store pre-combat idle/home state; repeated sample positions are
+     only route research candidates. Keep all unproven thresholds unconfigured.
+  6. Do not substitute model/name/allegiance for ownership, hostility, death,
+     quest eligibility or invulnerability. Map148's perpetual fight needs an
+     encounter controller; it cannot calibrate ordinary respawn/acquisition/leash.
+
+New independently testable native slice
+  src/runtime/gw_ai_action_provenance.h has a pending-action Latch with serial,
+    Context{caster,optional target,optional credit_owner,kind,skill}, and Released
+    values. It uses companion::Actor lifetime keys, emits no packets, chooses no
+    targets/skills, mutates no resources and installs no timing/distance defaults.
+  Bind source lifetime, then start. Only one noninstant pending action is admitted.
+    Cancel/release require the matching serial; source or target generation
+    disagreement consumes the stale pending action without releasing. Binding to
+    a replacement source clears pending state. Released values remain independent.
+  The caller must validate costs/cooldown/liveness/gates at start and release.
+    A credit owner's captured lifetime is provenance; death/disappearance does
+    not authorize assigning the action to that actor ID's replacement generation.
+    World damage/credit code decides whether original owner credit remains valid.
+  tests/ai_action_provenance.cpp passed MSVC C++20 /W4 /WX: attribution separation,
+    old-target preservation after retarget, stale serial cancellation, one release,
+    source/target reuse, cross-instance IDs, missing skill, untargeted Glyph.
+  tests/test_ai_capture_analysis.py:10 synthetic tests passed, covering decode forms,
+    epoch gaps, same-ID target reuse, full raw replay, incomplete-action barriers,
+    stale source hashes, lifetime disagreement, future identity exclusion, exact
+    endpoint/plane equality, exclusive snapshot lifetime ends and same-tick packet
+    action-before-despawn ordering.
+  Original companion policy still needs its separate profile integration contract
+    in capture-behavior-evidence.txt. No existing policy semantics were changed.

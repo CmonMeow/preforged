@@ -1,0 +1,17 @@
+{
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Overcast.html",
+  "sha256": "8ad2216c537955a0c8ab4ecda8d8a5c82309a25554fa5dd04bf9c1a5a296ecff",
+  "rules": [
+    "Cumulative capacity reduction3/5/10.",
+    "Recovery1 capacity each3 seconds.",
+    "Effective capacity may become negative.",
+    "Current Energy only reduced when above effective capacity.",
+    "Persists through death, resets on zoning."
+  ],
+  "limits": [
+    "Signed Pool and caller-controlled RecoveryClock restored to documented API; duplicate first-stack-phase model removed.",
+    "State not yet connected to world Energy/negative capacity or native UI publication.",
+    "No new elemental skill binding claimed."
+  ],
+  "implementation": "src/runtime/gw_overcast.h; fw::gw::overcast::Pool and RecoveryClock"
+}

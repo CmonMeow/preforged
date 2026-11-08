@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "status": "review_only_not_runtime",
+  "candidate": "data\\gw\\npcs\\vencel-review-candidate.txt",
+  "candidate_sha256": "64fc0028912da75829d4576cb62d8d5cacd4168e452179b82c175a4f59771647",
+  "sources": [
+    {
+      "path": "data\\captures\\skill-checkpoints\\20261023-session-52044-complete\\packets-52044-191877156.jsonl",
+      "sha256": "f9611646aa04fbbbad49ec4bedb30b7fc5fa7315581d7678449b89a387699d03"
+    },
+    {
+      "path": "data\\captures\\skill-checkpoints\\20261023-session-52044-complete\\world-52044-191877453.jsonl",
+      "sha256": "442799838cf9489e5be39d3c22121cf9d615694fa3e48f1b88122acbad1d932e"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Vencel.html",
+      "sha256": "e65d3f67fbce354f2721a6d762f847f6b924fa124bce311a09f7a4e0bd57f59a"
+    }
+  ],
+  "map": 162,
+  "private_actor": 31062,
+  "private_definition": 31062,
+  "capture_epoch": 56,
+  "captured_actor": 62,
+  "captured_model": 1470,
+  "native_spawn_packet_line": 105183,
+  "native_name_packet_line": 105180,
+  "world_definition_line": 8580,
+  "world_first_named_observation_line": 8581,
+  "world_name_decoded_line": 8582,
+  "exact_native_initial_position": {
+    "x": 5450,
+    "y": 5861,
+    "plane": 0,
+    "direction_x": 1,
+    "direction_y": 0,
+    "facing": 0
+  },
+  "stable_position_observations": 91,
+  "wiki_location_line": 82,
+  "duplicate_review": [
+    "No actor31062 or Vencel name exists in runtime map162 base or giver overlay.",
+    "Vencel also exists on post-Searing map39 with the same encoded name but a different model-files array142118 and level5. Do not coalesce across maps.",
+    "Captured pre-Searing map162 uses model-files116698 and level2."
+  ],
+  "limits": [
+    "Not automatically installed: same-instance snapshot supplements cannot combine this epoch with another population.",
+    "Source contains no inferred quest condition. Wiki location is RegentValley pre-Searing.",
+    "Use native initial facing0, not later observation angles after the merchant turns toward a player.",
+    "This is one independent reviewed placement, not approval of an entire captured population."
+  ]
+}

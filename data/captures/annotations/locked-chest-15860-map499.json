@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "map": 499,
+  "instance_epoch": 3,
+  "capture": "world-15860-253212140.jsonl",
+  "gadget_agent": 27,
+  "gadget_id": 8141,
+  "label": "Locked Chest",
+  "classification_evidence": "user targeted label and reported opening while adjacent; selected target ID not recorded",
+  "classification_confidence": "user_report_supported_by_nearby_drop",
+  "position": {
+    "y": -16499.800781,
+    "plane": 0,
+    "x": -5152.037598
+  },
+  "nearby_drop": {
+    "instance_ms": 302001,
+    "model": 1939,
+    "name": "Pyrewood Staff",
+    "agent": 28,
+    "item_id": 460,
+    "x": -5046.073242,
+    "y": -16449.113281
+  },
+  "drop_source_confirmed": false,
+  "spawn_radius_confirmed": false
+}

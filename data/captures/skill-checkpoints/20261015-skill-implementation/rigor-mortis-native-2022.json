@@ -1,0 +1,75 @@
+{
+  "skill": 137,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 137,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 8,
+    "0x48": 20,
+    "0x4c": 20,
+    "0x5c": 0,
+    "0x60": 0,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 248
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "2e7e00010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 86252,
+    "tick_ms": 17455687,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000089000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 86260,
+    "tick_ms": 17456765,
+    "hex": "a0000000140000001e00000019000000f8000000"
+  },
+  "associated_packets": {
+    "status_applications": [],
+    "recharges": [
+      {
+        "line": 86258,
+        "tick_ms": 17456765,
+        "hex": "e500000019000000890000000000000014000000",
+        "slot": 0,
+        "seconds": 20
+      }
+    ]
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Rigor_Mortis.html": "58ee58aaad2d5216e55ca5040ac27339856242475b5fafac0a64180e0deb6716",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Block.html": "bcbda813ad1b88bd275cf1488b89cbc161181f497e3134b6238d11d8a457ffa9"
+  },
+  "tool_sha256": "3e3ad321fda47a9a6f3c153973d60be62c53bd998fdbd0fdcaf45f835ed40651",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Offline first consumers,not rendered acceptance.",
+    "Native row proves1second activation,8..20second duration,20second recharge and targeted body248.",
+    "Archived wiki specifies target foe cannot block;this does not remove Blind,miss,dodge or obstruction.",
+    "This native audit does not prove World block handling or casting;an icon-only hex is not a complete implementation.",
+    "Associated status and recharge observations do not establish caster rank or override canonical2022timing.",
+    "Expiry,removal,ownership and mixed player/NPC attack integration require runtime verification.",
+    "This audit does not implement skill137casting or gameplay."
+  ]
+}

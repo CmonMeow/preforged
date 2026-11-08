@@ -1,0 +1,77 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136625,
+      "tick_ms": 18301671,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e000000a2000000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136707,
+      "tick_ms": 18308093,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e000000a2000000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136641,
+      "tick_ms": 18302656,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136717,
+      "tick_ms": 18309078,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136718,
+      "tick_ms": 18309078,
+      "hex": "a0000000140000001e0000001900000022010000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136719,
+      "tick_ms": 18309078,
+      "hex": "a20000003f0000001e00000000000040"
+    }
+  ],
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 162,
+    "override_after": 2139095040
+  },
+  "target_resource": 290,
+  "particle": {
+    "actor": 43,
+    "encoded_file": "766f01010000",
+    "flags": 1
+  },
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Gale.html",
+  "wiki_sha256": "ad91c0fc637098b49b74fa80e191a5201f88ad40d44820fd4a9711ce60f6d141",
+  "tool_sha256": "96ba04a9b39f1488d16c0e692902cc388b5e8a794ff5f2043798a98b9a7271fc",
+  "limits": [
+    "Body/particle consumers use stubbed model services;no rendered acceptance.",
+    "Second-cast target particle290 and2s knockdown are captured;global duration modifiers remain unverified.",
+    "Overcast recovery calibration and NPC-caster AI remain unverified."
+  ]
+}

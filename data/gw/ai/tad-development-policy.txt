@@ -1,0 +1,31 @@
+Ambient River Skale Tad development policy, 2026-10-30
+
+Exact baseline bindings only: map146 actors10002/10003, definitions2/3,
+model_file82023, skin0, appearance0, flags8, level0. Appearance/positions
+come from unclaimed guild halls.jsonl epoch7 actors30/31, model1433.
+These are existing population actors, not additional spawns. Do not enroll
+other Skale, quest actors, or actors matched only by model/name/level.
+
+The baseline capture supplies identity/placement, NOT maximum Health or
+combat constants. Full initial Health10 is AUTHORED development tuning,
+borrowed from separately captured Tad lifetimes (quest85 actors40/41/42,
+packet kind42 maximum10; docs/npc-quest85-83-enrollment-evidence-20261029.txt).
+Those different lifetimes do not prove Health10 for the baseline actors.
+All six final armor ratings0, damageable=true, private hostility token2,
+ordinary physical type0 damage5..5, mastery0, noncaster melee, windup750ms,
+period2000ms and reach128 are AUTHORED settings, not measured retail facts.
+Conditions remain disabled; Energy, skills and other unknown traits remain
+unknown. The captured level0 is preserved through ordinary resolution.
+
+Movement220, acquire1000 metadata, follow1500, home leash2000, four cardinal
+idle offsets80, pause1200ms, leg timeout6000ms are authored development
+settings. Proximity acquisition is DISABLED. Only positive committed player
+damage admits a validated attacker to encounter memory, with existing plane,
+lifetime, clock, follow/leash guards. Remembered foes can still be pursued;
+nearby bystanders do not join through proximity. The generic low-level starter
+non-proximity behavior has separate local Aggro.html corroboration described
+in data/gw/ai/capture-behavior-evidence.txt, not exact measured Tad thresholds.
+Return home and resume wandering on disengagement; no automatic respawn/heal.
+Projectile metadata1000/32 is required policy metadata, not a melee projectile.
+Navigation validates existing coordinates without moving or replacing actors.
+No retail parity, deployment or rendered-client validation is claimed.

@@ -1,0 +1,24 @@
+Sundering Attack [1191] / Sundering Attack (PvP) [2864]
+2026-10-23 native binding; rendered client acceptance pending.
+
+Evidence: pinned Guild Wars 2022 skill rows in src/runtime/gw_skill_catalog_generated.h,
+plus local historical wiki Sundering_Attack.html and Sundering_Attack_(PvP).html.
+The fixed 20261022 cumulative checkpoint contains 32 other/unassigned starts of
+1191 on map 653, but no local player start. The separate 20261023 target review
+contains 35 other/unassigned PvP starts of 2864 on maps 223/300, but no local
+player start. These observations establish presence, not the exact hit formula.
+
+Native behavior: Ranger Marksmanship bow attack with 10 Energy, four-second
+recharge, 750ms PvE or 1000ms PvP attack release, +5..25 PvE or +3..10 PvP
+bonus at ranks 0..15, and 10 percent armor penetration on weapon damage.
+The existing World weapon resolver keeps bonus damage armor-ignoring and grants
+neither damage component on a miss. A PvP match remaps learned 1191 to the
+2864 row/plan; non-PvP direct requests for 2864 are rejected. The bow and
+target are checked through the normal authoritative attack path.
+
+Verified by fresh Release sundering_attack_test: 21 ranks, pinned mode rows,
+forged-plan rejection, hit/miss damage, PvE and PvP learned Runtime cast,
+10 Energy payment, World contact, release timing and four-second recharge.
+The original-client animation, projectile timing, weapon contact order, exact
+rounding, PvP mode selection on a live 2022 client, and NPC caster behavior
+remain unverified. A local player capture in each mode is still needed.

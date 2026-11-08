@@ -1,0 +1,78 @@
+{
+  "skill": 14,
+  "name": "Mantra of Persistence",
+  "runtime_status": "source Runtime/world binding; full Release build and175 CTest targets passed",
+  "wiki": {
+    "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Persistence.html",
+    "sha256": "f367feea4915e7dfb5477a29648c08215e7ae0d91f0e580f36ab28b37a8b1de6",
+    "description": "Stance5..21..25seconds; Illusion hexes cast last10..34..40percent longer at ranks0/12/15."
+  },
+  "activation_evidence": [
+    {
+      "file": "packets-6468-5728843.jsonl",
+      "line": 66572,
+      "tick_ms": 8023750,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f00000030000000190000000e000000",
+      "kind": 48
+    }
+  ],
+  "native_report": "build/reports/persistence-2022.json",
+  "native_result": "Original instant-stance UI10000025 and caster resource27 first consumers passed offline.",
+  "integration_requirements": [
+    "Add stance14 through the shared instant-stance admission and replacement path.",
+    "Snapshot the caster-owned active stance when each Illusion hex actually applies; never extend unrelated attributes or non-hex effects.",
+    "Apply the duration modifier consistently to player registry/regeneration and NPC hex, attack-trigger and Fragility ledgers.",
+    "Keep original canonical damage, range and condition data; do not make modified untrusted plans pass validation.",
+    "Keep effect removal, renewal, dependent timers and UI expiry consistent with the extended deadline.",
+    "Test rank0/12/20, expired/replaced stance, application timing, player/NPC parity and unchanged hexes already applied.",
+    "Verify retail rounding and maximum duration stacking before claiming exact fidelity; rendered acceptance remains outstanding."
+  ],
+  "source_hashes": {
+    "src/runtime/gw_hex_duration.h": "ed6b7f1d0c3819a5b6f94f761c0e830f048e03f2a2758216ee6098cb3e676758",
+    "src/runtime/gw_cast_timing.h": "7f3abc201ec4b576bc72af2dae9ffc3fa6ea65e951cdd76c37c0f35f7ceb765a",
+    "src/runtime/gw_skill_casting.h": "e2fb35b0fc1c2c1dd0494548220d33e7788a691df1cdac71e040d30b2d963c25",
+    "src/runtime/gw_world_simulation.h": "0306c8b725c3f37016a58d92206c7117df156a3afef948719e7d3a102f52ab5c",
+    "src/runtime/gw_npc_combat_catalog.h": "f45f5b2d4bbf4703b30f70dc712949606181683eff7faeaae34c567a2360b9ad",
+    "tests/persistence.cpp": "1c422a7b462ac896d9726fc1b9beecf1b59870c39710bf9e41e13395d3ab1d87",
+    "tools/protocol/persistence_2022.py": "8f8a217525be20b4d4467ee63941bd095af04dd66e09f21a5358f2409e8d5fc5",
+    "tools/protocol/skill_runtime_coverage.py": "e963387c5d04d5f2a18602beb4e116fb9865aa0d463771e2be4f14b69669bb76",
+    "tests/test_skill_runtime_coverage.py": "f7a4e88bbdaf5048b9034fd479a35550285973e81143a16b60d3c1e90b189fc5",
+    "CMakeLists.txt": "7a6f0e017c6bbf84559ce2bfc91a4dd3b114af9c1d479ebfc1a01c689fce7e16"
+  },
+  "limits": [
+    "Wiki description and native consumers do not prove server mechanics.",
+    "No live official client or collector was accessed."
+  ],
+  "focused_tests": {
+    "result": "persistence, captured_skills, skill_casting passed;12 Python audit tests passed",
+    "build_report": "build/reports/persistence-focused-build.txt",
+    "test_source": "tests/persistence.cpp",
+    "checks": [
+      "rank0/12/20 duration bonus; duplicates do not stack",
+      "Domination/Inspiration and non-hex exclusions",
+      "wrong cause/kind, missing lifetime, invalid rank and overflow guards",
+      "NPC generic/movement/attack/Fragility ledger expiry",
+      "player timers/condition duration and stance removal",
+      "mixed world NPC duration extension and exact expiry",
+      "actual instant stance Energy cost, UI message and replacement",
+      "application-time stance gained/lost during cast"
+    ]
+  },
+  "remaining": [
+    "Rendered stance particles and altered hex timers remain unverified.",
+    "Retail sub-second rounding, other hex-duration modifier stacking and autonomous NPC self-stancing remain unverified/incomplete."
+  ],
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/persistence-full-build.txt",
+    "host": "bin/server_host.exe",
+    "host_sha256": "0ed070a60fca871514cb3b1b942f778e83df5b994b2d29e6f1fb46bc3be7a864"
+  },
+  "full_regression": {
+    "result": "175/175 passed",
+    "seconds": 20.55,
+    "report": "build/reports/persistence-full-tests.txt"
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "skill": 110,
+  "source": "packets-1360-15821281.jsonl",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Unholy_Feast.html",
+  "wiki_sha256": "2d625729e2d219e6c50084851bb9b801fc049431d20e112f9b5e3478932737e6",
+  "records": [
+    {
+      "line": 71810,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17217781,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003c000000190000006e000000"
+      }
+    },
+    {
+      "line": 71811,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17217781,
+        "opcode": 30,
+        "bytes": 8,
+        "complete": true,
+        "hex": "1e00000046000000"
+      }
+    },
+    {
+      "line": 71812,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218171,
+        "opcode": 30,
+        "bytes": 8,
+        "complete": true,
+        "hex": "1e000000f4010000"
+      }
+    },
+    {
+      "line": 71813,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 229,
+        "bytes": 20,
+        "complete": true,
+        "hex": "e5000000190000006e0000000000000008000000"
+      }
+    },
+    {
+      "line": 71814,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      }
+    },
+    {
+      "line": 71815,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000001500000019000000d1000000"
+      }
+    },
+    {
+      "line": 71816,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a00000019000000ae010000"
+      }
+    },
+    {
+      "line": 71817,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000370000001900000019000000fa82be3c"
+      }
+    },
+    {
+      "line": 71818,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000001d000000e0010000"
+      }
+    },
+    {
+      "line": 71819,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000370000001d00000019000000abaaaabc"
+      }
+    },
+    {
+      "line": 71820,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 17218500,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f000000140000001d000000d2000000"
+      }
+    }
+  ],
+  "findings": [
+    "Caster kind21 resource209; victim kind20 resource210.",
+    "Modern generic159 maps to2022 generic158.",
+    "This single-victim capture does not establish capped-recipient ordering.",
+    "Observed health deltas do not by themselves establish rank or maximum Health."
+  ]
+}

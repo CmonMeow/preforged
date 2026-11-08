@@ -1,0 +1,61 @@
+{
+  "skill": 86,
+  "status": "Source-bound player/combat-NPC cast; full Release build and249/249 native tests passed. Mechanics/rendered verification incomplete.",
+  "source": "Local Grenth%27s_Balance.html revision2663563; pinned2022 row86.",
+  "test": "tests/grenths_balance_policy.cpp",
+  "report": "build/reports/grenths-balance-policy.txt",
+  "result": "Standalone native probe passed normal, maximum-cap, reverse, equal, fractional and post-reaction-death cases.",
+  "remaining": [
+    "Retail fractional rounding, reverse target gain saturation and maximum-cap edge behavior remain unverified.",
+    "NPC condition/debt edge acceptance and non-Backfire spell reaction mechanisms need broader coverage.",
+    "Stale callback-time handling, rendered animation/sound and completed production rebuild remain pending."
+  ],
+  "fidelity": "Arithmetic assertions define a candidate policy, not proof of retail edge behavior. No armor/ordinary-heal/life-steal modifiers imported.",
+  "native_animation_evidence": {
+    "report": "grenths-balance-native-2022.json",
+    "result": "Pinned original cast consumer verifies quarter-second activation; frozen exact targeted20/body164 packet and native first consumer match.",
+    "limits": "Not rendered verification; no arithmetic inference from animation packets."
+  },
+  "world_application_stage": {
+    "test": "tests/grenths_balance_world.cpp",
+    "result": "Registered focused4/4 native gate passed0.05s (grenths-balance-world-build.txt and grenths-balance-world-tests.txt), including eight World cases.",
+    "scope": "Both current actor scopes, hostile team/plane/range/line checks, current Health, forward/reverse gain/loss, staged Deep Wound reconciliation, actual delta publication and targeted body164. Reaction-death continuation is trusted server-only; no client flag.",
+    "limits": "Dedicated healing-reduction, Deep Wound caster/target and pending-debt cases now pass against the current candidate policy. NPCs and dispatcher absent; retail edge verification and host rebuild pending."
+  },
+  "wound_modifier_gate": {
+    "report": "build/reports/grenths-balance-wound-tests.txt",
+    "result": "Native World fixture passed four additional cases: healing-hex bypass, wounded caster gain without ordinary-heal penalty, latent wound debt settlement, wounded target capacity. Both precise final Health fraction packets checked.",
+    "build": "build/reports/grenths-balance-wound-build.txt",
+    "fidelity": "Validates World candidate and existing Deep Wound policy, not retail fractional/cap ordering."
+  },
+  "npc_application_stage": {
+    "test": "tests/grenths_balance_npc.cpp",
+    "reports": [
+      "grenths-balance-npc-final-build.txt",
+      "grenths-balance-npc-final-tests.txt"
+    ],
+    "scope": "Real combat NPC Health/lifetime, hostility/damageability guards, range/layer/line/clock checks, copy-before-commit transfer, Deep Wound state, target fraction/body164 and player source death cleanup. No fake playerResources for NPC.",
+    "fixture_correction": "Initial reverse fixture swapped capacity/current Health; corrected500/100. Original failed report retained. Unknown-Health fixture initially violated catalog rule by marking unknown Health damageable; corrected to0damageable/0conditions with absent evidence. Catalog policy was preserved; failing guard report retained.",
+    "limits": "NPC condition/debt edge cases and retail ordering still need dedicated verification; normal dispatcher remains unbound. Host has not rebuilt this new NPC integration.",
+    "result": "Three registered Grenth suites pass0.04s. NPC fixture includes forward/reverse/reaction-death/wounded caster and stale/range/unknown-Health/neutral rejection."
+  },
+  "reaction_authority_stage": {
+    "test": "tests/grenths_reaction_authority.cpp",
+    "report": "build/reports/grenths-reaction-authority-epoch-tests.txt",
+    "mechanism": "One-use Grenth86 Backfire reaction-death proof bound to current Scope,event,time and post-death control epoch. Clear on later accepted spell event and departure. Ordinary death or another spell does not authorize continuation.",
+    "integration": "World proof API implemented. Dispatcher has not consumed this API yet;86 remains unbound.",
+    "limits": "Timestamp must match authoritative reaction time; stale callback-time handling remains a verification concern."
+  },
+  "casting_binding_stage": {
+    "test": "tests/grenths_balance_cast.cpp plus actual NPC cast in grenths_balance_npc.cpp",
+    "result": "Five registered Grenth suites passed0.06s;19 tooling tests passed. Actual250ms/10Energy/10recharge cast with body164, normal/nonlethal/lethal Backfire behavior, owner/target lifetime anchoring, cancel/interrupt, denied reaction/manual death and death-epoch race rejection.",
+    "authority": "One-use reaction proof now returns its control epoch; World application rechecks that epoch, preventing a consumed proof from authorizing a later death. Dead continuation skips Channeling and self-healing/energy aftermath.",
+    "reports": [
+      "grenths-balance-binding-build.txt",
+      "grenths-balance-binding-tests.txt"
+    ],
+    "production": "All-target Release build and249/249 native suite passed31.84s (grenths-balance-binding-full-build.txt and grenths-balance-binding-full-tests.txt); host contains Grenth binding."
+  },
+  "coverage": "161/575 captured player skills source-bound;414 awaiting binding;754 baseline skills without local capture.",
+  "current_full_gate": "249/249 passed31.84s. Includes Grenth casting, reaction authority, World/NPC and Distortion/block foundations. Does not cover subsequent Diversion World integration."
+}

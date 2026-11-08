@@ -1,0 +1,115 @@
+{
+  "source": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+  "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+  "definitions": [
+    {
+      "line": 6002,
+      "map": 148,
+      "item": {
+        "model": 2652,
+        "model_file": 93541,
+        "type": 22,
+        "base_value": 0,
+        "quantity": 1,
+        "interaction": 570429440,
+        "profession": 5,
+        "slot": 0,
+        "dye_tint": 0,
+        "dye1": 7,
+        "dye2": 0,
+        "dye3": 0,
+        "dye4": 0,
+        "modifiers_complete": true,
+        "modifiers": [
+          616039936,
+          647495680,
+          2760377603,
+          2761455616,
+          3221225472
+        ],
+        "name_encoded_utf16": [
+          9651,
+          48088,
+          37012,
+          21300
+        ],
+        "name": "Starter Cane",
+        "name_status": "decoded",
+        "observed_item_id": 12116
+      }
+    },
+    {
+      "line": 7367,
+      "map": 148,
+      "item": {
+        "model": 2787,
+        "model_file": 94904,
+        "type": 22,
+        "base_value": 0,
+        "quantity": 1,
+        "interaction": 570429440,
+        "profession": 3,
+        "slot": 0,
+        "dye_tint": 0,
+        "dye1": 5,
+        "dye2": 0,
+        "dye3": 0,
+        "dye4": 0,
+        "modifiers_complete": true,
+        "modifiers": [
+          616039680,
+          647495684,
+          2760377603,
+          2761455616,
+          3221225472
+        ],
+        "name_encoded_utf16": [
+          9762,
+          60084,
+          41282,
+          6389
+        ],
+        "name": "Starter Holy Rod",
+        "name_status": "decoded",
+        "observed_item_id": 2012
+      }
+    },
+    {
+      "line": 9609,
+      "map": 148,
+      "item": {
+        "model": 2694,
+        "model_file": 94936,
+        "type": 22,
+        "base_value": 0,
+        "quantity": 1,
+        "interaction": 570429440,
+        "profession": 4,
+        "slot": 0,
+        "dye_tint": 0,
+        "dye1": 2,
+        "dye2": 0,
+        "dye3": 0,
+        "dye4": 0,
+        "modifiers_complete": true,
+        "modifiers": [
+          616040192,
+          647495682,
+          2760377603,
+          2761455616,
+          3221225472
+        ],
+        "name_encoded_utf16": [
+          9687,
+          39411,
+          42256,
+          4016
+        ],
+        "name": "Starter Truncheon",
+        "name_status": "decoded",
+        "observed_item_id": 7236
+      }
+    }
+  ],
+  "policy": "Fresh level-one Prophecies creation; allocate owned IDs and customize to character. Does not infer opaque modifier semantics or establish combat correctness."
+}

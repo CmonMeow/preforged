@@ -1,0 +1,110 @@
+{
+  "skill": 10,
+  "status": "Source-bound instant stance; all-target Release build and242/242 native tests passed. Mechanics/rendered verification remains incomplete.",
+  "native_evidence": "hex-breaker-native-2022.json",
+  "implemented": "Canonical stance duration/retaliation and scoped proposed-registry one-use consumption only for hex applications. Nonhex/stale/expired/malformed stance cases do not consume. Speculative copy preserves authoritative stance until World commits.",
+  "validation": {
+    "native": "Instant48UI and exact captured simple21/casterresource21 first consumer pass.",
+    "policy": "Standalone native probe passes;build/reports/hex-breaker-policy-final.txt"
+  },
+  "critical_rules": [
+    "Do not cancel or fail entire cast:initial effects still occur.",
+    "Reject only protected hex application;other area recipients unaffected.",
+    "Do not register prevented hex end effects."
+  ],
+  "remaining": [
+    "Secondary-only area triggering and lethal retaliation during specialized area continuation require evidence.",
+    "NPC stance/casting and specialized hex interactions remain incomplete.",
+    "Initial lethal damage, retaliation/protection ordering and duration modifiers remain unverified.",
+    "Rendered effect/sound verification remains pending; production rebuild passed."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_hex_breaker.h": "59ac464cf1dc4c92afa39bbed6ee7f01a09159093ec82bb8e2d80fa689732adf",
+    "tests/hex_breaker_policy.cpp": "10ad4e8427d5ea268e8a861a3b345c6a77d09b98393bc83a78de299a40509f19",
+    "tools/protocol/hex_breaker_2022.py": "0ff08ac00c6ba61b91005cd3cd1d61ffd1bb36efe9cb24381bdc799dad0a6c67"
+  },
+  "coverage": "160/575 captured player skills source-bound;415 await binding;754 baseline skills without local activation capture.",
+  "transaction_stage": {
+    "status": "Candidate immutable selected-recipient registry/retaliation transaction implemented;notWorldbound",
+    "report": "build/reports/hex-breaker-transaction-corrected.txt",
+    "result": "Standalone native probe passed",
+    "scope": "Armor-ignore retaliation39atDom12,multiplier/flat reduction,zero and lethal damage. Immune or unknownHealth caster doesnotundohexprevention or fabricateNPCHealth. Invalidstate/stalegeneration/level rejectsproposal;originalregistryunchanged.",
+    "fixture_correction": "First fixture compile needed explicit bool conversion ofoptionalregistrylookup;failedlog retained.",
+    "source_sha256": {
+      "src/runtime/gw_hex_breaker_transaction.h": "8c8b3708cd9569bbd0e41ef9f5e95bad9dfeea2cf46429702aa3ae4b6a073a78",
+      "tests/hex_breaker_transaction.cpp": "c6615f0fb0846620e09a8d61697b7e9f900fe7e03394cfcdf4529fe6e4d1d728"
+    }
+  },
+  "tooling": "19 skill tooling tests passed in 0.134s. Fixed raw captures unchanged; derived coverage and body-form reports refreshed.",
+  "application_outcome_stage": {
+    "status": "Typed selected-recipient proposal implemented; not connected to World yet.",
+    "report": "build/reports/selected-hex-application-corrected.txt",
+    "result": "Standalone native test passed.",
+    "scope": "Applied, prevented and invalid are distinct. Prevention preserves an older same-name hex, consumes only the proposed stance, stages retaliation from the supplied post-initial-effect Health, and emits no Soul Barbs application event. Unprotected application still replaces the old hex and generates its observer event. Invalid clock/scope leaves original state unchanged.",
+    "fixture_correction": "The first fixture compile required an explicit bool conversion for an optional lookup; failed log retained.",
+    "source_sha256": {
+      "src/runtime/gw_selected_hex_application.h": "07c5c920bdb39d0cda0cdedfa9af120e2f654e00a91a44b2b6b93eda65c69ba7",
+      "tests/selected_hex_application.cpp": "7060c3f42bf0c9b581fbe17f7c05308d8b2f420e76a9f0f0411e79ebc83fdbcc"
+    }
+  },
+  "registered_gate": "All-target Release build and expanded237/237 native gate passed (hex-breaker-register-build.txt, hex-breaker-register-tests.txt). This validates the three registered foundation probes; skill10 World/casting integration remains incomplete.",
+  "world_application_stage": {
+    "status": "Trusted World application connected; Runtime skill10 remains unbound.",
+    "scope": "Backfire, Soul Barbs, movement hexes, and selected single-target degeneration-family hexes prevent application before timers, life-drain links and end-condition registration. Existing hex survives blocked renewal. Area-recipient policy remains pending. Specialized selected-recipient paths now include Parasitic Bond99, Phantom Pain44 and Faintheartedness135.",
+    "validation": "hex-breaker-specialized-build.txt and hex-breaker-specialized-tests.txt: 13 skills across five modes including delayed-effect absence, plus stance replacement. See actual report for result.",
+    "limitations": "No complete production gate or rendered validation for this stage. Other specialized hex handlers and area behavior remain pending."
+  },
+  "selected_area_stage": {
+    "status": "Selected recipient prevention implemented for degeneration-family area hexes.",
+    "validation": "hex-breaker-area-build.txt and hex-breaker-area-tests.txt passed; skills108 and142 protect selected player while nearby hostile player receives degeneration. Existing65 selected tests retained.",
+    "remaining": "Secondary-only recipient triggering, lethal retaliation with area continuation, atomic failure behavior across multiple recipients, specialized area handlers, Runtime activation and rendered validation remain unverified or incomplete.",
+    "full_gate": "Pre-fix all-target Release build and238/238 native tests passed30.93s; hex-breaker-world-full-build.txt and hex-breaker-world-full-tests.txt. This does not cover later integrated fixes."
+  },
+  "atomic_failure_regression": {
+    "status": "Integrated and registered; all6 focused Hex Breaker/application native suites passed0.07s, including rejected-area preservation regression.",
+    "test": "tests/hex_breaker_atomic_failure.cpp (not registered in current running full gate)",
+    "report": "build/reports/hex-breaker-atomic-before.txt",
+    "observed": "Area Suffering108 rejected due to nearby recipient clock300 > request200, but selected stance10 was consumed and caster Health500->461.",
+    "required_fix": "Stage prevention until all area recipient proposals validate, then commit protection/retaliation and applications. Do not treat existing focused area tests as atomicity proof.",
+    "staged_fix": {
+      "header": "build/staging/hex-breaker/gw_world_simulation.h",
+      "result": "Isolated candidate passes rejected-area preservation regression (hex-breaker-atomic-staged.txt). Production source not changed while full build runs.",
+      "mechanism": "Preflight selected protection without commit; defer actual stance consumption and retaliation until recipient/link proposals validate.",
+      "remaining": "Integrate after active build terminates, register regression, revalidate broader suite. Lethal retaliation and caster-benefit lifetime need separate review.",
+      "combined_regression": "hex-breaker-combined-world-staged.txt passes all existing 65 single-recipient scenarios, two area-recipient cases and stance replacement against both staged fixes.",
+      "baseline_sha256": "9b729fac253bb17b68ed975605bc09f1f570e34aea9485c3ea078385b654768c",
+      "candidate_sha256": "3b8ee7c574cc727f879c60e458199b6ee6658458bcbb7f1b7f903c7e9481fdb6"
+    }
+  },
+  "lethal_life_drain_stage": {
+    "regression": "tests/hex_breaker_life_drain_death.cpp",
+    "before": "hex-breaker-life-death-before.txt confirms Life Transfer state committed after caster-death cleanup.",
+    "candidate": "Isolated staged header now prevents life-drain state from being restored after lethal retaliation. See hex-breaker-life-death-staged.txt.",
+    "fidelity": "Enforces existing World death/life-drain lifetime invariant; exact retail timing and area continuation still require capture evidence.",
+    "production": "Integrated and registered; lethal-retaliation lifetime regression passed in the6-suite focused gate."
+  },
+  "integrated_host_gate": "server_host Release rebuild succeeded after atomicity/lifetime fixes (hex-breaker-integrated-host-build.txt); later initial-damage change not included in that binary.",
+  "initial_damage_stage": {
+    "status": "World conditional damaging-hex828 path integrated; Runtime10 remains unsupported.",
+    "validation": "hex-breaker-initial-tests.txt: initial cold damage54 retained while hex prevented and caster takes39 retaliation; absent prerequisite does not consume stance; lethal initial hit causes target death cleanup with no retaliation.",
+    "limits": "The lethal-initial ordering is candidate World policy, not retail-verified. General initial damage/retaliation/reaction ordering remains open.",
+    "test": "tests/hex_breaker_initial_damage.cpp",
+    "host": "Latest change not rebuilt into host binary yet.",
+    "regression_gate": "Eight focused native suites passed0.07s after rebuilding affected Hex Breaker World fixtures; hex-breaker-initial-regression-build.txt and hex-breaker-initial-regression-tests.txt.",
+    "skill_name": "Vile Miasma828; interaction probe, not new captured evidence. Manifest marks local capture missing."
+  },
+  "shadow_fear_area_stage": {
+    "status": "Selected-recipient Shadow of Fear136 prevention connected through specialized faintheartedness handler.",
+    "test": "Existing World fixture extended: selected owner retains no hex, nearby hostile receives136 and caster loses39 Health; report hex-breaker-shadow-fear-tests.txt.",
+    "evidence": "Local Hex_Breaker.html revision2668458, last edited2020-11-07, states initial effects persist and area hexes apply to other targets. Does not establish secondary-only triggering.",
+    "remaining": "Secondary-only recipient behavior remains unknown; lethal retaliation during specialized area continuation remains unverified. Skill10 normal dispatcher binding still incomplete."
+  },
+  "casting_binding_stage": {
+    "test": "tests/hex_breaker_cast.cpp",
+    "result": "Actual dispatcher test passed: instant48 activation, self-target override, scoped owner,5Energy/15recharge, body21, one-use Backfire prevention/39retaliation, reactivation after recharge, missing hook/scope/dead owner rejection.",
+    "report": "hex-breaker-cast-corrected-tests.txt",
+    "fixture_correction": "Initial fixture compile had ambiguous Reason enums; corrected to casting::Reason. Coverage tooling had stale expected-unbound10; updated to assert binding and detect omitted production hook.",
+    "production": "Dedicated World hook compiled into server_host; all-target Release build and242/242 native tests passed31.74s (hex-breaker-binding-full-build.txt and hex-breaker-binding-full-tests.txt)."
+  },
+  "current_full_gate": "242/242 passed31.74s; includes integrated atomicity/lifetime/initial-damage/casting regressions. Distortion and Grenth standalone probes remain unregistered and unbound."
+}

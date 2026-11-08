@@ -1,0 +1,59 @@
+{
+  "skill": 103,
+  "status": "Staged103hex,chance and projectile/ordinary-melee/single-melee/NPC failure reactions connected;multi-target/casting incomplete",
+  "native_evidence": "price-of-failure-native-2022.json",
+  "implemented": [
+    "Owned release ledger with monotonically assigned server event IDs and exact attacker/target lifetimes.",
+    "Out-of-order projectile completion;consume once before reactive damage callbacks.",
+    "Bounded4096pending releases;discard/retire removes pending events without inventing failure.",
+    "Canonical30s/25percent miss/rank0..20 damage1+3rank plan.",
+    "Current scoped hex plus miss/block/dodge/obstruction terminal event yields reaction;hit,target retirement,cancellation,expired/stale hexes do not.",
+    "World-only apply_price_of_failure stages a canonical scoped hex through the existing validated player/NPC application transaction;generic casting factory remains unsupported for103.",
+    "Owned current effect and caster lifetime validated before projectile failure callback applies a103armor-ignoring hit.",
+    "Barbs and Price of Failure share reactive Health/protection/death/credit delivery;existing Barbs regression passes.",
+    "Failure event consumed before damage callback;repeat polling cannot repeat damage."
+  ],
+  "focused_validation": "attack_outcomes_test and price_of_failure_test registered and compiled Release. Full192/192 CTest passed20.18s after production190target build passed22.45s.12 tooling tests pass.",
+  "remaining": [
+    "Cyclone recipient hit/miss outcomes now recorded atomically;multi-target Price103reaction count/ordering and casting remain unbound pending evidence.",
+    "Correct launch-origin obstruction/player projectile geometry.",
+    "Add actual casting/cost/recharge/cancel/interrupt binding.",
+    "Broader block/on-damage and NPC miss animation/retail scheduling checks.",
+    "Current196all-target/full-suite gate and rendered acceptance."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_attack_outcomes.h": "8c353eb3c759f39c5fed4992c111db20a3b2092ee2cdf102a21bb4aba372d919",
+    "src/runtime/gw_price_of_failure.h": "a5318db6e2252ef53ab65983fd9fc518727468e111abf9afdf7affce393eb93b",
+    "tests/attack_outcomes.cpp": "c476781549f4be681bc155d23bf2e44781bed6fbc2d7f4d11b47e43a378c8b67",
+    "tests/price_of_failure.cpp": "4fc7cc497933cf1bd91d14d48d08efaba3a162e1c52a22ca5a6312f03db37934",
+    "CMakeLists.txt": "98781d50cf2aeffebf555670b993284895f8fed7e57d4fe7f7e2b563c4b362fa",
+    "src/runtime/gw_world_simulation.h": "66366f4e8379a197f19ef960ea8ca582f26be66353e3c185a22f113911910b76",
+    "src/runtime/gw_npc_combat_catalog.h": "d9324990158788b8775f2fc41aaeafd8edd4a09a9fed4d3690aa65e75b831ede",
+    "tests/price_of_failure_world.cpp": "5688b72d683c0b41395ece203f77f5c32201e31453f31d7b588f4e5c4827a7b4",
+    "tests/projectile_attack_outcomes.cpp": "8e8b7a0023a1baccb1b2a05da96e988343e8fd56fe3af3c953a2075bea1d953f",
+    "tests/projectile_miss_state.cpp": "a1fea68ec0f1bb3309e49f991da717ec0d615f262e94f27b6489f7149ea16386",
+    "tests/ignite_arrows.cpp": "7b09a87efd752e81e91a81a0460850b4a3c3e09ceb9e0cad71d1f0312e13e50b",
+    "tests/captured_skills.cpp": "dcb8a5c4cb06982cfc4cab5e6743a412d3229ce690b30a0147d60d53d7d9460d",
+    "tests/world_weapon_attacks.cpp": "784cbcf9bd2914f6a8f5e954fce9a7657832c1056d38f8284094e9d8889dfa2e",
+    "tests/world_adrenaline.cpp": "f63d13ace8cb4f5524ed44b7790c8eaa3fe144ae6314ca4341dd9a790fc5a8db",
+    "tests/cyclone_axe.cpp": "e9571b53b56bcfc61759db51ba26fe6a74d0082b6cbbc9ec32ea70c08784a76a",
+    "tests/melee_attack_outcomes.cpp": "b24f2cb43a26eea5982cb818521c942c001a66c9768b0f4684f09b91f60ef941",
+    "tests/npc_attack_outcomes.cpp": "f50346f2fb7e9825630b64e9e578b5949e6ece8bcb30d8ddee8ab0def15d116f"
+  },
+  "full_validation": "Cyclone recipient outcome wiring passed all-target Release build and197/197 CTest22.55s:cyclone-outcomes-full-build.txt,cyclone-outcomes-full-tests.txt. Subsequent Mark150integration changes are not covered by that gate.",
+  "world_projectile_stage": "projectile-outcomes-implementation-review.json:ordinary projectile server release IDs/terminal classification connected and focused tested;Price damage callback not connected.",
+  "world_validation": "Registered price_of_failure_world,barbs,projectile_attack_outcomes3/3 passed0.03s. Tests cover ranks0/12/20,projectile miss/dodge reactive damage,successful-hit exclusion,renewal,removal,expiry,caster death/replacement,lethal impact-time death,Frenzy doubling,invalid targets and NPC hex renewal/expiry without degeneration.12 tooling tests pass.",
+  "random_sampling": "World hit resolvers now sample a server-owned mt19937_64 stream when Blind or Price adds a chance. Live InstanceSet creations receive entropy seeds;standalone simulations accept a reproducible seed(default0). Trusted draw injection is only for simulations/tests,no client opcode. Ordinary,fixed-damage,Cyclone and trusted NPC strike resolvers derive current scoped103chance and combine it with Blind multiplicatively.",
+  "rng_validation": "Five suites pass0.07s:price_of_failure_world,cyclone_axe,captured_skills,world_weapon_attacks,ignite_arrows. World tests cover exact25/92.5percent thresholds,two seeded200impact replays with same outcomes and Health totals,and invalid draws cancelling without reactive damage. Explicit draw injection controls legacy deterministic miss tests.12 tooling tests pass.",
+  "melee_npc_validation": "Registered melee_attack_outcomes,npc_attack_outcomes,npc_world_combat,price_of_failure_world4/4 passed0.16s. Tests cover ordinary/single-skill melee hit/miss,exactly-once reactive damage,range rejection,NPC-to-player/NPC-to-guardian miss reactions,and invalid NPC strike level with no outcome/damage.12 tooling tests pass.",
+  "stack_regression": "First194gate built successfully but193/194 tests passed;npc_world_combat crashed. Direct exitC00000FD confirmed stack overflow. New inline RNG increased World footprint;generator moved to lazily allocated heap state,seed retained inline. npc_world_combat and Price world focused suites then passed0.15s;current broader gate pending.",
+  "npc_before_probe_correction": "Initial standalone NPC before probe used an incorrect hard-coded strike level and was rejected at admission;that output is not proof of missing reactive delivery. Corrected fixture derives reviewed definition.level,explicitly tests wrong-level rejection,and verifies both valid NPC attack paths.",
+  "cyclone_outcome_validation": "Focused cyclone_axe,melee_attack_outcomes,npc_attack_outcomes,price_of_failure_world4/4 pass0.06s. Tests verify mixed player/NPC scopes,hit/miss classifications,exactly-once drain,server IDs/time,late invalid armor rollback without Health/outcome/ID commit,and exclusion of allies/out-of-range targets. This does not validate retail Price103multi-target reaction cardinality.",
+  "capture_search": "price-failure-cyclone-candidates.json:immutable files include3Price103starts and1Cyclone330start,all accounted against inventory;zero candidate affected-actor pairs within33seconds. Pre-existing/unobserved applications excluded;absence is not proof of reaction cardinality.",
+  "current_source_sha256": {
+    "src/runtime/gw_world_simulation.h": "b2eabc5c88dcd952a9d9613eb86fd40dee068709aefa3fc544c1417e29c5756b",
+    "src/runtime/gw_attack_outcome_batch.h": "23355bff2fa8bf2709725638c195578662f4eb27d96b87f4fc05442ad9a42780",
+    "tests/cyclone_axe.cpp": "7e0b1c14d60908b902c3886f9f6b38444486babd44ab5d49ae84b24310eacbef",
+    "tests/attack_outcome_batch.cpp": "25f7effbe1640bab9cf31b56f7ed5f55e32fc95766ceb222a6628d8965f8100e"
+  }
+}

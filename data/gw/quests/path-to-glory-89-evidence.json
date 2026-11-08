@@ -1,0 +1,284 @@
+{
+  "quest": 89,
+  "status": "installed_source_pending_native_validation",
+  "world_source": "data\\captures\\pre-searing-warrior-ele-2026-10-09\\world-13908-99220828.jsonl",
+  "world_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "snapshot_line": 3688,
+  "captured_quest": {
+    "quest_id": 89,
+    "log_state": 33,
+    "completed": false,
+    "current_mission": false,
+    "primary": true,
+    "area_primary": false,
+    "map_from": 148,
+    "map_to": 148,
+    "marker": {
+      "x": 11715.0,
+      "y": 3517.0,
+      "plane": 26,
+      "x_bits": 1178012672,
+      "y_bits": 1163644928,
+      "finite": true
+    },
+    "unknown_0024": 0,
+    "category": {
+      "encoded_utf16": [
+        15716
+      ],
+      "decoded": "Ascalon",
+      "status": "decoded"
+    },
+    "name": {
+      "encoded_utf16": [
+        6039,
+        45634,
+        37833,
+        1031
+      ],
+      "decoded": "The Path to Glory",
+      "status": "decoded"
+    },
+    "npc": {
+      "encoded_utf16": [
+        13209,
+        50766,
+        45044,
+        3929
+      ],
+      "decoded": "Armin Saberlin",
+      "status": "decoded"
+    },
+    "description": {
+      "encoded_utf16": [
+        6041,
+        40818,
+        63895,
+        21667,
+        266,
+        2985,
+        263,
+        76,
+        111,
+        103,
+        103,
+        101,
+        114,
+        1,
+        1,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        356
+      ],
+      "decoded": "You look ready for war, Logger. Ready as any of us are the first time, at any rate. That's good. From what I've seen, the war party will be prepared to head out soon. You'd best go talk to <c=@Quest>Sir Tydus</c> lest they set forth without you.\n\nReward:<brx>100 Experience<brx>",
+      "status": "decoded"
+    },
+    "objectives": {
+      "encoded_utf16": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        6040,
+        33057,
+        37192,
+        8533,
+        1
+      ],
+      "decoded": "{s}Go to Ascalon City to speak to Sir Tydus.",
+      "status": "decoded"
+    }
+  },
+  "packet_source": "data\\captures\\pre-searing-warrior-ele-2026-10-09\\packets-13908-99235906.jsonl",
+  "packet_sha256": "3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a",
+  "receipts_by_line": {
+    "39040": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100670578,
+      "opcode": 73,
+      "bytes": 80,
+      "complete": true,
+      "hex": "4900000059000000000c374600d05b451a0000009400000020000000643d00000100020007010200e82ad4e7971742b2c9930704000019b51166010199334ec6f4af590f000000004744f92f94000000"
+    },
+    "39041": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100670578,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "810000003e000000"
+    },
+    "39046": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100670640,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c000000590000009917729f97f9a3540a01a90b07014c006f0067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101640100004744f92f94000000505a34c37a8960c3377b1046a69ee3451300000000000000377b1046a69ee34513000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b01f62ab7c12dcf21130a01981721814891552101000000f62ab7c12dcf21130a01f02aa7c4009cbb3e0a0199334ec6f4af590f010001000000020700071705fe6900fe0615fe3a0efe8f0303000e9635bb303f432408352d783917fe120802030202fec61e030000000302fe6d0021fea60883fea9051d5822fe280004fe04011cfecd0a06fed20007feb30a09fe571200fea700005b1d3e0b04febe0f00fe0e02009f1702020240040404fe031e000000056135724f1afe06006f921a020202fe4a00a45502122cfeeb1d0000000000000000000000000002fe0107fe8705fe1b0800fe2010fe3400fe8d06fe51038a6700a814101010103b53930f02020204fe"
+    },
+    "39225": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100672625,
+      "opcode": 128,
+      "bytes": 248,
+      "complete": true,
+      "hex": "800000009d17cdb125ec22350a01a90b07014c006f0067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101640100000000000095def82f0000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe"
+    },
+    "39226": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100672625,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "810000002a000000"
+    },
+    "39227": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100672625,
+      "opcode": 126,
+      "bytes": 272,
+      "complete": true,
+      "hex": "7e00000017000000df2a39e8fbb6a91900004c006f0067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101640100000000000095def82f0000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b0107598000ffffffff"
+    },
+    "39254": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 77,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4d00000059000000000c374600d05b451a00000094000000"
+    },
+    "39255": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c000000590000009917729f97f9a3540a01a90b07014c006f0067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b5116601016401000095def82f0000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b01f62ab7c12dcf21130a01981721814891552101000000f62ab7c12dcf21130a01f02aa7c4009cbb3e0a0199334ec6f4af590f010001000000020700071705fe6900fe0615fe3a0efe8f0303000e9635bb303f432408352d783917fe120802030202fec61e030000000302fe6d0021fea60883fea9051d5822fe280004fe04011cfecd0a06fed20007feb30a09fe571200fea700005b1d3e0b04febe0f00fe0e02009f1702020240040404fe031e000000056135724f1afe06006f921a020202fe4a00a45502122cfeeb1d0000000000000000000000000002fe0107fe8705fe1b0800fe2010fe3400fe8d06fe51038a6700a814101010103b53930f02020204fe"
+    },
+    "39256": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000059000000"
+    },
+    "39261": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee0000000000000064000000"
+    },
+    "39264": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000059000000"
+    },
+    "39269": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 128,
+      "bytes": 248,
+      "complete": true,
+      "hex": "80000000843395b7c5b54f65000000000000c99307040100000067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b5116601016401000095def82f0000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe"
+    },
+    "39270": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "810000002a000000"
+    },
+    "39271": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 126,
+      "bytes": 272,
+      "complete": true,
+      "hex": "7e00000018000000863357aabe873f6e0000c99307040100000067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b5116601016401000095def82f0000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b0184000000ffffffff"
+    },
+    "39272": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 100673296,
+      "opcode": 126,
+      "bytes": 272,
+      "complete": true,
+      "hex": "7e000000190000008833fa869ddaef410000c99307040100000067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b5116601016401000095def82f0000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b0180000000ffffffff"
+    }
+  },
+  "window_direction_counts": {
+    "StoC": 256
+  },
+  "wiki_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\The_Path_to_Glory.html",
+  "wiki_sha256": "b960ef4adbbce5d76999b9d38ae8dca4ce03170a291add2528e884a22ace2cf6",
+  "catalog_sha256": "0aae8aabeab828915da36d1a40b3737783c0874faa8741af37832e287cc9aa07",
+  "captured_character_argument": "Logger",
+  "policy": [
+    "Armin Saberlin148 offer, Sir Tydus148 turn-in,100XP, rewarded primary-test gate consistent with installed pre progression.",
+    "Wiki requires completed primary test; it does not require quest79 or a secondary profession. Rewarded rather than merely objective-completed is explicit private admission policy.",
+    "Greeting/menu39225..39227 precedes refresh/removal/XP39254..39264 by671ms. No CtoS input is present in the inspected window; private tokens are not recovered retail identifiers.",
+    "Pre-removal bounded description/objectives exactly repeat ACTIVE snapshot3688. PRIVATE atomic active->completed->rewarded storage does not claim retail durability or greeting-triggered completion.",
+    "Accept/restore native72+75; turn-in76marker+75boundACTIVEdetails+81remove prepared before durable100XP transaction. No invented83/checkmark or duplicate72/79.",
+    "Existing auth absolute XP publication precedes this batch; original incoming refresh/removal precedes XP, so exact combined ordering is not claimed.",
+    "Captured Tydus marker is valid only for current map148; other map routes stay unresolved. Character literal argument is session-bound.",
+    "Reward DOES NOT start Academy, Searing, party mission or map/profession changes; later captured dialogue buttons are outside this implementation."
+  ],
+  "limitations": [
+    "Incoming-only timing does not recover actual reward-choice CtoS input or persistence boundaries.",
+    "Modern logger opcodes do not prove native2022 mappings; existing native serializers are independently proved.",
+    "Rendered end-to-end behavior remains unverified."
+  ],
+  "policy_document": "docs/path-to-glory89-policy-20261030.txt",
+  "installed_catalog": "data/gw/quests/path-to-glory-89.fwqc"
+}

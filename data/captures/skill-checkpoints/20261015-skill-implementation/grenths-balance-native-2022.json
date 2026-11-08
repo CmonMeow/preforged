@@ -1,0 +1,51 @@
+{
+  "skill": 86,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 52,
+    "seconds": 0.25,
+    "stored_skill": 86,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 0,
+    "0x48": 0,
+    "0x4c": 10,
+    "0x5c": 0,
+    "0x60": 0,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 164
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "a83500010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 52095,
+    "tick_ms": 16817703,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000056000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 52105,
+    "tick_ms": 16818000,
+    "hex": "a0000000140000001e00000019000000a4000000"
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "tool_sha256": "5cbb2d8e1c7005d6d4d6a305c2af7ad85607e3383dfb808fe01d8ea401f00e2f",
+  "limitations": [
+    "Cast/body evidence does not verify Health-transfer arithmetic or fractional rounding.",
+    "Post-reaction caster death, reverse gain saturation and rendered behavior remain unverified.",
+    "No World/Runtime binding claimed."
+  ]
+}

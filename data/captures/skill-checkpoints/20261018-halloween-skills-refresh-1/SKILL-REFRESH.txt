@@ -1,0 +1,103 @@
+HALLOWEEN SESSION SKILL EVIDENCE REFRESH
+Checkpoint: 20261018-halloween-skills-refresh-1; cutoff UTC: 2026-10-18T23:37:33.786604+00:00
+Comparison: 20261018-polymock-refresh-2
+Seasonal populations are not regular spawn baselines. No NPC spawn import performed.
+Other/unassigned actors are not automatically enemies. Activation is not full mechanics verification.
+Implementation baseline remains 20261017-npc-refresh-2.
+
+NEW LOCAL ACTIVATION IDS: 10
+2288: Polymock Lamentation | local 20; other/unassigned 0 | packets-21464-51537578.jsonl:199317
+2289: Polymock Spirit Rift | local 2; other/unassigned 0 | packets-21464-51537578.jsonl:199287
+2290: Polymock Painful Bond | local 2; other/unassigned 0 | packets-21464-51537578.jsonl:199266
+2758: Candy Corn Strike | local 42; other/unassigned 1613 | packets-38060-79906390.jsonl:24969
+2759: Rocket Propelled Gobstopper | local 4; other/unassigned 136 | packets-38060-79906390.jsonl:26146
+2760: Rain of Terror spell | local 8; other/unassigned 404 | packets-38060-79906390.jsonl:25485
+2761: Cry of Madness | local 2; other/unassigned 103 | packets-38060-79906390.jsonl:39424
+2762: Sugar Infusion | local 2; other/unassigned 1423 | packets-38060-79906390.jsonl:40872
+2763: Feast of Vengeance | local 13; other/unassigned 709 | packets-38060-79906390.jsonl:25250
+2764: Animate Candy Minions | local 4; other/unassigned 314 | packets-38060-79906390.jsonl:27604
+
+NEW OTHER/UNASSIGNED ACTIVATION IDS: 43
+50: Wastrel's Worry | other-actor receipt packets-38060-79906390.jsonl:246329
+78: Epidemic | other-actor receipt packets-38060-79906390.jsonl:266289
+84: Animate Bone Fiend | other-actor receipt packets-38060-79906390.jsonl:274173
+90: Verata's Sacrifice | other-actor receipt packets-38060-79906390.jsonl:292630
+116: Dark Aura | other-actor receipt packets-38060-79906390.jsonl:249993
+149: Plague Sending | other-actor receipt packets-38060-79906390.jsonl:308065
+158: Touch of Agony | other-actor receipt packets-38060-79906390.jsonl:250550
+219: Obsidian Flame | other-actor receipt packets-38060-79906390.jsonl:25021
+221: Conjure Lightning | other-actor receipt packets-38060-79906390.jsonl:268008
+318: Defy Pain | other-actor receipt packets-38060-79906390.jsonl:79372
+353: Crude Swing | other-actor receipt packets-38060-79906390.jsonl:292174
+428: Incendiary Arrows | other-actor receipt packets-38060-79906390.jsonl:266748
+512: Crippling Attack | other-actor receipt packets-38060-79906390.jsonl:297794
+821: Icy Veins | other-actor receipt packets-38060-79906390.jsonl:31093
+882: Signet of Disenchantment | other-actor receipt packets-38060-79906390.jsonl:293545
+892: Quivering Blade | other-actor receipt packets-38060-79906390.jsonl:32033
+1066: Spoil Victor | other-actor receipt packets-38060-79906390.jsonl:289279
+1075: Vampiric Swarm | other-actor receipt packets-38060-79906390.jsonl:289546
+1269: Signet of Rage | other-actor receipt packets-38060-79906390.jsonl:25200
+1379: Glowing Gaze | other-actor receipt packets-38060-79906390.jsonl:323483
+1416: Barbarous Slice | other-actor receipt packets-38060-79906390.jsonl:32657
+1483: Banishing Strike | other-actor receipt packets-38060-79906390.jsonl:26506
+1486: Reap Impurities | other-actor receipt packets-38060-79906390.jsonl:53902
+1496: Balthazar's Rage | other-actor receipt packets-38060-79906390.jsonl:25260
+1546: Blazing Spear | other-actor receipt packets-38060-79906390.jsonl:37363
+1547: Mighty Throw | other-actor receipt packets-38060-79906390.jsonl:26370
+1658: Symbolic Posture | other-actor receipt packets-38060-79906390.jsonl:35850
+1761: Zealous Vow | other-actor receipt packets-38060-79906390.jsonl:24972
+1779: "Make Your Time!" | other-actor receipt packets-38060-79906390.jsonl:24973
+1997: Withering Aura | other-actor receipt packets-38060-79906390.jsonl:30702
+2054: Shrinking Armor | other-actor receipt packets-38060-79906390.jsonl:35891
+2143: Disrupting Shot | other-actor receipt packets-38060-79906390.jsonl:289354
+2238: Spear of Redemption | other-actor receipt packets-38060-79906390.jsonl:25384
+2275: Polymock Smite Hex | see cumulative audit; no current-session start receipt
+2758: Candy Corn Strike | other-actor receipt packets-38060-79906390.jsonl:25122
+2759: Rocket Propelled Gobstopper | other-actor receipt packets-38060-79906390.jsonl:26494
+2760: Rain of Terror spell | other-actor receipt packets-38060-79906390.jsonl:24980
+2761: Cry of Madness | other-actor receipt packets-38060-79906390.jsonl:25649
+2762: Sugar Infusion | other-actor receipt packets-38060-79906390.jsonl:25136
+2763: Feast of Vengeance | other-actor receipt packets-38060-79906390.jsonl:25313
+2764: Animate Candy Minions | other-actor receipt packets-38060-79906390.jsonl:25738
+2768: Mad King Pony Support | other-actor receipt packets-38060-79906390.jsonl:25217
+2770: Maddening Laughter | other-actor receipt packets-38060-79906390.jsonl:46591
+
+NEW DAMAGE_SKILL_SIGHTINGS: 19
+50: Wastrel's Worry | 5 sightings
+101: Barbs | 8 sightings
+151: Feast of Corruption | 2 sightings
+158: Touch of Agony | 1 sightings
+353: Crude Swing | 1 sightings
+428: Incendiary Arrows | 1 sightings
+512: Crippling Attack | 1 sightings
+1066: Spoil Victor | 5 sightings
+1075: Vampiric Swarm | 6 sightings
+1269: Signet of Rage | 2 sightings
+1382: Freezing Gust | 5 sightings
+1484: Mystic Sweep | 1 sightings
+1485: Eremite's Attack | 1 sightings
+1549: Harrier's Toss | 1 sightings
+2004: Smite Condition | 3 sightings
+2143: Disrupting Shot | 2 sightings
+2238: Spear of Redemption | 2 sightings
+2275: Polymock Smite Hex | 1 sightings
+2762: Sugar Infusion | 2 sightings
+
+NEW EFFECT_SKILL_SIGHTINGS: 7
+50: Wastrel's Worry | 9 sightings
+821: Icy Veins | 3 sightings
+1066: Spoil Victor | 7 sightings
+2054: Shrinking Armor | 38 sightings
+2322: see numeric evidence | 1 sightings
+2757: see numeric evidence | 8 sightings
+2761: Cry of Madness | 591 sightings
+
+
+CURRENT SESSION FESTIVAL QUESTS
+Snapshot state is not proof of reward collection or full dialogue coverage.
+1406: Evil Residents | NPC The Countess of Hakewood | completion flag seen: False | world-38060-79906984.jsonl:21170
+1161: An Ingenious Plan | NPC The Countess of Hakewood | completion flag seen: False | world-38060-79906984.jsonl:21170
+1160: Commandeering a Mortal Vessel | NPC The Countess of Hakewood | completion flag seen: True | world-38060-79906984.jsonl:21092
+1159: Heirlooms of the Mad King | NPC The Countess of Hakewood | completion flag seen: False | world-38060-79906984.jsonl:21170
+1120: Something Wicked This Way Comes | NPC Mad King's Steward | completion flag seen: False | world-38060-79906984.jsonl:21170
+1434: Better You Than Me | NPC Gul Terror | completion flag seen: False | world-38060-79906984.jsonl:21170

@@ -1,0 +1,260 @@
+{
+  "checkpoint": "20261024-all-completed",
+  "verifier_sha256": "a69973435f2b9b665258802f8c813863e8a19839ad4d7bc3472e3a1c1dffee60",
+  "baseline_verifier_sha256": "cb5f7213242d1ddd740f8371fae6ce880bd1c1cb45b734e3f0f86a0b45a61d0f",
+  "packet_sha256": {
+    "packets-1360-15821281.jsonl": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+    "packets-19472-19186421.jsonl": "3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb"
+  },
+  "windows": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "selfless_skill": 1952,
+      "effect_id": 109,
+      "active_open_line_interval": [
+        313665,
+        313994
+      ],
+      "terminal": "boundary",
+      "casts": [],
+      "resource_candidates": [],
+      "energy_property33": [],
+      "preceding_local_modifier_casts": {
+        "198": {
+          "receipt": {
+            "line": 157183,
+            "tick_ms": 19070250,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              198
+            ],
+            "hex": "9f0000003c00000019000000c6000000"
+          },
+          "elapsed_to_selfless_ms": 2969640
+        },
+        "199": {
+          "receipt": {
+            "line": 163154,
+            "tick_ms": 19158359,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              199
+            ],
+            "hex": "9f0000003c00000019000000c7000000"
+          },
+          "elapsed_to_selfless_ms": 2881531
+        },
+        "200": {
+          "receipt": {
+            "line": 157212,
+            "tick_ms": 19072218,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              200
+            ],
+            "hex": "9f0000003c00000019000000c8000000"
+          },
+          "elapsed_to_selfless_ms": 2967672
+        },
+        "203": {
+          "receipt": {
+            "line": 168919,
+            "tick_ms": 19253156,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              203
+            ],
+            "hex": "9f0000003c00000019000000cb000000"
+          },
+          "elapsed_to_selfless_ms": 2786734
+        }
+      }
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "selfless_skill": 2095,
+      "effect_id": 73,
+      "active_open_line_interval": [
+        322109,
+        322427
+      ],
+      "terminal": "remove",
+      "casts": [
+        {
+          "line": 322150,
+          "tick_ms": 22161046,
+          "complete": true,
+          "words": [
+            160,
+            60,
+            25,
+            28,
+            2105
+          ],
+          "hex": "a00000003c000000190000001c00000039080000"
+        }
+      ],
+      "resource_candidates": [
+        {
+          "line": 322149,
+          "tick_ms": 22161046,
+          "complete": true,
+          "words": [
+            162,
+            62,
+            25,
+            3173242634
+          ],
+          "hex": "a20000003e000000190000000ad723bd",
+          "last_float": -0.03999999910593033
+        }
+      ],
+      "energy_property33": [],
+      "preceding_local_modifier_casts": {
+        "198": {
+          "receipt": {
+            "line": 157183,
+            "tick_ms": 19070250,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              198
+            ],
+            "hex": "9f0000003c00000019000000c6000000"
+          },
+          "elapsed_to_selfless_ms": 3088593
+        },
+        "199": {
+          "receipt": {
+            "line": 163154,
+            "tick_ms": 19158359,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              199
+            ],
+            "hex": "9f0000003c00000019000000c7000000"
+          },
+          "elapsed_to_selfless_ms": 3000484
+        },
+        "200": {
+          "receipt": {
+            "line": 157212,
+            "tick_ms": 19072218,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              200
+            ],
+            "hex": "9f0000003c00000019000000c8000000"
+          },
+          "elapsed_to_selfless_ms": 3086625
+        },
+        "203": {
+          "receipt": {
+            "line": 168919,
+            "tick_ms": 19253156,
+            "complete": true,
+            "words": [
+              159,
+              60,
+              25,
+              203
+            ],
+            "hex": "9f0000003c00000019000000cb000000"
+          },
+          "elapsed_to_selfless_ms": 2905687
+        }
+      }
+    },
+    {
+      "file": "packets-19472-19186421.jsonl",
+      "selfless_skill": 2095,
+      "effect_id": 100,
+      "active_open_line_interval": [
+        480989,
+        481106
+      ],
+      "terminal": "remove",
+      "casts": [
+        {
+          "line": 481101,
+          "tick_ms": 30031593,
+          "complete": true,
+          "words": [
+            159,
+            60,
+            25,
+            2379
+          ],
+          "hex": "9f0000003c000000190000004b090000"
+        }
+      ],
+      "resource_candidates": [
+        {
+          "line": 481100,
+          "tick_ms": 30031593,
+          "complete": true,
+          "words": [
+            162,
+            62,
+            25,
+            3188475427
+          ],
+          "hex": "a20000003e0000001900000023460cbe",
+          "last_float": -0.13698630034923553
+        }
+      ],
+      "energy_property33": [],
+      "preceding_local_modifier_casts": {}
+    },
+    {
+      "file": "packets-19472-19186421.jsonl",
+      "selfless_skill": 2095,
+      "effect_id": 119,
+      "active_open_line_interval": [
+        482001,
+        482399
+      ],
+      "terminal": "boundary",
+      "casts": [],
+      "resource_candidates": [],
+      "energy_property33": [],
+      "preceding_local_modifier_casts": {}
+    }
+  ],
+  "findings": [
+    "Only two local cast starts occur after Selfless effect addition and before its first removal/boundary: Seed of Life2105 targeted at actor28, and untargeted Volfen Blessing2379.",
+    "Seed of Life has modern162/kind62 float-0.04 immediately before start; Volfen Blessing has kind62 float approximately-0.1369863.",
+    "Existing original-client timing proof classifies kind62 as cast timing override, not an Energy debit. Neither value can be converted into paid Energy.",
+    "No modern162/property33 current-Energy receipt or modern156/157/158 curve candidate occurs in the four active intervals.",
+    "Seed target28 differs from caster25, but raw actor IDs alone do not prove ally/player classification. Untargeted Volfen form does not test an ally spell discount.",
+    "Prior modifier cast receipts are contextual history only; they do not establish active glyph charges or Quickening Zephyr spirit ownership/range."
+  ],
+  "ordering_limits": [
+    "No detectable paid-Energy debit establishes the Selfless discount even in the targeted Seed example.",
+    "No controlled paired casts with independent base cost, allegiance rank, resource capacity and modifier state exist in these windows.",
+    "Quickening Zephyr versus Selfless ordering, glyph/Lesser Energy versus Selfless ordering, integer rounding and minimum-cost behavior are not distinguishable.",
+    "Absence is scoped to decoded packet forms and these windows; unrelated incomplete packets and omitted capture fields prevent a universal no-cost assertion.",
+    "No client or shared runtime edits; report uses only the frozen checkpoint and existing offline timing classification."
+  ],
+  "classification_reference": "tools/protocol/divine_spirit_2022.py:timing_override (modern162/kind62 maps to original161/kind61 actor timing event24)"
+}

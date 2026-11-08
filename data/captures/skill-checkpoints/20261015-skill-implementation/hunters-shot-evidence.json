@@ -1,0 +1,36 @@
+{
+  "skill": 391,
+  "capture": {
+    "id": 391,
+    "name": "Hunter's Shot",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 0,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 426272,
+        "tick_ms": 24459718,
+        "actor": 25,
+        "map": 280,
+        "hex": "a000000032000000190000001e00000087010000",
+        "kind": 50
+      }
+    ],
+    "endpoint_evidence": [],
+    "body_effect_evidence": []
+  },
+  "wiki_sha256": "8d9106f0580d732269868eb10caffd7270b551ec68f72c125a7003902063ff98",
+  "mechanics": [
+    "Bleeding on hit; no moving-target requirement in this backed-up balance.",
+    "Duration3..25s at Marksmanship0..15.",
+    "Pinned native body consumer uses1s activation and style41/state45."
+  ],
+  "limits": [
+    "Rendered appearance and general block/dodge mechanics not verified."
+  ]
+}

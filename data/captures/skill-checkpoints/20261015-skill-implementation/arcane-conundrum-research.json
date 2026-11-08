@@ -1,0 +1,174 @@
+{
+  "skill": 36,
+  "state": "source runtime/world binding implemented; full build and167 regression tests passed; rendered acceptance pending",
+  "capture": {
+    "id": 36,
+    "name": "Arcane Conundrum",
+    "obtainable_baseline": true,
+    "runtime_status": "unsupported",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 1,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86648,
+        "tick_ms": 8365265,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e00000024000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86663,
+        "tick_ms": 8367140,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": []
+  },
+  "wiki": {
+    "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Arcane_Conundrum.html",
+    "sha256": "39bfa2ff0917647be27059968d7b9477780fce4cafbe39a108a4c255e0d91de5"
+  },
+  "native_proof": "tools/protocol/arcane_conundrum_2022.py",
+  "required_mechanics": [
+    "Target foe and adjacent foes independently receive hex.",
+    "Duration 5..15 seconds at Illusion Magic 0..15.",
+    "Double spell activation time; do not slow signets or attack skills.",
+    "Caster gains 1..7 Energy at rank 0..15 from each affected foe when hex ends.",
+    "Hex persists when caster dies; preserve lifetime-safe attribution.",
+    "Respect shared activation modifier cap and separate Fast Casting."
+  ],
+  "integration_requirements": [
+    "Use scoped caster/target lifetime links for deferred Energy return.",
+    "Settle expiry chronologically before later casts.",
+    "Differentiate natural expiry, cleansing, renewal, target death, source death and map departure; verify end-trigger semantics.",
+    "Apply area recipients transactionally across players and NPCs.",
+    "No Energy return may credit a reused actor ID after reconnect."
+  ],
+  "limits": [
+    "Rendered visual acceptance remains pending.",
+    "Frozen activation and completion are not proof of successful retail end rewards.",
+    "Renewal, target death, and delayed-tick reward timing need further retail comparison.",
+    "NPC spellcasting AI remains incomplete."
+  ],
+  "source_foundation": [
+    "src/runtime/gw_arcane_conundrum.h",
+    "tests/arcane_conundrum.cpp"
+  ],
+  "focused_tests": {
+    "arcane_conundrum": "passed",
+    "coverage": [
+      "native duration/reward rank endpoints",
+      "independent per-recipient rewards",
+      "duplicate end prevention",
+      "stale target generation rejection",
+      "caster departure invalidation",
+      "chronology and forged-link rejection"
+    ],
+    "cast_timing": "passed"
+  },
+  "activation_modifier": "implemented in shared world/NPC timing helper; spell-only, unique-name stacking, 2.5 cap, future/expiry boundaries focused-tested",
+  "integrated_tests": [
+    "actual Runtime cast at rank12, energy cost10 and 2s activation",
+    "primary player or NPC with mixed adjacent recipients",
+    "ally and distant NPC exclusion, inclusive166-unit boundary",
+    "spell-only slowdown and natural expiry",
+    "caster death preserves hex and per-recipient returns",
+    "Shatter Delusions removal returns energy exactly once",
+    "renewal replaces prior reward timers without duplicate return",
+    "source leaves and actor ID reused: no old reward"
+  ],
+  "target_particle_capture": [
+    {
+      "skill": 36,
+      "name": "Arcane Conundrum",
+      "runtime_status": "implemented_binding",
+      "roles": [
+        "target_resource"
+      ],
+      "endpoint": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86663,
+        "tick_ms": 8367140,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "event": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86664,
+        "tick_ms": 8367140,
+        "actor": 30,
+        "map": 280,
+        "hex": "a0000000140000001e000000190000003e000000",
+        "opcode": 160,
+        "kind": 20,
+        "resource": 62,
+        "source_actor": 25,
+        "instance_epoch": 27,
+        "local_actor": 25,
+        "affected_local": false,
+        "attribution": "unassigned_resource_event"
+      },
+      "source_matches": true,
+      "review_status": "candidate_not_proven_skill_attribution"
+    },
+    {
+      "skill": 36,
+      "name": "Arcane Conundrum",
+      "runtime_status": "implemented_binding",
+      "roles": [
+        "target_resource"
+      ],
+      "endpoint": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86663,
+        "tick_ms": 8367140,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "event": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86665,
+        "tick_ms": 8367140,
+        "actor": 30,
+        "map": 280,
+        "hex": "a0000000140000001e000000190000003e000000",
+        "opcode": 160,
+        "kind": 20,
+        "resource": 62,
+        "source_actor": 25,
+        "instance_epoch": 27,
+        "local_actor": 25,
+        "affected_local": false,
+        "attribution": "unassigned_resource_event"
+      },
+      "source_matches": true,
+      "review_status": "candidate_not_proven_skill_attribution"
+    }
+  ],
+  "capture_interpretation": "Two identical kind20 target30/source25/resource62 packets at tick8367140 coincide with caster25 completion. This supports source/target particle identity, not two distinct recipients or Energy-return mechanics.",
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/arcane-conundrum-full-build.txt"
+  },
+  "full_suite": {
+    "passed": 167,
+    "failed": 0,
+    "seconds": 29.26,
+    "report": "build/reports/arcane-conundrum-full-tests.txt"
+  }
+}

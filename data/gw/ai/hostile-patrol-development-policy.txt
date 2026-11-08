@@ -1,0 +1,38 @@
+Hostile patrol development policy, 2026-10-28
+
+Production activation is restricted to the existing quest75 Grawl and quest49
+Brood rosters,
+owner, quest cycle and exact NPC lifetime. Health80 and the existing combat
+policy remain sourced from quests/grawl-development-combat.txt and
+quests/grawl-melee-development-policy.txt. No population is duplicated, and
+no unknown health, armor, Energy, spellbook or skill is supplied. Brood retains
+its existing domination-magic-development-combat.txt Health100 and authored
+armor0/Energy40,pips5, with Aura180/IceSpear214 combat as documented in
+domination-magic-ai-development-policy.txt. Patrol adds no combat values.
+
+Idle patrol offsets relative to original spawn are (80,0), (0,80), (-80,0),
+(0,-80), with 1200ms pauses and 6000ms maximum attempts per leg. These numbers
+and the cyclic choice are authored private-server playability policy, not a
+reconstruction of retail wander. Existing navigation validates each route;
+an authoritative unavailable route, unsupported layer or invalid route request
+retires the idle leg immediately, then tries the next offset after the pause.
+Missing observations, zero travel budget and valid moving routes keep their
+original maximum leg attempt deadline. This recovery choice is authored policy.
+Movement obeys existing speed/conditions/wards, action control and home leash.
+
+Quest Grawl and Brood still acquire only their owner after authoritative health loss.
+Merely approaching or selecting them does not initiate combat. Combat and
+return-home take priority over idle patrol; patrol resumes after disengagement.
+The existing generic hostile controllers additionally accept committed positive
+damage as provocation outside acquisition but within their authored follow
+radius, unless already returning home. This does not implement linked-group
+aggro or retail threat weights. Generic ordinary-only enrollment requires an
+explicit attack profile and existing reviewed combat health/relation.
+
+Evidence boundary: ai/capture-behavior-evidence.txt and
+ai/ai-action-and-policy-evidence.txt distinguish observed NPC movement and
+attack/damage acquisition from unmeasured patrol centers/radii/thresholds.
+Canonical npc-combat.txt is relation-only and remains unenrolled without the
+missing combat data. npc_ai_coverage exposes unknown-health and active counts.
+Native regressions prove mechanics only; rendered-client verification remains
+separate, and no official capture client is touched by this implementation.

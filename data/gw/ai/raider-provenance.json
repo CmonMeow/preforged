@@ -1,0 +1,159 @@
+{
+  "status": "five exact lifetimes exported; all5 real-map native patrol/combat/return/reconnect cases pass; production core and isolated auth/roster/initial-world handshake pass; not deployed or rendered",
+  "captured_lifetime": "53:164:1",
+  "runtime_binding": {
+    "map": 146,
+    "actor": 59001,
+    "definition": 59001
+  },
+  "world": {
+    "path": "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl",
+    "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+    "definition_line": 14034,
+    "definition": 1421
+  },
+  "packets": {
+    "path": "data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl",
+    "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+    "creation": 140908,
+    "health120": 141398,
+    "attack_start": 141503,
+    "attack_finish": 141542,
+    "despawn": 143075
+  },
+  "wiki": {
+    "path": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Bandit_Raider.html",
+    "oldid": 2604166,
+    "sha256": "0024219d3a783c1d025ff18c39d37f1883d07377e0f114db444ec1b52764a15c",
+    "fact": "hammer weapon, blunt damage"
+  },
+  "outputs": {
+    "data/gw/ai/raider-development-npcs.txt": "00e6ec6bdd3e2fc84796953337ae5ede0e16195d0391bc6f9962b846cff25e78",
+    "data/gw/ai/raider-development-combat.txt": "8e7c431448979aca8d55cdea566e88d2021540a91dc858d2c6e950e614c82ef2",
+    "data/gw/ai/raider-development-policy.txt": "9b00937819a33845baf29853f112b771a5b451b0a2b94ef8001ef034670010c3"
+  },
+  "limits": [
+    "Exact same lifetime supplies identity/Health/creation/attack.",
+    "Full health, armor and ordinary profile magnitude/timing are authored.",
+    "Body traits and Energy remain unknown.",
+    "Creation coordinate is not proven retail spawn.",
+    "Lifetime53:194:1 has ordinary start/stopped only; completed melee behavior is explicitly authored."
+  ],
+  "population": [
+    {
+      "captured_lifetime": "53:164:1",
+      "actor": 59001,
+      "definition_line": 14034,
+      "definition": 1421,
+      "creation": 140908,
+      "health120": 141398,
+      "ordinary_start": 141503,
+      "ordinary_end": {
+        "packet_line": 141542,
+        "tick_ms": 87183921,
+        "kind": 1,
+        "outcome": "finished",
+        "value": 0,
+        "elapsed_ms": 812
+      },
+      "despawn": 143075,
+      "placement": [
+        -7931.35009765625,
+        1981.5538330078125,
+        0
+      ]
+    },
+    {
+      "captured_lifetime": "53:163:1",
+      "actor": 59002,
+      "definition_line": 14034,
+      "definition": 1421,
+      "creation": 140931,
+      "health120": 141476,
+      "ordinary_start": 141462,
+      "ordinary_end": {
+        "packet_line": 141511,
+        "tick_ms": 87183265,
+        "kind": 1,
+        "outcome": "finished",
+        "value": 0,
+        "elapsed_ms": 797
+      },
+      "despawn": 143260,
+      "placement": [
+        -8206.0595703125,
+        2034.3111572265625,
+        0
+      ]
+    },
+    {
+      "captured_lifetime": "53:191:1",
+      "actor": 59003,
+      "definition_line": 14034,
+      "definition": 1421,
+      "creation": 141106,
+      "health120": 142764,
+      "ordinary_start": 142853,
+      "ordinary_end": {
+        "packet_line": 142872,
+        "tick_ms": 87224234,
+        "kind": 3,
+        "outcome": "stopped",
+        "value": 0,
+        "elapsed_ms": 484
+      },
+      "despawn": 143797,
+      "placement": [
+        -7504.94970703125,
+        4267.375,
+        0
+      ]
+    },
+    {
+      "captured_lifetime": "53:193:1",
+      "actor": 59004,
+      "definition_line": 14034,
+      "definition": 1421,
+      "creation": 141115,
+      "health120": 142773,
+      "ordinary_start": 142861,
+      "ordinary_end": {
+        "packet_line": 142882,
+        "tick_ms": 87224750,
+        "kind": 1,
+        "outcome": "finished",
+        "value": 0,
+        "elapsed_ms": 782
+      },
+      "despawn": 143709,
+      "placement": [
+        -7440.02587890625,
+        4375.86279296875,
+        0
+      ]
+    },
+    {
+      "captured_lifetime": "53:194:1",
+      "actor": 59005,
+      "definition_line": 14034,
+      "definition": 1421,
+      "creation": 141126,
+      "health120": 142727,
+      "ordinary_start": 142895,
+      "ordinary_end": {
+        "packet_line": 142917,
+        "tick_ms": 87225109,
+        "kind": 3,
+        "outcome": "stopped",
+        "value": 0,
+        "elapsed_ms": 125
+      },
+      "despawn": 143710,
+      "placement": [
+        -7712.95654296875,
+        4512.0,
+        0
+      ]
+    }
+  ]
+}

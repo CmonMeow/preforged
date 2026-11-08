@@ -1,0 +1,63 @@
+{
+  "skill": 150,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 150,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 30,
+    "0x48": 30,
+    "0x4c": 20,
+    "0x5c": 10,
+    "0x60": 40,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 272
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "3db600010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 91177,
+    "tick_ms": 17535156,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000096000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 91183,
+    "tick_ms": 17536234,
+    "hex": "a0000000140000001e0000001900000010010000"
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mark_of_Pain.html": "3595137bc26c333e87b2e1bfe17835fdd5e06d3e8cc33a2afcad589f0a40a5d5",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Damage_type.html": "7b4133ac292d8ce576e3fb435e80a20bb56f2a2ec817696703628b6a4c6dc1b4",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Adjacent.html": "3e0f036349fad41508861fc1a18f97fff9db8d923578d01de4ca867420429695"
+  },
+  "tool_sha256": "a71b94ec626ed94710e936e4be989885649c762c98c0be37ecdee4d8b096e322",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Offline first consumers,not rendered acceptance.",
+    "Native row proves30second duration,20second recharge,damage10..40 and targeted body272;archived wiki establishes positive physical damage triggers adjacent shadow damage.",
+    "Primary hexed victim is excluded from the adjacent damage;caster team and exact actor lifetimes must be checked at trigger time.",
+    "Do not treat all weapon damage as physical:elementally converted weapons must be excluded.",
+    "Damage/Health packets without causal skill IDs do not alone prove trigger attribution.",
+    "No skill150 casting binding or gameplay implementation added."
+  ]
+}

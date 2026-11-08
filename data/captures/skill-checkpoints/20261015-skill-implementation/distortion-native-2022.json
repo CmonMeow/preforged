@@ -1,0 +1,51 @@
+{
+  "skill": 11,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "fields": {
+    "0x44": 1,
+    "0x48": 5,
+    "0x4c": 8,
+    "0x5c": 75,
+    "0x60": 75,
+    "0x64": 2,
+    "0x68": 2,
+    "0x78": 23,
+    "0x7c": 2077
+  },
+  "instant_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 11
+    }
+  ],
+  "caster_body": {
+    "actor": 42,
+    "encoded_file": "803c01010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-6468-5728843.jsonl",
+    "line": 66553,
+    "tick_ms": 8021328,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f00000030000000190000000b000000",
+    "kind": 48
+  },
+  "captured_body": {
+    "line": 66554,
+    "tick_ms": 8021328,
+    "hex": "9f000000150000001900000017000000"
+  },
+  "source_sha256": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+  "wiki_sha256": "b0094b0ad366be657c2841ef3d91066ba0e3bcdc74352182a03976b91e9e3e1e",
+  "tool_sha256": "9106b3a863fad3304ae0f6f5aece61a7f34c22a91b723c2a2643f264e4f9fd98",
+  "limitations": [
+    "First consumer is not rendered acceptance.",
+    "Capture does not establish block attribution or insufficient-Energy deduction.",
+    "No World/casting binding claimed."
+  ]
+}

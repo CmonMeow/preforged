@@ -1,0 +1,107 @@
+{
+  "schema": 4,
+  "source": "data/captures/skills/skills-20261003-073129-11136-121116187.jsonl",
+  "source_sha256": "c305ee5fe33ebca5e8d093c214e8baa6a8e657d7bfcf92690e527425999dbbb2",
+  "map": 137,
+  "read_only": true,
+  "character_identity_exact_code_verified": true,
+  "unique_imported_main_roster_match": true,
+  "matched_name_equal": true,
+  "identity_fields": "Own character identity in private source only; omitted here",
+  "account_unlocked_ids": 1233,
+  "character_learned_ids": 1081,
+  "learned_outside_2022_catalogue": [],
+  "account_ids_outside_2022_catalogue": [],
+  "professions": {
+    "primary": 8,
+    "secondary": 7,
+    "unlocked_mask": 1790
+  },
+  "equipped_slots": [
+    {
+      "slot": 1,
+      "skill_id": 1239,
+      "copy_index": 0
+    },
+    {
+      "slot": 2,
+      "skill_id": 1253,
+      "copy_index": 0
+    },
+    {
+      "slot": 3,
+      "skill_id": 2110,
+      "copy_index": 0
+    },
+    {
+      "slot": 4,
+      "skill_id": 1232,
+      "copy_index": 0
+    },
+    {
+      "slot": 5,
+      "skill_id": 2100,
+      "copy_index": 0
+    },
+    {
+      "slot": 6,
+      "skill_id": 2235,
+      "copy_index": 0
+    },
+    {
+      "slot": 7,
+      "skill_id": 1237,
+      "copy_index": 0
+    },
+    {
+      "slot": 8,
+      "skill_id": 791,
+      "copy_index": 0
+    }
+  ],
+  "equipped_ids_not_learned": [],
+  "equipped_copy_violations": [],
+  "duplicate_records": [
+    {
+      "skill_id": 3,
+      "count": 81
+    }
+  ],
+  "raw_attribute_rows": 51,
+  "attribute_interpretation_status": "Exact modern executable proves 51 slots; dynamic tail excluded from schema4",
+  "equipped_bar_2022_validation": "Matching bar passed native skillbar test with explicitly captured professions and learning",
+  "scope": "Captured availability/equipped state and exact roster association; not skill effects, not yet imported into backend",
+  "invalid_historical_attribute_schemas": [
+    2,
+    3
+  ],
+  "static_constants_source": "data/captures/skills/skill-constants-8e50edfb83515fabfec50bfd9d17968e8635a39b4c3e796e311bbc5cd15e5878.json",
+  "static_constants_row_count": 3495,
+  "static_constants_match_exact_image_table": true,
+  "nonzero_attribute_rows": [
+    {
+      "source_index": 32,
+      "attribute_id": 32,
+      "base_level": 3,
+      "effective_level": 3,
+      "decrement_points": 3,
+      "increment_points": 4
+    },
+    {
+      "source_index": 34,
+      "attribute_id": 34,
+      "base_level": 12,
+      "effective_level": 16,
+      "decrement_points": 20,
+      "increment_points": 4294967295
+    },
+    {
+      "source_index": 36,
+      "attribute_id": 36,
+      "base_level": 12,
+      "effective_level": 15,
+      "decrement_points": 20,
+      "increment_points": 4294967295
+    }
+  ]
+}

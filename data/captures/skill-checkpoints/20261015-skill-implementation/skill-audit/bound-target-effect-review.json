@@ -1,0 +1,2805 @@
+{
+  "limits": [
+    "Source comparison required; these are candidates, not confirmed bugs.",
+    "No implementation or visual acceptance status inferred."
+  ],
+  "skills": [
+    {
+      "id": 23,
+      "name": "Power Spike",
+      "evidence": [
+        {
+          "skill": 23,
+          "name": "Power Spike",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79316,
+            "tick_ms": 8263562,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79318,
+            "tick_ms": 8263562,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000047000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 71,
+            "source_actor": 25,
+            "instance_epoch": 24,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Empathy",
+      "evidence": [
+        {
+          "skill": 26,
+          "name": "Empathy",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79425,
+            "tick_ms": 8271671,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79426,
+            "tick_ms": 8271671,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000002f000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 47,
+            "source_actor": 25,
+            "instance_epoch": 24,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Shatter Delusions",
+      "evidence": [
+        {
+          "skill": 27,
+          "name": "Shatter Delusions",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79451,
+            "tick_ms": 8272734,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79452,
+            "tick_ms": 8272734,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000031000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 49,
+            "source_actor": 25,
+            "instance_epoch": 24,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Backfire",
+      "evidence": [
+        {
+          "skill": 28,
+          "name": "Backfire",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79493,
+            "tick_ms": 8277078,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 79494,
+            "tick_ms": 8277078,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000032000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 50,
+            "source_actor": 25,
+            "instance_epoch": 24,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Conjure Phantasm",
+      "evidence": [
+        {
+          "skill": 31,
+          "name": "Conjure Phantasm",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 86571,
+            "tick_ms": 8360843,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 86572,
+            "tick_ms": 8360843,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000009000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 9,
+            "source_actor": 25,
+            "instance_epoch": 27,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Energy Surge",
+      "evidence": [
+        {
+          "skill": 39,
+          "name": "Energy Surge",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92504,
+            "tick_ms": 8437046,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92505,
+            "tick_ms": 8437046,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000041000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 65,
+            "source_actor": 25,
+            "instance_epoch": 30,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Ether Feast",
+      "evidence": [
+        {
+          "skill": 40,
+          "name": "Ether Feast",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92534,
+            "tick_ms": 8438765,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92535,
+            "tick_ms": 8438765,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000042000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 66,
+            "source_actor": 25,
+            "instance_epoch": 30,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Energy Burn",
+      "evidence": [
+        {
+          "skill": 42,
+          "name": "Energy Burn",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92576,
+            "tick_ms": 8442359,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92577,
+            "tick_ms": 8442359,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000045000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 69,
+            "source_actor": 25,
+            "instance_epoch": 30,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Signet of Midnight",
+      "evidence": [
+        {
+          "skill": 58,
+          "name": "Signet of Midnight",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 27626,
+            "tick_ms": 16396312,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 27627,
+            "tick_ms": 16396312,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000068000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 104,
+            "source_actor": 25,
+            "instance_epoch": 15,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Leech Signet",
+      "evidence": [
+        {
+          "skill": 61,
+          "name": "Leech Signet",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 103168,
+            "tick_ms": 8587250,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 103169,
+            "tick_ms": 8587250,
+            "actor": 31,
+            "map": 280,
+            "hex": "a0000000140000001f000000190000006e000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 110,
+            "source_actor": 25,
+            "instance_epoch": 36,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 61,
+          "name": "Leech Signet",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 3127,
+            "tick_ms": 15869859,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 3128,
+            "tick_ms": 15869859,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000006e000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 110,
+            "source_actor": 25,
+            "instance_epoch": 3,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Imagined Burden",
+      "evidence": [
+        {
+          "skill": 76,
+          "name": "Imagined Burden",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9513,
+            "tick_ms": 15987421,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9514,
+            "tick_ms": 15987421,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000082000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 130,
+            "source_actor": 25,
+            "instance_epoch": 6,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 76,
+          "name": "Imagined Burden",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9563,
+            "tick_ms": 15990250,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9564,
+            "tick_ms": 15990250,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000082000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 130,
+            "source_actor": 25,
+            "instance_epoch": 6,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 76,
+          "name": "Imagined Burden",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9728,
+            "tick_ms": 16007796,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9729,
+            "tick_ms": 16007796,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000082000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 130,
+            "source_actor": 25,
+            "instance_epoch": 6,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Energy Drain",
+      "evidence": [
+        {
+          "skill": 79,
+          "name": "Energy Drain",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 43108,
+            "tick_ms": 16688765,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 43109,
+            "tick_ms": 16688765,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000087000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 135,
+            "source_actor": 25,
+            "instance_epoch": 24,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Energy Tap",
+      "evidence": [
+        {
+          "skill": 80,
+          "name": "Energy Tap",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9626,
+            "tick_ms": 15997234,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 9627,
+            "tick_ms": 15997234,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000089000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 137,
+            "source_actor": 25,
+            "instance_epoch": 6,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Shadow Strike",
+      "evidence": [
+        {
+          "skill": 102,
+          "name": "Shadow Strike",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 66492,
+            "tick_ms": 17130531,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 66493,
+            "tick_ms": 17130531,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000c0000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 192,
+            "source_actor": 25,
+            "instance_epoch": 36,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Deathly Swarm",
+      "evidence": [
+        {
+          "skill": 105,
+          "name": "Deathly Swarm",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 66619,
+            "tick_ms": 17144250,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 66620,
+            "tick_ms": 17144250,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000c9000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 201,
+            "source_actor": 25,
+            "instance_epoch": 36,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Suffering",
+      "evidence": [
+        {
+          "skill": 108,
+          "name": "Suffering",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 71760,
+            "tick_ms": 17215156,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 71761,
+            "tick_ms": 17215156,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000cf000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 207,
+            "source_actor": 25,
+            "instance_epoch": 39,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Life Siphon",
+      "evidence": [
+        {
+          "skill": 109,
+          "name": "Life Siphon",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 71791,
+            "tick_ms": 17216953,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 71792,
+            "tick_ms": 17216953,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000d0000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 208,
+            "source_actor": 25,
+            "instance_epoch": 39,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "name": "Enfeebling Blood",
+      "evidence": [
+        {
+          "skill": 118,
+          "name": "Enfeebling Blood",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 76245,
+            "tick_ms": 17274296,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 76247,
+            "tick_ms": 17274296,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000009d000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 157,
+            "source_actor": 25,
+            "instance_epoch": 42,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "name": "Life Transfer",
+      "evidence": [
+        {
+          "skill": 126,
+          "name": "Life Transfer",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 101480,
+            "tick_ms": 17689125,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 101481,
+            "tick_ms": 17689125,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000ea000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 234,
+            "source_actor": 25,
+            "instance_epoch": 57,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "name": "Barbed Signet",
+      "evidence": [
+        {
+          "skill": 131,
+          "name": "Barbed Signet",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81242,
+            "tick_ms": 17350890,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81243,
+            "tick_ms": 17350890,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000f1000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 241,
+            "source_actor": 25,
+            "instance_epoch": 45,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "name": "Dark Pact",
+      "evidence": [
+        {
+          "skill": 133,
+          "name": "Dark Pact",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81283,
+            "tick_ms": 17353046,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81284,
+            "tick_ms": 17353046,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000f3000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 243,
+            "source_actor": 25,
+            "instance_epoch": 45,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "name": "Faintheartedness",
+      "evidence": [
+        {
+          "skill": 135,
+          "name": "Faintheartedness",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81346,
+            "tick_ms": 17358265,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81347,
+            "tick_ms": 17358265,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000f5000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 245,
+            "source_actor": 25,
+            "instance_epoch": 45,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 135,
+          "name": "Faintheartedness",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81523,
+            "tick_ms": 17373937,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 81524,
+            "tick_ms": 17373937,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000f5000000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 245,
+            "source_actor": 25,
+            "instance_epoch": 45,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "name": "Vampiric Gaze",
+      "evidence": [
+        {
+          "skill": 153,
+          "name": "Vampiric Gaze",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91240,
+            "tick_ms": 17540234,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91241,
+            "tick_ms": 17540234,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000014010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 276,
+            "source_actor": 25,
+            "instance_epoch": 51,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 153,
+          "name": "Vampiric Gaze",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91371,
+            "tick_ms": 17554984,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91372,
+            "tick_ms": 17554984,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000014010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 276,
+            "source_actor": 25,
+            "instance_epoch": 51,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "name": "Plague Touch",
+      "evidence": [
+        {
+          "skill": 154,
+          "name": "Plague Touch",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91283,
+            "tick_ms": 17545453,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91284,
+            "tick_ms": 17545453,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000016010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 278,
+            "source_actor": 25,
+            "instance_epoch": 51,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 154,
+          "name": "Plague Touch",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91340,
+            "tick_ms": 17551890,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91341,
+            "tick_ms": 17551890,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000016010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 278,
+            "source_actor": 25,
+            "instance_epoch": 51,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 154,
+          "name": "Plague Touch",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91387,
+            "tick_ms": 17556609,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91388,
+            "tick_ms": 17556609,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000016010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 278,
+            "source_actor": 25,
+            "instance_epoch": 51,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 154,
+          "name": "Plague Touch",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91478,
+            "tick_ms": 17562656,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 91479,
+            "tick_ms": 17562656,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000016010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 278,
+            "source_actor": 25,
+            "instance_epoch": 51,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "name": "Weaken Armor",
+      "evidence": [
+        {
+          "skill": 159,
+          "name": "Weaken Armor",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 96697,
+            "tick_ms": 17629718,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 96698,
+            "tick_ms": 17629718,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000001b010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 283,
+            "source_actor": 25,
+            "instance_epoch": 54,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 159,
+          "name": "Weaken Armor",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 96787,
+            "tick_ms": 17636171,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 96788,
+            "tick_ms": 17636171,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000001b010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 283,
+            "source_actor": 25,
+            "instance_epoch": 54,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "name": "Immolate",
+      "evidence": [
+        {
+          "skill": 191,
+          "name": "Immolate",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 150209,
+            "tick_ms": 18572625,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 150210,
+            "tick_ms": 18572625,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000053010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 339,
+            "source_actor": 25,
+            "instance_epoch": 87,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "name": "Blinding Flash",
+      "evidence": [
+        {
+          "skill": 220,
+          "name": "Blinding Flash",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173492,
+            "tick_ms": 19327421,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173494,
+            "tick_ms": 19327421,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000087010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 391,
+            "source_actor": 25,
+            "instance_epoch": 99,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 220,
+          "name": "Blinding Flash",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173754,
+            "tick_ms": 19348218,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173756,
+            "tick_ms": 19348218,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000087010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 391,
+            "source_actor": 25,
+            "instance_epoch": 99,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 224,
+      "name": "Enervating Charge",
+      "evidence": [
+        {
+          "skill": 224,
+          "name": "Enervating Charge",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173590,
+            "tick_ms": 19333875,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173591,
+            "tick_ms": 19333875,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000008d010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 397,
+            "source_actor": 25,
+            "instance_epoch": 99,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 232,
+      "name": "Lightning Touch",
+      "evidence": [
+        {
+          "skill": 232,
+          "name": "Lightning Touch",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 178334,
+            "tick_ms": 19424296,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 178335,
+            "tick_ms": 19424296,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000099010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 409,
+            "source_actor": 25,
+            "instance_epoch": 102,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 232,
+          "name": "Lightning Touch",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 178455,
+            "tick_ms": 19431562,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 178456,
+            "tick_ms": 19431562,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000099010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 409,
+            "source_actor": 25,
+            "instance_epoch": 102,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "name": "Banish",
+      "evidence": [
+        {
+          "skill": 252,
+          "name": "Banish",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 252427,
+            "tick_ms": 20928218,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 252428,
+            "tick_ms": 20928218,
+            "actor": 31,
+            "map": 280,
+            "hex": "a0000000140000001f00000019000000ce010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 462,
+            "source_actor": 25,
+            "instance_epoch": 129,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "name": "Mend Condition",
+      "evidence": [
+        {
+          "skill": 275,
+          "name": "Mend Condition",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261656,
+            "tick_ms": 21082984,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261657,
+            "tick_ms": 21082984,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000ea010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 490,
+            "source_actor": 25,
+            "instance_epoch": 135,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 275,
+          "name": "Mend Condition",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261695,
+            "tick_ms": 21085015,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261696,
+            "tick_ms": 21085015,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000ea010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 490,
+            "source_actor": 25,
+            "instance_epoch": 135,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 276,
+      "name": "Restore Condition",
+      "evidence": [
+        {
+          "skill": 276,
+          "name": "Restore Condition",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 309312,
+            "tick_ms": 21963109,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 309313,
+            "tick_ms": 21963109,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000eb010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 491,
+            "source_actor": 25,
+            "instance_epoch": 162,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "name": "Mend Ailment",
+      "evidence": [
+        {
+          "skill": 277,
+          "name": "Mend Ailment",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261731,
+            "tick_ms": 21086515,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261732,
+            "tick_ms": 21086515,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000ec010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 492,
+            "source_actor": 25,
+            "instance_epoch": 135,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 278,
+      "name": "Purge Conditions",
+      "evidence": [
+        {
+          "skill": 278,
+          "name": "Purge Conditions",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261748,
+            "tick_ms": 21087578,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 261749,
+            "tick_ms": 21087578,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000ed010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 493,
+            "source_actor": 25,
+            "instance_epoch": 135,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 286,
+      "name": "Heal Other",
+      "evidence": [
+        {
+          "skill": 286,
+          "name": "Heal Other",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 265899,
+            "tick_ms": 21153218,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 265900,
+            "tick_ms": 21153218,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000f9010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 505,
+            "source_actor": 25,
+            "instance_epoch": 138,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "name": "Healing Breeze",
+      "evidence": [
+        {
+          "skill": 288,
+          "name": "Healing Breeze",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 265963,
+            "tick_ms": 21158343,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 265964,
+            "tick_ms": 21158343,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000fb010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 507,
+            "source_actor": 25,
+            "instance_epoch": 138,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "name": "Infuse Health",
+      "evidence": [
+        {
+          "skill": 292,
+          "name": "Infuse Health",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 270249,
+            "tick_ms": 21227453,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 270250,
+            "tick_ms": 21227453,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c0000001900000005020000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 517,
+            "source_actor": 25,
+            "instance_epoch": 141,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 296,
+      "name": "Bane Signet",
+      "evidence": [
+        {
+          "skill": 296,
+          "name": "Bane Signet",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 270169,
+            "tick_ms": 21221984,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 270171,
+            "tick_ms": 21221984,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000000a020000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 522,
+            "source_actor": 25,
+            "instance_epoch": 141,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "name": "Draw Conditions",
+      "evidence": [
+        {
+          "skill": 311,
+          "name": "Draw Conditions",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 280040,
+            "tick_ms": 21410078,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 280042,
+            "tick_ms": 21410078,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c000000190000002b020000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 555,
+            "source_actor": 25,
+            "instance_epoch": 147,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 424,
+      "name": "Throw Dirt",
+      "evidence": [
+        {
+          "skill": 424,
+          "name": "Throw Dirt",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 472164,
+            "tick_ms": 26326609,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 472165,
+            "tick_ms": 26326609,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000d3020000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 723,
+            "source_actor": 25,
+            "instance_epoch": 292,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 846,
+      "name": "Steam",
+      "evidence": [
+        {
+          "skill": 846,
+          "name": "Steam",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 182855,
+            "tick_ms": 19525875,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 182856,
+            "tick_ms": 19525875,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000006a060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1642,
+            "source_actor": 25,
+            "instance_epoch": 105,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 859,
+      "name": "Conjure Nightmare",
+      "evidence": [
+        {
+          "skill": 859,
+          "name": "Conjure Nightmare",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 15738,
+            "tick_ms": 16165203,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 15739,
+            "tick_ms": 16165203,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000061030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 865,
+            "source_actor": 25,
+            "instance_epoch": 9,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 859,
+          "name": "Conjure Nightmare",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 16202,
+            "tick_ms": 16201906,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 16203,
+            "tick_ms": 16201906,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000061030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 865,
+            "source_actor": 25,
+            "instance_epoch": 9,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 860,
+      "name": "Signet of Disruption",
+      "evidence": [
+        {
+          "skill": 860,
+          "name": "Signet of Disruption",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 15763,
+            "tick_ms": 16167765,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 15764,
+            "tick_ms": 16167765,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000062030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 866,
+            "source_actor": 25,
+            "instance_epoch": 9,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 860,
+          "name": "Signet of Disruption",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 16099,
+            "tick_ms": 16193281,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 16100,
+            "tick_ms": 16193281,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000062030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 866,
+            "source_actor": 25,
+            "instance_epoch": 9,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 865,
+      "name": "Lightning Hammer",
+      "evidence": [
+        {
+          "skill": 865,
+          "name": "Lightning Hammer",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 188877,
+            "tick_ms": 19616703,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 188878,
+            "tick_ms": 19616703,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000df030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 991,
+            "source_actor": 25,
+            "instance_epoch": 108,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 931,
+      "name": "Power Return",
+      "evidence": [
+        {
+          "skill": 931,
+          "name": "Power Return",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 21903,
+            "tick_ms": 16307734,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 21904,
+            "tick_ms": 16307734,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000cd030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 973,
+            "source_actor": 25,
+            "instance_epoch": 12,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 958,
+      "name": "Healing Whisper",
+      "evidence": [
+        {
+          "skill": 958,
+          "name": "Healing Whisper",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 289872,
+            "tick_ms": 21575421,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 289873,
+            "tick_ms": 21575421,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000e9040000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1257,
+            "source_actor": 25,
+            "instance_epoch": 153,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 958,
+          "name": "Healing Whisper",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 290019,
+            "tick_ms": 21590046,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 290020,
+            "tick_ms": 21590046,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000e9040000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1257,
+            "source_actor": 25,
+            "instance_epoch": 153,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 958,
+          "name": "Healing Whisper",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 290079,
+            "tick_ms": 21594578,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 290080,
+            "tick_ms": 21594578,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000e9040000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1257,
+            "source_actor": 25,
+            "instance_epoch": 153,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 958,
+          "name": "Healing Whisper",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 290123,
+            "tick_ms": 21598296,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 290124,
+            "tick_ms": 21598296,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000e9040000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1257,
+            "source_actor": 25,
+            "instance_epoch": 153,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 1052,
+      "name": "Accumulated Pain",
+      "evidence": [
+        {
+          "skill": 1052,
+          "name": "Accumulated Pain",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 27781,
+            "tick_ms": 16409328,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 27782,
+            "tick_ms": 16409328,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000087060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1671,
+            "source_actor": 25,
+            "instance_epoch": 15,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 1120,
+      "name": "Jamei's Gaze",
+      "evidence": [
+        {
+          "skill": 1120,
+          "name": "Jamei's Gaze",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 294446,
+            "tick_ms": 21664718,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 294447,
+            "tick_ms": 21664718,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000f9010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 505,
+            "source_actor": 25,
+            "instance_epoch": 156,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 1379,
+      "name": "Glowing Gaze",
+      "evidence": [
+        {
+          "skill": 1379,
+          "name": "Glowing Gaze",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 234916,
+            "tick_ms": 20635906,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 234917,
+            "tick_ms": 20635906,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000062060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1634,
+            "source_actor": 25,
+            "instance_epoch": 117,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 1379,
+          "name": "Glowing Gaze",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 235080,
+            "tick_ms": 20646203,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 235081,
+            "tick_ms": 20646203,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000062060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1634,
+            "source_actor": 25,
+            "instance_epoch": 117,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 1396,
+      "name": "Words of Comfort",
+      "evidence": [
+        {
+          "skill": 1396,
+          "name": "Words of Comfort",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 309371,
+            "tick_ms": 21968140,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 309372,
+            "tick_ms": 21968140,
+            "actor": 28,
+            "map": 280,
+            "hex": "a0000000140000001c00000019000000f4010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 500,
+            "source_actor": 25,
+            "instance_epoch": 162,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 1661,
+      "name": "Glowstone",
+      "evidence": [
+        {
+          "skill": 1661,
+          "name": "Glowstone",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 1392,
+            "tick_ms": 5815281,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 1394,
+            "tick_ms": 5815281,
+            "actor": 31,
+            "map": 280,
+            "hex": "a0000000140000001f0000001900000060060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1632,
+            "source_actor": 25,
+            "instance_epoch": 1,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        },
+        {
+          "skill": 1661,
+          "name": "Glowstone",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 235012,
+            "tick_ms": 20640703,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 235014,
+            "tick_ms": 20640703,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000060060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1632,
+            "source_actor": 25,
+            "instance_epoch": 117,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    },
+    {
+      "id": 2192,
+      "name": "Glowing Ice",
+      "evidence": [
+        {
+          "skill": 2192,
+          "name": "Glowing Ice",
+          "runtime_status": "implemented_binding",
+          "roles": [
+            "target_resource"
+          ],
+          "endpoint": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 243469,
+            "tick_ms": 20776656,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          },
+          "event": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 243470,
+            "tick_ms": 20776656,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000001f070000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1823,
+            "source_actor": 25,
+            "instance_epoch": 123,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "source_matches": true,
+          "review_status": "candidate_not_proven_skill_attribution"
+        }
+      ]
+    }
+  ]
+}

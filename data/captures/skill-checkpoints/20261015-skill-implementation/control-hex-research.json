@@ -1,0 +1,172 @@
+{
+  "skills": [
+    {
+      "skill": 19,
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Fragility.html",
+      "wiki_sha256": "f463b8545f4507f895d1b5306d64bd2e80f35ae00128ea4978f41c54e821434a",
+      "capture": {
+        "id": 19,
+        "name": "Fragility",
+        "obtainable_baseline": true,
+        "runtime_status": "unsupported",
+        "local_starts": 1,
+        "other_or_unassigned_starts": 0,
+        "local_finished": 1,
+        "local_stopped": 0,
+        "local_instant": 0,
+        "activation_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 71630,
+            "tick_ms": 8094390,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e00000013000000",
+            "kind": 60
+          }
+        ],
+        "endpoint_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 71639,
+            "tick_ms": 8095421,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          }
+        ],
+        "body_effect_evidence": []
+      },
+      "native_proof": "tools/protocol/hex_control_2022.py",
+      "runtime_status": "unsupported; preparation only"
+    },
+    {
+      "skill": 35,
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ignorance.html",
+      "wiki_sha256": "e6c134adb758c1422185ff365478a0a61712fcf51d51af111a52d8e37e8c4d7c",
+      "capture": {
+        "id": 35,
+        "name": "Ignorance",
+        "obtainable_baseline": true,
+        "runtime_status": "unsupported",
+        "local_starts": 1,
+        "other_or_unassigned_starts": 0,
+        "local_finished": 1,
+        "local_stopped": 0,
+        "local_instant": 0,
+        "activation_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 86614,
+            "tick_ms": 8363390,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e00000023000000",
+            "kind": 60
+          }
+        ],
+        "endpoint_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 86628,
+            "tick_ms": 8364421,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          }
+        ],
+        "body_effect_evidence": []
+      },
+      "native_proof": "tools/protocol/hex_control_2022.py",
+      "runtime_status": "source runtime/world binding implemented; full build and168 regression tests pass; rendered acceptance pending"
+    },
+    {
+      "skill": 56,
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Soothing_Images.html",
+      "wiki_sha256": "038e278933a773166c131e7b3fac390c87abacc2e736a97a7e5e477f30aec1ad",
+      "capture": {
+        "id": 56,
+        "name": "Soothing Images",
+        "obtainable_baseline": true,
+        "runtime_status": "unsupported",
+        "local_starts": 1,
+        "other_or_unassigned_starts": 0,
+        "local_finished": 1,
+        "local_stopped": 0,
+        "local_instant": 0,
+        "activation_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 97511,
+            "tick_ms": 8501546,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e00000038000000",
+            "kind": 60
+          }
+        ],
+        "endpoint_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 97526,
+            "tick_ms": 8503484,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          }
+        ],
+        "body_effect_evidence": []
+      },
+      "native_proof": "tools/protocol/hex_control_2022.py",
+      "runtime_status": "source runtime/world binding implemented; full build and168 regression tests pass; rendered acceptance pending"
+    }
+  ],
+  "limits": [
+    "Rendered client checks remain pending.",
+    "NPC autonomous signet use and adrenaline skillcasting remain part of incomplete NPC AI.",
+    "Exact retail rejection text/client-side disabled-signet appearance not validated.",
+    "Fragility19 is still unsupported."
+  ],
+  "reviewed_semantics": {
+    "19": "Only condition acquisition or loss triggers damage; refreshing an existing condition does not.",
+    "35": "Target foe cannot activate signets while hex is active.",
+    "56": "Adjacent foes cannot gain adrenaline; existing charge must not be erased."
+  },
+  "source_foundation": "src/runtime/gw_control_hexes.h; not wired into runtime yet",
+  "foundation_test": "control_hexes passed; rank scaling, skill-type gating, application/expiry boundaries and hex category checks. Not live runtime implementation.",
+  "source_integration": [
+    "gw_degeneration_hexes.h routes reviewed zero-degeneration control plans",
+    "gw_skill_casting.h checks scoped snapshot before signet costs",
+    "gw_world_simulation.h gates every current outgoing-hit and incoming-damage adrenaline gain",
+    "gw_npc_combat_catalog.h receives scoped hostile control hexes"
+  ],
+  "focused_suites": {
+    "captured_skills": "passed",
+    "skill_casting": "passed",
+    "world_adrenaline": "passed",
+    "control_hexes": "passed",
+    "audit_tooling": "12 passed"
+  },
+  "tested_mechanics": [
+    "actual Runtime casts against players and NPCs",
+    "Ignorance blocks signet admission until removal/expiry, without costs",
+    "Ignorance caster effect60 emitted once",
+    "Soothing Images preserves existing charge",
+    "outgoing attacks and incoming damage do not add charge while active",
+    "gains resume after removal and expiry",
+    "inclusive166-unit adjacent boundary, exclusion beyond"
+  ],
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/control-hex-full-build.txt"
+  },
+  "full_suite": {
+    "passed": 168,
+    "failed": 0,
+    "seconds": 29.17,
+    "report": "build/reports/control-hex-full-tests.txt"
+  }
+}

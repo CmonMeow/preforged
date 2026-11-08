@@ -1,0 +1,351 @@
+{
+  "checkpoint": "20261024-all-completed",
+  "cutoff": "2026-10-24T04:27:02.320932+00:00",
+  "actor": 25,
+  "map": 280,
+  "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+  "audit_sha256": "f30fb14a4789d793e943a9b18c3661934f894487b75b562fac41712f447685f6",
+  "verifier_sha256": "cb5f7213242d1ddd740f8371fae6ce880bd1c1cb45b734e3f0f86a0b45a61d0f",
+  "packet_sha256": {
+    "packets-1360-15821281.jsonl": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+    "packets-19472-19186421.jsonl": "3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb"
+  },
+  "samples": [
+    {
+      "skill": 1952,
+      "file": "packets-1360-15821281.jsonl",
+      "effect_id": 109,
+      "activation_observed_ms": 172,
+      "effect_duration_float": 20.0,
+      "terminal_kind": "boundary",
+      "effect_to_terminal_ms": 19156,
+      "receipts": [
+        {
+          "line": 313654,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22039703,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003c00000019000000a0070000"
+        },
+        {
+          "line": 313662,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22039875,
+          "opcode": 229,
+          "bytes": 20,
+          "complete": true,
+          "hex": "e500000019000000a0070000000000002d000000"
+        },
+        {
+          "line": 313663,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22039875,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003a0000001900000000000000"
+        },
+        {
+          "line": 313664,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22039890,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f000000150000001900000029020000"
+        },
+        {
+          "line": 313665,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22039890,
+          "opcode": 66,
+          "bytes": 24,
+          "complete": true,
+          "hex": "4200000019000000a00700000f0000006d0000000000a041"
+        },
+        {
+          "line": 313994,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22059046,
+          "opcode": 390,
+          "bytes": 4,
+          "complete": false,
+          "hex": "86010000"
+        }
+      ]
+    },
+    {
+      "skill": 2095,
+      "file": "packets-1360-15821281.jsonl",
+      "effect_id": 73,
+      "activation_observed_ms": 265,
+      "effect_duration_float": 20.0,
+      "terminal_kind": "remove",
+      "effect_to_terminal_ms": 20016,
+      "receipts": [
+        {
+          "line": 322101,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22158578,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003c000000190000002f080000"
+        },
+        {
+          "line": 322106,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22158843,
+          "opcode": 229,
+          "bytes": 20,
+          "complete": true,
+          "hex": "e5000000190000002f080000000000002d000000"
+        },
+        {
+          "line": 322107,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22158843,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003a0000001900000000000000"
+        },
+        {
+          "line": 322108,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22158843,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f000000150000001900000029020000"
+        },
+        {
+          "line": 322109,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22158843,
+          "opcode": 66,
+          "bytes": 24,
+          "complete": true,
+          "hex": "42000000190000002f0800000f000000490000000000a041"
+        },
+        {
+          "line": 322427,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 22178859,
+          "opcode": 68,
+          "bytes": 12,
+          "complete": true,
+          "hex": "440000001900000049000000"
+        }
+      ]
+    },
+    {
+      "skill": 2095,
+      "file": "packets-19472-19186421.jsonl",
+      "effect_id": 100,
+      "activation_observed_ms": 266,
+      "effect_duration_float": 20.0,
+      "terminal_kind": "remove",
+      "effect_to_terminal_ms": 4734,
+      "receipts": [
+        {
+          "line": 480977,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30026593,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003c000000190000002f080000"
+        },
+        {
+          "line": 480986,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30026859,
+          "opcode": 229,
+          "bytes": 20,
+          "complete": true,
+          "hex": "e5000000190000002f080000000000002d000000"
+        },
+        {
+          "line": 480987,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30026859,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003a0000001900000000000000"
+        },
+        {
+          "line": 480988,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30026859,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f000000150000001900000029020000"
+        },
+        {
+          "line": 480989,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30026859,
+          "opcode": 66,
+          "bytes": 24,
+          "complete": true,
+          "hex": "42000000190000002f0800000f000000640000000000a041"
+        },
+        {
+          "line": 481106,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30031593,
+          "opcode": 68,
+          "bytes": 12,
+          "complete": true,
+          "hex": "440000001900000064000000"
+        },
+        {
+          "line": 481118,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30031593,
+          "opcode": 66,
+          "bytes": 24,
+          "complete": true,
+          "hex": "42000000190000004b0900000f0000006400000000007042"
+        }
+      ]
+    },
+    {
+      "skill": 2095,
+      "file": "packets-19472-19186421.jsonl",
+      "effect_id": 119,
+      "activation_observed_ms": 282,
+      "effect_duration_float": 20.0,
+      "terminal_kind": "boundary",
+      "effect_to_terminal_ms": 19578,
+      "receipts": [
+        {
+          "line": 481995,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30088343,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003c000000190000002f080000"
+        },
+        {
+          "line": 481998,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30088625,
+          "opcode": 229,
+          "bytes": 20,
+          "complete": true,
+          "hex": "e5000000190000002f080000000000002d000000"
+        },
+        {
+          "line": 481999,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30088625,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f0000003a0000001900000000000000"
+        },
+        {
+          "line": 482000,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30088625,
+          "opcode": 159,
+          "bytes": 16,
+          "complete": true,
+          "hex": "9f000000150000001900000029020000"
+        },
+        {
+          "line": 482001,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30088625,
+          "opcode": 66,
+          "bytes": 24,
+          "complete": true,
+          "hex": "42000000190000002f0800000f000000770000000000a041"
+        },
+        {
+          "line": 482399,
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 19472,
+          "tick_ms": 30108203,
+          "opcode": 390,
+          "bytes": 4,
+          "complete": false,
+          "hex": "86010000"
+        }
+      ]
+    }
+  ],
+  "observed_duration_seconds": 20,
+  "allegiance_rank": null,
+  "conclusions": [
+    "All four effect-add packets explicitly encode20.0seconds; recharge packets encode45seconds.",
+    "One Luxon effect is removed20016ms after add, consistent with its20second timer.",
+    "One Luxon effect is removed4734ms after add; its ID is immediately reused for skill2379. This is early removal, not natural expiry.",
+    "Kurzick and final Luxon samples reach opcode390 boundary before20seconds; no matching removal before that boundary is established.",
+    "Caster kind21 payload553 follows every finish; no targeted body evidence appears in the audit."
+  ],
+  "limitations": [
+    "The effect-add word15 is retained raw and does not independently establish allegiance rank.",
+    "Duration20seconds alone does not identify rank without independent verified scaling/modifier context.",
+    "Opcode390 is an incomplete captured header and marks a boundary observation, not a fully decoded map transition.",
+    "Activation tick gaps172/265/266/282ms are observations rather than authoritative base activation values.",
+    "Spell-only Energy reduction, minimum cost, modifier ordering, model animation, pixels and sound require separate verification.",
+    "Offline files only; no official client interaction."
+  ]
+}

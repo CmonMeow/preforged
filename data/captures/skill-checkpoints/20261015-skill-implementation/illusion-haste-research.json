@@ -1,0 +1,108 @@
+{
+  "skill": 37,
+  "pvp_alias": 3373,
+  "runtime_status": "source Runtime/world binding; full Release build and180 CTest targets passed",
+  "sources": [
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Illusion_of_Haste.html",
+      "sha256": "00463a9a5ae6cc25507f41f66a51cd580b4618590db0204311e72a5b36f8d590"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Illusion_of_Haste_(PvP).html",
+      "sha256": "197be355264e7ba2ad816eb38b1222ed0cef527e89f60eb0e1922a699c160ca2"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Movement_speed.html",
+      "sha256": "38f6e06483dd2887575b0fdf14ce96b4abff5b90c585203722bfdf7813789c5a"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Effect_stacking.html",
+      "sha256": "da724f9b516bb4fe8b3622c0137448debea466fde3547b35a0061c2164cfc6ac"
+    }
+  ],
+  "activation_evidence": [
+    {
+      "file": "packets-6468-5728843.jsonl",
+      "line": 86672,
+      "tick_ms": 8367906,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003c0000001900000025000000",
+      "kind": 60
+    }
+  ],
+  "endpoint_evidence": [
+    {
+      "file": "packets-6468-5728843.jsonl",
+      "line": 86687,
+      "tick_ms": 8368937,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    }
+  ],
+  "native_report": "build/reports/illusion-haste-2022.json",
+  "native_tool_sha256": "bf80ac27fb5ea0728e9f86dfc9038aa7e1ab243f518b34552b807697a5bc08ff",
+  "reviewed_semantics": [
+    "Both variants: self enchantment5..10..11seconds,33percent faster,3second Crippled end effect.",
+    "PvE37 removes Crippled on initial application; PvP3373 does not. PvE recharge5, PvP recharge8.",
+    "Reapplication ends the old enchantment, applying Crippled, then applies the new version. PvE initial cleanse clears that new condition; PvP retains it.",
+    "Both native rows have no body resource2077; do not invent an extra particle packet. Original1s/style50 self-cast consumers passed offline."
+  ],
+  "integration_requirements": [
+    "Route active variant into authoritative status storage, preserving base equipped-skill identity for slot/recharge behavior.",
+    "Schedule real self-enchantment end effects through owned health/effect history, so expiry, stripping and renewal fire once; corpse cleanup must not add Crippled.",
+    "Add both movement intervals and initial/end condition transitions through common condition machinery, including Fragility reactions.",
+    "Do not treat Mantra of Persistence as extending an enchantment; it extends Illusion hexes only.",
+    "Test PvE initial cleanse vs PvP no-cleanse, renewal transition counts, natural expiry and enemy removal, movement integration and replay/stale scope.",
+    "The fixed capture now verifies1.33movement; still verify gear/condition-duration modifiers; archived notes mention Swift as the Wind plus Rune of Restoration shortening Crippled. Rendered checks remain separate."
+  ],
+  "tests": {
+    "source": "tests/illusion_haste.cpp",
+    "focused": [
+      "illusion_haste",
+      "movement_effects",
+      "captured_skills",
+      "skill_casting"
+    ],
+    "checks": [
+      "PvE initial cleanse vs PvP no cleanse",
+      "rank0/12/20 durations;5/8second recharge",
+      "natural expiry,renewal and all4 enemy removal spells",
+      "Fragility gain/loss reactions,lethal end effect and corpse cleanup",
+      "movement forecast canceled on early removal/renewal",
+      "late ticks integrate buff/end slow/normal intervals",
+      "Crippled actual+forecast deduplicates;34percent cap and Dash50percent exception",
+      "real1s5Energy casts;cancel/interruption/reconnect safety"
+    ]
+  },
+  "speed_capture": "haste-speed-capture-evidence.json",
+  "remaining": [
+    "Current player movement baseline220 differs from the frozen official288 observation; calibrate all player movement/steering/publication paths together after active build.",
+    "Rendered acceptance,gear/enchantment/condition duration modifiers and broader prevention/removal triggers remain incomplete.",
+    "NPC positive-status/end-effect integration remains unavailable.",
+    "Same-tick official intermediate speed191.52 then144 does not independently establish internal end-trigger ordering; current history uses final resultant speed without emulating transient same-tick packets."
+  ],
+  "source_hashes": {
+    "src/runtime/gw_illusion_haste.h": "afb62e62310a61142512cb8f1c8825f66fcdb9bc3c8c562739a5f124b65bb0ae",
+    "src/runtime/gw_movement_effects.h": "59551029c57ef75542c3b9fdffd7a02b8eae97c775d21052d370b1ac9711825e",
+    "src/runtime/gw_skill_casting.h": "a034f22ccfb58f869769928ccafd4e5ac5af9b96b15fc961d463189c8dd2a487",
+    "src/runtime/gw_world_simulation.h": "4425f4c7608d768d53fb94a4ef0d0e6d82c1cbf0697a7cb59f3a4d64f025cfbf",
+    "tests/illusion_haste.cpp": "cd7d7fda10fb9b67d1d25e0c1e305c45e4e58b76c89053473a30a53d6041a85b",
+    "CMakeLists.txt": "8700c488eff7840b887c4dcdd2bac41cee913d825f5a05cdd21085cf34a0f63d",
+    "tools/protocol/illusion_haste_2022.py": "bf80ac27fb5ea0728e9f86dfc9038aa7e1ab243f518b34552b807697a5bc08ff",
+    "tools/protocol/haste_capture_speed_evidence.py": "8ffbd317bb723e1adeb074bd86094289b9f79dae3bdbe91eeebac5a09ad98ba3"
+  },
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/illusion-haste-full-build.txt",
+    "host": "bin/server_host.exe",
+    "host_sha256": "24ade8b05f2ec0018859b1c917fc17f623e149090c1c2d33c4991f6f2bd3bc0d"
+  },
+  "full_regression": {
+    "result": "180/180 passed",
+    "seconds": 19.48,
+    "report": "build/reports/illusion-haste-full-tests.txt"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "378870": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23468187,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000300000001900000073010000"
+    },
+    "378871": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23468187,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000076020000"
+    },
+    "378872": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23468187,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "420000001900000073010000000000005b00000000000041"
+    }
+  },
+  "native_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 371
+    }
+  ],
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "6fbb00010000",
+    "flags": 1
+  },
+  "captured_rank": 0,
+  "captured_duration_seconds": 8,
+  "limitations": [
+    "Model/asset services are stubbed; no rendered acceptance.",
+    "Critical-hit and knockdown immunity are not established by these receipts; authoritative server regressions verify those mechanics.",
+    "Automatic critical-rate sampling remains a shared combat gap."
+  ]
+}

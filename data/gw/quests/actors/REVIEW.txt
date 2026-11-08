@@ -1,0 +1,21 @@
+Isolated quest-giver candidates, not installed in the live NPC population.
+Each quest-giver file preserves one actor/definition from a captured map/epoch.
+provenance.json stores the source SHA256, snapshot line and full observations.
+Actor20001/definition1 are isolated validation IDs, not production assignments.
+Remap on activation and fence by instance/quest attempt before dispatching offers.
+Do not concatenate these files: Grast and Van in146 came from different quest
+contexts, and Grast in160 is a distinct observed placement.
+No health/armor or allegiance permissions are inferred from appearance records.
+All five files pass existing native npc_catalog_validate against exact planes.
+NPCs still need quest-stage activation rules and authorized dialogue sessions.
+Warrior Test encounter candidate (2026-10-10):
+warrior-test-tads.txt contains three observed River Skale Tads, captured agents
+40/41/42 in map146 epoch3 at lines560/565, while quest85 was active529 and before
+completed615. Native exact-plane navigation validation passes for all three.
+Their wiki health is35, NOT the70 health of the distinct River Skale creature.
+The JSON provenance preserves observations, definition, source hashes and the
+health source. These are not installed. The companion incoming packet capture
+confirms dead-effect bit0x10 for41/40/42 at11610/11671/11713; the world snapshot
+then shows completion. Obtain armor evidence and activate per quest attempt; do not add
+all visible skale to the objective by model/name alone.
+

@@ -1,0 +1,17 @@
+{
+  "baseline": "Guild Wars 2022",
+  "modern_rule_date": "2023-10-10",
+  "source": "https://wiki.guildwars.com/wiki/Feedback:Game_updates/20231010",
+  "affected_skills": [
+    "Complicate",
+    "Leech Signet",
+    "Power Lock",
+    "Power Spike",
+    "Psychic Instability",
+    "Psychic Instability (PvP)",
+    "Signet of Distraction"
+  ],
+  "documented_rule": "Interrupt success odds rise with player target hold time up to approximately one quarter second, depending on latency.",
+  "capture_interpretation": "Modern failed interrupts alone do not establish missing skill mechanics. Do not infer a blanket rejection of every fast interrupt or a packet-speed threshold.",
+  "implementation_policy": "Keep this later anti-bot rule outside the 2022 baseline unless an explicit later ruleset is selected."
+}

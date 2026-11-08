@@ -1,0 +1,266 @@
+{
+  "checkpoint": "20261022-night-session",
+  "comparison_checkpoint": "20261018-halloween-skills-refresh-2",
+  "session_skill_summary": {
+    "local_distinct": 19,
+    "local_obtainable": 16,
+    "local_activation_events": 658,
+    "local_finished_events": 458,
+    "local_instant_events": 143,
+    "runtime_bound": 12,
+    "awaiting_runtime_binding": 4,
+    "obtainable_not_seen": 1313,
+    "local_body_effect_packets": 270
+  },
+  "new_activation_ids": [
+    {
+      "id": 387,
+      "name": "Riposte",
+      "local_starts": 0,
+      "other_or_unassigned_starts": 4
+    },
+    {
+      "id": 1130,
+      "name": "Spear of Light",
+      "local_starts": 75,
+      "other_or_unassigned_starts": 782
+    },
+    {
+      "id": 3074,
+      "name": "ID 3074",
+      "local_starts": 0,
+      "other_or_unassigned_starts": 1
+    },
+    {
+      "id": 3075,
+      "name": "ID 3075",
+      "local_starts": 0,
+      "other_or_unassigned_starts": 1
+    }
+  ],
+  "event_counts": {
+    "collector_start": 1,
+    "initialization_begin": 1,
+    "initialization_guards_installed": 1,
+    "initialization_modules_configured": 1,
+    "gwca_initialize_returned": 1,
+    "initialization_complete": 1,
+    "callback_registered": 1,
+    "game_thread_hook_enabled": 1,
+    "quest_info_requested": 197,
+    "quest_snapshot_changed": 227,
+    "npc_visibility_changed": 3464,
+    "gadget_observations": 15767,
+    "local_equipment_observed": 15,
+    "local_inventory_observed": 574,
+    "npc_definition_observed": 510,
+    "travel_command_enabled": 1,
+    "name_decoded": 447,
+    "other_player_first_seen": 1379,
+    "npc_observations": 15751,
+    "local_map_transition_observed": 11,
+    "local_entry_candidate": 11,
+    "ground_item_observed": 175,
+    "ground_item_no_longer_observed": 122,
+    "loot_notification": 25
+  },
+  "maps": [
+    58,
+    72,
+    138,
+    807,
+    808
+  ],
+  "distinct_decoded_npc_names": 163,
+  "ground_item_models": 12,
+  "quest_names_and_completion_flags": {
+    "Mallyx the Unyielding": [
+      "False"
+    ],
+    "840": [
+      "False"
+    ],
+    "862": [
+      "False"
+    ],
+    "886": [
+      "False"
+    ],
+    "1086": [
+      "False"
+    ],
+    "1102": [
+      "False"
+    ],
+    "Don't Fear the Reapers": [
+      "False",
+      "True"
+    ],
+    "Evil Residents": [
+      "False",
+      "True"
+    ],
+    "1440": [
+      "False"
+    ],
+    "Miniature Companion: Factions": [
+      "False"
+    ],
+    "Miniature Companion: Nightfall": [
+      "False"
+    ],
+    "Miniature Companion: Young Heroes": [
+      "False"
+    ],
+    "Miniature Companion: Eye of the North": [
+      "False"
+    ],
+    "Miniature Companion: Dungeons": [
+      "False"
+    ],
+    "Miniature Companion: The Underworld": [
+      "False"
+    ],
+    "Miniature Companion: The Fissure of Woe": [
+      "False"
+    ],
+    "Miniature Companion: The Deep": [
+      "False"
+    ],
+    "Miniature Companion: The Domain of Anguish": [
+      "False"
+    ],
+    "Miniature Companion: Sorrow's Furnace": [
+      "False"
+    ],
+    "Shadows in the Night": [
+      "False"
+    ],
+    "Forgotten Relics": [
+      "False"
+    ],
+    "Give Peace a Chance": [
+      "False"
+    ],
+    "Lord Khobay": [
+      "False"
+    ],
+    "Heroes' Ascent": [
+      "False"
+    ],
+    "Miniature Companion: Prophecies": [
+      "False"
+    ],
+    "Evil Residents Code: Harmonica": [
+      "False",
+      "True"
+    ],
+    "Stemming the Skeletal Tide": [
+      "False"
+    ],
+    "Every Bit Helps": [
+      "False"
+    ],
+    "The Waiting Game": [
+      "False"
+    ]
+  },
+  "loot_notifications": [
+    {
+      "source": "Fire Imp",
+      "item": "Trick-or-Treat Bag",
+      "count": 1
+    },
+    {
+      "source": "Fire Imp",
+      "item": "Glowing Heart",
+      "count": 1
+    },
+    {
+      "source": "Caromi Tengu Scout",
+      "item": "Hatchet",
+      "count": 1
+    },
+    {
+      "source": "Zombie",
+      "item": "Decayed Orr Emblem",
+      "count": 2
+    },
+    {
+      "source": "Zombie",
+      "item": "<c=@ItemUncommon>Executioner's Breastplate</c>",
+      "count": 1
+    },
+    {
+      "source": "Disgruntled Zombie",
+      "item": "Trick-or-Treat Bag",
+      "count": 1
+    },
+    {
+      "source": "Zombie Warlock",
+      "item": "Decayed Orr Emblem",
+      "count": 4
+    },
+    {
+      "source": "Zombie Warlock",
+      "item": "23 Bones",
+      "count": 1
+    },
+    {
+      "source": "Disgruntled Zombie",
+      "item": "3 Decayed Orr Emblems",
+      "count": 1
+    },
+    {
+      "source": "Zombie Hound",
+      "item": "Trick-or-Treat Bag",
+      "count": 2
+    },
+    {
+      "source": "Zombie",
+      "item": "Trick-or-Treat Bag",
+      "count": 1
+    },
+    {
+      "source": "Zombie",
+      "item": "Dead Staff",
+      "count": 2
+    },
+    {
+      "source": "Bloated Zombie",
+      "item": "<c=@ItemRare>Sephis Axe</c>",
+      "count": 1
+    },
+    {
+      "source": "Zombie Hound",
+      "item": "Executioner's Breastplate",
+      "count": 1
+    },
+    {
+      "source": "Zombie Warlock",
+      "item": "Break Hammer",
+      "count": 1
+    },
+    {
+      "source": "Zombie",
+      "item": "Executioner's Breastplate",
+      "count": 2
+    },
+    {
+      "source": "Zombie Warlock",
+      "item": "Dead Staff",
+      "count": 1
+    },
+    {
+      "source": "Zombie Warlock",
+      "item": "Deadly Cesta",
+      "count": 1
+    }
+  ],
+  "limitations": [
+    "Session-only checkpoint; cumulative implementation backlog unchanged.",
+    "NPC snapshots are observations, not proven spawns.",
+    "Loot names do not prove source agent identity or drop probabilities.",
+    "Quest snapshots do not by themselves prove reward dialogue."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "skill": 5,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 52,
+    "seconds": 0.25,
+    "stored_skill": 5,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 0,
+    "0x48": 0,
+    "0x4c": 20,
+    "0x5c": 1,
+    "0x60": 12,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 11
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "a4d100010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-6468-5728843.jsonl",
+    "line": 66395,
+    "tick_ms": 8007437,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000005000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 66402,
+    "tick_ms": 8007781,
+    "hex": "a0000000140000001e000000190000000b000000"
+  },
+  "source_sha256": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+  "wiki_sha256": "3d400a491009e85728921a4003c9110a31d07be88e22909046eb85f7d0543e78",
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Power_Block.html",
+  "tool_sha256": "5aed2433f3354dbf5b5893a90521467ac5d4bbf2528b5de43b29deaa7d9b6084",
+  "limitations": [
+    "Native scale1..12is disable duration,not damage or generic duration fields.",
+    "Wiki specifies spell/chant and same-attribute disable;no-attribute/PvE-only casts disable only that skill.",
+    "Wiki explicitly says disable applies even if interruption is prevented;do not require successful-interrupt evidence.",
+    "Existing longer recharge/disable deadlines must not be shortened.",
+    "Captured cast/body does not prove disable timing,protected-cast behavior or rendered acceptance.",
+    "This audit does not bind casting or Runtime cooldown application."
+  ]
+}

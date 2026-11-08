@@ -1,0 +1,27 @@
+{
+  "status": "Shared miss policy and projectile condition timing implemented;Price of Failure103 casting still unbound",
+  "before": "projectile-miss-state-before.txt:Blind expired before impact but target remained500 rather than480HP.",
+  "implemented": [
+    "Queued projectiles no longer store Blind at release;both player/NPC impact paths query current attacker conditions after Health advancement.",
+    "Ordinary and fixed-damage attack resolvers share validated multiplicative miss probability.",
+    "Additional chance defaults to0;Price of Failure does not become enabled from this groundwork."
+  ],
+  "focused_validation": "Four suites passed0.04s:weapon_attack,attack_miss,projectile_miss_state,barbs. Player and NPC targets cover Blind expiry/application during flight. Complete10000quantile checks give2500/9250/9000 misses for25percent/Blind+25percent/Blind. Exact thresholds,invalid probabilities/draws,and actual ordinary/fixed resolver paths covered.12 tooling tests pass.",
+  "full_validation": "All-target Release build succeeded and190/190 CTest passed22.45s. Subsequently registered/compiled two independent outcome-policy targets;all192/192 CTest passed20.18s.12 tooling tests pass.",
+  "limitations": [
+    "Existing world callers still use private deterministic midpoint miss draws;these changes do not implement server RNG for103.",
+    "Price of Failure103 needs owned hex/casting integration and exactly-once released attack outcomes including block,dodge/obstruction.",
+    "Projectile events currently resolve at observed world time;this does not recover retail scheduling or late-tick historical condition state.",
+    "Weakness remains launch-snapshotted;its separate retail timing is not established by this change.",
+    "No rendered acceptance or new skill binding."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_attack_miss.h": "14ca165244677a3b48395394e5563e0b384317729186bd5ff40f9e82224579b9",
+    "src/runtime/gw_weapon_attack.h": "570a08d31837d7527e45213863bdec4c06d03044790db89cca6087097fbed34d",
+    "src/runtime/gw_weapon_attack_skills.h": "c3e7949004b0e94159faf7e692e63baefd619d024baa9abf606130e39c6cf63d",
+    "src/runtime/gw_world_simulation.h": "99055106952c660a4083ab4fa19d45f2f6d30cfdd579fbc5bf9412d5a2d18a51",
+    "tests/attack_miss.cpp": "223e5e596be4048aec2fcbdffb417d8e9c462d142b1d3ec3d46bfee4d2a92ff8",
+    "tests/projectile_miss_state.cpp": "c74f2485631cd1a9ef302ba1860cb3e3fe782ff7bbcbc70432b5f36db1448324",
+    "CMakeLists.txt": "3a016b0e93654a2b805a93dc887b2c52667b7312b2793e361701d5b39ee67754"
+  }
+}

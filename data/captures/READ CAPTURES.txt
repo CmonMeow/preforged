@@ -1,0 +1,6 @@
+All collected official-client captures are indexed in capture-index.json.
+Each SHA256 identifies one canonical file; sources lists all original locations.
+Existing reviewed session paths are preserved. incoming contains previously scattered logs.
+observer-downloads contains replay data; account-imports contains private account captures.
+Original files remain where existing tools may reference them. Active files are never removed.
+Run python tools/captures/consolidate.py from the project to collect later sessions.

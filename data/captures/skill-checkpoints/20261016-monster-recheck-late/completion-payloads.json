@@ -1,0 +1,59 @@
+{
+  "checkpoint": "20261016-monster-recheck-late",
+  "cutoff": "2026-10-17T02:14:37.266193+00:00",
+  "source_manifest_sha256": "5e285cf2e45e9f0561e50d95789e869d499ea3134c0972c9eea8681198e6bc74",
+  "events": [
+    {
+      "kind": 46,
+      "value": 0,
+      "count": 2709,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 21267,
+        "tick_ms": 190492031,
+        "actor": 25,
+        "hex": "9f0000002e0000001900000000000000"
+      }
+    },
+    {
+      "kind": 49,
+      "value": 0,
+      "count": 1209,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 40729,
+        "tick_ms": 190962984,
+        "actor": 100,
+        "hex": "9f000000310000006400000000000000"
+      }
+    },
+    {
+      "kind": 58,
+      "value": 0,
+      "count": 19281,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 20827,
+        "tick_ms": 190477437,
+        "actor": 50,
+        "hex": "9f0000003a0000003200000000000000"
+      }
+    },
+    {
+      "kind": 59,
+      "value": 0,
+      "count": 1571,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 51678,
+        "tick_ms": 191195125,
+        "actor": 25,
+        "hex": "9f0000003b0000001900000000000000"
+      }
+    }
+  ],
+  "limits": [
+    "Terminal generic events only; no inference of pending skill or local ownership.",
+    "Observed modern expanded records are not native 2022 wire bytes."
+  ]
+}

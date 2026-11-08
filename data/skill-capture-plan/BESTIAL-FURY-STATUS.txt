@@ -1,0 +1,25 @@
+Bestial Fury [1209] — native runtime-bound; rendered verification pending (2026-10-23)
+
+Capture: frozen 20261023-targets-review has 1 local instant use (map 280)
+and 41 other/unassigned starts. Known PvP-map windows have 41 other-actor
+starts: 33 in Competitive Mission map 223 and 8 in Alliance Battle map 300.
+No local start in those PvP windows. Other actors may include NPCs.
+
+Implementation: gw_bestial_fury.h validates the pinned 2022 skill row,
+computes 5..11-second stance duration and 25% attack-speed increase, and
+proposes a 5-second disable for each exact non-attack skill copy on the
+authoritative bar. Attack skills (including pet attacks) are excluded. Replay,
+forged plans, duplicate copies, reset, expiry, and retirement have focused
+tests. Trusted World status application now commits the stance and disable,
+applies 25% IAS to ordinary and attack-skill timing, includes the disable in
+exact-copy queries and reset revisions, and clears lifetime state on leave.
+The focused World test verifies these paths and stance replacement. The native
+Runtime now admits the learned Ranger skill, pays 10 Energy, applies the World
+stance, publishes effect-add and caster body resource 766, starts 10s recharge,
+and synchronizes the other non-attack slot disable to the client. The cast test
+uses a legal Ranger bar and checks the native packets and exact-copy authority.
+
+Remaining: verify the attack-speed stacking rule with other IAS sources against
+retail, NPC caster handling, and the rendered 2022 client effect/disable feedback.
+The existing capture has no local Bestial Fury body-effect packet evidence.
+Source binding and native packet tests do not prove pixel/animation acceptance.

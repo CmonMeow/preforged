@@ -1,0 +1,30 @@
+{
+  "checkpoint": "20261016-monster-recheck-late",
+  "skills": {
+    "1176": {
+      "count": 34,
+      "first": {
+        "file": "packets-110488-195213578.jsonl",
+        "line": 580141,
+        "tick_ms": 203631015,
+        "actor": 23,
+        "hex": "9f0000000a0000001700000098040000"
+      }
+    }
+  },
+  "interpretation": "Regular Factions Afflicted use1176;profession-specific Soul Explosions are Winds of Change equivalents. GenericValue10 actor is the damage recipient,not proof of the caster.",
+  "sources": [
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Afflicted_Soul_Explosion.html",
+      "sha256": "656f819751e5d44de112959b6c2a1ad8f096607f5debc9f96bfbd4c8a91ed25f"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Unbalancing_Soul_Explosion.html",
+      "sha256": "710d75b47f203a8460c13ae4823fb4ffd552acac3db640017dfa496619f00f29"
+    }
+  ],
+  "limits": [
+    "Damage-attribution count is not a cast-start count or independent damage amount measurement.",
+    "No profession-specific Soul Explosion ID found by this scan through the fixed cutoff;not evidence those variants cannot occur elsewhere."
+  ]
+}

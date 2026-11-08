@@ -1,0 +1,7 @@
+Perf: AuthSrv (127.0.0.1)
+Perf: Gc::BeginRequest host 127.0.0.1 target /Spawned/WebGate/session/create.xml
+Error: Retrying auth server connection
+Error: Web request error: A connection with the server could not be established
+
+Debug: OnAccountLogin err=58
+Perf: Gc::GcAuthCmdQueryServerError returned 58

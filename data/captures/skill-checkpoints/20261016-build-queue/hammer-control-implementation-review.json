@@ -1,0 +1,64 @@
+{
+  "status": "Five hammer player bindings implemented;production build and11 rebuilt combat suites passed",
+  "skills": [
+    355,
+    357,
+    358,
+    359,
+    360
+  ],
+  "native_evidence": "hammer-control-native-2022.json",
+  "requirements": [
+    "Devastating Hammer: landed hit,2s knockdown,5..20s Weakness and captured targeted resource608.",
+    "Counter Blow: knockdown only when a player/NPC target is actually attacking at contact.",
+    "Backbreaker:1..20 bonus damage;2s knockdown below8effective Strength and4s from8Strength.",
+    "Heavy Blow:lose all adrenaline pools at activation;1..30 bonus gated by start Weakness and2s knockdown gated by contact Weakness.",
+    "Staggering Blow:fixed native1s activation and5..20s Weakness on landed hit."
+  ],
+  "authority": [
+    "World alone constructs an immutable one-use Heavy Blow capability with exact source/target lifetimes,owned equipment,canonical plan,start Weakness,release deadline and caster control/attack epochs.",
+    "Capability cannot commit before authoritative release or after90s;wrong equipment/plan/lifetimes,interrupted control and replay are rejected.",
+    "Runtime owns a move-only lease;failure,cancel,interrupt,actor retirement,destruction and completed attempts close it. Instant stance suspension/restoration preserves the active lease.",
+    "Known NPC immunity permits damage and independent Weakness but suppresses knockdown;unknown susceptibility fails closed for potentially knocking-down skills.",
+    "Existing attack hit qualification,miss/block,Conjure,death and condition authority remain shared."
+  ],
+  "validation": {
+    "native": "Five fixed lifecycle/cost/scale checks,20 original body/endpoint consumers andDevastating particle/two captured2s knockdowns pass",
+    "focused": "4/4 focused suites passed,0.12s;includes authoritative contact/admission and actual Runtime casts",
+    "build": "build/reports/hammer-control-integration-build.txt",
+    "integration_status": "completed successfully",
+    "tooling": "23 skill tooling tests passed",
+    "integration_tests": "build/reports/hammer-control-integration-tests.txt",
+    "integration_result": "11/11 passed,0.22s;production server_host and every selected test executable rebuilt against current source"
+  },
+  "limits": [
+    "Rendered animations/sounds and independent retail melee release calibration remain unverified.",
+    "Overall finish/adrenaline packet ordering versus World effect/damage/control publication remains unverified;Devastating body-before-damage is preserved within World.",
+    "Heavy Blow split predicate is grounded in archived Withering Aura anomaly notes;Withering Aura producer1997 remains unbound and its exact same-attack reaction phase needs integration/testing.",
+    "Stonefist and other equipment/skill knockdown-duration/protection modifiers are not added by this change.",
+    "NPC-caster dispatch/AI use is separate from these player attacks against NPC recipients.",
+    "Broader all-target build/full regression and live client acceptance remain open."
+  ],
+  "next_related_work": [
+    "Earth Shaker354:target-centered adjacent knockdown after primary hit andlow-mastery failure roll.",
+    "Yeti Smash1137:caster-centered weapon hit batch,condition-gated knockdown andlow-mastery failure roll.",
+    "Irresistible Blow356/Leviathan Sweep1134:block retaliation damage/control requires a distinct blocked-outcome commit.",
+    "Bull Strike332:authoritative moving-target qualification for NPC routes.",
+    "Existing Soldier Strike1693:NPC activity now available but its old NPC refund guard still needs replacement and tests."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_weapon_attack_skills.h": "a6cc0c9420c41e08a965f643ac35304cb1ad401a1dc069ac7170f8e00ae2e2ff",
+    "src/runtime/gw_attack_admission.h": "83f7b0c5ea90bf4d83f1f4f2ea96931b203cff676f7666bc74c8994f9459c0ac",
+    "src/runtime/gw_world_simulation.h": "96f6d2af3ea48a0b6977ca4fc931e7ac188f5efec1df06a41ca1cb1fb1f452bb",
+    "src/runtime/gw_skill_casting.h": "8bac83804268e99b35703d7db16a1b97fde6ef35b46ff4ba8faeacbfcc1641eb",
+    "src/apps/gw_auth.cpp": "847077ace10fdb2e608e6ae6f7f599150193b8b9a1db92c5148c88313cdb3e97",
+    "tests/hammer_control_policy.cpp": "72d9a69d13711aaed24db00ef69c42410192f2e959ac71be72bad86e26334cec",
+    "tests/hammer_control_world.cpp": "9e0037e12e381c005ff2d053f4fb1afda7eb8db271e34f6edc15dde0d7169afb",
+    "tests/hammer_control_cast.cpp": "848630a5fdf39eac05397460f2731ec027decc39cfbcd9123904ec0af0cf9a18",
+    "tests/attack_admission.cpp": "87c938bfeacfeceeb22a7be75f9b8c60815542552f35db4b9f159d41d556f054",
+    "tests/warrior_condition_fixture.h": "372cd22307fbaa4809002d4a7347982e754a4f12537d7e780276348098f1f28d",
+    "tools/protocol/hammer_control_2022.py": "25b910d5f3876934c8232ce19179debe8cb4d1e16ad47a9aafbb38e92b83fae8",
+    "tools/protocol/skill_runtime_coverage.py": "db923a91e2525af6a91bb84054fcd272cd0351d044c977b33d9ecb9290e9751f",
+    "CMakeLists.txt": "67c74422cbaa4524b2c1383e613ed0106dfc58d7f7af477bb86fce4ee4832251"
+  }
+}

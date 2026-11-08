@@ -1,0 +1,52 @@
+WITHER125 / MALAISE140: ADDITIONAL MECHANICS EVIDENCE
+
+Both skills already have activation/particle captures. These are unresolved
+mechanics cases, not requests to repeat the ordinary skill capture batches.
+No logger replacement or official-client restart is required by this checklist.
+
+1. Apply to an already-empty foe.
+   Use a consenting test opponent whose own client confirms its Energy state.
+   Capture both clients: establish a real zero, cast each hex separately, and
+   retain application, damage, effect removal and subsequent regeneration.
+   A displayed0 alone is insufficient: fractions and equipment debt can hide
+   a different resource state. Record how zero was established.
+
+2. Original caster dies while the target remains alive and hexed.
+   Capture application, caster death, and a later controlled target Energy
+   loss to0. Determine whether each hex persists and whether zero damage occurs.
+   Repeat separately for the caster leaving the instance; death and departure
+   are distinct lifetime cases. Record source/target IDs and map transitions.
+
+3. Simultaneous zero observers and lethal outcomes.
+   Capture125+140, then125+140+Mind Wrack49, with a known target Energy loss.
+   Include target Health sufficient to survive all bursts and a lethal case.
+   Existing private-server tests prove our transaction policy, not retail
+   equal-time damage/end ordering. Keep full packet context around the loss.
+
+Historical sources/native metadata and current verification:
+docs/energy-degeneration-hexes.txt
+build/reports/energy-degeneration-hexes-native-2022.json
+tests/energy_hex_world.cpp
+tests/npc_energy_hex.cpp
+
+Modern captures do not override pinned2022 timing without separate evidence.
+
+2026-10-20: sharpened caster-death capture (do not use private tests as retail proof)
+The historical Skill_quick_reference.html lists Malaise under hexes affecting
+the caster and cross-links Death's caster-death-removal section. Death explicitly
+labels its list incomplete. This suggests testing immediate removal,not assuming
+Malaise persists until Energy zero. Wither needs a separate controlled comparison.
+
+A. Malaise alone: establish positive target Energy,apply,kill original caster,
+   inspect immediate target effect removal and Energy slope before any later drain.
+B. Wither alone: kill original caster while target survives,then drain known
+   positive Energy to real zero. Record whether damage occurs despite caster death.
+C. Combined: only after A,measure whether removal of Malaise changes the zero
+   crossing. Do not assume the private combined2500ms boundary remains valid.
+D. Repeat departure separately;death is not evidence for map exit or actor reuse.
+
+Reproducible offline audit (no live collector access):
+python tools/protocol/energy_hex_lifecycle_evidence.py data/captures/skill-checkpoints/20261017-npc-refresh-2
+Report:build/reports/energy-hex-lifecycle-evidence.json
+The audit hashes four wiki references and verifies fixed activation/finish
+receipts against frozen packet hashes. Those receipts are not death experiments.

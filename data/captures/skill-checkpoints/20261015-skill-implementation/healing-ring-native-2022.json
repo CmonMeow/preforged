@@ -1,0 +1,72 @@
+{
+  "skill": 1262,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "2dcaf71b991e2aa0f71a5f020fa5ae50b33a56e34b32cd613562f1e691b5425f",
+  "capture_file": "packets-1360-15821281.jsonl",
+  "capture_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "evidence": [
+    {
+      "line": 299027,
+      "tick_ms": 21742734,
+      "hex": "9f0000003c00000019000000ee040000"
+    },
+    {
+      "line": 299038,
+      "tick_ms": 21743734,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    {
+      "line": 299039,
+      "tick_ms": 21743734,
+      "hex": "9f0000001500000019000000f3010000"
+    },
+    {
+      "line": 299040,
+      "tick_ms": 21743734,
+      "hex": "9f0000002a0000001c000000e0010000"
+    },
+    {
+      "line": 299041,
+      "tick_ms": 21743734,
+      "hex": "a3000000370000001c000000190000000000803d"
+    }
+  ],
+  "animation": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 1.0,
+    "stored_skill": 1262,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 0,
+    "0x48": 0,
+    "0x4c": 10,
+    "0x5c": 30,
+    "0x60": 180,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 499
+  },
+  "particle": {
+    "actor": 42,
+    "encoded_file": "a23b00010000",
+    "flags": 1
+  },
+  "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Healing_Ring.html",
+  "wiki_sha256": "4120bde56fcf6297bfdfca7af4f453e6661bdfa355b3a5cd3b22a3a352d039af",
+  "requirements": [
+    "Heal adjacent allies and foes, including eligible NPC creatures, except caster.",
+    "Caster receives only its primary-Monk Divine Favor bonus.",
+    "Spirits are immune to healing; reviewed eligibility required.",
+    "Apply normal healing modifiers, caps, alive/lifetime and plane/range checks.",
+    "Frozen generic body499 is emitted on caster despite living in native target-resource column."
+  ],
+  "limits": [
+    "No Runtime binding or rendered acceptance claimed.",
+    "Same-tick target28/source25 feedback is0.0625 of advertised maximum480 (30Health); full recipient set and actual-restored versus nominal/overheal feedback semantics remain unproven.",
+    "Existing all_creatures party heal only enumerates players; do not reuse it unchanged."
+  ]
+}

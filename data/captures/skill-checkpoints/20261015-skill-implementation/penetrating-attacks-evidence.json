@@ -1,0 +1,99 @@
+{
+  "skills": [
+    339,
+    1136
+  ],
+  "captured": [
+    {
+      "id": 1136,
+      "name": "Penetrating Chop",
+      "obtainable_baseline": true,
+      "runtime_status": "unsupported",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 399311,
+          "tick_ms": 23952421,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000070040000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 399314,
+          "tick_ms": 23953000,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "missing_activation_capture": [
+    339
+  ],
+  "wiki": [
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Penetrating_Chop.html",
+      "sha256": "7ed4ccf8efff1124ab564569b4580a15ece8dc82e79a17764632ef54cef42bd8"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Penetrating_Blow.html",
+      "sha256": "cf9272f8d463250ca77ba53f267a0e5e8bff14659c5090021b09bcf139c38a88"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Armor_penetration.html",
+      "sha256": "247ae8322e5836c4bc21ccf08465a995d9cea6a053269949404358b850441f6e"
+    }
+  ],
+  "reviewed_rules": [
+    "Both duplicate axe attacks have5..17..20 bonus damage at ranks0/12/15 and20% base armor penetration.",
+    "Base armor penetration does not stack: use max(Strength,20%), not Strength+20%.",
+    "Bonus damage remains armor ignoring and separate from weapon base damage."
+  ],
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "cases": [
+      {
+        "skill": 339,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 339
+        }
+      },
+      {
+        "skill": 1136,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 1136
+        }
+      }
+    ],
+    "limits": "Native attack body consumer reaches model lookup/style41 and animation state45 using supplied intervals. Model lookup returns synthetic handles, ancillary effects/clock/actor services stubbed. No rendered pixels or attack release timing proof."
+  },
+  "implementation_status": "Source bindings339 and1136 implemented; native offline tracing and rebuilt focused suites pass.",
+  "limitations": [
+    "Archived wiki explicitly describes an unresolved armor-penetration rounding anomaly; percentage model is not exact retail rounding proof.",
+    "Penetrating Blow339 lacks a local activation capture; native synthetic tracing is not activation capture.",
+    "Rendered animation acceptance and ordinary release timing are unverified."
+  ],
+  "validation": [
+    "adrenaline_casting: native attack lifecycle/resource paths for both duplicate skills; numeric AP20 formula at Strength0/12/20, separate Weakness bonus, Blind and forged penetration rejection.",
+    "captured_skills: both skills hit actual player/NPC armor100 targets at Strength0/12/20, with and without Blind.",
+    "Captured-skill coverage and checkpoint audit refreshed;11 developer audit tests pass.",
+    "Production/all-target build succeeded (session29516 exit0).",
+    "Full rebuilt CTest166/166 passed21.06s: build/reports/penetrating-full-tests.txt."
+  ]
+}

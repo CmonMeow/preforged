@@ -1,0 +1,24 @@
+HEALING RIBBON [2062] — REMAINING CAPTURE AND VERIFICATION
+
+Source-bound in the private 2022 server. Fixed DoA session
+20261024-urgoz-doa-completed contains 70 timing-attributed starts and 63
+same-actor finishes, each with exactly one resource1738 selected-target body
+within 50ms. The separate player-skill checkpoint
+20261024-all-completed has no local player activation for skill2062; keep it
+on MISSING-CAPTURES.txt and OTHER-ACTOR-CURRENT.txt accordingly.
+
+Capture needed: one locally controlled player cast with a known Healing
+Prayers rank and two injured allied recipients near the selected ally; one
+cast with more than two eligible nearby allies to determine selection order;
+one cast at the near-radius boundary; one cast with Divine Favor. Record
+primary and secondary Health before/after, caster/target identities, and
+resource1738 events. Do not assume overlapping DoA Health packets prove the
+spell's exact numeric effect.
+
+Verification needed: rendered Guild Wars 2022 client acceptance of the
+primary animation and heal updates; retail near-radius and recipient-order
+comparison; heal-modifier and protection interactions; NPC caster behavior.
+The server currently uses 322 units and nearest-first deterministic ordering
+as documented private policies. The original official client/loggers must
+remain running during private-server work unless a collector-specific restart
+has been separately authorized.

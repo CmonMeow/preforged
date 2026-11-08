@@ -1,0 +1,842 @@
+{
+  "quest": 71,
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+      "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6"
+    },
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+      "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02"
+    }
+  ],
+  "active": {
+    "line": 591,
+    "epoch": 3,
+    "tick_ms": 81638359,
+    "quest": {
+      "quest_id": 71,
+      "log_state": 1,
+      "completed": false,
+      "current_mission": false,
+      "primary": false,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": -5025.0,
+        "y": 4296.0,
+        "plane": 0,
+        "x_bits": 3315402752,
+        "y_bits": 1166426112,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5801,
+          60141,
+          37705,
+          22812
+        ],
+        "decoded": "A Mesmer's Burden",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          13308,
+          39195,
+          34100,
+          5716
+        ],
+        "decoded": "Lady Althea",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5802,
+          48806,
+          54772,
+          32266,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          506
+        ],
+        "decoded": "At the <c=@Quest>watering hole</c> southwest of here, you will find a <c=@Quest>rogue bull</c>. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\n\nReward:<brx>250 Experience<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5806,
+          58437,
+          57808,
+          3992,
+          1
+        ],
+        "decoded": "{s}Kill the rogue bull that is threatening Althea's theatre.",
+        "status": "decoded"
+      }
+    }
+  },
+  "completed": {
+    "line": 897,
+    "epoch": 3,
+    "tick_ms": 81760437,
+    "quest": {
+      "quest_id": 71,
+      "log_state": 3,
+      "completed": true,
+      "current_mission": false,
+      "primary": false,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 2743.0,
+        "y": 7786.0,
+        "plane": 0,
+        "x_bits": 1160474624,
+        "y_bits": 1173573632,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5801,
+          60141,
+          37705,
+          22812
+        ],
+        "decoded": "A Mesmer's Burden",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          13308,
+          39195,
+          34100,
+          5716
+        ],
+        "decoded": "Lady Althea",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5802,
+          48806,
+          54772,
+          32266,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          506
+        ],
+        "decoded": "At the <c=@Quest>watering hole</c> southwest of here, you will find a <c=@Quest>rogue bull</c>. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\n\nReward:<brx>250 Experience<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10997,
+          50642,
+          61219,
+          3064,
+          266,
+          5806,
+          58437,
+          57808,
+          3992,
+          1,
+          2,
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          10992,
+          50343,
+          39936,
+          16059,
+          266,
+          13308,
+          39195,
+          34100,
+          5716,
+          1,
+          1
+        ],
+        "decoded": "{sc}Kill the rogue bull that is threatening Althea's theatre.{s}Return to Lady Althea for your reward.",
+        "status": "decoded"
+      }
+    }
+  },
+  "states": [
+    {
+      "line": 591,
+      "epoch": 3,
+      "tick_ms": 81638359,
+      "quest": {
+        "quest_id": 71,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": -5025.0,
+          "y": 4296.0,
+          "plane": 0,
+          "x_bits": 3315402752,
+          "y_bits": 1166426112,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5801,
+            60141,
+            37705,
+            22812
+          ],
+          "decoded": "A Mesmer's Burden",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13308,
+            39195,
+            34100,
+            5716
+          ],
+          "decoded": "Lady Althea",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5802,
+            48806,
+            54772,
+            32266,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "At the <c=@Quest>watering hole</c> southwest of here, you will find a <c=@Quest>rogue bull</c>. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5806,
+            58437,
+            57808,
+            3992,
+            1
+          ],
+          "decoded": "{s}Kill the rogue bull that is threatening Althea's theatre.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 897,
+      "epoch": 3,
+      "tick_ms": 81760437,
+      "quest": {
+        "quest_id": 71,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 2743.0,
+          "y": 7786.0,
+          "plane": 0,
+          "x_bits": 1160474624,
+          "y_bits": 1173573632,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5801,
+            60141,
+            37705,
+            22812
+          ],
+          "decoded": "A Mesmer's Burden",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13308,
+            39195,
+            34100,
+            5716
+          ],
+          "decoded": "Lady Althea",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5802,
+            48806,
+            54772,
+            32266,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "At the <c=@Quest>watering hole</c> southwest of here, you will find a <c=@Quest>rogue bull</c>. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5806,
+            58437,
+            57808,
+            3992,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13308,
+            39195,
+            34100,
+            5716,
+            1,
+            1
+          ],
+          "decoded": "{sc}Kill the rogue bull that is threatening Althea's theatre.{s}Return to Lady Althea for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6604,
+      "epoch": 20,
+      "tick_ms": 84188218,
+      "quest": {
+        "quest_id": 71,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": -5025.0,
+          "y": 4296.0,
+          "plane": 0,
+          "x_bits": 3315402752,
+          "y_bits": 1166426112,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5801,
+            60141,
+            37705,
+            22812
+          ],
+          "decoded": "A Mesmer's Burden",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13308,
+            39195,
+            34100,
+            5716
+          ],
+          "decoded": "Lady Althea",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5802,
+            48806,
+            54772,
+            32266,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "At the <c=@Quest>watering hole</c> southwest of here, you will find a <c=@Quest>rogue bull</c>. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5806,
+            58437,
+            57808,
+            3992,
+            1
+          ],
+          "decoded": "{s}Kill the rogue bull that is threatening Althea's theatre.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6739,
+      "epoch": 20,
+      "tick_ms": 84245218,
+      "quest": {
+        "quest_id": 71,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 2743.0,
+          "y": 7786.0,
+          "plane": 0,
+          "x_bits": 1160474624,
+          "y_bits": 1173573632,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5801,
+            60141,
+            37705,
+            22812
+          ],
+          "decoded": "A Mesmer's Burden",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13308,
+            39195,
+            34100,
+            5716
+          ],
+          "decoded": "Lady Althea",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5802,
+            48806,
+            54772,
+            32266,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "At the <c=@Quest>watering hole</c> southwest of here, you will find a <c=@Quest>rogue bull</c>. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5806,
+            58437,
+            57808,
+            3992,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13308,
+            39195,
+            34100,
+            5716,
+            1,
+            1
+          ],
+          "decoded": "{sc}Kill the rogue bull that is threatening Althea's theatre.{s}Return to Lady Althea for your reward.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "actors": [
+    {
+      "line": 305,
+      "npc": {
+        "agent": 41,
+        "model": 1510,
+        "x": 2743.0,
+        "y": 7786.0,
+        "plane": 0,
+        "facing": -0.88076,
+        "level": 5,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          13308,
+          39195,
+          34100,
+          5716
+        ],
+        "name": "Lady Althea",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 304,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 3,
+          "instance_ms": 4953,
+          "npc_table_id": 1510,
+          "definition": {
+            "model_file": 116225,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 5,
+            "secondary": 0,
+            "default_level": 5,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116781
+            ],
+            "name_encoded_utf16": [
+              3968,
+              33488,
+              35171,
+              4939
+            ],
+            "name": "Mesmer Trainer",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 632,
+      "npc": {
+        "agent": 55,
+        "model": 1397,
+        "x": -5025.0,
+        "y": 4296.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3852,
+          53364,
+          47895,
+          22410
+        ],
+        "name": "Rogue Bull",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 631,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 3,
+          "instance_ms": 127932,
+          "npc_table_id": 1397,
+          "definition": {
+            "model_file": 116295,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 9,
+            "primary": 1,
+            "secondary": 0,
+            "default_level": 5,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3852,
+              53364,
+              47895,
+              22410
+            ],
+            "name": "Rogue Bull",
+            "name_status": "decoded"
+          }
+        }
+      }
+    }
+  ],
+  "health_capacity_records": [
+    {
+      "line": 9325,
+      "actor": 55,
+      "capacity": 80,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81750812,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000003700000050000000"
+      }
+    }
+  ],
+  "death_records": [
+    {
+      "line": 9537,
+      "actor": 55,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81760078,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f100000037000000100c0000"
+      }
+    },
+    {
+      "line": 9560,
+      "actor": 55,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81760078,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003700000010000000"
+      }
+    }
+  ],
+  "wiki": {
+    "title": "A Mesmer's Burden",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\A_Mesmer's_Burden.html",
+    "sha256": "2c10e65c372892a831c87842c5f71b42d667c4540ce57c6993b6be9b35b43663",
+    "sections": {
+      "Quest_information": {
+        "line": 105,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nmesmer primary or secondary\nCompleted primary profession test (elementalist, mesmer, monk, necromancer, ranger, or warrior)\nCharacter in pre-Searing\nObjectives\nKill the Rogue Bull that is threatening Althea's theatre.\nReturn to Lady Althea for your reward.\nEarly benefits\nLady Althea will give you the following skills upon taking the quest:\nConjure Phantasm\nEther Feast\nImagined Burden\nReward\n250 Experience\nEnvironmental changes\nAfter completing this quest and accepting the reward, the Rogue Bull no longer spawns on entering Lakeside County."
+      },
+      "Requirements": {
+        "line": 106,
+        "text": "Requirements\nTyrian (Prophecies) character\nmesmer primary or secondary\nCompleted primary profession test (elementalist, mesmer, monk, necromancer, ranger, or warrior)\nCharacter in pre-Searing"
+      },
+      "Objectives": {
+        "line": 111,
+        "text": "Objectives\nKill the Rogue Bull that is threatening Althea's theatre.\nReturn to Lady Althea for your reward."
+      },
+      "Reward": {
+        "line": 119,
+        "text": "Reward\n250 Experience"
+      },
+      "Walkthrough": {
+        "line": 123,
+        "text": "Walkthrough\nHead roughly south-west towards the pool of water to find the Rogue Bull. The Rogue Bull has a high armor rating, so armor ignoring skills (such as Bane Signet or Banish) and health degeneration skills (such as Conjure Phantasm or Sever Artery) are useful here. Because the bull is quite a high level, consider bringing healing skills such as Orison of Healing or Troll Unguent. Also be wary of the Rogue Bull's skill, Bull's Charge, as this can cause knock down, particularly if you are attempting to flee. Once the bull is dead, return to Lady Althea for your reward."
+      },
+      "Dialogue": {
+        "line": 126,
+        "text": "Dialogue\nInitial dialogue\nLady Althea\n\"At the watering hole southwest of here, you will find a rogue bull. Terrible creature, a menace to everyone coming to visit our humble theatre. Here are some Mesmer spells to assist you. If you'd dispatch this creature for me, I'd be most grateful.\"\nAccept: \"I'd be happy to help.\"\nDecline: \"I'm too busy right now.\"\nAsk: \"I'd head southwest to the watering hole and take care of that bull if I were you. Use \"Imagined Burden\" first to slow him down, then attack him from range.\"\nReward dialogue\nLady Althea\n\"Back already? Excellent! I can't thank you enough for taking care of that dangerous bull.\"\nRetrieved from \"https://wiki.guildwars.com/index.php?title=A_Mesmer%27s_Burden&oldid=2634998\"\nCategories:\nAscalon (pre-Searing) quests\nProphecies secondary quests\nProphecies quests\nTyrian only quests\nMesmer questsHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "limits": [
+    "Modern memory packet records are not native2022 opcodes.",
+    "Sampled actor positions do not prove exact spawn timing.",
+    "Completion does not prove reward turn-in.",
+    "Armor, targeting and retaliation are not inferred."
+  ],
+  "exports": [
+    {
+      "path": "data\\gw\\quests\\actors\\mesmer-burden-althea.txt",
+      "sha256": "0cab685302ad6c582a514d12e0324dc393ed8e59e23e91bcaa13fc383019fd9d",
+      "source_actor": 41
+    },
+    {
+      "path": "data\\gw\\quests\\actors\\mesmer-burden-bull.txt",
+      "sha256": "403b4e1576f4f6eb456d311befc074d1f5bf4ec8c096257ccab0291cad956f60",
+      "source_actor": 55
+    },
+    {
+      "path": "data\\gw\\quests\\mesmer-burden.fwqc",
+      "sha256": "527c3c2a0c9549f9a961b863b9326be0fba66e70ee7917cbf5c4cc580e76fd42"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "skills": [
+    397,
+    432
+  ],
+  "source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Read_the_Wind.html",
+  "sha256": "a8c33906ad36acfdf3667747e1b216614273102705c7223fee00a2de01db3e0b",
+  "rule": "Bow attack skills retain their own flight timing while receiving preparation bonus damage. Quick Shot remains twice ordinary bow speed with Read the Wind; it does not become four times speed.",
+  "scope": "Shared bow attack-skill projectile path; ordinary arrows retain preparation flight modification.",
+  "verification": "Focused captured_skills regression passes including early-arrival assertion rejecting erroneous 4x speed, preserved bonus damage, and unprepared flight. skill_casting and npc_world_combat rebuilt and passed. Full CTest run: 166/166 passed (20.28s); remaining test binaries predate this header correction until final full rebuild. Native rendering and retail base flight speed remain unverified."
+}

@@ -1,0 +1,1324 @@
+{
+  "quest": 84,
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+      "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6"
+    },
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+      "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02"
+    }
+  ],
+  "active": {
+    "line": 7599,
+    "epoch": 25,
+    "tick_ms": 84612593,
+    "quest": {
+      "quest_id": 84,
+      "log_state": 33,
+      "completed": false,
+      "current_mission": false,
+      "primary": true,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 3802.0,
+        "y": -4559.0,
+        "plane": 0,
+        "x_bits": 1164812288,
+        "y_bits": 3314448384,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5932,
+          46767,
+          54553,
+          11785
+        ],
+        "decoded": "Monk Test",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          5940,
+          52985,
+          52227,
+          17056
+        ],
+        "decoded": "Ciglo the Monk",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5935,
+          33407,
+          43098,
+          17687,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          26042,
+          1,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          25968,
+          1
+        ],
+        "decoded": "There's a little girl named <c=@Quest>Gwen</c> who I'm worried about. She seems to have wandered across the river, and I'm sure she won't make it back through all those <c=@Quest>skale</c> without some help. Please go lead her back here safely.\n\nReward:<brx>500 Experience<brx>Healing Breeze<brx>Banish<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5938,
+          48045,
+          40889,
+          17736,
+          1
+        ],
+        "decoded": "{s}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.",
+        "status": "decoded"
+      }
+    }
+  },
+  "completed": {
+    "line": 7710,
+    "epoch": 25,
+    "tick_ms": 84652593,
+    "quest": {
+      "quest_id": 84,
+      "log_state": 35,
+      "completed": true,
+      "current_mission": false,
+      "primary": true,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 5942.0,
+        "y": 4172.0,
+        "plane": 0,
+        "x_bits": 1169797120,
+        "y_bits": 1166172160,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5932,
+          46767,
+          54553,
+          11785
+        ],
+        "decoded": "Monk Test",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          5940,
+          52985,
+          52227,
+          17056
+        ],
+        "decoded": "Ciglo the Monk",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5935,
+          33407,
+          43098,
+          17687,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          26042,
+          1,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          25968,
+          1
+        ],
+        "decoded": "There's a little girl named <c=@Quest>Gwen</c> who I'm worried about. She seems to have wandered across the river, and I'm sure she won't make it back through all those <c=@Quest>skale</c> without some help. Please go lead her back here safely.\n\nReward:<brx>500 Experience<brx>Healing Breeze<brx>Banish<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10997,
+          50642,
+          61219,
+          3064,
+          266,
+          5938,
+          48045,
+          40889,
+          17736,
+          1,
+          2,
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5939,
+          34570,
+          44895,
+          17262,
+          1
+        ],
+        "decoded": "{sc}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.{s}Lead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way.",
+        "status": "decoded"
+      }
+    }
+  },
+  "states": [
+    {
+      "line": 7599,
+      "epoch": 25,
+      "tick_ms": 84612593,
+      "quest": {
+        "quest_id": 84,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 3802.0,
+          "y": -4559.0,
+          "plane": 0,
+          "x_bits": 1164812288,
+          "y_bits": 3314448384,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5932,
+            46767,
+            54553,
+            11785
+          ],
+          "decoded": "Monk Test",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            5940,
+            52985,
+            52227,
+            17056
+          ],
+          "decoded": "Ciglo the Monk",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5935,
+            33407,
+            43098,
+            17687,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            756,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26042,
+            1,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            25968,
+            1
+          ],
+          "decoded": "There's a little girl named <c=@Quest>Gwen</c> who I'm worried about. She seems to have wandered across the river, and I'm sure she won't make it back through all those <c=@Quest>skale</c> without some help. Please go lead her back here safely.\n\nReward:<brx>500 Experience<brx>Healing Breeze<brx>Banish<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5938,
+            48045,
+            40889,
+            17736,
+            1
+          ],
+          "decoded": "{s}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 7693,
+      "epoch": 25,
+      "tick_ms": 84645593,
+      "quest": {
+        "quest_id": 84,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 3802.0,
+          "y": -4559.0,
+          "plane": 0,
+          "x_bits": 1164812288,
+          "y_bits": 3314448384,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5932,
+            46767,
+            54553,
+            11785
+          ],
+          "decoded": "Monk Test",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            5940,
+            52985,
+            52227,
+            17056
+          ],
+          "decoded": "Ciglo the Monk",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5935,
+            33407,
+            43098,
+            17687,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            756,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26042,
+            1,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            25968,
+            1
+          ],
+          "decoded": "There's a little girl named <c=@Quest>Gwen</c> who I'm worried about. She seems to have wandered across the river, and I'm sure she won't make it back through all those <c=@Quest>skale</c> without some help. Please go lead her back here safely.\n\nReward:<brx>500 Experience<brx>Healing Breeze<brx>Banish<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5938,
+            48045,
+            40889,
+            17736,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5939,
+            34570,
+            44895,
+            17262,
+            1
+          ],
+          "decoded": "{sc}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.{s}Lead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 7710,
+      "epoch": 25,
+      "tick_ms": 84652593,
+      "quest": {
+        "quest_id": 84,
+        "log_state": 35,
+        "completed": true,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 5942.0,
+          "y": 4172.0,
+          "plane": 0,
+          "x_bits": 1169797120,
+          "y_bits": 1166172160,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5932,
+            46767,
+            54553,
+            11785
+          ],
+          "decoded": "Monk Test",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            5940,
+            52985,
+            52227,
+            17056
+          ],
+          "decoded": "Ciglo the Monk",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5935,
+            33407,
+            43098,
+            17687,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            756,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26042,
+            1,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            25968,
+            1
+          ],
+          "decoded": "There's a little girl named <c=@Quest>Gwen</c> who I'm worried about. She seems to have wandered across the river, and I'm sure she won't make it back through all those <c=@Quest>skale</c> without some help. Please go lead her back here safely.\n\nReward:<brx>500 Experience<brx>Healing Breeze<brx>Banish<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5938,
+            48045,
+            40889,
+            17736,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5939,
+            34570,
+            44895,
+            17262,
+            1
+          ],
+          "decoded": "{sc}Go southwest up the road until you find skale. Cross the river and find the missing girl Gwen.{s}Lead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "actors": [
+    {
+      "line": 7586,
+      "npc": {
+        "agent": 36,
+        "model": 1477,
+        "x": 5942.0,
+        "y": 4172.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5940,
+          52985,
+          52227,
+          17056
+        ],
+        "name": "Ciglo the Monk",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 7585,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 25,
+          "instance_ms": 1958,
+          "npc_table_id": 1477,
+          "definition": {
+            "model_file": 16202,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 3,
+            "secondary": 0,
+            "default_level": 2,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116721
+            ],
+            "name_encoded_utf16": [
+              3937,
+              57842,
+              43654,
+              10226
+            ],
+            "name": "Monk",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 7633,
+      "npc": {
+        "agent": 42,
+        "model": 1434,
+        "x": 4702.0,
+        "y": -2843.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 7632,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 25,
+          "instance_ms": 15932,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 7633,
+      "npc": {
+        "agent": 43,
+        "model": 1434,
+        "x": 4920.0,
+        "y": -2857.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 7632,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 25,
+          "instance_ms": 15932,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 7636,
+      "npc": {
+        "agent": 44,
+        "model": 1434,
+        "x": 4878.0,
+        "y": -3173.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 7632,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 25,
+          "instance_ms": 15932,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 7651,
+      "npc": {
+        "agent": 244,
+        "model": 1496,
+        "x": 3802.0,
+        "y": -4559.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 1,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          3954,
+          64924,
+          48794,
+          442
+        ],
+        "name": "Gwen",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 7650,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 25,
+          "instance_ms": 22930,
+          "npc_table_id": 1496,
+          "definition": {
+            "model_file": 116377,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 3,
+            "secondary": 0,
+            "default_level": 1,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116759,
+              116760
+            ],
+            "name_encoded_utf16": [
+              3954,
+              64924,
+              48794,
+              442
+            ],
+            "name": "Gwen",
+            "name_status": "decoded"
+          }
+        }
+      }
+    }
+  ],
+  "gwen_movement": [
+    {
+      "line": 7651,
+      "instance_ms": 22930,
+      "actor": 244,
+      "position": [
+        3802.0,
+        -4559.0,
+        0
+      ]
+    }
+  ],
+  "bounded_deaths": [
+    {
+      "line": 67719,
+      "actor": 42,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84638859,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002a00000010000000"
+      }
+    },
+    {
+      "line": 67772,
+      "actor": 43,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84643375,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002b00000010000000"
+      }
+    },
+    {
+      "line": 67878,
+      "actor": 44,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84650437,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002c00000010000000"
+      }
+    }
+  ],
+  "bounded_raw_events": [
+    {
+      "line": 67471,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84620640,
+        "opcode": 32,
+        "bytes": 116,
+        "complete": true,
+        "hex": "200000002a0000009a050020010000000900000000f0924500b031c5000000000000803f0000000001000000000090430000803f00004041316e6f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      }
+    },
+    {
+      "line": 67475,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84620640,
+        "opcode": 32,
+        "bytes": 116,
+        "complete": true,
+        "hex": "200000002b0000009a050020010000000900000000c09945009032c5000000000000803f0000000001000000000090430000803f00004041316e6f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      }
+    },
+    {
+      "line": 67486,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84621765,
+        "opcode": 32,
+        "bytes": 116,
+        "complete": true,
+        "hex": "200000002c0000009a050020010000000900000000709845005046c5000000000000803f0000000001000000000090430000803f00004041316e6f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      }
+    },
+    {
+      "line": 67571,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84627593,
+        "opcode": 32,
+        "bytes": 116,
+        "complete": true,
+        "hex": "20000000f4000000d8050020010000000900000000a06d4500788ec5000000000000803f0000000001000000000090430000803f00002041636e6f6e000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      }
+    },
+    {
+      "line": 67647,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84631187,
+        "opcode": 33,
+        "bytes": 8,
+        "complete": true,
+        "hex": "2100000024000000"
+      }
+    },
+    {
+      "line": 67689,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84636515,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000270000002a000000ba000000"
+      }
+    },
+    {
+      "line": 67706,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84638093,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000040000002a0000001f00000000000000"
+      }
+    },
+    {
+      "line": 67717,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84638562,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000002a0000002700000058010000"
+      }
+    },
+    {
+      "line": 67750,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84641750,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000270000002b000000c2000000"
+      }
+    },
+    {
+      "line": 67763,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84643062,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000002b0000002700000058010000"
+      }
+    },
+    {
+      "line": 67770,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84643375,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000040000002b0000002700000000000000"
+      }
+    },
+    {
+      "line": 67833,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84648171,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000270000002c000000ba000000"
+      }
+    },
+    {
+      "line": 67873,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84650203,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000002c0000002700000058010000"
+      }
+    },
+    {
+      "line": 68056,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84666531,
+        "opcode": 32,
+        "bytes": 116,
+        "complete": true,
+        "hex": "2000000024000000c5050020010000000900000000b0b9450060824500000000ac177a3fedb65a3e01000000000090430000803f0000404179616c70000000000000000000000000e51000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      }
+    },
+    {
+      "line": 68114,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84672140,
+        "opcode": 33,
+        "bytes": 8,
+        "complete": true,
+        "hex": "210000002c000000"
+      }
+    },
+    {
+      "line": 68139,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84676140,
+        "opcode": 33,
+        "bytes": 8,
+        "complete": true,
+        "hex": "210000002a000000"
+      }
+    },
+    {
+      "line": 68146,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84676546,
+        "opcode": 33,
+        "bytes": 8,
+        "complete": true,
+        "hex": "210000002b000000"
+      }
+    }
+  ],
+  "first_removal_after_completed": {
+    "line": 68227,
+    "record": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84686171,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000054000000"
+    }
+  },
+  "actor_state_records": [
+    {
+      "line": 67719,
+      "actor": 42,
+      "state": 16,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84638859,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002a00000010000000"
+      }
+    },
+    {
+      "line": 67772,
+      "actor": 43,
+      "state": 16,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84643375,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002b00000010000000"
+      }
+    },
+    {
+      "line": 67878,
+      "actor": 44,
+      "state": 16,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84650437,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002c00000010000000"
+      }
+    }
+  ],
+  "blocker_health_capacity_records": [
+    {
+      "line": 67715,
+      "actor": 42,
+      "capacity": 10,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84638562,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000002a0000000a000000"
+      }
+    },
+    {
+      "line": 67764,
+      "actor": 43,
+      "capacity": 10,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84643062,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000002b0000000a000000"
+      }
+    },
+    {
+      "line": 67871,
+      "actor": 44,
+      "capacity": 10,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84650203,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000002c0000000a000000"
+      }
+    }
+  ],
+  "death_bit_reference": {
+    "path": "C:/Users/CmonMeow/Desktop/gw/GWCA/Agent.h",
+    "line": 241,
+    "mask": 16
+  },
+  "wiki": {
+    "title": "Monk Test",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Monk_Test.html",
+    "sha256": "9b8bf2c2aebfd889e7ef9c6dcd3bd1ab957168efe578c3e45141b3dac8d2fe5a",
+    "sections": {
+      "Quest_information": {
+        "line": 110,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nmonk primary\nCharacter in pre-Searing\nObjectives\nGo southwest up the road until you find skale. Cross the river and find the missing girl Gwen.\nLead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way.\nReward\n500 Experience\nHealing Breeze\nBanish"
+      },
+      "Requirements": {
+        "line": 111,
+        "text": "Requirements\nTyrian (Prophecies) character\nmonk primary\nCharacter in pre-Searing"
+      },
+      "Objectives": {
+        "line": 115,
+        "text": "Objectives\nGo southwest up the road until you find skale. Cross the river and find the missing girl Gwen.\nLead Gwen back to Ciglo the Monk. Gwen will not move as long as the skale are in the way."
+      },
+      "Reward": {
+        "line": 118,
+        "text": "Reward\n500 Experience\nHealing Breeze\nBanish"
+      },
+      "Walkthrough": {
+        "line": 122,
+        "text": "Walkthrough\nCross the river away from Ciglo the Monk and find Gwen. Once you find her, kill the three River Skale Tad that are in the river near her. Once you kill the Skale, lead her back towards Ciglo the Monk and talk to him to receive your reward."
+      },
+      "Dialogue": {
+        "line": 125,
+        "text": "Dialogue\nInitial dialogue\nCiglo the Monk\n\"There's a little girl named Gwen who I'm worried about. She seems to have wandered across the river, and I'm sure she won't make it back through all those skale without some help. Please go lead her back here safely.\"\nAccept: \"I'll go and get her.\"\nDecline: \"Wait, I don't think I'm ready.\"\nAsk: \"Please don't waste time. Go down to the river and bring Gwen back. The skale should be relatively easy to overcome. I have faith in you.\"\nIntermediate dialogue\nGwen\n\"Help me! Those monsters in the river are trying to eat me!\"\nGwen: \"Thanks for killing the monsters! I'll follow you back to the gate.\"\nReward dialogue\nCiglo the Monk\n\"Gwen looks unharmed. That is good enough for me. I believe you can be entrusted with a few skills. May these skills aid you as you seek to bring peace and harmony to the people of Ascalon.\"\n\"I will return to the city and inform Sir Tydus of your actions here. If you wish for further guidance, you may wish to talk to Haversdan. I imagine he'll be coming by shortly.\"\nRetrieved from \"https://wiki.guildwars.com/index.php?title=Monk_Test&oldid=2633336\"\nCategories:\nPrimary quests\nProphecies primary quests\nAscalon (pre-Searing) quests\nProphecies quests\nTyrian only quests\nMonk questsHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "limits": [
+    "Position sampling is not exact trigger/range evidence.",
+    "Nearby skale are candidates, not proven required kills.",
+    "Raw modern records are not native2022 opcodes.",
+    "Completion does not prove reward turn-in."
+  ],
+  "exports": [
+    {
+      "path": "data\\gw\\quests\\actors\\monk-test-givers.txt",
+      "sha256": "14b6cc1b3b97e5ad5b4bcb922486890c0675036440f23e93ff38d6ccb2001b1f"
+    },
+    {
+      "path": "data\\gw\\quests\\actors\\monk-test-skale.txt",
+      "sha256": "faa268470eba50f6fe4ba66517c51c6823d5ffc045afe51f0ee6665a5c02a5ec"
+    },
+    {
+      "path": "data\\gw\\quests\\monk-test.fwqc",
+      "sha256": "d3c60b336a02b2bf85c562776ba55a89c1ac8baee66682607dc68cc44a14d4c2"
+    }
+  ]
+}

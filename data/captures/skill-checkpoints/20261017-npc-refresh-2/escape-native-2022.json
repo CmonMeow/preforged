@@ -1,0 +1,78 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "511447": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 27029546,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4200000019000000a00000000f0000004700000000005041"
+    },
+    "511782": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 27037937,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003000000019000000c0010000"
+    },
+    "511783": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 27037937,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000001500000019000000f8020000"
+    },
+    "511784": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 27037937,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4200000019000000c001000000000000620000000000803f"
+    },
+    "511787": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 27037937,
+      "opcode": 39,
+      "bytes": 12,
+      "complete": true,
+      "hex": "2700000019000000c3f5c043"
+    }
+  },
+  "native_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 448
+    }
+  ],
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "a52701010000",
+    "flags": 1
+  },
+  "captured_rank": 0,
+  "captured_duration_seconds": 1,
+  "captured_speed": 385.9200134277344,
+  "limitations": [
+    "Actor/UI/model services are stubbed; no rendered acceptance.",
+    "Captured speed385.92 overlaps active Windborne Speed160; it is compatible with the combined34percent cap and cannot calibrate Escape in isolation.",
+    "PvP3060 alias has native-row evidence here but no local activation receipt; melee-start termination follows historical wiki and server tests."
+  ]
+}

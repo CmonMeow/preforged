@@ -1,0 +1,195 @@
+{
+  "quest": 81,
+  "world_source": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+  "world_sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+  "packet_source": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+  "packet_sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+  "wiki_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mesmer_Test.html",
+  "wiki_sha256": "7125152805d209feb268f3a555447d81a1f24f93dfa081d4ead8a36998361f8e",
+  "wiki_note": "You only need to kill one skale for the quest to complete",
+  "population_line": 6285,
+  "instance_epoch": 20,
+  "observed_positions_not_spawns": true,
+  "actors": [
+    {
+      "agent": 36,
+      "model": 1468,
+      "x": 6180.0,
+      "y": 3873.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 2,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        5905,
+        53561,
+        38919,
+        19479
+      ],
+      "name": "Sebedoh the Mesmer",
+      "name_status": "decoded"
+    },
+    {
+      "agent": 37,
+      "model": 1434,
+      "x": 4347.0,
+      "y": 548.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 0,
+      "allegiance": 3,
+      "name_encoded_utf16": [
+        3894,
+        35404,
+        42145,
+        21249
+      ],
+      "name": "River Skale Tad",
+      "name_status": "decoded"
+    },
+    {
+      "agent": 38,
+      "model": 1434,
+      "x": 4605.0,
+      "y": 581.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 0,
+      "allegiance": 3,
+      "name_encoded_utf16": [
+        3894,
+        35404,
+        42145,
+        21249
+      ],
+      "name": "River Skale Tad",
+      "name_status": "decoded"
+    },
+    {
+      "agent": 39,
+      "model": 1434,
+      "x": 4221.0,
+      "y": 308.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 0,
+      "allegiance": 3,
+      "name_encoded_utf16": [
+        3894,
+        35404,
+        42145,
+        21249
+      ],
+      "name": "River Skale Tad",
+      "name_status": "decoded"
+    },
+    {
+      "agent": 40,
+      "model": 1434,
+      "x": 4480.0,
+      "y": 274.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 0,
+      "allegiance": 3,
+      "name_encoded_utf16": [
+        3894,
+        35404,
+        42145,
+        21249
+      ],
+      "name": "River Skale Tad",
+      "name_status": "decoded"
+    }
+  ],
+  "definitions": [
+    {
+      "line": 6283,
+      "record": {
+        "schema": 1,
+        "event": "npc_definition_observed",
+        "map": 146,
+        "instance_epoch": 20,
+        "instance_ms": 1926,
+        "npc_table_id": 1468,
+        "definition": {
+          "model_file": 16257,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 524,
+          "primary": 5,
+          "secondary": 0,
+          "default_level": 2,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            116688
+          ],
+          "name_encoded_utf16": [
+            3925,
+            34011,
+            52115,
+            8603
+          ],
+          "name": "Mesmer",
+          "name_status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 6284,
+      "record": {
+        "schema": 1,
+        "event": "npc_definition_observed",
+        "map": 146,
+        "instance_epoch": 20,
+        "instance_ms": 1926,
+        "npc_table_id": 1434,
+        "definition": {
+          "model_file": 82023,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 8,
+          "primary": 6,
+          "secondary": 0,
+          "default_level": 0,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [],
+          "name_encoded_utf16": [
+            3894,
+            35404,
+            42145,
+            21249
+          ],
+          "name": "River Skale Tad",
+          "name_status": "decoded"
+        }
+      }
+    }
+  ],
+  "active_snapshot_line": 6301,
+  "completed_snapshot_line": 6339,
+  "observed_deaths_in_objective_window": [
+    {
+      "line": 53068,
+      "tick_ms": 84076250,
+      "actor": 38,
+      "state": 16,
+      "hex": "f10000002600000010000000"
+    }
+  ],
+  "limitations": [
+    "Incoming modern memory records are not native2022 wire schemas.",
+    "Positions are sampled observations; not proven spawn triggers.",
+    "A bounded packet window does not establish every possible death event or reward turn-in."
+  ]
+}

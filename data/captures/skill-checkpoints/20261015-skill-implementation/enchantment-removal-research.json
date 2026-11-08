@@ -1,0 +1,272 @@
+{
+  "skills": [
+    {
+      "skill": 68,
+      "name": "Drain_Enchantment",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Drain_Enchantment.html",
+      "wiki_sha256": "e45c3c060f58a538ba43554c7d3f7ba2d31baff57bc9767556be588e41df15e3",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 103430,
+          "tick_ms": 8614656,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001f00000044000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 3300,
+          "tick_ms": 15883093,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000044000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 103456,
+          "tick_ms": 8616640,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 3313,
+          "tick_ms": 15885140,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": [],
+      "native": {
+        "id": 68,
+        "campaign": 0,
+        "profession": 5,
+        "attribute": 3,
+        "type": 5,
+        "special": 0,
+        "encoded_energy": 5,
+        "health_sacrifice": 0,
+        "overcast": 15,
+        "adrenaline": 0,
+        "activation": 2.0,
+        "aftercast": 0.75,
+        "recharge": 20,
+        "pvp_skill": 3433,
+        "weapon_requirement": 0,
+        "target": 5,
+        "equip_type": 1,
+        "name_string": 24932,
+        "concise_string": 59209,
+        "description_string": 24935,
+        "scale0": 8,
+        "scale15": 17,
+        "bonus0": 40,
+        "bonus15": 120,
+        "caster_body_resource": 2077,
+        "target_body_resource": 124,
+        "duration0": 0,
+        "duration15": 0,
+        "skill_arguments": 6
+      },
+      "native_first_consumers": {
+        "activation": {
+          "status": "observed",
+          "path": "spell60",
+          "first_lookup": {
+            "model": 33607680,
+            "layer": 0,
+            "style": 49,
+            "seconds": 2.0,
+            "stored_skill": 68,
+            "override_after": 2139095040
+          }
+        },
+        "caster_body": {
+          "status": "observed",
+          "resource": 2077,
+          "result": "native_no_body_sentinel"
+        },
+        "target_body": {
+          "status": "observed",
+          "resource": 124,
+          "result": "first_consumer",
+          "particle": {
+            "actor": 43,
+            "encoded_file": "799300010000",
+            "flags": 1
+          }
+        }
+      }
+    },
+    {
+      "skill": 69,
+      "name": "Shatter_Enchantment",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Shatter_Enchantment.html",
+      "wiki_sha256": "e20e01120e57b0da010f6906bb937048ddeefa0a4181ebeb9bd1d8cdbe867c22",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 103475,
+          "tick_ms": 8617468,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001f00000045000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 3328,
+          "tick_ms": 15885859,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000045000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 103483,
+          "tick_ms": 8618484,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 3334,
+          "tick_ms": 15886875,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": [],
+      "native": {
+        "id": 69,
+        "campaign": 0,
+        "profession": 5,
+        "attribute": 2,
+        "type": 5,
+        "special": 0,
+        "encoded_energy": 10,
+        "health_sacrifice": 0,
+        "overcast": 10,
+        "adrenaline": 0,
+        "activation": 1.0,
+        "aftercast": 0.75,
+        "recharge": 20,
+        "pvp_skill": 3433,
+        "weapon_requirement": 0,
+        "target": 5,
+        "equip_type": 1,
+        "name_string": 24933,
+        "concise_string": 59208,
+        "description_string": 24934,
+        "scale0": 14,
+        "scale15": 100,
+        "bonus0": 0,
+        "bonus15": 0,
+        "caster_body_resource": 2077,
+        "target_body_resource": 123,
+        "duration0": 0,
+        "duration15": 0,
+        "skill_arguments": 2
+      },
+      "native_first_consumers": {
+        "activation": {
+          "status": "observed",
+          "path": "spell60",
+          "first_lookup": {
+            "model": 33607680,
+            "layer": 0,
+            "style": 51,
+            "seconds": 1.0,
+            "stored_skill": 69,
+            "override_after": 2139095040
+          }
+        },
+        "caster_body": {
+          "status": "observed",
+          "resource": 2077,
+          "result": "native_no_body_sentinel"
+        },
+        "target_body": {
+          "status": "observed",
+          "resource": 123,
+          "result": "first_consumer",
+          "particle": {
+            "actor": 43,
+            "encoded_file": "789300010000",
+            "flags": 1
+          }
+        }
+      }
+    }
+  ],
+  "runtime_status": "source Runtime/world binding; full Release build and177 CTest targets passed",
+  "mechanics": [
+    "Remove one newest active enchantment only; same-skill renewal order comes from the owned registry, not numeric effect IDs.",
+    "Shatter Enchantment69 removes protection/end effects before83damage at rank12, single target only.",
+    "Drain Enchantment68 gives104Health gain and15Energy at rank12 only on successful removal; Health gain bypasses healing modifiers while settling Deep Wound debt; Energy repays debt before increasing UI balance.",
+    "Source/target scope, hostility, current Health clock, plane, range and existing LOS policy are checked under the world mutex.",
+    "Known unenchanted hostile NPCs complete with no damage/resource gain; positive NPC status/end-effect integration is explicitly incomplete."
+  ],
+  "tests": {
+    "source": "tests/enchantment_removal.cpp",
+    "focused": "enchantment_removal, captured_skills, skill_casting and shatter_hex passed;12 Python audit tests passed",
+    "checks": [
+      "rank0/12/20 formulas",
+      "one newest enchantment removed, with an older enchantment retained",
+      "stale target and self/ally targets rejected",
+      "colocated peer receives no Shatter damage",
+      "Shielding Hands heals then is absent for the hit",
+      "end heal settling lethal Deep Wound invalidates control only once",
+      "Drain Health gain bypasses Defile Flesh/Deep Wound healing reduction",
+      "lethal wound debt and100Health wound-reduction cap respected",
+      "Energy debt repayment, health/Energy caps",
+      "real1s/2s casts,5/10Energy costs,20s recharge",
+      "cancel/interruption/reconnect and no-enchantment/NPC no-op branches",
+      "native target123/124 particle packets emitted once",
+      "removed Aura observer does not trigger on next Orison"
+    ]
+  },
+  "remaining": [
+    "Rendered particles/Health and Energy feedback remain unverified.",
+    "Positive NPC enchantment application and end-effect transactions are unavailable; enchanted NPC removal fails explicitly.",
+    "Unimplemented global prevention, removal-trigger and multi-effect ordering interactions remain outside current verified scope."
+  ],
+  "source_hashes": {
+    "src/runtime/gw_enchantment_removal.h": "362e508dcdd438a81159c445bdb9cb057667ae440ac276b4f7d15b31906b8739",
+    "src/runtime/gw_npc_combat_catalog.h": "37cf8fa2f9da1cd01db52c29aa95f302663b15dfaea9065f5d983fe8f8fd7049",
+    "src/runtime/gw_world_simulation.h": "88e14cf84bac83deba3ced0779f1b97959fa4dc64fc6f8bd3704fea11e0bc536",
+    "src/runtime/gw_skill_casting.h": "05788fb9bfee671b5268a395672643b6d338fcdd5ad0ba0e40955cb749f709ba",
+    "src/apps/gw_auth.cpp": "4aad71ae57c5eff9a2a481cba26db2c502a9cbb6c37cbf65ca9f1361f473afe9",
+    "tests/enchantment_removal.cpp": "14f28b077eff64d365167f183740a4523b250e1e2beb2dc8a1e3aabba578f4d9",
+    "tools/protocol/skill_runtime_coverage.py": "d069e54891cecc62a2194941663e14e25821e38ed4a96e6fc5d019013d47d856",
+    "tests/test_skill_runtime_coverage.py": "8d81c80a082a0d2d90122f9655082c614dfc7e156cb422c3c479c459d24cb3d0",
+    "CMakeLists.txt": "45f1d432172a2c802cde22880288c08b62f87216ae5799259e97155ff05fa24e"
+  },
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/enchantment-removal-full-build.txt",
+    "host": "bin/server_host.exe",
+    "host_sha256": "4d41dbfbbfa56332b85be6056981c29a3a2ee87b6eacd9ba1c8bd7ae22500ef2"
+  },
+  "full_regression": {
+    "result": "177/177 passed",
+    "seconds": 20.68,
+    "report": "build/reports/enchantment-removal-full-tests.txt"
+  }
+}

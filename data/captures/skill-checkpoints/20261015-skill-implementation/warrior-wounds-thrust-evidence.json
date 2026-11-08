@@ -1,0 +1,178 @@
+{
+  "skills": [
+    337,
+    338,
+    385
+  ],
+  "capture_evidence": [
+    {
+      "id": 337,
+      "name": "Dismember",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 359774,
+          "tick_ms": 23076343,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000051010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 359782,
+          "tick_ms": 23076937,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 338,
+      "name": "Eviscerate",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369677,
+          "tick_ms": 23258062,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000002000000052010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369681,
+          "tick_ms": 23258578,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 385,
+      "name": "Final Thrust",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383699,
+          "tick_ms": 23581203,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000081010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383702,
+          "tick_ms": 23581734,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "wiki": [
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Dismember.html",
+      "sha256": "24ed613953c5f0d422a8844c933a9b73becba8c77463862c3a58f25258819da5"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Eviscerate.html",
+      "sha256": "e18729172bc3b3dddcd1cd8bc21e8512cc5ebd1f18d5c7ac4657481c5458125e"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Final_Thrust.html",
+      "sha256": "8920553eb19e398aa4dd6e8ef2fd816cc3d01b979f389fbed586b76b1f455896"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Deep_Wound.html",
+      "sha256": "7325a283be6f35cdc6cf27af41505ec3d043fb06a25ab4e1df26402f2c207dcf"
+    }
+  ],
+  "mechanics": {
+    "Dismember": "Normal axe damage; surviving hit applies Deep Wound5..17..20s at rank0/12/15.",
+    "Eviscerate": "Axe damage plus1..25..31 bonus; surviving hit applies Deep Wound5..17..20s.",
+    "Final Thrust": "Sword damage plus1..32..40 bonus; double only bonus damage when target strictly below50% current maximum health at impact. Consume all adrenaline pools at activation.",
+    "NPC health": "Settle NPC timed conditions before impact, preventing stale degeneration or wound capacity from selecting the wrong threshold."
+  },
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "cases": [
+      {
+        "skill": 337,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 337
+        }
+      },
+      {
+        "skill": 338,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 338
+        }
+      },
+      {
+        "skill": 385,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 385
+        }
+      }
+    ],
+    "limits": "Native attack body consumer reaches model lookup/style41 and animation state45 using supplied intervals. Model lookup returns synthetic handles, ancillary effects/clock/actor services stubbed. No rendered pixels or attack release timing proof."
+  },
+  "validation": [
+    "captured_skills: actual player/NPC axe damage, Deep Wound capacities/expiry, Blind miss, lethal hit, forged plan and wrong weapon.",
+    "captured_skills: Final Thrust player/NPC health499/500/501 out of1000; pending degeneration crossing threshold; actual world adrenaline pool clearing.",
+    "adrenaline_casting: all three skills use native attack start/finish/cancel, spend resources and reconcile hit adrenaline.",
+    "Both rebuilt focused suites pass.",
+    "Production/all-target rebuild succeeded (session62142 exit0).",
+    "Full rebuilt suite166/166 passed21.67s: build/reports/warrior-batch-full-tests.txt."
+  ],
+  "limits": [
+    "Default500ms release remains development policy.",
+    "General block/dodge and retail RNG are not complete.",
+    "No rendered animation acceptance."
+  ]
+}

@@ -1,0 +1,464 @@
+{
+  "checkpoint": "20261017-log-check-0059",
+  "cutoff": "2026-10-17T06:01:36.761196+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "cases": [
+    {
+      "skill": 210,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 163266,
+        "tick_ms": 19165281,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000d2000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 163300,
+        "tick_ms": 19167375,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 49,
+        "seconds": 2.0,
+        "stored_skill": 210,
+        "override_after": 2139095040
+      },
+      "effects": [
+        {
+          "receipt": {
+            "line": 163301,
+            "fields": [
+              160,
+              20,
+              30,
+              25,
+              374
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19167375,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e0000001900000076010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "599400010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001e0000001900000076010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ice_Prison.html",
+      "wiki_sha256": "fa5ae0126b4476cf4edbaca84f7b385ee5c8a0a62dc422935e438e32c5f632d9"
+    },
+    {
+      "skill": 211,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 163313,
+        "tick_ms": 19168078,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000d3000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 163321,
+        "tick_ms": 19169625,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.5,
+        "stored_skill": 211,
+        "override_after": 2139095040
+      },
+      "effects": [
+        {
+          "receipt": {
+            "line": 163322,
+            "fields": [
+              160,
+              20,
+              30,
+              25,
+              375
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19169625,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e0000001900000077010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "fe8200010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001e0000001900000077010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ice_Spikes.html",
+      "wiki_sha256": "5f12a164d3f46aa7f792daa010773ec965ad590d199a5aa61ff88bbb3ae3685d"
+    },
+    {
+      "skill": 212,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 168950,
+        "tick_ms": 19254921,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c00000019000000d4000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 168956,
+        "tick_ms": 19255750,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 0.75,
+        "stored_skill": 212,
+        "override_after": 2139095040
+      },
+      "effects": [
+        {
+          "receipt": {
+            "line": 168957,
+            "fields": [
+              159,
+              21,
+              25,
+              376
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19255750,
+            "opcode": 159,
+            "bytes": 16,
+            "complete": true,
+            "hex": "9f000000150000001900000078010000"
+          },
+          "native": {
+            "actor": 42,
+            "encoded_file": "87c500010000",
+            "flags": 1
+          },
+          "wire2022": "9e80150000001900000078010000"
+        },
+        {
+          "receipt": {
+            "line": 168960,
+            "fields": [
+              160,
+              20,
+              29,
+              25,
+              377
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19255750,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001d0000001900000079010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "88c500010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001d0000001900000079010000"
+        },
+        {
+          "receipt": {
+            "line": 168966,
+            "fields": [
+              160,
+              20,
+              30,
+              25,
+              377
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19255750,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e0000001900000079010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "88c500010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001e0000001900000079010000"
+        },
+        {
+          "receipt": {
+            "line": 168972,
+            "fields": [
+              160,
+              20,
+              31,
+              25,
+              377
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19255750,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001f0000001900000079010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "88c500010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001f0000001900000079010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Frozen_Burst.html",
+      "wiki_sha256": "872dd9a9dcf8a043255483b35e8bd591c17feab86923bccc51d0ccf4f5c30dbe"
+    },
+    {
+      "skill": 234,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 178363,
+        "tick_ms": 19425781,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000ea000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 178380,
+        "tick_ms": 19427875,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 49,
+        "seconds": 2.0,
+        "stored_skill": 234,
+        "override_after": 2139095040
+      },
+      "effects": [
+        {
+          "receipt": {
+            "line": 178381,
+            "fields": [
+              159,
+              21,
+              25,
+              413
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19427875,
+            "opcode": 159,
+            "bytes": 16,
+            "complete": true,
+            "hex": "9f00000015000000190000009d010000"
+          },
+          "native": {
+            "actor": 42,
+            "encoded_file": "69bb00010000",
+            "flags": 1
+          },
+          "wire2022": "9e8015000000190000009d010000"
+        },
+        {
+          "receipt": {
+            "line": 178384,
+            "fields": [
+              160,
+              20,
+              29,
+              25,
+              414
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19427875,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001d000000190000009e010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "b2cd00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001d000000190000009e010000"
+        },
+        {
+          "receipt": {
+            "line": 178389,
+            "fields": [
+              160,
+              20,
+              30,
+              25,
+              414
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19427875,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e000000190000009e010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "b2cd00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001e000000190000009e010000"
+        },
+        {
+          "receipt": {
+            "line": 178395,
+            "fields": [
+              160,
+              20,
+              31,
+              25,
+              414
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19427875,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001f000000190000009e010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "b2cd00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001f000000190000009e010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Deep_Freeze.html",
+      "wiki_sha256": "b07eac4eed44401ab9fe39f4fb4d1d82e2c3dcb8e1f3c294af4c7883d87db353"
+    },
+    {
+      "skill": 235,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 178414,
+        "tick_ms": 19428875,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000eb000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 178423,
+        "tick_ms": 19429625,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 235,
+        "override_after": 2139095040
+      },
+      "effects": [
+        {
+          "receipt": {
+            "line": 178424,
+            "fields": [
+              160,
+              20,
+              30,
+              25,
+              415
+            ],
+            "event": "packet",
+            "direction": "StoC",
+            "process_id": 1360,
+            "tick_ms": 19429625,
+            "opcode": 160,
+            "bytes": 20,
+            "complete": true,
+            "hex": "a0000000140000001e000000190000009f010000"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "b5cd00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000001e000000190000009f010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Blurred_Vision.html",
+      "wiki_sha256": "c745d8535360a32f2b146682c28db4bc501fb89a859d86d0b5eac70ff2cdfac1"
+    }
+  ],
+  "tool_sha256": "7c42cf3fe9e5957a867cc8ed21cd9cba551b314466746991fe4363aa219475b2",
+  "limits": [
+    "Stationary mannequin captures do not calibrate movement multipliers, area radii or miss probability.",
+    "Single-target captures do not prove the absence of area effects.",
+    "Duration/modifier and removal behavior require separate controlled tests.",
+    "Original asset/model services are stubbed; no rendered acceptance or runtime binding is established."
+  ]
+}

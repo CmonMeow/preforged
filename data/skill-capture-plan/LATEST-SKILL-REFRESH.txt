@@ -1,0 +1,181 @@
+LATEST COMPLETED SKILL-LOG REVIEW
+2026-10-26 Ray of Judgment830 paid-cast follow-up: native Runtime/World and
+host binding now pass success/cancel/interrupt/payment and packet-order tests.
+Source coverage is implemented_binding; the local-player capture remains
+missing and no rendered client acceptance is claimed. Fixed baseline backlog:
+679 local obtainable, 383 bound, 296 awaiting, 650 lacking local activation.
+2026-10-26 Ray of Judgment830 visual follow-up: pinned 2022 offline
+consumer confirms cast style49 and target/pulse resources1018/1019. Trusted
+World now publishes both at the tested points; Release Ray/field tests and
+host rebuild pass. Normal casting and rendered acceptance remain unbound.
+2026-10-26 Ray of Judgment830 World follow-up: trusted target admission and
+fixed-location holy/Burning pulses pass native NPC and moving-player tests.
+The Release host builds. Skill830 remains unsupported for normal client use
+until paid casting and 2022 effect consumers are reviewed.
+2026-10-26 Ray of Judgment830 scheduler follow-up: the shared field queue
+now carries the canonical five fixed-position one-second pulses and Burning
+duration. Release ray_of_judgment and damage_fields tests and host build pass.
+World damage/condition application and paid client casting remain unbound;
+see docs/ray-of-judgment-foundation.txt.
+2026-10-26 Ray of Judgment830: a reproducible audit of the immutable full
+Urgoz/Domain snapshot joins 2,520 per-victim pulse bodies to 284 bounded
+finishes, with 2,452 same-source/victim damage pairs. A catalog-checked
+five-pulse native plan passes Release test. Local-player capture and World
+binding remain missing; see docs/ray-of-judgment-foundation.txt.
+2026-10-26 Healing Seed274: adjacent player candidate filtering now occurs
+before health settlement, and an Arc Lightning842 chain fixture verifies
+the primary-hit heal precedes secondary damage. Broader area and visual
+verification, plus normal casting, remain open; coverage unsupported.
+2026-10-25 Healing Seed274: shared lightning player impact and separate
+Lightning Strike222 commit now consume the trusted reaction. Strike222 and
+Bolt1369 native fixtures pass. Area/multi-hit verification, normal cast and
+rendered-client proof remain open; coverage stays unsupported.
+2026-10-25 Healing Seed274: Stone Daggers and Dancing Daggers accepted
+player impacts now consume the trusted reaction on each timed hit. A missed
+projectile is a native no-heal regression. Most spell damage paths and normal
+casting remain unbound; coverage stays unsupported.
+2026-10-25 Healing Seed274: Illusionary Weaponry replacement and Conjure
+elemental bonus have separate direct-hit group-heal consumers and a native
+fixture. Normal cast and remaining damage producers remain unbound; source
+coverage remains unsupported.
+2026-10-25 Healing Seed274 direct-hit follow-up: trusted effect reactions
+are wired to player ordinary, player weapon-skill and NPC ordinary hits,
+with native lethal/expiry/ally tests. This does not establish triggered
+heal packet fidelity or a normal cast binding; 274 remains unsupported.
+2026-10-25 Healing Seed274 World follow-up: a trusted other-player-ally
+application now commits the status, replaces older copies and publishes
+finish58/target-body489 before effects. Release host and four focused tests
+pass. Damage-triggered healing and NPC ally application are not yet wired;
+normal casting stays unsupported. See docs/healing-seed-foundation.txt.
+2026-10-25 Healing Seed274 follow-up: the fixed player checkpoint has one
+completed cast and target effect; Domain/Citadel has 94 mixed-source starts.
+Pinned 2022 row and reference description now drive a tested native rank
+plan, other-ally gate and scoped damage-triggered adjacent group-heal
+proposal. No World damage-event consumer or cast binding exists; 274 remains
+unsupported. See docs/healing-seed-foundation.txt.
+2026-10-25 completed Urgoz/Domain session verified again: both frozen sources
+match their manifest and the Urgoz prefix. The current source-coverage join
+finds 148 cast-start IDs in Domain of Anguish (474) and Ebony Citadel (445),
+49 without a source binding (3,434 starts). The largest remaining counts are
+Lightbringer's Gaze1814 (442), Iron Palm786 (318), Ebon Vanguard Assassin
+Support2235 (314), Ray of Judgment830 (283), and Wandering Eye2056 (257).
+These mixed player/hero/monster starts are not complete-effect proof or
+monster skillbars. The actor audit conservatively brackets 8,834 starts with
+sampled names; actor reuse and missing samples remain limitations. Current
+reports: build/reports/doa-skill-gaps-20261025.json and
+build/reports/doa-actor-skill-attribution-20261025.json. The earlier 53/3,933
+and 56/4,957 entries below are historical coverage snapshots.
+2026-10-25 Gaze1814 player armor follow-up: host equipment refresh now
+derives neutral armor per worn location from native base armor, shield and
+all-damage Tormentor insignia. Physical-only Stalwart and elemental-only
+Dreadnought bonuses are excluded. Gaze samples the reviewed armor location
+for an opposing player; uneven suits no longer require a false uniform
+scalar. Production NPC general armor and modifier-aware disable still gate
+the normal cast. Six rebuilt focused CTests and Release host build pass.
+2026-10-25 Gaze1814 armor correction: the archived skill page explicitly
+marks its holy damage as armor-respecting and says Quickening Zephyr and
+Serpent's Quickness reduce both recharge and disable. Native World now uses
+a separate holy damage kind with reviewed neutral armor; unknown armor
+rejects the whole area transaction. Mixed 60/80/100 armor cases, Mantra
+protection, host rebuild and focused combat tests pass. Normal activation
+is still unbound; neutral armor supply and modified-disable ownership need
+integration before that binding.
+2026-10-25 completed DoA checkpoint recheck: source packet/world files still
+match the frozen manifest (11:59 PM local cutoff). The audit finds 148
+cast-start IDs in Domain/Citadel, 53 without source bindings (3,933 starts).
+These include player/hero/monster actors; starts are not effect proof.
+Lightbringer's Gaze1814 now passes a mixed NPC/opposing-player World damage
+test, including exclusion of a nearby party ally and primary-only interrupt.
+It remains unbound pending exact disable and Runtime cast wiring.
+2026-10-25 Gaze1814 mechanics follow-up on the same fixed DoA checkpoint:
+the archived Wiki's Domain-wide monster eligibility and primary-only
+interrupt rule now drive an NPC World area-damage transaction. It remains
+unbound pending disable and Runtime wiring. No new
+capture was merged into the fixed player-skill checkpoint; counts unchanged.
+2026-10-25 Lightbringer's Gaze1814 follow-up on the same fixed DoA capture:
+pinned-2022 offline callback confirms a one-second targeted cast animation.
+Evidence-backed NPC servant taxonomy and World primary admission now pass
+focused tests, but no reviewed servant has been added to the production
+catalog and the skill remains unbound. The DoA damage/interrupt attribution
+and rendered client result remain open. See
+docs/lightbringers-gaze-foundation.txt. Fixed backlog counts are unchanged.
+2026-10-25 Signet of Rejuvenation887 fixed DoA audit:116 starts in map474,
+110 same-actor finishes within2250ms, and106 matched selected-target
+opcode160/kind20/resource1012 receipts within200ms of a finish. This is
+mixed-source evidence, not numeric-heal or rendered animation proof. The
+earlier kind21 search was wrong. Native player/NPC World and Runtime cast
+binding now pass focused tests; pinned-2022 offline dispatch confirms the
+cast style and target particle path. See docs/signet-rejuvenation-foundation.txt
+and build/reports/signet-rejuvenation-doa-20261025.json.
+2026-10-25 Lightbringer's Gaze1814 receipt audit: fixed DoA/Citadel
+checkpoint has 442 starts, 410 nearby same-actor finishes, and 394 windows
+with selected-target source-attributed damage; 289 windows have multiple
+recipients. Some windows exceed the skill's nine-target maximum, proving
+the short-window join can include unrelated damage. See
+docs/lightbringers-gaze-foundation.txt and
+build/reports/lightbringers-gaze-doa-20261025.json. No animation packet,
+servant taxonomy, or normal cast binding is verified.
+2026-10-25 Iron Palm786 follow-up: fixed player checkpoint has three verified
+start/finish/body857/damage sequences and one same-tick 2-second knockdown.
+The completed Domain/Citadel capture yields 271/318 finish/body sequences;
+all 271 have same-tick target damage, but source IDs differ from the caster,
+consistent with an unresolved ownership-attribution path. There are 131
+same-tick knockdown candidates. See docs/iron-palm-capture-20261025.txt and
+build/reports/iron-palm-doa-20261025.json. Iron Palm remains unbound.
+2026-10-25 completed Domain of Anguish recheck: the frozen packet/world files
+match their manifest hashes, and tools/skills/review_doa_skill_gaps.py reports
+148 distinct cast-start skill IDs in maps 474/445. Current source coverage has
+53 unsupported IDs (3,933 starts). The largest remaining gaps are
+Lightbringer's Gaze1814 (442), Iron Palm786 (318), Ebon Vanguard Assassin
+Support2235 (314), Putrid Bile2058 (294), and Ray of Judgment830 (283).
+These are mixed player/hero/monster starts, not five confirmed monster skills.
+Lightbringer's Gaze has a detached rank/target plan but no normal World cast.
+See build/reports/doa-skill-gaps-20261025.json and
+docs/lightbringers-gaze-foundation.txt. No new capture or player-skill baseline
+was added by this recheck.
+2026-10-25 earlier DoA runtime-gap join: 148 distinct cast-start skill IDs
+across the Domain/Citadel combat instances; 56 then lacked a source binding
+(4,957 starts). The current recheck above supersedes those implementation
+counts. This includes player/hero skills and is not an NPC ownership count.
+Reproduce with tools/skills/review_doa_skill_gaps.py; see
+build/reports/doa-skill-gaps-20261025.json and the session review below.
+2026-10-25 separate Urgoz/Domain of Anguish field session frozen at
+2026-10-25T04:59:05.851860Z. Its completed checkpoint contains 667,493 new
+packet rows and 19,881 new world rows beyond the earlier Urgoz prefix. The
+audited Domain/Citadel portion has before/after named-actor cast evidence for
+monster-only IDs 1324, 1880, 1881, 1885 and 1894. These are timing/sample
+correlations and are not effect-completion or private-client verification.
+See docs/urgoz-doa-completed-20261024.txt and
+build/reports/urgoz-doa-completed-20261024.json. This field session is separate
+from the fixed 20261024-all-completed player-skill checkpoint; its backlog
+counts are unchanged.
+2026-10-24 current implementation follow-up: Ward Against Foes177 is now
+source-bound using the same immutable completed capture. The fixed backlog
+is 370 bound, 309 awaiting binding, and 650 without local activation.
+No new packet capture or skill ID was added. See docs/ward-foes-bound.txt.
+2026-10-24 implementation follow-up: the same immutable completed capture
+now has 369 source-bound and 310 awaiting-binding baseline skills after
+I Am Unstoppable!2356 was bound. No new packet capture or skill ID was added.
+See docs/i-am-unstoppable.txt and CURRENT-BACKLOG.json.
+Checkpoint: 20261024-all-completed; cutoff UTC: 2026-10-24T04:27:02.320932+00:00
+This is a frozen copy of the completed official session. Logger originals were not altered.
+
+Compared with 20261023-cumulative-skills, the completed PID 54796 session adds
+896 local activations, 839 completed casts and 425 local body/effect packets.
+It adds no previously unseen player-obtainable skill ID. It strengthens the
+evidence for Ebon Hawk, Stoning, Glowstone, Aftershock, Shockwave, Earth
+Attunement, Aura of Restoration and Death's Charge.
+
+The fixed checkpoint has 679 locally activated obtainable skills and 650
+without local activation evidence. The current source audit (after subsequent
+implementation) has 368 source-bound and 311 awaiting binding. Source binding
+does not establish complete mechanics or rendered-client acceptance.
+
+The monster/NPC hunt list has 519 search entries; 201 observed skill/effect
+entries and 261 encountered named NPC sources were omitted. These sightings
+do not establish complete NPC skillbars or actor ownership for every packet.
+
+Exact receipts: data/captures/skill-checkpoints/20261024-all-completed/skill-audit/
+Detailed review: data/skill-capture-plan/20261024-COMPLETED-SESSION-REVIEW.txt
+Current targets: data/skill-capture-plan/CAPTURED-NEEDS-IMPLEMENTATION.txt and
+data/skill-capture-plan/MONSTER-NPC-ENVIRONMENT-CAPTURES.txt

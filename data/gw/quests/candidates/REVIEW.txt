@@ -1,0 +1,25 @@
+Four preserved candidate quest-content rows. Not enabled in config/server.txt.
+Source: data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl
+SHA256: 3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff
+85 Warrior Test: snapshot529
+73 The Elementalist Experiment: snapshot2039
+37 The Supremacy of Air: snapshot2438
+75 Grawl Invasion: snapshot3195
+Completion-state variants preserved separately:
+85 snapshot615;73 snapshot2223;37 snapshot2859;75 snapshot3460.
+These snapshots carry completed bit2. Their objective resource arguments differ
+from active states and must be selected by durable quest stage, not merely by
+toggling the quest log completion bit.
+
+Native quest_capture_candidate validated the saved fields against the 2022 wire
+bounds and catalog parser. This proves framing, not matching text-resource IDs
+in the supplied 2022 Gw.dat. Do not convert these codes into literal Unicode.
+Captured description85 includes the character name Logger as a literal argument.
+It must be rebound for the current character, not exposed as a fixed quest name
+or description. Preserve the original candidates as evidence.
+
+Next verification: render these resources in the private 2022 client, verify
+active/completed objective variants, and resolve dynamic character arguments.
+Offer/accept/reward choices are not inferred from incoming-only packet streams.
+Bind NPC identity using reviewed map population provenance, never session actor
+IDs from the official capture as permanent production identifiers.

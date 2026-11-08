@@ -1,0 +1,51 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "426345": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24463843,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001e00000089010000"
+    },
+    "426591": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24483062,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001e00000089010000"
+    },
+    "426680": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24489109,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001e00000089010000"
+    }
+  },
+  "native_body": {
+    "state": 45,
+    "seconds": 2.4749999046325684,
+    "skill": 393
+  },
+  "style": 41,
+  "native_success_action": 17,
+  "limitations": [
+    "Clock/actor/model/effect services are stubbed; no rendered acceptance.",
+    "Supplied2.475second weapon interval exercises the native animation path; it does not prove release timing or projectile speed.",
+    "Native condition endpoints1..11 are bonus fields; condition application and unblockability use historical wiki mechanics and World tests.",
+    "Exact condition start phase under delayed projectile processing remains a shared simulation verification gap."
+  ]
+}

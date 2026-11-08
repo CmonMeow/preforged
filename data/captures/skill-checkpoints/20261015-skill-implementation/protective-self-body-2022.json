@@ -1,0 +1,61 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "cases": [
+    {
+      "skill": 299,
+      "activation": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 274706,
+        "tick_ms": 21295546,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c000000190000002b010000",
+        "kind": 60
+      },
+      "captured_body": {
+        "line": 274711,
+        "tick_ms": 21295875,
+        "hex": "9f000000150000001900000013020000"
+      },
+      "resource": 531,
+      "first_consumer": {
+        "actor": 42,
+        "encoded_file": "81c200010000",
+        "flags": 1
+      },
+      "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf"
+    },
+    {
+      "skill": 2061,
+      "activation": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 317970,
+        "tick_ms": 22100828,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c000000190000000d080000",
+        "kind": 60
+      },
+      "captured_body": {
+        "line": 317977,
+        "tick_ms": 22101031,
+        "hex": "9f0000001500000019000000cb060000"
+      },
+      "resource": 1739,
+      "first_consumer": {
+        "actor": 42,
+        "encoded_file": "f79904010000",
+        "flags": 1
+      },
+      "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf"
+    }
+  ],
+  "tool_sha256": "bd5b43b307283623b19d4f641cfd4999d4e1826964c5b957e32902eb419e25d6",
+  "limitations": [
+    "Captured simple self-cast starts and same-actor completion-body packets;allied target form not established.",
+    "First native particle consumer is not rendered animation/sound acceptance.",
+    "This audit does not validate duration,healing,damage reduction or source lifetime mechanics."
+  ]
+}

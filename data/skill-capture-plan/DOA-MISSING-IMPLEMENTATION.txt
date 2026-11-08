@@ -1,0 +1,108 @@
+DOMAIN OF ANGUISH — CONFIRMED MONSTER CASTS, NOT YET IMPLEMENTED
+
+Evidence: data/captures/field-sessions/20261024-urgoz-doa-completed
+Audit: build/reports/urgoz-doa-completed-20261024.json
+Cutoff: 2026-10-25T04:59:05.851860Z
+
+Each count below requires matching named NPC observations before and after
+the cast start (both within 1.5 seconds). These are stronger actor receipts,
+but not completed effect or 2022 private-client proof.
+
+1324 Torment Slash — Torment Claw, 77 starts. Detached canonical two-hit
+      slashing resolver and core physical-armor kind now pass native tests.
+      Still need authoritative forward area geometry, per-recipient World
+      transaction, target protection/block behavior, NPC payment/recharge
+      and client visuals. Original 2022 offline cast callback reaches first
+      animation style49 for 3.25 seconds; rendered assets are unverified.
+      A bounded impact audit finds 45 same-tick damage
+      pairs from 26 cast windows, including multi-victim examples; geometry
+      remains unproven. See docs/torment-slash-npc.txt.
+1880 Torment Slash (Smothering Tendrils) — 26 starts. Twenty-one bounded
+      finishes and seven same-tick kind16 damage pairs now support two
+      slashing hits. A detached native resolver for two independent
+      200-damage hits passes focused tests. Need its larger forward area,
+      World transaction, NPC payment/recharge and visuals. Its original
+      2022 offline cast callback reaches style49 for 3.25 seconds; rendered
+      assets remain unverified. See docs/torment-slash-npc.txt.
+1881 Bonds of Torment — The Greater Darkness, 2 starts. Need persistent hex
+      lifetime and equal cold-damage propagation when the caster takes damage,
+      including removal and death cleanup. Both starts have 500ms finishes;
+      only the first has a same-tick skill1881 effect packet. Original 2022
+      offline first-animation lookup reaches style51 for 1.0 second. See
+      docs/bonds-of-torment-npc.txt; neither proves propagation or rendering.
+      The first effect packet carries an explicit 30.0-second float, matching
+      the 2022 catalog; the older wiki note claiming no duration does not
+      match this observed cast. See build/reports/bonds-duration-20261024.json.
+      A tested native ledger now tracks committed hex lifetimes and returns
+      cold-damage intents on unique committed caster Health-loss events.
+      Copy-only Registry/ledger replacement proposal passes focused tests.
+      Trusted World NPC-to-player staging and propagation through
+      World.damage_npc now pass focused tests. Explicit paid NPC spellbook
+      casting, timer completion and interruption also pass; the pinned 2022
+      activation is 1s versus 500ms in the modern capture. Autonomous AI,
+      other NPC damage paths, NPC recipients, Hex Breaker and rendered
+      acceptance remain missing.
+      Illusionary Weaponry replacement NPC hits now use the shared damage
+      commit and trigger Bonds propagation; remaining direct NPC damage
+      commits still need review. Ordinary weapon and Conjure bonus NPC hits
+      also trigger one propagation per committed Health loss. Unnatural
+      Signet's direct primary/adjacent NPC damage now propagates each actual
+      loss once before caster retirement. Shatter Enchantment's direct NPC
+      damage now does the same after its reviewed removal. A damaging player
+      interrupt against an actively casting NPC propagates once; idle-target
+      feedback remains damage-free. Other direct NPC damage commits still need review. See
+      docs/bonds-of-torment-npc.txt.
+      Ignite Arrows' adjacent fire blast now propagates its committed NPC
+      Health loss once, independently of the bow hit; focused World and
+      Ignite Arrows tests pass. Other direct NPC damage commits remain open.
+      Keystone Signet, Cry of Frustration, and Shatter Delusions proposed-copy
+      NPC commits now propagate positive Health loss. A Keystone regression
+      checks the level-eight caster's armor-reduced cold damage. Cry/Shatter
+      now also have coupled bonded-target World regressions (4/4 focused
+      CTests pass). Rendered client behavior remains unverified.
+      Soul Barbs and Backfire NPC reactions now propagate their committed
+      damage too, with coupled bonded-player fixtures and 3/3 focused CTests.
+      Other direct damage, NPC recipients, autonomous AI and visuals remain open.
+      Spiteful Spirit's preflighted area NPC commits now propagate only after
+      Health commit. A coupled bonded-player World regression and existing
+      Spiteful/Bonds suites pass (2/2 focused CTests).
+      A lethal Spiteful regression also confirms ten remaining NPC Health,
+      rather than the proposed 29 damage, is what propagates before retirement.
+      2026-10-26: an opt-in hostile NPC AI now selects the nearest visible,
+      unhexed player and calls the existing paid 1881 spell action. A native
+      World regression verifies target selection, cast publication and equal
+      cold damage propagation; four focused/adjacent CTests and Release host
+      build pass. This is private-server target policy, not reconstructed
+      retail AI. Greater Darkness is not yet enrolled in map 474 content;
+      NPC recipients, remaining direct NPC damage routes, Hex Breaker and
+      rendered-client verification remain open.
+1885 Banish Enchantment — Mallyx the Unyielding, 18 starts. Need strip of all
+      enchantments on one target and, for each removed enchantment, a six-second
+      skill disable across foes. Disable selection and packet publication need
+      more protocol evidence; do not guess them from the wiki text. The fixed
+      packet audit finds 15 near cast finishes, one late finish and two starts
+      without a finish within three seconds. All 15 near finishes have two to
+      four target-actor effect-removal packets in the following 200 ms. Only
+      matched completions are candidates for an effect receipt. A tested native
+      read-only enchantment-strip/disable-obligation preflight now exists;
+      World transaction, NPC casting, disable selection and visuals do not.
+      Twenty-six local-player skill-recharge updates accompany the 15 near
+      finishes, with raw recharge fields 16..49; packet evidence does not yet
+      establish how the six-second disable modifies existing cooldowns.
+      See docs/banish-enchantment-npc.txt.
+      A fixed-line receipt audit finds two confirmed finish windows with two
+      target effect removals but three local-player recharge updates each,
+      all at the finish tick. This prevents inferring disable selection from
+      a simple one-update-per-removal count. See the new audit in that doc.
+1894 Touch of Aaaaarrrrrrggghhh — The Black Beast of Arrgh, 1 start. Need
+      20-second zero-attribute state and a validated target-position swap with
+      another random foe, plus path/collision and packet handling.
+      A fixed-line audit finds start packet707199 targeting Jagged Horror423
+      and actor438's kind58 event 1,032ms later. Four one-second world samples
+      around this window show Beast438 and target423 at unchanged positions
+      through the next sample; they do not establish that a swap occurred.
+      Treat the effect, destination choice and 2022 wire as unverified.
+      See build/reports/arrgh-touch-20261024.json.
+
+All five require NPC skill decision rules and end-to-end World integration.
+Player/hero skill starts in these maps must not be counted as monster casts.

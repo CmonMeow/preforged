@@ -1,0 +1,3518 @@
+{
+  "quest": 43,
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+      "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6"
+    },
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+      "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02"
+    }
+  ],
+  "wiki": {
+    "title": "The Power of Blood",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\The_Power_of_Blood.html",
+    "sha256": "cc2875cc3e62bd0bcb5ab76512b7d1850f2e22143f3856cc836dd4485e8afb31",
+    "sections": {
+      "Quest_information": {
+        "line": 109,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nnecromancer profession\nCharacter in pre-Searing\nObjectives\nEnter the catacombs and destroy the Blood Fanatics.\nDestroy 3...0 more Blood Fanatic(s).\nReturn to Kasha Blackblood for your reward.\nEarly benefits\nKasha will give you the following skills upon taking the quest:\nBlood Renewal\nVampiric Touch\nReward\n250 Experience"
+      },
+      "Requirements": {
+        "line": 110,
+        "text": "Requirements\nTyrian (Prophecies) character\nnecromancer profession\nCharacter in pre-Searing"
+      },
+      "Objectives": {
+        "line": 114,
+        "text": "Objectives\nEnter the catacombs and destroy the Blood Fanatics.\nDestroy 3...0 more Blood Fanatic(s).\nReturn to Kasha Blackblood for your reward."
+      },
+      "Reward": {
+        "line": 122,
+        "text": "Reward\n250 Experience"
+      },
+      "Walkthrough": {
+        "line": 124,
+        "text": "Walkthrough\nAfter taking the quest from Kasha Blackblood, the closest outpost to the fanatics is Barradin Estate. Exit the outpost and go straight north from there, following the quest marker. Cross at the second bridge, just next to the entrance to the Catacombs. Then go straight east (see quest map) and you should find the fanatics.\nAn alternative is to map travel to Ashford Abbey and enter the Catacombs there. There is a hidden passage just to the right after entering the area that goes behind Necromancer Munne. In the cavern at the end, follow the long path in front with gargoyles all along the way. The path leads west before taking a turn to the north. At some point you will reach a path split. The quest marker will direct you to the stairs leading to a crypt to the right, where the fanatics are located.\nThe fanatics themselves shouldn't pose any serious threat, dispose of them before returning to Kasha for your reward."
+      },
+      "Dialogue": {
+        "line": 134,
+        "text": "Dialogue\nInitial dialogue\nKasha Blackblood\n\"I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the catacombs. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using Blood Magic to drain their Health.\"\nAccept: \"I'll leave right away!\"\nDecline: \"I'd rather not take this on.\"\nAsk: \"Was I not clear, apprentice? Go to the catacombs and eliminate those weaklings. I haven't time to do it myself.\"\nIntermediate dialogue\nBlood Fanatic: \"Oh, no! Kasha has sent someone else to punish us.\"\nBlood Fanatic: \"Be ready everyone! Trouble is coming.\"\nReward dialogue\nKasha Blackblood\n\"Excellent. The Blood Fanatics got what they deserved.\""
+      },
+      "Notes": {
+        "line": 147,
+        "text": "Notes\nSometimes the blood fanatics turn hostile towards the gargoyles and move out along the path of gargoyles towards the armor collector.\nAnomaly.Although there are five fanatics, you only need to kill three of them.\nAnomaly.While Kasha tells you that the Blood Fanatics are fond of Dark Pact, they in fact use Vile Touch.\nRetrieved from \"https://wiki.guildwars.com/index.php?title=The_Power_of_Blood&oldid=2649275\"\nCategories:\nAscalon (pre-Searing) quests\nProphecies secondary quests\nProphecies quests\nTyrian only quests\nNecromancer quests\nAnomaliesHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "states": [
+    {
+      "line": 12993,
+      "tick_ms": 86771265,
+      "map": 160,
+      "epoch": 48,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": -3046.0,
+          "y": 9242.0,
+          "plane": 0,
+          "x_bits": 3309199360,
+          "y_bits": 1175480320,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 13103,
+      "tick_ms": 86823031,
+      "map": 148,
+      "epoch": 49,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": 7311.0,
+          "y": 5438.0,
+          "plane": 0,
+          "x_bits": 1172600832,
+          "y_bits": 1168764928,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 13128,
+      "tick_ms": 86824031,
+      "map": 148,
+      "epoch": 49,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": 7311.0,
+          "y": 5438.0,
+          "plane": 0,
+          "x_bits": 1172600832,
+          "y_bits": 1168764928,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 13514,
+      "tick_ms": 86991906,
+      "map": 164,
+      "epoch": 51,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": -14333.0,
+          "y": -7095.0,
+          "plane": 0,
+          "x_bits": 3328177152,
+          "y_bits": 3319642112,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 13531,
+      "tick_ms": 86992906,
+      "map": 164,
+      "epoch": 51,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": -14333.0,
+          "y": -7095.0,
+          "plane": 0,
+          "x_bits": 3328177152,
+          "y_bits": 3319642112,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 13536,
+      "tick_ms": 86994921,
+      "map": 164,
+      "epoch": 51,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": -14333.0,
+          "y": -7095.0,
+          "plane": 0,
+          "x_bits": 3328177152,
+          "y_bits": 3319642112,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 13562,
+      "tick_ms": 87005937,
+      "map": 146,
+      "epoch": 53,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 0,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 898,
+        "marker": {
+          "x": null,
+          "y": null,
+          "plane": 0,
+          "x_bits": 2139095040,
+          "y_bits": 2139095040,
+          "finite": false
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": null,
+          "decoded": null,
+          "status": "absent"
+        },
+        "objectives": {
+          "encoded_utf16": null,
+          "decoded": null,
+          "status": "absent"
+        }
+      }
+    },
+    {
+      "line": 13587,
+      "tick_ms": 87006937,
+      "map": 146,
+      "epoch": 53,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 898,
+        "marker": {
+          "x": null,
+          "y": null,
+          "plane": 0,
+          "x_bits": 2139095040,
+          "y_bits": 2139095040,
+          "finite": false
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 14567,
+      "tick_ms": 87337171,
+      "map": 146,
+      "epoch": 53,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 898,
+        "marker": {
+          "x": null,
+          "y": null,
+          "plane": 0,
+          "x_bits": 2139095040,
+          "y_bits": 2139095040,
+          "finite": false
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 14600,
+      "tick_ms": 87348750,
+      "map": 164,
+      "epoch": 54,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 0,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 898,
+        "marker": {
+          "x": null,
+          "y": null,
+          "plane": 0,
+          "x_bits": 2139095040,
+          "y_bits": 2139095040,
+          "finite": false
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": null,
+          "decoded": null,
+          "status": "absent"
+        },
+        "objectives": {
+          "encoded_utf16": null,
+          "decoded": null,
+          "status": "absent"
+        }
+      }
+    },
+    {
+      "line": 14618,
+      "tick_ms": 87349750,
+      "map": 164,
+      "epoch": 54,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 898,
+        "marker": {
+          "x": null,
+          "y": null,
+          "plane": 0,
+          "x_bits": 2139095040,
+          "y_bits": 2139095040,
+          "finite": false
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 14638,
+      "tick_ms": 87358750,
+      "map": 164,
+      "epoch": 54,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": -14333.0,
+          "y": -7095.0,
+          "plane": 0,
+          "x_bits": 3328177152,
+          "y_bits": 3319642112,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 14649,
+      "tick_ms": 87361984,
+      "map": 145,
+      "epoch": 56,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": 3323.0,
+          "y": 18874.0,
+          "plane": 0,
+          "x_bits": 1162850304,
+          "y_bits": 1184068608,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 14667,
+      "tick_ms": 87362984,
+      "map": 145,
+      "epoch": 56,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": 3323.0,
+          "y": 18874.0,
+          "plane": 0,
+          "x_bits": 1162850304,
+          "y_bits": 1184068608,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 3 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15199,
+      "tick_ms": 87561078,
+      "map": 145,
+      "epoch": 56,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": 7523.620605,
+          "y": 18299.738281,
+          "plane": 36,
+          "x_bits": 1173036279,
+          "y_bits": 1183774586,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            258,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 2 more Blood Fanatics.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15260,
+      "tick_ms": 87585109,
+      "map": 145,
+      "epoch": 56,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 145,
+        "marker": {
+          "x": 12188.0,
+          "y": 18621.0,
+          "plane": 0,
+          "x_bits": 1178497024,
+          "y_bits": 1183939072,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            257,
+            1
+          ],
+          "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 1 more Blood Fanatic.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15307,
+      "tick_ms": 87603125,
+      "map": 145,
+      "epoch": 56,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": -11260.0,
+          "y": 16201.0,
+          "plane": 0,
+          "x_bits": 3325030400,
+          "y_bits": 1182606336,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15329,
+      "tick_ms": 87610875,
+      "map": 164,
+      "epoch": 57,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": -11215.0,
+          "y": -6200.0,
+          "plane": 0,
+          "x_bits": 3324984320,
+          "y_bits": 3317809152,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15346,
+      "tick_ms": 87611875,
+      "map": 164,
+      "epoch": 57,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": -11215.0,
+          "y": -6200.0,
+          "plane": 0,
+          "x_bits": 3324984320,
+          "y_bits": 3317809152,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15370,
+      "tick_ms": 87622656,
+      "map": 146,
+      "epoch": 59,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": -14926.0,
+          "y": 9979.0,
+          "plane": 0,
+          "x_bits": 3328784384,
+          "y_bits": 1176235008,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15393,
+      "tick_ms": 87623656,
+      "map": 146,
+      "epoch": 59,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": -14926.0,
+          "y": 9979.0,
+          "plane": 0,
+          "x_bits": 3328784384,
+          "y_bits": 1176235008,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15775,
+      "tick_ms": 87780453,
+      "map": 160,
+      "epoch": 61,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": 17419.0,
+          "y": 12186.0,
+          "plane": 0,
+          "x_bits": 1183323648,
+          "y_bits": 1178494976,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15793,
+      "tick_ms": 87781468,
+      "map": 160,
+      "epoch": 61,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": 17419.0,
+          "y": 12186.0,
+          "plane": 0,
+          "x_bits": 1183323648,
+          "y_bits": 1178494976,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 15850,
+      "tick_ms": 87805515,
+      "map": 160,
+      "epoch": 61,
+      "quest": {
+        "quest_id": 43,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 160,
+        "map_to": 160,
+        "marker": {
+          "x": 17419.0,
+          "y": 12186.0,
+          "plane": 0,
+          "x_bits": 1183323648,
+          "y_bits": 1178494976,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5511,
+            52827,
+            34454,
+            31531
+          ],
+          "decoded": "The Power of Blood",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13018,
+            49778,
+            40997,
+            15700
+          ],
+          "decoded": "Kasha Blackblood",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5512,
+            49788,
+            43452,
+            7268,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5515,
+            36131,
+            50203,
+            2938,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5516,
+            43434,
+            34685,
+            28620,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13018,
+            49778,
+            40997,
+            15700,
+            1,
+            1
+          ],
+          "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "actors": [
+    {
+      "line": 15062,
+      "epoch": 56,
+      "first_observed_tick": 87511046,
+      "npc": {
+        "agent": 30,
+        "model": 1521,
+        "x": 4671.0,
+        "y": 15343.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3979,
+          52909,
+          34176,
+          4822
+        ],
+        "name": "Blood Fanatic",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 15156,
+      "epoch": 56,
+      "first_observed_tick": 87543078,
+      "npc": {
+        "agent": 39,
+        "model": 1521,
+        "x": 3323.0,
+        "y": 18874.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3979,
+          52909,
+          34176,
+          4822
+        ],
+        "name": "Blood Fanatic",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 15168,
+      "epoch": 56,
+      "first_observed_tick": 87548078,
+      "npc": {
+        "agent": 48,
+        "model": 1521,
+        "x": 8830.0,
+        "y": 18098.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3979,
+          52909,
+          34176,
+          4822
+        ],
+        "name": "Blood Fanatic",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 15172,
+      "epoch": 56,
+      "first_observed_tick": 87549078,
+      "npc": {
+        "agent": 49,
+        "model": 1521,
+        "x": 8800.0,
+        "y": 18496.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3979,
+          52909,
+          34176,
+          4822
+        ],
+        "name": "Blood Fanatic",
+        "name_status": "decoded"
+      }
+    }
+  ],
+  "deaths": [
+    {
+      "line": 151645,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87561015,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e00000010000000"
+      },
+      "actor": 30,
+      "next_snapshot": {
+        "line": 15199,
+        "tick_ms": 87561078,
+        "map": 145,
+        "epoch": 56,
+        "quest": {
+          "quest_id": 43,
+          "log_state": 1,
+          "completed": false,
+          "current_mission": false,
+          "primary": false,
+          "area_primary": false,
+          "map_from": 160,
+          "map_to": 145,
+          "marker": {
+            "x": 7523.620605,
+            "y": 18299.738281,
+            "plane": 36,
+            "x_bits": 1173036279,
+            "y_bits": 1183774586,
+            "finite": true
+          },
+          "unknown_0024": 0,
+          "category": {
+            "encoded_utf16": [
+              15716
+            ],
+            "decoded": "Ascalon",
+            "status": "decoded"
+          },
+          "name": {
+            "encoded_utf16": [
+              5511,
+              52827,
+              34454,
+              31531
+            ],
+            "decoded": "The Power of Blood",
+            "status": "decoded"
+          },
+          "npc": {
+            "encoded_utf16": [
+              13018,
+              49778,
+              40997,
+              15700
+            ],
+            "decoded": "Kasha Blackblood",
+            "status": "decoded"
+          },
+          "description": {
+            "encoded_utf16": [
+              5512,
+              49788,
+              43452,
+              7268,
+              2,
+              258,
+              2,
+              258,
+              2,
+              10984,
+              59348,
+              58828,
+              13938,
+              2,
+              10986,
+              35903,
+              46361,
+              26129,
+              257,
+              506
+            ],
+            "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+            "status": "decoded"
+          },
+          "objectives": {
+            "encoded_utf16": [
+              10998,
+              49591,
+              53037,
+              4897,
+              266,
+              5515,
+              36131,
+              50203,
+              2938,
+              1,
+              2,
+              10998,
+              49591,
+              53037,
+              4897,
+              266,
+              5516,
+              43434,
+              34685,
+              28620,
+              257,
+              258,
+              1
+            ],
+            "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 2 more Blood Fanatics.",
+            "status": "decoded"
+          }
+        }
+      },
+      "snapshot_delay_ms": 63
+    },
+    {
+      "line": 152145,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87585015,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000010000000"
+      },
+      "actor": 39,
+      "next_snapshot": {
+        "line": 15260,
+        "tick_ms": 87585109,
+        "map": 145,
+        "epoch": 56,
+        "quest": {
+          "quest_id": 43,
+          "log_state": 1,
+          "completed": false,
+          "current_mission": false,
+          "primary": false,
+          "area_primary": false,
+          "map_from": 160,
+          "map_to": 145,
+          "marker": {
+            "x": 12188.0,
+            "y": 18621.0,
+            "plane": 0,
+            "x_bits": 1178497024,
+            "y_bits": 1183939072,
+            "finite": true
+          },
+          "unknown_0024": 0,
+          "category": {
+            "encoded_utf16": [
+              15716
+            ],
+            "decoded": "Ascalon",
+            "status": "decoded"
+          },
+          "name": {
+            "encoded_utf16": [
+              5511,
+              52827,
+              34454,
+              31531
+            ],
+            "decoded": "The Power of Blood",
+            "status": "decoded"
+          },
+          "npc": {
+            "encoded_utf16": [
+              13018,
+              49778,
+              40997,
+              15700
+            ],
+            "decoded": "Kasha Blackblood",
+            "status": "decoded"
+          },
+          "description": {
+            "encoded_utf16": [
+              5512,
+              49788,
+              43452,
+              7268,
+              2,
+              258,
+              2,
+              258,
+              2,
+              10984,
+              59348,
+              58828,
+              13938,
+              2,
+              10986,
+              35903,
+              46361,
+              26129,
+              257,
+              506
+            ],
+            "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+            "status": "decoded"
+          },
+          "objectives": {
+            "encoded_utf16": [
+              10998,
+              49591,
+              53037,
+              4897,
+              266,
+              5515,
+              36131,
+              50203,
+              2938,
+              1,
+              2,
+              10998,
+              49591,
+              53037,
+              4897,
+              266,
+              5516,
+              43434,
+              34685,
+              28620,
+              257,
+              257,
+              1
+            ],
+            "decoded": "{s}Enter the catacombs and destroy the Blood Fanatics.{s}Destroy 1 more Blood Fanatic.",
+            "status": "decoded"
+          }
+        }
+      },
+      "snapshot_delay_ms": 94
+    },
+    {
+      "line": 152493,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87602640,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f100000031000000100c0000"
+      },
+      "actor": 49,
+      "next_snapshot": {
+        "line": 15307,
+        "tick_ms": 87603125,
+        "map": 145,
+        "epoch": 56,
+        "quest": {
+          "quest_id": 43,
+          "log_state": 3,
+          "completed": true,
+          "current_mission": false,
+          "primary": false,
+          "area_primary": false,
+          "map_from": 160,
+          "map_to": 160,
+          "marker": {
+            "x": -11260.0,
+            "y": 16201.0,
+            "plane": 0,
+            "x_bits": 3325030400,
+            "y_bits": 1182606336,
+            "finite": true
+          },
+          "unknown_0024": 0,
+          "category": {
+            "encoded_utf16": [
+              15716
+            ],
+            "decoded": "Ascalon",
+            "status": "decoded"
+          },
+          "name": {
+            "encoded_utf16": [
+              5511,
+              52827,
+              34454,
+              31531
+            ],
+            "decoded": "The Power of Blood",
+            "status": "decoded"
+          },
+          "npc": {
+            "encoded_utf16": [
+              13018,
+              49778,
+              40997,
+              15700
+            ],
+            "decoded": "Kasha Blackblood",
+            "status": "decoded"
+          },
+          "description": {
+            "encoded_utf16": [
+              5512,
+              49788,
+              43452,
+              7268,
+              2,
+              258,
+              2,
+              258,
+              2,
+              10984,
+              59348,
+              58828,
+              13938,
+              2,
+              10986,
+              35903,
+              46361,
+              26129,
+              257,
+              506
+            ],
+            "decoded": "I've got a job for you, if you're willing to work. A group of former students of mine are hiding out in the <c=@Quest>catacombs</c>. They fear my wrath, and rightly so. They have failed in their training and they must pay the price. They're very fond of Dark Pact, so you should be able to counter them using <c=@Quest>Blood Magic</c> to drain their Health.\n\nReward:<brx>250 Experience<brx>",
+            "status": "decoded"
+          },
+          "objectives": {
+            "encoded_utf16": [
+              10997,
+              50642,
+              61219,
+              3064,
+              266,
+              5515,
+              36131,
+              50203,
+              2938,
+              1,
+              2,
+              10997,
+              50642,
+              61219,
+              3064,
+              266,
+              5516,
+              43434,
+              34685,
+              28620,
+              257,
+              256,
+              1,
+              2,
+              10998,
+              49591,
+              53037,
+              4897,
+              266,
+              10992,
+              50343,
+              39936,
+              16059,
+              266,
+              13018,
+              49778,
+              40997,
+              15700,
+              1,
+              1
+            ],
+            "decoded": "{sc}Enter the catacombs and destroy the Blood Fanatics.{sc}Destroy 0 more Blood Fanatics.{s}Return to Kasha Blackblood for your reward.",
+            "status": "decoded"
+          }
+        }
+      },
+      "snapshot_delay_ms": 485
+    }
+  ],
+  "rejected_pre_observation_deaths": [
+    {
+      "line": 6026,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81550281,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000010000000"
+      },
+      "actor": 39
+    },
+    {
+      "line": 8409,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81702625,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000010000000"
+      },
+      "actor": 39
+    },
+    {
+      "line": 53388,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84102906,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000010000000"
+      },
+      "actor": 39
+    },
+    {
+      "line": 55919,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 84272781,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003100000010000000"
+      },
+      "actor": 49
+    },
+    {
+      "line": 77114,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85175546,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e000000100c0000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 77128,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85175546,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e00000010000000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 80171,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85314546,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e00000010000000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 80225,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85314859,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003000000014000000"
+      },
+      "actor": 48
+    },
+    {
+      "line": 93187,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85632875,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000010000000"
+      },
+      "actor": 39
+    },
+    {
+      "line": 103406,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 86062031,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e000000100c0000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 103412,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 86062031,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e00000010000000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 104529,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 86115390,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000014000000"
+      },
+      "actor": 39
+    },
+    {
+      "line": 107831,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 86309828,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003100000010000000"
+      },
+      "actor": 49
+    },
+    {
+      "line": 140470,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87144093,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003100000010000000"
+      },
+      "actor": 49
+    },
+    {
+      "line": 140518,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87146437,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003100000014000000"
+      },
+      "actor": 49
+    },
+    {
+      "line": 140627,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87150093,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003000000010000000"
+      },
+      "actor": 48
+    },
+    {
+      "line": 148490,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87446687,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e00000010000000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 148623,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87450265,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001e00000014000000"
+      },
+      "actor": 30
+    },
+    {
+      "line": 149541,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87482281,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000010000000"
+      },
+      "actor": 39
+    },
+    {
+      "line": 149586,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87483906,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002700000014000000"
+      },
+      "actor": 39
+    }
+  ],
+  "capacities": [
+    {
+      "line": 151511,
+      "actor": 30,
+      "capacity": 120,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87557281,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000001e00000078000000"
+      }
+    },
+    {
+      "line": 151940,
+      "actor": 39,
+      "capacity": 120,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87578421,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000002700000078000000"
+      }
+    },
+    {
+      "line": 152349,
+      "actor": 49,
+      "capacity": 120,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87597812,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000003100000078000000"
+      }
+    },
+    {
+      "line": 152442,
+      "actor": 48,
+      "capacity": 120,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 87601156,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000003000000078000000"
+      }
+    }
+  ],
+  "conclusions": [
+    "Captured objective transitions are 3,2,1,0 kills remaining.",
+    "Four Blood Fanatics were observed; the wiki states five exist and only three are required.",
+    "The observed eligible deaths belong to actors30,39,49; actor48 is not needed for this completion.",
+    "Earlier deaths using IDs30/39 are excluded; those numeric IDs predate the observed Blood Fanatic lifetimes."
+  ],
+  "implementation_requirements": [
+    "Count three eligible unique actor deaths instead of clearing every assigned actor.",
+    "Publish captured intermediate objective strings after the first and second credited kills.",
+    "Define durable counter restoration and reward idempotency before enabling the quest.",
+    "Retain encounter generation/ownership checks when crediting deaths.",
+    "Do not invent the missing fifth actor position."
+  ],
+  "counter_content_export": {
+    "path": "data/gw/quests/power-of-blood.fwqc",
+    "format": "FWQC3",
+    "variants": [
+      "active",
+      "count:1",
+      "count:2",
+      "completed"
+    ],
+    "source": "same captured epoch56 states; no rewritten objective strings"
+  },
+  "limits": [
+    "First observation bounds attribution; it does not establish exact spawn time.",
+    "This evidence does not establish retail armor, full AI or all spawn positions.",
+    "Modern decoded packets are not 2022 wire mappings."
+  ]
+}

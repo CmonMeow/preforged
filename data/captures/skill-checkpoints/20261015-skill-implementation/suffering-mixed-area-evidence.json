@@ -1,0 +1,106 @@
+{
+  "skill": 108,
+  "capture_evidence": {
+    "id": 108,
+    "name": "Suffering",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 4,
+    "local_finished": 1,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 71747,
+        "tick_ms": 17214171,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e0000006c000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 71760,
+        "tick_ms": 17215156,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": []
+  },
+  "wiki": {
+    "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Suffering.html",
+    "sha256": "6d156821cb5ca49a51830cfdf10e2caaa770c757b31b23e6a8609242ea9ddd2a"
+  },
+  "mechanics": {
+    "radius": 252,
+    "pips_ranks_0_12_15": [
+      0,
+      2,
+      3
+    ],
+    "duration_ranks_0_12_15_seconds": [
+      6,
+      25,
+      30
+    ],
+    "recipients": "Primary player or reviewed hostile NPC, plus nearby hostile players/NPCs on the same layer. NPC hostility does not require assigning caster a PvP team.",
+    "transaction": "Stage player registries/regeneration and NPC copies before applying hexes; selected target must be present in the staged set.",
+    "renewal": "Replaces same skill without stacking its degeneration."
+  },
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "cast": {
+      "model": 33607680,
+      "layer": 0,
+      "style": 51,
+      "seconds": 1.0,
+      "stored_skill": 108,
+      "override_after": 2139095040
+    },
+    "particles": [
+      {
+        "skill": 108,
+        "target": 43,
+        "caster": 42,
+        "resource": 207,
+        "particle": {
+          "actor": 43,
+          "encoded_file": "b6f100010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 108,
+        "target": 42,
+        "caster": 43,
+        "resource": 207,
+        "particle": {
+          "actor": 42,
+          "encoded_file": "b6f100010000",
+          "flags": 1
+        }
+      }
+    ],
+    "limits": "Original first dispatch/particle call only; other family members and rendered acceptance require further verification."
+  },
+  "validation": [
+    "Rebuilt captured_skills passes primary-player and primary-NPC mixed AoE, exact radius boundary, outside radius, allies, neutral NPCs, other layers, stale scope and forged plan.",
+    "Actual Runtime casts on NPCs and players with expected Energy cost; native targeted particles published for all four eligible fixture recipients.",
+    "Actual player/NPC delayed expiry and renewal integrate correct HP; player cleansing and NPC hex removal stop degeneration.",
+    "Zero-rank NPC hex accepted with zero degeneration; PvE source without PvP team can hex hostile NPCs.",
+    "Native dispatch/first particle trace passes;11 audit tooling tests pass.",
+    "Production/all-target build completed (session85243 exit0).",
+    "Full rebuilt CTest166/166 passed21.41s: build/reports/suffering-full-tests.txt."
+  ],
+  "limits": [
+    "Source binding count unchanged: this closes NPC/area coverage in an existing binding.",
+    "No claim of NPC skill casting AI, rendered animation/sound acceptance or general NPC end-effect hex support."
+  ]
+}

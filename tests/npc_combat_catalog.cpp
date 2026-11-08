@@ -375,10 +375,11 @@ int main(int argc,char** argv)try{
     // Revisions6/7/8/9/10 added general armor, energy, regeneration, holy traits,
     // and independently evidenced knockdown susceptibility.
     // A header-only catalog is valid for every recognized revision.
-    for(unsigned revision=1;revision<=16;++revision)
+    for(unsigned revision=1;revision<=17;++revision)
         require(load("gw-npc-combat "+std::to_string(revision)+" "+hash+"\n").size()==0,"recognized empty revision rejected");
-    auto bad_catalog=[&](const std::string& text){rejected([&]{load(text);},"invalid combat catalog accepted");};
-    bad_catalog("");bad_catalog("gw-npc-combat 17 "+hash+"\n");bad_catalog("gw-npc-combat 1 "+other_hash+"\n");
+    unsigned bad_catalog_case=0;
+    auto bad_catalog=[&](const std::string& text){++bad_catalog_case;try{(void)load(text);}catch(const std::invalid_argument&){return;}throw std::runtime_error("invalid combat catalog accepted case "+std::to_string(bad_catalog_case));};
+    bad_catalog("");bad_catalog("gw-npc-combat 0 "+hash+"\n");bad_catalog("gw-npc-combat 1 "+other_hash+"\n");
     // The new revision adds two mandatory columns; merely changing the header
     // on an old row must not silently imply susceptibility.
     bad_catalog("gw-npc-combat 10 "+hash+"\n"+sources+foe);

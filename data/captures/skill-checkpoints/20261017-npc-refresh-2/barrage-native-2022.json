@@ -1,0 +1,189 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "467209": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 26181859,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001f0000008b010000"
+    },
+    "467637": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 26210531,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003200000019000000210000008b010000"
+    }
+  },
+  "native_body": {
+    "state": 45,
+    "seconds": 2.4749999046325684,
+    "skill": 395
+  },
+  "style": 41,
+  "native_success_action": 17,
+  "multi_arrow_source": "packets-110488-195213578.jsonl",
+  "multi_arrow_launches": [
+    {
+      "line": 85775,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000bcfb90c6e9d372c500000000b3f9bb3e8f0000000a00000001000000"
+      },
+      "native_payload": [
+        10,
+        1052506547,
+        143,
+        3331390396,
+        3312636905,
+        0
+      ],
+      "state_requests": [
+        6
+      ]
+    },
+    {
+      "line": 85776,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000622791c66fd476c50000000066cec23e8f0000000700000001000000"
+      },
+      "native_payload": [
+        7,
+        1052954214,
+        143,
+        3331401570,
+        3312899183,
+        0
+      ],
+      "state_requests": [
+        6
+      ]
+    },
+    {
+      "line": 85777,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000b5e790c6100d73c500000000dd1db93e8f0000000400000001000000"
+      },
+      "native_payload": [
+        4,
+        1052319197,
+        143,
+        3331385269,
+        3312651536,
+        0
+      ],
+      "state_requests": [
+        6
+      ]
+    },
+    {
+      "line": 85778,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000bf3690c64cdf6cc50000000089a6a23e8f0000000300000001000000"
+      },
+      "native_payload": [
+        3,
+        1050846857,
+        143,
+        3331339967,
+        3312246604,
+        0
+      ],
+      "state_requests": [
+        6
+      ]
+    },
+    {
+      "line": 85779,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000f7ee8fc6eee878c5000000007ad8973e8f0000000100000001000000"
+      },
+      "native_payload": [
+        1,
+        1050138746,
+        143,
+        3331321591,
+        3313035502,
+        0
+      ],
+      "state_requests": [
+        6
+      ]
+    },
+    {
+      "line": 85780,
+      "receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000944890c63d7979c50000000019d7a43e8f0000000800000001000000"
+      },
+      "native_payload": [
+        8,
+        1050990361,
+        143,
+        3331344532,
+        3313072445,
+        0
+      ],
+      "state_requests": [
+        6
+      ]
+    }
+  ],
+  "limitations": [
+    "Clock/actor/model/effect services are stubbed; no rendered acceptance.",
+    "The first native payload word is an opaque delayed-trigger matching key,verified separately by bow_projectile_sync_2022. Server multi-arrow launches are bound;arrival child-event grouping and rendered QA remain pending.",
+    "The zero-activation native row uses the supplied2.475second weapon interval for its attack body; this does not prove server projectile release timing.",
+    "Native5..20bonus fields encode damage;scale fields retain five extra recipients. Live failed-hit/reset mechanics are tested separately by barrage;animation does not prove reset correctness.",
+    "No local completion endpoint is captured;success17is separately executed on the original dispatcher. Staged multi-arrow World release is bound;retail recipient tie-break,projectile release timing and rendered acceptance remain unverified."
+  ]
+}

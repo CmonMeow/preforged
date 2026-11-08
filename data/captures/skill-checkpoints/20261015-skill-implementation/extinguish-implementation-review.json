@@ -1,0 +1,121 @@
+{
+  "skill": 943,
+  "status": "Source-bound player-party casting path;NPC party and exact visual multiplicity remain incomplete",
+  "evidence": "extinguish-native-2022.json",
+  "build": "build/reports/extinguish-policy-build.txt",
+  "tests": "extinguish_policy registered native test",
+  "verified": [
+    "Rank0/12/15/20 native10->100 heal endpoints",
+    "All1024 condition subsets:one newest active condition removed",
+    "Burning merely present beneath another condition earns no heal",
+    "Burning reapplication changes covered order without mutating original selection state",
+    "Caster-only Divine Favor,expired states and forged-plan rejection"
+  ],
+  "remaining": [
+    "World party/lifetime/range selection and actual removal/healing callbacks",
+    "Lethal Fragility and party effect ordering",
+    "Player/NPC party-member support",
+    "Casting,cost,recharge,cancel/interrupt and production hook",
+    "Two self-body1014 packet provenance/count explanation",
+    "Retail condition-priority and rendered acceptance"
+  ],
+  "source_sha256": {
+    "src\\runtime\\gw_extinguish.h": "7ff86724e71219655f0a62a6784f51ce1af1a8cf129f38e3951153f895c67ac1",
+    "tests\\extinguish_policy.cpp": "6f8b43da6e16c9a946f7d6f9277142b2962395a3c8b0db507ac81bd2a47787f4",
+    "tools\\protocol\\extinguish_2022.py": "ecc4a76099f3221c6fb2eab6f190619d26debff396ec3290ced87083d6e84468",
+    "CMakeLists.txt": "faac0595cac37203da57643ab4692229936007c19239dbb4687e37039404e1bd"
+  },
+  "world_stage": {
+    "status": "Production host built;four focused suites passed0.06s;19 tooling tests passed;Runtime still unbound",
+    "build": "build/reports/extinguish-world-production-build.txt",
+    "tests": "build/reports/extinguish-world-tests.txt",
+    "verified": [
+      "Party membership and compass-range selection;outsider/far member excluded",
+      "Actual selected Burning removal grants healing;covered Burning does not",
+      "Caster-only primary-Monk Divine Favor",
+      "Full caster lifetime and canonical-plan guards",
+      "Real removal callbacks can kill recipient;no posthumous Burning heal",
+      "Selected condition application order retained across callbacks;no retargeting newly applied replacement"
+    ],
+    "remaining": [
+      "NPC party member path",
+      "Caster-death/simultaneous party reaction ordering and timeline edge coverage",
+      "Casting and body1014 publication policy",
+      "Retail priority,visual acceptance and broad integration gate"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "bf063a0fda693131535900d613c7da032de316d59894772a4a2335dc609423a2",
+      "tests\\extinguish_world.cpp": "8d4012f4080a0622ee67518850b89b33fb8828bf18415a17ba01251a069ce9f6",
+      "CMakeLists.txt": "c25ba8e68358ab8837ce6a57fa9d3397755bd48360b9992e80cf57d2631906da"
+    }
+  },
+  "animation_followup": "Frozen world event inventory has no party event records;no explanation of the two identical self-body1014 packets established. Packet-level party/state correlation remains needed.",
+  "boundary_stage": {
+    "status": "Four focused native suites passed;19 tooling tests passed;Runtime remains unbound",
+    "build": "build/reports/extinguish-boundaries-build.txt",
+    "tests": "build/reports/extinguish-boundaries-tests.txt",
+    "verified": [
+      "Caster killed by Fragility removal receives no Burning healing or Divine Favor and dies once",
+      "Other frozen party recipients still receive removal and healing for both caster IDs and either party leader;this is explicit server ordering policy,not measured retail simultaneous ordering",
+      "Burning death boundary1100ms:1099ms cast saves caster;1100ms cast rejects and does not cleanse ally;dense and sparse ticks agree"
+    ],
+    "fixture_correction": "Both Burning applications must precede either Fragility hex because Fragility reaches adjacent foes;interleaving them tests unintended application damage. No production assertion was relaxed.",
+    "remaining": [
+      "Retail simultaneous reaction ordering",
+      "NPC party members",
+      "Casting/cost/recharge/cancellation production hook",
+      "Duplicate1014 effect provenance and rendered acceptance"
+    ],
+    "source_sha256": {
+      "tests/extinguish_world.cpp": "729cfe8df5de04e55d934320014bb3b45762a49da6b193141f5d60c03f54c8b2",
+      "src/runtime/gw_world_simulation.h": "bf063a0fda693131535900d613c7da032de316d59894772a4a2335dc609423a2"
+    }
+  },
+  "casting_stage": {
+    "status": "Production server_host built;8 focused suites passed0.11s;19 tooling tests passed",
+    "build": "build/reports/extinguish-production-build.txt",
+    "tests": "tests/extinguish_cast.cpp",
+    "verified": [
+      "1s activation,15Energy at start,12s completion recharge",
+      "Selected foe replaced with authoritative caster scope for untargeted party cast",
+      "Rank12 Protection Magic and Divine Favor12 reach World",
+      "Party Burning removed and82Health restored after1s degeneration;caster38Divine Favor",
+      "Cancel/interrupt prevent World commit",
+      "Retired/reused caster rejected before hook",
+      "Lethal Backfire prevents World effect",
+      "Missing effect/scope/pre-spell/Energy hooks reject before cost",
+      "One native body1014 packet;no synthetic2077 caster body"
+    ],
+    "visual_policy": "One standard body1014 packet uses pinned native target-body resource and observed capture form. The capture contains a second identical self packet with unresolved cause;universal count and per-recipient rendering remain unverified.",
+    "remaining": [
+      "NPC party recipients",
+      "Retail additional-condition selection and simultaneous reaction order",
+      "Exact duplicate1014 provenance and rendered acceptance",
+      "Broad current all-target gate"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_skill_casting.h": "0f2d6980d51d91a6c26cc6de02bb1c536df79ba90373d2d1405c28df9ba5cd1e",
+      "src/apps/gw_auth.cpp": "fd3ece4827715408ba69de3a60c446b089d7d713584f736f3d9a363d1ee79f69",
+      "tests/extinguish_cast.cpp": "d49715cf85d13ddc500aac900dbcba04ec8a152767b4c110374f316565c726ea",
+      "tools/protocol/skill_runtime_coverage.py": "a4f8fb94960964eb48482f20858294aa5e1bd585ae27b33a0ed8455f30fa2a7c",
+      "CMakeLists.txt": "51fc7940eb97a883b35e39416233ad4f0865c93985ef1814af34e33ff6db11d4"
+    },
+    "integration_tests": "build/reports/extinguish-integration-tests.txt"
+  },
+  "party_membership_stage": {
+    "status": "Expanded cast test built;8 focused suites pass0.09s",
+    "build": "build/reports/extinguish-membership-build.txt",
+    "tests": "build/reports/extinguish-membership-tests.txt",
+    "verified": [
+      "14Energy cannot start15Energy skill;no active cast,no effect commit,no body1014",
+      "Missing target-validity hook rejects before cost",
+      "All cancel/interrupt/retired/Backfire failures emit no success body1014",
+      "Party leaver at1099ms excluded from1100ms completion;caster retains Divine Favor",
+      "Party joiner at1099ms included at1100ms completion"
+    ],
+    "npc_party_gap": "Authoritative party::State roster is currently populated by players;World roster/publication paths dereference players_.at(member). Cannot safely classify nearby friendly NPCs as party members. Requires owned NPC party enrollment,roster/lifetime handling and World reaction integration.",
+    "source_sha256": {
+      "tests/extinguish_cast.cpp": "6cc052ecae64ba3e7aef5db7f1023360fd8c6323af75fd0475ab7418d79be210"
+    }
+  }
+}

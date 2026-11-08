@@ -1,0 +1,90 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "baseline": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 281,
+    "override_after": 2139095040
+  },
+  "cases": [
+    {
+      "skill": 361,
+      "original_heap_iat": "0x61185a",
+      "allocations": [
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 264,
+          "pointer": 33685504
+        },
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 4,
+          "pointer": 33685776
+        }
+      ],
+      "faults": [
+        {
+          "access": 20,
+          "address": 2672280608,
+          "size": 4,
+          "value": 10292588,
+          "pc": 7856970
+        }
+      ],
+      "final_pc": "0x77e34a",
+      "first_lookup": null,
+      "error": {
+        "type": "UcError",
+        "message": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)"
+      }
+    },
+    {
+      "skill": 810,
+      "original_heap_iat": "0x61185a",
+      "allocations": [
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 264,
+          "pointer": 33685504
+        },
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 4,
+          "pointer": 33685776
+        }
+      ],
+      "faults": [
+        {
+          "access": 20,
+          "address": 2672280608,
+          "size": 4,
+          "value": 10292588,
+          "pc": 7856970
+        }
+      ],
+      "final_pc": "0x77e34a",
+      "first_lookup": null,
+      "error": {
+        "type": "UcError",
+        "message": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)"
+      }
+    }
+  ],
+  "source_sha256": {
+    "probe_animation_consumer_gaps_2022.py": "ce2927c5dce18a5082efa6a5e1eb83f0ad448cb9c08afba988971671b06c1100",
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Original consumer runs offline with synthetic actors and allocation services.",
+    "HeapAlloc import was unresolved in the base harness, not an observed retail failure.",
+    "After supplying HeapAlloc, both reach an unmapped write in animation bookkeeping at77e34a; missing actor/global fixture initialization is not yet isolated.",
+    "No consumer/rendered acceptance is added for either skill by this diagnostic."
+  ]
+}

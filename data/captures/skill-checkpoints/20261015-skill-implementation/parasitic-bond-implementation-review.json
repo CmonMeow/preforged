@@ -1,0 +1,23 @@
+{
+  "status": "Parasitic Bond cast and body evidence verified; Runtime binding/lifecycle review pending",
+  "native_evidence": "parasitic-bond-native-2022.json",
+  "next": [
+    "Review existing ParasiticBonds and NPC timeline removal/death/renewal ownership",
+    "Bind Runtime only after player/NPC scoped lifecycle and animation publication tests",
+    "Keep rendered acceptance separate from native particle lookup"
+  ],
+  "full_gate": {
+    "status": "All-target Release build succeeded;321/321 CTest passed32.36s",
+    "build": "build/reports/energy-integration-full-build.txt",
+    "tests": "build/reports/energy-integration-full-tests.txt",
+    "exec_session": 83196,
+    "shared_runtime_edits": "build terminal; safe to resume"
+  },
+  "lifecycle_review": {
+    "existing_review": "parasitic-bond-review.json",
+    "integration_history": "docs/parasitic-bond-integration.txt",
+    "state": "Player/NPC lifecycle integration already has registered tests; cross-caster behavior remains unresolved. Do not count an ordinary-path binding as complete.",
+    "blocker": "Documented cross-caster extra delayed-heal anomaly lacks callback recipient/rank/timing evidence. Existing same-caster renewal explicitly rejects cross-caster replacement.",
+    "next_action": "Preserve skill99 unsupported; advance another captured skill while retaining the targeted evidence gap."
+  }
+}

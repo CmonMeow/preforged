@@ -1,0 +1,112 @@
+{
+  "skills": [
+    22,
+    1049
+  ],
+  "status": "Source-bound22/1049 through Runtime/gateway; all-target production Release build and265/265 tests passed. Retail success capture/rendering and documented edge cases remain incomplete.",
+  "validation": "Standalone inspired-hex-policy.txt passed both skills: Energy endpoints, newest hex removal, immutable original, lifetime/overflow, monster-only and PvP-alias classification.",
+  "native": "inspired-hex-native-2022.json verifies one-second self cast and native20second/4..10Energy metadata. Hypothetical body39/40 consumers are explicitly not emitted-packet proof.",
+  "capture_gap": "Fixed activations are self-target form and body_effect_evidence arrays empty. Successful removal, Energy gain and replacement have not been established by those activations.",
+  "remaining": [
+    "Successful official removal/copy/body capture and rendered acceptance.",
+    "Friendly NPC ally recipients; PvP alias copying currently rejects before removal.",
+    "Retained/cross-copy recharge semantics and complete skill interactions need retail evidence."
+  ],
+  "coverage": "Included in164/575 source-bound count; source binding is not full mechanics/visual acceptance.",
+  "temporary_slots_stage": {
+    "header": "src/runtime/gw_temporary_hex_slots.h",
+    "test": "tests/temporary_hex_slots.cpp",
+    "report": "build/reports/temporary-hex-slots.txt",
+    "result": "Standalone native probe passed duplicate-copy prevention,20second strict expiry, old cast grant invalidation after slot reinstallation, original restoration, changed-slot preservation, retirement/stale owner and overflow.",
+    "eligibility": "Only exact live copied slots substitute original learned abilities for standard eligibility checks. A scoped/indexed/generation-bound cast grant must also be checked at completion. No persistent Learned or Policy grants are changed.",
+    "limits": "Not World/Runtime wired or registered in current running build. Caller-selected replacement copy index and PvP alias wire identity still need evidence; alias installation rejected explicitly."
+  },
+  "admission_stage": {
+    "header": "src/runtime/gw_temporary_hex_admission.h",
+    "test": "tests/temporary_hex_admission.cpp",
+    "report": "build/reports/temporary-hex-admission.txt",
+    "result": "Standalone native probe passed copied elite/off-profession capability admission; unrelated unlearned/wrong-profession/campaign-locked slots and missing original learned ability reject. Completion expiry/owner/index and old-grant checks pass.",
+    "boundary": "Eligibility substitution is scoped to exact live temporary slots; no persistent account grants change. Implementation/mode/target/resources/timing remain separate required casting checks.",
+    "integration": "Not wired into Runtime or account/session bar yet; native replacement copy IDs and successful capture remain open."
+  },
+  "world_offer_stage": {
+    "test": "tests/inspired_hex_world.cpp",
+    "report": "build/reports/inspired-hex-world-tests.txt",
+    "result": "Four registered focused suites passed0.05s;14 World cases across22/1049 verify Energy gain, no-hex result, real Phantom Pain end effect and changed-cover/death/range/team/lifetime rejection.",
+    "mechanism": "Host can preflight a temporary slot from the prepared offer, then World revalidates exact cover hex and actor/control identities before real removal. Energy repayment/restoration uses existing debt-aware rules.",
+    "limits": "Dedicated Energy debt/cap tests, friendly NPC targets, actual session/temporary-bar atomic integration, Runtime/gateway and replacement wire evidence remain pending. No hypothetical body packets emitted here."
+  },
+  "energy_gate": {
+    "report": "build/reports/inspired-hex-energy-tests.txt",
+    "result": "Native World fixture passes both skills across full debt, partial debt, partial capacity room and full capacity. Expanding capacity afterward confirms retained negative-Energy debt accounting.",
+    "values": "Rank12 gain9: debt20 repays9/restores0; debt5 repays5/restores4; room2 restores2; full capacity restores0. Real hex removal succeeds in all cases.",
+    "test": "tests/inspired_hex_world.cpp"
+  },
+  "session_integration_findings": {
+    "source": "src/apps/gw_auth.cpp session_skills getter and skill_runtime start/update paths",
+    "finding": "session_skills currently derives the effective trial/match profile by value from saved skill_profile. Temporary copies must be a separate Scope-owned session overlay, never writes to skill_profile.bar or persistent learned data.",
+    "remaining": "Overlay lifecycle, expiry publication, copied-cast admission/completion hooks and original-client slot/cast-reference packet ordering need integration and verification."
+  },
+  "session_overlay_stage": {
+    "header": "src/runtime/gw_hex_copy_session.h",
+    "test": "tests/hex_copy_session.cpp",
+    "report": "build/reports/hex-copy-session-tests.txt",
+    "result": "Registered native probe passes actual World offer/result to session replacement, result scope/source/time matching, stale plan readiness,20second restoration, saved bar/learning isolation and base-epoch protection against identical replacement reuse.",
+    "mechanism": "Prepared copy holds staged bar/capability state. Matching World result publishes through no-allocation move commit. Explicit base replacement revokes grants; expiry/time advance invalidates stale plans.",
+    "concurrency": "Host must serialize session state across ready-check, World commit and session publish. The helper does not make unrelated threads or stale asynchronous callers atomic.",
+    "remaining": "Live gw_auth session getter/expiry/packet publication and Runtime copied-cast hooks are not wired. Replacement copy index/alias identity and original-client packet ordering remain unverified."
+  },
+  "native_slot_sequence_stage": {
+    "tool": "tools/protocol/hex_copy_slot_sequence_2022.py",
+    "report": "hex-copy-slot-sequence-native-2022.json",
+    "result": "Pinned original 2022 callbacks pass all four combinations of acknowledgement before/after replacement and before/after restoration. Copied request68 retains skill28/copy1; final pending arrays and warnings are empty. Disabled map gate is a separate negative control.",
+    "probe_correction": "Original798560 requires mode gate1. Negative gate0 control emits no request; this explains the earlier synthetic probe failure.",
+    "limits": "Synthetic actor/bar and intercepted UI/eligibility/network. Copy1 identity preservation does not establish official allocation, alias identity, successful captured copying or rendering.",
+    "next": "Wire session overlay and copied-cast lifetime validation without persisting copied skills; verify recharge lifecycle and publish original slot/copy identities."
+  },
+  "runtime_admission_stage": {
+    "test": "tests/hex_copy_cast.cpp",
+    "report": "build/reports/hex-copy-cast-tests.txt",
+    "result": "Native Runtime casts copied Backfire28/copy1 while permanent policy knows only Inspired Hex22. Missing callback pairs and ordinary unlearned admission reject before Energy. Expiry at20seconds, base reset and missing completion hook cancel without applying Backfire; accepted completion recharges copied identity.",
+    "gateway": "Scope-owned session overlay derives from ordinary trial/match profile. Start synchronizes base changes; completion verifies current scope/base/policy; loop restores expired slots with owner-only216 packets. Persistent skill_profile and learned data remain untouched.",
+    "focused_gate": "Five rebuilt registered casting suites passed: copied hex, Diversion, Hex Breaker, Grenth Balance and Power Block.",
+    "limits": "Inspired/Revealed activation/removal/copy commit callback not yet wired. No live copies are created yet. This is capability plumbing, not a new skill binding, official-copy capture or visual verification.",
+    "full_gate": {
+      "build": "build/reports/hex-copy-session-full-build.txt",
+      "tests": "build/reports/hex-copy-session-full-tests.txt",
+      "result": "Production/all-target Release build succeeded;263/263 registered tests passed31.47s. This gate includes Runtime/session admission and gateway plumbing, not later allocation wiring."
+    }
+  },
+  "copy_identity_allocation_stage": {
+    "native_tool": "tools/protocol/hex_copy_id_boundary_2022.py",
+    "native_report": "hex-copy-id-boundary-native-2022.json",
+    "header": "src/runtime/gw_hex_copy_ids.h",
+    "test": "tests/hex_copy_ids.cpp",
+    "report": "build/reports/hex-copy-ids-tests.txt",
+    "result": "Six original-client identities prove pending key wraps (skill shifted16)+copy. Copy65536 on skill28 aliases skill29/copy0; two references share the same key. Scope-owned allocator reserves copies1..65535, excludes occupied IDs and never reuses issued IDs during lifetime; boundary/stale/failure tests pass.",
+    "limits": "Registered allocator target and test pass separately after full263 gate. Allocator is not gateway-wired. This is a compatible server policy, not recovered ArenaNet allocation; PvP aliases/rendered acceptance remain open."
+  },
+  "current_binding_stage": {
+    "header": "src/runtime/gw_inspired_hex_commit.h",
+    "test": "tests/inspired_hex_cast.cpp",
+    "report": "build/reports/inspired-hex-cast-tests.txt",
+    "result": "Fourteen actual Runtime cases across22/1049 pass one-second/5Energy casts, ally/self removal and Energy, duplicated hex copy allocation, owner-only216 replacement,20second restoration, no-hex/no-Energy result, cancellation, interruption, replaced target and missing hook rejection.",
+    "gateway": "Scope-owned session and nonreused16-bit copy allocator are initialized at World join. Matching prepared World removal publishes the staged session copy; ordinary saves/learning remain untouched. Session callbacks check admission and completion; expiry publishes original owner slot.",
+    "animation": "Captured self activation form/native one-second consumer established previously. Runtime emits catalogue caster body39 through native generic21 success path; native consumer is proven, official successful body emission/rendering is not. Target body40 is not emitted speculatively.",
+    "remaining": [
+      "Successful official removal/copy/body capture and rendered acceptance.",
+      "Friendly NPC ally recipients; PvP alias copying currently rejects before removal.",
+      "Retained/cross-copy recharge semantics and complete skill interactions need retail evidence."
+    ],
+    "focused_gate": {
+      "build": "build/reports/inspired-hex-binding-build.txt",
+      "tests": "build/reports/inspired-hex-binding-tests.txt",
+      "result": "Production server_host and six related targets rebuilt successfully. Six registered focused suites passed0.06s."
+    },
+    "full_gate": {
+      "build": "build/reports/inspired-hex-binding-full-build.txt",
+      "tests": "build/reports/inspired-hex-binding-full-tests.txt",
+      "result": "All-target Release build succeeded;265/265 registered tests passed32.28s."
+    }
+  }
+}

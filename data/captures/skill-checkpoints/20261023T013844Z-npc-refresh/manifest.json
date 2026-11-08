@@ -1,0 +1,538 @@
+{
+  "created_utc": "2026-10-23T01:38:47.590746+00:00",
+  "policy": "Verified immutable snapshots hard-linked; fullest compatible prefix per filename; live sources untouched",
+  "parents": [
+    {
+      "checkpoint": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills",
+      "manifest_sha256": "88e589bc610c250e566ee87082ec673fb4a15827107d2d0e74a7fc6aaba11d89",
+      "cutoff": "2026-10-22T05:20:56.051606+00:00"
+    },
+    {
+      "checkpoint": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261023T013844Z-npc-session",
+      "manifest_sha256": "9a82410cfb568c9ac60341f11b66cadc7cf871d135cca3b303b7b7d09e3b4ba2",
+      "cutoff": "2026-10-23T01:38:45.126501+00:00"
+    }
+  ],
+  "files": [
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-108988-190116609.jsonl",
+      "snapshot": "packets-108988-190116609.jsonl",
+      "source_read_limit": 38672060,
+      "snapshot_bytes": 38672060,
+      "complete_lines": 214433,
+      "sha256": "9cadca1740cdd4aae3ac27246b95f9dca0b262eff17a3fba4f429daa38664ddf",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-108988-190116609.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-110228-194407640.jsonl",
+      "snapshot": "packets-110228-194407640.jsonl",
+      "source_read_limit": 6283245,
+      "snapshot_bytes": 6283245,
+      "complete_lines": 33124,
+      "sha256": "8b6176a074e2422d6fa4abf3686f2cdcb2ef23cdec9ffe0f894f7581cefbc19d",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-110228-194407640.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-110488-195213578.jsonl",
+      "snapshot": "packets-110488-195213578.jsonl",
+      "source_read_limit": 259239772,
+      "snapshot_bytes": 259239772,
+      "complete_lines": 1501897,
+      "sha256": "9cdec19f550cae907c19bfc4b59df1af370ab649d8cddbf789ba57601bf6ef8f",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-110488-195213578.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-11512-72008578.jsonl",
+      "snapshot": "packets-11512-72008578.jsonl",
+      "source_read_limit": 454850,
+      "snapshot_bytes": 454850,
+      "complete_lines": 3545,
+      "sha256": "e88e7d09d8bf8b6158d0622239d1435225a15a85c5aa99bea26e0267510c7a20",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-11512-72008578.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-119224-229505703.jsonl",
+      "snapshot": "packets-119224-229505703.jsonl",
+      "source_read_limit": 13619291,
+      "snapshot_bytes": 13619291,
+      "complete_lines": 77764,
+      "sha256": "7adad1845566c480a17729bb3f44d6c415cec518345038bab90602766b9adec0",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-119224-229505703.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-120312-228736078.jsonl",
+      "snapshot": "packets-120312-228736078.jsonl",
+      "source_read_limit": 4749689,
+      "snapshot_bytes": 4749689,
+      "complete_lines": 27945,
+      "sha256": "287b1c4a14833a22cd2e4a00a1b44a8eac41cdb3d8610e5e16bbdce590ee0874",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-120312-228736078.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-124648-268887312.jsonl",
+      "snapshot": "packets-124648-268887312.jsonl",
+      "source_read_limit": 61459495,
+      "snapshot_bytes": 61459495,
+      "complete_lines": 354461,
+      "sha256": "8b40eedd9ced6166310138e172997cb42ccd7a008bfbf51e3e7063dd3286fe67",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-124648-268887312.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-1360-15821281.jsonl",
+      "snapshot": "packets-1360-15821281.jsonl",
+      "source_read_limit": 151079748,
+      "snapshot_bytes": 151079748,
+      "complete_lines": 759636,
+      "sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-1360-15821281.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-13908-99235906.jsonl",
+      "snapshot": "packets-13908-99235906.jsonl",
+      "source_read_limit": 9554986,
+      "snapshot_bytes": 9554986,
+      "complete_lines": 48910,
+      "sha256": "39e619551a6e2705dec76d0b10923b2fe847115ddb4496ce3c09c97bd9a343b8",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-13908-99235906.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-19472-19186421.jsonl",
+      "snapshot": "packets-19472-19186421.jsonl",
+      "source_read_limit": 100954738,
+      "snapshot_bytes": 100954738,
+      "complete_lines": 554114,
+      "sha256": "3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-19472-19186421.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-21116-95422890.jsonl",
+      "snapshot": "packets-21116-95422890.jsonl",
+      "source_read_limit": 8095655,
+      "snapshot_bytes": 8095655,
+      "complete_lines": 55277,
+      "sha256": "8b64d9637576aeb479a172077fc3390ef3284bdbeed85e5ab358a4e6370cae4b",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-21116-95422890.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-21464-51537578.jsonl",
+      "snapshot": "packets-21464-51537578.jsonl",
+      "source_read_limit": 40265576,
+      "snapshot_bytes": 40265576,
+      "complete_lines": 224095,
+      "sha256": "e112d8fbbd0e510817ffd96dbaad3c805fd0493871ffc487431b93b5b7478fa1",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-21464-51537578.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-30352-81363781.jsonl",
+      "snapshot": "packets-30352-81363781.jsonl",
+      "source_read_limit": 28932814,
+      "snapshot_bytes": 28932814,
+      "complete_lines": 156166,
+      "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-30352-81363781.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-30392-99005187.jsonl",
+      "snapshot": "packets-30392-99005187.jsonl",
+      "source_read_limit": 97479745,
+      "snapshot_bytes": 97479745,
+      "complete_lines": 591782,
+      "sha256": "a566dc25ef377c00b51a04434194af5d60a681f07730e30e4fb2c69e43869f38",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-30392-99005187.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-38060-79906390.jsonl",
+      "snapshot": "packets-38060-79906390.jsonl",
+      "source_read_limit": 76265160,
+      "snapshot_bytes": 76265160,
+      "complete_lines": 466687,
+      "sha256": "aad99933e7e42085b7a310a16580ee65324fcd0504de5600143784edc725c786",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-38060-79906390.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-40172-93822296.jsonl",
+      "snapshot": "packets-40172-93822296.jsonl",
+      "source_read_limit": 59161977,
+      "snapshot_bytes": 59161977,
+      "complete_lines": 346685,
+      "sha256": "b0d3b78384799e2cf877fd2180cab3ee99de613de992d1fc28bbb18a675aef32",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-40172-93822296.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-43292-168891734.jsonl",
+      "snapshot": "packets-43292-168891734.jsonl",
+      "source_read_limit": 95714705,
+      "snapshot_bytes": 95714705,
+      "complete_lines": 588962,
+      "sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-43292-168891734.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-55816-187708109.jsonl",
+      "snapshot": "packets-55816-187708109.jsonl",
+      "source_read_limit": 32991225,
+      "snapshot_bytes": 32991225,
+      "complete_lines": 192091,
+      "sha256": "c114efdb3b2b659046d135195029439417bb34ee081a8dedca155e666d2ab2b4",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261023T013844Z-npc-session\\packets-55816-187708109.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-6468-5728843.jsonl",
+      "snapshot": "packets-6468-5728843.jsonl",
+      "source_read_limit": 23439462,
+      "snapshot_bytes": 23439462,
+      "complete_lines": 126975,
+      "sha256": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-6468-5728843.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\aftershock-camera-2026-10-14\\packets-6468-checkpoint.jsonl",
+      "snapshot": "packets-6468-checkpoint.jsonl",
+      "source_read_limit": 403981,
+      "snapshot_bytes": 403981,
+      "complete_lines": 2831,
+      "sha256": "bead7bd4dc55c1106b0520b4665310f2bb5fa9df64514ac81b5ef24c350b5844",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-6468-checkpoint.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-7108-102222937.jsonl",
+      "snapshot": "packets-7108-102222937.jsonl",
+      "source_read_limit": 13471191,
+      "snapshot_bytes": 13471191,
+      "complete_lines": 87694,
+      "sha256": "9c11ec953f649a0a512582640338f4c38a686c49e564b78aa90d79c15df612f1",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\packets-7108-102222937.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-10392-98228765.jsonl",
+      "snapshot": "world-10392-98228765.jsonl",
+      "source_read_limit": 56497848,
+      "snapshot_bytes": 56497848,
+      "complete_lines": 10315,
+      "sha256": "c5d01dce1e2474410bcb5a41c6f7309ad2213ab89a9a223ff40e312160e76425",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-10392-98228765.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-108988-190099484.jsonl",
+      "snapshot": "world-108988-190099484.jsonl",
+      "source_read_limit": 56869538,
+      "snapshot_bytes": 56869538,
+      "complete_lines": 11479,
+      "sha256": "9ad6337e852dd14f16fadc10acc5bab9f200a7f43fb42faa8977a0a39e84d211",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-108988-190099484.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-110228-194394062.jsonl",
+      "snapshot": "world-110228-194394062.jsonl",
+      "source_read_limit": 14418085,
+      "snapshot_bytes": 14418085,
+      "complete_lines": 2378,
+      "sha256": "4a00ae0b6a56ae67a77922a992d6a3c088ee3d47b40391629f2613cda4352fdc",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-110228-194394062.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-110488-195199687.jsonl",
+      "snapshot": "world-110488-195199687.jsonl",
+      "source_read_limit": 277592647,
+      "snapshot_bytes": 277592647,
+      "complete_lines": 66285,
+      "sha256": "237e0e8bd74d61f57164db66f317dccaf4e36287ba19f8320bd842dbd0c398c9",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-110488-195199687.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-119224-230421312.jsonl",
+      "snapshot": "world-119224-230421312.jsonl",
+      "source_read_limit": 6667293,
+      "snapshot_bytes": 6667293,
+      "complete_lines": 1857,
+      "sha256": "2c8dcb6ba30580d0d861aed566d2806b014eec8ddc8b55517f562d387dae5043",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-119224-230421312.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-120312-228736640.jsonl",
+      "snapshot": "world-120312-228736640.jsonl",
+      "source_read_limit": 7750429,
+      "snapshot_bytes": 7750429,
+      "complete_lines": 1386,
+      "sha256": "f27b81f5a6d7bb0373287848dd035015a68d39019a26c710a01fde05e57937aa",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-120312-228736640.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-124648-268873187.jsonl",
+      "snapshot": "world-124648-268873187.jsonl",
+      "source_read_limit": 64338320,
+      "snapshot_bytes": 64338320,
+      "complete_lines": 16539,
+      "sha256": "f18b08b0d8e469c2da529a9a32b41c9be75c97725cc3eecb5c3066335e93cd45",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-124648-268873187.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-13324-237035312.jsonl",
+      "snapshot": "world-13324-237035312.jsonl",
+      "source_read_limit": 256803,
+      "snapshot_bytes": 256803,
+      "complete_lines": 311,
+      "sha256": "d7772196e03257dbd22919ea8e4df75c9d56e55fd51c22c0d30461b7caa6860c",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-13324-237035312.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-1360-15811984.jsonl",
+      "snapshot": "world-1360-15811984.jsonl",
+      "source_read_limit": 245878988,
+      "snapshot_bytes": 245878988,
+      "complete_lines": 54160,
+      "sha256": "de6f061799d3db9f7406f55e5e0da20fff0c5e46daaa634e1e4d952d0fd4882f",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-1360-15811984.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-13908-99220828.jsonl",
+      "snapshot": "world-13908-99220828.jsonl",
+      "source_read_limit": 6883749,
+      "snapshot_bytes": 6883749,
+      "complete_lines": 4517,
+      "sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-13908-99220828.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-15312-239943281.jsonl",
+      "snapshot": "world-15312-239943281.jsonl",
+      "source_read_limit": 10155205,
+      "snapshot_bytes": 10155205,
+      "complete_lines": 1827,
+      "sha256": "0fb4ca8ea8dad53373cf8431fcb1f631192ec851913f97133b32bf3880add473",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-15312-239943281.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-15860-253212140.jsonl",
+      "snapshot": "world-15860-253212140.jsonl",
+      "source_read_limit": 2688285,
+      "snapshot_bytes": 2688285,
+      "complete_lines": 2530,
+      "sha256": "6d505ab27beea99d5bd89b1da258253fae3bdb0bb8106dec3d4fcb9952894bbe",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-15860-253212140.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\incoming\\5cb396714a55155f\\world-16120-242707234.jsonl",
+      "snapshot": "world-16120-242707234.jsonl",
+      "source_read_limit": 426010,
+      "snapshot_bytes": 426010,
+      "complete_lines": 168,
+      "sha256": "5cb396714a55155f3feddcd03e1e66539820e06e0a3a1f81a58f2db7a33f3323",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-16120-242707234.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\incoming\\1bdebbc3382961ff\\world-16884-252128984.jsonl",
+      "snapshot": "world-16884-252128984.jsonl",
+      "source_read_limit": 8802223,
+      "snapshot_bytes": 8802223,
+      "complete_lines": 1823,
+      "sha256": "1bdebbc3382961ffd720bbaf328ecc18ebfd6eb3ccf3fe493a8cf1f2ef88d7f1",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-16884-252128984.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-17056-263108156.jsonl",
+      "snapshot": "world-17056-263108156.jsonl",
+      "source_read_limit": 43492778,
+      "snapshot_bytes": 43492778,
+      "complete_lines": 17041,
+      "sha256": "6e8af463eecb6414d85471951384931944b2a2eb68509c16b0cc3cc7e2b65698",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-17056-263108156.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-19472-19196937.jsonl",
+      "snapshot": "world-19472-19196937.jsonl",
+      "source_read_limit": 173113945,
+      "snapshot_bytes": 173113945,
+      "complete_lines": 33283,
+      "sha256": "b9b8d0aae7a823840b3976c44bbaff1d0145c4c8cc9eb617742c114a0622f2e5",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-19472-19196937.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-21116-95410734.jsonl",
+      "snapshot": "world-21116-95410734.jsonl",
+      "source_read_limit": 7748708,
+      "snapshot_bytes": 7748708,
+      "complete_lines": 2853,
+      "sha256": "b8eb71a20e83e8bc1956e147843faef7cb2ed4fcc008bd9287b0b0bf56b7c3b6",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-21116-95410734.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-21464-51548515.jsonl",
+      "snapshot": "world-21464-51548515.jsonl",
+      "source_read_limit": 100341774,
+      "snapshot_bytes": 100341774,
+      "complete_lines": 25788,
+      "sha256": "e42b69e8312b3b3e37ba58c3c823824a31a4d2b3234426880f10ec048f96eaf4",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-21464-51548515.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-30352-81344734.jsonl",
+      "snapshot": "world-30352-81344734.jsonl",
+      "source_read_limit": 24049699,
+      "snapshot_bytes": 24049699,
+      "complete_lines": 15867,
+      "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-30352-81344734.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-30392-99012484.jsonl",
+      "snapshot": "world-30392-99012484.jsonl",
+      "source_read_limit": 178310546,
+      "snapshot_bytes": 178310546,
+      "complete_lines": 38684,
+      "sha256": "29feb434ebd47d8a17a60ff6596b2d0f47c9f009d843da5f341c219bed9d32c6",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-30392-99012484.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-38060-79906984.jsonl",
+      "snapshot": "world-38060-79906984.jsonl",
+      "source_read_limit": 107882784,
+      "snapshot_bytes": 107882784,
+      "complete_lines": 24151,
+      "sha256": "fb68fcb64be6a5798d4f194d5cf212527d0da4673a43aafe4830572b41fa0b4a",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-38060-79906984.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-40172-93835062.jsonl",
+      "snapshot": "world-40172-93835062.jsonl",
+      "source_read_limit": 89055464,
+      "snapshot_bytes": 89055464,
+      "complete_lines": 19636,
+      "sha256": "9b7c6962267fc4c0315df03e7c04d86a0ccdaf6363496f6f034d96552793b9ac",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-40172-93835062.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-43292-168890171.jsonl",
+      "snapshot": "world-43292-168890171.jsonl",
+      "source_read_limit": 90725687,
+      "snapshot_bytes": 90725687,
+      "complete_lines": 27901,
+      "sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-43292-168890171.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-55816-187981562.jsonl",
+      "snapshot": "world-55816-187981562.jsonl",
+      "source_read_limit": 27689015,
+      "snapshot_bytes": 27689015,
+      "complete_lines": 6510,
+      "sha256": "f4ed4706a26295c4b8d329dcd1926f732167c3570d5165861e49c5b3493620f4",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261023T013844Z-npc-session\\world-55816-187981562.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\incoming\\6053c514b063fea2\\world-5604-54915078.jsonl",
+      "snapshot": "world-5604-54915078.jsonl",
+      "source_read_limit": 242958695,
+      "snapshot_bytes": 242958695,
+      "complete_lines": 22683,
+      "sha256": "6053c514b063fea2a30831bfc99030626816a83250098b4c30dab03babacf688",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-5604-54915078.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-6468-5692828.jsonl",
+      "snapshot": "world-6468-5692828.jsonl",
+      "source_read_limit": 55049306,
+      "snapshot_bytes": 55049306,
+      "complete_lines": 9610,
+      "sha256": "96278e657d920318e3e3a00c4b7187205f6b4023734e7497c161fd9240ec36cc",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-6468-5692828.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-6784-190402640.jsonl",
+      "snapshot": "world-6784-190402640.jsonl",
+      "source_read_limit": 825349,
+      "snapshot_bytes": 825349,
+      "complete_lines": 299,
+      "sha256": "4f8d65cab3f12d844fcf1f57b1e6f6b428994eb8bf22fe81ffca41b748cd5a4b",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-6784-190402640.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-7108-102222171.jsonl",
+      "snapshot": "world-7108-102222171.jsonl",
+      "source_read_limit": 20227542,
+      "snapshot_bytes": 20227542,
+      "complete_lines": 13947,
+      "sha256": "2e6c0c890273273ef3bab12289eb42e1b8777de70795ed4cc660eb132d8bd838",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-7108-102222171.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-7412-29734296.jsonl",
+      "snapshot": "world-7412-29734296.jsonl",
+      "source_read_limit": 7714974,
+      "snapshot_bytes": 7714974,
+      "complete_lines": 3822,
+      "sha256": "02a34935a2a08fd8cb4a99c256eb79732195a546c9d17e8b193056ad7f8a74a3",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-7412-29734296.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-8432-209740140.jsonl",
+      "snapshot": "world-8432-209740140.jsonl",
+      "source_read_limit": 21183295,
+      "snapshot_bytes": 21183295,
+      "complete_lines": 7501,
+      "sha256": "aa354d883dd255006315f871eee992fd27f2d372e7562d38f50b740aaf1fbaa2",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-8432-209740140.jsonl"
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\world-8512-185810437.jsonl",
+      "snapshot": "world-8512-185810437.jsonl",
+      "source_read_limit": 3312917,
+      "snapshot_bytes": 3312917,
+      "complete_lines": 4644,
+      "sha256": "4666f000d533c65a1e0c7e07949ac3cbd7576f14b4f2661bda7fad80f52dcba5",
+      "partial_tail_excluded_bytes": 0,
+      "source_snapshot": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\data\\captures\\skill-checkpoints\\20261022-cumulative-skills\\world-8512-185810437.jsonl"
+    }
+  ]
+}

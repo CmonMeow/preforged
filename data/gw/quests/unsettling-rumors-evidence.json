@@ -1,0 +1,1761 @@
+{
+  "quest": 62,
+  "status": "detached_candidate_not_built",
+  "wiki_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Unsettling_Rumors.html",
+  "wiki_sha256": "8ba56c0b300e2adcb51e7186421813e3b299490996c48d397c1d885fb6bfcc7e",
+  "world_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\world-43292-168890171.jsonl",
+  "world_sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757",
+  "packet_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\packets-43292-168891734.jsonl",
+  "packet_sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c",
+  "states": [
+    {
+      "line": 19062,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 43292,
+        "tick_ms": 176198703,
+        "map": 146,
+        "instance_epoch": 6,
+        "instance_ms": 1185683,
+        "local_actor": 31,
+        "quest_snapshot_revision": 44,
+        "active_quest_id": 62,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 41,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 146,
+            "marker": {
+              "x": -7832.0,
+              "y": -15081.0,
+              "plane": 0,
+              "x_bits": 3321151488,
+              "y_bits": 3328943104,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5503,
+                37998,
+                48760,
+                23264
+              ],
+              "decoded": "Bandit Raid",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13182,
+                41334,
+                38146,
+                11853
+              ],
+              "decoded": "Baron Egan",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5506,
+                50769,
+                51744,
+                1311,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9168,
+                34355,
+                39460,
+                22700,
+                1,
+                267,
+                2692,
+                266,
+                2327,
+                1,
+                257,
+                259,
+                1,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9808,
+                48724,
+                51282,
+                20020,
+                1,
+                267,
+                2694,
+                266,
+                2628,
+                1,
+                257,
+                260,
+                1
+              ],
+              "decoded": "A group of bandits has been terrorizing Lakeside recently. They have grown so bold that they ambushed a royal tax collector and stole a chest full of gold. That gold is vital to our war effort against the Charr and must be recovered! You look like you could give those bandits a good thrashing. Will you recover the <c=@Quest>stolen chest</c> and then return it to <c=@Quest>Devona</c> in Ashford for me?\n\nReward:<brx>250 Experience<brx>Flame Artifact<br>Energy +3<brx>Tall Shield<br>Armor: 4<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10997,
+                50642,
+                61219,
+                3064,
+                266,
+                5504,
+                59288,
+                45740,
+                14504,
+                1,
+                2,
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5505,
+                41490,
+                64607,
+                4674,
+                1
+              ],
+              "decoded": "{sc}Recover the Ashford strongbox from the bandits.{s}Return the strongbox to Devona in Ashford.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 54,
+            "log_state": 33,
+            "completed": false,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 146,
+            "marker": {
+              "x": -7832.0,
+              "y": -15081.0,
+              "plane": 0,
+              "x_bits": 3321151488,
+              "y_bits": 3328943104,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5632,
+                37838,
+                64636,
+                9418
+              ],
+              "decoded": "Further Adventures",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13289,
+                60403,
+                53622,
+                2742
+              ],
+              "decoded": "Haversdan",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5635,
+                33958,
+                47493,
+                16501,
+                266,
+                2302,
+                1,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506
+              ],
+              "decoded": "You're the Elementalist Sir Tydus was telling me about, aren't you? Well, I imagine he's right that you've got potential, but potential won't save you from a Charr firestorm. Experience will.<p>I suggest you head southwest to Ashford and talk to <c=@Quest>Devona</c>. She's bound to have a task or two for you.\n\nReward:<brx>250 Experience<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5638,
+                49076,
+                58763,
+                27246,
+                1
+              ],
+              "decoded": "{s}Follow the road southwest from town to Ashford. Talk to Devona.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 56,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5712,
+                64669,
+                61198,
+                16010
+              ],
+              "decoded": "Adventure with an Ally",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13299,
+                51941,
+                40139,
+                27334
+              ],
+              "decoded": "Lina the Healer",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5714,
+                42987,
+                41310,
+                27071,
+                266,
+                2302,
+                1,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                356,
+                2,
+                10994,
+                51111,
+                34011,
+                18705,
+                266,
+                25220,
+                1
+              ],
+              "decoded": "With all the dangers out in Lakeside, I can't believe the number of people who go running around by themselves. Why, I've already got my hands full resurrecting fallen soldiers without some novice Elementalist adding to the burden! Don't people know there are plenty of folks in <c=@Quest>Ascalon City</c> who'd be perfectly happy to join them in their adventures?<p>I'll tell you what, if you promise to do your adventuring with an <c=@Quest>ally</c>, I'll gladly give you a Signet that can resurrect fallen party members.\n\nReward:<brx>100 Experience<brx>Resurrection Signet<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5713,
+                45343,
+                58274,
+                28606,
+                1
+              ],
+              "decoded": "{s}Return to Ascalon City. Form a party with another player.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 58,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 146,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5651,
+                61193,
+                50525,
+                23447
+              ],
+              "decoded": "A Gift for Althea",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                5640,
+                44463,
+                52933,
+                19297
+              ],
+              "decoded": "Captain Osric",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5652,
+                48606,
+                38832,
+                30403,
+                266,
+                2985,
+                263,
+                76,
+                111,
+                103,
+                103,
+                101,
+                114,
+                1,
+                1,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9172,
+                39937,
+                46198,
+                932,
+                1,
+                267,
+                2692,
+                266,
+                2327,
+                1,
+                257,
+                259,
+                1
+              ],
+              "decoded": "I have a very important mission for you, Logger. The prince's love, Althea, will celebrate her birthday tomorrow. The prince has charged me with finding the <c=@Quest>perfect gift</c>, one that is as unique and beautiful as Althea herself. What do you say? Can you help me?\n\nReward:<brx>250 Experience<brx>Inscribed Chakram<br>Energy +3<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5655,
+                36487,
+                52857,
+                4661,
+                1,
+                2,
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5656,
+                49027,
+                61728,
+                28438,
+                1,
+                2,
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5658,
+                33063,
+                46909,
+                20724,
+                1
+              ],
+              "decoded": "{s}Find the perfect gift for Lady Althea. It must be something beautiful.{s}Give the Beautiful Feather to Captain Osric.{s}Give the Beautiful Pendant to Captain Osric.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 62,
+            "log_state": 33,
+            "completed": false,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 164,
+            "marker": {
+              "x": -11308.0,
+              "y": -6195.0,
+              "plane": 0,
+              "x_bits": 3325079552,
+              "y_bits": 3317798912,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5737,
+                60676,
+                52161,
+                11121
+              ],
+              "decoded": "Unsettling Rumors",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13255,
+                63163,
+                59038,
+                32232
+              ],
+              "decoded": "Devona",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5740,
+                37586,
+                38312,
+                27892,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9809,
+                33833,
+                54950,
+                12855,
+                1,
+                267,
+                2694,
+                266,
+                2628,
+                1,
+                257,
+                260,
+                1
+              ],
+              "decoded": "I've heard talk among the townsfolk of unsettling rumors coming from <c=@Quest>Meerak the Scribe</c>. Instead of babbling to random strangers, he ought to send word to the authorities if he's come across something truly important, but I'm sure he's too engrossed in his books to think of anything practical like that.<p>My duties in town keep me from looking into this matter myself, but if you could go to <c=@Quest>Ashford Abbey</c> to the north and ask him about it, I'd appreciate it.\n\nReward:<brx>250 Experience<brx>Tall Shield<br>Armor: 4<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5744,
+                39774,
+                44909,
+                13347,
+                1
+              ],
+              "decoded": "{s}Speak with Meerak the Scribe in Ashford Abbey.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 70,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5703,
+                39622,
+                57907,
+                6159
+              ],
+              "decoded": "Poor Tenant",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13180,
+                57779,
+                60274,
+                23226
+              ],
+              "decoded": "Namar",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5704,
+                64550,
+                52340,
+                8339,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                756,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9173,
+                43855,
+                36894,
+                9784,
+                1,
+                267,
+                2692,
+                266,
+                2327,
+                1,
+                257,
+                259,
+                1
+              ],
+              "decoded": "Alas, I am behind on my rent, and my landlord, Gelsan, has run out of patience with me. I fear I will be put out of my home. I'll understand if you'd rather not help a Krytan; our nations were at war a long time. But I'm not your enemy, and I could really use some assistance.<p>My friend, <c=@Quest>Miller Upton</c>, lives to the southwest. I know he'll help me if I can get a message to him. If you're going that way, could you tell him of my plight?\n\nReward:<brx>500 Experience<brx>Divine Symbol<br>Energy +3<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5707,
+                41596,
+                53343,
+                13592,
+                1
+              ],
+              "decoded": "{s}Follow the road southwest from town to Ashford. Find Miller Upton and ask him to help Namar.",
+              "status": "decoded"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 62,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 164,
+        "marker": {
+          "x": -11308.0,
+          "y": -6195.0,
+          "plane": 0,
+          "x_bits": 3325079552,
+          "y_bits": 3317798912,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5737,
+            60676,
+            52161,
+            11121
+          ],
+          "decoded": "Unsettling Rumors",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13255,
+            63163,
+            59038,
+            32232
+          ],
+          "decoded": "Devona",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5740,
+            37586,
+            38312,
+            27892,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9809,
+            33833,
+            54950,
+            12855,
+            1,
+            267,
+            2694,
+            266,
+            2628,
+            1,
+            257,
+            260,
+            1
+          ],
+          "decoded": "I've heard talk among the townsfolk of unsettling rumors coming from <c=@Quest>Meerak the Scribe</c>. Instead of babbling to random strangers, he ought to send word to the authorities if he's come across something truly important, but I'm sure he's too engrossed in his books to think of anything practical like that.<p>My duties in town keep me from looking into this matter myself, but if you could go to <c=@Quest>Ashford Abbey</c> to the north and ask him about it, I'd appreciate it.\n\nReward:<brx>250 Experience<brx>Tall Shield<br>Armor: 4<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5744,
+            39774,
+            44909,
+            13347,
+            1
+          ],
+          "decoded": "{s}Speak with Meerak the Scribe in Ashford Abbey.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 24789,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 43292,
+        "tick_ms": 178312875,
+        "map": 164,
+        "instance_epoch": 16,
+        "instance_ms": 124157019,
+        "local_actor": 24,
+        "quest_snapshot_revision": 115,
+        "active_quest_id": 62,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 48,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5584,
+                61433,
+                50994,
+                28201
+              ],
+              "decoded": "The Poison Devourer",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13182,
+                41334,
+                38146,
+                11853
+              ],
+              "decoded": "Baron Egan",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5585,
+                57303,
+                42247,
+                17178,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9169,
+                62416,
+                60218,
+                22661,
+                1,
+                267,
+                2692,
+                266,
+                2327,
+                1,
+                257,
+                259,
+                1
+              ],
+              "decoded": "The devourer cave southwest of town has always been a source of danger to the people of Lakeside County, but they have learned to be vigilant and to defend themselves from the beasts. Unfortunately, I've been hearing recently of a new sort of devourer with a poisonous sting.<p>I'd like you to find one of these creatures, kill it, and take its <c=@Quest>Poisonous Stinger</c> to <c=@Quest>Brother Mhenlo</c> in Ashford Abbey.\n\nReward:<brx>250 Experience<brx>Healing Ankh<br>Energy +3<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5589,
+                47533,
+                60923,
+                6418,
+                1
+              ],
+              "decoded": "{s}Cross the river and destroy the plague devourer to get a poisonous stinger.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 53,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5666,
+                40304,
+                55251,
+                12383
+              ],
+              "decoded": "The Prize Moa Bird",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13251,
+                53601,
+                38649,
+                8230
+              ],
+              "decoded": "Pitney",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5667,
+                49356,
+                41127,
+                7657,
+                266,
+                2302,
+                1,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9965,
+                50648,
+                39965,
+                9447,
+                1,
+                267,
+                2692,
+                266,
+                2327,
+                1,
+                257,
+                261,
+                2,
+                258,
+                2,
+                2697,
+                266,
+                2638,
+                1,
+                267,
+                2279,
+                1,
+                257,
+                259,
+                258,
+                261,
+                2,
+                258,
+                2,
+                2708,
+                1,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9998,
+                52074,
+                63116,
+                6531,
+                1,
+                267,
+                2697,
+                266,
+                2638,
+                1,
+                267,
+                2272,
+                1,
+                257,
+                262,
+                258,
+                265,
+                1
+              ],
+              "decoded": "I'm at a loss. First those worms, and now someone has stolen my prize <c=@Quest>moa bird</c>. To make matters worse, the tracks seem to indicate that whoever took her led off to the <c=@Quest>Catacombs</c>! I don't have to tell you how dangerous it is down there.<p>But wait, you're a strong Elementalist. Would you be willing to find my poor bird and bring her back?\n\nReward:<brx>250 Experience<brx>Smiting Staff<br>Energy +5\nHoly Dmg: 3-5\nTwo-handed<brx>Long Sword<br>Slashing Dmg: 6-9<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5670,
+                42336,
+                44996,
+                1800,
+                1
+              ],
+              "decoded": "{s}Head to the catacombs and find Pitney's prize bird.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 55,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5673,
+                58870,
+                35349,
+                7652
+              ],
+              "decoded": "The Wayward Wizard",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13170,
+                52680,
+                41767,
+                16871
+              ],
+              "decoded": "Sandre Elek",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5674,
+                48324,
+                33064,
+                24792,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9966,
+                43471,
+                46674,
+                918,
+                1,
+                267,
+                2692,
+                266,
+                2327,
+                1,
+                257,
+                259,
+                2,
+                258,
+                2,
+                2697,
+                266,
+                2638,
+                1,
+                267,
+                2275,
+                1,
+                257,
+                259,
+                258,
+                261,
+                2,
+                258,
+                2,
+                2708,
+                1
+              ],
+              "decoded": "I'm sorry to bother you, but I've heard some impressive things about you, and I think only someone with your skill and bravery can help me with my problem.<p>I think my brother <c=@Quest>Orion</c> has fallen in with the Royalists. He's not wicked, just reckless and impulsive. When Sir Tydus expelled him from the Academy, he became embittered toward the army, but I don't think he realizes how serious this is. I don't want him to throw his life away for foolish pride. Do you think you could find him and tell him what I said? Perhaps convince him to come home?<p>I don't know exactly where he is, but I imagine <c=@Quest>Ralena Stormbringer</c> in <c=@Quest>Foible's Fair</c> might. Orion was always trying to impress her. He might have told her something.\n\nReward:<brx>250 Experience<brx>Air Staff<br>Energy +3\nLightning Dmg: 3-5\nTwo-handed<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5677,
+                33130,
+                63070,
+                23830,
+                1
+              ],
+              "decoded": "{s}Talk to Ralena Stormbringer in Foible's Fair to learn Orion's whereabouts.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 56,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5712,
+                64669,
+                61198,
+                16010
+              ],
+              "decoded": "Adventure with an Ally",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13299,
+                51941,
+                40139,
+                27334
+              ],
+              "decoded": "Lina the Healer",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5714,
+                42987,
+                41310,
+                27071,
+                266,
+                2302,
+                1,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                356,
+                2,
+                10994,
+                51111,
+                34011,
+                18705,
+                266,
+                25220,
+                1
+              ],
+              "decoded": "With all the dangers out in Lakeside, I can't believe the number of people who go running around by themselves. Why, I've already got my hands full resurrecting fallen soldiers without some novice Elementalist adding to the burden! Don't people know there are plenty of folks in <c=@Quest>Ascalon City</c> who'd be perfectly happy to join them in their adventures?<p>I'll tell you what, if you promise to do your adventuring with an <c=@Quest>ally</c>, I'll gladly give you a Signet that can resurrect fallen party members.\n\nReward:<brx>100 Experience<brx>Resurrection Signet<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5713,
+                45343,
+                58274,
+                28606,
+                1
+              ],
+              "decoded": "{s}Return to Ascalon City. Form a party with another player.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 62,
+            "log_state": 33,
+            "completed": false,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 148,
+            "marker": {
+              "x": -11215.0,
+              "y": -6200.0,
+              "plane": 0,
+              "x_bits": 3324984320,
+              "y_bits": 3317809152,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5737,
+                60676,
+                52161,
+                11121
+              ],
+              "decoded": "Unsettling Rumors",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13255,
+                63163,
+                59038,
+                32232
+              ],
+              "decoded": "Devona",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5740,
+                37586,
+                38312,
+                27892,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506,
+                2,
+                10991,
+                63120,
+                53358,
+                19539,
+                266,
+                9809,
+                33833,
+                54950,
+                12855,
+                1,
+                267,
+                2694,
+                266,
+                2628,
+                1,
+                257,
+                260,
+                1
+              ],
+              "decoded": "I've heard talk among the townsfolk of unsettling rumors coming from <c=@Quest>Meerak the Scribe</c>. Instead of babbling to random strangers, he ought to send word to the authorities if he's come across something truly important, but I'm sure he's too engrossed in his books to think of anything practical like that.<p>My duties in town keep me from looking into this matter myself, but if you could go to <c=@Quest>Ashford Abbey</c> to the north and ask him about it, I'd appreciate it.\n\nReward:<brx>250 Experience<brx>Tall Shield<br>Armor: 4<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10997,
+                50642,
+                61219,
+                3064,
+                266,
+                5744,
+                39774,
+                44909,
+                13347,
+                1,
+                2,
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5745,
+                57346,
+                55815,
+                1071,
+                1
+              ],
+              "decoded": "{sc}Speak with Meerak the Scribe in Ashford Abbey.{s}Deliver the message to Armin Saberlin. Use your map to travel to Ascalon City quickly.",
+              "status": "decoded"
+            }
+          },
+          {
+            "quest_id": 65,
+            "log_state": 1,
+            "completed": false,
+            "current_mission": false,
+            "primary": false,
+            "area_primary": false,
+            "map_from": 146,
+            "map_to": 898,
+            "marker": {
+              "x": null,
+              "y": null,
+              "plane": 0,
+              "x_bits": 2139095040,
+              "y_bits": 2139095040,
+              "finite": false
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                5760,
+                33110,
+                40494,
+                32593
+              ],
+              "decoded": "A New Elementalist Trainer",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13289,
+                60403,
+                53622,
+                2742
+              ],
+              "decoded": "Haversdan",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                5761,
+                44431,
+                34935,
+                29107,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506
+              ],
+              "decoded": "To become a more powerful Elementalist, I think you should start with <c=@Quest>Elementalist Aziure</c>. She is performing experiments at the <c=@Quest>tower</c> in Wizard's Folly. Follow the road southwest from town and continue past Ashford to find Wizard's Folly.\n\nReward:<brx>250 Experience<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                5764,
+                35928,
+                38393,
+                31096,
+                1
+              ],
+              "decoded": "{s}Follow the road southwest from town and continue past Ashford to find Wizard's Folly. Continue to the tower. Talk to Elementalist Aziure.",
+              "status": "decoded"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 62,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 148,
+        "marker": {
+          "x": -11215.0,
+          "y": -6200.0,
+          "plane": 0,
+          "x_bits": 3324984320,
+          "y_bits": 3317809152,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5737,
+            60676,
+            52161,
+            11121
+          ],
+          "decoded": "Unsettling Rumors",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13255,
+            63163,
+            59038,
+            32232
+          ],
+          "decoded": "Devona",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5740,
+            37586,
+            38312,
+            27892,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9809,
+            33833,
+            54950,
+            12855,
+            1,
+            267,
+            2694,
+            266,
+            2628,
+            1,
+            257,
+            260,
+            1
+          ],
+          "decoded": "I've heard talk among the townsfolk of unsettling rumors coming from <c=@Quest>Meerak the Scribe</c>. Instead of babbling to random strangers, he ought to send word to the authorities if he's come across something truly important, but I'm sure he's too engrossed in his books to think of anything practical like that.<p>My duties in town keep me from looking into this matter myself, but if you could go to <c=@Quest>Ashford Abbey</c> to the north and ask him about it, I'd appreciate it.\n\nReward:<brx>250 Experience<brx>Tall Shield<br>Armor: 4<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5744,
+            39774,
+            44909,
+            13347,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5745,
+            57346,
+            55815,
+            1071,
+            1
+          ],
+          "decoded": "{sc}Speak with Meerak the Scribe in Ashford Abbey.{s}Deliver the message to Armin Saberlin. Use your map to travel to Ascalon City quickly.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "receipts": {
+    "564872": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 77,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4d0000003e000000000c3c4600c042450000000094000000"
+    },
+    "564873": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c0000003e0000006c16d292a895f46c02000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa010200ef2a90f66ed0534c0a0151262984a6d6373201000b01860a0a01440a010001010401010000000b01860a0a01440a01000101040101000000807f0000807f00000000f0000000060000000b0000004a00000006000000000000002d89010000000000e803000000000000000000000b01e008010001010601020109010100010000000004c8a3040688a4141488a4001428a2df0800fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe9c01feb60123fe3509fe5518feb11d680c46fef001bcf52ad2c523eff80b0a0170165e9b6daf233401000200f52ad2c523eff80b0a01711602e007da2f0401000200f62ab7c12dcf21130a01f12aedbe39bb045b0a0199334ec6f4af590f0100010000009635bb303f432408352d783917fe120802030202fec61e030000000302fe6d0021fea60883fea9051d5822fe280004fe04011cfecd0a06fed20007feb30a09fe571200fea700005b1d3e0b04febe0f00fe0e02009f17020202400904fe031e000000056135724f1afe06006f921a020202fe4a00a45502122cfeeb1d0000000000000000000000000002fe0107fe8705fe1b0800fe2010fe3400fe8d06fe51038a6700a814101010103b53930f02020204fe"
+    },
+    "564874": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 353,
+      "bytes": 436,
+      "complete": true,
+      "hex": "61010000df1e0000382500801800000000000000000000000000000000000000000000200a000000010b00000100000051262984a6d63732000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030000000532a821000f48230004c8a300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "normalized_unused_capacity": true
+    },
+    "564875": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 318,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3e0100006b000000df1e0000f900000006000000"
+    },
+    "564876": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "520000003e000000"
+    },
+    "564881": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee00000000000000fa000000"
+    },
+    "564892": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 178406390,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000044000000"
+    }
+  },
+  "reward_item": {
+    "opcode": 353,
+    "id": 7903,
+    "file": 2147493176,
+    "type": 24,
+    "unknown1": 0,
+    "dye": 0,
+    "materials": 0,
+    "unknown2": 0,
+    "interaction": 536870912,
+    "price": 10,
+    "model": 2817,
+    "quantity": 1,
+    "encoded_name": [
+      9809,
+      33833,
+      54950,
+      12855
+    ],
+    "name_terminated": true,
+    "modifiers": [
+      564670981,
+      591924992,
+      2747794432
+    ]
+  },
+  "limitations": [
+    "Private dialogue tokens and completed durable state are server policy; no retail outgoing choice IDs inferred.",
+    "Completed content uses bounded turn-in details; completed snapshot was not observed.",
+    "Only observed map/stage route markers are bound; Armin turn-in location is reused for delivery. Other map routes unresolved; rendered verification not performed.",
+    "Quest offer is Devona, not Armin; existing catalog supplies Devona146, Meerak164 and Armin148."
+  ],
+  "marker_snapshot_lines": [
+    19062,
+    23809,
+    24751,
+    24789
+  ],
+  "npc_name_observation_lines": [
+    24768,
+    25124
+  ],
+  "npc_binding": "Meerak agent7/map164/epoch16; Armin agent68/map148/epoch19. Sender129 agent68 appears at reward packet564892. World observation instance_ms is not used as packet tick_ms."
+}

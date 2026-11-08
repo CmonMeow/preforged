@@ -1,0 +1,112 @@
+{
+  "skill": 58,
+  "name": "Signet of Midnight",
+  "balance_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Signet_of_Midnight.html",
+  "balance_sha256": "aad964de6137d298f1deb2a0de6ef27a2a81682e51a60fa7ff21140b981abd51",
+  "capture": {
+    "id": 58,
+    "name": "Signet of Midnight",
+    "obtainable_baseline": true,
+    "runtime_status": "unsupported",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 1,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 27613,
+        "tick_ms": 16394312,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e0000003a000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 27626,
+        "tick_ms": 16396312,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": []
+  },
+  "wire_evidence": [
+    {
+      "line": 27625,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16396312,
+        "opcode": 229,
+        "bytes": 20,
+        "complete": true,
+        "hex": "e5000000190000003a000000000000000a000000"
+      }
+    },
+    {
+      "line": 27627,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16396312,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e0000001900000068000000"
+      }
+    },
+    {
+      "line": 27630,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16396312,
+        "opcode": 66,
+        "bytes": 24,
+        "complete": true,
+        "hex": "4200000019000000df0100000f0000008100000000007041"
+      }
+    },
+    {
+      "line": 27631,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16396312,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f000000060000001900000018000000"
+      }
+    },
+    {
+      "line": 27632,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16396312,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000001900000002000000"
+      }
+    }
+  ],
+  "limits": [
+    "Player-to-player world commit currently supported; NPC blindness path remains missing.",
+    "Rendered visual acceptance not performed; ongoing official client untouched.",
+    "Global condition duration modifiers and all other skills remain separate work."
+  ]
+}

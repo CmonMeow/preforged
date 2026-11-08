@@ -1,0 +1,62 @@
+{
+  "checkpoint": "20261016-monster-hunt",
+  "cutoff": "2026-10-17T01:17:33.777153+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 194114,
+      "tick_ms": 19719765,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e00000046040000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 194127,
+      "tick_ms": 19721875,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    }
+  ],
+  "completion_wire2022": "9e803a0000001900000000000000",
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 1094,
+    "override_after": 2139095040
+  },
+  "ground_effect": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 194128,
+    "hex": "a10000000040b4c50040f7440000000000000000a70400000000000000000000",
+    "consumer": {
+      "position": [
+        3316924416,
+        1157054464,
+        0
+      ],
+      "actor": 0,
+      "effect": 1191,
+      "data5": 0,
+      "data6": 0
+    },
+    "wire2022": "a0800040b4c50040f744000000000000a7040000"
+  },
+  "target_resource": 2077,
+  "particle": null,
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Breath_of_Fire.html",
+  "wiki_sha256": "9c3f95aecf4730d72765c5c018b9369161b30ef431893535b4bebe52a368e96f",
+  "tool_sha256": "e76cb1d8438b5d0a1ef541a754fc1ff37932f8649df3268c0efef8bbed1be8b4",
+  "ground_helper_sha256": "644c684b5490a9fbbf115edad26730a2609d7a3028f4fee6586e3e3299987e5e",
+  "limits": [
+    "Body/particle consumers use stubbed model services;no rendered acceptance.",
+    "Body resource2077 is a sentinel.Ground resource1191 with actor0 is captured and its positional handler/wire are verified;this native proof does not establish World publication.Rendered acceptance and first-pulse timing remain unverified.",
+    "Overcast recovery calibration and NPC-caster AI remain unverified."
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "quest": 54,
+  "world_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\world-43292-168890171.jsonl",
+  "world_sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757",
+  "quest_line": 15467,
+  "captured_quest_unchanged": {
+    "quest_id": 54,
+    "log_state": 33,
+    "completed": false,
+    "current_mission": false,
+    "primary": true,
+    "area_primary": false,
+    "map_from": 146,
+    "map_to": 146,
+    "marker": {
+      "x": -7832.0,
+      "y": -15081.0,
+      "plane": 0,
+      "x_bits": 3321151488,
+      "y_bits": 3328943104,
+      "finite": true
+    },
+    "unknown_0024": 0,
+    "category": {
+      "encoded_utf16": [
+        15716
+      ],
+      "decoded": "Ascalon",
+      "status": "decoded"
+    },
+    "name": {
+      "encoded_utf16": [
+        5632,
+        37838,
+        64636,
+        9418
+      ],
+      "decoded": "Further Adventures",
+      "status": "decoded"
+    },
+    "npc": {
+      "encoded_utf16": [
+        13289,
+        60403,
+        53622,
+        2742
+      ],
+      "decoded": "Haversdan",
+      "status": "decoded"
+    },
+    "description": {
+      "encoded_utf16": [
+        5635,
+        33958,
+        47493,
+        16501,
+        266,
+        2302,
+        1,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        506
+      ],
+      "decoded": "You're the Elementalist Sir Tydus was telling me about, aren't you? Well, I imagine he's right that you've got potential, but potential won't save you from a Charr firestorm. Experience will.<p>I suggest you head southwest to Ashford and talk to <c=@Quest>Devona</c>. She's bound to have a task or two for you.\n\nReward:<brx>250 Experience<brx>",
+      "status": "decoded"
+    },
+    "objectives": {
+      "encoded_utf16": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5638,
+        49076,
+        58763,
+        27246,
+        1
+      ],
+      "decoded": "{s}Follow the road southwest from town to Ashford. Talk to Devona.",
+      "status": "decoded"
+    }
+  },
+  "actor": {
+    "line": 17822,
+    "map": 146,
+    "epoch": 6,
+    "npc": {
+      "agent": 112,
+      "model": 1505,
+      "x": -7832.0,
+      "y": -15081.0,
+      "plane": 0,
+      "facing": 1.568702,
+      "level": 5,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        13255,
+        63163,
+        59038,
+        32232
+      ],
+      "name": "Devona",
+      "name_status": "decoded"
+    },
+    "definition": {
+      "line": 17821,
+      "record": {
+        "schema": 1,
+        "event": "npc_definition_observed",
+        "map": 146,
+        "instance_epoch": 6,
+        "instance_ms": 657308,
+        "npc_table_id": 1505,
+        "definition": {
+          "model_file": 128780,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 524,
+          "primary": 1,
+          "secondary": 0,
+          "default_level": 5,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            129988
+          ],
+          "name_encoded_utf16": [
+            3963,
+            56782,
+            58664,
+            15994
+          ],
+          "name": "Devona",
+          "name_status": "decoded"
+        }
+      }
+    }
+  },
+  "packet_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\packets-43292-168891734.jsonl",
+  "packet_sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c",
+  "reward_packets_by_line": {
+    "510609": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 176201328,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000036000000"
+    },
+    "510614": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 176201328,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee00000000000000fa000000"
+    },
+    "510617": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 176201328,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000036000000"
+    },
+    "510622": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 43292,
+      "tick_ms": 176201328,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000070000000"
+    }
+  },
+  "reward_join": "quest54 removal and XP250 in one Devona turn-in burst",
+  "wiki_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Further_Adventures.html",
+  "wiki_sha256": "10adf5ea4394f062438601fc6b819a1fca08133e361782b64ee9e74e96de276b",
+  "wiki_policy": "All six primary professions; requires completed primary profession test; Haversdan to Devona; 250 XP.",
+  "authored_neutral_description": "Haversdan recommends gaining experience. Follow the road southwest to Ashford and speak to Devona. Reward: 250 Experience.",
+  "authored_completed_objective": "Speak to Devona in Ashford for your reward.",
+  "limits": [
+    "Original captured description embeds Elementalist resource2302 and is preserved above, never generalized by guessing profession resources.",
+    "Runtime description and completed objective are explicitly authored literal summaries of wiki objectives/reward, not captured encoded text.",
+    "Completion at Devona is a trusted server conversation; no outgoing native dialogue identifier inferred.",
+    "Captured actor placement is static; no unobserved movement behavior inferred."
+  ],
+  "exports": [
+    {
+      "path": "data\\gw\\quests\\further-adventures.fwqc",
+      "sha256": "017a3263949af0182f11c73162b5629ba15b3dfc0963d43d81b54a7924b26e9b"
+    },
+    {
+      "path": "data\\gw\\quests\\actors\\further-adventures-devona.txt",
+      "sha256": "86750e28f445db4aac228ec8bdde6d319f5cb5c377f52b3d7e895021a7e68558"
+    }
+  ]
+}

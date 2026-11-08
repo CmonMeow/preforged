@@ -1,0 +1,80 @@
+{
+  "skill": 258,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 258,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 2,
+    "0x48": 7,
+    "0x4c": 4,
+    "0x5c": 50,
+    "0x60": 50,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 472
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "60cd00010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 257265,
+    "tick_ms": 21007921,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003c0000001900000002010000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 257279,
+    "tick_ms": 21008937,
+    "hex": "9f0000001500000019000000d8010000"
+  },
+  "all_body_sources": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+      "matches": [
+        {
+          "line": 257279,
+          "tick_ms": 21008937,
+          "hex": "9f0000001500000019000000d8010000"
+        }
+      ]
+    },
+    {
+      "file": "packets-6468-5728843.jsonl",
+      "sha256": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+      "matches": []
+    }
+  ],
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Guardian.html": "785a92b2c87ece63bb033a99db45f4e4ffd6c55527fc3a978c7f4b6cfcd636e3",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Block.html": "bcbda813ad1b88bd275cf1488b89cbc161181f497e3134b6238d11d8a457ffa9"
+  },
+  "tool_sha256": "34e652d98013db839abbb4a206176572cfee7b2c4997584f6061628d11f6cf08",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Offline first consumers,not rendered acceptance.",
+    "Native row proves1second activation,2..7second duration,4second recharge,50percent block chance and body472.",
+    "Archived wiki specifies target ally has50percent chance to block attacks;it is not a miss modifier.",
+    "This offline audit does not validate generic casting,NPC defense or rendered acceptance.",
+    "Captured completion includes generic159kind21 body472 for actor25. Earlier targeted-kind20-only search falsely reported absence;its report is preserved under build/reports/guardian-native-before-kind21-correction.json. Rendered acceptance remains unverified.",
+    "This audit proves offline first consumers,not World behavior or rendered acceptance."
+  ]
+}

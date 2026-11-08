@@ -1,0 +1,60 @@
+{
+  "skill": 943,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "ecc4a76099f3221c6fb2eab6f190619d26debff396ec3290ced87083d6e84468",
+  "capture_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "evidence": [
+    {
+      "line": 290031,
+      "tick_ms": 21590937,
+      "hex": "9f0000003c00000019000000af030000"
+    },
+    {
+      "line": 290049,
+      "tick_ms": 21591953,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    {
+      "line": 290050,
+      "tick_ms": 21591953,
+      "hex": "9f0000001500000019000000f6030000"
+    },
+    {
+      "line": 290051,
+      "tick_ms": 21591953,
+      "hex": "9f0000001500000019000000f6030000"
+    }
+  ],
+  "animation": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 1.0,
+    "stored_skill": 943,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x4c": 12,
+    "0x5c": 10,
+    "0x60": 100,
+    "0x78": 2077,
+    "0x7c": 1014
+  },
+  "particle": {
+    "actor": 42,
+    "encoded_file": "cc8202010000",
+    "flags": 1
+  },
+  "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Extinguish.html",
+  "wiki_sha256": "31208b2999a70330b15e36c8aea4bd19344e288f1d92135cd2d151520f9e8474",
+  "requirements": [
+    "One condition removed from each party member within compass range.",
+    "Only a recipient actually relieved of Burning earns rank-scaled heal.",
+    "Caster Divine Favor and real removal reactions require separate handling."
+  ],
+  "limits": [
+    "Two identical self-body1014 packets observed;do not hardcode a universal count without recipient/Divine Favor evidence.",
+    "Conditional removal,party coverage and additional-condition priority are not proven by this one activation.",
+    "No Runtime binding or rendered acceptance claimed."
+  ]
+}

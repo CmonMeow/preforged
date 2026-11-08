@@ -1,0 +1,759 @@
+CAPTURED SKILL CHECKLIST — FIXED SNAPSHOT
+Cutoff UTC: 2026-10-24T04:27:02.320932+00:00
+This file excludes every packet recorded after the checkpoint. Live loggers remain separate.
+Seen means an explicit local skill activation; it does not mean every mechanic has been verified.
+Implementation progress is tracked separately in IMPLEMENTATION-STATUS.txt beside the manual build-code list.
+
+{"local_distinct": 751, "local_obtainable": 679, "local_activation_events": 8956, "local_finished_events": 7994, "local_instant_events": 409, "obtainable_not_seen": 650, "local_body_effect_packets": 5671}
+
+   1 Healing Signet | starts 35, finished 31, instant 0, stopped 4
+   2 Resurrection Signet | starts 2, finished 1, instant 0, stopped 1
+   5 Power Block | starts 1, finished 1, instant 0, stopped 0
+   6 Mantra of Earth | starts 2, finished 0, instant 2, stopped 0
+   7 Mantra of Flame | starts 1, finished 0, instant 1, stopped 0
+   8 Mantra of Frost | starts 1, finished 0, instant 1, stopped 0
+   9 Mantra of Lightning | starts 1, finished 0, instant 1, stopped 0
+  10 Hex Breaker | starts 1, finished 0, instant 1, stopped 0
+  11 Distortion | starts 1, finished 0, instant 1, stopped 0
+  13 Mantra of Recovery | starts 1, finished 0, instant 1, stopped 0
+  14 Mantra of Persistence | starts 1, finished 0, instant 1, stopped 0
+  15 Mantra of Inscriptions | starts 1, finished 0, instant 1, stopped 0
+  17 Mantra of Resolve | starts 1, finished 0, instant 1, stopped 0
+  19 Fragility | starts 1, finished 1, instant 0, stopped 0
+  22 Inspired Hex | starts 2, finished 2, instant 0, stopped 0
+  23 Power Spike | starts 1, finished 1, instant 0, stopped 0
+  25 Power Drain | starts 1, finished 1, instant 0, stopped 0
+  26 Empathy | starts 2, finished 2, instant 0, stopped 0
+  27 Shatter Delusions | starts 1, finished 1, instant 0, stopped 0
+  28 Backfire | starts 1, finished 1, instant 0, stopped 0
+  30 Diversion | starts 1, finished 1, instant 0, stopped 0
+  31 Conjure Phantasm | starts 44, finished 42, instant 0, stopped 2
+  33 Illusionary Weaponry | starts 1, finished 1, instant 0, stopped 0
+  35 Ignorance | starts 1, finished 1, instant 0, stopped 0
+  36 Arcane Conundrum | starts 1, finished 1, instant 0, stopped 0
+  37 Illusion of Haste | starts 1, finished 1, instant 0, stopped 0
+  38 Channeling | starts 1, finished 1, instant 0, stopped 0
+  39 Energy Surge | starts 1, finished 1, instant 0, stopped 0
+  40 Ether Feast | starts 13, finished 13, instant 0, stopped 0
+  42 Energy Burn | starts 1, finished 1, instant 0, stopped 0
+  43 Clumsiness | starts 1, finished 1, instant 0, stopped 0
+  47 Ineptitude | starts 1, finished 1, instant 0, stopped 0
+  49 Mind Wrack | starts 1, finished 1, instant 0, stopped 0
+  52 Panic | starts 2, finished 2, instant 0, stopped 0
+  53 Migraine | starts 1, finished 1, instant 0, stopped 0
+  54 Crippling Anguish | starts 2, finished 2, instant 0, stopped 0
+  55 Fevered Dreams | starts 1, finished 1, instant 0, stopped 0
+  56 Soothing Images | starts 1, finished 1, instant 0, stopped 0
+  57 Cry of Frustration | starts 1, finished 1, instant 0, stopped 0
+  58 Signet of Midnight | starts 1, finished 1, instant 0, stopped 0
+  61 Leech Signet | starts 2, finished 2, instant 0, stopped 0
+  62 Signet of Humility | starts 2, finished 2, instant 0, stopped 0
+  63 Keystone Signet | starts 1, finished 1, instant 0, stopped 0
+  65 Arcane Mimicry | starts 2, finished 2, instant 0, stopped 0
+  66 Spirit Shackles | starts 2, finished 2, instant 0, stopped 0
+  67 Shatter Hex | starts 2, finished 2, instant 0, stopped 0
+  68 Drain Enchantment | starts 2, finished 2, instant 0, stopped 0
+  69 Shatter Enchantment | starts 2, finished 2, instant 0, stopped 0
+  74 Echo | starts 39, finished 39, instant 0, stopped 0
+  75 Arcane Echo | starts 1, finished 1, instant 0, stopped 0
+  76 Imagined Burden | starts 9, finished 9, instant 0, stopped 0
+  78 Epidemic | starts 2, finished 2, instant 0, stopped 0
+  79 Energy Drain | starts 1, finished 1, instant 0, stopped 0
+  80 Energy Tap | starts 1, finished 1, instant 0, stopped 0
+  82 Mantra of Recall | starts 1, finished 1, instant 0, stopped 0
+  83 Animate Bone Horror | starts 38, finished 38, instant 0, stopped 0
+  86 Grenth's Balance | starts 1, finished 1, instant 0, stopped 0
+  91 Well of Power | starts 1, finished 1, instant 0, stopped 0
+  92 Well of Blood | starts 1, finished 1, instant 0, stopped 0
+  93 Well of Suffering | starts 1, finished 1, instant 0, stopped 0
+  94 Well of the Profane | starts 2, finished 2, instant 0, stopped 0
+  97 Necrotic Traversal | starts 1, finished 1, instant 0, stopped 0
+  99 Parasitic Bond | starts 1, finished 1, instant 0, stopped 0
+ 101 Barbs | starts 1, finished 1, instant 0, stopped 0
+ 102 Shadow Strike | starts 1, finished 1, instant 0, stopped 0
+ 103 Price of Failure | starts 1, finished 1, instant 0, stopped 0
+ 104 Death Nova | starts 2, finished 2, instant 0, stopped 0
+ 105 Deathly Swarm | starts 22, finished 20, instant 0, stopped 2
+ 106 Rotting Flesh | starts 1, finished 1, instant 0, stopped 0
+ 107 Virulence | starts 1, finished 1, instant 0, stopped 0
+ 108 Suffering | starts 1, finished 1, instant 0, stopped 0
+ 109 Life Siphon | starts 8, finished 7, instant 0, stopped 1
+ 110 Unholy Feast | starts 1, finished 1, instant 0, stopped 0
+ 113 Tainted Flesh | starts 2, finished 2, instant 0, stopped 0
+ 114 Aura of the Lich | starts 1, finished 1, instant 0, stopped 0
+ 115 Blood Renewal | starts 1, finished 1, instant 0, stopped 0
+ 116 Dark Aura | starts 1, finished 1, instant 0, stopped 0
+ 118 Enfeebling Blood | starts 1, finished 1, instant 0, stopped 0
+ 119 Blood is Power | starts 2, finished 2, instant 0, stopped 0
+ 120 Blood of the Master | starts 2, finished 2, instant 0, stopped 0
+ 121 Spiteful Spirit | starts 2, finished 2, instant 0, stopped 0
+ 123 Insidious Parasite | starts 1, finished 1, instant 0, stopped 0
+ 125 Wither | starts 1, finished 1, instant 0, stopped 0
+ 126 Life Transfer | starts 1, finished 1, instant 0, stopped 0
+ 127 Mark of Subversion | starts 1, finished 1, instant 0, stopped 0
+ 128 Soul Leech | starts 1, finished 1, instant 0, stopped 0
+ 129 Defile Flesh | starts 1, finished 1, instant 0, stopped 0
+ 130 Demonic Flesh | starts 1, finished 1, instant 0, stopped 0
+ 131 Barbed Signet | starts 1, finished 1, instant 0, stopped 0
+ 132 Plague Signet | starts 1, finished 1, instant 0, stopped 0
+ 133 Dark Pact | starts 1, finished 1, instant 0, stopped 0
+ 134 Order of Pain | starts 3, finished 3, instant 0, stopped 0
+ 135 Faintheartedness | starts 2, finished 2, instant 0, stopped 0
+ 136 Shadow of Fear | starts 1, finished 1, instant 0, stopped 0
+ 137 Rigor Mortis | starts 1, finished 1, instant 0, stopped 0
+ 138 Dark Bond | starts 1, finished 1, instant 0, stopped 0
+ 140 Malaise | starts 1, finished 1, instant 0, stopped 0
+ 141 Rend Enchantments | starts 1, finished 1, instant 0, stopped 0
+ 142 Lingering Curse | starts 1, finished 1, instant 0, stopped 0
+ 143 Strip Enchantment | starts 1, finished 1, instant 0, stopped 0
+ 144 Chilblains | starts 1, finished 1, instant 0, stopped 0
+ 145 Signet of Agony | starts 2, finished 2, instant 0, stopped 0
+ 146 Offering of Blood | starts 1, finished 1, instant 0, stopped 0
+ 148 Order of the Vampire | starts 1, finished 1, instant 0, stopped 0
+ 150 Mark of Pain | starts 1, finished 1, instant 0, stopped 0
+ 151 Feast of Corruption | starts 1, finished 1, instant 0, stopped 0
+ 153 Vampiric Gaze | starts 21, finished 20, instant 0, stopped 1
+ 154 Plague Touch | starts 4, finished 4, instant 0, stopped 0
+ 155 Vile Touch | starts 2, finished 2, instant 0, stopped 0
+ 156 Vampiric Touch | starts 1, finished 1, instant 0, stopped 0
+ 159 Weaken Armor | starts 2, finished 2, instant 0, stopped 0
+ 162 Gale | starts 2, finished 2, instant 0, stopped 0
+ 163 Whirlwind | starts 1, finished 1, instant 0, stopped 0
+ 164 Elemental Attunement | starts 1, finished 1, instant 0, stopped 0
+ 165 Armor of Earth | starts 1, finished 1, instant 0, stopped 0
+ 167 Eruption | starts 1, finished 1, instant 0, stopped 0
+ 169 Earth Attunement | starts 215, finished 207, instant 0, stopped 8
+ 171 Stoning | starts 565, finished 492, instant 0, stopped 73
+ 172 Stone Daggers | starts 3, finished 3, instant 0, stopped 0
+ 174 Aftershock | starts 387, finished 372, instant 0, stopped 15
+ 175 Ward Against Elements | starts 1, finished 1, instant 0, stopped 0
+ 176 Ward Against Melee | starts 1, finished 1, instant 0, stopped 0
+ 177 Ward Against Foes | starts 1, finished 1, instant 0, stopped 0
+ 178 Ether Prodigy | starts 1, finished 1, instant 0, stopped 0
+ 180 Aura of Restoration | starts 237, finished 237, instant 0, stopped 0
+ 181 Ether Renewal | starts 1, finished 1, instant 0, stopped 0
+ 182 Conjure Flame | starts 1, finished 1, instant 0, stopped 0
+ 183 Inferno | starts 1, finished 1, instant 0, stopped 0
+ 184 Fire Attunement | starts 1, finished 1, instant 0, stopped 0
+ 185 Mind Burn | starts 1, finished 1, instant 0, stopped 0
+ 186 Fireball | starts 2, finished 2, instant 0, stopped 0
+ 187 Meteor | starts 1, finished 1, instant 0, stopped 0
+ 191 Immolate | starts 1, finished 1, instant 0, stopped 0
+ 192 Meteor Shower | starts 2, finished 2, instant 0, stopped 0
+ 194 Flare | starts 282, finished 253, instant 0, stopped 29
+ 195 Lava Font | starts 1, finished 1, instant 0, stopped 0
+ 197 Fire Storm | starts 16, finished 15, instant 0, stopped 1
+ 198 Glyph of Elemental Power | starts 1, finished 1, instant 0, stopped 0
+ 199 Glyph of Energy | starts 1, finished 1, instant 0, stopped 0
+ 200 Glyph of Lesser Energy | starts 4, finished 4, instant 0, stopped 0
+ 203 Glyph of Renewal | starts 1, finished 1, instant 0, stopped 0
+ 204 Rust | starts 2, finished 2, instant 0, stopped 0
+ 205 Lightning Surge | starts 2, finished 2, instant 0, stopped 0
+ 207 Conjure Frost | starts 1, finished 1, instant 0, stopped 0
+ 208 Water Attunement | starts 1, finished 1, instant 0, stopped 0
+ 209 Mind Freeze | starts 2, finished 2, instant 0, stopped 0
+ 210 Ice Prison | starts 1, finished 1, instant 0, stopped 0
+ 211 Ice Spikes | starts 2, finished 2, instant 0, stopped 0
+ 212 Frozen Burst | starts 1, finished 1, instant 0, stopped 0
+ 213 Shard Storm | starts 1, finished 1, instant 0, stopped 0
+ 214 Ice Spear | starts 2, finished 2, instant 0, stopped 0
+ 215 Maelstrom | starts 1, finished 1, instant 0, stopped 0
+ 218 Obsidian Flesh | starts 1, finished 1, instant 0, stopped 0
+ 219 Obsidian Flame | starts 1, finished 1, instant 0, stopped 0
+ 220 Blinding Flash | starts 8, finished 8, instant 0, stopped 0
+ 221 Conjure Lightning | starts 1, finished 1, instant 0, stopped 0
+ 222 Lightning Strike | starts 1, finished 1, instant 0, stopped 0
+ 224 Enervating Charge | starts 1, finished 1, instant 0, stopped 0
+ 225 Air Attunement | starts 1, finished 1, instant 0, stopped 0
+ 226 Mind Shock | starts 1, finished 1, instant 0, stopped 0
+ 227 Glimmering Mark | starts 1, finished 1, instant 0, stopped 0
+ 228 Thunderclap | starts 2, finished 2, instant 0, stopped 0
+ 229 Lightning Orb | starts 1, finished 1, instant 0, stopped 0
+ 230 Lightning Javelin | starts 9, finished 9, instant 0, stopped 0
+ 232 Lightning Touch | starts 2, finished 2, instant 0, stopped 0
+ 234 Deep Freeze | starts 1, finished 1, instant 0, stopped 0
+ 235 Blurred Vision | starts 1, finished 1, instant 0, stopped 0
+ 236 Mist Form | starts 1, finished 1, instant 0, stopped 0
+ 237 Water Trident | starts 1, finished 1, instant 0, stopped 0
+ 239 Ward Against Harm | starts 1, finished 1, instant 0, stopped 0
+ 241 Life Bond | starts 1, finished 1, instant 0, stopped 0
+ 242 Balthazar's Spirit | starts 1, finished 1, instant 0, stopped 0
+ 243 Strength of Honor | starts 1, finished 1, instant 0, stopped 0
+ 245 Protective Spirit | starts 1, finished 1, instant 0, stopped 0
+ 246 Divine Intervention | starts 1, finished 1, instant 0, stopped 0
+ 247 Symbol of Wrath | starts 4, finished 4, instant 0, stopped 0
+ 248 Retribution | starts 3, finished 3, instant 0, stopped 0
+ 249 Holy Wrath | starts 1, finished 1, instant 0, stopped 0
+ 251 Scourge Healing | starts 1, finished 1, instant 0, stopped 0
+ 252 Banish | starts 6, finished 6, instant 0, stopped 0
+ 254 Vigorous Spirit | starts 1, finished 1, instant 0, stopped 0
+ 257 Aegis | starts 1, finished 1, instant 0, stopped 0
+ 258 Guardian | starts 1, finished 1, instant 0, stopped 0
+ 259 Shield of Deflection | starts 1, finished 1, instant 0, stopped 0
+ 260 Aura of Faith | starts 1, finished 1, instant 0, stopped 0
+ 261 Shield of Regeneration | starts 1, finished 1, instant 0, stopped 0
+ 262 Shield of Judgment | starts 1, finished 1, instant 0, stopped 0
+ 264 Pacifism | starts 1, finished 1, instant 0, stopped 0
+ 265 Amity | starts 1, finished 1, instant 0, stopped 0
+ 266 Peace and Harmony | starts 1, finished 1, instant 0, stopped 0
+ 267 Judge's Insight | starts 1, finished 1, instant 0, stopped 0
+ 268 Unyielding Aura | starts 1, finished 1, instant 0, stopped 0
+ 269 Mark of Protection | starts 2, finished 2, instant 0, stopped 0
+ 270 Life Barrier | starts 1, finished 1, instant 0, stopped 0
+ 271 Zealot's Fire | starts 1, finished 1, instant 0, stopped 0
+ 272 Balthazar's Aura | starts 1, finished 1, instant 0, stopped 0
+ 273 Spell Breaker | starts 1, finished 1, instant 0, stopped 0
+ 274 Healing Seed | starts 1, finished 1, instant 0, stopped 0
+ 275 Mend Condition | starts 2, finished 2, instant 0, stopped 0
+ 276 Restore Condition | starts 1, finished 1, instant 0, stopped 0
+ 277 Mend Ailment | starts 1, finished 1, instant 0, stopped 0
+ 278 Purge Conditions | starts 1, finished 1, instant 0, stopped 0
+ 279 Divine Healing | starts 1, finished 1, instant 0, stopped 0
+ 281 Orison of Healing | starts 33, finished 33, instant 0, stopped 0
+ 282 Word of Healing | starts 1, finished 1, instant 0, stopped 0
+ 284 Divine Boon | starts 1, finished 1, instant 0, stopped 0
+ 285 Healing Hands | starts 1, finished 1, instant 0, stopped 0
+ 286 Heal Other | starts 1, finished 1, instant 0, stopped 0
+ 287 Heal Party | starts 1, finished 1, instant 0, stopped 0
+ 288 Healing Breeze | starts 14, finished 14, instant 0, stopped 0
+ 290 Mending | starts 1, finished 1, instant 0, stopped 0
+ 292 Infuse Health | starts 1, finished 1, instant 0, stopped 0
+ 293 Signet of Devotion | starts 1, finished 1, instant 0, stopped 0
+ 294 Signet of Judgment | starts 1, finished 1, instant 0, stopped 0
+ 295 Purge Signet | starts 1, finished 1, instant 0, stopped 0
+ 296 Bane Signet | starts 31, finished 29, instant 0, stopped 2
+ 297 Blessed Signet | starts 1, finished 1, instant 0, stopped 0
+ 298 Martyr | starts 1, finished 1, instant 0, stopped 0
+ 299 Shielding Hands | starts 1, finished 1, instant 0, stopped 0
+ 301 Remove Hex | starts 1, finished 1, instant 0, stopped 0
+ 302 Smite Hex | starts 1, finished 1, instant 0, stopped 0
+ 303 Convert Hexes | starts 1, finished 1, instant 0, stopped 0
+ 307 Reversal of Fortune | starts 1, finished 1, instant 0, stopped 0
+ 308 Succor | starts 1, finished 1, instant 0, stopped 0
+ 309 Holy Veil | starts 1, finished 1, instant 0, stopped 0
+ 310 Divine Spirit | starts 1, finished 1, instant 0, stopped 0
+ 311 Draw Conditions | starts 1, finished 1, instant 0, stopped 0
+ 312 Holy Strike | starts 1, finished 1, instant 0, stopped 0
+ 313 Healing Touch | starts 6, finished 6, instant 0, stopped 0
+ 316 "To the Limit!" | starts 1, finished 0, instant 1, stopped 0
+ 317 Battle Rage | starts 1, finished 0, instant 1, stopped 0
+ 318 Defy Pain | starts 1, finished 0, instant 1, stopped 0
+ 320 Hamstring | starts 1, finished 1, instant 0, stopped 0
+ 321 Wild Blow | starts 1, finished 1, instant 0, stopped 0
+ 322 Power Attack | starts 1, finished 1, instant 0, stopped 0
+ 324 Thrill of Victory | starts 2, finished 2, instant 0, stopped 0
+ 325 Distracting Blow | starts 2, finished 2, instant 0, stopped 0
+ 326 Protector's Strike | starts 3, finished 3, instant 0, stopped 0
+ 328 Pure Strike | starts 1, finished 1, instant 0, stopped 0
+ 329 Skull Crack | starts 1, finished 1, instant 0, stopped 0
+ 330 Cyclone Axe | starts 1, finished 1, instant 0, stopped 0
+ 331 Hammer Bash | starts 1, finished 1, instant 0, stopped 0
+ 332 Bull's Strike | starts 2, finished 2, instant 0, stopped 0
+ 334 Axe Rake | starts 1, finished 1, instant 0, stopped 0
+ 335 Cleave | starts 5, finished 5, instant 0, stopped 0
+ 336 Executioner's Strike | starts 1, finished 1, instant 0, stopped 0
+ 337 Dismember | starts 1, finished 1, instant 0, stopped 0
+ 338 Eviscerate | starts 1, finished 1, instant 0, stopped 0
+ 340 Disrupting Chop | starts 1, finished 1, instant 0, stopped 0
+ 341 Swift Chop | starts 4, finished 4, instant 0, stopped 0
+ 342 Axe Twist | starts 3, finished 3, instant 0, stopped 0
+ 343 "For Great Justice!" | starts 1, finished 0, instant 1, stopped 0
+ 344 Flurry | starts 4, finished 0, instant 4, stopped 0
+ 345 Defensive Stance | starts 2, finished 0, instant 2, stopped 0
+ 346 Frenzy | starts 17, finished 0, instant 17, stopped 0
+ 347 Endure Pain | starts 1, finished 0, instant 1, stopped 0
+ 348 "Watch Yourself!" | starts 2, finished 0, instant 2, stopped 0
+ 349 Sprint | starts 2, finished 0, instant 2, stopped 0
+ 351 Mighty Blow | starts 1, finished 1, instant 0, stopped 0
+ 352 Crushing Blow | starts 1, finished 1, instant 0, stopped 0
+ 354 Earth Shaker | starts 3, finished 3, instant 0, stopped 0
+ 355 Devastating Hammer | starts 2, finished 2, instant 0, stopped 0
+ 356 Irresistible Blow | starts 1, finished 1, instant 0, stopped 0
+ 357 Counter Blow | starts 2, finished 2, instant 0, stopped 0
+ 358 Backbreaker | starts 1, finished 1, instant 0, stopped 0
+ 359 Heavy Blow | starts 2, finished 2, instant 0, stopped 0
+ 360 Staggering Blow | starts 1, finished 1, instant 0, stopped 0
+ 361 Dolyak Signet | starts 1, finished 1, instant 0, stopped 0
+ 362 Warrior's Cunning | starts 1, finished 0, instant 1, stopped 0
+ 363 Shield Bash | starts 1, finished 0, instant 1, stopped 0
+ 364 "Charge!" | starts 2, finished 0, instant 2, stopped 0
+ 365 "Victory Is Mine!" | starts 2, finished 0, instant 2, stopped 0
+ 367 "Shields Up!" | starts 1, finished 0, instant 1, stopped 0
+ 368 "I Will Survive!" | starts 1, finished 0, instant 1, stopped 0
+ 370 Berserker Stance | starts 2, finished 0, instant 2, stopped 0
+ 371 Balanced Stance | starts 1, finished 0, instant 1, stopped 0
+ 372 Gladiator's Defense | starts 1, finished 0, instant 1, stopped 0
+ 374 Warrior's Endurance | starts 2, finished 0, instant 2, stopped 0
+ 375 Dwarven Battle Stance | starts 2, finished 0, instant 2, stopped 0
+ 377 Wary Stance | starts 1, finished 0, instant 1, stopped 0
+ 378 Shield Stance | starts 2, finished 0, instant 2, stopped 0
+ 379 Bull's Charge | starts 1, finished 0, instant 1, stopped 0
+ 380 Bonetti's Defense | starts 1, finished 0, instant 1, stopped 0
+ 381 Hundred Blades | starts 2, finished 0, instant 2, stopped 0
+ 382 Sever Artery | starts 2, finished 2, instant 0, stopped 0
+ 384 Gash | starts 1, finished 1, instant 0, stopped 0
+ 385 Final Thrust | starts 1, finished 1, instant 0, stopped 0
+ 386 Seeking Blade | starts 2, finished 2, instant 0, stopped 0
+ 389 Flourish | starts 2, finished 2, instant 0, stopped 0
+ 390 Savage Slash | starts 2, finished 2, instant 0, stopped 0
+ 391 Hunter's Shot | starts 1, finished 0, instant 0, stopped 0
+ 392 Pin Down | starts 1, finished 0, instant 0, stopped 0
+ 393 Crippling Shot | starts 3, finished 0, instant 0, stopped 0
+ 394 Power Shot | starts 3, finished 0, instant 0, stopped 0
+ 395 Barrage | starts 2, finished 0, instant 0, stopped 0
+ 396 Dual Shot | starts 1, finished 0, instant 0, stopped 0
+ 397 Quick Shot | starts 1, finished 0, instant 0, stopped 0
+ 399 Distracting Shot | starts 1, finished 0, instant 0, stopped 0
+ 400 Precision Shot | starts 1, finished 0, instant 0, stopped 0
+ 402 Determined Shot | starts 2, finished 0, instant 0, stopped 0
+ 403 Called Shot | starts 3, finished 0, instant 0, stopped 0
+ 404 Poison Arrow | starts 1, finished 0, instant 0, stopped 0
+ 405 Oath Shot | starts 1, finished 0, instant 0, stopped 0
+ 406 Debilitating Shot | starts 2, finished 0, instant 0, stopped 0
+ 407 Point Blank Shot | starts 3, finished 0, instant 0, stopped 0
+ 408 Concussion Shot | starts 1, finished 0, instant 0, stopped 0
+ 409 Punishing Shot | starts 1, finished 0, instant 0, stopped 0
+ 411 Charm Animal | starts 1, finished 1, instant 0, stopped 0
+ 412 Call of Protection | starts 1, finished 0, instant 1, stopped 0
+ 422 Revive Animal | starts 1, finished 1, instant 0, stopped 0
+ 424 Throw Dirt | starts 8, finished 6, instant 0, stopped 2
+ 426 Savage Shot | starts 1, finished 0, instant 0, stopped 0
+ 427 Antidote Signet | starts 1, finished 1, instant 0, stopped 0
+ 428 Incendiary Arrows | starts 2, finished 0, instant 0, stopped 0
+ 429 Melandru's Arrows | starts 2, finished 2, instant 0, stopped 0
+ 430 Marksman's Wager | starts 1, finished 1, instant 0, stopped 0
+ 431 Ignite Arrows | starts 1, finished 1, instant 0, stopped 0
+ 432 Read the Wind | starts 1, finished 1, instant 0, stopped 0
+ 433 Kindle Arrows | starts 1, finished 1, instant 0, stopped 0
+ 434 Choking Gas | starts 1, finished 1, instant 0, stopped 0
+ 435 Apply Poison | starts 1, finished 1, instant 0, stopped 0
+ 436 Comfort Animal | starts 4, finished 4, instant 0, stopped 0
+ 446 Troll Unguent | starts 14, finished 13, instant 0, stopped 1
+ 448 Escape | starts 1, finished 0, instant 1, stopped 0
+ 449 Practiced Stance | starts 1, finished 0, instant 1, stopped 0
+ 450 Whirling Defense | starts 1, finished 0, instant 1, stopped 0
+ 451 Melandru's Resilience | starts 1, finished 0, instant 1, stopped 0
+ 453 Lightning Reflexes | starts 1, finished 0, instant 1, stopped 0
+ 455 Storm Chaser | starts 1, finished 0, instant 1, stopped 0
+ 456 Serpent's Quickness | starts 1, finished 0, instant 1, stopped 0
+ 458 Barbed Trap | starts 2, finished 2, instant 0, stopped 0
+ 459 Flame Trap | starts 2, finished 2, instant 0, stopped 0
+ 461 Spike Trap | starts 1, finished 1, instant 0, stopped 0
+ 462 Winter | starts 1, finished 1, instant 0, stopped 0
+ 463 Winnowing | starts 1, finished 1, instant 0, stopped 0
+ 464 Edge of Extinction | starts 1, finished 1, instant 0, stopped 0
+ 465 Greater Conflagration | starts 1, finished 1, instant 0, stopped 0
+ 466 Conflagration | starts 1, finished 1, instant 0, stopped 0
+ 469 Primal Echoes | starts 1, finished 1, instant 0, stopped 0
+ 472 Favorable Winds | starts 1, finished 1, instant 0, stopped 0
+ 474 Energizing Wind | starts 1, finished 1, instant 0, stopped 0
+ 475 Quickening Zephyr | starts 1, finished 1, instant 0, stopped 0
+ 476 Nature's Renewal | starts 1, finished 1, instant 0, stopped 0
+ 570 Mark of Insecurity | starts 3, finished 3, instant 0, stopped 0
+ 571 Disrupting Dagger | starts 2, finished 2, instant 0, stopped 0
+ 572 Deadly Paradox | starts 1, finished 0, instant 1, stopped 0
+ 764 Wail of Doom | starts 1, finished 1, instant 0, stopped 0
+ 766 Gaze of Contempt | starts 1, finished 1, instant 0, stopped 0
+ 769 Viper's Defense | starts 2, finished 2, instant 0, stopped 0
+ 770 Return | starts 1, finished 1, instant 0, stopped 0
+ 771 Aura of Displacement | starts 2, finished 2, instant 0, stopped 0
+ 772 Generous Was Tsungrai | starts 2, finished 2, instant 0, stopped 0
+ 773 Mighty Was Vorizun | starts 2, finished 2, instant 0, stopped 0
+ 775 Death Blossom | starts 1, finished 1, instant 0, stopped 0
+ 776 Twisting Fangs | starts 2, finished 2, instant 0, stopped 0
+ 777 Horns of the Ox | starts 1, finished 1, instant 0, stopped 0
+ 778 Falling Spider | starts 10, finished 10, instant 0, stopped 0
+ 779 Black Lotus Strike | starts 4, finished 4, instant 0, stopped 0
+ 780 Fox Fangs | starts 6, finished 6, instant 0, stopped 0
+ 782 Jagged Strike | starts 3, finished 3, instant 0, stopped 0
+ 783 Unsuspecting Strike | starts 3, finished 3, instant 0, stopped 0
+ 784 Entangling Asp | starts 4, finished 4, instant 0, stopped 0
+ 785 Mark of Death | starts 2, finished 2, instant 0, stopped 0
+ 786 Iron Palm | starts 3, finished 3, instant 0, stopped 0
+ 787 Resilient Weapon | starts 2, finished 2, instant 0, stopped 0
+ 788 Blind Was Mingson | starts 2, finished 2, instant 0, stopped 0
+ 789 Grasping Was Kuurong | starts 2, finished 2, instant 0, stopped 0
+ 790 Vengeful Was Khanhei | starts 1, finished 1, instant 0, stopped 0
+ 791 Flesh of My Flesh | starts 42, finished 34, instant 0, stopped 8
+ 792 Splinter Weapon | starts 2, finished 2, instant 0, stopped 0
+ 793 Weapon of Warding | starts 2, finished 2, instant 0, stopped 0
+ 794 Wailing Weapon | starts 2, finished 2, instant 0, stopped 0
+ 795 Nightmare Weapon | starts 1, finished 1, instant 0, stopped 0
+ 799 Beguiling Haze | starts 1, finished 1, instant 0, stopped 0
+ 800 Enduring Toxin | starts 3, finished 3, instant 0, stopped 0
+ 801 Shroud of Silence | starts 1, finished 1, instant 0, stopped 0
+ 802 Expose Defenses | starts 1, finished 1, instant 0, stopped 0
+ 803 Power Leech | starts 1, finished 1, instant 0, stopped 0
+ 804 Arcane Languor | starts 1, finished 1, instant 0, stopped 0
+ 806 Cultist's Fervor | starts 1, finished 1, instant 0, stopped 0
+ 808 Reaper's Mark | starts 1, finished 1, instant 0, stopped 0
+ 809 Shatterstone | starts 1, finished 1, instant 0, stopped 0
+ 810 Protector's Defense | starts 2, finished 2, instant 0, stopped 0
+ 811 Run as One | starts 1, finished 0, instant 1, stopped 0
+ 812 Defiant Was Xinrae | starts 1, finished 1, instant 0, stopped 0
+ 813 Lyssa's Aura | starts 1, finished 1, instant 0, stopped 0
+ 814 Shadow Refuge | starts 2, finished 2, instant 0, stopped 0
+ 815 Scorpion Wire | starts 2, finished 2, instant 0, stopped 0
+ 816 Mirrored Stance | starts 2, finished 2, instant 0, stopped 0
+ 817 Discord | starts 2, finished 2, instant 0, stopped 0
+ 819 Vampiric Spirit | starts 1, finished 1, instant 0, stopped 0
+ 820 Depravity | starts 1, finished 1, instant 0, stopped 0
+ 821 Icy Veins | starts 1, finished 1, instant 0, stopped 0
+ 823 Burning Speed | starts 1, finished 1, instant 0, stopped 0
+ 824 Lava Arrows | starts 1, finished 1, instant 0, stopped 0
+ 825 Bed of Coals | starts 1, finished 1, instant 0, stopped 0
+ 826 Shadow Form | starts 9, finished 9, instant 0, stopped 0
+ 835 Blood Bond | starts 1, finished 1, instant 0, stopped 0
+ 838 Dwayna's Sorrow | starts 1, finished 1, instant 0, stopped 0
+ 839 "Retreat!" | starts 2, finished 0, instant 2, stopped 0
+ 840 Poisoned Heart | starts 1, finished 1, instant 0, stopped 0
+ 842 Arc Lightning | starts 1, finished 1, instant 0, stopped 0
+ 844 Churning Earth | starts 1, finished 1, instant 0, stopped 0
+ 845 Liquid Flame | starts 1, finished 1, instant 0, stopped 0
+ 846 Steam | starts 1, finished 1, instant 0, stopped 0
+ 849 Lacerating Chop | starts 2, finished 2, instant 0, stopped 0
+ 850 Fierce Blow | starts 2, finished 2, instant 0, stopped 0
+ 851 Sun and Moon Slash | starts 1, finished 1, instant 0, stopped 0
+ 858 Dancing Daggers | starts 2, finished 2, instant 0, stopped 0
+ 859 Conjure Nightmare | starts 2, finished 2, instant 0, stopped 0
+ 860 Signet of Disruption | starts 2, finished 2, instant 0, stopped 0
+ 865 Lightning Hammer | starts 1, finished 1, instant 0, stopped 0
+ 866 Vapor Blade | starts 1, finished 1, instant 0, stopped 0
+ 870 Pestilence | starts 1, finished 1, instant 0, stopped 0
+ 871 Shadowsong | starts 1, finished 1, instant 0, stopped 0
+ 876 Signet of Shadows | starts 1, finished 1, instant 0, stopped 0
+ 877 Lyssa's Balance | starts 2, finished 2, instant 0, stopped 0
+ 879 Illusion of Pain | starts 1, finished 1, instant 0, stopped 0
+ 881 Ether Signet | starts 1, finished 1, instant 0, stopped 0
+ 882 Signet of Disenchantment | starts 1, finished 1, instant 0, stopped 0
+ 883 Vocal Minority | starts 1, finished 1, instant 0, stopped 0
+ 886 Restful Breeze | starts 1, finished 1, instant 0, stopped 0
+ 891 "None Shall Pass!" | starts 1, finished 0, instant 1, stopped 0
+ 898 Overload | starts 1, finished 1, instant 0, stopped 0
+ 899 Images of Remorse | starts 1, finished 1, instant 0, stopped 0
+ 902 Blood of the Aggressor | starts 1, finished 1, instant 0, stopped 0
+ 903 Icy Prism | starts 1, finished 1, instant 0, stopped 0
+ 904 Furious Axe | starts 1, finished 1, instant 0, stopped 0
+ 905 Auspicious Blow | starts 1, finished 1, instant 0, stopped 0
+ 906 "On Your Knees!" | starts 2, finished 0, instant 2, stopped 0
+ 908 Marauder's Shot | starts 1, finished 0, instant 0, stopped 0
+ 909 Focused Shot | starts 1, finished 0, instant 0, stopped 0
+ 910 Spirit Rift | starts 184, finished 165, instant 0, stopped 19
+ 911 Union | starts 1, finished 1, instant 0, stopped 0
+ 915 Spirit Light | starts 1, finished 1, instant 0, stopped 0
+ 916 Lamentation | starts 1, finished 1, instant 0, stopped 0
+ 917 Rupture Soul | starts 2, finished 2, instant 0, stopped 0
+ 918 Spirit to Flesh | starts 1, finished 1, instant 0, stopped 0
+ 919 Spirit Burn | starts 1, finished 1, instant 0, stopped 0
+ 920 Destruction | starts 2, finished 2, instant 0, stopped 0
+ 921 Dissonance | starts 1, finished 1, instant 0, stopped 0
+ 925 Recall | starts 3, finished 3, instant 0, stopped 0
+ 926 Sharpen Daggers | starts 1, finished 1, instant 0, stopped 0
+ 927 Shameful Fear | starts 1, finished 1, instant 0, stopped 0
+ 929 Shadow of Haste | starts 1, finished 0, instant 1, stopped 0
+ 930 Auspicious Incantation | starts 1, finished 1, instant 0, stopped 0
+ 931 Power Return | starts 1, finished 1, instant 0, stopped 0
+ 932 Complicate | starts 1, finished 1, instant 0, stopped 0
+ 934 Unnatural Signet | starts 1, finished 1, instant 0, stopped 0
+ 936 Envenom Enchantments | starts 1, finished 1, instant 0, stopped 0
+ 937 Shockwave | starts 388, finished 365, instant 0, stopped 23
+ 938 Ward of Stability | starts 1, finished 1, instant 0, stopped 0
+ 943 Extinguish | starts 1, finished 1, instant 0, stopped 0
+ 944 Signet of Strength | starts 1, finished 1, instant 0, stopped 0
+ 948 Desperate Strike | starts 1, finished 1, instant 0, stopped 0
+ 949 Way of the Fox | starts 1, finished 1, instant 0, stopped 0
+ 950 Shadowy Burden | starts 2, finished 2, instant 0, stopped 0
+ 951 Siphon Speed | starts 2, finished 2, instant 0, stopped 0
+ 952 Death's Charge | starts 124, finished 123, instant 0, stopped 1
+ 955 Rip Enchantment | starts 1, finished 1, instant 0, stopped 0
+ 957 Spell Shield | starts 1, finished 1, instant 0, stopped 0
+ 958 Healing Whisper | starts 4, finished 4, instant 0, stopped 0
+ 959 Ethereal Light | starts 2, finished 2, instant 0, stopped 0
+ 960 Release Enchantments | starts 1, finished 1, instant 0, stopped 0
+ 973 Blinding Powder | starts 2, finished 1, instant 0, stopped 1
+ 974 Mantis Touch | starts 3, finished 3, instant 0, stopped 0
+ 975 Exhausting Assault | starts 2, finished 2, instant 0, stopped 0
+ 976 Repeating Strike | starts 3, finished 3, instant 0, stopped 0
+ 979 Mistrust | starts 1, finished 1, instant 0, stopped 0
+ 991 Deny Hexes | starts 1, finished 1, instant 0, stopped 0
+ 994 Renewing Smash | starts 1, finished 1, instant 0, stopped 0
+ 995 Tiger Stance | starts 1, finished 0, instant 1, stopped 0
+ 996 Standing Slash | starts 1, finished 1, instant 0, stopped 0
+1031 Shroud of Distress | starts 7, finished 7, instant 0, stopped 0
+1043 Dash | starts 43, finished 0, instant 43, stopped 0
+1048 Revealed Enchantment | starts 3, finished 3, instant 0, stopped 0
+1049 Revealed Hex | starts 2, finished 2, instant 0, stopped 0
+1052 Accumulated Pain | starts 1, finished 1, instant 0, stopped 0
+1054 Ancestor's Visage | starts 1, finished 1, instant 0, stopped 0
+1056 Kitah's Burden | starts 1, finished 1, instant 0, stopped 0
+1059 Hex Eater Signet | starts 1, finished 1, instant 0, stopped 0
+1061 Feedback | starts 1, finished 1, instant 0, stopped 0
+1062 Arcane Larceny | starts 2, finished 2, instant 0, stopped 0
+1068 Bitter Chill | starts 1, finished 1, instant 0, stopped 0
+1076 Blood Drinker | starts 1, finished 1, instant 0, stopped 0
+1081 Teinai's Wind | starts 1, finished 1, instant 0, stopped 0
+1082 Shock Arrow | starts 1, finished 1, instant 0, stopped 0
+1084 Sliver Armor | starts 1, finished 1, instant 0, stopped 0
+1085 Ash Blast | starts 1, finished 1, instant 0, stopped 0
+1086 Dragon's Stomp | starts 1, finished 1, instant 0, stopped 0
+1090 Smoldering Embers | starts 1, finished 1, instant 0, stopped 0
+1093 Teinai's Heat | starts 1, finished 1, instant 0, stopped 0
+1094 Breath of Fire | starts 1, finished 1, instant 0, stopped 0
+1096 Glyph of Essence | starts 1, finished 1, instant 0, stopped 0
+1097 Teinai's Prison | starts 1, finished 1, instant 0, stopped 0
+1099 Teinai's Crystals | starts 1, finished 1, instant 0, stopped 0
+1117 Heaven's Delight | starts 1, finished 1, instant 0, stopped 0
+1119 Karei's Healing Circle | starts 1, finished 1, instant 0, stopped 0
+1120 Jamei's Gaze | starts 1, finished 1, instant 0, stopped 0
+1121 Gift of Health | starts 1, finished 1, instant 0, stopped 0
+1130 Spear of Light | starts 75, finished 67, instant 0, stopped 8
+1133 Drunken Blow | starts 2, finished 2, instant 0, stopped 0
+1134 Leviathan's Sweep | starts 2, finished 2, instant 0, stopped 0
+1135 Jaizhenju Strike | starts 1, finished 1, instant 0, stopped 0
+1136 Penetrating Chop | starts 1, finished 1, instant 0, stopped 0
+1137 Yeti Smash | starts 5, finished 5, instant 0, stopped 0
+1141 "You Will Die!" | starts 2, finished 0, instant 2, stopped 0
+1144 Silverwing Slash | starts 1, finished 1, instant 0, stopped 0
+1194 Predatory Bond | starts 1, finished 0, instant 1, stopped 0
+1209 Bestial Fury | starts 1, finished 0, instant 1, stopped 0
+1211 Viper's Nest | starts 1, finished 1, instant 0, stopped 0
+1213 Tranquility | starts 1, finished 1, instant 0, stopped 0
+1232 Armor of Unfeeling | starts 336, finished 329, instant 0, stopped 7
+1237 Painful Bond | starts 379, finished 350, instant 0, stopped 29
+1239 Signet of Spirits | starts 341, finished 338, instant 0, stopped 3
+1241 ID 1241 | starts 1, finished 1, instant 0, stopped 0
+1253 Bloodsong | starts 338, finished 338, instant 0, stopped 0
+1260 Meekness | starts 1, finished 1, instant 0, stopped 0
+1261 Frigid Armor | starts 1, finished 1, instant 0, stopped 0
+1262 Healing Ring | starts 1, finished 1, instant 0, stopped 0
+1334 Hypochondria | starts 1, finished 1, instant 0, stopped 0
+1335 Wastrel's Demise | starts 1, finished 1, instant 0, stopped 0
+1336 Spiritual Pain | starts 1, finished 1, instant 0, stopped 0
+1337 Drain Delusions | starts 1, finished 1, instant 0, stopped 0
+1338 Persistence of Memory | starts 1, finished 1, instant 0, stopped 0
+1340 Symbolic Celerity | starts 1, finished 1, instant 0, stopped 0
+1341 Frustration | starts 3, finished 3, instant 0, stopped 0
+1343 Ether Phantom | starts 1, finished 1, instant 0, stopped 0
+1344 Web of Disruption | starts 1, finished 1, instant 0, stopped 0
+1347 Discharge Enchantment | starts 1, finished 1, instant 0, stopped 0
+1349 Mirror of Disenchantment | starts 1, finished 1, instant 0, stopped 0
+1358 Ulcerous Lungs | starts 1, finished 1, instant 0, stopped 0
+1360 Mark of Fury | starts 1, finished 1, instant 0, stopped 0
+1363 Signet of Sorrow | starts 1, finished 1, instant 0, stopped 0
+1365 Signet of Lost Souls | starts 1, finished 1, instant 0, stopped 0
+1366 Well of Darkness | starts 2, finished 2, instant 0, stopped 0
+1368 Chilling Winds | starts 1, finished 1, instant 0, stopped 0
+1369 Lightning Bolt | starts 1, finished 1, instant 0, stopped 0
+1370 Storm Djinn's Haste | starts 1, finished 1, instant 0, stopped 0
+1371 Stone Striker | starts 1, finished 1, instant 0, stopped 0
+1374 Ebon Hawk | starts 596, finished 534, instant 0, stopped 62
+1375 Stoneflesh Aura | starts 1, finished 1, instant 0, stopped 0
+1376 Glyph of Restoration | starts 2, finished 2, instant 0, stopped 0
+1379 Glowing Gaze | starts 2, finished 2, instant 0, stopped 0
+1381 Flame Djinn's Haste | starts 1, finished 1, instant 0, stopped 0
+1382 Freezing Gust | starts 1, finished 1, instant 0, stopped 0
+1390 Judge's Intervention | starts 1, finished 1, instant 0, stopped 0
+1391 Supportive Spirit | starts 1, finished 1, instant 0, stopped 0
+1392 Watchful Healing | starts 1, finished 1, instant 0, stopped 0
+1396 Words of Comfort | starts 1, finished 1, instant 0, stopped 0
+1398 Scourge Enchantment | starts 1, finished 1, instant 0, stopped 0
+1399 Shield of Absorption | starts 1, finished 1, instant 0, stopped 0
+1400 Reversal of Damage | starts 1, finished 1, instant 0, stopped 0
+1401 Mending Touch | starts 1, finished 1, instant 0, stopped 0
+1402 Critical Chop | starts 1, finished 1, instant 0, stopped 0
+1403 Agonizing Chop | starts 1, finished 1, instant 0, stopped 0
+1404 Flail | starts 3, finished 0, instant 3, stopped 0
+1407 Lion's Comfort | starts 2, finished 2, instant 0, stopped 0
+1409 Mokele Smash | starts 1, finished 1, instant 0, stopped 0
+1410 Overbearing Smash | starts 1, finished 1, instant 0, stopped 0
+1411 Signet of Stamina | starts 2, finished 2, instant 0, stopped 0
+1413 Burst of Aggression | starts 2, finished 0, instant 2, stopped 0
+1414 Enraging Charge | starts 2, finished 0, instant 2, stopped 0
+1416 Barbarous Slice | starts 1, finished 1, instant 0, stopped 0
+1467 Arcing Shot | starts 1, finished 0, instant 0, stopped 0
+1469 Crossfire | starts 1, finished 0, instant 0, stopped 0
+1470 Barbed Arrows | starts 1, finished 1, instant 0, stopped 0
+1472 Toxicity | starts 1, finished 1, instant 0, stopped 0
+1474 Storm's Embrace | starts 2, finished 0, instant 2, stopped 0
+1475 Trapper's Speed | starts 2, finished 0, instant 2, stopped 0
+1476 Tripwire | starts 2, finished 2, instant 0, stopped 0
+1539 Chilling Victory | starts 3, finished 3, instant 0, stopped 0
+1655 Price of Pride | starts 1, finished 1, instant 0, stopped 0
+1657 Signet of Clumsiness | starts 1, finished 1, instant 0, stopped 0
+1658 Symbolic Posture | starts 1, finished 0, instant 1, stopped 0
+1660 Well of Silence | starts 2, finished 2, instant 0, stopped 0
+1661 Glowstone | starts 439, finished 400, instant 0, stopped 39
+1663 Elemental Flame | starts 1, finished 1, instant 0, stopped 0
+1683 Pensive Guardian | starts 1, finished 1, instant 0, stopped 0
+1685 Holy Haste | starts 1, finished 1, instant 0, stopped 0
+1689 Signet of Mystic Wrath | starts 1, finished 1, instant 0, stopped 0
+1691 Dismiss Condition | starts 1, finished 1, instant 0, stopped 0
+1693 Counterattack | starts 2, finished 2, instant 0, stopped 0
+1695 Soldier's Strike | starts 1, finished 1, instant 0, stopped 0
+1699 Soldier's Defense | starts 1, finished 0, instant 1, stopped 0
+1700 Frenzied Defense | starts 1, finished 0, instant 1, stopped 0
+1702 Steelfang Slash | starts 1, finished 1, instant 0, stopped 0
+1719 Screaming Shot | starts 2, finished 0, instant 0, stopped 0
+1720 Keen Arrow | starts 2, finished 0, instant 0, stopped 0
+1722 Forked Arrow | starts 2, finished 0, instant 0, stopped 0
+1723 Disrupting Accuracy | starts 1, finished 1, instant 0, stopped 0
+1725 Roaring Winds | starts 1, finished 1, instant 0, stopped 0
+1727 Natural Stride | starts 1, finished 0, instant 1, stopped 0
+1728 Heket's Rampage | starts 1, finished 0, instant 1, stopped 0
+1815 Lightbringer Signet | starts 2, finished 2, instant 0, stopped 0
+1816 Sunspear Rebirth Signet | starts 1, finished 1, instant 0, stopped 0
+1951 Elemental Lord | starts 1, finished 1, instant 0, stopped 0
+1952 Selfless Spirit | starts 1, finished 1, instant 0, stopped 0
+1953 Triple Shot | starts 2, finished 0, instant 0, stopped 0
+1954 "Save Yourselves!" | starts 1, finished 0, instant 1, stopped 0
+1997 Withering Aura | starts 1, finished 1, instant 0, stopped 0
+1998 Cacophony | starts 1, finished 1, instant 0, stopped 0
+2000 Earthen Shackles | starts 1, finished 1, instant 0, stopped 0
+2002 Glyph of Swiftness | starts 1, finished 1, instant 0, stopped 0
+2006 Castigation Signet | starts 1, finished 1, instant 0, stopped 0
+2013 Grenth's Aura | starts 4, finished 3, instant 1, stopped 0
+2057 Foul Feast | starts 1, finished 1, instant 0, stopped 0
+2058 Putrid Bile | starts 1, finished 1, instant 0, stopped 0
+2059 Shell Shock | starts 1, finished 1, instant 0, stopped 0
+2060 Glyph of Immolation | starts 1, finished 1, instant 0, stopped 0
+2061 Patient Spirit | starts 1, finished 1, instant 0, stopped 0
+2091 Shadow Sanctuary | starts 1, finished 1, instant 0, stopped 0
+2092 Ether Nightmare | starts 2, finished 2, instant 0, stopped 0
+2093 Signet of Corruption | starts 2, finished 2, instant 0, stopped 0
+2094 Elemental Lord | starts 1, finished 1, instant 0, stopped 0
+2095 Selfless Spirit | starts 3, finished 3, instant 0, stopped 0
+2096 Triple Shot | starts 3, finished 0, instant 0, stopped 0
+2097 "Save Yourselves!" | starts 2, finished 0, instant 2, stopped 0
+2098 Aura of Holy Might | starts 1, finished 1, instant 0, stopped 0
+2100 Summon Spirits | starts 633, finished 632, instant 0, stopped 1
+2101 Critical Agility | starts 2, finished 2, instant 0, stopped 0
+2102 Cry of Pain | starts 2, finished 2, instant 0, stopped 0
+2103 Necrosis | starts 2, finished 2, instant 0, stopped 0
+2104 Intensity | starts 2, finished 0, instant 2, stopped 0
+2105 Seed of Life | starts 2, finished 2, instant 0, stopped 0
+2107 Whirlwind Attack | starts 3, finished 3, instant 0, stopped 0
+2108 Never Rampage Alone | starts 1, finished 0, instant 1, stopped 0
+2109 Eternal Aura | starts 1, finished 1, instant 0, stopped 0
+2110 Vampirism | starts 331, finished 330, instant 0, stopped 1
+2112 "There's Nothing to Fear!" | starts 1, finished 0, instant 1, stopped 0
+2128 ID 2128 | starts 3, finished 3, instant 0, stopped 0
+2129 ID 2129 | starts 4, finished 2, instant 0, stopped 2
+2131 ID 2131 | starts 4, finished 0, instant 4, stopped 0
+2132 ID 2132 | starts 3, finished 0, instant 3, stopped 0
+2133 ID 2133 | starts 2, finished 2, instant 0, stopped 0
+2138 Hexer's Vigor | starts 2, finished 2, instant 0, stopped 0
+2139 Masochism | starts 1, finished 1, instant 0, stopped 0
+2140 Piercing Trap | starts 1, finished 1, instant 0, stopped 0
+2144 Volley | starts 1, finished 0, instant 0, stopped 0
+2188 Defile Defenses | starts 2, finished 2, instant 0, stopped 0
+2189 Angorodon's Gaze | starts 1, finished 1, instant 0, stopped 0
+2190 Magnetic Surge | starts 1, finished 1, instant 0, stopped 0
+2191 Slippery Ground | starts 1, finished 1, instant 0, stopped 0
+2192 Glowing Ice | starts 1, finished 1, instant 0, stopped 0
+2193 Energy Blast | starts 1, finished 1, instant 0, stopped 0
+2212 Light of Deldrimor | starts 4, finished 4, instant 0, stopped 0
+2213 Ear Bite | starts 1, finished 1, instant 0, stopped 0
+2214 Low Blow | starts 1, finished 1, instant 0, stopped 0
+2215 Brawling Headbutt | starts 1, finished 1, instant 0, stopped 0
+2216 "Don't Trip!" | starts 2, finished 0, instant 2, stopped 0
+2218 Drunken Master | starts 1, finished 0, instant 1, stopped 0
+2221 Breath of the Great Dwarf | starts 1, finished 1, instant 0, stopped 0
+2222 Snow Storm | starts 1, finished 1, instant 0, stopped 0
+2224 Summon Mursaat | starts 1, finished 1, instant 0, stopped 0
+2225 Summon Ruby Djinn | starts 2, finished 2, instant 0, stopped 0
+2226 Summon Ice Imp | starts 1, finished 1, instant 0, stopped 0
+2227 Summon Naga Shaman | starts 2, finished 2, instant 0, stopped 0
+2228 Deft Strike | starts 2, finished 0, instant 0, stopped 0
+2229 Signet of Infection | starts 2, finished 2, instant 0, stopped 0
+2233 Ebon Battle Standard of Honor | starts 4, finished 4, instant 0, stopped 0
+2234 Ebon Vanguard Sniper Support | starts 15, finished 15, instant 0, stopped 0
+2235 Ebon Vanguard Assassin Support | starts 417, finished 397, instant 0, stopped 20
+2236 Well of Ruin | starts 1, finished 1, instant 0, stopped 0
+2237 Atrophy | starts 1, finished 1, instant 0, stopped 0
+2248 ID 2248 | starts 46, finished 40, instant 0, stopped 6
+2249 ID 2249 | starts 23, finished 23, instant 0, stopped 0
+2250 ID 2250 | starts 9, finished 9, instant 0, stopped 0
+2251 ID 2251 | starts 71, finished 67, instant 0, stopped 4
+2252 ID 2252 | starts 11, finished 11, instant 0, stopped 0
+2253 ID 2253 | starts 17, finished 15, instant 0, stopped 2
+2254 ID 2254 | starts 3, finished 2, instant 0, stopped 1
+2255 ID 2255 | starts 2, finished 0, instant 0, stopped 2
+2260 ID 2260 | starts 35, finished 31, instant 0, stopped 4
+2261 ID 2261 | starts 8, finished 6, instant 0, stopped 2
+2262 ID 2262 | starts 7, finished 5, instant 0, stopped 2
+2263 ID 2263 | starts 19, finished 18, instant 0, stopped 1
+2264 ID 2264 | starts 2, finished 2, instant 0, stopped 0
+2265 ID 2265 | starts 1, finished 1, instant 0, stopped 0
+2266 ID 2266 | starts 58, finished 49, instant 0, stopped 9
+2267 ID 2267 | starts 6, finished 2, instant 0, stopped 4
+2268 ID 2268 | starts 4, finished 4, instant 0, stopped 0
+2269 ID 2269 | starts 126, finished 110, instant 0, stopped 16
+2270 ID 2270 | starts 3, finished 2, instant 0, stopped 1
+2271 ID 2271 | starts 4, finished 2, instant 0, stopped 2
+2272 ID 2272 | starts 15, finished 8, instant 0, stopped 7
+2273 ID 2273 | starts 14, finished 9, instant 0, stopped 5
+2274 ID 2274 | starts 184, finished 150, instant 0, stopped 34
+2275 ID 2275 | starts 2, finished 2, instant 0, stopped 0
+2276 ID 2276 | starts 3, finished 3, instant 0, stopped 0
+2277 ID 2277 | starts 104, finished 87, instant 0, stopped 17
+2278 ID 2278 | starts 7, finished 7, instant 0, stopped 0
+2279 ID 2279 | starts 6, finished 4, instant 0, stopped 2
+2280 ID 2280 | starts 4, finished 2, instant 0, stopped 2
+2281 ID 2281 | starts 4, finished 4, instant 0, stopped 0
+2282 ID 2282 | starts 5, finished 4, instant 0, stopped 1
+2283 ID 2283 | starts 6, finished 2, instant 0, stopped 4
+2288 ID 2288 | starts 20, finished 18, instant 0, stopped 2
+2289 ID 2289 | starts 2, finished 2, instant 0, stopped 0
+2290 ID 2290 | starts 2, finished 2, instant 0, stopped 0
+2295 ID 2295 | starts 26, finished 26, instant 0, stopped 0
+2296 ID 2296 | starts 27, finished 27, instant 0, stopped 0
+2297 ID 2297 | starts 10, finished 7, instant 0, stopped 3
+2298 ID 2298 | starts 8, finished 6, instant 0, stopped 2
+2353 "Finish Him!" | starts 2, finished 0, instant 2, stopped 0
+2354 "Dodge This!" | starts 1, finished 0, instant 1, stopped 0
+2355 "I Am the Strongest!" | starts 1, finished 0, instant 1, stopped 0
+2356 "I Am Unstoppable!" | starts 26, finished 0, instant 26, stopped 0
+2357 A Touch of Guile | starts 2, finished 2, instant 0, stopped 0
+2358 "You Move Like a Dwarf!" | starts 2, finished 0, instant 2, stopped 0
+2359 "You Are All Weaklings!" | starts 1, finished 0, instant 1, stopped 0
+2360 Feel No Pain | starts 28, finished 0, instant 28, stopped 0
+2361 Club of a Thousand Bears | starts 1, finished 1, instant 0, stopped 0
+2374 Ursan Blessing | starts 1, finished 1, instant 0, stopped 0
+2375 ID 2375 | starts 2, finished 2, instant 0, stopped 0
+2376 ID 2376 | starts 2, finished 2, instant 0, stopped 0
+2377 ID 2377 | starts 2, finished 0, instant 2, stopped 0
+2378 ID 2378 | starts 2, finished 0, instant 2, stopped 0
+2379 Volfen Blessing | starts 2, finished 2, instant 0, stopped 0
+2380 ID 2380 | starts 2, finished 2, instant 0, stopped 0
+2381 ID 2381 | starts 3, finished 0, instant 3, stopped 0
+2382 ID 2382 | starts 5, finished 0, instant 5, stopped 0
+2383 ID 2383 | starts 2, finished 2, instant 0, stopped 0
+2389 ID 2389 | starts 3, finished 3, instant 0, stopped 0
+2412 Smooth Criminal | starts 1, finished 1, instant 0, stopped 0
+2413 Technobabble | starts 1, finished 1, instant 0, stopped 0
+2414 Radiation Field | starts 2, finished 2, instant 0, stopped 0
+2415 Asuran Scan | starts 1, finished 1, instant 0, stopped 0
+2416 Air of Superiority | starts 1, finished 1, instant 0, stopped 0
+2417 Mental Block | starts 2, finished 2, instant 0, stopped 0
+2418 Pain Inverter | starts 3, finished 3, instant 0, stopped 0
+2420 Ebon Escape | starts 1, finished 1, instant 0, stopped 0
+2422 Winds | starts 1, finished 1, instant 0, stopped 0
+2423 Dwarven Stability | starts 1, finished 1, instant 0, stopped 0
+2505 ID 2505 | starts 3, finished 2, instant 0, stopped 1
+2506 ID 2506 | starts 4, finished 4, instant 0, stopped 0
+2507 ID 2507 | starts 5, finished 5, instant 0, stopped 0
+2508 ID 2508 | starts 3, finished 3, instant 0, stopped 0
+2509 ID 2509 | starts 17, finished 0, instant 17, stopped 0
+2513 ID 2513 | starts 1, finished 1, instant 0, stopped 0
+2758 ID 2758 | starts 42, finished 41, instant 0, stopped 1
+2759 ID 2759 | starts 4, finished 4, instant 0, stopped 0
+2760 ID 2760 | starts 8, finished 8, instant 0, stopped 0
+2761 ID 2761 | starts 2, finished 0, instant 2, stopped 0
+2762 ID 2762 | starts 2, finished 2, instant 0, stopped 0
+2763 ID 2763 | starts 13, finished 12, instant 0, stopped 1
+2764 ID 2764 | starts 4, finished 4, instant 0, stopped 0
+3070 ID 3070 | starts 90, finished 0, instant 90, stopped 0
+3071 ID 3071 | starts 2, finished 0, instant 2, stopped 0
+3072 ID 3072 | starts 11, finished 0, instant 11, stopped 0
+3073 ID 3073 | starts 50, finished 0, instant 50, stopped 0
+3375 Aura of Restoration (PvP) | starts 40, finished 40, instant 0, stopped 0

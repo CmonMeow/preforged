@@ -1,0 +1,44 @@
+Experiment73 acceptance evidence
+
+Source: data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl
+Tick100074984. Captured client actor7; modern captured opcode layout uses DWORD
+header. These are decoded observations, not bytes replayed into the2022client:
+  220 skill197 count1; 217 actor7 slot2 skill197 copy0
+  220 skill180 count1; 217 actor7 slot3 skill180 copy0
+  220 skill200 count1; 217 actor7 slot4 skill200 copy0
+The installed2022 slot serializer is gw_skillbar.h/slot_packet_2022 (opcode216,
+WORD header, BYTE slot, WORD skill, DWORD copy), independently pinned already.
+Never substitute modern packet217 for the2022full-bar217 snapshot.
+
+Policy: acceptance_fill_skillbar fills empty slots in grant order for genuinely
+new, usable primary/secondary skills. Existing slots and previously learned skills
+are left alone. Full bars still learn the skills. This generalization is explicit
+private-server policy; this capture proves the three observed assignments, not
+every retail duplicate-learning/full-bar edge case. This originally described
+acceptance only; subsequent reward and trial work is summarized below.
+Learning, slot changes, quest acceptance and optional starter-item grant share
+one CAS transaction; prepared packets are returned only after successful commit.
+
+Current implementation status (documentation reconciliation, 2026-10-18):
+src/runtime/gw_quest_skills.h::teach now serves acceptance and reward grants.
+New usable skills fill vacant slots when requested; existing builds and already
+learned skills remain unchanged. src/network/quest_actions.h::rewardCharacterQuest
+prepares learned/slot notifications before storage and returns them only after
+rewardQuestExperience succeeds. src/runtime/accounts_quests.inc commits learning,
+bar, completed-to-rewarded quest state, XP and any inventory turn-in atomically.
+data/gw/quests/reward-skillbar-evidence.txt records Warrior Test packet lines11949
+and11953 at99595031: Frenzy346 and Healing Signet1 enter slots0/1. These observations
+support that reward assignment; they do not establish every full-bar/duplicate
+edge case or prove that all reward paths have been rendered in a client.
+
+Temporary trials are implemented through teach_acceptance/teach_trial,
+prune_trials and unlock_trial in src/runtime/gw_quest_skills.h. Reviewed rewards73
+and75 unlock their profession mask without selecting a secondary; the existing
+decoded profession request handles subsequent selection. Native NPC selection
+dialogue parity remains unresolved. See data/gw/quests/profession-trial-evidence.txt
+for the exact acceptance/selection capture provenance, implemented transaction
+and restoration policy, and separately labeled private-client verification.
+That report records live explicit trial-slot clearing and the quest73 reward /
+Elementalist dropdown selection checks in build/reports/secondary-trial-native/.
+Those historical checks apply to the documented scenarios and builds; this
+documentation update did not run a client or verify current rendered behavior.

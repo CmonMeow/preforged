@@ -1,0 +1,61 @@
+{
+  "skill": 103,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 103,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 30,
+    "0x48": 30,
+    "0x4c": 20,
+    "0x5c": 1,
+    "0x60": 46,
+    "0x64": 25,
+    "0x68": 25,
+    "0x78": 2077,
+    "0x7c": 193
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "efa900010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 66510,
+    "tick_ms": 17131203,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000067000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 66517,
+    "tick_ms": 17133312,
+    "hex": "a0000000140000001e00000019000000c1000000"
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Price_of_Failure.html": "39a10b5876d53b60729850d1af6d2029103a1ffbe35c89fbdd400b74aa7ffd24",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Miss.html": "9ee25935cbe8804b153ca737e19c4ecd6dc6d8158c46c6ea4e3f1733bfef0a62"
+  },
+  "tool_sha256": "a75b6916a4dcf5e5775e8e6b1dac47b13b1adf0bf8e197d5ad83019654d4dda0",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Offline first consumers,not rendered acceptance.",
+    "Native metadata alone does not establish failure triggers or multiplicative miss policy;archived wiki distinguishes misses,blocks,dodges and obstruction.",
+    "Miss chances combine multiplicatively;Blind90percent plus this25percent gives92.5percent,not a universal guaranteed miss.",
+    "Each released attack/projectile needs one authoritative outcome;cancelled admission,stale actors and unknown outcomes must not invent a failure.",
+    "No skill103 casting binding or gameplay implementation added."
+  ]
+}

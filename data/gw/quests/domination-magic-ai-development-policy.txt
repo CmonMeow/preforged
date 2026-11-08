@@ -1,0 +1,35 @@
+Domination Magic49 owned Brood caster development policy, 2026-10-23
+
+This extends the older combat-only policy without changing its archived source
+hash. Existing exact quest actor identity/position/level4 and Health100 remain
+captured; final armor0/hostility and full spawn Health remain development policy.
+River_Skale_Brood wiki explicitly lists0 Energy Storage, Aura180 and IceSpear214.
+Same-map/model1436/level4 captured Broods cast both skills, but no admitted skill
+start by the exact original quest actor60 was recovered. See
+docs/npc-brood-caster-activation-plan.txt for exact lines/hashes/limits.
+
+Resource profile40/40Energy and5positive pips is a reference development default
+following existing Mesmer81 content and Creature/Energy wiki conventions; it is
+not a measurement of this individual Brood. Healing permission=true is explicitly
+bound from its self-healing Aura skill. Aura Energy Storage rank0 is wiki-backed.
+Water rank4, source initialOvercast0, speed220, follow1500, home leash2000 and
+effect-flight capacity4 are authored playability settings, not inferred retail
+stats, threat weights or exact AI timing. Ice Spear uses the existing canonical
+flight1200 policy, itself a documented calibration hypothesis.
+
+Only the exact quest49 owner/cycle's remaining Brood reacts after observed
+authoritative Health loss (including degeneration); proximity alone is not a
+trigger. Health loss completely healed between polls is not journaled. Authored
+preference maintains Aura when absent, then uses supported ready Ice Spear.
+One owned spellbook/control/Energy source handles both. First Aura does not heal
+itself; renewing an active old Aura can. Each completed spell uses unmodified
+cost and the shared player formula; actual healing modifiers/wound debt apply.
+Backfire resolves before spell effects and can kill the Brood before healing or
+projectile launch. Released projectiles retain their own immutable lifetimes.
+Unknown Overcast is never assumed zero: the new source gets an explicit authored
+zero observation at binding. No arbitrary ordinary weapon profile is added.
+
+Owner departure, death, abandon/reset, quest completion and actor-generation
+replacement cannot transfer a prior cast/Aura to another owner/source. Return
+home completes before new engagement. This is bounded quest playability and
+does not claim complete retail monster AI or apply to nearby broodcallers.

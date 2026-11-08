@@ -1,0 +1,18 @@
+Development Warrior Test combat policy
+
+Captured Tad identity/appearance/positions are preserved. Exact captured actor
+lifetimes40/41/42 report maximum Health10 (packet kind42), superseding the generic
+wiki Health35 for this specific quest encounter. See
+ docs/npc-quest85-83-enrollment-evidence-20261029.txt.
+Physical, earth, fire, cold, lightning and general armor are authored as0,
+not retail measurements. Native comparison token2 marks private enemies;
+it is not a recovered official packed allegiance value.
+
+Authored ordinary melee policy: damage5, mastery0, physical damage_type0,
+windup750ms, period2000ms, reach128. Movement speed220, acquire1000,
+follow1500, leash2000. Patrol radius80, pause1200ms, leg timeout6000ms.
+These are development tuning, not measured retail cadence/range/damage.
+Damage triggers owner-targeted pursuit; no claim of owner-exclusive damage
+attribution or unsolicited proximity aggro. Return home and resume patrol after
+disengagement. Preserve kill-all objective: all three assigned Tads must die.
+Unknown resources/skills remain unknown; no inferred profession skillbook.

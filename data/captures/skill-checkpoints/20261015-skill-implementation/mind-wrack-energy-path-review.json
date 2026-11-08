@@ -1,0 +1,94 @@
+{
+  "source": "src\\runtime\\gw_world_simulation.h",
+  "sha256": "6d1e8ea0f4986c333af4ca8b0c1630b27574833a641657b0dc747b1c0731d7e4",
+  "connected": [
+    "Timestamped Runtime/gateway payment",
+    "Confirmed normalized Runtime target callback with source/target lifetime pins",
+    "Player and known-NPC drains",
+    "Equipment actual before/after capacity changes",
+    "Player/NPC attack-hex Energy events",
+    "Cleansing Energy penalty",
+    "Deferred Mantra of Resolve cost snapshots across area damage/NPC commits",
+    "Interrupt target Energy loss snapshot before any target Energy gain"
+  ],
+  "remaining": [
+    "NPC original-caster skill dispatch",
+    "Underlying negative Energy regeneration and its future transitions",
+    "Retail component/event ordering and rendered acceptance"
+  ],
+  "candidates": [
+    {
+      "line": 1003,
+      "nearest_method": "remove_health_effect_locked",
+      "source": "player.resources->energy=energy->resources.energy;player.energy_regeneration=energy->regeneration;",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 1134,
+      "nearest_method": "prevent_interrupt_locked",
+      "source": "player.resources->energy-=std::min(cost,player.resources->energy);",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 1192,
+      "nearest_method": "react_player_attack_hexes_locked",
+      "source": "player.resources->energy-=std::min(reaction->plan.energy_loss,player.resources->energy);",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 2425,
+      "nearest_method": "consume_energy",
+      "source": "if(at&&resources.energy==cost){",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 2437,
+      "nearest_method": "consume_energy",
+      "source": "const skills::effects::MindWrackEnergy before{resources.energy,resources.max_energy,actor.energy_debt};resources.energy-=cost;",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 2509,
+      "nearest_method": "energy_capacity",
+      "source": "energy::resize(*p.resources,capacity,p.energy_debt);",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 2585,
+      "nearest_method": "party_morale",
+      "source": "energy::resize(*player->resources,next.energy,player->energy_debt);",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 2656,
+      "nearest_method": "resurrect_locked",
+      "source": "p.resources->energy=std::min(p.resources->max_energy,static_cast<unsigned>(std::nearbyint(double(p.resources->max_energy)*energy_percent/100)));p.energy_debt=0;",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 3018,
+      "nearest_method": "interrupt_skill",
+      "source": "victim.resources->energy-=std::min(plan.target_loss,victim.resources->energy);",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 4181,
+      "nearest_method": "energy_drain",
+      "source": "for(auto& candidate:candidates){auto& p=*candidate.player;if(p.precise_health<=0)continue;p.resources->energy=candidate.energy.target_energy;candidate.after={p.resources->energy,p.resources->max_energy,p.energy_debt};",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 4761,
+      "nearest_method": "mind_wrack_targeted",
+      "source": "accept();p.resources->energy=after.current;if(before.current!=after.current)p.outbox->enqueue(owner_vitals(p));",
+      "status": "Source inventory, not independent mechanics proof"
+    },
+    {
+      "line": 5682,
+      "nearest_method": "ally_cleansing_outcome",
+      "source": "caster.resources->energy-=std::min(caster.resources->energy,removed*10u);caster.outbox->enqueue(owner_vitals(caster));observe_mind_wrack_energy_locked(caster,before,now);",
+      "status": "Source inventory, not independent mechanics proof"
+    }
+  ],
+  "non_loss_capacity_path": "party_morale currently only increases capacity; no positive-to-zero Energy loss is inferred from its gains."
+}

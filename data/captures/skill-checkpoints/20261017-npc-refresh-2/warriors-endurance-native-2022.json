@@ -1,0 +1,57 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "404139": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24052390,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000300000001900000076010000"
+    },
+    "404140": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24052390,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000079020000"
+    },
+    "404141": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24052390,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "420000001900000076010000000000005f0000000000a040"
+    }
+  },
+  "native_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 374
+    }
+  ],
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "4aed00010000",
+    "flags": 1
+  },
+  "captured_rank": 0,
+  "captured_duration_seconds": 5,
+  "limitations": [
+    "Model/asset services are stubbed; no rendered acceptance.",
+    "Activation evidence does not establish per-hit Energy gain; capped gain and World combat integration are verified separately by server regressions. PvP3002 local activation remains unverified.",
+    "Concurrent-action and control-state admission boundaries require retail verification."
+  ]
+}

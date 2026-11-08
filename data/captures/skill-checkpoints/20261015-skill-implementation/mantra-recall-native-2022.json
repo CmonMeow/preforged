@@ -1,0 +1,96 @@
+{
+  "skill": 82,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 1.0,
+    "stored_skill": 82,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 20,
+    "0x48": 20,
+    "0x4c": 30,
+    "0x5c": 10,
+    "0x60": 25,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 140
+  },
+  "captured_self_body_consumer": {
+    "actor": 42,
+    "encoded_file": "f6b700010000",
+    "flags": 1
+  },
+  "derived_packet_evidence": {
+    "self_body": {
+      "line": 47231,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 16743546,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f00000015000000190000008c000000"
+    },
+    "applied": {
+      "line": 47232,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 16743546,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "42000000190000005200000000000000440000000000a041"
+    },
+    "removed": {
+      "line": 47559,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 16763421,
+      "opcode": 68,
+      "bytes": 12,
+      "complete": true,
+      "hex": "440000001900000044000000"
+    },
+    "same_tick_energy_gain": {
+      "line": 47558,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 16763421,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f00000036000000190000000a000000"
+    }
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "activation_evidence": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 47213,
+      "tick_ms": 16742437,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003c0000001900000052000000",
+      "kind": 60
+    }
+  ],
+  "captured_body_evidence": [],
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Recall.html",
+  "wiki_sha256": "b2a643a92f6a80db8968068c5eb927fe6d1f4cc529a70b893504c30d23b5311e",
+  "tool_sha256": "854d81c088841749f04f2eef23aa99fa07a3a958ad866d45476a0bd2c4f30c88",
+  "limits": [
+    "Matched effect removal and same-tick rank0 gain support natural end behavior; this was not an isolated experiment.",
+    "Removal/renewal/death/extended-duration interactions and rendered acceptance remain unverified.",
+    "Packet receive interval is not the authoritative server simulation duration."
+  ]
+}

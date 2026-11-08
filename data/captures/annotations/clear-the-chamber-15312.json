@@ -1,0 +1,610 @@
+{
+  "quest": "Clear the Chamber",
+  "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\build\\capture\\experimental\\world-15312-239943281.jsonl",
+  "map": 72,
+  "instance_epoch": 6,
+  "baseline_ms": 467643,
+  "user_confirmed_quest_populations": [
+    "Grasping Darkness",
+    "Terrorweb Dryder around first statue"
+  ],
+  "import_as_static_population": false,
+  "limits": "Observed positions are not proven spawn positions. Visibility first appearance is not a spawn event. Quest-state packets not captured in this session.",
+  "observations": [
+    {
+      "first_observed_ms": 152408,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 267,
+        "model": 2388,
+        "x": -5514.748047,
+        "y": 7796.694824,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 631752,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 352,
+        "model": 2388,
+        "x": 1046.248169,
+        "y": 11625.347656,
+        "plane": 14,
+        "facing": -1.769582,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 615753,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 295,
+        "model": 2388,
+        "x": -1616.906494,
+        "y": 10734.942383,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 615753,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 234,
+        "model": 2388,
+        "x": -1717.682129,
+        "y": 10537.03125,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 151408,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 268,
+        "model": 2388,
+        "x": -5581.012207,
+        "y": 7653.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 166424,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 336,
+        "model": 2388,
+        "x": -641.318909,
+        "y": 8956.93457,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 155408,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 302,
+        "model": 2388,
+        "x": -4152.65918,
+        "y": 11522.755859,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 4422,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 326,
+        "model": 2388,
+        "x": 4215.475098,
+        "y": 7583.773438,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 160424,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 335,
+        "model": 2388,
+        "x": -723.246765,
+        "y": 8861.844727,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 4422,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 325,
+        "model": 2388,
+        "x": 4087.871094,
+        "y": 7806.604004,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 166424,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 305,
+        "model": 2388,
+        "x": -1272.102905,
+        "y": 13293.458984,
+        "plane": 27,
+        "facing": -3.064539,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 615753,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 348,
+        "model": 2388,
+        "x": -2282.233154,
+        "y": 5450.711914,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 18419,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 344,
+        "model": 2388,
+        "x": -4805.56543,
+        "y": 4981.958008,
+        "plane": 0,
+        "facing": 0.529614,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 246487,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 337,
+        "model": 2388,
+        "x": 1433.444702,
+        "y": 10537.733398,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 4422,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 327,
+        "model": 2388,
+        "x": 4439.964355,
+        "y": 7638.349121,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 202456,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 241,
+        "model": 2371,
+        "x": -5721.249512,
+        "y": 12490.738281,
+        "plane": 16,
+        "facing": 0.0,
+        "level": 28,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4780,
+          40833,
+          49124,
+          12822
+        ],
+        "name": "Terrorweb Dryder",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 615753,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 349,
+        "model": 2388,
+        "x": -2543.335449,
+        "y": 5475.855957,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 204456,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 276,
+        "model": 2371,
+        "x": -5858.400391,
+        "y": 12628.00293,
+        "plane": 0,
+        "facing": 1.788889,
+        "level": 28,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4780,
+          40833,
+          49124,
+          12822
+        ],
+        "name": "Terrorweb Dryder",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 634752,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 350,
+        "model": 2388,
+        "x": 1171.147949,
+        "y": 11623.255859,
+        "plane": 0,
+        "facing": -1.70866,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 17419,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 68,
+        "model": 2388,
+        "x": -4661.869629,
+        "y": 4821.234863,
+        "plane": 0,
+        "facing": 0.595579,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 242487,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 334,
+        "model": 2388,
+        "x": 734.839355,
+        "y": 9730.056641,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 165424,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 307,
+        "model": 2388,
+        "x": -948.193481,
+        "y": 13085.771484,
+        "plane": 0,
+        "facing": 2.613495,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 635768,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 351,
+        "model": 2388,
+        "x": 1184.326294,
+        "y": 11111.964844,
+        "plane": 15,
+        "facing": -1.617639,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 160424,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 304,
+        "model": 2388,
+        "x": -858.62323,
+        "y": 12965.798828,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 154408,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 289,
+        "model": 2388,
+        "x": -4086.010742,
+        "y": 11437.405273,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 617753,
+      "observed_before_baseline": false,
+      "npc": {
+        "agent": 272,
+        "model": 2388,
+        "x": -2426.821289,
+        "y": 5508.77002,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "first_observed_ms": 199456,
+      "observed_before_baseline": true,
+      "npc": {
+        "agent": 245,
+        "model": 2388,
+        "x": -5525.699219,
+        "y": 11017.341797,
+        "plane": 18,
+        "facing": 0.466099,
+        "level": 26,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4805,
+          53570,
+          64034,
+          7753
+        ],
+        "name": "Grasping Darkness",
+        "name_status": "decoded"
+      }
+    }
+  ],
+  "classification": "Review candidates by model/name; only user-confirmed quest groups around the first statue belong to this quest. Not all same-model creatures across Underworld are classified."
+}

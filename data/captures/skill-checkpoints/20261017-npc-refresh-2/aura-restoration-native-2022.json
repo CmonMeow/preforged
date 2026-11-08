@@ -1,0 +1,146 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "variants": [
+    {
+      "skill": 180,
+      "fields": [
+        60,
+        60,
+        20,
+        200,
+        500,
+        0,
+        1,
+        2077,
+        2077
+      ],
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 52,
+        "seconds": 0.25,
+        "stored_skill": 180,
+        "override_after": 2139095040
+      }
+    },
+    {
+      "skill": 3375,
+      "fields": [
+        60,
+        60,
+        20,
+        200,
+        400,
+        0,
+        1,
+        2077,
+        2077
+      ],
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 52,
+        "seconds": 0.25,
+        "stored_skill": 3375,
+        "override_after": 2139095040
+      }
+    }
+  ],
+  "activation_receipts": [
+    {
+      "file": "packets-110488-195213578.jsonl",
+      "line": 616,
+      "tick_ms": 195220062,
+      "actor": 19,
+      "hex": "9f0000003c000000130000002f0d0000"
+    },
+    {
+      "file": "packets-110488-195213578.jsonl",
+      "line": 1065,
+      "tick_ms": 195257906,
+      "actor": 19,
+      "hex": "9f0000003c000000130000002f0d0000"
+    },
+    {
+      "file": "packets-110488-195213578.jsonl",
+      "line": 3062,
+      "tick_ms": 195277281,
+      "actor": 19,
+      "hex": "9f0000003c000000130000002f0d0000"
+    },
+    {
+      "file": "packets-110488-195213578.jsonl",
+      "line": 7620,
+      "tick_ms": 195374171,
+      "actor": 38,
+      "hex": "9f0000003c000000260000002f0d0000"
+    },
+    {
+      "file": "packets-110488-195213578.jsonl",
+      "line": 9670,
+      "tick_ms": 195399453,
+      "actor": 38,
+      "hex": "9f0000003c000000260000002f0d0000"
+    },
+    {
+      "file": "packets-110228-194407640.jsonl",
+      "line": 2381,
+      "tick_ms": 194462093,
+      "actor": 22,
+      "hex": "9f0000003c000000160000002f0d0000"
+    },
+    {
+      "file": "packets-110228-194407640.jsonl",
+      "line": 28563,
+      "tick_ms": 194987812,
+      "actor": 6,
+      "hex": "9f0000003c000000060000002f0d0000"
+    },
+    {
+      "file": "packets-110228-194407640.jsonl",
+      "line": 32365,
+      "tick_ms": 195127500,
+      "actor": 8,
+      "hex": "9f0000003c000000080000002f0d0000"
+    },
+    {
+      "file": "packets-108988-190116609.jsonl",
+      "line": 206437,
+      "tick_ms": 194177453,
+      "actor": 9,
+      "hex": "9f0000003c000000090000002f0d0000"
+    },
+    {
+      "file": "packets-108988-190116609.jsonl",
+      "line": 208296,
+      "tick_ms": 194197531,
+      "actor": 9,
+      "hex": "9f0000003c000000090000002f0d0000"
+    },
+    {
+      "file": "packets-108988-190116609.jsonl",
+      "line": 211326,
+      "tick_ms": 194295421,
+      "actor": 11,
+      "hex": "9f0000003c0000000b0000002f0d0000"
+    },
+    {
+      "file": "packets-108988-190116609.jsonl",
+      "line": 213827,
+      "tick_ms": 194327546,
+      "actor": 11,
+      "hex": "9f0000003c0000000b0000002f0d0000"
+    }
+  ],
+  "source_sha256": {
+    "packets-110488-195213578.jsonl": "9cdec19f550cae907c19bfc4b59df1af370ab649d8cddbf789ba57601bf6ef8f",
+    "packets-110228-194407640.jsonl": "8b6176a074e2422d6fa4abf3686f2cdcb2ef23cdec9ffe0f894f7581cefbc19d",
+    "packets-108988-190116609.jsonl": "9cadca1740cdd4aae3ac27246b95f9dca0b262eff17a3fba4f429daa38664ddf"
+  },
+  "wiki_sha256": "156cd55d1e31572e9be22a642d20c92ad8dd682968c75eae7ae05bd9f2e0ab22",
+  "limitations": [
+    "Native cast consumer uses stubbed assets; no rendered proof.",
+    "Both body resources are sentinel2077: no guessed success-body particle emitted.",
+    "Activations do not independently prove healing/refund or reaction ordering."
+  ]
+}

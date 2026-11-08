@@ -1,0 +1,127 @@
+{
+  "checkpoint": "20261017-npc-refresh-current",
+  "cutoff": "2026-10-17T04:38:55.921140+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "start": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 136672,
+    "tick_ms": 18305781,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003c00000019000000a3000000",
+    "kind": 60
+  },
+  "finish": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 136677,
+    "tick_ms": 18306546,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003a0000001900000000000000",
+    "kind": 58
+  },
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 0.75,
+    "stored_skill": 163,
+    "override_after": 2139095040
+  },
+  "visuals": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136678,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 18306546,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f00000015000000190000001f010000"
+      },
+      "native": {
+        "actor": 42,
+        "encoded_file": "7ac200010000",
+        "flags": 1
+      },
+      "native_actor_normalization": "caster42,target43; original receipt retained",
+      "wire2022": "9e8015000000190000001f010000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136681,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 18306546,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001d0000001900000020010000"
+      },
+      "native": {
+        "actor": 43,
+        "encoded_file": "7bc200010000",
+        "flags": 1
+      },
+      "native_actor_normalization": "caster42,target43; original receipt retained",
+      "wire2022": "9f80140000001d0000001900000020010000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136684,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 18306546,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e0000001900000020010000"
+      },
+      "native": {
+        "actor": 43,
+        "encoded_file": "7bc200010000",
+        "flags": 1
+      },
+      "native_actor_normalization": "caster42,target43; original receipt retained",
+      "wire2022": "9f80140000001e0000001900000020010000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136687,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 18306546,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001f0000001900000020010000"
+      },
+      "native": {
+        "actor": 43,
+        "encoded_file": "7bc200010000",
+        "flags": 1
+      },
+      "native_actor_normalization": "caster42,target43; original receipt retained",
+      "wire2022": "9f80140000001f0000001900000020010000"
+    }
+  ],
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Whirlwind.html",
+  "wiki_sha256": "f7005f4b952d6689697a3e05e0c179612e6efae7873e8af5e55139531e58ab6e",
+  "tool_sha256": "bfafd822d449a4a050a8c2db489f8e4c08bee2938cbcfc0c780ba474de7a10b4",
+  "limits": [
+    "Native model/asset services stubbed; rendered acceptance not established.",
+    "Target resource288 comes from captured receipts, not the2077 metadata sentinel.",
+    "Three recipients do not calibrate radius or prove attacking-state knockdown.",
+    "No runtime implementation or source-binding credit is established by this proof."
+  ]
+}

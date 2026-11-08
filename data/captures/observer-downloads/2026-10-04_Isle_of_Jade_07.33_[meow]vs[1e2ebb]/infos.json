@@ -1,0 +1,218 @@
+{
+  "recording_version": 2,
+  "map_id": 356,
+  "flux": "Minion Apocalypse",
+  "day": 4,
+  "month": 10,
+  "year": 2026,
+  "occasion": "A AT",
+  "match_duration": "07:33",
+  "match_original_duration": "07:33",
+  "match_end_time_ms": 513007,
+  "match_end_time_formatted": "08:33.007",
+  "winner_party_id": 1,
+  "team_kills": {
+    "1": 20,
+    "2": 5
+},
+  "team_damage": {
+    "1": 20822,
+    "2": 8267
+},
+  "team_healing": {
+    "1": 18424,
+    "2": 15997
+},
+  "parties": {
+    "1": {
+      "PLAYER": [{"id":50,"primary":6,"secondary":10,"level":20,"team_id":1,"player_number":3,"guild_id":3,"model_id":3,"gadget_id":0,"gender":"Female","appearance_bitmap":123772957,"encoded_name":"Shaco I (3)","total_damage":3874,"total_damage_received":613,"total_healing_dealt":1720,"total_healing_received":4068,"attacks_started":7,"attacks_finished":0,"attacks_stopped":6,"skills_activated":81,"skills_finished":78,"skills_stopped":3,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":2,"interrupted_skills_count":2,"cancelled_attacks_count":6,"cancelled_skills_count":3,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":3,"player_kills":2,"skill_template_code":"","used_skills":[180,184,1381,1090,198,185,191,1379]}, {"id":51,"primary":6,"secondary":9,"level":20,"team_id":1,"player_number":1,"guild_id":1,"model_id":1,"gadget_id":0,"gender":"Female","appearance_bitmap":1332327761,"encoded_name":"Pixie (1)","total_damage":4092,"total_damage_received":781,"total_healing_dealt":775,"total_healing_received":3715,"attacks_started":6,"attacks_finished":0,"attacks_stopped":1,"skills_activated":82,"skills_finished":64,"skills_stopped":6,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":2,"interrupted_skills_count":2,"cancelled_attacks_count":1,"cancelled_skills_count":6,"crits_dealt":0,"crits_received":2,"deaths":0,"kills":2,"player_kills":0,"skill_template_code":"","used_skills":[180,225,222,198,1595,1081,1664,2059]}, {"id":52,"primary":5,"secondary":8,"level":20,"team_id":1,"player_number":6,"guild_id":4,"model_id":6,"gadget_id":0,"gender":"Male","appearance_bitmap":5537810,"encoded_name":"Holye Mesmerise (6)","total_damage":459,"total_damage_received":975,"total_healing_dealt":0,"total_healing_received":4251,"attacks_started":22,"attacks_finished":0,"attacks_stopped":5,"skills_activated":32,"skills_finished":31,"skills_stopped":1,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":5,"cancelled_skills_count":1,"crits_dealt":1,"crits_received":10,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[74,46,51,57,69,932,1993]}, {"id":53,"primary":3,"secondary":7,"level":20,"team_id":1,"player_number":8,"guild_id":3,"model_id":8,"gadget_id":0,"gender":"Female","appearance_bitmap":204685873,"encoded_name":"Love (8)","total_damage":87,"total_damage_received":356,"total_healing_dealt":11102,"total_healing_received":2925,"attacks_started":6,"attacks_finished":0,"attacks_stopped":0,"skills_activated":91,"skills_finished":84,"skills_stopped":3,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":0,"cancelled_skills_count":3,"crits_dealt":0,"crits_received":2,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[254,258,885,2061,1037,311,941]}, {"id":54,"primary":2,"secondary":8,"level":20,"team_id":1,"player_number":5,"guild_id":4,"model_id":5,"gadget_id":0,"gender":"Female","appearance_bitmap":1328061689,"encoded_name":"Il Atsu Il (5)","total_damage":1608,"total_damage_received":56,"total_healing_dealt":0,"total_healing_received":1080,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":89,"skills_finished":51,"skills_stopped":2,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":0,"cancelled_skills_count":2,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":1,"player_kills":1,"skill_template_code":"","used_skills":[461,456,1727,457,458,459,471,446]}, {"id":55,"primary":6,"secondary":9,"level":20,"team_id":1,"player_number":4,"guild_id":4,"model_id":4,"gadget_id":0,"gender":"Male","appearance_bitmap":1298705838,"encoded_name":"World Never Changes (4)","total_damage":4619,"total_damage_received":769,"total_healing_dealt":1196,"total_healing_received":4023,"attacks_started":29,"attacks_finished":0,"attacks_stopped":21,"skills_activated":86,"skills_finished":69,"skills_stopped":7,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":2,"interrupted_skills_count":2,"cancelled_attacks_count":21,"cancelled_skills_count":7,"crits_dealt":0,"crits_received":4,"deaths":0,"kills":5,"player_kills":2,"skill_template_code":"","used_skills":[180,225,222,198,1595,1081,1664,2059]}, {"id":57,"primary":3,"secondary":1,"level":20,"team_id":1,"player_number":7,"guild_id":9,"model_id":7,"gadget_id":0,"gender":"Female","appearance_bitmap":1329012049,"encoded_name":"Ali (7)","total_damage":128,"total_damage_received":892,"total_healing_dealt":2286,"total_healing_received":4207,"attacks_started":11,"attacks_finished":0,"attacks_stopped":1,"skills_activated":49,"skills_finished":45,"skills_stopped":1,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":1,"cancelled_skills_count":1,"crits_dealt":0,"crits_received":3,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1123,257,258,299,885,371]}, {"id":58,"primary":6,"secondary":8,"level":20,"team_id":1,"player_number":2,"guild_id":1,"model_id":2,"gadget_id":0,"gender":"Female","appearance_bitmap":90186961,"encoded_name":"Prompt Engineering (2)","total_damage":5107,"total_damage_received":1016,"total_healing_dealt":1345,"total_healing_received":4401,"attacks_started":9,"attacks_finished":0,"attacks_stopped":6,"skills_activated":82,"skills_finished":77,"skills_stopped":5,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":3,"interrupted_skills_count":3,"cancelled_attacks_count":6,"cancelled_skills_count":5,"crits_dealt":1,"crits_received":0,"deaths":0,"kills":6,"player_kills":1,"skill_template_code":"","used_skills":[180,225,222,198,220,1081,1664]}],
+      "OTHER": [{"id":25,"primary":1,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":170,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":21,"skills_finished":21,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[3205]}, {"id":27,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":174,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":28,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":29,"primary":6,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":172,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":34,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":74,"total_damage_received":411,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":5,"attacks_finished":0,"attacks_stopped":0,"skills_activated":1,"skills_finished":1,"skills_stopped":0,"attack_skills_activated":2,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":1,"player_kills":1,"skill_template_code":"","used_skills":[392,446]}, {"id":37,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":89,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":7,"attacks_finished":0,"attacks_stopped":1,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":2,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":1,"cancelled_skills_count":0,"crits_dealt":2,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392]}, {"id":40,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":174,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":41,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":44,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":175,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":58,"total_damage_received":584,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":5,"attacks_finished":0,"attacks_stopped":2,"skills_activated":1,"skills_finished":1,"skills_stopped":0,"attack_skills_activated":1,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":2,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392,446]}, {"id":47,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":48,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":173,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":85,"total_damage_received":396,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":3,"attacks_finished":3,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":2,"attack_skills_finished":2,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[328,382]}, {"id":49,"primary":0,"secondary":0,"level":20,"team_id":1,"player_number":0,"guild_id":0,"model_id":173,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":542,"total_damage_received":408,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":5,"attacks_finished":5,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":2,"attack_skills_finished":2,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":5,"crits_received":0,"deaths":1,"kills":2,"player_kills":0,"skill_template_code":"","used_skills":[328]}, {"id":90,"primary":0,"secondary":0,"level":9,"team_id":1,"player_number":0,"guild_id":0,"model_id":2933,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":0,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}]
+    },
+    "2": {
+      "PLAYER": [{"id":56,"primary":5,"secondary":8,"level":20,"team_id":2,"player_number":11,"guild_id":7,"model_id":11,"gadget_id":0,"gender":"Male","appearance_bitmap":122848270,"encoded_name":"Shakezz On Shutdown (3)","total_damage":1545,"total_damage_received":1256,"total_healing_dealt":0,"total_healing_received":2174,"attacks_started":1,"attacks_finished":0,"attacks_stopped":1,"skills_activated":26,"skills_finished":26,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":1,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[49,23,39,69,932,1993]}, {"id":59,"primary":3,"secondary":7,"level":20,"team_id":2,"player_number":15,"guild_id":14,"model_id":15,"gadget_id":0,"gender":"Male","appearance_bitmap":3145742,"encoded_name":"Suffering Martyr (7)","total_damage":486,"total_damage_received":1725,"total_healing_dealt":7331,"total_healing_received":2277,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":42,"skills_finished":34,"skills_stopped":2,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":2,"crits_dealt":0,"crits_received":1,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[2061,1037,292,311,1118,2003]}, {"id":60,"primary":1,"secondary":10,"level":20,"team_id":2,"player_number":9,"guild_id":2,"model_id":9,"gadget_id":0,"gender":"Female","appearance_bitmap":1377473887,"encoded_name":"Taint Zilla (1)","total_damage":851,"total_damage_received":499,"total_healing_dealt":0,"total_healing_received":1332,"attacks_started":24,"attacks_finished":17,"attacks_stopped":7,"skills_activated":8,"skills_finished":2,"skills_stopped":1,"attack_skills_activated":13,"attack_skills_finished":13,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":7,"cancelled_skills_count":1,"crits_dealt":6,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1415,332,384,390,319,346,2,1545]}, {"id":61,"primary":3,"secondary":1,"level":20,"team_id":2,"player_number":14,"guild_id":2,"model_id":14,"gadget_id":0,"gender":"Female","appearance_bitmap":1278580753,"encoded_name":"Scrub Monks (6)","total_damage":0,"total_damage_received":883,"total_healing_dealt":1827,"total_healing_received":1392,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":33,"skills_finished":32,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1123,299,885,1114,371]}, {"id":62,"primary":5,"secondary":7,"level":20,"team_id":2,"player_number":12,"guild_id":2,"model_id":12,"gadget_id":0,"gender":"Female","appearance_bitmap":1314436113,"encoded_name":"Matto (4)","total_damage":1373,"total_damage_received":1501,"total_healing_dealt":0,"total_healing_received":1494,"attacks_started":10,"attacks_finished":0,"attacks_stopped":6,"skills_activated":52,"skills_finished":26,"skills_stopped":2,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":6,"cancelled_skills_count":2,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[49,1043,39,42,57,69,932,1993]}, {"id":63,"primary":8,"secondary":7,"level":20,"team_id":2,"player_number":13,"guild_id":18,"model_id":13,"gadget_id":0,"gender":"Male","appearance_bitmap":1199570946,"encoded_name":"I Was Told To (5)","total_damage":2742,"total_damage_received":405,"total_healing_dealt":2356,"total_healing_received":858,"attacks_started":2,"attacks_finished":0,"attacks_stopped":2,"skills_activated":66,"skills_finished":31,"skills_stopped":2,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":2,"cancelled_skills_count":2,"crits_dealt":0,"crits_received":2,"deaths":1,"kills":5,"player_kills":0,"skill_template_code":"","used_skills":[1257,1237,1478,1043,1253,2204,919,1227]}, {"id":85,"primary":10,"secondary":8,"level":20,"team_id":2,"player_number":10,"guild_id":2,"model_id":10,"gadget_id":0,"gender":"Male","appearance_bitmap":2191523854,"encoded_name":"Timo Thee Stallionn (2)","total_damage":486,"total_damage_received":1143,"total_healing_dealt":60,"total_healing_received":2039,"attacks_started":31,"attacks_finished":16,"attacks_stopped":15,"skills_activated":75,"skills_finished":16,"skills_stopped":1,"attack_skills_activated":1,"attack_skills_finished":0,"attack_skills_stopped":1,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":15,"cancelled_skills_count":2,"crits_dealt":5,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1518,1537,1755,1758,1768,1762,2014]}, {"id":86,"primary":3,"secondary":7,"level":20,"team_id":2,"player_number":16,"guild_id":28,"model_id":16,"gadget_id":0,"gender":"Male","appearance_bitmap":3407952,"encoded_name":"Xavien Monk (8)","total_damage":60,"total_damage_received":1771,"total_healing_dealt":4423,"total_healing_received":2422,"attacks_started":11,"attacks_finished":0,"attacks_stopped":3,"skills_activated":45,"skills_finished":41,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":3,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":2,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[258,299,307,885,1114,1037,770,941]}],
+      "OTHER": [{"id":26,"primary":1,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":170,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":175,"total_damage_received":5018,"total_healing_dealt":0,"total_healing_received":2828,"attacks_started":5,"attacks_finished":0,"attacks_stopped":2,"skills_activated":24,"skills_finished":21,"skills_stopped":0,"attack_skills_activated":3,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":2,"cancelled_skills_count":0,"crits_dealt":1,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[394,362,3205]}, {"id":30,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":174,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":520,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":2,"skills_finished":0,"skills_stopped":1,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":1,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1,362]}, {"id":31,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":174,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":609,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":2,"skills_finished":0,"skills_stopped":1,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":1,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1,362]}, {"id":32,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":19,"total_damage_received":541,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":2,"attacks_finished":0,"attacks_stopped":1,"skills_activated":1,"skills_finished":0,"skills_stopped":1,"attack_skills_activated":1,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":1,"cancelled_skills_count":1,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392,446]}, {"id":33,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":53,"total_damage_received":525,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":3,"attacks_finished":0,"attacks_stopped":2,"skills_activated":1,"skills_finished":0,"skills_stopped":1,"attack_skills_activated":1,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":2,"cancelled_skills_count":1,"crits_dealt":1,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392,446]}, {"id":35,"primary":6,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":172,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":37,"total_damage_received":495,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":5,"attacks_finished":0,"attacks_stopped":1,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":1,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":36,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":130,"total_damage_received":1446,"total_healing_dealt":0,"total_healing_received":532,"attacks_started":8,"attacks_finished":0,"attacks_stopped":1,"skills_activated":4,"skills_finished":3,"skills_stopped":1,"attack_skills_activated":6,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":1,"interrupted_skills_count":1,"cancelled_attacks_count":1,"cancelled_skills_count":1,"crits_dealt":0,"crits_received":1,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392,446]}, {"id":38,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":143,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":39,"attacks_started":17,"attacks_finished":0,"attacks_stopped":4,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":5,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":4,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392]}, {"id":39,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":176,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":18,"total_damage_received":613,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":1,"attacks_finished":0,"attacks_stopped":1,"skills_activated":1,"skills_finished":0,"skills_stopped":1,"attack_skills_activated":1,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":1,"cancelled_skills_count":1,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392,446]}, {"id":42,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":175,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":58,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":6,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":2,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":1,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[392]}, {"id":43,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":173,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":70,"total_damage_received":334,"total_healing_dealt":0,"total_healing_received":65,"attacks_started":5,"attacks_finished":5,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":4,"attack_skills_finished":4,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":3,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[328,382]}, {"id":45,"primary":0,"secondary":0,"level":20,"team_id":2,"player_number":0,"guild_id":0,"model_id":173,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":21,"total_damage_received":245,"total_healing_dealt":0,"total_healing_received":33,"attacks_started":3,"attacks_finished":3,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":1,"attack_skills_finished":1,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":2,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[328]}, {"id":101,"primary":0,"secondary":0,"level":11,"team_id":2,"player_number":0,"guild_id":0,"model_id":5904,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":104,"primary":0,"secondary":0,"level":8,"team_id":2,"player_number":0,"guild_id":0,"model_id":4278,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":754,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":1,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1254]}, {"id":87,"primary":0,"secondary":0,"level":11,"team_id":2,"player_number":0,"guild_id":0,"model_id":5904,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":150,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":91,"primary":0,"secondary":0,"level":8,"team_id":2,"player_number":0,"guild_id":0,"model_id":4278,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":260,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":10,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1254]}, {"id":99,"primary":0,"secondary":0,"level":8,"team_id":2,"player_number":0,"guild_id":0,"model_id":4278,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":226,"total_healing_dealt":0,"total_healing_received":721,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":15,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":1,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1254]}, {"id":106,"primary":0,"secondary":0,"level":11,"team_id":2,"player_number":0,"guild_id":0,"model_id":5904,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":541,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":4,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":89,"primary":0,"secondary":0,"level":11,"team_id":2,"player_number":0,"guild_id":0,"model_id":5904,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":225,"total_healing_dealt":0,"total_healing_received":0,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":0,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[]}, {"id":93,"primary":0,"secondary":0,"level":8,"team_id":2,"player_number":0,"guild_id":0,"model_id":4278,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":473,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":9,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1254]}, {"id":107,"primary":0,"secondary":0,"level":8,"team_id":2,"player_number":0,"guild_id":0,"model_id":4278,"gadget_id":0,"gender":"Unknown","appearance_bitmap":0,"encoded_name":"","total_damage":0,"total_damage_received":0,"total_healing_dealt":0,"total_healing_received":195,"attacks_started":0,"attacks_finished":0,"attacks_stopped":0,"skills_activated":0,"skills_finished":0,"skills_stopped":0,"attack_skills_activated":4,"attack_skills_finished":0,"attack_skills_stopped":0,"interrupted_count":0,"interrupted_skills_count":0,"cancelled_attacks_count":0,"cancelled_skills_count":0,"crits_dealt":0,"crits_received":0,"deaths":1,"kills":0,"player_kills":0,"skill_template_code":"","used_skills":[1254]}]
+    }
+  },
+  "guilds": {
+    "1": {
+      "id": 1,
+      "name": "Kitten Pounce",
+      "tag": "meow",
+      "rank": 8,
+      "features": 40,
+      "rating": 1544,
+      "faction": 1,
+      "faction_points": 1134,
+      "qualifier_points": 29,
+      "cape": {
+            "bg_color": 240,
+            "detail_color": 177,
+            "emblem_color": 101,
+            "shape": 3,
+            "detail": 10,
+            "emblem": 0,
+            "trim": 2
+      }
+},
+    "2": {
+      "id": 2,
+      "name": "Coming To A Console Near You",
+      "tag": "GW크",
+      "rank": 250,
+      "features": 40,
+      "rating": 998,
+      "faction": 1,
+      "faction_points": 3283,
+      "qualifier_points": 0,
+      "cape": {
+            "bg_color": 255,
+            "detail_color": 107,
+            "emblem_color": 67,
+            "shape": 2,
+            "detail": 0,
+            "emblem": 35,
+            "trim": 0
+      }
+},
+    "3": {
+      "id": 3,
+      "name": "Sydney Sweeney",
+      "tag": "RACK",
+      "rank": 0,
+      "features": 40,
+      "rating": 1000,
+      "faction": 1,
+      "faction_points": 3281,
+      "qualifier_points": 0,
+      "cape": {
+            "bg_color": 173,
+            "detail_color": 255,
+            "emblem_color": 241,
+            "shape": 1,
+            "detail": 23,
+            "emblem": 35,
+            "trim": 0
+      }
+},
+    "4": {
+      "id": 4,
+      "name": "Vive Le Serpiente",
+      "tag": "OG",
+      "rank": 9,
+      "features": 40,
+      "rating": 1540,
+      "faction": 1,
+      "faction_points": 6567,
+      "qualifier_points": 20,
+      "cape": {
+            "bg_color": 144,
+            "detail_color": 160,
+            "emblem_color": 111,
+            "shape": 6,
+            "detail": 10,
+            "emblem": 80,
+            "trim": 9
+      }
+},
+    "7": {
+      "id": 7,
+      "name": "Fashion Police",
+      "tag": "chic",
+      "rank": 51,
+      "features": 40,
+      "rating": 1154,
+      "faction": 1,
+      "faction_points": 118,
+      "qualifier_points": 61,
+      "cape": {
+            "bg_color": 254,
+            "detail_color": 15,
+            "emblem_color": 12,
+            "shape": 6,
+            "detail": 24,
+            "emblem": 114,
+            "trim": 0
+      }
+},
+    "9": {
+      "id": 9,
+      "name": "The High Council 옷",
+      "tag": "옷옷옷옷",
+      "rank": 46,
+      "features": 40,
+      "rating": 1185,
+      "faction": 0,
+      "faction_points": 12954,
+      "qualifier_points": 36,
+      "cape": {
+            "bg_color": 144,
+            "detail_color": 160,
+            "emblem_color": 96,
+            "shape": 8,
+            "detail": 2,
+            "emblem": 161,
+            "trim": 2
+      }
+},
+    "14": {
+      "id": 14,
+      "name": "Savant",
+      "tag": "Crew",
+      "rank": 80,
+      "features": 40,
+      "rating": 1096,
+      "faction": 0,
+      "faction_points": 192,
+      "qualifier_points": 30,
+      "cape": {
+            "bg_color": 240,
+            "detail_color": 104,
+            "emblem_color": 240,
+            "shape": 0,
+            "detail": 23,
+            "emblem": 79,
+            "trim": 2
+      }
+},
+    "18": {
+      "id": 18,
+      "name": "The Uppercut Providers",
+      "tag": "hook",
+      "rank": 233,
+      "features": 40,
+      "rating": 1009,
+      "faction": 1,
+      "faction_points": 3744,
+      "qualifier_points": 36,
+      "cape": {
+            "bg_color": 255,
+            "detail_color": 165,
+            "emblem_color": 63,
+            "shape": 5,
+            "detail": 30,
+            "emblem": 75,
+            "trim": 0
+      }
+},
+    "28": {
+      "id": 28,
+      "name": "Meddl Loide",
+      "tag": "mddl",
+      "rank": 0,
+      "features": 40,
+      "rating": 1000,
+      "faction": 4,
+      "faction_points": 0,
+      "qualifier_points": 0,
+      "cape": {
+            "bg_color": 253,
+            "detail_color": 238,
+            "emblem_color": 16,
+            "shape": 5,
+            "detail": 13,
+            "emblem": 150,
+            "trim": 0
+      }
+}
+  }
+}

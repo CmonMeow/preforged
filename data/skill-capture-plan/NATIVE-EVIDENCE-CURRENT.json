@@ -1,0 +1,414 @@
+{
+  "updated_utc": "2026-10-28T05:19:44.511342+00:00",
+  "scope": "Maintained current native evidence entries; not an exhaustive list of skill support",
+  "entries": {
+    "157": {
+      "report": "build/reports/generic-effect-full-recheck-20261027-final/build/reports/blood-ritual-native-2022.json",
+      "report_sha256": "f73315832da2c0ee2d9eb332aa72eb1c4819fa76074ada4d12033347a6bd65c6",
+      "tool": "blood_ritual_2022",
+      "tool_sha256": "a4ffa73832f76319d27ece12777ef0d08628b5512266eb8131c4d0a89d000ca9",
+      "checkpoint": "20261017-npc-refresh-2",
+      "manifest_sha256": "010f1733641dbde2f5667132c8d17bbf72b503f1ccd3eaca55233eb79f174953",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "/caster_body": "5bbb00010000"
+      },
+      "supersedes_particle_fields": "e9a4d8b42a1545bc97917d7528f2f56a7f2d5b649540bcaf0aa8a3a1df366709",
+      "scope": "Full scoped frozen-capture/native-consumer verifier; not full mechanics or rendered proof",
+      "rendered_verified": false,
+      "limitations": [
+        "These five casts are not local-player activations;do not remove157 from the local missing-capture list.",
+        "Modern completions take roughly1s;context/balance differences are unresolved and do not override pinned2s activation.",
+        "No target particle is invented for the2077 sentinel;captured success is caster21/resource281.",
+        "Touch144 comes from the supplied SDK and existing server touch policy,not an independently executed2022 distance threshold.",
+        "Numeric regeneration/duration/sacrifice,renewal/stacking,touch approach behavior and rendered QA remain unproved by these receipts.",
+        "Runtime binding is tested separately;this evidence tool stubs actor/asset services and does not prove rendered gameplay."
+      ],
+      "does_not_count_as_local_player_capture": true
+    },
+    "2213": {
+      "report": "build/reports/ear-bite-seed-native-20261027/build/reports/ear-bite-native-2022.json",
+      "report_sha256": "6e5421ca9867150d3f72a6196faf888c979aee13f37327832550e50c5fe8b91f",
+      "tool": "ear_bite_2022",
+      "tool_sha256": "b63608165eca2a4ef0d36210a6964d987b83c7cb576e77b924ac94e0d023a4bf",
+      "checkpoint": "20261024-signet-infection-bound",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "scope": "Fresh full frozen receipt and synthetic original cast/particle consumer check;Ear Bite Seed mechanics tested separately",
+      "rendered_verified": false,
+      "limitations": [
+        "One local rank/armor-unknown cast cannot establish exact damage, title rank or target armor.",
+        "Piercing and Bleeding are inferred from archived skill text plus damage/condition receipts; actual status duration and rendered pixels remain unverified."
+      ],
+      "previous_report": "build/reports/generic-effect-full-recheck-20261027-final/build/reports/ear-bite-native-2022.json"
+    },
+    "1239": {
+      "report": "build/reports/generic-effect-full-recheck-20261027-final/build/reports/signet-spirits-native-2022.json",
+      "report_sha256": "13122e6f071bfcc0d8dcb89a5cd4826f46e481271246bfca322b2ad0ee6fc005",
+      "tool": "signet_spirits_2022",
+      "tool_sha256": "c57793e87c28c39d10f7632b4b4c55c3f6fdf2ea2e96e9cccdd0e333d3571ae8",
+      "checkpoint": "20261024-signet-infection-bound",
+      "manifest_sha256": "cc21124ac10039de2a9c56ee00e288ae5737d8d353c7849cb8267742d2fb349b",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "/native_caster_body": "1e8402010000"
+      },
+      "supersedes_particle_fields": "f86ce8ded17605198d10c4b5d6be536c0950a71ff85814bc004988c57fc41c04",
+      "scope": "Full scoped frozen-capture/native-consumer verifier; not full mechanics or rendered proof",
+      "rendered_verified": false,
+      "limitations": [
+        "Modern definition IDs 4280-4282 and model file 184446 are observation evidence, not verified 2022 asset mappings.",
+        "Three definition/spawn packets identify this observed population; they do not establish Spirit Health, targeting, attack cadence, lifetime or replacement rules.",
+        "The packet sample uses modern opcode numbers; native consumers are pinned to the 2022 client."
+      ]
+    },
+    "2100": {
+      "report": "build/reports/generic-effect-full-recheck-20261027-final/build/reports/summon-spirits-native-2022.json",
+      "report_sha256": "706c64faaf5a36b97d1eff3ad3141359dc05d0061e56db9f920e03011b73ca39",
+      "tool": "summon_spirits_2022",
+      "tool_sha256": "0703a8bb744d43c47988bff18125e6386205e724ffef2df8f8fa07ff30300c6f",
+      "checkpoint": "20261024-signet-infection-bound",
+      "manifest_sha256": "cc21124ac10039de2a9c56ee00e288ae5737d8d353c7849cb8267742d2fb349b",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "/caster_body": "9b8402010000",
+        "/target_consumers/0/consumer": "07b501010000",
+        "/target_consumers/1/consumer": "354500010000"
+      },
+      "supersedes_particle_fields": "392ef7861f241439a14e7d0cf583c4fac1c788270a81dc538a2d9390e135f536",
+      "scope": "Full scoped frozen-capture/native-consumer verifier; not full mechanics or rendered proof",
+      "rendered_verified": false,
+      "limitations": [
+        "Modern kind42 target effects map to pinned 2022 targeted kind20 consumers for resources426/459; DAT pixels are not rendered.",
+        "Modern kind55 Health update and position44 are source receipts; their 2022 native consumers are not exercised by this verifier.",
+        "The receipt shows one five-spirit move, not a general landing-position or Health-max formula.",
+        "Native body lookup stubs asset rendering."
+      ]
+    },
+    "113": {
+      "report": "build/reports/generic-effect-full-recheck-20261027-final/build/reports/tainted-flesh-native-2022.json",
+      "report_sha256": "c49192b5d64f2cfeab1920050391c11d796852b99d724a6fa72d86a7feadb99f",
+      "tool": "tainted_flesh_2022",
+      "tool_sha256": "b01933ae365eab61349534ee91024ed4946e8b1c3175afee77ee982668a30c55",
+      "checkpoint": "20261017-npc-refresh-2",
+      "manifest_sha256": "010f1733641dbde2f5667132c8d17bbf72b503f1ccd3eaca55233eb79f174953",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "/target": "c3f100010000"
+      },
+      "supersedes_particle_fields": "033d43a47fe88b8082eb369eb94743de5e4e78c5b93754c58b2fb7b280bcb4bf",
+      "scope": "Full scoped frozen-capture/native-consumer verifier; not full mechanics or rendered proof",
+      "rendered_verified": false,
+      "limitations": [
+        "Two self casts prove finish/214 ordering and20s rank0 effect timers;they do not prove melee retaliation or Disease cleansing.",
+        "Native baseline1s,zero recharge and20..44s enchantment/3..15s Disease are retained;modern timing/context is separate.",
+        "Self21 is observed;other-ally targeted20 rendering requires separate verification.",
+        "Runtime/World and authored melee retaliation are tested separately;other-ally capture,AI maintenance,combined reactions and rendered acceptance remain unverified;native actor/asset services are stubbed."
+      ]
+    },
+    "175": {
+      "report": "build/reports/generic-effect-full-recheck-20261027-final/build/reports/ward-elements-native-2022.json",
+      "report_sha256": "34d86397cff2a9e04a115782d4b9db2be9d2d794e0e594adefed039f1bec8b8a",
+      "tool": "ward_elements_2022",
+      "tool_sha256": "ebcf9af0171c5c9004944b5ada6e1c3354e0d5664dc02b6220ccee3e6f73a77b",
+      "checkpoint": "20261022-cumulative-skills",
+      "manifest_sha256": "88e589bc610c250e566ee87082ec673fb4a15827107d2d0e74a7fc6aaba11d89",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "/caster_particle": "c5f600010000"
+      },
+      "supersedes_particle_fields": "d7cf1f17d9e6a04c834ef466a6d1dcd548c767f999f884d234dd2d228f6499ff",
+      "scope": "Full scoped frozen-capture/native-consumer verifier; not full mechanics or rendered proof",
+      "rendered_verified": false,
+      "limitations": [
+        "Ground effect900 is completion-adjacent and accepted by the original consumer; exact ownership/lifetime/removal are not recovered.",
+        "Original model and asset services are stubbed, so rendered pixels are unverified.",
+        "The adjacent opcode161 resource356 is retained as evidence but not assigned to Ward175."
+      ]
+    },
+    "205": {
+      "report": "build/reports/timed-lightning-native-recheck-20261027/20261017-log-check-0059/lightning-surge-native-2022.json",
+      "report_sha256": "3ca569a49b2980053e854749ff186f68ab2752db010a32d33e8c439663d97591",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "scope": "Frozen lifecycle and native first consumers; not rendered/controlled combined reactions",
+      "rendered_verified": false
+    },
+    "222": {
+      "report": "build/reports/timed-lightning-native-recheck-20261027/20261017-npc-refresh-current/lightning-strike-native-2022.json",
+      "report_sha256": "672a2d3e4bd2ab6ff6dfb772ee348be29ca02ab415a5cdcae763fdc2b6693df3",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "scope": "Frozen lifecycle and native first consumers; not rendered/controlled combined reactions",
+      "rendered_verified": false,
+      "followup_associations": {
+        "report": "build/reports/timed-lightning-native-recheck-20261027/20261017-npc-refresh-current/lightning-strike-followup-2022.json",
+        "sha256": "1f2465ea5d120e76d061ab3691355297a3654891ed5a809d0f3071aa71de5199",
+        "count": 19,
+        "ownership": "Association evidence only; does not grant local capture credit"
+      }
+    },
+    "903": {
+      "report": "build/reports/area-seed-native-recheck-20261027/build/reports/icy-prism-native-2022.json",
+      "report_sha256": "eba1e28d78427d14c725d512ce279d953100fcef4ec71d1122c5246467a91ce8",
+      "scope": "Frozen capture/native first consumers only; not rendered or complete gameplay certification",
+      "rendered_verified": false,
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac"
+    },
+    "294": {
+      "report": "build/reports/area-seed-native-recheck-20261027/build/reports/signet-judgment-native-2022.json",
+      "report_sha256": "e1fda7ef2997cd79db0c8fb1d4026f63a1c204c6b8632bf91583fbdce8fbcb2b",
+      "scope": "Frozen capture/native first consumers only; not rendered or complete gameplay certification",
+      "rendered_verified": false,
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac"
+    },
+    "2093": {
+      "report": "build/reports/area-seed-native-recheck-20261027/build/reports/signet-corruption-capture.json",
+      "report_sha256": "e37accde9ffa3ab411230697d21ca751ef727926f5ab27c5984a152bfcfce508",
+      "scope": "Frozen capture/native first consumers only; not rendered or complete gameplay certification",
+      "rendered_verified": false,
+      "evidence_kind": "frozen_capture_only",
+      "native_consumer_verified": false,
+      "kurzick1950_local_capture_missing": true
+    },
+    "2887": {
+      "report": "build/reports/area-seed-native-recheck-20261027/build/reports/signet-judgment-native-2022.json",
+      "report_sha256": "e1fda7ef2997cd79db0c8fb1d4026f63a1c204c6b8632bf91583fbdce8fbcb2b",
+      "scope": "Native PvP metadata/first consumer alias; owned PvP activation capture remains missing",
+      "rendered_verified": false,
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "owned_pvp_capture_missing": true
+    },
+    "2056": {
+      "report": "build/reports/wind-eye-native-recheck-20261027/build/reports/wandering-eye-native-2022.json",
+      "report_sha256": "0df6fb3d941fc7c43d7bf5cc2a8c11b212f32d592c8ced9f5562eedc2140c4f5",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "scope": "Frozen receipts and first native animation/effect consumers only; not rendered/complete gameplay",
+      "rendered_verified": false,
+      "radius_reference": {
+        "report": "build/reports/wind-eye-radius-references-20261027.json",
+        "sha256": "11266bd1bca174e0d38815d0529e03a3433ec9f465a6bb1c6b1bca6f5d447f4f",
+        "nearby": 252,
+        "live_boundary_measured": false
+      }
+    },
+    "163": {
+      "report": "build/reports/wind-eye-native-recheck-20261027/20261017-npc-refresh-current/whirlwind-native-2022.json",
+      "report_sha256": "eea686688c0ac8dc51e2b4239f3f1115436ecc15628ac136bff7b09822393511",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "scope": "Frozen receipts and first native animation/effect consumers only; not rendered/complete gameplay",
+      "rendered_verified": false
+    },
+    "182": {
+      "report": "build/reports/weapon-conjure-native-recheck-20261027/data/captures/skill-checkpoints/20261015-skill-implementation/conjures-native-2022.json",
+      "report_sha256": "5fae6e306cd9b3aaf38e792198fe44c3ab986fa33aeef9f2f44ad864dda4ad82",
+      "tool": "conjures_2022",
+      "tool_sha256": "68e680f8cd606c4c12dc58f0ce6db9a5401c087dfc2354ed857b9c6f7bc085dd",
+      "checkpoint": "20261015-skill-implementation",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "resources": [
+        326,
+        327
+      ],
+      "particles": [
+        {
+          "actor": 42,
+          "encoded_file": "397e00010000",
+          "flags": 1
+        },
+        {
+          "actor": 42,
+          "encoded_file": "3a7e00010000",
+          "flags": 1
+        }
+      ],
+      "scope": "Fresh hash-verified fixed cast/completion evidence and original2022 cast/six particle consumers; World reactions validated separately",
+      "rendered_verified": false,
+      "limitations": [
+        "This native probe does not establish Runtime binding,World integration or rendered acceptance.",
+        "One caster and one target-body packet per captured completion;per-hit visuals are not established.",
+        "Element conversion,multi-hit and NPC attack integration require explicit validation.",
+        "Modern frozen completion packets recharge30s;native2022 and archived wiki recharge45s. Server2022 baseline retains45s.",
+        "This does not establish retail order for Reversal/Seed/Conjure combinations or NPC-recipient conversion coverage."
+      ]
+    },
+    "207": {
+      "report": "build/reports/weapon-conjure-native-recheck-20261027/data/captures/skill-checkpoints/20261015-skill-implementation/conjures-native-2022.json",
+      "report_sha256": "5fae6e306cd9b3aaf38e792198fe44c3ab986fa33aeef9f2f44ad864dda4ad82",
+      "tool": "conjures_2022",
+      "tool_sha256": "68e680f8cd606c4c12dc58f0ce6db9a5401c087dfc2354ed857b9c6f7bc085dd",
+      "checkpoint": "20261015-skill-implementation",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "resources": [
+        370,
+        371
+      ],
+      "particles": [
+        {
+          "actor": 42,
+          "encoded_file": "a49300010000",
+          "flags": 1
+        },
+        {
+          "actor": 42,
+          "encoded_file": "344500010000",
+          "flags": 1
+        }
+      ],
+      "scope": "Fresh hash-verified fixed cast/completion evidence and original2022 cast/six particle consumers; World reactions validated separately",
+      "rendered_verified": false,
+      "limitations": [
+        "This native probe does not establish Runtime binding,World integration or rendered acceptance.",
+        "One caster and one target-body packet per captured completion;per-hit visuals are not established.",
+        "Element conversion,multi-hit and NPC attack integration require explicit validation.",
+        "Modern frozen completion packets recharge30s;native2022 and archived wiki recharge45s. Server2022 baseline retains45s.",
+        "This does not establish retail order for Reversal/Seed/Conjure combinations or NPC-recipient conversion coverage."
+      ]
+    },
+    "221": {
+      "report": "build/reports/weapon-conjure-native-recheck-20261027/data/captures/skill-checkpoints/20261015-skill-implementation/conjures-native-2022.json",
+      "report_sha256": "5fae6e306cd9b3aaf38e792198fe44c3ab986fa33aeef9f2f44ad864dda4ad82",
+      "tool": "conjures_2022",
+      "tool_sha256": "68e680f8cd606c4c12dc58f0ce6db9a5401c087dfc2354ed857b9c6f7bc085dd",
+      "checkpoint": "20261015-skill-implementation",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "resources": [
+        392,
+        393
+      ],
+      "particles": [
+        {
+          "actor": 42,
+          "encoded_file": "ab4000010000",
+          "flags": 1
+        },
+        {
+          "actor": 42,
+          "encoded_file": "184100010000",
+          "flags": 1
+        }
+      ],
+      "scope": "Fresh hash-verified fixed cast/completion evidence and original2022 cast/six particle consumers; World reactions validated separately",
+      "rendered_verified": false,
+      "limitations": [
+        "This native probe does not establish Runtime binding,World integration or rendered acceptance.",
+        "One caster and one target-body packet per captured completion;per-hit visuals are not established.",
+        "Element conversion,multi-hit and NPC attack integration require explicit validation.",
+        "Modern frozen completion packets recharge30s;native2022 and archived wiki recharge45s. Server2022 baseline retains45s.",
+        "This does not establish retail order for Reversal/Seed/Conjure combinations or NPC-recipient conversion coverage."
+      ]
+    },
+    "307": {
+      "report": "build/reports/npc-weapon-reversal-particle-20261027.json",
+      "report_sha256": "11aa79bf96705002335e39a941b56a65df807a69760f5f8f3f9a012f2debe501",
+      "tool": "reversal_fortune_evidence_20261027",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "checkpoint": "20261024-all-completed",
+      "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+      "particle": {
+        "actor": 42,
+        "encoded_file": "a53b00010000",
+        "flags": 1
+      },
+      "world_weapon_wire_report": "build/reports/npc-weapon-reversal-native-20261027.json",
+      "world_weapon_wire_report_sha256": "7ba1d4fbd84c52c9b689fe665da44af01731f88b5ac8a20f2a2d4b9cfd7ad44b",
+      "scope": "Fresh fixed self-cast/constructed545 native particle and actual NPC weapon wire evidence; not paid casting or complete307 support",
+      "rendered_verified": false,
+      "paid_binding": false,
+      "limitations": [
+        "NPC-owned ordinary attacks against NPC recipients and their Seed/Reversal World publication",
+        "Other pending direct,preparation,reactive and life-steal producers",
+        "NPC Healing Seed caster/lifetime and healing-caused death World cleanup",
+        "Paid274 remains staged;307 remains UNBOUND pending producer/paid-lifetime/deferred/full life-steal review",
+        "Zero reduced-input consumption and combined reaction order require controlled retail evidence",
+        "Conjure elemental type16 per-hit presentation not proved against retail;rendered client verification remains open"
+      ]
+    },
+    "1381": {
+      "report": "build/reports/flame-djinn-native-20261027.json",
+      "report_sha256": "cf1fd213c8e0bd2f245392ab93f950acaae7cab10dce332fc62daa173b9c69a5",
+      "tool": "flame_djinn_haste_20261027",
+      "tool_sha256": "33b29baa449d4b2cab620fbff00323e7fba0b0e50cd2802ff4ef1c000d356da0",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "checkpoint": "20261024-all-completed",
+      "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 0.75,
+        "stored_skill": 1381,
+        "override_after": 2139095040
+      },
+      "native_particle": {
+        "actor": 42,
+        "encoded_file": "081004010000",
+        "flags": 1
+      },
+      "rendered_verified": false,
+      "production_binding_report": "build/reports/flame-djinn-implementation-20261027.json",
+      "scope": "One completed local cast/eight fixed receipts and original2022 cast/particle consumers;production mechanics verified separately",
+      "limitations": [
+        "One local completed cast; other/unassigned casts are not local ownership evidence.",
+        "The window includes10/0/5second recharge updates and other reactions; it does not independently establish modifier composition.",
+        "The166adjacent radius follows archived range/category rules, not a measured live-server boundary.",
+        "Pinned catalog raw radius is156; World follows the supplied SDK adjacent166 category used by other skills. Controlled retail distance boundary remains unverified.",
+        "Native actor/asset services are synthetic; no rendered appearance or per-target particle is inferred.",
+        "Mechanics and production casting are validated separately from these frozen/native receipts."
+      ]
+    },
+    "274": {
+      "report": "build/reports/ear-bite-seed-native-20261027/build/reports/healing-seed-native-2022-20261027.json",
+      "report_sha256": "6b09bb741c51a125cb51fadaf7e7cb2e00d6daa69b9e29f062a7b3a127820303",
+      "tool": "healing_seed_2022",
+      "tool_sha256": "e14b842c4d0897ef367994863c7f8614eb90b864ee8aab88b4b3aede8137273e",
+      "checkpoint": "20261024-all-completed",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "scope": "Fresh full frozen receipt and synthetic original cast/particle consumer check;Ear Bite Seed mechanics tested separately",
+      "rendered_verified": false,
+      "limitations": [
+        "Original first model/particle consumers use synthetic actor/asset services; no rendered acceptance.",
+        "One owned activation/terminal/body receipt does not prove reactive triggers,retaliation/conversion order,last-hit healing or retail geometry."
+      ]
+    },
+    "2221": {
+      "report": "build/reports/breath-dwarf-native-20261027.json",
+      "report_sha256": "528d0c8b5085d5471277b51a65170ab9f448cae1d0c529cb62494d1f1c9b672d",
+      "tool": "breath_great_dwarf_20261027",
+      "tool_sha256": "65f2fe1b0ff97fc6ecb3c29d8c98587bd6887351d3ae279c7bc90a56a9e70260",
+      "checkpoint": "20261024-all-completed",
+      "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "caster1957": "dd0d05010000"
+      },
+      "scope": "Full frozen local receipt and original synthetic cast/particle consumers;mechanics tested separately",
+      "rendered_verified": false,
+      "limitations": [
+        "Native actor/model/asset services are synthetic;no rendered acceptance.",
+        "Reported60Health is a normalized notification,not proof of actual restored Health,title scaling,Burning removal,party membership or radius.",
+        "Recorded8second recharge has unproven modifiers;the pinned base15seconds is retained.",
+        "Nearby generic42 is maxHealth capacity,not a particle;no extra body1014 ownership is claimed."
+      ]
+    },
+    "2216": {
+      "report": "build/reports/dont-trip-native-20261028.json",
+      "report_sha256": "2e0977aed63bd972ec4739ee54616851efa0551eec00585b132a5ff24dc044c8",
+      "tool": "dont_trip_20261028",
+      "tool_sha256": "53b4bd0a91e9f824bf1a816b771365fc713e3bfd9b2e3feb8344940a2813bfa2",
+      "checkpoint": "20261024-all-completed",
+      "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+      "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+      "particles": {
+        "caster1901": "d39a04010000"
+      },
+      "scope": "Two frozen local instant/body/status windows and original synthetic instant/particle consumers;mechanics tested separately",
+      "rendered_verified": false,
+      "limitations": [
+        "Two self receipts prove instant48/body1901/timed5second status,not actual knockdown immunity,rank or retail party radius.",
+        "Original actor/model/asset services are synthetic;rendered acceptance remains open.",
+        "The native row uses1000range;Shields Up shared authority retains its reviewed1012 policy pending a controlled retail boundary measurement.",
+        "The captured zero cast events are intentional for an instant shout;no spell58 terminal or timed casting animation is invented."
+      ]
+    }
+  },
+  "summary": "build/reports/generic-effect-full-recheck-20261027-final/SUMMARY.json",
+  "summary_sha256": "4b1255951146134aa432e3952a5781786b498c54b15ee896b326e51076685f32"
+}

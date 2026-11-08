@@ -1,0 +1,25 @@
+Bandit Raider ambient melee development policy, 2026-10-29
+Five exact map146 captured identities53:164:1,53:163:1,53:191:1,53:193:1,
+53:194:1; no model-wide or quest enrollment.
+Captured maximum Health120 and ordinary attacks, with local wiki hammer/blunt
+weapon classification. No weapon inventory, profession-based stats, or Energy
+pool is inferred. Private persistent placements reuse each lifetime native creation;
+visibility entry is not proof of retail spawn center. Navigation must validate
+this coordinate before loading; no coordinate fallback or collision bypass.
+Authored values: full initial Health120, all six final armor0, damageable=true,
+private hostile token2. Conditions disabled conservatively; flesh/type/holy/
+summon/healing/knockdown/immunity traits remain unknown.
+Authored ordinary profile: base damage5..5, mastery0, blunt raw damage type0,
+noncaster melee, range128, windup750ms, period2000ms. Captured812ms start-to-finish
+is an observation, not a recovered attack constant. No adrenaline skills.
+Authored movement220, acquire1000, follow1500, home leash2000. Projectile policy
+1000/32 is retained profile metadata but no melee flight is manufactured.
+Cardinal80 idle offsets, pause1200ms, leg timeout6000ms, standard authoritative
+navigation/LOS and retained route timeline. No automatic home heal/respawn.
+No retail parity, deployment or rendered-client validation is claimed.
+
+Expansion evidence: all five exact lifetimes bind definition1421 and maximum
+Health120. Lifetimes164/163/191/193 have completed ordinary actions;194 has an
+ordinary start followed by stop, not a completed hit. Its completed melee
+behavior uses the same explicitly authored ordinary policy. No damage magnitude
+or timing is recovered from those action observations. See raider-provenance.json.

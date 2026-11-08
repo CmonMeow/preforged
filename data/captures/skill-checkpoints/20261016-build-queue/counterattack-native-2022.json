@@ -1,0 +1,91 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "208eb0bb3f4fac1df847d5055d9f55b3161de35ba5ba56dbb56d45a40b6374d0",
+  "manifest_sha256": "e6cf85aeb2b11f9411464705939829d7ae03b47ac76b6da19edf3882e98bd83a",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 408416,
+      "tick_ms": 24157953,
+      "actor": 25,
+      "map": 280,
+      "hex": "a000000032000000190000001e0000009d060000",
+      "kind": 50
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 408689,
+      "tick_ms": 24176796,
+      "actor": 25,
+      "map": 280,
+      "hex": "a000000032000000190000001e0000009d060000",
+      "kind": 50
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 408433,
+      "tick_ms": 24158671,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000002e0000001900000000000000",
+      "kind": 46
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 408701,
+      "tick_ms": 24177406,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000002e0000001900000000000000",
+      "kind": 46
+    }
+  ],
+  "consumers": [
+    {
+      "interval": 1.33,
+      "modifier": 1.0,
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 1693
+      }
+    },
+    {
+      "interval": 1.75,
+      "modifier": 1.0,
+      "body": {
+        "state": 45,
+        "seconds": 1.75,
+        "skill": 1693
+      }
+    },
+    {
+      "interval": 1.33,
+      "modifier": 1.5,
+      "body": {
+        "state": 45,
+        "seconds": 1.9950001239776611,
+        "skill": 1693
+      }
+    }
+  ],
+  "energy": 5,
+  "recharge_seconds": 6,
+  "damage_endpoints": [
+    5,
+    35
+  ],
+  "energy_gain_endpoints": [
+    2,
+    6
+  ],
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Counterattack.html",
+  "wiki_sha256": "61bda530802cb39f3d58819ce0418a5f2832e64af0ab2912d7c3136ede7d70ef",
+  "limits": [
+    "Captured starts/finishes do not prove conditional Energy gain.",
+    "Original body consumer executes with synthetic model handles; no rendered acceptance.",
+    "Ordinary attack release timing and autonomous NPC action producers remain unverified."
+  ]
+}

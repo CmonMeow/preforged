@@ -1,0 +1,741 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "disabled_gate_sends_no_request": true,
+  "cases": [
+    {
+      "ack_first": true,
+      "restore_ack_first": true,
+      "restoration_pending": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "before": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1441792,
+            1
+          ]
+        ],
+        "icons": [
+          true,
+          false,
+          false
+        ]
+      },
+      "replaced": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "after_original_ack": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "restored": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "copied_request": [
+        68,
+        28,
+        1,
+        43,
+        0
+      ],
+      "warnings": [],
+      "slot_ui": [
+        268435550,
+        268435550,
+        268435550
+      ]
+    },
+    {
+      "ack_first": true,
+      "restore_ack_first": false,
+      "restoration_pending": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1835009,
+            1
+          ]
+        ],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "before": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1441792,
+            1
+          ]
+        ],
+        "icons": [
+          true,
+          false,
+          false
+        ]
+      },
+      "replaced": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "after_original_ack": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "restored": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "copied_request": [
+        68,
+        28,
+        1,
+        43,
+        0
+      ],
+      "warnings": [],
+      "slot_ui": [
+        268435550,
+        268435550,
+        268435550
+      ]
+    },
+    {
+      "ack_first": false,
+      "restore_ack_first": true,
+      "restoration_pending": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "before": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1441792,
+            1
+          ]
+        ],
+        "icons": [
+          true,
+          false,
+          false
+        ]
+      },
+      "replaced": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1441792,
+            1
+          ]
+        ],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "after_original_ack": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "restored": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "copied_request": [
+        68,
+        28,
+        1,
+        43,
+        0
+      ],
+      "warnings": [],
+      "slot_ui": [
+        268435550,
+        268435550,
+        268435550
+      ]
+    },
+    {
+      "ack_first": false,
+      "restore_ack_first": false,
+      "restoration_pending": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1835009,
+            1
+          ]
+        ],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "before": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1441792,
+            1
+          ]
+        ],
+        "icons": [
+          true,
+          false,
+          false
+        ]
+      },
+      "replaced": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [
+          [
+            1441792,
+            1
+          ]
+        ],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "after_original_ack": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            28,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "restored": {
+        "slots": [
+          [
+            0,
+            0,
+            0,
+            22,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            28,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "pending": [],
+        "icons": [
+          false,
+          false,
+          false
+        ]
+      },
+      "copied_request": [
+        68,
+        28,
+        1,
+        43,
+        0
+      ],
+      "warnings": [],
+      "slot_ui": [
+        268435550,
+        268435550,
+        268435550
+      ]
+    }
+  ],
+  "slot_wire": "d8802a000000001c0001000000",
+  "limits": [
+    "Synthetic native bars and pending arrays; original slot/pending/request callbacks execute.",
+    "Widget services, mode/profession/learning eligibility and network delivery are stubbed.",
+    "Copy index1 demonstrates identity preservation, not official temporary-copy allocation policy.",
+    "No successful official copy capture or rendered acceptance is claimed."
+  ]
+}

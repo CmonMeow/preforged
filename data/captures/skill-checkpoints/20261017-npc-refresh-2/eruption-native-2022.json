@@ -1,0 +1,171 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "136817": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18316078,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c000000190000001e000000a7000000"
+    },
+    "136829": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18318203,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "136830": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18318203,
+      "opcode": 161,
+      "bytes": 32,
+      "complete": true,
+      "hex": "a10000000040b4c50040f74400000000190000002c0100000000000000000000"
+    },
+    "136842": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18319093,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001d00000018000000"
+    },
+    "136844": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18319093,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001d00000019000000cdccccbc"
+    },
+    "136845": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18319093,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000018000000"
+    },
+    "136847": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18319093,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000898888bc"
+    },
+    "136848": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18319093,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001f00000018000000"
+    },
+    "136850": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18319093,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001f00000019000000cdcc4cbc"
+    },
+    "136858": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18320109,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000898888bc"
+    },
+    "136869": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18321140,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000898888bc"
+    },
+    "136878": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18322109,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000898888bc"
+    },
+    "136889": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 18323078,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000898888bc"
+    }
+  },
+  "native_cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 167,
+    "override_after": 2139095040
+  },
+  "native_ground": {
+    "position": [
+      3316924416,
+      1157054464,
+      0
+    ],
+    "actor": 25,
+    "effect": 300,
+    "data5": 0,
+    "data6": 0
+  },
+  "ground_wire2022": "a0800040b4c50040f7440000190000002c010000",
+  "first_pulse_after_finish_ms": 890,
+  "pulse_offsets_ms": [
+    0,
+    1016,
+    2047,
+    3016,
+    3985
+  ],
+  "limitations": [
+    "Model/asset services are stubbed;no rendered acceptance.",
+    "Captured condition effects precede first damage;radius/numeric armor were not controlled trials.",
+    "First observed pulse890ms after completion;logical server schedule currently uses1000ms and exact retail first-pulse phase remains unverified."
+  ]
+}

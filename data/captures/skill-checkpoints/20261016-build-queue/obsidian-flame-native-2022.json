@@ -1,0 +1,47 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 169143,
+      "tick_ms": 19265062,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e000000db000000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 169157,
+      "tick_ms": 19266359,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    }
+  ],
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.5,
+    "stored_skill": 219,
+    "override_after": 2139095040
+  },
+  "target_resource": 389,
+  "particle": {
+    "actor": 43,
+    "encoded_file": "ab6400010000",
+    "flags": 1
+  },
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Obsidian_Flame.html",
+  "wiki_sha256": "1f19e0d1e931517cab81bddeeb1b8ee0416b7fabe5d384dbacb0a0d46f83a84a",
+  "tool_sha256": "541b502249f55345450de217d47c723492577e612a182fdacde6314253aef52e",
+  "limits": [
+    "Body/particle consumers use stubbed model services;no rendered acceptance.",
+    "Resource389 comes from pinned metadata;capture has no independently attributed particle.",
+    "Overcast recovery calibration and NPC-caster AI remain unverified."
+  ]
+}

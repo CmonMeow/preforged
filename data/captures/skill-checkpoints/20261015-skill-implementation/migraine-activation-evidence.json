@@ -1,0 +1,61 @@
+{
+  "skills": [
+    53,
+    3183
+  ],
+  "mechanics": [
+    "mode-specific degeneration and duration",
+    "scoped player and NPC activation multipliers",
+    "attack skill exclusion",
+    "Dazed spell multiplier and 150 percent increase cap",
+    "Fast Casting applied separately",
+    "expiry and hex removal"
+  ],
+  "focused_tests": {
+    "cast_timing": "passed",
+    "captured_skills": "passed",
+    "audit_tooling": "12 passed"
+  },
+  "native_manual_override_consumers": [
+    {
+      "skill": 132,
+      "seconds": 2.0,
+      "stored_skill": 132,
+      "override_consumed": true
+    },
+    {
+      "skill": 154,
+      "seconds": 1.5,
+      "stored_skill": 154,
+      "override_consumed": true
+    }
+  ],
+  "full_build": {
+    "state": "passed",
+    "report": "build/reports/migraine-full-build.txt"
+  },
+  "limits": [
+    "offline consumer tracing does not establish rendered animation",
+    "Dazed easy-interrupt behavior remains incomplete",
+    "production NPC spellcasting AI remains incomplete",
+    "source binding is not complete skill verification"
+  ],
+  "repeatable_native_proof": {
+    "tool": "tools/protocol/cast_timing_2022.py",
+    "report": "build/reports/cast-timing-2022.json",
+    "result": "passed: 7 recharge deadlines, 9 cast overrides, 6 instant stance paths"
+  },
+  "wiki_sha256": {
+    "Migraine.html": "0e542c9a319dc5d6050d6867194c1239c7b12158d4757499a25df4736e3b565a",
+    "Migraine_(PvP).html": "583304633ab0e9f58d38a1d73de4d5e8b8d0ad0df1de4935cc918e13c50c344d",
+    "Dazed.html": "80d8f69cb0446f3b6a44d6e4ff960478cd51ba1194c0b5b14064c8b7e206ae3a",
+    "Activation_time.html": "4b25558cbd5a1d6a10c1ba602f7d86a6217674097a350e3376560de14cd7a9e1",
+    "Effect_stacking.html": "da724f9b516bb4fe8b3622c0137448debea466fde3547b35a0061c2164cfc6ac"
+  },
+  "full_suite": {
+    "passed": 166,
+    "failed": 0,
+    "seconds": 29.53,
+    "report": "build/reports/migraine-full-tests.txt"
+  }
+}

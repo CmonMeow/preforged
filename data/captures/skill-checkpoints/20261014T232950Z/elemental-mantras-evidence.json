@@ -1,0 +1,254 @@
+{
+  "cutoff": "2026-10-14T23:29:51.460985+00:00",
+  "skills": [
+    {
+      "skill": 6,
+      "name": "Mantra of Earth",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Earth.html",
+      "wiki_sha256": "1dcaf0db2c782e55672d80adc41d85fb4e9bca62a83533d545c012a7c1b1cbcd",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66433,
+          "tick_ms": 8009515,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f000000300000001900000006000000",
+          "kind": 48
+        },
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66658,
+          "tick_ms": 8032500,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f000000300000001900000006000000",
+          "kind": 48
+        }
+      ],
+      "body_resource_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66434,
+          "tick_ms": 8009515,
+          "hex": "9f00000015000000190000000c000000",
+          "interpretation": "Same-actor, same-tick body effect matches independently pinned2022 caster resource; not a skill ID field."
+        },
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66659,
+          "tick_ms": 8032500,
+          "hex": "9f00000015000000190000000c000000",
+          "interpretation": "Same-actor, same-tick body effect matches independently pinned2022 caster resource; not a skill ID field."
+        }
+      ],
+      "native_proof": {
+        "skill": 6,
+        "caster_body_resource": 12,
+        "ui": [
+          {
+            "event": 268435493,
+            "actor": 42,
+            "skill": 6
+          }
+        ],
+        "particle_call": {
+          "actor": 42,
+          "encoded_file": "e9bf00010000",
+          "flags": 1
+        }
+      },
+      "effect_add_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66435,
+          "hex": "42000000190000000600000000000000490000000000f041",
+          "rank": 0,
+          "effect_instance": 73,
+          "duration_seconds": 30.0
+        },
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66660,
+          "hex": "42000000190000000600000000000000490000000000f041",
+          "rank": 0,
+          "effect_instance": 73,
+          "duration_seconds": 30.0
+        }
+      ]
+    },
+    {
+      "skill": 7,
+      "name": "Mantra of Flame",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Flame.html",
+      "wiki_sha256": "04c97471fdf4ff3c294afc96f770c65ffb5b9d634a105a4b955f8de428b08408",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66445,
+          "tick_ms": 8011156,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f000000300000001900000007000000",
+          "kind": 48
+        }
+      ],
+      "body_resource_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66446,
+          "tick_ms": 8011156,
+          "hex": "9f00000015000000190000000e000000",
+          "interpretation": "Same-actor, same-tick body effect matches independently pinned2022 caster resource; not a skill ID field."
+        }
+      ],
+      "native_proof": {
+        "skill": 7,
+        "caster_body_resource": 14,
+        "ui": [
+          {
+            "event": 268435493,
+            "actor": 42,
+            "skill": 7
+          }
+        ],
+        "particle_call": {
+          "actor": 42,
+          "encoded_file": "458300010000",
+          "flags": 1
+        }
+      },
+      "effect_add_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66448,
+          "hex": "42000000190000000700000000000000490000000000f041",
+          "rank": 0,
+          "effect_instance": 73,
+          "duration_seconds": 30.0
+        }
+      ]
+    },
+    {
+      "skill": 8,
+      "name": "Mantra of Frost",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Frost.html",
+      "wiki_sha256": "a9ebc80c585161da9f1d8c3ef50a6f3d9ce404034dfa90d12c7752b113a724cc",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66467,
+          "tick_ms": 8012687,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f000000300000001900000008000000",
+          "kind": 48
+        }
+      ],
+      "body_resource_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66468,
+          "tick_ms": 8012687,
+          "hex": "9f000000150000001900000010000000",
+          "interpretation": "Same-actor, same-tick body effect matches independently pinned2022 caster resource; not a skill ID field."
+        }
+      ],
+      "native_proof": {
+        "skill": 8,
+        "caster_body_resource": 16,
+        "ui": [
+          {
+            "event": 268435493,
+            "actor": 42,
+            "skill": 8
+          }
+        ],
+        "particle_call": {
+          "actor": 42,
+          "encoded_file": "498300010000",
+          "flags": 1
+        }
+      },
+      "effect_add_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66470,
+          "hex": "42000000190000000800000000000000490000000000f041",
+          "rank": 0,
+          "effect_instance": 73,
+          "duration_seconds": 30.0
+        }
+      ]
+    },
+    {
+      "skill": 9,
+      "name": "Mantra of Lightning",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Lightning.html",
+      "wiki_sha256": "b665f9b595694e6cef27fe448817f7d43f13e24074c62f45aa6c55074d60a68c",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66490,
+          "tick_ms": 8014234,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f000000300000001900000009000000",
+          "kind": 48
+        }
+      ],
+      "body_resource_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66491,
+          "tick_ms": 8014234,
+          "hex": "9f000000150000001900000012000000",
+          "interpretation": "Same-actor, same-tick body effect matches independently pinned2022 caster resource; not a skill ID field."
+        }
+      ],
+      "native_proof": {
+        "skill": 9,
+        "caster_body_resource": 18,
+        "ui": [
+          {
+            "event": 268435493,
+            "actor": 42,
+            "skill": 9
+          }
+        ],
+        "particle_call": {
+          "actor": 42,
+          "encoded_file": "76b900010000",
+          "flags": 1
+        }
+      },
+      "effect_add_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 66493,
+          "hex": "42000000190000000900000000000000490000000000f041",
+          "rank": 0,
+          "effect_instance": 73,
+          "duration_seconds": 30.0
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://wiki.guildwars.com/wiki/Order_of_damage_modifiers",
+      "use": "Percentage reduction precedes flat protection; page warns of errors."
+    },
+    {
+      "url": "https://wiki.guildwars.com/wiki/User_talk:Isaiah_Cartwright/Izzy_Talk_Archive_1",
+      "use": "First-hand report explicitly observes Mantra of Earth granting2 Energy on zero-damage hits with Stoneflesh Aura."
+    }
+  ],
+  "limitations": [
+    "No rendered visual test performed.",
+    "Native particle proof stops at first particle creation call with asset service stubs.",
+    "NPC self-casting status hook remains unavailable; production bindings currently operate on player-owned status registries.",
+    "Cold/lightning wand types and damage conversion skills remain unsupported; chaos6 and dark7 must not be relabeled.",
+    "All-skill interactions beyond implemented mitigation mechanisms remain incomplete."
+  ]
+}

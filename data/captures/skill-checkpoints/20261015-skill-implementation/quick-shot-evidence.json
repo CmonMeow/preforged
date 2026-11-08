@@ -1,0 +1,36 @@
+{
+  "skill": 397,
+  "capture": {
+    "id": 397,
+    "name": "Quick Shot",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 0,
+    "local_finished": 0,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 471944,
+        "tick_ms": 26310828,
+        "actor": 25,
+        "map": 280,
+        "hex": "a000000032000000190000001e0000008d010000",
+        "kind": 50
+      }
+    ],
+    "endpoint_evidence": [],
+    "body_effect_evidence": []
+  },
+  "wiki_sha256": "8049f9f934fe48f2a16e227e836a3054dc26b1d0902f022c2bb2ba7d0241b602",
+  "mechanics": [
+    "Normal bow damage, double projectile speed.",
+    "Pinned native consumer uses1s activation/style41/state45."
+  ],
+  "limits": [
+    "Projectile speed stacking with preparations remains provisional multiplicative behavior.",
+    "General block/dodge/RNG and rendered appearance remain unverified."
+  ]
+}

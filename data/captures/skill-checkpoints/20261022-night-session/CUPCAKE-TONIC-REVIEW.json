@@ -1,0 +1,371 @@
+{
+  "user_reported": "Used cupcakes; Candy Corn use not confirmed; tonic possible.",
+  "items": [
+    {
+      "model": 15837,
+      "name": "Transmogrifier Tonic",
+      "observations": 275,
+      "stack_decreases": [
+        {
+          "before": {
+            "line": 8388,
+            "epoch": 8,
+            "map": 138,
+            "instance_ms": 425953166,
+            "item_id": 18429,
+            "quantity": 24
+          },
+          "after": {
+            "line": 10392,
+            "epoch": 8,
+            "map": 138,
+            "instance_ms": 426638603,
+            "item_id": 18429,
+            "quantity": 23
+          }
+        },
+        {
+          "before": {
+            "line": 38104,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292859607,
+            "item_id": 13659,
+            "quantity": 44
+          },
+          "after": {
+            "line": 38121,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292865607,
+            "item_id": 13659,
+            "quantity": 43
+          }
+        }
+      ],
+      "limitation": "Same-instance same-item stack decreases are candidates; transfers/splitting remain possible without effect correlation."
+    },
+    {
+      "model": 22269,
+      "name": "Birthday Cupcake",
+      "observations": 202,
+      "stack_decreases": [
+        {
+          "before": {
+            "line": 4692,
+            "epoch": 6,
+            "map": 58,
+            "instance_ms": 1939,
+            "item_id": 1325,
+            "quantity": 192
+          },
+          "after": {
+            "line": 6226,
+            "epoch": 6,
+            "map": 58,
+            "instance_ms": 578058,
+            "item_id": 1325,
+            "quantity": 191
+          }
+        },
+        {
+          "before": {
+            "line": 7427,
+            "epoch": 6,
+            "map": 58,
+            "instance_ms": 1039334,
+            "item_id": 1325,
+            "quantity": 191
+          },
+          "after": {
+            "line": 7435,
+            "epoch": 6,
+            "map": 58,
+            "instance_ms": 1042334,
+            "item_id": 1325,
+            "quantity": 190
+          }
+        },
+        {
+          "before": {
+            "line": 7435,
+            "epoch": 6,
+            "map": 58,
+            "instance_ms": 1042334,
+            "item_id": 1325,
+            "quantity": 190
+          },
+          "after": {
+            "line": 7829,
+            "epoch": 6,
+            "map": 58,
+            "instance_ms": 1177428,
+            "item_id": 1325,
+            "quantity": 189
+          }
+        },
+        {
+          "before": {
+            "line": 10420,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 2502,
+            "item_id": 734,
+            "quantity": 189
+          },
+          "after": {
+            "line": 10553,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 35485,
+            "item_id": 734,
+            "quantity": 188
+          }
+        },
+        {
+          "before": {
+            "line": 10562,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 39478,
+            "item_id": 734,
+            "quantity": 188
+          },
+          "after": {
+            "line": 10902,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 173468,
+            "item_id": 734,
+            "quantity": 187
+          }
+        },
+        {
+          "before": {
+            "line": 10922,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 180467,
+            "item_id": 734,
+            "quantity": 187
+          },
+          "after": {
+            "line": 13800,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 1336242,
+            "item_id": 734,
+            "quantity": 186
+          }
+        },
+        {
+          "before": {
+            "line": 14713,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 1739741,
+            "item_id": 734,
+            "quantity": 186
+          },
+          "after": {
+            "line": 15026,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 1894854,
+            "item_id": 734,
+            "quantity": 185
+          }
+        },
+        {
+          "before": {
+            "line": 19188,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 3872232,
+            "item_id": 734,
+            "quantity": 185
+          },
+          "after": {
+            "line": 19193,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 3874232,
+            "item_id": 734,
+            "quantity": 184
+          }
+        },
+        {
+          "before": {
+            "line": 26783,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 7524971,
+            "item_id": 734,
+            "quantity": 184
+          },
+          "after": {
+            "line": 27856,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 8050914,
+            "item_id": 734,
+            "quantity": 183
+          }
+        },
+        {
+          "before": {
+            "line": 28411,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 8263087,
+            "item_id": 734,
+            "quantity": 183
+          },
+          "after": {
+            "line": 28440,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 8276102,
+            "item_id": 734,
+            "quantity": 182
+          }
+        },
+        {
+          "before": {
+            "line": 29143,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 8554291,
+            "item_id": 734,
+            "quantity": 182
+          },
+          "after": {
+            "line": 29163,
+            "epoch": 10,
+            "map": 807,
+            "instance_ms": 8561290,
+            "item_id": 734,
+            "quantity": 181
+          }
+        }
+      ],
+      "limitation": "Same-instance same-item stack decreases are candidates; transfers/splitting remain possible without effect correlation."
+    },
+    {
+      "model": 30642,
+      "name": "Phantasmal Tonic",
+      "observations": 192,
+      "stack_decreases": [
+        {
+          "before": {
+            "line": 35487,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 291891053,
+            "item_id": 20584,
+            "quantity": 7
+          },
+          "after": {
+            "line": 37022,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292535372,
+            "item_id": 20584,
+            "quantity": 6
+          }
+        },
+        {
+          "before": {
+            "line": 37022,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292535372,
+            "item_id": 20584,
+            "quantity": 6
+          },
+          "after": {
+            "line": 37039,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292541372,
+            "item_id": 20584,
+            "quantity": 5
+          }
+        },
+        {
+          "before": {
+            "line": 37213,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292596419,
+            "item_id": 20584,
+            "quantity": 5
+          },
+          "after": {
+            "line": 37224,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292600419,
+            "item_id": 20584,
+            "quantity": 4
+          }
+        },
+        {
+          "before": {
+            "line": 38057,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292841591,
+            "item_id": 20584,
+            "quantity": 4
+          },
+          "after": {
+            "line": 38061,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292842591,
+            "item_id": 20584,
+            "quantity": 3
+          }
+        },
+        {
+          "before": {
+            "line": 38061,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292842591,
+            "item_id": 20584,
+            "quantity": 3
+          },
+          "after": {
+            "line": 38076,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292848590,
+            "item_id": 20584,
+            "quantity": 2
+          }
+        },
+        {
+          "before": {
+            "line": 38076,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292848590,
+            "item_id": 20584,
+            "quantity": 2
+          },
+          "after": {
+            "line": 38091,
+            "epoch": 17,
+            "map": 808,
+            "instance_ms": 292854607,
+            "item_id": 20584,
+            "quantity": 1
+          }
+        }
+      ],
+      "limitation": "Same-instance same-item stack decreases are candidates; transfers/splitting remain possible without effect correlation."
+    }
+  ]
+}

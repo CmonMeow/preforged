@@ -1,0 +1,224 @@
+{
+  "skill": 1262,
+  "status": "Source-bound Runtime/production World hook; production host built;seven focused suites passed;19 tooling tests passed;content/rendered gaps remain",
+  "evidence": "healing-ring-native-2022.json",
+  "requirements": [
+    "Self-centered adjacent166 range; no base heal to caster",
+    "Eligible nearby players and NPC creatures, both friendly and hostile",
+    "Caster gets Divine Favor only; spirits cannot be healed",
+    "Normal healing modifiers and actual Health/lifetime/plane checks",
+    "Captured body499 emitted on caster; no duplicate publication",
+    "Cast1s,recharge10s,cost5,scoped commit and interruption/cancel lifecycle"
+  ],
+  "current_gap": "party_heal all_creatures branch only iterates players. Do not mark complete by adding1262 to that whitelist.",
+  "next": "Implement distinct validated recipient transaction and tests after full build terminal; bind casting and production hook; refresh fixed coverage without touching active logs.",
+  "policy_stage": {
+    "status": "Standalone native Release probe passed; not included by production or root CMake yet",
+    "build": "build/reports/healing-ring-policy-build.txt",
+    "tests": "build/reports/healing-ring-policy-tests.txt",
+    "verified": [
+      "Rank0/12/15/20 and Divine Favor0/12/20",
+      "Caster excluded from base heal; receives Divine Favor only",
+      "Player and NPC-creature candidates share radius166; allegiance does not filter",
+      "Spirit/dead/plane/range exclusions",
+      "Nearby unknown traits reject instead of guessing",
+      "Stale caster, reused actor IDs and forged plan rejection; stable recipient ordering"
+    ],
+    "remaining": [
+      "World Health settlement and actual healing modifiers/caps",
+      "Reviewed NPC healing-eligibility traits and spirit exclusion at source",
+      "Production casting hook and effect publication"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_healing_ring.h": "b91d263b4a96333e8bd5fc6510cf5340b48f7b6ec6eda6bc91864dd36782452d",
+      "tests\\healing_ring_policy.cpp": "bc6ac61ff3a0e5a0b046a980b10392e802e2f84abd8e19a3108b59709c60e4a8"
+    }
+  },
+  "npc_proposal_stage": {
+    "status": "Standalone Release NPC proposal test passed; production/root CMake wiring pending",
+    "build": "build/reports/healing-ring-npc-build.txt",
+    "tests": "build/reports/healing-ring-npc-tests.txt",
+    "verified": [
+      "Friendly/neutral/hostile healing proposals use actual LiveActor healing",
+      "Rank0/12/20, maximum Health cap and Deep Wound behavior",
+      "Spirit/unknown eligibility rejection",
+      "Stale lifetime and forged amount rejection",
+      "Source actor unchanged until caller commits copy"
+    ],
+    "remaining": [
+      "World must settle NPC timeline/death and commit/publicize atomically with player recipients",
+      "Server-reviewed healing eligibility source must be connected; no model-based guesses",
+      "Casting binding and rendered verification"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_healing_ring_npc.h": "731ff34b70eab8270546b52982a3dd21a2afc53da7feae2c640edd02807feb94",
+      "tests\\healing_ring_npc.cpp": "5ee58f725d6d77aa45d135e1b2940a6c93134f0525a2d3017affed204ffd4f33"
+    }
+  },
+  "registered_validation": {
+    "status": "Both staged tests registered in root CMake and passed2/2",
+    "build": "build/reports/healing-ring-registered-build.txt",
+    "tests": "build/reports/healing-ring-registered-tests.txt",
+    "production_binding": "pending"
+  },
+  "healing_eligibility_metadata": {
+    "status": "Production server_host built; six focused suites including production NPC population passed0.08s;19 tooling tests passed",
+    "build": "build/reports/healing-eligibility-production-build.txt",
+    "tests": "build/reports/healing-eligibility-tests.txt",
+    "schema": "gw-npc-combat11 appends healing_allowed(0/1/-) and healing_evidence to version10 fields. Versions1..10 retain unknown healing eligibility.",
+    "verified": [
+      "Both true and false require a declared evidence source",
+      "Unknown value requires absent evidence",
+      "Malformed boolean and missing/unknown/inapplicable evidence reject",
+      "Trait is retained in LiveActor and unavailable for stale lifetime",
+      "Ring proposal checks stored reviewed true, rejecting spoofed eligibility labels"
+    ],
+    "remaining": [
+      "World mixed-recipient transaction and casting binding",
+      "Populate reviewed content healing traits without inferring from appearance/relation",
+      "Rendered skill acceptance"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_npc_combat_catalog.h": "cfa12335d776bba579ee01d07e8c180f0cc0b84d2f2b671670bc42e034bd8d7e",
+      "src\\runtime\\gw_healing_ring_npc.h": "60e6d21833b94597881963a6ff122d518deba1dbbff4d7875e2e854361c3505a",
+      "tests\\healing_eligibility.cpp": "963186f9db3f64ba138a3e07957fc03d3af1238d8582a9408810776d0934f35a",
+      "tests\\healing_ring_npc.cpp": "6a787a04955fc322a4c568898b9c0437d3baf687b8250986b0c0eb9e7455176f",
+      "CMakeLists.txt": "533baca53bfc79da084c58e9f7360c697fb9575de2ed3b25b50d739db88cc63c",
+      "tests/healing_eligibility.cpp": "7e3c076a81ee19dffb2a64c740869c280cfc2e11e0d5b149354c5e8260724573",
+      "tests/npc_combat_catalog.cpp": "1d6e2baefd8967a9f5fc21a0102540c062418ed23df0fee0bdee20a85fdeb385"
+    },
+    "regression_build": "build/reports/healing-eligibility-regression-build.txt",
+    "catalog_build": "build/reports/healing-eligibility-catalog-build.txt"
+  },
+  "world_stage": {
+    "status": "Production server_host built;five focused suites passed0.06s;19 tooling tests passed;casting remains unbound",
+    "build": "build/reports/healing-ring-world-production-build.txt",
+    "tests": "build/reports/healing-ring-world-tests.txt",
+    "verified": [
+      "Mixed nearby allied/enemy players and reviewed NPC healing",
+      "Caster receives only Divine Favor; noncaster recipients receive base heal",
+      "Radius166 boundary and outside exclusion",
+      "Stored immune NPC excluded; dead NPC not revived",
+      "Nearby unknown NPC aborts primary healing; distant unknown does not block",
+      "Stale caster and forged plan reject",
+      "NPC healing proposals prepared before primary Health commit"
+    ],
+    "remaining": [
+      "Casting eligibility/cost/recharge/cancel/interrupt and production hook",
+      "Mixed event/death-return ordering and NPC movement snapshots need additional coverage",
+      "Reviewed content healing traits must be populated; legacy content stays unknown",
+      "Rendered acceptance and complete current integration gate"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "62cd98a4b12d65b5845e4a400b91e03b9cd84bd0565d58b42f2e71ad35391e7c",
+      "src\\runtime\\gw_healing_ring.h": "4bc52d5c1a302726cd808b23c2e63c6255258f6fa256b782d03d05a654ce46f9",
+      "tests\\healing_ring_world.cpp": "293ed8b7441cae6bd6ec96b8efa463c2ddde99f53b82058277aa51e2b2a65cd9",
+      "CMakeLists.txt": "a2bf518312a7f9d78727c229489f1203f129aebb04bcbc1f6b1bb4c79d06a644"
+    }
+  },
+  "casting_stage": {
+    "build": "build/reports/healing-ring-binding-build.txt",
+    "tests": "build/reports/healing-ring-binding-tests.txt",
+    "verified": [
+      "Self-centered target normalized regardless of selected foe",
+      "1s activation,5Energy,10s recharge",
+      "Healing Prayers12 and Divine Favor12 forwarded",
+      "Cancel,interrupt,retired actor and lethal Backfire prevent healing",
+      "Missing required scoped/reaction/payment hooks reject before cost",
+      "World publishes captured body499 once; Runtime excludes duplicate success publication"
+    ],
+    "remaining": [
+      "Populate reviewed NPC healing eligibility; unknown nearby NPC currently rejects effect",
+      "Mixed timeline/return ordering tests",
+      "Healing floating feedback and rendered appearance",
+      "Fresh broad integration gate after binding"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_skill_casting.h": "031b4e58eb7f0b01311d57b306424f57f75365c7f55918a4b3cd1927aefaf122",
+      "src\\apps\\gw_auth.cpp": "9eeab238ebb64570e0a82daeeac4dfc3d9bfc1bf7b464e4098dd311d84cfd1b4",
+      "tests\\healing_ring_cast.cpp": "190c3d49138c83b189e45d9d82b26d4fd223db2bc7ba465ff7f302b8640e1c09",
+      "tools\\protocol\\skill_runtime_coverage.py": "c3ba1f35ccbcbf86eeabfbbb1e466b0aeb990d2774627586339e92f9bddd8c82",
+      "CMakeLists.txt": "ce2bff089df3e6da4818b972c9e05f0b6826fb40c6b3d913febba9ef053c7250"
+    }
+  },
+  "healing_feedback": {
+    "status": "Production server_host built;four focused suites passed;offline capture probe and19 tooling tests passed;retail overheal/rendered acceptance remain open",
+    "build": "build/reports/healing-ring-feedback-production-build.txt",
+    "tests": "build/reports/healing-ring-feedback-tests.txt",
+    "capture": "healing-ring-native-2022.json includes fixed lines299040/299041:maximum480,target28/source25,normalized0.0625",
+    "policy": "Emit positive actual restored Health normalized by recipient maximum, once per recipient. No positive cue for zero restored Health. This follows existing Infuse feedback policy; retail nominal-versus-applied overheal semantics remain unverified.",
+    "verified": [
+      "Player ally/foe and caster Divine Favor packets carry correct source",
+      "NPC packet only for healed eligible actor",
+      "Immune/dead/unknown-rejected NPC gets no healing feedback",
+      "One missing Health yields1/500 feedback; full-health repeat no positive cue"
+    ],
+    "remaining": [
+      "Retail overheal display semantics",
+      "Rendered number/color verification",
+      "Reviewed NPC content and mixed timeline event ordering"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "006bd29d3ec7c4093977a53a91429719052c280a44a522244b3c54f0b2addf32",
+      "tests\\healing_ring_world.cpp": "735e8703eb73098811983d1fd4cb9814a516570248509e11b9b87e66987152bc",
+      "tools\\protocol\\healing_ring_2022.py": "2dcaf71b991e2aa0f71a5f020fa5ae50b33a56e34b32cd613562f1e691b5425f"
+    }
+  },
+  "timeline_boundaries": {
+    "status": "Three rebuilt focused suites passed0.07s;no production code change required",
+    "build": "build/reports/healing-ring-boundaries-build.txt",
+    "tests": "build/reports/healing-ring-boundaries-tests.txt",
+    "verified": [
+      "Player and NPC bleeding death267ms: heal at266 saves living recipient;heal at267 does not revive",
+      "Caster death267ms rejects effect",
+      "Dense200ms tick then heal agrees with direct delayed settlement",
+      "Parasitic Bond20second return settles before Ring healing exactly once in dense/sparse runs"
+    ],
+    "remaining": [
+      "NPC movement/external-action boundaries and simultaneous unrelated effects need further coverage",
+      "Reviewed content population,retail overheal and rendered verification"
+    ],
+    "test_sha256": "26309d7a43f7e431ebe9735de38efcf346087b9fc40be065ffe706a34d907352"
+  },
+  "motion_stage": {
+    "status": "Production host built;three rebuilt focused suites passed;19 tooling tests passed",
+    "build": "build/reports/healing-ring-motion-production-build.txt",
+    "tests": "build/reports/healing-ring-motion-tests.txt",
+    "change": "Settle active server-owned NPC routes at cast timestamp before radius/plane selection; snapshot route IDs across callbacks; reacquire NPC/body after condition/death callbacks and exclude retired/replaced lifetimes.",
+    "remaining": [
+      "Retirement callback adversarial scenario and unrelated external-action boundaries need more coverage",
+      "Reviewed content and rendering remain open",
+      "Review route validity/death settlement ordering before refresh for all moving NPCs"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "aae809aac48f3876d07528c97fcda2330eca4f47cbe6015cda96aa748975547b",
+      "tests\\healing_ring_world.cpp": "cef83281e9a912afdb9799de50ba51d6482e8919b7665c476acad3c08f6d06a6"
+    },
+    "verified": [
+      "Follower entering/leaving Healing Ring radius classified at cast-time coordinates",
+      "Dense/sparse motion settlement agrees",
+      "Existing caster and NPC combat/quest motion regressions pass"
+    ]
+  },
+  "route_lifecycle": {
+    "status": "Production host built;five rebuilt focused suites passed;19 tooling tests passed",
+    "build": "build/reports/healing-ring-route-production-build.txt",
+    "tests": "build/reports/healing-ring-route-tests.txt",
+    "change": "Normal tick and explicit refresh share valid_npc_motion_locked. Explicit refresh settles NPC conditions/deaths before acquiring route iterators, then rejects dead/replaced NPCs or invalid quest/follow owner lifetimes and stops invalid routes.",
+    "remaining": [
+      "Direct moving-NPC death and adversarial callback retirement scenarios need further coverage",
+      "Reviewed NPC content and rendered verification remain open"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "ece434638c368787853420f6183fc6f8d8b2164e94b2e7247515c6ae815c5a37",
+      "tests\\healing_ring_world.cpp": "76d961da94e2f90ed49cc6151d9ee73201f132cfd79bc1f1de28635345afb035"
+    },
+    "verified": [
+      "Follower owner retirement/reused player ID stops stale route before Ring radius selection",
+      "Normal tick and explicit refresh share unchanged quest/lifetime validity policy",
+      "NPC condition/death settlement precedes route refresh; map iterators reacquired afterward",
+      "Dense/sparse follower and existing NPC combat/field/linked-healing/casting regressions pass"
+    ],
+    "followup": "Captured-skills regression exposed premature stationary/same-time Fragility flush. Active-route-only,strictly-later Health settlement now passes captured_skills and healing_ring_world. Production final gate in antidote-final-build.txt."
+  }
+}

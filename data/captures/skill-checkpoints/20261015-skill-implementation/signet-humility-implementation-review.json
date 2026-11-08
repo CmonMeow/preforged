@@ -1,0 +1,61 @@
+{
+  "skill": 62,
+  "status": "Source-bound Signet of Humility paired World authority,Runtime casting/admission/UI",
+  "native_evidence": "signet-humility-native-2022.json",
+  "implemented": "Target elite skills/all copies and caster non-Mesmer selection,paired immutable proposed deadline maps,longer/unrelated deadlines preserved,late invalid targetbar/forgedplan/overflowrejectwithoutmutatingeitherinput.",
+  "validation": {
+    "standalone": "Passed;build/reports/signet-humility-policy-standalone.txt",
+    "native": "Pinned3s/style49,20recharge,1..16targetdisable and10secondselfpenalty;exact frozen targetedbody111firstconsumer passed."
+  },
+  "remaining": [
+    "Actual World hostile cast/actor scope validation and atomic two-actor authority integration.",
+    "Runtime UI/admission,costlesssignet/recharge/interrupt/control behavior.",
+    "Empty-elite targets,profession0/common classification,bar mutations and retail reaction ordering unverified.",
+    "NPCcasting/targets and renderedcast/body/sound unverified."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_signet_humility.h": "e22983df2574281e9c81701cb727464194e7aaa5bf4728641e1e76486055e37a",
+    "tests/signet_humility_policy.cpp": "de638091c09ce8681482e6ca1070304eb3b40b1e21671a867492de345e3db76b",
+    "tools/protocol/signet_humility_2022.py": "e74c3252bc455c8c99b649bb5ec531a36a1552ca0f7b61f6a69d45ad15a92c8c"
+  },
+  "coverage": "159/575captured player skills bound;416awaitbinding;754baselinewithoutlocalcapture.",
+  "build": "PowerBlock230fullbuild91166confirmedlive;newheader/testnotconsumedbyrunningbuild.",
+  "authority_stage": {
+    "status": "Immutable paired actor-scoped proposals implemented;notWorldbound",
+    "report": "build/reports/humility-authority-standalone.txt",
+    "result": "Standalone native probe passed",
+    "scope": "Both actor scopes validated before pair exists;combined elite-target/nonMesmer-self deadlines,overlapmax,expiry,backwardsclock,overflow,stalegeneration and retirement. Invalidpair leavesoriginalstatesunchanged.",
+    "source_sha256": {
+      "src/runtime/gw_humility_disables.h": "89ce37e36d5448d23287d7c0bb794bd9fb6cd81787626222e8fac345f6fbc6eb",
+      "tests/humility_authority.cpp": "7834955ce1aeb763a1ac751271059d6868fccaf6b37c1dec73683ce3ee26ef2d"
+    }
+  },
+  "tooling": "19skill tooling tests passed0.482s;fixedraw unchanged,derived inventory/bodyform audit current.",
+  "registered_validation": "Humilitypolicy/authoritytargetsregisteredandbuiltRelease;includedin8/8focusedpass0.10s(power-block-idle-tests.txt). Stillunbound.",
+  "current_implementation": [
+    "Owned hostile player cast commits both scoped proposals under Worldmutex.",
+    "Worldquerycombines PowerBlock and Humility with maximumdeadline;targetdeparture clears Humilitystate.",
+    "Runtime62factory/productionhook wired;zeroEnergy/3second/20recharge with Inspirationrank and captured targetedbody111.",
+    "SharedUIupdates caster nonMesmerpenalty and targetelite deadlines;disabledcastrejectedbeforecost."
+  ],
+  "binding_validation": {
+    "result": "Five rebuilt registered Release suites passed0.08s",
+    "report": "build/reports/humility-world-guards-tests.txt",
+    "scope": "Eightcaster scenarios plus6Worldguard/overlapscenarios:cost/time/recharge/body/selfUI,cancel/interrupt/death/replacement,friendly/range/stale/dead/forged rejection with no partial penalties,and maxoverlap withPowerBlock.",
+    "tooling": "19skill tooling tests passed0.234s;frozenraw unchanged;derivedreportsrefreshed."
+  },
+  "current_remaining": [
+    "NPCtargets/AIcasting unsupported by currentWorldhandler.",
+    "Common profession0classification,emptyelite targets and copiedskill bar mutations require retail verification.",
+    "Morale/reset interactions,fractional UI timing and renderedcast/body/sound unverified."
+  ],
+  "binding_source_sha256": {
+    "src/runtime/gw_humility_disables.h": "89ce37e36d5448d23287d7c0bb794bd9fb6cd81787626222e8fac345f6fbc6eb",
+    "src/runtime/gw_world_simulation.h": "09fe21a998baaafd5f4aee0705aa6b603b557da3b9e7e5cfb5f849b4b06a71b3",
+    "src/runtime/gw_skill_casting.h": "e315b80f92a1585faaf19e32d3fbbae6d599a9b8a00d94b17be3dc052c1664da",
+    "src/apps/gw_auth.cpp": "89e20ecdff388ccbe1068907de6073cc178fb549137c412acdda82e3350d3526",
+    "tests/humility_cast.cpp": "a7878439d3740fd1972c743d62a3901e3dc3d9341de6287ec5794f373e4e9ad7"
+  },
+  "full_build_status": "Original30319handle missing;originalbuildreport stopped on10/15withoutfinaltestreport. Readonlyprocesscheck confirmed no cmake/MSBuild/ctestchain remained;incrementalproductionbuildresumed as25416withreports humility-binding-resumed-build/tests.txt. Not claimed complete.",
+  "full_binding_validation": "All production Release targets built successfully; 234/234 native tests passed in 22.39s (humility-binding-resumed-build.txt, humility-binding-resumed-tests.txt). This supersedes the stopped original build and pending resumed-build notes."
+}

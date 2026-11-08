@@ -1,0 +1,56 @@
+{
+  "status": "Seven captured player attack bindings implemented; production build and10 focused/regression suites passed",
+  "skills": [
+    320,
+    334,
+    342,
+    352,
+    849,
+    850,
+    1416
+  ],
+  "capture_evidence": "warrior-conditions-native-2022.json",
+  "requirements": [
+    "Hamstring: successful sword hit inflicts Crippled for native3..15s.",
+    "Axe Rake: Deep Wound at contact gates both native1..10 bonus and fixed15s Crippled.",
+    "Axe Twist: Deep Wound at contact gates both native1..20 bonus and fixed20s Weakness.",
+    "Crushing Blow: native1..20 bonus always; Deep Wound5..20s only on a currently knocked-down foe.",
+    "Lacerating Chop: native5..20 bonus always; Bleeding5..20s only on a currently knocked-down foe.",
+    "Fierce Blow: native5..20 bonus always; Deep Wound1..8s only if Weakness existed at contact.",
+    "Barbarous Slice: native5..30 bonus always; Bleeding5..15s only while attacker is not in an active stance."
+  ],
+  "implementation": [
+    "Contact predicates use World-owned condition, control and stance state for player and NPC recipients; expired states do not count.",
+    "Existing weapon armor/mastery, Strength penetration, Weakness base-only reduction, Blind/block, lifetime/equipment/range and reactive attack paths remain shared.",
+    "Conditions commit only on a surviving landed recipient; misses/lethal base or Conjure damage do not apply a new condition.",
+    "Existing condition authority publishes effects and retains Fragility/Fevered Dreams boundaries and NPC kill credit.",
+    "Actual Runtime starts consume real Energy/adrenaline and emit attack50; success46/cancel49 remain separate from spell lifecycle."
+  ],
+  "validation": {
+    "focused_tests": "build/reports/warrior-condition-focused-tests.txt",
+    "focused_result": "3/3 passed,0.08s; policy ranks0..20,World contact matrix and133 actual-cast scenarios",
+    "tooling": "23/23 skill tooling tests passed",
+    "native": "Fixed11 activation/endpoint pairs and28 original body/endpoint consumers pass",
+    "integration_build": "build/reports/warrior-condition-integration-build.txt",
+    "integration_status": "completed successfully",
+    "integration_tests": "build/reports/warrior-condition-integration-tests.txt",
+    "integration_result": "10/10 passed,0.18s; all selected executables rebuilt against current source"
+  },
+  "limits": [
+    "Rendered client animations/sound and independent retail release timing not yet verified.",
+    "This binds player attacks against player/NPC targets; NPC-caster attack dispatch/AI use remains a separate integration requirement.",
+    "Synthetic trusted targets use explicit known armor/condition/knockdown metadata; this does not fill missing creature definitions.",
+    "Retail same-timestamp reactive ordering and primary/secondary modifiers outside existing shared combat behavior remain verification gaps.",
+    "Broad all-target rebuild/full regression suite still pending; focused checks are not a full-game completion claim."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_weapon_attack_skills.h": "058615cc49f0a89b38726103d6f93474fc52a031bae93d10b0c0594e91c1626c",
+    "src/runtime/gw_world_simulation.h": "bc295dd35b71ae584178ea14edf0759fd8f28a6dc60daa5d321a90d9be5153b0",
+    "tests/warrior_condition_policy.cpp": "c4c78592d15f4d83e00dd465a1dcf475b151beebf1f51504910679a813b529da",
+    "tests/warrior_condition_fixture.h": "c7df8f1505cf2baa2e69730f0cde2a1d9781ac31e57b9da91f89c39c6962389c",
+    "tests/warrior_condition_world.cpp": "eee8f9102d54fc860c4d0148ed982f11117bb7052153d79f2fc24a9b3674449b",
+    "tests/warrior_condition_cast.cpp": "9c57633f941c87ef83ce560a39e0c0a7d5d40b55285481b6f684c183898c83ee",
+    "tools/protocol/warrior_conditions_2022.py": "01a42bfd4c8f84ef7ca5e5894609e29aff3ce934fb0955c6c81502fc82a6b182",
+    "CMakeLists.txt": "99e742552a6ecb5ab1e758ee3c6270ed0c89d7d80234b5ec983ec7bdee8b7d49"
+  }
+}

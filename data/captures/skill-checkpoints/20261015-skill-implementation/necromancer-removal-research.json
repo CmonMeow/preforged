@@ -1,0 +1,245 @@
+{
+  "skills": [
+    {
+      "skill": 141,
+      "name": "Rend_Enchantments",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Rend_Enchantments.html",
+      "wiki_sha256": "eef297bf691b996f836417e5b2bcdd94c298cf2357c6b652557d09d79e0afa1f",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 86331,
+          "tick_ms": 17463015,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000008d000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 86357,
+          "tick_ms": 17464968,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": [],
+      "native": {
+        "id": 141,
+        "campaign": 0,
+        "profession": 4,
+        "attribute": 7,
+        "type": 5,
+        "special": 0,
+        "encoded_energy": 5,
+        "health_sacrifice": 0,
+        "overcast": 99,
+        "adrenaline": 0,
+        "activation": 2.0,
+        "aftercast": 0.75,
+        "recharge": 20,
+        "pvp_skill": 3433,
+        "weapon_requirement": 0,
+        "target": 5,
+        "equip_type": 1,
+        "name_string": 25102,
+        "concise_string": 59284,
+        "description_string": 25103,
+        "scale0": 55,
+        "scale15": 25,
+        "bonus0": 5,
+        "bonus15": 9,
+        "caster_body_resource": 2077,
+        "target_body_resource": 253,
+        "duration0": 0,
+        "duration15": 0,
+        "skill_arguments": 6
+      },
+      "native_first_consumers": {
+        "activation": {
+          "status": "observed",
+          "path": "spell60",
+          "first_lookup": {
+            "model": 33607680,
+            "layer": 0,
+            "style": 49,
+            "seconds": 2.0,
+            "stored_skill": 141,
+            "override_after": 2139095040
+          }
+        },
+        "caster_body": {
+          "status": "observed",
+          "resource": 2077,
+          "result": "native_no_body_sentinel"
+        },
+        "target_body": {
+          "status": "observed",
+          "resource": 253,
+          "result": "first_consumer",
+          "particle": {
+            "actor": 43,
+            "encoded_file": "8a3b00010000",
+            "flags": 1
+          }
+        }
+      }
+    },
+    {
+      "skill": 143,
+      "name": "Strip_Enchantment",
+      "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Strip_Enchantment.html",
+      "wiki_sha256": "33aca98f047b63fa121ae38e6c931235a4b6f76b3c553091c4d7d9ce43120c51",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 86375,
+          "tick_ms": 17465734,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000008f000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 86383,
+          "tick_ms": 17466812,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": [],
+      "native": {
+        "id": 143,
+        "campaign": 0,
+        "profession": 4,
+        "attribute": 4,
+        "type": 5,
+        "special": 0,
+        "encoded_energy": 10,
+        "health_sacrifice": 0,
+        "overcast": 10,
+        "adrenaline": 0,
+        "activation": 1.0,
+        "aftercast": 0.75,
+        "recharge": 20,
+        "pvp_skill": 3433,
+        "weapon_requirement": 0,
+        "target": 5,
+        "equip_type": 1,
+        "name_string": 25106,
+        "concise_string": 59286,
+        "description_string": 25109,
+        "scale0": 0,
+        "scale15": 2,
+        "bonus0": 5,
+        "bonus15": 65,
+        "caster_body_resource": 2077,
+        "target_body_resource": 258,
+        "duration0": 0,
+        "duration15": 0,
+        "skill_arguments": 2
+      },
+      "native_first_consumers": {
+        "activation": {
+          "status": "observed",
+          "path": "spell60",
+          "first_lookup": {
+            "model": 33607680,
+            "layer": 0,
+            "style": 51,
+            "seconds": 1.0,
+            "stored_skill": 143,
+            "override_after": 2139095040
+          }
+        },
+        "caster_body": {
+          "status": "observed",
+          "resource": 2077,
+          "result": "native_no_body_sentinel"
+        },
+        "target_body": {
+          "status": "observed",
+          "resource": 258,
+          "result": "first_consumer",
+          "particle": {
+            "actor": 43,
+            "encoded_file": "fbb700010000",
+            "flags": 1
+          }
+        }
+      }
+    }
+  ],
+  "runtime_status": "source Runtime/world binding; full Release build and179 CTest targets passed",
+  "mechanics": [
+    "Rend removes up to5..8..9 enchantments, newest first, and loses55..31..25Health per actually removed Monk skill; cost uses native enchantment profession, not owner profession.",
+    "Strip removes0..2..2 enchantments; low ranks may remove none. One successful-removal group triggers one5..53..65 life steal, not a transfer per enchantment.",
+    "Shared owned removal handles end effects first; remaining Shielding Hands still reduces life stealing.",
+    "Life stealing uses overkill remainingHealth+1, bypasses healing reductions and settles Health debt; Strip reconciles fractions from committed Health afterward.",
+    "Health loss can kill Rend caster after completed removals and still starts normal recharge.",
+    "Positive NPC enchantment/end-effect integration remains unavailable; known unenchanted NPC casts complete with no gain or Health loss."
+  ],
+  "tests": {
+    "source": "tests/necromancer_enchantment_removal.cpp",
+    "checks": [
+      "rank0/4/12/20 removal/cost/steal values",
+      "removal limit and mixed Monk/Elementalist counts",
+      "Rend lethal cost/control invalidation",
+      "Strip steal once across multi-removal",
+      "remaining vs removed Shielding Hands",
+      "Defile Flesh/Deep Wound and exact Health-fraction feedback",
+      "overkill target death",
+      "actual2s/1s activation,5/10Energy and20s recharge",
+      "cancel/control/reconnect and no-enchantment/NPC cases",
+      "real rank0Strip no-op with intact enchants",
+      "Rend caster death preserves completed removals/recharge",
+      "target253/258 publication once"
+    ]
+  },
+  "remaining": [
+    "Rendered acceptance, retail multi-removal/end-effect/cost ordering and wider prevention/removal reactions remain unverified.",
+    "Enchanted NPC targets remain unsupported until positive-status/end-effect integration."
+  ],
+  "source_hashes": {
+    "src/runtime/gw_enchantment_removal.h": "3ace7dd8f8623de81555e47a0449920b64ce8ee718159c6306046c7d4af4083c",
+    "src/runtime/gw_life_stealing.h": "1393a2507a6029ec5532fb0282d0fe6ab73c9b143e637095b17f7ff735840f8e",
+    "src/runtime/gw_world_simulation.h": "f6f214453723719da05ccf816463e266cedc4242be6547768f64cdd2da636082",
+    "src/runtime/gw_skill_casting.h": "e1371bbfdd4a4cd2c1a170117ec2e88f86a4cbc47701836c67d38a7def410290",
+    "tests/necromancer_enchantment_removal.cpp": "d7ce14ad272997017be9546ec867cca4d78fa39a6d3bdb7a1575a43f4244ba63",
+    "tests/life_steal_wound_feedback.cpp": "856f61abefd829fb85add175cb4ada9da5d3430f8b014e8fc72848d882658392",
+    "tools/protocol/skill_runtime_coverage.py": "512a7f4b0d50650dfdf0e2011f3e94399bb88be86e7ed1b6a1fe6810e5e9d5c8",
+    "CMakeLists.txt": "b67b5831f8a41a8ccf1a9202f1c359bf5ea64cadfc606626526b37f8aab1a6e3"
+  },
+  "life_steal_regression": {
+    "source": "tests/life_steal_wound_feedback.cpp",
+    "before_report": "build/reports/life-feedback-before.txt",
+    "after_result": "CMake life_steal_wound_feedback passed, along with necromancer_enchantment_removal/enchantment_removal/captured_skills",
+    "focused_build": "build/reports/necro-life-feedback-focused-build.txt",
+    "fix": [
+      "Reconcile player/NPC source Health from committed state after pending wound debt.",
+      "Player target fraction likewise uses post-settlement Health.",
+      "Lethal caster Health debt against NPCs now invokes normal death/control invalidation."
+    ],
+    "scope": "Focused and full179-target CTest acceptance; rendered/retail comparisons still unverified."
+  },
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/necro-removal-full-build.txt",
+    "host": "bin/server_host.exe",
+    "host_sha256": "6af06378031946486b2738e1c3e02da82efafd9aee22a71b43315c9686507b2e"
+  },
+  "full_regression": {
+    "result": "179/179 passed",
+    "seconds": 23.44,
+    "report": "build/reports/necro-removal-full-tests.txt"
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "skills": [
+    {
+      "id": 327,
+      "energy": 5,
+      "recharge": 8,
+      "scales": [
+        5,
+        20,
+        10,
+        34
+      ],
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 327
+      },
+      "events": [],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Griffon's_Sweep.html",
+      "wiki_sha256": "67ad981a45ec523a7b19240febfa7d752023c86df6b6544ef77d482c30f49564"
+    },
+    {
+      "id": 341,
+      "energy": 5,
+      "recharge": 4,
+      "scales": [
+        1,
+        20,
+        1,
+        20
+      ],
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 341
+      },
+      "events": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364530,
+          "tick_ms": 23142546,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000055010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364660,
+          "tick_ms": 23149515,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000055010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364822,
+          "tick_ms": 23158156,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000055010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364994,
+          "tick_ms": 23169015,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000055010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364543,
+          "tick_ms": 23143093,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364663,
+          "tick_ms": 23149812,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364825,
+          "tick_ms": 23158500,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 365010,
+          "tick_ms": 23169562,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Swift_Chop.html",
+      "wiki_sha256": "18b41e64318762e480c2e47bff2d2bf35f71b1d5555604da060b345b3a278077"
+    },
+    {
+      "id": 356,
+      "energy": 5,
+      "recharge": 6,
+      "scales": [
+        5,
+        20,
+        0,
+        0
+      ],
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 356
+      },
+      "events": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369847,
+          "tick_ms": 23270734,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000002000000064010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369865,
+          "tick_ms": 23271546,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Irresistible_Blow.html",
+      "wiki_sha256": "7f032d314b1abefb75f2dbf84a3cb26710d8a29c0d0cd4745057fae20d8afde8"
+    },
+    {
+      "id": 386,
+      "energy": 5,
+      "recharge": 4,
+      "scales": [
+        1,
+        20,
+        1,
+        20
+      ],
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 386
+      },
+      "events": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383718,
+          "tick_ms": 23582843,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000082010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383814,
+          "tick_ms": 23588453,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000082010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383725,
+          "tick_ms": 23583406,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383822,
+          "tick_ms": 23589015,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Seeking_Blade.html",
+      "wiki_sha256": "973c8cf3a316b887dbe1c829605122a48094650808a90f9e531aaaa0b428af4c"
+    },
+    {
+      "id": 1134,
+      "energy": 5,
+      "recharge": 8,
+      "scales": [
+        5,
+        20,
+        10,
+        34
+      ],
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 1134
+      },
+      "events": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 398776,
+          "tick_ms": 23903328,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000006e040000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 398912,
+          "tick_ms": 23915312,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000006e040000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 398781,
+          "tick_ms": 23903890,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 398921,
+          "tick_ms": 23916078,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Leviathan's_Sweep.html",
+      "wiki_sha256": "6c8ed356b1195a81eacf9b790de4a72e9c72fc85bd1da7c8644228a948184f0e"
+    }
+  ],
+  "tool_sha256": "47691b9ae06cc329b326d9b1ca052f49f21b3c859257c47df9f674f911cc6ac3",
+  "limits": [
+    "Griffon Sweep327 has no local activation capture in this checkpoint;native evidence is separate.",
+    "Activation captures do not prove successful block punishments.",
+    "Secondary damage/control/condition ordering and retail damage-reduction interactions need comparison.",
+    "Synthetic model handles;no rendered pixels or retail release timing.",
+    "NPC block sources and NPC-caster AI remain separate gaps."
+  ]
+}

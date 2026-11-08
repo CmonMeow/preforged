@@ -1,0 +1,136 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 1.0,
+    "stored_skill": 63,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 20,
+    "0x48": 20,
+    "0x4c": 15,
+    "0x5c": 15,
+    "0x60": 60,
+    "0x64": 0,
+    "0x68": 6,
+    "0x78": 112,
+    "0x7c": 2077
+  },
+  "body_consumer": {
+    "actor": 42,
+    "encoded_file": "ae9e00010000",
+    "flags": 1
+  },
+  "captures": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+      "activation": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 32296,
+        "tick_ms": 16480703,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c000000190000003f000000",
+        "kind": 60
+      },
+      "self_body": {
+        "line": 32311,
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16481718,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f000000150000001900000070000000"
+      },
+      "effect_timer": {
+        "line": 32312,
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16481718,
+        "opcode": 66,
+        "bytes": 24,
+        "complete": true,
+        "hex": "42000000190000003f000000000000004a0000000000a041",
+        "effect_id": 74,
+        "duration_seconds": 20.0,
+        "uninterpreted_field": 0
+      },
+      "effect_removal": {
+        "line": 32712,
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 16501703,
+        "opcode": 68,
+        "bytes": 12,
+        "complete": true,
+        "hex": "44000000190000004a000000",
+        "elapsed_ms": 19985
+      },
+      "following_activations_before_removal": [
+        {
+          "line": 32432,
+          "tick_ms": 16490531,
+          "skill": 1334,
+          "native_2022_type": 5,
+          "signet_type": false
+        },
+        {
+          "line": 32461,
+          "tick_ms": 16491515,
+          "skill": 1335,
+          "native_2022_type": 4,
+          "signet_type": false
+        },
+        {
+          "line": 32484,
+          "tick_ms": 16492609,
+          "skill": 1336,
+          "native_2022_type": 5,
+          "signet_type": false
+        },
+        {
+          "line": 32507,
+          "tick_ms": 16494406,
+          "skill": 1337,
+          "native_2022_type": 5,
+          "signet_type": false
+        },
+        {
+          "line": 32529,
+          "tick_ms": 16495453,
+          "skill": 1338,
+          "native_2022_type": 6,
+          "signet_type": false
+        },
+        {
+          "line": 32553,
+          "tick_ms": 16497281,
+          "skill": 1340,
+          "native_2022_type": 6,
+          "signet_type": false
+        }
+      ],
+      "following_signet_activation_count": 0,
+      "following_activation_limit": "Activation observations and pinned2022 type classification only; not successful use, target allegiance or reactive mechanic proof."
+    }
+  ],
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Keystone_Signet.html",
+  "wiki_revision": 2664408,
+  "wiki_sha256": "de0f0d71f53bf88cfbc4fdf154828e9d576bcf204c4436d388dc979a56f73d3a",
+  "tool_sha256": "bf0a715b141ebb552d016eee86355a688d6900075b23db2042571ac66e7b0d6d",
+  "limitations": [
+    "Initial self body112 and original first consumers only; no rendered acceptance.",
+    "Modern activation interval does not establish original2022 simulation timing.",
+    "No subsequent foe-target signet reaction, adjacent damage/interruption, charge consumption or signet recharge exception is proved by this initial cast.",
+    "Older wiki states other signet effects precede Keystone interruption; same-time World ownership/lifecycle behavior still needs implementation and tests."
+  ]
+}

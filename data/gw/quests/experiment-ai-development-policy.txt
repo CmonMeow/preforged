@@ -1,0 +1,47 @@
+Temporary Experiment guardian attack policy: movement220 units/second,
+melee range128, fixed base physical damage5, cadence2000ms. These are authored
+playability settings, not measured ArenaNet stats or captured attack timing.
+Shards use ordinary melee presentation and no skills (local shard wiki).
+First strike waits one cadence after arriving in range; delayed polling gives
+one strike, not accumulated burst damage. A living quest owner on the same
+plane within1000 units acquires the enemy target. Unacquired enemies pursue Aziure.
+This radius and preference are authored development policy, not recovered
+retail aggro logic. The captured modern160/type4 responses establish Shards
+attacking actor7 and Fire Imp16, rather than exclusively guardian13; audit:
+tools/quests/audit_experiment_combat.py. Current implementation covers the owner,
+not summoned allies, other party members, threat scoring or complete attack
+windup. Moving player targets repath after32 units of destination displacement.
+Player strikes use reviewed physical armor, conditions, absorption, Frenzy,
+adrenaline and death handling; never invent missing player armor.
+
+Hostile pursuit now remembers the acquired owner outside the 1000-unit danger
+circle, up to a 1500-unit owner separation or 2000 units from the NPC's
+acquisition position. These distances remain authored playability tuning, not
+packet-derived retail values. A broken pursuit falls back to Aziure and
+completes that return before
+acquiring the owner again. This guardian-return rule is encounter policy.
+The anchor belongs to the NPC/owner generations
+and plane, so recycled actors and different planes cannot inherit pursuit.
+Zero follow/leash values explicitly select the older proximity-only policy.
+
+Behavioral basis: local wiki Aggro.html (Aggro oldid2655578), SHA256
+ ecd48c32198979d9ddb68f125e68c4f83f4ccb353abc9bbbbccc18f05e2610bc:
+foes follow acquired targets until death or aggro break; leash distance is
+measured from acquisition and varies with foe/patrol. Monster_AI.html redirects
+to Foe behavior oldid2656731 (SHA256
+ b501d443839ef9436fad6e4aca3e326d009e9af9394b330124a79e4ac5d4faa9).
+Neither article supplies exact pursuit radii or complete target scoring.
+The experiment combat capture cited above supports player/ally attacks, not
+these radii, automatic threat scores, patrol routes or skill-selection rules.
+Still missing: synchronized position/attack capture during a controlled pull,
+aggro acquisition/break timestamps and repeated stationary/patrol comparisons.
+This implementation is hostile encounter pursuit, not companion follow AI.
+
+
+
+
+The host explicitly labels these authored short-range physical attacks as
+melee at release. This metadata lets owned melee-hit reactions distinguish them
+from ranged/unknown delivery;it does not turn these development settings into
+measured retail AI. Generic trusted NPC strike calls without delivery evidence
+remain unknown and do not trigger melee-only reactions.

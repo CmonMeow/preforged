@@ -1,0 +1,352 @@
+{
+  "skill": 2093,
+  "name": "Signet of Corruption",
+  "checkpoint": "20261024-all-completed",
+  "cutoff": "2026-10-24T04:27:02.320932+00:00",
+  "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+  "audit_sha256": "f30fb14a4789d793e943a9b18c3661934f894487b75b562fac41712f447685f6",
+  "verifier_sha256": "48196f0c911c0cf476fb39946551e457afc51338e938fd87280953e8aa69c6fb",
+  "map": 280,
+  "actor": 25,
+  "selected_target": 30,
+  "local_starts": 2,
+  "local_finished": 2,
+  "kurzick_1950_local_starts": 0,
+  "samples": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+      "start_line": 126366,
+      "finish_line": 126376,
+      "observed_elapsed_ms": 812,
+      "sequence": [
+        {
+          "line": 126366,
+          "tick_ms": 18084906,
+          "words": [
+            160,
+            60,
+            25,
+            30,
+            2093
+          ],
+          "hex": "a00000003c000000190000001e0000002d080000"
+        },
+        {
+          "line": 126375,
+          "tick_ms": 18085718,
+          "words": [
+            229,
+            25,
+            2093,
+            0,
+            20
+          ],
+          "hex": "e5000000190000002d0800000000000014000000"
+        },
+        {
+          "line": 126376,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            58,
+            25,
+            0
+          ],
+          "hex": "9f0000003a0000001900000000000000"
+        },
+        {
+          "line": 126377,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            21,
+            25,
+            1621
+          ],
+          "hex": "9f000000150000001900000055060000"
+        },
+        {
+          "line": 126378,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            42,
+            29,
+            480
+          ],
+          "hex": "9f0000002a0000001d000000e0010000"
+        },
+        {
+          "line": 126379,
+          "tick_ms": 18085718,
+          "words": [
+            163,
+            55,
+            29,
+            25,
+            3179282432
+          ],
+          "hex": "a3000000370000001d00000019000000000080bd",
+          "last_float": -0.0625
+        },
+        {
+          "line": 126380,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            42,
+            30,
+            480
+          ],
+          "hex": "9f0000002a0000001e000000e0010000"
+        },
+        {
+          "line": 126381,
+          "tick_ms": 18085718,
+          "words": [
+            163,
+            55,
+            30,
+            25,
+            3179282432
+          ],
+          "hex": "a3000000370000001e00000019000000000080bd",
+          "last_float": -0.0625
+        },
+        {
+          "line": 126382,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            42,
+            31,
+            480
+          ],
+          "hex": "9f0000002a0000001f000000e0010000"
+        },
+        {
+          "line": 126383,
+          "tick_ms": 18085718,
+          "words": [
+            163,
+            55,
+            31,
+            25,
+            3179282432
+          ],
+          "hex": "a3000000370000001f00000019000000000080bd",
+          "last_float": -0.0625
+        },
+        {
+          "line": 126384,
+          "tick_ms": 18085718,
+          "words": [
+            163,
+            52,
+            25,
+            25,
+            1025758986
+          ],
+          "hex": "a30000003400000019000000190000000ad7233d",
+          "last_float": 0.03999999910593033
+        },
+        {
+          "line": 126385,
+          "tick_ms": 18085718,
+          "words": [
+            160,
+            54,
+            25,
+            25,
+            2
+          ],
+          "hex": "a000000036000000190000001900000002000000"
+        },
+        {
+          "line": 126386,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            8,
+            25,
+            0
+          ],
+          "hex": "9f000000080000001900000000000000"
+        },
+        {
+          "line": 126387,
+          "tick_ms": 18085718,
+          "words": [
+            159,
+            8,
+            25,
+            1
+          ],
+          "hex": "9f000000080000001900000001000000"
+        }
+      ]
+    },
+    {
+      "file": "packets-19472-19186421.jsonl",
+      "sha256": "3ad1e5c22b193f7f980bddabf6027e860c4381c38859377faf42c81100937dfb",
+      "start_line": 488557,
+      "finish_line": 488565,
+      "observed_elapsed_ms": 1015,
+      "sequence": [
+        {
+          "line": 488557,
+          "tick_ms": 30176906,
+          "words": [
+            160,
+            60,
+            25,
+            30,
+            2093
+          ],
+          "hex": "a00000003c000000190000001e0000002d080000"
+        },
+        {
+          "line": 488564,
+          "tick_ms": 30177921,
+          "words": [
+            229,
+            25,
+            2093,
+            0,
+            20
+          ],
+          "hex": "e5000000190000002d0800000000000014000000"
+        },
+        {
+          "line": 488565,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            58,
+            25,
+            0
+          ],
+          "hex": "9f0000003a0000001900000000000000"
+        },
+        {
+          "line": 488566,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            21,
+            25,
+            1621
+          ],
+          "hex": "9f000000150000001900000055060000"
+        },
+        {
+          "line": 488567,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            42,
+            29,
+            480
+          ],
+          "hex": "9f0000002a0000001d000000e0010000"
+        },
+        {
+          "line": 488568,
+          "tick_ms": 30177921,
+          "words": [
+            163,
+            55,
+            29,
+            25,
+            3179282432
+          ],
+          "hex": "a3000000370000001d00000019000000000080bd",
+          "last_float": -0.0625
+        },
+        {
+          "line": 488569,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            42,
+            30,
+            480
+          ],
+          "hex": "9f0000002a0000001e000000e0010000"
+        },
+        {
+          "line": 488570,
+          "tick_ms": 30177921,
+          "words": [
+            163,
+            55,
+            30,
+            25,
+            3179282432
+          ],
+          "hex": "a3000000370000001e00000019000000000080bd",
+          "last_float": -0.0625
+        },
+        {
+          "line": 488571,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            42,
+            31,
+            480
+          ],
+          "hex": "9f0000002a0000001f000000e0010000"
+        },
+        {
+          "line": 488572,
+          "tick_ms": 30177921,
+          "words": [
+            163,
+            55,
+            31,
+            25,
+            3179282432
+          ],
+          "hex": "a3000000370000001f00000019000000000080bd",
+          "last_float": -0.0625
+        },
+        {
+          "line": 488573,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            8,
+            25,
+            0
+          ],
+          "hex": "9f000000080000001900000000000000"
+        },
+        {
+          "line": 488574,
+          "tick_ms": 30177921,
+          "words": [
+            159,
+            8,
+            25,
+            1
+          ],
+          "hex": "9f000000080000001900000001000000"
+        }
+      ]
+    }
+  ],
+  "findings": [
+    "Both casts: kind60 start; recharge20; kind58 finish; actor kind21 payload1621; three kind42 payload480 plus kind55 float -0.0625 for actors29,30,31.",
+    "Only first cast has self kind52 float approximately0.04 and self kind54 integer2 at finish.",
+    "No kind20 targeted body packet in either captured activation-to-completion window; audit body_effect_evidence is empty."
+  ],
+  "limitations": [
+    "Capture tick deltas812/1015ms are observations, not authoritative base activation times.",
+    "Raw effect payload1621/480 meanings and original2022 animation/body consumers require separate verification.",
+    "Nearby geometry, allegiance rank, condition/hex qualification, exact damage and Energy totals cannot be proven from these packet windows alone.",
+    "Second cast lacks first-cast resource notifications; absence does not independently prove the conditional Energy rule.",
+    "No Kurzick1950 local cast; no rendered-client, audio, private-server runtime or official-client mutation performed."
+  ]
+}

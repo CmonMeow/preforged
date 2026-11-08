@@ -1,0 +1,46 @@
+{
+  "skill": 57,
+  "status": "Source-bound57; production/all-target Release build and268/268 tests passed. Documented retail/rendering gaps remain.",
+  "mechanics": "Selected foe must be using a skill; a basic attack alone is insufficient. Once triggered, all living foes within Area322 of the selected foe take15..75 armor-ignoring damage; active skills and ordinary attacks receive interrupt attempts. Protection may prevent interruption but does not suppress damage or other recipients.",
+  "evidence": "Local Cry_of_Frustration wiki revision2669627; pinned2022 row confirms .25second,10Energy,15second recharge and damage endpoints; GWCA Range::Area322.",
+  "native": "cry-frustration-native-2022.json proves original quarter-second/style52 cast and hypothetical target102 body consumer. Fixed checkpoint has one activation/finish and no target-body emission proof.",
+  "policy_report": "build/reports/cry-frustration-policy-tests.txt",
+  "policy_result": "Pass rank endpoints, skill-versus-basic-attack trigger, attack/idle damage recipients, inclusive322 boundary, ally/dead exclusion, malformed/duplicate actor and stale-generation collision rejection; input unchanged.",
+  "remaining": [
+    "Successful official area damage/interrupt and target102 body emission capture; rendered effect/cancel behavior.",
+    "NPC actions currently classify spell versus basic attack; an NPC attack skill needs richer action identity to satisfy the initial gate accurately.",
+    "NPC interrupt-protection mechanics and general actions beyond tracked spell/attack windups remain unsupported.",
+    "Precise selected-target interrupt-attempt count under one-use protection needs direct retail evidence; implemented one attempt per recipient based on skill description, not established by the frozen idle-target cast."
+  ],
+  "coverage": "Included in165/575 source-bound count; no full mechanics/rendered acceptance claim.",
+  "source_sha256": {
+    "src/runtime/gw_cry_frustration.h": "6bf2b8548e4c91c08ced53b2c8dc55908ba0661d89d778896990e1683f24d539",
+    "tests/cry_frustration_policy.cpp": "8e78fe0cd9b4da0e8ccc2a34d9dc84cdb12f30038085a3cb748b6871530bcd4d",
+    "tests/cry_frustration_world.cpp": "a434e3a3e91fe3426a135656d566f6ce18b9d656bedffd4a9f2ef96ca600e18e",
+    "tests/cry_frustration_cast.cpp": "07d5f5f1ff461559eaf89b6c341f1da815f9c5959f99629b2685ec1a4b4b2240",
+    "tools/protocol/cry_frustration_2022.py": "a33ab706c3baadeef48d28c805dace0e3f9d129a3064cc3a5cdd26f3e8dfe359"
+  },
+  "world_stage": {
+    "test": "tests/cry_frustration_world.cpp",
+    "report": "build/reports/cry-frustration-world-tests.txt",
+    "result": "Mixed player/NPC recipients and either selected actor kind; actual NPC spell/attack tokens invalidated; idle/expired selected gate, living allied/radius exclusions, Mantra16/17 protection independent of damage, stale target and future area-recipient rejection without consuming selected protection all pass.",
+    "ordering": "Damage and NPC control cancellation staged before player protection consumption/committed hits. Initial using-skill gate is evaluated before any recipient interruption. Idle recipients take damage without consuming protection.",
+    "npc_activity": "Read-only current authoritative control token; spell token can satisfy initial gate, attack token denotes a basic attack. No invented NPC Energy or skill IDs."
+  },
+  "casting_stage": {
+    "test": "tests/cry_frustration_cast.cpp",
+    "report": "build/reports/cry-frustration-cast-tests.txt",
+    "result": "Actual Runtime .25second/10Energy/15second recharge, area damage, selected protection, cancel/interrupt/stale target/missing-hook rejection pass. Gateway uses actor Scope and normal spell-reaction handling."
+  },
+  "baseline_note": "Local older wiki and pinned2022 row used. Current wiki has later recharge20 and75percent secondary damage; these are not backported into the2022 implementation.",
+  "focused_gate": {
+    "build": "build/reports/cry-frustration-binding-build.txt",
+    "tests": "build/reports/cry-frustration-binding-tests.txt",
+    "result": "Production server_host and related targets built successfully; five registered suites passed0.05s. Separately rebuilt npc_action_control passed0.02s including current-action reader boundaries, cancellation, stale lifetime and death."
+  },
+  "full_gate": {
+    "build": "build/reports/cry-frustration-binding-full-build.txt",
+    "tests": "build/reports/cry-frustration-binding-full-tests.txt",
+    "result": "All-target Release build succeeded;268/268 registered tests passed31.79s."
+  }
+}

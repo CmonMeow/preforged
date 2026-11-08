@@ -1,0 +1,903 @@
+{
+  "purpose": "Pre-Searing collector and starter-item review evidence",
+  "runtime_ready": false,
+  "requirements": [
+    "Join each offer to captured native item definitions",
+    "Verify costs, stats, profession and customization",
+    "Apply inventory exchange and quest grants atomically"
+  ],
+  "sources": [
+    {
+      "page": "List_of_general_collectors_in_Ascalon_(pre-Searing).html",
+      "sha256": "112e73391eb94283a0c67dfd83962e8ec9509afcf0a20ed254e1dbf7d4c79609",
+      "tables": [
+        [
+          "Summary"
+        ],
+        [
+          "Profession",
+          "Two-handed | weapon",
+          "One-handed | weapon",
+          "Off-hand item"
+        ],
+        [
+          "Warrior",
+          "3 Skeletal Limbs | 3 Enchanted Lodestones",
+          "5 Worn Belts (axe) | 5 Unnatural Seeds (axe)",
+          "5 Worn Belts"
+        ],
+        [
+          "Ranger",
+          "5 Unnatural Seeds (Longbow) | 3 Dull Carapaces (Hornbow) | 3 Enchanted Lodestones (Longbow)",
+          "",
+          ""
+        ],
+        [
+          "Monk",
+          "3 Dull Carapaces | 3 Skeletal Limbs",
+          "5 Worn Belts",
+          "3 Baked Husks | 3 Grawl Necklaces"
+        ],
+        [
+          "Necromancer",
+          "5 Unnatural Seeds",
+          "5 Unnatural Seeds",
+          "3 Baked Husks | 3 Grawl Necklaces | 3 Dull Carapaces | 3 Enchanted Lodestones"
+        ],
+        [
+          "Mesmer",
+          "5 Worn Belts",
+          "3 Skeletal Limbs | 3 Enchanted Lodestones",
+          "3 Grawl Necklaces"
+        ],
+        [
+          "Elementalist",
+          "5 Unnatural Seeds",
+          "5 Worn Belts | 3 Dull Carapaces",
+          "3 Baked Husks | 3 Grawl Necklaces | 5 Unnatural Seeds | 3 Dull Carapaces | 3 Skeletal Limbs"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Belt Pouch",
+          "Holds 5 items",
+          "5"
+        ],
+        [
+          "Devourer Egg",
+          "Quest item",
+          "-"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Belt Pouch",
+          "Holds 5 items",
+          "5"
+        ],
+        [
+          "Inscribed Staff",
+          "Energy +3 | Chaos damage: 3-5",
+          "9"
+        ],
+        [
+          "Battle Axe",
+          "Slashing damage: 5-10",
+          "9"
+        ],
+        [
+          "Holy Rod",
+          "Fire damage: 3-5",
+          "9"
+        ],
+        [
+          "Crimson Carapace Shield",
+          "Armor: 4",
+          "9"
+        ],
+        [
+          "Fire Wand",
+          "Fire damage: 3-5",
+          "9"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Accursed Icon",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Flame Artifact",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Healing Ankh",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Jeweled Chalice",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Idol",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Earth Scroll",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Divine Symbol",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Bone Staff",
+          "Energy +3 | Cold damage: 3-5",
+          "9"
+        ],
+        [
+          "Truncheon",
+          "Dark damage: 3-5",
+          "9"
+        ],
+        [
+          "Earth Scroll",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Water Staff",
+          "Energy +3 | Cold damage: 3-5",
+          "9"
+        ],
+        [
+          "Battle Axe",
+          "Slashing damage: 5-10",
+          "9"
+        ],
+        [
+          "Ascalon Longbow",
+          "Piercing damage: 7-10",
+          "9"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Devourer Egg",
+          "Quest item",
+          "Can't be sold"
+        ],
+        [
+          "Grim Cesta",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Storm Artifact",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Smiting Staff",
+          "Energy +3 | Holy damage: 3-5",
+          "9"
+        ],
+        [
+          "Earth Wand",
+          "Earth damage: 3-5",
+          "9"
+        ],
+        [
+          "Ascalon Hornbow",
+          "Piercing damage: 7-10",
+          "9"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Small Equipment Pack",
+          "5 weapon or armor slots",
+          "0"
+        ],
+        [
+          "Item",
+          "Value"
+        ],
+        [
+          "Gift of the Huntsman",
+          "0"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Cane",
+          "Chaos damage: 3-5",
+          "9"
+        ],
+        [
+          "Frost Artifact",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "Holy Staff",
+          "Energy +3 | Fire damage: 3-5",
+          "9"
+        ],
+        [
+          "War Hammer",
+          "Blunt damage: 8-10",
+          "9"
+        ],
+        [
+          "Item",
+          "Stats",
+          "Value"
+        ],
+        [
+          "Cane",
+          "Chaos damage: 3-5",
+          "9"
+        ],
+        [
+          "Grim Cesta",
+          "Energy +3",
+          "9"
+        ],
+        [
+          "War Hammer*",
+          "Blunt damage 8-10",
+          "9"
+        ],
+        [
+          "Ascalon Longbow",
+          "Piercing damage: 7-10",
+          "9"
+        ]
+      ]
+    },
+    {
+      "page": "List_of_armor_collectors_in_Ascalon_(pre-Searing).html",
+      "sha256": "2f0bdadd39b132752e31a7044aa9970599274fb39a1733f03d36698db762be3a",
+      "tables": [
+        [
+          "Pre-Searing collectable armor quick navigation"
+        ],
+        [
+          "Profession",
+          "Headgear",
+          "Chest armor",
+          "Hand armor",
+          "Leg armor",
+          "Footwear"
+        ],
+        [
+          "All",
+          "Professor Yakkington: | 50 Red Iris Flowers",
+          "Hatcher: | 5 Unnatural Seeds",
+          "Savich: | 3 Icy Lodestones",
+          "Varis: | 3 Spider Legs",
+          "Karleen: | 5 Gargoyle Skulls"
+        ],
+        [
+          "Profession-specific alternatives"
+        ],
+        [
+          "Warrior",
+          "",
+          "Kaylee: | 3 Grawl Necklaces",
+          "Jacobs: | 3 Baked Husks",
+          "",
+          ""
+        ],
+        [
+          "Ranger",
+          "",
+          "Kaylee: | 3 Grawl Necklaces",
+          "",
+          "",
+          "Jacobs: | 3 Baked Husks"
+        ],
+        [
+          "Monk",
+          "",
+          "",
+          "Mindle: | 3 Enchanted Lodestones",
+          "",
+          ""
+        ],
+        [
+          "Necromancer",
+          "",
+          "",
+          "Gwynn: | 3 Skeletal Limbs",
+          "",
+          ""
+        ],
+        [
+          "Mesmer",
+          "",
+          "",
+          "",
+          "",
+          "Jacobs: | 3 Baked Husks"
+        ],
+        [
+          "Elementalist",
+          "",
+          "",
+          "Mindle: | 3 Enchanted Lodestones",
+          "",
+          ""
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Gauntlets",
+          "27",
+          "Armor +20 (vs. physical damage)",
+          "9"
+        ],
+        [
+          "",
+          "Ranger",
+          "Krytan Boots",
+          "12",
+          "Armor +30 (vs. elemental damage)",
+          "9"
+        ],
+        [
+          "",
+          "Monk",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Necromancer",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Mesmer",
+          "Krytan Footwear",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Elementalist",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Cuirass",
+          "27",
+          "Armor +20 (vs. physical damage)",
+          "9"
+        ],
+        [
+          "",
+          "Ranger",
+          "Krytan Vest",
+          "12",
+          "Energy +5 | Armor +30 (vs. elemental damage)",
+          "9"
+        ],
+        [
+          "",
+          "Monk",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Necromancer",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Mesmer",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Elementalist",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Cuirass",
+          "27",
+          "Armor +20 (vs. physical damage)",
+          "9"
+        ],
+        [
+          "",
+          "Ranger",
+          "Krytan Vest",
+          "12",
+          "Energy +5 | Armor +30 (vs. elemental damage)",
+          "9"
+        ],
+        [
+          "",
+          "Monk",
+          "Krytan Vestments",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Necromancer",
+          "Krytan Tunic",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Mesmer",
+          "Krytan Attire",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Elementalist",
+          "Krytan Robes",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Leggings",
+          "27",
+          "Armor +20 (vs. physical damage)",
+          "9"
+        ],
+        [
+          "",
+          "Ranger",
+          "Krytan Leggings",
+          "12",
+          "Energy recovery +1 | Armor +30 (vs. elemental damage)",
+          "9"
+        ],
+        [
+          "",
+          "Monk",
+          "Krytan Pants",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Necromancer",
+          "Krytan Leggings",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Mesmer",
+          "Krytan Hose",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Elementalist",
+          "Krytan Leggings",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Helm",
+          "27",
+          "Item's Attribute +1 (Stacking)",
+          "3"
+        ],
+        [
+          "",
+          "Ranger",
+          "Simple Mask",
+          "12",
+          "Item's Attribute +1 (Stacking)",
+          "3"
+        ],
+        [
+          "",
+          "Monk",
+          "Dragon Scalp Design",
+          "7",
+          "Item's Attribute +1 (Stacking)",
+          "3"
+        ],
+        [
+          "",
+          "Necromancer",
+          "Ragged Scar Pattern",
+          "7",
+          "Item's Attribute +1 (Stacking)",
+          "3"
+        ],
+        [
+          "",
+          "Mesmer",
+          "Discreet Mask",
+          "7",
+          "Item's Attribute +1 (Stacking)",
+          "3"
+        ],
+        [
+          "",
+          "Elementalist",
+          "Third Eye",
+          "7",
+          "Item's Attribute +1 (Stacking)",
+          "3"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Ranger",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Monk",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Necromancer",
+          "Krytan Gloves",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Mesmer",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Elementalist",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Boots",
+          "27",
+          "Armor +20 (vs. physical damage)",
+          "9"
+        ],
+        [
+          "",
+          "Ranger",
+          "Krytan Boots",
+          "12",
+          "Armor +30 (vs. elemental damage)",
+          "9"
+        ],
+        [
+          "",
+          "Monk",
+          "Krytan Sandals",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Necromancer",
+          "Krytan Boots",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Mesmer",
+          "Krytan Footwear",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "",
+          "Elementalist",
+          "Krytan Shoes",
+          "7",
+          "Energy recovery +1",
+          "9"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Ranger",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Monk",
+          "Krytan Handwraps",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Necromancer",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Mesmer",
+          "No armor",
+          "N/A",
+          "N/A",
+          "N/A"
+        ],
+        [
+          "",
+          "Elementalist",
+          "Krytan Gloves",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "Profession",
+          "Item",
+          "AR",
+          "Armor bonus",
+          "Value"
+        ],
+        [
+          "",
+          "Warrior",
+          "Krytan Gauntlets",
+          "27",
+          "Armor +20 (vs. physical damage)",
+          "9"
+        ],
+        [
+          "",
+          "Ranger",
+          "Krytan Gloves",
+          "12",
+          "Armor +30 (vs. elemental damage)",
+          "9"
+        ],
+        [
+          "",
+          "Monk",
+          "Krytan Handwraps",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Necromancer",
+          "Krytan Gloves",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Mesmer",
+          "Krytan Gloves",
+          "7",
+          "Energy +5",
+          "9"
+        ],
+        [
+          "",
+          "Elementalist",
+          "Krytan Gloves",
+          "7",
+          "Energy +5",
+          "9"
+        ]
+      ]
+    },
+    {
+      "page": "Starter_Sword.html",
+      "sha256": "129b6baae80b7145459041acd79260be0e3864fea853acd287b7d9822ef4eea8",
+      "tables": [
+        [
+          "Starter Sword"
+        ],
+        [
+          "Type",
+          "Sword"
+        ],
+        [
+          "Campaign(s)",
+          "Core"
+        ],
+        [
+          "Attribute | requirement(s)",
+          "None"
+        ],
+        [
+          "Damage type(s)",
+          "Slashing damage"
+        ],
+        [
+          "Value",
+          "Can't be sold"
+        ],
+        [
+          "Salvage",
+          "Only for upgrades"
+        ],
+        [
+          "Inventory icon",
+          ""
+        ]
+      ]
+    }
+  ]
+}

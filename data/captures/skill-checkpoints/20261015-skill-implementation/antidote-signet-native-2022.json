@@ -1,0 +1,55 @@
+{
+  "skill": 427,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "39449bc9ca2f096cedf6264b9c42a109a7db9c816cd2a96f7490a2b7bdddf3fa",
+  "capture_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "evidence": [
+    {
+      "line": 472222,
+      "tick_ms": 26331609,
+      "hex": "9f0000003c00000019000000ab010000"
+    },
+    {
+      "line": 472230,
+      "tick_ms": 26332625,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    {
+      "line": 472231,
+      "tick_ms": 26332625,
+      "hex": "9f0000001500000019000000da020000"
+    },
+    {
+      "line": 472232,
+      "tick_ms": 26332625,
+      "hex": "9f0000001500000019000000ec010000"
+    }
+  ],
+  "animation": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 50,
+    "seconds": 1.0,
+    "stored_skill": 427,
+    "override_after": 2139095040
+  },
+  "particles": [
+    {
+      "actor": 42,
+      "encoded_file": "ac4f00010000",
+      "flags": 1
+    },
+    {
+      "actor": 42,
+      "encoded_file": "e94400010000",
+      "flags": 1
+    }
+  ],
+  "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Antidote_Signet.html",
+  "wiki_sha256": "2f8c4c70a917f132676a86f358caaf6ffb39a08682d4802f35c4418d54a1d8f4",
+  "rule": "Remove self Poison,Disease,Blindness and one additional condition.",
+  "limits": [
+    "Fixed sample proves cast and bodies,not the conditional removal set or additional-condition priority.",
+    "Implementation uses existing covered-condition newest order; targeted retail condition-priority evidence and rendered acceptance remain open."
+  ]
+}

@@ -1,0 +1,1913 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "audit_sha256": "bdba1280be997d26ca31315d0a2da8c8a2c96d75ab934a5998acd38cb5d52f2e",
+  "verified_skills": 73,
+  "skills": [
+    {
+      "skill": 6,
+      "name": "Mantra of Earth",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66433,
+        "tick_ms": 8009515,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000006000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        6
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 6
+        }
+      ]
+    },
+    {
+      "skill": 7,
+      "name": "Mantra of Flame",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66445,
+        "tick_ms": 8011156,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000007000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        7
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 7
+        }
+      ]
+    },
+    {
+      "skill": 8,
+      "name": "Mantra of Frost",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66467,
+        "tick_ms": 8012687,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000008000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        8
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 8
+        }
+      ]
+    },
+    {
+      "skill": 9,
+      "name": "Mantra of Lightning",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66490,
+        "tick_ms": 8014234,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000009000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        9
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 9
+        }
+      ]
+    },
+    {
+      "skill": 10,
+      "name": "Hex Breaker",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66501,
+        "tick_ms": 8015250,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000000a000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        10
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 10
+        }
+      ]
+    },
+    {
+      "skill": 11,
+      "name": "Distortion",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66553,
+        "tick_ms": 8021328,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000000b000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        11
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 11
+        }
+      ]
+    },
+    {
+      "skill": 13,
+      "name": "Mantra of Recovery",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 71538,
+        "tick_ms": 8086312,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000000d000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        13
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 13
+        }
+      ]
+    },
+    {
+      "skill": 14,
+      "name": "Mantra of Persistence",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 66572,
+        "tick_ms": 8023750,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000000e000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        14
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 14
+        }
+      ]
+    },
+    {
+      "skill": 15,
+      "name": "Mantra of Inscriptions",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 71575,
+        "tick_ms": 8088968,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000000f000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        15
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 15
+        }
+      ]
+    },
+    {
+      "skill": 17,
+      "name": "Mantra of Resolve",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 71614,
+        "tick_ms": 8092296,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000011000000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        17
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 17
+        }
+      ]
+    },
+    {
+      "skill": 316,
+      "name": "\"To the Limit!\"",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 50280,
+        "tick_ms": 7679937,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000003c010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        316
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 316
+        }
+      ]
+    },
+    {
+      "skill": 317,
+      "name": "Battle Rage",
+      "receipt": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 50383,
+        "tick_ms": 7688796,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000003d010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        317
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 317
+        }
+      ]
+    },
+    {
+      "skill": 318,
+      "name": "Defy Pain",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 354848,
+        "tick_ms": 22960375,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000003e010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        318
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 318
+        }
+      ]
+    },
+    {
+      "skill": 343,
+      "name": "\"For Great Justice!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 364561,
+        "tick_ms": 23144078,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000057010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        343
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 343
+        }
+      ]
+    },
+    {
+      "skill": 344,
+      "name": "Flurry",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 364596,
+        "tick_ms": 23146171,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000058010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        344
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 344
+        }
+      ]
+    },
+    {
+      "skill": 345,
+      "name": "Defensive Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 364716,
+        "tick_ms": 23152312,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000059010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        345
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 345
+        }
+      ]
+    },
+    {
+      "skill": 346,
+      "name": "Frenzy",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 364734,
+        "tick_ms": 23153203,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000005a010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        346
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 346
+        }
+      ]
+    },
+    {
+      "skill": 347,
+      "name": "Endure Pain",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 364763,
+        "tick_ms": 23153953,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000005b010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        347
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 347
+        }
+      ]
+    },
+    {
+      "skill": 348,
+      "name": "\"Watch Yourself!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 369691,
+        "tick_ms": 23259390,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000005c010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        348
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 348
+        }
+      ]
+    },
+    {
+      "skill": 349,
+      "name": "Sprint",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 369731,
+        "tick_ms": 23261718,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000005d010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        349
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 349
+        }
+      ]
+    },
+    {
+      "skill": 362,
+      "name": "Warrior's Cunning",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 374312,
+        "tick_ms": 23348375,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000006a010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        362
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 362
+        }
+      ]
+    },
+    {
+      "skill": 363,
+      "name": "Shield Bash",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 374338,
+        "tick_ms": 23350921,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000006b010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        363
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 363
+        }
+      ]
+    },
+    {
+      "skill": 364,
+      "name": "\"Charge!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 387930,
+        "tick_ms": 23642843,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000006c010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        364
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 364
+        }
+      ]
+    },
+    {
+      "skill": 365,
+      "name": "\"Victory Is Mine!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 394010,
+        "tick_ms": 23788828,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000006d010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        365
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 365
+        }
+      ]
+    },
+    {
+      "skill": 367,
+      "name": "\"Shields Up!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 378791,
+        "tick_ms": 23463703,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000006f010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        367
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 367
+        }
+      ]
+    },
+    {
+      "skill": 368,
+      "name": "\"I Will Survive!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 378821,
+        "tick_ms": 23465171,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000070010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        368
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 368
+        }
+      ]
+    },
+    {
+      "skill": 370,
+      "name": "Berserker Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 378845,
+        "tick_ms": 23466625,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000072010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        370
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 370
+        }
+      ]
+    },
+    {
+      "skill": 371,
+      "name": "Balanced Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 378870,
+        "tick_ms": 23468187,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000073010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        371
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 371
+        }
+      ]
+    },
+    {
+      "skill": 372,
+      "name": "Gladiator's Defense",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 398684,
+        "tick_ms": 23897859,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000074010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        372
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 372
+        }
+      ]
+    },
+    {
+      "skill": 374,
+      "name": "Warrior's Endurance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 404139,
+        "tick_ms": 24052390,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000076010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        374
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 374
+        }
+      ]
+    },
+    {
+      "skill": 375,
+      "name": "Dwarven Battle Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 408244,
+        "tick_ms": 24146890,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000077010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        375
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 375
+        }
+      ]
+    },
+    {
+      "skill": 377,
+      "name": "Wary Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 378912,
+        "tick_ms": 23471484,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000079010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        377
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 377
+        }
+      ]
+    },
+    {
+      "skill": 378,
+      "name": "Shield Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 383449,
+        "tick_ms": 23557671,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007a010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        378
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 378
+        }
+      ]
+    },
+    {
+      "skill": 379,
+      "name": "Bull's Charge",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 413768,
+        "tick_ms": 24255203,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007b010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        379
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 379
+        }
+      ]
+    },
+    {
+      "skill": 380,
+      "name": "Bonetti's Defense",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 383630,
+        "tick_ms": 23576828,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007c010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        380
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 380
+        }
+      ]
+    },
+    {
+      "skill": 381,
+      "name": "Hundred Blades",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 417960,
+        "tick_ms": 24315750,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007d010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        381
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 381
+        }
+      ]
+    },
+    {
+      "skill": 412,
+      "name": "Call of Protection",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 467517,
+        "tick_ms": 26201562,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000009c010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        412
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 412
+        }
+      ]
+    },
+    {
+      "skill": 448,
+      "name": "Escape",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 511782,
+        "tick_ms": 27037937,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c0010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        448
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 448
+        }
+      ]
+    },
+    {
+      "skill": 449,
+      "name": "Practiced Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 525586,
+        "tick_ms": 27242781,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c1010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        449
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 449
+        }
+      ]
+    },
+    {
+      "skill": 450,
+      "name": "Whirling Defense",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 484824,
+        "tick_ms": 26533812,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c2010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        450
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 450
+        }
+      ]
+    },
+    {
+      "skill": 451,
+      "name": "Melandru's Resilience",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 534173,
+        "tick_ms": 27450343,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c3010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        451
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 451
+        }
+      ]
+    },
+    {
+      "skill": 453,
+      "name": "Lightning Reflexes",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 484852,
+        "tick_ms": 26536062,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c5010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        453
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 453
+        }
+      ]
+    },
+    {
+      "skill": 455,
+      "name": "Storm Chaser",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 484916,
+        "tick_ms": 26539937,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c7010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        455
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 455
+        }
+      ]
+    },
+    {
+      "skill": 456,
+      "name": "Serpent's Quickness",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 489072,
+        "tick_ms": 26600625,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c8010000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        456
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 456
+        }
+      ]
+    },
+    {
+      "skill": 572,
+      "name": "Deadly Paradox",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 710415,
+        "tick_ms": 32724171,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000003c020000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        572
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 572
+        }
+      ]
+    },
+    {
+      "skill": 811,
+      "name": "Run as One",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 499404,
+        "tick_ms": 26819671,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000002b030000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        811
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 811
+        }
+      ]
+    },
+    {
+      "skill": 839,
+      "name": "\"Retreat!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 388020,
+        "tick_ms": 23647812,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000047030000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        839
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 839
+        }
+      ]
+    },
+    {
+      "skill": 891,
+      "name": "\"None Shall Pass!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 394053,
+        "tick_ms": 23790640,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007b030000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        891
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 891
+        }
+      ]
+    },
+    {
+      "skill": 906,
+      "name": "\"On Your Knees!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 394157,
+        "tick_ms": 23799343,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000008a030000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        906
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 906
+        }
+      ]
+    },
+    {
+      "skill": 929,
+      "name": "Shadow of Haste",
+      "receipt": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 45623,
+        "tick_ms": 191027359,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000a1030000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        929
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 929
+        }
+      ]
+    },
+    {
+      "skill": 995,
+      "name": "Tiger Stance",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 398711,
+        "tick_ms": 23899000,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000e3030000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        995
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 995
+        }
+      ]
+    },
+    {
+      "skill": 1043,
+      "name": "Dash",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 598799,
+        "tick_ms": 29329859,
+        "actor": 19,
+        "map": 33,
+        "hex": "9f000000300000001300000013040000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1043
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1043
+        }
+      ]
+    },
+    {
+      "skill": 1141,
+      "name": "\"You Will Die!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 404176,
+        "tick_ms": 24054515,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000075040000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1141
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1141
+        }
+      ]
+    },
+    {
+      "skill": 1194,
+      "name": "Predatory Bond",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 511813,
+        "tick_ms": 27040234,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000aa040000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1194
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1194
+        }
+      ]
+    },
+    {
+      "skill": 1209,
+      "name": "Bestial Fury",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 525665,
+        "tick_ms": 27245734,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000b9040000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1209
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1209
+        }
+      ]
+    },
+    {
+      "skill": 1404,
+      "name": "Flail",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 404226,
+        "tick_ms": 24058640,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007c050000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1404
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1404
+        }
+      ]
+    },
+    {
+      "skill": 1413,
+      "name": "Burst of Aggression",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 408350,
+        "tick_ms": 24153250,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000085050000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1413
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1413
+        }
+      ]
+    },
+    {
+      "skill": 1414,
+      "name": "Enraging Charge",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 408373,
+        "tick_ms": 24154984,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000086050000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1414
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1414
+        }
+      ]
+    },
+    {
+      "skill": 1474,
+      "name": "Storm's Embrace",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 534379,
+        "tick_ms": 27468765,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c2050000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1474
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1474
+        }
+      ]
+    },
+    {
+      "skill": 1475,
+      "name": "Trapper's Speed",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 534403,
+        "tick_ms": 27470812,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c3050000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1475
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1475
+        }
+      ]
+    },
+    {
+      "skill": 1658,
+      "name": "Symbolic Posture",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 43121,
+        "tick_ms": 16689281,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f00000030000000190000007a060000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1658
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1658
+        }
+      ]
+    },
+    {
+      "skill": 1699,
+      "name": "Soldier's Defense",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 413826,
+        "tick_ms": 24259656,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000a3060000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1699
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1699
+        }
+      ]
+    },
+    {
+      "skill": 1700,
+      "name": "Frenzied Defense",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 413803,
+        "tick_ms": 24258000,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000a4060000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1700
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1700
+        }
+      ]
+    },
+    {
+      "skill": 1727,
+      "name": "Natural Stride",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 539798,
+        "tick_ms": 27588484,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000bf060000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1727
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1727
+        }
+      ]
+    },
+    {
+      "skill": 1728,
+      "name": "Heket's Rampage",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 539816,
+        "tick_ms": 27589531,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003000000019000000c0060000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        1728
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 1728
+        }
+      ]
+    },
+    {
+      "skill": 2013,
+      "name": "Grenth's Aura",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 619653,
+        "tick_ms": 30020390,
+        "actor": 11,
+        "map": 103,
+        "hex": "9f000000300000000b000000dd070000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2013
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2013
+        }
+      ]
+    },
+    {
+      "skill": 2097,
+      "name": "\"Save Yourselves!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 418161,
+        "tick_ms": 24331625,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000031080000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2097
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2097
+        }
+      ]
+    },
+    {
+      "skill": 2104,
+      "name": "Intensity",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 243389,
+        "tick_ms": 20770953,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f000000300000001900000038080000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2104
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2104
+        }
+      ]
+    },
+    {
+      "skill": 2131,
+      "name": "ID 2131",
+      "receipt": {
+        "file": "packets-110488-195213578.jsonl",
+        "line": 1291029,
+        "tick_ms": 215112593,
+        "actor": 54,
+        "map": 653,
+        "hex": "9f000000300000003600000053080000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2131
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2131
+        }
+      ]
+    },
+    {
+      "skill": 2132,
+      "name": "ID 2132",
+      "receipt": {
+        "file": "packets-110488-195213578.jsonl",
+        "line": 1290928,
+        "tick_ms": 215110828,
+        "actor": 54,
+        "map": 653,
+        "hex": "9f000000300000003600000054080000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2132
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2132
+        }
+      ]
+    },
+    {
+      "skill": 2356,
+      "name": "\"I Am Unstoppable!\"",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 602340,
+        "tick_ms": 29501984,
+        "actor": 18,
+        "map": 102,
+        "hex": "9f000000300000001200000034090000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2356
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2356
+        }
+      ]
+    },
+    {
+      "skill": 2360,
+      "name": "Feel No Pain",
+      "receipt": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 603440,
+        "tick_ms": 29548078,
+        "actor": 18,
+        "map": 102,
+        "hex": "9f000000300000001200000038090000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2360
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2360
+        }
+      ]
+    },
+    {
+      "skill": 2509,
+      "name": "ID 2509",
+      "receipt": {
+        "file": "packets-110488-195213578.jsonl",
+        "line": 1337195,
+        "tick_ms": 216052843,
+        "actor": 32,
+        "map": 649,
+        "hex": "9f0000003000000020000000cd090000",
+        "kind": 48
+      },
+      "opcode2022": 158,
+      "normalized_fields": [
+        48,
+        42,
+        2509
+      ],
+      "native_ui": [
+        {
+          "event": 268435493,
+          "actor": 42,
+          "skill": 2509
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Local ownership comes from the fixed audit world-snapshot windows.",
+    "Receipt opcode is translated to the original2022 descriptor index; this does not establish cross-version mechanics equivalence.",
+    "Actor lookup and UI delivery are stubbed; original dispatch executes, but no rendered animation or UI consumer is verified.",
+    "No body-particle evidence, block attribution, Energy cost or other skill mechanics are inferred."
+  ]
+}

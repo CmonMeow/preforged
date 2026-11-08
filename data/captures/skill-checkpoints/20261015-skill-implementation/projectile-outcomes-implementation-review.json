@@ -1,0 +1,27 @@
+{
+  "status": "Production ordinary projectile outcome ledger connected;Price of Failure reactive callback not connected",
+  "implemented": [
+    "Server event ID assigned to each queued ordinary/attack-skill projectile,including separate Dual Shot arrows.",
+    "One terminal outcome consumed by scoped ledger before diagnostic publication.",
+    "Hit resolution distinguishes true miss from invalid/unknown state;no fabricated miss on cancellation.",
+    "Dodge,target lifetime replacement and equipment cancellation retain distinct outcomes.",
+    "Bounded4096entry diagnostic trace;owner leave removes its state and old lifetime cannot transfer attribution.",
+    "Existing NPC quest retirement clears matching pending target identities."
+  ],
+  "focused_validation": "projectile_attack_outcomes,projectile_miss_state and barbs3/3 passed0.04s;12 tooling tests pass. Production test covers hit/miss/dodge/retire/cancel,dual arrow identity,repeated polling and attacker replacement.",
+  "full_validation": "Prior all192tests passed before this world change. Current all-target rebuild/193test gate pending,not running;complete remaining Price of Failure integration batch before broad rebuild.",
+  "limitations": [
+    "Price of Failure world hex ownership/Health damage and server RNG still unconnected;no103casting binding.",
+    "Ordinary melee and trusted NPC attack APIs do not yet publish these release/outcome events.",
+    "Existing NPC obstruction uses current source-to-target visibility;launch-origin projectile geometry/player obstruction need separate correction.",
+    "Diagnostic trace drops oldest records at4096;it is not a persistent capture or skill-event delivery queue.",
+    "Existing projectile source death/equipment-change cancellation policies are preserved,not claimed as recovered retail behavior.",
+    "Late observation time is still used for impact;retail historical scheduling not recovered."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_world_simulation.h": "a06af7e0cf40a68cdf9ae721ff1c49354ef2bc7b60a2bcca69f7ca6216b94d4b",
+    "src/runtime/gw_attack_outcomes.h": "8c353eb3c759f39c5fed4992c111db20a3b2092ee2cdf102a21bb4aba372d919",
+    "tests/projectile_attack_outcomes.cpp": "f21bc2a101bd1b6d3c910694a5cc83b06325340da964d8615506f39a64525d60",
+    "CMakeLists.txt": "bad175231ec546404994c260790196bf1b5c7d2adf9ba711b97b6ce96843dc28"
+  }
+}

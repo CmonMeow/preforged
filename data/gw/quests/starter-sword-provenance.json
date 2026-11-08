@@ -1,0 +1,36 @@
+{
+  "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+  "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "acceptance_line": 3195,
+  "inventory_line": 3197,
+  "observed_item_id_not_reused": 749,
+  "raw_profession_cache": 11,
+  "raw_modifiers": [
+    616038912,
+    2760377090,
+    3221225472
+  ],
+  "wire_modifiers": [
+    616038912,
+    2760377090
+  ],
+  "reviewed_content": {
+    "profession": 0,
+    "profession_policy": "Server-owned unrestricted quest weapon for primary or secondary Warrior; not reinterpretation of captured sentinel11",
+    "minimum_damage": 2,
+    "maximum_damage": 3,
+    "damage_type": "slashing",
+    "customization": "receiving character, +20% under existing weapon calculation"
+  },
+  "wiki": [
+    {
+      "page": "Starter_Sword.html",
+      "sha256": "129b6baae80b7145459041acd79260be0e3864fea853acd287b7d9822ef4eea8"
+    },
+    {
+      "page": "Grawl_Invasion.html",
+      "sha256": "6250821f757dfa613aef1917e598662d544b122bbd5d9ce709da76a55f61a2e7"
+    }
+  ],
+  "unverified": "Live2022 tooltip/appearance and combat playthrough"
+}

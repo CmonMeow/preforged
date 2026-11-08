@@ -1,0 +1,53 @@
+{
+  "checkpoint": "20261016-monster-recheck-late",
+  "cutoff": "2026-10-17T02:14:37.266193+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66510,
+      "tick_ms": 17131203,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e00000067000000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66516,
+      "tick_ms": 17133312,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66517,
+      "tick_ms": 17133312,
+      "hex": "a0000000140000001e00000019000000c1000000"
+    }
+  ],
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 103,
+    "override_after": 2139095040
+  },
+  "target_resource": 193,
+  "particle": {
+    "actor": 43,
+    "encoded_file": "efa900010000",
+    "flags": 1
+  },
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Price_of_Failure.html",
+  "wiki_sha256": "39a10b5876d53b60729850d1af6d2029103a1ffbe35c89fbdd400b74aa7ffd24",
+  "tool_sha256": "c801c1cc22f2c817dba9ee4eac2c37f4bdb53df8030c6b6e412e28a0a65ea396",
+  "limits": [
+    "Body/particle consumers use stubbed model services;no rendered acceptance.",
+    "Target particle193 is captured;failed-attack reactions are separately tested inWorld.",
+    "NPC-caster AI and general NPC attack producers remain unverified."
+  ]
+}

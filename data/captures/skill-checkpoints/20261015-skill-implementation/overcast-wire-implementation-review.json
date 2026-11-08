@@ -1,0 +1,28 @@
+{
+  "status": "native dedicated Energy-ceiling wire and continuous client curve verified; World integration pending",
+  "native_evidence": "overcast-curve-native-2022.json",
+  "excluded_generic_path": "overcast-property40-native-2022.json",
+  "build": "build/reports/energy-ceiling-wire-build.txt",
+  "tests": "build/reports/energy-ceiling-wire-tests.txt",
+  "focused_passed": 2,
+  "seconds": 0.03,
+  "verified": [
+    "Original descriptor60bdd8 opcode156 callback874b20 updates independent cached Energy ceiling curve and actor stat0 event12",
+    "Original setters and interpolation accept a negative ceiling and interpolate recovery continuously",
+    "Sixteen immutable modern157 candidates at capacity50 show about0.33 Energy/second and5/10 decreases within timestamp tolerance",
+    "Validated C++ logical packet builder matches original serializer payload after transport opcode-flag normalization",
+    "Zero/oversized actor, invalid nominal capacity, nonfinite/out-of-range ceiling/rate rejected"
+  ],
+  "remaining": [
+    "Connect signed effective ceiling to all World Energy costs, gains, resizing, morale, death and zoning",
+    "Use continuous client projection without claiming server authoritative granularity from presentation alone",
+    "Conditional Overcast snapshot timing and rendered grey-bar acceptance",
+    "Bind affected elemental skills only after shared resource support is complete"
+  ],
+  "source_sha256": {
+    "tools/protocol/overcast_curve_2022.py": "00f041413f36681b726b4a371e6094aefacaba602b91e5eedec2a25f44f6b56d",
+    "src/runtime/gw_vitals.h": "303c807f8e3c6f0dff2eef368c50a71aecdd4435d01e9fa74d4387c03b5aa42a",
+    "tests/energy_ceiling_wire.cpp": "69bc308574739b333f65008171a4c911f874becd9e57ff63cb474c52aa137988",
+    "CMakeLists.txt": "da69d4325dbfded523c4a1327455556e032bb662814dfd534acce66d360bb57c"
+  }
+}

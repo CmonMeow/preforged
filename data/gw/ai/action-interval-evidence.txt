@@ -1,0 +1,39 @@
+NPC action-boundary capture evidence - 2026-10-14
+
+Reproduction from repository root:
+python -m unittest discover -s tests -p test_ai_action_intervals.py
+python tools/ai/audit_action_intervals.py build/reports/ai/four-action-sequences.json --output build/reports/ai/four-action-intervals.json
+python tools/ai/audit_action_intervals.py build/reports/ai/side-action-sequences.json --output build/reports/ai/side-action-intervals.json
+
+Seven explicit-boundary regression tests pass. Both reports verify original
+identity/action report and capture hashes before replay; full input SHA256s,
+packet references and lifetime windows are retained in the JSON outputs.
+Four-profession report: 1,735 ordinary starts and 20 Bane probes with known
+target generations. Side-quest report: 1,196 ordinary starts, 54,390 separately
+classified scripted Ascalon starts, and 11 Bane probes with known targets.
+
+Modern opcode164 AgentProjectileLaunched with is_attack1 at offset32 explicitly
+witnesses a ranged weapon release/finish. Its destination is not actor position.
+It does not prove projectile arrival, damage, or recovery completion. Flag0
+launches also occur near ordinary Imp/wand attacks and are not promoted to
+terminal boundaries. Melee finished1 and attack-skill finished46 do not expose
+a separate earlier contact timestamp. No exact retail default duration follows
+from observed callback intervals or a gap before another action.
+
+Qualified Bane example (side report):
+Bane starts at packet578175, tick178955000, caster7 to Black Bear15 with exact
+target lifetime31:15:1. Bear attack starts578187/tick178955265. Bane completion
+578217/tick178956062 precedes Bear attack-stopped578220, knockdown578221
+(duration2s), and Bane damage578222. The target's pending attack is present
+before Bane completion and absent after its stop. Therefore a condition checked
+only at the damage packet would use already-modified state. The private server
+captures attacking state before applying control, matching this ordering.
+The knockdown packet names its target but not its caster: same-tick association
+is qualified evidence, not an independently identified causal event. Bane
+caster generation is unknown in this example; the NPC target generation is
+known. The nearby NPC identity snapshot has277ms skew.
+
+No open action in this ledger does not prove retail idle state. Missing
+knockdown does not prove immunity. The data does not yet establish the exact
+post-release attacking boundary, recovery length, priority weights, energy
+pools or a general combat AI decision algorithm. Preserve those gaps.

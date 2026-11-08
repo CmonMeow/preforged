@@ -1,0 +1,233 @@
+{
+  "skill": 251,
+  "name": "Scourge Healing",
+  "checkpoint": "20261024-all-completed",
+  "cutoff": "2026-10-24T04:27:02.320932+00:00",
+  "manifest_sha256": "1b7479c788d386d6002bc98fa276a598ea50e02a3a3620d89ac0a3f4d4663376",
+  "audit_sha256": "f30fb14a4789d793e943a9b18c3661934f894487b75b562fac41712f447685f6",
+  "packet_file": "packets-1360-15821281.jsonl",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "verifier_sha256": "efb0887d39ab813b8a837b1be70deb3f602dab466b19b8aa3567de6266751017",
+  "audit_local_starts": 1,
+  "audit_local_finished": 1,
+  "audit_other_starts": 8,
+  "map": 280,
+  "caster": 25,
+  "target": 30,
+  "observed_activation_ms": 2047,
+  "recharge_seconds": 5,
+  "targeted_body_resource": 460,
+  "receipts": [
+    {
+      "line": 252351,
+      "words": [
+        162,
+        62,
+        25,
+        3192704205
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20922203,
+      "opcode": 162,
+      "bytes": 16,
+      "complete": true,
+      "hex": "a20000003e00000019000000cdcc4cbe"
+    },
+    {
+      "line": 252352,
+      "words": [
+        160,
+        60,
+        25,
+        30,
+        251
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20922203,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c000000190000001e000000fb000000"
+    },
+    {
+      "line": 252368,
+      "words": [
+        229,
+        25,
+        251,
+        0,
+        5
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 229,
+      "bytes": 20,
+      "complete": true,
+      "hex": "e500000019000000fb0000000000000005000000"
+    },
+    {
+      "line": 252369,
+      "words": [
+        159,
+        58,
+        25,
+        0
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    {
+      "line": 252370,
+      "words": [
+        160,
+        20,
+        30,
+        25,
+        460
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e00000019000000cc010000"
+    },
+    {
+      "line": 252371,
+      "words": [
+        159,
+        6,
+        30,
+        1
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000001000000"
+    },
+    {
+      "line": 252372,
+      "words": [
+        159,
+        6,
+        30,
+        19
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000013000000"
+    },
+    {
+      "line": 252373,
+      "words": [
+        241,
+        30,
+        2048
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000000080000"
+    }
+  ],
+  "post_finish_window_ms": [
+    20924250,
+    20954250
+  ],
+  "window_packet_count": 2405,
+  "window_incomplete_packets": 102,
+  "target_context": [
+    {
+      "line": 252370,
+      "words": [
+        160,
+        20,
+        30,
+        25,
+        460
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e00000019000000cc010000"
+    },
+    {
+      "line": 252371,
+      "words": [
+        159,
+        6,
+        30,
+        1
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000001000000"
+    },
+    {
+      "line": 252372,
+      "words": [
+        159,
+        6,
+        30,
+        19
+      ],
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20924250,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000013000000"
+    }
+  ],
+  "findings": [
+    "Raw target body kind20 resource460 exists despite empty audit body_effect_evidence. Do not infer absence from that audit field.",
+    "Finish is followed by target30 kind6 values1/19 and opcode241 mask2048; these are state publication receipts, not independently decoded duration or trigger magnitudes.",
+    "No target30 generic heal/damage notification appears in the next30seconds under the explicitly scanned packet forms. No healing-trigger retaliation is demonstrated."
+  ],
+  "limitations": [
+    "One local successful cast does not establish damage scaling, duration, healer attribution, healing qualification, repeated triggers or removal semantics.",
+    "Modern162/kind62 negative0.2 is cast timing context per separate original-client timing proof, not Energy debit.",
+    "Observed2047ms is a capture tick gap, not an exact authoritative activation clock.",
+    "No original-client resource460 consumer or rendered/audio acceptance was run by this verifier.",
+    "Target-context absence is scoped to listed packet forms, actor30 and bounded30second window; incomplete packets are counted.",
+    "Offline checkpoint only; official client and shared runtime unchanged."
+  ]
+}

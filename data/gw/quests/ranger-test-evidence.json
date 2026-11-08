@@ -1,0 +1,689 @@
+{
+  "quest": 86,
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+      "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6"
+    },
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+      "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02"
+    }
+  ],
+  "active": {
+    "line": 311,
+    "epoch": 3,
+    "tick_ms": 81531281,
+    "quest": {
+      "quest_id": 86,
+      "log_state": 33,
+      "completed": false,
+      "current_mission": false,
+      "primary": true,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 5670.0,
+        "y": -4379.0,
+        "plane": 0,
+        "x_bits": 1169240064,
+        "y_bits": 3314079744,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5955,
+          36406,
+          55959,
+          7191
+        ],
+        "decoded": "Ranger Test",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          5962,
+          33093,
+          49898,
+          1463
+        ],
+        "decoded": "Artemis the Ranger",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5958,
+          39758,
+          50883,
+          21044,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          26402,
+          1,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          26506,
+          1
+        ],
+        "decoded": "A horde of <c=@Quest>skale</c> down by the <c=@Quest>river road</c> has been hunting human prey to feed to their queen. You must put an end to this. If you can get them to flee into the woods, they should lead you right to her. Eliminate the <c=@Quest>skale queen</c> and report back to me.\n\nReward:<brx>500 Experience<brx>Power Shot<brx>Troll Unguent<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5961,
+          55749,
+          59428,
+          26697,
+          1
+        ],
+        "decoded": "{s}Find the river skale queen and slay her.",
+        "status": "decoded"
+      }
+    }
+  },
+  "completed": {
+    "line": 424,
+    "epoch": 3,
+    "tick_ms": 81574312,
+    "quest": {
+      "quest_id": 86,
+      "log_state": 35,
+      "completed": true,
+      "current_mission": false,
+      "primary": true,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 6086.0,
+        "y": 4161.0,
+        "plane": 0,
+        "x_bits": 1170092032,
+        "y_bits": 1166149632,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5955,
+          36406,
+          55959,
+          7191
+        ],
+        "decoded": "Ranger Test",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          5962,
+          33093,
+          49898,
+          1463
+        ],
+        "decoded": "Artemis the Ranger",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5958,
+          39758,
+          50883,
+          21044,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          26402,
+          1,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          26506,
+          1
+        ],
+        "decoded": "A horde of <c=@Quest>skale</c> down by the <c=@Quest>river road</c> has been hunting human prey to feed to their queen. You must put an end to this. If you can get them to flee into the woods, they should lead you right to her. Eliminate the <c=@Quest>skale queen</c> and report back to me.\n\nReward:<brx>500 Experience<brx>Power Shot<brx>Troll Unguent<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10997,
+          50642,
+          61219,
+          3064,
+          266,
+          5961,
+          55749,
+          59428,
+          26697,
+          1,
+          2,
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          10992,
+          50343,
+          39936,
+          16059,
+          266,
+          5962,
+          33093,
+          49898,
+          1463,
+          1,
+          1
+        ],
+        "decoded": "{sc}Find the river skale queen and slay her.{s}Return to Artemis the Ranger for your reward.",
+        "status": "decoded"
+      }
+    }
+  },
+  "states": [
+    {
+      "line": 311,
+      "epoch": 3,
+      "tick_ms": 81531281,
+      "quest": {
+        "quest_id": 86,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 5670.0,
+          "y": -4379.0,
+          "plane": 0,
+          "x_bits": 1169240064,
+          "y_bits": 3314079744,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5955,
+            36406,
+            55959,
+            7191
+          ],
+          "decoded": "Ranger Test",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            5962,
+            33093,
+            49898,
+            1463
+          ],
+          "decoded": "Artemis the Ranger",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5958,
+            39758,
+            50883,
+            21044,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            756,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26402,
+            1,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26506,
+            1
+          ],
+          "decoded": "A horde of <c=@Quest>skale</c> down by the <c=@Quest>river road</c> has been hunting human prey to feed to their queen. You must put an end to this. If you can get them to flee into the woods, they should lead you right to her. Eliminate the <c=@Quest>skale queen</c> and report back to me.\n\nReward:<brx>500 Experience<brx>Power Shot<brx>Troll Unguent<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5961,
+            55749,
+            59428,
+            26697,
+            1
+          ],
+          "decoded": "{s}Find the river skale queen and slay her.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 424,
+      "epoch": 3,
+      "tick_ms": 81574312,
+      "quest": {
+        "quest_id": 86,
+        "log_state": 35,
+        "completed": true,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 146,
+        "map_to": 146,
+        "marker": {
+          "x": 6086.0,
+          "y": 4161.0,
+          "plane": 0,
+          "x_bits": 1170092032,
+          "y_bits": 1166149632,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5955,
+            36406,
+            55959,
+            7191
+          ],
+          "decoded": "Ranger Test",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            5962,
+            33093,
+            49898,
+            1463
+          ],
+          "decoded": "Artemis the Ranger",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5958,
+            39758,
+            50883,
+            21044,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            756,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26402,
+            1,
+            2,
+            10994,
+            51111,
+            34011,
+            18705,
+            266,
+            26506,
+            1
+          ],
+          "decoded": "A horde of <c=@Quest>skale</c> down by the <c=@Quest>river road</c> has been hunting human prey to feed to their queen. You must put an end to this. If you can get them to flee into the woods, they should lead you right to her. Eliminate the <c=@Quest>skale queen</c> and report back to me.\n\nReward:<brx>500 Experience<brx>Power Shot<brx>Troll Unguent<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5961,
+            55749,
+            59428,
+            26697,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            5962,
+            33093,
+            49898,
+            1463,
+            1,
+            1
+          ],
+          "decoded": "{sc}Find the river skale queen and slay her.{s}Return to Artemis the Ranger for your reward.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "actors": [
+    {
+      "line": 283,
+      "npc": {
+        "agent": 36,
+        "model": 1484,
+        "x": 6086.0,
+        "y": 4161.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5962,
+          33093,
+          49898,
+          1463
+        ],
+        "name": "Artemis the Ranger",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 281,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 3,
+          "instance_ms": 1966,
+          "npc_table_id": 1484,
+          "definition": {
+            "model_file": 12818,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 2,
+            "secondary": 0,
+            "default_level": 2,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116737
+            ],
+            "name_encoded_utf16": [
+              3941,
+              51205,
+              39649,
+              28425
+            ],
+            "name": "Ranger",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 379,
+      "npc": {
+        "agent": 45,
+        "model": 1434,
+        "x": 5670.0,
+        "y": -4379.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3897,
+          42335,
+          60294,
+          2169
+        ],
+        "name": "River Skale Queen",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 282,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 3,
+          "instance_ms": 1966,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    }
+  ],
+  "health_capacity_records": [
+    {
+      "line": 6315,
+      "actor": 45,
+      "capacity": 10,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81573109,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a0000002d0000000a000000"
+      }
+    }
+  ],
+  "death_records": [
+    {
+      "line": 6323,
+      "actor": 45,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 81573406,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002d00000010000000"
+      }
+    }
+  ],
+  "wiki": {
+    "title": "Ranger Test",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ranger_Test.html",
+    "sha256": "848c105e5e7fdc2472eaa327651294e620a813641aae13d98013b76112252c5f",
+    "sections": {
+      "Quest_information": {
+        "line": 114,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nranger primary\nCharacter in pre-Searing\nObjectives\nFind the River Skale Queen and slay her.\nReward\n500 Experience\nPower Shot\nTroll Unguent"
+      },
+      "Requirements": {
+        "line": 115,
+        "text": "Requirements\nTyrian (Prophecies) character\nranger primary\nCharacter in pre-Searing"
+      },
+      "Objectives": {
+        "line": 119,
+        "text": "Objectives\nFind the River Skale Queen and slay her."
+      },
+      "Reward": {
+        "line": 121,
+        "text": "Reward\n500 Experience\nPower Shot\nTroll Unguent"
+      },
+      "Walkthrough": {
+        "line": 125,
+        "text": "Walkthrough\nHead south towards the river. The River Skale Queen should be on the other side of it. You can use the ctrl-key to see the name of any foes within the range of the radar. they will appear in red on your screen."
+      },
+      "Dialogue": {
+        "line": 134,
+        "text": "Dialogue\nInitial dialogue\nArtemis the Ranger\n\"A horde of skale down by the river road has been hunting human prey to feed to their queen. You must put an end to this. If you can get them to flee into the woods, they should lead you right to her. Eliminate the skale queen and report back to me.\"\nAccept: \"I won’t let you down.\"\nDecline: \"I don’t think I’m ready for this!\"\nAsk: \"Come on, «name», you can handle this! Just scare the skale into the woods, then follow them to their queen. Kill her and return to me. You can do it!\"\nReward dialogue\nArtemis the Ranger\n\"Sir Tydus was right. There is something special about you. I have no doubt that you can be entrusted with a few skills. Use them wisely.\"\n\"Haversdan should be here in a moment if you desire further guidance.\"\nRetrieved from \"https://wiki.guildwars.com/index.php?title=Ranger_Test&oldid=2633335\"\nCategories:\nPrimary quests\nProphecies primary quests\nAscalon (pre-Searing) quests\nProphecies quests\nTyrian only quests\nRanger questsHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "limits": [
+    "Modern memory packet records are not native2022 opcodes.",
+    "Sampled actor positions do not prove exact spawn timing.",
+    "Completion does not prove reward turn-in.",
+    "Armor, targeting and retaliation are not inferred."
+  ],
+  "exports": [
+    {
+      "path": "data\\gw\\quests\\actors\\ranger-test-artemis.txt",
+      "sha256": "ee4b868d4d71932ea5626eb32c7024e36d6ba03c75fb788bd6170a9e285ab2cf",
+      "source_actor": 36
+    },
+    {
+      "path": "data\\gw\\quests\\actors\\ranger-test-queen.txt",
+      "sha256": "dcd0f2629e5394771ec46fe8aca78e523394e6c532fdb66ef469bdc01d124797",
+      "source_actor": 45
+    },
+    {
+      "path": "data\\gw\\quests\\ranger-test.fwqc",
+      "sha256": "ea8bed82cdc0983cfa95a6a51e3fe106555f7c6c6870f96d67ae4af9def7399d"
+    }
+  ]
+}

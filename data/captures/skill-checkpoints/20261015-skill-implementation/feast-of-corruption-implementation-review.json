@@ -1,0 +1,64 @@
+{
+  "skill": 151,
+  "status": "Source-bound151:Runtime/gateway original caster-target anchor,player/NPC area damage and conditional life steal;retail ordering/retained despawn/rendered acceptance incomplete",
+  "native_evidence": "feast-of-corruption-native-2022.json",
+  "mechanics": {
+    "damage": "round(16+64*rank/15)",
+    "conditional_life_steal": "round(8+32*rank/15)",
+    "range": 1248,
+    "radius": 166,
+    "dead_selected_anchor": "retain selected scope if target dies during casting;do not damage the corpse"
+  },
+  "validation": "Standalone Release policy test passes canonical ranks0/12/20,armor-independent shadow damage,hex-only candidate life steal,reduction,overheal/overkill,dead recipient and forged plan rejection. Candidate uses shadow-then-steal sequencing;not a verified retail ordering claim.",
+  "remaining": [
+    "Finish/inspect current all-target213gate.",
+    "Retain verified death observations for despawned original actors;current completion correctly rejects missing/replaced scopes rather than invent an anchor.",
+    "Verify shadow/life-steal/capped-heal/killing-blow ordering and remaining-recipient behavior if caster dies mid-effect;current shadow-then-steal/player-then-NPC/stop-on-caster-death are explicit private model policies.",
+    "Verify NPC pending Deep Wound debt and global protection/credit interactions.",
+    "Verify full Health55 damage/overkill feedback and rendered body273/sound against original client."
+  ],
+  "capture_limits": "Local associated packets show max480,normalizedHealthDelta-0.033333335 and observed recharge15seconds. Health event lacks a skill ID;modifiers/attribution remain unresolved. Canonical native recharge stays20seconds.",
+  "source_sha256": {
+    "src/runtime/gw_feast_of_corruption.h": "0c3c1a4992436e2cc96a25eec47f8f29fa7381ce60cfd0b15a03ea7962ae3bdf",
+    "tests/feast_of_corruption_policy.cpp": "352234b7927d04c5ee41f1ba054f89096899b0e8662302b4e748dbb4898e33f5",
+    "tools/protocol/feast_of_corruption_2022.py": "9d70f3d7f982608df3a27d2191bbc3eed3d58d422c57ed496b57ef6023f0750d",
+    "tests/feast_of_corruption_anchor.cpp": "2973f2e465ac542a32a3286e043e10551f2ed6570ea9ebbd30d696996cdaea0f",
+    "src/runtime/gw_world_simulation.h": "c3772f502d1da83bf055074cd92501a0933ebc1b30995c77089445ef1fa48b4f",
+    "src/runtime/gw_npc_combat_catalog.h": "ad80d39b3e9bf38d8ffa9512974c21fbec294a44a6b25b7830f8ffb19fee9f71",
+    "tests/feast_of_corruption_world.cpp": "0343bff96e49ef59d38634aa46506272793cd7f8f248cc92b4955af10a12df96",
+    "src/runtime/gw_skill_casting.h": "a751dfae514b07c368aba89d7411dbc3e155b3bbd334275cbaf49134534a2986",
+    "src/apps/gw_auth.cpp": "e0735a50306d0d07c0d6fc3b6537a6bc2428f49127ad338fcca508941a042dc5",
+    "tools/protocol/skill_runtime_coverage.py": "2e26ed8dcc28f9dfc2fa7f77df438647c31c7dcd03556343a2c145ca2a6e90a7",
+    "tests/feast_of_corruption_cast.cpp": "fd768dde9b87860e419fba0b3999978600f67fba01a1c1b20f465e528a96f24d"
+  },
+  "anchor_validation": "Standalone Release feast anchor probe passes against actual World player death and ID reuse:original corpse accepted,current observation position used,missing/replaced target and replaced caster rejected. Fresh living observations required;retained death observations must be at/after acquisition and no later than completion. Invalid/future/stale times and nonfinite positions rejected. World/runtime spell completion and actor-death observation retention are not yet wired.",
+  "registered_validation": "Both new Release targets compiled and expanded211/211 CTest passed26.54s(feast-register-build.txt,feast-registered-full-tests.txt). Core native source batch had already passed all-target Release209gate30.74s;no core source edits since that gate. Anchor/policy tests do not establish world/casting or retail damage-order acceptance.",
+  "world_stage_validation": "Five registered Release suites pass0.07s(feast-stage-regression-tests.txt):Feast policy/anchor/world and Mark/Insidious NPC regressions. Nine world scenarios cover mixed recipients,166radius boundary,team/layer exclusion,any-current-hex qualification,expiry,player/NPC corpse anchors,replacement rejection,dead caster,body273single-center publication,GenericTargetFloat55 shadow feedback and lethal life-steal NPC kill credit/dead-state packet.",
+  "world_model_limits": "Candidate component order remains shadow-then-steal. Stable player-then-NPC sequence and stopping remaining recipients if caster dies are explicit private model policies,not proved retail ordering. Player Health events recompute conditional steal after wound settlement;NPC pending Deep Wound debt/global protection interactions still require verification. Despawned selected actors have no retained observation store yet.",
+  "fixture_corrections": "Initial compile required explicit double-to-float navigation point conversion;first world fixture attempted navigation configuration after NPC population and was rejected. Corrected fixture order to configure navigation before population;original failed reports retained.",
+  "casting_validation": "Four rebuilt registered Release suites pass0.09s(feast-identity-final-focused-tests.txt). Casting test covers14scenarios:2second/15Energy/20second casting,player/NPC death during cast,target and caster replacement,cancel versus full interrupt recharge,dead caster,missing handler,dead-at-start target,zero target generation and wrong caster identity. Original caster/selected scopes and start time are saved before costs and forwarded as a typed FeastCastAnchor;gateway checks current caster scope against original.",
+  "aborted_validation": "Initial full213build9270 was deliberately stopped before completion after identifying that its gateway reconstructed caster identity at completion. Verified exact task-owned pwsh61196path/command and descendant build executables before terminating its compiler tree. Official clients untouched. No full pass claimed for interrupted feast-binding-full-build.txt.",
+  "full_validation": "Corrected all-target Release rebuild and213CTest gate running78699(feast-identity-full-build.txt,feast-identity-full-tests.txt). Last full211pass predates Feast world/casting binding.",
+  "supplementary_observer_search": {
+    "report": "feast-of-corruption-observer-evidence.json",
+    "archived_files": 9,
+    "casts": 0,
+    "meaning": "No additional component-order evidence in these nine decoded matches;fixed local inventory unchanged.",
+    "validation": "15 skill tooling tests pass, including actor-specific terminal association, superseding activation and interrupt classification."
+  },
+  "full_binding_validation": {
+    "build": "build/reports/feast-identity-full-build.txt",
+    "tests": "build/reports/feast-identity-full-tests.txt",
+    "result": "213/213 passed",
+    "seconds": 37.07,
+    "scope": "Original-caster/target typed anchor binding, all production Release targets and registered native suites; does not prove rendered or unresolved retail ordering."
+  },
+  "health_gain_regression": {
+    "scenario": "Caster under Defile Flesh receives full 34+34 life-steal Health gain from hexed player and NPC recipients,100 to168;received-healing penalty is bypassed.",
+    "result": "Rebuilt Feast world suite passed10scenarios,0.03s CTest",
+    "build": "build/reports/feast-health-gain-build.txt",
+    "tests": "build/reports/feast-health-gain-tests.txt",
+    "source_sha256": "d20b154f7073f15065fea0933618cb3e6ed0699c0978f93a86a7e8d9cd4483dd",
+    "scope": "Only tests changed after full213gate; final comment clarified recipient terminology. Earlier source_sha256 map belongs to original binding gate."
+  }
+}

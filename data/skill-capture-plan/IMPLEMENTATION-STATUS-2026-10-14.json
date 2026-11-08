@@ -1,0 +1,48 @@
+{
+  "checkpoint": "20261014T232950Z",
+  "capture_cutoff": "2026-10-14T23:29:51.460985+00:00",
+  "captured_ids": 378,
+  "runtime_bound_captured": 92,
+  "awaiting_runtime_binding": 286,
+  "new_bindings": [
+    155,
+    159,
+    1396,
+    1401,
+    2057,
+    146,
+    881,
+    1365,
+    13,
+    15,
+    6,
+    7,
+    8,
+    9
+  ],
+  "shared_fixes": [
+    "scoped NPC nonspread condition spells",
+    "NPC Aftershock/Shockwave area resolution",
+    "Aftershock actor-relative camera shake",
+    "Aftershock separate knockdown bonus damage",
+    "status healing and condition-removal target particles",
+    "primary Mesmer Fast Casting activation and PvE recharge",
+    "instant stance activation preserves pending spell and omits body finish",
+    "Foul Feast healing and fixed Disease recharge",
+    "typed elemental damage reduction before flat protection",
+    "common matching-hit Energy gain including zero-damage absorbed events",
+    "elemental caster-weapon reduction and gain; physical attacks excluded"
+  ],
+  "visual_acceptance": "deferred_by_user_while_official_logging",
+  "goal": "active_incomplete",
+  "server_sha256": "2350bc3ddf791504ef4eb5f0e4ef26d51ade208a5d58c3f77f3c31e65b8a7149",
+  "validation": "Full Release build and166 CTests pass 39.48 sec; elemental Mantra all-ranks, resources, zero-hit, expiry/replacement and casting tests pass; coverage3 and checkpoint4 tests pass. Pinned2022 native proof7 recharge,4 fractional overrides,6 stance/UI/particle paths passes. Visuals deferred.",
+  "latest_batch": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "global_runtime_bindings": 146,
+  "updated_utc": "2026-10-15T01:38:39.903701+00:00"
+}

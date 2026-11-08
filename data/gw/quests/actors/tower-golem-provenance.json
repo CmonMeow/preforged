@@ -1,0 +1,68 @@
+{
+  "quest": 37,
+  "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+  "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "acceptance_line": 2438,
+  "offer_map": 165,
+  "encounter_map": 161,
+  "encounter_epoch": 19,
+  "definition_line": 2614,
+  "definition": {
+    "model_file": 141262,
+    "skin_file": 0,
+    "appearance": 0,
+    "flags": 4,
+    "primary": 6,
+    "secondary": 0,
+    "default_level": 3,
+    "visual_adjustment_bytes": [
+      0,
+      0,
+      0,
+      100
+    ],
+    "model_files": [
+      129931
+    ],
+    "name_encoded_utf16": [
+      3876,
+      64404,
+      58631,
+      14458
+    ],
+    "name": "Tower Golem",
+    "name_status": "decoded"
+  },
+  "actor_line": 2615,
+  "actor": {
+    "agent": 14,
+    "model": 1416,
+    "x": -9398.0,
+    "y": 2972.0,
+    "plane": 0,
+    "facing": 0.0,
+    "level": 3,
+    "allegiance": 3,
+    "name_encoded_utf16": [
+      3876,
+      64404,
+      58631,
+      14458
+    ],
+    "name": "Tower Golem",
+    "name_status": "decoded"
+  },
+  "completed_line": 2859,
+  "death_source": "data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl",
+  "death_source_sha256": "3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a",
+  "deaths": [
+    {
+      "line": 30592,
+      "tick_ms": 100394796,
+      "hex": "f10000000e00000010000000"
+    }
+  ],
+  "wiki_source": "Tower_Golem.html",
+  "wiki_sha256": "bebe6372797f5af64a58e83eae28ddad5322453036dc437e552250c7b4584dfe",
+  "limits": "Observed position, not full patrol. No measured maximum health/armor. Local wiki describes lightning weakness and retaliation; neither quantified."
+}

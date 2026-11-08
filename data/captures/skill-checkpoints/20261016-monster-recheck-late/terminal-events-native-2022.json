@@ -1,0 +1,112 @@
+{
+  "checkpoint": "20261016-monster-recheck-late",
+  "cutoff": "2026-10-17T02:14:37.266193+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "source_manifest_sha256": "5e285cf2e45e9f0561e50d95789e869d499ea3134c0972c9eea8681198e6bc74",
+  "captured": [
+    {
+      "kind": 46,
+      "value": 0,
+      "count": 2709,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 21267,
+        "tick_ms": 190492031,
+        "actor": 25,
+        "hex": "9f0000002e0000001900000000000000"
+      }
+    },
+    {
+      "kind": 49,
+      "value": 0,
+      "count": 1209,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 40729,
+        "tick_ms": 190962984,
+        "actor": 100,
+        "hex": "9f000000310000006400000000000000"
+      }
+    },
+    {
+      "kind": 58,
+      "value": 0,
+      "count": 19281,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 20827,
+        "tick_ms": 190477437,
+        "actor": 50,
+        "hex": "9f0000003a0000003200000000000000"
+      }
+    },
+    {
+      "kind": 59,
+      "value": 0,
+      "count": 1571,
+      "first": {
+        "file": "packets-108988-190116609.jsonl",
+        "line": 51678,
+        "tick_ms": 191195125,
+        "actor": 25,
+        "hex": "9f0000003b0000001900000000000000"
+      }
+    }
+  ],
+  "native": [
+    {
+      "kind": 46,
+      "native_action": 17,
+      "actor": 42,
+      "payload": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wire2022": "9e802e0000002a00000000000000"
+    },
+    {
+      "kind": 49,
+      "native_action": 19,
+      "actor": 42,
+      "payload": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wire2022": "9e80310000002a00000000000000"
+    },
+    {
+      "kind": 58,
+      "native_action": 22,
+      "actor": 42,
+      "payload": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wire2022": "9e803a0000002a00000000000000"
+    },
+    {
+      "kind": 59,
+      "native_action": 23,
+      "actor": 42,
+      "payload": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "wire2022": "9e803b0000002a00000000000000"
+    }
+  ],
+  "tool_sha256": "32d0a9a9f47c32c22ed9cd22b07756282e800b51563c12648afb3e93967a7ece",
+  "limits": [
+    "Original dispatch executes with actor/cache services stubbed;no rendered acceptance.",
+    "Wire records include the original serializer transport header flag;Runtime payload tests use its existing unflagged opcode form.",
+    "No claim about recharge or cancellation-acknowledgement timing/order."
+  ]
+}

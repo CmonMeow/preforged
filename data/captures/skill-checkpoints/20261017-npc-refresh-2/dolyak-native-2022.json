@@ -1,0 +1,86 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "374294": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23346843,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003c0000001900000069010000"
+    },
+    "374297": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23346843,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "374298": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23346843,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000069020000"
+    },
+    "374299": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23346843,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "420000001900000069010000000000004200000000000041"
+    },
+    "374302": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23346843,
+      "opcode": 39,
+      "bytes": 12,
+      "complete": true,
+      "hex": "270000001900000000009042"
+    }
+  },
+  "native_cast": {
+    "event": {
+      "pointer": 33628160,
+      "code": 25,
+      "actor": 42,
+      "payload": [
+        0,
+        361,
+        0,
+        0
+      ]
+    },
+    "zero_time_consumer_unverified": true
+  },
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "437e00010000",
+    "flags": 1
+  },
+  "captured_rank": 0,
+  "captured_duration_seconds": 8,
+  "captured_speed": 72,
+  "limitations": [
+    "Model/asset services are stubbed;no rendered acceptance.",
+    "Zero-time cast dispatch is verified,but the cast consumer enters an unmodeled action-cleanup path;only the body617 consumer is executed to its model boundary.",
+    "This capture does not prove armor stacking or knockdown immunity;those use native/wiki plans and server regressions.",
+    "Absolute speed72 is recorded;do not treat this one receipt as a universal baseline-speed calibration."
+  ]
+}

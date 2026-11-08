@@ -1,0 +1,272 @@
+[
+  {
+    "file": "data\\gw\\quests\\actors\\warrior-test-van.txt",
+    "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+    "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+    "snapshot_line": 504,
+    "map": 146,
+    "epoch": 3,
+    "actor": {
+      "agent": 36,
+      "model": 1478,
+      "x": 6066.0,
+      "y": 3939.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 2,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        5951,
+        49276,
+        59017,
+        31016
+      ],
+      "name": "Van the Warrior",
+      "name_status": "decoded"
+    },
+    "definition": {
+      "model_file": 116228,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 524,
+      "primary": 1,
+      "secondary": 0,
+      "default_level": 2,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        116676
+      ],
+      "name_encoded_utf16": [
+        3940,
+        37368,
+        61727,
+        19139
+      ],
+      "name": "Warrior",
+      "name_status": "decoded"
+    },
+    "scope": "quest_actor_candidate_not_installed",
+    "combat": "not_defined"
+  },
+  {
+    "file": "data\\gw\\quests\\actors\\grawl-grast-lakeside.txt",
+    "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+    "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+    "snapshot_line": 3147,
+    "map": 146,
+    "epoch": 22,
+    "actor": {
+      "agent": 63,
+      "model": 1514,
+      "x": -15605.0,
+      "y": 9992.0,
+      "plane": 0,
+      "facing": 0.033321,
+      "level": 5,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        13372,
+        61736,
+        52921,
+        20255
+      ],
+      "name": "Warmaster Grast",
+      "name_status": "decoded"
+    },
+    "definition": {
+      "model_file": 116228,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 524,
+      "primary": 1,
+      "secondary": 0,
+      "default_level": 5,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        116776
+      ],
+      "name_encoded_utf16": [
+        3972,
+        50103,
+        40568,
+        16367
+      ],
+      "name": "Warrior Trainer",
+      "name_status": "decoded"
+    },
+    "scope": "quest_actor_candidate_not_installed",
+    "combat": "not_defined"
+  },
+  {
+    "file": "data\\gw\\quests\\actors\\grawl-grast-green-hills.txt",
+    "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+    "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+    "snapshot_line": 3214,
+    "map": 160,
+    "epoch": 24,
+    "actor": {
+      "agent": 10,
+      "model": 1514,
+      "x": 21195.0,
+      "y": 13076.0,
+      "plane": 0,
+      "facing": -0.244359,
+      "level": 5,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        13372,
+        61736,
+        52921,
+        20255
+      ],
+      "name": "Warmaster Grast",
+      "name_status": "decoded"
+    },
+    "definition": {
+      "model_file": 116228,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 524,
+      "primary": 1,
+      "secondary": 0,
+      "default_level": 5,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        116776
+      ],
+      "name_encoded_utf16": [
+        3972,
+        50103,
+        40568,
+        16367
+      ],
+      "name": "Warrior Trainer",
+      "name_status": "decoded"
+    },
+    "scope": "quest_actor_candidate_not_installed",
+    "combat": "not_defined"
+  },
+  {
+    "file": "data\\gw\\quests\\actors\\elementalist-aziure.txt",
+    "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+    "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+    "snapshot_line": 2120,
+    "map": 161,
+    "epoch": 15,
+    "actor": {
+      "agent": 13,
+      "model": 1512,
+      "x": -7774.0,
+      "y": 1246.0,
+      "plane": 0,
+      "facing": 0.046258,
+      "level": 5,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        13340,
+        44034,
+        53345,
+        1102
+      ],
+      "name": "Elementalist Aziure",
+      "name_status": "decoded"
+    },
+    "definition": {
+      "model_file": 116225,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 524,
+      "primary": 6,
+      "secondary": 0,
+      "default_level": 5,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        116789
+      ],
+      "name_encoded_utf16": [
+        3970,
+        49422,
+        35877,
+        22953
+      ],
+      "name": null,
+      "name_status": "pending"
+    },
+    "scope": "quest_actor_candidate_not_installed",
+    "combat": "not_defined"
+  },
+  {
+    "file": "data\\gw\\quests\\actors\\air-ralena.txt",
+    "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+    "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+    "snapshot_line": 1773,
+    "map": 165,
+    "epoch": 13,
+    "actor": {
+      "agent": 3,
+      "model": 1474,
+      "x": -659.0,
+      "y": 11180.0,
+      "plane": 0,
+      "facing": -1.325283,
+      "level": 2,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        13040,
+        34881,
+        39433,
+        13303
+      ],
+      "name": "Ralena Stormbringer",
+      "name_status": "decoded"
+    },
+    "definition": {
+      "model_file": 16258,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 524,
+      "primary": 6,
+      "secondary": 0,
+      "default_level": 2,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        116712
+      ],
+      "name_encoded_utf16": [
+        3930,
+        56278,
+        53847,
+        26909
+      ],
+      "name": "Elementalist",
+      "name_status": "decoded"
+    },
+    "scope": "quest_actor_candidate_not_installed",
+    "combat": "not_defined"
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "start": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 188829,
+    "tick_ms": 19612921,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e000000e2000000",
+    "kind": 60
+  },
+  "finish": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 188851,
+    "tick_ms": 19613843,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003a0000001900000000000000",
+    "kind": 58
+  },
+  "particle": [
+    {
+      "line": 188852,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19613843,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e000000190000008f010000"
+    }
+  ],
+  "damage": [
+    {
+      "line": 188854,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19613843,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000abaaaabc"
+    },
+    {
+      "line": 188855,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19613843,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000abaaaabc"
+    }
+  ],
+  "knockdown": [
+    {
+      "line": 188856,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19613843,
+      "opcode": 162,
+      "bytes": 16,
+      "complete": true,
+      "hex": "a20000003f0000001e00000000000040"
+    }
+  ],
+  "metadata": [
+    {
+      "skill": 226,
+      "overcast": 5,
+      "alias": 2804,
+      "native_body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 226,
+        "override_after": 2139095040
+      }
+    },
+    {
+      "skill": 2804,
+      "overcast": 10,
+      "alias": 226,
+      "native_body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 2804,
+        "override_after": 2139095040
+      }
+    }
+  ],
+  "native_particle": {
+    "actor": 43,
+    "encoded_file": "e5d100010000",
+    "flags": 1
+  },
+  "target_wire2022": "9f80140000001e000000190000008f010000",
+  "knockdown_wire2022": "a1803f0000001e00000000000040",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mind_Shock.html",
+  "wiki_sha256": "3a42d36aa1ffbf2d5b109ff7f24d09dae2bed044b7ce32468e2813f202908ae4",
+  "tool_sha256": "9c75ee75dcc02d610cf4a0d361d713fd13d9d64ea5396118346df5a14be5076a",
+  "limits": [
+    "The local226 cast shows successful bonus damage/control,not a controlled Energy-threshold experiment.",
+    "2804 native alias/cost metadata is not local PvP capture credit.",
+    "Original cast/particle consumers use stubbed asset/model services;no rendered acceptance.",
+    "Runtime and World integration remain separate;this proof establishes no binding."
+  ]
+}

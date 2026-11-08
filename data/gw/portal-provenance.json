@@ -1,0 +1,1592 @@
+{
+  "schema": 1,
+  "client_target": "pinned pre-Reforged Guild Wars 2022",
+  "catalog": "config/map-portals.txt",
+  "trigger_policy": "Explicitly developer-defined bounded rectangles around observed departure positions, not recovered retail trigger geometry. Observed map changes alone do not prove walking rather than fast travel. Known map adjacency is separately established by the supplied 2021 local wiki.",
+  "navigation_policy": "Logical map IDs and asset bindings from existing pinned 2022 MapBrowser catalog, exact source planes. Trigger and arrival validation fails closed if a matching navigation asset is absent.",
+  "entries": [
+    {
+      "id": "ascalon_lakeside",
+      "status": "development_trigger_observed_endpoints",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 552,
+      "line_sha256": "34d293e1eb194fc3eb8cf44525384d024c024ca525255c3d9df39b21facd467c",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 148,
+        "x": 7331.333008,
+        "y": 5277.143555,
+        "plane": 0,
+        "facing": -2.304956
+      },
+      "to": {
+        "map": 146,
+        "x": 6602.0,
+        "y": 4485.0,
+        "plane": 0,
+        "facing": -2.2758
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113021,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Ascalon_City_(pre-Searing).html",
+      "validation": "Both observed endpoints on exact captured planes are walkable in the pinned 2022 mesh. Every configured trigger rectangle is wholly contained in one convex source navigation cell.",
+      "arrival_policy": "Direction-specific captured arrival, never default map spawn or last logout position."
+    },
+    {
+      "id": "lakeside_ascalon",
+      "status": "development_trigger_observed_endpoints",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 580,
+      "line_sha256": "c0d476aacfc6fe53d3f71ce3e9ba6d1c6767b4ba78401e944627667038326730",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 146,
+        "x": 7212.046875,
+        "y": 5255.59375,
+        "plane": 0,
+        "facing": 0.847049
+      },
+      "to": {
+        "map": 148,
+        "x": 7645.832031,
+        "y": 5785.655762,
+        "plane": 0,
+        "facing": 0.56895
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113021,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Lakeside_County.html",
+      "validation": "Both observed endpoints on exact captured planes are walkable in the pinned 2022 mesh. Every configured trigger rectangle is wholly contained in one convex source navigation cell.",
+      "arrival_policy": "Direction-specific captured arrival, never default map spawn or last logout position."
+    },
+    {
+      "id": "ashford_catacombs",
+      "status": "development_trigger_observed_endpoints",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 966,
+      "line_sha256": "35ce3ee378535bdce8a26c955b3ef74ad8b1de12074c6642858e5b7cd1e022b5",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 164,
+        "x": -13889.167969,
+        "y": -7106.244629,
+        "plane": 47,
+        "facing": -3.095581
+      },
+      "to": {
+        "map": 145,
+        "x": 14442.0,
+        "y": 2135.0,
+        "plane": 0,
+        "facing": -3.042645
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 116016,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Ashford_Abbey.html",
+      "validation": "Both observed endpoints on exact captured planes are walkable in the pinned 2022 mesh. Every configured trigger rectangle is wholly contained in one convex source navigation cell.",
+      "arrival_policy": "Direction-specific captured arrival, never default map spawn or last logout position."
+    },
+    {
+      "id": "catacombs_ashford",
+      "status": "development_trigger_observed_endpoints",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 981,
+      "line_sha256": "3870102b3a93accc967fd43c24d2685b12f3cbe4432f44b20a6dc63cc31563d4",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 47,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 145,
+        "x": 14473.984375,
+        "y": 2120.160156,
+        "plane": 47,
+        "facing": -0.522528
+      },
+      "to": {
+        "map": 164,
+        "x": -13231.121094,
+        "y": -7005.174805,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 116016,
+      "destination_navigation_asset": 113021,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/The_Catacombs.html",
+      "validation": "Both observed endpoints on exact captured planes are walkable in the pinned 2022 mesh. Every configured trigger rectangle is wholly contained in one convex source navigation cell.",
+      "arrival_policy": "Direction-specific captured arrival, never default map spawn or last logout position.",
+      "corridor_revision_20261030": {
+        "reason": "User reported Abbey entry/Catacombs exit failing. Replace center-only lane coverage with pinned connected doorway corridor. Abbey facing sample did not establish its physical crossing axis.",
+        "bounds_source": "data/gw/navigation/113021.fwnav plane0 connected strips y-6356..-6093, or116016.fwnav plane47 cell1 y2007..2256",
+        "retail_trigger_verified": false,
+        "rendered_verified": false
+      }
+    },
+    {
+      "id": "fort_ranik_regent",
+      "status": "development_trigger_observed_endpoints",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 654,
+      "line_sha256": "c944f743129693a6b7c714fb315d72590f17773450ff82b86fe8ebee3f89bb11",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 166,
+        "x": 22623.791016,
+        "y": 7471.063477,
+        "plane": 7,
+        "facing": -1.695065
+      },
+      "to": {
+        "map": 162,
+        "x": 22614.0,
+        "y": 6849.0,
+        "plane": 0,
+        "facing": -1.434743
+      },
+      "source_navigation_asset": 113437,
+      "destination_navigation_asset": 113437,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Fort_Ranik_(pre-Searing).html",
+      "validation": "Both observed endpoints on exact captured planes are walkable in the pinned 2022 mesh. Every configured trigger rectangle is wholly contained in one convex source navigation cell.",
+      "arrival_policy": "Direction-specific captured arrival, never default map spawn or last logout position."
+    },
+    {
+      "id": "barradin_green_hills",
+      "status": "development_trigger_observed_endpoints_inferred_shared_asset",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 757,
+      "line_sha256": "27f4b9a5d1fc217b7430236cb942a515f135306d4df2d624c7f967edd1c06f73",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 32,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 163,
+        "x": -7408.256836,
+        "y": 1446.322144,
+        "plane": 0,
+        "facing": -3.13589
+      },
+      "to": {
+        "map": 160,
+        "x": -7459.0,
+        "y": 1458.0,
+        "plane": 0,
+        "facing": -3.042645
+      },
+      "source_navigation_asset": 113190,
+      "destination_navigation_asset": 113190,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/The_Barradin_Estate.html",
+      "validation": "Entire corridor rectangle is analytically covered by nine genuine connected plane0 trapezoids in pinned113190. Event-height/edge-order interval proof rejects interior gaps, disconnected cells and wrong-floor fills. Actual arrival remains walkable on exactplane0. Logical160 binding is still inferred development data, not recovered CSVmanifest.",
+      "arrival_policy": "Direction-specific captured arrival, not last logout point.",
+      "developer_trigger": {
+        "plane": 0,
+        "min_x": -7500,
+        "min_y": 1312,
+        "max_x": -7460,
+        "max_y": 1553,
+        "connected_cells": [
+          2865,
+          2866,
+          2867,
+          2868,
+          2898,
+          2902,
+          2903,
+          2904,
+          2905
+        ]
+      },
+      "private_test_correction": {
+        "first_failure_y": 1440,
+        "later_failed_exit_endpoints": [
+          [
+            -7803.42,
+            1437.78
+          ],
+          [
+            -8158.23,
+            1424.18
+          ]
+        ],
+        "previous_trigger": [
+          -7460,
+          1439,
+          -7370,
+          1498
+        ],
+        "failure": "Single-cell trigger missed additional real doorway lanes despite one earlier successful roundtrip",
+        "correction": "Whole connected corridor cross-section x-7500..-7460 y1312..1553; inward-face crossing required, transverseouterboundaries closed",
+        "native_validated_lane_y": [
+          1312,
+          1330,
+          1360,
+          1424.18,
+          1437.78,
+          1440,
+          1458,
+          1510,
+          1540,
+          1553
+        ],
+        "live_retest": "pending"
+      }
+    },
+    {
+      "id": "green_hills_barradin",
+      "status": "development_trigger_observed_endpoints_inferred_shared_asset",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 772,
+      "line_sha256": "1c5c6170f7078b15e34952445ad3dc051a6988eec07b7f35f46ff6ea89335992",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 47,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 160,
+        "x": -7282.256348,
+        "y": 1444.687744,
+        "plane": 0,
+        "facing": -0.113283
+      },
+      "to": {
+        "map": 163,
+        "x": -7073.177734,
+        "y": 1382.66748,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 113190,
+      "destination_navigation_asset": 113190,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Green_Hills_County.html",
+      "validation": "Observed endpoints and full developer trigger rectangles match plane0 in pinned113190 mesh; forward cell2902/reverse4119. All472 distinct map160 captured own/NPC points match their recorded planes in this same asset. CSV160 has a zero placeholder, so the logical shared-asset binding is inferred development data, pending private rendered-map confirmation.",
+      "arrival_policy": "Direction-specific captured arrival, not last logout point."
+    },
+    {
+      "source_navigation_asset": 113355,
+      "destination_navigation_asset": 113355,
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "logical_binding_verified_retail": false,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Foible's_Fair.html",
+      "adjacency_sha256": "03309e0bf209dea70800dd465b21f88c358efbab197eb2887ba7602a1fcc1ab3",
+      "validation": "Full developer rectangle250..550/7778..7815 lies inside plane0 convex cell145 of113355. Forward arrival633/7270 matches plane0cell347. Logical161 shared-asset binding inferred from2420/2421 captured own/NPC points on their recorded planes; one point(-5967.105469,16205.658203,0) does not match and remains unresolved. CSV161 has zero binding. Private rendered-map/walking test pending.",
+      "id": "foibles_wizards_folly",
+      "status": "development_trigger_observed_endpoints_inferred_shared_asset",
+      "source_capture": "data/captures/unclaimed guild halls.jsonl",
+      "line": 691,
+      "line_sha256": "ef591d9f76d73dfd879c20474c7edb40ad35763d8f82e1b12dca9112d56b3a07",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "from": {
+        "map": 165,
+        "x": 397.276611,
+        "y": 7782.817383,
+        "plane": 0,
+        "facing": -1.293456
+      },
+      "to": {
+        "map": 161,
+        "x": 633.0,
+        "y": 7270.0,
+        "plane": 0,
+        "facing": -1.1379
+      },
+      "arrival_policy": "Direction-specific observed arrival; not last logout point."
+    },
+    {
+      "source_navigation_asset": 113355,
+      "destination_navigation_asset": 113355,
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "logical_binding_verified_retail": false,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Foible's_Fair.html",
+      "adjacency_sha256": "03309e0bf209dea70800dd465b21f88c358efbab197eb2887ba7602a1fcc1ab3",
+      "validation": "Full developer rectangle250..550/7778..7815 lies inside plane0 convex cell145 of113355. Forward arrival633/7270 matches plane0cell347. Logical161 shared-asset binding inferred from2420/2421 captured own/NPC points on their recorded planes; one point(-5967.105469,16205.658203,0) does not match and remains unresolved. CSV161 has zero binding. Private rendered-map/walking test pending.",
+      "id": "wizards_folly_foibles",
+      "status": "generated_shared_asset_review_required",
+      "generated_from": "foibles_wizards_folly",
+      "capture_method": "none_generated",
+      "from": {
+        "map": 161,
+        "plane": 0,
+        "trigger": [
+          250,
+          7778,
+          550,
+          7815
+        ]
+      },
+      "to": {
+        "map": 165,
+        "x": 384.667267,
+        "y": 7850.35986,
+        "plane": 0,
+        "facing": 1.84813666
+      },
+      "arrival_policy": "Generated development arrival via reverse_candidate on collision-connected plane0cell145, more than32units outside trigger. Not a captured or official spawn; private live confirmation required."
+    },
+    {
+      "id": "capture_248_280_191",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-10392-98228765.jsonl",
+      "line": 191,
+      "line_sha256": "bc9a643981a76654e9ecf62ce16d03e759a6cd921aedd8e87ff5ab937ce58f45",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 32,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 248,
+        "x": -6053.297363,
+        "y": -3835.470703,
+        "plane": 26,
+        "facing": 1.583177
+      },
+      "to": {
+        "map": 280,
+        "x": -6036.0,
+        "y": -2519.0,
+        "plane": 0,
+        "facing": 1.434743
+      },
+      "source_navigation_asset": 165811,
+      "destination_navigation_asset": 165811,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Great_Temple_of_Balthazar.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_280_248_241",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-10392-98228765.jsonl",
+      "line": 241,
+      "line_sha256": "487dfe14b467f9ff57ced33dc3006e4e5fab4837b00f4360d196459b7738dc2c",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 280,
+        "x": -6091.058594,
+        "y": -3519.761719,
+        "plane": 26,
+        "facing": -1.597941
+      },
+      "to": {
+        "map": 248,
+        "x": -6031.521484,
+        "y": -4582.39502,
+        "plane": 0,
+        "facing": -1.434743
+      },
+      "source_navigation_asset": 165811,
+      "destination_navigation_asset": 165811,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Isle_of_the_Nameless.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_78_75_9070",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-10392-98228765.jsonl",
+      "line": 9070,
+      "line_sha256": "305c50b7fd37582e78353ea86f6532830caa73290eace4739c3bf1ad12a136b9",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 78,
+        "x": 1651.740723,
+        "y": -1049.231323,
+        "plane": 0,
+        "facing": -2.209059
+      },
+      "to": {
+        "map": 75,
+        "x": -7088.115723,
+        "y": 6184.330566,
+        "plane": 31,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 13989,
+      "destination_navigation_asset": 14004,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\The_Courtyard.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_499_675_1675",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-15860-253212140.jsonl",
+      "line": 1675,
+      "line_sha256": "ad1a0389f94390c130e355d6f36ec666e61aeec40d8fd315f393997f174450a3",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 499,
+        "x": -4112.156738,
+        "y": -10893.368164,
+        "plane": 0,
+        "facing": 0.306025
+      },
+      "to": {
+        "map": 675,
+        "x": 8756.821289,
+        "y": -26295.667969,
+        "plane": 0,
+        "facing": 2.102641
+      },
+      "source_navigation_asset": 288299,
+      "destination_navigation_asset": 288299,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ice_Cliff_Chasms.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_138_72_5006",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-17056-263108156.jsonl",
+      "line": 5006,
+      "line_sha256": "0b3a7b43b5e91fd402bf0d040c94ad443e1fb7a2795be1e00d8c8f633885ba7c",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 138,
+        "x": -4029.168701,
+        "y": 19725.638672,
+        "plane": 21,
+        "facing": 2.313182
+      },
+      "to": {
+        "map": 72,
+        "x": 724.0,
+        "y": 6875.0,
+        "plane": 28,
+        "facing": 2.102641
+      },
+      "source_navigation_asset": 34045,
+      "destination_navigation_asset": 63059,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Temple_of_the_Ages.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_58_55_250",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-6784-190402640.jsonl",
+      "line": 250,
+      "line_sha256": "bd1ff491d598584007c5b9041013165dfd29530ae92db0698382702a8afb94b0",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 58,
+        "x": 6444.448242,
+        "y": -18298.595703,
+        "plane": 19,
+        "facing": -0.900697
+      },
+      "to": {
+        "map": 55,
+        "x": 1177.504883,
+        "y": 10535.591797,
+        "plane": 0,
+        "facing": -1.1379
+      },
+      "source_navigation_asset": 321286,
+      "destination_navigation_asset": 13565,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\North_Kryta_Province.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_54_14_509",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 509,
+      "line_sha256": "bbed1573d6ad51eb5a30be08b4ed3367efb2d0b5841ff28d8c5299132154ec74",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 54,
+        "x": -1233.049805,
+        "y": -6966.394043,
+        "plane": 0,
+        "facing": -0.951475
+      },
+      "to": {
+        "map": 14,
+        "x": -4092.115479,
+        "y": 26355.330078,
+        "plane": 0,
+        "facing": -0.717372
+      },
+      "source_navigation_asset": 41193,
+      "destination_navigation_asset": 35379,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Scoundrel's_Rise.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_63_19_963",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 963,
+      "line_sha256": "1ff8b715e5f167fec157f8164c9a325b7f83b604be46b56745d6d6ef22c8fac3",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 63,
+        "x": 7857.724609,
+        "y": -14331.782227,
+        "plane": 0,
+        "facing": -1.021284
+      },
+      "to": {
+        "map": 19,
+        "x": -22595.0,
+        "y": 6880.0,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 34281,
+      "destination_navigation_asset": 37216,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Stingray_Strand.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_20_26_1134",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1134,
+      "line_sha256": "ec2fd878f6d9cb04bccbf3e2c56f76709186feb51a5b5d560a70b91f0e4b03d0",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 20,
+        "x": -144.22937,
+        "y": 10588.34375,
+        "plane": 0,
+        "facing": 3.053469
+      },
+      "to": {
+        "map": 26,
+        "x": 8612.0,
+        "y": -16186.0,
+        "plane": 0,
+        "facing": 2.102641
+      },
+      "source_navigation_asset": 33642,
+      "destination_navigation_asset": 46589,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Droknars_Forge.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_26_20_1144",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1144,
+      "line_sha256": "01f6c1fd2ef21f7ad6ebeddb69170487482c8a7730c7e51d4117753d3cf74391",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 26,
+        "x": 8954.795898,
+        "y": -16657.607422,
+        "plane": 0,
+        "facing": -0.858929
+      },
+      "to": {
+        "map": 20,
+        "x": 284.218933,
+        "y": 10275.765625,
+        "plane": 0,
+        "facing": -0.717372
+      },
+      "source_navigation_asset": 46589,
+      "destination_navigation_asset": 33642,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Talus_Chute.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_20_95_1256",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1256,
+      "line_sha256": "f11287feb93d7ef673d708b647c7d2d9a553bcdfb179153173bcf95380396cdb",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 0,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 20,
+        "x": 5748.033203,
+        "y": 1478.124146,
+        "plane": 0,
+        "facing": -0.720523
+      },
+      "to": {
+        "map": 95,
+        "x": -18182.0,
+        "y": 7023.0,
+        "plane": 0,
+        "facing": -0.717372
+      },
+      "source_navigation_asset": 33642,
+      "destination_navigation_asset": 46599,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Droknars_Forge.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_89_21_1355",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1355,
+      "line_sha256": "1887021bdb4d7ed88e61a30236bb267182d05c7ad1595f20061c538efed70447",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 89,
+        "x": 18857.775391,
+        "y": -17976.988281,
+        "plane": 0,
+        "facing": -0.344742
+      },
+      "to": {
+        "map": 21,
+        "x": 7267.0,
+        "y": 30830.0,
+        "plane": 0,
+        "facing": -0.717372
+      },
+      "source_navigation_asset": 46593,
+      "destination_navigation_asset": 13265,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Anvil_Rock.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_94_23_1652",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1652,
+      "line_sha256": "77fd9ac382b3187165824d06e7b128142a2ac7d78c8eb3de9f93eefed1b7dc12",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 94,
+        "x": 21599.205078,
+        "y": 13408.495117,
+        "plane": 0,
+        "facing": 1.069625
+      },
+      "to": {
+        "map": 23,
+        "x": -11815.791016,
+        "y": -22639.880859,
+        "plane": 0,
+        "facing": 1.434743
+      },
+      "source_navigation_asset": 46598,
+      "destination_navigation_asset": 11565,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ice_Floe.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_98_24_1787",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1787,
+      "line_sha256": "49daac16e0f8ea88f377c3db8fa9d9770f1287f3f18e07d4eb980098cc0e2b7b",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 98,
+        "x": 20112.941406,
+        "y": 11364.273438,
+        "plane": 0,
+        "facing": -0.372891
+      },
+      "to": {
+        "map": 24,
+        "x": -6816.30127,
+        "y": -31965.212891,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 46602,
+      "destination_navigation_asset": 47660,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Frozen_Forest.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_99_25_1947",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 1947,
+      "line_sha256": "b2777112db07f7a1997483dbe599a54b5217d0ea923f01a99fe1f4f9b3d8a3ed",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 0,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 99,
+        "x": -11030.460938,
+        "y": -8497.133789,
+        "plane": 0,
+        "facing": 3.120185
+      },
+      "to": {
+        "map": 25,
+        "x": 25223.748047,
+        "y": -2284.727539,
+        "plane": 0,
+        "facing": -2.696328
+      },
+      "source_navigation_asset": 46603,
+      "destination_navigation_asset": 13019,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Traveler's_Vale.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_81_28_2042",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 2042,
+      "line_sha256": "3e89e7ecaa8712ca66cd854982da8609203ad200cc3bca6a2ddf63eaa3fa8de9",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 0,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 81,
+        "x": 13031.432617,
+        "y": 13571.689453,
+        "plane": 0,
+        "facing": 1.255581
+      },
+      "to": {
+        "map": 28,
+        "x": 9504.749023,
+        "y": -10480.272461,
+        "plane": 0,
+        "facing": 1.014215
+      },
+      "source_navigation_asset": 22052,
+      "destination_navigation_asset": 13824,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ascalon_City.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_101_29_2669",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 2669,
+      "line_sha256": "5eba475a1e6df4b306c0ede21279f96566134c54d8a39cd664351637de48906b",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 32,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 101,
+        "x": 22605.332031,
+        "y": 7196.430664,
+        "plane": 5,
+        "facing": 1.709644
+      },
+      "to": {
+        "map": 29,
+        "x": 7651.0,
+        "y": -29365.0,
+        "plane": 0,
+        "facing": 1.014215
+      },
+      "source_navigation_asset": 51060,
+      "destination_navigation_asset": 13906,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Regent_Valley.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_107_30_2828",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 2828,
+      "line_sha256": "198f3ee1f104c8d747cae12d3686b2566ea38566424e0e655691f3351a5d2b2f",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 107,
+        "x": -19938.0,
+        "y": 10851.654297,
+        "plane": 0,
+        "facing": -3.001327
+      },
+      "to": {
+        "map": 30,
+        "x": -2220.0,
+        "y": -13859.0,
+        "plane": 0,
+        "facing": -2.869486
+      },
+      "source_navigation_asset": 51066,
+      "destination_navigation_asset": 13907,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Eastern_Frontier.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_35_121_3064",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3064,
+      "line_sha256": "a05cda44f4f80ac49f6397019232809ddcae3a15f1e8d2ff69ffbe8375390bd6",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 35,
+        "x": 3841.81958,
+        "y": -8700.704102,
+        "plane": 14,
+        "facing": 1.500909
+      },
+      "to": {
+        "map": 121,
+        "x": 3912.0,
+        "y": -8006.0,
+        "plane": 0,
+        "facing": 1.1379
+      },
+      "source_navigation_asset": 55563,
+      "destination_navigation_asset": 55563,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ember_Light_Camp.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_121_35_3078",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3078,
+      "line_sha256": "1e27ac1031e42eb03e530119198829015d449534cd252a9c6dd00ae61d250120",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 121,
+        "x": 3821.917969,
+        "y": -8570.449219,
+        "plane": 14,
+        "facing": -1.522684
+      },
+      "to": {
+        "map": 35,
+        "x": 3774.881836,
+        "y": -9867.174805,
+        "plane": 0,
+        "facing": -1.434743
+      },
+      "source_navigation_asset": 55563,
+      "destination_navigation_asset": 55563,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Perdition_Rock.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_36_13_3135",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3135,
+      "line_sha256": "5848dfb73e0650e5d1b99a4336d3497613e01cfca37348c867426ae8a5fecc12",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 36,
+        "x": 1936.053101,
+        "y": 13659.243164,
+        "plane": 39,
+        "facing": -0.6329
+      },
+      "to": {
+        "map": 13,
+        "x": 3093.0,
+        "y": 13016.0,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 14936,
+      "destination_navigation_asset": 14936,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Grendich_Courthouse.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_13_36_3161",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3161,
+      "line_sha256": "e9c6d50dfdf5ee8ab0fc7a352ddd4816e68fc31d7aca312043bb248ecdad4914",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 13,
+        "x": 1890.96106,
+        "y": 13551.607422,
+        "plane": 39,
+        "facing": 2.613626
+      },
+      "to": {
+        "map": 36,
+        "x": 1205.218994,
+        "y": 14039.765625,
+        "plane": 0,
+        "facing": 2.696328
+      },
+      "source_navigation_asset": 14936,
+      "destination_navigation_asset": 14936,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Diessa_Lowlands.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_115_38_3333",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3333,
+      "line_sha256": "f435e342dc5c6555125a0b708fb64fa3cde463c54b81b52f1fddf28b4492f1a8",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 115,
+        "x": -15227.268555,
+        "y": 2134.064209,
+        "plane": 0,
+        "facing": -1.618343
+      },
+      "to": {
+        "map": 38,
+        "x": -15106.78125,
+        "y": 1312.765259,
+        "plane": 0,
+        "facing": -1.434743
+      },
+      "source_navigation_asset": 52837,
+      "destination_navigation_asset": 52837,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Skyward_Reach.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_113_38_3395",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3395,
+      "line_sha256": "0db6e4720bb1becac1a0657a503b4f4f6072049a620f2a8e417c9cb86e90a1d5",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 113,
+        "x": 20023.505859,
+        "y": -321.843201,
+        "plane": 0,
+        "facing": -0.167743
+      },
+      "to": {
+        "map": 38,
+        "x": -18617.740234,
+        "y": -560.568665,
+        "plane": 0,
+        "facing": -0.717372
+      },
+      "source_navigation_asset": 52835,
+      "destination_navigation_asset": 52837,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Prophet's_Path.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_39_33_3474",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3474,
+      "line_sha256": "8a4b206d94dc94ab4d9c440e6bc201f6b80caaa57e3dadbbeabb9b2335da5991",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 39,
+        "x": -5073.144043,
+        "y": -72.826096,
+        "plane": 0,
+        "facing": 0.327909
+      },
+      "to": {
+        "map": 33,
+        "x": -4747.0,
+        "y": -65.0,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 14937,
+      "destination_navigation_asset": 14937,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Sardelac_Sanitarium.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_102_40_3585",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3585,
+      "line_sha256": "cc2ba20bcedd835f252423d4bdf2069b58248d83b7363595175ba38c11e14bb4",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 102,
+        "x": 20216.580078,
+        "y": 7544.116699,
+        "plane": 0,
+        "facing": 1.550158
+      },
+      "to": {
+        "map": 40,
+        "x": 20289.191406,
+        "y": 8635.1875,
+        "plane": 0,
+        "facing": 0.717372
+      },
+      "source_navigation_asset": 51061,
+      "destination_navigation_asset": 51061,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\The_Breach.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_49_48_3749",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3749,
+      "line_sha256": "0ae559885cf83886b4aebc9dbda24bf70644ef90b093fd09a8eb55debb73ce75",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 0,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 49,
+        "x": 6294.442871,
+        "y": -10630.451172,
+        "plane": 0,
+        "facing": -2.066259
+      },
+      "to": {
+        "map": 48,
+        "x": 12200.0,
+        "y": 13516.0,
+        "plane": 0,
+        "facing": -2.102641
+      },
+      "source_navigation_asset": 40759,
+      "destination_navigation_asset": 40811,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Henge_of_Denravi.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_48_49_3760",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3760,
+      "line_sha256": "6607a5c856209bfbdedff4bb32b656e173a2c0cf2b62f349a0eb2c14be1f8208",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 48,
+        "x": 12558.979492,
+        "y": 13838.667969,
+        "plane": 0,
+        "facing": 0.888155
+      },
+      "to": {
+        "map": 49,
+        "x": 6658.259277,
+        "y": -10123.431641,
+        "plane": 0,
+        "facing": 0.717372
+      },
+      "source_navigation_asset": 40811,
+      "destination_navigation_asset": 40759,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Tangle_Root.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_51_31_3910",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3910,
+      "line_sha256": "c45db304b85c77368b495bfa6286e4d1f07ceaf6163071c3c2b7c97e3e9d55f3",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 51,
+        "x": 6332.025391,
+        "y": -12947.449219,
+        "plane": 6,
+        "facing": 2.861593
+      },
+      "to": {
+        "map": 31,
+        "x": 5382.0,
+        "y": -12137.0,
+        "plane": 0,
+        "facing": 2.2758
+      },
+      "source_navigation_asset": 157168,
+      "destination_navigation_asset": 157168,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Senji's_Corner.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_31_51_3935",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 3935,
+      "line_sha256": "7ee0f9a2729363af702dbb18a256d064bb127659775dd71b07bc490c4c0754f2",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 31,
+        "x": 6161.702637,
+        "y": -12946.958008,
+        "plane": 6,
+        "facing": -0.562533
+      },
+      "to": {
+        "map": 51,
+        "x": 6665.881836,
+        "y": -13519.825195,
+        "plane": 0,
+        "facing": -0.717372
+      },
+      "source_navigation_asset": 157168,
+      "destination_navigation_asset": 157168,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Xaquang_Skyway.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_57_59_4112",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 4112,
+      "line_sha256": "42a1f3c5c275aebc8e5d669412695d77974f8e06eccf8700277012ecb62206b6",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 57,
+        "x": 15466.189453,
+        "y": -15063.334961,
+        "plane": 0,
+        "facing": 1.748325
+      },
+      "to": {
+        "map": 59,
+        "x": 15241.0,
+        "y": -14387.0,
+        "plane": 0,
+        "facing": 1.434743
+      },
+      "source_navigation_asset": 34216,
+      "destination_navigation_asset": 34216,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Bergen_Hot_Springs.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_59_57_4123",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/world-8432-209740140.jsonl",
+      "line": 4123,
+      "line_sha256": "5d1658c33eb9153f0654e35014f5e53c9cb030ac1659684949758ea634b63159",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 31,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 59,
+        "x": 15390.560547,
+        "y": -15017.118164,
+        "plane": 0,
+        "facing": -1.17038
+      },
+      "to": {
+        "map": 57,
+        "x": 15673.0,
+        "y": -15792.0,
+        "plane": 0,
+        "facing": -0.56895
+      },
+      "source_navigation_asset": 34216,
+      "destination_navigation_asset": 34216,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Nebo_Terrace.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_146_164_734",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/pre-searing-ele-warrior-2026-10-09/world-21116-95410734.jsonl",
+      "line": 734,
+      "line_sha256": "3cbd6b9fd404c419f332d99840a011d571c429702040c7a9944c0541b130f882",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 146,
+        "x": -11155.18457,
+        "y": -6418.872559,
+        "plane": 0,
+        "facing": 1.987227
+      },
+      "to": {
+        "map": 164,
+        "x": -11646.251953,
+        "y": -6177.728027,
+        "plane": 0,
+        "facing": -3.042645
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113021,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lakeside_County.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position.",
+      "corridor_revision_20261030": {
+        "reason": "User reported Abbey entry/Catacombs exit failing. Replace center-only lane coverage with pinned connected doorway corridor. Abbey facing sample did not establish its physical crossing axis.",
+        "bounds_source": "data/gw/navigation/113021.fwnav plane0 connected strips y-6356..-6093, or116016.fwnav plane47 cell1 y2007..2256",
+        "retail_trigger_verified": false,
+        "rendered_verified": false
+      }
+    },
+    {
+      "id": "capture_146_160_1274",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/pre-searing-ele-warrior-2026-10-09/world-21116-95410734.jsonl",
+      "line": 1274,
+      "line_sha256": "8f15ff686c90ea468b3b582feb5d7bf0d35236a246476c28dc605aafec5fb9d5",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 16,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 146,
+        "x": -14554.65625,
+        "y": 9953.533203,
+        "plane": 0,
+        "facing": 3.074178
+      },
+      "to": {
+        "map": 160,
+        "x": 21932.0,
+        "y": 12966.0,
+        "plane": 0,
+        "facing": -3.042645
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113190,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lakeside_County.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_146_161_2156",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/pre-searing-ele-warrior-2026-10-09/world-21116-95410734.jsonl",
+      "line": 2156,
+      "line_sha256": "85b9e0c0915f8603ded3762d848113f0a8b2ead71035a80bd64987f756644df9",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 0,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 146,
+        "x": -13934.873047,
+        "y": -19991.052734,
+        "plane": 0,
+        "facing": -2.8376
+      },
+      "to": {
+        "map": 161,
+        "x": 9449.0,
+        "y": 19702.0,
+        "plane": 0,
+        "facing": -2.102641
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113355,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lakeside_County.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position."
+    },
+    {
+      "id": "capture_164_146_1339",
+      "status": "development_trigger_wiki_adjacent",
+      "source_capture": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+      "line": 1339,
+      "line_sha256": "a0b02ed6bfac66505dea6f8cc4030b94619b68c07bc38d9304eabe676c5388cf",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 0,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 164,
+        "x": -11316.757812,
+        "y": -6308.029785,
+        "plane": 0,
+        "facing": 0.216226
+      },
+      "to": {
+        "map": 146,
+        "x": -10853.0,
+        "y": -6221.0,
+        "plane": 0,
+        "facing": 0.0
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113021,
+      "adjacency_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ashford_Abbey.html",
+      "validation": "The full trigger rectangle is contained by a source navigation cell; both captured endpoints are walkable on their recorded planes.",
+      "arrival_policy": "Direction-specific captured arrival, never a logout position.",
+      "corridor_revision_20261030": {
+        "reason": "User reported Abbey entry/Catacombs exit failing. Replace center-only lane coverage with pinned connected doorway corridor. Abbey facing sample did not establish its physical crossing axis.",
+        "bounds_source": "data/gw/navigation/113021.fwnav plane0 connected strips y-6356..-6093, or116016.fwnav plane47 cell1 y2007..2256",
+        "retail_trigger_verified": false,
+        "rendered_verified": false
+      }
+    },
+    {
+      "id": "capture_lakeside_regent_1574",
+      "status": "development_trigger_observed_endpoints",
+      "source_capture": "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl",
+      "line": 1574,
+      "line_sha256": "137e38818e27e427ae1c5cfd0bc01856740caed07eb0340c41a6bc9f136afd09",
+      "corroborating_line": 7180,
+      "corroborating_line_sha256": "d6cc36db4e8a9f2890a1fb4b59a1ae31d06d50a0af402d007c5eb186e7e20d5e",
+      "event": "local_map_transition_observed",
+      "loading_observed": true,
+      "departure_sample_age_ms": 15,
+      "capture_method": "unknown",
+      "retail_trigger_verified": false,
+      "retail_portal_spawn_verified": false,
+      "from": {
+        "map": 146,
+        "x": 4246.410645,
+        "y": -19627.900391,
+        "plane": 0,
+        "facing": -0.199981
+      },
+      "corroborating_from": {
+        "map": 146,
+        "x": 4300.002441,
+        "y": -19646.574219,
+        "plane": 0,
+        "facing": -0.171597
+      },
+      "to": {
+        "map": 162,
+        "x": -14893,
+        "y": 16791,
+        "plane": 0,
+        "facing": -1.1379
+      },
+      "source_navigation_asset": 113021,
+      "destination_navigation_asset": 113437,
+      "adjacency_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/Lakeside_County.html",
+      "validation": "The whole 80 by 80 development rectangle fits one pinned source cell; both independent departures are inside it. Both transitions record the exact same destination coordinates, plane and facing, on walkable pinned destination geometry. No manual_travel_request records occur in this source file.",
+      "arrival_policy": "Direction-specific captured arrival, never logout position or inferred reverse spawn.",
+      "limits": [
+        "Travel method remains unknown; these observations do not recover retail trigger bounds.",
+        "Only the forward direction is proposed. No reverse endpoint was invented.",
+        "Forward development trigger activated; native catalog/detector validation required before deployment."
+      ]
+    }
+  ],
+  "generated_private_edges": [
+    {
+      "id": "regent_fort_ranik",
+      "source": 162,
+      "destination": 166,
+      "asset": 113437,
+      "parent": "fort_ranik_regent",
+      "source_plane": 7,
+      "arrival_plane": 8,
+      "arrival": [
+        22633.4082,
+        7534.82129
+      ],
+      "capture_method": "none_generated",
+      "policy": "Private reverse gate derived from the existing shared-asset corridor and collision-connected inward arrival, outside trigger by at least32units. Does not assert recovered retail trigger or spawn.",
+      "validation": "Configured native detector direction and exact destination plane/navigation checked in map_portals test. Native client crossing remains pending."
+    }
+  ],
+  "unsupported_observed_edges": [
+    {
+      "source": 779,
+      "destination": 147,
+      "reason": "Modern map779 has no equivalent proven pinned2022 map binding; no inferred ID rewrite."
+    }
+  ]
+}

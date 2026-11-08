@@ -1,0 +1,120 @@
+Pre-Searing profession trial evidence, 2026-10-11
+
+Reproduce with tools/quests/audit_presearing_profession_trial.py. The report
+records the archived packet source SHA256, original hex, line numbers and ticks.
+Production remains native C++; this offline tool does not attach to a client.
+
+W/E capture actor7 receives modern opcode217 slot assignments at100074984:
+slot2 Fire Storm197, slot3 Aura of Restoration180, slot4 Glyph of Lesser Energy200.
+The Experiment objective completes at100136093 in the existing quest provenance.
+Later, at100146656, modern183 carries actor7/primary1/secondary6/state0 and
+modern166 carries actor7/primary1/secondary6. Skill slots are cleared and reissued
+at the latter tick. Thus teaching trial skills and the observed profession
+selection are distinct stages, not one acceptance-time permanent mutation.
+
+Modern responses are DWORD-expanded logger records, not native2022 packets.
+The native profession serializers already independently pin182/181 and165;
+do not derive those opcodes by subtracting one from this capture.
+
+Remaining implementation: represent temporary profession trials separately from
+the committed secondary/unlock mask; allow only the reviewed trial grants to be
+equipped/cast under that trial; persist trial state atomically with quest grants;
+recover the selection dialogue before enabling final profession commitment.
+Trials must not grant permanent profession-switch privileges. The archive here
+does not prove cancellation behavior or the selecting CtoS dialogue ID.
+
+Selection-context audit extension:
+The five seconds before selection and one second after contain95 archived rows
+and no CtoS requests. The three interaction files starting100143640,100144843
+and100146656 all identify agent13; their name is explicitly unverified and map0
+must not be used as the actual map. Those files likewise contain no outgoing
+request. Report now preserves their hashes/headers alongside the exact response
+window. Agent13/timing provides context, not the selecting dialogue token. Thus
+these sources cannot establish that missing token; inspect other captures or
+define an explicitly private menu action rather than fabricating a retail one.
+
+Implementation foundation (not yet enabled by quest acceptance):
+Character skill profiles now persist an explicit trial skill set using FWS2;
+ordinary profiles still write/read FWS1. Trials require an unchosen secondary,
+a core primary, already learned skills and membership in the44 pre-Searing list.
+Session policy defaults trial permissions off. Only an explicit trial-area view
+allows those exact off-profession skills; it grants neither profession_mask bits
+nor secondary selection. Character skill tests cover roundtrip, default denial,
+unlisted off-profession skill denial, invalid grants and malformed/truncated data.
+Still required: atomic quest grant integration, authoritative pre-map policy at
+restore/casting/bar changes, trial cleanup and final selection lifecycle. No
+live training or reconnect claim follows from this persistence foundation.
+
+Typed acceptance integration:
+SaveQuests/acceptCharacterQuest now carry an explicit trial request. Both packet
+preparation and storage independently apply the same reviewed quest grant helper.
+Trial acceptance requires a nonzero actor, exact ordered acceptance grants from
+the installed rule, and vacancy assignment; arbitrary IDs cannot become trials.
+Quest stage and FWS2 skill state commit in the existing single revision-checked
+transaction. The untyped storage payload refuses trial requests. Production NPC
+menus now request trials for unchosen-secondary characters at the reviewed NPCs.
+Session restore/casting/bar edits use explicit pre-area authorization from pinned
+map metadata (campaign1/continent1/region7, explorable/outpost types). Outside it,
+trial_view suppresses off-profession slots without altering the durable build.
+Denied profession-menu requests reconcile under the same trial policy; they do
+not permanently select/unlock the trial profession. Final NPC selection remains
+unfinished. Live trial gameplay is not yet verified.
+
+Private abandonment policy (not inferred retail cancellation semantics):
+Abandonment retains learned skills, prunes trial authorization against the other
+non-abandoned reviewed quest records, and clears only revoked off-profession
+slots. Rewarded trial quests retain authorization pending permanent selection.
+The quest stage and skill state share one transaction and two revision checks;
+stale skill revisions roll back the quest as well. Actor-less cleanup refuses
+publication. Explicit native slot clears reconcile successful cleanup; the host uses
+its map-filtered session view and cancels any current cast after commit.
+Reacceptance restores newly reauthorized trial slots without relearning or
+overwriting occupied slots. Repeated ongoing grants respect manually removed
+skills. Focused tests cover remaining-trial preservation and storage rollback,
+reopen and reacceptance. These do not prove native client behavior yet.
+
+Native2022 trial acceptance test,2026-10-11:
+Pre Quest War primary1/secondary0 accepted73 at Aziure. FWS2 saved three trial
+skills in slots4/5/6. Glyph200 was accepted/applied; Fire Storm197 during Glyph
+cast/aftercast was rejected, then the encounter failed. This verifies acceptance
+and one trial cast, not successful trial completion. Abandonment recorded status0
+and persisted an empty trial set/slots, but the client retained icons after the
+full217 snapshot. Cleanup now uses explicit216 slot clears instead. Archive
+selection-window lines26373/26375/26377 independently show modern217 clearing
+slots3/2/4 to skill0/copy0 before reassignment; native216 serializer is independently
+pinned. Native opcode identity is not derived by subtraction. Updated clear
+publication was then live-retested: reaccepted73, returned165 (native L permits
+abandonment only in town), clicked Abandon/OK, and the quest and three trial
+icons cleared immediately. Saved profile returned to FWS1, secondary0, four
+Warrior slots and unchanged XP750. Evidence: explicit-clears-verified.png and
+explicit-clears-server.txt. Reports: build/reports/secondary-trial-native/.
+
+Reviewed reward unlock implementation:
+The local Experiment page states "Unlocks Elementalist for secondary profession";
+Grawl's notes identify it among the quests required for a secondary profession.
+Installed source hashes are in gw_presearing_quests.h. Rewards73/75 now support
+an explicit reviewed trial-unlock flag: require all recorded trial grants, keep
+the selected secondary0, add only that rule's profession-mask bit, and commit it
+with XP and the completed->rewarded fence under the skill revision check.
+Publication uses independently pinned181 mask update for an already initialized
+profession state. The normal decoded63 profession request can then select an
+unlocked profession and clear temporary permissions. No retail NPC selection
+dialogue ID is invented. Native NPC selection parity remains unresolved.
+Tests cover stale reward rollback, reopening rewarded quest/unlocked mask, native
+mask publication, unchanged selection/learning, authorized selection, saving
+through the typed secondary-profession transaction and reopening with secondary6,
+no trial permissions and preserved Fire Storm slot. Rebuilt lifecycle test passes.
+Live unlock/selection verified 2026-10-11 on host27032/private client27468:
+Pre Quest War completed all three waves in quest73 cycle5 using native SPACE,
+Glyph200, Fire Storm197 and Healing Signet1. The bounded developer input script
+tools/client/test_presearing_trial_wave.ps1 -AllWaves records server completion;
+it does not write quest objectives, resources, position or server state.
+Native Aziure reward recorded reward1/status0, cleared L and saved XP750->1000,
+secondary0 and unlocked Elementalist mask64. After native travel to165, the K
+profession dropdown showed Warrior/Elementalist. Selecting it sent the existing
+profession request and recorded secondary_edit profession6 outcomeaccepted.
+Read-only DB verifies FWS1 primary1/secondary6, XP1000 and no trial permissions.
+Screenshots/logs: build/reports/secondary-trial-native/three-wave-complete.png,
+native-reward.png, native-secondary-selection.png, three-wave-reward-server.txt.
+This validates this authored encounter and native menu/selection, not retail AI,
+all profession paths, doorway travel or complete pre-Searing playability.

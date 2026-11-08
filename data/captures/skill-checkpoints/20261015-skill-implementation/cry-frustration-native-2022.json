@@ -1,0 +1,49 @@
+{
+  "skill": 57,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 52,
+    "seconds": 0.25,
+    "stored_skill": 57,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 0,
+    "0x48": 0,
+    "0x4c": 15,
+    "0x5c": 15,
+    "0x60": 75,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 102
+  },
+  "hypothetical_target_body_consumer": {
+    "actor": 43,
+    "encoded_file": "fdbf00010000",
+    "flags": 1
+  },
+  "activation_evidence": [
+    {
+      "file": "packets-6468-5728843.jsonl",
+      "line": 97535,
+      "tick_ms": 8504328,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e00000039000000",
+      "kind": 60
+    }
+  ],
+  "captured_body_evidence": [],
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Cry_of_Frustration.html",
+  "wiki_sha256": "a52d3f07bf68af52aad1c8648492d8d251b67dc440fcf4e260b1cd3b90856de3",
+  "tool_sha256": "a33ab706c3baadeef48d28c805dace0e3f9d129a3064cc3a5cdd26f3e8dfe359",
+  "limits": [
+    "One fixed activation and finish, no successful area effect or target-body emission established.",
+    "Original cast consumer and hypothetical body102 consumer only; no rendered/retail behavior claim."
+  ]
+}

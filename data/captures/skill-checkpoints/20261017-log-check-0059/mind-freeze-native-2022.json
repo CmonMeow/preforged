@@ -1,0 +1,178 @@
+{
+  "checkpoint": "20261017-log-check-0059",
+  "cutoff": "2026-10-17T06:01:36.761196+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "cases": [
+    {
+      "start": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19420031,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e000000d1000000"
+      },
+      "finish": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19421125,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      },
+      "particle": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19421125,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e0000001900000075010000"
+      },
+      "damage": [
+        {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19421125,
+          "opcode": 163,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a3000000100000001e00000019000000efee6ebc"
+        },
+        {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19421125,
+          "opcode": 163,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a3000000100000001e00000019000000efee6ebc"
+        }
+      ],
+      "lines": {
+        "start": 178255,
+        "finish": 178267,
+        "particle": 178268,
+        "damage": [
+          178270,
+          178271
+        ]
+      }
+    },
+    {
+      "start": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19433984,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001e000000d1000000"
+      },
+      "finish": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19435046,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      },
+      "particle": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19435046,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e0000001900000075010000"
+      },
+      "damage": [
+        {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 1360,
+          "tick_ms": 19435046,
+          "opcode": 163,
+          "bytes": 20,
+          "complete": true,
+          "hex": "a3000000100000001e00000019000000efee6ebc"
+        }
+      ],
+      "lines": {
+        "start": 178504,
+        "finish": 178515,
+        "particle": 178516,
+        "damage": [
+          178517
+        ]
+      }
+    }
+  ],
+  "metadata": [
+    {
+      "skill": 209,
+      "alias": 2803,
+      "energy": 5,
+      "overcast": 5,
+      "scale": [
+        10,
+        60
+      ],
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 209,
+        "override_after": 2139095040
+      }
+    },
+    {
+      "skill": 2803,
+      "alias": 209,
+      "energy": 10,
+      "overcast": 5,
+      "scale": [
+        10,
+        40
+      ],
+      "native_cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 2803,
+        "override_after": 2139095040
+      }
+    }
+  ],
+  "native_particle": {
+    "actor": 43,
+    "encoded_file": "d2d100010000",
+    "flags": 1
+  },
+  "target_wire2022": "9f80140000001e0000001900000075010000",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mind_Freeze.html": "301356a8a805eda5145b4ae690846ed50eb775e8b788865dedb412a572224e24",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mind_Freeze_(PvP).html": "258c2ff45fc95e75659f703e0afd39b3045e0c6488cfc0a98a31f476f8610ab2"
+  },
+  "tool_sha256": "a4c602bc4c527d7337d601096bed590ee86f0c0d13547b4fed1fa85776fd3f59",
+  "limits": [
+    "Local209 receipts establish one/two matching damage notifications,not a controlled Energy-threshold or numeric damage trial.",
+    "2803 native metadata is not local PvP activation credit.",
+    "90percent snare and duration are native/wiki evidence;stationary target captures do not measure movement.",
+    "Original consumers use stubbed model/assets;no rendered acceptance or production binding."
+  ]
+}

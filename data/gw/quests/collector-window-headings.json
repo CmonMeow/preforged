@@ -1,0 +1,306 @@
+{
+  "source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\packets-43292-168891734.jsonl",
+  "source_sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c",
+  "modern_heading_schema": [
+    197,
+    260,
+    31255
+  ],
+  "pinned2022": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "descriptor_rva": "0x60bfb8",
+    "fields": [
+      196,
+      260,
+      31255
+    ],
+    "callback_va": "0x8750f0",
+    "consumer_va": "0x795f60",
+    "item_list_descriptor_rva": "0x60bcac",
+    "item_list_fields": [
+      131,
+      4139,
+      6
+    ],
+    "item_list_callback_va": "0x8746a0",
+    "item_list_consumer_va": "0x793a80",
+    "consumer_requirement": "At least one accumulated item; first is the cost and remaining entries are offers."
+  },
+  "windows": [
+    {
+      "owner": {
+        "packet_line": 467863,
+        "tick_ms": 174633046,
+        "agent": 33,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 15013,
+        "instance_epoch": 3,
+        "map": 146,
+        "name": "Brownlow [Collector]",
+        "model": 1471,
+        "observation_age_ms": 235
+      },
+      "definition_candidate_ids": [
+        506,
+        585,
+        586
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10502,
+        1,
+        257,
+        261
+      ],
+      "heading_packet_line": 467868
+    },
+    {
+      "owner": {
+        "packet_line": 471155,
+        "tick_ms": 174915312,
+        "agent": 33,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 15717,
+        "instance_epoch": 3,
+        "map": 146,
+        "name": "Brownlow [Collector]",
+        "model": 1471,
+        "observation_age_ms": 281
+      },
+      "definition_candidate_ids": [],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10502,
+        1,
+        257,
+        261
+      ],
+      "heading_packet_line": 471157
+    },
+    {
+      "owner": {
+        "packet_line": 488014,
+        "tick_ms": 175637671,
+        "agent": 50,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 17705,
+        "instance_epoch": 6,
+        "map": 146,
+        "name": "Jacobs [Collector]",
+        "model": 1471,
+        "observation_age_ms": 375
+      },
+      "definition_candidate_ids": [
+        310,
+        311,
+        309,
+        314
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10508,
+        1,
+        257,
+        259
+      ],
+      "heading_packet_line": 488020
+    },
+    {
+      "owner": {
+        "packet_line": 523210,
+        "tick_ms": 176566578,
+        "agent": 253,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 20113,
+        "instance_epoch": 6,
+        "map": 146,
+        "name": "Kaylee  [Collector]",
+        "model": 1490,
+        "observation_age_ms": 625
+      },
+      "definition_candidate_ids": [
+        263,
+        396,
+        45,
+        46,
+        36
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10506,
+        1,
+        257,
+        259
+      ],
+      "heading_packet_line": 523217
+    },
+    {
+      "owner": {
+        "packet_line": 537715,
+        "tick_ms": 177350671,
+        "agent": 36,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 22223,
+        "instance_epoch": 6,
+        "map": 146,
+        "name": "Brownlow [Collector]",
+        "model": 1471,
+        "observation_age_ms": 156
+      },
+      "definition_candidate_ids": [
+        55,
+        51,
+        52
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10502,
+        1,
+        257,
+        261
+      ],
+      "heading_packet_line": 537720
+    },
+    {
+      "owner": {
+        "packet_line": 568546,
+        "tick_ms": 178521046,
+        "agent": 55,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 25473,
+        "instance_epoch": 23,
+        "map": 146,
+        "name": "Walden [Collector]",
+        "model": 1471,
+        "observation_age_ms": 437
+      },
+      "definition_candidate_ids": [
+        264,
+        234,
+        237,
+        539,
+        540,
+        541,
+        542
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10499,
+        1,
+        257,
+        259
+      ],
+      "heading_packet_line": 568555
+    },
+    {
+      "owner": {
+        "packet_line": 570881,
+        "tick_ms": 178628312,
+        "agent": 25,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 25782,
+        "instance_epoch": 25,
+        "map": 161,
+        "name": "Savich [Collector]",
+        "model": 1471,
+        "observation_age_ms": 844
+      },
+      "definition_candidate_ids": [
+        326,
+        650
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10479,
+        1,
+        257,
+        259
+      ],
+      "heading_packet_line": 570887
+    },
+    {
+      "owner": {
+        "packet_line": 587848,
+        "tick_ms": 179328312,
+        "agent": 44,
+        "event": "window_owner",
+        "status": "joined_by_sender_and_recent_observation",
+        "world_line": 27788,
+        "instance_epoch": 36,
+        "map": 146,
+        "name": "Humphreys [Collector]",
+        "model": 1471,
+        "observation_age_ms": 312
+      },
+      "definition_candidate_ids": [
+        261,
+        270,
+        373,
+        381,
+        391,
+        13,
+        219
+      ],
+      "type": 2,
+      "encoded_utf16": [
+        11059,
+        55010,
+        55495,
+        2666,
+        266,
+        10494,
+        1,
+        257,
+        261
+      ],
+      "heading_packet_line": 587857
+    }
+  ],
+  "limits": [
+    "Only the used heading prefix is decoded; stale tail omitted.",
+    "Definition order is not a recovered window item-list packet.",
+    "No outgoing purchase action or transaction success is established."
+  ]
+}

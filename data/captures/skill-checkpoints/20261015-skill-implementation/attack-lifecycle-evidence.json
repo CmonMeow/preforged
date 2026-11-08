@@ -1,0 +1,766 @@
+{
+  "skills": [
+    322,
+    326,
+    330,
+    331,
+    335,
+    336,
+    351,
+    382,
+    383,
+    384,
+    1144,
+    1693
+  ],
+  "source": "immutable checkpoint activation/endpoint evidence",
+  "capture_evidence": [
+    {
+      "id": 322,
+      "name": "Power Attack",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 5,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 50453,
+          "tick_ms": 7694031,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000042010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 50460,
+          "tick_ms": 7694531,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 326,
+      "name": "Protector's Strike",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 3,
+      "other_or_unassigned_starts": 5,
+      "local_finished": 3,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 354822,
+          "tick_ms": 22958203,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000046010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 354889,
+          "tick_ms": 22962765,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000046010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 354970,
+          "tick_ms": 22968578,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000046010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 354828,
+          "tick_ms": 22958437,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 354893,
+          "tick_ms": 22963031,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 354974,
+          "tick_ms": 22968718,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 330,
+      "name": "Cyclone Axe",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 355059,
+          "tick_ms": 22975734,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004a010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 355064,
+          "tick_ms": 22976250,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 331,
+      "name": "Hammer Bash",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 355110,
+          "tick_ms": 22980265,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004b010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 355116,
+          "tick_ms": 22981078,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 335,
+      "name": "Cleave",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 5,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 5,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364621,
+          "tick_ms": 23147406,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004f010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364675,
+          "tick_ms": 23150421,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004f010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364806,
+          "tick_ms": 23157296,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004f010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364853,
+          "tick_ms": 23160062,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004f010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364965,
+          "tick_ms": 23167671,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004f010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364625,
+          "tick_ms": 23147750,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364678,
+          "tick_ms": 23150703,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364811,
+          "tick_ms": 23157593,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364858,
+          "tick_ms": 23160406,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364972,
+          "tick_ms": 23168250,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 336,
+      "name": "Executioner's Strike",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 359749,
+          "tick_ms": 23075015,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000050010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 359758,
+          "tick_ms": 23075578,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 351,
+      "name": "Mighty Blow",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369791,
+          "tick_ms": 23266546,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003200000019000000200000005f010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369796,
+          "tick_ms": 23267296,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 382,
+      "name": "Sever Artery",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 2,
+      "other_or_unassigned_starts": 1,
+      "local_finished": 2,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383656,
+          "tick_ms": 23578531,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000007e010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383789,
+          "tick_ms": 23587171,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000007e010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383660,
+          "tick_ms": 23579078,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383798,
+          "tick_ms": 23587687,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 384,
+      "name": "Gash",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383677,
+          "tick_ms": 23579859,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000080010000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383680,
+          "tick_ms": 23580406,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 1144,
+      "name": "Silverwing Slash",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 404277,
+          "tick_ms": 24061875,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000078040000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 404282,
+          "tick_ms": 24062437,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 1693,
+      "name": "Counterattack",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 2,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 2,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 408416,
+          "tick_ms": 24157953,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000009d060000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 408689,
+          "tick_ms": 24176796,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000009d060000",
+          "kind": 50
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 408433,
+          "tick_ms": 24158671,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 408701,
+          "tick_ms": 24177406,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "events": {
+      "50": {
+        "code": 21,
+        "payload": [
+          43,
+          0,
+          404,
+          0
+        ]
+      },
+      "60": {
+        "code": 25,
+        "payload": [
+          43,
+          404,
+          0,
+          0
+        ]
+      }
+    },
+    "endpoints": {
+      "46": 17,
+      "49": 19,
+      "58": 22,
+      "59": 23
+    },
+    "body": {
+      "state": 45,
+      "seconds": 1.75,
+      "skill": 404
+    },
+    "hunter": {
+      "state": 45,
+      "seconds": 1.0,
+      "skill": 391
+    },
+    "quick": {
+      "state": 45,
+      "seconds": 1.0,
+      "skill": 397
+    },
+    "pin_down": {
+      "state": 45,
+      "seconds": 2.4749999046325684,
+      "skill": 392
+    },
+    "melee_cases": [
+      {
+        "skill": 322,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 322
+        }
+      },
+      {
+        "skill": 326,
+        "body": {
+          "state": 45,
+          "seconds": 0.5,
+          "skill": 326
+        }
+      },
+      {
+        "skill": 330,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 330
+        }
+      },
+      {
+        "skill": 331,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 331
+        }
+      },
+      {
+        "skill": 335,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 335
+        }
+      },
+      {
+        "skill": 336,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 336
+        }
+      },
+      {
+        "skill": 351,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 351
+        }
+      },
+      {
+        "skill": 382,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 382
+        }
+      },
+      {
+        "skill": 383,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 383
+        }
+      },
+      {
+        "skill": 384,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 384
+        }
+      },
+      {
+        "skill": 1144,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 1144
+        }
+      },
+      {
+        "skill": 1693,
+        "body": {
+          "state": 45,
+          "seconds": 1.75,
+          "skill": 1693
+        }
+      }
+    ],
+    "cyclone_self": {
+      "state": 45,
+      "seconds": 1.75,
+      "skill": 330
+    },
+    "styles": [
+      41
+    ],
+    "timing_cases": [
+      {
+        "interval": 2.475,
+        "modifier": 1.0,
+        "body": {
+          "state": 45,
+          "seconds": 2.4749999046325684,
+          "skill": 404
+        }
+      },
+      {
+        "interval": 2.475,
+        "modifier": 0.67,
+        "body": {
+          "state": 45,
+          "seconds": 1.6582499742507935,
+          "skill": 404
+        }
+      },
+      {
+        "skill": 322,
+        "interval": 1.33,
+        "modifier": 1.5,
+        "body": {
+          "state": 45,
+          "seconds": 1.9950001239776611,
+          "skill": 322
+        }
+      },
+      {
+        "skill": 326,
+        "interval": 1.33,
+        "modifier": 1.5,
+        "body": {
+          "state": 45,
+          "seconds": 0.75,
+          "skill": 326
+        }
+      },
+      {
+        "skill": 391,
+        "interval": 1.33,
+        "modifier": 1.5,
+        "body": {
+          "state": 45,
+          "seconds": 1.5,
+          "skill": 391
+        }
+      }
+    ],
+    "limits": "Native attack body consumer reaches model lookup/style41 and animation state45 using supplied intervals. Model lookup returns synthetic handles, ancillary effects/clock/actor services stubbed. No rendered pixels or attack release timing proof."
+  },
+  "runtime_changes": [
+    "Attack skills use kind50/action21 instead of spell60/action25 plus ordinary swing.",
+    "Successful attack skill uses finish46/action17; cancellation uses49/action19. Spell lifecycle58/59 remains separate.",
+    "Weapon interval and duration modifier are published separately before activation; fixed native activation skills receive the same factor as server release timing."
+  ],
+  "verification": [
+    "Native offline traces pass for twelve melee skills and self-centered Cyclone Axe.",
+    "Native timing factor1.5 verified for native-zero Power Attack, fixed0.5s Seeking Blade and fixed1s Hunter Shot.",
+    "Seven rebuilt C++ combat suites pass.",
+    "Additional C++ native timing modifier and zero-cadence assertions pass.",
+    "Full CTest run166/166 passed30.95s; full host/all-target rebuild still running.",
+    "Capture/effect audit tooling11 tests pass; immutable snapshot hashes reverified."
+  ],
+  "limits": [
+    "Native model lookup returns synthetic handles; no rendered animation acceptance.",
+    "Ordinary release500ms remains a development policy; the supplied native animation period is not independent retail release calibration.",
+    "Production/full-all-target rebuild pending build/reports/attack-lifecycle-full-build.txt; full test report build/reports/attack-lifecycle-full-tests.txt."
+  ],
+  "production_build_status": {
+    "completed": true,
+    "report": "build/reports/attack-lifecycle-full-build.txt",
+    "note": "Confirmed session43463 exit0 before warrior batch edits. Later source changes require their own rebuild."
+  }
+}

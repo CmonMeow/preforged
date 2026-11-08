@@ -1,0 +1,328 @@
+{
+  "quest": 80,
+  "status": "installed_source_pending_native_validation",
+  "world_source": "data\\captures\\pre-searing-warrior-ele-2026-10-09\\world-13908-99220828.jsonl",
+  "world_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "quest_snapshot_line": 126,
+  "captured_quest": {
+    "quest_id": 80,
+    "log_state": 1,
+    "completed": false,
+    "current_mission": false,
+    "primary": false,
+    "area_primary": false,
+    "map_from": 148,
+    "map_to": 148,
+    "marker": {
+      "x": 11715.0,
+      "y": 3517.0,
+      "plane": 26,
+      "x_bits": 1178012672,
+      "y_bits": 1163644928,
+      "finite": true
+    },
+    "unknown_0024": 0,
+    "category": {
+      "encoded_utf16": [
+        15716
+      ],
+      "decoded": "Ascalon",
+      "status": "decoded"
+    },
+    "name": {
+      "encoded_utf16": [
+        5891,
+        43118,
+        40603,
+        19586
+      ],
+      "decoded": "Message from a Friend",
+      "status": "decoded"
+    },
+    "npc": {
+      "encoded_utf16": [
+        13172,
+        42252,
+        54956,
+        8813
+      ],
+      "decoded": "Town Crier",
+      "status": "decoded"
+    },
+    "description": {
+      "encoded_utf16": [
+        5894,
+        63503,
+        44219,
+        20386,
+        266,
+        2985,
+        263,
+        76,
+        111,
+        103,
+        103,
+        101,
+        114,
+        1,
+        1,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        356,
+        2,
+        10988,
+        56007,
+        33198,
+        13442,
+        257,
+        266
+      ],
+      "decoded": "Excuse me, you're Logger, aren't you? I think <c=@Quest>Sir Tydus</c> was looking for you. He said he had some good news for you.\n\nReward:<brx>100 Experience<brx>10 Gold<brx>",
+      "status": "decoded"
+    },
+    "objectives": {
+      "encoded_utf16": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5897,
+        52655,
+        47458,
+        15945,
+        1
+      ],
+      "decoded": "{s}Go to the town square in Ascalon City. Talk to Sir Tydus.",
+      "status": "decoded"
+    }
+  },
+  "packet_source": "data\\captures\\pre-searing-warrior-ele-2026-10-09\\packets-13908-99235906.jsonl",
+  "packet_sha256": "3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a",
+  "reward_receipts_by_line": {
+    "9093": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 77,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4d00000050000000000c374600d05b451a00000094000000"
+    },
+    "9094": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c0000005000000006170ff8bbaca24f0a01a90b07014c006f0067006700650072000100010002000201020002010200e82ad4e7cce572360200ea2a3f8c19b51166010164010200ec2ac7daae81823401010a01000000000000807f0000807f00000000000000000000807f0000807f000000006900000001000000000000002c00000000000000040000000000000000000000e8030000000000000000000006040704001cccfe5a2b8787fe4003d8010000000004c8a3040688a4fe7b030b11fe6701fe8636ffec9d0200fe74d5070501b5bb0329fed3000d39fe8907c94d1578d40200fe4cd5270705016b494d031ffe4501050d1d0119fe89070dbb230019f5010064280198f62ab7c12dcf21130a010917afcd62b9493e0100000000e80317015869010077007f0005091901586901005a091e01586901001309170159690100ed003301ff001901596901005f001e015969010014000a01416d0100d0070b01a9af0100d0071701a9af01000100e9000d111901a9af01004c111e01a9af01001511190179b701004b010a017ab7010088130000a5338fcf3baa8c3b0000050a01823e0000d0071701823e00001e004700f6001901823e00005c001e01823e000008001201d859000003f50100642201d8590000a6337afa34a2cb100000050b0132750000e80317011a7900001e002f000f1119011a7900005a111e011a79000009110a01"
+    },
+    "9095": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000050000000"
+    },
+    "9100": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee0000000000000064000000"
+    },
+    "9103": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 320,
+      "bytes": 12,
+      "complete": true,
+      "hex": "40010000600000000a000000"
+    },
+    "9106": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "5200000050000000"
+    },
+    "9112": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 13908,
+      "tick_ms": 99496734,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "810000002a000000"
+    }
+  },
+  "ranger_source": "data\\captures\\pre-searing-ranger-partial-2026-10-10\\world-7108-102222171.jsonl",
+  "ranger_sha256": "2e6c0c890273273ef3bab12289eb42e1b8777de70795ed4cc660eb132d8bd838",
+  "ranger_marker": {
+    "line": 3891,
+    "map": 146,
+    "quest": {
+      "quest_id": 80,
+      "log_state": 1,
+      "completed": false,
+      "current_mission": false,
+      "primary": false,
+      "area_primary": false,
+      "map_from": 148,
+      "map_to": 148,
+      "marker": {
+        "x": 7559.0,
+        "y": 5596.0,
+        "plane": 0,
+        "x_bits": 1173108736,
+        "y_bits": 1169088512,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5891,
+          43118,
+          40603,
+          19586
+        ],
+        "decoded": "Message from a Friend",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          13172,
+          42252,
+          54956,
+          8813
+        ],
+        "decoded": "Town Crier",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5894,
+          63503,
+          44219,
+          20386,
+          266,
+          2985,
+          263,
+          81,
+          117,
+          101,
+          115,
+          116,
+          32,
+          76,
+          111,
+          103,
+          103,
+          101,
+          114,
+          1,
+          1,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          356,
+          2,
+          10988,
+          56007,
+          33198,
+          13442,
+          257,
+          266
+        ],
+        "decoded": "Excuse me, you're Quest Logger, aren't you? I think <c=@Quest>Sir Tydus</c> was looking for you. He said he had some good news for you.\n\nReward:<brx>100 Experience<brx>10 Gold<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5897,
+          52655,
+          47458,
+          15945,
+          1
+        ],
+        "decoded": "{s}Go to the town square in Ascalon City. Talk to Sir Tydus.",
+        "status": "decoded"
+      }
+    }
+  },
+  "wiki_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Message_from_a_Friend.html",
+  "wiki_sha256": "d8e598973c21ee4f3c566a154de856435b95651852731d59a59b6600e039e896",
+  "captured_character_argument": "Logger",
+  "catalog_sha256": "ec57fee8af30a88aeb42ed01315469c3e3babd41cec79d7dc8adbf88b27de8e9",
+  "policy": [
+    "Optional first quest; Town Crier148 acceptance, Sir Tydus148 turn-in; not a continuation/prerequisite of quest79.",
+    "New acceptance requires War Preparations35/217..222 not completed/rewarded; does not revoke an already accepted quest.",
+    "Exact current NPC lifetime/map/range and expected attempt cycle are private controller authority; no retail CtoS token inferred.",
+    "Marker/details refresh, removal, XP100 and gold10 share one captured tick. Absence of a completed snapshot establishes no retail durability policy. PRIVATE storage closes active->completed->rewarded atomically with XP/gold.",
+    "Acceptance/restore use native72+75. Turn-in validates/allocates bound active76marker+75details+81remove+319gold before durable write, publishes after success; no invented83 or duplicate72/79.",
+    "Captured name argument is bound through existing reviewed literal argument machinery; no Logger name is leaked into another character.",
+    "Only captured map148/146 markers are bound; other current-map routes unresolved, not invented.",
+    "No automatic War Preparations, Academy, Searing, profession or map transition is enabled."
+  ],
+  "limitations": [
+    "Modern DWORD-expanded logger receipts are not native2022 opcode mappings; existing native serializers have independent proofs.",
+    "Raw fixed-buffer details have stale tails; catalog retains only bounded decoded snapshot units.",
+    "Rendered end-to-end behavior and retail menu-token parity remain unverified."
+  ],
+  "policy_document": "docs/message-from-friend80-policy-20261030.txt",
+  "installed_catalog": "data/gw/quests/message-from-friend-80.fwqc",
+  "ordering_gap": "Existing auth absolute XP/progression publication precedes the batch; captured marker/details/removal precede XP/gold. Combined retail ordering is not reproduced or claimed.",
+  "dialogue_flow_audit": "build/reports/message80-dialogue-flow-audit-20261030.json"
+}

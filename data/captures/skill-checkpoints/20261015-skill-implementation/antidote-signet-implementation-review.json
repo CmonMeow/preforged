@@ -1,0 +1,57 @@
+{
+  "skill": 427,
+  "status": "Source-bound Runtime/production self-cleanse;corrected production host built;seven focused suites passed;19 tooling tests and native capture proof passed",
+  "evidence": "antidote-signet-native-2022.json",
+  "build": "build/reports/antidote-binding-build.txt",
+  "tests": "build/reports/antidote-binding-tests.txt",
+  "verified": [
+    "All1024 condition subsets:Poison,Disease,Blindness removed plus one additional active condition",
+    "Expired conditions excluded;original selection state unchanged",
+    "Existing covered-condition order determines additional removal",
+    "One-second/zero-Energy/four-second-recharge self cast regardless of selected foe",
+    "Captured caster730 and self492 published once each",
+    "Cancel,interrupt,retired actor and missing required hooks prevent effect",
+    "World uses real condition-removal callbacks and stops removals on caster death"
+  ],
+  "remaining": [
+    "Retail additional-condition priority/order need targeted coverage",
+    "Rendered acceptance remains open",
+    "Fresh broad integration gate after recent bindings",
+    "Trusted NPC caster self-cleanse integration remains outside player Runtime binding"
+  ],
+  "source_sha256": {
+    "src\\runtime\\gw_antidote_signet.h": "a12c190f24e9586d40af623ed2340fe0e8938ada26bd2574c101e5fbdb7ad5d7",
+    "src\\runtime\\gw_world_simulation.h": "1fbdbd0f71ad7791b3ea820e3b17ef582c827b441d6b2481da7991e26392c3ed",
+    "src\\runtime\\gw_skill_casting.h": "3984770c8aff973bca231e7f26c4385c2599be4fdd1f5c89216d9274b1123e48",
+    "src\\apps\\gw_auth.cpp": "b7c74ee734ceeb21b78b90c43f03b06b91cf81ab269d4ab129d4f023e64b47f6",
+    "tests\\antidote_signet.cpp": "2efd11864d8b19d66ad96c646e2eeced404c566bea4677d0ed8ce8761d921567",
+    "tests\\antidote_cast.cpp": "4d1ddbe86116ccaee536290f5f6dc83a08ff6a89b86b79ec09b2a819c505b0d4",
+    "CMakeLists.txt": "16945e4cec0e52c2c57819e08cb63fb6faa5c3d153ea96706b24b0bdea445b84",
+    "src/runtime/gw_world_simulation.h": "99446237e10af4990f0eb01652111a13addbf552d395cdba16ba865dd2dcef9c"
+  },
+  "route_regression_correction": {
+    "reproduced": "Captured-skills test line411 failed: stationarity refresh flushed queued Fragility feedback early.",
+    "fix": "Return when there is no active NPC route; only settle active-route NPC Health when clock is genuinely earlier, preserving same-timestamp deferred reaction ownership.",
+    "verified": "captured_skills and healing_ring_world rebuilt and passed0.06s",
+    "build": "build/reports/antidote-fragility-build.txt",
+    "tests": "build/reports/antidote-fragility-tests.txt"
+  },
+  "final_build": "build/reports/antidote-final-build.txt",
+  "final_tests": "build/reports/antidote-final-tests.txt",
+  "reaction_validation": {
+    "status": "Four focused suites passed0.05s;19 tooling tests passed;no production code change required",
+    "build": "build/reports/antidote-reactions-regression-build.txt",
+    "tests": "build/reports/antidote-reactions-tests.txt",
+    "verified": [
+      "Direct World and Runtime self-cleanse with first/second-removal lethal Fragility",
+      "Nonlethal two-removal damage and no subsequent duplicate or healing",
+      "Single control/death transition and one Runtime recharge publication",
+      "Retired/reused source receives no attribution while existing hex mechanics persist"
+    ],
+    "limits": [
+      "This establishes consistency with existing Fragility mechanics;not a new official reaction capture.",
+      "Retail additional-condition priority,rendered appearance and NPC caster integration remain open"
+    ],
+    "test_sha256": "fe0b050e44573b0660c0249ecc2530fea9a30702e674878eb3d7b20df8f94800"
+  }
+}

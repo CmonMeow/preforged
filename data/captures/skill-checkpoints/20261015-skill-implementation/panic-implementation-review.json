@@ -1,0 +1,90 @@
+{
+  "skill": 52,
+  "status": "World application and trusted completed-use reaction stages implemented; eight standalone reaction fixtures pass. Casting remains unbound pending snapshot/ordering integration.",
+  "mechanics": "Elite hex1..10seconds at rank0..15, initially applies to selected foe and nearby252 foes. A hexed foe successfully using a skill triggers interruption attempts on other nearby foes; the triggering actor is excluded. No damage is specified by the reviewed description.",
+  "evidence": "Local older Panic wiki revision2646854 plus pinned2022 catalogue. panic-native-2022.json proves original one-second/style51 cast and target body87 consumers; both fixed activations have exact targeted87 body emissions.",
+  "metadata_caution": "Native scale2/bonus10..82 fields are not interpreted as damage. Body evidence is direct despite empty general inventory body array; dedicated records contain exact lines/source hashes. No successful reaction cadence/order is established by those idle-target activations.",
+  "policy_test": "tests/panic_policy.cpp",
+  "policy_report": "build/reports/panic-policy-tests.txt",
+  "policy_result": "Pass successful-versus-failed/basic-attack gating, active expiry, trigger exclusion, inclusive252 boundary, ally/dead exclusion, idle recipient no interruption attempt, duplicate/reused actor rejection and monotonic use-event replay isolation. Source registry is not mutated by this pure stage.",
+  "remaining": [
+    "Runtime/gateway successful-use connection with evidence-supported snapshot ordering; trusted World reaction is now present.",
+    "Select evidence-supported trigger snapshot relative to the used skill effect, removal/reapplication, activation failure and sacrifice/death. Do not assume Diversion ordering applies.",
+    "NPC action identity including attack skills and passive charmable animal anomaly.",
+    "Runtime/gateway, production and registered integrated tests, rendered acceptance."
+  ],
+  "coverage": "Excluded from166/575 source-bound count.",
+  "source_sha256": {
+    "src/runtime/gw_panic.h": "6e54d1ee83a4f04d5326aed49adf33785e15e93d0b9e695b092456e2a33dc799",
+    "tests/panic_policy.cpp": "75ffd7535ede0d19a9f6a069b38bc8a0e397da44107830c02d94f131ab22c06b",
+    "tools/protocol/panic_2022.py": "78e4d9797c45d72924ab327efb4fe40f662fbe6745e7a909fb08ad3c838b3598",
+    "src/runtime/gw_panic_application.h": "cca37121639801c887128ef7a35b22bb8d62fe0788859ed5145b38f8e473fdc1",
+    "tests/panic_application.cpp": "cd06ec48959838b629b7800a58d14a3382b228647c1ea6468fcc536716df5406",
+    "tests/panic_world.cpp": "22112df32e1929c98da2a1b04310f4c6e5fbdb43fe4580ae20b88376d95814a3",
+    "src/runtime/gw_npc_combat_catalog.h": "971be58f25a62e89dcfb5c471d18f086e1a706d23db9cc230231d50e049d927e",
+    "tests/panic_world_use.cpp": "83746562135d253596a57544a5b4deb0ec3f6504aa983da8183e3379941aead0"
+  },
+  "ordering_research": {
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Talk_Panic.html",
+    "sha256": "71286b8b04e58a3211acefd57f92b537beb37bd98a6c068b2f437ebe5b91a20b",
+    "result": "Local discussion contains general group-shutdown observations but no evidence settling reaction order versus removal, sacrifice/death or effect failure. No ordering rule inferred from those comments."
+  },
+  "application_stage": {
+    "header": "src/runtime/gw_panic_application.h",
+    "test": "tests/panic_application.cpp",
+    "report": "build/reports/panic-application-tests.txt",
+    "result": "Immutable scoped registry transaction passes renewal/cross-caster replacement, exact original caster/target generations and effect-instance identity, expiry/overflow and forged-plan rejection. No World timer/protection or reaction execution is claimed."
+  },
+  "registered_gate": {
+    "build": "build/reports/panic-foundation-build.txt",
+    "tests": "build/reports/panic-foundation-tests.txt",
+    "result": "Two registered foundation suites rebuilt/passed0.03s separately after Recall full275 gate."
+  },
+  "world_application_stage": {
+    "source": "src/runtime/gw_world_simulation.h apply_panic/degeneration_hex_impl and npc combat apply_panic",
+    "test": "tests/panic_world.cpp",
+    "report": "build/reports/panic-world-tests.txt",
+    "result": "Pass selected player/NPC, nearby252 inclusive/outside253, ally exclusion, zero degeneration, expiry, selected-only body87, selected Hex Breaker with remaining area recipients, invalid future recipient preserves stance/caster Health, cross-caster renewal/rank/deadline and stale target rejection.",
+    "mechanism": "Shared scoped hex transaction stages all player registries/timers and NPC copies before selected protection consumes. Original caster/target lifetimes are recorded per recipient for future reaction authority and cleared on owner departure/NPC retirement.",
+    "scope": "Native Panic duration; normal Runtime/gateway binding now connected after trusted successful-use reaction tests.",
+    "gate": {
+      "build": "build/reports/panic-world-build.txt",
+      "tests": "build/reports/panic-world-registered-tests.txt",
+      "result": "Production host and related targets rebuilt successfully;6/6 registered suites passed0.09s, including Panic World, Price world, Insidious world, Hex Breaker atomic/world and captured_skills."
+    }
+  },
+  "world_reaction_stage": {
+    "source": "src/runtime/gw_world_simulation.h panic_skill_used",
+    "test": "tests/panic_world_use.cpp",
+    "report": "build/reports/panic-world-use-tests.txt",
+    "result": "Pass player/NPC triggers, trigger exclusion, original-caster foe allegiance, inclusive252/outside253, no damage, independent one-use protection, idle stance preservation, failed/no-hex/expired use, replay, replaced caster and atomic future-recipient rejection. NPC spell/attack tokens invalidated; own trigger token and outside token remain completable.",
+    "ownership": "Per-trigger Scope event ledger; original caster/target scope and effect ID verified against World credit. Departures/NPC retirement remove lifetime-owned records.",
+    "snapshot": "Normal Runtime observes successful use after the primary effect and resource reactions. Current post-effect hex snapshot is explicit; retail same-time removal/sacrifice ordering remains unverified.",
+    "presentation_gap": "Ordinary NPC attack stop packet published. NPC spell visual cancellation needs exact skill identity; speech/interrupt effects and rendered acceptance are not established by token tests.",
+    "gate": {
+      "build": "build/reports/panic-use-build.txt",
+      "tests": "build/reports/panic-use-registered-tests.txt",
+      "result": "Production host and related targets rebuilt;5/5 registered suites passed0.08s: Panic use/application, Cry World, NPC action control and captured_skills."
+    }
+  },
+  "runtime_binding": {
+    "tests": [
+      "tests/panic_cast.cpp",
+      "tests/panic_runtime_use.cpp"
+    ],
+    "report": "build/reports/panic-casts-tests.txt",
+    "result": "Both standalone native suites passed. One-second cast, 10 Energy, 15-second recharge, targeted body87; cancelled/interrupted/failed/stale casts do not trigger. Successful spell and instant use trigger once; another active Runtime receives interruption/full recharge.",
+    "gaps": [
+      "Retail effect/removal/sacrifice ordering",
+      "NPC AI successful-use callback integration",
+      "NPC spell visual cancellation identity",
+      "Rendered animation acceptance"
+    ],
+    "coverage": "167 of 575 captured player skills source-bound; this is not a full mechanics or rendered acceptance claim.",
+    "gate": {
+      "build": "build/reports/panic-binding-full-build.txt",
+      "tests": "build/reports/panic-binding-full-tests.txt",
+      "result": "Full Release build succeeded; 281/281 registered tests passed in 21.20s. Evidence tooling: 19/19 tests passed."
+    }
+  }
+}

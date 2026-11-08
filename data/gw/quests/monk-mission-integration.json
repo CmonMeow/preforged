@@ -1,0 +1,202 @@
+{
+  "quest": 74,
+  "status": "Evidence/integration plan only; acceptance and default content remain disabled.",
+  "capture": {
+    "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+    "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6"
+  },
+  "faithfully_extractable": {
+    "actor_join": {
+      "definition_line": 8211,
+      "repeated_definition_line": 10920,
+      "observation_line": 8212,
+      "definition": {
+        "model_file": 116228,
+        "skin_file": 0,
+        "appearance": 0,
+        "flags": 524,
+        "primary": 3,
+        "secondary": 0,
+        "default_level": 3,
+        "visual_adjustment_bytes": [
+          0,
+          0,
+          0,
+          100
+        ],
+        "model_files": [
+          116746
+        ],
+        "name_encoded_utf16": [
+          3957,
+          49450,
+          65336,
+          12944
+        ],
+        "name": "Paulus the Abbot",
+        "name_status": "decoded"
+      },
+      "observation": {
+        "agent": 19,
+        "model": 1499,
+        "x": 13797.0,
+        "y": 1865.0,
+        "plane": 0,
+        "facing": -1.573324,
+        "level": 3,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          3957,
+          49450,
+          65336,
+          12944
+        ],
+        "name": "Paulus the Abbot",
+        "name_status": "decoded"
+      },
+      "mapping_method": "Join epoch+npc_table_id to observation.model; use definition.model_file and model_files via existing gw-npcs serializer, as export_further_adventures.py does. Table1499 is not a spawn model file. Private actor/template IDs remain server allocation policy."
+    },
+    "quest_objectives": [
+      {
+        "line": 8108,
+        "map": 164,
+        "completed": false,
+        "text": "{s}Meet Paulus inside the Catacombs."
+      },
+      {
+        "line": 8218,
+        "map": 145,
+        "completed": false,
+        "text": "{sc}Meet Paulus inside the Catacombs.{s}Go with Paulus and use your healing prayers to make sure he survives."
+      },
+      {
+        "line": 8912,
+        "map": 145,
+        "completed": true,
+        "text": "{sc}Meet Paulus inside the Catacombs.{sc}Go with Paulus and use your healing prayers to make sure he survives.{s}Return to Brother Mhenlo for your reward."
+      },
+      {
+        "line": 12062,
+        "map": 164,
+        "completed": true,
+        "text": "{sc}Meet Paulus inside the Catacombs.{s}Return to Brother Mhenlo for your reward."
+      }
+    ],
+    "skill_reward_evidence": "monk-mission-evidence.json packets70344/70346:296/281 acceptance grants;110593:250 XP alongside quest74 removal110588/110596 and Mhenlo sender110600.",
+    "route_observations": [
+      {
+        "epoch": 28,
+        "samples": 304,
+        "first": {
+          "line": 8212,
+          "instance_ms": 1942,
+          "x": 13797.0,
+          "y": 1865.0,
+          "plane": 0
+        },
+        "minimum_y_observation": {
+          "line": 8567,
+          "instance_ms": 141855,
+          "x": 10452.317383,
+          "y": -12132.575195,
+          "plane": 0
+        },
+        "last": {
+          "line": 8926,
+          "instance_ms": 304928,
+          "x": 14107.106445,
+          "y": 1818.69519,
+          "plane": 0
+        }
+      },
+      {
+        "epoch": 40,
+        "samples": 278,
+        "first": {
+          "line": 10921,
+          "instance_ms": 2270,
+          "x": 13797.0,
+          "y": 1865.0,
+          "plane": 0
+        },
+        "minimum_y_observation": {
+          "line": 11783,
+          "instance_ms": 363293,
+          "x": 10412.084961,
+          "y": -12132.671875,
+          "plane": 0
+        },
+        "last": {
+          "line": 12057,
+          "instance_ms": 492359,
+          "x": 14055.487305,
+          "y": 1782.210449,
+          "plane": 0
+        }
+      }
+    ]
+  },
+  "wiki": [
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\A_Monk's_Mission.html",
+      "sha256": "c699ca153921e95936fbd2722f3aed76dc66a3f6ef7ea659ce247da21b74135e",
+      "lines": [
+        117,
+        118,
+        127,
+        135,
+        136
+      ],
+      "findings": "Meet Paulus, accompany and heal him, retrieve artifact, return to entrance alive and then Mhenlo. Walkthrough calls it poison water; dialogue explicitly says disease. Neither gives hazard geometry/duration."
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Paulus_the_Abbot.html",
+      "sha256": "42548b0d295955364f413cd8bea79eae690f263552ee2e18464b4268818b99d2",
+      "lines": [
+        64,
+        66,
+        85,
+        87,
+        88
+      ],
+      "findings": "Monk level3; Smiting Prayers7; Bane Signet and Symbol of Wrath."
+    }
+  ],
+  "requires_explicit_authored_policy": [
+    "Navigation-validated route goals and artifact/return milestones; sampled positions are not authoritative waypoints.",
+    "Movement speed, proximity pause range and pause/rebase clock behavior.",
+    "Disease-water geometry and application/reapplication duration are unresolved; no coordinates inferred from route extrema.",
+    "Paulus maxHealth, armor, weapon and defensive/hostile-target relationships are not in these observations. Wiki supplies skills/attribute, not timing or AI priority.",
+    "Enemy population samples do not prove quest-triggered spawn ownership or waves.",
+    "Active reconnect restarts a scoped attempt; completed durable quest can be rewarded in map164.",
+    "Static quest catalog does not select map-specific markers."
+  ],
+  "minimal_integration": [
+    {
+      "file": "src/runtime/gw_world_simulation.h",
+      "locations": [
+        447,
+        582,
+        721,
+        11674,
+        11735,
+        11750,
+        12859
+      ],
+      "work": "Store quest74 Escort/owner/cycle/Paulus; add dedicated route motion discriminator; validate navigation, map145, actual route milestones, proximity and health; invalidate death/replacement, clean up abandonment; queue completion only after living return. Existing84 paths are hardcoded and follow player."
+    },
+    {
+      "file": "src/apps/gw_auth.cpp",
+      "locations": [
+        4588,
+        4646
+      ],
+      "work": "Bind/drive active74 on map145; use existing completion persistence loop, atomic acceptance skill grants and reward250XP at Brother Mhenlo map164. Enable menu/default content only after full route/hazard integration."
+    }
+  ],
+  "verification_needed": [
+    "World tests: path routing, pause without catch-up teleport, artifact before return, wrong plane/LOS, death and generation replacement, reconnect/abandon cleanup.",
+    "Account tests: acceptance skills atomic with quest, completed-to-rewarded XP transaction rollback and replay.",
+    "Private-client gameplay validation remains required; source/capture analysis is not gameplay verification."
+  ]
+}

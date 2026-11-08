@@ -1,0 +1,24 @@
+{
+  "repository": "https://github.com/build-wars/gw-skilldata",
+  "commit": "8495ca2c6125e1a03269c2932f099f7e7c09fb36",
+  "source_sha256": {
+    "skilldata.json": "0d9af43e6180726766d521149a8dbb927b102f753f28865f23014415dfd357f7",
+    "skilldesc-en.json": "aa25c8fe769988ed6c790da8583539a849a496300076888857f786ffb009c6d3",
+    "itemdata.json": "cd90df62e724c20166e2b04e291c256cc16d3c3f8e4752d020f625fdee176aeb",
+    "moddata.json": "c579c48899a38bf17c82e15f157bea21bf2a26e9e37406c31b56f594a5371f56"
+  },
+  "counts": {
+    "pinned_2022": 3433,
+    "external_skills": 1517,
+    "compared_exact_matches": 1129,
+    "conflicts": 355,
+    "outside_2022": 33,
+    "external_items": 336,
+    "external_modifiers": 407
+  },
+  "limitations": [
+    "Only campaign/profession/attribute/cost/timing compared; exact match does not prove gameplay implementation.",
+    "External item/modifier IDs are not assumed to be native model/modifier IDs.",
+    "External data is a reference; no runtime values changed."
+  ]
+}

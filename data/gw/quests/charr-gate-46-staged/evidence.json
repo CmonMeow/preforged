@@ -1,0 +1,7327 @@
+{
+  "quest": 46,
+  "status": "staged_not_installed",
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\world-43292-168890171.jsonl",
+      "sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757"
+    },
+    {
+      "path": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\packets-43292-168891734.jsonl",
+      "sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c"
+    },
+    {
+      "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Charr_at_the_Gate.html",
+      "sha256": "c5afeca7eb0267838c737eb184a6b8dc7ae086d9cbac65b1171c596f1fe83de8"
+    }
+  ],
+  "stages": [
+    {
+      "line": 23323,
+      "epoch": 9,
+      "map": 148,
+      "tick_ms": 177783328,
+      "quest": {
+        "quest_id": 46,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 146,
+        "marker": {
+          "x": 7311.0,
+          "y": 5438.0,
+          "plane": 0,
+          "x_bits": 1172600832,
+          "y_bits": 1168764928,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5555,
+            56520,
+            61082,
+            22663
+          ],
+          "decoded": "Charr at the Gate",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13184,
+            33200,
+            61971,
+            24276
+          ],
+          "decoded": "Prince Rurik",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5557,
+            56408,
+            49767,
+            29461,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            456,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9997,
+            60200,
+            53520,
+            30681,
+            1,
+            267,
+            2697,
+            266,
+            2638,
+            1,
+            267,
+            2272,
+            1,
+            257,
+            262,
+            258,
+            265,
+            1
+          ],
+          "decoded": "A group of Charr have broken through the gates! They must be stopped at all costs! Meet me at the <c=@Quest>gates</c> just outside of town in <c=@Quest>Lakeside</c>. What say you? Will you help me drive these <c=@Quest>Charr</c> from fair Ascalon?\n\nReward:<brx>200 Experience<brx>Long Sword<br>Slashing Dmg: 6-9<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5556,
+            43813,
+            34196,
+            24739,
+            1
+          ],
+          "decoded": "{s}Follow Rurik and help him defeat the Charr.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 23464,
+      "epoch": 11,
+      "map": 146,
+      "tick_ms": 177838187,
+      "quest": {
+        "quest_id": 46,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 146,
+        "marker": {
+          "x": -5270.0,
+          "y": 11725.0,
+          "plane": 0,
+          "x_bits": 3315904512,
+          "y_bits": 1178022912,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5555,
+            56520,
+            61082,
+            22663
+          ],
+          "decoded": "Charr at the Gate",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13184,
+            33200,
+            61971,
+            24276
+          ],
+          "decoded": "Prince Rurik",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5557,
+            56408,
+            49767,
+            29461,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            456,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9997,
+            60200,
+            53520,
+            30681,
+            1,
+            267,
+            2697,
+            266,
+            2638,
+            1,
+            267,
+            2272,
+            1,
+            257,
+            262,
+            258,
+            265,
+            1
+          ],
+          "decoded": "A group of Charr have broken through the gates! They must be stopped at all costs! Meet me at the <c=@Quest>gates</c> just outside of town in <c=@Quest>Lakeside</c>. What say you? Will you help me drive these <c=@Quest>Charr</c> from fair Ascalon?\n\nReward:<brx>200 Experience<brx>Long Sword<br>Slashing Dmg: 6-9<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5556,
+            43813,
+            34196,
+            24739,
+            1
+          ],
+          "decoded": "{s}Follow Rurik and help him defeat the Charr.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 23692,
+      "epoch": 11,
+      "map": 146,
+      "tick_ms": 177911187,
+      "quest": {
+        "quest_id": 46,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 148,
+        "marker": {
+          "x": 7559.0,
+          "y": 5596.0,
+          "plane": 0,
+          "x_bits": 1173108736,
+          "y_bits": 1169088512,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5555,
+            56520,
+            61082,
+            22663
+          ],
+          "decoded": "Charr at the Gate",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13184,
+            33200,
+            61971,
+            24276
+          ],
+          "decoded": "Prince Rurik",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5557,
+            56408,
+            49767,
+            29461,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            456,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9997,
+            60200,
+            53520,
+            30681,
+            1,
+            267,
+            2697,
+            266,
+            2638,
+            1,
+            267,
+            2272,
+            1,
+            257,
+            262,
+            258,
+            265,
+            1
+          ],
+          "decoded": "A group of Charr have broken through the gates! They must be stopped at all costs! Meet me at the <c=@Quest>gates</c> just outside of town in <c=@Quest>Lakeside</c>. What say you? Will you help me drive these <c=@Quest>Charr</c> from fair Ascalon?\n\nReward:<brx>200 Experience<brx>Long Sword<br>Slashing Dmg: 6-9<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5556,
+            43813,
+            34196,
+            24739,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13184,
+            33200,
+            61971,
+            24276,
+            1,
+            1
+          ],
+          "decoded": "{sc}Follow Rurik and help him defeat the Charr.{s}Return to Prince Rurik for your reward.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "actors": [
+    {
+      "captured_actor": 35,
+      "first_observation_line": 23487,
+      "npc": {
+        "agent": 35,
+        "model": 1509,
+        "x": 6017.003418,
+        "y": 4306.635742,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 10,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          13184,
+          33200,
+          61971,
+          24276
+        ],
+        "name": "Prince Rurik",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23483,
+        "record": {
+          "model_file": 116228,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 524,
+          "primary": 1,
+          "secondary": 0,
+          "default_level": 10,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            129997
+          ],
+          "name_encoded_utf16": [
+            3967,
+            55632,
+            52135,
+            10823
+          ],
+          "name": "Prince Rurik",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 550382,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177837421,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "2000000023000000e505002001000000090000000708bc4516958645000000000000803f0000000001000000000090430000803f0000404179616c70000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": 6017.00341796875,
+        "y": 4306.6357421875,
+        "plane": 0,
+        "facing": 0.0
+      }
+    },
+    {
+      "captured_actor": 36,
+      "first_observation_line": 23487,
+      "npc": {
+        "agent": 36,
+        "model": 1486,
+        "x": 5917.003418,
+        "y": 4306.635742,
+        "plane": 0,
+        "facing": -2.380549,
+        "level": 5,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          13093,
+          63750,
+          63739,
+          8156
+        ],
+        "name": "Academy Monk",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23479,
+        "record": {
+          "model_file": 116225,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 524,
+          "primary": 3,
+          "secondary": 0,
+          "default_level": 5,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            116741
+          ],
+          "name_encoded_utf16": [
+            3944,
+            45501,
+            61520,
+            25395
+          ],
+          "name": "Academy Monk",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 550388,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177837421,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "2000000024000000ce0500200100000009000000f1dfbc45af5c8a45000000000000803f000000000100000000007a430000803f0000404179616c70000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": 6043.99267578125,
+        "y": 4427.58544921875,
+        "plane": 0,
+        "facing": 0.0
+      }
+    },
+    {
+      "captured_actor": 37,
+      "first_observation_line": 23487,
+      "npc": {
+        "agent": 37,
+        "model": 1480,
+        "x": 5917.003418,
+        "y": 4261.635742,
+        "plane": 0,
+        "facing": -2.618433,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          14658,
+          33181,
+          61716,
+          11639
+        ],
+        "name": "Ascalon Guard",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23484,
+        "record": {
+          "model_file": 141285,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 524,
+          "primary": 1,
+          "secondary": 0,
+          "default_level": 2,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            116727
+          ],
+          "name_encoded_utf16": [
+            3933,
+            50198,
+            44838,
+            5755
+          ],
+          "name": "Ascalonian Guard",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 550396,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177837421,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "2000000025000000c805002001000000090000004638be45a13d8845000000000000803f000000000100000000007a430000803f0000404179616c70000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": 6087.0341796875,
+        "y": 4359.70361328125,
+        "plane": 0,
+        "facing": 0.0
+      }
+    },
+    {
+      "captured_actor": 50,
+      "first_observation_line": 23608,
+      "npc": {
+        "agent": 50,
+        "model": 1643,
+        "x": -5214.837402,
+        "y": 11730.009766,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4122,
+          56741,
+          38490,
+          19984
+        ],
+        "name": "Charr Ash Walker",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23607,
+        "record": {
+          "model_file": 129130,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 12,
+          "primary": 4,
+          "secondary": 0,
+          "default_level": 5,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            130050
+          ],
+          "name_encoded_utf16": [
+            4122,
+            56741,
+            38490,
+            19984
+          ],
+          "name": "Charr Ash Walker",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 551089,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177874328,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "20000000320000006b0600200100000009000000b3f6a2c50a483746000000000000803f00000000010000000000af430000803f0000404172616863000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": -5214.83740234375,
+        "y": 11730.009765625,
+        "plane": 0,
+        "facing": 0.0
+      }
+    },
+    {
+      "captured_actor": 51,
+      "first_observation_line": 23602,
+      "npc": {
+        "agent": 51,
+        "model": 1648,
+        "x": -5110.37207,
+        "y": 11426.0625,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4127,
+          64474,
+          34444,
+          27182
+        ],
+        "name": "Charr Fire Caller",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23600,
+        "record": {
+          "model_file": 141281,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 12,
+          "primary": 6,
+          "secondary": 0,
+          "default_level": 5,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            141912
+          ],
+          "name_encoded_utf16": [
+            4127,
+            64474,
+            34444,
+            27182
+          ],
+          "name": "Charr Fire Caller",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 551054,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177873312,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "2000000033000000700600200100000009000000fab29fc540883246000000000000803f00000000010000000000af430000803f0000404172616863000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": -5110.3720703125,
+        "y": 11426.0625,
+        "plane": 0,
+        "facing": 0.0
+      }
+    },
+    {
+      "captured_actor": 52,
+      "first_observation_line": 23608,
+      "npc": {
+        "agent": 52,
+        "model": 1640,
+        "x": -5311.388184,
+        "y": 11845.290039,
+        "plane": 36,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4119,
+          41063,
+          42684,
+          22915
+        ],
+        "name": "Charr Mind Spark",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23601,
+        "record": {
+          "model_file": 129114,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 12,
+          "primary": 5,
+          "secondary": 0,
+          "default_level": 5,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            130049
+          ],
+          "name_encoded_utf16": [
+            4119,
+            41063,
+            42684,
+            22915
+          ],
+          "name": "Charr Mind Spark",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 551100,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177874796,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "20000000340000006806002001000000090000001bfba5c529153946240000000000803f00000000010000000000af430000803f0000404172616863000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": -5311.38818359375,
+        "y": 11845.2900390625,
+        "plane": 36,
+        "facing": 0.0
+      }
+    },
+    {
+      "captured_actor": 53,
+      "first_observation_line": 23602,
+      "npc": {
+        "agent": 53,
+        "model": 1640,
+        "x": -5089.131836,
+        "y": 11424.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          4119,
+          41063,
+          42684,
+          22915
+        ],
+        "name": "Charr Mind Spark",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23601,
+        "record": {
+          "model_file": 129114,
+          "skin_file": 0,
+          "appearance": 0,
+          "flags": 12,
+          "primary": 5,
+          "secondary": 0,
+          "default_level": 5,
+          "visual_adjustment_bytes": [
+            0,
+            0,
+            0,
+            100
+          ],
+          "model_files": [
+            130049
+          ],
+          "name_encoded_utf16": [
+            4119,
+            41063,
+            42684,
+            22915
+          ],
+          "name": "Charr Mind Spark",
+          "name_status": "decoded"
+        }
+      },
+      "native_spawn": {
+        "line": 551045,
+        "packet": {
+          "event": "packet",
+          "direction": "StoC",
+          "process_id": 43292,
+          "tick_ms": 177873265,
+          "opcode": 32,
+          "bytes": 116,
+          "complete": true,
+          "hex": "20000000350000006806002001000000090000000e099fc500803246000000000000803f00000000010000000000af430000803f0000404172616863000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+        },
+        "x": -5089.1318359375,
+        "y": 11424.0,
+        "plane": 0,
+        "facing": 0.0
+      }
+    }
+  ],
+  "positions": [
+    {
+      "line": 23487,
+      "instance_ms": 2257,
+      "actor": 35,
+      "x": 6017.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23487,
+      "instance_ms": 2257,
+      "actor": 36,
+      "x": 5917.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23487,
+      "instance_ms": 2257,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23496,
+      "instance_ms": 3257,
+      "actor": 35,
+      "x": 6017.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23496,
+      "instance_ms": 3257,
+      "actor": 36,
+      "x": 5917.003418,
+      "y": 4351.635742,
+      "plane": 0
+    },
+    {
+      "line": 23496,
+      "instance_ms": 3257,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23503,
+      "instance_ms": 4257,
+      "actor": 35,
+      "x": 6017.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23503,
+      "instance_ms": 4257,
+      "actor": 36,
+      "x": 5917.003418,
+      "y": 4351.635742,
+      "plane": 0
+    },
+    {
+      "line": 23503,
+      "instance_ms": 4257,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23507,
+      "instance_ms": 5257,
+      "actor": 35,
+      "x": 6017.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23507,
+      "instance_ms": 5257,
+      "actor": 36,
+      "x": 5917.003418,
+      "y": 4351.635742,
+      "plane": 0
+    },
+    {
+      "line": 23507,
+      "instance_ms": 5257,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23511,
+      "instance_ms": 6256,
+      "actor": 35,
+      "x": 6017.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23511,
+      "instance_ms": 6256,
+      "actor": 36,
+      "x": 5917.003418,
+      "y": 4351.635742,
+      "plane": 0
+    },
+    {
+      "line": 23511,
+      "instance_ms": 6256,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23515,
+      "instance_ms": 7256,
+      "actor": 35,
+      "x": 6017.003418,
+      "y": 4306.635742,
+      "plane": 0
+    },
+    {
+      "line": 23515,
+      "instance_ms": 7256,
+      "actor": 36,
+      "x": 5917.003418,
+      "y": 4351.635742,
+      "plane": 0
+    },
+    {
+      "line": 23515,
+      "instance_ms": 7256,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23519,
+      "instance_ms": 8257,
+      "actor": 35,
+      "x": 5962.102539,
+      "y": 4353.217773,
+      "plane": 0
+    },
+    {
+      "line": 23519,
+      "instance_ms": 8257,
+      "actor": 36,
+      "x": 5940.685059,
+      "y": 4327.941406,
+      "plane": 0
+    },
+    {
+      "line": 23519,
+      "instance_ms": 8257,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23523,
+      "instance_ms": 9254,
+      "actor": 35,
+      "x": 5743.156738,
+      "y": 4538.986328,
+      "plane": 0
+    },
+    {
+      "line": 23523,
+      "instance_ms": 9254,
+      "actor": 36,
+      "x": 5963.376465,
+      "y": 4293.121094,
+      "plane": 0
+    },
+    {
+      "line": 23523,
+      "instance_ms": 9254,
+      "actor": 37,
+      "x": 5917.003418,
+      "y": 4261.635742,
+      "plane": 0
+    },
+    {
+      "line": 23525,
+      "instance_ms": 10251,
+      "actor": 35,
+      "x": 5524.211426,
+      "y": 4724.754883,
+      "plane": 0
+    },
+    {
+      "line": 23525,
+      "instance_ms": 10251,
+      "actor": 36,
+      "x": 5861.12793,
+      "y": 4379.876465,
+      "plane": 0
+    },
+    {
+      "line": 23525,
+      "instance_ms": 10251,
+      "actor": 37,
+      "x": 5853.95166,
+      "y": 4397.188965,
+      "plane": 0
+    },
+    {
+      "line": 23528,
+      "instance_ms": 11236,
+      "actor": 35,
+      "x": 5307.901367,
+      "y": 4908.287598,
+      "plane": 0
+    },
+    {
+      "line": 23528,
+      "instance_ms": 11236,
+      "actor": 36,
+      "x": 5673.358398,
+      "y": 4539.192871,
+      "plane": 0
+    },
+    {
+      "line": 23528,
+      "instance_ms": 11236,
+      "actor": 37,
+      "x": 5759.108398,
+      "y": 4584.467773,
+      "plane": 0
+    },
+    {
+      "line": 23530,
+      "instance_ms": 12222,
+      "actor": 35,
+      "x": 5091.371094,
+      "y": 5092.006348,
+      "plane": 0
+    },
+    {
+      "line": 23530,
+      "instance_ms": 12222,
+      "actor": 36,
+      "x": 5488.13916,
+      "y": 4696.345703,
+      "plane": 0
+    },
+    {
+      "line": 23530,
+      "instance_ms": 12222,
+      "actor": 37,
+      "x": 5571.148438,
+      "y": 4743.945801,
+      "plane": 0
+    },
+    {
+      "line": 23532,
+      "instance_ms": 13217,
+      "actor": 35,
+      "x": 4872.865234,
+      "y": 5277.402344,
+      "plane": 0
+    },
+    {
+      "line": 23532,
+      "instance_ms": 13217,
+      "actor": 36,
+      "x": 5299.470703,
+      "y": 4856.425781,
+      "plane": 0
+    },
+    {
+      "line": 23532,
+      "instance_ms": 13217,
+      "actor": 37,
+      "x": 5381.526367,
+      "y": 4904.833984,
+      "plane": 0
+    },
+    {
+      "line": 23534,
+      "instance_ms": 14217,
+      "actor": 35,
+      "x": 4653.260742,
+      "y": 5463.72998,
+      "plane": 0
+    },
+    {
+      "line": 23534,
+      "instance_ms": 14217,
+      "actor": 36,
+      "x": 5108.841797,
+      "y": 5018.167969,
+      "plane": 0
+    },
+    {
+      "line": 23534,
+      "instance_ms": 14217,
+      "actor": 37,
+      "x": 5190.897949,
+      "y": 5066.57666,
+      "plane": 0
+    },
+    {
+      "line": 23536,
+      "instance_ms": 15200,
+      "actor": 35,
+      "x": 4437.389648,
+      "y": 5646.890137,
+      "plane": 0
+    },
+    {
+      "line": 23536,
+      "instance_ms": 15200,
+      "actor": 36,
+      "x": 4994.566406,
+      "y": 5115.126953,
+      "plane": 0
+    },
+    {
+      "line": 23536,
+      "instance_ms": 15200,
+      "actor": 37,
+      "x": 5016.383789,
+      "y": 5214.646484,
+      "plane": 0
+    },
+    {
+      "line": 23540,
+      "instance_ms": 16200,
+      "actor": 35,
+      "x": 4217.785645,
+      "y": 5833.217773,
+      "plane": 0
+    },
+    {
+      "line": 23540,
+      "instance_ms": 16200,
+      "actor": 36,
+      "x": 4810.228516,
+      "y": 5271.532227,
+      "plane": 0
+    },
+    {
+      "line": 23540,
+      "instance_ms": 16200,
+      "actor": 37,
+      "x": 4858.218262,
+      "y": 5348.844727,
+      "plane": 0
+    },
+    {
+      "line": 23545,
+      "instance_ms": 17200,
+      "actor": 35,
+      "x": 3938.683838,
+      "y": 5895.205078,
+      "plane": 0
+    },
+    {
+      "line": 23545,
+      "instance_ms": 17200,
+      "actor": 36,
+      "x": 4617.461426,
+      "y": 5428.45459,
+      "plane": 0
+    },
+    {
+      "line": 23545,
+      "instance_ms": 17200,
+      "actor": 37,
+      "x": 4680.374512,
+      "y": 5512.227539,
+      "plane": 0
+    },
+    {
+      "line": 23549,
+      "instance_ms": 18201,
+      "actor": 35,
+      "x": 3656.930908,
+      "y": 5956.240234,
+      "plane": 0
+    },
+    {
+      "line": 23549,
+      "instance_ms": 18201,
+      "actor": 36,
+      "x": 4417.936523,
+      "y": 5579.5,
+      "plane": 0
+    },
+    {
+      "line": 23549,
+      "instance_ms": 18201,
+      "actor": 37,
+      "x": 4481.686523,
+      "y": 5658.283203,
+      "plane": 0
+    },
+    {
+      "line": 23551,
+      "instance_ms": 19200,
+      "actor": 35,
+      "x": 3375.741211,
+      "y": 6017.153809,
+      "plane": 0
+    },
+    {
+      "line": 23551,
+      "instance_ms": 19200,
+      "actor": 36,
+      "x": 4286.077148,
+      "y": 5647.70752,
+      "plane": 0
+    },
+    {
+      "line": 23551,
+      "instance_ms": 19200,
+      "actor": 37,
+      "x": 4256.358887,
+      "y": 5765.99707,
+      "plane": 0
+    },
+    {
+      "line": 23554,
+      "instance_ms": 20200,
+      "actor": 35,
+      "x": 3094.269775,
+      "y": 6078.128418,
+      "plane": 0
+    },
+    {
+      "line": 23554,
+      "instance_ms": 20200,
+      "actor": 36,
+      "x": 4052.895996,
+      "y": 5737.85498,
+      "plane": 0
+    },
+    {
+      "line": 23554,
+      "instance_ms": 20200,
+      "actor": 37,
+      "x": 4022.480469,
+      "y": 5851.254395,
+      "plane": 0
+    },
+    {
+      "line": 23557,
+      "instance_ms": 21200,
+      "actor": 35,
+      "x": 2812.79834,
+      "y": 6139.102539,
+      "plane": 0
+    },
+    {
+      "line": 23557,
+      "instance_ms": 21200,
+      "actor": 36,
+      "x": 3819.27417,
+      "y": 5812.998047,
+      "plane": 0
+    },
+    {
+      "line": 23557,
+      "instance_ms": 21200,
+      "actor": 37,
+      "x": 3784.919434,
+      "y": 5927.73291,
+      "plane": 0
+    },
+    {
+      "line": 23561,
+      "instance_ms": 22200,
+      "actor": 35,
+      "x": 2531.327148,
+      "y": 6200.077148,
+      "plane": 0
+    },
+    {
+      "line": 23561,
+      "instance_ms": 22200,
+      "actor": 36,
+      "x": 3616.824707,
+      "y": 5874.171387,
+      "plane": 0
+    },
+    {
+      "line": 23561,
+      "instance_ms": 22200,
+      "actor": 37,
+      "x": 3543.728271,
+      "y": 5993.51123,
+      "plane": 0
+    },
+    {
+      "line": 23565,
+      "instance_ms": 23200,
+      "actor": 35,
+      "x": 2249.855957,
+      "y": 6261.05127,
+      "plane": 0
+    },
+    {
+      "line": 23565,
+      "instance_ms": 23200,
+      "actor": 36,
+      "x": 3447.34375,
+      "y": 5917.774414,
+      "plane": 0
+    },
+    {
+      "line": 23565,
+      "instance_ms": 23200,
+      "actor": 37,
+      "x": 3386.73584,
+      "y": 6034.754883,
+      "plane": 0
+    },
+    {
+      "line": 23568,
+      "instance_ms": 24200,
+      "actor": 35,
+      "x": 1968.384521,
+      "y": 6322.025879,
+      "plane": 0
+    },
+    {
+      "line": 23568,
+      "instance_ms": 24200,
+      "actor": 36,
+      "x": 3213.783691,
+      "y": 5977.60791,
+      "plane": 0
+    },
+    {
+      "line": 23568,
+      "instance_ms": 24200,
+      "actor": 37,
+      "x": 3143.800293,
+      "y": 6093.766113,
+      "plane": 0
+    },
+    {
+      "line": 23571,
+      "instance_ms": 25200,
+      "actor": 35,
+      "x": 1686.913086,
+      "y": 6383.000488,
+      "plane": 0
+    },
+    {
+      "line": 23571,
+      "instance_ms": 25200,
+      "actor": 36,
+      "x": 2970.773193,
+      "y": 6036.310059,
+      "plane": 0
+    },
+    {
+      "line": 23571,
+      "instance_ms": 25200,
+      "actor": 37,
+      "x": 2900.516846,
+      "y": 6151.254395,
+      "plane": 0
+    },
+    {
+      "line": 23573,
+      "instance_ms": 26200,
+      "actor": 35,
+      "x": 1407.130615,
+      "y": 6443.608887,
+      "plane": 0
+    },
+    {
+      "line": 23573,
+      "instance_ms": 26200,
+      "actor": 36,
+      "x": 2740.064209,
+      "y": 6091.109863,
+      "plane": 0
+    },
+    {
+      "line": 23573,
+      "instance_ms": 26200,
+      "actor": 37,
+      "x": 2657.861328,
+      "y": 6207.57666,
+      "plane": 0
+    },
+    {
+      "line": 23575,
+      "instance_ms": 27199,
+      "actor": 35,
+      "x": 1125.940796,
+      "y": 6504.522461,
+      "plane": 0
+    },
+    {
+      "line": 23575,
+      "instance_ms": 27199,
+      "actor": 36,
+      "x": 2496.797119,
+      "y": 6147.64502,
+      "plane": 0
+    },
+    {
+      "line": 23575,
+      "instance_ms": 27199,
+      "actor": 37,
+      "x": 2414.266113,
+      "y": 6262.680176,
+      "plane": 0
+    },
+    {
+      "line": 23577,
+      "instance_ms": 28200,
+      "actor": 35,
+      "x": 844.187988,
+      "y": 6565.557617,
+      "plane": 0
+    },
+    {
+      "line": 23577,
+      "instance_ms": 28200,
+      "actor": 36,
+      "x": 2253.009277,
+      "y": 6203.200195,
+      "plane": 0
+    },
+    {
+      "line": 23577,
+      "instance_ms": 28200,
+      "actor": 37,
+      "x": 2170.651611,
+      "y": 6317.430176,
+      "plane": 0
+    },
+    {
+      "line": 23579,
+      "instance_ms": 29200,
+      "actor": 35,
+      "x": 614.733704,
+      "y": 6733.812988,
+      "plane": 0
+    },
+    {
+      "line": 23579,
+      "instance_ms": 29200,
+      "actor": 36,
+      "x": 2009.761841,
+      "y": 6260.257812,
+      "plane": 0
+    },
+    {
+      "line": 23579,
+      "instance_ms": 29200,
+      "actor": 37,
+      "x": 1926.62915,
+      "y": 6371.771973,
+      "plane": 0
+    },
+    {
+      "line": 23582,
+      "instance_ms": 30199,
+      "actor": 35,
+      "x": 384.374664,
+      "y": 6906.187012,
+      "plane": 0
+    },
+    {
+      "line": 23582,
+      "instance_ms": 30199,
+      "actor": 36,
+      "x": 1768.197876,
+      "y": 6323.676758,
+      "plane": 0
+    },
+    {
+      "line": 23582,
+      "instance_ms": 30199,
+      "actor": 37,
+      "x": 1686.924927,
+      "y": 6441.597168,
+      "plane": 0
+    },
+    {
+      "line": 23584,
+      "instance_ms": 31199,
+      "actor": 35,
+      "x": 153.785034,
+      "y": 7078.733887,
+      "plane": 0
+    },
+    {
+      "line": 23584,
+      "instance_ms": 31199,
+      "actor": 36,
+      "x": 1532.980225,
+      "y": 6404.749023,
+      "plane": 0
+    },
+    {
+      "line": 23584,
+      "instance_ms": 31199,
+      "actor": 37,
+      "x": 1454.295166,
+      "y": 6519.115723,
+      "plane": 0
+    },
+    {
+      "line": 23587,
+      "instance_ms": 32199,
+      "actor": 35,
+      "x": -76.804626,
+      "y": 7251.280762,
+      "plane": 0
+    },
+    {
+      "line": 23587,
+      "instance_ms": 32199,
+      "actor": 36,
+      "x": 1300.900391,
+      "y": 6497.360352,
+      "plane": 0
+    },
+    {
+      "line": 23587,
+      "instance_ms": 32199,
+      "actor": 37,
+      "x": 1225.585693,
+      "y": 6620.070801,
+      "plane": 0
+    },
+    {
+      "line": 23589,
+      "instance_ms": 33199,
+      "actor": 35,
+      "x": -307.394287,
+      "y": 7423.827637,
+      "plane": 0
+    },
+    {
+      "line": 23589,
+      "instance_ms": 33199,
+      "actor": 36,
+      "x": 1076.884399,
+      "y": 6608.341309,
+      "plane": 0
+    },
+    {
+      "line": 23589,
+      "instance_ms": 33199,
+      "actor": 37,
+      "x": 1009.493469,
+      "y": 6727.090332,
+      "plane": 0
+    },
+    {
+      "line": 23591,
+      "instance_ms": 34199,
+      "actor": 35,
+      "x": -537.983887,
+      "y": 7596.374512,
+      "plane": 0
+    },
+    {
+      "line": 23591,
+      "instance_ms": 34199,
+      "actor": 36,
+      "x": 855.926575,
+      "y": 6724.14209,
+      "plane": 0
+    },
+    {
+      "line": 23591,
+      "instance_ms": 34199,
+      "actor": 37,
+      "x": 789.025269,
+      "y": 6844.962402,
+      "plane": 0
+    },
+    {
+      "line": 23593,
+      "instance_ms": 35199,
+      "actor": 35,
+      "x": -766.498169,
+      "y": 7767.368652,
+      "plane": 0
+    },
+    {
+      "line": 23593,
+      "instance_ms": 35199,
+      "actor": 36,
+      "x": 638.301392,
+      "y": 6847.183594,
+      "plane": 0
+    },
+    {
+      "line": 23593,
+      "instance_ms": 35199,
+      "actor": 37,
+      "x": 671.329529,
+      "y": 6916.361816,
+      "plane": 0
+    },
+    {
+      "line": 23595,
+      "instance_ms": 36199,
+      "actor": 35,
+      "x": -997.087769,
+      "y": 7939.915527,
+      "plane": 0
+    },
+    {
+      "line": 23595,
+      "instance_ms": 36199,
+      "actor": 36,
+      "x": 424.483704,
+      "y": 6976.747559,
+      "plane": 0
+    },
+    {
+      "line": 23595,
+      "instance_ms": 36199,
+      "actor": 37,
+      "x": 458.045685,
+      "y": 7046.78418,
+      "plane": 0
+    },
+    {
+      "line": 23597,
+      "instance_ms": 37199,
+      "actor": 35,
+      "x": -1227.67749,
+      "y": 8112.462402,
+      "plane": 0
+    },
+    {
+      "line": 23597,
+      "instance_ms": 37199,
+      "actor": 36,
+      "x": 212.409607,
+      "y": 7108.841309,
+      "plane": 0
+    },
+    {
+      "line": 23597,
+      "instance_ms": 37199,
+      "actor": 37,
+      "x": 259.170685,
+      "y": 7175.074219,
+      "plane": 0
+    },
+    {
+      "line": 23602,
+      "instance_ms": 38199,
+      "actor": 35,
+      "x": -1458.26709,
+      "y": 8285.008789,
+      "plane": 0
+    },
+    {
+      "line": 23602,
+      "instance_ms": 38199,
+      "actor": 36,
+      "x": 2.873413,
+      "y": 7245.203613,
+      "plane": 0
+    },
+    {
+      "line": 23602,
+      "instance_ms": 38199,
+      "actor": 37,
+      "x": 50.340736,
+      "y": 7311.889648,
+      "plane": 0
+    },
+    {
+      "line": 23602,
+      "instance_ms": 38199,
+      "actor": 51,
+      "x": -5110.37207,
+      "y": 11426.0625,
+      "plane": 0
+    },
+    {
+      "line": 23602,
+      "instance_ms": 38199,
+      "actor": 53,
+      "x": -5089.131836,
+      "y": 11424.0,
+      "plane": 0
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 35,
+      "x": -1688.856689,
+      "y": 8457.555664,
+      "plane": 0
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 36,
+      "x": -142.489807,
+      "y": 7341.755859,
+      "plane": 0
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 37,
+      "x": -156.920044,
+      "y": 7451.686035,
+      "plane": 0
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 50,
+      "x": -5214.837402,
+      "y": 11730.009766,
+      "plane": 0
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 51,
+      "x": -5019.188965,
+      "y": 11491.029297,
+      "plane": 0
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 52,
+      "x": -5311.388184,
+      "y": 11845.290039,
+      "plane": 36
+    },
+    {
+      "line": 23608,
+      "instance_ms": 39199,
+      "actor": 53,
+      "x": -5184.211426,
+      "y": 11364.882812,
+      "plane": 0
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 35,
+      "x": -1919.446289,
+      "y": 8630.102539,
+      "plane": 0
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 36,
+      "x": -349.164673,
+      "y": 7482.416992,
+      "plane": 0
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 37,
+      "x": -362.110657,
+      "y": 7592.662598,
+      "plane": 0
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 50,
+      "x": -5322.807617,
+      "y": 11727.480469,
+      "plane": 0
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 51,
+      "x": -4936.572266,
+      "y": 11418.255859,
+      "plane": 0
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 52,
+      "x": -5311.388184,
+      "y": 11845.290039,
+      "plane": 36
+    },
+    {
+      "line": 23612,
+      "instance_ms": 40199,
+      "actor": 53,
+      "x": -5094.635742,
+      "y": 11399.760742,
+      "plane": 0
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 35,
+      "x": -2177.842529,
+      "y": 8752.040039,
+      "plane": 0
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 36,
+      "x": -547.331421,
+      "y": 7619.759277,
+      "plane": 0
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 37,
+      "x": -567.607605,
+      "y": 7734.929199,
+      "plane": 0
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 50,
+      "x": -5442.774902,
+      "y": 11724.669922,
+      "plane": 0
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 51,
+      "x": -4855.635742,
+      "y": 11329.660156,
+      "plane": 0
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 52,
+      "x": -5311.388184,
+      "y": 11845.290039,
+      "plane": 36
+    },
+    {
+      "line": 23614,
+      "instance_ms": 41199,
+      "actor": 53,
+      "x": -4983.443359,
+      "y": 11444.886719,
+      "plane": 0
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 35,
+      "x": -2439.401123,
+      "y": 8872.584961,
+      "plane": 0
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 36,
+      "x": -752.097717,
+      "y": 7761.67041,
+      "plane": 0
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 37,
+      "x": -774.510864,
+      "y": 7875.253906,
+      "plane": 0
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 50,
+      "x": -5562.742188,
+      "y": 11721.859375,
+      "plane": 0
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 51,
+      "x": -4774.69873,
+      "y": 11241.064453,
+      "plane": 0
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23617,
+      "instance_ms": 42199,
+      "actor": 53,
+      "x": -4872.251465,
+      "y": 11490.011719,
+      "plane": 0
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 35,
+      "x": -2606.046631,
+      "y": 9104.702148,
+      "plane": 0
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 36,
+      "x": -962.924072,
+      "y": 7896.028809,
+      "plane": 0
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 37,
+      "x": -982.711365,
+      "y": 8012.540527,
+      "plane": 0
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 50,
+      "x": -5682.708984,
+      "y": 11719.049805,
+      "plane": 0
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 51,
+      "x": -4693.762207,
+      "y": 11152.467773,
+      "plane": 0
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23619,
+      "instance_ms": 43199,
+      "actor": 53,
+      "x": -4762.727051,
+      "y": 11534.459961,
+      "plane": 0
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 35,
+      "x": -2767.867188,
+      "y": 9342.941406,
+      "plane": 0
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 36,
+      "x": -1169.505981,
+      "y": 8036.372559,
+      "plane": 0
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 37,
+      "x": -1193.432129,
+      "y": 8147.064941,
+      "plane": 0
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 50,
+      "x": -5802.67627,
+      "y": 11716.239258,
+      "plane": 0
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 51,
+      "x": -4612.825195,
+      "y": 11063.87207,
+      "plane": 0
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23621,
+      "instance_ms": 44199,
+      "actor": 53,
+      "x": -4651.534668,
+      "y": 11579.584961,
+      "plane": 0
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 35,
+      "x": -2908.486816,
+      "y": 9593.079102,
+      "plane": 0
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 36,
+      "x": -1371.789673,
+      "y": 8183.27832,
+      "plane": 0
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 37,
+      "x": -1391.81665,
+      "y": 8298.557617,
+      "plane": 0
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 50,
+      "x": -5922.643066,
+      "y": 11713.428711,
+      "plane": 0
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 51,
+      "x": -4531.888672,
+      "y": 10975.276367,
+      "plane": 0
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23624,
+      "instance_ms": 45199,
+      "actor": 53,
+      "x": -4540.342285,
+      "y": 11624.709961,
+      "plane": 0
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 35,
+      "x": -3037.217773,
+      "y": 9850.707031,
+      "plane": 0
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 36,
+      "x": -1546.737549,
+      "y": 8330.474609,
+      "plane": 0
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 37,
+      "x": -1585.286743,
+      "y": 8450.484375,
+      "plane": 0
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 50,
+      "x": -6042.610352,
+      "y": 11710.618164,
+      "plane": 0
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 51,
+      "x": -4450.952148,
+      "y": 10886.679688,
+      "plane": 0
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23627,
+      "instance_ms": 46199,
+      "actor": 53,
+      "x": -4429.149902,
+      "y": 11669.834961,
+      "plane": 0
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 35,
+      "x": -3165.948975,
+      "y": 10108.334961,
+      "plane": 0
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 36,
+      "x": -1735.876831,
+      "y": 8492.912109,
+      "plane": 0
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 37,
+      "x": -1781.567749,
+      "y": 8605.319336,
+      "plane": 0
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 50,
+      "x": -6077.847656,
+      "y": 11709.792969,
+      "plane": 0
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 51,
+      "x": -4449.050293,
+      "y": 10884.598633,
+      "plane": 0
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23630,
+      "instance_ms": 47199,
+      "actor": 53,
+      "x": -4400.389648,
+      "y": 11681.506836,
+      "plane": 0
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 35,
+      "x": -3294.55127,
+      "y": 10365.706055,
+      "plane": 0
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 36,
+      "x": -1925.34314,
+      "y": 8655.631836,
+      "plane": 0
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 37,
+      "x": -1976.726196,
+      "y": 8759.268555,
+      "plane": 0
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 50,
+      "x": -6077.847656,
+      "y": 11709.792969,
+      "plane": 0
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 51,
+      "x": -4449.050293,
+      "y": 10884.598633,
+      "plane": 0
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23632,
+      "instance_ms": 48198,
+      "actor": 53,
+      "x": -4400.389648,
+      "y": 11681.506836,
+      "plane": 0
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 35,
+      "x": -3423.282227,
+      "y": 10623.333984,
+      "plane": 0
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 36,
+      "x": -2114.098389,
+      "y": 8817.740234,
+      "plane": 0
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 37,
+      "x": -2172.279785,
+      "y": 8913.529297,
+      "plane": 0
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 50,
+      "x": -6085.442383,
+      "y": 11755.121094,
+      "plane": 0
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 51,
+      "x": -4387.131348,
+      "y": 10796.257812,
+      "plane": 0
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 52,
+      "x": -5304.073242,
+      "y": 11863.415039,
+      "plane": 36
+    },
+    {
+      "line": 23634,
+      "instance_ms": 49198,
+      "actor": 53,
+      "x": -4428.010742,
+      "y": 11718.241211,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 35,
+      "x": -3552.14209,
+      "y": 10881.219727,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 36,
+      "x": -2303.83252,
+      "y": 8980.689453,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 37,
+      "x": -2368.75708,
+      "y": 9068.518555,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 50,
+      "x": -5793.534668,
+      "y": 11673.267578,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 52,
+      "x": -5034.763184,
+      "y": 11686.333008,
+      "plane": 0
+    },
+    {
+      "line": 23636,
+      "instance_ms": 50199,
+      "actor": 53,
+      "x": -4259.661621,
+      "y": 11475.543945,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 35,
+      "x": -3762.43457,
+      "y": 11046.803711,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 36,
+      "x": -2493.299072,
+      "y": 9143.408203,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 37,
+      "x": -2564.662354,
+      "y": 9223.056641,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 50,
+      "x": -5601.362793,
+      "y": 11612.542969,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 52,
+      "x": -4891.563965,
+      "y": 11606.494141,
+      "plane": 0
+    },
+    {
+      "line": 23639,
+      "instance_ms": 51198,
+      "actor": 53,
+      "x": -4151.41748,
+      "y": 11320.074219,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 35,
+      "x": -4026.705078,
+      "y": 11161.28125,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 36,
+      "x": -2682.446289,
+      "y": 9305.853516,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 37,
+      "x": -2760.943359,
+      "y": 9377.891602,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 50,
+      "x": -5255.616211,
+      "y": 11558.288086,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 52,
+      "x": -4891.563965,
+      "y": 11606.494141,
+      "plane": 0
+    },
+    {
+      "line": 23641,
+      "instance_ms": 52198,
+      "actor": 53,
+      "x": -4151.41748,
+      "y": 11320.074219,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 35,
+      "x": -4291.240234,
+      "y": 11275.873047,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 36,
+      "x": -2858.148682,
+      "y": 9479.22168,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 37,
+      "x": -2915.372803,
+      "y": 9566.369141,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 50,
+      "x": -4946.675781,
+      "y": 11513.253906,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 52,
+      "x": -4891.563965,
+      "y": 11606.494141,
+      "plane": 0
+    },
+    {
+      "line": 23643,
+      "instance_ms": 53199,
+      "actor": 53,
+      "x": -4159.239258,
+      "y": 11366.317383,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 35,
+      "x": -4537.833496,
+      "y": 11399.630859,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 36,
+      "x": -3009.093262,
+      "y": 9674.259766,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 37,
+      "x": -3055.871582,
+      "y": 9770.349609,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 50,
+      "x": -4946.675781,
+      "y": 11513.253906,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 52,
+      "x": -4891.563965,
+      "y": 11606.494141,
+      "plane": 0
+    },
+    {
+      "line": 23645,
+      "instance_ms": 54199,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 35,
+      "x": -4641.564453,
+      "y": 11606.744141,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 36,
+      "x": -3159.478027,
+      "y": 9856.408203,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 37,
+      "x": -3215.71167,
+      "y": 9962.250977,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 50,
+      "x": -4867.316406,
+      "y": 11494.478516,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 52,
+      "x": -4891.563965,
+      "y": 11606.494141,
+      "plane": 0
+    },
+    {
+      "line": 23647,
+      "instance_ms": 55198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 35,
+      "x": -4511.606934,
+      "y": 11434.246094,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 36,
+      "x": -3326.772217,
+      "y": 10042.18457,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 37,
+      "x": -3377.485352,
+      "y": 10147.176758,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 50,
+      "x": -4574.68457,
+      "y": 11407.263672,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 52,
+      "x": -4891.563965,
+      "y": 11606.494141,
+      "plane": 0
+    },
+    {
+      "line": 23649,
+      "instance_ms": 56198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 35,
+      "x": -4397.906738,
+      "y": 11262.381836,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 36,
+      "x": -3485.94751,
+      "y": 10233.332031,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 37,
+      "x": -3541.710205,
+      "y": 10329.527344,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 52,
+      "x": -4614.63623,
+      "y": 11497.787109,
+      "plane": 0
+    },
+    {
+      "line": 23651,
+      "instance_ms": 57198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 35,
+      "x": -4385.915039,
+      "y": 11215.804688,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 36,
+      "x": -3675.60791,
+      "y": 10396.208984,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 37,
+      "x": -3664.568359,
+      "y": 10381.116211,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23653,
+      "instance_ms": 58198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 35,
+      "x": -4385.915039,
+      "y": 11215.804688,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 36,
+      "x": -3858.473145,
+      "y": 10553.25,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 37,
+      "x": -3895.071289,
+      "y": 10477.907227,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23655,
+      "instance_ms": 59198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 35,
+      "x": -4373.532227,
+      "y": 11195.022461,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 36,
+      "x": -3858.473145,
+      "y": 10553.25,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 37,
+      "x": -4097.65332,
+      "y": 10562.972656,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23657,
+      "instance_ms": 60198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 35,
+      "x": -4226.118164,
+      "y": 10947.609375,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 36,
+      "x": -3858.473145,
+      "y": 10553.25,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 37,
+      "x": -4328.15625,
+      "y": 10659.763672,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23660,
+      "instance_ms": 61198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 35,
+      "x": -4165.570801,
+      "y": 10996.666992,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 36,
+      "x": -3858.473145,
+      "y": 10553.25,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 37,
+      "x": -4459.689453,
+      "y": 10820.397461,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23663,
+      "instance_ms": 62198,
+      "actor": 53,
+      "x": -4189.885254,
+      "y": 11547.494141,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 35,
+      "x": -4173.315918,
+      "y": 11284.5625,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 36,
+      "x": -3924.282715,
+      "y": 10733.353516,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 37,
+      "x": -4452.884766,
+      "y": 11070.305664,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23665,
+      "instance_ms": 63198,
+      "actor": 53,
+      "x": -4180.814941,
+      "y": 11532.52832,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 35,
+      "x": -4360.519043,
+      "y": 11401.299805,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 36,
+      "x": -4009.998535,
+      "y": 10967.933594,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 37,
+      "x": -4398.854492,
+      "y": 11307.361328,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23667,
+      "instance_ms": 64198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 35,
+      "x": -4360.519043,
+      "y": 11401.299805,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 36,
+      "x": -4095.713867,
+      "y": 11202.513672,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 37,
+      "x": -4388.88916,
+      "y": 11325.5625,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23669,
+      "instance_ms": 65197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 35,
+      "x": -4360.519043,
+      "y": 11401.299805,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 36,
+      "x": -4175.937988,
+      "y": 11422.06543,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 37,
+      "x": -4388.88916,
+      "y": 11325.5625,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23671,
+      "instance_ms": 66198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 35,
+      "x": -4360.519043,
+      "y": 11401.299805,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 36,
+      "x": -4301.747559,
+      "y": 11424.15625,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 37,
+      "x": -4388.88916,
+      "y": 11325.5625,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23674,
+      "instance_ms": 67199,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 35,
+      "x": -4351.303711,
+      "y": 11401.177734,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 36,
+      "x": -4301.747559,
+      "y": 11424.15625,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 37,
+      "x": -4395.570312,
+      "y": 11329.962891,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23676,
+      "instance_ms": 68197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 35,
+      "x": -4159.512695,
+      "y": 11398.633789,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 36,
+      "x": -4173.575195,
+      "y": 11407.500977,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 37,
+      "x": -4459.040039,
+      "y": 11371.766602,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23678,
+      "instance_ms": 69197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 35,
+      "x": -4159.512695,
+      "y": 11398.633789,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 36,
+      "x": -4173.575195,
+      "y": 11407.500977,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 37,
+      "x": -4459.040039,
+      "y": 11371.766602,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23682,
+      "instance_ms": 70197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 35,
+      "x": -4376.624512,
+      "y": 11412.673828,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 36,
+      "x": -4265.31543,
+      "y": 11408.829102,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 37,
+      "x": -4459.040039,
+      "y": 11371.766602,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23685,
+      "instance_ms": 71198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 36,
+      "x": -4411.050293,
+      "y": 11410.938477,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 37,
+      "x": -4459.040039,
+      "y": 11371.766602,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23687,
+      "instance_ms": 72198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 36,
+      "x": -4411.050293,
+      "y": 11410.938477,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 37,
+      "x": -4459.040039,
+      "y": 11371.766602,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23689,
+      "instance_ms": 73198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 36,
+      "x": -4411.050293,
+      "y": 11410.938477,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 37,
+      "x": -4459.040039,
+      "y": 11371.766602,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23691,
+      "instance_ms": 74197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 36,
+      "x": -4358.010254,
+      "y": 11377.614258,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 37,
+      "x": -4342.333496,
+      "y": 11457.708008,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23696,
+      "instance_ms": 75197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 36,
+      "x": -4342.243652,
+      "y": 11367.708008,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 37,
+      "x": -4342.333496,
+      "y": 11457.708008,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23699,
+      "instance_ms": 76197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 36,
+      "x": -4342.243652,
+      "y": 11367.708008,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 37,
+      "x": -4342.333496,
+      "y": 11457.708008,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23701,
+      "instance_ms": 77197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 36,
+      "x": -4404.648438,
+      "y": 11476.016602,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 37,
+      "x": -4342.333496,
+      "y": 11457.708008,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23705,
+      "instance_ms": 78197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 37,
+      "x": -4421.279297,
+      "y": 11464.644531,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23708,
+      "instance_ms": 79197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23710,
+      "instance_ms": 80198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23712,
+      "instance_ms": 81197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23714,
+      "instance_ms": 82197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23717,
+      "instance_ms": 83197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23719,
+      "instance_ms": 84197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23721,
+      "instance_ms": 85197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23723,
+      "instance_ms": 86197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23725,
+      "instance_ms": 87197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23728,
+      "instance_ms": 88197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23730,
+      "instance_ms": 89197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23732,
+      "instance_ms": 90196,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23734,
+      "instance_ms": 91197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23737,
+      "instance_ms": 92198,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23739,
+      "instance_ms": 93197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23741,
+      "instance_ms": 94197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23743,
+      "instance_ms": 95197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23745,
+      "instance_ms": 96197,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23747,
+      "instance_ms": 97189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23749,
+      "instance_ms": 98189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23751,
+      "instance_ms": 99189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23753,
+      "instance_ms": 100189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23756,
+      "instance_ms": 101189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23758,
+      "instance_ms": 102189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23760,
+      "instance_ms": 103189,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23763,
+      "instance_ms": 104180,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 51,
+      "x": -4384.789551,
+      "y": 10792.916992,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23765,
+      "instance_ms": 105181,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23768,
+      "instance_ms": 106181,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23768,
+      "instance_ms": 106181,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23768,
+      "instance_ms": 106181,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23768,
+      "instance_ms": 106181,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23768,
+      "instance_ms": 106181,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23768,
+      "instance_ms": 106181,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23770,
+      "instance_ms": 107180,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23770,
+      "instance_ms": 107180,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23770,
+      "instance_ms": 107180,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23770,
+      "instance_ms": 107180,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23770,
+      "instance_ms": 107180,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23770,
+      "instance_ms": 107180,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23772,
+      "instance_ms": 108181,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23772,
+      "instance_ms": 108181,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23772,
+      "instance_ms": 108181,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23772,
+      "instance_ms": 108181,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23772,
+      "instance_ms": 108181,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23772,
+      "instance_ms": 108181,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23775,
+      "instance_ms": 109180,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23775,
+      "instance_ms": 109180,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23775,
+      "instance_ms": 109180,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23775,
+      "instance_ms": 109180,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23775,
+      "instance_ms": 109180,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23775,
+      "instance_ms": 109180,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23777,
+      "instance_ms": 110180,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23777,
+      "instance_ms": 110180,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23777,
+      "instance_ms": 110180,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23777,
+      "instance_ms": 110180,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23777,
+      "instance_ms": 110180,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23777,
+      "instance_ms": 110180,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23780,
+      "instance_ms": 111180,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23780,
+      "instance_ms": 111180,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23780,
+      "instance_ms": 111180,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23780,
+      "instance_ms": 111180,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23780,
+      "instance_ms": 111180,
+      "actor": 52,
+      "x": -4426.74707,
+      "y": 11424.03125,
+      "plane": 0
+    },
+    {
+      "line": 23780,
+      "instance_ms": 111180,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23783,
+      "instance_ms": 112180,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23783,
+      "instance_ms": 112180,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23783,
+      "instance_ms": 112180,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23783,
+      "instance_ms": 112180,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23783,
+      "instance_ms": 112180,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23785,
+      "instance_ms": 113196,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23785,
+      "instance_ms": 113196,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23785,
+      "instance_ms": 113196,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23785,
+      "instance_ms": 113196,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23785,
+      "instance_ms": 113196,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23787,
+      "instance_ms": 114176,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23787,
+      "instance_ms": 114176,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23787,
+      "instance_ms": 114176,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23787,
+      "instance_ms": 114176,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23787,
+      "instance_ms": 114176,
+      "actor": 53,
+      "x": -4096.099121,
+      "y": 11392.746094,
+      "plane": 0
+    },
+    {
+      "line": 23790,
+      "instance_ms": 115192,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23790,
+      "instance_ms": 115192,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23790,
+      "instance_ms": 115192,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23790,
+      "instance_ms": 115192,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23792,
+      "instance_ms": 116192,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23792,
+      "instance_ms": 116192,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23792,
+      "instance_ms": 116192,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23792,
+      "instance_ms": 116192,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23794,
+      "instance_ms": 117192,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23794,
+      "instance_ms": 117192,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23794,
+      "instance_ms": 117192,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23794,
+      "instance_ms": 117192,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23796,
+      "instance_ms": 118192,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23796,
+      "instance_ms": 118192,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23796,
+      "instance_ms": 118192,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23796,
+      "instance_ms": 118192,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23798,
+      "instance_ms": 119182,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23798,
+      "instance_ms": 119182,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23798,
+      "instance_ms": 119182,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23798,
+      "instance_ms": 119182,
+      "actor": 50,
+      "x": -4527.659668,
+      "y": 11411.870117,
+      "plane": 0
+    },
+    {
+      "line": 23801,
+      "instance_ms": 120174,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23801,
+      "instance_ms": 120174,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23801,
+      "instance_ms": 120174,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    },
+    {
+      "line": 23803,
+      "instance_ms": 121175,
+      "actor": 35,
+      "x": -4442.288574,
+      "y": 11412.608398,
+      "plane": 0
+    },
+    {
+      "line": 23803,
+      "instance_ms": 121175,
+      "actor": 36,
+      "x": -4456.063965,
+      "y": 11521.397461,
+      "plane": 0
+    },
+    {
+      "line": 23803,
+      "instance_ms": 121175,
+      "actor": 37,
+      "x": -4532.847168,
+      "y": 11474.447266,
+      "plane": 0
+    }
+  ],
+  "first_deaths": {
+    "51": {
+      "line": 551879,
+      "flags": 2192,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177897078,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003300000090080000"
+      }
+    },
+    "52": {
+      "line": 552168,
+      "flags": 16,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177903015,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003400000010000000"
+      }
+    },
+    "53": {
+      "line": 552275,
+      "flags": 16,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177905781,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003500000010000000"
+      }
+    },
+    "50": {
+      "line": 552420,
+      "flags": 16,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177910375,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000003200000010000000"
+      }
+    }
+  },
+  "observed_max_health": [
+    {
+      "line": 551508,
+      "actor": 51,
+      "capacity": 180,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177889812,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a00000033000000b4000000"
+      }
+    },
+    {
+      "line": 552081,
+      "actor": 53,
+      "capacity": 180,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177901296,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a00000035000000b4000000"
+      }
+    },
+    {
+      "line": 552375,
+      "actor": 50,
+      "capacity": 180,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177908953,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a00000032000000b4000000"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "line": 551384,
+      "kind": 60,
+      "source": 53,
+      "target": 35,
+      "auxiliary": 42,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177886640,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c00000035000000230000002a000000"
+      }
+    },
+    {
+      "line": 551397,
+      "kind": 60,
+      "source": 51,
+      "target": 35,
+      "auxiliary": 194,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177887125,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c0000003300000023000000c2000000"
+      }
+    },
+    {
+      "line": 551402,
+      "kind": 4,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177887343,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002300000000000000"
+      }
+    },
+    {
+      "line": 551458,
+      "kind": 4,
+      "source": 51,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177889031,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000330000002300000000000000"
+      }
+    },
+    {
+      "line": 551466,
+      "kind": 4,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177889031,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002300000000000000"
+      }
+    },
+    {
+      "line": 551468,
+      "kind": 60,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 109,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177889031,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c00000032000000230000006d000000"
+      }
+    },
+    {
+      "line": 551492,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177889546,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 551528,
+      "kind": 60,
+      "source": 51,
+      "target": 28,
+      "auxiliary": 194,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177890046,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000330000001c000000c2000000"
+      }
+    },
+    {
+      "line": 551530,
+      "kind": 60,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 42,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177890046,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c00000034000000230000002a000000"
+      }
+    },
+    {
+      "line": 551602,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177891687,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 551618,
+      "kind": 4,
+      "source": 51,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177891937,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000330000002300000000000000"
+      }
+    },
+    {
+      "line": 551620,
+      "kind": 60,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 135,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177892031,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000320000002300000087000000"
+      }
+    },
+    {
+      "line": 551622,
+      "kind": 60,
+      "source": 51,
+      "target": 28,
+      "auxiliary": 194,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177892031,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000330000001c000000c2000000"
+      }
+    },
+    {
+      "line": 551695,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177893421,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 551727,
+      "kind": 60,
+      "source": 51,
+      "target": 28,
+      "auxiliary": 194,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177894093,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000330000001c000000c2000000"
+      }
+    },
+    {
+      "line": 551734,
+      "kind": 4,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177894203,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002300000000000000"
+      }
+    },
+    {
+      "line": 551741,
+      "kind": 4,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177894453,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002300000000000000"
+      }
+    },
+    {
+      "line": 551776,
+      "kind": 60,
+      "source": 36,
+      "target": 35,
+      "auxiliary": 286,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177895109,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c00000024000000230000001e010000"
+      }
+    },
+    {
+      "line": 551788,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177895296,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 551827,
+      "kind": 60,
+      "source": 51,
+      "target": 28,
+      "auxiliary": 194,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177896078,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000330000001c000000c2000000"
+      }
+    },
+    {
+      "line": 551845,
+      "kind": 4,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177896328,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002300000000000000"
+      }
+    },
+    {
+      "line": 551847,
+      "kind": 4,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177896375,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002300000000000000"
+      }
+    },
+    {
+      "line": 551860,
+      "kind": 60,
+      "source": 36,
+      "target": 28,
+      "auxiliary": 281,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177896765,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000240000001c00000019010000"
+      }
+    },
+    {
+      "line": 551904,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177897281,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 551940,
+      "kind": 60,
+      "source": 50,
+      "target": 36,
+      "auxiliary": 109,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177898093,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c00000032000000240000006d000000"
+      }
+    },
+    {
+      "line": 551947,
+      "kind": 4,
+      "source": 52,
+      "target": 36,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177898296,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002400000000000000"
+      }
+    },
+    {
+      "line": 551993,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177899625,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 552005,
+      "kind": 4,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177899828,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002300000000000000"
+      }
+    },
+    {
+      "line": 552010,
+      "kind": 4,
+      "source": 52,
+      "target": 36,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177899953,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002400000000000000"
+      }
+    },
+    {
+      "line": 552019,
+      "kind": 4,
+      "source": 35,
+      "target": 52,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177900171,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000230000003400000000000000"
+      }
+    },
+    {
+      "line": 552025,
+      "kind": 4,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177900312,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002300000000000000"
+      }
+    },
+    {
+      "line": 552028,
+      "kind": 4,
+      "source": 37,
+      "target": 52,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177900312,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000250000003400000000000000"
+      }
+    },
+    {
+      "line": 552084,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177901343,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 552094,
+      "kind": 4,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177901578,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002300000000000000"
+      }
+    },
+    {
+      "line": 552096,
+      "kind": 4,
+      "source": 37,
+      "target": 52,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177901593,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000250000003400000000000000"
+      }
+    },
+    {
+      "line": 552120,
+      "kind": 4,
+      "source": 35,
+      "target": 52,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177902203,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000230000003400000000000000"
+      }
+    },
+    {
+      "line": 552122,
+      "kind": 4,
+      "source": 52,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177902203,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000340000002300000000000000"
+      }
+    },
+    {
+      "line": 552152,
+      "kind": 60,
+      "source": 36,
+      "target": 35,
+      "auxiliary": 281,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177902562,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000240000002300000019010000"
+      }
+    },
+    {
+      "line": 552188,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177903265,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 552190,
+      "kind": 4,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177903312,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002300000000000000"
+      }
+    },
+    {
+      "line": 552210,
+      "kind": 60,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 135,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177904125,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000320000002300000087000000"
+      }
+    },
+    {
+      "line": 552217,
+      "kind": 4,
+      "source": 37,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177904453,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000250000003200000000000000"
+      }
+    },
+    {
+      "line": 552236,
+      "kind": 4,
+      "source": 35,
+      "target": 53,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177904968,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000230000003500000000000000"
+      }
+    },
+    {
+      "line": 552260,
+      "kind": 4,
+      "source": 36,
+      "target": 53,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177905312,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000240000003500000000000000"
+      }
+    },
+    {
+      "line": 552266,
+      "kind": 4,
+      "source": 53,
+      "target": 28,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177905375,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000350000001c00000000000000"
+      }
+    },
+    {
+      "line": 552291,
+      "kind": 4,
+      "source": 37,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177905984,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000250000003200000000000000"
+      }
+    },
+    {
+      "line": 552294,
+      "kind": 4,
+      "source": 50,
+      "target": 35,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177906000,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002300000000000000"
+      }
+    },
+    {
+      "line": 552304,
+      "kind": 60,
+      "source": 50,
+      "target": 37,
+      "auxiliary": 109,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177906250,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c00000032000000250000006d000000"
+      }
+    },
+    {
+      "line": 552329,
+      "kind": 4,
+      "source": 37,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177907421,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000250000003200000000000000"
+      }
+    },
+    {
+      "line": 552332,
+      "kind": 4,
+      "source": 35,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177907515,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000230000003200000000000000"
+      }
+    },
+    {
+      "line": 552339,
+      "kind": 4,
+      "source": 36,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177907750,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000240000003200000000000000"
+      }
+    },
+    {
+      "line": 552358,
+      "kind": 4,
+      "source": 50,
+      "target": 37,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177908453,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002500000000000000"
+      }
+    },
+    {
+      "line": 552380,
+      "kind": 4,
+      "source": 37,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177909093,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000250000003200000000000000"
+      }
+    },
+    {
+      "line": 552389,
+      "kind": 4,
+      "source": 36,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177909281,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000240000003200000000000000"
+      }
+    },
+    {
+      "line": 552395,
+      "kind": 4,
+      "source": 35,
+      "target": 50,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177909562,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000230000003200000000000000"
+      }
+    },
+    {
+      "line": 552418,
+      "kind": 4,
+      "source": 50,
+      "target": 37,
+      "auxiliary": 0,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177910375,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a000000004000000320000002500000000000000"
+      }
+    }
+  ],
+  "reward": {
+    "definition_line": 552527,
+    "location_line": 552528,
+    "removal_line": 552529,
+    "xp_line": 552534,
+    "packets": {
+      "552527": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177913937,
+        "opcode": 354,
+        "bytes": 436,
+        "complete": true,
+        "hex": "6201000036010000ee2400801b00000000000000000000000000000000000000000010220a000000a20b0000010000000d2728eb10d1d977000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000002b8240f327822d1000824a301302505005821060988a400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "normalized_unused_capacity": true
+      },
+      "552528": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177913937,
+        "opcode": 318,
+        "bytes": 20,
+        "complete": true,
+        "hex": "3e01000002000000360100000400000004000000"
+      },
+      "552529": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177913937,
+        "opcode": 82,
+        "bytes": 8,
+        "complete": true,
+        "hex": "520000002e000000"
+      },
+      "552534": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 177913937,
+        "opcode": 238,
+        "bytes": 12,
+        "complete": true,
+        "hex": "ee00000000000000c8000000"
+      }
+    },
+    "encoded_name": [
+      9997,
+      60200,
+      53520,
+      30681
+    ],
+    "modifiers": [
+      616038912,
+      578302479,
+      604504273,
+      623903139,
+      559415301,
+      2760378630
+    ],
+    "owned_inventory_line": 23704,
+    "owned_definition": {
+      "model": 2978,
+      "model_file": 9454,
+      "type": 27,
+      "base_value": 10,
+      "quantity": 1,
+      "interaction": 571473920,
+      "profession": 11,
+      "slot": 4,
+      "dye_tint": 0,
+      "dye1": 0,
+      "dye2": 0,
+      "dye3": 0,
+      "dye4": 0,
+      "modifiers_complete": true,
+      "modifiers": [
+        616038912,
+        578302479,
+        604504273,
+        623903139,
+        559415301,
+        2760378630,
+        3221225472
+      ],
+      "name_encoded_utf16": [
+        9997,
+        60200,
+        53520,
+        30681
+      ],
+      "name": "Long Sword",
+      "name_status": "decoded",
+      "observed_item_id": 310
+    }
+  },
+  "exports": [
+    {
+      "path": "quest46-active.fwqc",
+      "sha256": "c13e869d630d369e4e40b2769c3185be50f5ac174fd9df395dd9b7d937f6e92b",
+      "source_line": 23323
+    },
+    {
+      "path": "quest46-objective-zone.fwqc",
+      "sha256": "b65e8458255c926a50ec957370d98c695c6158a2e5846085cf65dc8dea30659e",
+      "source_line": 23464
+    },
+    {
+      "path": "quest46-completed.fwqc",
+      "sha256": "b8f899daed39d75ad8e80e3045b2a1b6cbd56fede8a9d9ea7c8b9b45b98a3b55",
+      "source_line": 23692
+    }
+  ],
+  "limits": [
+    "Actor IDs belong only to map146 epoch11, not permanent runtime identities.",
+    "Native32 supplies initial spawn/facing; world movement samples are not an inferred navigation route.",
+    "The captured four enemies are one observed composition; wiki permits randomized groups.",
+    "No death is inferred from disappearance. Four explicit241 dead-bit events precede completion.",
+    "Reward is proven by definition, placement, removal, XP200 and new owned inventory, not absence alone.",
+    "Three separate stage catalogs require explicit runtime stage selection; do not concatenate duplicate active rows.",
+    "No outgoing native accept/reward IDs, uncaptured health/armor/attack rates or customization metadata are inferred.",
+    "Modern decoded-memory packet opcodes are not 2022 wire opcodes."
+  ]
+}

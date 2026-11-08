@@ -1,0 +1,15 @@
+Shield of Judgment262 - outstanding retail lifetime evidence
+
+Manual capture protocol only. Do not restart or replace an active logger/session for this checklist. Use normal official-client actions and preserve raw packet/world logs. No credentials belong in the evidence report.
+
+Use two cooperating characters in the same area. A casts262onB;only B should receive the test enemy's attacks. Record actual rank,equipment duration modifiers,map/district,actor IDs and initial effect duration. Avoid block/miss effects where possible;identify confirmed successful contacts rather than inferring a hit from attack animation alone.
+
+1. Baseline:one successful contact while A remains alive/present. Preserve attack qualification/contact,Health change,knockdown and262status/end packets. Capture a second hit while the attacker is already knocked down if a legitimately released projectile permits it.
+2. A dies while B remains alive with the enchantment. Establish whether B loses262immediately or retains it,and whether a later successful hit still retaliates. Preserve exact effect IDs and source identity.
+3. A logs out to character selection while B and its area remain loaded. Establish whether262ends or survives and whether a later contact still retaliates. If both characters change area,the test is invalid for source-only departure.
+4. If practical,A re-enters before expiry. Record the new actor identity;determine whether surviving effects retain old ownership,retarget,or end. Do not assume a matching numeric actor ID proves the same lifetime.
+5. Let the buff expire naturally,then confirm the next successful hit has no retaliation. Also capture deliberate removal/renewal separately so those end causes are not confused with departure.
+
+Current private candidate:nonmaintained finite262survives source departure until its recipient effect ends. It retains exact old scope,cast level and departure team;reactions do not credit a replacement actor. When the original source is absent,Health/control still commit but stale-source damage popups and source-specific NPC death credit are omitted. This is tested private behavior,not verified retail behavior.
+
+Need to resolve:source-only departure/death behavior,source-attributed feedback after disappearance,retail retaliation/control ordering,Stonefist/Earthbind modifiers,other-ally rendering/sound and NPC caster roles. Five frozen self-cast receipts prove none of these edge cases. Keep raw packet evidence separate from derived conclusions and note unexpected conditions.

@@ -1,0 +1,205 @@
+{
+  "checkpoint": "20261017-log-check-0059",
+  "cutoff": "2026-10-17T06:01:36.761196+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "start": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 229958,
+    "tick_ms": 20545671,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e000000e4000000",
+    "kind": 60
+  },
+  "finish": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 229973,
+    "tick_ms": 20546703,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003a0000001900000000000000",
+    "kind": 58
+  },
+  "receipts": [
+    {
+      "kind": "target_particle",
+      "line": 229974,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e00000019000000ec070000"
+    },
+    {
+      "kind": "health_display",
+      "line": 229975,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001d000000e0010000"
+    },
+    {
+      "kind": "damage",
+      "line": 229976,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001d00000019000000deddddbc"
+    },
+    {
+      "kind": "condition_mask",
+      "line": 229977,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001d0000001d000000"
+    },
+    {
+      "kind": "agent_state",
+      "line": 229978,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001d00000002000000"
+    },
+    {
+      "kind": "health_display",
+      "line": 229979,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001e000000e0010000"
+    },
+    {
+      "kind": "damage",
+      "line": 229980,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000abaaaabc"
+    },
+    {
+      "kind": "condition_mask",
+      "line": 229981,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e0000001d000000"
+    },
+    {
+      "kind": "agent_state",
+      "line": 229982,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000002000000"
+    },
+    {
+      "kind": "health_display",
+      "line": 229983,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001f000000e0010000"
+    },
+    {
+      "kind": "damage",
+      "line": 229984,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001f00000019000000898888bc"
+    },
+    {
+      "kind": "condition_mask",
+      "line": 229985,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001f0000001d000000"
+    },
+    {
+      "kind": "agent_state",
+      "line": 229986,
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 20546703,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001f00000002000000"
+    }
+  ],
+  "native_cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 228,
+    "override_after": 2139095040
+  },
+  "native_particle": {
+    "actor": 43,
+    "encoded_file": "6f2a05010000",
+    "flags": 1
+  },
+  "particle_wire2022": "9f80140000001e00000019000000ec070000",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Thunderclap.html",
+  "wiki_sha256": "39022824bf71ad51b59ecc5e7d5f2fce64a318083b2dbcecc9651ed7f89acbed",
+  "tool_sha256": "ea1eb7075eebbb050d1de582987a1874c0b8a3ef2bff1184f179959ca3e9beb9",
+  "limits": [
+    "Three damaged recipients do not independently calibrate the area radius.",
+    "An aggregate condition mask does not establish condition stack ordering; the historical wiki specifies Cracked Armor before Weakness.",
+    "This idle-target frame does not prove interrupt admission, immunity or recharge behavior.",
+    "Original consumer asset/model services are stubbed; no rendered acceptance or runtime binding is established."
+  ]
+}

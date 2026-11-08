@@ -1,0 +1,52 @@
+{
+  "cutoff": "2026-10-14T23:29:51.460985+00:00",
+  "skills": [
+    {
+      "skill": 13,
+      "name": "Mantra of Recovery",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Recovery.html",
+      "wiki_sha256": "b403e47ea74e1f4af4280794cd9255dfccd68a0bf260bae482198d10efe51236",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 71538,
+          "tick_ms": 8086312,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f00000030000000190000000d000000",
+          "kind": 48
+        }
+      ],
+      "endpoint_evidence": [],
+      "body_effect_evidence": []
+    },
+    {
+      "skill": 15,
+      "name": "Mantra of Inscriptions",
+      "primary_wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mantra_of_Inscriptions.html",
+      "wiki_sha256": "9ccc5c5c3f52f0cf20e73bbcb91933885f0744d8a0ecd44412d06745cc5c707f",
+      "activation_evidence": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 71575,
+          "tick_ms": 8088968,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f00000030000000190000000f000000",
+          "kind": 48
+        }
+      ],
+      "endpoint_evidence": [],
+      "body_effect_evidence": []
+    }
+  ],
+  "limitations": [
+    "Fixed snapshot only; instant stance activation is packet evidence, not independent proof of every timing modifier.",
+    "Fast Casting signet rounding and Lyssa/global interactions need further calibration.",
+    "No live client or rendered animation test performed."
+  ],
+  "fast_casting_source": {
+    "path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Fast_Casting.html",
+    "sha256": "88fcec5d68bb6c53adaab35e760f1f35760fd19e638fe7a44e752665d2c05996"
+  }
+}

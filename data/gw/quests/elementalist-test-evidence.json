@@ -1,0 +1,487 @@
+{
+  "quest": 83,
+  "packet_source_sha256": "8b64d9637576aeb479a172077fc3390ef3284bdbeed85e5ab358a4e6370cae4b",
+  "world_source_sha256": "b8eb71a20e83e8bc1956e147843faef7cb2ed4fcc008bd9287b0b0bf56b7c3b6",
+  "events": [
+    {
+      "line": 10980,
+      "tick_ms": 96260390,
+      "opcode": 73,
+      "captured_hex": "490000005300000000289045004045c5000000009200000020000000643d000001000200070102000000d4e72017dfbac0de506a000019b50f0000002817f8f7cfec3154000000001200000092000000",
+      "x_bits": 1167075328,
+      "y_bits": 3309649920,
+      "plane": 0,
+      "log_state": 32,
+      "map_to": 146,
+      "map_from": 146,
+      "location_units": [
+        15716
+      ],
+      "name_units": [
+        5920,
+        47839,
+        57024,
+        27216
+      ],
+      "npc_units": [
+        5928,
+        63480,
+        60623,
+        21553
+      ]
+    },
+    {
+      "line": 10985,
+      "tick_ms": 96260453,
+      "opcode": 76,
+      "captured_hex": "4c00000053000000231799ade0dd1f6602000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101f4020200f22aa7c7db8411490a017a6301000200f22aa7c7db8411490a015e6301000000a7c7db8411490a015e630100020007010000000000000000807f0000807f000000000500000016000000a50000000b00000000000000be921b000000000000000000eb030000f900000000000000fe1003fe550dfef0062afe980cfed20304000000000018260003b82401009826030588a4fe060efe5b13fe740100fe2705fedc0cfef7000202020202029bfe4900fe1204fea7015ffed401fe060300fe8a0c00000000000000000000000001009afe25012902fec2f62ab7c12dcf21130a01261720ec6ab98a3c01000200f62ab7c12dcf21130a012717209749eecf630101000101000000850b000000422c190afe0a00040b01091a040b0b06060402040400040a040ac6fef700fe0a13fec800e2025b2e1400020003fe61122e2a5ca0fe7a030300033508fe3d010406fe8e14a505fe8612060aa662fe6600707efe5e0802030202fea81bfe1f0203000000030208febf13fe253ffe4900fe0e02007d0236020202450404fe031e000000fea002020202fe731907fe080efe8705febc21fed100fea0e621feca2505fe1b23fe792200feda15fead050ffed26cfed34024fee70c000000fe540c0210110b2202fed86f091f0701",
+      "description_units": [
+        5923,
+        44441,
+        56800,
+        26143,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        756,
+        2,
+        10994,
+        51111,
+        34011,
+        18705,
+        266,
+        25466,
+        1,
+        2,
+        10994,
+        51111,
+        34011,
+        18705,
+        266,
+        25438,
+        1
+      ],
+      "objective_units": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5926,
+        60448,
+        47466,
+        15498,
+        1,
+        2,
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5927,
+        38688,
+        61001,
+        25551,
+        257,
+        256,
+        1
+      ]
+    },
+    {
+      "line": 11775,
+      "tick_ms": 96312781,
+      "opcode": 84,
+      "captured_hex": "5400000053000000f52ad2c523eff80b0a01261720ec6ab98a3c01000200f52ad2c523eff80b0a012717209749eecf630101010101000200f62ab7c12dcf21130a01f02aa7c4009cbb3e0a012817f8f7cfec3154010001000000807f0000807f00000000000000000000807f0000807f000000000500000016000000a50000000b00000000000000be921b000000000000000000eb030000f900000000000000fe1003fe550dfef0062afe980cfed20305000000010aa823000bb824030098260003c862040688a45b13fe740100fe2705fedc0cfef7000202020202029bfe4900fe1204fea7015ffed401fe060300fe8a0c00000000000000000000000001009afe25012902fec2"
+    },
+    {
+      "line": 11776,
+      "tick_ms": 96312781,
+      "opcode": 81,
+      "captured_hex": "510000005300000000f0bf4500e07a450000000092000000"
+    },
+    {
+      "line": 12076,
+      "tick_ms": 96339828,
+      "opcode": 84,
+      "captured_hex": "5400000053000000f62ab7c12dcf21130a01261720ec6ab98a3c01000200f62ab7c12dcf21130a012717209749eecf6301010001010000003f8c19b511660101f4020200f22aa7c7db8411490a017a6301000200f22aa7c7db8411490a015e6301000000000000000000807f0000807f000000000500000016000000a50000000b00000000000000be921b000000000000000000eb030000f900000000000000fe1003fe550dfef0062afe980cfed20305000000010aa823000bb824030098260003c862040688a45b13fe740100fe2705fedc0cfef7000202020202029bfe4900fe1204fea7015ffed401fe060300fe8a0c00000000000000000000000001009afe25012902fec2"
+    },
+    {
+      "line": 12077,
+      "tick_ms": 96339828,
+      "opcode": 81,
+      "captured_hex": "510000005300000000289045004045c50000000092000000"
+    },
+    {
+      "line": 12085,
+      "tick_ms": 96339828,
+      "opcode": 76,
+      "captured_hex": "4c00000053000000231799ade0dd1f6602000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101f4020200f22aa7c7db8411490a017a6301000200f22aa7c7db8411490a015e63010000000200f22aa7c7db8411490a015e6301000000000000000000807f0000807f000000000500000016000000a50000000b00000000000000be921b000000000000000000eb030000f900000000000000fe1003fe550dfef0062afe980cfed20305000000010aa823000bb824030098260003c862040688a45b13fe740100fe2705fedc0cfef7000202020202029bfe4900fe1204fea7015ffed401fe060300fe8a0c00000000000000000000000001009afe25012902fec2f62ab7c12dcf21130a01261720ec6ab98a3c01000200f62ab7c12dcf21130a012717209749eecf630101000101000000850b000000422c190afe0a00040b01091a040b0b06060402040400040a040ac6fef700fe0a13fec800e2025b2e1400020003fe61122e2a5ca0fe7a030300033508fe3d010406fe8e14a505fe8612060aa662fe6600707efe5e0802030202fea81bfe1f0203000000030208febf13fe253ffe4900fe0e02007d0236020202450404fe031e000000fea002020202fe731907fe080efe8705febc21fed100fea0e621feca2505fe1b23fe792200feda15fead050ffed26cfed34024fee70c000000fe540c0210110b2202fed86f091f0701",
+      "description_units": [
+        5923,
+        44441,
+        56800,
+        26143,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        756,
+        2,
+        10994,
+        51111,
+        34011,
+        18705,
+        266,
+        25466,
+        1,
+        2,
+        10994,
+        51111,
+        34011,
+        18705,
+        266,
+        25438,
+        1
+      ],
+      "objective_units": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5926,
+        60448,
+        47466,
+        15498,
+        1,
+        2,
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5927,
+        38688,
+        61001,
+        25551,
+        257,
+        256,
+        1
+      ]
+    },
+    {
+      "line": 12086,
+      "tick_ms": 96339828,
+      "opcode": 82,
+      "captured_hex": "5200000053000000",
+      "meaning": "Removal only; does not independently prove reward or abandonment"
+    },
+    {
+      "line": 12102,
+      "tick_ms": 96339828,
+      "opcode": 82,
+      "captured_hex": "5200000053000000",
+      "meaning": "Removal only; does not independently prove reward or abandonment"
+    }
+  ],
+  "ground_items": [
+    {
+      "record": {
+        "schema": 1,
+        "event": "ground_item_observed",
+        "map": 146,
+        "instance_epoch": 3,
+        "instance_ms": 45087,
+        "agent_id": 48,
+        "observed_item_id": 489,
+        "x": 4626.896973,
+        "y": -2924.479248,
+        "plane": 0,
+        "definition": {
+          "model": 2566,
+          "model_file": 23704,
+          "type": 21,
+          "base_value": 0,
+          "quantity": 1,
+          "interaction": 537399809,
+          "profession": 11,
+          "slot": 0,
+          "dye_tint": 0,
+          "dye1": 0,
+          "dye2": 0,
+          "dye3": 0,
+          "dye4": 0,
+          "modifiers_complete": true,
+          "modifiers": [
+            3221225472
+          ],
+          "name_encoded_utf16": [
+            9558,
+            52505,
+            35705,
+            32767
+          ],
+          "name": "Shimmering Scale",
+          "name_status": "decoded"
+        }
+      },
+      "line": 436
+    },
+    {
+      "record": {
+        "schema": 1,
+        "event": "ground_item_observed",
+        "map": 146,
+        "instance_epoch": 3,
+        "instance_ms": 51079,
+        "agent_id": 50,
+        "observed_item_id": 493,
+        "x": 4616.100098,
+        "y": -2467.269775,
+        "plane": 0,
+        "definition": {
+          "model": 2566,
+          "model_file": 23704,
+          "type": 21,
+          "base_value": 0,
+          "quantity": 1,
+          "interaction": 537399809,
+          "profession": 11,
+          "slot": 0,
+          "dye_tint": 0,
+          "dye1": 0,
+          "dye2": 0,
+          "dye3": 0,
+          "dye4": 0,
+          "modifiers_complete": true,
+          "modifiers": [
+            3221225472
+          ],
+          "name_encoded_utf16": [
+            9558,
+            52505,
+            35705,
+            32767
+          ],
+          "name": "Shimmering Scale",
+          "name_status": "decoded"
+        }
+      },
+      "line": 446
+    },
+    {
+      "record": {
+        "schema": 1,
+        "event": "ground_item_observed",
+        "map": 146,
+        "instance_epoch": 3,
+        "instance_ms": 56060,
+        "agent_id": 52,
+        "observed_item_id": 497,
+        "x": 4485.142578,
+        "y": -3995.757812,
+        "plane": 0,
+        "definition": {
+          "model": 2566,
+          "model_file": 23704,
+          "type": 21,
+          "base_value": 0,
+          "quantity": 1,
+          "interaction": 537399809,
+          "profession": 11,
+          "slot": 0,
+          "dye_tint": 0,
+          "dye1": 0,
+          "dye2": 0,
+          "dye3": 0,
+          "dye4": 0,
+          "modifiers_complete": true,
+          "modifiers": [
+            3221225472
+          ],
+          "name_encoded_utf16": [
+            9558,
+            52505,
+            35705,
+            32767
+          ],
+          "name": "Shimmering Scale",
+          "name_status": "decoded"
+        }
+      },
+      "line": 454
+    },
+    {
+      "record": {
+        "schema": 1,
+        "event": "ground_item_observed",
+        "map": 146,
+        "instance_epoch": 3,
+        "instance_ms": 117970,
+        "agent_id": 50,
+        "observed_item_id": 493,
+        "x": 4616.100098,
+        "y": -2467.269775,
+        "plane": 0,
+        "definition": {
+          "model": 2566,
+          "model_file": 23704,
+          "type": 21,
+          "base_value": 0,
+          "quantity": 1,
+          "interaction": 537399809,
+          "profession": 11,
+          "slot": 0,
+          "dye_tint": 0,
+          "dye1": 0,
+          "dye2": 0,
+          "dye3": 0,
+          "dye4": 0,
+          "modifiers_complete": true,
+          "modifiers": [
+            3221225472
+          ],
+          "name_encoded_utf16": [
+            9558,
+            52505,
+            35705,
+            32767
+          ],
+          "name": "Shimmering Scale",
+          "name_status": "decoded"
+        }
+      },
+      "line": 532
+    },
+    {
+      "record": {
+        "schema": 1,
+        "event": "ground_item_observed",
+        "map": 146,
+        "instance_epoch": 3,
+        "instance_ms": 123969,
+        "agent_id": 52,
+        "observed_item_id": 497,
+        "x": 4485.142578,
+        "y": -3995.757812,
+        "plane": 0,
+        "definition": {
+          "model": 2566,
+          "model_file": 23704,
+          "type": 21,
+          "base_value": 0,
+          "quantity": 1,
+          "interaction": 537399809,
+          "profession": 11,
+          "slot": 0,
+          "dye_tint": 0,
+          "dye1": 0,
+          "dye2": 0,
+          "dye3": 0,
+          "dye4": 0,
+          "modifiers_complete": true,
+          "modifiers": [
+            3221225472
+          ],
+          "name_encoded_utf16": [
+            9558,
+            52505,
+            35705,
+            32767
+          ],
+          "name": "Shimmering Scale",
+          "name_status": "decoded"
+        }
+      },
+      "line": 542
+    }
+  ],
+  "howland": {
+    "record": {
+      "agent": 36,
+      "model": 1475,
+      "x": 6142.0,
+      "y": 4014.0,
+      "plane": 0,
+      "facing": 0.0,
+      "level": 2,
+      "allegiance": 6,
+      "name_encoded_utf16": [
+        5928,
+        63480,
+        60623,
+        21553
+      ],
+      "name": "Howland the Elementalist",
+      "name_status": "decoded"
+    },
+    "line": 371
+  },
+  "howland_definition": {
+    "record": {
+      "schema": 1,
+      "event": "npc_definition_observed",
+      "map": 146,
+      "instance_epoch": 3,
+      "instance_ms": 2113,
+      "npc_table_id": 1475,
+      "definition": {
+        "model_file": 15490,
+        "skin_file": 0,
+        "appearance": 0,
+        "flags": 524,
+        "primary": 6,
+        "secondary": 0,
+        "default_level": 2,
+        "visual_adjustment_bytes": [
+          0,
+          0,
+          0,
+          100
+        ],
+        "model_files": [
+          116715
+        ],
+        "name_encoded_utf16": [
+          3931,
+          61338,
+          50332,
+          19324
+        ],
+        "name": "Elementalist",
+        "name_status": "decoded"
+      }
+    },
+    "line": 369
+  },
+  "limitations": [
+    "Incoming packet memory, not wire serializer layout.",
+    "Marker changes/removal do not independently prove quest completion/reward.",
+    "Ground observation proves item identity, not drop probability or quest ownership.",
+    "NPC coordinates are observed positions, not guaranteed spawn points.",
+    "No content is enabled by this extraction."
+  ]
+}

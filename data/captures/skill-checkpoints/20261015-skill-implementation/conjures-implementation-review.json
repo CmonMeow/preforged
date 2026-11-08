@@ -1,0 +1,244 @@
+{
+  "skills": [
+    182,
+    207,
+    221
+  ],
+  "status": "Three Conjures source-bound through scoped casting and production hook;remaining mechanics/rendering gaps explicit",
+  "evidence": "conjures-native-2022.json",
+  "build": "build/reports/conjures-policy-build.txt",
+  "tests": "build/reports/conjures-policy-tests.txt",
+  "verified": [
+    "All21 ranks0..20:bonus5+rank and60s base duration",
+    "Matching effective element chooses one corresponding enchantment",
+    "Repeat landed hits do not consume the enchantment",
+    "Unknown/earth/armor-ignoring element and failed hit receive no bonus",
+    "Future/expired/removed effects and stale owner scope rejected"
+  ],
+  "remaining": [
+    "Enchantment duration modifiers",
+    "NPC casters",
+    "Elemental bow equipment and unreviewed upgrade modifiers",
+    "Retail impact sampling/reactive ordering and full completion packet-order/rendered acceptance",
+    "Broad current all-target gate"
+  ],
+  "source_sha256": {
+    "src/runtime/gw_conjures.h": "5ee065370077e0644155221b1e12646c116de93b47953a0419fd2d5785368acc",
+    "tests/conjures_policy.cpp": "a358bbab6bc95b422af414a702f6c826ac54e3ab9c9fe4755fd3272470cffe2d",
+    "tools/protocol/conjures_2022.py": "24727f4ebdacf2fb66cccea8c3f4ffe3a14f1fcd769ef63c6fb00328c2da5f8f",
+    "CMakeLists.txt": "904127285283fcff443aed2a0826566795cd6b5819f713219369b48c7f55c5f0"
+  },
+  "damage_stage": {
+    "status": "Production host built;8 rebuilt focused suites passed0.22s;19 tooling tests passed",
+    "build": "build/reports/conjures-damage-integration-build.txt",
+    "tests": "build/reports/conjures-damage-tests.txt",
+    "verified": [
+      "Three elemental identities retained in combat::Hit while armor bypass skips armor and level scaling",
+      "Rank0/12/15/20 tested across levels1/20/80/255 and armor-100/60/160/500",
+      "Unknown armor permitted for armor-bypassing hits;known living health and authoritative hostility still required",
+      "Matching elemental protection,incoming multiplier and flat reduction apply to the separate bonus",
+      "Lethal clamp and source/target value immutability;missed/expired/nonhostile/dead/invalid-level cases rejected",
+      "Armor bypass cannot be combined with penetration;existing armor-respecting and untyped bypass tests pass",
+      "19 skill tooling tests pass;fixed source fingerprints and lists refreshed"
+    ],
+    "remaining": [
+      "World enchantment/lifetime integration",
+      "Actual weapon element conversion and ordinary/multi-hit/projectile/NPC attack integration",
+      "Casting/production hook and packet placement/count",
+      "Rendered acceptance and broad current all-target gate"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_combat.h": "0958749fe9b23691e4c38168c8534a2481d14b18fa208c90b87ac882e528e751",
+      "src/runtime/gw_conjures.h": "387e0b68f3a9186e8ad56ae573930de98739d18cdb58cdd79e9b08ddfe62a572",
+      "tests/conjures_damage.cpp": "794619b06a64cf67a5bf203d9ff665a06b95c46723ff0b091d7ea6b946467c4c",
+      "CMakeLists.txt": "72a4eb886029d56728d8a67fcd29f28f813614fc4af27f7f6ec182c96ab3de5d"
+    },
+    "integration_tests": "build/reports/conjures-damage-integration-tests.txt"
+  },
+  "attack_integration_findings": {
+    "equipment": "gw_weapon_intent.h currently rejects nonpiercing bow/nonphysical melee raw damage;requires authoritative elemental weapon support rather than item-category inference.",
+    "npc_hit": "Ordinary and single-target melee NPC paths now choose actual elemental armor and typed weapon damage;Cyclone remains pending.",
+    "paths": "World has distinct ordinary NPC/player/projectile and melee attack-skill paths;Conjure trigger must cover every landed hit without triggering from bonus damage or applying once per activation.",
+    "remaining": "No attack hooks or equipment routing changed in this stage;source binding remains unsupported."
+  },
+  "weapon_element_stage": {
+    "status": "Production host built;6 rebuilt focused suites passed0.24s;19 tooling tests passed",
+    "mapping_source": "build/research/toolbox-modifiers/GWToolboxdll/Utils/ToolboxUtils.h DamageType enum;ItemDrops.cpp24b8 arg1 decoding",
+    "verified": [
+      "Raw3cold,4lightning,5fire,11earth;other raw values do not become elemental",
+      "NPC caster armor chooses reviewed cold/lightning ratings;unknown/stale ratings stay unknown",
+      "Resolved NPC weapon hit retains its elemental identity",
+      "World cold/lightning staff attacks reject missing armor,then deal20 at60armor only on projectile arrival;no duplicate at next tick"
+    ],
+    "limits": [
+      "Elemental melee/bow equipment remains restricted;not yet enabled",
+      "World and NPC attack-skill routes need complete typed damage and Conjure trigger review",
+      "No Conjure enchantment/casting/bonus hook is connected yet",
+      "No rendered acceptance or all-target gate"
+    ],
+    "builds": [
+      "build/reports/weapon-elements-build.txt",
+      "build/reports/weapon-elements-world-build.txt",
+      "build/reports/weapon-elements-integration-build.txt"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_weapon_element.h": "ea12db4056b402522e836c32d0c896f19c8b784fde46cc67b65e156e47f2bf3d",
+      "src/runtime/gw_npc_combat_catalog.h": "3922ccad582f81430c559720df0fe05af54653cdc7e52c484e32b0ac7566e58d",
+      "src/runtime/gw_world_simulation.h": "35ab374253556714d499a7b8e8d914b194a0b6dfe511634ae40a5e70e18e690f",
+      "tests/weapon_elements.cpp": "20b229d15526a4b42be0cfcfde9d9e57607ab86a06ad82438827097a2592d544",
+      "tests/world_weapon_attacks.cpp": "4f5dd289f8b48a77201ad6c4983a1bebbf71132e5e9ef8d7774d90b1ff64d663",
+      "build/research/toolbox-modifiers/GWToolboxdll/Utils/ToolboxUtils.h": "4ee971cc617ab3ab90a29f5cfcb2724d361e41e6f7b7d9e600347ba9f76be2a6",
+      "build/research/toolbox-modifiers/GWToolboxdll/Modules/ItemDrops.cpp": "c89084699f3c6c9a8732bffa0cf65b4c391769c5bdc32a3dc627a2e8deae6756"
+    },
+    "integration_tests": "build/reports/weapon-elements-integration-tests.txt"
+  },
+  "world_enchantment_stage": {
+    "status": "Production host built;4 focused suites pass0.10s;19 tooling tests passed",
+    "build": "build/reports/conjures-world-integration-build.txt",
+    "verified": [
+      "Three canonical self enchantments use authoritative scope,rank and60s base timers",
+      "Registry/timer copies prepared together;renewal removes old timer before replacing entry",
+      "Same-skill renewal replaces rank and effect identity;different Conjures coexist",
+      "Natural expiration,dispel,death and rejoin remove or reject stale effects",
+      "Forged plan,backward time,overflow and dead caster rejected"
+    ],
+    "guard": "Verified:generic status cannot create Conjures or overwrite their owned effect IDs,preventing timer/registry divergence.",
+    "remaining": [
+      "Enchantment duration modifiers",
+      "Weapon bonus hooks and full recipient/lifetime reaction integration",
+      "Casting/production hook and visual packet placement/count",
+      "NPC casters/elemental melee/bow support",
+      "Rendered acceptance and broad gate"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "22cb73d0ec7f732e546facb243d2bfe517ce3f4ef5152f75ebc05202ce32e222",
+      "tests/conjures_world.cpp": "b981f8a4b77c1bcbd97590836b1402318f6349b08056bab8f4ab82dde59ed3ef",
+      "CMakeLists.txt": "ca69278b24a68d1313943e365236276f45403894ce72a62eebeb6f53adb677ad"
+    },
+    "integration_tests": "build/reports/conjures-world-integration-tests.txt"
+  },
+  "ordinary_hit_stage": {
+    "status": "Production host built;6 rebuilt focused suites passed0.26s;19 tooling tests passed",
+    "build": "build/reports/conjures-hit-integration-build.txt",
+    "verified": [
+      "Three elements add one rank12 bonus17 to landed20-damage player/NPC projectile hits",
+      "No bonus for miss,wrong element,expired/dispelled enchantment or base hit that already killed target",
+      "Bonus lethal hits perform one player death transition or one NPC death credit",
+      "Matching elemental Mantra reduces base and bonus separately and grants2Energy per damage event",
+      "No duplicate damage or death on following tick"
+    ],
+    "timing_policy": "Current server checks active enchantment and captured weapon element at impact. Frozen captures establish casts and metadata,not retail launch-versus-impact enchantment sampling;this remains a verification gap.",
+    "remaining": [
+      "Elemental melee/bow equipment and damage routing",
+      "Other melee/multi-target attack-skill commit paths",
+      "NPC casters",
+      "Casting/production hook and visual effect packet count/placement",
+      "Duration modifiers,retail event ordering and rendered acceptance"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "3a2f683e4b3186dc29e6d006a7335e8519babbb161e33161d6fab9b62c68b127",
+      "tests/conjures_player_hits.cpp": "d6de940e3207cf2a121ad808e3691bf8ec5f85c814119df78fa53513fe1370e4",
+      "CMakeLists.txt": "d99d688cdd873ad576977c55f16a83b0314208b94d41e55e70d825c4d621e99f"
+    },
+    "integration_tests": "build/reports/conjures-hit-integration-tests.txt"
+  },
+  "ordinary_elemental_melee_stage": {
+    "status": "Production host built;7 rebuilt focused suites passed0.29s;19 tooling tests passed",
+    "build": "build/reports/conjures-melee-integration-build.txt",
+    "verified": [
+      "Sword/axe/hammer/bow x cold/lightning/fire/earth x player/NPC target:32 combinations",
+      "Elemental ordinary hits use reviewed elemental armor rather than physical500armor",
+      "Player physical absorption3 does not reduce elemental weapon damage",
+      "Matching cold/lightning/fire Conjure adds17 separately;earth receives only20weapon damage",
+      "Missing player elemental armor rejects attack even when physical armor exists",
+      "Bows remain projectiles;no damage at release,one hit on arrival"
+    ],
+    "limits": [
+      "Trusted Owned weapon fixtures test World routing;public equipment restrictions have NOT been lifted",
+      "Melee/multi-target attack-skill paths must be updated before elemental weapon equipment admission",
+      "Enchant duration modifiers,NPC casters,casting and rendering remain pending"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "46b0f1c70e470233b8f7291eafe4ec3245905426a0884cd5f1881979d22181b8",
+      "tests/conjures_melee_hits.cpp": "427da22276e9bd163e9c84157102540249aa31758241284ca694da9f1b42ab74",
+      "CMakeLists.txt": "854fb542d838a9cdf9bc4a74e7a43659fb479fa35ed7d0dae404fb6b01f31010"
+    },
+    "integration_tests": "build/reports/conjures-melee-integration-tests.txt"
+  },
+  "single_target_attack_stage": {
+    "status": "Production host built;6 focused suites passed0.30s;19 tooling tests passed",
+    "build": "build/reports/conjures-attack-integration-build.txt",
+    "verified": [
+      "Melee Power Attack sword/axe/hammer and fixed Power Shot bow across four raw elements and player/NPC targets",
+      "Actual elemental armor and no physical absorption;matching Conjure adds17",
+      "Lethal Conjure after Sever Artery base hit skips corpse Bleeding for player/NPC;one NPC death credit",
+      "Missing player elemental armor rejects melee skill targeting despite physical500armor"
+    ],
+    "correction": "Initial test exposed NPC single-target physical armor lookup;corrected actual path and retained expected damage. Cyclone path restored unchanged until its full transaction is updated.",
+    "remaining": [
+      "Multi-target Cyclone Axe",
+      "Equipment admission,casting,duration modifiers,NPC casters and rendering"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "b37b0096abb22af3fe4593f61b857bd4a0bf40ec69f3697deca7a31b7711cc36",
+      "tests/conjures_attack_skills.cpp": "51f8647026a1659ee0097aaa5c05919c75f6789bb25d8e3902c84cabfdd4daa3",
+      "CMakeLists.txt": "ae6b84ddfc22a34e2108b20aab69ac1a02650e458aadc05caf5992cb6e475753"
+    },
+    "integration_tests": "build/reports/conjures-attack-integration-tests.txt"
+  },
+  "cyclone_equipment_stage": {
+    "status": "Production host built;6 rebuilt focused suites passed0.28s;19 tooling tests passed",
+    "build": "build/reports/conjures-cyclone-integration-build.txt",
+    "verified": [
+      "Cold/lightning/fire/earth Cyclone chooses actual elemental armor for mixed player/NPC recipients",
+      "One Conjure event per landed recipient;misses,far enemies and allies excluded",
+      "Late unknown player armor rejects entire proposed hit batch with no leaked outcomes",
+      "Fire-vulnerable NPC receives its multiplier once per weapon and Conjure event;commit rebases planned numeric weapon damage without remultiplying",
+      "Reviewed sword/axe/hammer equipment accepts explicit elemental24b8 types3/4/5/11 while preserving mastery,requirements and metadata guards;Chaos remains rejected"
+    ],
+    "limits": [
+      "Synthetic trusted combat/owned item tests are not rendered retail acceptance",
+      "Bow exact-captured-modifier equipment restrictions remain",
+      "Reactive recipient order and launch/impact enchantment sampling remain provisional"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "e87d37f78362bb8645ea75a78898f8fdf193cb1630dd1367758a0898c9c72a37",
+      "src/runtime/gw_weapon_intent.h": "7392d382c10a39bee18511acd7a5ddc222124c844c30749db7ae6c2622931a89",
+      "tests/conjures_cyclone.cpp": "e7a399b3069e74a6e3f4868087ed64b9dc16e931a54bcec50cfcee8caedb3d64",
+      "tests/weapon_intent.cpp": "b81d92d05dfc82226f97041267cf59ededc9ccb921092a752fb2588c02974c9e",
+      "tools/protocol/conjures_2022.py": "68e680f8cd606c4c12dc58f0ce6db9a5401c087dfc2354ed857b9c6f7bc085dd",
+      "CMakeLists.txt": "a15062028ee9cadf4abe638ce0a485a203482fc6ae4b59a70aca400978fa4047"
+    },
+    "integration_tests": "build/reports/conjures-cyclone-integration-tests.txt"
+  },
+  "completion_visual_followup": {
+    "evidence": "conjures-native-2022.json",
+    "verified": "Each captured completion has one native caster-body and one native target-body resource plus modern66 enchantment entry duration60s. All12 additional completion packets verified against fixed source hash.",
+    "version_difference": "Modern captured recharge30s differs from pinned2022/archive45s;server baseline retains45s.",
+    "remaining": "Rendered placement and per-hit visuals not established."
+  },
+  "casting_stage": {
+    "status": "Production/regression build succeeded; all 7 selected CTests passed (0.13s)",
+    "build": "build/reports/conjures-cast-integration-build.txt",
+    "verified": [
+      "Three1s/10Energy/2022-45s scoped self casts with rank12 and60s owned enchantments",
+      "Captured caster body then target body then native65enchantment entry published once from World;Runtime duplicate caster body suppressed",
+      "Cancel/interrupt,retired caster,lethal Backfire and missing required hooks prevent effect commit",
+      "Successful cast then ordinary matching staff hit deals20+17 exactly once"
+    ],
+    "additional_assertion": "9 Energy cannot start a 10 Energy cast; rebuilt 33-case Conjure suite passed",
+    "limits": [
+      "Effect-body/entry relative order tested;overall order versus Runtime finish/recharge packets and rendered playback remain unverified",
+      "2026 capture cooldown30s intentionally not substituted for pinned2022 cooldown45s"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_skill_casting.h": "67bc252e0ef84d97c38e5e9b824322319659fcfa57bf5876cf36efc2ddb8b5f7",
+      "src/runtime/gw_world_simulation.h": "83477613e8709665063e5ab5a1f2cdea820a93b7f735cff74b9661f7ac1be5e2",
+      "src/apps/gw_auth.cpp": "f346bcde8e3f8b38c68efea8adf400f438d1903407ccaea30a1c85da261ae065",
+      "tests/conjures_cast.cpp": "d85e49a98a5faf12b4a5f41a9ded72a68bf9e1d7af8b1e692f5ccfea58bab0fe",
+      "tools/protocol/skill_runtime_coverage.py": "0b347acca5999c9035df9eafdc82e598691703632a1ddecc60f2f1850bf29407",
+      "CMakeLists.txt": "fba53594b534c703992543a0f2dfaaf574f2aff6502a87a53f62f37dc947069f"
+    },
+    "integration_tests": "build/reports/conjures-cast-integration-tests.txt"
+  }
+}

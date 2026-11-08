@@ -1,0 +1,7552 @@
+{
+  "checkpoint": "20261024-all-completed",
+  "cutoff": "2026-10-24T04:27:02.320932+00:00",
+  "map_rule": [
+    "AllianceBattle",
+    "Arena",
+    "CompetitiveMission",
+    "GuildBattleArea",
+    "HeroBattleArea",
+    "HeroesAscent"
+  ],
+  "limitations": [
+    "Only complete StoC activation packets in known world map windows count.",
+    "Other means an actor other than the observed local actor, not a proven player; NPC casts can occur in PvP maps.",
+    "Unknown-map starts and unclassified maps are excluded.",
+    "Skill activation does not prove effect mechanics, body animation or 2022 rendering."
+  ],
+  "skills": [
+    {
+      "id": 1254,
+      "name": "ID 1254",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 106,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 106,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69679,
+            "tick_ms": 266452937
+          }
+        }
+      ]
+    },
+    {
+      "id": 205,
+      "name": "Lightning Surge",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 84,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 29,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7288,
+            "tick_ms": 264964859
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 55,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76851,
+            "tick_ms": 266516453
+          }
+        }
+      ]
+    },
+    {
+      "id": 3375,
+      "name": "Aura of Restoration (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 40,
+      "other": 43,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 0,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 7620,
+            "tick_ms": 195374171
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 211326,
+            "tick_ms": 194295421
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 11,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 6066,
+            "tick_ms": 264940468
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 17,
+          "other": 27,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 57293,
+            "tick_ms": 266322109
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206437,
+            "tick_ms": 194177453
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 4,
+          "other": 0,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2381,
+            "tick_ms": 194462093
+          }
+        }
+      ]
+    },
+    {
+      "id": 2061,
+      "name": "Patient Spirit",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 70,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9578,
+            "tick_ms": 195398437
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213037,
+            "tick_ms": 194321687
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 49,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 64699,
+            "tick_ms": 266404015
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208181,
+            "tick_ms": 194196375
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4624,
+            "tick_ms": 194494640
+          }
+        }
+      ]
+    },
+    {
+      "id": 222,
+      "name": "Lightning Strike",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 66,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 23,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 6966,
+            "tick_ms": 264958500
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 43,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 77989,
+            "tick_ms": 266521218
+          }
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "name": "Stoning",
+      "runtime_status": "implemented_binding",
+      "local": 62,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8997,
+            "tick_ms": 195394296
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212734,
+            "tick_ms": 194319156
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 16,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8190,
+            "tick_ms": 264977218
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 33,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61845,
+            "tick_ms": 266365609
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 6,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207475,
+            "tick_ms": 194190578
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4993,
+            "tick_ms": 194497734
+          }
+        }
+      ]
+    },
+    {
+      "id": 1118,
+      "name": "Healing Burst",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 61,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9638,
+            "tick_ms": 195399156
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213062,
+            "tick_ms": 194322109
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 42,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 65464,
+            "tick_ms": 266411421
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207498,
+            "tick_ms": 194190968
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4464,
+            "tick_ms": 194493140
+          }
+        }
+      ]
+    },
+    {
+      "id": 1374,
+      "name": "Ebon Hawk",
+      "runtime_status": "implemented_binding",
+      "local": 59,
+      "other": 0,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 0,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9291,
+            "tick_ms": 195396390
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213617,
+            "tick_ms": 194325453
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 21,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8300,
+            "tick_ms": 264978468
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 28,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 62147,
+            "tick_ms": 266368875
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 4,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207774,
+            "tick_ms": 194193109
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 0,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4488,
+            "tick_ms": 194493421
+          }
+        }
+      ]
+    },
+    {
+      "id": 952,
+      "name": "Death's Charge",
+      "runtime_status": "unsupported",
+      "local": 25,
+      "other": 31,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8543,
+            "tick_ms": 195390406
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212508,
+            "tick_ms": 194316656
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 6,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7801,
+            "tick_ms": 264973562
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 12,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61579,
+            "tick_ms": 266362828
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 6,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206886,
+            "tick_ms": 194185296
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 8,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3222,
+            "tick_ms": 194488000
+          }
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "name": "Fire Attunement",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 53,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 6754,
+            "tick_ms": 195329328
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 211273,
+            "tick_ms": 194291218
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 22317,
+            "tick_ms": 265206406
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 14,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70361,
+            "tick_ms": 266456953
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206572,
+            "tick_ms": 194180234
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 15,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 1715,
+            "tick_ms": 194424546
+          }
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "name": "Aftershock",
+      "runtime_status": "implemented_binding",
+      "local": 36,
+      "other": 10,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8646,
+            "tick_ms": 195391125
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213274,
+            "tick_ms": 194323546
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 7,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8059,
+            "tick_ms": 264975718
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 17,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61995,
+            "tick_ms": 266367359
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 4,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207437,
+            "tick_ms": 194190250
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 4,
+          "other": 3,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3794,
+            "tick_ms": 194491281
+          }
+        }
+      ]
+    },
+    {
+      "id": 937,
+      "name": "Shockwave",
+      "runtime_status": "implemented_binding",
+      "local": 35,
+      "other": 9,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8669,
+            "tick_ms": 195391406
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212889,
+            "tick_ms": 194320406
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 7,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7906,
+            "tick_ms": 264974500
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 18,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61684,
+            "tick_ms": 266363843
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207113,
+            "tick_ms": 194187468
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 4,
+          "other": 3,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3468,
+            "tick_ms": 194489546
+          }
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "name": "Earth Attunement",
+      "runtime_status": "implemented_binding",
+      "local": 31,
+      "other": 12,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 7658,
+            "tick_ms": 195375359
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 210598,
+            "tick_ms": 194243859
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 9,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 6088,
+            "tick_ms": 264941500
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 13,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 57385,
+            "tick_ms": 266325671
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206319,
+            "tick_ms": 194175718
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 3,
+          "other": 5,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 1629,
+            "tick_ms": 194423609
+          }
+        }
+      ]
+    },
+    {
+      "id": 865,
+      "name": "Lightning Hammer",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 43,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 15,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8038,
+            "tick_ms": 264975453
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 28,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 79366,
+            "tick_ms": 266528875
+          }
+        }
+      ]
+    },
+    {
+      "id": 3465,
+      "name": "Charging Strike (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 43,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 43,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 57501,
+            "tick_ms": 266327046
+          }
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "name": "Mind Burn",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 41,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 19519,
+            "tick_ms": 265160859
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 33,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61240,
+            "tick_ms": 266359843
+          }
+        }
+      ]
+    },
+    {
+      "id": 1209,
+      "name": "Bestial Fury",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 41,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 33,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7038,
+            "tick_ms": 264959515
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 132980,
+            "tick_ms": 266827156
+          }
+        }
+      ]
+    },
+    {
+      "id": 394,
+      "name": "Power Shot",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 40,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 10689,
+            "tick_ms": 195408171
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212555,
+            "tick_ms": 194317281
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 27,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8080,
+            "tick_ms": 264976125
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 146443,
+            "tick_ms": 266894250
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208245,
+            "tick_ms": 194197328
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3187,
+            "tick_ms": 194487484
+          }
+        }
+      ]
+    },
+    {
+      "id": 3449,
+      "name": "Protector's Strike (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 40,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 40,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78265,
+            "tick_ms": 266522781
+          }
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "name": "Immolate",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 39,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213072,
+            "tick_ms": 194322187
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 19700,
+            "tick_ms": 265162640
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 28,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 80299,
+            "tick_ms": 266534187
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207466,
+            "tick_ms": 194190390
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3432,
+            "tick_ms": 194489281
+          }
+        }
+      ]
+    },
+    {
+      "id": 2864,
+      "name": "Sundering Attack (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 35,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 30,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7066,
+            "tick_ms": 264960015
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 142097,
+            "tick_ms": 266867125
+          }
+        }
+      ]
+    },
+    {
+      "id": 245,
+      "name": "Protective Spirit",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 34,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 32,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 65462,
+            "tick_ms": 266411421
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208141,
+            "tick_ms": 194195968
+          }
+        }
+      ]
+    },
+    {
+      "id": 958,
+      "name": "Healing Whisper",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 34,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 34,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 65681,
+            "tick_ms": 266413531
+          }
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "name": "Chain Lightning",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 33,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 33,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 77387,
+            "tick_ms": 266518468
+          }
+        }
+      ]
+    },
+    {
+      "id": 1379,
+      "name": "Glowing Gaze",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 33,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 23320,
+            "tick_ms": 265223109
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 32,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61497,
+            "tick_ms": 266362031
+          }
+        }
+      ]
+    },
+    {
+      "id": 1661,
+      "name": "Glowstone",
+      "runtime_status": "implemented_binding",
+      "local": 33,
+      "other": 0,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 0,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9485,
+            "tick_ms": 195397640
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213728,
+            "tick_ms": 194326375
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 10,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 12239,
+            "tick_ms": 265035375
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 18,
+          "other": 0,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 62288,
+            "tick_ms": 266370593
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 2,
+          "other": 0,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207961,
+            "tick_ms": 194194578
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 1,
+          "other": 0,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2934,
+            "tick_ms": 195275781
+          }
+        }
+      ]
+    },
+    {
+      "id": 3037,
+      "name": "\"Fall Back!\" (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 33,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212364,
+            "tick_ms": 194314562
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 6247,
+            "tick_ms": 264946796
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 30,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 74976,
+            "tick_ms": 266503843
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206681,
+            "tick_ms": 194182265
+          }
+        }
+      ]
+    },
+    {
+      "id": 1081,
+      "name": "Teinai's Wind",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 32,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 11109,
+            "tick_ms": 195413468
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 29,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 77599,
+            "tick_ms": 266519531
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28787,
+            "tick_ms": 194990515
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 3982,
+            "tick_ms": 195287250
+          }
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "name": "Reversal of Fortune",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 31,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 28,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 55778,
+            "tick_ms": 266261031
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207876,
+            "tick_ms": 194193968
+          }
+        }
+      ]
+    },
+    {
+      "id": 847,
+      "name": "Boon Signet",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 31,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 31,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 55674,
+            "tick_ms": 266258171
+          }
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Shatter Enchantment",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 30,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8037,
+            "tick_ms": 264975453
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 27,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69956,
+            "tick_ms": 266454421
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28089,
+            "tick_ms": 194982500
+          }
+        }
+      ]
+    },
+    {
+      "id": 1037,
+      "name": "Dark Escape",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 30,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 30,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 59370,
+            "tick_ms": 266346281
+          }
+        }
+      ]
+    },
+    {
+      "id": 349,
+      "name": "Sprint",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 28,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 28,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69049,
+            "tick_ms": 266448437
+          }
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "name": "Crushing Blow",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 28,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 28,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69640,
+            "tick_ms": 266452765
+          }
+        }
+      ]
+    },
+    {
+      "id": 1335,
+      "name": "Wastrel's Demise",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 28,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 28,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76323,
+            "tick_ms": 266513843
+          }
+        }
+      ]
+    },
+    {
+      "id": 1090,
+      "name": "Smoldering Embers",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 27,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 23086,
+            "tick_ms": 265219109
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 25,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 73231,
+            "tick_ms": 266487062
+          }
+        }
+      ]
+    },
+    {
+      "id": 3151,
+      "name": "Empathy (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 27,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 27,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61495,
+            "tick_ms": 266362031
+          }
+        }
+      ]
+    },
+    {
+      "id": 3464,
+      "name": "Flail (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 27,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 27,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76764,
+            "tick_ms": 266516078
+          }
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Glyph of Sacrifice",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 26,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8423,
+            "tick_ms": 195388687
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 211292,
+            "tick_ms": 194293531
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206442,
+            "tick_ms": 194177593
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2702,
+            "tick_ms": 194480671
+          }
+        }
+      ]
+    },
+    {
+      "id": 200,
+      "name": "Glyph of Lesser Energy",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 25,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8469,
+            "tick_ms": 195389531
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212557,
+            "tick_ms": 194317421
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8301,
+            "tick_ms": 264978468
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206844,
+            "tick_ms": 194184578
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3200,
+            "tick_ms": 194487578
+          }
+        }
+      ]
+    },
+    {
+      "id": 822,
+      "name": "Weaken Knees",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 25,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 25,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 68324,
+            "tick_ms": 266442453
+          }
+        }
+      ]
+    },
+    {
+      "id": 1687,
+      "name": "Zealous Benediction",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 25,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 25,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78533,
+            "tick_ms": 266524093
+          }
+        }
+      ]
+    },
+    {
+      "id": 2892,
+      "name": "Spirit Bond (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 25,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 214171,
+            "tick_ms": 194329156
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 23,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61064,
+            "tick_ms": 266358546
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3199,
+            "tick_ms": 194487578
+          }
+        }
+      ]
+    },
+    {
+      "id": 229,
+      "name": "Lightning Orb",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 24,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 24,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7120,
+            "tick_ms": 264961171
+          }
+        }
+      ]
+    },
+    {
+      "id": 392,
+      "name": "Pin Down",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 24,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 22,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7887,
+            "tick_ms": 264974343
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 146800,
+            "tick_ms": 266896343
+          }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Power Spike",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 23,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213700,
+            "tick_ms": 194326171
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7630,
+            "tick_ms": 264970609
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 14,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70140,
+            "tick_ms": 266455578
+          }
+        }
+      ]
+    },
+    {
+      "id": 283,
+      "name": "Dwayna's Kiss",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 23,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8860,
+            "tick_ms": 195393078
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213390,
+            "tick_ms": 194324265
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 84181,
+            "tick_ms": 266552781
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208551,
+            "tick_ms": 194199718
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3697,
+            "tick_ms": 194490765
+          }
+        }
+      ]
+    },
+    {
+      "id": 3185,
+      "name": "Psychic Instability (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 23,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 23,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76514,
+            "tick_ms": 266514734
+          }
+        }
+      ]
+    },
+    {
+      "id": 3453,
+      "name": "Dash (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 23,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 23,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 59952,
+            "tick_ms": 266351046
+          }
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "name": "Draw Conditions",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 22,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 22,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 77610,
+            "tick_ms": 266519593
+          }
+        }
+      ]
+    },
+    {
+      "id": 1591,
+      "name": "\"Make Haste!\"",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 22,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 6822,
+            "tick_ms": 195330046
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 210480,
+            "tick_ms": 194243265
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206755,
+            "tick_ms": 194183390
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 1481,
+            "tick_ms": 194423125
+          }
+        }
+      ]
+    },
+    {
+      "id": 770,
+      "name": "Return",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 21,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 21,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 58125,
+            "tick_ms": 266334671
+          }
+        }
+      ]
+    },
+    {
+      "id": 225,
+      "name": "Air Attunement",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 20,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7856,
+            "tick_ms": 264973750
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61276,
+            "tick_ms": 266360093
+          }
+        }
+      ]
+    },
+    {
+      "id": 331,
+      "name": "Hammer Bash",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 20,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 20,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78468,
+            "tick_ms": 266523703
+          }
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Clumsiness",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 18,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8191,
+            "tick_ms": 264977218
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 27570,
+            "tick_ms": 194977078
+          }
+        }
+      ]
+    },
+    {
+      "id": 1091,
+      "name": "Double Dragon",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 18,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9061,
+            "tick_ms": 195395031
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78879,
+            "tick_ms": 266526171
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28446,
+            "tick_ms": 194986156
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2543,
+            "tick_ms": 195273156
+          }
+        }
+      ]
+    },
+    {
+      "id": 2188,
+      "name": "Defile Defenses",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 18,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 18,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 68577,
+            "tick_ms": 266444218
+          }
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "name": "Blood of the Master",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 17,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 17,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81898,
+            "tick_ms": 266542234
+          }
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "name": "Meteor Shower",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 17,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8553,
+            "tick_ms": 195390437
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212876,
+            "tick_ms": 194320312
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207295,
+            "tick_ms": 194189343
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3353,
+            "tick_ms": 194488812
+          }
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "name": "Healing Breeze",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 17,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 9928,
+            "tick_ms": 265002031
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 92619,
+            "tick_ms": 266595703
+          }
+        }
+      ]
+    },
+    {
+      "id": 1257,
+      "name": "Spirit Light Weapon",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 17,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 17,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 75039,
+            "tick_ms": 266504125
+          }
+        }
+      ]
+    },
+    {
+      "id": 92,
+      "name": "Well of Blood",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 16,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 55538,
+            "tick_ms": 266255437
+          }
+        }
+      ]
+    },
+    {
+      "id": 1727,
+      "name": "Natural Stride",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 16,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78384,
+            "tick_ms": 266523140
+          }
+        }
+      ]
+    },
+    {
+      "id": 2012,
+      "name": "Radiant Scythe",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 16,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 67102,
+            "tick_ms": 266428953
+          }
+        }
+      ]
+    },
+    {
+      "id": 3455,
+      "name": "Auspicious Blow (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 16,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 80916,
+            "tick_ms": 266537546
+          }
+        }
+      ]
+    },
+    {
+      "id": 3459,
+      "name": "Melandru's Shot (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 16,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 16,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76816,
+            "tick_ms": 266516343
+          }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Channeling",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 15,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8468,
+            "tick_ms": 195389531
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 211968,
+            "tick_ms": 194307359
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206655,
+            "tick_ms": 194181343
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2862,
+            "tick_ms": 194482781
+          }
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "name": "Life Transfer",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 15,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61802,
+            "tick_ms": 266365093
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206957,
+            "tick_ms": 194185984
+          }
+        }
+      ]
+    },
+    {
+      "id": 1381,
+      "name": "Flame Djinn's Haste",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 15,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8276,
+            "tick_ms": 195386843
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 214138,
+            "tick_ms": 194328859
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81523,
+            "tick_ms": 266540718
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208774,
+            "tick_ms": 194201703
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 4397,
+            "tick_ms": 195291390
+          }
+        }
+      ]
+    },
+    {
+      "id": 1662,
+      "name": "Mind Blast",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 15,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8817,
+            "tick_ms": 195392531
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212560,
+            "tick_ms": 194317421
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207741,
+            "tick_ms": 194192390
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3203,
+            "tick_ms": 194487578
+          }
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Chaos Storm",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8438,
+            "tick_ms": 195388890
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 214234,
+            "tick_ms": 194329718
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69989,
+            "tick_ms": 266454656
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 27954,
+            "tick_ms": 194981062
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4500,
+            "tick_ms": 194493546
+          }
+        }
+      ]
+    },
+    {
+      "id": 188,
+      "name": "Flame Burst",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9153,
+            "tick_ms": 195395750
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213403,
+            "tick_ms": 194324375
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207747,
+            "tick_ms": 194192578
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4085,
+            "tick_ms": 194492093
+          }
+        }
+      ]
+    },
+    {
+      "id": 941,
+      "name": "Blessed Light",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 14,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78834,
+            "tick_ms": 266525890
+          }
+        }
+      ]
+    },
+    {
+      "id": 1414,
+      "name": "Enraging Charge",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 14,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 57772,
+            "tick_ms": 266329609
+          }
+        }
+      ]
+    },
+    {
+      "id": 1545,
+      "name": "Test of Faith",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 14,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 66765,
+            "tick_ms": 266425468
+          }
+        }
+      ]
+    },
+    {
+      "id": 1999,
+      "name": "Winter's Embrace",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8626,
+            "tick_ms": 195391031
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61241,
+            "tick_ms": 266359843
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3201,
+            "tick_ms": 194487578
+          }
+        }
+      ]
+    },
+    {
+      "id": 3456,
+      "name": "\"Coward!\" (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 14,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 14,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 77963,
+            "tick_ms": 266521125
+          }
+        }
+      ]
+    },
+    {
+      "id": 435,
+      "name": "Apply Poison",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 13,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 11341,
+            "tick_ms": 195415750
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 84394,
+            "tick_ms": 266553984
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 26991,
+            "tick_ms": 194967000
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 978,
+            "tick_ms": 195253062
+          }
+        }
+      ]
+    },
+    {
+      "id": 845,
+      "name": "Liquid Flame",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 13,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212559,
+            "tick_ms": 194317421
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 79989,
+            "tick_ms": 266532421
+          }
+        }
+      ]
+    },
+    {
+      "id": 1095,
+      "name": "Star Burst",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 13,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9632,
+            "tick_ms": 195399062
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213193,
+            "tick_ms": 194322921
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207521,
+            "tick_ms": 194191078
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3712,
+            "tick_ms": 194490968
+          }
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Energy Burn",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7738,
+            "tick_ms": 264972171
+          }
+        }
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Parasitic Bond",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61640,
+            "tick_ms": 266363093
+          }
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "name": "Incendiary Bonds",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81085,
+            "tick_ms": 266538484
+          }
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "name": "Inferno",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9357,
+            "tick_ms": 195396843
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207893,
+            "tick_ms": 194194078
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4468,
+            "tick_ms": 194493218
+          }
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "name": "Shielding Hands",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8653,
+            "tick_ms": 195391296
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 80623,
+            "tick_ms": 266536031
+          }
+        }
+      ]
+    },
+    {
+      "id": 386,
+      "name": "Seeking Blade",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61135,
+            "tick_ms": 266359093
+          }
+        }
+      ]
+    },
+    {
+      "id": 1146,
+      "name": "Shove",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69395,
+            "tick_ms": 266451312
+          }
+        }
+      ]
+    },
+    {
+      "id": 2003,
+      "name": "Cure Hex",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8900,
+            "tick_ms": 195393421
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213287,
+            "tick_ms": 194323593
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 86176,
+            "tick_ms": 266562687
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207743,
+            "tick_ms": 194192468
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3375,
+            "tick_ms": 194489078
+          }
+        }
+      ]
+    },
+    {
+      "id": 2058,
+      "name": "Putrid Bile",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69770,
+            "tick_ms": 266453468
+          }
+        }
+      ]
+    },
+    {
+      "id": 2998,
+      "name": "Fragility (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 12,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 12,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61947,
+            "tick_ms": 266366796
+          }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Energy Surge",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 11,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7945,
+            "tick_ms": 264975000
+          }
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Ether Feast",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 11,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8460,
+            "tick_ms": 264980453
+          }
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Drain Enchantment",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 11,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 8230,
+            "tick_ms": 264977671
+          }
+        }
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Echo",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 11,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 7826,
+            "tick_ms": 264973750
+          }
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "name": "Blinding Flash",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 11,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76315,
+            "tick_ms": 266513718
+          }
+        }
+      ]
+    },
+    {
+      "id": 426,
+      "name": "Savage Shot",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 11,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 11,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 87019,
+            "tick_ms": 266566734
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Distortion",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78314,
+            "tick_ms": 266522890
+          }
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Animate Bone Fiend",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 87327,
+            "tick_ms": 266568703
+          }
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "name": "Insidious Parasite",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70059,
+            "tick_ms": 266454968
+          }
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "name": "Barbed Signet",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 62259,
+            "tick_ms": 266370234
+          }
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "name": "Plague Touch",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207257,
+            "tick_ms": 194188968
+          }
+        }
+      ]
+    },
+    {
+      "id": 160,
+      "name": "Windborne Speed",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 79642,
+            "tick_ms": 266530468
+          }
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "name": "Searing Heat",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8623,
+            "tick_ms": 195391031
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212784,
+            "tick_ms": 194319671
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 85404,
+            "tick_ms": 266558953
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207080,
+            "tick_ms": 194186890
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3202,
+            "tick_ms": 194487578
+          }
+        }
+      ]
+    },
+    {
+      "id": 258,
+      "name": "Guardian",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81260,
+            "tick_ms": 266539375
+          }
+        }
+      ]
+    },
+    {
+      "id": 322,
+      "name": "Power Attack",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61565,
+            "tick_ms": 266362562
+          }
+        }
+      ]
+    },
+    {
+      "id": 919,
+      "name": "Spirit Burn",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 10,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 10,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81697,
+            "tick_ms": 266541515
+          }
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "name": "Flare",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 10371,
+            "tick_ms": 195404546
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 4094,
+            "tick_ms": 195288484
+          }
+        }
+      ]
+    },
+    {
+      "id": 238,
+      "name": "Armor of Mist",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 57317,
+            "tick_ms": 266324000
+          }
+        }
+      ]
+    },
+    {
+      "id": 830,
+      "name": "Ray of Judgment",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8446,
+            "tick_ms": 195389062
+          }
+        },
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 9723,
+            "tick_ms": 264999343
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28063,
+            "tick_ms": 194982078
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 1756,
+            "tick_ms": 195268187
+          }
+        }
+      ]
+    },
+    {
+      "id": 916,
+      "name": "Lamentation",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 73235,
+            "tick_ms": 266487093
+          }
+        }
+      ]
+    },
+    {
+      "id": 932,
+      "name": "Complicate",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 83175,
+            "tick_ms": 266547593
+          }
+        }
+      ]
+    },
+    {
+      "id": 1082,
+      "name": "Shock Arrow",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 98440,
+            "tick_ms": 266621750
+          }
+        }
+      ]
+    },
+    {
+      "id": 1478,
+      "name": "Renewing Surge",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 9,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81322,
+            "tick_ms": 266539750
+          }
+        }
+      ]
+    },
+    {
+      "id": 2809,
+      "name": "Obsidian Flame (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 9,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9362,
+            "tick_ms": 195396875
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208024,
+            "tick_ms": 194195125
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2965,
+            "tick_ms": 195276125
+          }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Power Drain",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9166,
+            "tick_ms": 195395828
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213493,
+            "tick_ms": 194325171
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 85435,
+            "tick_ms": 266559125
+          }
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Shame",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 82640,
+            "tick_ms": 266545187
+          }
+        }
+      ]
+    },
+    {
+      "id": 275,
+      "name": "Mend Condition",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 71351,
+            "tick_ms": 266466171
+          }
+        }
+      ]
+    },
+    {
+      "id": 399,
+      "name": "Distracting Shot",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 11158,
+            "tick_ms": 195414109
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213639,
+            "tick_ms": 194325890
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 96673,
+            "tick_ms": 266613687
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4647,
+            "tick_ms": 194494828
+          }
+        }
+      ]
+    },
+    {
+      "id": 974,
+      "name": "Mantis Touch",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 77553,
+            "tick_ms": 266519343
+          }
+        }
+      ]
+    },
+    {
+      "id": 991,
+      "name": "Deny Hexes",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70805,
+            "tick_ms": 266460953
+          }
+        }
+      ]
+    },
+    {
+      "id": 1123,
+      "name": "Life Sheath",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8754,
+            "tick_ms": 195392390
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212623,
+            "tick_ms": 194317921
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2057,
+            "tick_ms": 195270968
+          }
+        }
+      ]
+    },
+    {
+      "id": 2064,
+      "name": "Spotless Mind",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212937,
+            "tick_ms": 194321093
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76834,
+            "tick_ms": 266516406
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207362,
+            "tick_ms": 194189718
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3780,
+            "tick_ms": 194491281
+          }
+        }
+      ]
+    },
+    {
+      "id": 3039,
+      "name": "Rejuvenation (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 8,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 8,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 72375,
+            "tick_ms": 266478015
+          }
+        }
+      ]
+    },
+    {
+      "id": 75,
+      "name": "Arcane Echo",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 7,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 7700,
+            "tick_ms": 195377421
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 32401,
+            "tick_ms": 195128562
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 27098,
+            "tick_ms": 194969250
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 1117,
+            "tick_ms": 195259015
+          }
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "name": "Dark Bond",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 7,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 91771,
+            "tick_ms": 266591843
+          }
+        }
+      ]
+    },
+    {
+      "id": 864,
+      "name": "Oppressive Gaze",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 7,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 62438,
+            "tick_ms": 266371984
+          }
+        }
+      ]
+    },
+    {
+      "id": 2071,
+      "name": "Zealous Sweep",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 7,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 66289,
+            "tick_ms": 266419859
+          }
+        }
+      ]
+    },
+    {
+      "id": 3019,
+      "name": "Bloodsong (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 7,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 7,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 72814,
+            "tick_ms": 266483468
+          }
+        }
+      ]
+    },
+    {
+      "id": 3447,
+      "name": "Wastrel's Worry (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 7,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 214122,
+            "tick_ms": 194328734
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 76687,
+            "tick_ms": 266515656
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 3180,
+            "tick_ms": 195278828
+          }
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "name": "Faintheartedness",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61810,
+            "tick_ms": 266365140
+          }
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "name": "Strip Enchantment",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 66458,
+            "tick_ms": 266422125
+          }
+        }
+      ]
+    },
+    {
+      "id": 159,
+      "name": "Weaken Armor",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213248,
+            "tick_ms": 194323359
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207374,
+            "tick_ms": 194189812
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3677,
+            "tick_ms": 194490562
+          }
+        }
+      ]
+    },
+    {
+      "id": 282,
+      "name": "Word of Healing",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207353,
+            "tick_ms": 194189609
+          }
+        }
+      ]
+    },
+    {
+      "id": 313,
+      "name": "Healing Touch",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208223,
+            "tick_ms": 194196953
+          }
+        }
+      ]
+    },
+    {
+      "id": 887,
+      "name": "Signet of Rejuvenation",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 10320,
+            "tick_ms": 195403875
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 84005,
+            "tick_ms": 266551796
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28609,
+            "tick_ms": 194988156
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 3155,
+            "tick_ms": 195278468
+          }
+        }
+      ]
+    },
+    {
+      "id": 1070,
+      "name": "Defile Enchantments",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213757,
+            "tick_ms": 194326656
+          }
+        },
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 61788,
+            "tick_ms": 266365000
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208169,
+            "tick_ms": 194196265
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 5022,
+            "tick_ms": 194498031
+          }
+        }
+      ]
+    },
+    {
+      "id": 1368,
+      "name": "Chilling Winds",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 83369,
+            "tick_ms": 266548578
+          }
+        }
+      ]
+    },
+    {
+      "id": 1399,
+      "name": "Shield of Absorption",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 99172,
+            "tick_ms": 266625062
+          }
+        }
+      ]
+    },
+    {
+      "id": 2013,
+      "name": "Grenth's Aura",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 71411,
+            "tick_ms": 266466890
+          }
+        }
+      ]
+    },
+    {
+      "id": 2859,
+      "name": "Enfeeble (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 6,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 6,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 78293,
+            "tick_ms": 266522812
+          }
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Healing Signet",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 138962,
+            "tick_ms": 266853046
+          }
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "name": "Aura of Restoration",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 79220,
+            "tick_ms": 266527875
+          }
+        }
+      ]
+    },
+    {
+      "id": 187,
+      "name": "Meteor",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 79511,
+            "tick_ms": 266529687
+          }
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "name": "Lava Font",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 11066,
+            "tick_ms": 195413093
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208034,
+            "tick_ms": 194195218
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4979,
+            "tick_ms": 194497593
+          }
+        }
+      ]
+    },
+    {
+      "id": 208,
+      "name": "Water Attunement",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 7732,
+            "tick_ms": 195380187
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 210599,
+            "tick_ms": 194243859
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 1630,
+            "tick_ms": 194423609
+          }
+        }
+      ]
+    },
+    {
+      "id": 246,
+      "name": "Divine Intervention",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9474,
+            "tick_ms": 195397546
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207677,
+            "tick_ms": 194191968
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2545,
+            "tick_ms": 195273218
+          }
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "name": "Infuse Health",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 10479,
+            "tick_ms": 195405609
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212830,
+            "tick_ms": 194319875
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207220,
+            "tick_ms": 194188484
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3475,
+            "tick_ms": 194489687
+          }
+        }
+      ]
+    },
+    {
+      "id": 301,
+      "name": "Remove Hex",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 214347,
+            "tick_ms": 194331484
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207119,
+            "tick_ms": 194187531
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3313,
+            "tick_ms": 194488515
+          }
+        }
+      ]
+    },
+    {
+      "id": 333,
+      "name": "\"I Will Avenge You!\"",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 80841,
+            "tick_ms": 266537203
+          }
+        }
+      ]
+    },
+    {
+      "id": 355,
+      "name": "Devastating Hammer",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 81037,
+            "tick_ms": 266538218
+          }
+        }
+      ]
+    },
+    {
+      "id": 821,
+      "name": "Icy Veins",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 62200,
+            "tick_ms": 266369703
+          }
+        }
+      ]
+    },
+    {
+      "id": 1227,
+      "name": "Essence Strike",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 95369,
+            "tick_ms": 266608203
+          }
+        }
+      ]
+    },
+    {
+      "id": 1378,
+      "name": "Master of Magic",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 57226,
+            "tick_ms": 266320359
+          }
+        }
+      ]
+    },
+    {
+      "id": 1394,
+      "name": "Healer's Covenant",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 60835,
+            "tick_ms": 266357093
+          }
+        }
+      ]
+    },
+    {
+      "id": 1535,
+      "name": "Crippling Sweep",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 101057,
+            "tick_ms": 266634140
+          }
+        }
+      ]
+    },
+    {
+      "id": 2065,
+      "name": "Spotless Soul",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 5,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 5,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 103392,
+            "tick_ms": 266644656
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Mantra of Concentration",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8207,
+            "tick_ms": 195386312
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212575,
+            "tick_ms": 194317531
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3715,
+            "tick_ms": 194490968
+          }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Inspired Enchantment",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9311,
+            "tick_ms": 195396687
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212562,
+            "tick_ms": 194317421
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3464,
+            "tick_ms": 194489531
+          }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Backfire",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70271,
+            "tick_ms": 266456625
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28477,
+            "tick_ms": 194986640
+          }
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Panic",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8622,
+            "tick_ms": 195391031
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212579,
+            "tick_ms": 194317562
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3799,
+            "tick_ms": 194491312
+          }
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "name": "Mark of Subversion",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 66252,
+            "tick_ms": 266419296
+          }
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "name": "Rend Enchantments",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 105098,
+            "tick_ms": 266652484
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207156,
+            "tick_ms": 194188062
+          }
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "name": "Feast of Corruption",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212904,
+            "tick_ms": 194320609
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207098,
+            "tick_ms": 194187062
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3366,
+            "tick_ms": 194488812
+          }
+        }
+      ]
+    },
+    {
+      "id": 177,
+      "name": "Ward Against Foes",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212713,
+            "tick_ms": 194318671
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3431,
+            "tick_ms": 194489281
+          }
+        }
+      ]
+    },
+    {
+      "id": 197,
+      "name": "Fire Storm",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8884,
+            "tick_ms": 195393203
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28113,
+            "tick_ms": 194982640
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 3204,
+            "tick_ms": 195279046
+          }
+        }
+      ]
+    },
+    {
+      "id": 217,
+      "name": "Crystal Wave",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213066,
+            "tick_ms": 194322187
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207274,
+            "tick_ms": 194189109
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4495,
+            "tick_ms": 194493484
+          }
+        }
+      ]
+    },
+    {
+      "id": 848,
+      "name": "Reverse Hex",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 131869,
+            "tick_ms": 266822484
+          }
+        }
+      ]
+    },
+    {
+      "id": 892,
+      "name": "Quivering Blade",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 122912,
+            "tick_ms": 266766156
+          }
+        }
+      ]
+    },
+    {
+      "id": 908,
+      "name": "Marauder's Shot",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 99594,
+            "tick_ms": 266627078
+          }
+        }
+      ]
+    },
+    {
+      "id": 1097,
+      "name": "Teinai's Prison",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 107125,
+            "tick_ms": 266663265
+          }
+        }
+      ]
+    },
+    {
+      "id": 1117,
+      "name": "Heaven's Delight",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 66464,
+            "tick_ms": 266422140
+          }
+        }
+      ]
+    },
+    {
+      "id": 2879,
+      "name": "\"Incoming!\" (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 211487,
+            "tick_ms": 194301828
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206445,
+            "tick_ms": 194177656
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2796,
+            "tick_ms": 194482234
+          }
+        }
+      ]
+    },
+    {
+      "id": 3141,
+      "name": "Lightning Reflexes (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 4,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 107958,
+            "tick_ms": 266667781
+          }
+        }
+      ]
+    },
+    {
+      "id": 3183,
+      "name": "Migraine (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 4,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8809,
+            "tick_ms": 195392406
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212719,
+            "tick_ms": 194318796
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3198,
+            "tick_ms": 194487578
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Resurrection Signet",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9515,
+            "tick_ms": 195397984
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Hex Breaker",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212301,
+            "tick_ms": 194313421
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206794,
+            "tick_ms": 194183890
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2942,
+            "tick_ms": 194483890
+          }
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Guilt",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 84496,
+            "tick_ms": 266554515
+          }
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Putrid Explosion",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208786,
+            "tick_ms": 194201859
+          }
+        }
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Suffering",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213438,
+            "tick_ms": 194324906
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207510,
+            "tick_ms": 194191062
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3900,
+            "tick_ms": 194491812
+          }
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "name": "Vampiric Gaze",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208026,
+            "tick_ms": 194195125
+          }
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "name": "Earthquake",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9256,
+            "tick_ms": 195396125
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28283,
+            "tick_ms": 194984421
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2796,
+            "tick_ms": 195274640
+          }
+        }
+      ]
+    },
+    {
+      "id": 189,
+      "name": "Rodgort's Invocation",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213640,
+            "tick_ms": 194325890
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 5374,
+            "tick_ms": 194501531
+          }
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "name": "Ice Spikes",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8818,
+            "tick_ms": 195392531
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212933,
+            "tick_ms": 194320937
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3698,
+            "tick_ms": 194490765
+          }
+        }
+      ]
+    },
+    {
+      "id": 247,
+      "name": "Symbol of Wrath",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8899,
+            "tick_ms": 195393421
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28432,
+            "tick_ms": 194985875
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 1920,
+            "tick_ms": 195269921
+          }
+        }
+      ]
+    },
+    {
+      "id": 471,
+      "name": "Frozen Soil",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212396,
+            "tick_ms": 194314906
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206703,
+            "tick_ms": 194182500
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2442,
+            "tick_ms": 194466500
+          }
+        }
+      ]
+    },
+    {
+      "id": 813,
+      "name": "Lyssa's Aura",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 69599,
+            "tick_ms": 266452437
+          }
+        }
+      ]
+    },
+    {
+      "id": 832,
+      "name": "Animate Flesh Golem",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 87085,
+            "tick_ms": 266567203
+          }
+        }
+      ]
+    },
+    {
+      "id": 898,
+      "name": "Overload",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70034,
+            "tick_ms": 266454828
+          }
+        }
+      ]
+    },
+    {
+      "id": 985,
+      "name": "Caltrops",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212589,
+            "tick_ms": 194317656
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207013,
+            "tick_ms": 194186437
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3374,
+            "tick_ms": 194489078
+          }
+        }
+      ]
+    },
+    {
+      "id": 1341,
+      "name": "Frustration",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8625,
+            "tick_ms": 195391031
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213035,
+            "tick_ms": 194321687
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2072,
+            "tick_ms": 195271093
+          }
+        }
+      ]
+    },
+    {
+      "id": 1365,
+      "name": "Signet of Lost Souls",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207756,
+            "tick_ms": 194192859
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 5298,
+            "tick_ms": 194500750
+          }
+        }
+      ]
+    },
+    {
+      "id": 1650,
+      "name": "Shadow Walk",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8522,
+            "tick_ms": 195390140
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 27716,
+            "tick_ms": 194978906
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 1827,
+            "tick_ms": 195269109
+          }
+        }
+      ]
+    },
+    {
+      "id": 2000,
+      "name": "Earthen Shackles",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212809,
+            "tick_ms": 194319843
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206989,
+            "tick_ms": 194186328
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3233,
+            "tick_ms": 194488062
+          }
+        }
+      ]
+    },
+    {
+      "id": 2006,
+      "name": "Castigation Signet",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9135,
+            "tick_ms": 195395640
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28772,
+            "tick_ms": 194990234
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2897,
+            "tick_ms": 195275515
+          }
+        }
+      ]
+    },
+    {
+      "id": 3232,
+      "name": "Heal Party (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9046,
+            "tick_ms": 195394859
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213678,
+            "tick_ms": 194325921
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2648,
+            "tick_ms": 195273515
+          }
+        }
+      ]
+    },
+    {
+      "id": 3443,
+      "name": "Frenzy (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 3,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 3,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 70285,
+            "tick_ms": 266456703
+          }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Diversion",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 103779,
+            "tick_ms": 266646375
+          }
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Desecrate Enchantments",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 214165,
+            "tick_ms": 194329062
+          }
+        },
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208820,
+            "tick_ms": 194202234
+          }
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "name": "Taste of Death",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 86725,
+            "tick_ms": 266565343
+          }
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "name": "Grasping Earth",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 10034,
+            "tick_ms": 195401828
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3843,
+            "tick_ms": 194491406
+          }
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "name": "Frozen Burst",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207489,
+            "tick_ms": 194190828
+          }
+        }
+      ]
+    },
+    {
+      "id": 239,
+      "name": "Ward Against Harm",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207025,
+            "tick_ms": 194186593
+          }
+        }
+      ]
+    },
+    {
+      "id": 280,
+      "name": "Heal Area",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4931,
+            "tick_ms": 194497093
+          }
+        }
+      ]
+    },
+    {
+      "id": 330,
+      "name": "Cyclone Axe",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3442,
+            "tick_ms": 194489437
+          }
+        }
+      ]
+    },
+    {
+      "id": 1083,
+      "name": "Unsteady Ground",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 8652,
+            "tick_ms": 195391296
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213386,
+            "tick_ms": 194324265
+          }
+        }
+      ]
+    },
+    {
+      "id": 1093,
+      "name": "Teinai's Heat",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9120,
+            "tick_ms": 195395578
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2003,
+            "tick_ms": 195270453
+          }
+        }
+      ]
+    },
+    {
+      "id": 1098,
+      "name": "Mirror of Ice",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9094,
+            "tick_ms": 195395375
+          }
+        },
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213387,
+            "tick_ms": 194324265
+          }
+        }
+      ]
+    },
+    {
+      "id": 1099,
+      "name": "Teinai's Crystals",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207619,
+            "tick_ms": 194191765
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 5084,
+            "tick_ms": 194498750
+          }
+        }
+      ]
+    },
+    {
+      "id": 1382,
+      "name": "Freezing Gust",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212558,
+            "tick_ms": 194317421
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 1711,
+            "tick_ms": 195267781
+          }
+        }
+      ]
+    },
+    {
+      "id": 1401,
+      "name": "Mending Touch",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 89016,
+            "tick_ms": 266578328
+          }
+        }
+      ]
+    },
+    {
+      "id": 1603,
+      "name": "Merciless Spear",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 209022,
+            "tick_ms": 194204015
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 5284,
+            "tick_ms": 194500468
+          }
+        }
+      ]
+    },
+    {
+      "id": 1995,
+      "name": "Waste Not, Want Not",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 80,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 9942,
+            "tick_ms": 195401109
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 3152,
+            "tick_ms": 195278375
+          }
+        }
+      ]
+    },
+    {
+      "id": 2192,
+      "name": "Glowing Ice",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212735,
+            "tick_ms": 194319156
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 1870,
+            "tick_ms": 195269468
+          }
+        }
+      ]
+    },
+    {
+      "id": 2880,
+      "name": "\"Never Surrender!\" (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208266,
+            "tick_ms": 194197437
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 4522,
+            "tick_ms": 194493843
+          }
+        }
+      ]
+    },
+    {
+      "id": 3021,
+      "name": "Savannah Heat (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 212738,
+            "tick_ms": 194319156
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3913,
+            "tick_ms": 194492000
+          }
+        }
+      ]
+    },
+    {
+      "id": 3032,
+      "name": "\"Stand Your Ground!\" (PvP)",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 206649,
+            "tick_ms": 194181328
+          }
+        },
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 2876,
+            "tick_ms": 194482937
+          }
+        }
+      ]
+    },
+    {
+      "id": 3457,
+      "name": "Protector's Defense (PvP)",
+      "runtime_status": "outside_pinned_catalog",
+      "local": 0,
+      "other": 2,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 2,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 83593,
+            "tick_ms": 266549906
+          }
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Ineptitude",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 28251,
+            "tick_ms": 194984203
+          }
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Signet of Weariness",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 5282,
+            "tick_ms": 194500468
+          }
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Leech Signet",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2378,
+            "tick_ms": 195272953
+          }
+        }
+      ]
+    },
+    {
+      "id": 167,
+      "name": "Eruption",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2095,
+            "tick_ms": 195271218
+          }
+        }
+      ]
+    },
+    {
+      "id": 215,
+      "name": "Maelstrom",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207237,
+            "tick_ms": 194188578
+          }
+        }
+      ]
+    },
+    {
+      "id": 235,
+      "name": "Blurred Vision",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 3376,
+            "tick_ms": 194489078
+          }
+        }
+      ]
+    },
+    {
+      "id": 277,
+      "name": "Mend Ailment",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 132192,
+            "tick_ms": 266823640
+          }
+        }
+      ]
+    },
+    {
+      "id": 300,
+      "name": "Contemplation of Purity",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 148465,
+            "tick_ms": 266905828
+          }
+        }
+      ]
+    },
+    {
+      "id": 332,
+      "name": "Bull's Strike",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 125028,
+            "tick_ms": 266776875
+          }
+        }
+      ]
+    },
+    {
+      "id": 340,
+      "name": "Disrupting Chop",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 4223,
+            "tick_ms": 195289828
+          }
+        }
+      ]
+    },
+    {
+      "id": 341,
+      "name": "Swift Chop",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 4034,
+            "tick_ms": 195287875
+          }
+        }
+      ]
+    },
+    {
+      "id": 380,
+      "name": "Bonetti's Defense",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 120759,
+            "tick_ms": 266756250
+          }
+        }
+      ]
+    },
+    {
+      "id": 382,
+      "name": "Sever Artery",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 140669,
+            "tick_ms": 266860453
+          }
+        }
+      ]
+    },
+    {
+      "id": 384,
+      "name": "Gash",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 123644,
+            "tick_ms": 266769750
+          }
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "name": "Dual Shot",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207918,
+            "tick_ms": 194194328
+          }
+        }
+      ]
+    },
+    {
+      "id": 433,
+      "name": "Kindle Arrows",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 208603,
+            "tick_ms": 194200343
+          }
+        }
+      ]
+    },
+    {
+      "id": 457,
+      "name": "Dust Trap",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207441,
+            "tick_ms": 194190281
+          }
+        }
+      ]
+    },
+    {
+      "id": 460,
+      "name": "Healing Spring",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 207118,
+            "tick_ms": 194187531
+          }
+        }
+      ]
+    },
+    {
+      "id": 853,
+      "name": "Melandru's Shot",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 148250,
+            "tick_ms": 266904281
+          }
+        }
+      ]
+    },
+    {
+      "id": 1121,
+      "name": "Gift of Health",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 84,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-108988-190116609.jsonl",
+            "line": 213389,
+            "tick_ms": 194324265
+          }
+        }
+      ]
+    },
+    {
+      "id": 1400,
+      "name": "Reversal of Damage",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 223,
+          "region": "CompetitiveMission",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 9834,
+            "tick_ms": 265001015
+          }
+        }
+      ]
+    },
+    {
+      "id": 1524,
+      "name": "Eremite's Zeal",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 593,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110488-195213578.jsonl",
+            "line": 2779,
+            "tick_ms": 195274500
+          }
+        }
+      ]
+    },
+    {
+      "id": 2057,
+      "name": "Foul Feast",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 139381,
+            "tick_ms": 266854921
+          }
+        }
+      ]
+    },
+    {
+      "id": 2734,
+      "name": "Mind Wrack (PvP)",
+      "runtime_status": "implemented_binding",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 300,
+          "region": "AllianceBattle",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-46120-264418546.jsonl",
+            "line": 71588,
+            "tick_ms": 266468812
+          }
+        }
+      ]
+    },
+    {
+      "id": 2853,
+      "name": "ID 2853",
+      "runtime_status": "unsupported",
+      "local": 0,
+      "other": 1,
+      "maps": [
+        {
+          "map": 330,
+          "region": "HeroesAscent",
+          "local": 0,
+          "other": 1,
+          "sample": {
+            "file": "packets-110228-194407640.jsonl",
+            "line": 27769,
+            "tick_ms": 194979421
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "distinct": 242,
+    "local": 321,
+    "other": 2949,
+    "awaiting_runtime_binding": 110
+  },
+  "audit_sha256": "33d3e43a6b91cfbf6db0ae44127ad0aed8b04df4e4f004520ef3c8bc9896a7a5",
+  "map_catalog_sha256": "bc5146f8a2e24848ccf5a3aefe70b34a37dcb703e128c7514951cb0ee4839e42"
+}

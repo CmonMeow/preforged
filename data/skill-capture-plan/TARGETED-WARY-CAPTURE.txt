@@ -1,0 +1,13 @@
+Wary Stance377 reward verification
+=================================
+
+Needed:one clearly identified enemy attack skill blocked by Wary,with owner
+Energy and two tracked adrenaline pools recorded before/after. Start pools empty,
+remove other Energy/adrenaline gain modifiers,and preserve target/cast/contact
+identity in the packet/world log. Repeated qualified blocks help distinguish
+35 native units from an assumed ordinary25-unit strike and reveal any cap.
+Control:ordinary attack should not be blocked by Wary;pet contact should not
+qualify simply because its owner activated a PetAttack. Also capture stance
+ending after using a skill. Rigor/unblockable cases require their explicit setup.
+The existing cast/application/body636 capture is already present;no need to
+repeat a cast without receiving a clearly attributed attack-skill contact.

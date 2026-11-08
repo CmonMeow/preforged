@@ -1,0 +1,30 @@
+Authored development policy: quest43 owned immediate caster, map145.
+Private-server tuning, not a retail-stat observation. Native verification is recorded separately.
+
+Existing captured templates20100..20103, definition70/model116378/level2,
+Health120 are retained from power-of-blood-development-combat.txt and its
+capture provenance. No fifth actor or duplicate spawn is introduced.
+Enrollment refuses actors without the explicit Energy/rank policy below.
+
+Explicit private-development resource policy: spawn Energy40/40,
+regeneration4pips; Death Magic rank0 for Vile Touch155. Existing authored armor,
+allegiance and damageable policy remain unchanged. No ordinary weapon profile:
+ordinary damage, cadence and weapon evidence are missing. No made-up defaults.
+Vile Touch is a non-spell activated Skill (pinned native type10); canonical
+rank0 damage20, range144, Energy10, activation750ms, recharge2000ms and
+aftercast750ms use the existing reviewed typed consumer and resource ledger.
+
+Retaliation only after a committed Health-loss revision; proximity never
+starts combat. Only the exact quest owner is selected, bound to quest43 and
+its cycle and remaining-source lifetime. This is authored encounter policy.
+Movement speed220, follow1500, home leash2000; anchored idle offsets
+(80,0),(0,80),(-80,0),(0,-80), pause1200ms, leg limit6000ms are authored.
+Existing navigation, collision, strict touch reach, paid action/interrupt,
+Energy/cooldown/aftercast, Seed admission and leash-return authority apply.
+Returning has priority over renewed damage; arrival clears retaliation.
+Repeated arming preserves action, resource, cooldown and patrol state.
+
+Evidence: docs/npc-blood-fanatic-activation-audit-20261028.txt and
+data/gw/quests/power-of-blood-evidence.json. Capture proves use155 and ordinary
+attack observations, not rank, Energy, regeneration or ordinary damage.
+No rendered-client acceptance or measured retail patrol/threat claim.

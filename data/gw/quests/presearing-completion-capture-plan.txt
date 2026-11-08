@@ -1,0 +1,42 @@
+REGULAR PRE-SEARING QUEST COMPLETION INPUTS
+
+User confirmed 2026-10-22: the latest session plus earlier playthroughs cover
+every regular pre-Searing quest. Level10+ daily quests will be captured later.
+Do not treat daily quests as a prerequisite for the regular pre-Searing area.
+Implement from combined captures and historical local wiki; do not request a
+repeat full playthrough because one logger channel lacks a snapshot.
+
+Latest immutable pair:
+data/captures/skill-checkpoints/20261023-session-52044-complete
+Quest recovery: quest-packets.json (723 events,37 distinct quest IDs across
+all areas in this session; not all37 are pre-Searing quests).
+Session inventory and source-event examples: session-review.json.
+Separate immutable105NPC interaction files:
+data/captures/skill-checkpoints/20261023-session-52044-interactions
+Combined earlier/latest evidence:
+data/captures/skill-checkpoints/20261023-session-review (54 packet/world files).
+Original captures remain unchanged.
+
+Latest world log has NPC observations,definitions,names,ground items and loot,
+but no quest_snapshot_changed or local_entry_candidate records. Therefore the
+current skill audit correctly leaves new casts unassigned rather than claiming
+local ownership. Quest/dialogue incoming packets remain usable independently.
+There are105DialogSender129and5window197records. Neither a window nor an
+incoming quest removal alone proves a purchase/reward transaction succeeded.
+
+Before further playthrough capture, diagnose controlled-character validation
+and quest snapshot access in tools/capture/world_capture.cpp. Current local
+validation gates both quest snapshots and local entry records. QuestModule was
+omitted by the recent safe initializer configuration. These are investigation
+leads, not a demonstrated root cause or permission to invent actor identity.
+
+Implementation acceptance: class-specific admission,prerequisites,objective
+updates (not duplicate quest-added notifications),reward turn-in,skill/item/XP
+grants exactly once,collector exchanges,quest-dependent actor transitions and
+reconnect persistence. Use captured responses and wiki per quest; distinguish
+authored policy from recovered behavior. No claim that these all work yet.
+Latest collector recovery is in the completed session's item-windows.json.
+It preserves five ordered collector windows (four with all definitions), without
+inventing NPC identities or exchanges. See docs/collector-packet-recovery.txt.
+Original DLL proof shows GetMerchantItems does not support collector type 2;
+use packet lists/definitions rather than assuming world snapshots must exist.

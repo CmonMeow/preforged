@@ -1,0 +1,106 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "157023": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19060156,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c000000190000001e000000b9000000"
+    },
+    "157034": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "157035": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e000000190000004b010000"
+    },
+    "157036": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001e000000e0010000"
+    },
+    "157037": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000bcbbbbbc"
+    },
+    "157038": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000bcbbbbbc"
+    },
+    "157039": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000019000000"
+    },
+    "157040": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19061171,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000002000000"
+    }
+  },
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 185,
+    "override_after": 2139095040
+  },
+  "particle": {
+    "actor": 43,
+    "encoded_file": "cad100010000",
+    "flags": 1
+  },
+  "limitations": [
+    "Original dispatch/first consumers run with actor/model/clock services stubbed;no rendered QA.",
+    "Two captured damage modifiers and Burning do not prove the independent per-recipient Energy anomaly;the historical wiki documents that rule.",
+    "Training-target damage modifiers are normalized values,not a replacement for authoritative armor/health/Energy state."
+  ]
+}

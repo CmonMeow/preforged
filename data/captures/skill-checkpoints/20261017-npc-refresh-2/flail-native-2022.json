@@ -1,0 +1,68 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "404226": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24058640,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f00000030000000190000007c050000"
+    },
+    "404227": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24058640,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000004060000"
+    },
+    "404228": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24058640,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "42000000190000007c050000000000005f0000000000803f"
+    },
+    "404231": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 24058640,
+      "opcode": 39,
+      "bytes": 12,
+      "complete": true,
+      "hex": "2700000019000000c3f54043"
+    }
+  },
+  "native_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 1404
+    }
+  ],
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "9e1004010000",
+    "flags": 1
+  },
+  "captured_rank": 0,
+  "captured_duration_seconds": 1,
+  "captured_speed": 192.9600067138672,
+  "limitations": [
+    "Actor/UI/model services are stubbed; no rendered acceptance.",
+    "One captured absolute speed is compatible with288 baseline and0.67 multiplier; it does not establish a universal speed baseline.",
+    "Attack haste across weapon types and real-time transition phase require broader retail measurement."
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "387975": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23645437,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001e00000086010000"
+    },
+    "388441": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23681500,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a000000032000000190000001e00000086010000"
+    }
+  },
+  "native_body": {
+    "state": 45,
+    "seconds": 0.5,
+    "skill": 390
+  },
+  "style": 41,
+  "native_success_action": 17,
+  "limitations": [
+    "Clock/actor/model/effect services are stubbed; no rendered acceptance.",
+    "The native row selects a fixed0.5second attack animation despite the supplied2.475second weapon interval; this does not prove live server release timing.",
+    "Native damage endpoints1..40 are scale fields. Spell-only damage and interrupt outcome are not proven by these activation receipts; World/Runtime validation is recorded separately.",
+    "Retail interruption/protection ordering and NPC action identity need live integration validation."
+  ]
+}

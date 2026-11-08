@@ -1,0 +1,83 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "baseline": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 281,
+    "override_after": 2139095040
+  },
+  "cases": [
+    {
+      "skill": 361,
+      "path": "zero_duration_spell60_ui",
+      "ui": {
+        "event": 268435495,
+        "actor": 42,
+        "skill": 361,
+        "duration": [
+          0.0,
+          0.0
+        ]
+      },
+      "allocations": [
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 264,
+          "pointer": 33685504
+        },
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 4,
+          "pointer": 33685776
+        }
+      ],
+      "model_lookup": false,
+      "stop": "before native UI delivery/event disposal"
+    },
+    {
+      "skill": 810,
+      "path": "zero_duration_spell60_ui",
+      "ui": {
+        "event": 268435495,
+        "actor": 42,
+        "skill": 810,
+        "duration": [
+          0.0,
+          0.0
+        ]
+      },
+      "allocations": [
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 264,
+          "pointer": 33685504
+        },
+        {
+          "heap": 0,
+          "flags": 0,
+          "bytes": 4,
+          "pointer": 33685776
+        }
+      ],
+      "model_lookup": false,
+      "stop": "before native UI delivery/event disposal"
+    }
+  ],
+  "source_sha256": {
+    "zero_cast_consumer_2022.py": "a4c049149b866418333ecb021a8c1658bcc4a17b845c5f47061fce5b3ff1c480",
+    "probe_animation_consumer_gaps_2022.py": "ce2927c5dce18a5082efa6a5e1eb83f0ad448cb9c08afba988971671b06c1100",
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "finding": "Both skills select the zero-duration UI branch rather than a model cast-animation lookup. Earlier unmapped writes came from omitted actor intrusive-list constructor state.",
+  "limits": [
+    "Synthetic actor/model and allocation services; no live client or renderer.",
+    "Stops at original UI call before event disposal; event destructor fixture remains incomplete.",
+    "Zero-duration UI branch is not proof of skill mechanics,body effects or rendered acceptance."
+  ]
+}

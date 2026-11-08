@@ -1,0 +1,87 @@
+{
+  "skill": 30,
+  "status": "Source-bound player/combat-NPC cast; full Release build and257/257 native tests passed. Mechanics/rendered verification remains incomplete.",
+  "mechanics": "Six-second hex; additional recharge10..56seconds at rank0..15 (rank12=47,rank20=71). Proposed consumption requires an authoritative used-skill event; non-use is not sufficient. Inspired Hex22/Revealed Hex1049 and explicit instant-recharge outcomes consume without added recharge.",
+  "evidence": "Local Diversion.html revision2607469; pinned2022 row30; diversion-native-2022.json exact captured targeted body52 and native3second activation.",
+  "validation": "Standalone native diversion-policy.txt passed scale, scoped proposal, unchanged original registry, instant-reset exceptions and nonshortening/overflow deadline checks. Native evidence audit passed diversion-native.txt.",
+  "remaining": [
+    "Recharge modifier ordering and copied-skill sharing need retail verification.",
+    "Interrupted/failed/instant-reset and death/sacrifice trigger semantics need broader coverage; current completion-success candidate tested.",
+    "NPC AI needs these skill-use callbacks wired into its own casting path.",
+    "Full updated production build and rendered animation/sound acceptance remain pending."
+  ],
+  "coverage": "Not added to161/575 source-bound count.",
+  "authority_stage": {
+    "header": "src/runtime/gw_diversion_authority.h",
+    "test": "tests/diversion_authority.cpp",
+    "report": "build/reports/diversion-authority.txt",
+    "result": "Standalone native probe passed atomic proposed registry/authority, duplicate event, stale identity, expiry/time/overflow and instant-reset handling.",
+    "limits": "The explicit used skill/copy is tracked; sharing across copies is not asserted. Caller must supply a monotonic event namespace and correctly classified actual skill use. Modifier ordering remains external/unverified.",
+    "integration": "Not registered or World-bound while current full build runs."
+  },
+  "staged_world_application": {
+    "header": "build/staging/diversion/gw_world_simulation.h",
+    "fragment": "build/staging/diversion/diversion-method.txt",
+    "test": "tests/diversion_world.cpp",
+    "report": "build/reports/diversion-world-staged.txt",
+    "result": "Standalone native staged World probe passed seven modes: application, renewal, Hex Breaker, stale scope, range, friendly team, forged plan; timed expiry and exact targeted body52 checked.",
+    "baseline_sha256": "d0bfc61377382920f6e9a769f424f2417a7b7d69283dd5a3fc7cd48be9d7325a",
+    "candidate_sha256": "9f71430d8ed04aaf5148baaa92bfe8c666a751423ee650546113b067d3bc2382",
+    "integration": "Production source not modified while full Grenth build is live; trigger authority/NPC/casting remain incomplete."
+  },
+  "staged_world_use": {
+    "test": "tests/diversion_world_use.cpp",
+    "report": "build/reports/diversion-world-use-clock-final.txt",
+    "result": "Standalone staged World probe passed: one-use consumption, owned recharge authority, existing longer deadline, Inspired Hex exception, stale scope and replay-before-new-hex rejection.",
+    "scope": "No-hex uses still advance the event cursor, preventing an old event from consuming a newly applied Diversion. Owner Health/expiry settles before use. Registry and authority proposals commit together.",
+    "integration": "Integrated into production source; four registered focused suites pass. NPC uses/dispatcher/modifier and copy-sharing policies remain open."
+  },
+  "integrated_gate": "Production source integrated after baseline/candidate hash verification. Four registered Diversion native suites passed0.05s;19 tooling tests pass. Reports diversion-integrated-build.txt and diversion-integrated-tests.txt. Updated host not rebuilt with this later change.",
+  "lifecycle_gate": {
+    "test": "tests/diversion_world_use.cpp",
+    "report": "build/reports/diversion-lifecycle-tests.txt",
+    "result": "Native World fixture passes active/no-hex invalid-base rollback, expired hex, preserved long deadline, duplicate/stale event and actor retirement/replacement isolation.",
+    "fix": "World rejects invalid/overflowing base recharge before no-hex event cursor advancement; a rejected request does not poison a later valid event.",
+    "limits": "Normal skill-use classification/dispatcher, NPC uses, modifier ordering and copy-sharing remain unfinished."
+  },
+  "npc_stage": {
+    "test": "tests/diversion_npc.cpp",
+    "report": "build/reports/diversion-npc-tests.txt",
+    "result": "Five registered Diversion native suites pass0.05s. NPC seven modes cover apply/body52, renewal/expiry, normal recharge extension, Inspired Hex reset, replay preserving hex, range/neutral/unknown-Health rejection.",
+    "scope": "Stored NPC Health/lifetime and private hex registry; World-owned Scope-keyed authority, copied NPC/authority commit. No fake playerResources.",
+    "remaining": "Normal NPC/player skill-use callback and dispatcher wiring, modifier ordering, copied-skill recharge policy and rendered validation remain incomplete."
+  },
+  "prepared_use_stage": {
+    "header": "src/runtime/gw_diversion_prepared_use.h",
+    "test": "tests/diversion_prepared_use.cpp",
+    "report": "build/reports/diversion-prepared-registry-tests.txt",
+    "result": "Four registered focused suites pass0.04s. Prepared snapshot survives used-skill hex removal, preserves newer Diversion, handles instant reset, rejects replay/time/owner/effect-instance reuse and preserves originals.",
+    "mechanism": "Capture before the used skill effect; finalize recharge from that owned snapshot even if the skill removed the original hex. Registry now exposes a read-only ownership check for safe finalization.",
+    "remaining": "World must privately own prepared snapshots and integrate them with actual skill-use classification/normal casting. Existing direct-use World path does not yet handle post-effect removal. Recharge modifier ordering and copied-skill sharing remain unverified."
+  },
+  "world_prepared_callbacks": {
+    "tests": [
+      "tests/diversion_world_prepared.cpp",
+      "tests/diversion_npc.cpp"
+    ],
+    "reports": [
+      "diversion-world-prepared-tests.txt",
+      "diversion-npc-prepared-tests.txt"
+    ],
+    "result": "Native player World probe passes removal/replacement/abort/death/wrong event/time/replay. NPC prepared snapshot also finalizes after real World Shatter Delusions removes Diversion.",
+    "mechanism": "World privately stores one prepared snapshot per Scope with control epoch; finalization consumes the matching event once, commits recharge authority and removes only the captured live effect. Player death/departure clear pending state.",
+    "limits": "Trusted callbacks implemented but not yet wired into normal casting. Exact failure/interrupt classification, recharge modifier order, copied-skill sharing and rendered acceptance remain open."
+  },
+  "casting_binding_stage": {
+    "test": "tests/diversion_cast.cpp",
+    "reports": [
+      "diversion-cast-complete-build.txt",
+      "diversion-cast-complete-tests.txt"
+    ],
+    "result": "Actual3second/10Energy/12recharge player/NPC target casting passes body52, Hex Breaker, cancel/interrupt and both actor replacement guards. Victim Shatter Hex and instant Hex Breaker use receive extra47seconds at rank12; cancelled/failed casts preserve Diversion. World slot authority survives local morale reset and replacement Runtime.",
+    "mechanism": "Generic use preparation before effect; guarded abort on unsuccessful effect; finalization after base recharge calculation. Slot-specific authority joins existing global disables for admission/UI synchronization. Gateway hooks wired.",
+    "coverage": "162/575 captured player skills source-bound;413 awaiting binding;754 baseline skills without local activation.",
+    "fidelity": "Final-base recharge plus Diversion is the current candidate ordering, not retail-verified for all modifiers. Only the used skill/copy is extended; cross-copy policy remains unverified."
+  },
+  "current_full_gate": "All-target Release and257/257 native tests passed31.79s (diversion-binding-full-build.txt/diversion-binding-full-tests.txt). Includes casting/use lifecycle and earlier families; does not cover later Inspired Hex World integration."
+}

@@ -1,0 +1,75 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "182ecc2229e6eb9178f558f0b4afaf9f4337c90ce70a41019403a37680fcec15",
+  "manifest_sha256": "e6cf85aeb2b11f9411464705939829d7ae03b47ac76b6da19edf3882e98bd83a",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 121647,
+      "tick_ms": 18009531,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003c00000019000000cd070000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 121659,
+      "tick_ms": 18010562,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    }
+  ],
+  "consumers": [
+    {
+      "target": 0,
+      "model": 33607680,
+      "layer": 0,
+      "style": 50,
+      "seconds": 1.0,
+      "stored_skill": 1997,
+      "override_after": 2139095040
+    },
+    {
+      "target": 42,
+      "model": 33607680,
+      "layer": 0,
+      "style": 50,
+      "seconds": 1.0,
+      "stored_skill": 1997,
+      "override_after": 2139095040
+    },
+    {
+      "target": 43,
+      "model": 33607680,
+      "layer": 0,
+      "style": 51,
+      "seconds": 1.0,
+      "stored_skill": 1997,
+      "override_after": 2139095040
+    }
+  ],
+  "energy": 5,
+  "recharge_seconds": 3,
+  "duration_endpoints": [
+    5,
+    20
+  ],
+  "weakness_endpoints": [
+    5,
+    20
+  ],
+  "body_resource_sentinel": 2077,
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Withering_Aura.html",
+  "wiki_sha256": "98e7f6d0931cfe94adac1154f442f94e93d59e1371a6f374bf33f40538082d87",
+  "limits": [
+    "Activation evidence does not prove melee-trigger qualification on miss/block.",
+    "Original animation consumer executes with asset/model services stubbed; no rendered acceptance.",
+    "Caster attribution, allied NPC buff ownership and Heavy Blow same-contact ordering still need implementation and tests.",
+    "No runtime binding or completeness claim is established by this report."
+  ]
+}

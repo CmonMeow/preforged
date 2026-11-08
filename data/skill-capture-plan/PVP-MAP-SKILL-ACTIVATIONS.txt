@@ -1,0 +1,494 @@
+PVP MAP SKILL ACTIVATIONS
+Frozen checkpoint: 20261024-all-completed; UTC cutoff: 2026-10-24T04:27:02.320932+00:00
+Region types: AllianceBattle, Arena, CompetitiveMission, GuildBattleArea, HeroBattleArea, HeroesAscent
+Distinct IDs: 242; local starts: 321; other actor starts: 2949
+IDs awaiting runtime binding: 110
+Other-actor starts can include NPCs. Ordinary and PvP-variant skills are both listed.
+Unknown-map activations are excluded. These are evidence of use, not working mechanics or visuals.
+Audit SHA256: 33d3e43a6b91cfbf6db0ae44127ad0aed8b04df4e4f004520ef3c8bc9896a7a5
+Map catalog SHA256: bc5146f8a2e24848ccf5a3aefe70b34a37dcb703e128c7514951cb0ee4839e42
+
+1254 ID 1254 | L0 O106 | unsupported | 300:AllianceBattle L0/O106
+     evidence packets-46120-264418546.jsonl:69679 at 266452937ms
+ 205 Lightning Surge | L0 O84 | implemented_binding | 223:CompetitiveMission L0/O29, 300:AllianceBattle L0/O55
+     evidence packets-46120-264418546.jsonl:7288 at 264964859ms
+3375 Aura of Restoration (PvP) | L40 O43 | implemented_binding | 80:HeroesAscent L2/O0, 84:HeroesAscent L3/O0, 223:CompetitiveMission L11/O16, 300:AllianceBattle L17/O27, 330:HeroesAscent L3/O0, 593:HeroesAscent L4/O0
+     evidence packets-110488-195213578.jsonl:7620 at 195374171ms
+2061 Patient Spirit | L0 O70 | implemented_binding | 80:HeroesAscent L0/O8, 84:HeroesAscent L0/O3, 300:AllianceBattle L0/O49, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O7
+     evidence packets-110488-195213578.jsonl:9578 at 195398437ms
+ 222 Lightning Strike | L0 O66 | implemented_binding | 223:CompetitiveMission L0/O23, 300:AllianceBattle L0/O43
+     evidence packets-46120-264418546.jsonl:6966 at 264958500ms
+ 171 Stoning | L62 O3 | implemented_binding | 80:HeroesAscent L3/O1, 84:HeroesAscent L1/O1, 223:CompetitiveMission L16/O0, 300:AllianceBattle L33/O0, 330:HeroesAscent L6/O0, 593:HeroesAscent L3/O1
+     evidence packets-110488-195213578.jsonl:8997 at 195394296ms
+1118 Healing Burst | L0 O61 | unsupported | 80:HeroesAscent L0/O5, 84:HeroesAscent L0/O3, 300:AllianceBattle L0/O42, 330:HeroesAscent L0/O5, 593:HeroesAscent L0/O6
+     evidence packets-110488-195213578.jsonl:9638 at 195399156ms
+1374 Ebon Hawk | L59 O0 | implemented_binding | 80:HeroesAscent L2/O0, 84:HeroesAscent L1/O0, 223:CompetitiveMission L21/O0, 300:AllianceBattle L28/O0, 330:HeroesAscent L4/O0, 593:HeroesAscent L3/O0
+     evidence packets-110488-195213578.jsonl:9291 at 195396390ms
+ 952 Death's Charge | L25 O31 | unsupported | 80:HeroesAscent L1/O3, 84:HeroesAscent L1/O2, 223:CompetitiveMission L6/O0, 300:AllianceBattle L12/O12, 330:HeroesAscent L2/O6, 593:HeroesAscent L3/O8
+     evidence packets-110488-195213578.jsonl:8543 at 195390406ms
+ 184 Fire Attunement | L0 O53 | implemented_binding | 80:HeroesAscent L0/O9, 84:HeroesAscent L0/O7, 223:CompetitiveMission L0/O2, 300:AllianceBattle L0/O14, 330:HeroesAscent L0/O6, 593:HeroesAscent L0/O15
+     evidence packets-110488-195213578.jsonl:6754 at 195329328ms
+ 174 Aftershock | L36 O10 | implemented_binding | 80:HeroesAscent L3/O3, 84:HeroesAscent L1/O1, 223:CompetitiveMission L7/O0, 300:AllianceBattle L17/O0, 330:HeroesAscent L4/O3, 593:HeroesAscent L4/O3
+     evidence packets-110488-195213578.jsonl:8646 at 195391125ms
+ 937 Shockwave | L35 O9 | implemented_binding | 80:HeroesAscent L2/O2, 84:HeroesAscent L1/O1, 223:CompetitiveMission L7/O0, 300:AllianceBattle L18/O0, 330:HeroesAscent L3/O3, 593:HeroesAscent L4/O3
+     evidence packets-110488-195213578.jsonl:8669 at 195391406ms
+ 169 Earth Attunement | L31 O12 | implemented_binding | 80:HeroesAscent L2/O2, 84:HeroesAscent L2/O3, 223:CompetitiveMission L9/O0, 300:AllianceBattle L13/O0, 330:HeroesAscent L2/O2, 593:HeroesAscent L3/O5
+     evidence packets-110488-195213578.jsonl:7658 at 195375359ms
+ 865 Lightning Hammer | L0 O43 | implemented_binding | 223:CompetitiveMission L0/O15, 300:AllianceBattle L0/O28
+     evidence packets-46120-264418546.jsonl:8038 at 264975453ms
+3465 Charging Strike (PvP) | L0 O43 | outside_pinned_catalog | 300:AllianceBattle L0/O43
+     evidence packets-46120-264418546.jsonl:57501 at 266327046ms
+ 185 Mind Burn | L0 O41 | implemented_binding | 223:CompetitiveMission L0/O8, 300:AllianceBattle L0/O33
+     evidence packets-46120-264418546.jsonl:19519 at 265160859ms
+1209 Bestial Fury | L0 O41 | implemented_binding | 223:CompetitiveMission L0/O33, 300:AllianceBattle L0/O8
+     evidence packets-46120-264418546.jsonl:7038 at 264959515ms
+ 394 Power Shot | L0 O40 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O2, 223:CompetitiveMission L0/O27, 300:AllianceBattle L0/O4, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O4
+     evidence packets-110488-195213578.jsonl:10689 at 195408171ms
+3449 Protector's Strike (PvP) | L0 O40 | outside_pinned_catalog | 300:AllianceBattle L0/O40
+     evidence packets-46120-264418546.jsonl:78265 at 266522781ms
+ 191 Immolate | L0 O39 | implemented_binding | 84:HeroesAscent L0/O3, 223:CompetitiveMission L0/O3, 300:AllianceBattle L0/O28, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O4
+     evidence packets-108988-190116609.jsonl:213072 at 194322187ms
+2864 Sundering Attack (PvP) | L0 O35 | implemented_binding | 223:CompetitiveMission L0/O30, 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:7066 at 264960015ms
+ 245 Protective Spirit | L0 O34 | implemented_binding | 300:AllianceBattle L0/O32, 330:HeroesAscent L0/O2
+     evidence packets-46120-264418546.jsonl:65462 at 266411421ms
+ 958 Healing Whisper | L0 O34 | implemented_binding | 300:AllianceBattle L0/O34
+     evidence packets-46120-264418546.jsonl:65681 at 266413531ms
+ 223 Chain Lightning | L0 O33 | unsupported | 300:AllianceBattle L0/O33
+     evidence packets-46120-264418546.jsonl:77387 at 266518468ms
+1379 Glowing Gaze | L0 O33 | implemented_binding | 223:CompetitiveMission L0/O1, 300:AllianceBattle L0/O32
+     evidence packets-46120-264418546.jsonl:23320 at 265223109ms
+1661 Glowstone | L33 O0 | implemented_binding | 80:HeroesAscent L1/O0, 84:HeroesAscent L1/O0, 223:CompetitiveMission L10/O0, 300:AllianceBattle L18/O0, 330:HeroesAscent L2/O0, 593:HeroesAscent L1/O0
+     evidence packets-110488-195213578.jsonl:9485 at 195397640ms
+3037 "Fall Back!" (PvP) | L0 O33 | unsupported | 84:HeroesAscent L0/O1, 223:CompetitiveMission L0/O1, 300:AllianceBattle L0/O30, 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212364 at 194314562ms
+1081 Teinai's Wind | L0 O32 | implemented_binding | 80:HeroesAscent L0/O1, 300:AllianceBattle L0/O29, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:11109 at 195413468ms
+ 307 Reversal of Fortune | L0 O31 | unsupported | 300:AllianceBattle L0/O28, 330:HeroesAscent L0/O3
+     evidence packets-46120-264418546.jsonl:55778 at 266261031ms
+ 847 Boon Signet | L0 O31 | unsupported | 300:AllianceBattle L0/O31
+     evidence packets-46120-264418546.jsonl:55674 at 266258171ms
+  69 Shatter Enchantment | L0 O30 | implemented_binding | 223:CompetitiveMission L0/O2, 300:AllianceBattle L0/O27, 330:HeroesAscent L0/O1
+     evidence packets-46120-264418546.jsonl:8037 at 264975453ms
+1037 Dark Escape | L0 O30 | unsupported | 300:AllianceBattle L0/O30
+     evidence packets-46120-264418546.jsonl:59370 at 266346281ms
+ 349 Sprint | L0 O28 | implemented_binding | 300:AllianceBattle L0/O28
+     evidence packets-46120-264418546.jsonl:69049 at 266448437ms
+ 352 Crushing Blow | L0 O28 | implemented_binding | 300:AllianceBattle L0/O28
+     evidence packets-46120-264418546.jsonl:69640 at 266452765ms
+1335 Wastrel's Demise | L0 O28 | unsupported | 300:AllianceBattle L0/O28
+     evidence packets-46120-264418546.jsonl:76323 at 266513843ms
+1090 Smoldering Embers | L0 O27 | unsupported | 223:CompetitiveMission L0/O2, 300:AllianceBattle L0/O25
+     evidence packets-46120-264418546.jsonl:23086 at 265219109ms
+3151 Empathy (PvP) | L0 O27 | implemented_binding | 300:AllianceBattle L0/O27
+     evidence packets-46120-264418546.jsonl:61495 at 266362031ms
+3464 Flail (PvP) | L0 O27 | outside_pinned_catalog | 300:AllianceBattle L0/O27
+     evidence packets-46120-264418546.jsonl:76764 at 266516078ms
+ 202 Glyph of Sacrifice | L0 O26 | unsupported | 80:HeroesAscent L0/O6, 84:HeroesAscent L0/O4, 330:HeroesAscent L0/O7, 593:HeroesAscent L0/O9
+     evidence packets-110488-195213578.jsonl:8423 at 195388687ms
+ 200 Glyph of Lesser Energy | L0 O25 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O2, 223:CompetitiveMission L0/O16, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O3
+     evidence packets-110488-195213578.jsonl:8469 at 195389531ms
+ 822 Weaken Knees | L0 O25 | unsupported | 300:AllianceBattle L0/O25
+     evidence packets-46120-264418546.jsonl:68324 at 266442453ms
+1687 Zealous Benediction | L0 O25 | implemented_binding | 300:AllianceBattle L0/O25
+     evidence packets-46120-264418546.jsonl:78533 at 266524093ms
+2892 Spirit Bond (PvP) | L0 O25 | unsupported | 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O23, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:214171 at 194329156ms
+ 229 Lightning Orb | L0 O24 | implemented_binding | 223:CompetitiveMission L0/O24
+     evidence packets-46120-264418546.jsonl:7120 at 264961171ms
+ 392 Pin Down | L0 O24 | implemented_binding | 223:CompetitiveMission L0/O22, 300:AllianceBattle L0/O2
+     evidence packets-46120-264418546.jsonl:7887 at 264974343ms
+  23 Power Spike | L0 O23 | implemented_binding | 84:HeroesAscent L0/O1, 223:CompetitiveMission L0/O8, 300:AllianceBattle L0/O14
+     evidence packets-108988-190116609.jsonl:213700 at 194326171ms
+ 283 Dwayna's Kiss | L0 O23 | implemented_binding | 80:HeroesAscent L0/O4, 84:HeroesAscent L0/O2, 300:AllianceBattle L0/O9, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O7
+     evidence packets-110488-195213578.jsonl:8860 at 195393078ms
+3185 Psychic Instability (PvP) | L0 O23 | unsupported | 300:AllianceBattle L0/O23
+     evidence packets-46120-264418546.jsonl:76514 at 266514734ms
+3453 Dash (PvP) | L0 O23 | outside_pinned_catalog | 300:AllianceBattle L0/O23
+     evidence packets-46120-264418546.jsonl:59952 at 266351046ms
+ 311 Draw Conditions | L0 O22 | implemented_binding | 300:AllianceBattle L0/O22
+     evidence packets-46120-264418546.jsonl:77610 at 266519593ms
+1591 "Make Haste!" | L0 O22 | unsupported | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O8, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O9
+     evidence packets-110488-195213578.jsonl:6822 at 195330046ms
+ 770 Return | L0 O21 | unsupported | 300:AllianceBattle L0/O21
+     evidence packets-46120-264418546.jsonl:58125 at 266334671ms
+ 225 Air Attunement | L0 O20 | implemented_binding | 223:CompetitiveMission L0/O4, 300:AllianceBattle L0/O16
+     evidence packets-46120-264418546.jsonl:7856 at 264973750ms
+ 331 Hammer Bash | L0 O20 | implemented_binding | 300:AllianceBattle L0/O20
+     evidence packets-46120-264418546.jsonl:78468 at 266523703ms
+  43 Clumsiness | L0 O18 | implemented_binding | 223:CompetitiveMission L0/O16, 330:HeroesAscent L0/O2
+     evidence packets-46120-264418546.jsonl:8191 at 264977218ms
+1091 Double Dragon | L0 O18 | unsupported | 80:HeroesAscent L0/O4, 300:AllianceBattle L0/O10, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:9061 at 195395031ms
+2188 Defile Defenses | L0 O18 | unsupported | 300:AllianceBattle L0/O18
+     evidence packets-46120-264418546.jsonl:68577 at 266444218ms
+ 120 Blood of the Master | L0 O17 | unsupported | 300:AllianceBattle L0/O17
+     evidence packets-46120-264418546.jsonl:81898 at 266542234ms
+ 192 Meteor Shower | L0 O17 | implemented_binding | 80:HeroesAscent L0/O3, 84:HeroesAscent L0/O2, 330:HeroesAscent L0/O5, 593:HeroesAscent L0/O7
+     evidence packets-110488-195213578.jsonl:8553 at 195390437ms
+ 288 Healing Breeze | L0 O17 | implemented_binding | 223:CompetitiveMission L0/O6, 300:AllianceBattle L0/O11
+     evidence packets-46120-264418546.jsonl:9928 at 265002031ms
+1257 Spirit Light Weapon | L0 O17 | unsupported | 300:AllianceBattle L0/O17
+     evidence packets-46120-264418546.jsonl:75039 at 266504125ms
+  92 Well of Blood | L0 O16 | unsupported | 300:AllianceBattle L0/O16
+     evidence packets-46120-264418546.jsonl:55538 at 266255437ms
+1727 Natural Stride | L0 O16 | unsupported | 300:AllianceBattle L0/O16
+     evidence packets-46120-264418546.jsonl:78384 at 266523140ms
+2012 Radiant Scythe | L0 O16 | unsupported | 300:AllianceBattle L0/O16
+     evidence packets-46120-264418546.jsonl:67102 at 266428953ms
+3455 Auspicious Blow (PvP) | L0 O16 | outside_pinned_catalog | 300:AllianceBattle L0/O16
+     evidence packets-46120-264418546.jsonl:80916 at 266537546ms
+3459 Melandru's Shot (PvP) | L0 O16 | outside_pinned_catalog | 300:AllianceBattle L0/O16
+     evidence packets-46120-264418546.jsonl:76816 at 266516343ms
+  38 Channeling | L0 O15 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O5, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O6
+     evidence packets-110488-195213578.jsonl:8468 at 195389531ms
+ 126 Life Transfer | L0 O15 | implemented_binding | 300:AllianceBattle L0/O11, 330:HeroesAscent L0/O4
+     evidence packets-46120-264418546.jsonl:61802 at 266365093ms
+1381 Flame Djinn's Haste | L0 O15 | unsupported | 80:HeroesAscent L0/O4, 84:HeroesAscent L0/O2, 300:AllianceBattle L0/O5, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8276 at 195386843ms
+1662 Mind Blast | L0 O15 | unsupported | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O3, 330:HeroesAscent L0/O4, 593:HeroesAscent L0/O7
+     evidence packets-110488-195213578.jsonl:8817 at 195392531ms
+  77 Chaos Storm | L0 O14 | unsupported | 80:HeroesAscent L0/O3, 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O4, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O4
+     evidence packets-110488-195213578.jsonl:8438 at 195388890ms
+ 188 Flame Burst | L0 O14 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O6, 593:HeroesAscent L0/O5
+     evidence packets-110488-195213578.jsonl:9153 at 195395750ms
+ 941 Blessed Light | L0 O14 | unsupported | 300:AllianceBattle L0/O14
+     evidence packets-46120-264418546.jsonl:78834 at 266525890ms
+1414 Enraging Charge | L0 O14 | unsupported | 300:AllianceBattle L0/O14
+     evidence packets-46120-264418546.jsonl:57772 at 266329609ms
+1545 Test of Faith | L0 O14 | unsupported | 300:AllianceBattle L0/O14
+     evidence packets-46120-264418546.jsonl:66765 at 266425468ms
+1999 Winter's Embrace | L0 O14 | unsupported | 80:HeroesAscent L0/O1, 300:AllianceBattle L0/O11, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:8626 at 195391031ms
+3456 "Coward!" (PvP) | L0 O14 | outside_pinned_catalog | 300:AllianceBattle L0/O14
+     evidence packets-46120-264418546.jsonl:77963 at 266521125ms
+ 435 Apply Poison | L0 O13 | implemented_binding | 80:HeroesAscent L0/O1, 300:AllianceBattle L0/O10, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:11341 at 195415750ms
+ 845 Liquid Flame | L0 O13 | implemented_binding | 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O12
+     evidence packets-108988-190116609.jsonl:212559 at 194317421ms
+1095 Star Burst | L0 O13 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O5, 593:HeroesAscent L0/O5
+     evidence packets-110488-195213578.jsonl:9632 at 195399062ms
+  42 Energy Burn | L0 O12 | implemented_binding | 223:CompetitiveMission L0/O12
+     evidence packets-46120-264418546.jsonl:7738 at 264972171ms
+  99 Parasitic Bond | L0 O12 | implemented_binding | 300:AllianceBattle L0/O12
+     evidence packets-46120-264418546.jsonl:61640 at 266363093ms
+ 179 Incendiary Bonds | L0 O12 | unsupported | 300:AllianceBattle L0/O12
+     evidence packets-46120-264418546.jsonl:81085 at 266538484ms
+ 183 Inferno | L0 O12 | implemented_binding | 80:HeroesAscent L0/O3, 330:HeroesAscent L0/O4, 593:HeroesAscent L0/O5
+     evidence packets-110488-195213578.jsonl:9357 at 195396843ms
+ 299 Shielding Hands | L0 O12 | implemented_binding | 80:HeroesAscent L0/O1, 300:AllianceBattle L0/O11
+     evidence packets-110488-195213578.jsonl:8653 at 195391296ms
+ 386 Seeking Blade | L0 O12 | implemented_binding | 300:AllianceBattle L0/O12
+     evidence packets-46120-264418546.jsonl:61135 at 266359093ms
+1146 Shove | L0 O12 | unsupported | 300:AllianceBattle L0/O12
+     evidence packets-46120-264418546.jsonl:69395 at 266451312ms
+2003 Cure Hex | L0 O12 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O2, 300:AllianceBattle L0/O3, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O3
+     evidence packets-110488-195213578.jsonl:8900 at 195393421ms
+2058 Putrid Bile | L0 O12 | unsupported | 300:AllianceBattle L0/O12
+     evidence packets-46120-264418546.jsonl:69770 at 266453468ms
+2998 Fragility (PvP) | L0 O12 | implemented_binding | 300:AllianceBattle L0/O12
+     evidence packets-46120-264418546.jsonl:61947 at 266366796ms
+  39 Energy Surge | L0 O11 | implemented_binding | 223:CompetitiveMission L0/O11
+     evidence packets-46120-264418546.jsonl:7945 at 264975000ms
+  40 Ether Feast | L0 O11 | implemented_binding | 223:CompetitiveMission L0/O11
+     evidence packets-46120-264418546.jsonl:8460 at 264980453ms
+  68 Drain Enchantment | L0 O11 | implemented_binding | 223:CompetitiveMission L0/O11
+     evidence packets-46120-264418546.jsonl:8230 at 264977671ms
+  74 Echo | L0 O11 | implemented_binding | 223:CompetitiveMission L0/O11
+     evidence packets-46120-264418546.jsonl:7826 at 264973750ms
+ 220 Blinding Flash | L0 O11 | implemented_binding | 300:AllianceBattle L0/O11
+     evidence packets-46120-264418546.jsonl:76315 at 266513718ms
+ 426 Savage Shot | L0 O11 | implemented_binding | 300:AllianceBattle L0/O11
+     evidence packets-46120-264418546.jsonl:87019 at 266566734ms
+  11 Distortion | L0 O10 | implemented_binding | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:78314 at 266522890ms
+  84 Animate Bone Fiend | L0 O10 | unsupported | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:87327 at 266568703ms
+ 123 Insidious Parasite | L0 O10 | implemented_binding | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:70059 at 266454968ms
+ 131 Barbed Signet | L0 O10 | implemented_binding | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:62259 at 266370234ms
+ 154 Plague Touch | L0 O10 | implemented_binding | 330:HeroesAscent L0/O10
+     evidence packets-108988-190116609.jsonl:207257 at 194188968ms
+ 160 Windborne Speed | L0 O10 | unsupported | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:79642 at 266530468ms
+ 196 Searing Heat | L0 O10 | unsupported | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O2, 300:AllianceBattle L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O4
+     evidence packets-110488-195213578.jsonl:8623 at 195391031ms
+ 258 Guardian | L0 O10 | implemented_binding | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:81260 at 266539375ms
+ 322 Power Attack | L0 O10 | implemented_binding | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:61565 at 266362562ms
+ 919 Spirit Burn | L0 O10 | unsupported | 300:AllianceBattle L0/O10
+     evidence packets-46120-264418546.jsonl:81697 at 266541515ms
+ 194 Flare | L0 O9 | implemented_binding | 80:HeroesAscent L0/O2, 593:HeroesAscent L0/O7
+     evidence packets-110488-195213578.jsonl:10371 at 195404546ms
+ 238 Armor of Mist | L0 O9 | unsupported | 300:AllianceBattle L0/O9
+     evidence packets-46120-264418546.jsonl:57317 at 266324000ms
+ 830 Ray of Judgment | L0 O9 | unsupported | 80:HeroesAscent L0/O3, 223:CompetitiveMission L0/O1, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O3
+     evidence packets-110488-195213578.jsonl:8446 at 195389062ms
+ 916 Lamentation | L0 O9 | unsupported | 300:AllianceBattle L0/O9
+     evidence packets-46120-264418546.jsonl:73235 at 266487093ms
+ 932 Complicate | L0 O9 | unsupported | 300:AllianceBattle L0/O9
+     evidence packets-46120-264418546.jsonl:83175 at 266547593ms
+1082 Shock Arrow | L0 O9 | implemented_binding | 300:AllianceBattle L0/O9
+     evidence packets-46120-264418546.jsonl:98440 at 266621750ms
+1478 Renewing Surge | L0 O9 | unsupported | 300:AllianceBattle L0/O9
+     evidence packets-46120-264418546.jsonl:81322 at 266539750ms
+2809 Obsidian Flame (PvP) | L0 O9 | unsupported | 80:HeroesAscent L0/O3, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O3
+     evidence packets-110488-195213578.jsonl:9362 at 195396875ms
+  25 Power Drain | L0 O8 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O5
+     evidence packets-110488-195213578.jsonl:9166 at 195395828ms
+  51 Shame | L0 O8 | unsupported | 300:AllianceBattle L0/O8
+     evidence packets-46120-264418546.jsonl:82640 at 266545187ms
+ 275 Mend Condition | L0 O8 | implemented_binding | 300:AllianceBattle L0/O8
+     evidence packets-46120-264418546.jsonl:71351 at 266466171ms
+ 399 Distracting Shot | L0 O8 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O4, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:11158 at 195414109ms
+ 974 Mantis Touch | L0 O8 | unsupported | 300:AllianceBattle L0/O8
+     evidence packets-46120-264418546.jsonl:77553 at 266519343ms
+ 991 Deny Hexes | L0 O8 | unsupported | 300:AllianceBattle L0/O8
+     evidence packets-46120-264418546.jsonl:70805 at 266460953ms
+1123 Life Sheath | L0 O8 | unsupported | 80:HeroesAscent L0/O3, 84:HeroesAscent L0/O4, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8754 at 195392390ms
+2064 Spotless Mind | L0 O8 | unsupported | 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O5, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212937 at 194321093ms
+3039 Rejuvenation (PvP) | L0 O8 | unsupported | 300:AllianceBattle L0/O8
+     evidence packets-46120-264418546.jsonl:72375 at 266478015ms
+  75 Arcane Echo | L0 O7 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:7700 at 195377421ms
+ 138 Dark Bond | L0 O7 | unsupported | 300:AllianceBattle L0/O7
+     evidence packets-46120-264418546.jsonl:91771 at 266591843ms
+ 864 Oppressive Gaze | L0 O7 | implemented_binding | 300:AllianceBattle L0/O7
+     evidence packets-46120-264418546.jsonl:62438 at 266371984ms
+2071 Zealous Sweep | L0 O7 | unsupported | 300:AllianceBattle L0/O7
+     evidence packets-46120-264418546.jsonl:66289 at 266419859ms
+3019 Bloodsong (PvP) | L0 O7 | unsupported | 300:AllianceBattle L0/O7
+     evidence packets-46120-264418546.jsonl:72814 at 266483468ms
+3447 Wastrel's Worry (PvP) | L0 O7 | outside_pinned_catalog | 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O5, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:214122 at 194328734ms
+ 135 Faintheartedness | L0 O6 | implemented_binding | 300:AllianceBattle L0/O6
+     evidence packets-46120-264418546.jsonl:61810 at 266365140ms
+ 143 Strip Enchantment | L0 O6 | implemented_binding | 300:AllianceBattle L0/O6
+     evidence packets-46120-264418546.jsonl:66458 at 266422125ms
+ 159 Weaken Armor | L0 O6 | implemented_binding | 84:HeroesAscent L0/O2, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:213248 at 194323359ms
+ 282 Word of Healing | L0 O6 | implemented_binding | 330:HeroesAscent L0/O6
+     evidence packets-108988-190116609.jsonl:207353 at 194189609ms
+ 313 Healing Touch | L0 O6 | implemented_binding | 330:HeroesAscent L0/O6
+     evidence packets-108988-190116609.jsonl:208223 at 194196953ms
+ 887 Signet of Rejuvenation | L0 O6 | unsupported | 80:HeroesAscent L0/O2, 300:AllianceBattle L0/O1, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:10320 at 195403875ms
+1070 Defile Enchantments | L0 O6 | unsupported | 84:HeroesAscent L0/O1, 300:AllianceBattle L0/O3, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:213757 at 194326656ms
+1368 Chilling Winds | L0 O6 | unsupported | 300:AllianceBattle L0/O6
+     evidence packets-46120-264418546.jsonl:83369 at 266548578ms
+1399 Shield of Absorption | L0 O6 | unsupported | 300:AllianceBattle L0/O6
+     evidence packets-46120-264418546.jsonl:99172 at 266625062ms
+2013 Grenth's Aura | L0 O6 | unsupported | 300:AllianceBattle L0/O6
+     evidence packets-46120-264418546.jsonl:71411 at 266466890ms
+2859 Enfeeble (PvP) | L0 O6 | implemented_binding | 300:AllianceBattle L0/O6
+     evidence packets-46120-264418546.jsonl:78293 at 266522812ms
+   1 Healing Signet | L0 O5 | implemented_binding | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:138962 at 266853046ms
+ 180 Aura of Restoration | L0 O5 | implemented_binding | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:79220 at 266527875ms
+ 187 Meteor | L0 O5 | implemented_binding | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:79511 at 266529687ms
+ 195 Lava Font | L0 O5 | implemented_binding | 80:HeroesAscent L0/O1, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:11066 at 195413093ms
+ 208 Water Attunement | L0 O5 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O3
+     evidence packets-110488-195213578.jsonl:7732 at 195380187ms
+ 246 Divine Intervention | L0 O5 | unsupported | 80:HeroesAscent L0/O1, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9474 at 195397546ms
+ 292 Infuse Health | L0 O5 | implemented_binding | 80:HeroesAscent L0/O2, 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:10479 at 195405609ms
+ 301 Remove Hex | L0 O5 | implemented_binding | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O3, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:214347 at 194331484ms
+ 333 "I Will Avenge You!" | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:80841 at 266537203ms
+ 355 Devastating Hammer | L0 O5 | implemented_binding | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:81037 at 266538218ms
+ 821 Icy Veins | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:62200 at 266369703ms
+1227 Essence Strike | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:95369 at 266608203ms
+1378 Master of Magic | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:57226 at 266320359ms
+1394 Healer's Covenant | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:60835 at 266357093ms
+1535 Crippling Sweep | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:101057 at 266634140ms
+2065 Spotless Soul | L0 O5 | unsupported | 300:AllianceBattle L0/O5
+     evidence packets-46120-264418546.jsonl:103392 at 266644656ms
+  16 Mantra of Concentration | L0 O4 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:8207 at 195386312ms
+  21 Inspired Enchantment | L0 O4 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:9311 at 195396687ms
+  28 Backfire | L0 O4 | implemented_binding | 300:AllianceBattle L0/O3, 330:HeroesAscent L0/O1
+     evidence packets-46120-264418546.jsonl:70271 at 266456625ms
+  52 Panic | L0 O4 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:8622 at 195391031ms
+ 127 Mark of Subversion | L0 O4 | implemented_binding | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:66252 at 266419296ms
+ 141 Rend Enchantments | L0 O4 | implemented_binding | 300:AllianceBattle L0/O1, 330:HeroesAscent L0/O3
+     evidence packets-46120-264418546.jsonl:105098 at 266652484ms
+ 151 Feast of Corruption | L0 O4 | implemented_binding | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:212904 at 194320609ms
+ 177 Ward Against Foes | L0 O4 | unsupported | 84:HeroesAscent L0/O2, 593:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:212713 at 194318671ms
+ 197 Fire Storm | L0 O4 | implemented_binding | 80:HeroesAscent L0/O2, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8884 at 195393203ms
+ 217 Crystal Wave | L0 O4 | implemented_binding | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:213066 at 194322187ms
+ 848 Reverse Hex | L0 O4 | unsupported | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:131869 at 266822484ms
+ 892 Quivering Blade | L0 O4 | unsupported | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:122912 at 266766156ms
+ 908 Marauder's Shot | L0 O4 | implemented_binding | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:99594 at 266627078ms
+1097 Teinai's Prison | L0 O4 | unsupported | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:107125 at 266663265ms
+1117 Heaven's Delight | L0 O4 | implemented_binding | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:66464 at 266422140ms
+2879 "Incoming!" (PvP) | L0 O4 | unsupported | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:211487 at 194301828ms
+3141 Lightning Reflexes (PvP) | L0 O4 | implemented_binding | 300:AllianceBattle L0/O4
+     evidence packets-46120-264418546.jsonl:107958 at 266667781ms
+3183 Migraine (PvP) | L0 O4 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-110488-195213578.jsonl:8809 at 195392406ms
+   2 Resurrection Signet | L0 O3 | implemented_binding | 80:HeroesAscent L0/O3
+     evidence packets-110488-195213578.jsonl:9515 at 195397984ms
+  10 Hex Breaker | L0 O3 | implemented_binding | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212301 at 194313421ms
+  46 Guilt | L0 O3 | unsupported | 300:AllianceBattle L0/O3
+     evidence packets-46120-264418546.jsonl:84496 at 266554515ms
+  95 Putrid Explosion | L0 O3 | unsupported | 330:HeroesAscent L0/O3
+     evidence packets-108988-190116609.jsonl:208786 at 194201859ms
+ 108 Suffering | L0 O3 | implemented_binding | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:213438 at 194324906ms
+ 153 Vampiric Gaze | L0 O3 | implemented_binding | 330:HeroesAscent L0/O3
+     evidence packets-108988-190116609.jsonl:208026 at 194195125ms
+ 170 Earthquake | L0 O3 | implemented_binding | 80:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9256 at 195396125ms
+ 189 Rodgort's Invocation | L0 O3 | implemented_binding | 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:213640 at 194325890ms
+ 211 Ice Spikes | L0 O3 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8818 at 195392531ms
+ 247 Symbol of Wrath | L0 O3 | implemented_binding | 80:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8899 at 195393421ms
+ 471 Frozen Soil | L0 O3 | unsupported | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212396 at 194314906ms
+ 813 Lyssa's Aura | L0 O3 | unsupported | 300:AllianceBattle L0/O3
+     evidence packets-46120-264418546.jsonl:69599 at 266452437ms
+ 832 Animate Flesh Golem | L0 O3 | unsupported | 300:AllianceBattle L0/O3
+     evidence packets-46120-264418546.jsonl:87085 at 266567203ms
+ 898 Overload | L0 O3 | implemented_binding | 300:AllianceBattle L0/O3
+     evidence packets-46120-264418546.jsonl:70034 at 266454828ms
+ 985 Caltrops | L0 O3 | unsupported | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212589 at 194317656ms
+1341 Frustration | L0 O3 | unsupported | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8625 at 195391031ms
+1365 Signet of Lost Souls | L0 O3 | implemented_binding | 330:HeroesAscent L0/O2, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:207756 at 194192859ms
+1650 Shadow Walk | L0 O3 | unsupported | 80:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8522 at 195390140ms
+2000 Earthen Shackles | L0 O3 | unsupported | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212809 at 194319843ms
+2006 Castigation Signet | L0 O3 | implemented_binding | 80:HeroesAscent L0/O1, 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9135 at 195395640ms
+3232 Heal Party (PvP) | L0 O3 | implemented_binding | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9046 at 195394859ms
+3443 Frenzy (PvP) | L0 O3 | outside_pinned_catalog | 300:AllianceBattle L0/O3
+     evidence packets-46120-264418546.jsonl:70285 at 266456703ms
+  30 Diversion | L0 O2 | implemented_binding | 300:AllianceBattle L0/O2
+     evidence packets-46120-264418546.jsonl:103779 at 266646375ms
+ 112 Desecrate Enchantments | L0 O2 | unsupported | 84:HeroesAscent L0/O1, 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:214165 at 194329062ms
+ 152 Taste of Death | L0 O2 | unsupported | 300:AllianceBattle L0/O2
+     evidence packets-46120-264418546.jsonl:86725 at 266565343ms
+ 173 Grasping Earth | L0 O2 | unsupported | 80:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:10034 at 195401828ms
+ 212 Frozen Burst | L0 O2 | implemented_binding | 330:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:207489 at 194190828ms
+ 239 Ward Against Harm | L0 O2 | unsupported | 330:HeroesAscent L0/O2
+     evidence packets-108988-190116609.jsonl:207025 at 194186593ms
+ 280 Heal Area | L0 O2 | implemented_binding | 593:HeroesAscent L0/O2
+     evidence packets-110228-194407640.jsonl:4931 at 194497093ms
+ 330 Cyclone Axe | L0 O2 | implemented_binding | 593:HeroesAscent L0/O2
+     evidence packets-110228-194407640.jsonl:3442 at 194489437ms
+1083 Unsteady Ground | L0 O2 | unsupported | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:8652 at 195391296ms
+1093 Teinai's Heat | L0 O2 | unsupported | 80:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9120 at 195395578ms
+1098 Mirror of Ice | L0 O2 | unsupported | 80:HeroesAscent L0/O1, 84:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9094 at 195395375ms
+1099 Teinai's Crystals | L0 O2 | unsupported | 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:207619 at 194191765ms
+1382 Freezing Gust | L0 O2 | unsupported | 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212558 at 194317421ms
+1401 Mending Touch | L0 O2 | implemented_binding | 300:AllianceBattle L0/O2
+     evidence packets-46120-264418546.jsonl:89016 at 266578328ms
+1603 Merciless Spear | L0 O2 | unsupported | 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:209022 at 194204015ms
+1995 Waste Not, Want Not | L0 O2 | unsupported | 80:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:9942 at 195401109ms
+2192 Glowing Ice | L0 O2 | implemented_binding | 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212735 at 194319156ms
+2880 "Never Surrender!" (PvP) | L0 O2 | unsupported | 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:208266 at 194197437ms
+3021 Savannah Heat (PvP) | L0 O2 | unsupported | 84:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:212738 at 194319156ms
+3032 "Stand Your Ground!" (PvP) | L0 O2 | unsupported | 330:HeroesAscent L0/O1, 593:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:206649 at 194181328ms
+3457 Protector's Defense (PvP) | L0 O2 | outside_pinned_catalog | 300:AllianceBattle L0/O2
+     evidence packets-46120-264418546.jsonl:83593 at 266549906ms
+  47 Ineptitude | L0 O1 | implemented_binding | 330:HeroesAscent L0/O1
+     evidence packets-110228-194407640.jsonl:28251 at 194984203ms
+  59 Signet of Weariness | L0 O1 | implemented_binding | 593:HeroesAscent L0/O1
+     evidence packets-110228-194407640.jsonl:5282 at 194500468ms
+  61 Leech Signet | L0 O1 | implemented_binding | 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:2378 at 195272953ms
+ 167 Eruption | L0 O1 | implemented_binding | 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:2095 at 195271218ms
+ 215 Maelstrom | L0 O1 | implemented_binding | 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:207237 at 194188578ms
+ 235 Blurred Vision | L0 O1 | implemented_binding | 593:HeroesAscent L0/O1
+     evidence packets-110228-194407640.jsonl:3376 at 194489078ms
+ 277 Mend Ailment | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:132192 at 266823640ms
+ 300 Contemplation of Purity | L0 O1 | unsupported | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:148465 at 266905828ms
+ 332 Bull's Strike | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:125028 at 266776875ms
+ 340 Disrupting Chop | L0 O1 | implemented_binding | 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:4223 at 195289828ms
+ 341 Swift Chop | L0 O1 | implemented_binding | 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:4034 at 195287875ms
+ 380 Bonetti's Defense | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:120759 at 266756250ms
+ 382 Sever Artery | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:140669 at 266860453ms
+ 384 Gash | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:123644 at 266769750ms
+ 396 Dual Shot | L0 O1 | implemented_binding | 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:207918 at 194194328ms
+ 433 Kindle Arrows | L0 O1 | implemented_binding | 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:208603 at 194200343ms
+ 457 Dust Trap | L0 O1 | unsupported | 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:207441 at 194190281ms
+ 460 Healing Spring | L0 O1 | unsupported | 330:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:207118 at 194187531ms
+ 853 Melandru's Shot | L0 O1 | unsupported | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:148250 at 266904281ms
+1121 Gift of Health | L0 O1 | implemented_binding | 84:HeroesAscent L0/O1
+     evidence packets-108988-190116609.jsonl:213389 at 194324265ms
+1400 Reversal of Damage | L0 O1 | unsupported | 223:CompetitiveMission L0/O1
+     evidence packets-46120-264418546.jsonl:9834 at 265001015ms
+1524 Eremite's Zeal | L0 O1 | unsupported | 593:HeroesAscent L0/O1
+     evidence packets-110488-195213578.jsonl:2779 at 195274500ms
+2057 Foul Feast | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:139381 at 266854921ms
+2734 Mind Wrack (PvP) | L0 O1 | implemented_binding | 300:AllianceBattle L0/O1
+     evidence packets-46120-264418546.jsonl:71588 at 266468812ms
+2853 ID 2853 | L0 O1 | unsupported | 330:HeroesAscent L0/O1
+     evidence packets-110228-194407640.jsonl:27769 at 194979421ms

@@ -1,0 +1,17 @@
+Enduring Toxin [800] renewal capture needed
+
+The fixed three-cast modern packet sample in
+20261024-signet-infection-bound/packets-108988-190116609.jsonl has no
+confirmed moving-target renewal. Target actor 30's status clears at
+190792843 and 190816343, exactly five seconds after the first two cast
+finishes; in the third window it clears at 190836234, 4953 ms after the
+finish. The third difference could reflect network timing, prior removal or
+another effect; it is not renewal proof. See docs/enduring-toxin.txt for
+source lines and source hash.
+
+Capture both packet and world logs for a target standing still for one cast,
+then one moving continuously through at least two five-second boundaries.
+Record target actor, start/finish, movement start/stop, hex application,
+renewal/status updates and final removal. A later-tick World test also needs
+movement history at the original deadline. The modern capture cannot supply
+the 2022 packet opcode or rendered acceptance by itself.

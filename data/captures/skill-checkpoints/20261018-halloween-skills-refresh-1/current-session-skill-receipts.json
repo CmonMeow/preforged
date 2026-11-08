@@ -1,0 +1,3115 @@
+{
+  "checkpoint": "20261018-halloween-skills-refresh-1",
+  "cutoff": "2026-10-18T23:37:33.786604+00:00",
+  "limitations": [
+    "Other/unassigned actors are not necessarily enemies.",
+    "Fallback names use historical GWCA aliases.",
+    "No baseline NPC population import."
+  ],
+  "skills": [
+    {
+      "id": 2,
+      "name": "Resurrection Signet",
+      "local": 0,
+      "other": 5,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 161571,
+          "tick_ms": 81927000,
+          "actor": 21,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Mantra of Recovery",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 77492,
+          "tick_ms": 80877265,
+          "actor": 36,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Power Drain",
+      "local": 0,
+      "other": 114,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246770,
+          "tick_ms": 86911593,
+          "actor": 19,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Backfire",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 350367,
+          "tick_ms": 88261375,
+          "actor": 116,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Diversion",
+      "local": 0,
+      "other": 3,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 350226,
+          "tick_ms": 88260375,
+          "actor": 116,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Arcane Conundrum",
+      "local": 0,
+      "other": 35,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246624,
+          "tick_ms": 86910359,
+          "actor": 17,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Energy Surge",
+      "local": 0,
+      "other": 44,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247727,
+          "tick_ms": 86923390,
+          "actor": 20,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Clumsiness",
+      "local": 0,
+      "other": 56,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246393,
+          "tick_ms": 86908515,
+          "actor": 234,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Ethereal Burden",
+      "local": 0,
+      "other": 60,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 35652,
+          "tick_ms": 80411093,
+          "actor": 145,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Ineptitude",
+      "local": 0,
+      "other": 43,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246449,
+          "tick_ms": 86908984,
+          "actor": 17,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "name": "Wastrel's Worry",
+      "local": 0,
+      "other": 12,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246329,
+          "tick_ms": 86907578,
+          "actor": 232,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Panic",
+      "local": 0,
+      "other": 72,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246719,
+          "tick_ms": 86911125,
+          "actor": 18,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Migraine",
+      "local": 0,
+      "other": 62,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 36386,
+          "tick_ms": 80416609,
+          "actor": 145,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Cry of Frustration",
+      "local": 0,
+      "other": 47,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246508,
+          "tick_ms": 86909390,
+          "actor": 20,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Signet of Weariness",
+      "local": 0,
+      "other": 3,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 265059,
+          "tick_ms": 87279984,
+          "actor": 79,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Leech Signet",
+      "local": 0,
+      "other": 61,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 36047,
+          "tick_ms": 80414484,
+          "actor": 153,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 62,
+      "name": "Signet of Humility",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 291489,
+          "tick_ms": 87547343,
+          "actor": 32,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Shatter Hex",
+      "local": 0,
+      "other": 62,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246887,
+          "tick_ms": 86912421,
+          "actor": 19,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Chaos Storm",
+      "local": 0,
+      "other": 7,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 264982,
+          "tick_ms": 87278031,
+          "actor": 79,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 78,
+      "name": "Epidemic",
+      "local": 0,
+      "other": 4,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 266289,
+          "tick_ms": 87303093,
+          "actor": 71,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Animate Bone Fiend",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 274173,
+          "tick_ms": 87359437,
+          "actor": 35,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Animate Bone Minions",
+      "local": 0,
+      "other": 58,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 268062,
+          "tick_ms": 87318890,
+          "actor": 30,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Verata's Sacrifice",
+      "local": 0,
+      "other": 18,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 292630,
+          "tick_ms": 87555218,
+          "actor": 34,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Barbs",
+      "local": 0,
+      "other": 26,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267146,
+          "tick_ms": 87313328,
+          "actor": 35,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Price of Failure",
+      "local": 0,
+      "other": 4,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 295519,
+          "tick_ms": 87577000,
+          "actor": 33,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 104,
+      "name": "Death Nova",
+      "local": 0,
+      "other": 83,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26138,
+          "tick_ms": 80300187,
+          "actor": 119,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 105,
+      "name": "Deathly Swarm",
+      "local": 0,
+      "other": 30,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267873,
+          "tick_ms": 87317609,
+          "actor": 8,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Rotting Flesh",
+      "local": 0,
+      "other": 25,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 291938,
+          "tick_ms": 87550984,
+          "actor": 34,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 110,
+      "name": "Unholy Feast",
+      "local": 0,
+      "other": 43,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 265339,
+          "tick_ms": 87284375,
+          "actor": 30,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Desecrate Enchantments",
+      "local": 0,
+      "other": 18,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267513,
+          "tick_ms": 87315359,
+          "actor": 35,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 114,
+      "name": "Aura of the Lich",
+      "local": 0,
+      "other": 17,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 288576,
+          "tick_ms": 87514984,
+          "actor": 34,
+          "map": null,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 116,
+      "name": "Dark Aura",
+      "local": 0,
+      "other": 10,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 249993,
+          "tick_ms": 87021031,
+          "actor": 271,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 118,
+      "name": "Enfeebling Blood",
+      "local": 0,
+      "other": 11,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 294600,
+          "tick_ms": 87569265,
+          "actor": 34,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "name": "Spiteful Spirit",
+      "local": 0,
+      "other": 6,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 291796,
+          "tick_ms": 87550015,
+          "actor": 33,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "name": "Barbed Signet",
+      "local": 0,
+      "other": 14,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25839,
+          "tick_ms": 80298421,
+          "actor": 119,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "name": "Dark Pact",
+      "local": 0,
+      "other": 27,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 39045,
+          "tick_ms": 80436140,
+          "actor": 146,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "name": "Malaise",
+      "local": 0,
+      "other": 17,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 268147,
+          "tick_ms": 87319609,
+          "actor": 8,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "name": "Strip Enchantment",
+      "local": 0,
+      "other": 19,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289834,
+          "tick_ms": 87536609,
+          "actor": 38,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "name": "Signet of Agony",
+      "local": 0,
+      "other": 6,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 308929,
+          "tick_ms": 87677484,
+          "actor": 126,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "name": "Plague Sending",
+      "local": 0,
+      "other": 5,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 308065,
+          "tick_ms": 87670625,
+          "actor": 126,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 150,
+      "name": "Mark of Pain",
+      "local": 0,
+      "other": 84,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 261846,
+          "tick_ms": 87237781,
+          "actor": 29,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "name": "Feast of Corruption",
+      "local": 0,
+      "other": 134,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 261620,
+          "tick_ms": 87235000,
+          "actor": 29,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "name": "Taste of Death",
+      "local": 0,
+      "other": 19,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 303815,
+          "tick_ms": 87640718,
+          "actor": 53,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "name": "Vampiric Gaze",
+      "local": 0,
+      "other": 28,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290024,
+          "tick_ms": 87537609,
+          "actor": 38,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 158,
+      "name": "Touch of Agony",
+      "local": 0,
+      "other": 15,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 250550,
+          "tick_ms": 87036875,
+          "actor": 272,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 164,
+      "name": "Elemental Attunement",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 322316,
+          "tick_ms": 87812453,
+          "actor": 153,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 169,
+      "name": "Earth Attunement",
+      "local": 19,
+      "other": 10,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 40005,
+          "tick_ms": 80444843,
+          "actor": 61,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 265931,
+          "tick_ms": 87296937,
+          "actor": 17,
+          "map": 60,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 170,
+      "name": "Earthquake",
+      "local": 0,
+      "other": 11,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 46629,
+          "tick_ms": 80501578,
+          "actor": 163,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "name": "Stoning",
+      "local": 43,
+      "other": 70,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 30501,
+          "tick_ms": 80356484,
+          "actor": 139,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267616,
+          "tick_ms": 87316031,
+          "actor": 17,
+          "map": 60,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "name": "Stone Daggers",
+      "local": 0,
+      "other": 133,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25487,
+          "tick_ms": 80296500,
+          "actor": 109,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 174,
+      "name": "Aftershock",
+      "local": 31,
+      "other": 10,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 30502,
+          "tick_ms": 80356484,
+          "actor": 135,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 255498,
+          "tick_ms": 87140843,
+          "actor": 13,
+          "map": 837,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "name": "Incendiary Bonds",
+      "local": 0,
+      "other": 23,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 250897,
+          "tick_ms": 87043375,
+          "actor": 22,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 180,
+      "name": "Aura of Restoration",
+      "local": 24,
+      "other": 21,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 250830,
+          "tick_ms": 87041890,
+          "actor": 22,
+          "map": 837,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 265879,
+          "tick_ms": 87295843,
+          "actor": 17,
+          "map": 60,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 184,
+      "name": "Fire Attunement",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 77329,
+          "tick_ms": 80874406,
+          "actor": 45,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 190,
+      "name": "Mark of Rodgort",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 323339,
+          "tick_ms": 87827765,
+          "actor": 153,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 191,
+      "name": "Immolate",
+      "local": 0,
+      "other": 22,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 250765,
+          "tick_ms": 87040046,
+          "actor": 22,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 192,
+      "name": "Meteor Shower",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 322587,
+          "tick_ms": 87816843,
+          "actor": 153,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 196,
+      "name": "Searing Heat",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 322444,
+          "tick_ms": 87814140,
+          "actor": 153,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "name": "Ice Spikes",
+      "local": 0,
+      "other": 29,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 299592,
+          "tick_ms": 87616984,
+          "actor": 52,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "name": "Frozen Burst",
+      "local": 0,
+      "other": 5,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 305590,
+          "tick_ms": 87651468,
+          "actor": 56,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 219,
+      "name": "Obsidian Flame",
+      "local": 0,
+      "other": 115,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25021,
+          "tick_ms": 80291984,
+          "actor": 109,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 221,
+      "name": "Conjure Lightning",
+      "local": 0,
+      "other": 5,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 268008,
+          "tick_ms": 87318578,
+          "actor": 127,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 223,
+      "name": "Chain Lightning",
+      "local": 0,
+      "other": 15,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 268011,
+          "tick_ms": 87318578,
+          "actor": 121,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 224,
+      "name": "Enervating Charge",
+      "local": 0,
+      "other": 11,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 268010,
+          "tick_ms": 87318578,
+          "actor": 100,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 234,
+      "name": "Deep Freeze",
+      "local": 0,
+      "other": 19,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 299931,
+          "tick_ms": 87618875,
+          "actor": 63,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 238,
+      "name": "Armor of Mist",
+      "local": 0,
+      "other": 66,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 293521,
+          "tick_ms": 87561109,
+          "actor": 56,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 245,
+      "name": "Protective Spirit",
+      "local": 0,
+      "other": 37,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247194,
+          "tick_ms": 86917171,
+          "actor": 15,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 252,
+      "name": "Banish",
+      "local": 0,
+      "other": 111,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25428,
+          "tick_ms": 80296062,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 268,
+      "name": "Unyielding Aura",
+      "local": 0,
+      "other": 9,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246018,
+          "tick_ms": 86900781,
+          "actor": 14,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 272,
+      "name": "Balthazar's Aura",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 250574,
+          "tick_ms": 87037390,
+          "actor": 10,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 279,
+      "name": "Divine Healing",
+      "local": 0,
+      "other": 10,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 251193,
+          "tick_ms": 87049765,
+          "actor": 14,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 281,
+      "name": "Orison of Healing",
+      "local": 0,
+      "other": 34,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 251463,
+          "tick_ms": 87053468,
+          "actor": 14,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 283,
+      "name": "Dwayna's Kiss",
+      "local": 0,
+      "other": 48,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 251666,
+          "tick_ms": 87056531,
+          "actor": 15,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 288,
+      "name": "Healing Breeze",
+      "local": 0,
+      "other": 49,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 251703,
+          "tick_ms": 87057546,
+          "actor": 14,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 292,
+      "name": "Infuse Health",
+      "local": 0,
+      "other": 31,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290369,
+          "tick_ms": 87539437,
+          "actor": 45,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 293,
+      "name": "Signet of Devotion",
+      "local": 0,
+      "other": 43,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26089,
+          "tick_ms": 80299796,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 296,
+      "name": "Bane Signet",
+      "local": 0,
+      "other": 7,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 266912,
+          "tick_ms": 87311796,
+          "actor": 16,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 299,
+      "name": "Shielding Hands",
+      "local": 0,
+      "other": 27,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246752,
+          "tick_ms": 86911593,
+          "actor": 15,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "name": "Smite Hex",
+      "local": 0,
+      "other": 13,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290874,
+          "tick_ms": 87542421,
+          "actor": 45,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 307,
+      "name": "Reversal of Fortune",
+      "local": 0,
+      "other": 12,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 270890,
+          "tick_ms": 87336171,
+          "actor": 14,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 311,
+      "name": "Draw Conditions",
+      "local": 0,
+      "other": 12,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267238,
+          "tick_ms": 87313796,
+          "actor": 14,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 318,
+      "name": "Defy Pain",
+      "local": 0,
+      "other": 13,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 79372,
+          "tick_ms": 80899906,
+          "actor": 111,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 321,
+      "name": "Wild Blow",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 297593,
+          "tick_ms": 87593531,
+          "actor": 93,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 322,
+      "name": "Power Attack",
+      "local": 0,
+      "other": 55,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26567,
+          "tick_ms": 80303171,
+          "actor": 127,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 332,
+      "name": "Bull's Strike",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 101116,
+          "tick_ms": 81148328,
+          "actor": 133,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 333,
+      "name": "\"I Will Avenge You!\"",
+      "local": 0,
+      "other": 17,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290423,
+          "tick_ms": 87539609,
+          "actor": 36,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 346,
+      "name": "Frenzy",
+      "local": 0,
+      "other": 6,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289672,
+          "tick_ms": 87535656,
+          "actor": 35,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 347,
+      "name": "Endure Pain",
+      "local": 0,
+      "other": 46,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 48836,
+          "tick_ms": 80534281,
+          "actor": 133,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 348,
+      "name": "\"Watch Yourself!\"",
+      "local": 0,
+      "other": 37,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 30878,
+          "tick_ms": 80358546,
+          "actor": 133,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 351,
+      "name": "Mighty Blow",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 331526,
+          "tick_ms": 87893140,
+          "actor": 58,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 353,
+      "name": "Crude Swing",
+      "local": 0,
+      "other": 19,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 292174,
+          "tick_ms": 87552546,
+          "actor": 30,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 354,
+      "name": "Earth Shaker",
+      "local": 0,
+      "other": 5,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 304447,
+          "tick_ms": 87644812,
+          "actor": 55,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 381,
+      "name": "Hundred Blades",
+      "local": 0,
+      "other": 76,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25416,
+          "tick_ms": 80295953,
+          "actor": 29,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 382,
+      "name": "Sever Artery",
+      "local": 0,
+      "other": 22,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290094,
+          "tick_ms": 87537953,
+          "actor": 35,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 383,
+      "name": "Galrath Slash",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 86154,
+          "tick_ms": 80968484,
+          "actor": 139,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 384,
+      "name": "Gash",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 320622,
+          "tick_ms": 87793421,
+          "actor": 41,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 392,
+      "name": "Pin Down",
+      "local": 0,
+      "other": 8,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 268122,
+          "tick_ms": 87319484,
+          "actor": 32,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "name": "Dual Shot",
+      "local": 0,
+      "other": 14,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 266750,
+          "tick_ms": 87311109,
+          "actor": 10,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 399,
+      "name": "Distracting Shot",
+      "local": 0,
+      "other": 9,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 291359,
+          "tick_ms": 87546109,
+          "actor": 39,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 428,
+      "name": "Incendiary Arrows",
+      "local": 0,
+      "other": 22,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 266748,
+          "tick_ms": 87311109,
+          "actor": 13,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 435,
+      "name": "Apply Poison",
+      "local": 0,
+      "other": 57,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 261561,
+          "tick_ms": 87233406,
+          "actor": 25,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 446,
+      "name": "Troll Unguent",
+      "local": 0,
+      "other": 21,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267694,
+          "tick_ms": 87316328,
+          "actor": 13,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 453,
+      "name": "Lightning Reflexes",
+      "local": 0,
+      "other": 5,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 270137,
+          "tick_ms": 87331687,
+          "actor": 9,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 471,
+      "name": "Frozen Soil",
+      "local": 0,
+      "other": 7,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267870,
+          "tick_ms": 87317609,
+          "actor": 11,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 475,
+      "name": "Quickening Zephyr",
+      "local": 0,
+      "other": 7,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267076,
+          "tick_ms": 87312765,
+          "actor": 9,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 510,
+      "name": "Deafening Roar",
+      "local": 0,
+      "other": 15,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267478,
+          "tick_ms": 87315296,
+          "actor": 8,
+          "map": 60,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 512,
+      "name": "Crippling Attack",
+      "local": 0,
+      "other": 8,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 297794,
+          "tick_ms": 87595515,
+          "actor": 93,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 791,
+      "name": "Flesh of My Flesh",
+      "local": 0,
+      "other": 2,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 306599,
+          "tick_ms": 87659296,
+          "actor": 26,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 821,
+      "name": "Icy Veins",
+      "local": 0,
+      "other": 44,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 31093,
+          "tick_ms": 80359781,
+          "actor": 129,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 830,
+      "name": "Ray of Judgment",
+      "local": 0,
+      "other": 81,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25793,
+          "tick_ms": 80298109,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 834,
+      "name": "Reckless Haste",
+      "local": 0,
+      "other": 8,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289613,
+          "tick_ms": 87535140,
+          "actor": 37,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 851,
+      "name": "Sun and Moon Slash",
+      "local": 0,
+      "other": 4,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 301944,
+          "tick_ms": 87629015,
+          "actor": 116,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 882,
+      "name": "Signet of Disenchantment",
+      "local": 0,
+      "other": 3,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 293545,
+          "tick_ms": 87561265,
+          "actor": 32,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 887,
+      "name": "Signet of Rejuvenation",
+      "local": 0,
+      "other": 41,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 251585,
+          "tick_ms": 87055109,
+          "actor": 14,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 892,
+      "name": "Quivering Blade",
+      "local": 0,
+      "other": 10,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 32033,
+          "tick_ms": 80365796,
+          "actor": 130,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 899,
+      "name": "Images of Remorse",
+      "local": 0,
+      "other": 89,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 36514,
+          "tick_ms": 80417328,
+          "actor": 153,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 911,
+      "name": "Union",
+      "local": 0,
+      "other": 31,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246587,
+          "tick_ms": 86910187,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 934,
+      "name": "Unnatural Signet",
+      "local": 0,
+      "other": 183,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246379,
+          "tick_ms": 86908453,
+          "actor": 18,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 935,
+      "name": "Rising Bile",
+      "local": 0,
+      "other": 10,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289832,
+          "tick_ms": 87536609,
+          "actor": 37,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 937,
+      "name": "Shockwave",
+      "local": 31,
+      "other": 0,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 255250,
+          "tick_ms": 87139062,
+          "actor": 13,
+          "map": 837,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 944,
+      "name": "Signet of Strength",
+      "local": 0,
+      "other": 90,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25294,
+          "tick_ms": 80294968,
+          "actor": 127,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 952,
+      "name": "Death's Charge",
+      "local": 11,
+      "other": 0,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 255154,
+          "tick_ms": 87138046,
+          "actor": 13,
+          "map": 837,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 979,
+      "name": "Mistrust",
+      "local": 0,
+      "other": 93,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246564,
+          "tick_ms": 86909656,
+          "actor": 19,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 982,
+      "name": "Shelter",
+      "local": 0,
+      "other": 44,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246375,
+          "tick_ms": 86908453,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1052,
+      "name": "Accumulated Pain",
+      "local": 0,
+      "other": 75,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 36084,
+          "tick_ms": 80414656,
+          "actor": 145,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1066,
+      "name": "Spoil Victor",
+      "local": 0,
+      "other": 31,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289279,
+          "tick_ms": 87533109,
+          "actor": 38,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1068,
+      "name": "Bitter Chill",
+      "local": 0,
+      "other": 188,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25036,
+          "tick_ms": 80292375,
+          "actor": 110,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1069,
+      "name": "Taste of Pain",
+      "local": 0,
+      "other": 3,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 327058,
+          "tick_ms": 87867656,
+          "actor": 54,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1075,
+      "name": "Vampiric Swarm",
+      "local": 0,
+      "other": 44,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289546,
+          "tick_ms": 87534859,
+          "actor": 38,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1098,
+      "name": "Mirror of Ice",
+      "local": 0,
+      "other": 45,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 300078,
+          "tick_ms": 87619750,
+          "actor": 125,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1114,
+      "name": "Spirit Bond",
+      "local": 0,
+      "other": 35,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247114,
+          "tick_ms": 86916125,
+          "actor": 15,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1117,
+      "name": "Heaven's Delight",
+      "local": 0,
+      "other": 7,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290302,
+          "tick_ms": 87539140,
+          "actor": 23,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1118,
+      "name": "Healing Burst",
+      "local": 0,
+      "other": 41,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 251174,
+          "tick_ms": 87049265,
+          "actor": 15,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1198,
+      "name": "Broad Head Arrow",
+      "local": 0,
+      "other": 26,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289675,
+          "tick_ms": 87535656,
+          "actor": 39,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1230,
+      "name": "Boon of Creation",
+      "local": 0,
+      "other": 21,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246021,
+          "tick_ms": 86900781,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1232,
+      "name": "Armor of Unfeeling",
+      "local": 0,
+      "other": 26,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247331,
+          "tick_ms": 86918656,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1238,
+      "name": "Signet of Creation",
+      "local": 0,
+      "other": 37,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247161,
+          "tick_ms": 86916609,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1240,
+      "name": "Soul Twisting",
+      "local": 0,
+      "other": 48,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246006,
+          "tick_ms": 86900281,
+          "actor": 16,
+          "map": null,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1249,
+      "name": "Displacement",
+      "local": 0,
+      "other": 33,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247047,
+          "tick_ms": 86915125,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1269,
+      "name": "Signet of Rage",
+      "local": 0,
+      "other": 72,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25200,
+          "tick_ms": 80294281,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1336,
+      "name": "Spiritual Pain",
+      "local": 0,
+      "other": 199,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246569,
+          "tick_ms": 86909796,
+          "actor": 18,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1341,
+      "name": "Frustration",
+      "local": 0,
+      "other": 32,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247406,
+          "tick_ms": 86919171,
+          "actor": 17,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1374,
+      "name": "Ebon Hawk",
+      "local": 38,
+      "other": 114,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25223,
+          "tick_ms": 80294515,
+          "actor": 109,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267864,
+          "tick_ms": 87317609,
+          "actor": 17,
+          "map": 60,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 1379,
+      "name": "Glowing Gaze",
+      "local": 0,
+      "other": 1,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 323483,
+          "tick_ms": 87829265,
+          "actor": 153,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1382,
+      "name": "Freezing Gust",
+      "local": 0,
+      "other": 44,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 299356,
+          "tick_ms": 87615250,
+          "actor": 52,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1392,
+      "name": "Watchful Healing",
+      "local": 0,
+      "other": 68,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26495,
+          "tick_ms": 80302578,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1393,
+      "name": "Healer's Boon",
+      "local": 0,
+      "other": 6,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 70571,
+          "tick_ms": 80802265,
+          "actor": 101,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1399,
+      "name": "Shield of Absorption",
+      "local": 0,
+      "other": 13,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 258471,
+          "tick_ms": 87186750,
+          "actor": 15,
+          "map": 837,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1400,
+      "name": "Reversal of Damage",
+      "local": 0,
+      "other": 136,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26716,
+          "tick_ms": 80304296,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1407,
+      "name": "Lion's Comfort",
+      "local": 0,
+      "other": 14,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 291076,
+          "tick_ms": 87544078,
+          "actor": 36,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1414,
+      "name": "Enraging Charge",
+      "local": 0,
+      "other": 27,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289351,
+          "tick_ms": 87533609,
+          "actor": 36,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1416,
+      "name": "Barbarous Slice",
+      "local": 0,
+      "other": 4,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 32657,
+          "tick_ms": 80370296,
+          "actor": 130,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1469,
+      "name": "Crossfire",
+      "local": 0,
+      "other": 39,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 290120,
+          "tick_ms": 87538125,
+          "actor": 39,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1483,
+      "name": "Banishing Strike",
+      "local": 0,
+      "other": 32,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26506,
+          "tick_ms": 80302687,
+          "actor": 112,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1484,
+      "name": "Mystic Sweep",
+      "local": 0,
+      "other": 45,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25380,
+          "tick_ms": 80295750,
+          "actor": 115,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1485,
+      "name": "Eremite's Attack",
+      "local": 0,
+      "other": 48,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26036,
+          "tick_ms": 80299640,
+          "actor": 113,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1486,
+      "name": "Reap Impurities",
+      "local": 0,
+      "other": 6,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 53902,
+          "tick_ms": 80600484,
+          "actor": 152,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1496,
+      "name": "Balthazar's Rage",
+      "local": 0,
+      "other": 68,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25260,
+          "tick_ms": 80294843,
+          "actor": 115,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1546,
+      "name": "Blazing Spear",
+      "local": 0,
+      "other": 13,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 37363,
+          "tick_ms": 80422015,
+          "actor": 141,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1547,
+      "name": "Mighty Throw",
+      "local": 0,
+      "other": 11,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26370,
+          "tick_ms": 80301609,
+          "actor": 117,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1549,
+      "name": "Harrier's Toss",
+      "local": 0,
+      "other": 50,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25707,
+          "tick_ms": 80297609,
+          "actor": 117,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1553,
+      "name": "Anthem of Fury",
+      "local": 0,
+      "other": 76,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25080,
+          "tick_ms": 80292843,
+          "actor": 116,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1558,
+      "name": "\"Go for the Eyes!\"",
+      "local": 0,
+      "other": 128,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 24997,
+          "tick_ms": 80291328,
+          "actor": 116,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1595,
+      "name": "\"Fall Back!\"",
+      "local": 0,
+      "other": 57,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246154,
+          "tick_ms": 86903812,
+          "actor": 16,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1657,
+      "name": "Signet of Clumsiness",
+      "local": 0,
+      "other": 44,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 247538,
+          "tick_ms": 86920953,
+          "actor": 17,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1658,
+      "name": "Symbolic Posture",
+      "local": 0,
+      "other": 55,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 35850,
+          "tick_ms": 80412703,
+          "actor": 145,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1661,
+      "name": "Glowstone",
+      "local": 32,
+      "other": 0,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 267761,
+          "tick_ms": 87316906,
+          "actor": 17,
+          "map": 60,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 1695,
+      "name": "Soldier's Strike",
+      "local": 0,
+      "other": 66,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 30389,
+          "tick_ms": 80355875,
+          "actor": 130,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1761,
+      "name": "Zealous Vow",
+      "local": 0,
+      "other": 65,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 24972,
+          "tick_ms": 80290828,
+          "actor": 115,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1779,
+      "name": "\"Make Your Time!\"",
+      "local": 0,
+      "other": 78,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 24973,
+          "tick_ms": 80290828,
+          "actor": 116,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 1997,
+      "name": "Withering Aura",
+      "local": 0,
+      "other": 17,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 30702,
+          "tick_ms": 80357781,
+          "actor": 129,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2004,
+      "name": "Smite Condition",
+      "local": 0,
+      "other": 6,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 292815,
+          "tick_ms": 87556265,
+          "actor": 45,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2006,
+      "name": "Castigation Signet",
+      "local": 0,
+      "other": 69,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26868,
+          "tick_ms": 80305562,
+          "actor": 118,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2054,
+      "name": "Shrinking Armor",
+      "local": 0,
+      "other": 71,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 35891,
+          "tick_ms": 80413203,
+          "actor": 145,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2056,
+      "name": "Wandering Eye",
+      "local": 0,
+      "other": 36,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 246870,
+          "tick_ms": 86912375,
+          "actor": 17,
+          "map": 18,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2058,
+      "name": "Putrid Bile",
+      "local": 0,
+      "other": 52,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25522,
+          "tick_ms": 80296671,
+          "actor": 119,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2088,
+      "name": "Trample",
+      "local": 0,
+      "other": 55,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25524,
+          "tick_ms": 80296671,
+          "actor": 127,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2143,
+      "name": "Disrupting Shot",
+      "local": 0,
+      "other": 9,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 289354,
+          "tick_ms": 87533609,
+          "actor": 39,
+          "map": 845,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2238,
+      "name": "Spear of Redemption",
+      "local": 0,
+      "other": 20,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25384,
+          "tick_ms": 80295750,
+          "actor": 116,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2758,
+      "name": "Candy Corn Strike",
+      "local": 42,
+      "other": 1613,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 24969,
+          "tick_ms": 80290765,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25122,
+          "tick_ms": 80293421,
+          "actor": 31,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2759,
+      "name": "Rocket Propelled Gobstopper",
+      "local": 4,
+      "other": 136,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26146,
+          "tick_ms": 80300250,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 26494,
+          "tick_ms": 80302578,
+          "actor": 35,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2760,
+      "name": "Rain of Terror spell",
+      "local": 8,
+      "other": 404,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 24980,
+          "tick_ms": 80290921,
+          "actor": 34,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25485,
+          "tick_ms": 80296484,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 2761,
+      "name": "Cry of Madness",
+      "local": 2,
+      "other": 103,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25649,
+          "tick_ms": 80297609,
+          "actor": 21,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 39424,
+          "tick_ms": 80438703,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 2762,
+      "name": "Sugar Infusion",
+      "local": 2,
+      "other": 1423,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25136,
+          "tick_ms": 80293562,
+          "actor": 25,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 40872,
+          "tick_ms": 80453031,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 2763,
+      "name": "Feast of Vengeance",
+      "local": 13,
+      "other": 709,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25250,
+          "tick_ms": 80294718,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25313,
+          "tick_ms": 80295218,
+          "actor": 34,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2764,
+      "name": "Animate Candy Minions",
+      "local": 4,
+      "other": 314,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25738,
+          "tick_ms": 80297781,
+          "actor": 34,
+          "map": 868,
+          "ownership": "other"
+        },
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 27604,
+          "tick_ms": 80313968,
+          "actor": 20,
+          "map": 868,
+          "ownership": "local"
+        }
+      ]
+    },
+    {
+      "id": 2768,
+      "name": "Mad King Pony Support",
+      "local": 0,
+      "other": 25,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 25217,
+          "tick_ms": 80294515,
+          "actor": 29,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    },
+    {
+      "id": 2770,
+      "name": "Maddening Laughter",
+      "local": 0,
+      "other": 8,
+      "receipts": [
+        {
+          "file": "packets-38060-79906390.jsonl",
+          "line": 46591,
+          "tick_ms": 80501281,
+          "actor": 29,
+          "map": 868,
+          "ownership": "other"
+        }
+      ]
+    }
+  ]
+}

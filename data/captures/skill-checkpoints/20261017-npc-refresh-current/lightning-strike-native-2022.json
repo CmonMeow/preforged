@@ -1,0 +1,85 @@
+{
+  "checkpoint": "20261017-npc-refresh-current",
+  "cutoff": "2026-10-17T04:38:55.921140+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "start": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 173562,
+    "tick_ms": 19331218,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e000000de000000",
+    "kind": 60
+  },
+  "finish": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 173571,
+    "tick_ms": 19332125,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003a0000001900000000000000",
+    "kind": 58
+  },
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 222,
+    "override_after": 2139095040
+  },
+  "visuals": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 173572,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19332125,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f00000015000000190000008a010000"
+      },
+      "native": {
+        "actor": 42,
+        "encoded_file": "913b00010000",
+        "flags": 1
+      },
+      "native_actor_normalization": "caster42,target43; original receipt retained",
+      "wire2022": "9e8015000000190000008a010000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 173573,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 19332125,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001e000000190000008b010000"
+      },
+      "native": {
+        "actor": 43,
+        "encoded_file": "dbd100010000",
+        "flags": 1
+      },
+      "native_actor_normalization": "caster42,target43; original receipt retained",
+      "wire2022": "9f80140000001e000000190000008b010000"
+    }
+  ],
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lightning_Strike.html",
+  "wiki_sha256": "268a89c5695463d955a3e3191f645349b3524c80b4be7126cc8d739c5879c031",
+  "tool_sha256": "5ef7895cbe070d00256dddcfc1d9f6e64e386c0fda74368e291c9ab126e981e5",
+  "limits": [
+    "Native model/asset services stubbed; rendered acceptance not established.",
+    "This local cast proves initial target395,not an isolated Overcast second-hit sequence.",
+    "Three-second natural-expiry behavior and early-removal exception come from the historical description,not these particles.",
+    "No runtime implementation or source-binding credit is established by this proof."
+  ]
+}

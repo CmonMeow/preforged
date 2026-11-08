@@ -1,0 +1,56 @@
+{
+  "skill": 101,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 101,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 30,
+    "0x48": 30,
+    "0x4c": 5,
+    "0x5c": 1,
+    "0x60": 15,
+    "0x78": 2077,
+    "0x7c": 190
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "dc3a00010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 66441,
+    "tick_ms": 17125109,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000065000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 66455,
+    "tick_ms": 17126015,
+    "hex": "a0000000140000001e00000019000000be000000"
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Barbs.html",
+  "wiki_sha256": "0e8ee13eed4fce8b689726d34480ae6af17cce41a6686c2566216738f760d4ff",
+  "tool_sha256": "92b6bb623bb2ae883224304a15a638f9806b1d2d9506ebe144fc27002fad0952",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Original offline first consumers,not rendered acceptance.",
+    "Observed906ms cast-start to target-body interval does not override native2second base cast;modifiers/arrival timing need separate attribution.",
+    "Archived wiki requires separate armor-ignoring damage after physical damage;damage-kind,positive-hit,modifier and recursive-reaction world integration remain pending.",
+    "No skill101 runtime binding added."
+  ]
+}

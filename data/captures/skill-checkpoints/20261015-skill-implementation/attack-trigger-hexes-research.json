@@ -1,0 +1,181 @@
+{
+  "state": "source runtime/world binding implemented; full build and172 regression tests pass; rendered/retail comparisons pending",
+  "skills": [
+    {
+      "id": 43,
+      "wiki_sha256": "68cb7e7dfefde570a74d899d10115d46b0bd4664fd9636e6b82cea1de0ac7136",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Clumsiness.html",
+      "capture": {
+        "id": 43,
+        "name": "Clumsiness",
+        "obtainable_baseline": true,
+        "runtime_status": "unsupported",
+        "local_starts": 1,
+        "other_or_unassigned_starts": 0,
+        "local_finished": 1,
+        "local_stopped": 0,
+        "local_instant": 0,
+        "activation_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92599,
+            "tick_ms": 8443171,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e0000002b000000",
+            "kind": 60
+          }
+        ],
+        "endpoint_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 92616,
+            "tick_ms": 8445218,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          }
+        ],
+        "body_effect_evidence": []
+      }
+    },
+    {
+      "id": 47,
+      "wiki_sha256": "c4f644eb0cbab38d83abb38cf06451d1427a6ee3d6a56d79f365d0e3b8ecffb3",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ineptitude.html",
+      "capture": {
+        "id": 47,
+        "name": "Ineptitude",
+        "obtainable_baseline": true,
+        "runtime_status": "unsupported",
+        "local_starts": 1,
+        "other_or_unassigned_starts": 0,
+        "local_finished": 1,
+        "local_stopped": 0,
+        "local_instant": 0,
+        "activation_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 97430,
+            "tick_ms": 8495750,
+            "actor": 25,
+            "map": 280,
+            "hex": "a00000003c000000190000001e0000002f000000",
+            "kind": 60
+          }
+        ],
+        "endpoint_evidence": [
+          {
+            "file": "packets-6468-5728843.jsonl",
+            "line": 97445,
+            "tick_ms": 8496937,
+            "actor": 25,
+            "map": 280,
+            "hex": "9f0000003a0000001900000000000000",
+            "kind": 58
+          }
+        ],
+        "body_effect_evidence": []
+      }
+    }
+  ],
+  "native_proof": "tools/protocol/hex_control_2022.py",
+  "standalone_test": {
+    "source": "tests/attack_trigger_hexes.cpp",
+    "binary": "build/tests/attack_trigger_hexes.exe",
+    "result": "MSVC C++20 compile and run passed",
+    "coverage": [
+      "rank12 damage76/114",
+      "4second duration,166-unit adjacent area",
+      "Clumsiness interrupt versus Ineptitude10second Blindness",
+      "exact effect consumed once",
+      "future/expired event rejection",
+      "stale target scope/generation rejection",
+      "forged damage plan rejection"
+    ],
+    "cmake": "attack_trigger_hexes_test built and focused CTest passed"
+  },
+  "important_retail_details": [
+    "Clumsiness: interruption-prevention skills trigger but do not prevent its interruption/damage, according to local wiki anomaly.",
+    "Ineptitude: Blindness applies before the attack, usually causing that attack to miss."
+  ],
+  "remaining": [
+    "rendered visual/animation verification",
+    "exact retail trigger timing and multi-hex ordering comparison",
+    "additional attack-specific mechanics beyond Power Attack/Hunters Shot",
+    "broader NPC AI behavior and protection implementation"
+  ],
+  "integration_audit": {
+    "player_ordinary": "start_ordinary_animation_locked is reached after valid ordinary attack admission and per-swing windup readiness; rejected movement/targets do not reach it.",
+    "player_skill": "Runtime begin calls attack_activity after target/resource admission; control_epoch is captured before that callback, but pending_attack_epoch is currently sampled afterward. Preserve a pre-trigger epoch when adding reactive interruptions.",
+    "npc": "LiveActor.begin_action validates alive state, lifetime and condition clock before control.begin; attack reactions must exclude spell actions.",
+    "timing_limit": "Captured casts/effect resources do not yet establish exact attack-start reaction timing or multi-hex ordering."
+  },
+  "npc_tests": [
+    "rejected pre-clock attack does not consume hex",
+    "spell action does not consume hex",
+    "admitted attack consumes once",
+    "Clumsiness rank12 deals76 and invalidates attack token",
+    "Ineptitude rank12 deals114 and applies Blindness while token stays valid",
+    "Ineptitude Blindness triggers Fragility17damage plus its own114damage",
+    "typed event retains original effect/source identity"
+  ],
+  "attack_skill_epoch_fix": {
+    "source": "src/runtime/gw_skill_casting.h",
+    "behavior": "sample pending attack epoch before synchronous attack_activity callback",
+    "test": "tests/skill_casting.cpp immediate callback interruption at6000ms prevents later hit",
+    "result": "passed"
+  },
+  "focused_suites": {
+    "skill_casting": "rebuilt/passed",
+    "npc_combat_catalog": "rebuilt/passed",
+    "captured_skills": "rebuilt/passed",
+    "attack_trigger_hexes": "passed"
+  },
+  "source_hashes": {
+    "src\\runtime\\gw_npc_combat_catalog.h": "7bb41c267abddc808eb42e3b57a2c66eb74d58610ad7f39ba77b9031c614c48f",
+    "src\\runtime\\gw_skill_casting.h": "5e4f1a43029c1d0e3b1f4441019fdba28eea67ebcae3d1af9201dadfaa924064",
+    "tests\\npc_combat_catalog.cpp": "2804bdf5d49203d3754120e6b6d923f758ecd844f28e42431c0c2086cf34242b",
+    "tests\\skill_casting.cpp": "5631c7a498f84661f828746371b800c5b439041f71d10dcb654a985343ac7748",
+    "src\\runtime\\gw_world_simulation.h": "f57c00d8d114a1519b67662edf56d6c1f5ecdd3a471a90ae0f68db2e576bbdf6",
+    "src\\runtime\\gw_degeneration_hexes.h": "08ec77e2f91c28b6fb30c66649e20acaadc60d4b3d4997d57ba3c4b57bb7520d",
+    "tests\\captured_skills.cpp": "c1bb07f53899eaa4db8953737da9515648fe664cfedd91a26eba6e1a6aeeb567",
+    "tests/attack_hex_skill_runtime.cpp": "ec2be3716f5776e2848d011097c06659c3d9f67b440b2b99356bdcc1c2b0d6ef"
+  },
+  "integrated_tests": [
+    "actual43/47 cast against player orNPC;10Energy cost",
+    "player ordinary attack triggers one hex consumption and damage",
+    "rejected target does not consume hex",
+    "Clumsiness forces interruption despite Mantra16/17;16 expires and17 pays5Energy at rank12",
+    "Ineptitude Blindness precedes ordinary attack resolution",
+    "NPC admitted attack triggers damage/control and world publication",
+    "NPC action completion rejected for Clumsiness but allowed for Ineptitude"
+  ],
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/attack-hex-full-build.txt"
+  },
+  "full_suite": {
+    "passed": 172,
+    "failed": 0,
+    "seconds": 26.72,
+    "report": "build/reports/attack-hex-full-tests.txt"
+  },
+  "attack_skill_tests": {
+    "source": "tests/attack_hex_skill_runtime.cpp",
+    "target": "attack_hex_skill_runtime_test",
+    "skills": [
+      322,
+      391
+    ],
+    "results": [
+      "invalid target: no costs and no reaction",
+      "Clumsiness: synchronous damage, no melee/projectile commit, native recharge",
+      "interrupt recharge deadline uses event200ms despite processing at800/1400ms",
+      "Ineptitude: admitted attack completes while Blind",
+      "Hunter Shot missed projectile deals no damage and applies no Bleeding",
+      "native Hunter Shot one-second aftercast distinguished from recharge"
+    ]
+  }
+}

@@ -6102,7 +6102,8 @@ int fw_gw_auth_run(const gwserver::ServerSettings& settings) try {
                 std::ifstream tad_file("data/gw/ai/tad-development-combat.txt");
                 if(!tad_file)throw std::invalid_argument("Tad development combat metadata unavailable");
                 const auto tad=fw::gw::combat::npcs::load_catalog(tad_file,encoded.data());
-                tad.validate_population(observed,encoded.data());
+                const auto tad_population=fw::gw::world::combat_population(npcs);
+                tad.validate_population(tad_population,encoded.data());
                 for(auto& [map,actors]:npcs.maps)for(auto& actor:actors)
                     if(const auto* row=tad.find(map,actor.id))actor.combat_definition=*row;
             }

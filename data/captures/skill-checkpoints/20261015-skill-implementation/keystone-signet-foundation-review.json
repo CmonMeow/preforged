@@ -1,0 +1,250 @@
+{
+  "skill": 63,
+  "status": "source-bound Keystone63 through Runtime, gateway and World; production rebuild and11 focused suites pass; retail reactive/rendered acceptance remains open",
+  "native_evidence": "keystone-signet-native-2022.json",
+  "tests": {
+    "standalone_native": "passed",
+    "build": "build/reports/keystone-policy-build.txt",
+    "cmake_registration": "registered keystone_signet_policy and keystone_recharge",
+    "focused": {
+      "passed": 2,
+      "report": "build/reports/keystone-foundation-tests.txt"
+    },
+    "full_gate": {
+      "status": "passed",
+      "build": "build/reports/keystone-foundation-full-build.txt",
+      "tests": "build/reports/keystone-foundation-full-tests.txt",
+      "passed": 307,
+      "seconds": 28.05,
+      "scope": "Historical 307-test gate before subsequent disable-authority and gateway edits; not current integration proof"
+    }
+  },
+  "verified": [
+    "rank0..20 charge/damage scaling against pinned metadata and older wiki",
+    "scope-owned charge ledger, application serial, event/time replay rejection, expiry and exhaustion",
+    "prepared post-primary-effect use revalidated before charge commit; renewals and forged counts/damage rejected",
+    "successful foe-target signets qualify; non-signets, failed uses, ally/self uses and Keystone itself do not consume charges",
+    "166-inclusive other-foe recipients, primary/caster exclusion, idle foe damage and acting-only interrupt attempts",
+    "empty adjacent recipient list still represents a qualifying use; World damage/protection publication remains separate",
+    "Joint cooldown/reset proposal clears eligible signet recharge and disable times, preserving spent2/1816 and own63",
+    "Supplied copied slots remain distinct; full snapshot/revision/event validation rejects changed or forged reset commits"
+  ],
+  "remaining": [
+    "Controlled retail Keystone reactive capture and rendered animation/effect acceptance",
+    "Confirm exhausted/zero-charge effect presentation and rare copied-slot eligibility against retail",
+    "Broader NPC original-caster, protection/deferred-reaction and equipment/global-modifier acceptance",
+    "Full all-target regression gate after the final binding (historical309-pass gate predates binding)"
+  ],
+  "source_sha256": {
+    "src/runtime/gw_keystone_signet.h": "b470a1e35f8434910db400b07f9ac0332451529e18f5961819f1ff5560dda34b",
+    "tests/keystone_signet_policy.cpp": "03e0c43d6c95130271d39028c48ac0dc1eadf5ec3a60c26c82b18b2bcc788880",
+    "tools/protocol/keystone_signet_2022.py": "bf0a715b141ebb552d016eee86355a688d6900075b23db2042571ac66e7b0d6d",
+    "src/runtime/gw_keystone_recharge.h": "59f88ca2543d7a0ab7611c8b72f3c80b76fcaddcf407d8e72505d33d457bacb5",
+    "tests/keystone_recharge.cpp": "d05794d9f348246fc546be2213d10dc70e802bc1d57d6d3eaa2a33355d74f044",
+    "CMakeLists.txt": "8a83b2e16fba4f77e695b75a58f61469ac52cefb3db74e3f5c3cb06d9dd21df4"
+  },
+  "disable_authority_foundation": {
+    "focused_report": "build/reports/disable-resets-tests.txt",
+    "focused_passed": 4,
+    "world_query": "disable_reset_world_test passed; combined copy-scoped query used by gateway",
+    "integration_build": "build/reports/disable-reset-integration-build.txt",
+    "integration_status": "server_host, disable_resets_test and disable_reset_world_test rebuilt successfully; five focused tests passed",
+    "integration_tests": "build/reports/disable-reset-integration-tests.txt",
+    "integration_source_sha256": {
+      "src/runtime/gw_disable_reset.h": "64fb1088de795ddc05639fc1aff8bd954ee72e6346b457a0f508db22502689f8",
+      "src/runtime/gw_power_block_disables.h": "511b80886f23d75a9807e69e51beb0421eaa7f7f537f42ed48633f9bb73b85f1",
+      "src/runtime/gw_humility_disables.h": "b917ef4f8bdbb9d6c94c79f5a0ad0d87aa135ee4001084da417b2b866f1c3998",
+      "src/runtime/gw_diversion_authority.h": "bce507c1d314cb6349191e0bbb23522e74671b075d2f80953ada6745cdedb707",
+      "src/runtime/gw_world_simulation.h": "0857e03c8b850ffc88fa64700748dddc12996f6ee1998b68c4ce22c4f005c99b",
+      "src/apps/gw_auth.cpp": "63f6f99bd31c2c83cb7ccf8bc22f06d994d01d039de46da2fd3fa40ecfb3c67d",
+      "tests/disable_resets.cpp": "196f19f7216bd854e2cdb2119a7b74668c7853688a38b40f7397c82feddc3b93",
+      "tests/disable_reset_world.cpp": "a9d0a1ee63153b2f7e21f22933647dd5a52620da5edc8d9286911acdbcb93c8c"
+    }
+  },
+  "world_reset_commit": {
+    "status": "World API implemented and native integration test passed; Runtime Keystone transaction not connected",
+    "build": "build/reports/disable-reset-commit-build.txt",
+    "test": "tests/disable_reset_world.cpp",
+    "verified": [
+      "full owner scope and living player validation",
+      "three-authority revision permit; newly applied interrupt invalidates earlier permit",
+      "all three authority proposals validated before mutation under World lock",
+      "selected copy reset preserves base copy and unrelated skill",
+      "duplicate slots and replayed permit rejected without mutation",
+      "departed actor permit rejected"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "8ae04a6c495ac189a68d1ec82ac5f5641d2b9455e32662eb294dbaca4cca39a2",
+      "tests/disable_reset_world.cpp": "422ae0d1cdb49850809c4222a25cfbebaea3037be25d2c95a51d2e3daee77459"
+    }
+  },
+  "runtime_reset_transaction": {
+    "status": "Implemented reset_other_signets transaction helper; not yet called by Keystone completion",
+    "build": "build/reports/signet-reset-runtime-build.txt",
+    "native_test": "disable_reset_world_test passed",
+    "tooling_tests": 19,
+    "verified": [
+      "World commit failure preserves Runtime recharge map and emits no reset packet",
+      "World commit success clears local recharge and World disable before opcode229 publication",
+      "same event replay rejected",
+      "normal signet recharge created by actual cast interruption can be reset and recast",
+      "other-copy and unrelated disable preservation covered by World integration test"
+    ],
+    "remaining": [
+      "Keystone initial-effect completion hook",
+      "owned charge ledger and reactive damage/interruption integration",
+      "World resurrection integration and rendered acceptance of spent/unspent reset behavior"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_skill_casting.h": "4e2d2c5b2a21558796cfc21082cc2c8dbdd229dfa568670e5014eada239775b1",
+      "tests/disable_reset_world.cpp": "3cbf6de98399a0728b9be3de29fe05fcc8df19350d1a32005b8873572987de8f"
+    },
+    "spent_signet_contract": {
+      "status": "passed",
+      "report": "build/reports/signet-reset-spent-build.txt",
+      "test": "tests/disable_reset_world.cpp",
+      "verified": [
+        "Actual Runtime Resurrection Signet completion marks the used copy spent",
+        "Keystone reset selection preserves spent copy0 while selecting disabled unspent copy1",
+        "Reset does not restore spent copy0; genuine morale_boost restores it"
+      ],
+      "scope": "Runtime contract with mocked corpse Resources and successful resurrection callback; not World resurrection or rendered validation"
+    }
+  },
+  "initial_application_preparation": {
+    "status": "passed; CMake-registered keystone_application",
+    "build": "build/reports/keystone-application-build.txt",
+    "verified": [
+      "timer and charge ledger share effect ID, owner, application time and expiration",
+      "renewal replaces only earlier Keystone, preserving unrelated signet effects",
+      "original state remains unchanged during preparation",
+      "replayed application, mismatched owner, occupied effect ID, forged plan and overflow rejected"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_keystone_application.h": "de605a495a6fbbbae3f9849d5ecb162d6e8cdf929776a402e88baab55735ca42",
+      "tests/keystone_application.cpp": "ea31c88e0b38cfd303fd10ec0537310297694d1c74de85dac8eac61528b26cc3"
+    }
+  },
+  "capture_timer_evidence": {
+    "report": "keystone-signet-native-2022.json",
+    "source": "packets-1360-15821281.jsonl",
+    "timer_line": 32312,
+    "removal_line": 32712,
+    "effect_id": 74,
+    "duration_seconds": 20,
+    "elapsed_ms": 19985,
+    "scope": "Modern frozen capture packet66 timer and exact packet68 removal; timing consistent with expiry, not proof of why removal occurred. Initial body112 shares timer timestamp. No charge consumption or reactive area effect proved.",
+    "following_activations": {
+      "count": 6,
+      "signet_type_count": 0,
+      "meaning": "No qualifying signet activation is present before the matched removal in this frozen window; do not use it to tune reactive damage/interruption or infer consumed charges."
+    }
+  },
+  "reset_transaction_full_gate": {
+    "status": "passed before initial World effect integration",
+    "build": "build/reports/keystone-reset-full-build.txt",
+    "tests": "build/reports/keystone-reset-full-tests.txt",
+    "passed": 309,
+    "seconds": 23.23,
+    "scope": "Reset transaction and shared disable authority gate; does not cover subsequent World initial-effect edits"
+  },
+  "world_initial_effect": {
+    "status": "production server build succeeded; six focused native suites passed in 0.06 seconds; 19 tooling tests passed",
+    "verified": [
+      "full owner scope, canonical plan and living/control checks",
+      "timer, registry, charge ledger and disable reset committed under World mutex",
+      "stale disable revision prevents initial effect installation",
+      "same-skill renewal removes prior timer and replaces charges",
+      "exact body112 packet emitted once per initial effect",
+      "20-second timer expiry and actor departure end owned visibility"
+    ],
+    "build": "build/reports/keystone-world-build.txt",
+    "production_build": "build/reports/keystone-world-production-build.txt",
+    "tests": "build/reports/keystone-world-tests.txt",
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "cd3813acaa0513d1a3b6bf7a86271743bb9602fc2234624caed623ecddb44b8d",
+      "tests/keystone_world.cpp": "5747385235fa845aa76a274b1a5094d58bef17814072e4ed673eeb36098f7d3e",
+      "CMakeLists.txt": "ca23f4b1d7a0c498f99e93652d4cad84783d8978fba6b8f3e61948d431d9c7ba"
+    },
+    "remaining": [
+      "Runtime/gateway Keystone completion callback",
+      "post-primary signet reaction, adjacent damage and interrupt protection",
+      "charge exhaustion publication",
+      "reactive retail evidence and rendered acceptance"
+    ]
+  },
+  "world_reactive_effect": {
+    "status": "production build and seven focused native suites passed in0.08 seconds;19 tooling tests passed",
+    "build": "build/reports/keystone-reaction-build.txt",
+    "tests": "build/reports/keystone-reaction-tests.txt",
+    "verified": [
+      "trusted post-primary event validates current full owner/target lifetimes and actual target allegiance",
+      "other living foes within166 inclusive receive armor-ignoring damage; primary and allied/dead/outside actors excluded",
+      "idle neighbors take damage; active player/NPC actions are interrupted",
+      "Mantra of Concentration blocks interrupt while damage remains",
+      "dead primary foe still provides area center",
+      "one charge per successful foe-target signet, failed use does not consume, replay rejected",
+      "exhaustion removes owned timer; no invented target-body resource published",
+      "Mantra of Resolve preserves interruption protection with real Energy loss; stale target scope rejected without charge consumption; World derives allegiance"
+    ],
+    "remaining": [
+      "Runtime/gateway initial and completed-use callbacks",
+      "controlled retail reactive capture, exact visual/charge presentation and ordering acceptance",
+      "NPC original-caster use and broader protection/lifecycle integration checks"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_world_simulation.h": "969a69ed44b59626881565f5eda7b5dfee1199bede02b4302d22850e8425a407",
+      "tests/keystone_world_use.cpp": "0ff6aa0e72f453d16257c5007547d43ee743867192e3bd75e9636917ce1e8265",
+      "CMakeLists.txt": "020504c7bdb292349d551a95c90fcb552e411da01506ddc94a6aa6627850ce0e"
+    }
+  },
+  "binding": {
+    "build": "build/reports/keystone-binding-build.txt",
+    "tests": "build/reports/keystone-binding-tests.txt",
+    "focused_passed": 11,
+    "seconds": 0.12,
+    "tooling_tests": 19,
+    "captured_source_bound": 171,
+    "captured_total": 575,
+    "awaiting_binding": 404,
+    "verified": [
+      "Runtime admission requires initial-reset, completed-use, scoped target, current-bar and copy-disable callbacks",
+      "reset permit captured before reading eligible visible-bar timers; World rejects changed disable revisions",
+      "normal Keystone cast resets other eligible signets and installs World effect before completion publication",
+      "World alone publishes self body112; generic Runtime duplicate suppressed",
+      "successful subsequent Humility completion triggers Keystone area damage after its primary effect",
+      "World derives allegiance, including dead primary foe, rather than trusting the observer foe flag",
+      "Keystone own normal recharge remains; canceled/interrupted/failed casts do not install effect",
+      "missing callbacks at admission or completion fail without invoking an empty callback",
+      "Panic, Mind Wrack and Fevered cast regression suites rebuilt and pass after independent observer lifetime checks"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_skill_casting.h": "4ada3ed2ed3b84f32dc32ee6610a7b1d1b8d9514d83d611f4333c5c53dc100c0",
+      "src/runtime/gw_world_simulation.h": "195b8a993771f14c35124ed4dd91f08869b2642230e757c3f86361b19dfd8b92",
+      "src/apps/gw_auth.cpp": "9ead6fa78b90d09fcc2a9feb15272467001919a165cb3424bd184c4eb49cd411",
+      "tests/keystone_cast.cpp": "babdd984237b278f49ec6796a72aed9b28fb337e68689b7ba3ff07ce569b77bc",
+      "tests/keystone_world_use.cpp": "d3a085f57daa8bf2845e8d7f7325da98ed5bb66053cc9b230a1444c99861615d",
+      "tools/protocol/skill_runtime_coverage.py": "d598ac9b6d2ba79067163079f42e9d8ba6e290446a0bde5d7e4773a35105ab90",
+      "CMakeLists.txt": "fba9ef1c2558159f3d12361d927ece434d161e6dab6660473286d3038115b2b1"
+    }
+  },
+  "owned_effect_hardening": {
+    "status": "production build and four rebuilt focused suites passed0.06s;19 tooling tests passed",
+    "build": "build/reports/keystone-ownership-production-build.txt",
+    "tests": "build/reports/keystone-ownership-tests.txt",
+    "verified": [
+      "charge visibility requires matching skill, category, cause, rank, application and expiration, not just effect ID",
+      "generic Keystone insertion and overwrite of its owned effect ID rejected",
+      "legitimate effect removal ends reaction eligibility without later area damage",
+      "invalid future recipient cannot consume charge, interrupt protection or damage earlier valid recipients",
+      "same event can succeed after an uncommitted failed attempt at a valid time"
+    ],
+    "tooling_tests": 19,
+    "source_sha256": {
+      "src/runtime/gw_keystone_application.h": "8fdc87cc5691ec2634a1a95f09fe5e6b16d64ae6082394942f2a94fb9f44f75e",
+      "src/runtime/gw_world_simulation.h": "ca0a1c4b689604e816a378072c2eaffa14a642d9ba0cac8591f6bbbb68073a5d",
+      "tests/keystone_application.cpp": "b09d0986bcade79ed2ea456faed272f4ff240cad4418f126509c1738386a6883",
+      "tests/keystone_world_use.cpp": "0330b85a718e73941e1a4595163d74ffbc441c92e74e3b4a0875e512c14a8986"
+    }
+  }
+}

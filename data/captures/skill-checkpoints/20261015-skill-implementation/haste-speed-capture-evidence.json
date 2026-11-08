@@ -1,0 +1,80 @@
+{
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "source": "packets-6468-5728843.jsonl",
+  "source_sha256": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+  "tool_sha256": "8c13238669e924fd05903cb84260638adab54881633f7c769ac9725ee34186ea",
+  "activation": {
+    "file": "packets-6468-5728843.jsonl",
+    "line": 86672,
+    "tick_ms": 8367906,
+    "actor": 25,
+    "map": 280,
+    "hex": "9f0000003c0000001900000025000000",
+    "kind": 60
+  },
+  "before": {
+    "line": 86557,
+    "tick_ms": 8359828,
+    "speed": 288.0,
+    "hex": "270000001900000000009043"
+  },
+  "speed_updates": [
+    {
+      "line": 86692,
+      "tick_ms": 8368937,
+      "speed": 383.03997802734375,
+      "hex": "27000000190000001e85bf43"
+    },
+    {
+      "line": 86777,
+      "tick_ms": 8373921,
+      "speed": 191.51998901367188,
+      "hex": "27000000190000001e853f43"
+    },
+    {
+      "line": 86778,
+      "tick_ms": 8373921,
+      "speed": 144.0,
+      "hex": "270000001900000000001043"
+    },
+    {
+      "line": 86810,
+      "tick_ms": 8376921,
+      "speed": 288.0,
+      "hex": "270000001900000000009043"
+    }
+  ],
+  "effect_updates": [
+    {
+      "line": 86688,
+      "tick_ms": 8368937,
+      "skill": 37,
+      "duration": 5.0,
+      "hex": "420000001900000025000000000000006f0000000000a040"
+    },
+    {
+      "line": 86718,
+      "tick_ms": 8370671,
+      "skill": 38,
+      "duration": 8.0,
+      "hex": "420000001900000026000000000000007000000000000041"
+    },
+    {
+      "line": 86773,
+      "tick_ms": 8373921,
+      "skill": 481,
+      "duration": 3.0,
+      "hex": "4200000019000000e1010000030000006e00000000004040"
+    }
+  ],
+  "measured_multiplier": 1.3299999237060547,
+  "end_penalty_ms": 3000,
+  "finding": "This captured player uses288 units/second baseline,1.33Haste and.5end slow; player baseline correction is tracked separately in player-movement-baseline-review.json.",
+  "limits": [
+    "One fixed player/session observation, not every movement mode or NPC gait.",
+    "Arrival tick differences are not exact server activation/expiry scheduling proof.",
+    "Same-tick intermediate speed packets do not independently prove internal end-trigger ordering.",
+    "No live renderer, gear-duration modifiers or movement-input behavior is verified."
+  ]
+}

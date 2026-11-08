@@ -1,0 +1,92 @@
+{
+  "skill": 258,
+  "stage": "Source-bound Guardian player enchantment:actual casting,DivineFavor and player-defender block transactions",
+  "native_evidence": "guardian-block-native-2022.json",
+  "capture_limit": "CORRECTION:earlier scans excluded generic kind21 and falsely reported missing472. Captured line257279,tick21008937,packets-1360-15821281.jsonl is159/21/25/472. Revised audit emulates pinned2022opcode158kind21firstconsumer and records exact body. Prior incorrect report preserved build/reports/guardian-native-before-kind21-correction.json. Rendered acceptance still unverified.",
+  "implemented": [
+    "Canonical50percent block source,2..7second duration,rank12sixseconds.",
+    "Same-name enchantments do not multiply;expired/future effects ignored.",
+    "Rigor Mortis block-only suppression helper;miss/dodge/obstruction/cancel/retirement retained.",
+    "Trusted World timed Guardian application to players and native target472 publication.",
+    "Player-defender ordinary melee/projectile,attack skill,bow fixed damage,Cyclone and trusted NPC-to-player branches consult block before hit qualification.",
+    "Independent server-owned block draws,no draw for zero block probability.",
+    "Generic Runtime258binding uses original target scope and production protective_enchantment hook;5Energy,1second cast,4second recharge,atomic DivineFavor on owned player enchantment."
+  ],
+  "validation": {
+    "focused": "Two Release suites passed0.04s;guardian-world-tests.txt",
+    "world_scenarios": "Ordinary melee,melee skill,Cyclone,fixed-damage bow,expiry and invalid-draw cancellation;blocked attacks have no before-damage hit qualification.",
+    "tooling": "15 skill tooling tests passed0.185s with new258sourcebinding;frozen inventory remains unchanged.",
+    "full": "Production all-target Release build succeeded and215/215registered native suites passed23.14s(guardian-player-block-full-build.txt,guardian-player-block-full-tests.txt). This gate predates the subsequent kind21packet correction.",
+    "reactive_hits": {
+      "result": "Standalone native probe passed",
+      "report": "build/reports/guardian-reactive-standalone.txt",
+      "scope": "Guardian block suppresses Insidious pre-damage steal,Barbs and Mark splash;unblocked control triggers each once. No extra event on subsequent tick.",
+      "source": "tests/guardian_reactive_hits.cpp",
+      "source_sha256": "e3f4520c987d3240310b2718367f89fadcb9af241d633dac7b1eb503f8ba085f",
+      "registration": "Not yet CMake registered;production full215gate was already running when this independent probe was created."
+    },
+    "trusted_npc_attack": {
+      "result": "Standalone native probe passed",
+      "report": "build/reports/guardian-npc-standalone.txt",
+      "source": "tests/guardian_npc_attack.cpp",
+      "sha256": "dae3deedb96f5957f9df59205aebce09bb3cefae0a7cbcccf0bd2bc0965015cb",
+      "scenarios": [
+        "Guardian block:zero damage,no Insidious steal,no successful-hit qualification.",
+        "Blind miss:preserved miss,no block draw consumed.",
+        "Hit control:Insidious steals39before NPC weapon damage."
+      ],
+      "registration": "Awaiting CMake registration after live215build81994finishes."
+    },
+    "lifetime": {
+      "result": "Standalone native probe passed",
+      "report": "build/reports/guardian-lifetime-standalone.txt",
+      "source": "tests/guardian_lifetime.cpp",
+      "sha256": "c65eb64a5818b9a66ecb816ec64f48fe02c90bfb5ddd87a786ad4659ac5a8061",
+      "scenarios": "Removal and defender replacement clear protection;stale source rejected;renewal has one new effect and remains effective after old expiry."
+    },
+    "particle_regression": "Six rebuilt registered Release suites passed0.07s(guardian-kind21-tests.txt),including exact captured kind21body472publication,reactive-hit exclusion,trustedNPCmiss/block/hit,lifetime and coreblockpolicy. Before-fix failed regression retained. Production full215gate predates packet correction;expanded219fullgate not run yet.",
+    "casting": {
+      "result": "Eight rebuilt Release suites passed0.09s",
+      "report": "build/reports/guardian-cast-client-outboxes-tests.txt",
+      "casting_scenarios": 9,
+      "scope": "Cost,cast timing,recharge,DF,exact kind21body,actual block,cancel versus full interrupt cooldown,missing handlers,dead caster/target and replaced caster/target.",
+      "fixture_corrections": "Initial compile needed casting::Reason qualification. Packet assertion failed because all simulated clients shared one outbox;corrected distinct per-client outboxes. Original callback expectation for caster replacement was also tightened to zero because control epoch invalidates before effect. Original failed reports retained."
+    },
+    "full_binding": "All production Release targets built;220/220native suites passed26.07s(guardian-binding-full-build.txt,guardian-binding-full-tests.txt). This proves final258casting binding,not subsequent299/2061selfparticlechanges."
+  },
+  "remaining": [
+    "NPC-defender block sources/enchantments and Rigor owned hex/casting integration incomplete.",
+    "Other blocking skills and unblockable attack classifications not implemented by this stage.",
+    "Retail ordering among misses/blocks and on-block effects unresolved;current model evaluates miss first.",
+    "Specific block visual feedback,rendered cast/target effect and sound unverified."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_blocking.h": "06a7634bcf2f0cb4ecfa327267fc39c34292ce79628f1933eb88de0783182dfe",
+    "src/runtime/gw_health_regeneration.h": "91bd60aad3cd51a280e0cdefb8e61c0f17d2fa0e2afea9733cb53ab90302b7f6",
+    "src/runtime/gw_world_simulation.h": "2eabe53a389a5b3ca373b0e677070636d75d8878f9b32f04cf8f2ab878879a9d",
+    "tests/guardian_block_world.cpp": "1951ca8b7c0470b39abf26769ae12cbf451ef6396d3ca5a488bc23da63674f5a",
+    "tests/rigor_mortis_blocking.cpp": "b58f9673b496cf0635944c04ab94087f3e8cd08a58665f7eec5b89358de00e4b",
+    "tools/protocol/guardian_block_2022.py": "ff1dc3e9e387122a6892ae7e4076bb906f0ec79edc896e0f0789835f234df75f"
+  },
+  "coverage": "156/575 source-bound;419awaiting binding;754baseline without local capture. Rigor137still unbound.",
+  "kind21_current_source_sha256": {
+    "src/runtime/gw_world_simulation.h": "bf2363144e0c9514425a79bf429a71e715d26454a6ab3c39893418c4e69cd4b3",
+    "tools/protocol/guardian_block_2022.py": "ff1dc3e9e387122a6892ae7e4076bb906f0ec79edc896e0f0789835f234df75f",
+    "tests/guardian_particle.cpp": "19fda25392cc7f4a686eca145e0ae38eca7a6ca6d28aa12ea52c5c6c42bceddb",
+    "CMakeLists.txt": "d436b3d94bb784f4a52d8afe4f701a52a85b6df39704bbad788673b81ba8bd5f"
+  },
+  "binding_source_sha256": {
+    "src/runtime/gw_skill_casting.h": "93369a505426645e3677a4f4224029a93b279189a8cf2d07b724acf7819e6f07",
+    "src/runtime/gw_world_simulation.h": "2591cb245796c70600f6b3957d9599e7355e3c387cf24a798d0c9bde6a39ac8d",
+    "tests/guardian_cast.cpp": "72d5bf699cf1182c974a28753fb595d637765f49ee12b12f47aaff3610ced351",
+    "tools/protocol/skill_runtime_coverage.py": "ee63707e8f0fda7676fab39030f0fc143ed709403d578a837a6c27d1031c48c3",
+    "tools/protocol/guardian_block_2022.py": "34e652d98013db839abbb4a206176572cfee7b2c4997584f6061628d11f6cf08"
+  },
+  "cross_skill_body_form_audit": {
+    "report": "skill-audit/body-form-candidates.json",
+    "tool": "tools/protocol/captured_body_forms.py",
+    "result": "580inventory entries reviewed;430have at least one candidate in10second windows. Whole frozenfiles contain220generic20,844targeted20,1136generic21records.",
+    "validation": "19 skill tooling tests pass0.414s including exact Guardian simple21,Rigor targeted20,wrong-packet-shape rejection and native resource roles.",
+    "scope": "Includes575local captured player skills plus other inventory entries. Resource/time matching is NOT causal attribution or rendered acceptance;no runtime binding count change."
+  }
+}

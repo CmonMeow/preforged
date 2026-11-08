@@ -1,0 +1,176 @@
+{
+  "skill": 49,
+  "pvp_alias": 2734,
+  "status": "Player Runtime/gateway source binding verified by full native gate; remaining mechanics/rendering gaps explicit",
+  "native_and_capture_evidence": "mind-wrack-native-2022.json",
+  "source": "src/runtime/gw_mind_wrack.h",
+  "test": "tests/mind_wrack_policy.cpp",
+  "mechanics": [
+    "Canonical rank0..20 duration5..52seconds and zero-Energy burst15..128",
+    "PvE own-loss damage5..32 per actual Energy lost; PvP has no own-loss damage despite same native bonus metadata",
+    "Only recorded original caster targeting this foe with a confirmed non-hex Mesmer skill qualifies",
+    "Separate actual one-Energy-loss and terminal damage components, not a combined fabricated damage packet",
+    "External costs/drains/equipment transitions can propose terminal damage only; no own-loss bonus assigned to unrelated drains",
+    "Signed Energy represented with explicit debt; UI zero, already-zero and debt repayment do not create a positive-to-exact-zero transition",
+    "Immutable scoped application/renewal/removal;49 and2734 replace each other as one family",
+    "Full recorded caster/target lifetime validation helper, no explosion on ordinary removal/expiry/caster end",
+    "Scoped copied event ledger rejects replay, stale time and retired target generations"
+  ],
+  "remaining": [
+    "Original-caster NPC Mind Wrack casting remains unsupported; current World source API requires a player caster",
+    "Underlying negative Energy regeneration is not implemented; observe those transitions when that subsystem exists",
+    "Retail target/primary/protection/zero-burst ordering, same-time resource returns and positive-to-debt equipment transitions",
+    "Rendered client acceptance and end-burst presentation beyond the captured initial target body83"
+  ],
+  "gate": {
+    "build": "build/reports/mind-wrack-policy-build.txt",
+    "test": "build/reports/mind-wrack-policy-tests.txt",
+    "result": "New isolated policy target built;286/286 registered tests passed. Existing production285 binaries were rebuilt/passed in the preceding Armor Earth gate; new header is not included by production. Evidence tooling19/19 passed. No production integration claim.",
+    "full_suite": "build/reports/mind-wrack-foundation-full-tests.txt"
+  },
+  "coverage": "169/575 captured player skills source-bound; source binding is not full mechanics or rendered acceptance.",
+  "world_stage": {
+    "sources": [
+      "src/runtime/gw_world_simulation.h apply_mind_wrack/observe_mind_wrack_energy_locked/end_mind_wrack_caster_locked/consume_energy",
+      "src/runtime/gw_npc_combat_catalog.h apply_mind_wrack"
+    ],
+    "test": "tests/mind_wrack_world.cpp",
+    "result": "World suite passed, including cross-caster renewal, player/NPC cleanup, actual timestamped payment burst, future-caster rejection before payment and delayed lethal caster degeneration.",
+    "mechanics": [
+      "Owned player timer/registry and NPC scoped registry application, PvE/PvP alias replacement and selected Hex Breaker",
+      "Captured targeted body83, no fabricated NPC Energy",
+      "Actual timestamped payment drops current Energy to exact zero: remove hex/timer before original-caster armor-ignoring burst, at most once",
+      "Original caster health settled before payment; future cursor rejects payment before Energy changes",
+      "Caster death/departure removes that caster's effects from player/NPC targets without damage; stale/retired lifetimes are not rebound"
+    ],
+    "limits": [
+      "Initial world-stage gate covers application and timestamped payment only; later stage sections describe subsequent integration."
+    ],
+    "gate": {
+      "build": "build/reports/mind-wrack-world-production-build.txt",
+      "tests": "build/reports/mind-wrack-world-production-tests.txt",
+      "result": "Production host and seven affected registered test targets rebuilt successfully;7/7 suites passed0.10s. Evidence tooling19/19 passed. This is a targeted gate, not a full rebuild/all-test claim.",
+      "official_logging": "No official process, UI or logging session operated."
+    }
+  },
+  "target_and_drain_stage": {
+    "sources": [
+      "src/runtime/gw_world_simulation.h mind_wrack_targeted/energy_drain/observe_npc_mind_wrack_energy_locked",
+      "src/runtime/gw_npc_combat_catalog.h react_mind_wrack_target/react_mind_wrack_energy"
+    ],
+    "tests": [
+      "tests/mind_wrack_target.cpp",
+      "tests/mind_wrack_drains.cpp"
+    ],
+    "initial_gate": "build/reports/mind-wrack-reactions-tests.txt:2/2 passed0.04s before area cases were added",
+    "mechanics": [
+      "Confirmed non-hex Mesmer target events drain actual1Energy; separate PvE21-per-loss and83-zero components at rank12, PvP lacks own-loss damage",
+      "Player and known-Energy NPC target reactions; unknown NPC Energy fails instead of inventing values",
+      "Per-source lifetime event ledger records accepted no-hex/ignored events too; replay, stale time, retired scopes and unconfirmed events rejected",
+      "Player drains and known-NPC Feast observe actual Energy transitions without granting the own-loss damage component to unrelated drains",
+      "Normal area drain effects commit for all recipients before zero-Energy reactions; exact before/after snapshots retained so subsequent Energy returns cannot erase an actual zero event",
+      "Lethal primary damage is not overwritten by a precomputed later hit after the burst"
+    ],
+    "candidate_order": "Trusted target API is explicitly post-resolution. Primary drain damage precedes zero bursts. These are testable candidate orderings, not independently established retail ordering.",
+    "gate": {
+      "build": "build/reports/mind-wrack-reactions-production-build.txt",
+      "tests": "build/reports/mind-wrack-reactions-production-tests.txt",
+      "result": "Production host and eight affected registered suites rebuilt;8/8 passed0.22s. Evidence tooling19/19 passed. No full-suite claim.",
+      "components_build": "build/reports/mind-wrack-components-build.txt",
+      "components_tests": "build/reports/mind-wrack-components-tests.txt",
+      "components_result": "Expanded target suite rebuilt/passed0.03s: actual Shielding Hands reduces each PvE component separately, PvP has one damage component, and real equipment Energy debt shown as zero causes no loss damage/burst.",
+      "area_result": "Area drain tests distinguish selected-only Energy Surge drain from each-recipient drain; lethal primary damage remains dead.",
+      "official_clients": "No official process, UI or logger operated."
+    }
+  },
+  "resource_event_stage": {
+    "source": [
+      "src/runtime/gw_world_simulation.h energy_capacity/react_player_attack_hexes_locked/ally_cleansing_outcome/publish_npc_attack_hexes_locked",
+      "src/runtime/gw_npc_combat_catalog.h attack_energy_changes_ journal"
+    ],
+    "test": "tests/mind_wrack_resource_events.cpp",
+    "initial_gate": "build/reports/mind-wrack-resource-events-tests.txt:1/1 passed0.03s",
+    "mechanics": [
+      "Equipment capacity exact-real-zero burst; positive Energy jumping directly into negative debt remains nonzero per current candidate policy",
+      "Player Spirit Shackles Energy loss observed from actual transition; lethal burst stops the attack-start path",
+      "NPC attack-hex Energy snapshots journalled and drained once by World; lethal burst invalidates existing action token",
+      "NPC journal retains actual before/after values rather than inferring zero from a later UI/current Energy value",
+      "Cleansing penalty observed after cleansing commits; unrelated penalties never gain the PvE one-Energy target damage component"
+    ],
+    "gate": {
+      "build": "build/reports/mind-wrack-resource-events-production-build.txt",
+      "tests": "build/reports/mind-wrack-resource-events-production-tests.txt",
+      "result": "Production host and eight affected native test targets rebuilt;8/8 suites passed0.20s. Evidence tooling19/19 passed. Targeted gate only, not full-suite/normal cast support.",
+      "official_logging": "No official process, UI or logger was operated."
+    }
+  },
+  "required_next_regressions": [
+    {
+      "case": "Lethal protection payment cannot be overwritten by Cry of Frustration cached health",
+      "setup": "Victim HP80/Energy5, Mantra of Resolve rank12 (cost5), Mind Wrack rank12 (burst83), casting a skill. Cry of Frustration rank12 deals63.",
+      "invariant": "Victim must remain dead after both transactions; no commit may restore a cached17HP. This final-death invariant does not depend on choosing retail component order.",
+      "status": "Covered and passing in tests/mind_wrack_interrupt_cost.cpp"
+    },
+    {
+      "case": "Dead caster cleanup cannot be undone by a staged NPC copy",
+      "setup": "The same victim also owns Mind Wrack on an NPC in the Cry/Panic area. An interrupt protection payment kills the victim.",
+      "invariant": "The final NPC state must not restore the dead original caster's hex from its earlier speculative copy.",
+      "status": "Covered and passing in tests/mind_wrack_interrupt_cost.cpp"
+    }
+  ],
+  "interrupt_protection_stage": {
+    "sources": [
+      "src/runtime/gw_world_simulation.h preflight_interrupt_protection_locked/prevent_interrupt_locked/commit_energy_reactions_locked",
+      "src/runtime/gw_npc_combat_catalog.h preserve_current_hexes"
+    ],
+    "test": "tests/mind_wrack_interrupt_cost.cpp",
+    "gate": "build/reports/mind-wrack-interrupt-cost-tests.txt:1/1 passed0.04s",
+    "mechanics": [
+      "Mantra of Resolve records actual paid Energy snapshots; area interruptions defer resulting burst until staged work commits",
+      "Cry/Panic damage/control NPC proposals preserve the current authoritative hex registry, preventing restoration after an original caster dies",
+      "Direct cast/attack interrupts and Clumsiness handle lethal payment without admitting further corpse actions",
+      "Power Leak target loss/gain preserves the actual loss event before any subsequent Energy gain"
+    ],
+    "tested_invariants": [
+      "Cry/Panic HP50/80/500 with Energy0/1/5, no resurrection and no restored NPC Mind Wrack after caster death",
+      "Protection still prevents interruption on surviving actors, including insufficient Energy",
+      "Lethal direct cast/attack/Clumsiness reactions and actual Power Leak zero burst"
+    ]
+  },
+  "runtime_binding": {
+    "sources": [
+      "src/runtime/gw_skill_casting.h",
+      "src/apps/gw_auth.cpp"
+    ],
+    "test": "tests/mind_wrack_cast.cpp",
+    "focused_gate": "build/reports/mind-wrack-cast-tests.txt:passed0.03s before adding the extra Backfire scenario",
+    "mechanics": [
+      "Base49 selects2734 in PvP; native1second/5Energy/7recharge and owned target body83",
+      "Generic completed-use target callback has pinned normalized caster/target lifetimes and a server event ID",
+      "Timestamped consume_energy_at preferred over legacy hook, with post-payment corpse rejection before pending cast/adrenaline admission",
+      "Cancelled/interrupted/failed/stale/hook-lost casts do not call the target observer",
+      "PvE and PvP actual cast chains exercise own loss, per-loss damage difference and zero burst"
+    ],
+    "candidate_order": "Confirmed target observer runs after primary effect, resource reactions and existing Panic observer. This is an explicit implementation ordering, not a retail timing proof."
+  },
+  "full_binding_gate": {
+    "build": "build/reports/mind-wrack-binding-full-build.txt",
+    "tests": "build/reports/mind-wrack-binding-full-tests.txt",
+    "status": "passed",
+    "source_sha256": {
+      "src\\runtime\\gw_skill_casting.h": "8bc8001c891fe58be6f26522ee14a043aa74a0c8d9653e862c67bcd2d5d89d7e",
+      "src\\runtime\\gw_world_simulation.h": "6d1e8ea0f4986c333af4ca8b0c1630b27574833a641657b0dc747b1c0731d7e4",
+      "src\\runtime\\gw_npc_combat_catalog.h": "0bce2b4d42181bddab95defd9674fa082daee81bc82c9962a0da9880cf04a296",
+      "src\\apps\\gw_auth.cpp": "8fb971afc14b7504fa8e1fb6472fbeca278fb395687bcc8202c98a950f64c0d3"
+    },
+    "result": "Full Release build succeeded. Additional dead-target test target built after fixture correction; no production source changed afterward. Expanded complete suite293/293 passed19.42s; evidence tooling19/19 passed.",
+    "earlier_full_suite": "build/reports/mind-wrack-binding-292-tests.txt:292/292 passed20.43s",
+    "official_logging": "No official client process, UI or logger operated."
+  },
+  "dead_target_regression": {
+    "test": "tests/mind_wrack_dead_target.cpp",
+    "build": "build/reports/mind-wrack-dead-target-before-build.txt",
+    "tests": "build/reports/mind-wrack-dead-target-before-tests.txt",
+    "result": "Passed0.02s with existing production code after correcting the fixture maximum/current-health column order. No production fix was made or claimed. Confirms killing non-hex use is accepted once without querying dead NPC Energy, in PvE/PvP and known/unknown Energy cases."
+  }
+}

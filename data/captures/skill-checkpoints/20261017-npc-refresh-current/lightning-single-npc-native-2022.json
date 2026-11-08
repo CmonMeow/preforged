@@ -1,0 +1,302 @@
+{
+  "checkpoint": "20261017-npc-refresh-current",
+  "cutoff": "2026-10-17T04:38:55.921140+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cases": [
+    {
+      "skill": 224,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 173583,
+        "tick_ms": 19332906,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000e0000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 173590,
+        "tick_ms": 19333875,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 224,
+        "override_after": 2139095040
+      },
+      "visuals": [
+        {
+          "receipt": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173591,
+            "tick_ms": 19333875,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e000000190000008d010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 397,
+            "source_actor": 25,
+            "instance_epoch": 99,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "dcd100010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a0000008d010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Enervating_Charge.html",
+      "wiki_sha256": "6f4d6e2bb5fad3fe1360ad53effb51c70ab22d42ffdafa69436d7633ddea13d7"
+    },
+    {
+      "skill": 865,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 188865,
+        "tick_ms": 19614593,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e00000061030000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 188877,
+        "tick_ms": 19616703,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 49,
+        "seconds": 2.0,
+        "stored_skill": 865,
+        "override_after": 2139095040
+      },
+      "visuals": [
+        {
+          "receipt": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 188878,
+            "tick_ms": 19616703,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000df030000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 991,
+            "source_actor": 25,
+            "instance_epoch": 108,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "618202010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000df030000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lightning_Hammer.html",
+      "wiki_sha256": "779e698d8c505e72ecfca8bf51fda61d165ff328888cdb6e9b33a5d49609cf08"
+    },
+    {
+      "skill": 229,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 173647,
+        "tick_ms": 19337656,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000e5000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 173660,
+        "tick_ms": 19339718,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 49,
+        "seconds": 2.0,
+        "stored_skill": 229,
+        "override_after": 2139095040
+      },
+      "visuals": [
+        {
+          "receipt": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 173669,
+            "tick_ms": 19339718,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000094010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 404,
+            "source_actor": 25,
+            "instance_epoch": 99,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "923b00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a00000094010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lightning_Orb.html",
+      "wiki_sha256": "c73b0032ffb2ee74f06f840e0a14bb375422af5003d18ca611315e0c7a17f972"
+    },
+    {
+      "skill": 232,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 178329,
+        "tick_ms": 19423578,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e000000e8000000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 178334,
+        "tick_ms": 19424296,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 0.75,
+        "stored_skill": 232,
+        "override_after": 2139095040
+      },
+      "visuals": [
+        {
+          "receipt": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 178335,
+            "tick_ms": 19424296,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e0000001900000099010000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 409,
+            "source_actor": 25,
+            "instance_epoch": 102,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "921f01010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a00000099010000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lightning_Touch.html",
+      "wiki_sha256": "5d9dd69abd69b07933652468e8a2257c4244f59b2c4551ad9e9d439e96788f83"
+    },
+    {
+      "skill": 2059,
+      "start": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 239192,
+        "tick_ms": 20708703,
+        "actor": 25,
+        "map": 280,
+        "hex": "a00000003c000000190000001e0000000b080000",
+        "kind": 60
+      },
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 239221,
+        "tick_ms": 20709734,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "body": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 2059,
+        "override_after": 2139095040
+      },
+      "visuals": [
+        {
+          "receipt": {
+            "file": "packets-1360-15821281.jsonl",
+            "line": 239222,
+            "tick_ms": 20709734,
+            "actor": 30,
+            "map": 280,
+            "hex": "a0000000140000001e00000019000000c2060000",
+            "opcode": 160,
+            "kind": 20,
+            "resource": 1730,
+            "source_actor": 25,
+            "instance_epoch": 120,
+            "local_actor": 25,
+            "affected_local": false,
+            "attribution": "unassigned_resource_event"
+          },
+          "native": {
+            "actor": 43,
+            "encoded_file": "9b9904010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000c2060000"
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Shell_Shock.html",
+      "wiki_sha256": "d3b35e113594a8eff6405b003d012e2a6a0c182ec89acd5c920a3032d6b24c6a"
+    }
+  ],
+  "tool_sha256": "99da9ff3f820f62b976e66f7c7d1f1d45c3a702626f1fe34185249aad8f4ba3c",
+  "limits": [
+    "Original model/asset services stubbed;no rendered acceptance.",
+    "Captured local PvE lifecycle is not proof of NPC-caster AI or PvP3396 visual capture.",
+    "World target-particle publication order remains separate from this native-consumer proof.",
+    "Armor/condition mechanics are World-tested against historical descriptions,not inferred from particle IDs.",
+    "Orb404 is a captured impact event outside the native target-body row;flying-projectile appearance is not proven.",
+    "Touch232 capture proves selected-target409 form/order,not a fully isolated multi-recipient area experiment.",
+    "Shell2059 capture proves selected-target1730 form/order,not an isolated Overcast multi-recipient experiment."
+  ]
+}

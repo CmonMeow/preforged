@@ -1,0 +1,26 @@
+DISTORTION: TARGETED MECHANICS CAPTURE
+Baseline: pre-Reforged/2022; fixed checkpoint20261015-skill-implementation remains unchanged.
+
+Already established:
+- Pinned native row:75percent block,2Energy per block,5Energy activation,8second recharge,1..5second duration at ranks0..15.
+- Fixed checkpoint: instant activation48 and simple body21/resource23 captured and native first consumer verified.
+- Local wiki Distortion revision2661973: insufficient Energy still permits one block before stance ends.
+
+Unresolved tests (record separately; no official session was operated for this checklist):
+1. At0Energy: allow one otherwise successful incoming attack to be blocked. Verify stance removal and the next attack's outcome.
+2. At1Energy: same test; inspect whether1Energy remains or becomes0. Do not infer this from the stance ending.
+3. At2Energy: verify paid block consumes2 and stance remains until another block/expiry.
+4. Guardian plus Distortion: apply Guardian first, then Distortion; repeat in reverse order. Record distinct blocks, Energy changes, source effect application/expiry and exact timestamps.
+5. Repeat overlap with Guardian rank high enough to keep it active throughout. Enough samples are required to distinguish random passes from effect priority.
+6. Control: Distortion alone, misses from blindness, Rigor Mortis active and an unblockable attack. No Energy charge should be attributed merely to a miss or a bypass.
+
+Capture requirements:
+- Full map epoch, owner/caster generation, skill IDs, attribute ranks, accurate Energy/maxEnergy/regen state and all block/contact packets.
+- Keep original raw packets. Identify controlled test boundaries and client version.
+- Do not derive exact Energy loss from rounded UI or nearby unrelated events alone; regeneration and simultaneous actions can confound it.
+
+Implementation status:
+- gw_distortion.h: proposed registry/affordable Energy transition; insufficient-Energy result explicitly unresolved.
+- gw_block_attribution.h: explicit source attribution with caller-provided order; no retail order asserted.
+- Both have passing standalone native probes; neither is World/dispatcher bound.
+- No need to interrupt an ongoing official logging session for these tests.

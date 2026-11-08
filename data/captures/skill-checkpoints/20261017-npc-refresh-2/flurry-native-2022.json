@@ -1,0 +1,43 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "captured_instant": {
+    "skill": 344,
+    "name": "Flurry",
+    "receipt": {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 364596,
+      "tick_ms": 23146171,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f000000300000001900000058010000",
+      "kind": 48
+    },
+    "opcode2022": 158,
+    "normalized_fields": [
+      48,
+      42,
+      344
+    ],
+    "native_ui": [
+      {
+        "event": 268435493,
+        "actor": 42,
+        "skill": 344
+      }
+    ]
+  },
+  "native_caster_resource": 594,
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "377000010000",
+    "flags": 1
+  },
+  "limitations": [
+    "Native594 body resource is read from the original2022 skill row and consumed offline; no captured body receipt is claimed.",
+    "The captured instant activation verifies dispatch only; rendered UI/body assets are unverified.",
+    "Attack duration and base-only25percent reduction follow local historical wiki mechanics and server tests; these receipts do not measure them.",
+    "Native scale16 is not interpreted as a damage penalty; its semantic mapping is not established."
+  ]
+}

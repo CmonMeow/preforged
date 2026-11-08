@@ -1,0 +1,48 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "085ccd55f74c300ea232519e42cb93bcb784733730a13dc920394f94b3433aa4",
+  "opcode": 161,
+  "property": 33,
+  "callback": "0x874c20",
+  "cache_dispatch": "0x79a200",
+  "actor_setter": "0x77a430",
+  "cases": [
+    {
+      "fraction": -0.2,
+      "cached_current": -10.0,
+      "nominal": 50.0,
+      "actor_fraction": -0.20000000298023224,
+      "wire_hex": "a180210000002a000000cdcc4cbe"
+    },
+    {
+      "fraction": 0.0,
+      "cached_current": 0.0,
+      "nominal": 50.0,
+      "actor_fraction": 0.0,
+      "wire_hex": "a180210000002a00000000000000"
+    },
+    {
+      "fraction": 0.5,
+      "cached_current": 25.0,
+      "nominal": 50.0,
+      "actor_fraction": 0.5,
+      "wire_hex": "a180210000002a0000000000003f"
+    },
+    {
+      "fraction": 1.0,
+      "cached_current": 50.0,
+      "nominal": 50.0,
+      "actor_fraction": 1.0,
+      "wire_hex": "a180210000002a0000000000803f"
+    }
+  ],
+  "findings": [
+    "Original packet161 property33 accepts negative normalized current Energy.",
+    "Original cached Energy curve stores signed absolute current while actor resource state stores the signed fraction.",
+    "Independent ceiling curve is unchanged."
+  ],
+  "limits": [
+    "Offline loaded-actor path: lookup, allocation and time services stubbed; original dispatch/cache/setter execute.",
+    "No rendered bar or screenshot acceptance; no claim about server recovery cadence or fractional drain rules."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "skill": 165,
+  "status": "World/Runtime/gateway source binding; rendered acceptance remains unverified",
+  "evidence": "armor-earth-native-2022.json",
+  "source": "src/runtime/gw_armor_earth.h",
+  "test": "tests/armor_earth_policy.cpp",
+  "mechanics": [
+    "Canonical rank0..20 +24..72 armor and50..2percent slowing; baseline30second lifetime",
+    "Immutable owned self-enchantment proposal and same-skill renewal",
+    "Generation-scoped current effect lookup; modifiers disappear on removal/expiry",
+    "All four elemental armor fields adjusted on copies; unknown ratings remain unknown",
+    "Armor-ignoring damage bypass verified using actual damage resolver"
+  ],
+  "remaining": [
+    "Equipment enchantment-duration modifiers (baseline30seconds only)",
+    "Overlap with future skill armor buffs and documented stacking quirks",
+    "NPC self-casting",
+    "Rendered client verification"
+  ],
+  "gate": {
+    "build": "build/reports/armor-earth-policy-build.txt",
+    "test": "build/reports/armor-earth-policy-tests.txt",
+    "result": "Registered native policy suite passed0.02s; not a production integration claim.",
+    "full_suite": "282/282 passed21.17s; prior281 production build plus new isolated policy target. No production integration claimed.",
+    "full_suite_report": "build/reports/armor-earth-foundation-full-tests.txt",
+    "tooling": "19/19 passed"
+  },
+  "integration": {
+    "world": "src/runtime/gw_world_simulation.h armor_earth, armor_effect_bonus_locked, conditioned_armor_locked and incoming_spell_actor_locked",
+    "movement": "src/runtime/gw_movement_effects.h owned effect intervals",
+    "runtime": "src/runtime/gw_skill_casting.h self-scope pinning,0.75second cast,10Energy,15second recharge; World publishes exactly one self body297",
+    "gateway": "src/apps/gw_auth.cpp armor_earth Hook binds only matching current owner Scope",
+    "lifetime": "Owned registry/timer/movement transaction. Same-skill renewal replaces old timer and interval; generic insertion refused; normal removal/expiry/death/rejoin paths clear effects. No permanent armor or baseline speed writes.",
+    "ordering": "Add bonus before Cracked Armor/Healing Signet; elemental helper receives raw armor and direct damage callers explicitly request condition adjustment once. Physical contact paths use the same bonus helper."
+  },
+  "tests": [
+    "tests/armor_earth_policy.cpp",
+    "tests/armor_earth_world.cpp",
+    "tests/armor_earth_damage.cpp",
+    "tests/armor_earth_cast.cpp"
+  ],
+  "focused_gate": {
+    "build": "build/reports/armor-earth-integration-build.txt",
+    "tests": "build/reports/armor-earth-integration-tests.txt",
+    "result": "4/4 registered suites passed0.05s. Expanded damage suite subsequently rebuilt/passed0.03s; includes physical, earth/lightning/fire/cold, earth projectile, Lightning Javelin, cold conditional and armor-ignoring damage, each with/without Cracked Armor."
+  },
+  "coverage": "168 of575 captured player skills source-bound; binding is not full mechanics or rendering acceptance.",
+  "full_binding_gate": {
+    "build": "build/reports/armor-earth-binding-full-build.txt",
+    "tests": "build/reports/armor-earth-binding-full-tests.txt",
+    "result": "Full Release build succeeded;285/285 registered tests passed21.27s. Evidence tooling19/19 passed.",
+    "fixture_update": "Initial full run found one test injecting165 through generic status. Updated tests/necromancer_enchantment_removal.cpp to call the actual owned handler in the same application order; targeted rebuild/test passed, then full285 passed. Generic insertion guard retained.",
+    "fixture_build": "build/reports/armor-earth-removal-fixture-build.txt",
+    "fixture_tests": "build/reports/armor-earth-removal-fixture-tests.txt",
+    "official_clients": "No official client process, window or logging session was operated."
+  }
+}

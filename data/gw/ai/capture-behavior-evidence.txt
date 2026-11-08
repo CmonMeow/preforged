@@ -1,0 +1,154 @@
+NPC AI evidence audit, 2026-10-12
+
+Reproduction (repository root; archived files only)
+  python tools/ai/audit_capture_behavior.py data/captures/pre-searing-four-professions-2026-10-11 --output build/reports/ai/four-professions.json
+  python tools/ai/audit_capture_behavior.py data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815 --output build/reports/ai/side-quests.json
+
+The reports include source SHA256s, packet/world line references, clock anchor
+spread, epoch windows, packet spawn/despawn generation tokens, observed action
+destinations, resource evidence, and short-interval positional displacement.
+No original capture, runtime file, client, process, network connection, or account
+was modified. These modern captures use 159/160/162/163. Those numbers must not
+be used as pinned-2022 serialization opcodes.
+
+Final audit totals
+  Four-professions: 2456 packet lifetimes, 6135 NPC-associated events,
+    122 ordinary-attack destination changes, 512 moving actor/epoch groups.
+  Side-quests checkpoint: 2920 packet lifetimes, 123978 NPC-associated events,
+    14119 ordinary-attack destination changes, 334 moving actor/epoch groups.
+  Only 43 of the side-quest destination changes are outside map148. The long
+    Ascalon scripted battle dominates its action evidence. Do not fit general
+    hostile AI to this scripted fight or infer fixed respawn rules from it.
+
+Concrete action and attribution evidence
+  Side packet471540, tick174943546, epoch3/map146, lifetime3:49:2:
+    Fire Imp49 -> River Skale Tad45, opcode160/type60, skill186 (Fireball).
+    Nearby world15788 has Imp model513/level1/allegiance4, target model1435/
+    level0/allegiance3. Snapshot is 454ms later, so coordinates are approximate.
+  Same cast completes with opcode159/type58 at packet471543, tick174945078.
+    Projectile packet164 follows at471545. Damage packet471555 at174945593
+    uses opcode163/type16, target45, CAUSE31, fraction-1.4. Effect packet471556
+    names target45/Imp49. World quest snapshot identifies local_actor31.
+    Therefore the observed damage cause is owner-attributed here. Keep actual
+    action caster and damage/credit owner distinct. Do not declare no Imp damage
+    merely because damage cause differs from the NPC caster ID.
+  Side packet471592, tick174947968: same Imp49 uses skill194 (Flare), target39.
+    The two reports observe Imp skill194 148+195 times and skill186 100+101 times.
+    Counts prove usage, not cooldown policy, energy regeneration or skill priority.
+  Side packet478153 ->478198, epoch6/map146, lifetime6:48:1:
+    Grawl48 starts an ordinary attack against Fire Imp61 at175293390 then against
+    actor31 at175296500 (3110ms later). Identity worlds16708/16715; local_actor31
+    is recorded in epoch6 quest snapshots. Reason for change is unknown.
+
+Resource evidence
+  Four-profession packet16407, tick82070859, epoch8/map162, lifetime8:181:1:
+    opcode159/type41, actor181, value30. World1859 identifies level5
+    Pet - Melandru's Stalker, model1345, allegiance4 (+331ms sample delta).
+    This is an observed max-energy value for this pet, not a universal NPC rule.
+  Neither report joins current-energy33 or expenditure62 to an NPC. Lack of
+    public NPC energy updates cannot justify infinite energy or a guessed pool.
+  Health capacity is visible for some NPCs: side packet471554 publishes10 for
+    River Skale Tad45;471611 publishes100 for Fire Imp49. Preserve per-observation
+    provenance. Do not apply player health formula to all creatures (Aloe Seed
+    capacity5 is also observed at side packet479994).
+
+Movement, patrol, pursuit and return
+  Packet lifetime bounds prevent short snapshot steps crossing a despawn/reuse.
+  Side world1075->1078 records guard27 in epoch1/lifetime1:27:1 displacing250
+    units in1000ms. Other scripted actors show multi-thousand-unit corrections.
+    A displacement rate is not necessarily run speed; teleports/resets and sparse
+    sampling exist. Patrol routes or wander centers must not be copied from this.
+  Full local-player positions are not included in every NPC snapshot. These
+    reports intentionally do not claim pursuit radius, owner-follow distance,
+    aggro threshold, home anchor, line-of-sight policy, or return completion.
+  Visibility is not spawn/death/quest causality. A never-attacking visible foe is
+    not proven passive without controlling range, ownership, state and trigger.
+
+Local historical wiki corroboration (separate from packet observation)
+  Root: C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/
+  Aggro.html:57 says very-low-level starter enemies have no proximity aggro;
+    :74 describes leash distance dependent on patrol/idle context; shared-aggro
+    section expressly describes target-choice factors as not fully known.
+  Minion.html:70 describes follow until engagement, then commitment to that foe
+    despite master movement. This is a distinct policy from party followers.
+  Summoning_stone.html:39 describes summons following the summoner and rarely
+    disengaging combat. Fire Imp behavior should use summoned-ally policy.
+  Animal_companion.html:304-306 distinguishes Attack target lock, Guard following
+    owner targeting/adjacent threats, and Heel immediately returning without
+    attack. Do not collapse pets, heroes, minions and summons into one policy.
+  Fire_Imp_(summon).html:80-82 lists Fireball, Flare, Glyph of Restoration;
+    :89 says it needs no energy management, which is not evidence of infinite
+    energy. The hostile Fire_Imp.html is a different creature profile.
+  Hero_behavior.html warns its AI information may be outdated/incomplete. Its
+    priorities should be reviewed individually, never imported as universal rules.
+
+Implementation requirements justified by these observations
+  1. Instance + spawn-generation identities for all actor, action and target state.
+     Cancel/clear references on actual despawn/death; never inherit agent-ID state.
+  2. Separate profiles for hostile proximity acquisition (including disabled),
+     scripted combat, patrol/wander, party follower, pet controls, minion and
+     summoned ally. Per-profile interruption/owner-follow priority is necessary.
+  3. Keep cast/start/finish/interruption, projectile arrival, damage and owner
+     credit as separate events. Retargeting must not transfer an in-flight action.
+  4. Track NPC resources server-side; missing public resource evidence is unknown.
+     Each loadout/profile needs reviewed capacity, costs and regeneration.
+  5. Store original home/patrol context separately from current pursuit position;
+     exact leash distances are unproven and require reviewed configuration.
+  6. Do not derive quest eligibility, hostility, invulnerability, AI ownership or
+     spawn timing from name, model, visibility, or normalized allegiance alone.
+
+Validation limits
+  Epoch tick conversion uses median(tick_ms-instance_ms) from observed anchors;
+    side capture anchor spreads reach806ms. Loading can briefly report tiny
+    instance_ms before resuming a persistent outpost clock. Those transient
+    samples are excluded; overlapping epoch windows fail closed.
+  NPC identity joins allow at most1500ms sample skew and reject known despawn
+    gaps. Unknown mid-stream lifetimes remain unknown and are excluded from
+    retarget/lifetime motion claims. Exact geometry needs packet movement replay.
+
+Native companion policy slice (2026-10-12)
+  src/runtime/gw_companion_policy.h is an independently testable decision module.
+  tests/companion_policy.cpp covers follower and guard-pet recall/hysteresis,
+    Heel immediate return, Attack lock restoration/range, committed minion and
+    summon combat, target/source/owner generation changes, stale/cross-instance
+    target commands, uncertified triggers, ambiguous actor snapshots, dead actors,
+    missing/NaN/invalid configuration, and pending-action cancellation.
+  All test distances are synthetic fixtures, NOT retail constants.
+  Profiles: friendly_follower, ranger_pet, minion, summoned_ally.
+    Following distance start/stop, friendly combat-break distance, pet Guard
+    combat-break distance, and pet Attack-lock range are optional explicit config.
+    Required missing values return unsupported_configuration; none has a default.
+  Minion/summon retain a valid engaged target despite owner distance or a new
+    owner target, and resume following/acquisition when it becomes invalid/dead.
+    Summon's rare exceptions are not recovered; this is the supported committed
+    profile, not a claim to represent every summoned ally's script.
+  Acquisition is a caller-certified event, not an automatic nearest-foe search.
+    Pet Guard accepts owner_attack/adjacent_owner_threat; minion/summon accept
+    owner_attack/proximity; friendly follower accepts owner_attack/assisted_combat.
+    The caller must validate the trigger using reviewed actor-specific rules.
+
+Root integration contract
+  Construct one Controller per authoritative NPC lifetime and provide Actor keys
+    {instance,generation,id}; bind to current owner lifetime. Command validation
+    requires one tick with the current binding first. The caller may tick again
+    immediately after a valid pet command to issue its resulting decision.
+  Under the instance mutex, build a Snapshot with alive/hostile targets and
+    materialized positions. action_ready means the actual action's current
+    range, LoS, plane and execution gates pass. Distance must be finite/nonnegative.
+    World identity/hostility/ownership are inputs, never inferred from model or
+    the observed normalized allegiance byte.
+  Apply cancel_pending_action before scheduling new action. It cancels unreleased
+    attack/cast intent only; already-released projectiles retain original target,
+    caster and credit owner. Follow/pursue decisions request normal pathfinding;
+    they do not teleport, serialize packets, or reserve damage.
+  Unsupported configuration must stop motion/actions and surface reviewed-content
+    diagnostics. It is not permission to insert fallback numbers in world code.
+  This module deliberately does not choose skill rotations or threat rankings,
+    grant energy, spend costs, pathfind, trigger quest scripts or emit packets.
+    Skill/weapon schedulers remain responsible for costs, cooldown, validation at
+    release, projectile arrival, damage, and separate actual-caster/credit-owner.
+  Owner disappearance is a fail-closed integration guard (idle/cancel), not an
+    asserted retail rule about orphaned summons. Explicit owner death policies,
+    uncommon summon disengagement and scripted exceptions remain future content.
+  No shared CMake/runtime-world files were modified. Root can register
+    companion_policy_test from tests/companion_policy.cpp as a standalone target.

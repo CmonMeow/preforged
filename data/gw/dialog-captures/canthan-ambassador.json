@@ -1,0 +1,132 @@
+{
+  "source": "bin/PacketLogger/packets-10216-28419859.jsonl",
+  "npc_agent_id": 55,
+  "incoming_dialog_body_packets": 3,
+  "incoming_dialog_sender_packets": 2,
+  "separate_dialog_button_packets": 0,
+  "notes": [
+    "Dialog options are embedded in encoded dialog body text, rather than arriving as opcode 126 buttons.",
+    "Toolbox DialogModule decodes these into <a=dialog_id> links. Map IDs must not be equated with dialog IDs.",
+    "Outgoing selected dialog actions are not captured by this build."
+  ],
+  "records": [
+    {
+      "event": "packet",
+      "direction": "StoC",
+      "tick_ms": 28493625,
+      "opcode": 128,
+      "bytes": 248,
+      "complete": true,
+      "hex": "80000000e77f4ef4f7931a160200e22a14ec21e1ea2c010181010a01e67ff1f55ea3ad4001000200e22a14ec21e1ea2c010198010a01ee7fd5a3faa94e1e010000002b903bc4b04701000200e22a14ec21e1ea2c010191010a01018101014ac52acd365901000200e22a14ec21e1ea2c010192010a010181e81d1ca86aded84601000200e22a14ec21e1ea2c010193010a0101814906ec9ce798987601000200e22a14ec21e1ea2c010194010a010181e91d7c9bacbf4f4801000200e22a14ec21e1ea2c010195010a0101814a06f9bc7291c82301000200e22a14ec21e1ea2c010180010a01ed7fe38ebcd095090100000001018e010000"
+    },
+    {
+      "event": "packet",
+      "direction": "StoC",
+      "tick_ms": 28493625,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000037000000"
+    },
+    {
+      "event": "packet",
+      "direction": "StoC",
+      "tick_ms": 28496703,
+      "opcode": 128,
+      "bytes": 248,
+      "complete": true,
+      "hex": "80000000e62acbf939e9d25d0a01ef7f379501a1883b01000200e22a14ec21e1ea2c010186010a01f57f15a48ac8e04f01000200e22a14ec21e1ea2c010187010a01f47fbef47ac68b6a01000200e22a14ec21e1ea2c010188010a01f07f1f9de2b0d46f01000200e22a14ec21e1ea2c010189010a01f27f83914eb7966801000200e22a14ec21e1ea2c01018a010a01f37f708ccaeb061a01000200e22a14ec21e1ea2c01018b010a01f67f41d2cdeff54b01000200e22a14ec21e1ea2c01018c010a01f77f6ce4969bf01501000200e22a14ec21e1ea2c01018d010a01f17fdcc45bf5b67e01000200e22a14ec21e1ea2c01018e010000"
+    },
+    {
+      "event": "packet",
+      "direction": "StoC",
+      "tick_ms": 28496703,
+      "opcode": 128,
+      "bytes": 248,
+      "complete": true,
+      "hex": "800000000a010181000159848eecfe6601000200e22a14ec21e1ea2c01018f010a0101810301a7c18cd6b41701000200e22a14ec21e1ea2c010190010a01018102012b903bc4b04701000200e22a14ec21e1ea2c010191010a01018101014ac52acd365901000200e22a14ec21e1ea2c010192010a010181e81d1ca86aded84601000200e22a14ec21e1ea2c010193010a0101814906ec9ce798987601000200e22a14ec21e1ea2c010194010a010181e91d7c9bacbf4f4801000200e22a14ec21e1ea2c010195010a0101814a06f9bc7291c82301000200e22a14ec21e1ea2c010180010a01ed7fe38ebcd095090100000001018e010000"
+    },
+    {
+      "event": "packet",
+      "direction": "StoC",
+      "tick_ms": 28496703,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000037000000"
+    }
+  ],
+  "decoded_tour": "I am pleased that you should ask. Truly, what guild can call itself a guild without an island of its own?<p>Come with me. I can take you on a tour of each island, and you can choose which you like the best.<br><brx><a=134>Take me to Warrior's Isle.</a><brx><a=135>Take me to Hunter's Isle.</a><brx><a=136>Take me to Wizard's Isle.</a><brx><a=137>Take me to Frozen Isle.</a><brx><a=138>Take me to Nomad's Isle.</a><brx><a=139>Take me to Druid's Isle.</a><brx><a=140>Take me to the Isle of the Dead.</a><brx><a=141>Take me to Burning Isle.</a><brx><a=142>Take me to the Isle of Weeping Stone.</a><brx><a=143>Take me to the Isle of Meditation</a><brx><a=144>Take me to Imperial Isle.</a><brx><a=145>Take me to the Isle of Jade.</a><brx><a=146>Take me to the Uncharted Isle.</a><brx><a=147>Take me to the Corrupted Isle.</a><brx><a=148>Take me to the Isle of Wurms.</a><brx><a=149>Take me to the Isle of Solitude.</a><brx><a=128>I want to look around some more.</a>",
+  "decoded_choices": [
+    {
+      "dialog_id": 134,
+      "label": "Take me to Warrior's Isle."
+    },
+    {
+      "dialog_id": 135,
+      "label": "Take me to Hunter's Isle."
+    },
+    {
+      "dialog_id": 136,
+      "label": "Take me to Wizard's Isle."
+    },
+    {
+      "dialog_id": 137,
+      "label": "Take me to Frozen Isle."
+    },
+    {
+      "dialog_id": 138,
+      "label": "Take me to Nomad's Isle."
+    },
+    {
+      "dialog_id": 139,
+      "label": "Take me to Druid's Isle."
+    },
+    {
+      "dialog_id": 140,
+      "label": "Take me to the Isle of the Dead."
+    },
+    {
+      "dialog_id": 141,
+      "label": "Take me to Burning Isle."
+    },
+    {
+      "dialog_id": 142,
+      "label": "Take me to the Isle of Weeping Stone."
+    },
+    {
+      "dialog_id": 143,
+      "label": "Take me to the Isle of Meditation"
+    },
+    {
+      "dialog_id": 144,
+      "label": "Take me to Imperial Isle."
+    },
+    {
+      "dialog_id": 145,
+      "label": "Take me to the Isle of Jade."
+    },
+    {
+      "dialog_id": 146,
+      "label": "Take me to the Uncharted Isle."
+    },
+    {
+      "dialog_id": 147,
+      "label": "Take me to the Corrupted Isle."
+    },
+    {
+      "dialog_id": 148,
+      "label": "Take me to the Isle of Wurms."
+    },
+    {
+      "dialog_id": 149,
+      "label": "Take me to the Isle of Solitude."
+    },
+    {
+      "dialog_id": 128,
+      "label": "I want to look around some more."
+    }
+  ],
+  "decoding_method": "Read-only retrieval of dialog text already decoded by the running official client; labels and IDs correspond to embedded links in the captured encoded body.",
+  "underworld_hall_offered": false
+}

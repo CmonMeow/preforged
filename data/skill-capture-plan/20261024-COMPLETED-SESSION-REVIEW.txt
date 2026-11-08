@@ -1,0 +1,39 @@
+Completed official skill-log review — 2026-10-24
+
+Source checkpoint: data/captures/skill-checkpoints/20261024-all-completed
+Cutoff: 2026-10-24T04:27:02.320932+00:00
+Compared with: 20261023-cumulative-skills
+
+The final packet and world files for PID 54796 are present in the immutable
+checkpoint at their completed lengths (92,320,383 and 155,229,187 bytes).
+The completed PID 46120 files are present too (37,174,549 and 20,897,818
+bytes). All four checkpoint copies match the SHA-256 hashes in manifest.json.
+The logger originals were not altered.
+
+The cumulative capture gained 896 local skill activations, 839 completed
+casts and 425 local body/effect packets. No previously unseen obtainable
+skill was activated locally in this delta. The new local activations deepen
+evidence for Ebon Hawk (+202), Stoning (+197), Glowstone (+138), Aftershock
+(+95), Shockwave (+92), Earth Attunement (+64), Aura of Restoration (+47),
+Death's Charge (+33), and Aura of Restoration (PvP) (+28).
+
+Current fixed inventory: 679 obtainable skills locally activated, 362 with
+production source bindings, 317 awaiting binding, and 650 with no local
+activation evidence. A binding denotes source coverage, not complete retail
+mechanics or rendered-client acceptance. Other/unassigned actor sightings
+must not be counted as local skill casts.
+
+See skill-audit/captured-skills.json within the checkpoint for the exact
+packet file, line, tick, actor and map receipts. CURRENT-BACKLOG.json and
+MONSTER-NPC-ENVIRONMENT-CAPTURES.txt hold the implementation and NPC
+capture targets. The remaining NPC list already excludes observed names and
+effects from this completed session.
+
+Post-review source update (2026-10-24): Tiger Stance 995 and Death's Charge 952 were bound after the initial capture inventory. The unchanged checkpoint now audits as 679 captured / 364 source-bound / 315 awaiting binding / 650 without local activation. Death's Charge paid-cast and native sequence tests pass; healing comparison and rendered acceptance remain open.
+
+Post-review source update (2026-10-24): Ash Blast 1085 is now bound for normal paid casting. The unchanged checkpoint audits as 679 captured / 365 source-bound / 314 awaiting binding / 650 without local activation. Pinned 2022 native effect descriptors158/159 are verified separately from newer official capture descriptors159/160; rendered acceptance and recharge-context resolution remain open.
+
+Current source audit (2026-10-24): the same completed capture is the base of
+20261024-signet-infection-bound. It still contains 679 locally activated
+obtainable skills and 650 without local activation; 368 are now source-bound
+and 311 await binding. The original packet and world files remain unchanged.

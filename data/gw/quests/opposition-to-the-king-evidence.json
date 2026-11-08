@@ -1,0 +1,729 @@
+{
+  "quest": 78,
+  "status": "detached_candidate_based_on_quest62_not_built",
+  "world_source": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\world-43292-168890171.jsonl",
+  "world_sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757",
+  "initial": {
+    "line": 25387,
+    "map": 146,
+    "epoch": 23,
+    "quest": {
+      "quest_id": 78,
+      "log_state": 1,
+      "completed": false,
+      "current_mission": false,
+      "primary": false,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 160,
+      "marker": {
+        "x": -14926.0,
+        "y": 9979.0,
+        "plane": 0,
+        "x_bits": 3328784384,
+        "y_bits": 1176235008,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5878,
+          54629,
+          53999,
+          646
+        ],
+        "decoded": "Opposition to the King",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          13255,
+          63163,
+          59038,
+          32232
+        ],
+        "decoded": "Devona",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5883,
+          54444,
+          64731,
+          19115,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756
+        ],
+        "decoded": "It's sad. These Royalist fools oppose King Adelbern because he was not born into nobility. They forget that it was Adelbern who saved us from the Guild Wars and the old king, Grenth Be Just, who nearly brought Ascalon to ruin.<p>The Royalists hope to depose Adelbern and place Duke Barradin on the throne, but no one dares implicate the duke in their actions. I'd like you to go to <c=@Quest>Green Hills County</c> and search for signs of support for the <c=@Quest>Royalists</c>. Head north until you find a road to Green Hill County, and talk to at least three people there. Sound them out to see if they have Royalist sentiments.<p>One warning though: Do not talk to Warmaster Grast. At the slightest mention of disloyalty to Adelbern, he's likely to crush your skull.\n\nReward:<brx>500 Experience<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5889,
+          51873,
+          51178,
+          24565,
+          1,
+          2,
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5890,
+          45934,
+          63514,
+          2553,
+          257,
+          256,
+          1
+        ],
+        "decoded": "{s}Go north from Ashford to find the road to Green Hills County. Once in Green Hills County, question at least three locals about opposition to the king.{s}0/3 locals questioned.",
+        "status": "decoded"
+      }
+    }
+  },
+  "packet_source": "data\\captures\\skill-checkpoints\\20261023-session-52044-complete\\packets-52044-191877156.jsonl",
+  "packet_sha256": "f9611646aa04fbbbad49ec4bedb30b7fc5fa7315581d7678449b89a387699d03",
+  "counted_receipts": [
+    {
+      "line": 72119,
+      "tick_ms": 194364375,
+      "opcode": 84,
+      "complete": true,
+      "captured_hex": "540000004e000000f62ab7c12dcf21130a010117a1caeac7f55f01000200f62ab7c12dcf21130a0102176eb31af8f909010101010100000021e1ea2c010180010a01fb2a8bca5ec47f340a01fb08010001000000000000000000807f0000807f00000000000000000000807f0000807f000000000500000016000000a50000000b0000000000000020a917000000000000000000eb030000040100000000000005fe0a0302fe370bfe1c01fe5b02fea9010000000004c8a3090b88a4030588a45202fe9c00fea00101fe4a0c01fecc040009fe860a02fe060efebf1287fe6706fe240efef700020202020202fee500fe1204fee008fe8a0c00000000000000000000000001009afe",
+      "quest_id": 78,
+      "name_encoded_utf16": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5889,
+        51873,
+        51178,
+        24565,
+        1,
+        2,
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5890,
+        45934,
+        63514,
+        2553,
+        257,
+        257,
+        1
+      ]
+    },
+    {
+      "line": 72352,
+      "tick_ms": 194387000,
+      "opcode": 84,
+      "complete": true,
+      "captured_hex": "540000004e000000f62ab7c12dcf21130a010117a1caeac7f55f01000200f62ab7c12dcf21130a0102176eb31af8f909010102010100000000006f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f000000000500000016000000a50000000b0000000000000020a917000000000000000000eb030000040100000000000005fe0a0302fe370bfe1c01fe5b02fea9000000000001b824000118268f009826060888a4050788a401fe4a0c01fecc040009fe860a02fe060efebf1287fe6706fe240efef700020202020202fee500fe1204fee008fe8a0c00000000000000000000000001009afe",
+      "quest_id": 78,
+      "name_encoded_utf16": [
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5889,
+        51873,
+        51178,
+        24565,
+        1,
+        2,
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        5890,
+        45934,
+        63514,
+        2553,
+        257,
+        258,
+        1
+      ]
+    },
+    {
+      "line": 72403,
+      "tick_ms": 194391609,
+      "opcode": 76,
+      "complete": true,
+      "captured_hex": "4c0000004e000000fb16acd4dbfcab4a02000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101f402000002010100000000006f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f000000000500000016000000a50000000b0000000000000020a917000000000000000000eb030000040100000000000005fe0a0302fe370bfe1c01fe5b02fea9000000000001b824000118268f009826060888a4050788a401fe4a0c01fecc040009fe860a02fe060efebf1287fe6706fe240efef700020202020202fee500fe1204fee008fe8a0c00000000000000000000000001009afef52ad2c523eff80b0a010117a1caeac7f55f01000200f52ad2c523eff80b0a0102176eb31af8f9090101030101000200f62ab7c12dcf21130a01f02aa7c4009cbb3e0a01c733bbf69ee6e87d010001000000b4158d15020003fe7d129afe1e0405fe7c010406fe8e14a5fe8c12060108a6fec900006ffedd0802030202fec61e03000000030208fe8c120434020202effe253ffe480000fe0e02007d0236020202400904fe031e000000fea002020202fe7319fe100efe8705febc21fed100fe8ee417fee100193721fec317fed00c05fe1b23fe792200feda15fead050ffed26cfef9180202061c01fe8a1efe260724fee70c000000fe540c0210110b2202fe",
+      "quest_id": 78,
+      "description_encoded_utf16": [
+        5883,
+        54444,
+        64731,
+        19115,
+        2,
+        258,
+        2,
+        258,
+        2,
+        10984,
+        59348,
+        58828,
+        13938,
+        2,
+        10986,
+        35903,
+        46361,
+        26129,
+        257,
+        756
+      ],
+      "objectives_encoded_utf16": [
+        10997,
+        50642,
+        61219,
+        3064,
+        266,
+        5889,
+        51873,
+        51178,
+        24565,
+        1,
+        2,
+        10997,
+        50642,
+        61219,
+        3064,
+        266,
+        5890,
+        45934,
+        63514,
+        2553,
+        257,
+        259,
+        1,
+        2,
+        10998,
+        49591,
+        53037,
+        4897,
+        266,
+        10992,
+        50343,
+        39936,
+        16059,
+        266,
+        13255,
+        63163,
+        59038,
+        32232,
+        1,
+        1
+      ]
+    }
+  ],
+  "receipts": {
+    "72120": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194364375,
+      "opcode": 81,
+      "bytes": 24,
+      "complete": true,
+      "hex": "510000004e0000000000807f0000807f00000000a0000000"
+    },
+    "72353": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194387000,
+      "opcode": 81,
+      "bytes": 24,
+      "complete": true,
+      "hex": "510000004e0000000000807f0000807f00000000a0000000"
+    },
+    "72402": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194391609,
+      "opcode": 77,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4d0000004e000000000eae4600044d460000000092000000"
+    },
+    "87821": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194940078,
+      "opcode": 81,
+      "bytes": 24,
+      "complete": true,
+      "hex": "510000004e000000003c2fc600c0c1c50000000092000000"
+    },
+    "88159": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194944828,
+      "opcode": 83,
+      "bytes": 24,
+      "complete": true,
+      "hex": "530000004e00000000c0f4c500a46bc60000000092000000"
+    },
+    "89127": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194986046,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "520000004e000000"
+    },
+    "89132": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194986046,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee00000000000000f4010000"
+    },
+    "89136": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194986046,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "520000004e000000"
+    },
+    "89140": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 52044,
+      "tick_ms": 194986062,
+      "opcode": 129,
+      "bytes": 8,
+      "complete": true,
+      "hex": "8100000039000000"
+    }
+  },
+  "preceding_map_receipts": {
+    "72120": [
+      71661,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194340921,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000a00000000100000000000000000000000000000000000000"
+      }
+    ],
+    "72353": [
+      71661,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194340921,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000a00000000100000000000000000000000000000000000000"
+      }
+    ],
+    "72402": [
+      71661,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194340921,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000a00000000100000000000000000000000000000000000000"
+      }
+    ],
+    "87821": [
+      86929,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194911828,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a0100000a000000a40000000000000001000000000000000000000000000000"
+      }
+    ],
+    "88159": [
+      87860,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194944000,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000920000000100000000000000000000000000000000000000"
+      }
+    ],
+    "89127": [
+      87860,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194944000,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000920000000100000000000000000000000000000000000000"
+      }
+    ],
+    "89132": [
+      87860,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194944000,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000920000000100000000000000000000000000000000000000"
+      }
+    ],
+    "89136": [
+      87860,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194944000,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000920000000100000000000000000000000000000000000000"
+      }
+    ],
+    "89140": [
+      87860,
+      {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 52044,
+        "tick_ms": 194944000,
+        "opcode": 410,
+        "bytes": 32,
+        "complete": true,
+        "hex": "9a01000001000000920000000100000000000000000000000000000000000000"
+      }
+    ]
+  },
+  "wiki": {
+    "title": "Opposition to the King",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Opposition_to_the_King.html",
+    "sha256": "f6aaadf57e84c80639b72b8c6b29a5f348fb79a81f41fde9eb533f258d2b3b7d",
+    "sections": {
+      "Quest_information": {
+        "line": 108,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nCharacter in pre-Searing\nObjectives\nGo north from Ashford to find the road to Green Hills County. Once in Green Hills County, question at least three locals about opposition to the king.\n[0..3]/3 locals questioned.\nReturn to Devona for your reward.\nReward\n500 Experience"
+      },
+      "Requirements": {
+        "line": 109,
+        "text": "Requirements\nTyrian (Prophecies) character\nCharacter in pre-Searing"
+      },
+      "Objectives": {
+        "line": 112,
+        "text": "Objectives\nGo north from Ashford to find the road to Green Hills County. Once in Green Hills County, question at least three locals about opposition to the king.\n[0..3]/3 locals questioned.\nReturn to Devona for your reward."
+      },
+      "Reward": {
+        "line": 116,
+        "text": "Reward\n500 Experience"
+      },
+      "Walkthrough": {
+        "line": 118,
+        "text": "Walkthrough\nOnce you obtain the quest, fast travel to Ascalon City because it's closer. Exit to Lakeside County, head right and follow the road until you reach Green Hills County and talk to the three closest NPCs, Farrah Cappo, Grazden the Protector and Kasha Blackblood."
+      },
+      "Dialogue": {
+        "line": 121,
+        "text": "Dialogue\nInitial dialogue\nDevona\n\"It's sad. These Royalist fools oppose King Adelbern because he was not born into nobility. They forget it was Adelbern who saved us from the Guild Wars and the old king, Grenth Be Just, who nearly brought Ascalon to ruin.\nThese Royalists hope to depose Adelbern and place Duke Barradin on the throne, but no one dares implicate the duke in their actions. I'd like you to go to Green Hills County and search for signs of support for the Royalists. Head north until you find a road to Green Hill County, and talk to at least three people there. Sound them out to see if they have Royalist sentiments.\nOne warning though: Do not talk to Warmaster Grast. At the slightest mention of disloyalty to Adelbern, he's likely to crush your skull.\"\nAccept: \"I'll see what I can do.\"\nDecline: \"I'm no spy. Get someone else.\"\nAsk: \"The road to Green Hills County is past those fields to the north. All I ask is that you question at least three locals to see how loyal they are to the king.\nOh, but remember: Do not talk to Warmaster Grast about this. Not if you value your life.\"\nIntermediate dialogue\nFarrah Cappo\n\"You must be joking. Not since King Doric himself has Ascalon had a finer king than Adelbern. The only good Royalist is a dead Royalist, I say.\"\n\"Excuse me, my mistake.\"\nGrazden the Protector\n\"From what I have seen, King Adelbern is a man of great compassion. There will always be those malcontents who seek to blame every hardship in life on the current monarch. Many of the Royalists are merely misguided. In time, they will realize the error of their ways.\"\n\"I hope you are right.\"\nKasha Blackblood\n\"Maybe you don't remember how Ascalon was before Adelbern. The crown peddled influence to guilds for the slightest show of coin. Who would wish for a thing like that to return?\"\n\"Not I! Long live the king!\"\nLittle Thom\n\"You've got a lot of nerve talking about that here. It's true the duke was next in line when the royal family was assassinated, but he fully supported the crowning of Adelbern. Wasn't it the duke, after all, who appointed Adelbern commander of the army after the Battle of Rin?\"\n\"I'm sorry. I misspoke.\"\nDuke Barradin\n\"It saddens me greatly to see people use my name and lineage to stir up trouble. Adelbern is a great king, and I see already in his son Rurik the markings of greatness. Disloyalty to Adelbern is nothing less than betrayal of Ascalon, but you were asking in a strictly theoretical sense, weren't you?\"\n\"Yes, of course. Long live the king!\"\nReward dialogue\nDevona\n\"So, the duke's people are loyal to Alderbern[sic] after all. I'm pleased to hear that.\""
+      },
+      "Notes": {
+        "line": 150,
+        "text": "Notes\nYou can also talk to Little Thom and Duke Barradin in The Barradin Estate, but since you need three witnesses it is not enough to just map travel there.\nRetrieved from \"https://wiki.guildwars.com/index.php?title=Opposition_to_the_King&oldid=2649446\"\nCategories:\nAscalon (pre-Searing) quests\nProphecies secondary quests\nProphecies quests\nTyrian only quests\nText errorsHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "limitations": [
+    "Incoming packets prove objective counts and500XP/removal; native outgoing choice IDs are not inferred.",
+    "Five identity credits, current-NPC lifetime checks and durable transitions are private-server policy backed by named wiki objectives.",
+    "Only observed map/stage markers are bound; other route markers unresolved.",
+    "No native build or rendered client verification yet.",
+    "Dialogue uses complete-sentence wiki excerpts within the established256-unit literal body bound; full native NPC dialogue parity is not claimed."
+  ],
+  "population_review": {
+    "capture_review": "data\\gw\\npcs\\presearing-review-evidence.json",
+    "capture_review_sha256": "ce5068cfa9146308ef5e2dbf1c48a7bf75c86aba814c11e10365e90801e59df2",
+    "eligibility_review": "data\\gw\\npcs\\presearing-eligibility-evidence.json",
+    "eligibility_review_sha256": "81e859d398076d97b462ecead261890ad951c749c81a9896bc16d9fdee75ce5c",
+    "exact_rows": [
+      "# Farrah Cappo",
+      "npc 160 30017 30017 16271 0 1677721600 0 524 1 2 0 21068.0 13342.0 0.163366 33be8783b10229c3 116659",
+      "# Grazden the Protector",
+      "npc 160 30018 30018 16202 0 1677721600 0 524 3 2 0 17719.0 12586.0 -0.782098 32e58a67a4850c6e 116721"
+    ],
+    "policy": "Only ordinary Green Hills160 placements; Farrah146 remains excluded.",
+    "captured_records": [
+      {
+        "map": 160,
+        "name": "Farrah Cappo",
+        "name_encoded_utf16": [
+          13246,
+          34691,
+          45314,
+          10691
+        ],
+        "status": "stationary_review_candidate",
+        "contexts": 4,
+        "visibility_segments": 6,
+        "quest_overlay_matches": [],
+        "representative": {
+          "source": "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl",
+          "map": 160,
+          "epoch": 48,
+          "agent": 13,
+          "visibility_segment": 1,
+          "first_line": 12820,
+          "last_line": 13097,
+          "first_instance_ms": 2141,
+          "last_instance_ms": 127101,
+          "first": {
+            "agent": 13,
+            "model": 1500,
+            "x": 21068.0,
+            "y": 13342.0,
+            "plane": 0,
+            "facing": 0.163366,
+            "level": 2,
+            "allegiance": 6,
+            "name_encoded_utf16": [
+              13246,
+              34691,
+              45314,
+              10691
+            ],
+            "name": "Farrah Cappo",
+            "name_status": "decoded"
+          },
+          "definition": {
+            "line": 12819,
+            "value": {
+              "model_file": 16271,
+              "skin_file": 0,
+              "appearance": 0,
+              "flags": 524,
+              "primary": 1,
+              "secondary": 0,
+              "default_level": 2,
+              "visual_adjustment_bytes": [
+                0,
+                0,
+                0,
+                100
+              ],
+              "model_files": [
+                116659
+              ],
+              "name_encoded_utf16": [
+                3958,
+                50296,
+                56403,
+                13856
+              ],
+              "name": "Farrah Cappo",
+              "name_status": "decoded"
+            }
+          },
+          "quest_context": {
+            "line": 12802,
+            "active_quest_id": 0,
+            "quests": []
+          },
+          "observations": 126,
+          "allegiance": [
+            6
+          ],
+          "planes": [
+            0
+          ],
+          "bounds": [
+            21068.0,
+            13342.0,
+            21068.0,
+            13342.0
+          ],
+          "observed_displacement_bound": 0.0,
+          "position_class": "stationary_observed",
+          "known_miniature": false,
+          "baseline_name_matches": 0,
+          "nearest_baseline_distance": null,
+          "quest_overlay_matches": []
+        },
+        "staging_agent": 30017,
+        "staging_definition": 30017
+      },
+      {
+        "map": 160,
+        "name": "Grazden the Protector",
+        "name_encoded_utf16": [
+          13029,
+          35431,
+          42117,
+          3182
+        ],
+        "status": "stationary_review_candidate",
+        "contexts": 4,
+        "visibility_segments": 6,
+        "quest_overlay_matches": [],
+        "representative": {
+          "source": "data/captures/pre-searing-ele-warrior-2026-10-09/world-21116-95410734.jsonl",
+          "map": 160,
+          "epoch": 9,
+          "agent": 11,
+          "visibility_segment": 2,
+          "first_line": 1497,
+          "last_line": 1650,
+          "first_instance_ms": 174971,
+          "last_instance_ms": 319061,
+          "first": {
+            "agent": 11,
+            "model": 1477,
+            "x": 17719.0,
+            "y": 12586.0,
+            "plane": 0,
+            "facing": -0.782098,
+            "level": 2,
+            "allegiance": 6,
+            "name_encoded_utf16": [
+              13029,
+              35431,
+              42117,
+              3182
+            ],
+            "name": "Grazden the Protector",
+            "name_status": "decoded"
+          },
+          "definition": {
+            "line": 1287,
+            "value": {
+              "model_file": 16202,
+              "skin_file": 0,
+              "appearance": 0,
+              "flags": 524,
+              "primary": 3,
+              "secondary": 0,
+              "default_level": 2,
+              "visual_adjustment_bytes": [
+                0,
+                0,
+                0,
+                100
+              ],
+              "model_files": [
+                116721
+              ],
+              "name_encoded_utf16": [
+                3937,
+                57842,
+                43654,
+                10226
+              ],
+              "name": "Monk",
+              "name_status": "decoded"
+            }
+          },
+          "quest_context": null,
+          "observations": 145,
+          "allegiance": [
+            6
+          ],
+          "planes": [
+            0
+          ],
+          "bounds": [
+            17719.0,
+            12586.0,
+            17719.0,
+            12586.0
+          ],
+          "observed_displacement_bound": 0.0,
+          "position_class": "stationary_observed",
+          "known_miniature": false,
+          "baseline_name_matches": 0,
+          "nearest_baseline_distance": null,
+          "quest_overlay_matches": []
+        },
+        "staging_agent": 30018,
+        "staging_definition": 30018
+      }
+    ],
+    "capture_sources": {
+      "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+      "data/captures/pre-searing-ele-warrior-2026-10-09/world-21116-95410734.jsonl": "b8eb71a20e83e8bc1956e147843faef7cb2ed4fcc008bd9287b0b0bf56b7c3b6"
+    }
+  },
+  "devona_sender_join": {
+    "world_source": "data\\captures\\skill-checkpoints\\20261023-session-52044-complete\\world-52044-191877453.jsonl",
+    "world_sha256": "442799838cf9489e5be39d3c22121cf9d615694fa3e48f1b88122acbad1d932e",
+    "line": 7074,
+    "map": 146,
+    "epoch": 45,
+    "actor": 57,
+    "sender_packet_line": 89140
+  }
+}

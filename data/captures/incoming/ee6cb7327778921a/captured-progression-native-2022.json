@@ -1,0 +1,24 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_counts": {
+    "232": 1,
+    "233": 1,
+    "234": 1,
+    "235": 1,
+    "236": 1,
+    "242": 88,
+    "245": 44,
+    "243": 1
+  },
+  "native_world_state_verified": true,
+  "rendered_ui_verified": false,
+  "network_verified": false,
+  "mocked_helpers": [
+    "TLS",
+    "allocator",
+    "strlen",
+    "copy",
+    "UI notification"
+  ],
+  "notifications": 48
+}

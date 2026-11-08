@@ -1,0 +1,92 @@
+{
+  "skill": 292,
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Infuse_Health.html",
+  "wiki_sha256": "00dec4fc26f7c7e8d5a576b326f9efa02548d498b4e284bf22cd97b56c13c66f",
+  "source": "packets-1360-15821281.jsonl",
+  "records": [
+    {
+      "line": 270240,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 21227156,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000003c000000190000001c00000024010000"
+      }
+    },
+    {
+      "line": 270249,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 21227453,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000003a0000001900000000000000"
+      }
+    },
+    {
+      "line": 270250,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 21227453,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a0000000140000001c0000001900000005020000"
+      }
+    },
+    {
+      "line": 270252,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 21227453,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000370000001c000000190000005555e53e"
+      }
+    },
+    {
+      "line": 270253,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 21227453,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000000a0000001900000024010000"
+      }
+    },
+    {
+      "line": 270254,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 1360,
+        "tick_ms": 21227453,
+        "opcode": 163,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a3000000370000001900000019000000000000bf"
+      }
+    }
+  ],
+  "observed_loss_fraction": -0.5,
+  "limits": [
+    "NPC ally target; current runtime player-only support does not cover it.",
+    "Resource517 requires targeted kind20; generic victim helper requires correction.",
+    "Fraction alone does not identify rank or maximum Health."
+  ]
+}

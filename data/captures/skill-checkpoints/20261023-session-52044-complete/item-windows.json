@@ -1,0 +1,1948 @@
+{
+  "source": "data\\captures\\skill-checkpoints\\20261023-session-52044-complete\\packets-52044-191877156.jsonl",
+  "source_sha256": "f9611646aa04fbbbad49ec4bedb30b7fc5fa7315581d7678449b89a387699d03",
+  "windows": [
+    {
+      "owner_agent": 7,
+      "owner_line": 75908,
+      "tick_ms": 194523000,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 75916,
+          "ids": [
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298
+          ]
+        }
+      ],
+      "definitions": {
+        "292": {
+          "line": 75909,
+          "definition": {
+            "opcode": 353,
+            "id": 292,
+            "file": 2147524679,
+            "type": 12,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871425,
+            "price": 50,
+            "model": 957,
+            "quantity": 1,
+            "encoded_name": [
+              8948,
+              59277,
+              37384,
+              3232
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657275136
+            ]
+          }
+        },
+        "293": {
+          "line": 75910,
+          "definition": {
+            "opcode": 353,
+            "id": 293,
+            "file": 2147499097,
+            "type": 24,
+            "unknown1": 3,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536875009,
+            "price": 0,
+            "model": 2822,
+            "quantity": 1,
+            "encoded_name": [
+              9814,
+              38279,
+              61274,
+              607
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              2747794176
+            ]
+          }
+        },
+        "294": {
+          "line": 75911,
+          "definition": {
+            "opcode": 353,
+            "id": 294,
+            "file": 2147493031,
+            "type": 10,
+            "unknown1": 0,
+            "dye": 11,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 554172929,
+            "price": 25,
+            "model": 918,
+            "quantity": 1,
+            "encoded_name": [
+              8910,
+              62060,
+              62927,
+              13357
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              618138369,
+              619184139
+            ]
+          }
+        },
+        "295": {
+          "line": 75912,
+          "definition": {
+            "opcode": 353,
+            "id": 295,
+            "file": 2147562877,
+            "type": 29,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 553648641,
+            "price": 20,
+            "model": 2993,
+            "quantity": 1,
+            "encoded_name": [
+              10013,
+              44808,
+              49094,
+              26605
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              635962112,
+              609746954
+            ]
+          }
+        },
+        "296": {
+          "line": 75913,
+          "definition": {
+            "opcode": 353,
+            "id": 296,
+            "file": 2147614229,
+            "type": 29,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 553648641,
+            "price": 50,
+            "model": 2989,
+            "quantity": 1,
+            "encoded_name": [
+              10008,
+              53131,
+              41023,
+              6395
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              635961600,
+              609746969
+            ]
+          }
+        },
+        "297": {
+          "line": 75914,
+          "definition": {
+            "opcode": 353,
+            "id": 297,
+            "file": 2147595658,
+            "type": 21,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 537395713,
+            "price": 100,
+            "model": 2110,
+            "quantity": 1,
+            "encoded_name": [
+              9401,
+              53264,
+              55986,
+              21848
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "298": {
+          "line": 75915,
+          "definition": {
+            "opcode": 353,
+            "id": 298,
+            "file": 2147595645,
+            "type": 12,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536870913,
+            "price": 2,
+            "model": 1101,
+            "quantity": 1,
+            "encoded_name": [
+              9049,
+              46336,
+              60056,
+              8468
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657274624
+            ]
+          }
+        },
+        "299": {
+          "line": 76003,
+          "definition": {
+            "opcode": 353,
+            "id": 299,
+            "file": 2147635541,
+            "type": 21,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 537399809,
+            "price": 0,
+            "model": 2555,
+            "quantity": 1,
+            "encoded_name": [
+              9547,
+              35515,
+              59112,
+              28124
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        }
+      },
+      "failures": [],
+      "status": "zone_before_window_heading"
+    },
+    {
+      "owner_agent": 62,
+      "owner_line": 107045,
+      "tick_ms": 195694343,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 107053,
+          "ids": [
+            203,
+            760,
+            558,
+            80,
+            201,
+            202,
+            204
+          ]
+        }
+      ],
+      "definitions": {
+        "203": {
+          "line": 107046,
+          "definition": {
+            "opcode": 353,
+            "id": 203,
+            "file": 2147524679,
+            "type": 12,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871425,
+            "price": 50,
+            "model": 957,
+            "quantity": 1,
+            "encoded_name": [
+              8948,
+              59277,
+              37384,
+              3232
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657275136
+            ]
+          }
+        },
+        "760": {
+          "line": 107047,
+          "definition": {
+            "opcode": 353,
+            "id": 760,
+            "file": 2147499097,
+            "type": 24,
+            "unknown1": 3,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536875009,
+            "price": 0,
+            "model": 2822,
+            "quantity": 1,
+            "encoded_name": [
+              9814,
+              38279,
+              61274,
+              607
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              2747794176
+            ]
+          }
+        },
+        "558": {
+          "line": 107048,
+          "definition": {
+            "opcode": 353,
+            "id": 558,
+            "file": 2147493031,
+            "type": 10,
+            "unknown1": 0,
+            "dye": 11,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 554172929,
+            "price": 25,
+            "model": 918,
+            "quantity": 1,
+            "encoded_name": [
+              8910,
+              62060,
+              62927,
+              13357
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              618138369,
+              619184139
+            ]
+          }
+        },
+        "80": {
+          "line": 107049,
+          "definition": {
+            "opcode": 353,
+            "id": 80,
+            "file": 2147562877,
+            "type": 29,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 553648641,
+            "price": 20,
+            "model": 2993,
+            "quantity": 1,
+            "encoded_name": [
+              10013,
+              44808,
+              49094,
+              26605
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              635962112,
+              609746954
+            ]
+          }
+        },
+        "201": {
+          "line": 107050,
+          "definition": {
+            "opcode": 353,
+            "id": 201,
+            "file": 2147614229,
+            "type": 29,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 553648641,
+            "price": 50,
+            "model": 2989,
+            "quantity": 1,
+            "encoded_name": [
+              10008,
+              53131,
+              41023,
+              6395
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              635961600,
+              609746969
+            ]
+          }
+        },
+        "202": {
+          "line": 107051,
+          "definition": {
+            "opcode": 353,
+            "id": 202,
+            "file": 2147595658,
+            "type": 21,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 537395713,
+            "price": 100,
+            "model": 2110,
+            "quantity": 1,
+            "encoded_name": [
+              9401,
+              53264,
+              55986,
+              21848
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "204": {
+          "line": 107052,
+          "definition": {
+            "opcode": 353,
+            "id": 204,
+            "file": 2147595645,
+            "type": 12,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536870913,
+            "price": 2,
+            "model": 1101,
+            "quantity": 1,
+            "encoded_name": [
+              9049,
+              46336,
+              60056,
+              8468
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657274624
+            ]
+          }
+        },
+        "221": {
+          "line": 107165,
+          "definition": {
+            "opcode": 353,
+            "id": 221,
+            "file": 136264,
+            "type": 30,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 445,
+            "unknown2": 1,
+            "interaction": 537395777,
+            "price": 3,
+            "model": 427,
+            "quantity": 1,
+            "encoded_name": [
+              10494
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "224": {
+          "line": 107225,
+          "definition": {
+            "opcode": 353,
+            "id": 224,
+            "file": 136264,
+            "type": 30,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 445,
+            "unknown2": 1,
+            "interaction": 537395777,
+            "price": 3,
+            "model": 427,
+            "quantity": 1,
+            "encoded_name": [
+              10494
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "230": {
+          "line": 107563,
+          "definition": {
+            "opcode": 353,
+            "id": 230,
+            "file": 9510,
+            "type": 5,
+            "unknown1": 4,
+            "dye": 0,
+            "materials": 455,
+            "unknown2": 1,
+            "interaction": 572522560,
+            "price": 5,
+            "model": 135,
+            "quantity": 1,
+            "encoded_name": [
+              10323
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              616038656,
+              639108096,
+              647495824,
+              2760378631
+            ]
+          }
+        },
+        "279": {
+          "line": 107763,
+          "definition": {
+            "opcode": 353,
+            "id": 279,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "285": {
+          "line": 107776,
+          "definition": {
+            "opcode": 353,
+            "id": 285,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "282": {
+          "line": 107791,
+          "definition": {
+            "opcode": 353,
+            "id": 282,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "252": {
+          "line": 107877,
+          "definition": {
+            "opcode": 353,
+            "id": 252,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "249": {
+          "line": 107882,
+          "definition": {
+            "opcode": 353,
+            "id": 249,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "255": {
+          "line": 107895,
+          "definition": {
+            "opcode": 353,
+            "id": 255,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "291": {
+          "line": 107923,
+          "definition": {
+            "opcode": 353,
+            "id": 291,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "288": {
+          "line": 107930,
+          "definition": {
+            "opcode": 353,
+            "id": 288,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "315": {
+          "line": 107987,
+          "definition": {
+            "opcode": 353,
+            "id": 315,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "312": {
+          "line": 107991,
+          "definition": {
+            "opcode": 353,
+            "id": 312,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "264": {
+          "line": 108006,
+          "definition": {
+            "opcode": 353,
+            "id": 264,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "270": {
+          "line": 108015,
+          "definition": {
+            "opcode": 353,
+            "id": 270,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "306": {
+          "line": 108076,
+          "definition": {
+            "opcode": 353,
+            "id": 306,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "309": {
+          "line": 108080,
+          "definition": {
+            "opcode": 353,
+            "id": 309,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "303": {
+          "line": 108089,
+          "definition": {
+            "opcode": 353,
+            "id": 303,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "258": {
+          "line": 108103,
+          "definition": {
+            "opcode": 353,
+            "id": 258,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "261": {
+          "line": 108108,
+          "definition": {
+            "opcode": 353,
+            "id": 261,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "267": {
+          "line": 108112,
+          "definition": {
+            "opcode": 353,
+            "id": 267,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3456,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "273": {
+          "line": 108739,
+          "definition": {
+            "opcode": 353,
+            "id": 273,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "276": {
+          "line": 108743,
+          "definition": {
+            "opcode": 353,
+            "id": 276,
+            "file": 111902,
+            "type": 28,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871168,
+            "price": 0,
+            "model": 3454,
+            "quantity": 1,
+            "encoded_name": [
+              8582
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              639107072,
+              616039168,
+              647495681,
+              2760377603
+            ]
+          }
+        },
+        "193": {
+          "line": 109246,
+          "definition": {
+            "opcode": 353,
+            "id": 193,
+            "file": 14401,
+            "type": 27,
+            "unknown1": 3,
+            "dye": 0,
+            "materials": 486,
+            "unknown2": 1,
+            "interaction": 578814272,
+            "price": 6,
+            "model": 412,
+            "quantity": 1,
+            "encoded_name": [
+              10465
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              616038912,
+              2760378374
+            ]
+          }
+        },
+        "194": {
+          "line": 109247,
+          "definition": {
+            "opcode": 353,
+            "id": 194,
+            "file": 9528,
+            "type": 24,
+            "unknown1": 3,
+            "dye": 0,
+            "materials": 228,
+            "unknown2": 1,
+            "interaction": 536871232,
+            "price": 7,
+            "model": 328,
+            "quantity": 1,
+            "encoded_name": [
+              10412
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              2747795200
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "status": "zone_before_window_heading"
+    },
+    {
+      "owner_agent": 12,
+      "owner_line": 190841,
+      "tick_ms": 198467640,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 190846,
+          "ids": [
+            658,
+            661
+          ]
+        }
+      ],
+      "definitions": {
+        "658": {
+          "line": 190842,
+          "definition": {
+            "opcode": 353,
+            "id": 658,
+            "file": 2147607112,
+            "type": 30,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 450,
+            "unknown2": 1,
+            "interaction": 537395777,
+            "price": 3,
+            "model": 424,
+            "quantity": 3,
+            "encoded_name": [
+              10479
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "661": {
+          "line": 190844,
+          "definition": {
+            "opcode": 353,
+            "id": 661,
+            "file": 2147484319,
+            "type": 13,
+            "unknown1": 8,
+            "dye": 11,
+            "materials": 39,
+            "unknown2": 1,
+            "interaction": 536870919,
+            "price": 9,
+            "model": 1426,
+            "quantity": 1,
+            "encoded_name": [
+              33026,
+              2965
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657275648,
+              2747795200
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "heading": {
+        "type": 2,
+        "encoded_utf16": [
+          11059,
+          55010,
+          55495,
+          2666,
+          266,
+          10479,
+          1,
+          257,
+          259
+        ]
+      },
+      "heading_line": 190847,
+      "ordered_items": [
+        {
+          "id": 658,
+          "evidence": {
+            "line": 190842,
+            "definition": {
+              "opcode": 353,
+              "id": 658,
+              "file": 2147607112,
+              "type": 30,
+              "unknown1": 0,
+              "dye": 0,
+              "materials": 450,
+              "unknown2": 1,
+              "interaction": 537395777,
+              "price": 3,
+              "model": 424,
+              "quantity": 3,
+              "encoded_name": [
+                10479
+              ],
+              "name_terminated": true,
+              "modifiers": []
+            }
+          }
+        },
+        {
+          "id": 661,
+          "evidence": {
+            "line": 190844,
+            "definition": {
+              "opcode": 353,
+              "id": 661,
+              "file": 2147484319,
+              "type": 13,
+              "unknown1": 8,
+              "dye": 11,
+              "materials": 39,
+              "unknown2": 1,
+              "interaction": 536870919,
+              "price": 9,
+              "model": 1426,
+              "quantity": 1,
+              "encoded_name": [
+                33026,
+                2965
+              ],
+              "name_terminated": true,
+              "modifiers": [
+                1657275648,
+                2747795200
+              ]
+            }
+          }
+        }
+      ],
+      "status": "captured_order",
+      "collector_cost_first": true
+    },
+    {
+      "owner_agent": 21,
+      "owner_line": 198104,
+      "tick_ms": 198772843,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 198108,
+          "ids": [
+            499,
+            511
+          ]
+        }
+      ],
+      "definitions": {
+        "499": {
+          "line": 198105,
+          "definition": {
+            "opcode": 353,
+            "id": 499,
+            "file": 2147619909,
+            "type": 30,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 436,
+            "unknown2": 1,
+            "interaction": 537395777,
+            "price": 3,
+            "model": 426,
+            "quantity": 5,
+            "encoded_name": [
+              10488
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "511": {
+          "line": 198106,
+          "definition": {
+            "opcode": 353,
+            "id": 511,
+            "file": 2147484317,
+            "type": 4,
+            "unknown1": 8,
+            "dye": 11,
+            "materials": 39,
+            "unknown2": 1,
+            "interaction": 536870919,
+            "price": 9,
+            "model": 184,
+            "quantity": 1,
+            "encoded_name": [
+              33026,
+              2963
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1659371776,
+              2747795200
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "heading": {
+        "type": 2,
+        "encoded_utf16": [
+          11059,
+          55010,
+          55495,
+          2666,
+          266,
+          10488,
+          1,
+          257,
+          261
+        ]
+      },
+      "heading_line": 198109,
+      "ordered_items": [
+        {
+          "id": 499,
+          "evidence": {
+            "line": 198105,
+            "definition": {
+              "opcode": 353,
+              "id": 499,
+              "file": 2147619909,
+              "type": 30,
+              "unknown1": 0,
+              "dye": 0,
+              "materials": 436,
+              "unknown2": 1,
+              "interaction": 537395777,
+              "price": 3,
+              "model": 426,
+              "quantity": 5,
+              "encoded_name": [
+                10488
+              ],
+              "name_terminated": true,
+              "modifiers": []
+            }
+          }
+        },
+        {
+          "id": 511,
+          "evidence": {
+            "line": 198106,
+            "definition": {
+              "opcode": 353,
+              "id": 511,
+              "file": 2147484317,
+              "type": 4,
+              "unknown1": 8,
+              "dye": 11,
+              "materials": 39,
+              "unknown2": 1,
+              "interaction": 536870919,
+              "price": 9,
+              "model": 184,
+              "quantity": 1,
+              "encoded_name": [
+                33026,
+                2963
+              ],
+              "name_terminated": true,
+              "modifiers": [
+                1659371776,
+                2747795200
+              ]
+            }
+          }
+        }
+      ],
+      "status": "captured_order",
+      "collector_cost_first": true
+    },
+    {
+      "owner_agent": 21,
+      "owner_line": 201793,
+      "tick_ms": 199020578,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 201794,
+          "ids": [
+            499,
+            511
+          ]
+        }
+      ],
+      "definitions": {},
+      "failures": [],
+      "heading": {
+        "type": 2,
+        "encoded_utf16": [
+          11059,
+          55010,
+          55495,
+          2666,
+          266,
+          10488,
+          1,
+          257,
+          261
+        ]
+      },
+      "heading_line": 201795,
+      "ordered_items": [
+        {
+          "id": 499,
+          "evidence": null
+        },
+        {
+          "id": 511,
+          "evidence": null
+        }
+      ],
+      "status": "captured_order",
+      "collector_cost_first": true
+    },
+    {
+      "owner_agent": 6,
+      "owner_line": 204287,
+      "tick_ms": 199096656,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 204291,
+          "ids": [
+            1008,
+            1011
+          ]
+        }
+      ],
+      "definitions": {
+        "1008": {
+          "line": 204288,
+          "definition": {
+            "opcode": 353,
+            "id": 1008,
+            "file": 2147607119,
+            "type": 30,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 448,
+            "unknown2": 1,
+            "interaction": 537395777,
+            "price": 3,
+            "model": 428,
+            "quantity": 5,
+            "encoded_name": [
+              10499
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "1011": {
+          "line": 204289,
+          "definition": {
+            "opcode": 353,
+            "id": 1011,
+            "file": 2147484318,
+            "type": 7,
+            "unknown1": 8,
+            "dye": 11,
+            "materials": 39,
+            "unknown2": 3,
+            "interaction": 536870919,
+            "price": 9,
+            "model": 651,
+            "quantity": 1,
+            "encoded_name": [
+              33026,
+              2964
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657275648,
+              2747795200
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "heading": {
+        "type": 2,
+        "encoded_utf16": [
+          11059,
+          55010,
+          55495,
+          2666,
+          266,
+          10499,
+          1,
+          257,
+          261
+        ]
+      },
+      "heading_line": 204292,
+      "ordered_items": [
+        {
+          "id": 1008,
+          "evidence": {
+            "line": 204288,
+            "definition": {
+              "opcode": 353,
+              "id": 1008,
+              "file": 2147607119,
+              "type": 30,
+              "unknown1": 0,
+              "dye": 0,
+              "materials": 448,
+              "unknown2": 1,
+              "interaction": 537395777,
+              "price": 3,
+              "model": 428,
+              "quantity": 5,
+              "encoded_name": [
+                10499
+              ],
+              "name_terminated": true,
+              "modifiers": []
+            }
+          }
+        },
+        {
+          "id": 1011,
+          "evidence": {
+            "line": 204289,
+            "definition": {
+              "opcode": 353,
+              "id": 1011,
+              "file": 2147484318,
+              "type": 7,
+              "unknown1": 8,
+              "dye": 11,
+              "materials": 39,
+              "unknown2": 3,
+              "interaction": 536870919,
+              "price": 9,
+              "model": 651,
+              "quantity": 1,
+              "encoded_name": [
+                33026,
+                2964
+              ],
+              "name_terminated": true,
+              "modifiers": [
+                1657275648,
+                2747795200
+              ]
+            }
+          }
+        }
+      ],
+      "status": "captured_order",
+      "collector_cost_first": true
+    },
+    {
+      "owner_agent": 7,
+      "owner_line": 204536,
+      "tick_ms": 199121546,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 204540,
+          "ids": [
+            554,
+            30
+          ]
+        }
+      ],
+      "definitions": {
+        "554": {
+          "line": 204537,
+          "definition": {
+            "opcode": 353,
+            "id": 554,
+            "file": 2147607106,
+            "type": 30,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 444,
+            "unknown2": 1,
+            "interaction": 537395777,
+            "price": 3,
+            "model": 422,
+            "quantity": 3,
+            "encoded_name": [
+              10474
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "30": {
+          "line": 204538,
+          "definition": {
+            "opcode": 353,
+            "id": 30,
+            "file": 2147484320,
+            "type": 19,
+            "unknown1": 8,
+            "dye": 11,
+            "materials": 39,
+            "unknown2": 2,
+            "interaction": 536870919,
+            "price": 9,
+            "model": 2268,
+            "quantity": 1,
+            "encoded_name": [
+              33026,
+              2966
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1659371776,
+              2747795200
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "heading": {
+        "type": 2,
+        "encoded_utf16": [
+          11059,
+          55010,
+          55495,
+          2666,
+          266,
+          10474,
+          1,
+          257,
+          259
+        ]
+      },
+      "heading_line": 204541,
+      "ordered_items": [
+        {
+          "id": 554,
+          "evidence": {
+            "line": 204537,
+            "definition": {
+              "opcode": 353,
+              "id": 554,
+              "file": 2147607106,
+              "type": 30,
+              "unknown1": 0,
+              "dye": 0,
+              "materials": 444,
+              "unknown2": 1,
+              "interaction": 537395777,
+              "price": 3,
+              "model": 422,
+              "quantity": 3,
+              "encoded_name": [
+                10474
+              ],
+              "name_terminated": true,
+              "modifiers": []
+            }
+          }
+        },
+        {
+          "id": 30,
+          "evidence": {
+            "line": 204538,
+            "definition": {
+              "opcode": 353,
+              "id": 30,
+              "file": 2147484320,
+              "type": 19,
+              "unknown1": 8,
+              "dye": 11,
+              "materials": 39,
+              "unknown2": 2,
+              "interaction": 536870919,
+              "price": 9,
+              "model": 2268,
+              "quantity": 1,
+              "encoded_name": [
+                33026,
+                2966
+              ],
+              "name_terminated": true,
+              "modifiers": [
+                1659371776,
+                2747795200
+              ]
+            }
+          }
+        }
+      ],
+      "status": "captured_order",
+      "collector_cost_first": true
+    },
+    {
+      "owner_agent": 5,
+      "owner_line": 205010,
+      "tick_ms": 199170890,
+      "npc_name": null,
+      "npc_identity_status": "not_joined",
+      "item_lists": [
+        {
+          "line": 205018,
+          "ids": [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208
+          ]
+        }
+      ],
+      "definitions": {
+        "202": {
+          "line": 205011,
+          "definition": {
+            "opcode": 353,
+            "id": 202,
+            "file": 2147524679,
+            "type": 12,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536871425,
+            "price": 50,
+            "model": 957,
+            "quantity": 1,
+            "encoded_name": [
+              8948,
+              59277,
+              37384,
+              3232
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657275136
+            ]
+          }
+        },
+        "203": {
+          "line": 205012,
+          "definition": {
+            "opcode": 353,
+            "id": 203,
+            "file": 2147499097,
+            "type": 24,
+            "unknown1": 3,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536875009,
+            "price": 0,
+            "model": 2822,
+            "quantity": 1,
+            "encoded_name": [
+              9814,
+              38279,
+              61274,
+              607
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              2747794176
+            ]
+          }
+        },
+        "204": {
+          "line": 205013,
+          "definition": {
+            "opcode": 353,
+            "id": 204,
+            "file": 2147493031,
+            "type": 10,
+            "unknown1": 0,
+            "dye": 11,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 554172929,
+            "price": 25,
+            "model": 918,
+            "quantity": 1,
+            "encoded_name": [
+              8910,
+              62060,
+              62927,
+              13357
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              618138369,
+              619184139
+            ]
+          }
+        },
+        "205": {
+          "line": 205014,
+          "definition": {
+            "opcode": 353,
+            "id": 205,
+            "file": 2147562877,
+            "type": 29,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 553648641,
+            "price": 20,
+            "model": 2993,
+            "quantity": 1,
+            "encoded_name": [
+              10013,
+              44808,
+              49094,
+              26605
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              635962112,
+              609746954
+            ]
+          }
+        },
+        "206": {
+          "line": 205015,
+          "definition": {
+            "opcode": 353,
+            "id": 206,
+            "file": 2147614229,
+            "type": 29,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 553648641,
+            "price": 50,
+            "model": 2989,
+            "quantity": 1,
+            "encoded_name": [
+              10008,
+              53131,
+              41023,
+              6395
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              635961600,
+              609746969
+            ]
+          }
+        },
+        "207": {
+          "line": 205016,
+          "definition": {
+            "opcode": 353,
+            "id": 207,
+            "file": 2147595658,
+            "type": 21,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 537395713,
+            "price": 100,
+            "model": 2110,
+            "quantity": 1,
+            "encoded_name": [
+              9401,
+              53264,
+              55986,
+              21848
+            ],
+            "name_terminated": true,
+            "modifiers": []
+          }
+        },
+        "208": {
+          "line": 205017,
+          "definition": {
+            "opcode": 353,
+            "id": 208,
+            "file": 2147595645,
+            "type": 12,
+            "unknown1": 0,
+            "dye": 0,
+            "materials": 0,
+            "unknown2": 0,
+            "interaction": 536870913,
+            "price": 2,
+            "model": 1101,
+            "quantity": 1,
+            "encoded_name": [
+              9049,
+              46336,
+              60056,
+              8468
+            ],
+            "name_terminated": true,
+            "modifiers": [
+              1657274624
+            ]
+          }
+        }
+      },
+      "failures": [],
+      "status": "eof_before_window_heading"
+    }
+  ],
+  "limits": [
+    "Incoming window order is not a purchase or reward confirmation.",
+    "Owner agent IDs are scoped observations, not NPC names or persistent identities.",
+    "Only definitions received after this window owner are joined; missing definitions remain null.",
+    "Collector type2 uses native cost-first order; encoded names remain untranslated.",
+    "Window headings do not establish character profession or item customization."
+  ]
+}

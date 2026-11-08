@@ -1,0 +1,681 @@
+{
+  "quest": 76,
+  "status": "source_integrated_pending_native_validation",
+  "world_source": "data/captures/pre-searing-four-professions-2026-10-11/world-30352-81344734.jsonl",
+  "world_sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+  "packet_source": "data/captures/pre-searing-four-professions-2026-10-11/packets-30352-81363781.jsonl",
+  "packet_sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02",
+  "wiki_source": "C:/Users/CmonMeow/Desktop/gw/Wiki/wiki.guildwars.com/wiki/The_Ranger's_Companion.html",
+  "wiki_sha256": "c344264fd0e8dd7ff9df93ba8ff33ef10b2324a9ea116adb897b846ab759a1bb",
+  "snapshots_by_line": {
+    "1671": {
+      "tick_ms": 82007171,
+      "map": 162,
+      "quest": {
+        "quest_id": 76,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -14912.0,
+          "y": -2135.0,
+          "plane": 0,
+          "x_bits": 3328770048,
+          "y_bits": 3305467904,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5856,
+            39789,
+            48804,
+            13222
+          ],
+          "decoded": "The Ranger's Companion",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13388,
+            45042,
+            46885,
+            26072
+          ],
+          "decoded": "Master Ranger Nente",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5859,
+            57515,
+            46327,
+            1573,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "One of the great joys in a Ranger's life is earning the trust of an animal companion. If you are interested, I will give you a skill that will allow you to charm an animal. However, it would not be fitting, so close to a shrine of Melandru, to charm just any creature.<p>Along the path here you will find the <c=@Quest>shrine</c>. Nearby you may find one of the rare cats known by the name <c=@Quest>Melandru's Stalker</c>. If you can charm one of these animals, you will truly have Melandru's blessing.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5863,
+            53931,
+            35738,
+            18722,
+            1
+          ],
+          "decoded": "{s}Find the shrine of Melandru's statue along the path in the woods.",
+          "status": "decoded"
+        }
+      }
+    },
+    "1864": {
+      "tick_ms": 82073171,
+      "map": 162,
+      "quest": {
+        "quest_id": 76,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -16961.0,
+          "y": 10431.0,
+          "plane": 0,
+          "x_bits": 3330572800,
+          "y_bits": 1176697856,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5856,
+            39789,
+            48804,
+            13222
+          ],
+          "decoded": "The Ranger's Companion",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13388,
+            45042,
+            46885,
+            26072
+          ],
+          "decoded": "Master Ranger Nente",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5859,
+            57515,
+            46327,
+            1573,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "One of the great joys in a Ranger's life is earning the trust of an animal companion. If you are interested, I will give you a skill that will allow you to charm an animal. However, it would not be fitting, so close to a shrine of Melandru, to charm just any creature.<p>Along the path here you will find the <c=@Quest>shrine</c>. Nearby you may find one of the rare cats known by the name <c=@Quest>Melandru's Stalker</c>. If you can charm one of these animals, you will truly have Melandru's blessing.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5863,
+            53931,
+            35738,
+            18722,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5864,
+            52759,
+            51961,
+            11108,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13388,
+            45042,
+            46885,
+            26072,
+            1,
+            1
+          ],
+          "decoded": "{sc}Find the shrine of Melandru's statue along the path in the woods.{sc}Use your Charm Animal skill on one of Melandru's Stalkers when it appears.{s}Return to Master Ranger Nente for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    "7275": {
+      "tick_ms": 84439359,
+      "map": 162,
+      "quest": {
+        "quest_id": 76,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -14912.0,
+          "y": -2135.0,
+          "plane": 0,
+          "x_bits": 3328770048,
+          "y_bits": 3305467904,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5856,
+            39789,
+            48804,
+            13222
+          ],
+          "decoded": "The Ranger's Companion",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13388,
+            45042,
+            46885,
+            26072
+          ],
+          "decoded": "Master Ranger Nente",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5859,
+            57515,
+            46327,
+            1573,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "One of the great joys in a Ranger's life is earning the trust of an animal companion. If you are interested, I will give you a skill that will allow you to charm an animal. However, it would not be fitting, so close to a shrine of Melandru, to charm just any creature.<p>Along the path here you will find the <c=@Quest>shrine</c>. Nearby you may find one of the rare cats known by the name <c=@Quest>Melandru's Stalker</c>. If you can charm one of these animals, you will truly have Melandru's blessing.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5863,
+            53931,
+            35738,
+            18722,
+            1
+          ],
+          "decoded": "{s}Find the shrine of Melandru's statue along the path in the woods.",
+          "status": "decoded"
+        }
+      }
+    }
+  },
+  "receipts_by_line": {
+    "14859": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82006359,
+      "opcode": 220,
+      "bytes": 12,
+      "complete": true,
+      "hex": "dc000000b401000001000000"
+    },
+    "14860": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82006359,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000000f00000005000000b401000000000000"
+    },
+    "14861": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82006359,
+      "opcode": 220,
+      "bytes": 12,
+      "complete": true,
+      "hex": "dc0000009b01000001000000"
+    },
+    "14862": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82006359,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000000f000000060000009b01000000000000"
+    },
+    "14865": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82006359,
+      "opcode": 73,
+      "bytes": 80,
+      "complete": true,
+      "hex": "490000004c000000000069c6007005c500000000a200000000000000643d00000100020007010200e82ad4e7e0166d9ba4bea633000019b5116601014c34f2af25b7d8650000000000000000a2000000"
+    },
+    "14869": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82006421,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c0000004c000000e316abe0f7b4250602000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa010000a633000019b5116601014c34f2af25b7d8650000000000000000a200000000000000000000000000807f0000807f00000000000000000000807f0000807f000000000500000016000000a50000000b000000000000005a451e000000000000000000eb030000fe00000000000000fef40efe6602fec400fe640101fe2212040000000001b824000218268f009826050788a40202fee500febb06fe3102fe4401fec30005fea106fee50400000000000000000000000001009afe250178fe79070505e9fe580604fece04fe9200fe9f01feb001022203f62ab7c12dcf21130a01e716abd29a8b22490100000002fe4d04fee509000000890afe05000404320424000c04000cdcfef400feb4155e2e0b0800020003fe08123a391287fe190400030004fe79010706fed813b51c8805fe7a120b0601affec00008006ffedd0802030202fe0600fe0b1cfeb700030000000302080504feac13070505fe6819feb224fe4900fe0e02007d0236020202400904fe031e000000fea002020202fe731907fe080efe8705fe7105fe4c1bfed100fea0e621fe8021fe4b0305fe8f160402600208fe180bfe792200feda15fead050f00fed16cfe4337fe910824fec20b0504fb1d00000000fe530c0210110b2202fed86f091f070d"
+    },
+    "16402": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82070859,
+      "opcode": 178,
+      "bytes": 88,
+      "complete": true,
+      "hex": "b2000000b50000000f00000008010a010d0f4aa7f9bb9a240100000000000000ace946bfb52621bf0100000000009043c771043f00004041316e6f6d000000000669010000000000ef59010096f5010084fb010001000000"
+    },
+    "16408": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82070859,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a000000b5000000b4000000"
+    },
+    "16446": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82072343,
+      "opcode": 77,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4d0000004c000000008284c600fc224600000000a2000000"
+    },
+    "16447": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82072343,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c0000004c000000e316abe0f7b4250602000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa010000aa3e00004041316e6f6d000000005a7d010000000000ff71010000000000cf2abd4298db0142630b9cc6fb1ecec30000000000000000630b9cc6fb1ecec3000000000500000016000000a50000000b000000000000005a451e000000000000000000eb030000fe00000000000000fef40efe6602fec400fe640101fe221205000000010aa8230008b824050098260004c862050888a400febb06fe3102fe4401fec30005fea106fee50400000000000000000000000001009afe250178fe79070505e9fe580604fece04fe9200fe9f01feb001022203f52ad2c523eff80b0a01e716abd29a8b224901000200f52ad2c523eff80b0a01e81617cef9ca642b01000200f62ab7c12dcf21130a01f02aa7c4009cbb3e0a014c34f2af25b7d865010001000000010706fed813b51c8805fe7a120b0601affec00008006ffedd0802030202fe0600fe0b1cfeb700030000000302080504feac13070505fe6819feb224fe4900fe0e02007d0236020202400904fe031e000000fea002020202fe731907fe080efe8705fe7105fe4c1bfed100fea0e621fe8021fe4b0305fe8f160402600208fe180bfe792200feda15fead050f00fed16cfe4337fe910824fec20b0504fb1d00000000fe530c0210110b2202fed86f091f070d"
+    },
+    "17742": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82126875,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "520000004c000000"
+    },
+    "17747": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82126875,
+      "opcode": 238,
+      "bytes": 12,
+      "complete": true,
+      "hex": "ee00000000000000fa000000"
+    },
+    "17750": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 82126875,
+      "opcode": 82,
+      "bytes": 8,
+      "complete": true,
+      "hex": "520000004c000000"
+    },
+    "58986": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 353,
+      "bytes": 436,
+      "complete": true,
+      "hex": "61010000c5000000a424008005000000000000000000000000000000000000000010202200000000dd010000010000003f22c0875cc28e3700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003000000000318260001b824030588a400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "normalized_unused_capacity": true
+    },
+    "58987": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 346,
+      "bytes": 12,
+      "complete": true,
+      "hex": "5a010000c500000002000000"
+    },
+    "58988": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 318,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3e01000005000000c50000000a00000002000000"
+    },
+    "58991": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 220,
+      "bytes": 12,
+      "complete": true,
+      "hex": "dc000000b401000001000000"
+    },
+    "58992": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000000f00000004000000b401000000000000"
+    },
+    "58993": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 220,
+      "bytes": 12,
+      "complete": true,
+      "hex": "dc000000be01000001000000"
+    },
+    "58994": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000000f00000005000000be01000000000000"
+    },
+    "58995": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 220,
+      "bytes": 12,
+      "complete": true,
+      "hex": "dc0000009b01000001000000"
+    },
+    "58996": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 217,
+      "bytes": 20,
+      "complete": true,
+      "hex": "d90000000f000000060000009b01000000000000"
+    },
+    "58999": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438468,
+      "opcode": 73,
+      "bytes": 80,
+      "complete": true,
+      "hex": "490000004c000000000069c6007005c500000000a200000000000000643d00008e37010000000000dd010000e0166d9ba4bea63300008e37000001014c34f2af25b7d8650000000067007700a2000000"
+    },
+    "59005": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 30352,
+      "tick_ms": 84438562,
+      "opcode": 76,
+      "bytes": 520,
+      "complete": true,
+      "hex": "4c0000004c000000e316abe0f7b4250602000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa010000a63300008e37000001014c34f2af25b7d8650000000067007700a20000000000c74261ac8542008026c6000034460000000000000000008026c600003446000000000500000016000000a50000000b000000000000005a451e000000000000000000eb030000fe0000000000000011fef40efe6602fec400fe640101fe2203000000000318260001b824030588a4040688a4040688a4e500febb06fe3102fe4401fec30005fea106fee50400000000000000000000000001009afe25012c1238fe7f0705e9fe580604fe5f0602fe9c01feb00102021ff62ab7c12dcf21130a01e716abd29a8b2249010000004d04fee509000000890afe05000404320424000c04000cdcfef400feb415025b2e0b0800020003fe08123a391287fe190400030004fe79010706fed813b51c5a2d05fe7a120b0601affec00008006ffedd0802030202fe0600fe0b1cfeb700030000000302080504feac13070505fe6819feb224fe4900fe0e02007d023602020240040404fe031e000000fea002020202fe731907fe080efe8705fe7105fe4c1bfed100fea0e621fe8021fe4b0305fe8f160402600208fe180bfe792200feda15fead050f00fed16cfe4337fe910824fec20b0504fb1d00000000fe530c0210110b2202fed26f05091f"
+    }
+  },
+  "nente_definition_line": 1610,
+  "nente_definition": {
+    "schema": 1,
+    "event": "npc_definition_observed",
+    "map": 162,
+    "instance_epoch": 8,
+    "instance_ms": 7935,
+    "npc_table_id": 1515,
+    "definition": {
+      "model_file": 116227,
+      "skin_file": 0,
+      "appearance": 0,
+      "flags": 524,
+      "primary": 2,
+      "secondary": 0,
+      "default_level": 5,
+      "visual_adjustment_bytes": [
+        0,
+        0,
+        0,
+        100
+      ],
+      "model_files": [
+        116773
+      ],
+      "name_encoded_utf16": [
+        3973,
+        39628,
+        43132,
+        5193
+      ],
+      "name": "Ranger Trainer",
+      "name_status": "decoded"
+    }
+  },
+  "nente_observation_line": 1611,
+  "nente_observation": {
+    "agent": 29,
+    "model": 1515,
+    "x": -16961.0,
+    "y": 10431.0,
+    "plane": 0,
+    "facing": -0.035605,
+    "level": 5,
+    "allegiance": 6,
+    "name_encoded_utf16": [
+      13388,
+      45042,
+      46885,
+      26072
+    ],
+    "name": "Master Ranger Nente",
+    "name_status": "decoded"
+  },
+  "authored_nente_actor_and_definition": 23001,
+  "exact_secondary_acceptance_grants": [
+    436,
+    446,
+    411
+  ],
+  "exact_quest_bow": {
+    "opcode": 353,
+    "id": 197,
+    "file": 2147493028,
+    "type": 5,
+    "unknown1": 0,
+    "dye": 0,
+    "materials": 0,
+    "unknown2": 0,
+    "interaction": 572526592,
+    "price": 0,
+    "model": 477,
+    "quantity": 1,
+    "encoded_name": [
+      8767,
+      34752,
+      49756,
+      14222
+    ],
+    "modifiers": [
+      639107840,
+      616038656,
+      2760377603
+    ],
+    "profession": 2,
+    "customization": "UNKNOWN"
+  },
+  "facts": [
+    "Nente, not Artemis, teaches436/446/411 for76. Artemis86 grants394/446.",
+    "Primary Ranger firstaccept learns436/411 only and has no bow grant; second off-profession accept gives captured bow and436/446/411.",
+    "PetAdd178 actor181/owner15 and maxHealth180 at82070859 precede completed quest76 marker/details at82072343.",
+    "No intermediate shrine-only objective stage appears among these snapshots; successful reviewed162 Stalker adoption satisfies both checked objectives.",
+    "NPC coordinates are first observed, not proven spawn geometry; authored actor/definition IDs are not captured29/table1515."
+  ],
+  "private_policy": [
+    "Acceptance requires no owned pet, matching wiki abandoned-retained-pet warning; storage enforces this atomically so preowned pet cannot shortcut objective.",
+    "Conditional starterbow duplicate suppression is inventory-based private policy consistent with two captures; class-based versus inventory-based retail issuance remains unresolved.",
+    "Exact bow definition and observed profession2 are preserved; customization remains UNKNOWN, not invented unrestricted or customized metadata. Strict equipment admission may refuse this new bow until separately reviewed; Charm itself requires no bow.",
+    "Existing primary test must be rewarded; Ranger primary/secondary or unchosen-secondary trial only. Teaching, quest and conditional bow persist together.",
+    "Only persisted subsequent Stalker adoption completes active76; reconnect catches adoption/quest commit gaps. No shrine trigger bounds are fabricated.",
+    "Reward250XP and reviewed Ranger-trial eligibility are one transaction; no permanent secondary selection occurs."
+  ],
+  "limits": [
+    "Incoming-only receipts do not recover CtoS dialogue identifiers or retail sub-frame ordering.",
+    "Other-map marker routes are unresolved rather than guessed.",
+    "No pet release/Jarrel shortcut is invented.",
+    "Rendered end-to-end acceptance remains unverified."
+  ],
+  "production_npc_sha256": "2c7a67f2eaeef9a1ea58d1a2a55046d5e56dcd579b2e2f31e68f623c1b66142b",
+  "completion_native_packets": [
+    76,
+    75
+  ],
+  "completion_receipt": "packets30352 lines16446/16447 tick82072343 modern77/76 maps to native76/75",
+  "nente_nav_evidence": {
+    "direct_trace_result": "blocked, not a disconnection proof",
+    "cell": "0:4068",
+    "direct_trace": "build/reports/ranger-companion76/nente-to-stalker-nav-route.txt",
+    "point": "build/reports/ranger-companion76/nente-nav-point.txt"
+  },
+  "runtime_nente_actor_and_definition": 24001,
+  "runtime_identity_policy": "Pinned source23001 maps to runtime24001 via shared helper; preceding Stalker23000 enrollment causes giver merger to allocate23001 to Ivor. Global name/actor/definition collisions remain failclosed."
+}

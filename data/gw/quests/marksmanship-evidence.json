@@ -1,0 +1,6113 @@
+{
+  "quest": 42,
+  "source": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+  "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6",
+  "states": [
+    {
+      "line": 2333,
+      "tick_ms": 82251296,
+      "map": 162,
+      "epoch": 8,
+      "quest": {
+        "quest_id": 42,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "x_bits": 3307745280,
+          "y_bits": 1171419136,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5521,
+            34677,
+            57313,
+            9517
+          ],
+          "decoded": "A Test of Marksmanship",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "decoded": "Ivor Trueshot",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5522,
+            59955,
+            47473,
+            30037,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the <c=@Quest>plague worms</c> in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple of skills, temporarily, that a true marksman would use to meet this challenge.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5526,
+            45610,
+            62215,
+            6389,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5527,
+            60480,
+            38817,
+            14983,
+            257,
+            261,
+            1
+          ],
+          "decoded": "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 5 more Plague Worms.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2385,
+      "tick_ms": 82268312,
+      "map": 162,
+      "epoch": 8,
+      "quest": {
+        "quest_id": 42,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "x_bits": 3307745280,
+          "y_bits": 1171419136,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5521,
+            34677,
+            57313,
+            9517
+          ],
+          "decoded": "A Test of Marksmanship",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "decoded": "Ivor Trueshot",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5522,
+            59955,
+            47473,
+            30037,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the <c=@Quest>plague worms</c> in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple of skills, temporarily, that a true marksman would use to meet this challenge.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5526,
+            45610,
+            62215,
+            6389,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5527,
+            60480,
+            38817,
+            14983,
+            257,
+            260,
+            1
+          ],
+          "decoded": "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 4 more Plague Worms.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2415,
+      "tick_ms": 82278312,
+      "map": 162,
+      "epoch": 8,
+      "quest": {
+        "quest_id": 42,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "x_bits": 3307745280,
+          "y_bits": 1171419136,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5521,
+            34677,
+            57313,
+            9517
+          ],
+          "decoded": "A Test of Marksmanship",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "decoded": "Ivor Trueshot",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5522,
+            59955,
+            47473,
+            30037,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the <c=@Quest>plague worms</c> in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple of skills, temporarily, that a true marksman would use to meet this challenge.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5526,
+            45610,
+            62215,
+            6389,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5527,
+            60480,
+            38817,
+            14983,
+            257,
+            259,
+            1
+          ],
+          "decoded": "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 3 more Plague Worms.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2423,
+      "tick_ms": 82279312,
+      "map": 162,
+      "epoch": 8,
+      "quest": {
+        "quest_id": 42,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "x_bits": 3307745280,
+          "y_bits": 1171419136,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5521,
+            34677,
+            57313,
+            9517
+          ],
+          "decoded": "A Test of Marksmanship",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "decoded": "Ivor Trueshot",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5522,
+            59955,
+            47473,
+            30037,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the <c=@Quest>plague worms</c> in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple of skills, temporarily, that a true marksman would use to meet this challenge.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5526,
+            45610,
+            62215,
+            6389,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5527,
+            60480,
+            38817,
+            14983,
+            257,
+            258,
+            1
+          ],
+          "decoded": "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 2 more Plague Worms.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2433,
+      "tick_ms": 82281312,
+      "map": 162,
+      "epoch": 8,
+      "quest": {
+        "quest_id": 42,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "x_bits": 3308527616,
+          "y_bits": 1170700288,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5521,
+            34677,
+            57313,
+            9517
+          ],
+          "decoded": "A Test of Marksmanship",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "decoded": "Ivor Trueshot",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5522,
+            59955,
+            47473,
+            30037,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the <c=@Quest>plague worms</c> in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple of skills, temporarily, that a true marksman would use to meet this challenge.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5526,
+            45610,
+            62215,
+            6389,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5527,
+            60480,
+            38817,
+            14983,
+            257,
+            257,
+            1
+          ],
+          "decoded": "{s}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{s}Kill 1 more Plague Worm.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 2455,
+      "tick_ms": 82289312,
+      "map": 162,
+      "epoch": 8,
+      "quest": {
+        "quest_id": 42,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 162,
+        "map_to": 162,
+        "marker": {
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "x_bits": 3314171904,
+          "y_bits": 1169846272,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5521,
+            34677,
+            57313,
+            9517
+          ],
+          "decoded": "A Test of Marksmanship",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "decoded": "Ivor Trueshot",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5522,
+            59955,
+            47473,
+            30037,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the <c=@Quest>plague worms</c> in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple of skills, temporarily, that a true marksman would use to meet this challenge.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5526,
+            45610,
+            62215,
+            6389,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5527,
+            60480,
+            38817,
+            14983,
+            257,
+            256,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13073,
+            64365,
+            60787,
+            25435,
+            1,
+            1
+          ],
+          "decoded": "{sc}Follow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.{sc}Kill 0 more Plague Worms.{s}Return to Ivor Trueshot for your reward.",
+          "status": "decoded"
+        }
+      }
+    }
+  ],
+  "population_observations": [
+    {
+      "line": 2283,
+      "tick_ms": 82230165,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2286,
+      "tick_ms": 82231165,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2288,
+      "tick_ms": 82232164,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2290,
+      "tick_ms": 82233165,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2292,
+      "tick_ms": 82234180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2294,
+      "tick_ms": 82235180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2297,
+      "tick_ms": 82236180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2300,
+      "tick_ms": 82237180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2302,
+      "tick_ms": 82238180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2305,
+      "tick_ms": 82239180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2308,
+      "tick_ms": 82240180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2311,
+      "tick_ms": 82241180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2313,
+      "tick_ms": 82242180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2315,
+      "tick_ms": 82243180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2317,
+      "tick_ms": 82244180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2320,
+      "tick_ms": 82245180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2323,
+      "tick_ms": 82246180,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2326,
+      "tick_ms": 82247197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2328,
+      "tick_ms": 82248197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.363451,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2330,
+      "tick_ms": 82249197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2332,
+      "tick_ms": 82250197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2336,
+      "tick_ms": 82251196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2343,
+      "tick_ms": 82252196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2346,
+      "tick_ms": 82253197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2349,
+      "tick_ms": 82254196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2352,
+      "tick_ms": 82255197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2354,
+      "tick_ms": 82256196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2356,
+      "tick_ms": 82257196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2359,
+      "tick_ms": 82258196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2362,
+      "tick_ms": 82259196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2364,
+      "tick_ms": 82260196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2367,
+      "tick_ms": 82261196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2370,
+      "tick_ms": 82262196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2372,
+      "tick_ms": 82263196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2375,
+      "tick_ms": 82264197,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2378,
+      "tick_ms": 82265196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 203,
+          "model": 1444,
+          "x": -2960.0,
+          "y": 5803.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2381,
+      "tick_ms": 82266196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -1.535192,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2383,
+      "tick_ms": 82267196,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2390,
+      "tick_ms": 82268212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -1.918466,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -0.20944,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2395,
+      "tick_ms": 82269212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2398,
+      "tick_ms": 82270213,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2401,
+      "tick_ms": 82271212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2403,
+      "tick_ms": 82272212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2405,
+      "tick_ms": 82273211,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2407,
+      "tick_ms": 82274212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2409,
+      "tick_ms": 82275212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2411,
+      "tick_ms": 82276212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2414,
+      "tick_ms": 82277212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2419,
+      "tick_ms": 82278212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2427,
+      "tick_ms": 82279212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2432,
+      "tick_ms": 82280211,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2437,
+      "tick_ms": 82281211,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2440,
+      "tick_ms": 82282212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2443,
+      "tick_ms": 82283211,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2445,
+      "tick_ms": 82284211,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2447,
+      "tick_ms": 82285211,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2449,
+      "tick_ms": 82286212,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2452,
+      "tick_ms": 82287209,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2454,
+      "tick_ms": 82288209,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2458,
+      "tick_ms": 82289209,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2461,
+      "tick_ms": 82290209,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2464,
+      "tick_ms": 82291209,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2466,
+      "tick_ms": 82292226,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2468,
+      "tick_ms": 82293226,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2470,
+      "tick_ms": 82294225,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -1.964949,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2473,
+      "tick_ms": 82295226,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": -0.532383,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2477,
+      "tick_ms": 82296226,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2479,
+      "tick_ms": 82297226,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2482,
+      "tick_ms": 82298226,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2485,
+      "tick_ms": 82299218,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2488,
+      "tick_ms": 82300218,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2491,
+      "tick_ms": 82301219,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    },
+    {
+      "line": 2493,
+      "tick_ms": 82302219,
+      "epoch": 8,
+      "actors": [
+        {
+          "agent": 199,
+          "model": 1515,
+          "x": -4424.0,
+          "y": 5966.0,
+          "plane": 0,
+          "facing": 0.293114,
+          "level": 5,
+          "allegiance": 6,
+          "name_encoded_utf16": [
+            13073,
+            64365,
+            60787,
+            25435
+          ],
+          "name": "Ivor Trueshot",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 204,
+          "model": 1444,
+          "x": -2691.0,
+          "y": 6734.0,
+          "plane": 0,
+          "facing": -2.345009,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 246,
+          "model": 1444,
+          "x": -2714.0,
+          "y": 6151.0,
+          "plane": 0,
+          "facing": -3.046241,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 269,
+          "model": 1444,
+          "x": -3200.0,
+          "y": 6634.0,
+          "plane": 0,
+          "facing": -1.784856,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        },
+        {
+          "agent": 270,
+          "model": 1444,
+          "x": -2882.0,
+          "y": 6383.0,
+          "plane": 0,
+          "facing": 0.0,
+          "level": 1,
+          "allegiance": 3,
+          "name_encoded_utf16": [
+            3909,
+            33905,
+            36383,
+            29574
+          ],
+          "name": "Plague Worm",
+          "name_status": "decoded"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Modern snapshots do not establish 2022 packet mappings.",
+    "Counter transitions do not establish reward delivery.",
+    "Sampled actor positions are not proven spawn-time positions.",
+    "Elapsed observation time does not establish the challenge timer duration.",
+    "Actor identities must be scoped by map epoch and lifetime before death correlation.",
+    "Original2022 start383 accepts flags4 and correction382 keeps the clock running; modern-to-native semantic translation still requires explicit source review. Timer failure/reset is not captured here.",
+    "Only terminated label units are retained; padded decoded string storage is not text."
+  ],
+  "wiki": {
+    "title": "A Test of Marksmanship",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\A_Test_of_Marksmanship.html",
+    "sha256": "c12481c380a89bdce5ae14d96adb344cf8ca35795e30fc8b8f62f5bc06bff447",
+    "sections": {
+      "Quest_information": {
+        "line": 104,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nranger profession\nCharacter in pre-Searing\nObjectives\nFollow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.\nKill [5...0]/0 more Plague Worm[s].\nReturn to Ivor Trueshot for your reward.\nEarly benefits\nIvor Trueshot will give you a Starter bow and the following skills upon taking the quest:\nRead the Wind\nPoint Blank Shot\nReward\n250 Experience"
+      },
+      "Requirements": {
+        "line": 105,
+        "text": "Requirements\nTyrian (Prophecies) character\nranger profession\nCharacter in pre-Searing"
+      },
+      "Objectives": {
+        "line": 109,
+        "text": "Objectives\nFollow the ridge east until you find a plague worm. Kill all the Plague Worms in the time allotted.\nKill [5...0]/0 more Plague Worm[s].\nReturn to Ivor Trueshot for your reward."
+      },
+      "Reward": {
+        "line": 117,
+        "text": "Reward\n250 Experience"
+      },
+      "Walkthrough": {
+        "line": 119,
+        "text": "Walkthrough\nThis is a simple quest. Just go to the pointed location and kill all the worms in under 1 minute and 30 seconds. Using the skills provided with the quest will make it much easier for Bow wielding characters."
+      },
+      "Dialogue": {
+        "line": 127,
+        "text": "Dialogue\nInitial dialogue\nIvor Trueshot\n\"There are many aspects to being a Ranger, but none more important than skill with a bow. I can help you become a great archer, but first you must show me that you have potential. If you follow the ridge eastward, you'll find a colony of plague worms anxious to rise up from the ground and attack the unsuspecting traveler. If you can kill all the plague worms in the allotted time, I'll believe you have the makings of a real Ranger. I'll give you a couple skills, temporarily, that a true marksman would use to meet this challenge.\"\nAccept: \"I like a good challenge.\"\nDecline: \"I don't have time for your games.\"\nAsk: \"Hurry to the east and kill those plague worms. I won't give you more time just because you're standing around here.\"\nReward dialogue\nIvor Trueshot\n\"I can see that you will be a great archer some day. Keep these skills, and as long as you follow the path of marksmanship, they will serve you well.\""
+      },
+      "Notes": {
+        "line": 137,
+        "text": "Notes\nThe worms do not need to be killed with a bow to complete this quest.\nThe skills will not be removed if the quest is abandoned or the timer runs out. This is useful if a careful experience management strategy is needed.\nOnce the quest is completed, the worms will not spawn anymore\nRetrieved from \"https://wiki.guildwars.com/index.php?title=A_Test_of_Marksmanship&oldid=2641577\"\nCategories:\nMap needed\nAscalon (pre-Searing) quests\nProphecies secondary quests\nProphecies quests\nTyrian only quests\nRanger questsHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "packet_candidates": [
+    {
+      "line": 20010,
+      "kind": "learned_skill_count_candidate",
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82251125,
+        "opcode": 220,
+        "bytes": 12,
+        "complete": true,
+        "hex": "dc0000009701000001000000"
+      },
+      "skill": 407,
+      "count": 1
+    },
+    {
+      "line": 20011,
+      "kind": "skill_state_candidate",
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82251125,
+        "opcode": 217,
+        "bytes": 20,
+        "complete": true,
+        "hex": "d90000000f000000070000009701000000000000"
+      },
+      "fields": [
+        217,
+        15,
+        7,
+        407,
+        0
+      ]
+    },
+    {
+      "line": 20014,
+      "kind": "learned_skill_count_candidate",
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82251125,
+        "opcode": 220,
+        "bytes": 12,
+        "complete": true,
+        "hex": "dc000000b001000001000000"
+      },
+      "skill": 432,
+      "count": 1
+    },
+    {
+      "line": 20017,
+      "kind": "clock_start_candidate",
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82251125,
+        "opcode": 384,
+        "bytes": 260,
+        "complete": true,
+        "hex": "800100006b0500000a0000000a016e6701000000a200000000000000643d00000100020007010200e82ad4e791157587e1df2d25000019b51166010111336dfb73ed5b630000000000000000a200000000000000000000000000807f0000807f00000000000000000000807f0000807f000000000500000016000000a50000000b000000000000005a451e000000000000000000eb030000fe00000000000000fef40efe6602fec400fe640101fe221204000000000018260003b82401009826030588a40032c8a400febb06fe3102fe4401fec30005fea106fee50400000000000000000000000001009afe250178fe79070505e9fe58060400000000000000905f0100"
+      },
+      "label_units": [
+        1387
+      ],
+      "flags": 4,
+      "elapsed_ms": 0,
+      "duration_ms": 90000
+    },
+    {
+      "line": 20735,
+      "kind": "elapsed_correction_candidate",
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82276187,
+        "opcode": 383,
+        "bytes": 8,
+        "complete": true,
+        "hex": "7f010000c8610000"
+      },
+      "value": 25032
+    }
+  ],
+  "death_candidates": [
+    {
+      "line": 20787,
+      "actor": 246,
+      "first_observed_tick_ms": 82254196,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82277515,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f1000000f6000000100c0000"
+      }
+    },
+    {
+      "line": 20802,
+      "actor": 246,
+      "first_observed_tick_ms": 82254196,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82277531,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f1000000f600000010000000"
+      }
+    },
+    {
+      "line": 20859,
+      "actor": 269,
+      "first_observed_tick_ms": 82254196,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82279109,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000000d01000010000000"
+      }
+    },
+    {
+      "line": 20908,
+      "actor": 204,
+      "first_observed_tick_ms": 82252196,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82280687,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f1000000cc00000010100000"
+      }
+    },
+    {
+      "line": 21084,
+      "actor": 270,
+      "first_observed_tick_ms": 82254196,
+      "packet": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 82288890,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000000e01000010000000"
+      }
+    }
+  ],
+  "packet_source": {
+    "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+    "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02"
+  },
+  "native_catalog_export": {
+    "path": "data/gw/quests/marksmanship.fwqc",
+    "variants": [
+      {
+        "stage": "active",
+        "line": 2333,
+        "tick_ms": 82251296
+      },
+      {
+        "stage": "count:1",
+        "line": 2385,
+        "tick_ms": 82268312
+      },
+      {
+        "stage": "count:2",
+        "line": 2415,
+        "tick_ms": 82278312
+      },
+      {
+        "stage": "count:3",
+        "line": 2423,
+        "tick_ms": 82279312
+      },
+      {
+        "stage": "count:4",
+        "line": 2433,
+        "tick_ms": 82281312
+      },
+      {
+        "stage": "completed",
+        "line": 2455,
+        "tick_ms": 82289312
+      }
+    ],
+    "enabled": false,
+    "text_source": "exact captured UTF16; no rewritten objectives"
+  }
+}

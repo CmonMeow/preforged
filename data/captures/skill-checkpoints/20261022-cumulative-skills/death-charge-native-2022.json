@@ -1,0 +1,301 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "source_sha256": {
+    "packets-108988-190116609.jsonl": "9cadca1740cdd4aae3ac27246b95f9dca0b262eff17a3fba4f429daa38664ddf"
+  },
+  "receipts": {
+    "51631": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191192687,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c000000190000001e000000b8030000"
+    },
+    "51635": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191192937,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "51636": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191192937,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000001500000019000000b7030000"
+    },
+    "51637": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191192937,
+      "opcode": 161,
+      "bytes": 32,
+      "complete": true,
+      "hex": "a10000006b10b4c590dced440000000019000000920400000000000000000000"
+    },
+    "51638": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191192937,
+      "opcode": 161,
+      "bytes": 32,
+      "complete": true,
+      "hex": "a1000000b823b1c52673f8440000000000000000920400000000000000000000"
+    },
+    "51642": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191192937,
+      "opcode": 44,
+      "bytes": 20,
+      "complete": true,
+      "hex": "2c00000019000000b823b1c52673f84400000000"
+    },
+    "52069": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191223250,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c000000190000001e000000b8030000"
+    },
+    "52073": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191223437,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "52074": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191223437,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000001500000019000000b7030000"
+    },
+    "52075": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191223437,
+      "opcode": 161,
+      "bytes": 32,
+      "complete": true,
+      "hex": "a1000000b823b1c52673f8440000000019000000920400000000000000000000"
+    },
+    "52076": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191223437,
+      "opcode": 161,
+      "bytes": 32,
+      "complete": true,
+      "hex": "a1000000fd5cb2c5309700450000000000000000920400000000000000000000"
+    },
+    "52080": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 108988,
+      "tick_ms": 191223437,
+      "opcode": 44,
+      "bytes": 20,
+      "complete": true,
+      "hex": "2c00000019000000fd5cb2c53097004500000000"
+    }
+  },
+  "casts": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 52,
+    "seconds": 0.25,
+    "stored_skill": 952,
+    "override_after": 2139095040
+  },
+  "body": {
+    "actor": 42,
+    "encoded_file": "048102010000",
+    "flags": 1
+  },
+  "sequences": [
+    {
+      "lines": [
+        51631,
+        51635,
+        51636,
+        51637,
+        51638,
+        51642
+      ],
+      "trails": [
+        {
+          "ground": {
+            "position": [
+              3316912235,
+              1156439184,
+              0
+            ],
+            "actor": 25,
+            "effect": 1170,
+            "data5": 0,
+            "data6": 0
+          },
+          "wire2022": "a0806b10b4c590dced4400001900000092040000"
+        },
+        {
+          "ground": {
+            "position": [
+              3316720568,
+              1157133094,
+              0
+            ],
+            "actor": 0,
+            "effect": 1170,
+            "data5": 0,
+            "data6": 0
+          },
+          "wire2022": "a080b823b1c52673f84400000000000092040000"
+        }
+      ],
+      "position_receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191192937,
+        "opcode": 44,
+        "bytes": 20,
+        "complete": true,
+        "hex": "2c00000019000000b823b1c52673f84400000000"
+      },
+      "native_position": {
+        "actor": 25,
+        "x": -5668.46484375,
+        "y": 1987.598388671875,
+        "plane": 0,
+        "wire2022": "2c8019000000b823b1c52673f8440000",
+        "native_setter_calls": 2,
+        "primary_and_secondary_position_match": true,
+        "stubbed_services": [
+          "0x5bbdc0",
+          "0x5c4e80",
+          "0x698790",
+          "0x5c4ed0",
+          "0x5beb90",
+          "0x5c0110",
+          "0x5bfa80",
+          "0x5c0d90",
+          "0x698790",
+          "0x5c4ed0",
+          "0x5beb90",
+          "0x5c0110",
+          "0x5bfa80",
+          "0x5c0d90",
+          "0x5c2850"
+        ]
+      }
+    },
+    {
+      "lines": [
+        52069,
+        52073,
+        52074,
+        52075,
+        52076,
+        52080
+      ],
+      "trails": [
+        {
+          "ground": {
+            "position": [
+              3316720568,
+              1157133094,
+              0
+            ],
+            "actor": 25,
+            "effect": 1170,
+            "data5": 0,
+            "data6": 0
+          },
+          "wire2022": "a080b823b1c52673f84400001900000092040000"
+        },
+        {
+          "ground": {
+            "position": [
+              3316800765,
+              1157666608,
+              0
+            ],
+            "actor": 0,
+            "effect": 1170,
+            "data5": 0,
+            "data6": 0
+          },
+          "wire2022": "a080fd5cb2c53097004500000000000092040000"
+        }
+      ],
+      "position_receipt": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 108988,
+        "tick_ms": 191223437,
+        "opcode": 44,
+        "bytes": 20,
+        "complete": true,
+        "hex": "2c00000019000000fd5cb2c53097004500000000"
+      },
+      "native_position": {
+        "actor": 25,
+        "x": -5707.62353515625,
+        "y": 2057.44921875,
+        "plane": 0,
+        "wire2022": "2c8019000000fd5cb2c5309700450000",
+        "native_setter_calls": 2,
+        "primary_and_secondary_position_match": true,
+        "stubbed_services": [
+          "0x5bbdc0",
+          "0x5c4e80",
+          "0x698790",
+          "0x5c4ed0",
+          "0x5beb90",
+          "0x5c0110",
+          "0x5bfa80",
+          "0x5c0d90",
+          "0x698790",
+          "0x5c4ed0",
+          "0x5beb90",
+          "0x5c0110",
+          "0x5bfa80",
+          "0x5c0d90",
+          "0x5c2850"
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Only the two explicit local sequences are checked;not every captured952activation.",
+    "Ground consumers/serializer and951consumer use stubbed assets;no rendered proof.",
+    "Position44original serializer/handler/two setters execute with map/path/publication services stubbed;no collision or rendered relocation proof.",
+    "No numerical heal,Health-comparison unit/moment,bundle drop,blocked fallback or dynamic-gate behavior established."
+  ]
+}

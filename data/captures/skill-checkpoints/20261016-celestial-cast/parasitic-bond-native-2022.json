@@ -1,0 +1,65 @@
+{
+  "checkpoint": "20261016-celestial-cast",
+  "cutoff": "2026-10-17T02:48:58.907161+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66417,
+      "tick_ms": 17123078,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e00000063000000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66422,
+      "tick_ms": 17124078,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66423,
+      "tick_ms": 17124078,
+      "hex": "9f0000001500000019000000b7000000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 66424,
+      "tick_ms": 17124078,
+      "hex": "a0000000140000001e00000019000000b8000000"
+    }
+  ],
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 99,
+    "override_after": 2139095040
+  },
+  "target_resource": 184,
+  "caster_resource": 183,
+  "particle": {
+    "actor": 43,
+    "encoded_file": "92b900010000",
+    "flags": 1
+  },
+  "caster_particle": {
+    "actor": 42,
+    "encoded_file": "91b900010000",
+    "flags": 1
+  },
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Parasitic_Bond.html",
+  "wiki_sha256": "205fa30e0ac4410f96b8248767f545122eb3ec899d19f9dace1a5ba0e6bb5395",
+  "tool_sha256": "284f131f08133ad872735bfdfaaf21959121dae1cc0024875551580c3e70da33",
+  "limits": [
+    "Body/particle consumers use stubbed model services;no rendered acceptance.",
+    "Caster183 and target184 are captured;degeneration and return healing are verified separately from this native probe.",
+    "NPC-caster AI and general NPC attack producers remain unverified."
+  ]
+}

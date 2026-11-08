@@ -1,0 +1,41 @@
+{
+  "source": "data\\captures\\pre-searing-ranger-partial-2026-10-10\\world-7108-102222171.jsonl",
+  "source_sha256": "2e6c0c890273273ef3bab12289eb42e1b8777de70795ed4cc660eb132d8bd838",
+  "line": 25,
+  "event": "local_inventory_observed",
+  "bag_id": 22,
+  "bag_type": 2,
+  "item": {
+    "model": 477,
+    "model_file": 9380,
+    "type": 5,
+    "base_value": 0,
+    "quantity": 1,
+    "interaction": 572526592,
+    "profession": 2,
+    "slot": 0,
+    "dye_tint": 0,
+    "dye1": 6,
+    "dye2": 0,
+    "dye3": 0,
+    "dye4": 0,
+    "modifiers_complete": true,
+    "modifiers": [
+      639107840,
+      616038656,
+      2760377603,
+      2761455616,
+      3221225472
+    ],
+    "name_encoded_utf16": [
+      8767,
+      34752,
+      49756,
+      14222
+    ],
+    "name": "Starter Bow",
+    "name_status": "decoded",
+    "observed_item_id": 2645
+  },
+  "runtime_policy": "Fresh Prophecies Ranger creation only; allocate owned item ID, equipped slot0, customize to owned character. No migration or bow combat completeness claim."
+}

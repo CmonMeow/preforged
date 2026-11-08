@@ -1,0 +1,359 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "00f041413f36681b726b4a371e6094aefacaba602b91e5eedec2a25f44f6b56d",
+  "native_opcode": 156,
+  "descriptor_rva": "0x60bdd8",
+  "callback": "0x874b20",
+  "native_cases": [
+    {
+      "fraction": 0.8,
+      "normalized_rate_per_second": 0.0066,
+      "cached_ceiling": 40.0,
+      "nominal_capacity": 50.0,
+      "cached_recovery_per_second": 0.32999998331069946,
+      "curve_samples": [
+        {
+          "at_ms": 1000,
+          "value": 40.0
+        },
+        {
+          "at_ms": 1500,
+          "value": 40.165000915527344
+        },
+        {
+          "at_ms": 2500,
+          "value": 40.494998931884766
+        }
+      ],
+      "actor_event_code": 12,
+      "actor_event_payload": [
+        0,
+        1061997773,
+        1004029136
+      ],
+      "wire_hex": "9c802a000000cdcc4c3fd044d83b"
+    },
+    {
+      "fraction": -0.2,
+      "normalized_rate_per_second": 0.0066,
+      "cached_ceiling": -10.0,
+      "nominal_capacity": 50.0,
+      "cached_recovery_per_second": 0.32999998331069946,
+      "curve_samples": [
+        {
+          "at_ms": 1000,
+          "value": -10.0
+        },
+        {
+          "at_ms": 1500,
+          "value": -9.835000038146973
+        },
+        {
+          "at_ms": 2500,
+          "value": -9.505000114440918
+        }
+      ],
+      "actor_event_code": 12,
+      "actor_event_payload": [
+        0,
+        3192704205,
+        1004029136
+      ],
+      "wire_hex": "9c802a000000cdcc4cbed044d83b"
+    },
+    {
+      "fraction": 1.0,
+      "normalized_rate_per_second": 0.0,
+      "cached_ceiling": 50.0,
+      "nominal_capacity": 50.0,
+      "cached_recovery_per_second": 0.0,
+      "curve_samples": [
+        {
+          "at_ms": 1000,
+          "value": 50.0
+        },
+        {
+          "at_ms": 1500,
+          "value": 50.0
+        },
+        {
+          "at_ms": 2500,
+          "value": 50.0
+        }
+      ],
+      "actor_event_code": 12,
+      "actor_event_payload": [
+        0,
+        1065353216,
+        0
+      ],
+      "wire_hex": "9c802a0000000000803f00000000"
+    },
+    {
+      "fraction": 0.8,
+      "normalized_rate_per_second": 0.0066000004298985004,
+      "cached_ceiling": 40.0,
+      "nominal_capacity": 50.0,
+      "cached_recovery_per_second": 0.33000001311302185,
+      "curve_samples": [
+        {
+          "at_ms": 1000,
+          "value": 40.0
+        },
+        {
+          "at_ms": 1500,
+          "value": 40.165000915527344
+        },
+        {
+          "at_ms": 2500,
+          "value": 40.494998931884766
+        }
+      ],
+      "actor_event_code": 12,
+      "actor_event_payload": [
+        0,
+        1061997773,
+        1004029137
+      ],
+      "wire_hex": "9c802a000000cdcc4c3fd144d83b"
+    },
+    {
+      "fraction": -0.2,
+      "normalized_rate_per_second": 0.0066000004298985004,
+      "cached_ceiling": -10.0,
+      "nominal_capacity": 50.0,
+      "cached_recovery_per_second": 0.33000001311302185,
+      "curve_samples": [
+        {
+          "at_ms": 1000,
+          "value": -10.0
+        },
+        {
+          "at_ms": 1500,
+          "value": -9.835000038146973
+        },
+        {
+          "at_ms": 2500,
+          "value": -9.505000114440918
+        }
+      ],
+      "actor_event_code": 12,
+      "actor_event_payload": [
+        0,
+        3192704205,
+        1004029137
+      ],
+      "wire_hex": "9c802a000000cdcc4cbed144d83b"
+    }
+  ],
+  "capture_sha256": {
+    "packets-6468-5728843.jsonl": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+    "packets-1360-15821281.jsonl": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf"
+  },
+  "frozen_candidates": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136624,
+      "tick_ms": 18301671,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.800000011920929,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": null,
+      "hex": "9d00000019000000cdcc4c3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 136706,
+      "tick_ms": 18308093,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.642484188079834,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.995051330095157,
+      "hex": "9d00000019000000d879243fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 145669,
+      "tick_ms": 18475234,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.800000011920929,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.999999403953552,
+      "hex": "9d00000019000000cdcc4c3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 150136,
+      "tick_ms": 18566859,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.800000011920929,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.999999403953552,
+      "hex": "9d00000019000000cdcc4c3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 150234,
+      "tick_ms": 18573859,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.6456456184387207,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 10.027719824574888,
+      "hex": "9d000000190000000849253fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 151901,
+      "tick_ms": 18957765,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.800000011920929,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.999999403953552,
+      "hex": "9d00000019000000cdcc4c3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 157022,
+      "tick_ms": 19060156,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.8999999761581421,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 5.0000011920928955,
+      "hex": "9d000000190000006666663fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 169059,
+      "tick_ms": 19259953,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.800000011920929,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.999999403953552,
+      "hex": "9d00000019000000cdcc4c3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 169142,
+      "tick_ms": 19265062,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.7325578331947327,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 5.058079046127384,
+      "hex": "9d00000019000000e9883b3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 178254,
+      "tick_ms": 19420031,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.8999999761581421,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 5.0000011920928955,
+      "hex": "9d000000190000006666663fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 178503,
+      "tick_ms": 19433984,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.8923010230064392,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 4.989437957503834,
+      "hex": "9d00000019000000d76d643fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 188828,
+      "tick_ms": 19612921,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.8999999761581421,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 5.0000011920928955,
+      "hex": "9d000000190000006666663fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 188899,
+      "tick_ms": 19617515,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.8305448293685913,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 4.988777438225222,
+      "hex": "9d00000019000000969e543fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 188934,
+      "tick_ms": 19619781,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.7458370327949524,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 4.983169877389448,
+      "hex": "9d000000190000002def3e3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 193937,
+      "tick_ms": 19707125,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.800000011920929,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.999999403953552,
+      "hex": "9d00000019000000cdcc4c3fd144d83b"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 194113,
+      "tick_ms": 19719765,
+      "actor": 25,
+      "capacity_from_prior_integer41": 50,
+      "fraction": 0.6835229992866516,
+      "normalized_recovery_per_second": 0.0066000004298985004,
+      "recovery_energy_per_second": 0.330000021494925,
+      "inferred_decrease_since_prior": 9.99505090340972,
+      "hex": "9d000000190000005dfb2e3fd144d83b"
+    }
+  ],
+  "findings": [
+    "Native packet156 updates the second cached Energy curve and actor stat0 event12, separately from ordinary Energy current.",
+    "Original curve interpolation is continuous and accepts a negative ceiling.",
+    "Modern frozen packet157 samples all normalize to approximately0.33 Energy/second at nominal capacity50; successive decreases fit5/10 Energy within timestamp tolerance.",
+    "Together these are strong Overcast-ceiling evidence; the existing discrete RecoveryClock must not be assumed to reproduce this continuous presentation."
+  ],
+  "limits": [
+    "No live client or rendered grey-bar acceptance. Actor lookup, allocation and clock services are stubbed; curve setters/interpolation and packet callback execute original code.",
+    "Modern-to-original opcode correspondence is inferred from neighboring descriptors and matching field behavior, not a modern executable consumer proof.",
+    "Continuous client presentation does not alone prove server authoritative recovery granularity or simultaneous-event ordering.",
+    "No World resource integration or new skill binding is claimed."
+  ]
+}

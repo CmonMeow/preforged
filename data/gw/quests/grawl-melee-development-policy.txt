@@ -1,0 +1,32 @@
+Grawl Invasion75 owner retaliation: authored playability policy, 2026-10-23
+
+Content: the existing grawl-development-combat.txt binds three quest75 actors
+on map160. Health80 comes from local Grawl_Invader.html (SHA256
+3d861c61c28910173638477802b1d98e15b74dddaa80cc188ab8c16783e0c354).
+Existing armor0 and condition permissions are provisional development policy.
+This activation adds no Energy pool, spellbook or attack skill.
+
+New authored numbers: speed220 world units/sec, melee range128, base damage5,
+750ms windup, 2000ms period, follow1500 and home leash2000. The speed/range/
+damage/period use the existing Experiment encounter's conservative development
+baseline; windup750 is new authored tuning, not packet recovered timing.
+Physical damage uses actual target armor, source conditions, miss/block rules,
+owned hit reactions, attack outcomes, and control interruptions.
+
+Only exact remaining quest75 NPC lifetimes retaliate against their exact quest
+owner after an observed authoritative Health decrease. This includes applied
+degeneration and is an authored trigger, not recovered retail threat scoring.
+No proximity acquisition is added: Aggro.html oldid2655578 line57 says very
+low level starter foes can have no aggro bubble, without listing all species.
+Selection alone is not a trigger. The actor's initial full80 baseline also
+allows a hit received before the first host activation poll to be observed.
+Health loss completely healed between scheduler observations is not recorded
+as a trigger; this bounded family has no autonomous self healing.
+
+The controller checks owner generation, quest75 cycle/remaining membership,
+NPC generation, life, plane, publication, position and resource clocks. A
+removed/dead quest actor cannot complete a delayed windup; abandon/reset or
+owner departure retires it. Reconnection restores a fresh quest encounter via
+the existing quest restoration path and requires a fresh retaliation trigger.
+Return-home completes before another acquisition. It does not acquire allies
+or other players, implement group aggro, patrol, or recover retail weights.

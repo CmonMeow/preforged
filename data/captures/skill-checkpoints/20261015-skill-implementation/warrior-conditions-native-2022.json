@@ -1,0 +1,611 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "checkpoint": "20261015-skill-implementation",
+  "manifest_sha256": "aabf3e7334f31509b2a459d6d1fe292d97bc409881a3deb2302fcc4c78ee2262",
+  "tool_sha256": "01a42bfd4c8f84ef7ca5e5894609e29aff3ce934fb0955c6c81502fc82a6b182",
+  "skills": [
+    {
+      "skill": 320,
+      "name": "Hamstring",
+      "attribute": 20,
+      "energy": 10,
+      "adrenaline": 0,
+      "recharge": 15,
+      "scales": [
+        0,
+        0,
+        3,
+        15
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 320
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 320
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 50337,
+          "tick_ms": 7684578,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000040010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 50342,
+          "tick_ms": 7685109,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Hamstring.html",
+      "wiki_sha256": "186ed8b8e7aca1cf1c20be15c239bc49b084437e97cbb0d5fda051730781fa10",
+      "description": "Sword Attack. If this attack hits, your target is Crippled for 3...13...15 seconds, slowing his movement."
+    },
+    {
+      "skill": 334,
+      "name": "Axe_Rake",
+      "attribute": 18,
+      "energy": 0,
+      "adrenaline": 120,
+      "recharge": 0,
+      "scales": [
+        1,
+        10,
+        0,
+        0
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 334
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 334
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 359723,
+          "tick_ms": 23073687,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e0000004e010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 359728,
+          "tick_ms": 23074265,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Axe_Rake.html",
+      "wiki_sha256": "73c82453fe14e007b5684af748b33f239833da8429c7477756ec865a1f0fe357",
+      "description": "Axe Attack. If this attack hits a foe suffering from a Deep Wound, you strike for +1...8...10 damage, and that foe becomes Crippled for 15 seconds."
+    },
+    {
+      "skill": 342,
+      "name": "Axe_Twist",
+      "attribute": 18,
+      "energy": 0,
+      "adrenaline": 120,
+      "recharge": 0,
+      "scales": [
+        1,
+        20,
+        0,
+        0
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 342
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 342
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364642,
+          "tick_ms": 23148515,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000056010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364839,
+          "tick_ms": 23159046,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000056010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 365028,
+          "tick_ms": 23170328,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000056010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364652,
+          "tick_ms": 23148859,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 364841,
+          "tick_ms": 23159375,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 365031,
+          "tick_ms": 23170890,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Axe_Twist.html",
+      "wiki_sha256": "5dd9fb3c8638d29403f552f2bb87ecec475aa804ce740b5a407fc809e357de7b",
+      "description": "Axe Attack. If this attack hits a foe suffering from a Deep Wound, you strike for 1...16...20 more damage and that foe suffers from Weakness for 20 seconds."
+    },
+    {
+      "skill": 352,
+      "name": "Crushing_Blow",
+      "attribute": 19,
+      "energy": 5,
+      "adrenaline": 0,
+      "recharge": 10,
+      "scales": [
+        1,
+        20,
+        5,
+        20
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 352
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 352
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369808,
+          "tick_ms": 23268296,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000002000000060010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 369814,
+          "tick_ms": 23269078,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Crushing_Blow.html",
+      "wiki_sha256": "8759d31510d9f88bb2621a325e2d6c490f62810f2d3f897049754115cae6f925",
+      "description": "Hammer Attack. If this attack hits, you strike for +1...16...20 damage. If you hit a knocked-down foe you inflict a Deep Wound, lowering your target's maximum Health by 20% for 5...17...20 seconds."
+    },
+    {
+      "skill": 849,
+      "name": "Lacerating_Chop",
+      "attribute": 18,
+      "energy": 0,
+      "adrenaline": 120,
+      "recharge": 0,
+      "scales": [
+        5,
+        20,
+        5,
+        20
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 849
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 849
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388068,
+          "tick_ms": 23650937,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000051030000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388171,
+          "tick_ms": 23660296,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000051030000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388074,
+          "tick_ms": 23651500,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388174,
+          "tick_ms": 23660812,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lacerating_Chop.html",
+      "wiki_sha256": "83877a9caebd6a73a00d84f12e7b88c4b395f44d8c25ceeeb3e9b2504fcf922e",
+      "description": "Axe Attack. If Lacerating Chop hits, you deal +5...17...20 damage. If it strikes a knocked down foe your target suffers from Bleeding for 5...17...20 seconds."
+    },
+    {
+      "skill": 850,
+      "name": "Fierce_Blow",
+      "attribute": 19,
+      "energy": 0,
+      "adrenaline": 140,
+      "recharge": 0,
+      "scales": [
+        5,
+        20,
+        1,
+        8
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 850
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 850
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388219,
+          "tick_ms": 23664890,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000052030000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388350,
+          "tick_ms": 23675390,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000052030000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388224,
+          "tick_ms": 23665718,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 388361,
+          "tick_ms": 23676250,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Fierce_Blow.html",
+      "wiki_sha256": "734567be459a82a5faaa1b17e7827b3c68c56fb2df207cf381944d23ce9c5948",
+      "description": "Hammer Attack. If Fierce Blow hits, you strike for +5...17...20 damage. If target foe was [sic] suffering from Weakness, that foe also suffers from a Deep Wound for 1...7...8 second[s]."
+    },
+    {
+      "skill": 1416,
+      "name": "Barbarous_Slice",
+      "attribute": 20,
+      "energy": 0,
+      "adrenaline": 150,
+      "recharge": 0,
+      "scales": [
+        5,
+        30,
+        5,
+        15
+      ],
+      "native_consumers": [
+        {
+          "interval": 1.33,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.3300000429153442,
+            "skill": 1416
+          },
+          "lookup_styles": [
+            41
+          ]
+        },
+        {
+          "interval": 1.75,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 2.625,
+            "skill": 1416
+          },
+          "lookup_styles": [
+            41
+          ]
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "action": 17
+        },
+        {
+          "kind": 49,
+          "action": 19
+        }
+      ],
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 408487,
+          "tick_ms": 24164484,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000088050000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 408494,
+          "tick_ms": 24165046,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Barbarous_Slice.html",
+      "wiki_sha256": "2fcdd98664850a8a5e72d2fcbcc065d922d1c9df6c507b756c71f3bbcba9b8f6",
+      "description": "Sword Attack. If this attack hits, you deal +5...25...30 damage. If you are currently not in a stance, you also inflict Bleeding for 5...13...15 seconds."
+    }
+  ],
+  "limits": [
+    "Original first attack body consumer only; model handles and ancillary services are stubbed.",
+    "No rendered animation/asset acceptance or independent retail weapon release calibration.",
+    "Captured activations/completions do not alone prove conditional damage or condition mechanics.",
+    "Archived wiki supplies predicates and fixed-duration prose; native rows supply numeric rank endpoints."
+  ]
+}

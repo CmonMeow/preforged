@@ -1,0 +1,32 @@
+{
+  "evidence": "haste-speed-capture-evidence.json",
+  "baseline": 288,
+  "previous": 220,
+  "scope": [
+    "player spawn speed",
+    "click route duration",
+    "keyboard forward/reverse/strafe",
+    "steering checkpoint prediction lead",
+    "speed changes and peer publication"
+  ],
+  "npc_policy": "Unchanged220 fallback; capture does not establish NPC speed.",
+  "validation": {
+    "serializer": "Pinned2022 serializer regenerated player288/NPC220 fixture; agent_wire passed.",
+    "skill_audit": "150 source-bound of575 captured;425 awaiting binding;754 missing activation captures.12 Python tests passed.",
+    "native": "Release all-target/host build succeeded.181/181 native tests passed, including independent player_movement_baseline;12 Python audit tests passed.",
+    "report": "build/reports/player-baseline-full-tests.txt"
+  },
+  "limits": [
+    "No live client or rendered movement test.",
+    "No universal NPC gait inference.",
+    "Existing 100ms steering lead policy retained, not established by speed capture."
+  ],
+  "host_sha256": "79811fa69274395c7ed82097e248b04437b867f6405e5226d4f7ad7fa59620d1",
+  "sources": {
+    "src\\runtime\\gw_player_movement.h": "66cab00cee20d9f389968227a20083d84ef175e4bd48ac9db9866b50cda1b6bb",
+    "src\\runtime\\gw_world_simulation.h": "d95f14379feb4114ecfb582f7197ddcc7aba64406e0d79e8b3a2c8000cf5b19f",
+    "src\\runtime\\gw_agent_wire.h": "cd0454612183e8a78a657b87ff2e144dfeb5b0c53dae666cddcc080f45f32f7f",
+    "tests\\player_movement_baseline.cpp": "9ac4508218b599a45c8dbfd6360be1123e0c215438c389eb4f59c849dcfcc496",
+    "tools\\protocol\\serialize_agents.py": "cd037bb5f6e9aadece03ae21251c555f79e321efd576983b5c54105e6ae0cc8c"
+  }
+}

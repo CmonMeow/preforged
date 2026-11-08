@@ -1,0 +1,1249 @@
+{
+  "quest": 82,
+  "instance_epoch": 37,
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\world-30352-81344734.jsonl",
+      "sha256": "1ccd2bef1daffada97c0da24193ca5628d9cef0c11a1bd0abee07a93bd6776e6"
+    },
+    {
+      "path": "data\\captures\\pre-searing-four-professions-2026-10-11\\packets-30352-81363781.jsonl",
+      "sha256": "a200aaeab545331315a8ca7c11ac9a60bb8ec8001b44db8b27515931b62cba02"
+    }
+  ],
+  "active": {
+    "line": 10521,
+    "tick_ms": 85835406,
+    "quest": {
+      "quest_id": 82,
+      "log_state": 33,
+      "completed": false,
+      "current_mission": false,
+      "primary": true,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 4347.0,
+        "y": 548.0,
+        "plane": 0,
+        "x_bits": 1166530560,
+        "y_bits": 1141440512,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5909,
+          59866,
+          50308,
+          20843
+        ],
+        "decoded": "Necromancer Test",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "decoded": "Verata the Necromancer",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5912,
+          41541,
+          40860,
+          18521,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          25382,
+          1,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          25286,
+          1
+        ],
+        "decoded": "Go to the <c=@Quest>river</c> and kill a <c=@Quest>skale</c> so that I can animate a bone horror from its corpse. You're going to love this....\n\nReward:<brx>500 Experience<brx>Vampiric Gaze<brx>Deathly Swarm<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          5915,
+          33421,
+          60455,
+          22362,
+          1
+        ],
+        "decoded": "{s}Go south to the river. Slay a skale so that Verata can make use of its corpse.",
+        "status": "decoded"
+      }
+    }
+  },
+  "completed": {
+    "line": 10603,
+    "tick_ms": 85859406,
+    "quest": {
+      "quest_id": 82,
+      "log_state": 35,
+      "completed": true,
+      "current_mission": false,
+      "primary": true,
+      "area_primary": false,
+      "map_from": 146,
+      "map_to": 146,
+      "marker": {
+        "x": 4961.838867,
+        "y": 1509.786621,
+        "plane": 0,
+        "x_bits": 1167789750,
+        "y_bits": 1153218860,
+        "finite": true
+      },
+      "unknown_0024": 0,
+      "category": {
+        "encoded_utf16": [
+          15716
+        ],
+        "decoded": "Ascalon",
+        "status": "decoded"
+      },
+      "name": {
+        "encoded_utf16": [
+          5909,
+          59866,
+          50308,
+          20843
+        ],
+        "decoded": "Necromancer Test",
+        "status": "decoded"
+      },
+      "npc": {
+        "encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "decoded": "Verata the Necromancer",
+        "status": "decoded"
+      },
+      "description": {
+        "encoded_utf16": [
+          5912,
+          41541,
+          40860,
+          18521,
+          2,
+          258,
+          2,
+          258,
+          2,
+          10984,
+          59348,
+          58828,
+          13938,
+          2,
+          10986,
+          35903,
+          46361,
+          26129,
+          257,
+          756,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          25382,
+          1,
+          2,
+          10994,
+          51111,
+          34011,
+          18705,
+          266,
+          25286,
+          1
+        ],
+        "decoded": "Go to the <c=@Quest>river</c> and kill a <c=@Quest>skale</c> so that I can animate a bone horror from its corpse. You're going to love this....\n\nReward:<brx>500 Experience<brx>Vampiric Gaze<brx>Deathly Swarm<brx>",
+        "status": "decoded"
+      },
+      "objectives": {
+        "encoded_utf16": [
+          10997,
+          50642,
+          61219,
+          3064,
+          266,
+          5915,
+          33421,
+          60455,
+          22362,
+          1,
+          2,
+          10998,
+          49591,
+          53037,
+          4897,
+          266,
+          10992,
+          50343,
+          39936,
+          16059,
+          266,
+          5916,
+          36840,
+          44973,
+          25068,
+          1,
+          1
+        ],
+        "decoded": "{sc}Go south to the river. Slay a skale so that Verata can make use of its corpse.{s}Return to Verata the Necromancer for your reward.",
+        "status": "decoded"
+      }
+    }
+  },
+  "verata_movement": [
+    {
+      "line": 10540,
+      "instance_ms": 1963,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 6086.0,
+        "y": 4161.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10560,
+      "instance_ms": 9956,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 6052.080078,
+        "y": 4091.989502,
+        "plane": 0,
+        "facing": -1.691023,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10562,
+      "instance_ms": 10956,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5953.761719,
+        "y": 3891.958252,
+        "plane": 0,
+        "facing": -2.027634,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10570,
+      "instance_ms": 12955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5848.422363,
+        "y": 3709.01416,
+        "plane": 0,
+        "facing": -2.093232,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10572,
+      "instance_ms": 13955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5716.940918,
+        "y": 3456.228027,
+        "plane": 0,
+        "facing": -2.031192,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10575,
+      "instance_ms": 14956,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5601.949707,
+        "y": 3192.047363,
+        "plane": 0,
+        "facing": -1.95824,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10578,
+      "instance_ms": 15955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5521.290039,
+        "y": 2986.075195,
+        "plane": 0,
+        "facing": -1.93401,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10582,
+      "instance_ms": 16955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5420.322266,
+        "y": 2720.355469,
+        "plane": 0,
+        "facing": -1.933885,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10585,
+      "instance_ms": 17955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5320.185547,
+        "y": 2453.378418,
+        "plane": 0,
+        "facing": -1.927052,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10587,
+      "instance_ms": 18955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5218.947266,
+        "y": 2183.759766,
+        "plane": 0,
+        "facing": -1.931827,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10589,
+      "instance_ms": 19955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5117.885742,
+        "y": 1916.880005,
+        "plane": 0,
+        "facing": -1.933505,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10591,
+      "instance_ms": 20955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5069.544922,
+        "y": 1789.498779,
+        "plane": 0,
+        "facing": -1.933505,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10596,
+      "instance_ms": 22955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 4995.342285,
+        "y": 1596.79541,
+        "plane": 0,
+        "facing": -1.938358,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10598,
+      "instance_ms": 23955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 4961.838867,
+        "y": 1509.786621,
+        "plane": 0,
+        "facing": -1.938358,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10650,
+      "instance_ms": 41954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 4999.088379,
+        "y": 1576.032227,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10653,
+      "instance_ms": 42954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5038.29834,
+        "y": 1645.764404,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10655,
+      "instance_ms": 43954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5077.508301,
+        "y": 1715.49646,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10659,
+      "instance_ms": 44954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5116.718262,
+        "y": 1785.228638,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10661,
+      "instance_ms": 45955,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5155.967773,
+        "y": 1855.030518,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10663,
+      "instance_ms": 46954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5195.138672,
+        "y": 1924.692993,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10665,
+      "instance_ms": 47954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5234.348633,
+        "y": 1994.425171,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10667,
+      "instance_ms": 48954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5273.558594,
+        "y": 2064.157227,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "line": 10669,
+      "instance_ms": 49954,
+      "npc": {
+        "agent": 36,
+        "model": 1473,
+        "x": 5312.768555,
+        "y": 2133.889404,
+        "plane": 0,
+        "facing": 1.058563,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5916,
+          36840,
+          44973,
+          25068
+        ],
+        "name": "Verata the Necromancer",
+        "name_status": "decoded"
+      }
+    }
+  ],
+  "trainer_definition": {
+    "line": 10538,
+    "record": {
+      "schema": 1,
+      "event": "npc_definition_observed",
+      "map": 146,
+      "instance_epoch": 37,
+      "instance_ms": 1963,
+      "npc_table_id": 1473,
+      "definition": {
+        "model_file": 116227,
+        "skin_file": 0,
+        "appearance": 0,
+        "flags": 524,
+        "primary": 4,
+        "secondary": 0,
+        "default_level": 2,
+        "visual_adjustment_bytes": [
+          0,
+          0,
+          0,
+          100
+        ],
+        "model_files": [
+          116709
+        ],
+        "name_encoded_utf16": [
+          3929,
+          40031,
+          55394,
+          5519
+        ],
+        "name": "Necromancer",
+        "name_status": "decoded"
+      }
+    }
+  },
+  "skale_candidates": [
+    {
+      "line": 10540,
+      "instance_ms": 1963,
+      "npc": {
+        "agent": 37,
+        "model": 1434,
+        "x": 4347.0,
+        "y": 548.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 10539,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 37,
+          "instance_ms": 1963,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 10540,
+      "instance_ms": 1963,
+      "npc": {
+        "agent": 38,
+        "model": 1434,
+        "x": 4605.0,
+        "y": 581.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 10539,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 37,
+          "instance_ms": 1963,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 10540,
+      "instance_ms": 1963,
+      "npc": {
+        "agent": 39,
+        "model": 1434,
+        "x": 4221.0,
+        "y": 308.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 10539,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 37,
+          "instance_ms": 1963,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 10540,
+      "instance_ms": 1963,
+      "npc": {
+        "agent": 40,
+        "model": 1434,
+        "x": 4480.0,
+        "y": 274.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 0,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3894,
+          35404,
+          42145,
+          21249
+        ],
+        "name": "River Skale Tad",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 10539,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 37,
+          "instance_ms": 1963,
+          "npc_table_id": 1434,
+          "definition": {
+            "model_file": 82023,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 8,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              3894,
+              35404,
+              42145,
+              21249
+            ],
+            "name": "River Skale Tad",
+            "name_status": "decoded"
+          }
+        }
+      }
+    }
+  ],
+  "exported_skale_appearance": {
+    "path": "data\\gw\\quests\\actors\\necromancer-test-skale.txt",
+    "sha256": "3123ceecab078f5eb150b2c96657bfe4e293b8c68858c4ec96930a1c9d15882a",
+    "limitations": "Captured nearby candidates; only actor38 death is linked to this completed attempt. No combat stats inferred."
+  },
+  "exported_quest_content": {
+    "path": "data\\gw\\quests\\necromancer-test.fwqc",
+    "sha256": "60e4f4c8411381bfbf677072b2186b6aa3402e5a1b7149b311dee3ab93d62f95"
+  },
+  "bone_horror_observations": [
+    {
+      "line": 10602,
+      "instance_ms": 24955,
+      "npc": {
+        "agent": 92,
+        "model": 2280,
+        "x": 4759.935059,
+        "y": 823.773987,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          4656,
+          37716,
+          38068,
+          25935
+        ],
+        "name": "Bone Horror",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 10601,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 37,
+          "instance_ms": 24955,
+          "npc_table_id": 2280,
+          "definition": {
+            "model_file": 48647,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 256,
+            "primary": 4,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              150
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              4656,
+              37716,
+              38068,
+              25935
+            ],
+            "name": "Bone Horror",
+            "name_status": "decoded"
+          }
+        }
+      }
+    },
+    {
+      "line": 10622,
+      "instance_ms": 31955,
+      "npc": {
+        "agent": 243,
+        "model": 2280,
+        "x": 4738.01709,
+        "y": 626.279297,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 5,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          4656,
+          37716,
+          38068,
+          25935
+        ],
+        "name": "Bone Horror",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 10601,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 146,
+          "instance_epoch": 37,
+          "instance_ms": 24955,
+          "npc_table_id": 2280,
+          "definition": {
+            "model_file": 48647,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 256,
+            "primary": 4,
+            "secondary": 0,
+            "default_level": 0,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              150
+            ],
+            "model_files": [],
+            "name_encoded_utf16": [
+              4656,
+              37716,
+              38068,
+              25935
+            ],
+            "name": "Bone Horror",
+            "name_status": "decoded"
+          }
+        }
+      }
+    }
+  ],
+  "bounded_actor_packets": [
+    {
+      "line": 98588,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85855390,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002600000010000000"
+      }
+    },
+    {
+      "line": 98634,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85857687,
+        "opcode": 241,
+        "bytes": 12,
+        "complete": true,
+        "hex": "f10000002600000014000000"
+      }
+    },
+    {
+      "line": 98642,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85857687,
+        "opcode": 32,
+        "bytes": 116,
+        "complete": true,
+        "hex": "200000005c000000e808002001000000090000007bbf944589f14d44000000000000803f0000000001000000000090430000803f00004041636e6f6e000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      }
+    }
+  ],
+  "bounded_generic_records": [
+    {
+      "line": 98635,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85857687,
+        "opcode": 160,
+        "bytes": 20,
+        "complete": true,
+        "hex": "a00000001400000026000000240000009e000000"
+      },
+      "raw_dwords": [
+        160,
+        20,
+        38,
+        36,
+        158
+      ]
+    }
+  ],
+  "skale_health_capacity_records": [
+    {
+      "line": 98560,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85853515,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a000000260000000a000000"
+      },
+      "actor": 38,
+      "capacity": 10
+    },
+    {
+      "line": 98686,
+      "record": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 30352,
+        "tick_ms": 85858890,
+        "opcode": 159,
+        "bytes": 16,
+        "complete": true,
+        "hex": "9f0000002a000000280000000a000000"
+      },
+      "actor": 40,
+      "capacity": 10
+    }
+  ],
+  "skale_allegiance_records": [],
+  "limitations": [
+    "Sampled positions are not exact spawn/follow triggers.",
+    "First observation is not proof of the exact summon time.",
+    "Objective completion alone does not prove reward turn-in.",
+    "Model/stat fields require independently reviewed2022 compatibility."
+  ]
+}

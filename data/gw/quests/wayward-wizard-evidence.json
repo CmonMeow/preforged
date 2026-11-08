@@ -1,0 +1,1022 @@
+{
+  "quest": 55,
+  "sources": [
+    {
+      "path": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\world-43292-168890171.jsonl",
+      "sha256": "194855cf498db3b91d9afee929785470c176596fc1fe149b33fe8b8c5a1b9757"
+    },
+    {
+      "path": "data\\captures\\pre-searing-side-quests-2026-10-12\\checkpoint-1815\\packets-43292-168891734.jsonl",
+      "sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c"
+    }
+  ],
+  "stages": [
+    {
+      "line": 23185,
+      "epoch": 9,
+      "map": 148,
+      "tick_ms": 177733296,
+      "quest": {
+        "quest_id": 55,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 165,
+        "marker": {
+          "x": 7311.0,
+          "y": 5438.0,
+          "plane": 0,
+          "x_bits": 1172600832,
+          "y_bits": 1168764928,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5673,
+            58870,
+            35349,
+            7652
+          ],
+          "decoded": "The Wayward Wizard",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13170,
+            52680,
+            41767,
+            16871
+          ],
+          "decoded": "Sandre Elek",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5674,
+            48324,
+            33064,
+            24792,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9966,
+            43471,
+            46674,
+            918,
+            1,
+            267,
+            2692,
+            266,
+            2327,
+            1,
+            257,
+            259,
+            2,
+            258,
+            2,
+            2697,
+            266,
+            2638,
+            1,
+            267,
+            2275,
+            1,
+            257,
+            259,
+            258,
+            261,
+            2,
+            258,
+            2,
+            2708,
+            1
+          ],
+          "decoded": "I'm sorry to bother you, but I've heard some impressive things about you, and I think only someone with your skill and bravery can help me with my problem.<p>I think my brother <c=@Quest>Orion</c> has fallen in with the Royalists. He's not wicked, just reckless and impulsive. When Sir Tydus expelled him from the Academy, he became embittered toward the army, but I don't think he realizes how serious this is. I don't want him to throw his life away for foolish pride. Do you think you could find him and tell him what I said? Perhaps convince him to come home?<p>I don't know exactly where he is, but I imagine <c=@Quest>Ralena Stormbringer</c> in <c=@Quest>Foible's Fair</c> might. Orion was always trying to impress her. He might have told her something.\n\nReward:<brx>250 Experience<brx>Air Staff<br>Energy +3\nLightning Dmg: 3-5\nTwo-handed<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5677,
+            33130,
+            63070,
+            23830,
+            1
+          ],
+          "decoded": "{s}Talk to Ralena Stormbringer in Foible's Fair to learn Orion's whereabouts.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 25897,
+      "epoch": 26,
+      "map": 165,
+      "tick_ms": 178662453,
+      "quest": {
+        "quest_id": 55,
+        "log_state": 1,
+        "completed": false,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 161,
+        "marker": {
+          "x": 430.0,
+          "y": 7598.0,
+          "plane": 0,
+          "x_bits": 1138163712,
+          "y_bits": 1173188608,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5673,
+            58870,
+            35349,
+            7652
+          ],
+          "decoded": "The Wayward Wizard",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13170,
+            52680,
+            41767,
+            16871
+          ],
+          "decoded": "Sandre Elek",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5674,
+            48324,
+            33064,
+            24792,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9966,
+            43471,
+            46674,
+            918,
+            1,
+            267,
+            2692,
+            266,
+            2327,
+            1,
+            257,
+            259,
+            2,
+            258,
+            2,
+            2697,
+            266,
+            2638,
+            1,
+            267,
+            2275,
+            1,
+            257,
+            259,
+            258,
+            261,
+            2,
+            258,
+            2,
+            2708,
+            1
+          ],
+          "decoded": "I'm sorry to bother you, but I've heard some impressive things about you, and I think only someone with your skill and bravery can help me with my problem.<p>I think my brother <c=@Quest>Orion</c> has fallen in with the Royalists. He's not wicked, just reckless and impulsive. When Sir Tydus expelled him from the Academy, he became embittered toward the army, but I don't think he realizes how serious this is. I don't want him to throw his life away for foolish pride. Do you think you could find him and tell him what I said? Perhaps convince him to come home?<p>I don't know exactly where he is, but I imagine <c=@Quest>Ralena Stormbringer</c> in <c=@Quest>Foible's Fair</c> might. Orion was always trying to impress her. He might have told her something.\n\nReward:<brx>250 Experience<brx>Air Staff<br>Energy +3\nLightning Dmg: 3-5\nTwo-handed<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5677,
+            33130,
+            63070,
+            23830,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            5678,
+            43846,
+            39695,
+            31997,
+            1
+          ],
+          "decoded": "{sc}Talk to Ralena Stormbringer in Foible's Fair to learn Orion's whereabouts.{s}Find Orion in Wizard's Folly and convince him to come home.",
+          "status": "decoded"
+        }
+      }
+    },
+    {
+      "line": 27325,
+      "epoch": 31,
+      "map": 161,
+      "tick_ms": 179190328,
+      "quest": {
+        "quest_id": 55,
+        "log_state": 3,
+        "completed": true,
+        "current_mission": false,
+        "primary": false,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 148,
+        "marker": {
+          "x": 10796.0,
+          "y": 19847.0,
+          "plane": 0,
+          "x_bits": 1177071616,
+          "y_bits": 1184566784,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            5673,
+            58870,
+            35349,
+            7652
+          ],
+          "decoded": "The Wayward Wizard",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13170,
+            52680,
+            41767,
+            16871
+          ],
+          "decoded": "Sandre Elek",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            5674,
+            48324,
+            33064,
+            24792,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506,
+            2,
+            10991,
+            63120,
+            53358,
+            19539,
+            266,
+            9966,
+            43471,
+            46674,
+            918,
+            1,
+            267,
+            2692,
+            266,
+            2327,
+            1,
+            257,
+            259,
+            2,
+            258,
+            2,
+            2697,
+            266,
+            2638,
+            1,
+            267,
+            2275,
+            1,
+            257,
+            259,
+            258,
+            261,
+            2,
+            258,
+            2,
+            2708,
+            1
+          ],
+          "decoded": "I'm sorry to bother you, but I've heard some impressive things about you, and I think only someone with your skill and bravery can help me with my problem.<p>I think my brother <c=@Quest>Orion</c> has fallen in with the Royalists. He's not wicked, just reckless and impulsive. When Sir Tydus expelled him from the Academy, he became embittered toward the army, but I don't think he realizes how serious this is. I don't want him to throw his life away for foolish pride. Do you think you could find him and tell him what I said? Perhaps convince him to come home?<p>I don't know exactly where he is, but I imagine <c=@Quest>Ralena Stormbringer</c> in <c=@Quest>Foible's Fair</c> might. Orion was always trying to impress her. He might have told her something.\n\nReward:<brx>250 Experience<brx>Air Staff<br>Energy +3\nLightning Dmg: 3-5\nTwo-handed<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5677,
+            33130,
+            63070,
+            23830,
+            1,
+            2,
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            5678,
+            43846,
+            39695,
+            31997,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13170,
+            52680,
+            41767,
+            16871,
+            1,
+            1
+          ],
+          "decoded": null,
+          "status": "pending"
+        }
+      }
+    }
+  ],
+  "actors": [
+    {
+      "line": 23126,
+      "epoch": 9,
+      "map": 148,
+      "npc": {
+        "agent": 42,
+        "model": 1490,
+        "x": 9647.0,
+        "y": 8965.0,
+        "plane": 0,
+        "facing": -1.541929,
+        "level": 1,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          13170,
+          52680,
+          41767,
+          16871
+        ],
+        "name": "Sandre Elek",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 23110,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 148,
+          "instance_epoch": 9,
+          "instance_ms": 298799107,
+          "npc_table_id": 1490,
+          "definition": {
+            "model_file": 116225,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 1,
+            "secondary": 0,
+            "default_level": 1,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116754
+            ],
+            "name_encoded_utf16": [
+              3948,
+              39255,
+              51957,
+              11013
+            ],
+            "name": "Ascalonian Townsfolk",
+            "name_status": "decoded"
+          }
+        }
+      },
+      "observation_windows": [
+        {
+          "first_line": 23126,
+          "last_line": 23458,
+          "open": true
+        }
+      ]
+    },
+    {
+      "line": 25839,
+      "epoch": 26,
+      "map": 165,
+      "npc": {
+        "agent": 3,
+        "model": 1474,
+        "x": -659.0,
+        "y": 11180.0,
+        "plane": 0,
+        "facing": -2.072143,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          13040,
+          34881,
+          39433,
+          13303
+        ],
+        "name": "Ralena Stormbringer",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 25836,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 165,
+          "instance_epoch": 26,
+          "instance_ms": 118495705,
+          "npc_table_id": 1474,
+          "definition": {
+            "model_file": 16258,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 2,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116712
+            ],
+            "name_encoded_utf16": [
+              3930,
+              56278,
+              53847,
+              26909
+            ],
+            "name": "Elementalist",
+            "name_status": "decoded"
+          }
+        }
+      },
+      "observation_windows": [
+        {
+          "first_line": 25839,
+          "last_line": 25944,
+          "open": true
+        }
+      ]
+    },
+    {
+      "line": 27242,
+      "epoch": 31,
+      "map": 161,
+      "npc": {
+        "agent": 41,
+        "model": 1475,
+        "x": -15223.0,
+        "y": 15281.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 2,
+        "allegiance": 6,
+        "name_encoded_utf16": [
+          5681,
+          50475,
+          56000,
+          21658
+        ],
+        "name": "Orion Elek",
+        "name_status": "decoded"
+      },
+      "definition": {
+        "line": 27241,
+        "record": {
+          "schema": 1,
+          "event": "npc_definition_observed",
+          "map": 161,
+          "instance_epoch": 31,
+          "instance_ms": 223853,
+          "npc_table_id": 1475,
+          "definition": {
+            "model_file": 15490,
+            "skin_file": 0,
+            "appearance": 0,
+            "flags": 524,
+            "primary": 6,
+            "secondary": 0,
+            "default_level": 2,
+            "visual_adjustment_bytes": [
+              0,
+              0,
+              0,
+              100
+            ],
+            "model_files": [
+              116715
+            ],
+            "name_encoded_utf16": [
+              3931,
+              61338,
+              50332,
+              19324
+            ],
+            "name": "Elementalist",
+            "name_status": "decoded"
+          }
+        }
+      },
+      "observation_windows": [
+        {
+          "first_line": 27242,
+          "last_line": 27387,
+          "open": true
+        }
+      ]
+    }
+  ],
+  "exports": [
+    {
+      "path": "data\\gw\\quests\\actors\\wayward-wizard-sandre-elek.txt",
+      "sha256": "a699fbb4463408d89015935a1b7dc5a4075eb71fcbe2ce15aab592e3250d217b"
+    },
+    {
+      "path": "data\\gw\\quests\\actors\\wayward-wizard-ralena-stormbringer.txt",
+      "sha256": "7b95017dd18f80f001985a0e26be1ddc717823bde0ca27ba28e958476dd99976"
+    },
+    {
+      "path": "data\\gw\\quests\\actors\\wayward-wizard-orion-elek.txt",
+      "sha256": "58a8d94e2a42755775d21d7d23ecbd3833f17260318591de70a17ac1ce190e20"
+    }
+  ],
+  "reward": {
+    "name_from_quest_description": "Air Staff",
+    "epoch": 32,
+    "packets_by_line": {
+      "585351": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 179239015,
+        "opcode": 353,
+        "bytes": 436,
+        "complete": true,
+        "hex": "610100009e1a000032e201801a00000000000000000000000000000000000000000020220a000000850b000001000000ee26cfa952b69603000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060000000004b824060098260a05f823070118210003c862030588a400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "normalized_unused_capacity": true
+      },
+      "585352": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 179239015,
+        "opcode": 318,
+        "bytes": 20,
+        "complete": true,
+        "hex": "3e0100008d0000009e1a00004e03000006000000"
+      },
+      "585353": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 179239015,
+        "opcode": 82,
+        "bytes": 8,
+        "complete": true,
+        "hex": "5200000037000000"
+      },
+      "585358": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 43292,
+        "tick_ms": 179239015,
+        "opcode": 238,
+        "bytes": 12,
+        "complete": true,
+        "hex": "ee00000000000000fa000000"
+      }
+    },
+    "encoded_name_utf16": [
+      9966,
+      43471,
+      46674,
+      918
+    ],
+    "raw_modifiers": [
+      616039424,
+      647495686,
+      603456778,
+      555221255,
+      1657275136,
+      2760377603
+    ],
+    "layout_reference": "tools/protocol/item_packet_layout_modern.py; third_party/gwca-current/include/GWCA/Packets/StoC.h ItemGeneral_FirstID",
+    "identity_join": "item6814 definition then location; quest55 removal and XP250 in same reward burst",
+    "condition_mapping": "Opaque modifier words preserved; no new condition semantics inferred."
+  },
+  "interactions": [
+    {
+      "packet_line": 462370,
+      "tick_ms": 174525343,
+      "agent": 44,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 14703,
+      "instance_epoch": 1,
+      "map": 148,
+      "name": "Sandre Elek",
+      "model": 1490,
+      "observation_age_ms": 344
+    },
+    {
+      "packet_line": 545018,
+      "tick_ms": 177729859,
+      "agent": 42,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 23178,
+      "instance_epoch": 9,
+      "map": 148,
+      "name": "Sandre Elek",
+      "model": 1490,
+      "observation_age_ms": 564
+    },
+    {
+      "packet_line": 545112,
+      "tick_ms": 177732531,
+      "agent": 42,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 23184,
+      "instance_epoch": 9,
+      "map": 148,
+      "name": "Sandre Elek",
+      "model": 1490,
+      "observation_age_ms": 237
+    },
+    {
+      "packet_line": 548544,
+      "tick_ms": 177800109,
+      "agent": 42,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 23374,
+      "instance_epoch": 9,
+      "map": 148,
+      "name": "Sandre Elek",
+      "model": 1490,
+      "observation_age_ms": 766
+    },
+    {
+      "packet_line": 571647,
+      "tick_ms": 178659078,
+      "agent": 3,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 25890,
+      "instance_epoch": 26,
+      "map": 165,
+      "name": "Ralena Stormbringer",
+      "model": 1474,
+      "observation_age_ms": 641
+    },
+    {
+      "packet_line": 571688,
+      "tick_ms": 178661703,
+      "agent": 3,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 25896,
+      "instance_epoch": 26,
+      "map": 165,
+      "name": "Ralena Stormbringer",
+      "model": 1474,
+      "observation_age_ms": 277
+    },
+    {
+      "packet_line": 571718,
+      "tick_ms": 178662843,
+      "agent": 3,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 25899,
+      "instance_epoch": 26,
+      "map": 165,
+      "name": "Ralena Stormbringer",
+      "model": 1474,
+      "observation_age_ms": 390
+    },
+    {
+      "packet_line": 571732,
+      "tick_ms": 178663843,
+      "agent": 3,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 25902,
+      "instance_epoch": 26,
+      "map": 165,
+      "name": "Ralena Stormbringer",
+      "model": 1474,
+      "observation_age_ms": 390
+    },
+    {
+      "packet_line": 571752,
+      "tick_ms": 178664890,
+      "agent": 3,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 25904,
+      "instance_epoch": 26,
+      "map": 165,
+      "name": "Ralena Stormbringer",
+      "model": 1474,
+      "observation_age_ms": 437
+    },
+    {
+      "packet_line": 571761,
+      "tick_ms": 178665375,
+      "agent": 3,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 25904,
+      "instance_epoch": 26,
+      "map": 165,
+      "name": "Ralena Stormbringer",
+      "model": 1474,
+      "observation_age_ms": 922
+    },
+    {
+      "packet_line": 583088,
+      "tick_ms": 179171343,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27285,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 15
+    },
+    {
+      "packet_line": 583590,
+      "tick_ms": 179189265,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27322,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 939
+    },
+    {
+      "packet_line": 583638,
+      "tick_ms": 179189984,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27324,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 658
+    },
+    {
+      "packet_line": 583659,
+      "tick_ms": 179192234,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27331,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 906
+    },
+    {
+      "packet_line": 583672,
+      "tick_ms": 179193156,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27333,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 812
+    },
+    {
+      "packet_line": 583692,
+      "tick_ms": 179194781,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27337,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 454
+    },
+    {
+      "packet_line": 583711,
+      "tick_ms": 179195625,
+      "agent": 41,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27339,
+      "instance_epoch": 31,
+      "map": 161,
+      "name": "Orion Elek",
+      "model": 1475,
+      "observation_age_ms": 298
+    },
+    {
+      "packet_line": 585332,
+      "tick_ms": 179238046,
+      "agent": 42,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27485,
+      "instance_epoch": 32,
+      "map": 148,
+      "name": "Sandre Elek",
+      "model": 1490,
+      "observation_age_ms": 328
+    },
+    {
+      "packet_line": 585369,
+      "tick_ms": 179239015,
+      "agent": 42,
+      "event": "dialogue_sender",
+      "status": "joined_by_sender_and_recent_observation",
+      "world_line": 27487,
+      "instance_epoch": 32,
+      "map": 148,
+      "name": "Sandre Elek",
+      "model": 1490,
+      "observation_age_ms": 297
+    }
+  ],
+  "wiki": {
+    "title": "The Wayward Wizard",
+    "source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\The_Wayward_Wizard.html",
+    "sha256": "56987929fccd4253ca2e75ae41dff3e2db8329131ab5b8780cf96ad90db6f61d",
+    "sections": {
+      "Quest_information": {
+        "line": 106,
+        "text": "Quest information\nRequirements\nTyrian (Prophecies) character\nCharacter in pre-Searing\nLevel 2 or higher\nObjectives\nTalk to Ralena Stormbringer in Foible's Fair to learn Orion's whereabouts.\nFind Orion in Wizard's Folly and convince him to come home.\nReturn to Sandre Elek for your reward.\nReward\n250 Experience\nAir Staff (lightning spire)\nEnergy +3\nLightning Dmg: 3-5\nArmor penetration +10% (Chance: 5%)\nArmor +7 (vs. Piercing damage)\nTwo-handed"
+      },
+      "Requirements": {
+        "line": 107,
+        "text": "Requirements\nTyrian (Prophecies) character\nCharacter in pre-Searing\nLevel 2 or higher"
+      },
+      "Objectives": {
+        "line": 111,
+        "text": "Objectives\nTalk to Ralena Stormbringer in Foible's Fair to learn Orion's whereabouts.\nFind Orion in Wizard's Folly and convince him to come home.\nReturn to Sandre Elek for your reward."
+      },
+      "Reward": {
+        "line": 115,
+        "text": "Reward\n250 Experience\nAir Staff (lightning spire)\nEnergy +3\nLightning Dmg: 3-5\nArmor penetration +10% (Chance: 5%)\nArmor +7 (vs. Piercing damage)\nTwo-handed"
+      },
+      "Walkthrough": {
+        "line": 123,
+        "text": "Walkthrough\nAfter getting the quest from Sandre Elek, travel to Foible's Fair and talk to Ralena Stormbringer. To find Orion, head out from Foible's Fair and follow the road northeast until you reach the house on the left. From there head west through the trees towards the quest pointer, until you find Orion. Speak to Orion, then travel back to Ascalon City and speak to Sandre Elek for the reward."
+      },
+      "Dialogue": {
+        "line": 126,
+        "text": "Dialogue\nInitial dialogue\nSandre Elek\n\"I'm sorry to bother you, but I've heard some impressive things about you, and I think only someone with your skill and bravery can help me with my problem.\"\n\"I think my brother Orion has fallen in with the Royalists. He's not wicked, just reckless and impulsive. When Sir Tydus expelled him from the Academy, he became embittered toward the army, but I don't think he realizes how serious this is. I don't want him to throw his life away for foolish pride. Do you think you could find him and tell him what I said? Perhaps convince him to come home?\"\n\"I don't know exactly where he is, but I imagine Ralena Stormbringer in Foible's Fair might. Orion was always trying to impress her. He might have told her something.\"\nAccept: \"I'll try to bring your brother home.\"\nDecline: \"Orion must live with his decision.\"\nAsk: \"Please. Have you found my brother yet? I have no more information to give you but that I think he's hiding out in Green Hills County.\"\nIntermediate dialogue\nRalena Stormbringer\n\"Aye, I can tell you where Orion went. He headed out northwest past the road. He thinks he'll find some Royalists there, but Vassar thinks it won't work. I hope he doesn't get himself killed, but he can't expect me to go tromping all over the mountain looking for him.\"\nIf you have not talked to Ralena Stormbringer\nOrion Elek\nHmph. Sandre's a sweet girl, but she's very naive about the ways of the world. Some day, you will all see that peace and order can only be restored fully to Ascalon when the rightful royal line is restored to the throne.\nIf you have talked to Ralena Stormbringer\nOrion Elek\n\"What's this? Vassar is at the Fair, cozying up to Ralena!? Curse the day I was born! What am I doing out here? The revolution will have to wait!\"\nReward dialogue\nSandre Elek\n\"Praise Dwayna! I'm so relieved to know he's left the Royalists. I feared he was lost to us forever.\""
+      },
+      "Notes": {
+        "line": 149,
+        "text": "Notes\nTalking to Orion before talking to Ralena Stormbringer will initiate dialog with him, but he will not be swayed.\nOrion starts walking as soon as you get done talking to him and, unless killed in the process, ultimately returns to Foible's Fair.\nRetrieved from \"https://wiki.guildwars.com/index.php?title=The_Wayward_Wizard&oldid=2658089\"\nCategories:\nQuest stubs\nAscalon (pre-Searing) quests\nProphecies secondary quests\nProphecies quests\nTyrian only quests\nQuests that award unreplicable itemsHidden category:\nPages using DynamicPageList dplreplace parser function"
+      }
+    },
+    "client_quest_id": null,
+    "runtime_status": "reference_only"
+  },
+  "limits": [
+    "Observation windows bound visible identities in one epoch; disappearance is not death or despawn proof.",
+    "NPC coordinates are observed positions, not proven spawn points.",
+    "Incoming dialogue senders do not establish outgoing native choice IDs.",
+    "Quest absence after Sandre dialogue is not by itself proof of reward delivery.",
+    "Captured reward definition is preserved; native-client visual verification remains an integration check.",
+    "Modern capture records do not establish native 2022 packet opcodes."
+  ]
+}

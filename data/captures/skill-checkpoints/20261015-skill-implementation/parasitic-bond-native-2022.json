@@ -1,0 +1,70 @@
+{
+  "skill": 99,
+  "name": "Parasitic Bond",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "9271d450726a71adba64e1f8c77e7576e6180afef161202f07fd9284132393e0",
+  "capture_file": "packets-1360-15821281.jsonl",
+  "capture_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "evidence": [
+    {
+      "line": 66417,
+      "tick_ms": 17123078,
+      "hex": "a00000003c000000190000001e00000063000000"
+    },
+    {
+      "line": 66422,
+      "tick_ms": 17124078,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    {
+      "line": 66423,
+      "tick_ms": 17124078,
+      "hex": "9f0000001500000019000000b7000000"
+    },
+    {
+      "line": 66424,
+      "tick_ms": 17124078,
+      "hex": "a0000000140000001e00000019000000b8000000"
+    }
+  ],
+  "animation": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 99,
+    "override_after": 2139095040
+  },
+  "native_fields": {
+    "0x44": 20,
+    "0x48": 20,
+    "0x4c": 2,
+    "0x5c": 1,
+    "0x60": 1,
+    "0x64": 30,
+    "0x68": 120,
+    "0x78": 183,
+    "0x7c": 184
+  },
+  "particles": [
+    {
+      "actor": 42,
+      "encoded_file": "91b900010000",
+      "flags": 1
+    },
+    {
+      "actor": 43,
+      "encoded_file": "92b900010000",
+      "flags": 1
+    }
+  ],
+  "findings": [
+    "Frozen local use completes after1000ms.",
+    "Frozen body183 caster and body184 target match original native resources and execute original particle lookup.",
+    "Native scale1->1, duration20s, healing30->120 and recharge2s match existing planner metadata."
+  ],
+  "limits": [
+    "No new Runtime binding or rendered acceptance claimed.",
+    "Capture does not prove end-heal/removal/death/renewal mechanics; owned lifecycle must be reviewed before binding."
+  ]
+}

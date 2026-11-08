@@ -1,0 +1,153 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "49afd03bda14943af5bbe638094aa8b81e46ac94b617b8414ec128f208a9358e",
+  "cases": [
+    {
+      "property": 40,
+      "value": 0,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    },
+    {
+      "property": 40,
+      "value": 1,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    },
+    {
+      "property": 40,
+      "value": 10,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    },
+    {
+      "property": 40,
+      "value": 30,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    },
+    {
+      "property": 40,
+      "value": 4294967295,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    },
+    {
+      "property": 41,
+      "value": 30,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [
+        {
+          "kind": "cache-capacity-boundary",
+          "this": 33568904,
+          "args": [
+            12345,
+            30,
+            1
+          ]
+        },
+        {
+          "kind": "cache-capacity-boundary",
+          "this": 33568920,
+          "args": [
+            12345,
+            30,
+            1
+          ]
+        },
+        {
+          "kind": "actor-capacity-boundary",
+          "args": [
+            0,
+            30
+          ]
+        }
+      ],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    },
+    {
+      "property": 42,
+      "value": 480,
+      "stages": [
+        "integer-cache",
+        "integer-sync",
+        "integer-actor"
+      ],
+      "setters": [
+        {
+          "kind": "cache-capacity-boundary",
+          "this": 33568936,
+          "args": [
+            12345,
+            480,
+            1
+          ]
+        },
+        {
+          "kind": "actor-capacity-boundary",
+          "args": [
+            1,
+            480
+          ]
+        }
+      ],
+      "observed_state_unchanged": true,
+      "events": [],
+      "effects": [],
+      "ui": []
+    }
+  ],
+  "finding": "Original generic integer40 reaches native cache, sync and actor dispatch without a state setter or observed actor/cache/sync change. It is not a usable Overcast display update in this path.",
+  "limits": [
+    "Offline pinned2022 loaded-actor path only; no claim about another opcode or client version.",
+    "Capacity setter internals are stopped for41/42 positive controls; their state/visual semantics are not established by this probe.",
+    "Unrelated actor lookup, allocation and time services remain stubbed. No Overcast wire identity or rendered grey bar has been established."
+  ]
+}

@@ -1,0 +1,15 @@
+Pre-Searing primary Elementalist / secondary Warrior playthrough, user report.
+Archived original world/packet/71 interaction files and latest crash report/dump.
+54,793 incoming packets, 483 schemas; 2,062 NPC population snapshots;
+218 NPC definition observations; 173 inventory snapshots; 66 ground item records;
+15 map transition observations. No quest snapshot events in this world log.
+Diagnostic confirms QuestModule retained=0 in the attached shipped build.
+Do not claim full quest semantic coverage or inferred completion states.
+Latest crash: 2026-10-09 21:26:01, build38974,
+msgId >= FRAME_MSG_EX, Engine/Frame/FrApi.cpp(3901).
+User reports chat missing and crash while entering mission to leave pre-Searing.
+Root cause unproven; preserve stack/dump for analysis. Do not confuse older
+ArenaNet.log assertions with this incident. Current official13908 unattached;
+do not reattach the October4 shipped logger or restart the user's session.
+Current source has quest snapshot support absent from shipped binary.
+Validate forwarding/UI hooks and package provenance before next attachment.

@@ -1,0 +1,208 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "capture_sha256": {
+    "packets-1360-15821281.jsonl": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf"
+  },
+  "skills": [
+    {
+      "skill": 172,
+      "name": "Stone_Daggers",
+      "native_fields": {
+        "0xc": 5,
+        "0x10": 0,
+        "0x44": 1,
+        "0x48": 5,
+        "0x4c": 0,
+        "0x5c": 8,
+        "0x60": 33,
+        "0x64": 1800,
+        "0x68": 1800,
+        "0x78": 307,
+        "0x7c": 2077
+      },
+      "native_cast_consumer": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 172,
+        "override_after": 2139095040
+      },
+      "overcast_byte": 99,
+      "produces_overcast": false,
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Stone_Daggers.html",
+      "wiki_sha256": "7a22d931b06558f706c11fb23996d6c4edf1a2287b6a53043aa9d8933fa810a3",
+      "wiki_revision": 2606928,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 140979,
+          "tick_ms": 18395375,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000ac000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 141120,
+          "tick_ms": 18403359,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000ac000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 141181,
+          "tick_ms": 18406937,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000ac000000",
+          "kind": 60
+        }
+      ]
+    },
+    {
+      "skill": 195,
+      "name": "Lava_Font",
+      "native_fields": {
+        "0xc": 5,
+        "0x10": 0,
+        "0x44": 5,
+        "0x48": 5,
+        "0x4c": 4,
+        "0x5c": 5,
+        "0x60": 50,
+        "0x64": 0,
+        "0x68": 0,
+        "0x78": 347,
+        "0x7c": 2077
+      },
+      "native_cast_consumer": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.5,
+        "stored_skill": 195,
+        "override_after": 2139095040
+      },
+      "overcast_byte": 99,
+      "produces_overcast": false,
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lava_Font.html",
+      "wiki_sha256": "b2896ebbdf95abcd6cb28e3df34cb7ff3ae58bba6a8da7201ef34666c3889cae",
+      "wiki_revision": 2667475,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 157087,
+          "tick_ms": 19064453,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c00000019000000c3000000",
+          "kind": 60
+        }
+      ]
+    },
+    {
+      "skill": 214,
+      "name": "Ice_Spear",
+      "native_fields": {
+        "0xc": 6,
+        "0x10": 0,
+        "0x44": 5,
+        "0x48": 5,
+        "0x4c": 0,
+        "0x5c": 10,
+        "0x60": 60,
+        "0x64": 1,
+        "0x68": 4,
+        "0x78": 380,
+        "0x7c": 2077
+      },
+      "native_cast_consumer": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 214,
+        "override_after": 2139095040
+      },
+      "overcast_byte": 99,
+      "produces_overcast": false,
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Ice_Spear.html",
+      "wiki_sha256": "96e8882c6d836cc2f0b138134b229f0c72b60da779b6ab0440247b083f3a97d3",
+      "wiki_revision": 2607597,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 169018,
+          "tick_ms": 19258203,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000d6000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 169080,
+          "tick_ms": 19262187,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000d6000000",
+          "kind": 60
+        }
+      ]
+    },
+    {
+      "skill": 222,
+      "name": "Lightning_Strike",
+      "native_fields": {
+        "0xc": 4,
+        "0x10": 0,
+        "0x44": 3,
+        "0x48": 3,
+        "0x4c": 5,
+        "0x5c": 5,
+        "0x60": 50,
+        "0x64": 0,
+        "0x68": 0,
+        "0x78": 394,
+        "0x7c": 395
+      },
+      "native_cast_consumer": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 51,
+        "seconds": 1.0,
+        "stored_skill": 222,
+        "override_after": 2139095040
+      },
+      "overcast_byte": 99,
+      "produces_overcast": false,
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lightning_Strike.html",
+      "wiki_sha256": "268a89c5695463d955a3e3191f645349b3524c80b4be7126cc8d739c5879c031",
+      "wiki_revision": 2667349,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173562,
+          "tick_ms": 19331218,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e000000de000000",
+          "kind": 60
+        }
+      ]
+    }
+  ],
+  "tool_sha256": "fbc593229852a4b018b3f95a4777986d42fd93dc9cc8bf6fe6615d9627a1e3a5",
+  "finding": "All four captured skills require actual Overcast state for conditional mechanics; none may be advertised as fully implemented by adding unconditional base damage alone.",
+  "limits": [
+    "Original cast consumers stop at model lookup, without rendering.",
+    "Metadata does not establish conditional snapshot timing, grey-bar wire identity or recovery phase.",
+    "Frozen modern activations are not proof of original2022 cast timing or successful conditional mechanics.",
+    "Ice Spear is native type6 enchantment and Lightning Strike type4 hex; treating them as plain damage spells loses their additional effect lifecycle."
+  ]
+}

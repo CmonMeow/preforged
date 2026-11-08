@@ -1,0 +1,898 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "157183": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19070250,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003c00000019000000c6000000"
+    },
+    "157193": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "157194": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000068010000"
+    },
+    "157195": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000089010000"
+    },
+    "157196": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4200000019000000c600000000000000460000000000c841"
+    },
+    "157197": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b00000019000000080000000000000002000000"
+    },
+    "157198": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b00000019000000090000000000000002000000"
+    },
+    "157199": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b000000190000000a0000000000000002000000"
+    },
+    "157200": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19071328,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b000000190000000b0000000000000002000000"
+    },
+    "163154": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19158359,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003c00000019000000c7000000"
+    },
+    "163166": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "163167": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000069010000"
+    },
+    "163168": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 65,
+      "bytes": 24,
+      "complete": true,
+      "hex": "410000001900000000000000c70000000000000079000000"
+    },
+    "163169": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b00000019000000080000000000000001000000"
+    },
+    "163170": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b00000019000000090000000000000001000000"
+    },
+    "163171": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b000000190000000a0000000000000001000000"
+    },
+    "163172": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19159281,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b000000190000000b0000000000000001000000"
+    },
+    "163181": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19160000,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a00000003c000000190000001e000000cc000000"
+    },
+    "163190": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 68,
+      "bytes": 12,
+      "complete": true,
+      "hex": "440000001900000079000000"
+    },
+    "163191": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b00000019000000080000000000000000000000"
+    },
+    "163192": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b00000019000000090000000000000000000000"
+    },
+    "163193": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b000000190000000a0000000000000000000000"
+    },
+    "163194": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 59,
+      "bytes": 20,
+      "complete": true,
+      "hex": "3b000000190000000b0000000000000000000000"
+    },
+    "163195": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 229,
+      "bytes": 20,
+      "complete": true,
+      "hex": "e500000019000000cc0000000000000008000000"
+    },
+    "163196": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19161015,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "168919": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19253156,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003c00000019000000cb000000"
+    },
+    "168936": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254156,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "168937": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254156,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f00000015000000190000006e010000"
+    },
+    "168938": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254156,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "4200000019000000cb000000000000004600000000007041"
+    },
+    "168942": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254609,
+      "opcode": 228,
+      "bytes": 16,
+      "complete": true,
+      "hex": "e400000019000000d400000000000000"
+    },
+    "168943": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254609,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e00000094010000"
+    },
+    "168944": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254609,
+      "opcode": 12,
+      "bytes": 4,
+      "complete": false,
+      "hex": "0c000000"
+    },
+    "168945": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254609,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e0000003d000000"
+    },
+    "168946": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254718,
+      "opcode": 13,
+      "bytes": 8,
+      "complete": true,
+      "hex": "0d00000032000000"
+    },
+    "168947": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254718,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e00000032000000"
+    },
+    "168948": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254921,
+      "opcode": 227,
+      "bytes": 16,
+      "complete": true,
+      "hex": "e300000019000000cb00000000000000"
+    },
+    "168949": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254921,
+      "opcode": 162,
+      "bytes": 16,
+      "complete": true,
+      "hex": "a20000003e000000190000009a9999be"
+    },
+    "168950": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254921,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003c00000019000000d4000000"
+    },
+    "168951": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19254921,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e000000e9000000"
+    },
+    "168952": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255234,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e00000038010000"
+    },
+    "168953": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255234,
+      "opcode": 46,
+      "bytes": 16,
+      "complete": true,
+      "hex": "2e0000002d00000045262ac0920a0640"
+    },
+    "168954": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255234,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e00000001000000"
+    },
+    "168955": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 68,
+      "bytes": 12,
+      "complete": true,
+      "hex": "440000001900000046000000"
+    },
+    "168956": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000003a0000001900000000000000"
+    },
+    "168957": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000150000001900000078010000"
+    },
+    "168958": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001d000000e0010000"
+    },
+    "168959": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001d00000019000000abaaaabc"
+    },
+    "168960": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001d0000001900000079010000"
+    },
+    "168961": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001d00000001000000"
+    },
+    "168962": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001d0000000c000000"
+    },
+    "168963": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001d00000000080000"
+    },
+    "168964": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001e000000e0010000"
+    },
+    "168965": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001e00000019000000efee6ebc"
+    },
+    "168966": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001e0000001900000079010000"
+    },
+    "168967": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e00000001000000"
+    },
+    "168968": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001e0000000c000000"
+    },
+    "168969": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001e00000000080000"
+    },
+    "168970": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f0000002a0000001f000000e0010000"
+    },
+    "168971": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 163,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a3000000100000001f00000019000000abaa2abc"
+    },
+    "168972": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 160,
+      "bytes": 20,
+      "complete": true,
+      "hex": "a0000000140000001f0000001900000079010000"
+    },
+    "168973": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001f00000001000000"
+    },
+    "168974": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000060000001f0000000c000000"
+    },
+    "168975": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 241,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f10000001f00000000080000"
+    },
+    "168976": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000080000001900000000000000"
+    },
+    "168977": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f000000080000001900000001000000"
+    },
+    "168978": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e000000b5010000"
+    },
+    "168979": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 39,
+      "bytes": 12,
+      "complete": true,
+      "hex": "270000001d00000000000000"
+    },
+    "168980": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 39,
+      "bytes": 12,
+      "complete": true,
+      "hex": "270000001e00000000000000"
+    },
+    "168981": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19255750,
+      "opcode": 39,
+      "bytes": 12,
+      "complete": true,
+      "hex": "270000001f00000000000000"
+    },
+    "168982": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256250,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e00000005020000"
+    },
+    "168983": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256250,
+      "opcode": 228,
+      "bytes": 16,
+      "complete": true,
+      "hex": "e400000019000000d500000000000000"
+    },
+    "168984": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 155,
+      "bytes": 72,
+      "complete": true,
+      "hex": "9b0000003f000000370d69fde0bc6d26000000000000704100b08c45000000000000803f0000000001000000000000000000803f0000a04100000000000000000000000000000000"
+    },
+    "168985": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 240,
+      "bytes": 12,
+      "complete": true,
+      "hex": "f00000003f00000000000000"
+    },
+    "168986": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e000000cc000000"
+    },
+    "168987": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 32,
+      "bytes": 116,
+      "complete": true,
+      "hex": "200000003f0000006c0000200100000009000000008089c40000c7c400000000048b68bfaf19d63e0100000000009043e4388e3e00004041636e6f6e000000003190000000000000df16000000000000e25691c20dd0054200d051c500400ac4000000000000000000d051c500400ac400000000"
+    },
+    "168988": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 109,
+      "bytes": 16,
+      "complete": true,
+      "hex": "6d0000003f0000008c00000000000000"
+    },
+    "168989": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 30,
+      "bytes": 8,
+      "complete": true,
+      "hex": "1e00000001000000"
+    },
+    "168990": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 19256468,
+      "opcode": 227,
+      "bytes": 16,
+      "complete": true,
+      "hex": "e300000019000000d400000000000000"
+    }
+  },
+  "cases": [
+    {
+      "skill": 198,
+      "start": 157183,
+      "finish": 157193,
+      "bodies": [
+        {
+          "line": 157194,
+          "resource": 360,
+          "native": {
+            "actor": 42,
+            "encoded_file": "b64f00010000",
+            "flags": 1
+          }
+        },
+        {
+          "line": 157195,
+          "resource": 393,
+          "native": {
+            "actor": 42,
+            "encoded_file": "184100010000",
+            "flags": 1
+          }
+        }
+      ],
+      "effect_line": 157196,
+      "wire": "418019000000c60000000000460000000000c841",
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 1.0,
+        "stored_skill": 198,
+        "override_after": 2139095040
+      }
+    },
+    {
+      "skill": 199,
+      "start": 163154,
+      "finish": 163166,
+      "bodies": [
+        {
+          "line": 163167,
+          "resource": 361,
+          "native": {
+            "actor": 42,
+            "encoded_file": "f78200010000",
+            "flags": 1
+          }
+        }
+      ],
+      "effect_line": 163168,
+      "wire": "40801900000000000000c7000000000079000000",
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 1.0,
+        "stored_skill": 199,
+        "override_after": 2139095040
+      }
+    },
+    {
+      "skill": 203,
+      "start": 168919,
+      "finish": 168936,
+      "bodies": [
+        {
+          "line": 168937,
+          "resource": 366,
+          "native": {
+            "actor": 42,
+            "encoded_file": "f88200010000",
+            "flags": 1
+          }
+        }
+      ],
+      "effect_line": 168938,
+      "wire": "418019000000cb00000000004600000000007041",
+      "cast": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 1.0,
+        "stored_skill": 203,
+        "override_after": 2139095040
+      }
+    }
+  ],
+  "renewal_success": {
+    "skill": 203,
+    "next_spell": 212,
+    "request": 168942,
+    "start": 168950,
+    "removal": 168955,
+    "finish": 168956,
+    "recharge_clear": 168990,
+    "clear_after_finish_ms": 718,
+    "recharge_start_absent_in_lines": [
+      168942,
+      168990
+    ],
+    "limitation": "One successful spell; no interrupted cast, Diversion or unrelated-disable experiment."
+  },
+  "limitations": [
+    "Actor/model/clock services stubbed;no rendered QA.",
+    "Captured199 final effect/attribute removal is terminal,not paid admission.",
+    "These successful casts do not prove unknown failure/interruption or expiration-crossing charge rules.",
+    "Runtime198/199/203 paths are source-bound;203 interrupted reset and Diversion override are wiki-backed,not proved by this successful capture."
+  ]
+}

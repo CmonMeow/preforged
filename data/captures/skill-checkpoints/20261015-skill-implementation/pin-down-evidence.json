@@ -1,0 +1,78 @@
+{
+  "skill": 392,
+  "name": "Pin Down",
+  "capture": {
+    "id": 392,
+    "name": "Pin Down",
+    "obtainable_baseline": true,
+    "runtime_status": "implemented_binding",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 6,
+    "local_finished": 0,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 426301,
+        "tick_ms": 24461296,
+        "actor": 25,
+        "map": 280,
+        "hex": "a000000032000000190000001e00000088010000",
+        "kind": 50
+      }
+    ],
+    "endpoint_evidence": [],
+    "body_effect_evidence": []
+  },
+  "wiki": [
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Pin_Down.html",
+      "sha256": "10b2701ac2b1247029969bce169f574c1bbf341953bcb6275f5c256cf1cfdfd9"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Crippled.html",
+      "sha256": "a1d81d6551866230f6dfb96c0a28fb4c853b53963f8138587714d1d0f46f3165"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Read_the_Wind.html",
+      "sha256": "a8c33906ad36acfdf3667747e1b216614273102705c7223fee00a2de01db3e0b"
+    }
+  ],
+  "mechanics": {
+    "on_hit": "normal bow attack damage plus Crippled on a surviving target",
+    "duration_seconds_ranks_0_12_15": [
+      3,
+      13,
+      15
+    ],
+    "movement_multiplier": 0.5,
+    "movement_scope": "player and NPC timed history, cleansing and expiry",
+    "weapon": "bow"
+  },
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "pin_down": {
+      "state": 45,
+      "seconds": 2.4749999046325684,
+      "skill": 392
+    },
+    "limits": "Native bow body consumer reaches model lookup/style41 and animation state45 using supplied interval1.75/modifier1. Model lookup returns synthetic handles, ancillary effects/clock/actor services stubbed. No rendered pixels or attack release timing proof."
+  },
+  "validation": [
+    "captured_skills: player and NPC hits, Blind miss, lethal hit, condition expiry, native kind50 activation and weapon timing packet",
+    "movement_effects: actual player route distances at slow/expiry/cleanse, NPC movement integrals, short reapplication, ID isolation",
+    "test_skill_runtime_coverage: 3 tests pass"
+  ],
+  "limits": [
+    "Ordinary projectile release500ms remains development timing, not retail calibration.",
+    "No claim of rendered model/animation acceptance.",
+    "General block/dodge and retail combat randomness remain incomplete.",
+    "Full production rebuild pending build/reports/pin-down-full-build.txt."
+  ],
+  "production_build_status": {
+    "completed": true,
+    "report": "build/reports/pin-down-full-build.txt",
+    "note": "Confirmed session62191 exit0; full suite at that stage exposed an obsolete Dual Shot speed expectation, fixed in subsequent lifecycle batch."
+  }
+}

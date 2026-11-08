@@ -1,0 +1,143 @@
+{
+  "skill": 54,
+  "pvp_alias": 3152,
+  "capture_evidence": [
+    {
+      "id": 54,
+      "name": "Crippling Anguish",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 2,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 2,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 15703,
+          "tick_ms": 16162031,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000036000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 16051,
+          "tick_ms": 16189281,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000036000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 15714,
+          "tick_ms": 16163046,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 16062,
+          "tick_ms": 16190234,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "wiki": [
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Crippling_Anguish.html",
+      "sha256": "9eeffe90c48c5b7ab175422ab3c9b8e0c655da850d6313825794b563ee17e2be"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Crippling_Anguish_(PvP).html",
+      "sha256": "574f86eb6c944a6ec073b7e4e72dc84d0a8923814d15c8b836266fbda2c1d8b6"
+    }
+  ],
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "casts": [
+      {
+        "skill": 54,
+        "cast": {
+          "model": 33607680,
+          "layer": 0,
+          "style": 51,
+          "seconds": 1.0,
+          "stored_skill": 54,
+          "override_after": 2139095040
+        }
+      },
+      {
+        "skill": 3152,
+        "cast": {
+          "model": 33607680,
+          "layer": 0,
+          "style": 51,
+          "seconds": 1.0,
+          "stored_skill": 3152,
+          "override_after": 2139095040
+        }
+      }
+    ],
+    "particle": {
+      "actor": 43,
+      "encoded_file": "f3b700010000",
+      "flags": 1
+    },
+    "limits": "Native dispatch/cast style and first particle lookup only. Synthetic actor/model services; no rendered animation, sound or retail combat acceptance."
+  },
+  "mechanics": {
+    "duration_ranks_0_12_15_seconds": [
+      5,
+      17,
+      20
+    ],
+    "movement_multiplier": 0.5,
+    "pve": {
+      "energy": 5,
+      "recharge_seconds": 12,
+      "pips_ranks_0_12_15": [
+        1,
+        7,
+        8
+      ],
+      "attack_duration_multiplier": 1.5
+    },
+    "pvp": {
+      "energy": 15,
+      "recharge_seconds": 20,
+      "pips_ranks_0_12_15": [
+        1,
+        4,
+        5
+      ],
+      "attack_duration_multiplier": 1
+    },
+    "alias_policy": "Only reviewed54 ->3152 cast-record alias enabled. Effect identity3152 keeps PvP regeneration/attack-slow distinction in authoritative registry."
+  },
+  "validation": [
+    "captured_skills rebuilt and passes: actual Runtime costs, completion and interruption recharge, player/NPC degeneration and attack duration, player movement, expiry and Shatter Delusions removal.",
+    "Published targeted particle packet matches native resource89 consumer.",
+    "movement_effects focused regression passes.",
+    "Capture/dispatcher audits refreshed and11 tooling tests pass.",
+    "Production/all-target build completed (session72955 exit0).",
+    "Full rebuilt CTest166/166 passed21.18s, report build/reports/crippling-anguish-full-tests.txt."
+  ],
+  "limits": [
+    "Base54 activation sightings do not by themselves prove PvP-specific effects; no explicit3152 activation capture is claimed.",
+    "No rendered animation/sound acceptance.",
+    "Shared IAS model and fractional timing are documented community-model behavior, not recovered exact retail scheduling."
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "9cdec19f550cae907c19bfc4b59df1af370ab649d8cddbf789ba57601bf6ef8f",
+  "cases": [
+    {
+      "line": 85775,
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000bcfb90c6e9d372c500000000b3f9bb3e8f0000000a00000001000000"
+      },
+      "arrival_line": 85829,
+      "arrival": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412718,
+        "opcode": 167,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a70000002a0000000a00000001000000"
+      },
+      "wire": "a3802a000000bcfb90c6e9d372c50000b3f9bb3e8f0000000a00000001",
+      "creation": {
+        "encoded_file": "352200010000",
+        "source": [
+          0,
+          0,
+          0
+        ],
+        "destination": [
+          3331390396,
+          3312636905,
+          3250585600
+        ],
+        "duration": 1052506547,
+        "flag": 0
+      },
+      "trigger": {
+        "delay": 1052506547,
+        "kind": 14,
+        "key": 10
+      }
+    },
+    {
+      "line": 85776,
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000622791c66fd476c50000000066cec23e8f0000000700000001000000"
+      },
+      "arrival_line": 85835,
+      "arrival": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412750,
+        "opcode": 167,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a70000002a0000000700000001000000"
+      },
+      "wire": "a3802a000000622791c66fd476c5000066cec23e8f0000000700000001",
+      "creation": {
+        "encoded_file": "352200010000",
+        "source": [
+          0,
+          0,
+          0
+        ],
+        "destination": [
+          3331401570,
+          3312899183,
+          3250585600
+        ],
+        "duration": 1052954214,
+        "flag": 0
+      },
+      "trigger": {
+        "delay": 1052954214,
+        "kind": 14,
+        "key": 7
+      }
+    },
+    {
+      "line": 85777,
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000b5e790c6100d73c500000000dd1db93e8f0000000400000001000000"
+      },
+      "arrival_line": 85827,
+      "arrival": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412718,
+        "opcode": 167,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a70000002a0000000400000001000000"
+      },
+      "wire": "a3802a000000b5e790c6100d73c50000dd1db93e8f0000000400000001",
+      "creation": {
+        "encoded_file": "352200010000",
+        "source": [
+          0,
+          0,
+          0
+        ],
+        "destination": [
+          3331385269,
+          3312651536,
+          3250585600
+        ],
+        "duration": 1052319197,
+        "flag": 0
+      },
+      "trigger": {
+        "delay": 1052319197,
+        "kind": 14,
+        "key": 4
+      }
+    },
+    {
+      "line": 85778,
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000bf3690c64cdf6cc50000000089a6a23e8f0000000300000001000000"
+      },
+      "arrival_line": 85819,
+      "arrival": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412671,
+        "opcode": 167,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a70000002a0000000300000001000000"
+      },
+      "wire": "a3802a000000bf3690c64cdf6cc5000089a6a23e8f0000000300000001",
+      "creation": {
+        "encoded_file": "352200010000",
+        "source": [
+          0,
+          0,
+          0
+        ],
+        "destination": [
+          3331339967,
+          3312246604,
+          3250585600
+        ],
+        "duration": 1050846857,
+        "flag": 0
+      },
+      "trigger": {
+        "delay": 1050846857,
+        "kind": 14,
+        "key": 3
+      }
+    },
+    {
+      "line": 85779,
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000f7ee8fc6eee878c5000000007ad8973e8f0000000100000001000000"
+      },
+      "arrival_line": 85816,
+      "arrival": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412640,
+        "opcode": 167,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a70000002a0000000100000001000000"
+      },
+      "wire": "a3802a000000f7ee8fc6eee878c500007ad8973e8f0000000100000001",
+      "creation": {
+        "encoded_file": "352200010000",
+        "source": [
+          0,
+          0,
+          0
+        ],
+        "destination": [
+          3331321591,
+          3313035502,
+          3250585600
+        ],
+        "duration": 1050138746,
+        "flag": 0
+      },
+      "trigger": {
+        "delay": 1050138746,
+        "kind": 14,
+        "key": 1
+      }
+    },
+    {
+      "line": 85780,
+      "launch": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412343,
+        "opcode": 164,
+        "bytes": 36,
+        "complete": true,
+        "hex": "a40000002a000000944890c63d7979c50000000019d7a43e8f0000000800000001000000"
+      },
+      "arrival_line": 85821,
+      "arrival": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 110488,
+        "tick_ms": 196412687,
+        "opcode": 167,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a70000002a0000000800000001000000"
+      },
+      "wire": "a3802a000000944890c63d7979c5000019d7a43e8f0000000800000001",
+      "creation": {
+        "encoded_file": "352200010000",
+        "source": [
+          0,
+          0,
+          0
+        ],
+        "destination": [
+          3331344532,
+          3313072445,
+          3250585600
+        ],
+        "duration": 1050990361,
+        "flag": 0
+      },
+      "trigger": {
+        "delay": 1050990361,
+        "kind": 14,
+        "key": 8
+      }
+    }
+  ],
+  "matches": [
+    {
+      "key": 1,
+      "equal": false,
+      "matched_existing": false
+    },
+    {
+      "key": 1,
+      "equal": true,
+      "matched_existing": true
+    },
+    {
+      "key": 10,
+      "equal": false,
+      "matched_existing": false
+    },
+    {
+      "key": 10,
+      "equal": true,
+      "matched_existing": true
+    },
+    {
+      "key": 2147483648,
+      "equal": false,
+      "matched_existing": false
+    },
+    {
+      "key": 2147483648,
+      "equal": true,
+      "matched_existing": true
+    },
+    {
+      "key": 4294967295,
+      "equal": false,
+      "matched_existing": false
+    },
+    {
+      "key": 4294967295,
+      "equal": true,
+      "matched_existing": true
+    }
+  ],
+  "evidence": "Native77fc70 passes the model/destination/duration to76b900 and schedules trigger14 with the exact opaque key;native77b468/77b46e select kind14 by equality.",
+  "limitations": [
+    "Geometry,housekeeping and asset creation are stubbed;no rendered QA.",
+    "This does not reconstruct retail pool allocation or the arrival marker child-event count.",
+    "Server launch tokens use a private unique uint32 allocation policy;full damage/arrival grouping remains unbound."
+  ]
+}

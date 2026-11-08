@@ -1,0 +1,134 @@
+{
+  "skill": 38,
+  "state": "source Runtime/world binding implemented; three focused suites and12 tooling tests pass; full rebuild/rendered checks pending",
+  "wiki_sha256": {
+    "Channeling.html": "4d2064a4bf517123d79c12c917cca97b9232a3c101bd2972eb9779ed796d90f5",
+    "Spell.html": "ad5f05feed41d08d595fd00f4a4ebcd81c311ba168ee8376033aa261d7c49bb3"
+  },
+  "range_source": {
+    "path": "C:/Users/CmonMeow/Desktop/gw/GWCA/Constants.h",
+    "line": 240,
+    "area_radius": 322
+  },
+  "capture": {
+    "id": 38,
+    "name": "Channeling",
+    "obtainable_baseline": true,
+    "runtime_status": "unsupported",
+    "local_starts": 1,
+    "other_or_unassigned_starts": 11,
+    "local_finished": 1,
+    "local_stopped": 0,
+    "local_instant": 0,
+    "activation_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86703,
+        "tick_ms": 8369671,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003c0000001900000026000000",
+        "kind": 60
+      }
+    ],
+    "endpoint_evidence": [
+      {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86716,
+        "tick_ms": 8370671,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      }
+    ],
+    "body_effect_evidence": []
+  },
+  "native_proof": {
+    "tool": "tools/protocol/channeling_2022.py",
+    "result": "passed:1second/style50,caster resource64; offline first consumers"
+  },
+  "standalone_tests": {
+    "source": "tests/channeling.cpp",
+    "result": "MSVC C++20 compile/run passed",
+    "coverage": [
+      "rank0/12/20 duration8/46/72seconds",
+      "inclusive322-unit boundary",
+      "dead/ally/other-instance/other-plane/self exclusion",
+      "duplicate actor ID counted once",
+      "forged per-foe gain and invalid coordinate rejected"
+    ],
+    "cmake": "channeling_test built and focused CTest passed"
+  },
+  "remaining": [
+    "rendered verification",
+    "retail comparison of initial38/renewal refund and lethal-spell foe-count ordering",
+    "NPC self-casting observation integration",
+    "verify retail Energy-gain feedback packets alongside rendered checks"
+  ],
+  "limits": [
+    "count helper uses current server plane policy; retail vertical-area behavior not proven",
+    "native first consumers do not prove rendered acceptance or successful spell timing"
+  ],
+  "completion_record_tests": [
+    "one prepared observation per owned scope",
+    "successful completion returns counted refund once",
+    "failed completion consumes observation without refund",
+    "duplicate callback cannot pay again",
+    "stale scope and backwards timestamps rejected",
+    "signets and attacks excluded using shared spell classification",
+    "absent Channeling observer gives no refund"
+  ],
+  "source_hashes": {
+    "src\\runtime\\gw_channeling.h": "09b31a9a674b16f6b14ff949353e87204fae110785b5086782f10d9eb842e970",
+    "tests\\channeling.cpp": "7131f49a9540efa69e4f6c79ddace111a0bb9ad86ebab033cfdb72ba30b95516",
+    "src\\runtime\\gw_world_simulation.h": "22dccb709206ba3351554ac6c4c0123dba4f5f372079238fc767e5bded6c610a",
+    "tests\\captured_skills.cpp": "64e406aaf3e62d286c81e349777f6f062c882a9f069db7a559378dbd926b2ddb",
+    "src\\runtime\\gw_skill_casting.h": "ebe7013873c4a48d4b64d8365c42103d9cc1838b6a994bebccede0192b6d6fdc",
+    "src\\apps\\gw_auth.cpp": "5bb9ad8594b9a1436842c16d2f447307f28ed266fcbb3e6ed50f968127434400",
+    "tests/channeling_debt.cpp": "c08f69c3459542361ee307efb29bb56048b873799d62cbaf9e311439578d889c",
+    "CMakeLists.txt": "4e08abb02250f05dc962c03b1d957e54fdc9750bd5e1ac53af3cdae52e4674aa"
+  },
+  "world_tests": [
+    "preparation alone does not grant Energy",
+    "failed completion grants0 and cannot be replayed",
+    "one boundary player plus two hostile NPCs grant3Energy",
+    "stale callback cannot consume valid observation",
+    "duplicate completion does not grant again",
+    "gain clamps to maximum Energy",
+    "expired observer grants0",
+    "departure invalidates outstanding ownership"
+  ],
+  "runtime_tests": [
+    "actual38 application with1second activation and5Energy cost",
+    "caster resource64 published once",
+    "successful Orison after buff grants1Energy for eligible foe",
+    "cancelled/interrupted casts consume costs but grant0",
+    "failed effect grants0 and pending observation cleaned before next successful cast",
+    "world failure cleanup with newer Energy time does not underflow or rewind resource clock"
+  ],
+  "current_observer_policy": "Snapshot pre-existing Channeling and eligible foes before applying primary spell; initial38 has no observer and gives no self-refund. Renewal can observe the old entry. Retail self-cast/renewal and lethal-spell foe-count ordering remain explicit comparison gaps.",
+  "debt_integration_test": {
+    "source": "tests/channeling_debt.cpp",
+    "binary": "build/tests/channeling_debt_test.exe",
+    "result": "CMake registered; Release build and full174-test CTest run passed",
+    "checks": [
+      "capacity reduction creates77 Energy debt with0 UI Energy",
+      "two-foe refund repays debt without creating positive UI Energy",
+      "capacity restoration exposes expected3+2=5 balance",
+      "later refund increases5 to7",
+      "departure invalidates prepared observation",
+      "replacement session cannot receive old refund and starts independent event sequence"
+    ]
+  },
+  "full_build": {
+    "result": "passed",
+    "report": "build/reports/channeling-full-build.txt"
+  },
+  "full_regression": {
+    "result": "174/174 passed",
+    "seconds": 19.45,
+    "report": "build/reports/channeling-full-tests.txt",
+    "scope": "All registered Release CTest targets, including channeling_debt; no rendered/live verification."
+  }
+}

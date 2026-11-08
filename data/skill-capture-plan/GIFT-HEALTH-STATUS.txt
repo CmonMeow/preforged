@@ -1,0 +1,60 @@
+Gift of Health [1121] — 2026-10-23 source and mechanics checkpoint
+
+The pinned native row supplies 5 Energy, 0.75s activation and aftercast,
+5s recharge, 15..150 healing, 10..5s disable, and caster-body resource1259.
+The local historical wiki limits the heal to another ally and disables the
+caster's other Healing Prayers skills. The World stage accepts a scoped allied
+player or an authored healable friendly NPC, validates range and lifetime,
+heals, and installs exact-copy Healing Prayers disables atomically. Normal
+Runtime casting now pays Energy, retains the selected scope across activation,
+and publishes the caster body before recipient Health and disable feedback.
+Cancelled/interrupted casts and a replaced target do not complete the heal.
+
+Fixed evidence: 20261022-cumulative-skills/packets-1360-15821281.jsonl,
+SHA256 59E2AE82E4C8187A88B5F3F8CAC919A085A14ACA314834ADA70117039F3287D6,
+lines 294458 and 294468-294473. The modern official capture shows the
+start/finish gap, 5s timed skill entry, caster body1259, Health fraction and
+two 10s Healing Prayers disables. It does not isolate raw heal magnitude or
+Divine Favor. Its timed entries use opcode229; the existing pre-Reforged 2022
+private-client timer serializer uses opcode228. This mapping has not been
+confirmed in a rendered 2022 client for Gift of Health.
+
+Validation: Release server_host and gift_health_cast_test built. CTest
+skill_casting, gift_health, gift_health_world and gift_health_cast pass (4/4).
+The new cast test covers player/NPC allies, self/opponent rejection, payment,
+activation timing, cancellation/interruption, stale target, healing,
+exact-copy disable and native body/Health/disable ordering. The fixed audit
+was re-run without changing capture inputs: 679 locally captured obtainable
+skills, 355 source-bound, 324 awaiting implementation, 650 lacking a local
+activation. These are source/mechanics results, not rendered client proof.
+
+Remaining: verify the 2022 client accepts and renders the caster animation,
+Health change and disable feedback; verify the modern-to-2022 timed opcode
+mapping on a real client. No official client or logger was restarted.
+
+Source SHA256:
+  src/runtime/gw_skill_casting.h D6C3D8C7F3ED5CD85BB8449312CECF3568BEA3A42DAF7433C983944C4C3B93DC
+  src/runtime/gw_world_gift_health.inl A8F9B353C28BC42FEEC64C34C0A721D3A1BCBB97EFDFD0242F4A2648253943DD
+  src/apps/gw_auth.cpp 22EDA90F8FB56A8E1C97C2595DC661ECAF02834CF16219E288F5540E5EBE4109
+  tests/gift_health_cast.cpp 816DBDC9F4CCA7B4A043265714937C804B756E84AFB092B8B180B25BACA6CC01
+  CMakeLists.txt B362F287824ACDB88EE8201BFDE50A15DDC39BEC3A2FFE2EC63C6EE083C277B0
+Executable SHA256:
+  bin/server_host.exe 6EC9CAF9AB787B09DD84B3B1799F9576349E0926665555336E6D39262A5A7117
+  build/tests/gift_health_cast_test.exe 065804D098EA9CA291638870DB5C88DE9D90EE9B2F173F9E6F1A7DE87ED6AADA
+
+2026-10-23 follow-up — unknown-team target preflight
+
+The World preflight now uses the same live ally/party test as the healing
+consumer. Two unrelated players with unknown team tokens (both zero) are
+rejected before Energy is paid; after they join the same party, the target
+is accepted and receives the heal. This closes a preflight/consumer mismatch
+without changing the frozen capture or claiming rendered-client verification.
+Release server_host and gift_health_world_test were rebuilt. CTest
+skill_casting, gift_health, gift_health_world and gift_health_cast pass (4/4).
+Both official loggers remained ready on PID 54796.
+
+Follow-up SHA256:
+  src/runtime/gw_world_gift_health.inl 8AF1261594B5F57A8D80C3B4386CB53F58EFEDFAC1181D416CDB7BDB44A3DA71
+  tests/gift_health_world.cpp 9511E7B7142160C59B13B5413D6F2B2BA44BDC94CC479283FD40987E8ABC10BF
+  bin/server_host.exe 11E24CCCDA69058C0C7AF299D097B0E529CAA9F01814B7D91F90E5CF355FE869
+  build/tests/gift_health_world_test.exe 8DE70FEE29112D57498F2CCBDC0EEF08BAC4166C3C1FB96BC6B4F86C68BF4589

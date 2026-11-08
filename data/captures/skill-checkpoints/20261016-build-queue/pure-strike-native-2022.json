@@ -1,0 +1,62 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 354948,
+      "tick_ms": 22966843,
+      "actor": 25,
+      "map": 280,
+      "hex": "a000000032000000190000001e00000048010000",
+      "kind": 50
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 354954,
+      "tick_ms": 22967437,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000002e0000001900000000000000",
+      "kind": 46
+    }
+  ],
+  "bodies": [
+    {
+      "interval": 1.33,
+      "modifier": 1.0,
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 328
+      }
+    },
+    {
+      "interval": 1.33,
+      "modifier": 1.5,
+      "body": {
+        "state": 45,
+        "seconds": 1.9950001239776611,
+        "skill": 328
+      }
+    },
+    {
+      "interval": 1.75,
+      "modifier": 1.0,
+      "body": {
+        "state": 45,
+        "seconds": 1.75,
+        "skill": 328
+      }
+    }
+  ],
+  "tool_sha256": "96ec034c1497adfea9699ecda2e820802dd80ae064458cca9d9e8117bd9f343e",
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Pure_Strike.html",
+  "wiki_sha256": "a51c2adb2e758037f8156a5586726c8836ff49ceed5473877659f271742816b5",
+  "limits": [
+    "Capture establishes activation,not stance/block qualification.",
+    "Synthetic model handles;no rendered acceptance or retail release calibration.",
+    "NPC targets do not prove NPC-caster dispatch or AI."
+  ]
+}

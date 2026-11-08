@@ -1,0 +1,258 @@
+{
+  "skills": [
+    132,
+    154
+  ],
+  "capture_evidence": [
+    {
+      "id": 132,
+      "name": "Plague Signet",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 111925,
+          "tick_ms": 17823531,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000084000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 111937,
+          "tick_ms": 17824281,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 154,
+      "name": "Plague Touch",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 4,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 4,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91279,
+          "tick_ms": 17544734,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009a000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91336,
+          "tick_ms": 17551125,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009a000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91383,
+          "tick_ms": 17555703,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009a000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91473,
+          "tick_ms": 17561953,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009a000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91283,
+          "tick_ms": 17545453,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91340,
+          "tick_ms": 17551890,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91387,
+          "tick_ms": 17556609,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91478,
+          "tick_ms": 17562656,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "wiki": [
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Plague_Signet.html",
+      "sha256": "b424b449d8f52a91a80b6e407b3ea5416b5dd8028bd6c7aa6d504d19b8c11eec"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Plague_Touch.html",
+      "sha256": "e549dcea85396506495f7ca91ec10e5d5eb496ef4d3f42e8bcc737cd52490157"
+    }
+  ],
+  "mechanics": {
+    "signet": {
+      "count": "all ten condition types",
+      "duration_percent_ranks_0_4_5_12_15": [
+        100,
+        127,
+        133,
+        180,
+        200
+      ],
+      "failure": "50% at effective Curses0..4; trusted server uniform roll only; no roll above4.",
+      "recharge_seconds": 4,
+      "energy": 0
+    },
+    "touch": {
+      "count_ranks_0_4_5_12": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "duration_percent": 100,
+      "range": 144,
+      "energy": 5
+    },
+    "recipient": "Player or reviewed hostile NPC, scoped to actor generation and map layer. Longer existing target timers remain longer.",
+    "authority": "Both successful and probability-failed casts validate/settle authoritative caster and target state. Failed casts retain source conditions and normal recharge. No trusted roll means unsupported for low-rank Signet."
+  },
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "casts": [
+      {
+        "skill": 132,
+        "cast": {
+          "model": 33607680,
+          "layer": 0,
+          "style": 51,
+          "seconds": 1.0,
+          "stored_skill": 132,
+          "override_after": 2139095040
+        }
+      },
+      {
+        "skill": 154,
+        "cast": {
+          "model": 33607680,
+          "layer": 0,
+          "style": 51,
+          "seconds": 0.75,
+          "stored_skill": 154,
+          "override_after": 2139095040
+        }
+      }
+    ],
+    "particles": [
+      {
+        "skill": 132,
+        "target": 43,
+        "caster": 42,
+        "resource": 242,
+        "particle": {
+          "actor": 43,
+          "encoded_file": "951c01010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 132,
+        "target": 42,
+        "caster": 43,
+        "resource": 242,
+        "particle": {
+          "actor": 42,
+          "encoded_file": "951c01010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 154,
+        "target": 43,
+        "caster": 42,
+        "resource": 278,
+        "particle": {
+          "actor": 43,
+          "encoded_file": "063b00010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 154,
+        "target": 42,
+        "caster": 43,
+        "resource": 278,
+        "particle": {
+          "actor": 42,
+          "encoded_file": "063b00010000",
+          "flags": 1
+        }
+      }
+    ],
+    "limits": "Original first dispatch/particle call only; other family members and rendered acceptance require further verification."
+  },
+  "validation": [
+    "Five focused suites pass: captured_skills, skill_casting, condition_transfer, npc_combat_catalog and movement_effects.",
+    "New integrated matrix: both skills, player/NPC, Curses0/4/5/12 and success/failure rolls; duration scaling, longer timers, condition ownership, movement restoration, cost/recharge, target particle and diagnostics.",
+    "All ten conditions transfer and expire on actual player/NPC state, including Deep Wound capacity and capped combined degeneration.",
+    "Low-rank missing-roll gate and failed-cast caster-death authority checks pass; roll boundary and invalid-domain checks pass.",
+    "11 audit tooling tests pass; production hook wiring verified.",
+    "Production/all-target build completed (session30133 exit0).",
+    "Full run165/166: world_simulation retained old generic Plague Touch particle fixture. Updated to independently traced targeted form; rebuilt world_simulation now passes."
+  ],
+  "limits": [
+    "Specific client low-attribute failure text/message is not decoded; server diagnostic records attribute_failure.",
+    "Recipient cover-order details and sub-percent duration rounding are not independently verified against retail.",
+    "Individual NPC condition immunities/flesh restrictions need reviewed content; this receiver requires conditions_allowed.",
+    "No rendered animation/sound acceptance or NPC skill-casting AI claim.",
+    "Final full-suite verification will follow current healing-reduction full build; do not treat focused fixture correction as a full-suite pass."
+  ]
+}

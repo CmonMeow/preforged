@@ -1,0 +1,37 @@
+{
+  "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-11512-72008578.jsonl",
+  "skipped_lines": 0,
+  "entries": [
+    {
+      "map": 514,
+      "info_tick": 72366968,
+      "info_line": 1520,
+      "info_opcode": 410,
+      "info_hex": "9a01000001000000020200000100000000000000000000000000000000000000",
+      "file_id": 249289,
+      "x": 10215.0,
+      "y": 6479.0,
+      "plane": 0,
+      "file_tick": 72367250,
+      "file_line": 1657,
+      "file_opcode": 406,
+      "file_hex": "96010000c9cd0300009c1f460078ca4500000000e200000001000000c10eaee59b56dd01"
+    },
+    {
+      "map": 490,
+      "info_tick": 72472234,
+      "info_line": 2852,
+      "info_opcode": 410,
+      "info_hex": "9a01000001000000ea0100000100000000000000000000000000000000000000",
+      "file_id": 249289,
+      "x": 10215.0,
+      "y": 6479.0,
+      "plane": 0,
+      "file_tick": 72472531,
+      "file_line": 2989,
+      "file_opcode": 406,
+      "file_hex": "96010000c9cd0300009c1f460078ca4500000000e20000000000000026c271249c56dd01"
+    }
+  ],
+  "limitation": "Observed current-client mapping only; validate against the target client's DAT before installing a binding."
+}

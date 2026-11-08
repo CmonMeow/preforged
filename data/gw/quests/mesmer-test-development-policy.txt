@@ -1,0 +1,28 @@
+Development Mesmer Test encounter policy
+Captured appearances and sampled positions from instance20 are preserved.
+The exact initial four Tads advertise maximum Health10 in captured opcode159,
+kind42 (actors37..40, map146 epoch20). This scoped observation replaces the
+generic wiki Health35 reference for this encounter only. See
+docs/npc-quest81-retaliation-evidence-20261029.json for packet lines and hashes.
+All final armor ratings0
+(including general chaos/dark armor) and private hostile token2 are authored,
+not retail measurements. Captures show ordinary attack starts from actors37/39
+toward the local player; Fireball belongs to Fire Imp41, not these Tads.
+Owned retaliation uses development melee damage5,750ms windup,2000ms period,
+range128 and speed220. These values and melee delivery are authored playability
+policy, not measurements of completed captured attacks. Acquisition requires
+committed Health loss and targets the assigned owner; proximity alone does not
+provoke. Damage attribution is not restricted to the owner by this controller.
+Each existing roster
+member wanders within bounded offsets and returns home after disengaging.
+Patrol offsets (80,0),(0,80),(-80,0),(0,-80), pauses1200ms and maximum leg6000ms
+are authored. Navigation remains authoritative. No linked-group aggro or spell
+loadout is inferred. Exact owner/cycle/lifetime guards prevent stale enrollment.
+Completion requires
+one assigned skale death, per Mesmer_Test Notes and the captured completion.
+Energy reference profile: captured primary6 Elementalist skale use40/40 energy
+and5 positive pips, based on Creature.html usual profession totals and normal
+caster regeneration plus the generally reported monster extra pip. This is
+a reference default, not a direct measurement of these individual skale.
+Normal caster regeneration basis: Energy.html SHA256
+bc13f6ddd1c100f0b38dfcbdfc40411d090f93aa5067df9a4fec813ff19930d3.

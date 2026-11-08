@@ -1,0 +1,82 @@
+Guild Wars 2022 single server; native direct listeners; client build37130
+Host entrypoint compiled Nov  8 2026 14:16:54; process 9392
+Executable SHA256 3a790e910cc78c41469b4a1d19341495ef9a5d0a262894f054c2e35487cbc218
+QUEST content_catalog loaded quests=22
+ITEM salvage_catalog unconfigured recipes=0
+ITEM identification_catalog unconfigured recipes=0
+ITEM consumable_catalog unconfigured recipes=0
+READY GW portal 127.0.0.1:6601
+WORLD portal_catalog_validated routes=54 trigger_provenance=development_observed_exit
+WORLD npc_combat_catalog_validated actors=1402 population_sha256=c5354607d9c8b55dc9525c955e320a737a9b39ca629f5ed886a77531af4a924f
+QUEST giver_catalog_validated maps=5
+QUEST ranger_companion_nente_validated actor=24001 source_identity=23001 map=162 observed_placement=1
+QUEST encounter_catalog_validated encounters=9 collections=1
+QUEST escort_catalog_validated encounters=1
+QUEST corpse_catalog_validated encounters=1
+QUEST wave_catalog_validated encounters=1
+WORLD population_catalog_validated map=146 actor=59000 policy=firestarter-development navigation=walkable population_sha256=3a6406fec910972738e77ce3ec877bebcb69be84f540379ea85075f8bf3ee999
+WORLD population_catalog_validated map=146 actor=59001 policy=raider-development navigation=walkable population_sha256=00e6ec6bdd3e2fc84796953337ae5ede0e16195d0391bc6f9962b846cff25e78
+WORLD population_catalog_validated map=146 actor=59002 policy=raider-development navigation=walkable population_sha256=00e6ec6bdd3e2fc84796953337ae5ede0e16195d0391bc6f9962b846cff25e78
+WORLD population_catalog_validated map=146 actor=59003 policy=raider-development navigation=walkable population_sha256=00e6ec6bdd3e2fc84796953337ae5ede0e16195d0391bc6f9962b846cff25e78
+WORLD population_catalog_validated map=146 actor=59004 policy=raider-development navigation=walkable population_sha256=00e6ec6bdd3e2fc84796953337ae5ede0e16195d0391bc6f9962b846cff25e78
+WORLD population_catalog_validated map=146 actor=59005 policy=raider-development navigation=walkable population_sha256=00e6ec6bdd3e2fc84796953337ae5ede0e16195d0391bc6f9962b846cff25e78
+READY GW auth 127.0.0.1:6112 world 127.0.0.1:6113 workers=128 navmeshes=397 npc_maps=115 account_profile=loaded
+Server ready. Portal 6601 / auth 6112 / world 6113.
+Local login: test@example.test / test
+Keep this console open. Ctrl+C stops the server.
+AUTH connection accepted
+AUTH phase preface -> seed
+AUTH phase seed -> client-info
+AUTH phase client-info -> hello
+PORTAL path=/Spawned/WebGate/session/create.xml status=200
+PORTAL path=/Spawned/WebGate/users/login.xml status=200
+PORTAL path=/Spawned/WebGate/my_account/game_accounts.xml status=200
+PORTAL path=/Spawned/WebGate/my_account/token.xml status=200
+AUTH phase hello -> ticket
+AUTH login transaction=1
+AUTH ticket_lookup status=0 elapsed_ms=0 connection_elapsed_ms=7782
+AUTH roster_entry index=0 name=Cmon Meow map=161 campaign=1 entitled=1 selected=0
+AUTH roster_entry index=1 name=A V E Y map=57 campaign=1 entitled=1 selected=0
+AUTH roster_entry index=2 name=Ecto Plz map=55 campaign=1 entitled=1 selected=0
+AUTH roster_entry index=3 name=Meow Zu Heltzer map=449 campaign=3 entitled=1 selected=0
+AUTH roster_entry index=4 name=Me Illusionist map=330 campaign=0 entitled=1 selected=0
+AUTH roster_entry index=5 name=Ctrl Alt Meow map=146 campaign=1 entitled=1 selected=0
+AUTH roster_entry index=6 name=Avey map=148 campaign=1 entitled=1 selected=0
+AUTH initial_character name=Cmon Meow map=161
+AUTH eula_lookup status=0 accepted=1
+AUTH response transaction=1
+AUTH character_roster count=7
+AUTHENTICATED character_account_login_result_sent=1
+AUTH post_login_opcode=15 bytes=112
+AUTH post_login_opcode=53 bytes=6
+AUTH hardware_info_exchange_complete=1
+AUTH post_login_opcode=41 bytes=26
+AUTH creation_preview_granted transaction=3 world=942465284
+WORLD connection accepted peer=127.0.0.1
+WORLD version_received version=37130 world=942465284 map=0 player=1
+WORLD transfer_grant_validated map=0
+WORLD npc_ai_coverage map=0 placed=0 reviewed_hostiles=0 active=0 unknown_health=0 wandering=0
+WORLD map_support map=0 asset=0 collision=missing zone_entry=unverified
+WORLD client_seed_received=66
+WORLD encrypted_channel=1 map=0
+WORLD map_request path=ordinary option0=0 option1=0
+WORLD creation_scene_asset=165843
+WORLD entry_position x=0 y=0 plane=0 facing=0
+WORLD player_stream_sent map=0 world=942465284 player=1
+WORLD mission_mask_request bytes=112 manifest_response_source=catalog_or_explicit_diagnostic
+WORLD diagnostic_empty_manifest_sent=1 map=0 version=0 files=0 composites=0
+AUTH post_login_opcode=41 bytes=26
+AUTH creation_preview_granted transaction=5 world=1561700780
+WORLD connection accepted peer=127.0.0.1
+WORLD version_received version=37130 world=1561700780 map=0 player=1
+WORLD transfer_grant_validated map=0
+WORLD npc_ai_coverage map=0 placed=0 reviewed_hostiles=0 active=0 unknown_health=0 wandering=0
+WORLD map_support map=0 asset=0 collision=missing zone_entry=unverified
+WORLD client_seed_received=66
+WORLD encrypted_channel=1 map=0
+WORLD map_request path=ordinary option0=0 option1=0
+WORLD creation_scene_asset=165843
+WORLD entry_position x=0 y=0 plane=0 facing=0
+WORLD player_stream_sent map=0 world=1561700780 player=1
+WORLD mission_mask_request bytes=112 manifest_response_source=catalog_or_explicit_diagnostic
+WORLD diagnostic_empty_manifest_sent=1 map=0 version=0 files=0 composites=0

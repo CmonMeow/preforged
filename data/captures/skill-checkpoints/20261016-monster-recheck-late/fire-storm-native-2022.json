@@ -1,0 +1,62 @@
+{
+  "checkpoint": "20261016-monster-recheck-late",
+  "cutoff": "2026-10-17T02:14:37.266193+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "events": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 157121,
+      "tick_ms": 19066796,
+      "actor": 25,
+      "map": 280,
+      "hex": "a00000003c000000190000001e000000c5000000",
+      "kind": 60
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 157150,
+      "tick_ms": 19068765,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003a0000001900000000000000",
+      "kind": 58
+    }
+  ],
+  "completion_wire2022": "9e803a0000001900000000000000",
+  "body": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 49,
+    "seconds": 2.0,
+    "stored_skill": 197,
+    "override_after": 2139095040
+  },
+  "ground_effect": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 157151,
+    "hex": "a10000000040b4c50040f74400000000000000005e0100000000000000000000",
+    "consumer": {
+      "position": [
+        3316924416,
+        1157054464,
+        0
+      ],
+      "actor": 0,
+      "effect": 350,
+      "data5": 0,
+      "data6": 0
+    },
+    "wire2022": "a0800040b4c50040f7440000000000005e010000"
+  },
+  "target_resource": 2077,
+  "particle": null,
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Fire_Storm.html",
+  "wiki_sha256": "59387cf1bae62f35f0f79d432ff4d443ff8a5d5b892ed9ee1b45097a2dc25f0d",
+  "tool_sha256": "6ffb123acedc9a8fdfc4e54fdecc53dc8fd831d73501a75ff2244cdebb054729",
+  "ground_helper_sha256": "644c684b5490a9fbbf115edad26730a2609d7a3028f4fee6586e3e3299987e5e",
+  "limits": [
+    "Body/particle consumers use stubbed model services;no rendered acceptance.",
+    "Body resource2077 is a sentinel.Ground resource350 with actor0 is captured and its positional handler/wire are verified;this native proof does not establish World publication.Rendered acceptance and first-pulse timing remain unverified.",
+    "Overcast recovery calibration and NPC-caster AI remain unverified."
+  ]
+}

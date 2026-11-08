@@ -1,0 +1,74 @@
+{
+  "skill": 2061,
+  "name": "Patient Spirit",
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "cast": {
+      "model": 33607680,
+      "layer": 0,
+      "style": 52,
+      "seconds": 0.25,
+      "stored_skill": 2061,
+      "override_after": 2139095040
+    },
+    "target_body": {
+      "actor": 43,
+      "encoded_file": "f79904010000",
+      "flags": 1
+    },
+    "duration_ms": 2000,
+    "recharge": 4,
+    "heal0": 30,
+    "heal15": 120,
+    "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Patient_Spirit.html",
+    "wiki_sha256": "59eab70bd36472dea26c58757e529fa088d937c22fd8372b634d40a6c2cfc19c",
+    "source_sha256": {
+      "patient_spirit_2022.py": "bd598b0401cb881cd5e64ec3231526a4e9da9a947129d3b6252c0b8985b1a8dc",
+      "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+      "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+    },
+    "limits": [
+      "Original offline first consumers and metadata only; no rendered animation or live successful-heal attribution.",
+      "Archived wiki establishes no healing on early removal; client metadata alone does not prove this rule.",
+      "Enchantment-duration equipment and caster healing multipliers remain integration gaps."
+    ]
+  },
+  "activation_evidence": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 317970,
+      "tick_ms": 22100828,
+      "actor": 25,
+      "map": 280,
+      "hex": "9f0000003c000000190000000d080000",
+      "kind": 60
+    }
+  ],
+  "mechanics": [
+    "Owned ally enchantment,zero regeneration,2second native timer,30+6rank healing only on natural expiry.",
+    "Early removal,renewal and corpse cleanup do not heal.",
+    "Divine Favor commits with enchantment application against the captured target lifetime.",
+    "Original target body1739 published once on application;cast uses native.25s/style52."
+  ],
+  "validation": {
+    "focused": "patient_spirit_test passed rank0/12/20,early remove,Drain Enchantment,renewal,death,late expiry,received-healing reduction,Divine Favor,Runtimecost/cancel/interrupt/replacement/recharge.",
+    "full": "Release all-target build succeeded including bin/server_host.exe;182/182 CTest passed21.49seconds.12 Python skill audits passed. Official sessions untouched.",
+    "build_report": "build/reports/patient-spirit-full-build.txt",
+    "test_report": "build/reports/patient-spirit-full-tests.txt",
+    "host_sha256": "4c78ef0c93b4d8df1934ee2df8a3703af90c9fe0d7a7a10b0476d7318d115e3e"
+  },
+  "limits": [
+    "No rendered client acceptance or independent attribution of successful healing in modern capture.",
+    "Enchantment-duration gear and caster-side healing boosts remain integration gaps.",
+    "Combat-capable allied NPC targeting remains subject to existing world allegiance/health model."
+  ],
+  "source_sha256": {
+    "src\\runtime\\gw_health_regeneration.h": "20675455b4715019e1750aa34c958e7e4c703100a1019fd46f139bda236fb71f",
+    "src\\runtime\\gw_world_simulation.h": "b02acc72c7bbecf242138e05f42f66fcebf24aa787c3af4574a464218f339810",
+    "src\\runtime\\gw_skill_casting.h": "31048a8960be5b124dc410bbf0e913829b9ee8874188deb400cf66545aed516e",
+    "tests\\patient_spirit.cpp": "34cc59594aaac4dfec2648d5cf1860bf336f2f864af63320e64d0386892af05c",
+    "tools\\protocol\\patient_spirit_2022.py": "bd598b0401cb881cd5e64ec3231526a4e9da9a947129d3b6252c0b8985b1a8dc"
+  }
+}

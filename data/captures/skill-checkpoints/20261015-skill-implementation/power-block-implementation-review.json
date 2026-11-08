@@ -1,0 +1,109 @@
+{
+  "skill": 5,
+  "status": "Source-bound PowerBlock World disabling and Runtime admission;cooldown UI and full caster flow pending",
+  "native_evidence": "power-block-native-2022.json",
+  "implemented": "Canonical disable duration and exact affected slot-copy selection. Same-attribute ordinary skills grouped;no-attribute and PvE-only activations affect only matching skill copies. Invalid/duplicate bars and forged plans rejected.",
+  "critical_semantics": "Disable is independent of interruption success:archived wiki says protected casts still suffer disable. Existing longer disable/recharge must not be shortened.",
+  "validation": {
+    "standalone": "Native policy probe passed;build/reports/power-block-selection-standalone.txt",
+    "native": "Pinned.25s/style52,20second recharge,1..12disable scale,targeted body11exact frozen capture and first consumer pass."
+  },
+  "remaining": [
+    "Capture trusted active spell/chant scope and current target bar at actual effect time.",
+    "Apply deadlines to every affected skill copy without shortening current recharge/disable.",
+    "Integrate interrupt-protection behavior independently from disabling.",
+    "Handle target/caster replacement,time overflow,death/map lifecycle and atomic callback publication.",
+    "Bind generic casting,player/NPC transactions and exact feedback packets.",
+    "Rendered casting/body/sound verification."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_power_block.h": "75279ffb208a6f068bacb22891efc6cd0efed0f610073758ea9a7c8b1a81185a",
+    "tests/power_block_selection.cpp": "c22251924f5830456caa09c09e91464c975d0bcab91e3641ad60578a3529e408",
+    "tools/protocol/power_block_2022.py": "5aed2433f3354dbf5b5893a90521467ac5d4bbf2528b5de43b29deaa7d9b6084"
+  },
+  "coverage": "158/575captured player skills source-bound;417awaitbinding;754baselinewithoutlocalcapture.",
+  "build_state": "Rigor225production build71200stilllive;new policy header/test unused by running build.",
+  "deadline_stage": {
+    "status": "Pure atomic proposed-deadline transaction implemented;Runtime binding pending",
+    "report": "build/reports/power-block-deadlines-standalone.txt",
+    "result": "Passed",
+    "scope": "Extends all selectedcopies,never shortens longer recharge,preserves unrelatedentries,repeateddisableextension,invalidbar/key/overflow rejects without mutatinginput.",
+    "source_sha256": {
+      "src/runtime/gw_power_block.h": "330bbd57ffe589f226806aa50c49d9896dc7deea904bcb7b14db6fa0077e4835",
+      "tests/power_block_selection.cpp": "adb083e2b8510ca7a497be58825a8b023aac91b501c210eba903193f2ff3181d"
+    }
+  },
+  "integration_audit": "Use target-scoped World disable authority queried at admission plus Runtime-owned cooldown/UI updates;old-bar cooldown packets alone cannot protect newly equipped same-attribute skills. Existing World active-cast/protection state provides eligibility. Disable must remain independent of interruption success. No cross-thread Runtime access without owner synchronization.",
+  "authority_stage": {
+    "status": "Standalone scoped World-authority model implemented;NOT wired into World/Runtime",
+    "source": "src/runtime/gw_power_block_disables.h",
+    "test": "tests/power_block_disables.cpp",
+    "report": "build/reports/power-block-authority-standalone.txt",
+    "result": "Passed",
+    "scope": "Target-generation ownership,skill queries independent of old bar,overlapmaxdeadline,expiry,backward-clock and invalidcast/overflow rejection,sourcegeneration replacement and target retirement. Caller still owns synchronization and verifies actual active cast.",
+    "source_sha256": {
+      "src/runtime/gw_power_block_disables.h": "b35a249367178777cbe2940254afa3c85ea8ab1dca96908723853fd06e53c64f",
+      "tests/power_block_disables.cpp": "de95691572721bcc651e36eaefdb0ca3e1f59163bca138a42b2a18711d6651b6"
+    }
+  },
+  "world_admission_stage": {
+    "result": "Three rebuilt registered Release suites passed0.04s",
+    "report": "build/reports/power-block-world-tests.txt",
+    "scope": "World activecast eligibility,matchingattribute authority,targetbody11,disable despite MantraConcentration interruptprotection,Runtime rejection before energy/exactexpiryacceptance,and targetreplacement.",
+    "binding": "Existing interrupt_skill5factory/production callback;new skill_disabled_until hookwired to World targetscope under mutex. Target departure erases disable authority."
+  },
+  "current_remaining": [
+    "NPCtargets/AI casting unsupported by current World interrupt handler.",
+    "Rendered effect/sound and multiplayer feedback unverified.",
+    "Morale/reset interaction and rendered cooldown behavior remain unverified;World authority is queried again on every admission/update.",
+    "UI remainingduration currently rounds up to whole seconds;fractional native/display acceptance requires capture/render verification.",
+    "Idle-player feedback now follows training-target capture;NPCinterrupttargetsupport stillpending and renderedacceptance unverified.",
+    "Expanded233productiongate afteridlevisualchange pending;nextbatchcanincludeHumilitybinding."
+  ],
+  "source_binding_sha256": {
+    "src/runtime/gw_interrupt_skills.h": "c5690112f063887806fb065fa3d279ad94e6db7ca48da4f7fc704a9a7473fc84",
+    "src/runtime/gw_skill_casting.h": "59901dd7e65cc3e134cf65b215a99a3215687fe0b4c765f0d101df7b4c3354d4",
+    "src/runtime/gw_world_simulation.h": "608d09ed75d12c0b16e684ab759d8b4a107e9a2bb3c1d5418efce5768aef2450",
+    "src/apps/gw_auth.cpp": "1d3dfa3cdc5806ecbfbd02b8430f0b7e05e5ac90d6271c2373d9fc1df8b0a519",
+    "tests/power_block_world.cpp": "7ce14a69260ebfe4de5ca6f3b88cad0b67a2a057cabf6dd8a41a633ef47b621e"
+  },
+  "ui_stage": {
+    "result": "Four rebuilt registered Release suites passed0.04s",
+    "report": "build/reports/power-block-ui-corrected-tests.txt",
+    "scope": "Every equipped copy,newly equipped copy,no repeated tick publication,expiry messages,and longer localdeadline preserved when a pending2second-recharge heal completes or is interrupted. World admission regression also rebuilt/passed.",
+    "production": "current_skillbar hook wired to authoritative session_skills().bar;disable deadline queries remain scoped World authority.",
+    "fixture_correction": "First fixture compile needed explicit fw::gw::vitals::Resources qualification;original failed log retained.",
+    "source_sha256": {
+      "src/runtime/gw_skill_casting.h": "ed097f2209af27bec13ca4e0e8341bbbf99a8e8cce1c4fa2262681c432a0a2b1",
+      "src/apps/gw_auth.cpp": "c562cce607a04de2120562db7d7d9c9b14f1f181fd718ffbf88e7a20042710e8",
+      "tests/power_block_ui.cpp": "a2366c18ab98ce8560cbbb343656e79ab4ef65324ffdba80392258be439941a2"
+    }
+  },
+  "tooling_validation": "19skill tooling tests pass0.117s;fixedraw files untouched;derived inventory/bodyaudit refreshed.",
+  "caster_flow_validation": {
+    "result": "Nine rebuilt registered Release suites passed0.12s",
+    "report": "build/reports/power-block-cast-tests.txt",
+    "caster_scenarios": 10,
+    "scope": "15Energy/.25second/20second recharge,protected and idle targets,cancel/fullinterrupt recharge,missinghandler,dead/replacedcaster/target,captured target11form and victim cooldownUI. Shared skill_casting,Guardian,Rigor,PatientSpirit regressions rebuilt/passed.",
+    "source_sha256": "7ddd2a39def699b7690954e9183282f6ab90f62cfdb26d1269321a250c18cb7c"
+  },
+  "target_context_audit": {
+    "report": "power-block-target-context.json",
+    "tool": "tools/protocol/power_block_target_context.py",
+    "result": "Actor30isSuit of80Armor,model153,in exactmap280epoch18. Zero recorded target48/50/60starts or46/49/58/59terminals from epochstart through3secondsafterPowerBlock. Captured targetbody11stillpresent.",
+    "scope": "World quest-snapshot timing defines instance identity;NPCobservation is selected from sameepochbeforeactivation. Sourcehashes and clockbasespread retained. No liveclient access.",
+    "implication": "Current idle-player visual omission should be reviewed separately from interrupt/disable eligibility;capture stronglysupports training-target feedback but absence of targetevents is notabsolute server-idle proof."
+  },
+  "idle_feedback_regression": {
+    "status": "Visual correction implemented and focused-tested",
+    "test": "tests/power_block_idle_feedback.cpp",
+    "source_sha256": "c88e43d336bb309f4746591c05e6fc3f4fdc3ebdd6df84813705fc787c10ae70",
+    "report": "build/reports/power-block-idle-feedback-before-fix.txt",
+    "result": "Eight registered Release suites passed0.10s(power-block-idle-tests.txt). All sixidlefeedbackscenariosnowexecute:idle/finishedcast/ordinaryattack validvisual,no disable/controlchanges;friendly/outofrange/deadtargets no visual. Existing10casecastertest updated and passes.",
+    "scope": "Sixdefined scenarios coveridle/finishedcast/ordinaryattack and friendly/outofrange/dead rejection;firstfailure means later scenarios notyetexecuted. Expected visualbehavior is based on sameepoch trainingtarget capture;not a claim of rendered acceptance.",
+    "planned_change": "Only PowerBlock5validcastwith noeligibleaction should still publish targetbody11;do not create disable,controlinterrupt,damage or rewards. Keepinvalidtarget rejection unchanged.",
+    "build_state": "No livebuild. New233registeredtotal;fullproductiongateaftervisualfixpending."
+  },
+  "full_binding_validation": "All production Release targets built and230/230native suites passed28.76s(power-block-binding-full-build.txt,power-block-binding-full-tests.txt). This gate predates subsequentidlefeedbackvisualchange.",
+  "idle_visual_source_sha256": "f1967dab651438b2523889943a5dab543be9e0d03459ced357a5690a72b33bcb"
+}

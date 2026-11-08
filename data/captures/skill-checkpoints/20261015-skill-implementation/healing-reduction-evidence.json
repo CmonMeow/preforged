@@ -1,0 +1,204 @@
+{
+  "skills": [
+    129,
+    142
+  ],
+  "capture_evidence": [
+    {
+      "id": 129,
+      "name": "Defile Flesh",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 1,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 81163,
+          "tick_ms": 17346296,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e00000081000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 81173,
+          "tick_ms": 17347203,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    },
+    {
+      "id": 142,
+      "name": "Lingering Curse",
+      "obtainable_baseline": true,
+      "runtime_status": "implemented_binding",
+      "local_starts": 1,
+      "other_or_unassigned_starts": 0,
+      "local_finished": 1,
+      "local_stopped": 0,
+      "local_instant": 0,
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 116030,
+          "tick_ms": 17881031,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000008e000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 116052,
+          "tick_ms": 17882046,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "body_effect_evidence": []
+    }
+  ],
+  "wiki": [
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Defile_Flesh.html",
+      "sha256": "e030d25d44b78a3ea11cbd5acd2c53a33670c2d7a27fbe86b1dd3032dee65117"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Lingering_Curse.html",
+      "sha256": "04bf80f306779634e42ab4b7efb70b40813a85cd153d04302e2f62854aa9d949"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Healing.html",
+      "sha256": "418fe78cfa2f5901c798f5888eb7ecb1fb26f1456ce167d65184ddf78d5ff433"
+    },
+    {
+      "file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Effect_stacking.html",
+      "sha256": "da724f9b516bb4fe8b3622c0137448debea466fde3547b35a0061c2164cfc6ac"
+    }
+  ],
+  "native": {
+    "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+    "casts": [
+      {
+        "skill": 129,
+        "cast": {
+          "model": 33607680,
+          "layer": 0,
+          "style": 51,
+          "seconds": 1.0,
+          "stored_skill": 129,
+          "override_after": 2139095040
+        }
+      },
+      {
+        "skill": 142,
+        "cast": {
+          "model": 33607680,
+          "layer": 0,
+          "style": 51,
+          "seconds": 1.0,
+          "stored_skill": 142,
+          "override_after": 2139095040
+        }
+      }
+    ],
+    "particles": [
+      {
+        "skill": 129,
+        "target": 43,
+        "caster": 42,
+        "resource": 238,
+        "particle": {
+          "actor": 43,
+          "encoded_file": "56bb00010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 129,
+        "target": 42,
+        "caster": 43,
+        "resource": 238,
+        "particle": {
+          "actor": 42,
+          "encoded_file": "56bb00010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 142,
+        "target": 43,
+        "caster": 42,
+        "resource": 254,
+        "particle": {
+          "actor": 43,
+          "encoded_file": "043b00010000",
+          "flags": 1
+        }
+      },
+      {
+        "skill": 142,
+        "target": 42,
+        "caster": 43,
+        "resource": 254,
+        "particle": {
+          "actor": 42,
+          "encoded_file": "043b00010000",
+          "flags": 1
+        }
+      }
+    ],
+    "limits": "Original first dispatch/particle call only; other family members and rendered acceptance require further verification."
+  },
+  "mechanics": {
+    "Defile Flesh": "Single-target hex5..29..35s at rank0/12/15. Native received-healing parameter66%;10% maximum-health sacrifice on successful completion.",
+    "Lingering Curse": "Nearby mixed player/NPC degeneration0..2..3pips for6..25..30s;20% healing reduction.",
+    "stacking": "Independent reductions multiply with Deep Wound, with a joint40% reduction cap. Same-name hexes do not stack.",
+    "exclusions": "Health gain and regeneration are not healing and bypass these received-healing reductions.",
+    "NPC core": "Trusted scoped healing primitive shares reduction/debt policy; lethal pending Deep Wound debt invalidates actions and marks death."
+  },
+  "native_duration_metadata": {
+    "duration0_offset": "0x44",
+    "duration15_offset": "0x48",
+    "skill_arguments_offset": "0x58",
+    "local_gwca_reference": "C:/Users/CmonMeow/Desktop/gw/GWCA/Skill.h:37",
+    "Defile Flesh": [
+      5,
+      35,
+      3
+    ],
+    "Lingering Curse": [
+      6,
+      30,
+      7
+    ],
+    "verification": "Generator regenerated all3433 rows; --check passes against pinned executable."
+  },
+  "validation": [
+    "captured_skills, deep_wound, degeneration_hexes and world_simulation rebuilt and pass.",
+    "Actual Runtime player/NPC targeting, sacrifices/costs and native target particles; player healing, health gain, cleansing and NPC degeneration.",
+    "NPC trusted healing across both hexes, Deep Wound,40% cap, expiry/removal and delayed lethal debt/action invalidation.",
+    "12 audit tooling tests pass; stale coverage sources now reject checkpoint audit/publication."
+  ],
+  "limits": [
+    "Defile uses native66%; wiki literal two-thirds/33% wording and exact retail fractional rounding need capture verification.",
+    "Native duration parameters are metadata, not independent proof of all skills' live effect timers. Only reviewed timers are used.",
+    "No complete floating healing-number, rendered visual/sound or NPC casting-AI claim.",
+    "Full production/all-target rebuild and rebuilt full suite pending build/reports/healing-reduction-full-build.txt."
+  ]
+}

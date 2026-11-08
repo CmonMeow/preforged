@@ -1,0 +1,46 @@
+Zealous Benediction [1687] — 2026-10-23 implementation checkpoint
+
+Native 2022 row: Monk Protection Prayers elite, 10 Energy, 0.75s cast,
+0.75s aftercast, 4s recharge, 30..180 Health, 7 Energy bonus,
+target-body resource 501. The local archived wiki says the Energy is returned
+only if the target was below 50% Health. Exact half does not qualify.
+
+Native ally-target implementation: the World advances resources, checks live
+pre-heal precise Health under its lock, applies the heal, then returns 7 Energy
+to the caster if qualified. The casting runtime binds the reviewed row to this
+transaction, retains its scoped target through completion, and emits the row's
+target-body particle. This does not infer the threshold from a stale cast-start
+snapshot or grant the bonus for an unsuccessful heal.
+Friendly NPC allies use the existing lifetime-scoped NPC health transaction,
+including movement/range, plane and line-of-sight checks, current condition
+settlement, public Health fraction/change packets and caster-only Energy gain.
+The skill-specific target check admits this NPC path without changing other
+direct heals' player-only admission.
+
+Validation: Release server_host.exe built; zealous_benediction and skill_casting
+and npc_friendly_heal_world CTest suites passed. New test covers all ranks,
+exact-half boundary, self, separate player ally and friendly NPC ally,
+opponent/stale-scope rejection, source Energy ownership, cast timing, recharge,
+and resource-501 target particle. The visual packet is derived
+from the pinned 2022 row; actual client rendering remains unverified.
+
+Capture evidence: fixed 2026-10-22 checkpoint has no local activation for 1687,
+so it remains in MISSING-CAPTURES.txt. PvP map checkpoint reports 25 other-actor
+activations in Alliance Battles but no local cast. Captured/awaiting totals are
+unchanged because the skill was not in the locally captured set. No official
+client was restarted, stopped, or controlled for this implementation.
+
+Remaining: capture a local cast and inspect 2022 client animation/particle.
+Other direct-heal skills retain their pre-existing player-only recipient path;
+this change does not establish general NPC healing parity for those skills.
+
+Source SHA256:
+  gw_heal_effects.h AA32F57B7DE02AA577698FDC2018F631371F80AF05148AA74BD7F5F8499D8A44
+  gw_world_simulation.h 633286A09F42E725D6E71FEF73332510B26845BB21359AFE035A2666886259CF
+  gw_skill_casting.h F36F8D869803B36B300DC984075A713B82667C069D18EC195838620FDB733ED5
+  gw_auth.cpp 2E0A9DEF8C9EAF0B33FC2C1E8EB38CA768B58D622C965B18077D5AEF515D37F6
+  zealous_benediction.cpp 8C922DF42AC8067B3443A8F17272FE5A053BEB58FD4EA34E7B87388DB1279A72
+  CMakeLists.txt 64DF8283FDE663980FC11AC7A7DD5331C745101931E0C09ADBD9DCFBD67C81E6
+Executable SHA256:
+  bin/server_host.exe 5DC5395F64B607CA6CCAFCE049675930CD35920D4AABD263C46048D6B58C987E
+  build/tests/zealous_benediction_test.exe 8C311BF85EF5B58BCDDF11CEE2CE6E00A307A816AA97648F70890DAC0B92F7B1

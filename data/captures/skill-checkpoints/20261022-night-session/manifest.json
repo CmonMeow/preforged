@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-10-22T04:39:30.038665+00:00",
+  "policy": "Fixed handle EOF per source; complete lines only; live originals untouched",
+  "files": [
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\PacketLogger\\packets-30392-99005187.jsonl",
+      "snapshot": "packets-30392-99005187.jsonl",
+      "source_read_limit": 97479745,
+      "snapshot_bytes": 97479745,
+      "complete_lines": 591782,
+      "sha256": "a566dc25ef377c00b51a04434194af5d60a681f07730e30e4fb2c69e43869f38",
+      "partial_tail_excluded_bytes": 0
+    },
+    {
+      "source": "C:\\Users\\CmonMeow\\Desktop\\gw-server\\bin\\GuildWarsLogger\\world-30392-99012484.jsonl",
+      "snapshot": "world-30392-99012484.jsonl",
+      "source_read_limit": 178310546,
+      "snapshot_bytes": 178310546,
+      "complete_lines": 38684,
+      "sha256": "29feb434ebd47d8a17a60ff6596b2d0f47c9f009d843da5f341c219bed9d32c6",
+      "partial_tail_excluded_bytes": 0
+    }
+  ]
+}

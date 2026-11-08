@@ -1,0 +1,445 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "25b910d5f3876934c8232ce19179debe8cb4d1e16ad47a9aafbb38e92b83fae8",
+  "manifest_sha256": "e6cf85aeb2b11f9411464705939829d7ae03b47ac76b6da19edf3882e98bd83a",
+  "skills": [
+    {
+      "skill": 355,
+      "name": "Devastating_Hammer",
+      "adrenaline": 160,
+      "scales": [
+        0,
+        0,
+        5,
+        20
+      ],
+      "activation": 0.0,
+      "consumers": [
+        {
+          "interval": 1.75,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.75,
+            "skill": 355
+          }
+        },
+        {
+          "interval": 1.33,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 1.9950001239776611,
+            "skill": 355
+          }
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "code": 17
+        },
+        {
+          "kind": 49,
+          "code": 19
+        }
+      ],
+      "target_body_resource": 608,
+      "particle": {
+        "actor": 43,
+        "encoded_file": "cdf100010000",
+        "flags": 1
+      },
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 378952,
+          "tick_ms": 23474578,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000063010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 379093,
+          "tick_ms": 23485656,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000063010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 378964,
+          "tick_ms": 23475359,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 379099,
+          "tick_ms": 23486140,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Devastating_Hammer.html",
+      "wiki_sha256": "abc8715446a3f7beb9cdf625a47427e6ca8d5d6ed398c33295f8449bd3a08bc5",
+      "description": "Elite Hammer Attack. If Devastating Hammer hits, your target is knocked down and suffers from Weakness for 5...17...20 seconds."
+    },
+    {
+      "skill": 357,
+      "name": "Counter_Blow",
+      "adrenaline": 100,
+      "scales": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "activation": 0.0,
+      "consumers": [
+        {
+          "interval": 1.75,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.75,
+            "skill": 357
+          }
+        },
+        {
+          "interval": 1.33,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 1.9950001239776611,
+            "skill": 357
+          }
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "code": 17
+        },
+        {
+          "kind": 49,
+          "code": 19
+        }
+      ],
+      "target_body_resource": 2077,
+      "particle": null,
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374225,
+          "tick_ms": 23340796,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000065010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374362,
+          "tick_ms": 23353093,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000065010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374229,
+          "tick_ms": 23341625,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374371,
+          "tick_ms": 23353796,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Counter_Blow.html",
+      "wiki_sha256": "1cd604d123a0d71f1e3f4f255423d18722f26f4e01c6ff50e6b3572c4ca7e97f",
+      "description": "Hammer Attack. If this attack hits an attacking foe, that foe is knocked down."
+    },
+    {
+      "skill": 358,
+      "name": "Backbreaker",
+      "adrenaline": 220,
+      "scales": [
+        1,
+        20,
+        0,
+        0
+      ],
+      "activation": 0.0,
+      "consumers": [
+        {
+          "interval": 1.75,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.75,
+            "skill": 358
+          }
+        },
+        {
+          "interval": 1.33,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 1.9950001239776611,
+            "skill": 358
+          }
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "code": 17
+        },
+        {
+          "kind": 49,
+          "code": 19
+        }
+      ],
+      "target_body_resource": 2077,
+      "particle": null,
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383584,
+          "tick_ms": 23571875,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000066010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 383589,
+          "tick_ms": 23572640,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Backbreaker.html",
+      "wiki_sha256": "6f4d722a2959a0b925bc7a606117b47a956d72956d82823575a0ce140e5e1774",
+      "description": "Elite Hammer Attack. If Backbreaker hits, you strike for +1...16...20 damage and your target is knocked down. If you have 8 Strength or higher, this knockdown lasts 4 seconds."
+    },
+    {
+      "skill": 359,
+      "name": "Heavy_Blow",
+      "adrenaline": 120,
+      "scales": [
+        1,
+        30,
+        0,
+        0
+      ],
+      "activation": 0.0,
+      "consumers": [
+        {
+          "interval": 1.75,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.75,
+            "skill": 359
+          }
+        },
+        {
+          "interval": 1.33,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 1.9950001239776611,
+            "skill": 359
+          }
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "code": 17
+        },
+        {
+          "kind": 49,
+          "code": 19
+        }
+      ],
+      "target_body_resource": 2077,
+      "particle": null,
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374266,
+          "tick_ms": 23344281,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000067010000",
+          "kind": 50
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374430,
+          "tick_ms": 23358109,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000067010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374276,
+          "tick_ms": 23345031,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374433,
+          "tick_ms": 23358921,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Heavy_Blow.html",
+      "wiki_sha256": "544ce988b0c0bcf63713605ff3856d5218a95d17c78b1b901ffd616b8ddb315a",
+      "description": "Hammer Attack. Lose all adrenaline. If this attack hits a foe suffering from Weakness, that foe is knocked down and you strike for +1...24...30 damage."
+    },
+    {
+      "skill": 360,
+      "name": "Staggering_Blow",
+      "adrenaline": 80,
+      "scales": [
+        0,
+        0,
+        5,
+        20
+      ],
+      "activation": 1.0,
+      "consumers": [
+        {
+          "interval": 1.75,
+          "modifier": 1.0,
+          "body": {
+            "state": 45,
+            "seconds": 1.0,
+            "skill": 360
+          }
+        },
+        {
+          "interval": 1.33,
+          "modifier": 1.5,
+          "body": {
+            "state": 45,
+            "seconds": 1.5,
+            "skill": 360
+          }
+        }
+      ],
+      "endpoints": [
+        {
+          "kind": 46,
+          "code": 17
+        },
+        {
+          "kind": 49,
+          "code": 19
+        }
+      ],
+      "target_body_resource": 2077,
+      "particle": null,
+      "activations": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374394,
+          "tick_ms": 23355031,
+          "actor": 25,
+          "map": 280,
+          "hex": "a000000032000000190000001e00000068010000",
+          "kind": 50
+        }
+      ],
+      "completions": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 374397,
+          "tick_ms": 23355437,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000002e0000001900000000000000",
+          "kind": 46
+        }
+      ],
+      "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Staggering_Blow.html",
+      "wiki_sha256": "1d6015f319f64ed26f62facb09cd9c10bd400cb3f4c7f72e6254e4d9baa7f58d",
+      "description": "Hammer Attack. If this hammer blow hits, your target will suffer from Weakness for 5...17...20 seconds."
+    }
+  ],
+  "devastating_additional_packets": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 378965,
+      "tick_ms": 23475359,
+      "hex": "a0000000140000001e0000001900000060020000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 378968,
+      "tick_ms": 23475359,
+      "hex": "a20000003f0000001e00000000000040"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 379100,
+      "tick_ms": 23486140,
+      "hex": "a0000000140000001e0000001900000060020000"
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 379103,
+      "tick_ms": 23486140,
+      "hex": "a20000003f0000001e00000000000040"
+    }
+  ],
+  "limits": [
+    "Original first body/particle consumers execute with model/asset services stubbed; no rendering.",
+    "Archived wiki supplies conditional predicates,Heavy Blow start/contact anomaly and Backbreaker Strength threshold;captures do not independently prove them.",
+    "Staggering has native fixed1s activation; other500ms release timing remains a private policy,not a retail calibration.",
+    "Devastating relative body/damage/control ordering is recorded;overall order versus Runtime finish/adrenaline packets remains unverified.",
+    "Player casts against NPCs are distinct from NPC-caster skill dispatch and AI decisions."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "checkpoint": "20261016-celestial-cast",
+  "cutoff": "2026-10-17T02:48:58.907161+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "activations": [
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 467294,
+      "tick_ms": 26186265,
+      "actor": 25,
+      "map": 280,
+      "hex": "a000000032000000190000001f00000093010000",
+      "kind": 50
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 467695,
+      "tick_ms": 26214718,
+      "actor": 25,
+      "map": 280,
+      "hex": "a000000032000000190000002100000093010000",
+      "kind": 50
+    },
+    {
+      "file": "packets-1360-15821281.jsonl",
+      "line": 467867,
+      "tick_ms": 26224921,
+      "actor": 25,
+      "map": 280,
+      "hex": "a000000032000000190000002100000093010000",
+      "kind": 50
+    }
+  ],
+  "bodies": [
+    {
+      "interval": 1.33,
+      "modifier": 1.0,
+      "body": {
+        "state": 45,
+        "seconds": 1.3300000429153442,
+        "skill": 403
+      }
+    },
+    {
+      "interval": 1.75,
+      "modifier": 1.0,
+      "body": {
+        "state": 45,
+        "seconds": 1.75,
+        "skill": 403
+      }
+    },
+    {
+      "interval": 1.75,
+      "modifier": 0.67,
+      "body": {
+        "state": 45,
+        "seconds": 1.1725000143051147,
+        "skill": 403
+      }
+    }
+  ],
+  "wiki": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Called_Shot.html",
+  "wiki_sha256": "71933632bfa9546c6d3137628a7a87e3d0abd3f06f858930c37f7934f55f747a",
+  "tool_sha256": "0af1f450c4df5b143343d3eb0e26364fbc63daa8ac11cdd8237ada7180bdfc80",
+  "limits": [
+    "Captured starts only;no correlated finish/impact claim.",
+    "Native model services stubbed;no rendered acceptance.",
+    "Triple speed/unblockable mechanics are historical wiki evidence plus World tests,not measured retail flight.",
+    "Absolute flight calibration,bow arc and autonomous NPC block sources remain unverified."
+  ]
+}

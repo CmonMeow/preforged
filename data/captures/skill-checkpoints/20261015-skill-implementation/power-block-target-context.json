@@ -1,0 +1,50 @@
+{
+  "skill": 5,
+  "epoch": 18,
+  "map": 280,
+  "target": 30,
+  "activation": {
+    "file": "packets-6468-5728843.jsonl",
+    "line": 66395,
+    "tick_ms": 8007437,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000005000000",
+    "kind": 60
+  },
+  "epoch_base_ms": 7992790,
+  "base_spread_ms": 14,
+  "npc_observation": {
+    "line": 5994,
+    "instance_ms": 14116,
+    "npc": {
+      "agent": 30,
+      "model": 153,
+      "level": 20,
+      "allegiance": 3,
+      "name": "Suit of 80 Armor",
+      "name_status": "decoded"
+    }
+  },
+  "target_activity_window": {
+    "begin_ms": 7992790,
+    "end_ms": 8010437,
+    "events": []
+  },
+  "captured_body": {
+    "line": 66402,
+    "tick_ms": 8007781,
+    "hex": "a0000000140000001e000000190000000b000000"
+  },
+  "sources": {
+    "packets-6468-5728843.jsonl": "f271bcf70b72b993c4fac8287e8e67e5ca0bdd0697876ecde35f3983cd667f39",
+    "world-6468-5692828.jsonl": "96278e657d920318e3e3a00c4b7187205f6b4023734e7497c161fd9240ec36cc"
+  },
+  "tool_sha256": "d88930d1ee5d2c51df303fb6e0cf4972248426a793392663aed93b3f2befffe0",
+  "limitations": [
+    "Same-instance NPC identity is observed,not inferred from a reused actor ID.",
+    "No recorded target activation is not absolute proof of server-side inactivity.",
+    "Training-target body observation does not establish successful interruption or disable.",
+    "Supports reviewing idle-target effect publication independently from mechanics;rendering remains unverified."
+  ]
+}

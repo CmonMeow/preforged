@@ -1,0 +1,146 @@
+{
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "source": "packets-1360-15821281.jsonl",
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "tool_sha256": "467c0b32325b0106ac69aa43ecfaab88bfe813d61ce1eb93571d7767da3bdfe9",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 66417,
+    "tick_ms": 17123078,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e00000063000000",
+    "kind": 60
+  },
+  "target": 30,
+  "capacity_updates": [
+    {
+      "line": 66494,
+      "tick_ms": 17130531,
+      "actor": 25,
+      "maximum": 430
+    },
+    {
+      "line": 66496,
+      "tick_ms": 17130531,
+      "actor": 30,
+      "maximum": 480
+    }
+  ],
+  "events": [
+    {
+      "stage": "caster_body",
+      "line": 66423,
+      "tick_ms": 17124078,
+      "resource": 183,
+      "hex": "9f0000001500000019000000b7000000"
+    },
+    {
+      "stage": "target_body",
+      "line": 66424,
+      "tick_ms": 17124078,
+      "resource": 184,
+      "hex": "a0000000140000001e00000019000000b8000000"
+    },
+    {
+      "stage": "target_regeneration",
+      "line": 66428,
+      "tick_ms": 17124078,
+      "fraction_per_second": -0.004166666883975267,
+      "hex": "a20000002c0000001e000000898888bb"
+    },
+    {
+      "stage": "caster_health_event",
+      "line": 66495,
+      "tick_ms": 17130531,
+      "fraction": 0.027906976640224457,
+      "last_maximum": 430,
+      "nominal_amount": 11.999999955296516,
+      "hex": "a30000003700000019000000190000002c9de43c"
+    },
+    {
+      "stage": "caster_health_event",
+      "line": 66612,
+      "tick_ms": 17144250,
+      "fraction": 0.06976744532585144,
+      "last_maximum": 430,
+      "nominal_amount": 30.00000149011612,
+      "hex": "a30000003700000019000000190000003ce28e3d"
+    },
+    {
+      "stage": "target_regeneration",
+      "line": 66614,
+      "tick_ms": 17144250,
+      "fraction_per_second": 0.0,
+      "hex": "a20000002c0000001e00000000000000"
+    }
+  ],
+  "other_casts": [
+    {
+      "actor": 206,
+      "target": 15,
+      "line": 606924,
+      "tick_ms": 29654250,
+      "hex": "a00000003c000000ce0000000f00000063000000",
+      "last_spawn": {
+        "line": 606814,
+        "tick_ms": 29652203,
+        "model": 536873392,
+        "hex": "20000000ce000000b009002001000000090000004027e34516552244000000000000803f00000000010000000000a0430000803f00005042736e6f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      },
+      "events": [
+        {
+          "stage": "caster_body",
+          "line": 606973,
+          "tick_ms": 29655265,
+          "hex": "9f00000015000000ce000000b7000000"
+        }
+      ],
+      "npc_spawn_kind": true
+    },
+    {
+      "actor": 234,
+      "target": 15,
+      "line": 608396,
+      "tick_ms": 29698156,
+      "hex": "a00000003c000000ea0000000f00000063000000",
+      "last_spawn": {
+        "line": 608332,
+        "tick_ms": 29695890,
+        "model": 536873392,
+        "hex": "20000000ea000000b00900200100000009000000b8a84b4600004046000000000000803f00000000010000000000a0430000803f00005042736e6f6d000000000000000000000000000000000000000000000000000000000000807f0000807f00000000000000000000807f0000807f00000000"
+      },
+      "events": [
+        {
+          "stage": "caster_body",
+          "line": 608423,
+          "tick_ms": 29699156,
+          "hex": "9f00000015000000ea000000b7000000"
+        },
+        {
+          "stage": "self_health_event",
+          "line": 608917,
+          "tick_ms": 29719234,
+          "fraction": 0.22499999403953552,
+          "hex": "a300000037000000ea000000ea0000006666663e"
+        }
+      ],
+      "npc_spawn_kind": true
+    }
+  ],
+  "measured_end_interval_ms": 20172,
+  "finding": "Captured body183/184 and -2Health/sec normalized to target480;about20seconds later degeneration clears with caster nominal30Health event at recorded maximum430.",
+  "wiki_path": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Parasitic_Bond.html",
+  "wiki_sha256": "205fa30e0ac4410f96b8248767f545122eb3ec899d19f9dace1a5ba0e6bb5395",
+  "unresolved": [
+    "Caster death ends the hex;the current shared degeneration path does not enforce this for99.",
+    "Archived wiki reports two healing packets after cross-caster replacement;recipient and timing need separate evidence.",
+    "Renewal,early removal,target death,late integration,lifetime cleanup and healing modifiers require implementation/tests.",
+    "Generic regeneration and health events carry no skill ID;temporal agreement alone does not prove causal attribution.",
+    "Arrival interval is not an exact server scheduling measurement;480 is the later recorded target capacity.",
+    "Two NPC casts use spawn model0x200009b0;they do not overlap and cannot resolve cross-caster replacement.",
+    "NPC self-health fraction has no skill ID or captured maximum;do not infer rank or nominal healing from it.",
+    "No runtime binding or rendered acceptance added."
+  ]
+}

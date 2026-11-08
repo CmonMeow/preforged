@@ -1,0 +1,399 @@
+{
+  "status": "production build and7 focused native suites passed0.08s; gain/refund boundary centralized; World Overcast state pending",
+  "build": "build/reports/energy-gain-production-build.txt",
+  "tests": "build/reports/energy-gain-central-tests.txt",
+  "tooling_tests": 19,
+  "verified": [
+    "Shared energy::gain accepts explicit signed ceiling while preserving nominal Resources.max_energy",
+    "Negative-current debt is repaid before visible Energy increases",
+    "Gains never exceed supplied ceiling and do not lower Energy already above ceiling",
+    "Exhaustive small-domain checks include zero capacity, negative ceilings, saturation and UINT32_MAX reward",
+    "Invalid input cannot partially mutate resources/debt",
+    "World gain/refund sites route through one gain_energy_locked boundary; Recall pure proposal uses the same arithmetic",
+    "Scoped Energy refunds and actual Recall end reward regressions pass"
+  ],
+  "remaining": [
+    "World still supplies nominal ceiling; no Overcast state is activated",
+    "Regeneration, costs, resource resizing, resurrection, death and zoning need signed-ceiling integration",
+    "Continuous recovery authority and snapshot ordering need explicit evidence/policy",
+    "No additional skill binding or visual acceptance claimed"
+  ],
+  "source_sha256": {
+    "src/runtime/gw_energy_regeneration.h": "90ab5a2cdcb2f4f36cffe9e0c247c6008fa3a2e9f0ed5b48e8f447dedeeb0012",
+    "src/runtime/gw_world_simulation.h": "3d3b4da15596eb394a8b212ccf543dc5c94d54f229a77e5e599b342a010e93c3",
+    "src/runtime/gw_recall_energy.h": "7790d58e25b6ca6576ae98f7bcb54af05e7b9f65cb01ef0b9d9fe50b28d5b2b6",
+    "tests/energy_ceiling_gain.cpp": "2b5655795b2186ab0c150a7d638ed8deee4d040780e27135d50d4da7be3c1de1",
+    "CMakeLists.txt": "8d79e93ebecd6efd9eefd2fd545b5b76234c314bffb0c9a6730474331add8cf9"
+  },
+  "focused_passed": 7,
+  "seconds": 0.08,
+  "regeneration_boundary": {
+    "status": "production build and5 focused native suites pass0.06s;19 tooling tests pass",
+    "build": "build/reports/energy-regeneration-production-build.txt",
+    "tests": "build/reports/energy-regeneration-tests.txt",
+    "verified": [
+      "Regeneration accepts an explicit signed ceiling and uses the shared debt-aware gain helper",
+      "Negative ceiling recovery stops at its signed limit without changing nominal max_energy",
+      "Fixed-ceiling dense/sparse tick equivalence verified across positive and negative current/ceilings",
+      "Invalid ceiling leaves resources, debt and fractional remainder unchanged",
+      "Dead actors do not receive ordinary Energy regeneration",
+      "Eighteen World regeneration call sites use one boundary; nominal behavior retained",
+      "Recall end transaction accepts the same signed ceiling for pre-reward regeneration and reward"
+    ],
+    "tooling_tests": 19,
+    "remaining": [
+      "Live scoped Overcast curve ownership and interleaved recovery boundaries",
+      "World still passes nominal ceilings; no Overcast costs or conditional skills are enabled",
+      "Capacity changes, resurrection, death/zoning and wire publication integration"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_energy_regeneration.h": "ad7b9f14b3ffa7c211a50563548440921911a22f11df7c4c9c5d2898b8a34447",
+      "src/runtime/gw_world_simulation.h": "b65d00d338b15674f9dea91d1f3711a9f0e9afe19d6a27d8e377ede125d6fb18",
+      "src/runtime/gw_recall_energy.h": "9f72849cb6617469ca826ff011ffdf85cb845cf1e828d41deeb45bc1aa93398a",
+      "tests/energy_ceiling_regeneration.cpp": "478abeeee4dbc96ac405be63d41032d1f6441f8ca244fc777c8ba5fa9b7dd86d",
+      "tests/recall_energy.cpp": "ecbcda4292010a007978506bce46c1f3846bce73af89bcdd66f6d0352ffd3c0d",
+      "CMakeLists.txt": "eb514a1a362f272f91221ada504fd5207f212fe0175c503fd616f3e910e30a5c"
+    },
+    "focused_passed": 5,
+    "seconds": 0.06
+  },
+  "owned_ceiling_clock": {
+    "status": "new owner-scoped continuous ceiling clock implemented;4 focused native suites pass0.04s; not yet attached to World",
+    "build": "build/reports/overcast-curve-build.txt",
+    "tests": "build/reports/overcast-curve-tests.txt",
+    "rate_policy": "Explicit constructor rate33 fixed units/ms corresponds to native/frozen continuous presentation0.33 Energy/s; not a claim that server granularity has been independently proved",
+    "verified": [
+      "Full instance/actor/generation ownership; retired and stale clocks reject mutation",
+      "Monotonic time and successful-cost event IDs prevent rewind/replay",
+      "Fixed-point recovery is tick-cadence independent and supports negative ceilings",
+      "Exact next integer-ceiling boundary lets World split regeneration without retroactive final-cap application",
+      "Huge elapsed time and cost overflow handled before mutation",
+      "Failed future cost does not partially advance time or burden",
+      "A fresh map/lifetime starts clear; ordinary death does not implicitly pause the standalone curve"
+    ],
+    "remaining": [
+      "Integrate clock with World resource events and activation costs",
+      "Capacity/morale/resurrection lifecycle projection and native grey-bar rendered acceptance",
+      "Fractional settlement now exists for a constant-pip event span; full World event/lifecycle attachment remains pending"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_overcast_curve.h": "cd6371be13e6af6998a6d98be15529c439f40bb92c99778bbc95951262e11107",
+      "tests/overcast_curve.cpp": "d018e1a6d0618a602811465552bbcd77dce3a081769e03cbc70b3fbfd66fd8e8",
+      "CMakeLists.txt": "e8de1e1500d1c13dd6136a0b28ba9479c0284e4212746915475e7ec664df6c67"
+    }
+  },
+  "changing_ceiling_settlement": {
+    "status": "immutable fractional settlement proposal implemented;3 focused native suites pass0.04s;19 tooling tests pass; World attachment pending",
+    "build": "build/reports/overcast-settlement-build.txt",
+    "tests": "build/reports/overcast-settlement-tests.txt",
+    "verified": [
+      "Shared1/300000-Energy grid combines pip-ms and ceiling recovery without whole-Energy boundary delays",
+      "Analytic settlement supports constant pips and monotonic recovering ceiling; dense/sparse proposals match including fractional tail",
+      "No saved regeneration credit accumulates at a full unchanged ceiling",
+      "Dead actors advance burden recovery without ordinary Energy gains",
+      "Wrong owner, backward/overlong span and current above ceiling reject without partial mutation",
+      "One proposal span is bounded to30000ms and rejects longer spans rather than silently discarding time"
+    ],
+    "remaining": [
+      "Attach complete fractional state to World resource authority",
+      "Activation costs, gains, capacity changes and lifecycle events must preserve fractional tail",
+      "Longer intervals need explicit caller splitting",
+      "Fractional current across death/resurrection and rendered grey-bar acceptance require validation",
+      "Rate33 remains explicit native-presentation-backed simulation policy; authoritative server granularity not independently proved"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_overcast_settlement.h": "a3f2351ee3d82165e8049a4df26a2c7c937eaebc04612810f177e67e75a449fc",
+      "src/runtime/gw_energy_regeneration.h": "29c11afa0ae62dfe376211698b9472132d209e6cfccc405b2a8ac940e1967d32",
+      "tests/overcast_settlement.cpp": "52b0ba73c85df75e806c18b94b0d553409c4e2bd4b195527359127200be45d3b",
+      "CMakeLists.txt": "e48e6b19d1503787ddf6a0d2de6dba0a8dc0fcdc7014feb0d02a4a90a8d2b05b"
+    }
+  },
+  "activation_transaction": {
+    "status": "immutable ordinary-payment/Overcast clamp proposal implemented;6 focused native suites pass0.06s;19 tooling tests pass; no live skill admission enabled",
+    "build": "build/reports/overcast-activation-build.txt",
+    "tests": "build/reports/overcast-activation-tests.txt",
+    "verified": [
+      "Documented Shock resource example30 current/nominal,5 ordinary cost,10 burden yields20 current rather than15",
+      "Below-ceiling current pays only ordinary cost; Overcast does not unconditionally subtract current",
+      "Ceiling/current can become negative without unsigned wrap",
+      "Fractional Energy survives settlement/payment/clamp on shared precision grid",
+      "Energy immediately below a positive cost cannot pay it; tiny remainder above an exact payment is preserved",
+      "Insufficient Energy, dead/stale owner, replayed cost and overflow reject without mutating original state",
+      "No cancellation/interruption rollback is provided after a committed activation"
+    ],
+    "remaining": [
+      "World owner-state commit and activation-start hook",
+      "Skill metadata, target admission and modified-cost validation remain external prerequisites",
+      "Gains, capacity/morale changes, death/resurrection/zoning and wire synchronization must preserve fractional state",
+      "Retail reactive ordering and rendered grey-bar acceptance"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_overcast_activation.h": "c55ef329d077d894f499a9ebaa1da35d4d8bf3ef5a0803246c7bbd2f711800ef",
+      "src/runtime/gw_overcast_settlement.h": "b12e8b650d8e34deeafaf79dd7863af21a0f4919e81db44a10d8c29143bb2887",
+      "tests/overcast_activation.cpp": "fe0d98690d275441d4a28cd0cf391e29744f8eabe2a5e9ddc7993093e268b223",
+      "CMakeLists.txt": "f8a544b7e55366aec8a510f832276016e54feb4ec9aed8a9253ef65e7ac4ec8c"
+    }
+  },
+  "fractional_gain_loss_transactions": {
+    "status": "fraction-preserving reward/drain/full-payment proposals implemented;6 focused suites pass0.06s;19 tooling tests pass; not yet World-attached",
+    "build": "build/reports/overcast-gain-loss-build.txt",
+    "tests": "build/reports/overcast-gain-loss-tests.txt",
+    "verified": [
+      "Gains clamp to exact recovering ceiling including fractional part",
+      "Negative current is repaid without crossing a still-negative ceiling",
+      "Positive gain/debt repayment reported in precise units, not rounded integer counts",
+      "Partitioned rewards at one timestamp preserve the same final state",
+      "Drain-to-zero removes available fractional Energy without creating negative current",
+      "Full-cost payment rejects insufficient fractions while zero payment remains arithmetic no-op",
+      "Activation reuses the common full-cost proposal before applying burden",
+      "Original state remains unchanged on proposal failure"
+    ],
+    "remaining": [
+      "World owner-state attachment and event replay authority for rewards/losses",
+      "Capacity/morale changes and resurrection/death/zoning must preserve precise state",
+      "Skill-specific effects caused by fractional loss need authoritative review; arithmetic does not infer damage scaling",
+      "Live wire synchronization and rendered acceptance"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_overcast_settlement.h": "ddec39ba3cc0e43b98ce5196b240b78fdb425f3bce53eade55678a55eaac2fc2",
+      "src/runtime/gw_overcast_activation.h": "2a88915c38d5f79676b916cf463025aae405a10b7df49535451f58127d33fddf",
+      "tests/overcast_settlement.cpp": "ffee6793193e849b430dc215174bc51f0c196597c07529278a2bfb2d9b26e28d"
+    }
+  },
+  "fractional_capacity_transaction": {
+    "status": "nominal-capacity resize proposal implemented;4 focused suites pass0.04s;19 tooling tests pass; World attachment pending",
+    "build": "build/reports/overcast-resize-build.txt",
+    "tests": "build/reports/overcast-resize-tests.txt",
+    "verified": [
+      "Recovery is settled before nominal capacity changes",
+      "Current Energy moves by nominal delta while burden is preserved",
+      "Fractional current/ceiling and negative debt survive capacity decrease/increase",
+      "Inactive-Overcast results match legacy energy::resize across capacity/current cases",
+      "Invalid capacity and stale owner reject without changing source state"
+    ],
+    "remaining": [
+      "Route World equipment/morale capacity changes through owned state",
+      "Death/resurrection/zoning and packet ordering require lifecycle integration",
+      "No additional skill binding or rendered acceptance"
+    ],
+    "source_sha256": {
+      "src/runtime/gw_overcast_settlement.h": "1c62e2db5f6dc7c48ea732530fbb1b544f70a9390e8d2abf442d018753e72538",
+      "tests/overcast_resize.cpp": "258e062277e9b1269608459426eddf734e0ab53a5cf5001d56f34614452143fe",
+      "CMakeLists.txt": "da7bb4d0e64b685738447cb934fcb6022697ba3dbb23c452c9dfb46e023d56eb"
+    }
+  },
+  "world_owner_attachment": {
+    "status": "Production server_host built; seven focused suites passed; 19 skill tooling tests passed; Runtime producer gate remains closed",
+    "build": "build/reports/overcast-world-production-build.txt",
+    "tests": "build/reports/overcast-world-tests.txt",
+    "verified": [
+      "Full actor lifetime owns curve, fractional tail and Energy debt",
+      "Trusted metadata admits Overcast producers and rejects nonproducer rows",
+      "Activation replay does not apply burden twice",
+      "Fractional recovery and negative ceiling constrain rewards and ordinary costs",
+      "Death advances burden recovery without losing fractional current",
+      "Equipment capacity changes preserve burden and fractional current through decrease/increase",
+      "Leaving removes state; replacement actor does not inherit it",
+      "Arbitrary constant-pip settlement spans avoid overflow and discarded elapsed time"
+    ],
+    "remaining": [
+      "Resurrection must clamp against recovering ceiling",
+      "Recall end and remaining direct Energy-loss routes must use precise state",
+      "Reward settlement must respect prior Health and timed-effect boundaries at every caller",
+      "Fractional reward publication/return counts require review",
+      "Current Energy property33 negative representation and rendered acceptance unverified",
+      "Native presentation recovery is evidence; exact authoritative recovery policy remains unverified",
+      "No additional skill binding; production producer admission remains blocked"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "57e85065b84b888a6a310a4a1035a3910c331072d0b2ea088ac78e07b6eb1192",
+      "src\\runtime\\gw_overcast_settlement.h": "b3797c1159071c816d679d89c9375b572e382d1f04347609fbc876c4b3174808",
+      "tests\\overcast_world.cpp": "7419fe96552ef3069d73b18a6ef5805782ed8e688ce969a6ff2685460fc93e70",
+      "CMakeLists.txt": "f17baf35e8fd924055d8ba8c5bf8e5015c54ae20ea9fba868736d1ac0e448f16"
+    }
+  },
+  "resurrection_attachment": {
+    "status": "Production server_host built; six focused suites passed 0.05s; 19 skill tooling tests passed; Runtime producer gate remains closed",
+    "policy": "Existing resurrection policy supplies rounded nominal Energy entitlement. Recover dead ceiling first, project the entitlement at that ceiling, retain burden and lifetime. Retail percentage-base/rounding with Overcast is not proven by these tests.",
+    "build": "build/reports/overcast-resurrection-production-build.txt",
+    "tests": "build/reports/overcast-resurrection-tests.txt",
+    "remaining": [
+      "Retail resurrection entitlement under Overcast requires capture evidence",
+      "Recall end and direct-loss paths remain outside precise Overcast settlement",
+      "Fractional reward publication and event-boundary ordering require review",
+      "Rendered acceptance and negative current-Energy property33 behavior",
+      "Producer admission remains disabled"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_overcast_settlement.h": "5dc98ed259cafe75cb57300fd748bde68dc4f25753332adbba5d928ece3f0cc6",
+      "src\\runtime\\gw_world_simulation.h": "cca5b382102446efce192485b617923d476bba9c83fc25c611808c18854f776a",
+      "tests\\overcast_settlement.cpp": "f205165ee95444776da812a9e2ca51ffa2634763b1819c814f3d5f97ffd86187",
+      "tests\\overcast_world.cpp": "7ea44531391564a91b108a63d9be33dcc4b3dc6774aec778f8cc5e32db3550d8",
+      "tests/overcast_settlement.cpp": "324fca5f12560e9962631f5962c2fca509aae7c57409c3799904b64419b95db1"
+    },
+    "fixture_build": "build/reports/overcast-resurrection-fixture-build.txt",
+    "verified": [
+      "Fractional recovering ceiling survives resurrection",
+      "Zero entitlement clears obsolete fractional current without clearing burden",
+      "Stale lifetime, living actor and invalid entitlement reject immutably",
+      "World death/resurrection retains burden; fully recovered resurrection restores nominal Energy"
+    ]
+  },
+  "recall_attachment": {
+    "status": "Production server_host built; nine focused suites passed; 19 skill tooling tests passed; Runtime producer gate remains closed",
+    "build": "build/reports/overcast-recall-production-build.txt",
+    "tests": "build/reports/overcast-recall-tests.txt",
+    "policy": "Owned Recall reward settles the recovering ceiling at its actual end timestamp, then clips reward precisely. Integer gain feedback reports floor(total precise reward) without rounding resource state. Retail fractional floating-feedback rounding remains unverified.",
+    "remaining": [
+      "Other direct Energy losses and fractional reward feedback",
+      "Retail resurrection entitlement/recovery schedule evidence",
+      "Rendered acceptance, negative current-Energy representation and full integration gate",
+      "Runtime Overcast producer gate remains closed"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_recall_energy.h": "c8fd57d9b37be53ed65a437336cdbe962971ef7f144d073b4f66f979bf3a7a68",
+      "src\\runtime\\gw_world_simulation.h": "d368280fc388a20b0b2279d51433a3f48b03826d233c9fe974c2655bb9b83d8d",
+      "tests\\recall_energy.cpp": "4d0b7d506ebc6ecb96b9785338c003cf6e478ec7daac3c4b9be36d7421bb3155",
+      "tests\\mantra_recall_world.cpp": "c48aa2f18948710a3bd76be7d673b8ddeedd985076d6ac179a2cc91b0ef9b035"
+    },
+    "verified": [
+      "Sparse/dense Recall expiry and early removal agree under recovering ceilings",
+      "Negative Energy and fractional ceilings survive the end reward",
+      "Owned end event rewards only once",
+      "Dead/stale/malformed/late reward input rejects",
+      "Existing Recall, Channeling and deferred resource ordering regressions pass"
+    ]
+  },
+  "drain_attachment": {
+    "status": "Production server_host built; five focused suites passed; 19 skill tooling tests passed; Runtime producer gate remains closed",
+    "build": "build/reports/overcast-drains-production-build.txt",
+    "tests": "build/reports/overcast-drains-tests.txt",
+    "verified": [
+      "Resolve, Spirit Shackles and Power Leak drain positive fractional balances to exact zero",
+      "Negative balances are not drained or erased",
+      "Overcast burden is unchanged by drains",
+      "True-zero Mind Wrack burst triggers for positive-to-zero only; negative balances do not trigger it"
+    ],
+    "remaining": [
+      "Energy denial area proposals and Mind Wrack own-loss path still mutate integer Energy",
+      "Cleansing Overcast-specific integration scenario pending",
+      "Fractional drain semantics require retail evidence; internal precision is tested, not retail equivalence",
+      "Non-Overcast path retains existing integer-drain semantics",
+      "Fractional feedback, negative current wire acceptance and producer admission remain open"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "edab47d8d6af8c4c7e7d4548479c2cfdced9c0a892eb92e0d0a5bc2dc013d018",
+      "tests\\overcast_world.cpp": "54556c8b2ca5e3ae99816a5925b816df4edea9aa9fe041a2aae4dc685f084c65"
+    }
+  },
+  "area_and_own_loss_attachment": {
+    "status": "Production server_host built; three rebuilt focused suites passed; 19 skill tooling tests passed; Runtime producer gate remains closed",
+    "build": "build/reports/overcast-area-production-build.txt",
+    "tests": "build/reports/overcast-area-tests.txt",
+    "policy": "Area denial and Mind Wrack own-loss preserve reviewed integer loss/consequence semantics while committing owned precise state. This is not complete fractional drain support: sub-unit Energy remains when the reviewed integer planner authorizes zero loss. Full fractional damage/gain/healing policy requires evidence.",
+    "remaining": [
+      "Resolve inconsistent partial-drain semantics between generic drain-to-zero and integer-consequence planners from retail evidence",
+      "Fractional damage, healing and gain calculations are not implemented",
+      "Cleansing Overcast scenario and generic reward publication need verification",
+      "Negative current property33 rendered acceptance and actual recovery schedule",
+      "Overcast producer Runtime gate stays closed"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "6790ff2b35ed93f6aa4320979f2d6eea88b5e5904fdec03c2db2c18f90d7d092",
+      "tests\\mind_wrack_drains.cpp": "9ca5352a610b091ad4b674c699e93b561147aecfd82d4d7bd269b95b19dd31f8",
+      "tests\\mind_wrack_target.cpp": "84a09d5690779c5e047ea8616d60b7321ddaf6abb26ae5b2f89aff899915d7ce"
+    },
+    "verified": [
+      "Six integer-consequence denial planners preserve fractional current and debt",
+      "Selected-only Energy Surge and area-drain Signet of Weariness keep distinct recipient behavior",
+      "Mind Wrack own loss preserves residual fractions without false zero burst",
+      "Negative balances do not create own-loss damage",
+      "PvE/PvP own-loss damage and replay rejection remain intact"
+    ]
+  },
+  "reward_publication": {
+    "status": "Production server_host built; four focused suites passed 0.06s; 19 skill tooling tests passed; producer gate remains closed",
+    "build": "build/reports/overcast-reward-production-build.txt",
+    "tests": "build/reports/overcast-reward-tests.txt",
+    "changes": [
+      "World EnergyReward retains exact gain units alongside existing integer repayment/restoration fields",
+      "Total reward floors combined precise units once, rather than adding independently floored components",
+      "restore_energy publishes any nonzero precise reward even when integer Energy does not change",
+      "Conditional resource gain compares full precise before/after snapshots for publication"
+    ],
+    "remaining": [
+      "Individual repayment/restoration return fields still integer approximations",
+      "Retail floating gain rounding and negative current property33 acceptance remain unverified",
+      "Timed Health/reward boundary audit and cleansing scenario pending",
+      "Fractional Energy-denial consequence policy remains unresolved; producer gate closed"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "18367e1e8a5d5a57cd2bee4a29ef125eab124d8c35255605b6f722dc7f295534",
+      "tests\\overcast_world.cpp": "eacedab7ebbbad3c8f248131f70e47e6b5920b56793909931c752986b5582180",
+      "tests\\resource_gain.cpp": "677aeba5a93f6de5ef8beddb02e578691bdbc66c890933d6e24b83827cea7bf2"
+    },
+    "verified": [
+      "Fractional-only restore publishes owner vitals once; capped repeated restore publishes none",
+      "Ether Signet reward crossing -8.5 to +9.5 reports all18 Energy instead of17",
+      "Existing resource-gain, Inspired Hex and Recall tests pass"
+    ]
+  },
+  "cleansing_and_initialization": {
+    "status": "Production server_host built; four rebuilt focused suites passed; 19 skill tooling tests passed; Runtime producer gate remains closed",
+    "build": "build/reports/overcast-cleansing-production-build.txt",
+    "tests": "build/reports/overcast-cleansing-tests.txt",
+    "verified": [
+      "Purge Signet removes allied conditions and drains caster positive fractions to zero",
+      "Negative caster Energy is retained and does not cause a false Mind Wrack zero burst",
+      "Full trusted set_vitals replacement clears old curve, debt, regeneration fraction and tail",
+      "Replacement emits a nominal static ceiling packet to retire the previous client curve",
+      "Subsequent regeneration starts without stale fractional carry"
+    ],
+    "scope": "Production set_vitals caller is map-entry initialization in src/apps/gw_auth.cpp; normal capacity updates retain burden through resize_energy_locked. This is not a player-accessible burden reset.",
+    "remaining": [
+      "Retail fractional loss/consequence rules and authoritative recovery cadence",
+      "Reward and timed Health ordering audit",
+      "Negative current property33 and rendered acceptance",
+      "Full current build/test gate before enabling any Overcast producer"
+    ],
+    "source_sha256": {
+      "src\\runtime\\gw_world_simulation.h": "2e272f45431ebfd3d02b64fb36dc95dcd4b8bd2d838730f7034607023ab93800",
+      "tests\\overcast_world.cpp": "33ce64d3fffe8e3abd5969fd5dbbb60db7d6770127c741dd561d8783923bd2b3"
+    }
+  },
+  "signed_current_consumer": {
+    "status": "Production server_host built; two focused suites passed; offline original consumer proof passed; 19 skill tooling tests passed; rendered acceptance open",
+    "evidence": "data/captures/skill-checkpoints/20261015-skill-implementation/energy-current-native-2022.json",
+    "build": "build/reports/energy-current-production-build.txt",
+    "tests": "build/reports/energy-current-tests.txt",
+    "verified": [
+      "Hash-pinned packet161/property33 original cache dispatch accepts signed current Energy",
+      "Actor resource setter stores signed normalized current",
+      "Independent Overcast ceiling cache unchanged",
+      "World owner vitals no longer clamps negative current to zero"
+    ],
+    "remaining": [
+      "Rendered Energy bar and visible negative-current acceptance",
+      "Retail authoritative recovery and fractional drain/consequence policy",
+      "Timed-event reward ordering and full integration validation before producer admission"
+    ],
+    "source_sha256": {
+      "tools\\protocol\\energy_current_2022.py": "085ccd55f74c300ea232519e42cb93bcb784733730a13dc920394f94b3433aa4",
+      "src\\runtime\\gw_world_simulation.h": "1a7734471f3031f511b560f14568ccdd6119db1cef2d9b3d41868cbf7e0fbf53",
+      "tests\\overcast_world.cpp": "557541232fb720345955f94b8fca394eca774ca4322c7098189a225dac07934d"
+    }
+  },
+  "full_integration_gate": {
+    "status": "All-target Release build succeeded;321/321 CTest passed32.36s",
+    "build": "build/reports/energy-integration-full-build.txt",
+    "tests": "build/reports/energy-integration-full-tests.txt",
+    "scope": "Shared Energy/Overcast integration through signed-current publication. New Healing Ring headers were unused by production/root targets and separately tested, not part of this321-test gate.",
+    "runtime_sha256": "1a7734471f3031f511b560f14568ccdd6119db1cef2d9b3d41868cbf7e0fbf53",
+    "remaining": [
+      "Retail recovery/fractional consequence evidence",
+      "Timed-event ordering audit",
+      "Rendered acceptance",
+      "Producer skill admission remains gated"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "skill": 123,
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cast": {
+    "model": 33607680,
+    "layer": 0,
+    "style": 51,
+    "seconds": 1.0,
+    "stored_skill": 123,
+    "override_after": 2139095040
+  },
+  "fields": {
+    "0x44": 5,
+    "0x48": 15,
+    "0x4c": 12,
+    "0x5c": 15,
+    "0x60": 45,
+    "0x64": 0,
+    "0x68": 0,
+    "0x78": 2077,
+    "0x7c": 230
+  },
+  "target_body": {
+    "actor": 43,
+    "encoded_file": "8c1c01010000",
+    "flags": 1
+  },
+  "checkpoint": "20261015-skill-implementation",
+  "cutoff": "2026-10-15T02:50:41.467928+00:00",
+  "activation": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 76369,
+    "tick_ms": 17282687,
+    "actor": 25,
+    "map": 280,
+    "hex": "a00000003c000000190000001e0000007b000000",
+    "kind": 60
+  },
+  "captured_target_body": {
+    "line": 76378,
+    "tick_ms": 17283703,
+    "hex": "a0000000140000001e00000019000000e6000000"
+  },
+  "source_sha256": "4f11f2264a7e9dda337cc1d726657fbfe53ec804da4f216539561d963c59bfbf",
+  "wiki_sha256": {
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Insidious_Parasite.html": "08d5585e37a92143d21fe9eaae7f5bec8380a02f9ef27ed4516d145fb8c123ab",
+    "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Life_stealing.html": "5d765190b76fc49aa7c4bde82cc996b83c329f6640a8157c6a4e2026af6bd312"
+  },
+  "tool_sha256": "3e69e1cbf443fb7a0267e5b494fa9fb0996e01714e143119ff921bba1a05639b",
+  "harness_sha256": {
+    "skill_animation_2022.py": "a6ddb3533a51ec16203fafb458c132f271f942152b98f41ba4caca6ea9274ba1",
+    "image_2022.py": "fe25a22bbf6debc56c11e81d1ac1be77ddcde6db38d4845cc80d01564bfb799b"
+  },
+  "limits": [
+    "Offline first consumers,not rendered acceptance.",
+    "Native row proves5..15second duration,12second recharge,15..45life steal and targeted body230;archived wiki establishes a reaction for every successful hit.",
+    "Successful hit is not equivalent to positive damage;zero damage after absorption must not be discarded as a miss.",
+    "Consume authoritative outcomes before reacting;multiple recipients of one attack may each yield a hit.",
+    "Archived wiki notes require life steal BEFORE attack damage and hex removal on caster death;post-damage callback integration would be incorrect.",
+    "Caster/target generation,expiry,Health transfer and lifecycle checks require world integration.",
+    "This audit does not implement skill123casting or gameplay."
+  ]
+}

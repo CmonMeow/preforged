@@ -1,0 +1,160 @@
+{
+  "skills": [
+    {
+      "skill": 155,
+      "name": "Vile Touch",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Vile_Touch.html",
+      "wiki_sha256": "168fb49f5a79ccf3989bfe8bc32528031fecb95e26afbfb1a2b1613a5c0059c6",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96643,
+          "tick_ms": 17626093,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009b000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96799,
+          "tick_ms": 17636921,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009b000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96649,
+          "tick_ms": 17626859,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96818,
+          "tick_ms": 17637640,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "numeric_metadata": "src/runtime/gw_skill_catalog_generated.h",
+      "client": "Pinned2022 a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac"
+    },
+    {
+      "skill": 159,
+      "name": "Weaken Armor",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Weaken_Armor.html",
+      "wiki_sha256": "97f50ceb2b077fdbd55dc916461f14c78a407559895bd50b3334299f6f796e8d",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96693,
+          "tick_ms": 17629312,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009f000000",
+          "kind": 60
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96780,
+          "tick_ms": 17635671,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001e0000009f000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96697,
+          "tick_ms": 17629718,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 96787,
+          "tick_ms": 17636171,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "numeric_metadata": "src/runtime/gw_skill_catalog_generated.h",
+      "client": "Pinned2022 a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac"
+    },
+    {
+      "skill": 1396,
+      "name": "Words of Comfort",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Words_of_Comfort.html",
+      "wiki_sha256": "c95869ef2cf89fc355bc5a3dc4a5954c708b4ba470c53e6e18860802306a91b8",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 309365,
+          "tick_ms": 21967156,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001c00000074050000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 309371,
+          "tick_ms": 21968140,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "numeric_metadata": "src/runtime/gw_skill_catalog_generated.h",
+      "client": "Pinned2022 a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac"
+    },
+    {
+      "skill": 1401,
+      "name": "Mending Touch",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Mending_Touch.html",
+      "wiki_sha256": "71748025bdd1a3bee43bf788b0d2a47dc037c773f717f6eb2b547e97b6afa0d0",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 309455,
+          "tick_ms": 21973953,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c0000001900000079050000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 309460,
+          "tick_ms": 21974671,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "numeric_metadata": "src/runtime/gw_skill_catalog_generated.h"
+    }
+  ],
+  "mechanic_sources": "Local primary Guild Wars Wiki articles; pinned2022 skill constants; immutable official packet evidence. Captures establish activation/publication, not all conditions."
+}

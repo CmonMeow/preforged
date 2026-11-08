@@ -1,0 +1,129 @@
+{
+  "checkpoint": "20261016-build-queue",
+  "cutoff": "2026-10-16T22:55:44.592170+00:00",
+  "audit_sha256": "c2796070a75f24942d0b6f531c01abde35dc3723e8d9e6aa7620590dc4180a3d",
+  "coverage_sha256": "f2ccf33770ee6900c98f817c88844a46c60190de5145dfdd19d4bbd9d264afe9",
+  "skills": [
+    {
+      "id": 162,
+      "name": "Gale",
+      "overcast": 10,
+      "local_finished": 2,
+      "dispatcher_binding": true,
+      "metadata_gate_blocks": false,
+      "runtime_status": "implemented_binding"
+    },
+    {
+      "id": 178,
+      "name": "Ether Prodigy",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 185,
+      "name": "Mind Burn",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 187,
+      "name": "Meteor",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 192,
+      "name": "Meteor Shower",
+      "overcast": 10,
+      "local_finished": 2,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 209,
+      "name": "Mind Freeze",
+      "overcast": 5,
+      "local_finished": 2,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 215,
+      "name": "Maelstrom",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 219,
+      "name": "Obsidian Flame",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": true,
+      "metadata_gate_blocks": false,
+      "runtime_status": "implemented_binding"
+    },
+    {
+      "id": 226,
+      "name": "Mind Shock",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 866,
+      "name": "Vapor Blade",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 903,
+      "name": "Icy Prism",
+      "overcast": 5,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 1086,
+      "name": "Dragon's Stomp",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    },
+    {
+      "id": 1094,
+      "name": "Breath of Fire",
+      "overcast": 10,
+      "local_finished": 1,
+      "dispatcher_binding": false,
+      "metadata_gate_blocks": false,
+      "runtime_status": "unsupported"
+    }
+  ],
+  "limits": [
+    "Overcast dependency inventory only;does not prove mechanics or rendered effects.",
+    "An available atomic payment hook does not establish an effect dispatcher for every listed skill."
+  ]
+}

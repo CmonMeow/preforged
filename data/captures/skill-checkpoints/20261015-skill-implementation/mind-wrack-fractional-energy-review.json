@@ -1,0 +1,27 @@
+{
+  "status": "fraction-aware Mind Wrack zero observer implemented; production build and6 focused native suites pass0.06s;19 tooling tests pass",
+  "build": "build/reports/mind-wrack-fraction-production-build.txt",
+  "additional_test_build": "build/reports/mind-wrack-fraction-final-build.txt",
+  "tests": "build/reports/mind-wrack-fraction-tests.txt",
+  "verified": [
+    "MindWrackEnergy carries fractional units on the shared1/300000 grid",
+    "Exact-zero trigger distinguishes remaining fractional Energy and negative debt",
+    "World player snapshots include existing regeneration remainder at all observed loss boundaries",
+    "One-Energy payment after partial regeneration leaves hex and health intact; exact payment with no fraction triggers normal burst",
+    "A later caster clock only blocks a cost when a true-zero reaction requires that caster settlement",
+    "A full-cap gain discards leftover regeneration fraction; subsequent exact full payment correctly reaches true zero",
+    "Known integer Mind Wrack own-loss reaction requires fractional state unchanged"
+  ],
+  "limits": [
+    "World snapshots currently carry ordinary regeneration precision; Overcast fractional-tail ownership is not yet attached",
+    "NPC fractional Energy exposure and fractional drain semantics still need review",
+    "No retail rendered/fractional capture acceptance or full all-target gate claimed",
+    "No additional skill binding"
+  ],
+  "source_sha256": {
+    "src/runtime/gw_mind_wrack.h": "7b7cf5a31267fb23abb2c825e1b0b1732e54e3444fd01c9e30f30a7ed50bdcbf",
+    "src/runtime/gw_world_simulation.h": "167b6396401f50362013cbd5d4342a2bed75190d1cf75463ef22d97d79e0e2f6",
+    "tests/mind_wrack_policy.cpp": "250dec72b84716f201085ff8968895d6bbda6410b6fad5314c51851032105562",
+    "tests/mind_wrack_resource_events.cpp": "a012d27667fdebbec8b7ab0b05a9f0402ce0cbf518e3f0ec91eb751f519b077b"
+  }
+}

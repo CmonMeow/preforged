@@ -1,0 +1,332 @@
+{
+  "status": "staged_not_installed",
+  "policy": "PRIVATE_QUEST46_QUALIFIED_CREATURE_BASELINE_V1",
+  "sources": {
+    "packet_sha256": "e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c",
+    "wiki": {
+      "Creature": "c162fc0e6f68c95069eecd3a8ddadb7a05c521997652aa0fabd110f99995513d",
+      "Academy_Monk": "a2008ae4f558146c859701e9bfca68acbcb78a495d773a60341f77cf0d9a4588",
+      "Prince_Rurik": "2e7ee3f6cc1385bf9ef70ff276f9b16824cf31df5b339547cad25f30fb2325db",
+      "Ascalon_Guard": "293016021a1c358a2c20a77fc038f8a2082dcb1bd815f512e6569c6056bb4c6f"
+    }
+  },
+  "profiles": [
+    {
+      "captured_actor": 35,
+      "name": "Prince Rurik",
+      "model": 1509,
+      "observed_level": 10,
+      "observed_profession": 1,
+      "definition_line": 23483,
+      "private_baseline": {
+        "health": 280,
+        "energy": 20,
+        "base_armor": 50,
+        "physical_bonus": 20
+      },
+      "wiki_attributes": {},
+      "unknown": [
+        "attack_damage",
+        "weapon_attribute",
+        "attack_range",
+        "energy_regeneration",
+        "escort_route",
+        "healing_threshold"
+      ],
+      "observed_attack_starts": [
+        {
+          "line": 552019,
+          "tick_ms": 177900171,
+          "target": 52,
+          "auxiliary": 0
+        },
+        {
+          "line": 552120,
+          "tick_ms": 177902203,
+          "target": 52,
+          "auxiliary": 0
+        },
+        {
+          "line": 552236,
+          "tick_ms": 177904968,
+          "target": 53,
+          "auxiliary": 0
+        },
+        {
+          "line": 552332,
+          "tick_ms": 177907515,
+          "target": 50,
+          "auxiliary": 0
+        },
+        {
+          "line": 552395,
+          "tick_ms": 177909562,
+          "target": 50,
+          "auxiliary": 0
+        }
+      ],
+      "observed_adjacent_start_intervals_ms": [
+        2032,
+        2765,
+        2547,
+        2047
+      ]
+    },
+    {
+      "captured_actor": 36,
+      "name": "Academy Monk",
+      "model": 1486,
+      "observed_level": 5,
+      "observed_profession": 3,
+      "definition_line": 23479,
+      "private_baseline": {
+        "health": 180,
+        "energy": 40,
+        "base_armor": 15,
+        "physical_bonus": 0
+      },
+      "wiki_attributes": {
+        "divine_favor": 6,
+        "healing_prayers": 7
+      },
+      "unknown": [
+        "attack_damage",
+        "weapon_attribute",
+        "attack_range",
+        "energy_regeneration",
+        "escort_route",
+        "healing_threshold"
+      ],
+      "observed_attack_starts": [
+        {
+          "line": 552260,
+          "tick_ms": 177905312,
+          "target": 53,
+          "auxiliary": 0
+        },
+        {
+          "line": 552339,
+          "tick_ms": 177907750,
+          "target": 50,
+          "auxiliary": 0
+        },
+        {
+          "line": 552389,
+          "tick_ms": 177909281,
+          "target": 50,
+          "auxiliary": 0
+        }
+      ],
+      "observed_adjacent_start_intervals_ms": [
+        2438,
+        1531
+      ]
+    },
+    {
+      "captured_actor": 37,
+      "name": "Ascalon Guard",
+      "model": 1480,
+      "observed_level": 2,
+      "observed_profession": 1,
+      "definition_line": 23484,
+      "private_baseline": {
+        "health": 120,
+        "energy": 20,
+        "base_armor": 26,
+        "physical_bonus": 20
+      },
+      "wiki_attributes": {},
+      "unknown": [
+        "attack_damage",
+        "weapon_attribute",
+        "attack_range",
+        "energy_regeneration",
+        "escort_route",
+        "healing_threshold"
+      ],
+      "observed_attack_starts": [
+        {
+          "line": 552028,
+          "tick_ms": 177900312,
+          "target": 52,
+          "auxiliary": 0
+        },
+        {
+          "line": 552096,
+          "tick_ms": 177901593,
+          "target": 52,
+          "auxiliary": 0
+        },
+        {
+          "line": 552217,
+          "tick_ms": 177904453,
+          "target": 50,
+          "auxiliary": 0
+        },
+        {
+          "line": 552291,
+          "tick_ms": 177905984,
+          "target": 50,
+          "auxiliary": 0
+        },
+        {
+          "line": 552329,
+          "tick_ms": 177907421,
+          "target": 50,
+          "auxiliary": 0
+        },
+        {
+          "line": 552380,
+          "tick_ms": 177909093,
+          "target": 50,
+          "auxiliary": 0
+        }
+      ],
+      "observed_adjacent_start_intervals_ms": [
+        1281,
+        2860,
+        1531,
+        1437,
+        1672
+      ]
+    }
+  ],
+  "observed_negative_damage_notifications": [
+    {
+      "line": 552054,
+      "tick_ms": 177900859,
+      "kind": 16,
+      "source": 37,
+      "target": 52,
+      "normalized_damage": -0.03888889029622078
+    },
+    {
+      "line": 552065,
+      "tick_ms": 177901062,
+      "kind": 16,
+      "source": 35,
+      "target": 50,
+      "normalized_damage": -0.17222222685813904
+    },
+    {
+      "line": 552066,
+      "tick_ms": 177901062,
+      "kind": 16,
+      "source": 35,
+      "target": 52,
+      "normalized_damage": -0.17222222685813904
+    },
+    {
+      "line": 552067,
+      "tick_ms": 177901062,
+      "kind": 17,
+      "source": 35,
+      "target": 52,
+      "normalized_damage": -0.5222222208976746
+    },
+    {
+      "line": 552124,
+      "tick_ms": 177902203,
+      "kind": 16,
+      "source": 37,
+      "target": 52,
+      "normalized_damage": -0.03333333507180214
+    },
+    {
+      "line": 552156,
+      "tick_ms": 177902796,
+      "kind": 16,
+      "source": 35,
+      "target": 50,
+      "normalized_damage": -0.17222222685813904
+    },
+    {
+      "line": 552157,
+      "tick_ms": 177902796,
+      "kind": 16,
+      "source": 35,
+      "target": 52,
+      "normalized_damage": -0.17222222685813904
+    },
+    {
+      "line": 552158,
+      "tick_ms": 177902796,
+      "kind": 17,
+      "source": 35,
+      "target": 52,
+      "normalized_damage": -0.5222222208976746
+    },
+    {
+      "line": 552239,
+      "tick_ms": 177905015,
+      "kind": 16,
+      "source": 37,
+      "target": 50,
+      "normalized_damage": -0.02777777798473835
+    },
+    {
+      "line": 552269,
+      "tick_ms": 177905562,
+      "kind": 16,
+      "source": 35,
+      "target": 53,
+      "normalized_damage": -0.33888888359069824
+    },
+    {
+      "line": 552308,
+      "tick_ms": 177906500,
+      "kind": 16,
+      "source": 37,
+      "target": 50,
+      "normalized_damage": -0.03888889029622078
+    },
+    {
+      "line": 552346,
+      "tick_ms": 177907937,
+      "kind": 16,
+      "source": 37,
+      "target": 50,
+      "normalized_damage": -0.03333333507180214
+    },
+    {
+      "line": 552353,
+      "tick_ms": 177908328,
+      "kind": 16,
+      "source": 36,
+      "target": 50,
+      "normalized_damage": -0.03888889029622078
+    },
+    {
+      "line": 552356,
+      "tick_ms": 177908406,
+      "kind": 17,
+      "source": 35,
+      "target": 50,
+      "normalized_damage": -0.5222222208976746
+    },
+    {
+      "line": 552398,
+      "tick_ms": 177909671,
+      "kind": 16,
+      "source": 37,
+      "target": 50,
+      "normalized_damage": -0.03333333507180214
+    },
+    {
+      "line": 552409,
+      "tick_ms": 177909859,
+      "kind": 16,
+      "source": 36,
+      "target": 50,
+      "normalized_damage": -0.03888889029622078
+    }
+  ],
+  "limits": [
+    "Creature health/energy/armor formulas are qualified most/usually; these private baseline values are not measured exact ally resources.",
+    "Warrior physical bonus is likewise a qualified wiki baseline.",
+    "Attack-start intervals include interruptions,retargeting and movement; they are not intrinsic weapon attack rates.",
+    "Normalized damage is not base weapon damage; target armor,skills,critical hits and modifiers may affect it.",
+    "No added monster regeneration pip is assumed for friendly allies.",
+    "Unknown attack/route/regen policy requires explicit review before encounter activation."
+  ]
+}

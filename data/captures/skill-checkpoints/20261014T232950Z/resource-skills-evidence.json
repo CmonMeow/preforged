@@ -1,0 +1,70 @@
+{
+  "capture_cutoff": "2026-10-14T23:29:51.460985+00:00",
+  "skills": [
+    {
+      "skill": 2057,
+      "name": "Foul Feast",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Foul_Feast.html",
+      "wiki_sha256": "5338c6e345a009783e8a5d0a4bda912bf17906383353cdbecd1f44712a94c7d6",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 126323,
+          "tick_ms": 18080593,
+          "actor": 25,
+          "map": 280,
+          "hex": "a00000003c000000190000001c00000009080000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 126329,
+          "tick_ms": 18080875,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ]
+    },
+    {
+      "skill": 146,
+      "name": "Offering of Blood",
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Offering_of_Blood.html",
+      "wiki_sha256": "5e3233dc3b3a64c055ee38a6188f627fee22e99765b56c6515ecfbe7bee99d4b",
+      "activation_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 120924,
+          "tick_ms": 17975140,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c0000001900000092000000",
+          "kind": 60
+        }
+      ],
+      "endpoint_evidence": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 120928,
+          "tick_ms": 17975390,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ]
+    }
+  ],
+  "foul_feast_normal_recharge_packet": {
+    "file": "packets-1360-15821281.jsonl",
+    "line": 126328,
+    "modern_opcode": 229,
+    "actor": 25,
+    "skill": 2057,
+    "seconds": 4
+  },
+  "limits": "Normal4-second Foul Feast recharge was captured; Disease half-recharge and resource formulas follow local primary wiki plus pinned2022 constants. Rendering remains unverified."
+}

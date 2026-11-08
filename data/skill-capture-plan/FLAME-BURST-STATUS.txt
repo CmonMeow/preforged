@@ -1,0 +1,26 @@
+Flame Burst [188] -- native player and reviewed-NPC binding, 2026-10-23.
+
+The fixed 20261022 checkpoint has no locally attributed player activation.
+The separate frozen 20261023 target review has 14 other-actor starts on
+Heroes Ascent maps 80/84/330/593. These starts establish skill use, not the
+damage formula or the rendered 2022 animation.
+
+The pinned Guild Wars 2022 skill catalog row and local historical Flame Burst
+wiki agree on Fire Magic rank 0..15 damage 15..120. The native plan uses a
+252-unit nearby radius, 15 Energy, 750ms cast, five-second recharge and
+fire armor. The server's existing area transaction admits only living hostile
+recipients on the caster's plane, rejects unknown required armor atomically,
+and leaves allies and farther targets unharmed. Player and NPC casts both use
+the canonical plan. NPC AI only admits an explicitly reviewed authored skill
+entry and emits the 2022 NPC skill-start packet for ID 188.
+
+Fresh Release flame_burst_test covers 21 ranks, a forged-radius rejection,
+near/far/ally player and NPC recipients, player payment and cast timing,
+the NPC Energy cost, NPC start packet, and damage at release. Five existing
+elemental/AI/casting suites were rebuilt and passed with the new headers.
+The serial Release server host built successfully.
+
+Open evidence: obtain a local player activation and a complete packet/visual
+sequence on the intended 2022 client; verify exact near-radius boundary and
+fire damage rounding against retail, and check the rendered cast animation.
+No separate target-body resource is present in the pinned 2022 row.

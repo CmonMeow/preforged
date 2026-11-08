@@ -1,0 +1,251 @@
+{
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "tool_sha256": "68e680f8cd606c4c12dc58f0ce6db9a5401c087dfc2354ed857b9c6f7bc085dd",
+  "evidence": [
+    {
+      "skill": 182,
+      "attribute": 10,
+      "animation": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 1.0,
+        "stored_skill": 182,
+        "override_after": 2139095040
+      },
+      "resources": [
+        326,
+        327
+      ],
+      "particles": [
+        {
+          "actor": 42,
+          "encoded_file": "397e00010000",
+          "flags": 1
+        },
+        {
+          "actor": 42,
+          "encoded_file": "3a7e00010000",
+          "flags": 1
+        }
+      ],
+      "starts": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 145749,
+          "tick_ms": 18480125,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c00000019000000b6000000",
+          "kind": 60
+        }
+      ],
+      "finishes": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 145761,
+          "tick_ms": 18481140,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "completion_packets": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 145760,
+          "tick_ms": 18481140,
+          "hex": "e500000019000000b6000000000000001e000000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 145762,
+          "tick_ms": 18481140,
+          "hex": "9f000000150000001900000046010000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 145763,
+          "tick_ms": 18481140,
+          "hex": "9f000000150000001900000047010000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 145764,
+          "tick_ms": 18481140,
+          "hex": "4200000019000000b6000000000000007300000000007042"
+        }
+      ],
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Conjure_Flame.html",
+      "wiki_sha256": "54119c2d1ff02429dfdb7d540ec01eb4dccc9be62f6018f8c59d6d9b9d27b58c"
+    },
+    {
+      "skill": 207,
+      "attribute": 11,
+      "animation": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 1.0,
+        "stored_skill": 207,
+        "override_after": 2139095040
+      },
+      "resources": [
+        370,
+        371
+      ],
+      "particles": [
+        {
+          "actor": 42,
+          "encoded_file": "a49300010000",
+          "flags": 1
+        },
+        {
+          "actor": 42,
+          "encoded_file": "344500010000",
+          "flags": 1
+        }
+      ],
+      "starts": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 163210,
+          "tick_ms": 19161750,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c00000019000000cf000000",
+          "kind": 60
+        }
+      ],
+      "finishes": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 163223,
+          "tick_ms": 19162765,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "completion_packets": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 163222,
+          "tick_ms": 19162765,
+          "hex": "e500000019000000cf000000000000001e000000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 163224,
+          "tick_ms": 19162765,
+          "hex": "9f000000150000001900000072010000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 163225,
+          "tick_ms": 19162765,
+          "hex": "9f000000150000001900000073010000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 163226,
+          "tick_ms": 19162765,
+          "hex": "4200000019000000cf000000000000007a00000000007042"
+        }
+      ],
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Conjure_Frost.html",
+      "wiki_sha256": "4682978f39cba03a03693909b98178df6a953e667e6a74785cca1cbfbb4445ed"
+    },
+    {
+      "skill": 221,
+      "attribute": 8,
+      "animation": {
+        "model": 33607680,
+        "layer": 0,
+        "style": 50,
+        "seconds": 1.0,
+        "stored_skill": 221,
+        "override_after": 2139095040
+      },
+      "resources": [
+        392,
+        393
+      ],
+      "particles": [
+        {
+          "actor": 42,
+          "encoded_file": "ab4000010000",
+          "flags": 1
+        },
+        {
+          "actor": 42,
+          "encoded_file": "184100010000",
+          "flags": 1
+        }
+      ],
+      "starts": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173514,
+          "tick_ms": 19328640,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003c00000019000000dd000000",
+          "kind": 60
+        }
+      ],
+      "finishes": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173534,
+          "tick_ms": 19329578,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000003a0000001900000000000000",
+          "kind": 58
+        }
+      ],
+      "completion_packets": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173533,
+          "tick_ms": 19329578,
+          "hex": "e500000019000000dd000000000000001e000000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173535,
+          "tick_ms": 19329578,
+          "hex": "9f000000150000001900000088010000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173536,
+          "tick_ms": 19329578,
+          "hex": "9f000000150000001900000089010000"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 173537,
+          "tick_ms": 19329578,
+          "hex": "4200000019000000dd000000000000004400000000007042"
+        }
+      ],
+      "wiki_file": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\Conjure_Lightning.html",
+      "wiki_sha256": "d750caf8e30c197e5d4b5d609ed3cfec42a0149c18c5506d22d3088464883037"
+    }
+  ],
+  "requirements": [
+    "60s self enchantment;10Energy;1s activation;45s recharge.",
+    "Matching actual weapon damage element is required at each successful hit.",
+    "Bonus5->20 at ranks0->15;archived wiki describes armor-ignoring additional damage on every hit."
+  ],
+  "version_difference": "Modern frozen completion packets recharge30s;native2022 and archived wiki recharge45s. Server2022 baseline retains45s.",
+  "limits": [
+    "This native probe does not establish Runtime binding,World integration or rendered acceptance.",
+    "One caster and one target-body packet per captured completion;per-hit visuals are not established.",
+    "Element conversion,multi-hit and NPC attack integration require explicit validation."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "skill": 11,
+  "status": "Policy and animation-evidence stage; not Runtime or World bound.",
+  "mechanics": "75percent block,2Energy per attributed block,1..5second duration at rank0..15. Paid block at exactly2Energy leaves stance active with0Energy. Insufficient Energy still allows the current block, then stance ends.",
+  "evidence": "Local Distortion wiki revision2661973 and pinned2022 skill row; distortion-native-2022.json validates instant48 and exact captured simple21 body23.",
+  "validation": "Standalone native tests passed: rank endpoints, paid/insufficient proposals, stale scope, expiry and unchanged original registry. build/reports/distortion-policy.txt",
+  "unknown": "Insufficient-Energy partial deduction is explicitly optional/unresolved; no energy value fabricated.",
+  "remaining": [
+    "Authoritative per-source blocking attribution when Guardian and Distortion coexist; do not charge for a Guardian-only block.",
+    "World paid Energy update, insufficient-Energy policy, stance cleanup and all attack paths.",
+    "Dispatcher/production wiring, rendered animation/sound, NPC behavior and live interaction verification."
+  ],
+  "source_sha256": {
+    "src/runtime/gw_distortion.h": "cbff4f4b9031697c00c8901e3a2ee10bd5c0aae61060a12615f696fede9896c3",
+    "tests/distortion_policy.cpp": "ea19a2149a264fc69f716d5c631d6e7bb05381964c0e1aa9d65eda345a20188c",
+    "tools/protocol/distortion_2022.py": "9106b3a863fad3304ae0f6f5aece61a7f34c22a91b723c2a2643f264e4f9fd98"
+  },
+  "block_attribution_stage": {
+    "header": "src/runtime/gw_block_attribution.h",
+    "test": "tests/block_attribution.cpp",
+    "report": "build/reports/block-attribution.txt",
+    "result": "Standalone native test passed; source-specific outcome, 100x100 independent draw grid yields8750blocks, terminal failures/unblockable/Rigor bypass use no draws, invalid inputs fail.",
+    "scope": "Explicit caller-provided effect ordering; this helper does not pick or claim retail ordering. Not connected to World yet.",
+    "remaining": "Choose evidence-supported World source ordering and integrate Energy loss only for Distortion-attributed blocks."
+  },
+  "targeted_capture": "data/skill-capture-plan/TARGETED-DISTORTION-CAPTURE.txt",
+  "research_result": "Additional web searches and attempted wiki talk-page fetches did not establish insufficient-Energy deduction or retail overlap ordering. No guessed behavior added. Proceed to other captured skills while retaining these explicit gaps."
+}

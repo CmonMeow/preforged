@@ -1,0 +1,107 @@
+{
+  "skill": 82,
+  "status": "Source-bound82; all-target production Release build and275/275 registered tests passed. Explicit duration/retail lifecycle/UI and rendered gaps remain.",
+  "mechanics": "Elite enchantment,1second/10Energy/30recharge. Native duration20seconds, end gain10..25Energy at rank0..15. Expiry and explicit removal grant Energy; renewal resets duration without gain. Stored adjusted expiry governs expiration timing.",
+  "evidence": "Local older wiki revision2629674 and pinned2022 catalogue. mantra-recall-native-2022.json includes exact fixed packet lines, source hash, original simple21 body140 consumer,20second enchantment application, matching effect removal and same-tick rank0 +10Energy message.",
+  "capture_caution": "General body_effect_evidence array is empty because the catalogue target resource140 was emitted as simple21 self-body. Dedicated exact packet evidence supersedes the blanket missing-body statement for this activation. Same-tick removal/gain is supportive but not an isolated causality experiment; receive timing is not server simulation duration.",
+  "policy_test": "tests/mantra_recall_policy.cpp",
+  "policy_report": "build/reports/mantra-recall-policy-tests.txt",
+  "policy_result": "Pass natural expiry/removal reward, renewal suppression, late polling uses stored deadline, extended expiry respected, consumed registry one-use, stale scope/wrong cause and invalid reason rejection without original mutation.",
+  "remaining": [
+    "Equipment/enchantment-duration modifiers are not yet applied; World uses native20second baseline.",
+    "Retail death/zoning/renewal boundary and simultaneous-end ordering evidence; living-end policy and no-reward death cleanup are tested implementation candidates, not independently established official behavior.",
+    "Energy cue amounts when capacity-capped or repaying debt need direct retail verification.",
+    "NPC self-casting/resource integration and rendered model/effect/sound acceptance."
+  ],
+  "coverage": "Included in166/575 captured source-bound skills; source binding is not full mechanics or rendered acceptance.",
+  "source_sha256": {
+    "src/runtime/gw_mantra_recall.h": "d5f8370f4db7c7800249a6e9b849f8be65c958189a8d8fd9d74c2d32d2a20d51",
+    "tests/mantra_recall_policy.cpp": "257d9c9e50248e089e92a868d24c1f9c3cf149d63429c8a425b24f9def95e25f",
+    "tools/protocol/mantra_recall_2022.py": "854d81c088841749f04f2eef23aa99fa07a3a958ad866d45476a0bd2c4f30c88",
+    "src/runtime/gw_recall_energy.h": "e2dceae4aa09335a4d8e48fce77e7552b42f0957655a149ba22509a1938575bb",
+    "tests/recall_energy.cpp": "3821e1a46e8c2704a173629565552ecd8d3abf70c1fa6a0448c2cc5913755c46",
+    "tests/mantra_recall_world.cpp": "b2ac816cb3653f9fac4e16a99b1aaf75c9dd3637b97b2459acab948785f7ccb9",
+    "tests/mantra_recall_cast.cpp": "502fe7ef6463738deba30ceb3f02c2d62ace9f83092bc14264669bb13c0d2a18",
+    "tests/recall_channeling_order.cpp": "32f9e56f43829cdff70e78bd1de57ddd5e2b68ccbd0c77c23670c051e81af642"
+  },
+  "energy_stage": {
+    "header": "src/runtime/gw_recall_energy.h",
+    "test": "tests/recall_energy.cpp",
+    "report": "build/reports/recall-energy-tests.txt",
+    "registered_gate": "build/reports/recall-foundation-tests.txt",
+    "result": "Two registered foundation suites passed0.03s. Settlement advances existing Energy regeneration to explicit end event, repays debt, caps visible gain and clears fractional credit at full capacity. Tests reject late cursor, dead/stale/invalid debt and preserve original state.",
+    "ordering_finding": "World currently has Energy mutation paths that need to settle due Recall first: timestamp-free consume/restore, capacity resize, Channeling completion and deferred arcane returns need explicit integration review. Most damage/denial paths already advance Health effects before Energy. No World binding until these end-event ordering paths are handled.",
+    "limits": "Uses current regeneration model, including30second delayed-step cap and nonnegative pip bound. Does not establish retail death/zoning/revival behavior or apply any live Energy update."
+  },
+  "world_resource_boundary_stage": {
+    "source": "src/runtime/gw_world_simulation.h advance_resource_event_locked, settle_resources, timestamped consume_energy/restore_energy, energy_capacity",
+    "gateway": "src/apps/gw_auth.cpp settles owned resources at cast request time and before Runtime update; a stale resource sample is not used to complete a cast. Legacy callback signatures remain unchanged.",
+    "test": "tests/resource_event_order.cpp",
+    "report": "build/reports/resource-event-order-tests.txt",
+    "result": "Standalone native test passes real Phantom Pain expiry/Deep Wound before timestamped cost, gain, capacity resize and explicit settlement; Energy regeneration once at event time, debt repayment after capacity shrink, stale clocks/owners reject.",
+    "limits": "Recall remains unbound. Legacy timestamp-free trusted APIs retain behavior; gateway establishes source event boundary before casting. Remaining Channeling/arcane-return ordering and World Recall application/end routing still require integration.",
+    "focused_gate": {
+      "build": "build/reports/resource-event-order-build.txt",
+      "tests": "build/reports/resource-event-order-registered-tests.txt",
+      "result": "Production host and related targets rebuilt successfully;4/4 focused suites passed0.05s."
+    },
+    "affected_gate": {
+      "build": "build/reports/resource-event-affected-build.txt",
+      "tests": "build/reports/resource-event-affected-tests.txt",
+      "result": "Nine related targets rebuilt;9/9 registered suites passed0.18s, including world_simulation, captured_skills, resource_gain, scoped_energy, overcast, elemental_mantras, both enchantment removal suites and channeling_debt."
+    },
+    "next_ordering_issue": "Source Health cursor deferral now avoids recursive Arcane payout settlement and has before/after plus same-event-cost evidence. Remaining work is Recall application/end routing, chronological Energy/debt integration tests, lifecycle policy and Runtime/gateway binding."
+  },
+  "deferred_return_order_stage": {
+    "test": "tests/deferred_energy_order.cpp",
+    "before": "build/reports/deferred-energy-order-before.txt",
+    "after": "build/reports/deferred-energy-order-after.txt",
+    "result": "Before fix, positive Arcane Energy fraction packet was index2 and caster Phantom Pain removal index5. New test failed order assertion. After fix, end removal index0 precedes positive credit index24; native probe passes and second tick gives no duplicate reward.",
+    "mechanism": "Arcane return remains pending until caster.health_updated equals the return event time. Health integration publishes deferred credits after completing its own end effects; payout does not recursively advance Health. Existing Arcane dead-caster behavior is preserved rather than changed without evidence.",
+    "channeling": "Successful Channeling completion settles the same owned resource boundary before its return. Failed completion remains cleanup-only without advancing resources.",
+    "gate": {
+      "build": "build/reports/deferred-energy-order-build.txt",
+      "tests": "build/reports/deferred-energy-order-tests.txt",
+      "result": "Production server_host and affected targets rebuilt;5/5 registered suites passed0.07s, including captured_skills Arcane player/NPC/renewal/death cases and Channeling debt/cleanup."
+    },
+    "same_event_cost_gate": {
+      "build": "build/reports/deferred-energy-cost-build.txt",
+      "tests": "build/reports/deferred-energy-cost-tests.txt",
+      "result": "Expanded deferred_energy_order fixture also passes timestamped cost that succeeds only after consuming the same-event Arcane credit; later tick pays nothing again."
+    }
+  },
+  "world_binding_stage": {
+    "source": "src/runtime/gw_world_simulation.h mantra_recall and remove_health_effect_locked",
+    "test": "tests/mantra_recall_world.cpp",
+    "report": "build/reports/mantra-recall-world-tests.txt",
+    "result": "Owned20second expiry and enemy removal return rank12 Energy22; renewal resets deadline without gain. Tests cover debt/capacity, stale owner, death cleanup candidate, same-event cost, late Arcane return, duplicate suppression and frequent/delayed positive regeneration equivalence.",
+    "animation": "Uses exact captured simple21 self body140 at application and positive Energy kind54 cue at end. Cue amount currently uses actual restored plus debt-repaid amount; cap/debt UI semantics still need retail capture.",
+    "ordering": "End proposal read before removal; Energy settled at stored expiry/removal time before deferred Arcane return. Invalid resource cursor fails closed with a logic diagnostic instead of silently rewinding or fabricating Energy.",
+    "generic_status_contract": "Active raw status insertion82 rejects before mutation, because it would replace the registry entry without its owned timer and orphan the old end contract. Generic removal of the owned effect uses the actual end path and grants Energy once; both cases pass."
+  },
+  "runtime_binding_stage": {
+    "test": "tests/mantra_recall_cast.cpp",
+    "report": "build/reports/mantra-recall-cast-tests.txt",
+    "result": "Actual1second/10Energy/30recharge self cast, body140 and Energy22 cue; cancellation/interruption/stale lifetime/missing hook/lethal Backfire rejection pass. Gateway validates owned Scope."
+  },
+  "channeling_recall_interaction": {
+    "test": "tests/recall_channeling_order.cpp",
+    "report": "build/reports/recall-channeling-order-tests.txt",
+    "result": "Recall expires before successful Channeling reward; failed completion remains cleanup-only and does not prematurely settle Recall. Subsequent timestamped cost consumes both rewards once.",
+    "registered_gate": {
+      "build": "build/reports/recall-channeling-registered-build.txt",
+      "tests": "build/reports/recall-channeling-registered-tests.txt",
+      "result": "Registered interaction target rebuilt;1/1 test passed0.03s."
+    }
+  },
+  "focused_gate": {
+    "build": "build/reports/mantra-recall-binding-build.txt",
+    "tests": "build/reports/mantra-recall-binding-tests.txt",
+    "result": "Production host and related targets rebuilt;7/7 focused suites passed0.09s. This precedes the final guard rejecting generic active status insertion for82."
+  },
+  "full_gate": {
+    "build": "build/reports/mantra-recall-binding-full-build.txt",
+    "tests": "build/reports/mantra-recall-binding-full-tests.txt",
+    "result": "All-target Release build succeeded;275/275 registered tests passed32.29s including final generic insertion guard."
+  }
+}

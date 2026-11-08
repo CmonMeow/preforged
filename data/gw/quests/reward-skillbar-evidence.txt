@@ -1,0 +1,12 @@
+Warrior Test reward skillbar evidence
+Source: data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl
+SHA256 3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a
+Line11949 tick99595031: modern217 DWORD fields (217,31,0,346,0).
+Line11953 same tick: modern217 DWORD fields (217,31,1,1,0).
+Frenzy and Healing Signet are taught by Warrior Test and placed into the first
+two empty slots. Native2022 slot216 serialization is pinned independently.
+
+Reward storage now uses the same vacant-slot teaching proposal as acceptance.
+Learning, bar, quest reward fence, XP and any item turn-in commit atomically.
+Existing builds are preserved; already learned skills are not reinserted.
+Packet publication requires the caller's owned actor and happens after commit.

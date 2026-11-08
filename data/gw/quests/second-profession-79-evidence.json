@@ -1,0 +1,1239 @@
+{
+  "quest": 79,
+  "status": "installed_source_pending_native_validation",
+  "world_source": "data\\captures\\pre-searing-warrior-ele-2026-10-09\\world-13908-99220828.jsonl",
+  "world_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "packet_source": "data\\captures\\pre-searing-warrior-ele-2026-10-09\\packets-13908-99235906.jsonl",
+  "packet_sha256": "3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a",
+  "wiki_source": "C:\\Users\\CmonMeow\\Desktop\\gw\\Wiki\\wiki.guildwars.com\\wiki\\A_Second_Profession.html",
+  "wiki_sha256": "fdd610f3fd643e6679b9ed367796a7e2ba4fd29cb0e394078b95e09b3b9897bf",
+  "snapshots": {
+    "858": {
+      "line": 858,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 13908,
+        "tick_ms": 99661625,
+        "map": 148,
+        "instance_epoch": 4,
+        "instance_ms": 803858825,
+        "local_actor": 195,
+        "quest_snapshot_revision": 11,
+        "active_quest_id": 79,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 79,
+            "log_state": 32,
+            "completed": false,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 148,
+            "marker": {
+              "x": 12035.0,
+              "y": 3116.0,
+              "plane": 0,
+              "x_bits": 1178340352,
+              "y_bits": 1162002432,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                6007,
+                34027,
+                54662,
+                5611
+              ],
+              "decoded": "A Second Profession",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13209,
+                50766,
+                45044,
+                3929
+              ],
+              "decoded": "Armin Saberlin",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": null,
+              "decoded": null,
+              "status": "absent"
+            },
+            "objectives": {
+              "encoded_utf16": null,
+              "decoded": null,
+              "status": "absent"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 79,
+        "log_state": 32,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 148,
+        "marker": {
+          "x": 12035.0,
+          "y": 3116.0,
+          "plane": 0,
+          "x_bits": 1178340352,
+          "y_bits": 1162002432,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            6007,
+            34027,
+            54662,
+            5611
+          ],
+          "decoded": "A Second Profession",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13209,
+            50766,
+            45044,
+            3929
+          ],
+          "decoded": "Armin Saberlin",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": null,
+          "decoded": null,
+          "status": "absent"
+        },
+        "objectives": {
+          "encoded_utf16": null,
+          "decoded": null,
+          "status": "absent"
+        }
+      }
+    },
+    "863": {
+      "line": 863,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 13908,
+        "tick_ms": 99662625,
+        "map": 148,
+        "instance_epoch": 4,
+        "instance_ms": 803859825,
+        "local_actor": 195,
+        "quest_snapshot_revision": 12,
+        "active_quest_id": 79,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 79,
+            "log_state": 33,
+            "completed": false,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 148,
+            "marker": {
+              "x": 12035.0,
+              "y": 3116.0,
+              "plane": 0,
+              "x_bits": 1178340352,
+              "y_bits": 1162002432,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                6007,
+                34027,
+                54662,
+                5611
+              ],
+              "decoded": "A Second Profession",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13209,
+                50766,
+                45044,
+                3929
+              ],
+              "decoded": "Armin Saberlin",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                6008,
+                36366,
+                54757,
+                6776,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506
+              ],
+              "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [],
+              "decoded": "",
+              "status": "empty"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 79,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 148,
+        "marker": {
+          "x": 12035.0,
+          "y": 3116.0,
+          "plane": 0,
+          "x_bits": 1178340352,
+          "y_bits": 1162002432,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            6007,
+            34027,
+            54662,
+            5611
+          ],
+          "decoded": "A Second Profession",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13209,
+            50766,
+            45044,
+            3929
+          ],
+          "decoded": "Armin Saberlin",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            6008,
+            36366,
+            54757,
+            6776,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [],
+          "decoded": "",
+          "status": "empty"
+        }
+      }
+    },
+    "873": {
+      "line": 873,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 13908,
+        "tick_ms": 99666625,
+        "map": 148,
+        "instance_epoch": 4,
+        "instance_ms": 803863822,
+        "local_actor": 195,
+        "quest_snapshot_revision": 13,
+        "active_quest_id": 79,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 79,
+            "log_state": 33,
+            "completed": false,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 161,
+            "marker": {
+              "x": 7311.0,
+              "y": 5438.0,
+              "plane": 0,
+              "x_bits": 1172600832,
+              "y_bits": 1168764928,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                6007,
+                34027,
+                54662,
+                5611
+              ],
+              "decoded": "A Second Profession",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13209,
+                50766,
+                45044,
+                3929
+              ],
+              "decoded": "Armin Saberlin",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                6008,
+                36366,
+                54757,
+                6776,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506
+              ],
+              "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                6012,
+                56880,
+                50832,
+                4208,
+                1
+              ],
+              "decoded": "{s}To take Elementalist as your second profession, follow the road southwest from town, continue past Ashford up into Wizard's Folly, and talk to Elementalist Aziure.",
+              "status": "decoded"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 79,
+        "log_state": 33,
+        "completed": false,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 161,
+        "marker": {
+          "x": 7311.0,
+          "y": 5438.0,
+          "plane": 0,
+          "x_bits": 1172600832,
+          "y_bits": 1168764928,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            6007,
+            34027,
+            54662,
+            5611
+          ],
+          "decoded": "A Second Profession",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13209,
+            50766,
+            45044,
+            3929
+          ],
+          "decoded": "Armin Saberlin",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            6008,
+            36366,
+            54757,
+            6776,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            6012,
+            56880,
+            50832,
+            4208,
+            1
+          ],
+          "decoded": "{s}To take Elementalist as your second profession, follow the road southwest from town, continue past Ashford up into Wizard's Folly, and talk to Elementalist Aziure.",
+          "status": "decoded"
+        }
+      }
+    },
+    "2258": {
+      "line": 2258,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 13908,
+        "tick_ms": 100148109,
+        "map": 161,
+        "instance_epoch": 15,
+        "instance_ms": 175936,
+        "local_actor": 7,
+        "quest_snapshot_revision": 23,
+        "active_quest_id": 0,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 79,
+            "log_state": 35,
+            "completed": true,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 148,
+            "marker": {
+              "x": 10796.0,
+              "y": 19847.0,
+              "plane": 0,
+              "x_bits": 1177071616,
+              "y_bits": 1184566784,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                6007,
+                34027,
+                54662,
+                5611
+              ],
+              "decoded": "A Second Profession",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13209,
+                50766,
+                45044,
+                3929
+              ],
+              "decoded": "Armin Saberlin",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                6008,
+                36366,
+                54757,
+                6776,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506
+              ],
+              "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10997,
+                50642,
+                61219,
+                3064,
+                266,
+                6012,
+                56880,
+                50832,
+                4208,
+                1,
+                2,
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                10992,
+                50343,
+                39936,
+                16059,
+                266,
+                13209,
+                50766,
+                45044,
+                3929,
+                1,
+                1
+              ],
+              "decoded": "{sc}To take Elementalist as your second profession, follow the road southwest from town, continue past Ashford up into Wizard's Folly, and talk to Elementalist Aziure.{s}Return to Armin Saberlin for your reward.",
+              "status": "decoded"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 79,
+        "log_state": 35,
+        "completed": true,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 148,
+        "marker": {
+          "x": 10796.0,
+          "y": 19847.0,
+          "plane": 0,
+          "x_bits": 1177071616,
+          "y_bits": 1184566784,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            6007,
+            34027,
+            54662,
+            5611
+          ],
+          "decoded": "A Second Profession",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13209,
+            50766,
+            45044,
+            3929
+          ],
+          "decoded": "Armin Saberlin",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            6008,
+            36366,
+            54757,
+            6776,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            6012,
+            56880,
+            50832,
+            4208,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13209,
+            50766,
+            45044,
+            3929,
+            1,
+            1
+          ],
+          "decoded": "{sc}To take Elementalist as your second profession, follow the road southwest from town, continue past Ashford up into Wizard's Folly, and talk to Elementalist Aziure.{s}Return to Armin Saberlin for your reward.",
+          "status": "decoded"
+        }
+      }
+    },
+    "3623": {
+      "line": 3623,
+      "event": {
+        "schema": 1,
+        "event": "quest_snapshot_changed",
+        "process_id": 13908,
+        "tick_ms": 100655046,
+        "map": 148,
+        "instance_epoch": 25,
+        "instance_ms": 804852255,
+        "local_actor": 669,
+        "quest_snapshot_revision": 38,
+        "active_quest_id": 79,
+        "full_snapshot": true,
+        "absence_does_not_prove_abandonment": true,
+        "quests": [
+          {
+            "quest_id": 79,
+            "log_state": 35,
+            "completed": true,
+            "current_mission": false,
+            "primary": true,
+            "area_primary": false,
+            "map_from": 148,
+            "map_to": 148,
+            "marker": {
+              "x": 12035.0,
+              "y": 3116.0,
+              "plane": 0,
+              "x_bits": 1178340352,
+              "y_bits": 1162002432,
+              "finite": true
+            },
+            "unknown_0024": 0,
+            "category": {
+              "encoded_utf16": [
+                15716
+              ],
+              "decoded": "Ascalon",
+              "status": "decoded"
+            },
+            "name": {
+              "encoded_utf16": [
+                6007,
+                34027,
+                54662,
+                5611
+              ],
+              "decoded": "A Second Profession",
+              "status": "decoded"
+            },
+            "npc": {
+              "encoded_utf16": [
+                13209,
+                50766,
+                45044,
+                3929
+              ],
+              "decoded": "Armin Saberlin",
+              "status": "decoded"
+            },
+            "description": {
+              "encoded_utf16": [
+                6008,
+                36366,
+                54757,
+                6776,
+                2,
+                258,
+                2,
+                258,
+                2,
+                10984,
+                59348,
+                58828,
+                13938,
+                2,
+                10986,
+                35903,
+                46361,
+                26129,
+                257,
+                506
+              ],
+              "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+              "status": "decoded"
+            },
+            "objectives": {
+              "encoded_utf16": [
+                10997,
+                50642,
+                61219,
+                3064,
+                266,
+                6012,
+                56880,
+                50832,
+                4208,
+                1,
+                2,
+                10998,
+                49591,
+                53037,
+                4897,
+                266,
+                10992,
+                50343,
+                39936,
+                16059,
+                266,
+                13209,
+                50766,
+                45044,
+                3929,
+                1,
+                1
+              ],
+              "decoded": "{sc}To take Elementalist as your second profession, follow the road southwest from town, continue past Ashford up into Wizard's Folly, and talk to Elementalist Aziure.{s}Return to Armin Saberlin for your reward.",
+              "status": "decoded"
+            }
+          }
+        ]
+      },
+      "quest": {
+        "quest_id": 79,
+        "log_state": 35,
+        "completed": true,
+        "current_mission": false,
+        "primary": true,
+        "area_primary": false,
+        "map_from": 148,
+        "map_to": 148,
+        "marker": {
+          "x": 12035.0,
+          "y": 3116.0,
+          "plane": 0,
+          "x_bits": 1178340352,
+          "y_bits": 1162002432,
+          "finite": true
+        },
+        "unknown_0024": 0,
+        "category": {
+          "encoded_utf16": [
+            15716
+          ],
+          "decoded": "Ascalon",
+          "status": "decoded"
+        },
+        "name": {
+          "encoded_utf16": [
+            6007,
+            34027,
+            54662,
+            5611
+          ],
+          "decoded": "A Second Profession",
+          "status": "decoded"
+        },
+        "npc": {
+          "encoded_utf16": [
+            13209,
+            50766,
+            45044,
+            3929
+          ],
+          "decoded": "Armin Saberlin",
+          "status": "decoded"
+        },
+        "description": {
+          "encoded_utf16": [
+            6008,
+            36366,
+            54757,
+            6776,
+            2,
+            258,
+            2,
+            258,
+            2,
+            10984,
+            59348,
+            58828,
+            13938,
+            2,
+            10986,
+            35903,
+            46361,
+            26129,
+            257,
+            506
+          ],
+          "decoded": "Sir Tydus wants you to take on a <c=@Quest>second profession</c> before you face the Charr, right? I think he is right to say so. A second profession gives you access to all of the skills and most of the attributes of that profession. This is a big decision, not to be taken lightly. You might wish to see trainers for several professions and learn a little something about them before settling on one.<p>Not just any trainer can teach you a second profession, but I can direct you if need be.\n\nReward:<brx>250 Experience<brx>",
+          "status": "decoded"
+        },
+        "objectives": {
+          "encoded_utf16": [
+            10997,
+            50642,
+            61219,
+            3064,
+            266,
+            6012,
+            56880,
+            50832,
+            4208,
+            1,
+            2,
+            10998,
+            49591,
+            53037,
+            4897,
+            266,
+            10992,
+            50343,
+            39936,
+            16059,
+            266,
+            13209,
+            50766,
+            45044,
+            3929,
+            1,
+            1
+          ],
+          "decoded": "{sc}To take Elementalist as your second profession, follow the road southwest from town, continue past Ashford up into Wizard's Folly, and talk to Elementalist Aziure.{s}Return to Armin Saberlin for your reward.",
+          "status": "decoded"
+        }
+      }
+    }
+  },
+  "receipts": {
+    "15326": {
+      "line": 15326,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 99661421,
+        "opcode": 73,
+        "bytes": 80,
+        "complete": true,
+        "hex": "490000004f000000000c3c4600c04245000000009400000020000000643d00000100020007010200e82ad4e77717eb8486d5eb15000019b51166010199334ec6f4af590f000000000000000094000000"
+      }
+    },
+    "15345": {
+      "line": 15345,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 99661640,
+        "opcode": 76,
+        "bytes": 520,
+        "complete": true,
+        "hex": "4c0000004f00000078170e8ee5d5781a02000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa010000eb15000019b51166010199334ec6f4af590f0000000000000000940000000000000000000000540042000000807f000000002800000000000000220000004000000042000000030000001d0000000200000000000000000000001d00000000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b0100008000ffffffff170d070404003cfeaa15fe1a021a0315fe9411fe3000d91bfe0f0033a92331cd2e392708459b0007250d0c432d042800020700071705fe6900fe0615fe3a0efe8f0303000e9635bb303f432408352d783917fe120802030202fec61e030000000302fe6d0021fea60883fea9051d5822fe280004fe04011cfecd0a06fed20007feb30a09fe571200fea700005b1d3e0b04febe0f00fe0e02009f1702020240040404fe031e000000056135724f1afe06006f921a020202fe4a00a45502122cfeeb1d0000000000000000000000000002fe0107fe8705fe1b0800fe2010fe3400fe8d06fe51038a6700a814101010103b53930f02020204fe"
+      }
+    },
+    "15636": {
+      "line": 15636,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 99666015,
+        "opcode": 84,
+        "bytes": 264,
+        "complete": true,
+        "hex": "540000004f000000f62ab7c12dcf21130a017c1730de90c6701001000000000006120020000000000c01000001000000a12800000000404179616c700000000033f5e92f000000004fece92f000000009c2d7bc30ee70cc3bab80f465b22e5451300000000000000bab80f465b22e5451300000042000000030000001d0000000200000000000000000000001d00000000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61040000000004b8241d00f82506009826050788a4050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe3d0efefd31680c46fef001bcfe850b01"
+      }
+    },
+    "15637": {
+      "line": 15637,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 99666015,
+        "opcode": 81,
+        "bytes": 24,
+        "complete": true,
+        "hex": "510000004f0000000078e44500f0a94500000000a1000000"
+      }
+    },
+    "26380": {
+      "line": 26380,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100146656,
+        "opcode": 183,
+        "bytes": 20,
+        "complete": true,
+        "hex": "b700000007000000010000000600000000000000"
+      }
+    },
+    "26381": {
+      "line": 26381,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100146656,
+        "opcode": 166,
+        "bytes": 16,
+        "complete": true,
+        "hex": "a6000000070000000100000006000000"
+      }
+    },
+    "26411": {
+      "line": 26411,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100147906,
+        "opcode": 77,
+        "bytes": 24,
+        "complete": true,
+        "hex": "4d0000004f00000000b02846000e9b460000000094000000"
+      }
+    },
+    "26412": {
+      "line": 26412,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100147906,
+        "opcode": 76,
+        "bytes": 520,
+        "complete": true,
+        "hex": "4c0000004f00000078170e8ee5d5781a02000201020002010200e82ad4e7cce572360200ea2a3f8c19b511660101fa010000000400004041316e6f6d00000000ecb8020000000000fb980200000000003df301c2ab2fd2420000bbc500902cc500000000000000000000bbc500902cc5000000006c0061007300740020007700650065006b00010000007400680061006e00200074006800650020006e006f0072006d0061006c00200031003200010005000000010aa8230005b824040098260003c862040688a400fe1204feda04fe070304fe850c00000000000000000000000001009afe25012c4bfe7f0705e9fe58065efe0806fe9c01feb001022302fe7a05fee901d2fe4ff52ad2c523eff80b0a017c1730de90c6701001000200f62ab7c12dcf21130a01f02aa7c4009cbb3e0a0199334ec6f4af590f0100010000002bfe5c01fe8e14a5fe060e05fe75030b11a6fec00079fedd0802030202fe0600fec11d0300000003020e04fe3c0cfe8506fe6819feb224fe4900fe0e02007d023602020240040404fe031e000000fea002020202fe731907fe080efe8705febc21fed100fea0e6feec2505fe1b23fe792200feda15fead050ffed26cfed34024fee70c000000fe540c0210110b2202fe0a700d0101650b0f31193557130329c5fe0d000d3945fe4307c909010d330b09fe130b023f043d042202510021013f042101510021013f04"
+      }
+    },
+    "38980": {
+      "line": 38980,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100669218,
+        "opcode": 82,
+        "bytes": 8,
+        "complete": true,
+        "hex": "520000004f000000"
+      }
+    },
+    "38985": {
+      "line": 38985,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100669218,
+        "opcode": 238,
+        "bytes": 12,
+        "complete": true,
+        "hex": "ee00000000000000fa000000"
+      }
+    },
+    "38988": {
+      "line": 38988,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100669218,
+        "opcode": 82,
+        "bytes": 8,
+        "complete": true,
+        "hex": "520000004f000000"
+      }
+    },
+    "38994": {
+      "line": 38994,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100669218,
+        "opcode": 128,
+        "bytes": 248,
+        "complete": true,
+        "hex": "800000009917729f97f9a3540a01a90b07014c006f00670067006500720001000100020007010200e82ad4e7cce572360200ea2a3f8c19b5116601016401020007010000000000004744f92f00000000505a34c37a8960c3377b1046a69ee3451300000000000000377b1046a69ee34513000000a5000000020000001d000000880000000000000000000000c0ec120000000000e80300000000000000000000fe6e02fe2207fe3d080202fe2629fe61010000000004c8a3040588a4040098260004c862050888a4fe8a0c0000000000000000000000000100fec00129024bfe7607020505e9feb706fefd01fe7801fe9500fe4e040223fe"
+      }
+    },
+    "38995": {
+      "line": 38995,
+      "event": {
+        "event": "packet",
+        "direction": "StoC",
+        "process_id": 13908,
+        "tick_ms": 100669218,
+        "opcode": 129,
+        "bytes": 8,
+        "complete": true,
+        "hex": "810000003e000000"
+      }
+    }
+  },
+  "captured_current_map_completion_markers": {
+    "161": {
+      "line": 2258,
+      "marker": {
+        "x": 10796.0,
+        "y": 19847.0,
+        "plane": 0,
+        "x_bits": 1177071616,
+        "y_bits": 1184566784,
+        "finite": true
+      }
+    },
+    "165": {
+      "line": 2438,
+      "marker": {
+        "x": 430.0,
+        "y": 7598.0,
+        "plane": 0,
+        "x_bits": 1138163712,
+        "y_bits": 1173188608,
+        "finite": true
+      }
+    },
+    "164": {
+      "line": 2904,
+      "marker": {
+        "x": -11215.0,
+        "y": -6200.0,
+        "plane": 0,
+        "x_bits": 3324984320,
+        "y_bits": 3317809152,
+        "finite": true
+      }
+    },
+    "146": {
+      "line": 2931,
+      "marker": {
+        "x": 7559.0,
+        "y": 5596.0,
+        "plane": 0,
+        "x_bits": 1173108736,
+        "y_bits": 1169088512,
+        "finite": true
+      }
+    },
+    "160": {
+      "line": 3589,
+      "marker": {
+        "x": 22279.0,
+        "y": 13121.0,
+        "plane": 0,
+        "x_bits": 1185811968,
+        "y_bits": 1179452416,
+        "finite": true
+      }
+    },
+    "148": {
+      "line": 3623,
+      "marker": {
+        "x": 12035.0,
+        "y": 3116.0,
+        "plane": 0,
+        "x_bits": 1178340352,
+        "y_bits": 1162002432,
+        "finite": true
+      }
+    }
+  },
+  "authored_neutral_objectives": {
+    "active": "Train with a profession trainer, then choose a second profession. Return to Armin Saberlin.",
+    "completed": "Return to Armin Saberlin for your reward."
+  },
+  "catalog_sha256": "049513483cb88235134a945012ae405f01150e9a6652ba5a91b8fb913f0c0d90",
+  "native_publication_policy": {
+    "accept_or_restore": [
+      "72 QuestAdd",
+      "75 QuestDetails"
+    ],
+    "existing_objective_completion": [
+      "83 QuestObjectives/QuestUpdated",
+      "76 QuestMarker"
+    ],
+    "forbidden_existing_objective": [
+      "72 QuestAdd",
+      "79 GeneralUpdate/QuestAdded"
+    ],
+    "reward": "81 QuestRemove after durable250XP/rewarded CAS"
+  },
+  "limitations": [
+    "Modern DWORD-expanded records do not establish2022 opcode identity; native serializers have independent original-client proofs.",
+    "Captured generic description is retained; objectives are explicitly authored wiki-neutral literals, never Elementalist resource codes applied to other professions.",
+    "Raw details records contain stale fixed-buffer tails; catalog uses decoded bounded snapshot units only.",
+    "Native NPC choice identifiers are not recovered; private menu actions require current Armin lifetime/range authority.",
+    "Secondary commit precedes completion in this bounded capture; exact retail scheduling and rendered behavior remain unverified.",
+    "A single current-map marker is not reused in every map; captured routes are scoped and unknown routes remain unresolved."
+  ],
+  "installed_catalog": "data/gw/quests/second-profession-79.fwqc",
+  "default_catalog": "data/gw/quests/presearing.fwqc",
+  "policy": "docs/second-profession79-policy-20261030.txt"
+}

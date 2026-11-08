@@ -1,0 +1,57 @@
+{
+  "checkpoint": "20261017-npc-refresh-2",
+  "cutoff": "2026-10-17T09:21:07.419412+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "packet_sha256": "59e2ae82e4c8187a88b5f3f8cac919a085a14aca314834ada70117039f3287d6",
+  "receipts": {
+    "374312": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23348375,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f00000030000000190000006a010000"
+    },
+    "374313": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23348375,
+      "opcode": 159,
+      "bytes": 16,
+      "complete": true,
+      "hex": "9f00000015000000190000006b020000"
+    },
+    "374314": {
+      "event": "packet",
+      "direction": "StoC",
+      "process_id": 1360,
+      "tick_ms": 23348375,
+      "opcode": 66,
+      "bytes": 24,
+      "complete": true,
+      "hex": "42000000190000006a010000000000006d0000000000a040"
+    }
+  },
+  "native_ui": [
+    {
+      "event": 268435493,
+      "actor": 42,
+      "skill": 362
+    }
+  ],
+  "native_body": {
+    "actor": 42,
+    "encoded_file": "44ed00010000",
+    "flags": 1
+  },
+  "captured_rank": 0,
+  "captured_duration_seconds": 5,
+  "limitations": [
+    "Model/asset services are stubbed; no rendered acceptance.",
+    "Melee-only block bypass is reviewed from the historical wiki and server tests; these activation receipts do not prove combat outcomes.",
+    "Concurrent-action and control-state admission boundaries require retail verification."
+  ]
+}

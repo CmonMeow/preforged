@@ -1,0 +1,133 @@
+{
+  "quest": 75,
+  "source": "data/captures/pre-searing-warrior-ele-2026-10-09/world-13908-99220828.jsonl",
+  "source_sha256": "3388d5edbe0ca0488f91d13244d6ec89670d14bed93b8ef0790b3fdaf7f283ff",
+  "map": 160,
+  "instance_epoch": 24,
+  "acceptance_line": 3195,
+  "completed_line": 3460,
+  "definition_line": 3253,
+  "definition": {
+    "model_file": 141274,
+    "skin_file": 0,
+    "appearance": 0,
+    "flags": 12,
+    "primary": 2,
+    "secondary": 0,
+    "default_level": 1,
+    "visual_adjustment_bytes": [
+      0,
+      0,
+      0,
+      100
+    ],
+    "model_files": [
+      141908
+    ],
+    "name_encoded_utf16": [
+      3901,
+      34556,
+      36746,
+      25603
+    ],
+    "name": "Grawl",
+    "name_status": "decoded"
+  },
+  "actors": [
+    {
+      "candidate_actor": 20100,
+      "captured_agent": 26,
+      "snapshot_line": 3275,
+      "observation": {
+        "agent": 26,
+        "model": 1437,
+        "x": 13781.0,
+        "y": 4789.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 1,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3903,
+          58571,
+          46558,
+          4024
+        ],
+        "name": "Grawl Invader",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "candidate_actor": 20101,
+      "captured_agent": 29,
+      "snapshot_line": 3284,
+      "observation": {
+        "agent": 29,
+        "model": 1437,
+        "x": 11401.0,
+        "y": 6009.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 1,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3903,
+          58571,
+          46558,
+          4024
+        ],
+        "name": "Grawl Invader",
+        "name_status": "decoded"
+      }
+    },
+    {
+      "candidate_actor": 20102,
+      "captured_agent": 30,
+      "snapshot_line": 3298,
+      "observation": {
+        "agent": 30,
+        "model": 1437,
+        "x": 11744.0,
+        "y": 3730.0,
+        "plane": 0,
+        "facing": 0.0,
+        "level": 1,
+        "allegiance": 3,
+        "name_encoded_utf16": [
+          3903,
+          58571,
+          46558,
+          4024
+        ],
+        "name": "Grawl Invader",
+        "name_status": "decoded"
+      }
+    }
+  ],
+  "death_source": "data/captures/pre-searing-warrior-ele-2026-10-09/packets-13908-99235906.jsonl",
+  "death_source_sha256": "3632078487f8b6925669ec309f3028bda653d943261547747dbf8ddaf2a6601a",
+  "deaths": [
+    {
+      "line": 34749,
+      "tick_ms": 100554000,
+      "captured_agent": 26,
+      "hex": "f10000001a00000010000000"
+    },
+    {
+      "line": 35408,
+      "tick_ms": 100577281,
+      "captured_agent": 29,
+      "hex": "f10000001d00000010000000"
+    },
+    {
+      "line": 35754,
+      "tick_ms": 100589234,
+      "captured_agent": 30,
+      "hex": "f10000001e00000010000000"
+    }
+  ],
+  "wiki_health": 80,
+  "wiki_health_source": "Grawl_Invader.html",
+  "wiki_health_sha256": "3d861c61c28910173638477802b1d98e15b74dddaa80cc188ab8c16783e0c354",
+  "status": "exact quest-specific observed group; placement observations are not a measured spawn distribution; combat armor/AI not established"
+}

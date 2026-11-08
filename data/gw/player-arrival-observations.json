@@ -1,0 +1,586 @@
+{
+  "schema": 1,
+  "source": "data/captures/world-8432-209740140.jsonl",
+  "source_sha256": "aa354d883dd255006315f871eee992fd27f2d372e7562d38f50b740aaf1fbaa2",
+  "classification": "Unconfirmed first-seen player positions; never default or portal spawn points.",
+  "observations": [
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 857,
+      "instance_epoch": 1,
+      "instance_ms": 304496908,
+      "x": -1754.197388,
+      "y": 130.308228,
+      "plane": 0,
+      "facing": 2.696328,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 153,
+      "navigation_validation": {
+        "status": "unavailable_2022_geometry"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 248,
+      "instance_epoch": 2,
+      "instance_ms": 304531612,
+      "x": -6852.157715,
+      "y": -5135.345215,
+      "plane": 0,
+      "facing": -0.024737,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 192,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 165811,
+        "native_output": "source start=0:138 result=0:138\npruned_edges=0\nruntime start=0:138 result=0:138\nstart_cell yt=-5116 yb=-5158 xtl=-7037 xtr=-4920.01 xbl=-7080.19 xbr=-4877.21\ndestination_surface=0:138 yt=-5116 yb=-5158 xtl=-7037 xtr=-4920.01 xbl=-7080.19 xbr=-4877.21 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 248,
+      "instance_epoch": 2,
+      "instance_ms": 304548221,
+      "x": -6124.206055,
+      "y": -4601.702637,
+      "plane": 0,
+      "facing": -1.434743,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 245,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 165811,
+        "native_output": "source start=0:1858 result=0:1858\npruned_edges=0\nruntime start=0:1858 result=0:1858\nstart_cell yt=-4596.83 yb=-4677 xtl=-6872.55 xtr=-5127.55 xbl=-6826 xbr=-5081.53\ndestination_surface=0:1858 yt=-4596.83 yb=-4677 xtl=-6872.55 xtr=-5127.55 xbl=-6826 xbr=-5081.53 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 248,
+      "instance_epoch": 2,
+      "instance_ms": 304555071,
+      "x": -6607.307617,
+      "y": -5929.831055,
+      "plane": 0,
+      "facing": 0.0,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 253,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 165811,
+        "native_output": "source start=0:1605 result=0:1605\npruned_edges=0\nruntime start=0:1605 result=0:1605\nstart_cell yt=-5859 yb=-5943 xtl=-7050.55 xtr=-4892 xbl=-7043.15 xbr=-4886\ndestination_surface=0:1605 yt=-5859 yb=-5943 xtl=-7050.55 xtr=-4892 xbl=-7043.15 xbr=-4886 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 14,
+      "instance_epoch": 10,
+      "instance_ms": 172150622,
+      "x": -388.11853,
+      "y": 22631.824219,
+      "plane": 0,
+      "facing": 1.014215,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 517,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 35379,
+        "native_output": "source start=0:1865 result=0:1865\npruned_edges=0\nruntime start=0:1865 result=0:1865\nstart_cell yt=22656 yb=22560 xtl=-1408 xtr=576 xbl=-1344 xbr=528\ndestination_surface=0:1865 yt=22656 yb=22560 xtl=-1408 xtr=576 xbl=-1344 xbr=528 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 14,
+      "instance_epoch": 10,
+      "instance_ms": 172150688,
+      "x": 756.191223,
+      "y": 24315.8125,
+      "plane": 0,
+      "facing": -2.448958,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 518,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 35379,
+        "native_output": "source start=0:1838 result=0:1838\npruned_edges=0\nruntime start=0:1838 result=0:1838\nstart_cell yt=24384 yb=24288 xtl=-576 xtr=1056 xbl=-576 xbr=1056\ndestination_surface=0:1838 yt=24384 yb=24288 xtl=-576 xtr=1056 xbl=-576 xbr=1056 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 15,
+      "instance_epoch": 18,
+      "instance_ms": 237271,
+      "x": 19335.097656,
+      "y": 12478.197266,
+      "plane": 0,
+      "facing": 2.487264,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 717,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 33663,
+        "native_output": "source start=0:4127 result=0:4127\npruned_edges=2\nruntime start=0:4127 result=0:4127\nstart_cell yt=12536 yb=12359 xtl=19297.3 xtr=19861.8 xbl=19159 xbr=20141.7\ndestination_surface=0:4127 yt=12536 yb=12359 xtl=19297.3 xtr=19861.8 xbl=19159 xbr=20141.7 source_portal=-65481 destination_portal=-65481 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 15,
+      "instance_epoch": 21,
+      "instance_ms": 265422,
+      "x": 19335.097656,
+      "y": 12478.197266,
+      "plane": 0,
+      "facing": 2.487264,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 758,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 33663,
+        "native_output": "source start=0:4127 result=0:4127\npruned_edges=2\nruntime start=0:4127 result=0:4127\nstart_cell yt=12536 yb=12359 xtl=19297.3 xtr=19861.8 xbl=19159 xbr=20141.7\ndestination_surface=0:4127 yt=12536 yb=12359 xtl=19297.3 xtr=19861.8 xbl=19159 xbr=20141.7 source_portal=-65481 destination_portal=-65481 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 20,
+      "instance_epoch": 45,
+      "instance_ms": 69220396,
+      "x": 3805.0,
+      "y": 4223.0,
+      "plane": 0,
+      "facing": 3.042645,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 1221,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 33642,
+        "native_output": "source start=0:1206 result=0:1206\npruned_edges=0\nruntime start=0:1206 result=0:1206\nstart_cell yt=4224 yb=4128 xtl=2295.55 xtr=4608 xbl=2151.72 xbr=4416\ndestination_surface=0:1206 yt=4224 yb=4128 xtl=2295.55 xtr=4608 xbl=2151.72 xbr=4416 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 29,
+      "instance_epoch": 105,
+      "instance_ms": 2152,
+      "x": 7528.0,
+      "y": -25887.0,
+      "plane": 0,
+      "facing": 0.0,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 2720,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 13906,
+        "native_output": "source start=0:5440 result=0:5440\npruned_edges=0\nruntime start=0:5440 result=0:5440\nstart_cell yt=-25873 yb=-26022 xtl=6840.52 xtr=10588.8 xbl=6843.51 xbr=10548\ndestination_surface=0:5440 yt=-25873 yb=-26022 xtl=6840.52 xtr=10588.8 xbl=6843.51 xbr=10548 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 32,
+      "instance_epoch": 116,
+      "instance_ms": 61721031,
+      "x": -687.114075,
+      "y": 18136.330078,
+      "plane": 0,
+      "facing": -0.56895,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 2876,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 13913,
+        "native_output": "source start=0:3162 result=0:3162\npruned_edges=0\nruntime start=0:3162 result=0:3162\nstart_cell yt=18144 yb=18082 xtl=-864 xtr=15.8515 xbl=-879.5 xbr=-75\ndestination_surface=0:3162 yt=18144 yb=18082 xtl=-864 xtr=15.8515 xbl=-879.5 xbr=-75 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 32,
+      "instance_epoch": 122,
+      "instance_ms": 61798280,
+      "x": 409.21933,
+      "y": 17719.767578,
+      "plane": 8,
+      "facing": -2.02843,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 3002,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 13913,
+        "native_output": "source start=8:4 result=8:4\npruned_edges=0\nruntime start=8:4 result=8:4\nstart_cell yt=17734 yb=17686 xtl=-7 xtr=674.107 xbl=18.3333 xbr=700\ndestination_surface=8:4 yt=17734 yb=17686 xtl=-7 xtr=674.107 xbl=18.3333 xbr=700 source_portal=5 destination_portal=5 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 149,
+      "instance_ms": 11136013,
+      "x": 20735.259766,
+      "y": 8990.568359,
+      "plane": 0,
+      "facing": 0.0,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 3570,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4210 result=0:4210\npruned_edges=4\nruntime start=0:4210 result=0:4210\nstart_cell yt=9093 yb=8928 xtl=19913.2 xtr=21865 xbl=19872 xbr=21865.2\ndestination_surface=0:4210 yt=9093 yb=8928 xtl=19913.2 xtr=21865 xbl=19872 xbr=21865.2 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 152,
+      "instance_ms": 11149295,
+      "x": 20792.21875,
+      "y": 9043.765625,
+      "plane": 0,
+      "facing": 0.0,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 3613,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4210 result=0:4210\npruned_edges=4\nruntime start=0:4210 result=0:4210\nstart_cell yt=9093 yb=8928 xtl=19913.2 xtr=21865 xbl=19872 xbr=21865.2\ndestination_surface=0:4210 yt=9093 yb=8928 xtl=19913.2 xtr=21865 xbl=19872 xbr=21865.2 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 152,
+      "instance_ms": 11172012,
+      "x": 21074.21875,
+      "y": 8090.234863,
+      "plane": 0,
+      "facing": 0.717372,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 3639,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4096 result=0:4096\npruned_edges=4\nruntime start=0:4096 result=0:4096\nstart_cell yt=8160 yb=8064 xtl=20640 xtr=21865.9 xbl=20736 xbr=21866\ndestination_surface=0:4096 yt=8160 yb=8064 xtl=20640 xtr=21865.9 xbl=20736 xbr=21866 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 152,
+      "instance_ms": 11173262,
+      "x": 21053.191406,
+      "y": 8124.812988,
+      "plane": 0,
+      "facing": 0.717372,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 3642,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4096 result=0:4096\npruned_edges=4\nruntime start=0:4096 result=0:4096\nstart_cell yt=8160 yb=8064 xtl=20640 xtr=21865.9 xbl=20736 xbr=21866\ndestination_surface=0:4096 yt=8160 yb=8064 xtl=20640 xtr=21865.9 xbl=20736 xbr=21866 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 152,
+      "instance_ms": 11174362,
+      "x": 20735.259766,
+      "y": 9137.431641,
+      "plane": 0,
+      "facing": 0.0,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 3645,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4208 result=0:4208\npruned_edges=4\nruntime start=0:4208 result=0:4208\nstart_cell yt=9142 yb=9130 xtl=19982 xtr=22560 xbl=19987.3 xbr=22560\ndestination_surface=0:4208 yt=9142 yb=9130 xtl=19982 xtr=22560 xbl=19987.3 xbr=22560 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 55,
+      "instance_epoch": 162,
+      "instance_ms": 306645133,
+      "x": 4104.225586,
+      "y": 9474.789062,
+      "plane": 0,
+      "facing": -0.56895,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 4047,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 13565,
+        "native_output": "source start=0:1840 result=0:1840\npruned_edges=0\nruntime start=0:1840 result=0:1840\nstart_cell yt=9533 yb=9365 xtl=3697.23 xtr=5263 xbl=3693.22 xbr=4881\ndestination_surface=0:1840 yt=9533 yb=9365 xtl=3697.23 xtr=5263 xbl=3693.22 xbr=4881 source_portal=7143495 destination_portal=7143495 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 81,
+      "instance_epoch": 173,
+      "instance_ms": 292093751,
+      "x": 5269.175781,
+      "y": 9414.327148,
+      "plane": 0,
+      "facing": -0.009465,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 4449,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 22052,
+        "native_output": "source start=0:1603 result=0:1603\npruned_edges=0\nruntime start=0:1603 result=0:1603\nstart_cell yt=9519 yb=9408 xtl=4722 xtr=7902 xbl=4722 xbr=7680\ndestination_surface=0:1603 yt=9519 yb=9408 xtl=4722 xtr=7902 xbl=4722 xbr=7680 source_portal=-65439 destination_portal=-65439 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 81,
+      "instance_epoch": 173,
+      "instance_ms": 292097417,
+      "x": 960.0,
+      "y": 3744.0,
+      "plane": 0,
+      "facing": -0.463651,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 4481,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 22052,
+        "native_output": "source start=0:324 result=0:324\npruned_edges=0\nruntime start=0:324 result=0:324\nstart_cell yt=3840 yb=3744 xtl=768 xtr=1088 xbl=960 xbr=960\ndestination_surface=0:324 yt=3840 yb=3744 xtl=768 xtr=1088 xbl=960 xbr=960 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 81,
+      "instance_epoch": 173,
+      "instance_ms": 292111150,
+      "x": 1139.0,
+      "y": 1858.004639,
+      "plane": 0,
+      "facing": 0.0,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 4503,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 22052,
+        "native_output": "source start=0:777 result=0:777\npruned_edges=0\nruntime start=0:777 result=0:777\nstart_cell yt=1920 yb=1824 xtl=424.372 xtr=2688 xbl=426.582 xbr=2976\ndestination_surface=0:777 yt=1920 yb=1824 xtl=424.372 xtr=2688 xbl=426.582 xbr=2976 source_portal=-65523 destination_portal=-65523 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 130,
+      "instance_epoch": 197,
+      "instance_ms": 610067,
+      "x": 21337.208984,
+      "y": 9966.879883,
+      "plane": 0,
+      "facing": -1.434743,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 5612,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 155165,
+        "native_output": "source start=0:3074 result=0:3074\npruned_edges=0\nruntime start=0:3074 result=0:3074\nstart_cell yt=9981 yb=9911 xtl=19812.7 xtr=23204.6 xbl=19768 xbr=23205\ndestination_surface=0:3074 yt=9981 yb=9911 xtl=19812.7 xtr=23204.6 xbl=19768 xbr=23205 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 130,
+      "instance_epoch": 197,
+      "instance_ms": 625466,
+      "x": 21399.699219,
+      "y": 6208.787598,
+      "plane": 0,
+      "facing": 1.434743,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 5628,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 155165,
+        "native_output": "source start=0:3523 result=0:3523\npruned_edges=0\nruntime start=0:3523 result=0:3523\nstart_cell yt=6232 yb=6203 xtl=20542.5 xtr=22469.5 xbl=20470 xbr=22467.6\ndestination_surface=0:3523 yt=6232 yb=6203 xtl=20542.5 xtr=22469.5 xbl=20470 xbr=22467.6 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 20,
+      "instance_epoch": 204,
+      "instance_ms": 71843656,
+      "x": 6014.960449,
+      "y": 5747.223145,
+      "plane": 0,
+      "facing": -2.380548,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 5831,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 33642,
+        "native_output": "source start=0:1174 result=0:1174\npruned_edges=0\nruntime start=0:1174 result=0:1174\nstart_cell yt=5907 yb=5715 xtl=4689 xtr=6313 xbl=4625 xbr=6349\ndestination_surface=0:1174 yt=5907 yb=5715 xtl=4689 xtr=6313 xbl=4625 xbr=6349 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 227,
+      "instance_ms": 12533177,
+      "x": 22345.880859,
+      "y": 9787.825195,
+      "plane": 0,
+      "facing": -2.2758,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 6170,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4123 result=0:4123\npruned_edges=4\nruntime start=0:4123 result=0:4123\nstart_cell yt=9792 yb=9769 xtl=22176 xtr=23046.4 xbl=22153 xbr=22912\ndestination_surface=0:4123 yt=9792 yb=9769 xtl=22176 xtr=23046.4 xbl=22153 xbr=22912 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 40,
+      "instance_epoch": 227,
+      "instance_ms": 12560289,
+      "x": 22307.748047,
+      "y": 9774.272461,
+      "plane": 0,
+      "facing": -2.2758,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 6204,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 51061,
+        "native_output": "source start=0:4123 result=0:4123\npruned_edges=4\nruntime start=0:4123 result=0:4123\nstart_cell yt=9792 yb=9769 xtl=22176 xtr=23046.4 xbl=22153 xbr=22912\ndestination_surface=0:4123 yt=9792 yb=9769 xtl=22176 xtr=23046.4 xbl=22153 xbr=22912 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 55,
+      "instance_epoch": 231,
+      "instance_ms": 307939175,
+      "x": 1702.938477,
+      "y": 8250.054688,
+      "plane": 0,
+      "facing": -1.299373,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 6341,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 13565,
+        "native_output": "source start=0:1216 result=0:1216\npruned_edges=0\nruntime start=0:1216 result=0:1216\nstart_cell yt=8260.9 yb=8206 xtl=-17.4762 xtr=1728 xbl=-26 xbr=1728\ndestination_surface=0:1216 yt=8260.9 yb=8206 xtl=-17.4762 xtr=1728 xbl=-26 xbr=1728 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 81,
+      "instance_epoch": 237,
+      "instance_ms": 293346658,
+      "x": 6660.194824,
+      "y": 4585.19043,
+      "plane": 0,
+      "facing": -2.448958,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 6585,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 22052,
+        "native_output": "source start=0:2019 result=0:2019\npruned_edges=0\nruntime start=0:2019 result=0:2019\nstart_cell yt=4608 yb=4560 xtl=6144 xtr=7488 xbl=6096 xbr=7488\ndestination_surface=0:2019 yt=4608 yb=4560 xtl=6144 xtr=7488 xbl=6096 xbr=7488 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    },
+    {
+      "schema": 1,
+      "event": "other_player_first_seen",
+      "map": 81,
+      "instance_epoch": 237,
+      "instance_ms": 293348702,
+      "x": 1650.345947,
+      "y": 5648.487305,
+      "plane": 0,
+      "facing": 0.94617,
+      "arrival_confirmed": false,
+      "verified_spawn": false,
+      "source_line": 6589,
+      "navigation_validation": {
+        "status": "accepted_observation",
+        "asset": 22052,
+        "native_output": "source start=0:2482 result=0:2482\npruned_edges=0\nruntime start=0:2482 result=0:2482\nstart_cell yt=5651 yb=5642.51 xtl=1432.49 xtr=2133 xbl=1403.98 xbr=2153.02\ndestination_surface=0:2482 yt=5651 yb=5642.51 xtl=1432.49 xtr=2133 xbl=1403.98 xbr=2153.02 source_portal=-1 destination_portal=-1 shared_edge=0"
+      },
+      "promoted_to_default": false
+    }
+  ]
+}

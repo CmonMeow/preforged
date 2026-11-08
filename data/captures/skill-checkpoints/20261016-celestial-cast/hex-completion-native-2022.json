@@ -1,0 +1,569 @@
+{
+  "checkpoint": "20261016-celestial-cast",
+  "cutoff": "2026-10-17T02:48:58.907161+00:00",
+  "client_sha256": "a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac",
+  "cases": [
+    {
+      "skill": 99,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 66422,
+        "tick_ms": 17124078,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 66423,
+          "tick_ms": 17124078,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f0000001500000019000000b7000000",
+          "opcode": 159,
+          "kind": 21,
+          "resource": 183,
+          "source_actor": null,
+          "instance_epoch": 36,
+          "local_actor": 25,
+          "affected_local": true,
+          "attribution": "unassigned_resource_event"
+        },
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 66424,
+          "tick_ms": 17124078,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000b8000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 184,
+          "source_actor": 25,
+          "instance_epoch": 36,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 183,
+          "kind": 21,
+          "native": {
+            "actor": 42,
+            "encoded_file": "91b900010000",
+            "flags": 1
+          },
+          "wire2022": "9e80150000002a000000b7000000"
+        },
+        {
+          "resource": 184,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "92b900010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000b8000000"
+        }
+      ]
+    },
+    {
+      "skill": 103,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 66516,
+        "tick_ms": 17133312,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 66517,
+          "tick_ms": 17133312,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000c1000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 193,
+          "source_actor": 25,
+          "instance_epoch": 36,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 193,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "efa900010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000c1000000"
+        }
+      ]
+    },
+    {
+      "skill": 31,
+      "finish": {
+        "file": "packets-30352-81363781.jsonl",
+        "line": 7566,
+        "tick_ms": 81664234,
+        "actor": 31,
+        "map": 146,
+        "hex": "9f0000003a0000001f00000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-30352-81363781.jsonl",
+          "line": 7567,
+          "tick_ms": 81664234,
+          "actor": 50,
+          "map": 146,
+          "hex": "a000000014000000320000001f00000009000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 9,
+          "source_actor": 31,
+          "instance_epoch": 3,
+          "local_actor": 31,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 9,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "f04700010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a00000009000000"
+        }
+      ]
+    },
+    {
+      "skill": 53,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 9452,
+        "tick_ms": 15981750,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 9453,
+          "tick_ms": 15981750,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e0000001900000058000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 88,
+          "source_actor": 25,
+          "instance_epoch": 6,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 88,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "baf600010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a00000058000000"
+        }
+      ]
+    },
+    {
+      "skill": 137,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 86259,
+        "tick_ms": 17456765,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 86260,
+          "tick_ms": 17456765,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000f8000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 248,
+          "source_actor": 25,
+          "instance_epoch": 48,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 248,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "2e7e00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000f8000000"
+        }
+      ]
+    },
+    {
+      "skill": 123,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 76377,
+        "tick_ms": 17283703,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 76378,
+          "tick_ms": 17283703,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000e6000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 230,
+          "source_actor": 25,
+          "instance_epoch": 42,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 230,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "8c1c01010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000e6000000"
+        }
+      ]
+    },
+    {
+      "skill": 150,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 91182,
+        "tick_ms": 17536234,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 91183,
+          "tick_ms": 17536234,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e0000001900000010010000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 272,
+          "source_actor": 25,
+          "instance_epoch": 51,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 272,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "3db600010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a00000010010000"
+        }
+      ]
+    },
+    {
+      "skill": 101,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 66454,
+        "tick_ms": 17126015,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 66455,
+          "tick_ms": 17126015,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000be000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 190,
+          "source_actor": 25,
+          "instance_epoch": 36,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 190,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "dc3a00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000be000000"
+        }
+      ]
+    },
+    {
+      "skill": 35,
+      "finish": {
+        "file": "packets-6468-5728843.jsonl",
+        "line": 86628,
+        "tick_ms": 8364421,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 86629,
+          "tick_ms": 8364421,
+          "actor": 25,
+          "map": 280,
+          "hex": "9f00000015000000190000003c000000",
+          "opcode": 159,
+          "kind": 21,
+          "resource": 60,
+          "source_actor": null,
+          "instance_epoch": 27,
+          "local_actor": 25,
+          "affected_local": true,
+          "attribution": "unassigned_resource_event"
+        },
+        {
+          "file": "packets-6468-5728843.jsonl",
+          "line": 86630,
+          "tick_ms": 8364421,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e000000190000003d000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 61,
+          "source_actor": 25,
+          "instance_epoch": 27,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 60,
+          "kind": 21,
+          "native": {
+            "actor": 42,
+            "encoded_file": "736f01010000",
+            "flags": 1
+          },
+          "wire2022": "9e80150000002a0000003c000000"
+        },
+        {
+          "resource": 61,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "67ca00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a0000003d000000"
+        }
+      ]
+    },
+    {
+      "skill": 129,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 81173,
+        "tick_ms": 17347203,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 81174,
+          "tick_ms": 17347203,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000ee000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 238,
+          "source_actor": 25,
+          "instance_epoch": 45,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 238,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "56bb00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000ee000000"
+        }
+      ]
+    },
+    {
+      "skill": 108,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 71760,
+        "tick_ms": 17215156,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 71761,
+          "tick_ms": 17215156,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000cf000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 207,
+          "source_actor": 25,
+          "instance_epoch": 39,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 207,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "b6f100010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000cf000000"
+        }
+      ]
+    },
+    {
+      "skill": 142,
+      "finish": {
+        "file": "packets-1360-15821281.jsonl",
+        "line": 116052,
+        "tick_ms": 17882046,
+        "actor": 25,
+        "map": 280,
+        "hex": "9f0000003a0000001900000000000000",
+        "kind": 58
+      },
+      "particles": [
+        {
+          "file": "packets-1360-15821281.jsonl",
+          "line": 116053,
+          "tick_ms": 17882046,
+          "actor": 30,
+          "map": 280,
+          "hex": "a0000000140000001e00000019000000fe000000",
+          "opcode": 160,
+          "kind": 20,
+          "resource": 254,
+          "source_actor": 25,
+          "instance_epoch": 66,
+          "local_actor": 25,
+          "affected_local": false,
+          "attribution": "unassigned_resource_event"
+        }
+      ],
+      "native_particles": [
+        {
+          "resource": 254,
+          "kind": 20,
+          "native": {
+            "actor": 43,
+            "encoded_file": "043b00010000",
+            "flags": 1
+          },
+          "wire2022": "9f80140000002b0000002a000000fe000000"
+        }
+      ]
+    }
+  ],
+  "tool_sha256": "32a845acbe00aa96de26a35535ebf00d18c60c9b3b3bf47d4fa00f7c983ed4c2",
+  "limits": [
+    "First matched local completion per skill only;not every mode/rank/application.",
+    "Asset services stubbed;native particle selection is not rendered acceptance.",
+    "State/status packets and acknowledgement/recharge ordering are outside this proof."
+  ]
+}
