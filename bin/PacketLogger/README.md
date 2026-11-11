@@ -1,9 +1,9 @@
 # Official-client packet logger
 
-Native C++ x86 logger, separate from the world/spawn collector. The shipped build
-supports the tested official Gw.exe PE timestamps `6abd61cd` and `6ada8611`. Other builds are
-rejected before injection. Source: tools/packet_logger; build: build/packet-logger;
-package: bin/PacketLogger.
+Legacy standalone package. These shipped binaries still accept only the tested
+32-bit client timestamps `6abd61cd` and `6ada8611`. For fingerprint-driven
+capture on the patched client, use the project-root START CAPTURE.cmd, which
+loads both updated collectors from bin/OfficialCapture.
 
 Run START LOGGER.cmd while Guild Wars is open. Enter its PID, or leave the prompt
 empty when only one Gw.exe is running. The launcher prints the executable path

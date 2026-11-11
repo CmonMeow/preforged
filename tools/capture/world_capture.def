@@ -1,0 +1,5 @@
+LIBRARY world_capture
+EXPORTS
+ StartCapture=_StartCapture@4
+ StopCapture=_StopCapture@4
+ CaptureStatus=_CaptureStatus@4

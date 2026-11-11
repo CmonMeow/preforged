@@ -1,0 +1,348 @@
+{
+  "revision": "1ce867e5557622408132495b92766ba3e59c1b76",
+  "source": "https://github.com/gwdevhub/GWToolboxpp",
+  "subdirectory": "Dependencies/GWCA",
+  "runtime_verified": false,
+  "files": [
+    {
+      "path": "bin/gwca.dll",
+      "sha256": "ab28a3001d0b032105ee26b8306aa76da58e212fc43c673559f142bec2b46bbd"
+    },
+    {
+      "path": "include/GWCA/Constants/AgentIDs.h",
+      "sha256": "51c9b4a92ab415cba39bc16a52cf3e03b0f756327f6a0418003a3ca1dd3d0c18"
+    },
+    {
+      "path": "include/GWCA/Constants/Constants.h",
+      "sha256": "55562ce874b4865c26d280f0d2d3aec086fec12f2dc73f3dd7ab8fc21380f8ab"
+    },
+    {
+      "path": "include/GWCA/Constants/ItemIDs.h",
+      "sha256": "00259568b4536713308106c5d37b2b6dc25ba8d9a9040f32bf62c2b86884580d"
+    },
+    {
+      "path": "include/GWCA/Constants/Maps.h",
+      "sha256": "0fe704d8047767ab60f555046795772ce8755cb6faffd4990edb030fcd526d9d"
+    },
+    {
+      "path": "include/GWCA/Constants/QuestIDs.h",
+      "sha256": "a53901eb64fc931f0c3ecce976ee0237cda1fe4a5ef7e392932ecbb44016fe20"
+    },
+    {
+      "path": "include/GWCA/Constants/Skills.h",
+      "sha256": "0c2ae3e04727a7738975dca2614fc4dfd4f89360100b228e14233cc62b6ece0f"
+    },
+    {
+      "path": "include/GWCA/Constants/UIMessages.h",
+      "sha256": "7a4d315435213c9ac841f8c0b590c8c57e2deb3aec7efab84b6761fa4d4cafa2"
+    },
+    {
+      "path": "include/GWCA/Context/AccountContext.h",
+      "sha256": "4c2be1b030e57368522efa152a57dcd28527a396251992c5cd494953d8c2d334"
+    },
+    {
+      "path": "include/GWCA/Context/AgentContext.h",
+      "sha256": "f9aed30682e9df9ea8456e899ed6b307f1d42a9d87b574b9b563915517af15e6"
+    },
+    {
+      "path": "include/GWCA/Context/CharContext.h",
+      "sha256": "2eab4e2fffa75e08b63dbe94e93b71364e005c67166044602d6407978a0f7bd7"
+    },
+    {
+      "path": "include/GWCA/Context/Cinematic.h",
+      "sha256": "c4d17cd377d2d816cf3e7da3e07be5d02e394dd9144398f1a6ed48d7c9932c93"
+    },
+    {
+      "path": "include/GWCA/Context/GadgetContext.h",
+      "sha256": "b1d345b2b8057aafd62da28939a7cc950b2e23ac8ee9996c3e85c9b9ea05913d"
+    },
+    {
+      "path": "include/GWCA/Context/GameContext.h",
+      "sha256": "8dc57ffb572bfe432b1f7af19614a2d20d7978bbc3aea95202ce0224c9f45e73"
+    },
+    {
+      "path": "include/GWCA/Context/GameplayContext.h",
+      "sha256": "bce0747d33a21e3237d917c94f85d50bf02fb6700d5ed9ace2d87fb85ae78deb"
+    },
+    {
+      "path": "include/GWCA/Context/GuildContext.h",
+      "sha256": "645039f2b25ba9bbf723434aa7f33f0b44e56d84383e3f3243aed7c882d7d669"
+    },
+    {
+      "path": "include/GWCA/Context/ItemContext.h",
+      "sha256": "4b9fb36351eb7dbeb780c54137f542a6ccee2164e0e47520e7afd5a6cb2831e5"
+    },
+    {
+      "path": "include/GWCA/Context/MapContext.h",
+      "sha256": "79f0787632af8a41699fb74345b9d592d04922a7f31cbe5742147792107383f1"
+    },
+    {
+      "path": "include/GWCA/Context/PartyContext.h",
+      "sha256": "c1761b7c389112833562c00d6823b5a6524bdb0359c50300deb6f82553777839"
+    },
+    {
+      "path": "include/GWCA/Context/PreGameContext.h",
+      "sha256": "ddd540ceb2259efb5d5fce09893643903e3a34045a271b419478ecb9df7e47da"
+    },
+    {
+      "path": "include/GWCA/Context/TextParser.h",
+      "sha256": "09e2c3ebceb7d76cc31ab833a0447e2da2d4c93332ba01792eac5788a58e6c2a"
+    },
+    {
+      "path": "include/GWCA/Context/TradeContext.h",
+      "sha256": "b645ed952416ded14ff2e3c18f02c786ad09e396fe6edaaac1a500e589f08810"
+    },
+    {
+      "path": "include/GWCA/Context/WorldContext.h",
+      "sha256": "2a5229a03392717e80e54587e40d23a0529c8e9d68f4c19b095e21e3202a27eb"
+    },
+    {
+      "path": "include/GWCA/GameContainers/Array.h",
+      "sha256": "20c6d501a7a631483faa29ac5f2b9c0d109376149304e39dd8c6977655112af0"
+    },
+    {
+      "path": "include/GWCA/GameContainers/GamePos.h",
+      "sha256": "fcf86bc5dc7e946af9bc3bfee35a2b443c958fa38c03f4844e26785296e989a8"
+    },
+    {
+      "path": "include/GWCA/GameContainers/Hash.h",
+      "sha256": "625eeb9a19d402f11e8a8375e192282f25f9e79e38b7e94cdd0d5483c8409fe9"
+    },
+    {
+      "path": "include/GWCA/GameContainers/List.h",
+      "sha256": "deee5a2ee8cfc133c106f9e92896e27cd00600d5afde71ffde949dd38b1b3e9a"
+    },
+    {
+      "path": "include/GWCA/GameContainers/ObjectPool.h",
+      "sha256": "db30710e2a3ef600be381fa580c64de926e70e85dc70d553d66cb54ae34d849a"
+    },
+    {
+      "path": "include/GWCA/GameContainers/PrioQ.h",
+      "sha256": "0cec04bc2242d29e4dfae1fe830e21f3387fbc9bdbce31de92fe9a85c97134bf"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Agent.h",
+      "sha256": "3e46854d4a58e416195e00c9923221491b172a348289a789f06e3475dbe78942"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Attribute.h",
+      "sha256": "705fd708b8326499af7e8fe0073d75dc9652db2e2bc17cf9c1a6fa6199cc6243"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Camera.h",
+      "sha256": "4323a4f972758eceb0eaf186acddb2c60a770b9d0376110a65a2bdcde6d7a8e8"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Frame.h",
+      "sha256": "eb0268791f92b960b4ee707f83057e9b3ff0beec2e47e504acfa4ddf831bffda"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Friendslist.h",
+      "sha256": "dabce94a869b39d0d1edcfe85292920272017fa2bb13c57ff51b11d3d6b79533"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Guild.h",
+      "sha256": "6507c39ea84123ee8cd030c6882fdec21186f67aacc72ea27c875fe36f168e3b"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Hero.h",
+      "sha256": "d91764c0112f22c611404e7df3d5e76838b69155451b74e22fa0a9f04512608c"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Item.h",
+      "sha256": "1ae11ed060a04caca9918c9e4af9395fb3ee138f70c694b68e0f3205d26010dc"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Map.h",
+      "sha256": "905816d94c7bd58b7dde0afc2fa120cefd991c35eaa5db79172236bdb40d94e5"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Match.h",
+      "sha256": "f9c9b4121f77ef91eef06a83bfdc419d27c1db5be2c2b948a94287b5b032feb1"
+    },
+    {
+      "path": "include/GWCA/GameEntities/NPC.h",
+      "sha256": "af202308d39b4865790704469c1b144a320849d335dda3fb0efce17b859b17e4"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Party.h",
+      "sha256": "eee12ed593fd77ac40bccb5f875d9e68d47c8396270521752bdfad30f4c7f0c3"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Pathing.h",
+      "sha256": "f924b7213aeb4a47ae60970ee5ed6f3c70f5dace080f68e2af64198d228771fa"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Player.h",
+      "sha256": "71edcc67fe47009032f9c004fa969076e961f8da0454e637f9394a0b1a3aedf2"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Quest.h",
+      "sha256": "b00433fd0de45d51dd5aa352bfbebecdbab084f144c5680b896e458a73030d7c"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Skill.h",
+      "sha256": "ea156a00bba9e7ec5f464f6c04a894b5eba2785f83be6b02a60c75b70b1e74ea"
+    },
+    {
+      "path": "include/GWCA/GameEntities/Title.h",
+      "sha256": "0b13f67a7ad9bf17803be69d83c53c6771f4a18318677acc1f9d6e9efd9906a1"
+    },
+    {
+      "path": "include/GWCA/GWCA.h",
+      "sha256": "1d589058b33983aec4e8181baf417cef5af832a025d7e07ad59f9ce74e5c33ca"
+    },
+    {
+      "path": "include/GWCA/GWCAVersion.h",
+      "sha256": "af1f8e069141d8f8fca397adde238fc514166fda65c818399a6b0f55ebfc35e1"
+    },
+    {
+      "path": "include/GWCA/Managers/AgentMgr.h",
+      "sha256": "93d2e4f977fff23e4b895037c7a4db83938f33d1c09ca5c5944c3a5cbab1708f"
+    },
+    {
+      "path": "include/GWCA/Managers/CameraMgr.h",
+      "sha256": "89807e92e833b345160e62e521d7d2312bce8cb91408f2a293cf766757758f63"
+    },
+    {
+      "path": "include/GWCA/Managers/ChatMgr.h",
+      "sha256": "c67567273c36a0560a706f4602de2ec902bcc4ef68f0e72063c4041b0c2a5307"
+    },
+    {
+      "path": "include/GWCA/Managers/EffectMgr.h",
+      "sha256": "53166c570a574f4fd67312aa2a4b4e90529d7107d46020f44fddab212a89b941"
+    },
+    {
+      "path": "include/GWCA/Managers/EventMgr.h",
+      "sha256": "559edf0dc4c351dcec6b94b476ca27450f17c32105dc3daa523b2cf9c388552b"
+    },
+    {
+      "path": "include/GWCA/Managers/FriendListMgr.h",
+      "sha256": "10e7f2e70cf288e48d835a9bffe5a2ef8366c0dbdc244bd8e8199df2afb64eec"
+    },
+    {
+      "path": "include/GWCA/Managers/GameThreadMgr.h",
+      "sha256": "a16afec1fd6be26696fe62856130114d6c31a5e8407a05caafa72342d7ceaf03"
+    },
+    {
+      "path": "include/GWCA/Managers/GuildMgr.h",
+      "sha256": "3268ffbe32ea999b87967fc76afff7ce557fc1b99c99656e6b3d77c51d2c1d27"
+    },
+    {
+      "path": "include/GWCA/Managers/ItemMgr.h",
+      "sha256": "250f35fd2e89cd6866967347237d6a153b493c788cec28ab2f37cc66aee35683"
+    },
+    {
+      "path": "include/GWCA/Managers/MapMgr.h",
+      "sha256": "ebf37b347496f9d3f6827c665b05d35efff816496b41b108f4d620ca6479076c"
+    },
+    {
+      "path": "include/GWCA/Managers/MemoryMgr.h",
+      "sha256": "2d09a6962424f0a16c5e394c27f4f39bed94e1bfe066d7c4b38e0648f740710a"
+    },
+    {
+      "path": "include/GWCA/Managers/MerchantMgr.h",
+      "sha256": "14d45dce81fb7e47e0a1b249767a3cd5416a288318b855fb8aec980cce367c8d"
+    },
+    {
+      "path": "include/GWCA/Managers/Module.h",
+      "sha256": "8ce4d2061e85e611fe4eddd6f809517056b109f2fe257be790fdc806b91c1619"
+    },
+    {
+      "path": "include/GWCA/Managers/PartyMgr.h",
+      "sha256": "98577b6b93a1e6e66afcd898cebcb6497f6b48a6c48368ece374ebcb18b078cf"
+    },
+    {
+      "path": "include/GWCA/Managers/PlayerMgr.h",
+      "sha256": "f4f1210d633eee99a729aa0ad4ad5efb7c19d67c144e11479ada8e53f61c528a"
+    },
+    {
+      "path": "include/GWCA/Managers/QuestMgr.h",
+      "sha256": "a2ca011beb8c5b3a7db311ffcb7c90e9c89f5faa88e8d218e54a7662044e3a9e"
+    },
+    {
+      "path": "include/GWCA/Managers/RenderMgr.h",
+      "sha256": "3aa7f6b0e3f404dc2f5bd8c6c2610a2d807309f4e308d777022111ae364aa850"
+    },
+    {
+      "path": "include/GWCA/Managers/SkillbarMgr.h",
+      "sha256": "0e60c888ce7187d0f9c5a0e5fabf12788158809363ca07e8de82311c39edc9eb"
+    },
+    {
+      "path": "include/GWCA/Managers/StoCMgr.h",
+      "sha256": "55616cecff6cd0273d4c4d5d72b870b998c92eb063a60fe92d05b71f0a565f7b"
+    },
+    {
+      "path": "include/GWCA/Managers/TradeMgr.h",
+      "sha256": "1d91c84ac4267877adf35f5f00b7ed0130db386c996d2da8d74f3570e989bb5e"
+    },
+    {
+      "path": "include/GWCA/Managers/UIMgr.h",
+      "sha256": "1d8d8da24a697d2142b11f984cdf88076ba4215aa5bcb0dc516986f4d389144c"
+    },
+    {
+      "path": "include/GWCA/Packets/Opcodes.h",
+      "sha256": "279766c3949ad244a511cd1c35ed7ccfabafbfdfd91123c05ad6b6e9d15d3047"
+    },
+    {
+      "path": "include/GWCA/Packets/StoC.h",
+      "sha256": "881d2078e28646003d5be21b91756dcc5e9eb5614d553ea3a2e9b159932698a4"
+    },
+    {
+      "path": "include/GWCA/stdafx.h",
+      "sha256": "a3dcaf1e83376415ac861c123d7b95a125c73110e61ed80bdf75071e2f337927"
+    },
+    {
+      "path": "include/GWCA/Utilities/Debug.h",
+      "sha256": "6e89065988544af6529348de36743f83133a85a7c9834e1de43b5974476d773e"
+    },
+    {
+      "path": "include/GWCA/Utilities/Export.h",
+      "sha256": "c89430e9cb3c024ad8a1721f5d5d30ac735af19996a055e508f2181c9c9276dc"
+    },
+    {
+      "path": "include/GWCA/Utilities/FileScanner.h",
+      "sha256": "8d1aa4bb7cc0bdc9dbf1d5ed943354f9ffab2a54b8e0794731d88a5ce32b9c19"
+    },
+    {
+      "path": "include/GWCA/Utilities/Hook.h",
+      "sha256": "6f1ad14d15fbd3af3233dc1b7eb39573c7d76fdce91ba9fc2bdee304bce56570"
+    },
+    {
+      "path": "include/GWCA/Utilities/Hooker.h",
+      "sha256": "e88ae62e3705a686442bbb32c9df28b4cfeed2a5dd333f4a40a0af12411ba0b0"
+    },
+    {
+      "path": "include/GWCA/Utilities/Macros.h",
+      "sha256": "7d33a9a3b55177a71426d424355e7897d67a5524e50274017bdb47ebfeae6c83"
+    },
+    {
+      "path": "include/GWCA/Utilities/MemoryPatcher.h",
+      "sha256": "3b6cc9927efadd0dbcb4f4687a636dc4849bb4677688e50c26b2e80ddb7a11df"
+    },
+    {
+      "path": "include/GWCA/Utilities/Scanner.h",
+      "sha256": "9e43c466ca968b28a3306a3e5e1693a9fa7367d3e5bce373d488d91e02638ac1"
+    },
+    {
+      "path": "include/GWCA/Utilities/Version.h",
+      "sha256": "19a6f00c75bdb12bdad0456be12a67a6d8d4d4612e5d1cf96d47100727460939"
+    },
+    {
+      "path": "lib/gwca.lib",
+      "sha256": "d7235031998f5395dd325782c0b4a23498f4369f43f5d98e4abd3ef74d2fe78f"
+    },
+    {
+      "path": "provenance.json",
+      "sha256": "fe2293ec85c114c7a0d748b32ce0050a18e8db554fbe3d3c3cc94fea6cca6eb4"
+    },
+    {
+      "path": "source/Platform/Wasm/WasmScanner.h",
+      "sha256": "cadfcf76c18567a3e23771f6eda7350dbf1ecb8d54f2fe32e21e41d6b29346a6"
+    },
+    {
+      "path": "source/Platform/Wasm/Win32Shim.h",
+      "sha256": "53a1d172ff7f9c3b71ce0568cf4016c8e1f5cfb976232730b21e634a50807bdd"
+    }
+  ]
+}

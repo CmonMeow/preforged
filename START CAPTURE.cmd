@@ -7,13 +7,13 @@ set "capture_pid=%~1"
 if not defined capture_pid set /p "capture_pid=Official Guild Wars PID: "
 if not defined capture_pid exit /b 1
 echo(%capture_pid%| findstr /r /x "[0-9][0-9]*" >nul || exit /b 1
-"bin\GuildWarsLogger\capture_control.exe" "%capture_pid%" start
+"bin\OfficialCapture\capture_control.exe" "%capture_pid%" start
 if errorlevel 1 goto failed
-"bin\PacketLogger\packet_control.exe" "%capture_pid%" start
+"bin\OfficialCapture\packet_control.exe" "%capture_pid%" start
 if errorlevel 1 goto partial
 echo Both loggers started. You may close this window; recording continues.
-echo World logs: bin\GuildWarsLogger\world-*.jsonl
-echo Packet logs: bin\PacketLogger\packets-*.jsonl
+echo World logs: bin\OfficialCapture\world-*.jsonl
+echo Packet logs: bin\OfficialCapture\packets-*.jsonl
 pause
 exit /b 0
 :partial

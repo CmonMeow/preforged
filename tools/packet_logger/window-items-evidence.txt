@@ -1,0 +1,37 @@
+Collector item-list decoded memory evidence (offline inspection, 2026-10-22)
+
+Pinned 2022 source: data/client-source/Gw_2022.exe
+SHA256 a6fb3c51a52ec5528156b690dc63b4ba51c4b95690d15877d5b49fc3c7dc57ac
+Descriptor RVA 0x60bcac: [131, 0x102b, 6]. Callback VA 0x8746a0:
+  mov ecx,[ebp+8]
+  lea eax,[ecx+8]
+  push eax
+  push DWORD PTR [ecx+4]
+  call 0x793a80
+Consumer 0x793a80 loops count times over [array+index*4], appending item IDs.
+Decoded header DWORD + count DWORD + 16 inline ID DWORDs = 72 bytes.
+The descriptor's bound is 16; this is not an unbounded pointer or a wire image.
+
+Captured modern schema: [132,4139,6] from the immutable side-quest checkpoint
+data/captures/pre-searing-side-quests-2026-10-12/checkpoint-1815/
+packets-43292-168891734.jsonl
+SHA256 e210b492c044e475735ac55dca85944598fff445e120e657674df9d7fc4df55c
+Its list packets were previously header-only/incomplete, so no captured order
+can be reconstructed from them retroactively.
+
+Additional modern executable inspected read-only: ../Guild Wars/Gw.exe
+SHA256 dc78cf7f36fc81280f760350305f1761377d9ae3566898f2329d5dd6da9a381d
+Schema VA 0xc03ad8, descriptor VA 0xbccc10, callback VA 0x91d0b0.
+The callback reads count at +4 and inline IDs at +8, then calls 0x80fdc0.
+This corroborates the decoded layout; it does NOT by itself validate a live
+client attachment. The runtime code fingerprint must uniquely resolve the
+handler table, and its descriptors and callbacks are validated before hooks
+are installed. Recognition additionally requires the exact schema.
+
+Copy policy: read only the 8-byte prefix and count*4 active item bytes; zero
+remaining capacity. Invalid count, wrong header or unreadable active data
+produces an incomplete header record with window_items_capture_failed:true.
+The original callback still runs exactly once, with its original pointer and
+return value. No changes to the source packet are made.
+
+No live logger deployment, session restart, injection or log mutation performed.

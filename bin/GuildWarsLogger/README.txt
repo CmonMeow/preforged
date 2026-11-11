@@ -40,9 +40,10 @@ START LOGGER.cmd waits for readiness and reports initialization failure instead
 of treating worker creation as successful recording.
 Check that world-*.jsonl is growing after entering an outpost.
 
-Supported client: tested 32-bit Gw.exe, PE timestamp 6ada8611. Other builds are
-rejected before attachment. This is a compatibility check, not a security hash.
-Updates may require a new logger. GWToolbox/GWCA coexistence is not supported:
+This is the legacy standalone package; its binaries still reject clients
+outside the tested 32-bit build with PE timestamp 6ada8611. For the updated
+fingerprint-driven combined package, use the project-root START CAPTURE.cmd,
+which loads bin\OfficialCapture. GWToolbox/GWCA coexistence is not supported:
 start with a game process that has no other GWCA DLL attached. If access fails
 because the game is elevated, run the launcher at the same privilege level.
 With multiple clients, use the exact PID; the selected executable path is shown.

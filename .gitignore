@@ -17,9 +17,12 @@ Desktop.ini
 # Crash dumps and private capture data
 *.dmp
 *.etl
-*.jsonl
 *.pcap
 *.pcapng
 *.sqlite-shm
 *.sqlite-wal
-/tools
+/tools/*
+!/tools/capture/
+!/tools/packet_logger/
+/tools/capture/__pycache__/
+*.pyc

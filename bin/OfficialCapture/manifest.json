@@ -1,0 +1,33 @@
+{
+  "built_date": "2026-11-10",
+  "schema": 1,
+  "gwca_runtime_sha256": "ab28a3001d0b032105ee26b8306aa76da58e212fc43c673559f142bec2b46bbd",
+  "client_profile": {
+    "live_attach_verified": false,
+    "packet_fingerprint_matches_on_disk": 1,
+    "pe_timestamp": "6ae951c4",
+    "size_of_image": "0xf4a000"
+  },
+  "binaries": [
+    {
+      "sha256": "2fe2a890cc95ade5547a9fbdb62de91b6a29a9878dcc7d0a6588bb5eee847964",
+      "file": "capture_control.exe"
+    },
+    {
+      "sha256": "ab28a3001d0b032105ee26b8306aa76da58e212fc43c673559f142bec2b46bbd",
+      "file": "gwca.dll"
+    },
+    {
+      "sha256": "4f78e04219a290539b3dfd26d3923a6038b4fd795c7dd5675445edd7b43cf79c",
+      "file": "official_packet_logger.dll"
+    },
+    {
+      "sha256": "dbf901779eaabe0b2cf078f6fa9d566f6af3dc1bc32fdc6dff5fbf2be9f0e748",
+      "file": "packet_control.exe"
+    },
+    {
+      "sha256": "a0b679f8c9040373866d0c28f92e158f7f0b6b45f9e27b11674a95eec04a1a15",
+      "file": "world_capture.dll"
+    }
+  ]
+}
